@@ -1,0 +1,497 @@
+/* ============================================
+   Filter Components
+   ============================================ */
+
+/* Filter Controls */
+.filters {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Search Box */
+#search {
+    flex: 1;
+    min-width: 300px;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all var(--transition-normal);
+}
+
+#search:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Select Dropdowns */
+select {
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--white-bg);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all var(--transition-normal);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--border-focus);
+}
+
+/* Advanced Filters */
+.advanced-filters {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: var(--light-bg);
+    border-radius: var(--radius-lg);
+}
+
+.advanced-filters > p {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.filter-group {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+/* Dropdown Filter */
+.dropdown-filter {
+    position: relative;
+    min-width: 200px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--white-bg);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.dropdown-btn:hover {
+    border-color: var(--border-focus);
+    background: #f5f5f5;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white-bg);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    margin-top: 4px;
+    padding: 12px;
+    display: none;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: var(--z-dropdown);
+    box-shadow: var(--shadow-md);
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+/* Tri-State Checkbox - General (for Curriculum, Features, Exam Type, Question Type) */
+.tri-state-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.tri-state-label:hover {
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.tri-state-label:last-child {
+    border-bottom: none;
+}
+
+.tri-state-checkbox {
+    padding: 8px 12px 8px 35px; /* Left padding for checkbox */
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.2s;
+    display: block;
+    width: 100%;
+}
+
+.tri-state-checkbox:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.tri-state-checkbox::before {
+    content: '';
+    position: absolute;
+    left: 10px; /* Position checkbox on the left */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.tri-state-checkbox.checked::before {
+    content: '✓';
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+}
+
+.tri-state-checkbox.excluded::before {
+    content: '✕';
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+}
+
+.tri-state-checkbox span {
+    display: inline-block;
+}
+
+/* ============================================
+   Dual Range Slider Components
+   ============================================ */
+
+/* Container for side-by-side collapsible filters */
+.range-filters-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Individual filter wrapper inside dropdown */
+.range-filter-wrapper {
+    padding: 0;
+}
+
+.range-filter-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.range-clear-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 8px;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm);
+}
+
+.range-clear-btn:hover {
+    background: rgba(231, 76, 60, 0.1);
+    color: #c0392b;
+}
+
+.range-info {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+/* Dual Range Slider Container */
+.range-slider-container {
+    position: relative;
+    height: 40px;
+    margin: 20px 0;
+}
+
+/* Track background */
+.range-slider-track {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+/* Filled range between handles */
+.range-slider-fill {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    background: #3498db;
+    border-radius: 3px;
+    z-index: 2;
+    transition: all 0.1s ease;
+}
+
+/* Range inputs */
+.range-slider-input {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    z-index: 3;
+}
+
+/* Make only the thumb interactive */
+.range-slider-input::-webkit-slider-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.range-slider-input::-moz-range-thumb {
+    pointer-events: auto;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+/* Hover effect on thumbs */
+.range-slider-input::-webkit-slider-thumb:hover {
+    background: #3498db;
+    transform: scale(1.15);
+    box-shadow: 0 3px 6px rgba(52, 152, 219, 0.4);
+}
+
+.range-slider-input::-moz-range-thumb:hover {
+    background: #3498db;
+    transform: scale(1.15);
+    box-shadow: 0 3px 6px rgba(52, 152, 219, 0.4);
+}
+
+/* Active state */
+.range-slider-input:active::-webkit-slider-thumb {
+    background: #2980b9;
+    transform: scale(1.2);
+}
+
+.range-slider-input:active::-moz-range-thumb {
+    background: #2980b9;
+    transform: scale(1.2);
+}
+
+/* Make sure max slider is above min slider */
+.range-max {
+    z-index: 4;
+}
+
+/* Range value display */
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.range-value-label {
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Marks filter specific styles */
+.marks-filter .range-slider-fill {
+    background: #9b59b6;
+}
+
+.marks-filter .range-slider-input::-webkit-slider-thumb {
+    border-color: #9b59b6;
+}
+
+.marks-filter .range-slider-input::-moz-range-thumb {
+    border-color: #9b59b6;
+}
+
+.marks-filter .range-slider-input::-webkit-slider-thumb:hover {
+    background: #9b59b6;
+    box-shadow: 0 3px 6px rgba(155, 89, 182, 0.4);
+}
+
+.marks-filter .range-slider-input::-moz-range-thumb:hover {
+    background: #9b59b6;
+    box-shadow: 0 3px 6px rgba(155, 89, 182, 0.4);
+}
+
+.marks-filter .range-slider-input:active::-webkit-slider-thumb {
+    background: #8e44ad;
+}
+
+.marks-filter .range-slider-input:active::-moz-range-thumb {
+    background: #8e44ad;
+}
+
+.marks-filter .range-value-label {
+    color: #9b59b6;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .range-filters-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Chapter Filter - Collapsible Grid
+   ============================================ */
+
+/* Dropdown section styling for consistency */
+.dropdown-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.dropdown-section > strong {
+    display: block;
+    padding: 12px 16px;
+    background: var(--white-bg);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    user-select: none;
+}
+
+.dropdown-section > strong:hover {
+    border-color: var(--border-focus);
+    background: #f5f5f5;
+}
+
+/* Chapter options grid */
+#chapter-options {
+    display: none; /* Hidden by default */
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    padding: 12px;
+    background: var(--white-bg);
+    border: 2px solid var(--border-light);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    margin-top: -8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* When expanded, show as grid */
+#chapter-options[style*="display: grid"],
+#chapter-options[style*="display: block"] {
+    display: grid !important;
+}
+
+/* Chapter filter buttons - Override general tri-state styles */
+#chapter-options .tri-state-checkbox {
+    padding: 8px 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s ease;
+    color: #666;
+}
+
+/* Remove ALL ::before and ::after content for chapter filters */
+#chapter-options .tri-state-checkbox::before,
+#chapter-options .tri-state-checkbox::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Checked state - green background with white text */
+#chapter-options .tri-state-checkbox.checked {
+    background: #27ae60;
+    color: white;
+    border-color: #229954;
+}
+
+/* Excluded state - red background with white text */
+#chapter-options .tri-state-checkbox.excluded {
+    background: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+}
+
+/* Hover effect for chapter filters */
+#chapter-options .tri-state-checkbox:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Arrow indicator animation */
+#chapter-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    float: right;
+}
