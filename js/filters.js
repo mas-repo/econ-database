@@ -61,7 +61,8 @@ function toggleCollapsibleSection(sectionId, arrowId) {
 // Close dropdowns when clicking outside
 // Dependencies: None
 document.addEventListener('click', function(event) {
-    if (!event.target.closest('.dropdown-filter')) {
+    // Check if click is outside both dropdown-filter AND dropdown-section
+    if (!event.target.closest('.dropdown-filter') && !event.target.closest('.dropdown-section')) {
         document.querySelectorAll('.dropdown-content').forEach(d => {
             d.classList.remove('active');
         });
