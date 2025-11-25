@@ -61,7 +61,7 @@ const CURRICULUM_ORDER = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'E1'
 const FEATURE_ITEMS = [
     '含圖表',
     '含表格',
-    // '含計算',
+    '含計算',
     '複選'
 ];
 
