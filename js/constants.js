@@ -16,7 +16,8 @@ const CURRICULUM_ITEMS = [
     'I 宏觀經濟問題和政府',
     'J 國際貿易和金融',
     'E1 選修單元一',
-    'E2 選修單元二'
+    'E2 選修單元二',
+    '未分類'
 ];
 
 // Curriculum mapping (short code to full name)
@@ -32,7 +33,8 @@ const CURRICULUM_NAMES = {
     'I 宏觀經濟問題和政府': 'I',
     'J 國際貿易和金融': 'J',
     'E1 選修單元一': 'E1',
-    'E2 選修單元二': 'E2'
+    'E2 選修單元二': 'E2',
+    '未分類': 'U',
 };
 
 // Reverse mapping (short code to full display name)
@@ -48,16 +50,18 @@ const CURRICULUM_DISPLAY = {
     'I': 'I 宏觀經濟問題和政府',
     'J': 'J 國際貿易和金融',
     'E1': 'E1 選修單元一',
-    'E2': 'E2 選修單元二'
+    'E2': 'E2 選修單元二',
+    'U': '未分類',
 };
 
 // Curriculum sort order
-const CURRICULUM_ORDER = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'E1', 'E2'];
+const CURRICULUM_ORDER = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'E1', 'E2', 'U'];
 
 // Feature filter items
 const FEATURE_ITEMS = [
     '含圖表',
     '含表格',
+    // '含計算',
     '複選'
 ];
 
