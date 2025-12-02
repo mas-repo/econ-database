@@ -339,6 +339,11 @@ async function attemptLogin() {
         if (result.data) {
             showLoading('正在初始化資料庫...');
             
+            // === MODIFIED: Update status to "Loading" ===
+            if (typeof updateStorageStatus === 'function') {
+                updateStorageStatus('loading', '⏳ 載入資料中...');
+            }
+            
             // Initialize storage if needed
             if (!window.storage) {
                 window.storage = new IndexedDBStorage();
@@ -347,6 +352,11 @@ async function attemptLogin() {
             
             // Load the data
             await loadAuthenticatedData(result.data);
+            
+            // === MODIFIED: Update status to "Complete" ===
+            if (typeof updateStorageStatus === 'function') {
+                updateStorageStatus('connected', '✓ 資料載入完成');
+            }
             
             // Initialize the rest of the app
             await initializeApp();
