@@ -60,6 +60,9 @@ async function renderQuestions() {
             <div class="question-header">
                 <div class="question-title">
                     ${q.id}
+                    <button class="feedback-btn" onclick="openFeedbackModal('${q.id.replace(/'/g, "\\'")}')" title="回報問題" style="background: none; border: none; cursor: pointer; font-size: 1.2em; opacity: 0.6; transition: opacity 0.2s; padding: 0; margin-left: 8px;">
+                        📢
+                    </button>                   
                 </div>
                 <div class="question-badges">
                     ${q.year && q.year !== '-' ? `<span class="badge badge-year">${q.year}</span>` : ''}

@@ -173,3 +173,87 @@ async function deleteQuestion(id) {
         await refreshViews();
     }
 }
+
+// Feedback Form Logic
+
+// Open the feedback modal
+function openFeedbackModal(questionId) {
+    const modal = document.getElementById('feedback-modal');
+    const idSpan = document.getElementById('feedback-question-id');
+    const textArea = document.getElementById('feedback-text');
+    
+    if (modal && idSpan) {
+        idSpan.textContent = questionId;
+        textArea.value = ''; // Clear previous text
+        
+        // Remove 'hidden' class to ensure visibility
+        modal.classList.remove('hidden');
+        modal.style.display = 'flex'; // Ensure flex layout for centering
+        
+        textArea.focus();
+    } else {
+        console.error('Feedback modal elements not found in DOM');
+    }
+}
+
+// Close the feedback modal
+function closeFeedbackModal() {
+    const modal = document.getElementById('feedback-modal');
+    if (modal) {
+        // Fix: Add 'hidden' class back
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+    }
+}
+
+// Submit feedback to Google Sheets via Apps Script
+async function submitFeedback() {
+    const questionId = document.getElementById('feedback-question-id').textContent;
+    const feedbackText = document.getElementById('feedback-text').value.trim();
+    const username = window.authManager ? window.authManager.currentUser : 'Anonymous';
+    
+    if (!feedbackText) {
+        alert('請輸入回報內容');
+        return;
+    }
+    
+    // Show loading state on button
+    const submitBtn = document.querySelector('#feedback-modal button[onclick="submitFeedback()"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '傳送中...';
+    submitBtn.disabled = true;
+    
+    try {
+        // Construct the URL for the Google Apps Script
+        const scriptUrl = window.googleSheetsSync ? window.googleSheetsSync.webAppUrl : CONFIG.GOOGLE_APPS_SCRIPT_URL;
+        
+        // We no longer send targetSheetId; the backend handles it via config.gs
+        const url = `${scriptUrl}?action=feedback&questionId=${encodeURIComponent(questionId)}&username=${encodeURIComponent(username)}&comment=${encodeURIComponent(feedbackText)}`;
+        
+        const response = await fetch(url);
+        
+        if (response.ok) {
+            alert('✅ 感謝您的回報！我們已收到您的建議。');
+            closeFeedbackModal();
+        } else {
+            throw new Error('Server response not ok');
+        }
+    } catch (error) {
+        console.error('Feedback error:', error);
+        alert('❌ 傳送失敗，請稍後再試。');
+    } finally {
+        if (submitBtn) {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    }
+}
+
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('feedback-modal');
+    if (event.target === modal) {
+        closeFeedbackModal();
+    }
+});
