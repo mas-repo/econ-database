@@ -122,8 +122,11 @@ function setupFormHandler() {
 
 
 // Edit question
-// Dependencies: globals.js (window.editingId), storage-core.js (window.storage), constants.js (DEFAULT_PUBLISHER)
+// Dependencies: globals.js (window.editingId), storage-core.js (window.storage), constants.js (DEFAULT_PUBLISHER), main.js (scrollToTop)
 async function editQuestion(id) {
+
+    scrollToTop();
+
     const questions = await window.storage.getQuestions();
     const question = questions.find(q => q.id === id);
     
