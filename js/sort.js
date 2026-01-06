@@ -1,0 +1,100 @@
+// Sort questions helper function
+function sortQuestions(questions, sortBy = 'default') {
+    const sorted = [...questions];
+    
+    // Helper to extract number and letter from question number
+    function parseQuestionNumber(qNum) {
+        if (!qNum) return { num: 0, letter: '' };
+        const match = qNum.match(/^(\d+)([a-z]*)$/i);
+        if (!match) return { num: 0, letter: qNum };
+        return {
+            num: parseInt(match[1]),
+            letter: match[2].toLowerCase()
+        };
+    }
+    
+    sorted.sort((a, b) => {
+        switch(sortBy) {
+            case 'default':
+                // Year DESC (newest first), then Question Number ASC
+                if (a.year !== b.year) {
+                    return b.year - a.year; // Newer years first
+                }
+                // Same year: sort by question number
+                const aQ = parseQuestionNumber(a.questionNumber);
+                const bQ = parseQuestionNumber(b.questionNumber);
+                if (aQ.num !== bQ.num) {
+                    return aQ.num - bQ.num; // Smaller numbers first
+                }
+                return aQ.letter.localeCompare(bQ.letter); // Then by letter
+                
+            case 'year-asc':
+                // Year ASC (oldest first), then Question Number ASC
+                if (a.year !== b.year) {
+                    return a.year - b.year;
+                }
+                const aQ1 = parseQuestionNumber(a.questionNumber);
+                const bQ1 = parseQuestionNumber(b.questionNumber);
+                if (aQ1.num !== bQ1.num) {
+                    return aQ1.num - bQ1.num;
+                }
+                return aQ1.letter.localeCompare(bQ1.letter);
+                
+            case 'year-desc':
+                // Year DESC (newest first), then Question Number ASC
+                if (a.year !== b.year) {
+                    return b.year - a.year;
+                }
+                const aQ2 = parseQuestionNumber(a.questionNumber);
+                const bQ2 = parseQuestionNumber(b.questionNumber);
+                if (aQ2.num !== bQ2.num) {
+                    return aQ2.num - bQ2.num;
+                }
+                return aQ2.letter.localeCompare(bQ2.letter);
+                
+            case 'question-asc':
+                // Question Number ASC, then Year DESC
+                const aQ3 = parseQuestionNumber(a.questionNumber);
+                const bQ3 = parseQuestionNumber(b.questionNumber);
+                if (aQ3.num !== bQ3.num) {
+                    return aQ3.num - bQ3.num;
+                }
+                if (aQ3.letter !== bQ3.letter) {
+                    return aQ3.letter.localeCompare(bQ3.letter);
+                }
+                return b.year - a.year;
+                
+            case 'question-desc':
+                // Question Number DESC, then Year DESC
+                const aQ4 = parseQuestionNumber(a.questionNumber);
+                const bQ4 = parseQuestionNumber(b.questionNumber);
+                if (aQ4.num !== bQ4.num) {
+                    return bQ4.num - aQ4.num;
+                }
+                if (aQ4.letter !== bQ4.letter) {
+                    return bQ4.letter.localeCompare(aQ4.letter);
+                }
+                return b.year - a.year;
+                
+            case 'marks-asc':
+                // Marks ASC, then Year DESC
+                if (a.marks !== b.marks) {
+                    return (a.marks || 0) - (b.marks || 0);
+                }
+                return b.year - a.year;
+                
+            case 'marks-desc':
+                // Marks DESC, then Year DESC
+                if (a.marks !== b.marks) {
+                    return (b.marks || 0) - (a.marks || 0);
+                }
+                return b.year - a.year;
+
+                
+            default:
+                return 0;
+        }
+    });
+    
+    return sorted;
+}
