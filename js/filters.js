@@ -79,13 +79,27 @@ function toggleCollapsibleSection(sectionId, arrowId) {
 }
 
 document.addEventListener('click', function(event) {
+    // Check if click is outside filter areas
     if (!event.target.closest('.dropdown-filter') && !event.target.closest('.dropdown-section') && !event.target.closest('.advanced-header')) {
+        
+        // 1. Close standard dropdowns (remove .active class)
         document.querySelectorAll('.dropdown-content:not(.input-dropdown-list):not(.static-position)').forEach(d => {
             d.classList.remove('active');
         });
         
-        // Note: We don't auto-close static positions (inside advanced grid) on outside click usually, 
-        // but if you want to, you can add logic here.
+        // 2. [FIX] Force close collapsible sections (Curriculum, Chapter, Feature)
+        // These use style.display, so we must manually set them to none
+        const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
+        collapsibleTypes.forEach(type => {
+            const section = document.getElementById(`${type}-options`);
+            const arrow = document.getElementById(`${type}-arrow`);
+            
+            // If section exists and is currently visible (not none), hide it
+            if (section && section.style.display && section.style.display !== 'none') {
+                section.style.display = 'none';
+                if (arrow) arrow.textContent = '▶';
+            }
+        });
     }
 
     if (!event.target.closest('.input-dropdown-container')) {
@@ -427,6 +441,15 @@ function clearFilters() {
     const marksArrow = document.getElementById('marks-arrow');
     if (marksSection) marksSection.style.display = 'none';
     if (marksArrow) marksArrow.textContent = '▶';
+
+    // [FIX] Explicitly collapse curriculum, chapter, and feature sections
+    const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
+    collapsibleTypes.forEach(type => {
+        const section = document.getElementById(`${type}-options`);
+        const arrow = document.getElementById(`${type}-arrow`);
+        if (section) section.style.display = 'none';
+        if (arrow) arrow.textContent = '▶';
+    });
 
     const scopeSelect = document.getElementById('search-scope');
     if (scopeSelect) scopeSelect.value = 'all';
