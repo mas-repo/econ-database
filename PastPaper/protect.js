@@ -138,7 +138,7 @@
         // Styling
         btn.style.position = 'fixed';
         btn.style.bottom = '20px';
-        btn.style.left = '20px'; 
+        btn.style.right = '20px'; 
         btn.style.zIndex = '10000'; 
         btn.style.display = 'none'; 
         
