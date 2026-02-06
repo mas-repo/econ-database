@@ -416,7 +416,8 @@ function populateSearchScope() {
 function clearFilters() {
     document.getElementById('search').value = '';
     document.getElementById('year-filter').value = '';
-    
+    toggleCollapsibleSection('percentage-options', 'percentage-arrow');
+    toggleCollapsibleSection('marks-options', 'marks-arrow');    
     const scopeSelect = document.getElementById('search-scope');
     if (scopeSelect) scopeSelect.value = 'all';
     window.searchScope = 'all';
