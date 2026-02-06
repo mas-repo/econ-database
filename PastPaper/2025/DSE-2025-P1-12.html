@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Marginal Analysis & Law of Demand</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --correct-color: #10b981; /* Emerald */
+            --wrong-color: #ef4444; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: #fffbeb; /* Cream/Light Yellow */
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .answer-section {
+            background-color: #f0fdf4; /* Light Green */
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .option-analysis {
+            margin-top: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .correct-badge {
+            background-color: var(--correct-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .wrong-badge {
+            background-color: var(--wrong-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .tips-box {
+            background-color: #e0e7ff; /* Indigo tint */
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #4338ca;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+            .header-item {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div class="header-item">
+            Topic (課題): <span style="color: var(--primary-color);">Consumer Demand & Marginal Analysis (消費者需求與邊際分析)</span>
+        </div>
+        <div class="header-item">
+            Difficulty (難度): ⭐⭐⭐☆☆
+        </div>
+        <div class="header-item">
+            Key Concepts (核心概念): 
+            <span style="font-weight: normal;">Marginal Cost (邊際成本), Law of Demand (需求定律), Sunk Cost (沉沒成本)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p>
+            ABC公司是一間提供送餐服務的公司。它予顧客以下兩種付費選項。<br>
+            <span class="en-text">ABC Company is a food delivery service provider. It offers the following two payment options to customers.</span>
+        </p>
+        <ul>
+            <li>
+                選項1：每次點餐支付$30送餐費用<br>
+                <span class="en-text">Option 1: to pay a delivery fee of $30 per order</span>
+            </li>
+            <li>
+                選項2：每月支付$200定額會員費，每次點餐無須支付任何送餐費用<br>
+                <span class="en-text">Option 2: to pay a lump-sum membership fee of $200 per month and do not need to pay any delivery fee per order</span>
+            </li>
+        </ul>
+        <p>
+            根據上述資料，當一名顧客支付定額會員費後，___________。<br>
+            <span class="en-text">Based on the above information, after a customer paying the lump-sum membership fee, ___________.</span>
+        </p>
+        <ol>
+            <li>
+                他／她傾向更頻密地使用ABC公司的送餐服務<br>
+                <span class="en-text">he/she tends to use the food delivery services of ABC Company more frequently</span>
+            </li>
+            <li>
+                他／她使用ABC公司的送餐服務時傾向點選較高價的食品<br>
+                <span class="en-text">he/she tends to order higher-priced food when using the food delivery services of ABC Company</span>
+            </li>
+            <li>
+                他／她消費的最後一單位的ABC公司送餐服務的邊際利益傾向變得較低<br>
+                <span class="en-text">the marginal benefit of the last unit of food delivery services of ABC Company consumed by him/her tends to become lower</span>
+            </li>
+        </ol>
+        <p>
+            A. 只有 (1)、(2) (A. (1) and (2) only)<br>
+            B. 只有 (1)、(3) (B. (1) and (3) only)<br>
+            C. 只有 (2)、(3) (C. (2) and (3) only)<br>
+            D. (1)、(2) 及 (3) (D. (1), (2) and (3))
+        </p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="bilingual-text">
+            <strong>1. 邊際成本與固定成本 (Marginal Cost vs. Fixed Cost)</strong><br>
+            在經濟學決策中，我們只看「邊際」轉變。選項1的$30是邊際成本（每多叫一次外賣的成本）。選項2的$200是固定成本，一旦支付後，它就變成了<strong>沉沒成本 (Sunk Cost)</strong>，不應影響之後「是否多叫一次外賣」的決定。支付會員費後，每次叫外賣的邊際成本變為$0。
+            <span class="en-text">In economic decision-making, we focus on "marginal" changes. The $30 in Option 1 is the Marginal Cost (MC) per order. The $200 in Option 2 is a Fixed Cost. Once paid, it becomes a <strong>Sunk Cost</strong> and should not affect the decision of "whether to order one more time". After paying the membership fee, the MC per order becomes $0.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>2. 最優化消費條件 (Optimization Condition)</strong><br>
+            消費者會持續消費直到：
+            $$ MB = MC $$
+            其中 \( MB \) 是邊際利益，\( MC \) 是邊際成本。
+            <span class="en-text">Consumers continue to consume until Marginal Benefit equals Marginal Cost: \( MB = MC \).</span>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>3. 需求定律 (Law of Demand)</strong><br>
+            其他因素不變，價格（成本）下降，需求量上升。
+            <span class="en-text">Ceteris paribus, when price (cost) decreases, quantity demanded increases.</span>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="answer-section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option (正確選項): <span style="font-size: 1.2em; color: var(--secondary-color);">B</span></strong></p>
+
+        <div class="option-analysis">
+            <p><span class="correct-badge">Correct</span> <strong>Statement (1): More frequent use (更頻密使用)</strong></p>
+            <p>
+                在選項1，每次送餐的邊際成本 (MC) 為 $30。在選項2，支付會員費後，每次送餐的 MC 變為 $0。
+                根據<strong>需求定律</strong>，當服務的價格（邊際成本）由 $30 下降至 $0，需求量（使用頻率）必然上升。
+                <span class="en-text">Under Option 1, the Marginal Cost (MC) per delivery is $30. Under Option 2, after paying the fee, the MC per delivery becomes $0. According to the <strong>Law of Demand</strong>, when the price (MC) of the service drops from $30 to $0, the quantity demanded (frequency of use) must increase.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="wrong-badge">Incorrect</span> <strong>Statement (2): Order higher-priced food (點選較高價食品)</strong></p>
+            <p>
+                這是一個常見的干擾項。送餐費用的改變影響的是「是否使用送餐服務」或「使用多少次送餐服務」。它並沒有改變「高價食品」與「低價食品」之間的相對價格。
+                雖然消費者節省了運費（收入效應），但在DSE經濟學的多項選擇題中，除非題目特別暗示強烈的收入效應，否則我們主要考慮價格效應。運費減免是針對「服務」本身，而非「食品」。因此，我們不能斷定消費者會轉向購買較貴的食品。
+                <span class="en-text">This is a distractor. The change in delivery fee affects "whether to use the service" or "how many times to use it". It does not change the relative price between "expensive food" and "cheap food". While the consumer saves on delivery (income effect), in HKDSE MC questions, we focus on price effects unless a strong income effect is implied. The fee reduction is on the "service", not the "food". Thus, we cannot conclude the consumer will switch to more expensive food.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="correct-badge">Correct</span> <strong>Statement (3): Lower marginal benefit (邊際利益較低)</strong></p>
+            <p>
+                根據最優化條件 \( MB = MC \)。
+                <br>情況1：消費者會消費至 \( MB = \$30 \)。
+                <br>情況2：消費者會消費至 \( MB = \$0 \)。
+                <br>由於邊際利益通常隨消費量增加而遞減（邊際利益遞減定律），當消費者增加消費次數（從 \(MB=30\) 的數量增加到 \(MB=0\) 的數量），最後一單位的邊際利益必然比之前低（由 $30 降至 $0）。
+                <span class="en-text">According to the optimization condition \( MB = MC \).
+                <br>Case 1: The consumer consumes until \( MB = \$30 \).
+                <br>Case 2: The consumer consumes until \( MB = \$0 \).
+                <br>Since Marginal Benefit typically diminishes as quantity increases (Law of Diminishing Marginal Benefit), as the consumer increases frequency (moving from the quantity where \(MB=30\) to where \(MB=0\)), the MB of the last unit consumed must be lower than before (dropping from $30 to $0).</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>
+            <strong>Pivot Point (破題關鍵):</strong> 區分「邊際成本」(Marginal Cost) 與「固定/沉沒成本」(Fixed/Sunk Cost)。
+            <span class="en-text">Distinguish between "Marginal Cost" and "Fixed/Sunk Cost".</span>
+        </p>
+        <ul>
+            <li>
+                <strong>$200 會員費 (Membership Fee):</strong> 這是入場費。一旦支付，就是沉沒成本。它<strong>不會</strong>影響之後每次點餐的邊際決定。
+                <span class="en-text">This is an entry fee. Once paid, it is a sunk cost. It does <strong>not</strong> affect the marginal decision of each subsequent order.</span>
+            </li>
+            <li>
+                <strong>每次 $0 (Per order $0):</strong> 這才是新的邊際成本 (New MC)。比較舊 MC ($30) 和新 MC ($0) 才是解題核心。
+                <span class="en-text">This is the new Marginal Cost. Comparing the old MC ($30) with the new MC ($0) is the core of the solution.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <div class="tips-box">
+        <h3>🚀 Exam Tricks & Common Mistakes (考試技巧與常犯錯誤)</h3>
+        
+        <p><strong>⚠️ Trap: Confusing Average Cost with Marginal Cost (混淆平均成本與邊際成本)</strong></p>
+        <p>
+            學生可能會想：「如果我叫很少次外賣，平均每次成本可能高於$30（因為有$200會員費）。」
+            但在經濟學分析行為改變（如：會否多叫一次？）時，我們<strong>只看邊際成本 (Marginal Cost)</strong>，不看平均成本。題目問的是支付會員費「後」的行為，此時$200已成定局。
+            <span class="en-text">Students might think: "If I order rarely, the average cost might be higher than $30 (due to the $200 fee)." However, when analyzing behavioral changes (e.g., will I order one more time?), we <strong>only look at Marginal Cost</strong>, not Average Cost. The question asks about behavior "after" paying the fee, so the $200 is already sunk.</span>
+        </p>
+
+        <p><strong>💡 Shortcut: Price \(\downarrow\) \(\Rightarrow\) Quantity \(\uparrow\) \(\Rightarrow\) MB \(\downarrow\)</strong></p>
+        <p>
+            這是一個連鎖反應：
+            1. 邊際成本下降 (MC: $30 \(\to\) $0)
+            2. 根據需求定律，數量上升 (Quantity \(\uparrow\)) [Statement 1 Correct]
+            3. 根據邊際利益遞減，當數量上升，邊際利益下降 (MB \(\downarrow\)) [Statement 3 Correct]
+            <span class="en-text">This is a chain reaction:
+            1. Marginal Cost drops (MC: $30 \(\to\) $0)
+            2. By Law of Demand, Quantity increases [Statement 1 Correct]
+            3. By Diminishing Marginal Benefit, as Quantity increases, Marginal Benefit drops [Statement 3 Correct]</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
