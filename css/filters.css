@@ -598,3 +598,45 @@
         text-align: left;
     }
 }
+
+
+
+/* Fix for AI Filter Dropdown Position and Width */
+#ai-options {
+    /* 1. Fix Position: Stop it from flying to the left */
+    position: relative; 
+    left: auto;
+    top: auto;
+    
+    /* 2. Fix Width: Stop it from being 100% wide */
+    width: fit-content;
+    min-width: 200px;
+    
+    /* 3. Visual Adjustments */
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Restore shadow if lost */
+    z-index: 100;
+}
+
+/* ============================================
+   Hide Dynamic Filters by Default
+   ============================================ */
+
+/* 
+   Hide the containers for AI, Concepts, and Patterns immediately.
+   The JavaScript in filters.js will add 'style="display: block"' 
+   to these elements once it confirms data exists, which will 
+   override this CSS rule.
+*/
+
+/* Target the wrapper that contains the AI options */
+.dropdown-filter:has(#ai-options),
+.dropdown-filter:has(#ai-filter-btn) {
+    display: none;
+}
+
+/* Target the wrappers that contain Concepts and Patterns options */
+.input-dropdown-container:has(#concepts-options),
+.input-dropdown-container:has(#patterns-options) {
+    display: none;
+}

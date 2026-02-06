@@ -41,8 +41,8 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                     return q.answer && q.answer.toLowerCase().includes(searchLower);
                 case 'concepts':
                     return q.concepts && Array.isArray(q.concepts) && q.concepts.some(c => c.toLowerCase().includes(searchLower));
-                case 'patternTags':
-                    return q.patternTags && Array.isArray(q.patternTags) && q.patternTags.some(p => p.toLowerCase().includes(searchLower));
+                case 'patterns':
+                    return q.patterns && Array.isArray(q.patterns) && q.patterns.some(p => p.toLowerCase().includes(searchLower));
                 case 'markersReport':
                     return q.markersReport && q.markersReport.toLowerCase().includes(searchLower);
                 case 'section':
@@ -211,16 +211,29 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
 
             if (checkedPatterns.length > 0) {
                 questions = questions.filter(q => {
-                    if (!q.patternTags || !Array.isArray(q.patternTags)) return false;
-                    return checkedPatterns.some(p => q.patternTags.includes(p));
+                    if (!q.patterns || !Array.isArray(q.patterns)) return false;
+                    return checkedPatterns.some(p => q.patterns.includes(p));
                 });
             }
 
             if (excludedPatterns.length > 0) {
                 questions = questions.filter(q => {
-                    if (!q.patternTags || !Array.isArray(q.patternTags)) return true;
-                    return !excludedPatterns.some(p => q.patternTags.includes(p));
+                    if (!q.patterns || !Array.isArray(q.patterns)) return true;
+                    return !excludedPatterns.some(p => q.patterns.includes(p));
                 });
+            }
+        }
+
+        // AI Explanation Filter
+        if (filters.triState.ai) {
+            const checked = Object.keys(filters.triState.ai).filter(k => filters.triState.ai[k] === 'checked');
+            const excluded = Object.keys(filters.triState.ai).filter(k => filters.triState.ai[k] === 'excluded');
+
+            if (checked.length > 0 && checked.includes('有 AI 詳解')) {
+                questions = questions.filter(q => q.AIExplanation && q.AIExplanation.trim() !== '');
+            }
+            if (excluded.length > 0 && excluded.includes('有 AI 詳解')) {
+                questions = questions.filter(q => !q.AIExplanation || q.AIExplanation.trim() === '');
             }
         }
 

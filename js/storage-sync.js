@@ -84,7 +84,7 @@ class GoogleSheetsSync {
                 let value = values[index] || '';
                 
                 if (!value) {
-                    if (['curriculumClassification', 'AristochapterClassification', 'concepts', 'patternTags'].includes(fieldName)) {
+                    if (['curriculumClassification', 'AristochapterClassification', 'concepts', 'patterns'].includes(fieldName)) {
                         question[fieldName] = [];
                     }
                     return;
@@ -106,7 +106,7 @@ class GoogleSheetsSync {
                     case 'curriculumClassification':
                     case 'AristochapterClassification':
                     case 'concepts':
-                    case 'patternTags':
+                    case 'patterns':
                         const trimmedValue = value.trim();
                         if (trimmedValue) {
                             question[fieldName] = trimmedValue.split(',').map(s => s.trim()).filter(s => s);
@@ -128,7 +128,7 @@ class GoogleSheetsSync {
                 }
             });
             
-            ['curriculumClassification', 'AristochapterClassification', 'concepts', 'patternTags'].forEach(field => {
+            ['curriculumClassification', 'AristochapterClassification', 'concepts', 'patterns'].forEach(field => {
                 if (!question[field]) {
                     question[field] = [];
                 }

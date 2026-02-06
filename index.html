@@ -278,6 +278,43 @@
 
                     </div>
 
+                    <!-- Dynamic Filters Grid for "Concepts, Pattern and AIExplanation" -->
+                    <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+                        <!-- Concepts Selection Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="搜尋概念類型..." data-filter-type="conceptsSelection" onkeyup="filterDropdownList(this, 'concepts-options')">
+                                <span class="active-indicator" id="indicator-concepts"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="concepts-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div> 
+                        <!-- Patterns Selection Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="搜尋題型類型..." data-filter-type="patternSelection" onkeyup="filterDropdownList(this, 'patterns-options')">
+                                <span class="active-indicator" id="indicator-patterns"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="patterns-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                        <!-- AIExplanation Selection Filter (not yet added)-->
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" onclick="toggleDropdown('ai-options')" id="ai-filter-btn">
+                                <span>🤖 AI 詳解</span>
+                                <div id="indicator-ai" class="filter-indicator"></div>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div id="ai-options" class="dropdown-content">
+                                <!-- Populated by JS (Single option: "Has AI Explanation") -->
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Add after filter controls, before questions list -->

@@ -20,6 +20,7 @@ if (!window.triStateFilters) {
         qtype: {},
         concepts: {},
         patterns: {},
+        ai: {},
         multipleSelection: {},
         graph: {},
         table: {},
@@ -206,10 +207,12 @@ function filterDropdownList(input, listId) {
 function updateFilterIndicators() {
     const triStateTypes = [
         'exam', 'qtype', 'curriculum', 'chapter', 'feature',
-        'multipleSelection', 'graph', 'table', 'calculation'
+        'multipleSelection', 'graph', 'table', 'calculation',
+        'concepts', 'patterns', 'ai'
     ];
     
     triStateTypes.forEach(type => {
+        // Handle the Dot Indicator (if it exists in HTML)
         const indicator = document.getElementById(`indicator-${type}`);
         if (!indicator) return;
 
@@ -221,13 +224,32 @@ function updateFilterIndicators() {
         } else {
             indicator.classList.remove('visible');
         }
-
+        // Handle Input Borders (for dropdowns with search inputs)
         const input = document.querySelector(`input[data-filter-type="${type}"]`);
         if (input) {
             input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
         }
     });
 
+    // Explicitly Handle AI Button Styling
+    const aiBtn = document.getElementById('ai-filter-btn');
+    if (aiBtn) {
+        const hasAiFilter = window.triStateFilters.ai && Object.keys(window.triStateFilters.ai).length > 0;
+        if (hasAiFilter) {
+            aiBtn.style.borderColor = 'var(--secondary-color)';
+            aiBtn.style.color = 'var(--secondary-color)';
+            // Also try to toggle a child indicator class if the ID method above failed
+            const childIndicator = aiBtn.querySelector('.filter-indicator');
+            if (childIndicator) childIndicator.classList.add('visible');
+        } else {
+            aiBtn.style.borderColor = '';
+            aiBtn.style.color = '';
+            const childIndicator = aiBtn.querySelector('.filter-indicator');
+            if (childIndicator) childIndicator.classList.remove('visible');
+        }
+    }
+
+    // Handle Year Indicator
     const yearIndicator = document.getElementById('indicator-year');
     if (yearIndicator) {
         const yearValue = document.getElementById('year-filter').value;
@@ -238,6 +260,7 @@ function updateFilterIndicators() {
         }
     }
 
+    // Handle Percentage Indicator
     const pctIndicator = document.getElementById('indicator-percentage');
     if (pctIndicator) {
         if (window.percentageFilter && window.percentageFilter.active) {
@@ -247,6 +270,7 @@ function updateFilterIndicators() {
         }
     }
 
+    // Handle Marks Indicator
     const marksIndicator = document.getElementById('indicator-marks');
     if (marksIndicator) {
         if (window.marksFilter && window.marksFilter.active) {
@@ -282,7 +306,9 @@ async function updateDynamicDropdowns() {
         multipleSelection: ['並非複選型', '不適用'], 
         graph: ['沒有圖', '未命名圖表'],
         table: ['沒有表格', '未命名表格'],
-        calculation: ['沒有計算', '未命名計算題']
+        calculation: ['沒有計算', '未命名計算題'],
+        concepts: [],
+        patterns: ['未分類']
     };
     // ==========================================================
 
@@ -291,22 +317,40 @@ async function updateDynamicDropdowns() {
 
     const contextFilters = JSON.parse(JSON.stringify(currentFilters));
     
+    // Remove self-filter to allow seeing other options in the same category
     if (contextFilters.triState) {
         delete contextFilters.triState.multipleSelection;
         delete contextFilters.triState.graph;
         delete contextFilters.triState.table;
         delete contextFilters.triState.calculation;
+        delete contextFilters.triState.concepts;
+        delete contextFilters.triState.patterns;
+        delete contextFilters.triState.ai;
     }
 
     const contextQuestions = window.storage.applyFilters(allQuestions, contextFilters);
 
     // Helper to generate HTML for a specific list
-    const populateList = (containerId, fieldName, filterType) => {
+    const populateList = (containerId, fieldName, filterType, isArrayField = false) => {
         const container = document.getElementById(containerId);
         if (!container) return;
 
         // 1. Get Values
-        let validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
+        let validValues;
+        if (isArrayField) {
+            // Flatten array fields
+            const set = new Set();
+            contextQuestions.forEach(q => {
+                if (Array.isArray(q[fieldName])) {
+                    q[fieldName].forEach(val => {
+                        if (val && val.trim() !== '') set.add(val.trim());
+                    });
+                }
+            });
+            validValues = Array.from(set).sort();
+        } else {
+            validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
+        }
         
         // 2. Apply Custom Sorting based on PRIORITY_CONFIG
         const priorities = PRIORITY_CONFIG[filterType] || [];
@@ -339,9 +383,16 @@ async function updateDynamicDropdowns() {
             });
         }
 
+        // Determine the wrapper to hide/show (supports both old and new styles)
+        const wrapper = container.closest('.input-dropdown-container') || container.closest('.dropdown-filter');
+
         if (validValues.length === 0) {
-            container.innerHTML = '<div style="padding:10px; color:#999; font-size:12px; text-align:center;">無選項</div>';
+            // Hide the entire dropdown container if no values exist
+            if (wrapper) wrapper.style.display = 'none';
             return;
+        } else {
+             // Show it if it was hidden
+            if (wrapper) wrapper.style.display = 'block'; 
         }
 
         let html = '';
@@ -370,10 +421,57 @@ async function updateDynamicDropdowns() {
         container.innerHTML = html;
     };
 
+    // Populate standard dynamic lists
     populateList('multiple-selection-options', 'multipleSelectionType', 'multipleSelection');
     populateList('graph-options', 'graphType', 'graph');
     populateList('table-options', 'tableType', 'table');
     populateList('calculation-options', 'calculationType', 'calculation');
+    
+    // Populate new array-based lists
+    populateList('concepts-options', 'concepts', 'concepts', true);
+    populateList('patterns-options', 'patterns', 'patterns', true);
+
+    // Dynamic AI Option (Modified to check for data existence)
+        const aiContainer = document.getElementById('ai-options');
+        if (aiContainer) {
+            // 1. Check if any question in the current context has an AI Explanation
+            const hasAI = contextQuestions.some(q => q.AIExplanation && q.AIExplanation.trim() !== '');
+
+            // 2. Find the wrapper element to hide/show
+            // This usually wraps both the button and the dropdown div
+            const wrapper = aiContainer.closest('.dropdown-filter') || aiContainer.parentElement;
+
+            if (!hasAI) {
+                // No questions have AI explanations -> Hide the filter
+                if (wrapper) wrapper.style.display = 'none';
+            } else {
+                // Questions exist -> Show the filter
+                if (wrapper) wrapper.style.display = 'block'; 
+
+                // 3. Render the checkbox option (Existing Logic)
+                const item = '有 AI 詳解';
+                const currentState = window.triStateFilters.ai && window.triStateFilters.ai[item];
+                
+                let wrapperClass = 'tri-state-label';
+                let checkboxClass = 'tri-state-checkbox';
+                
+                if (currentState === 'checked') {
+                    wrapperClass += ' checked';
+                    checkboxClass += ' checked';
+                } else if (currentState === 'excluded') {
+                    wrapperClass += ' excluded';
+                    checkboxClass += ' excluded';
+                }
+
+                aiContainer.innerHTML = `
+                    <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="ai" data-value="${item}">
+                        <div class="${checkboxClass}" data-filter="ai" data-value="${item}">
+                            <span>${item}</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
     
     updateFilterIndicators();
 }
@@ -428,7 +526,7 @@ function populateSearchScope() {
         'answer': '答案',
         'concepts': '相關概念',
         'markersReport': '評卷報告',
-        'patternTags': '題型標籤' 
+        'patterns': '題型標籤' 
     };
 
     Object.entries(fieldMapping).forEach(([field, label]) => {
@@ -496,6 +594,13 @@ function clearFilters() {
         }
     });
 
+    // Reset AI button style
+    const aiBtn = document.getElementById('ai-filter-btn');
+    if (aiBtn) {
+        aiBtn.style.borderColor = '';
+        aiBtn.style.color = '';
+    }
+
     window.triStateFilters = { 
         curriculum: {}, 
         chapter: {}, 
@@ -504,6 +609,7 @@ function clearFilters() {
         qtype: {},
         concepts: {},
         patterns: {},
+        ai: {},
         multipleSelection: {},
         graph: {},
         table: {},
@@ -572,7 +678,8 @@ function updateSearchInfo() {
         'multipleSelection': '複選',
         'graph': '圖表',
         'table': '表格',
-        'calculation': '計算'
+        'calculation': '計算',
+        'ai': 'AI'
     };
 
     Object.entries(window.triStateFilters).forEach(([catKey, items]) => {
