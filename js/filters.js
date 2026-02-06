@@ -416,8 +416,18 @@ function populateSearchScope() {
 function clearFilters() {
     document.getElementById('search').value = '';
     document.getElementById('year-filter').value = '';
-    toggleCollapsibleSection('percentage-options', 'percentage-arrow');
-    toggleCollapsibleSection('marks-options', 'marks-arrow');    
+    
+    // Explicitly collapse these sections instead of toggling them
+    const pctSection = document.getElementById('percentage-options');
+    const pctArrow = document.getElementById('percentage-arrow');
+    if (pctSection) pctSection.style.display = 'none';
+    if (pctArrow) pctArrow.textContent = '▶';
+
+    const marksSection = document.getElementById('marks-options');
+    const marksArrow = document.getElementById('marks-arrow');
+    if (marksSection) marksSection.style.display = 'none';
+    if (marksArrow) marksArrow.textContent = '▶';
+
     const scopeSelect = document.getElementById('search-scope');
     if (scopeSelect) scopeSelect.value = 'all';
     window.searchScope = 'all';
@@ -561,7 +571,7 @@ async function filterQuestions() {
     // Update indicators immediately when any filter action is triggered
     updateFilterIndicators();
 
-    // NEW: Update the dynamic dropdown options based on the new filter context
+    // Update the dynamic dropdown options based on the new filter context
     // This ensures that if Chapter 3 is selected, only Tables from Chapter 3 are shown
     await updateDynamicDropdowns();
 
