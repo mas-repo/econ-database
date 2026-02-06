@@ -60,8 +60,11 @@
         safeDOMAction(() => {
             // 1. Add the navigation footer
             addNavigationFooter();
+            
+            // 2. Add the scroll to top button
+            addScrollToTopButton();
 
-            // 2. Remove the hiding style
+            // 3. Remove the hiding style
             const styleNode = document.getElementById('protect-style');
             if (styleNode) styleNode.remove();
         });
@@ -77,13 +80,8 @@
     }
 
     function addNavigationFooter() {
-        // Create a footer container
         const footer = document.createElement('div');
         
-        // === UPDATED STYLES FOR VISIBILITY ===
-        // 1. clear: both -> ensures it drops below any floating elements
-        // 2. position: relative -> ensures it respects z-index
-        // 3. zIndex: 9999 -> ensures it sits on top of other elements
         footer.style.clear = 'both';
         footer.style.position = 'relative';
         footer.style.zIndex = '9999';
@@ -94,10 +92,9 @@
         footer.style.textAlign = 'center';
         footer.style.fontFamily = 'sans-serif';
         footer.style.backgroundColor = '#f9f9f9';
-        footer.style.width = '100%'; // Ensure full width
-        footer.style.boxSizing = 'border-box'; // Ensure padding doesn't overflow width
+        footer.style.width = '100%'; 
+        footer.style.boxSizing = 'border-box'; 
 
-        // Create the link
         const link = document.createElement('a');
         link.href = INDEX_URL;
         link.innerText = "⬅ 返回目錄 (Back to Index)";
@@ -112,5 +109,45 @@
 
         footer.appendChild(link);
         document.body.appendChild(footer);
+    }
+
+    function addScrollToTopButton() {
+        const btn = document.createElement('button');
+        btn.innerHTML = "⬆"; // Up arrow character
+        
+        // Styling
+        btn.style.position = 'fixed';
+        btn.style.bottom = '20px';
+        btn.style.left = '20px'; // Bottom Left
+        btn.style.zIndex = '10000'; // Very high z-index
+        btn.style.display = 'none'; // Hidden by default
+        
+        // Appearance
+        btn.style.backgroundColor = '#007bff';
+        btn.style.color = 'white';
+        btn.style.border = 'none';
+        btn.style.borderRadius = '50%';
+        btn.style.width = '50px';
+        btn.style.height = '50px';
+        btn.style.fontSize = '24px';
+        btn.style.cursor = 'pointer';
+        btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
+        btn.style.transition = 'opacity 0.3s';
+
+        // Functionality: Scroll to top
+        btn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Functionality: Show/Hide on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        document.body.appendChild(btn);
     }
 })();
