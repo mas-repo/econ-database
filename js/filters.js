@@ -32,24 +32,46 @@ if (!window.triStateFilters) {
 // ============================================
 
 function toggleDropdown(dropdownId) {
+    // 1. Check if this is actually a Collapsible Section (Curriculum, Feature, Chapter)
+    // These sections use style.display logic instead of class toggling.
+    const collapsibleMap = {
+        'curriculum-options': 'curriculum-arrow',
+        'feature-options': 'feature-arrow',
+        'chapter-options': 'chapter-arrow'
+    };
+
+    if (collapsibleMap[dropdownId]) {
+        toggleCollapsibleSection(dropdownId, collapsibleMap[dropdownId]);
+        return;
+    }
+
+    // 2. Standard Dropdown Logic (for Exam, QType, etc.)
     const dropdown = document.getElementById(dropdownId);
     const allDropdowns = document.querySelectorAll('.dropdown-content');
-    const chapterOptions = document.getElementById('chapter-options');
     
+    // Close other standard dropdowns
     allDropdowns.forEach(d => {
         if (d.id !== dropdownId && !d.classList.contains('input-dropdown-list')) {
             d.classList.remove('active');
         }
     });
     
-    if (chapterOptions && dropdownId !== 'chapter-options') {
-        chapterOptions.style.display = 'none';
-        const chapterArrow = document.getElementById('chapter-arrow');
-        if (chapterArrow) chapterArrow.textContent = '▶';
-        const chapterArrowInner = document.getElementById('chapter-arrow-inner');
-        if (chapterArrowInner) chapterArrowInner.textContent = '▶';
-    }
+    // Force close ALL collapsible sections when opening a standard dropdown
+    // (This replaces the hardcoded chapter-options check in the previous version)
+    const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
+    collapsibleTypes.forEach(type => {
+        const section = document.getElementById(`${type}-options`);
+        const arrow = document.getElementById(`${type}-arrow`);
+        const arrowInner = document.getElementById(`${type}-arrow-inner`); // Handle inner arrow if exists
+        
+        if (section && section.style.display !== 'none') {
+            section.style.display = 'none';
+            if (arrow) arrow.textContent = '▶';
+            if (arrowInner) arrowInner.textContent = '▶';
+        }
+    });
     
+    // Toggle the requested standard dropdown
     if (dropdown) {
         dropdown.classList.toggle('active');
     }
@@ -61,7 +83,8 @@ function toggleCollapsibleSection(sectionId, arrowId) {
     
     if (!section) return;
     
-    if (sectionId === 'chapter-options') {
+    // If opening a collapsible section, close all standard dropdowns first
+    if (section.style.display === 'none' || !section.style.display) {
         document.querySelectorAll('.dropdown-content').forEach(d => {
             d.classList.remove('active');
         });
@@ -87,7 +110,7 @@ document.addEventListener('click', function(event) {
             d.classList.remove('active');
         });
         
-        // 2. [FIX] Force close collapsible sections (Curriculum, Chapter, Feature)
+        // 2. Force close collapsible sections (Curriculum, Chapter, Feature)
         // These use style.display, so we must manually set them to none
         const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
         collapsibleTypes.forEach(type => {
@@ -442,7 +465,7 @@ function clearFilters() {
     if (marksSection) marksSection.style.display = 'none';
     if (marksArrow) marksArrow.textContent = '▶';
 
-    // [FIX] Explicitly collapse curriculum, chapter, and feature sections
+    // Explicitly collapse curriculum, chapter, and feature sections
     const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
     collapsibleTypes.forEach(type => {
         const section = document.getElementById(`${type}-options`);
