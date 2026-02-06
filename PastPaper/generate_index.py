@@ -4,7 +4,7 @@ import sys
 
 # Configuration
 IGNORE_DIRS = {'.git', '__pycache__', '.github', 'js', 'css', 'img', 'projects'}
-IGNORE_FILES = {'index.html', 'generate_index.py', 'protect.js'}
+IGNORE_FILES = {'index.html', 'generate_index.py', 'protect.js', 'sync_database.py'}
 
 # HTML Template
 HTML_TEMPLATE = """
