@@ -25,7 +25,7 @@ jobs:
       # === 1. Notify Google Sheets (Optional) ===
       - name: Notify Google Sheets for Changed Files
         env:
-          GAS_URL: "https://script.google.com/macros/s/AKfycby2ekiIw6zSJoCEQTo1XskkKVmO84IqZ4rsZHWi7kxWoSl1uXk59XqIXblddHlbvmap/exec"
+          GAS_URL: ${{ secrets.GAS_URL }}
           SECRET_KEY: ${{ secrets.ACTION_KEY }}
         run: |
           CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep "PastPaper/.*\.html" || true)
