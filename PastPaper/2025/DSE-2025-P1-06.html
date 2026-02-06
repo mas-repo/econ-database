@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis - Long Run Production</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f766e; /* Teal */
+            --secondary-color: #115e59; /* Darker Teal */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f0fdfa; /* Very light teal bg */
+            --text-color: #334155;
+            --box-bg: #ffffff;
+            --concept-bg: #ccfbf1; /* Light Teal */
+            --concept-border: #14b8a6;
+            --error-bg: #fef2f2;
+            --error-border: #ef4444;
+            --highlight-bg: #fff7ed;
+            --highlight-border: #f97316;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .header-info div {
+            margin: 5px 0;
+        }
+
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .answer-section {
+            margin-top: 30px;
+        }
+
+        .correct-option {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #16a34a; /* Green */
+            background-color: #dcfce7;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .option-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .trap-box {
+            background-color: var(--error-bg);
+            border-left: 5px solid var(--error-border);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .pivot-box {
+            background-color: var(--highlight-bg);
+            border-left: 5px solid var(--highlight-border);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Production & Costs in the Long Run (長期生產與成本)</div>
+        <div><strong>Difficulty (難度):</strong> ★★★★☆</div>
+        <div><strong>Keywords:</strong> Economies of Scale (規模經濟), Returns to Scale (規模回報)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>Question (題目)</h3>
+        <p>
+            下表顯示某廠商的投入與產出的關係。<strong>該廠商生產所需的投入只有勞力</strong>。每單位勞力的工資率是$50。<br>
+            <span class="en-text">The table below shows the input-output relationship of a firm. <strong>The only input required for the firm’s production is labour</strong>. The wage rate per unit of labour is $50.</span>
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>勞力 (單位)<br><span class="en-text">Labour (units)</span></th>
+                    <th>總產出 (單位)<br><span class="en-text">Total output (units)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>20</td></tr>
+                <tr><td>2</td><td>50</td></tr>
+                <tr><td>3</td><td>90</td></tr>
+                <tr><td>4</td><td>100</td></tr>
+                <tr><td>5</td><td>105</td></tr>
+            </tbody>
+        </table>
+
+        <p>根據以上資料，可得出的結論是：___________。<br>
+        <span class="en-text">Based on the above information, we can conclude that __________.</span></p>
+
+        <div style="margin-left: 20px;">
+            <p>A. 邊際回報遞減定律適用於該廠商，因為當僱用第4個勞力單位時，邊際產量開始遞減<br>
+            <span class="en-text">the law of diminishing marginal returns applies to the firm because when the 4th unit of labour is employed, marginal product starts to diminish</span></p>
+            
+            <p>B. 當產量由90單位增加至100單位時，該廠商會承受規模不經濟<br>
+            <span class="en-text">when output increases from 90 units to 100 units, the firm suffers from diseconomies of scale</span></p>
+            
+            <p>C. 當產量由100單位增加至105單位時，該廠商會承受虧損<br>
+            <span class="en-text">when output increases from 100 units to 105 units, the firm suffers a loss</span></p>
+            
+            <p>D. 利潤極大化的產量是90單位<br>
+            <span class="en-text">the profit-maximising output is 90 units</span></p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <span class="concept-title">Concept Review (概念重溫)</span>
+        
+        <p><strong>1. 短期 vs 長期 (Short Run vs. Long Run):</strong></p>
+        <ul>
+            <li><strong>短期 (Short Run):</strong> 存在<strong>固定要素</strong> (Fixed Factors)。適用「邊際回報遞減定律」。<br>
+            <span class="en-text">Existence of <strong>Fixed Factors</strong>. "Law of Diminishing Marginal Returns" applies.</span></li>
+            <li><strong>長期 (Long Run):</strong> 所有要素皆為<strong>可變要素</strong> (Variable Factors)。適用「規模經濟/不經濟」。<br>
+            <span class="en-text">All factors are <strong>Variable Factors</strong>. "Economies/Diseconomies of Scale" applies.</span></li>
+        </ul>
+
+        <p><strong>2. 規模不經濟 (Diseconomies of Scale):</strong></p>
+        <p>當生產規模擴大（所有投入增加），長期平均成本 (LRAC) 上升。<br>
+        <span class="en-text">When the scale of production expands (all inputs increase), Long Run Average Cost (LRAC) rises.</span></p>
+        $$ Average\ Cost\ (AC) = \frac{Total\ Cost}{Quantity} $$
+
+        <p><strong>3. 規模回報遞減 (Decreasing Returns to Scale):</strong></p>
+        <p>產出的增加比例 <strong>小於</strong> 投入的增加比例。<br>
+        <span class="en-text">The percentage increase in output is <strong>less than</strong> the percentage increase in inputs.</span></p>
+        $$ \%\Delta Output < \%\Delta Input $$
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="answer-section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-option">Correct Option: B</div>
+
+        <p><strong>關鍵計算：平均成本 (Average Cost)</strong><br>
+        由於只有勞力是投入，總成本 (TC) = 勞力單位 \(\times\) $50。<br>
+        <span class="en-text"><strong>Key Calculation: Average Cost (AC)</strong><br>Since labour is the only input, Total Cost (TC) = Labour units \(\times\) $50.</span></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>勞力 (L)</th>
+                    <th>總產出 (Q)</th>
+                    <th>總成本 (TC) = \(50 \times L\)</th>
+                    <th>平均成本 (AC) = \(TC / Q\)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>20</td><td>$50</td><td>$2.50</td></tr>
+                <tr><td>2</td><td>50</td><td>$100</td><td>$2.00</td></tr>
+                <tr><td>3</td><td><strong>90</strong></td><td>$150</td><td><strong>$1.67</strong></td></tr>
+                <tr><td>4</td><td><strong>100</strong></td><td>$200</td><td><strong>$2.00</strong></td></tr>
+                <tr><td>5</td><td>105</td><td>$250</td><td>$2.38</td></tr>
+            </tbody>
+        </table>
+
+        <div class="option-analysis">
+            <span class="option-label">Option B (Correct):</span>
+            <p><strong>分析：</strong>題目指出「該廠商生產所需的投入只有勞力」。這意味著<strong>沒有固定要素</strong>，所有要素（只有勞力）都是可變的，因此這是<strong>長期 (Long Run)</strong> 生產。<br>
+            當產量由 90 增至 100 時（勞力由 3 增至 4），平均成本 (AC) 由 $1.67 上升至 $2.00。長期平均成本上升定義為<strong>規模不經濟</strong>。<br>
+            <span class="en-text"><strong>Analysis:</strong> The question states "The only input... is labour". This means there are <strong>no fixed factors</strong>; all factors (just labour) are variable, making this a <strong>Long Run</strong> scenario.<br>
+            When output increases from 90 to 100 (labour increases from 3 to 4), Average Cost (AC) rises from $1.67 to $2.00. Rising Long Run Average Cost is defined as <strong>Diseconomies of Scale</strong>.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option A (Incorrect):</span>
+            <p><strong>分析：</strong>邊際回報遞減定律 (Law of Diminishing Marginal Returns) 是一個<strong>短期</strong>定律，其前提是必須有<strong>固定要素</strong>（如機器、土地）存在，導致可變要素效率下降。由於題目表明「只有勞力」是投入，即沒有固定要素，故此定律不適用。<br>
+            <span class="en-text"><strong>Analysis:</strong> The Law of Diminishing Marginal Returns is a <strong>Short Run</strong> law. It requires the existence of <strong>Fixed Factors</strong> (like machines, land) which cause the variable factor's efficiency to drop. Since the question states "only input is labour", there are no fixed factors, so this law does not apply.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option C (Incorrect):</span>
+            <p><strong>分析：</strong>要計算虧損，我們需要比較 總收入 (TR) 和 總成本 (TC)。題目只提供了成本數據（工資），但<strong>沒有提供產品價格 (Price)</strong>，因此無法計算收入，也就無法判斷是否虧損。<br>
+            <span class="en-text"><strong>Analysis:</strong> To calculate loss, we need to compare Total Revenue (TR) and Total Cost (TC). The question provides cost data (wages) but <strong>does not provide the Product Price</strong>. Without price, we cannot calculate revenue or determine if there is a loss.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option D (Incorrect):</span>
+            <p><strong>分析：</strong>利潤極大化條件是 \(MC = MR\)。雖然我們可以計算邊際成本 (MC)，但由於不知道價格（即不知道 MR），我們無法找出利潤極大化的產量。<br>
+            <span class="en-text"><strong>Analysis:</strong> The profit-maximising condition is \(MC = MR\). Although we can calculate Marginal Cost (MC), without the price (and thus MR), we cannot identify the profit-maximising output.</span></p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="pivot-box">
+        <span class="concept-title">Problem Decomposition (題目拆解)</span>
+        
+        <p><strong>1. 關鍵字眼 (The Pivot Point): "Only input... is labour"</strong><br>
+        這是解題的最關鍵線索。如果只有勞力，代表<strong>沒有固定要素 (No Fixed Factors)</strong>。
+        <br>沒有固定要素 \(\rightarrow\) <strong>長期 (Long Run)</strong>。
+        <br>這直接排除了選項 A (短期概念)，並指向選項 B (長期概念)。<br>
+        <span class="en-text">This is the crucial clue. If labour is the only input, there are <strong>No Fixed Factors</strong>. No Fixed Factors \(\rightarrow\) <strong>Long Run</strong>. This immediately eliminates Option A (Short Run concept) and points to Option B (Long Run concept).</span></p>
+
+        <p><strong>2. 驗證規模回報 (Verifying Returns to Scale):</strong><br>
+        由 L=3 到 L=4：<br>
+        投入增加：\((4-3)/3 = 33.3\%\)<br>
+        產出增加：\((100-90)/90 = 11.1\%\)<br>
+        產出增幅 < 投入增幅 \(\rightarrow\) 規模回報遞減 \(\rightarrow\) 平均成本上升 \(\rightarrow\) 規模不經濟。<br>
+        <span class="en-text">Input increase: 33.3%. Output increase: 11.1%. Output growth < Input growth \(\rightarrow\) Decreasing Returns to Scale \(\rightarrow\) Rising AC \(\rightarrow\) Diseconomies of Scale.</span></p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="trap-box">
+        <span class="concept-title">Common Mistakes & Traps (常犯錯誤與陷阱)</span>
+        <ul>
+            <li>
+                <strong>看見 MP 下降就選 A (Seeing MP drop and choosing A):</strong><br>
+                這是最常見的陷阱。學生計算出 MP (20, 30, 40, 10, 5) 發現先升後跌，就直覺以為是邊際回報遞減。必須先檢查前提：<strong>是否有固定要素？</strong> 如果沒有，就不能選 A。<br>
+                <span class="en-text">This is the biggest trap. Students calculate MP (20, 30, 40, 10, 5), see it rise then fall, and assume it's Diminishing Returns. You MUST check the condition: <strong>Are there fixed factors?</strong> If not, you cannot choose A.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

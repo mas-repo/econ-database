@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Market Intervention & Tax Burden Analysis</title>
+    <!-- MathJax for LaTeX Rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f766e; /* Teal-700 */
+            --secondary-color: #115e59; /* Teal-800 */
+            --bg-color: #f0fdfa; /* Teal-50 */
+            --card-bg: #ffffff;
+            --text-color: #334155; /* Slate-700 */
+            --accent-light: #ccfbf1; /* Teal-100 */
+            --accent-border: #99f6e4; /* Teal-200 */
+            --correct-color: #16a34a; /* Green-600 */
+            --wrong-color: #dc2626; /* Red-600 */
+            --highlight-bg: #fffbeb; /* Amber-50 */
+            --highlight-border: #fcd34d; /* Amber-300 */
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-flex;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: var(--text-color);
+            font-size: 1.15rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .data-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: background-color 0.2s;
+        }
+        
+        .options-list li:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #94a3b8;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+
+        .option-analysis.correct {
+            border-left-color: var(--correct-color);
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left-width: 5px;
+        }
+
+        .option-analysis.wrong {
+            border-left-color: var(--wrong-color);
+            border: 1px solid #fecaca;
+            border-left-width: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .tips-title {
+            color: #b45309; /* Amber-700 */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 6px;
+            font-weight: 500;
+            display: block;
+        }
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            display: block;
+            font-style: italic;
+        }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.3rem; }
+            .section { padding: 16px; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th, .data-table td { padding: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span>Topic: Market Intervention (Taxation)</span>
+            <span>Difficulty: ★★★★☆</span>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.95;">
+            Key Concepts: Tax Burden (稅項負擔), Counterfactual Analysis (反事實分析)
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">參考下列某物品的市場需求表，均衡價格是$20。</p>
+            <p class="en">Refer to the following market demand schedule of a good. The equilibrium price is $20.</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>單位價格 ($)<br>Unit price ($)</th>
+                        <th>10</th>
+                        <th>15</th>
+                        <th>20</th>
+                        <th>25</th>
+                        <th>30</th>
+                        <th>35</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>需求量（單位）<br>Quantity demanded (units)</td>
+                        <td>100</td>
+                        <td>90</td>
+                        <td>80</td>
+                        <td>70</td>
+                        <td>60</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="zh">假設政府向該物品徵收$10的從量銷售稅。與此同時，該物品的生產成本下降。結果，均衡價格維持在$20。</p>
+            <p class="en">Suppose the government imposes a per-unit sales tax of $10 on the good. At the same time, there is a decrease in the production cost of the good. As a result, the equilibrium price remains at $20.</p>
+            
+            <p class="zh">根據以上資料，可得出的結論是：</p>
+            <p class="en">Based on the above information, we can conclude that ____________.</p>
+
+            <ul class="options-list">
+                <li>A. 消費者不會有任何稅項負擔。<br><span style="color:#64748b; font-size:0.9em;">the consumers will not have any tax burden.</span></li>
+                <li>B. 生產者的稅後總收入會是$1 600。<br><span style="color:#64748b; font-size:0.9em;">producers’ total revenue net of tax will be $1 600.</span></li>
+                <li>C. 由徵收銷售稅引致的淨損失會因生產成本下降而消失。<br><span style="color:#64748b; font-size:0.9em;">the deadweight loss caused by the imposition of the sales tax will disappear due to the decrease in the production cost.</span></li>
+                <li>D. 政府從該物品所得的稅項收入會是$800。<br><span style="color:#64748b; font-size:0.9em;">the government’s tax revenue from the good will be $800.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <h3>1. Supply Shift Logic (供應移動邏輯)</h3>
+            <p class="zh"><strong>淨移動 (Net Shift):</strong> 供應曲線同時受到兩個因素影響：</p>
+            <ul class="zh" style="margin-top:0;">
+                <li>稅項 ($10) \(\rightarrow\) 供應曲線垂直向上移動 $10。</li>
+                <li>成本下降 \(\rightarrow\) 供應曲線垂直向下移動。</li>
+            </ul>
+            <p class="zh">由於最終均衡價格和數量（需求曲線不變，價格不變則數量不變）維持不變，這意味著<strong>淨移動為零</strong>。</p>
+            
+            <div class="math-block">
+                $$ \text{Upward Shift (Tax)} = \text{Downward Shift (Cost)} = \$10 $$
+            </div>
+            
+            <p class="en"><strong>Net Shift:</strong> Since the equilibrium price remained at $20 (and thus Quantity remained at 80), the Supply curve must have returned to its exact original position. This implies the vertical downward shift from cost reduction exactly offsets the $10 tax.</p>
+        </div>
+
+        <div class="concept-box">
+            <h3>2. True Definition of Tax Burden (稅項負擔的定義)</h3>
+            <p class="zh">稅項負擔不僅僅是看「價格是否上升」，而是比較「有稅的情況」與「沒有稅（但有成本下降）的情況」。</p>
+            <div class="math-block">
+                $$ \text{Consumer Burden} = P_{\text{actual}} - P_{\text{no tax}} $$
+            </div>
+            <p class="en">Tax burden is the difference between the price consumers actually pay and the price they <em>would have paid</em> if the tax did not exist (but the cost decrease still occurred).</p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span style="font-size: 1.2rem; font-weight: bold; color: var(--correct-color); border: 2px solid var(--correct-color); padding: 10px 25px; border-radius: 50px; background-color: #f0fdf4;">
+                Correct Answer: Option D
+            </span>
+        </div>
+
+        <h3>Option Analysis (選項分析)</h3>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option A</span> <strong>Incorrect / 錯誤 (Detailed Breakdown)</strong>
+            <p class="zh"><strong>消費者不會有任何稅項負擔。</strong><br>這是一個常見的陷阱。雖然消費者現在支付 $20（與原價相同），但我們必須進行<strong>反事實分析 (Counterfactual Analysis)</strong>：如果沒有稅，價格會是多少？</p>
+            <p class="en"><strong>The consumers will not have any tax burden.</strong><br>This is a trap. Although consumers pay $20 (same as before), we must ask: "What would the price be if there were NO tax?"</p>
+            
+            <div style="background: #fff; padding: 15px; border: 1px dashed #cbd5e1; border-radius: 6px; margin-top: 10px;">
+                <p class="zh"><strong>邏輯推演：</strong></p>
+                <ol style="margin-top: 5px; padding-left: 20px;">
+                    <li><strong>成本下降幅度：</strong> 由於最終供應曲線回到原位，我們知道成本下降導致供應曲線垂直向下移動了 <strong>$10</strong>。</li>
+                    <li><strong>假設沒有稅 (No Tax Scenario)：</strong> 如果政府不徵稅，供應曲線會從原點向下移動 $10。</li>
+                    <li><strong>尋找潛在價格：</strong> 原均衡點是 $(80, \$20)$。新的「無稅供應曲線」會經過 $(80, \$10)$（因為垂直下降 $10）。</li>
+                    <li><strong>市場調整：</strong> 在 $P=\$10$ 時，需求量是 100，而供應量是 80（假設供應曲線垂直平移）。這會造成短缺，推高價格。</li>
+                    <li><strong>結論：</strong> 最終的「無稅均衡價格」會介於 $10 與 $20 之間（例如 $15）。</li>
+                </ol>
+                <div class="math-block">
+                    $$ \text{Burden} = \$20 (\text{Actual}) - P_{\text{No Tax}} $$
+                    $$ \text{Since } P_{\text{No Tax}} < \$20, \quad \text{Burden} > 0 $$
+                </div>
+                <p class="zh">消費者本應享受低於 $20 的價格，卻因為稅項而需支付 $20，因此他們<strong>確實承擔了稅項負擔</strong>。</p>
+            </div>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option B</span> <strong>Incorrect / 錯誤</strong>
+            <p class="zh"><strong>生產者的稅後總收入會是$1 600。</strong><br>
+            計算：\( \text{Net Revenue} = (P - \text{Tax}) \times Q \)。<br>
+            \( (\$20 - \$10) \times 80 = \$800 \)。<br>
+            $1,600 是總收入 (Total Revenue)，未扣除稅款。</p>
+            <p class="en"><strong>Producers’ total revenue net of tax will be $1 600.</strong><br>
+            Calculation: \( (\$20 - \$10) \times 80 = \$800 \).<br>
+            $1,600 is Total Revenue, not Net Revenue.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option C</span> <strong>Incorrect / 錯誤</strong>
+            <p class="zh"><strong>由徵收銷售稅引致的淨損失會因生產成本下降而消失。</strong><br>
+            淨損失 (Deadweight Loss) 比較的是「社會最優數量 (Social Optimal Quantity)」與「實際數量」。<br>
+            在成本下降後，社會最優數量應該大於 80（因為邊際成本降低了，社會應該生產更多）。但由於稅項，實際交易量被鎖定在 80。實際數量 < 最優數量，因此淨損失依然存在。</p>
+            <p class="en"><strong>The deadweight loss... will disappear.</strong><br>
+            Deadweight loss exists because the actual quantity (80) is less than the new social optimal quantity (which increased due to lower costs). The tax prevents the market from expanding to this new optimal level.</p>
+        </div>
+
+        <div class="option-analysis correct">
+            <span class="badge badge-correct">Option D</span> <strong>Correct / 正確</strong>
+            <p class="zh"><strong>政府從該物品所得的稅項收入會是$800。</strong><br>
+            這是唯一不需要假設斜率、可以直接計算的事實。<br>
+            稅收 = $10 × 80 = $800。</p>
+            <p class="en"><strong>The government’s tax revenue from the good will be $800.</strong><br>
+            Tax Revenue = $10 × 80 = $800. This is factually correct based on the given numbers.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">解這類題目的關鍵在於「鎖定不變量」與「隱藏的比較」。</p>
+        <p class="en">The key is to "lock onto constants" and identify the "hidden comparison".</p>
+        
+        <ol>
+            <li>
+                <strong>Identify the Net Effect (淨影響):</strong> 
+                <br>Price stays at $20 \(\rightarrow\) Supply curve net shift is 0 \(\rightarrow\) Cost drop exactly equals Tax ($10).
+            </li>
+            <li>
+                <strong>The "Invisible" Scenario (隱藏的情境):</strong>
+                <br>To judge Tax Burden (Option A) or Deadweight Loss (Option C), you must imagine the world where <strong>only the cost drop happened</strong>.
+                <br>In that world, Price < $20 and Quantity > 80.
+            </li>
+            <li>
+                <strong>Calculate the Certainty (計算確定值):</strong>
+                <br>Option D relies only on the <em>actual</em> outcome ($P=20, Q=80, Tax=10$), which is fully known. Always prefer the option that requires the fewest assumptions.
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

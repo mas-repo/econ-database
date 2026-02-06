@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Overproduction vs. Excess Supply</title>
+    
+    <!-- MathJax for LaTeX Rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for difficulty */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Answer Section */
+        .answer-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border: 1px solid #86efac;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .statement-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Traps & Tricks */
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .trap-box {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Bilingual Styling */
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Efficiency & Market Failure (效率與市場失靈)</span>
+            <span>Difficulty: <span class="stars">★★★☆☆</span></span>
+            <span>Key Concepts: Allocative Efficiency, Externalities, Equilibrium</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <div class="question-box">
+        <div class="question-text">
+            <strong>Question / 題目:</strong><br>
+            下列哪項／些關於過度生產的陳述是正確的？<br>
+            <span class="en-text">Which of the following statements about overproduction is/are correct?</span>
+        </div>
+
+        <div style="margin-left: 20px; margin-bottom: 15px;">
+            (1) 當某物品有超額供應時，該物品會出現過度生產。<br>
+            <span class="en-text">Overproduction of a good occurs when there is an excess supply of the good.</span><br><br>
+            
+            (2) 每當市場處於均衡狀態時，便不會出現過度生產。<br>
+            <span class="en-text">Overproduction does not occur whenever the market is at equilibrium.</span><br><br>
+            
+            (3) 當過度生產出現時，最後一單位的邊際社會成本大於邊際社會利益。<br>
+            <span class="en-text">When overproduction occurs, the marginal social cost is greater than the marginal social benefit at the last unit.</span>
+        </div>
+
+        <ul class="options">
+            <li>A. 只有 (2) <span class="en-text">(2) only</span></li>
+            <li>B. 只有 (3) <span class="en-text">(3) only</span></li>
+            <li>C. 只有 (2)、(3) <span class="en-text">(2) and (3) only</span></li>
+            <li>D. (1)、(2) 及 (3) <span class="en-text">(1), (2) and (3)</span></li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">Concept Review / 概念重溫</div>
+        
+        <p><strong>1. 配置效率 (Allocative Efficiency):</strong><br>
+        當資源分配達到社會最佳水平時，即邊際社會利益等於邊際社會成本。<br>
+        <span class="en-text">Achieved when resources are allocated at the socially optimal level, where Marginal Social Benefit (MSB) equals Marginal Social Cost (MSC).</span>
+        $$ MSB = MSC $$
+        </p>
+
+        <p><strong>2. 過度生產 (Overproduction):</strong><br>
+        指生產數量超過了社會最佳水平 \(Q^*\) (即 \(Q > Q^*\))。在此情況下，額外生產單位的社會成本高於其帶來的社會利益，導致無謂損失 (Deadweight Loss)。<br>
+        <span class="en-text">Refers to a quantity produced that exceeds the socially optimal level \(Q^*\). In this case, the social cost of the extra units exceeds their social benefit, leading to Deadweight Loss.</span>
+        $$ MSC > MSB $$
+        </p>
+
+        <p><strong>3. 超額供應 (Excess Supply):</strong><br>
+        這是市場不均衡的一種狀態。指在特定價格下，供應量 \(Q_s\) 大於需求量 \(Q_d\)。<br>
+        <span class="en-text">A state of market disequilibrium. It occurs when Quantity Supplied \(Q_s\) is greater than Quantity Demanded \(Q_d\) at a specific price.</span>
+        </p>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="answer-section">
+        <div class="correct-answer">
+            Correct Option: B (Only 3)<br>
+            正确選項：B (只有 3)
+        </div>
+
+        <div class="analysis-item">
+            <span class="statement-label">Statement (1): Incorrect / 錯誤</span>
+            <p><strong>分析：</strong>「超額供應」(Excess Supply) 與「過度生產」(Overproduction) 是兩個完全不同的概念。</p>
+            <ul>
+                <li><strong>超額供應</strong>是指市場價格高於均衡價格，導致 \(Q_s > Q_d\)（賣剩貨）。這是一個市場<strong>不均衡</strong>的現象。</li>
+                <li><strong>過度生產</strong>是指實際產量 \(Q\) 大於社會最優產量 \(Q^*\)。這是一個<strong>資源配置低效</strong>的現象。</li>
+                <li>即使市場有超額供應，實際交易量通常由較小的需求量 \(Q_d\) 決定，這可能導致產量過少（生產不足），而非過度生產。</li>
+            </ul>
+            <p class="en-text"><strong>Analysis:</strong> "Excess Supply" and "Overproduction" are distinct concepts. Excess supply is a market <strong>disequilibrium</strong> where \(Q_s > Q_d\) because the price is too high. Overproduction is an <strong>inefficiency</strong> where actual quantity \(Q\) exceeds the socially optimal quantity \(Q^*\). Even with excess supply, the quantity traded is usually determined by the smaller \(Q_d\), which might actually represent underproduction, not overproduction.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="statement-label">Statement (2): Incorrect / 錯誤</span>
+            <p><strong>分析：</strong>市場均衡 (Market Equilibrium) <strong>不一定</strong>代表有效率。</p>
+            <ul>
+                <li>市場均衡發生在私人邊際利益等於私人邊際成本時 (\(MPB = MPC\))。</li>
+                <li>如果存在<strong>生產的負外部性</strong>（例如污染），社會成本會大於私人成本 (\(MSC > MPC\))。</li>
+                <li>此時，市場均衡產量 \(Q_e\) 會大於社會最優產量 \(Q^*\)，這就是<strong>過度生產</strong>。因此，即使在市場均衡點，過度生產依然可能發生。</li>
+            </ul>
+            <p class="en-text"><strong>Analysis:</strong> Market Equilibrium does <strong>not</strong> necessarily imply efficiency. Equilibrium occurs where \(MPB = MPC\). However, if there are <strong>negative externalities in production</strong> (e.g., pollution), then \(MSC > MPC\). In this case, the market equilibrium quantity \(Q_e\) will be greater than the socially optimal quantity \(Q^*\), resulting in <strong>overproduction</strong>. Thus, overproduction can occur even when the market is at equilibrium.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="statement-label">Statement (3): Correct / 正確</span>
+            <p><strong>分析：</strong>這是過度生產的定義。</p>
+            <ul>
+                <li>當產量超過社會最優水平 (\(Q > Q^*\)) 時，對於那些額外生產的單位（由 \(Q^*\) 到 \(Q\)），其對社會造成的成本 (\(MSC\)) 必然高於其帶來的利益 (\(MSB\))。</li>
+                <li>正是因為 \(MSC > MSB\)，社會才會蒙受福利損失（無謂損失）。</li>
+            </ul>
+            <p class="en-text"><strong>Analysis:</strong> This is the definition of overproduction. When quantity exceeds the socially optimal level (\(Q > Q^*\)), for those extra units produced, the cost to society (\(MSC\)) is strictly higher than the benefit to society (\(MSB\)). It is precisely because \(MSC > MSB\) that a Deadweight Loss exists.</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section-title">Problem Decomposition / 題目拆解</div>
+    <p>
+        這道題目的核心在於區分<strong>「市場狀態」</strong>與<strong>「效率狀態」</strong>。
+        <br><span class="en-text">The core of this question lies in distinguishing between "Market State" and "Efficiency State".</span>
+    </p>
+    <ul>
+        <li>
+            <strong>Pivot Point (關鍵點):</strong> 
+            <br>市場均衡 (\(D=S\)) 只考慮私人成本與利益。效率 (\(MSC=MSB\)) 則考慮整個社會。兩者只有在沒有外部性 (Externalities) 時才相等。
+            <br><span class="en-text">Market Equilibrium (\(D=S\)) only considers private costs and benefits. Efficiency (\(MSC=MSB\)) considers the whole society. They are only equal if there are no externalities.</span>
+        </li>
+        <li>
+            <strong>Distractor (干擾項):</strong> 
+            <br>選項 (1) 利用「多」(Excess/Over) 這個字眼的相似性來混淆學生。記住：超額供應是「價格定錯了」，過度生產是「資源配錯了」。
+            <br><span class="en-text">Option (1) uses the semantic similarity of "Excess/Over" to confuse students. Remember: Excess Supply means "Price is wrong"; Overproduction means "Resource allocation is wrong".</span>
+        </li>
+    </ul>
+
+    <!-- Common Mistakes -->
+    <div class="section-title">Common Mistakes & Traps / 常犯錯誤與陷阱</div>
+    <div class="trap-box">
+        <p><strong>陷阱：認為「均衡」就是「好」/「有效率」</strong></p>
+        <p>學生常誤以為只要供需平衡 (Equilibrium)，市場就達到了最優狀態。這是錯誤的。如果不考慮外部性（如污染、二手煙），自由市場的均衡往往會導致資源配置缺乏效率（過度生產或生產不足）。</p>
+        <p class="en-text"><strong>Trap: Assuming "Equilibrium" means "Good" / "Efficient"</strong><br>
+        Students often mistakenly believe that as long as Supply meets Demand (Equilibrium), the market is optimal. This is false. Without accounting for externalities (like pollution, second-hand smoke), free market equilibrium often leads to inefficient resource allocation (overproduction or underproduction).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

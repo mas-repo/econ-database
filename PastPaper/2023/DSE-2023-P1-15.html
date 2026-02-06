@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Tax & Elasticity Analysis</title>
+    <!-- MathJax for rendering LaTeX formulas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #eff6ff; /* Light Blue Background */
+            --accent-color: #f59e0b; /* Amber for tips */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .difficulty-stars {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .q-text-zh {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .q-text-en {
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .concept-content p {
+            margin-bottom: 10px;
+        }
+
+        .math-block {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Answer & Analysis */
+        .answer-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .analysis-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        /* Tricks & Decomposition */
+        .tricks-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .bilingual-split {
+            margin-bottom: 8px;
+        }
+        .en-trans {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 2px;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>Topic: Market Intervention - Taxation (市場干預 - 稅項)</h1>
+        <div class="meta-info">
+            <span><strong>Difficulty (難度):</strong> <span class="difficulty-stars">★★★☆☆</span></span>
+            <span><strong>Key Concepts:</strong> Tax Burden (稅項負擔), Elasticity (彈性), Equilibrium Price (均衡價格)</span>
+        </div>
+    </header>
+
+    <!-- Question -->
+    <div class="question-box">
+        <div class="q-text-zh">
+            菠蘿原初的均衡價格為$5。假設政府對菠蘿開徵$4的從量稅。若菠蘿的需求彈性 __________ 其供應彈性，新的均衡價格可以是 __________。
+        </div>
+        <div class="q-text-en">
+            The initial equilibrium price of pineapples is $5. Suppose the government imposes a per unit tax of $4 on pineapples. If the elasticity of demand for pineapples is __________ than their elasticity of supply, the new equilibrium price can be __________.
+        </div>
+
+        <div style="margin-left: 20px; margin-bottom: 15px;">
+            (1) 高於 (higher) …… $6<br>
+            (2) 高於 (higher) …… $8<br>
+            (3) 低於 (lower) …… $7<br>
+            (4) 低於 (lower) …… $8
+        </div>
+
+        <div class="options-grid">
+            <div>A. 只有 (1)、(3) (1) and (3) only</div>
+            <div>B. 只有 (1)、(4) (1) and (4) only</div>
+            <div>C. 只有 (2)、(3) (2) and (3) only</div>
+            <div>D. 只有 (2)、(4) (2) and (4) only</div>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-section">
+        <div class="section-title">
+            <span>📖 Concept Review (概念重溫)</span>
+        </div>
+        <div class="concept-content">
+            <div class="bilingual-split">
+                <strong>1. 稅項負擔的分配 (Distribution of Tax Burden)</strong><br>
+                <span class="en-trans">
+                    稅項負擔由買賣雙方共同分擔。負擔的比例取決於<strong>彈性 (Elasticity)</strong>。
+                    Tax burden is shared between buyers and sellers. The share depends on relative <strong>elasticity</strong>.
+                </span>
+            </div>
+            
+            <div class="math-block">
+                $$ \text{彈性較低的一方，負擔較重的稅項} $$
+                $$ \text{The side with LOWER elasticity bears a HEAVIER tax burden.} $$
+            </div>
+
+            <div class="bilingual-split">
+                <strong>2. 價格變動 (Price Changes)</strong><br>
+                <span class="en-trans">
+                    原價 (Original Price) = \(P_0 = \$5\)<br>
+                    稅項 (Tax) = \(t = \$4\)<br>
+                    新均衡價格 (New Price consumers pay) = \(P_1\)<br>
+                    消費者負擔 (Consumer Burden) = \(P_1 - P_0\)<br>
+                    生產者負擔 (Producer Burden) = \(P_0 - (P_1 - t)\)
+                </span>
+            </div>
+            
+            <div class="bilingual-split">
+                <strong>3. 基準點 (The Benchmark)</strong><br>
+                <span class="en-trans">
+                    如果需求彈性 = 供應彈性 (\(E_d = E_s\))，雙方平分稅項。
+                    If \(E_d = E_s\), the tax is shared equally.
+                </span>
+            </div>
+            <div class="math-block">
+                 $$ \Delta P = \frac{1}{2} \times \text{Tax} = \$2 $$
+                 $$ \text{Benchmark Price} = \$5 + \$2 = \$7 $$
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="answer-section">
+        <div class="section-title">
+            <span>✅ Answer & Detailed Analysis (答案與詳細分析)</span>
+        </div>
+        
+        <div class="correct-answer">
+            Correct Option: B (只有 (1)、(4))
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">Step 1: Determine the "Midpoint" (找出「中間點」)</div>
+            <p>
+                稅款是 $4。如果雙方彈性相等，消費者價格會上升 $2 (即 $4 的一半)。<br>
+                <span class="en-trans">The tax is $4. If elasticities are equal, the consumer price rises by $2 (half of $4).</span>
+            </p>
+            <p>
+                <strong>基準價格 (Benchmark Price): $5 + $2 = $7</strong>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">Step 2: Analyze "Higher Elasticity" (分析「彈性較高」)</div>
+            <p>
+                <strong>情況：需求彈性 > 供應彈性 (\(E_d > E_s\))</strong><br>
+                消費者對價格較敏感，容易逃避稅項。因此，消費者負擔會<strong>少於一半</strong>。<br>
+                <span class="en-trans"><strong>Scenario: \(E_d > E_s\)</strong>. Consumers are more sensitive and can escape the tax. Thus, consumer burden is <strong>less than half</strong>.</span>
+            </p>
+            <p>
+                價格上升幅度 < $2 <br>
+                新價格 \(P_1\) < $7
+            </p>
+            <ul>
+                <li><strong>(1) $6:</strong> 正確 (Correct)。因為 $6 < $7。</li>
+                <li><strong>(2) $8:</strong> 錯誤 (Incorrect)。因為 $8 > $7。</li>
+            </ul>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">Step 3: Analyze "Lower Elasticity" (分析「彈性較低」)</div>
+            <p>
+                <strong>情況：需求彈性 < 供應彈性 (\(E_d < E_s\))</strong><br>
+                消費者依賴該產品，難以逃避。因此，消費者負擔會<strong>多於一半</strong>。<br>
+                <span class="en-trans"><strong>Scenario: \(E_d < E_s\)</strong>. Consumers rely on the product. Thus, consumer burden is <strong>more than half</strong>.</span>
+            </p>
+            <p>
+                價格上升幅度 > $2 <br>
+                新價格 \(P_1\) > $7
+            </p>
+            <ul>
+                <li><strong>(3) $7:</strong> 錯誤 (Incorrect)。$7 代表彈性相等，題目指「低於」，通常意味著價格必須嚴格大於 $7。</li>
+                <li><strong>(4) $8:</strong> 正確 (Correct)。因為 $8 > $7。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="tricks-box">
+        <div class="section-title">
+            <span>🧩 Problem Decomposition & Exam Tricks (題目拆解與考試技巧)</span>
+        </div>
+        
+        <div class="bilingual-split">
+            <strong>1. 數軸法 (Number Line Method)</strong><br>
+            <span class="en-trans">
+                不要憑空想像。畫一條數軸：<br>
+                原價 $5 ——> 中間點 $7 ($5 + $2) ——> 最高點 $9 ($5 + $4)<br>
+                Don't imagine it. Draw a number line: Original $5 -> Midpoint $7 -> Max $9.
+            </span>
+        </div>
+        <ul style="margin-top: 5px;">
+            <li>如果 \(E_d\) 較大 (消費者強勢) -> 價格在 $5 與 $7 之間。</li>
+            <li>如果 \(E_d\) 較小 (消費者弱勢) -> 價格在 $7 與 $9 之間。</li>
+        </ul>
+
+        <div class="bilingual-split">
+            <strong>2. 常犯錯誤 (Common Mistakes)</strong><br>
+            <span class="en-trans">
+                學生常誤以為價格一定會上升整整 $4 (變成 $9)。記住，只有在需求完全缺乏彈性 (Perfectly Inelastic Demand) 時才會發生。<br>
+                Students often mistakenly think the price rises by the full $4 (to $9). Remember, this only happens if Demand is Perfectly Inelastic.
+            </span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

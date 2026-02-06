@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Tax & Elasticity Analysis</title>
+    <!-- MathJax for LaTeX Rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --accent-light: #eff6ff;
+            --accent-border: #bfdbfe;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 20px;
+            display: inline-flex;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        h3 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #cbd5e1;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+
+        .option-analysis.correct {
+            border-left-color: var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .option-analysis.wrong {
+            border-left-color: var(--wrong-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .tips-title {
+            color: #c2410c;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span>Topic: Market Intervention (Taxation)</span>
+            <span>Difficulty: ★★★★☆</span>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">
+            Key Concepts: Tax Revenue (稅收), Elasticity (彈性), Inelastic Supply (無彈性供應)
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">當物品X的從量銷售稅減半時，政府來自物品X的稅項收入亦減半。一個可能的解釋是 _____________。</p>
+            <p class="en">When the per-unit sales tax on Good X is halved, the government's tax revenue from Good X is also halved. One possible explanation is that _____________.</p>
+            
+            <ul class="options-list">
+                <li>A. 物品X的供應屬完全彈性供應 (the supply of Good X is perfectly elastic)</li>
+                <li>B. 物品X的供應屬完全無彈性供應 (the supply of Good X is perfectly inelastic)</li>
+                <li>C. 物品X的需求屬完全彈性需求 (the demand for Good X is perfectly elastic)</li>
+                <li>D. 物品X的需求屬單一彈性需求 (the demand for Good X is unitarily elastic)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <h3>1. Tax Revenue Formula (稅收公式)</h3>
+            <p class="zh">政府的稅收總額取決於每單位稅額與交易量的乘積。</p>
+            <p class="en">Total government tax revenue depends on the product of the per-unit tax and the quantity transacted.</p>
+            <div class="math-block">
+                $$ \text{Tax Revenue (TR)} = \text{Per-unit Tax (t)} \times \text{Quantity (Q)} $$
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <h3>2. Elasticity & Quantity Change (彈性與數量改變)</h3>
+            <p class="zh">一般情況下，稅項變動會影響價格，進而改變交易量 \( Q \)。但有兩個極端情況下，交易量 \( Q \) 保持不變：</p>
+            <p class="en">Usually, a change in tax affects price, which changes the quantity transacted \( Q \). However, in two extreme cases, \( Q \) remains constant:</p>
+            <ul>
+                <li>
+                    <span class="zh"><strong>完全無彈性需求 (Perfectly Inelastic Demand):</strong> 需求曲線垂直。</span>
+                    <span class="en" style="display:block; color:#666;">Vertical Demand Curve.</span>
+                </li>
+                <li>
+                    <span class="zh"><strong>完全無彈性供應 (Perfectly Inelastic Supply):</strong> 供應曲線垂直。</span>
+                    <span class="en" style="display:block; color:#666;">Vertical Supply Curve.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 1.2rem; font-weight: bold; color: var(--correct-color); border: 2px solid var(--correct-color); padding: 10px 20px; border-radius: 50px;">
+                Correct Answer: Option B
+            </span>
+        </div>
+
+        <h3>Mathematical Proof (數學證明)</h3>
+        <div class="math-block" style="text-align: left;">
+            Let \( t_1 \) be the original tax and \( Q_1 \) be the original quantity.<br>
+            Let \( t_2 \) be the new tax and \( Q_2 \) be the new quantity.<br><br>
+            Given:<br>
+            1. Tax is halved: \( t_2 = 0.5 t_1 \)<br>
+            2. Revenue is halved: \( TR_2 = 0.5 TR_1 \)<br><br>
+            Using the formula \( TR = t \times Q \):<br>
+            $$ t_2 \times Q_2 = 0.5 (t_1 \times Q_1) $$
+            Substitute \( t_2 = 0.5 t_1 \):<br>
+            $$ (0.5 t_1) \times Q_2 = 0.5 t_1 \times Q_1 $$
+            Divide both sides by \( 0.5 t_1 \):<br>
+            $$ Q_2 = Q_1 $$
+        </div>
+        <p class="zh"><strong>結論：</strong> 交易量 \( Q \) 必須保持不變。</p>
+        <p class="en"><strong>Conclusion:</strong> The quantity transacted \( Q \) must remain constant.</p>
+
+        <h3>Option Analysis (選項分析)</h3>
+
+        <div class="option-analysis correct">
+            <span class="badge badge-correct">Option B</span> <strong>Correct / 正確</strong>
+            <p class="zh"><strong>物品X的供應屬完全無彈性供應。</strong><br>當供應曲線是垂直線（完全無彈性）時，無論稅項如何變動，供應商提供的數量都固定不變。由於 \( Q \) 不變，稅收 \( (t \times Q) \) 的變動百分比將完全等於稅率 \( t \) 的變動百分比。</p>
+            <p class="en"><strong>The supply of Good X is perfectly inelastic.</strong><br>When the supply curve is vertical (perfectly inelastic), the quantity supplied remains fixed regardless of tax changes. Since \( Q \) is constant, the percentage change in Tax Revenue \( (t \times Q) \) will be exactly equal to the percentage change in tax rate \( t \).</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option A</span> <strong>Incorrect / 錯誤</strong>
+            <p class="zh"><strong>物品X的供應屬完全彈性供應。</strong><br>若供應為水平線，稅項減少會導致價格大幅下降，交易量 \( Q \) 會大幅增加。結果稅收不會剛好減半（因為 \( Q \) 變大了，抵銷了部分 \( t \) 的減少）。</p>
+            <p class="en"><strong>The supply of Good X is perfectly elastic.</strong><br>If supply is horizontal, a tax cut leads to a significant price drop and a large increase in quantity \( Q \). The tax revenue would not be exactly halved (because the increase in \( Q \) would offset some of the decrease in \( t \)).</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option C</span> <strong>Incorrect / 錯誤</strong>
+            <p class="zh"><strong>物品X的需求屬完全彈性需求。</strong><br>若需求為水平線，稅項減少會導致交易量 \( Q \) 大幅增加。同樣地，稅收不會剛好減半。</p>
+            <p class="en"><strong>The demand for Good X is perfectly elastic.</strong><br>If demand is horizontal, a tax cut leads to a large increase in quantity \( Q \). Similarly, tax revenue would not be exactly halved.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option D</span> <strong>Incorrect / 錯誤</strong>
+            <p class="zh"><strong>物品X的需求屬單一彈性需求。</strong><br>單一彈性是指價格變動時，「總支出」(Total Expenditure, \( P \times Q \)) 不變，而不是稅收 (\( t \times Q \))。這是一個常見的干擾選項。</p>
+            <p class="en"><strong>The demand for Good X is unitarily elastic.</strong><br>Unitary elasticity implies that "Total Expenditure" (\( P \times Q \)) remains constant when price changes, not Tax Revenue (\( t \times Q \)). This is a common distractor.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這類題目考驗邏輯推演，而非複雜計算。解題關鍵點 (Pivot Point) 在於找出變數之間的關係。</p>
+        <p class="en">This type of question tests logical deduction rather than complex calculation. The Pivot Point is identifying the relationship between variables.</p>
+        
+        <ol>
+            <li>
+                <strong>Identify the Variables (鎖定變數):</strong>
+                <br> \( t \) (Tax) and \( TR \) (Revenue).
+            </li>
+            <li>
+                <strong>Observe the Change (觀察變動):</strong>
+                <br> \( t \) drops by 50%, \( TR \) drops by 50%.
+            </li>
+            <li>
+                <strong>Find the Missing Link (尋找連結):</strong>
+                <br> Since \( TR = t \times Q \), for the percentage change to be identical, \( Q \) must be neutral (0% change).
+            </li>
+            <li>
+                <strong>Match with Graph (圖形配對):</strong>
+                <br> Which curve produces a constant \( Q \)? Only a Vertical line (Perfectly Inelastic).
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <h2>Exam Tricks & Traps (考試技巧與陷阱)</h2>
+        
+        <div class="tips-box">
+            <div class="tips-title">⚠️ Trap: The "Unitary Elasticity" Distractor (單一彈性陷阱)</div>
+            <p class="zh">許多學生看到「不變」或「比例相同」就會直覺選「單一彈性」。請記住：單一彈性是關於 \( P \times Q \) (總收入/支出)，而不是 \( t \times Q \) (稅收)。</p>
+            <p class="en">Many students instinctively choose "Unitary Elasticity" when they see "constant" or "proportional change". Remember: Unitary elasticity is about \( P \times Q \) (Total Revenue/Expenditure), NOT \( t \times Q \) (Tax Revenue).</p>
+        </div>
+
+        <br>
+
+        <div class="tips-box" style="background-color: #f0fdf4; border-color: #bbf7d0;">
+            <div class="tips-title" style="color: #15803d;">🚀 Speed Trick (速解法)</div>
+            <p class="zh">如果題目說「稅率變動 X%，稅收也變動 X%」，這直接暗示<strong>交易量 (Quantity) 沒有改變</strong>。直接找「完全無彈性 (Perfectly Inelastic)」的選項即可。</p>
+            <p class="en">If the question states "Tax rate changes by X%, and Tax Revenue also changes by X%", this directly implies <strong>Quantity did not change</strong>. Immediately look for the "Perfectly Inelastic" option.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue-600 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --bg-color: #f8fafc; /* Slate-50 */
+            --card-bg: #ffffff;
+            --text-main: #1e293b; /* Slate-800 */
+            --text-muted: #64748b; /* Slate-500 */
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --concept-bg: #eff6ff; /* Blue-50 */
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--text-muted);
+        }
+
+        .option-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+
+        .option-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .option-list li:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Answer Analysis */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ecfdf5;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+        }
+
+        .analysis-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .status-correct { color: var(--accent-green); }
+        .status-wrong { color: var(--accent-red); }
+
+        /* Bilingual Text Styling */
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Decomposition & Tricks */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 640px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            background-color: #fff7ed; /* Orange-50 */
+            border: 1px solid #fed7aa;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .tip-title {
+            font-weight: bold;
+            color: #c2410c;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Demand & Supply (需求與供應)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Total Revenue, Substitutes</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">
+            <span>📝 The Question (題目)</span>
+        </div>
+        <div class="question-box">
+            <p><strong>由於橙的收成欠佳，很多果汁生產商改以柑橘等其他水果作為生產果汁的材料。</strong></p>
+            <p class="lang-en">Due to poor harvests of oranges, many juice producers use other fruits such as mandarins as an alternative ingredient to produce juice.</p>
+            
+            <p><strong>根據上述資料，下列哪項是正確的？</strong></p>
+            <p class="lang-en">Based on the above information, which of the following is correct?</p>
+
+            <ul class="option-list">
+                <li><strong>A.</strong> 橙的市場上出現效率損失。<br><span class="lang-en">There is a deadweight loss in the market of oranges.</span></li>
+                <li><strong>B.</strong> 橙的賣家的總收入可能上升。<br><span class="lang-en">The total revenue of orange sellers may increase.</span></li>
+                <li><strong>C.</strong> 柑橘市場上的總社會盈餘下降。<br><span class="lang-en">The total social surplus in the market of mandarins decreases.</span></li>
+                <li><strong>D.</strong> 柑橘的總交易價值可能下降。<br><span class="lang-en">The total exchange value of mandarins may decrease.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">
+            <span>📚 Concept Review (概念重溫)</span>
+        </div>
+        <div class="concept-box">
+            <h3>1. 供應震盪與總收入 (Supply Shock & Total Revenue)</h3>
+            <p>當供應減少（\(S \downarrow\)）時，均衡價格上升（\(P \uparrow\)），均衡數量下降（\(Q \downarrow\)）。總收入（\(TR = P \times Q\)）的變動取決於<strong>需求價格彈性</strong>（\(E_d\)）。</p>
+            <span class="lang-en">When supply decreases (\(S \downarrow\)), equilibrium price rises (\(P \uparrow\)) and quantity falls (\(Q \downarrow\)). The change in Total Revenue (\(TR = P \times Q\)) depends on the <strong>Price Elasticity of Demand</strong> (\(E_d\)).</span>
+            
+            <div class="math-block">
+                $$ \text{If } E_d < 1 \text{ (Inelastic/低彈性)}: \% \Delta P > \% \Delta Q \Rightarrow TR \uparrow $$
+                $$ \text{If } E_d > 1 \text{ (Elastic/高彈性)}: \% \Delta P < \% \Delta Q \Rightarrow TR \downarrow $$
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <h3>2. 替代品與相關市場 (Substitutes & Related Markets)</h3>
+            <p>橙與柑橘在生產上是<strong>替代品</strong>。當橙的供應減少導致價格上升，生產商會轉用柑橘，導致柑橘的<strong>需求增加</strong>（\(D \uparrow\)）。</p>
+            <span class="lang-en">Oranges and mandarins are <strong>substitutes</strong> in production. When the supply of oranges decreases and price rises, producers switch to mandarins, causing an <strong>increase in demand</strong> (\(D \uparrow\)) for mandarins.</span>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">
+            <span>✅ Answer & Detailed Analysis (答案與詳細分析)</span>
+        </div>
+        
+        <div class="correct-answer">Correct Option: B</div>
+
+        <div class="analysis-item">
+            <span class="analysis-label status-wrong">Option A: Incorrect (錯誤)</span>
+            <p><strong>分析：</strong>橙的收成欠佳屬於自然因素導致的供應減少（\(S\) 左移）。市場會自動調節至新的均衡點。在新的均衡點上，邊際利益等於新的邊際成本（\(MB = MC'\)），因此達致配置效率，<strong>沒有</strong>效率損失（無謂損失）。</p>
+            <span class="lang-en"><strong>Analysis:</strong> Poor harvest is a natural supply decrease (shift of \(S\) to the left). The market adjusts to a new equilibrium. At this new point, Marginal Benefit equals the new Marginal Cost (\(MB = MC'\)), so allocative efficiency is achieved. There is <strong>no</strong> deadweight loss.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label status-correct">Option B: Correct (正確)</span>
+            <p><strong>分析：</strong>橙的供應減少導致價格上升（\(P \uparrow\)）及交易量下降（\(Q \downarrow\)）。由於題目沒有提供橙的需求彈性（Elasticity），如果橙的需求是<strong>低彈性</strong>（Inelastic），價格上升的百分比會大於數量下降的百分比，總收入（\(TR\)）便會上升。因此，總收入「可能」上升是正確的。</p>
+            <span class="lang-en"><strong>Analysis:</strong> The decrease in supply of oranges leads to a higher price (\(P \uparrow\)) and lower quantity (\(Q \downarrow\)). Since the question does not specify the elasticity of demand for oranges, if the demand is <strong>inelastic</strong>, the percentage increase in price will exceed the percentage decrease in quantity, causing Total Revenue (\(TR\)) to rise. Thus, stating TR "may" increase is correct.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label status-wrong">Option C: Incorrect (錯誤)</span>
+            <p><strong>分析：</strong>果汁生產商轉用柑橘，使柑橘的需求增加（\(D\) 右移）。需求曲線向右移會增加需求曲線與價格線之間的面積（消費者盈餘）以及價格線與供應曲線之間的面積（生產者盈餘）。因此，總社會盈餘（TSS）應該是<strong>上升</strong>。</p>
+            <span class="lang-en"><strong>Analysis:</strong> Juice producers switching to mandarins increases the demand for mandarins (\(D\) shifts right). A rightward shift of the demand curve increases the area between the demand curve and supply curve. Therefore, Total Social Surplus (TSS) should <strong>increase</strong>.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label status-wrong">Option D: Incorrect (錯誤)</span>
+            <p><strong>分析：</strong>柑橘的需求增加（\(D \uparrow\)），而供應不變（假設是一般向上傾斜的供應曲線）。這會導致均衡價格上升（\(P \uparrow\)）<strong>及</strong>均衡數量上升（\(Q \uparrow\)）。由於 \(P\) 和 \(Q\) 都上升，總交易價值（\(P \times Q\)）<strong>必定上升</strong>，不可能下降。</p>
+            <span class="lang-en"><strong>Analysis:</strong> The demand for mandarins increases (\(D \uparrow\)) while supply remains unchanged (assuming an upward-sloping supply curve). This leads to both higher equilibrium price (\(P \uparrow\)) <strong>and</strong> higher equilibrium quantity (\(Q \uparrow\)). Since both \(P\) and \(Q\) rise, the total exchange value (\(P \times Q\)) <strong>must increase</strong>. It cannot decrease.</span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">
+            <span>🔍 Problem Decomposition (題目拆解)</span>
+        </div>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <span class="tip-title">Pivot Point (關鍵點)</span>
+                <p><strong>1. 橙市場 (Orange Market):</strong><br>收成欠佳 = 供應減少 (\(S \downarrow\))。</p>
+                <p><strong>2. 柑橘市場 (Mandarin Market):</strong><br>替代材料 = 需求增加 (\(D \uparrow\))。</p>
+                <span class="lang-en"><strong>1. Orange Market:</strong> Poor harvest = Supply decreases (\(S \downarrow\)).<br><strong>2. Mandarin Market:</strong> Alternative ingredient = Demand increases (\(D \uparrow\)).</span>
+            </div>
+            <div class="tip-card">
+                <span class="tip-title">Logic Flow (邏輯流向)</span>
+                <p>橙 \(S \downarrow\) \(\rightarrow\) 橙 \(P \uparrow, Q \downarrow\) \(\rightarrow\) 橙 TR ? (視乎彈性)。</p>
+                <p>柑橘 \(D \uparrow\) \(\rightarrow\) 柑橘 \(P \uparrow, Q \uparrow\) \(\rightarrow\) 柑橘 TR \(\uparrow\) (必定)。</p>
+                <span class="lang-en">Orange \(S \downarrow\) \(\rightarrow\) Orange \(P \uparrow, Q \downarrow\) \(\rightarrow\) Orange TR ? (Depends on elasticity).<br>Mandarin \(D \uparrow\) \(\rightarrow\) Mandarin \(P \uparrow, Q \uparrow\) \(\rightarrow\) Mandarin TR \(\uparrow\) (Must increase).</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <div class="section">
+        <div class="section-title">
+            <span>⚠️ Common Mistakes & Exam Tricks (常犯錯誤與考試技巧)</span>
+        </div>
+        
+        <div class="analysis-item">
+            <span class="analysis-label">Trap: "Quantity drops, so Revenue must drop?" (陷阱：數量跌，收入一定跌？)</span>
+            <p>很多學生看到橙的交易量下降，就直覺認為總收入會下降。<strong>切記：</strong>當價格和數量呈反方向變動時（例如供應改變），必須考慮<strong>彈性 (Elasticity)</strong>。</p>
+            <span class="lang-en">Many students intuitively think Total Revenue falls because quantity falls. <strong>Remember:</strong> When Price and Quantity move in opposite directions (supply shift), you MUST consider <strong>Elasticity</strong>.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Trick: The word "May" (技巧：留意「可能」二字)</span>
+            <p>在經濟科 MC 中，如果題目沒有給予足夠數據（如彈性數值），帶有「可能」(May) 的選項通常是正確答案的強烈候選者，因為它包含了不確定性。</p>
+            <span class="lang-en">In Economics MC, if the question lacks specific data (like elasticity values), options containing "may" are often strong candidates for the correct answer because they account for uncertainty.</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

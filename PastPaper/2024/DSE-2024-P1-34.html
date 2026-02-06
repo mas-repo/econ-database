@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Money & Banking Analysis</title>
+    <!-- MathJax*Thinking...*
+
+> **Examining The Question's Core**
+> 
+> I'm focused on the balance sheet problem involving excess reserves and deposit creation. My recent thought process is centered on the best way to decompose the question, breaking it down into manageable components for the student. I'm exploring the key concepts, potential student errors, and helpful tricks for this particular question type.
+> 
+> 
+ for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --light-blue-bg: #eff6ff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: var(--light-blue-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: #f0fdf4; /* Light green tint */
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .formula-box {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .analysis-section {
+            margin-top: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-option {
+            background-color: #dbeafe;
+            border-color: var(--primary-color);
+        }
+
+        .wrong-option {
+            background-color: #fff;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+
+        .badge-correct { background-color: var(--primary-color); }
+        .badge-wrong { background-color: #ef4444; }
+
+        .decomposition-box {
+            background-color: #fff7ed; /* Light orange */
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .trap-box {
+            background-color: #fef2f2; /* Light red */
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .lang-label {
+            font-weight: bold;
+            color: #64748b;
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        
+        .bilingual-text p {
+            margin: 5px 0;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="header-info">
+            <div class="header-item">Topic: Money & Banking (貨幣與銀行)</div>
+            <div class="header-item">Difficulty: ★★★★☆ (Advanced Application)</div>
+            <div class="header-item">Key Concepts: Balance Sheet, Required Reserve Ratio, Deposit Creation</div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        
+        <div class="bilingual-text">
+            <p><strong>[中文]</strong> 下表顯示某銀行系統的資產負債表。假設該銀行系統有20百萬元的超額儲備，而公眾總是持有固定金額的現金。</p>
+            <p><strong>[English]</strong> The table below shows the balance sheet of a banking system. Suppose there are excess reserves of $20 million in the banking system and the public always holds a fixed amount of cash.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Assets (資產) ($ Mn)</th>
+                        <th colspan="2">Liabilities (負債) ($ Mn)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reserves (儲備)</td>
+                        <td>40</td>
+                        <td>Deposits (存款)</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Loans (貸款)</td>
+                        <td>60</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bilingual-text">
+            <p><strong>[中文]</strong> 假設一些銀行借出其超額儲備。經過存款創造後，該銀行系統的貸款增加了20百萬元，下列哪項關於上述銀行系統的陳述是正確的？</p>
+            <p><strong>[English]</strong> Suppose some banks lend out their excess reserves. After deposit creation, the loans in the banking system increase by $20 million. Which of the following statements about the banking system is correct?</p>
+        </div>
+
+        <div class="options">
+            <p>A. 該銀行系統的儲備變成20百萬元。<br>The reserves of the banking system become $20 million.</p>
+            <p>B. 該銀行系統的超額儲備變成16百萬元。<br>The excess reserves of the banking system become $16 million.</p>
+            <p>C. 該銀行系統出現8百萬元的儲備不足。<br>The banking system has a reserve shortage of $8 million.</p>
+            <p>D. 該銀行系統的存款金額變成200百萬元。<br>The amount of deposits in the banking system becomes $200 million.</p>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="bilingual-text">
+            <p>要解決這類問題，我們必須掌握以下核心公式與定義：</p>
+            <p>To solve this type of problem, we must master the following core formulas and definitions:</p>
+        </div>
+
+        <h3>1. Actual Reserves (實際儲備)</h3>
+        <div class="formula-box">
+            $$ \text{Actual Reserves} = \text{Required Reserves} + \text{Excess Reserves} $$
+            $$ \text{實際儲備} = \text{法定儲備} + \text{超額儲備} $$
+        </div>
+
+        <h3>2. Required Reserve Ratio (法定儲備比率, \(RRR\))</h3>
+        <div class="bilingual-text">
+            <p>我們可以透過初始狀態計算出法定儲備比率。這是整個計算的關鍵常數。</p>
+            <p>We can calculate the Required Reserve Ratio from the initial state. This is the key constant for the entire calculation.</p>
+        </div>
+        <div class="formula-box">
+            $$ RRR = \frac{\text{Required Reserves}}{\text{Deposits}} \times 100\% $$
+        </div>
+
+        <h3>3. Accounting Identity (會計恆等式)</h3>
+        <div class="formula-box">
+            $$ \text{Assets} = \text{Liabilities} $$
+            $$ \text{Reserves} + \text{Loans} = \text{Deposits} $$
+        </div>
+
+        <h3>4. Assumptions (假設)</h3>
+        <div class="bilingual-text">
+            <p><strong>公眾持有固定現金 (Fixed amount of cash held by public):</strong> 這意味著沒有現金流失 (Cash Leakage)。系統內的實際儲備總額 (Actual Reserves) 保持不變。</p>
+            <p><strong>Fixed amount of cash held by public:</strong> This implies no cash leakage. The total Actual Reserves in the system remain unchanged.</p>
+        </div>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section class="analysis-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="bilingual-text">
+            <p><strong>正確答案：選項 B</strong></p>
+            <p><strong>Correct Option: Option B</strong></p>
+        </div>
+
+        <h3>Step 1: Calculate Initial RRR (計算初始法定儲備比率)</h3>
+        <div class="bilingual-text">
+            <p>初始實際儲備 = 40 (百萬元)。<br>題目給定初始超額儲備 = 20 (百萬元)。<br>因此，初始法定儲備 = \(40 - 20 = 20\) (百萬元)。</p>
+            <p>Initial Actual Reserves = 40 ($ Mn).<br>Given Initial Excess Reserves = 20 ($ Mn).<br>Therefore, Initial Required Reserves = \(40 - 20 = 20\) ($ Mn).</p>
+        </div>
+        <div class="formula-box">
+            $$ RRR = \frac{20}{100} = 20\% $$
+        </div>
+
+        <h3>Step 2: Analyze the Changes (分析變動)</h3>
+        <div class="bilingual-text">
+            <p>題目指出「貸款增加了 20 百萬元」。<br>根據資產負債表恆等式：\(\Delta \text{Loans} = \Delta \text{Deposits}\) (假設儲備不變)。<br>所以，存款也增加了 20 百萬元。</p>
+            <p>The question states "loans increase by $20 million".<br>According to the balance sheet identity: \(\Delta \text{Loans} = \Delta \text{Deposits}\) (assuming reserves are constant).<br>So, Deposits also increase by $20 million.</p>
+        </div>
+
+        <h3>Step 3: Calculate New State (計算新狀態)</h3>
+        <ul>
+            <li>
+                <strong>New Deposits (新存款):</strong> \(100 + 20 = 120\) ($ Mn)
+            </li>
+            <li>
+                <strong>New Actual Reserves (新實際儲備):</strong> \(40\) ($ Mn) 
+                <br><em>(Note: Reserves do not change because the public holds fixed cash / no leakage.)</em>
+            </li>
+            <li>
+                <strong>New Required Reserves (新法定儲備):</strong> \(120 \times 20\% = 24\) ($ Mn)
+            </li>
+            <li>
+                <strong>New Excess Reserves (新超額儲備):</strong> \(40 - 24 = 16\) ($ Mn)
+            </li>
+        </ul>
+
+        <h3>Option Analysis (選項分析)</h3>
+
+        <div class="option-analysis wrong-option">
+            <span class="badge badge-wrong">Option A</span> <strong>Wrong / 錯誤</strong>
+            <div class="bilingual-text">
+                <p><strong>[中文]</strong> 銀行系統的實際儲備保持不變，仍然是 40 百萬元。因為公眾持有固定現金，現金沒有流出銀行體系。</p>
+                <p><strong>[English]</strong> The actual reserves of the banking system remain unchanged at $40 million. Since the public holds a fixed amount of cash, no cash leaks out of the banking system.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis correct-option">
+            <span class="badge badge-correct">Option B</span> <strong>Correct / 正確</strong>
+            <div class="bilingual-text">
+                <p><strong>[中文]</strong> 如上計算，新存款為 120，新法定儲備為 \(120 \times 0.2 = 24\)。實際儲備為 40。新超額儲備 = \(40 - 24 = 16\) 百萬元。</p>
+                <p><strong>[English]</strong> As calculated above, New Deposits = 120, New Required Reserves = \(120 \times 0.2 = 24\). Actual Reserves = 40. New Excess Reserves = \(40 - 24 = 16\) million.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis wrong-option">
+            <span class="badge badge-wrong">Option C</span> <strong>Wrong / 錯誤</strong>
+            <div class="bilingual-text">
+                <p><strong>[中文]</strong> 銀行系統仍有超額儲備 16 百萬元，並沒有出現儲備不足 (Shortage)。</p>
+                <p><strong>[English]</strong> The banking system still has excess reserves of $16 million, so there is no reserve shortage.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis wrong-option">
+            <span class="badge badge-wrong">Option D</span> <strong>Wrong / 錯誤</strong>
+            <div class="bilingual-text">
+                <p><strong>[中文]</strong> 新存款金額是 \(100 + 20 = 120\) 百萬元，而不是 200 百萬元。只有當銀行借出「所有」超額儲備並完成「最大」存款創造時，存款才會變成 200。</p>
+                <p><strong>[English]</strong> The new deposit amount is \(100 + 20 = 120\) million, not 200 million. Deposits would only become 200 if the banks lent out "all" excess reserves and achieved "maximum" deposit creation.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="decomposition-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="bilingual-text">
+            <p>這道題目的關鍵在於區分「最大存款創造」與「部分存款創造」。</p>
+            <p>The key to this question is distinguishing between "Maximum Deposit Creation" and "Partial Deposit Creation".</p>
+        </div>
+
+        <ul>
+            <li>
+                <strong>Pivot Point (關鍵點):</strong> 題目說貸款增加了 20 (Loans increased by 20)，而不是說銀行借出了「所有」超額儲備。
+                <br><em>The question says loans increased by 20, NOT that banks lent out "all" excess reserves.</em>
+            </li>
+            <li>
+                <strong>Logic Flow (邏輯流):</strong>
+                <ol>
+                    <li>利用初始數據找 RRR (Find RRR using initial data).</li>
+                    <li>確認變動量：\(\Delta L = +20 \rightarrow \Delta D = +20\) (Confirm changes).</li>
+                    <li>計算新狀態下的法定儲備 (Calculate new Required Reserves).</li>
+                    <li>用恆定的實際儲備減去新法定儲備 (Subtract new Required Reserves from constant Actual Reserves).</li>
+                </ol>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <section class="trap-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <h3>Trap 1: Assuming Maximum Creation (假設最大創造)</h3>
+        <div class="bilingual-text">
+            <p><strong>錯誤觀念：</strong> 看到「存款創造」，就直接套用乘數公式 \(\frac{1}{RRR} \times \text{Initial Excess Reserves}\)。</p>
+            <p><strong>Misconception:</strong> Seeing "deposit creation" and immediately applying the multiplier formula \(\frac{1}{RRR} \times \text{Initial Excess Reserves}\).</p>
+            <p><strong>後果：</strong> 如果你這樣做，你會算出 \(\Delta D = 20 \times \frac{1}{0.2} = 100\)，總存款變成 200 (選項 D)。這是錯的，因為題目只說貸款增加了 20，過程還沒完成或銀行保留了部分超額儲備。</p>
+            <p><strong>Consequence:</strong> If you do this, you calculate \(\Delta D = 20 \times \frac{1}{0.2} = 100\), making total deposits 200 (Option D). This is wrong because the question specifies loans only increased by 20.</p>
+        </div>
+
+        <h3>Trap 2: Confusing Reserves vs. Excess Reserves (混淆儲備與超額儲備)</h3>
+        <div class="bilingual-text">
+            <p><strong>錯誤觀念：</strong> 誤以為貸款增加會導致實際儲備 (Actual Reserves) 減少。</p>
+            <p><strong>Misconception:</strong> Thinking that an increase in loans reduces Actual Reserves.</p>
+            <p><strong>修正：</strong> 在封閉銀行系統（無現金流失）中，貸款只是將超額儲備轉化為法定儲備，實際儲備總額（現金+央行存款）是不變的。</p>
+            <p><strong>Correction:</strong> In a closed banking system (no cash leakage), lending merely converts Excess Reserves into Required Reserves. The total Actual Reserves remain constant.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - International Trade Analysis</title>
+    <!-- Tailwind CSS for styling -->
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+
+        .concept-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f9fafb;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .correct-answer {
+            color: #059669;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .option-analysis {
+            margin-top: 12px;
+            padding-left: 12px;
+            border-left: 2px solid #d1d5db;
+        }
+
+        .pivot-point {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 1. Header -->
+        <div class="card header-section">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                <h1 class="text-2xl font-bold">HKDSE Economics Analysis</h1>
+                <div class="mt-2 md:mt-0">
+                    <span class="tag bg-white text-blue-800">Topic: International Trade</span>
+                    <span class="tag bg-yellow-400 text-yellow-900">Difficulty: ★★★☆☆</span>
+                </div>
+            </div>
+            <p class="opacity-90">
+                <strong>Key Concepts:</strong> Opportunity Cost (機會成本), Terms of Trade (貿易比率), Gains from Trade (貿易得益)
+            </p>
+        </div>
+
+        <!-- 2. The Question -->
+        <div class="card">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">The Question (題目)</h2>
+            
+            <div class="mb-4">
+                <p class="bilingual-text font-medium">下表顯示Y國的書本及智能電話的產出。</p>
+                <span class="en-text">The following table shows the outputs of books and smartphones of Country Y.</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>書本 (單位)<br><span class="text-xs font-normal">Books (units)</span></th>
+                            <th>智能電話 (單位)<br><span class="text-xs font-normal">Smartphones (units)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">專門化和貿易前的產出<br><span class="text-xs text-gray-500">Outputs before specialisation and trade</span></td>
+                            <td>60</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">專門化後的產出<br><span class="text-xs text-gray-500">Outputs after specialisation</span></td>
+                            <td>0</td>
+                            <td>180</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mb-6">
+                <p class="bilingual-text">假設Y國從每單位智能電話的交易中的得益是0.2單位書本。貿易比率是1單位智能電話可換 __________ 單位書本。</p>
+                <span class="en-text">Suppose for each unit of smartphones traded, the gain to Country Y is 0.2 units of books. The terms of trade for 1 unit of smartphones is ______ units of books.</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-2 bg-gray-50 rounded border hover:bg-gray-100">A. 0.3</div>
+                <div class="p-2 bg-gray-50 rounded border hover:bg-gray-100">B. 0.7</div>
+                <div class="p-2 bg-gray-50 rounded border hover:bg-gray-100">C. 1.2</div>
+                <div class="p-2 bg-gray-50 rounded border hover:bg-gray-100">D. 2.2</div>
+            </div>
+        </div>
+
+        <!-- 3. Concept Review -->
+        <div class="card">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Concept Review (概念重溫)</h2>
+            
+            <div class="concept-box">
+                <h3 class="font-bold text-blue-800 mb-2">1. Opportunity Cost (機會成本)</h3>
+                <p>
+                    在生產可能性邊界（PPF）上，生產多一單位某物品所放棄的另一種物品的數量。
+                    <br><span class="en-text">The quantity of another good given up to produce one more unit of a specific good along the Production Possibility Frontier (PPF).</span>
+                </p>
+                <div class="math-block">
+                    $$ \text{OC of Good X} = \frac{\text{Decrease in Good Y}}{\text{Increase in Good X}} $$
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h3 class="font-bold text-blue-800 mb-2">2. Per Unit Gain from Trade (每單位貿易得益)</h3>
+                <p>
+                    對於出口國而言，每單位的得益等於「出售價格」（貿易比率）減去「生產成本」（機會成本）。
+                    <br><span class="en-text">For an exporting country, the gain per unit is equal to the "Selling Price" (Terms of Trade) minus the "Production Cost" (Opportunity Cost).</span>
+                </p>
+                <div class="math-block">
+                    $$ \text{Gain per unit} = \text{Terms of Trade (TOT)} - \text{Opportunity Cost (OC)} $$
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                    *注意：這公式適用於出口國。如果是進口國，公式則是 \( OC - TOT \)。
+                    <br><span class="en-text">*Note: This formula applies to the exporting country. If importing, the formula is \( OC - TOT \).</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. Answer & Analysis -->
+        <div class="card">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Answer & Detailed Analysis (答案與詳細分析)</h2>
+            
+            <div class="mb-6">
+                <span class="text-gray-700 font-medium">Correct Option: </span>
+                <span class="correct-answer">B</span>
+            </div>
+
+            <h3 class="font-bold text-gray-800 mt-4">Step-by-Step Solution (逐步題解):</h3>
+
+            <div class="option-analysis">
+                <h4 class="font-bold text-blue-600">Step 1: Determine the Opportunity Cost (計算機會成本)</h4>
+                <p class="mb-2">
+                    Y國由「專門化前」轉變為「專門化後」：
+                    <br>書本 (Books): \( 60 \to 0 \) (減少 60)
+                    <br>智能電話 (Smartphones): \( 60 \to 180 \) (增加 120)
+                </p>
+                <p class="mb-2">
+                    Y國為了生產額外 120 單位智能電話，放棄了 60 單位書本。
+                    <br><span class="en-text">Country Y gave up 60 units of books to produce an additional 120 units of smartphones.</span>
+                </p>
+                <div class="math-block">
+                    $$ \text{OC of 1 Smartphone} = \frac{60 \text{ Books}}{120 \text{ Smartphones}} = 0.5 \text{ Books} $$
+                </div>
+            </div>
+
+            <div class="option-analysis mt-4">
+                <h4 class="font-bold text-blue-600">Step 2: Identify Export vs. Import (確認出口與進口)</h4>
+                <p>
+                    由於Y國專門生產智能電話（產量由60增至180），Y國會<b>出口智能電話</b>。
+                    <br><span class="en-text">Since Country Y specializes in producing smartphones (output increased from 60 to 180), Country Y will <b>export smartphones</b>.</span>
+                </p>
+            </div>
+
+            <div class="option-analysis mt-4">
+                <h4 class="font-bold text-blue-600">Step 3: Calculate Terms of Trade (計算貿易比率)</h4>
+                <p>
+                    題目給定：每單位智能電話的得益 = 0.2 書本。
+                    <br>設貿易比率 (TOT) 為 \( 1 \text{ Smartphone} = T \text{ Books} \)。
+                    <br><span class="en-text">Given: Gain per unit of smartphone = 0.2 Books. Let Terms of Trade (TOT) be \( 1 \text{ Smartphone} = T \text{ Books} \).</span>
+                </p>
+                <div class="math-block">
+                    $$ \text{Gain} = \text{TOT} - \text{OC} $$
+                    $$ 0.2 = T - 0.5 $$
+                    $$ T = 0.2 + 0.5 $$
+                    $$ T = 0.7 $$
+                </div>
+                <p>
+                    所以，貿易比率是 1 單位智能電話可換 0.7 單位書本。
+                    <br><span class="en-text">Therefore, the terms of trade is 1 unit of smartphone for 0.7 units of books.</span>
+                </p>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="font-bold text-red-600">Why other options are wrong (為何其他選項錯誤):</h4>
+                <ul class="list-disc pl-5 space-y-2 mt-2 text-gray-700">
+                    <li>
+                        <strong>A (0.3):</strong> 這是誤將得益從成本中扣除 (\(0.5 - 0.2\))，這只有在Y國是智能電話的<b>進口國</b>時才合理，但Y國是出口國。
+                        <br><span class="en-text text-sm">This implies subtracting gain from cost (\(0.5 - 0.2\)), which would only be valid if Y were an <b>importer</b> of smartphones.</span>
+                    </li>
+                    <li>
+                        <strong>C (1.2):</strong> 計算錯誤，可能是誤用了書本的機會成本 (\(2.0\)) 進行計算。
+                        <br><span class="en-text text-sm">Calculation error, possibly confusing the OC of books (\(2.0\)) in the calculation.</span>
+                    </li>
+                    <li>
+                        <strong>D (2.2):</strong> 這是誤將書本的機會成本 (\(2.0\)) 加上得益 (\(0.2\))。
+                        <br><span class="en-text text-sm">This implies adding the gain (\(0.2\)) to the OC of books (\(2.0\)).</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. Problem Decomposition -->
+        <div class="card">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Problem Decomposition (題目拆解)</h2>
+            
+            <div class="pivot-point">
+                <h3 class="font-bold text-yellow-800 flex items-center">
+                    The Pivot Point (關鍵點)
+                </h3>
+                <p class="mt-2 text-yellow-900">
+                    這題的關鍵在於理解<b>「每單位得益」(Per Unit Gain)</b> 的定義。
+                    <br>把它想像成做生意：
+                    <br><b>利潤 (Gain) = 售價 (TOT) - 成本 (OC)</b>
+                </p>
+            </div>
+
+            <div class="mt-4 space-y-3">
+                <div>
+                    <span class="font-bold text-gray-700">1. 數據篩選 (Data Filtering):</span>
+                    <p class="text-sm text-gray-600">
+                        題目中的「60, 60」和「0, 180」這兩組數字，唯一的用途是用來計算<b>機會成本 (OC)</b>。一旦算出 OC = 0.5，這些數字就不再需要了。
+                        <br><span class="en-text">The numbers "60, 60" and "0, 180" are solely for calculating the <b>Opportunity Cost (OC)</b>. Once OC = 0.5 is found, these numbers are no longer needed.</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="font-bold text-gray-700">2. 單位確認 (Unit Check):</span>
+                    <p class="text-sm text-gray-600">
+                        題目問的是「1單位智能電話」，所以所有計算都要以「每單位智能電話」為基準。
+                        <br><span class="en-text">The question asks about "1 unit of smartphone", so all calculations must be based on "per unit of smartphone".</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Exam Tricks -->
+        <div class="card bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+            <h2 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                Exam Tricks & Shortcuts (考試技巧與速解)
+            </h2>
+            
+            <p class="mb-3">
+                <b>商業思維法 (Business Logic Method):</b>
+            </p>
+            <p class="text-gray-700">
+                不要死記公式，用常識思考：
+                <br>1. Y國自己生產一部電話要放棄 <b>0.5</b> 本書 (這是成本 Cost)。
+                <br>2. Y國透過貿易賺了 <b>0.2</b> 本書 (這是利潤 Profit)。
+                <br>3. 那麼，Y國賣出電話的價格 (Price) 必須是多少？
+            </p>
+            <div class="math-block bg-white border-green-200">
+                $$ \text{Price} = \text{Cost} + \text{Profit} $$
+                $$ \text{TOT} = 0.5 + 0.2 = 0.7 $$
+            </div>
+            <p class="text-sm text-gray-600 mt-2">
+                這樣想就不會搞錯是用加法還是減法了！
+                <br><span class="en-text">Thinking this way prevents you from confusing whether to add or subtract!</span>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

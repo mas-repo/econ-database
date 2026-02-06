@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Profit Maximization Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue */
+            --secondary: #475569; /* Slate */
+            --accent: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .header-item {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: #fffbeb; /* Light yellow/cream */
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: #b45309;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer-section {
+            margin-top: 30px;
+        }
+
+        .correct-option {
+            font-size: 1.5rem;
+            color: var(--success);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: var(--secondary);
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .trap-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px dashed #cbd5e1;
+            margin: 10px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .data-table {
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">📌 Topic: Firms & Production (廠商與生產) / Profit Maximization (利潤極大化)</div>
+        <div class="header-item">⭐ Difficulty: ★★★★☆ (Advanced Calculation)</div>
+        <div class="header-item">🔑 Key Concepts: MC=MR, Fixed Cost, Marginal Cost</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>題目 (Question)</h3>
+        <p>下表顯示某完全競爭市場中一間廠商的成本與產出的關係。該廠商的固定成本是$6，而市場價格是$20。</p>
+        <p class="en-text">The table below shows the cost-output relationship of a firm in a perfectly competitive market. The fixed cost of the firm is $6 and the market price is $20.</p>
+
+        <table class="data-table">
+            <tr>
+                <th>產出 (Output)</th>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <th>總可變成本 (TVC) ($)</th>
+                <td>4</td><td>12</td><td>24</td><td>40</td><td>60</td><td>84</td><td>112</td>
+            </tr>
+        </table>
+
+        <p>假設固定成本下降$4，而每單位產出的邊際成本上升$4。結果，該廠商的利潤會___________。</p>
+        <p class="en-text">Suppose the fixed cost decreases by $4 and the marginal cost for each unit of output increases by $4. As a result, the firm's profits will _________.</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 維持不變 (remain unchanged)</li>
+            <li>B. 下降$6 (decrease by $6)</li>
+            <li>C. 下降$12 (decrease by $12)</li>
+            <li>D. 下降$16 (decrease by $16)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">📚 概念重溫 (Concept Review)</div>
+        
+        <p><strong>1. 利潤極大化條件 (Profit Maximization Condition):</strong></p>
+        <p>在完全競爭市場中，廠商是價格接受者 (Price Taker)。廠商會生產至邊際收益等於邊際成本的產量。</p>
+        <p class="en-text">In a perfectly competitive market, the firm is a price taker. It produces at the output level where Marginal Revenue equals Marginal Cost.</p>
+        <div class="math-block">
+            $$ MR = P = MC $$
+        </div>
+
+        <p><strong>2. 邊際成本計算 (Calculating Marginal Cost):</strong></p>
+        <p>邊際成本是生產多一單位產出所增加的總成本 (或總可變成本)。</p>
+        <p class="en-text">Marginal Cost is the change in total cost (or total variable cost) arising from producing one extra unit of output.</p>
+        <div class="math-block">
+            $$ MC_n = TVC_n - TVC_{n-1} $$
+        </div>
+
+        <p><strong>3. 利潤公式 (Profit Formula):</strong></p>
+        <div class="math-block">
+            $$ \pi = TR - TC = (P \times Q) - (TVC + TFC) $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="answer-section">
+        <h2>答案與詳細分析 (Answer & Analysis)</h2>
+        <div class="correct-option">✅ 正確答案 (Correct Option): C</div>
+
+        <div class="step-box">
+            <div class="step-title">步驟 1：計算原本的利潤 (Step 1: Calculate Initial Profit)</div>
+            <p>首先，我們需要找出原本的邊際成本 (MC)，以決定原本的產量。</p>
+            <p class="en-text">First, we need to find the original Marginal Cost (MC) to determine the initial output level.</p>
+            
+            <table class="data-table" style="width: auto;">
+                <tr>
+                    <th>Q</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                </tr>
+                <tr>
+                    <th>TVC</th>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>24</td>
+                    <td>40</td>
+                    <td>60</td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <th>Original MC<br>\((TVC_n - TVC_{n-1})\)</th>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>16</td>
+                    <td><strong>20</strong></td>
+                    <td>24</td>
+                </tr>
+            </table>
+
+            <p>市場價格 \(P = 20\)。根據 \(P = MC\) 的條件，廠商會選擇生產 <strong>5 個單位</strong> (因為當 Q=5 時，MC=20)。</p>
+            <p class="en-text">Market Price \(P = 20\). According to \(P = MC\), the firm chooses to produce <strong>5 units</strong> (since at Q=5, MC=20).</p>
+
+            <ul>
+                <li>總收益 (TR) = \( 5 \times 20 = 100 \)</li>
+                <li>總成本 (TC) = \( TVC + TFC = 60 + 6 = 66 \)</li>
+                <li><strong>原本利潤 (Original Profit) = \( 100 - 66 = 34 \)</strong></li>
+            </ul>
+        </div>
+
+        <div class="step-box">
+            <div class="step-title">步驟 2：計算變動後的利潤 (Step 2: Calculate New Profit)</div>
+            <p><strong>變動 (Changes):</strong></p>
+            <ol>
+                <li>固定成本 (FC) 下降 $4 \rightarrow \text{New } FC = 6 - 4 = 2$</li>
+                <li>每單位 MC 上升 $4 \rightarrow \text{New } MC = \text{Old } MC + 4$</li>
+            </ol>
+
+            <table class="data-table" style="width: auto;">
+                <tr>
+                    <th>Q</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+                <tr>
+                    <th>Old MC</th>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>16</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th>New MC<br>\((Old + 4)\)</th>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>16</td>
+                    <td><strong>20</strong></td>
+                    <td>24</td>
+                </tr>
+            </table>
+
+            <p>現在，我們要重新尋找利潤極大化產量。價格仍然是 \(P=20\)。<br>
+            觀察新的 MC 列表，當 <strong>Q=4</strong> 時，New MC = 20。所以，新產量是 4。</p>
+            <p class="en-text">Now we find the new profit-maximizing output. Price is still \(P=20\).<br>
+            Looking at the New MC list, at <strong>Q=4</strong>, New MC = 20. So, the new output is 4.</p>
+
+            <p><strong>計算新成本 (Calculating New Costs):</strong></p>
+            <ul>
+                <li>新總收益 (New TR) = \( 4 \times 20 = 80 \)</li>
+                <li>新總可變成本 (New TVC) = 舊 TVC (於 Q=4) + 額外成本<br>
+                    或者將新的 MC 加總：\( 8 + 12 + 16 + 20 = 56 \)<br>
+                    (驗算：舊 TVC 是 40，每單位成本加 $4，共 4 單位，所以 \(40 + (4 \times 4) = 56\))。
+                </li>
+                <li>新固定成本 (New FC) = 2</li>
+                <li>新總成本 (New TC) = \( 56 + 2 = 58 \)</li>
+                <li><strong>新利潤 (New Profit) = \( 80 - 58 = 22 \)</strong></li>
+            </ul>
+        </div>
+
+        <div class="step-box">
+            <div class="step-title">步驟 3：比較與結論 (Step 3: Comparison & Conclusion)</div>
+            <div class="math-block">
+                $$ \text{Change in Profit} = \text{New Profit} - \text{Old Profit} $$
+                $$ = 22 - 34 = -12 $$
+            </div>
+            <p>利潤下降了 $12。因此，答案是 C。</p>
+            <p class="en-text">Profit decreases by $12. Therefore, the answer is C.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #f0f9ff; border-color: #0ea5e9;">
+        <div class="concept-title" style="color: #0369a1;">🔍 題目拆解 (Problem Decomposition)</div>
+        <p>這類題目的關鍵在於意識到<strong>「產量會改變」(Output will change)</strong>。</p>
+        <p class="en-text">The pivot point of this question is realizing that <strong>output will change</strong>.</p>
+        
+        <ol>
+            <li><strong>MC 的改變影響產量 (MC shift affects Q):</strong> 
+                <br>因為 MC 上升了，原本 Q=5 的時候 MC 變成了 24，大於價格 20。廠商為了止蝕，必須減少產量至 Q=4 (此時 MC=20)。
+            </li>
+            <li><strong>FC 的改變不影響產量，只影響利潤 (FC shift only affects Profit):</strong>
+                <br>FC 的下降純粹是成本的節省，不會改變 \(MC=MR\) 的決定點。
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="trap-box">
+        <h3 style="margin-top:0; color:#991b1b;">⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        
+        <p><strong>致命錯誤：忘記調整產量 (Fatal Error: Forgetting to adjust output)</strong></p>
+        <p>很多學生會假設產量維持在 Q=5 不變，然後直接計算成本變動：</p>
+        <p class="en-text">Many students assume output stays at Q=5 and simply calculate cost changes:</p>
+        
+        <ul style="font-size: 0.9em; color: #7f1d1d;">
+            <li>錯誤邏輯：產量仍是 5。</li>
+            <li>TR 仍是 100。</li>
+            <li>舊 TC = 66。</li>
+            <li>成本變動：FC 減 4，MC 每單位加 4 (共 5 單位，即加 20)。</li>
+            <li>淨成本增加 = \( -4 + 20 = +16 \)。</li>
+            <li>利潤改變 = \( -16 \)。</li>
+            <li><strong>這會導致你誤選 D (下降 $16)。</strong></li>
+        </ul>
+        <p><strong>緊記：當邊際成本 (MC) 改變時，利潤極大化的產量 (Q) 通常也會改變！</strong></p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="concept-box" style="background-color: #f3f4f6; border-color: #64748b;">
+        <div class="concept-title" style="color: #334155;">🚀 考試技巧 (Exam Tricks)</div>
+        <p>如果你對數字敏感，可以用<strong>邊際分析 (Marginal Analysis)</strong> 快速檢查：</p>
+        <ol>
+            <li><strong>原本利潤</strong>是 34。</li>
+            <li><strong>成本結構改變：</strong>
+                <ul>
+                    <li>FC 省了 $4。</li>
+                    <li>MC 每單位貴了 $4。</li>
+                </ul>
+            </li>
+            <li><strong>產量調整：</strong>
+                <br>原本在 Q=5，MC=20。現在 MC 變 24，比 Price ($20) 貴 $4。
+                <br>所以廠商<strong>放棄生產第 5 個單位</strong>。
+            </li>
+            <li><strong>損益計算：</strong>
+                <ul>
+                    <li>放棄第 5 單位：原本在第 5 單位賺多少？ \(MR - Old MC = 20 - 20 = 0\)。所以放棄它沒損失利潤。</li>
+                    <li>現在只生產 4 個單位。</li>
+                    <li>這 4 個單位每個成本貴了 $4 \(\rightarrow\) 成本增加 \(4 \times 4 = 16\)。</li>
+                    <li>固定成本省了 $4 \(\rightarrow\) 成本減少 4。</li>
+                    <li>總利潤變動 = 成本增加帶來的損失 + FC 節省 <br>
+                        \(= -16 + 4 = -12\)。</li>
+                </ul>
+            </li>
+        </ol>
+        <p>這個方法不需要算出完整的 TR 和 TC，只需計算<strong>變動的部分</strong>。</p>
+    </div>
+
+</div>
+
+</body>
+</html>

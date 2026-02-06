@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Exchange Rate Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f766e; /* Teal */
+            --secondary-color: #115e59; /* Darker Teal */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f0fdfa;
+            --text-dark: #1e293b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --concept-bg: #f3f4f6;
+            --concept-border: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: #334155;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .math-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Answer Section */
+        .answer-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--correct-border);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0fdf4;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .option-analysis.wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Decomposition & Tricks */
+        .strategy-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .strategy-title {
+            color: #92400e;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            color: var(--text-dark);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 4px;
+            display: block;
+            font-weight: 500;
+        }
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        /* Highlight for emphasis */
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: International Trade & Finance (國際貿易與金融)</span>
+            <span>Difficulty: <span class="stars">★★★★☆</span></span>
+            <span>Key Concepts: Exchange Rate (匯率), Competitiveness (競爭力), Causality (因果關係)</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <div class="question-text">
+            <p>
+                <span class="zh">下表顯示港元（HKD）兌人民幣（RMB）的匯率變動。</span>
+                <span class="en">The following table shows the change in the exchange rate of Hong Kong dollar (HKD) against Renminbi (RMB).</span>
+            </p>
+            <div style="background: #f8fafc; padding: 15px; border-radius: 6px; margin: 15px 0; border: 1px solid #e2e8f0;">
+                <p><strong>2022年8月11日 (11 August 2022):</strong> HKD 1 = RMB 0.86</p>
+                <p><strong>2023年8月11日 (11 August 2023):</strong> HKD 1 = RMB 0.92</p>
+            </div>
+            <p>
+                <span class="zh">上述的匯率變動會導致 ________________。</span>
+                <span class="en">The above change in the exchange rate would lead to ________________.</span>
+            </p>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> <span class="zh">美元兌人民幣升值</span> <br> <span class="en">an appreciation of US dollar against Renminbi</span></li>
+            <li><strong>B.</strong> <span class="zh">以港元計算，香港從內地的進口總值上升</span> <br> <span class="en">an increase in the total value of imports from the Mainland to Hong Kong in terms of Hong Kong dollar</span></li>
+            <li><strong>C.</strong> <span class="zh">內地出口往香港的貨物競爭力上升</span> <br> <span class="en">an increase in the competitiveness of the Mainland’s goods exported to Hong Kong</span></li>
+            <li><strong>D.</strong> <span class="zh">從內地進口建材的香港建築公司的生產成本上升</span> <br> <span class="en">an increase in the production cost of construction companies in Hong Kong which import construction materials from the Mainland</span></li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">Concept Review (概念重溫)</div>
+        
+        <p>
+            <span class="zh"><strong>1. 匯率變動 (Exchange Rate Changes):</strong></span>
+            <span class="en">When 1 unit of HKD exchanges for <strong>more</strong> RMB (0.86 $\to$ 0.92), HKD has appreciated (升值), and RMB has depreciated (貶值) against HKD.</span>
+        </p>
+
+        <p>
+            <span class="zh"><strong>2. 價格競爭力 (Price Competitiveness):</strong></span>
+            <span class="en">Competitiveness often refers to price. If a country's currency depreciates, its goods become cheaper for foreigners to buy.</span>
+        </p>
+        <div class="math-block">
+            $$ P_{\text{HKD}} = P_{\text{RMB}} \times \text{Exchange Rate (RMB/HKD)} $$
+            $$ \text{If RMB depreciates, Mainland goods become cheaper in HKD.} $$
+        </div>
+
+        <p>
+            <span class="zh"><strong>3. 因果關係 (Causality in Linked Exchange Rate):</strong></span>
+            <span class="en">Under the peg, HKD follows USD. A change in HKD/RMB is usually the <strong>result</strong> of a change in USD/RMB, not the cause.</span>
+        </p>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="answer-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-answer">Correct Option: C</div>
+
+        <!-- Option C (Correct) -->
+        <div class="option-analysis correct">
+            <span class="option-label">Option C:</span>
+            <span class="zh"><strong>正確。</strong> 題目顯示 1 港元能兌換更多人民幣（0.86 $\to$ 0.92），即港元升值，人民幣相對港元貶值。這意味著內地貨品以港元計算的價格會下降。當內地貨品在香港變得更便宜，其價格競爭力便會上升（相對於其他國家的進口貨或香港本地貨）。</span>
+            <span class="en"><strong>Correct.</strong> The data shows HKD appreciating against RMB (and RMB depreciating against HKD). This means Mainland goods become cheaper in terms of HKD. When the price of Mainland exports decreases in the Hong Kong market, their price competitiveness increases.</span>
+        </div>
+
+        <!-- Option A (Wrong - Causality) -->
+        <div class="option-analysis wrong">
+            <span class="option-label">Option A:</span>
+            <span class="zh"><strong>錯誤（因果倒置）。</strong> 這是最危險的陷阱。雖然在聯繫匯率下，港元升值通常伴隨著美元升值，但題目問的是「導致」(lead to)。港元只是美元的掛鈎貨幣（影子），港元兌人民幣的變動是<strong>結果</strong>，而非原因。是美元兌人民幣升值，才導致港元兌人民幣升值。港元的變動不會「導致」美元變動。</span>
+            <span class="en"><strong>Incorrect (Reversed Causality).</strong> This is a major trap. While HKD and USD move together due to the peg, the question asks what the HKD change "leads to" (consequence). The HKD is a passive follower of the USD. The change in HKD/RMB is the <strong>result</strong> of USD strength, not the cause. HKD appreciation does not "cause" USD appreciation.</span>
+        </div>
+
+        <!-- Option B (Wrong - Elasticity) -->
+        <div class="option-analysis wrong">
+            <span class="option-label">Option B:</span>
+            <span class="zh"><strong>錯誤。</strong> 港元升值令內地進口貨品價格（以港元計）下降。根據需求定律，進口量（Quantity）會上升。但進口總值（Total Value = Price $\times$ Quantity）的變動取決於需求的價格彈性（Price Elasticity）。題目未提供彈性數據，因此無法確定總值是上升還是下降。</span>
+            <span class="en"><strong>Incorrect.</strong> HKD appreciation lowers the price of imports in HKD. Quantity demanded will rise. However, the change in Total Value (Price $\times$ Quantity) depends on Price Elasticity of Demand. Without this data, the outcome is uncertain.</span>
+        </div>
+
+        <!-- Option D (Wrong - Direction) -->
+        <div class="option-analysis wrong">
+            <span class="option-label">Option D:</span>
+            <span class="zh"><strong>錯誤。</strong> 港元升值，購買內地建材的港元價格下降。這應該會導致建築公司的生產成本<strong>下降</strong>，而不是上升。</span>
+            <span class="en"><strong>Incorrect.</strong> HKD appreciation means imported materials from the Mainland become cheaper in HKD. This would lead to a <strong>decrease</strong> in production costs, not an increase.</span>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="strategy-box">
+        <div class="strategy-title">Problem Decomposition (題目拆解)</div>
+        <p>
+            <span class="zh"><strong>1. 判斷匯率方向 (Determine Direction):</strong></span><br>
+            <span class="en">HKD 1 = RMB 0.86 $\to$ 0.92. HKD buys <em>more</em> RMB.</span><br>
+            <span class="zh">結論：<strong>HKD 升值 (Appreciates) / RMB 貶值 (Depreciates)</strong>。</span>
+        </p>
+        <p>
+            <span class="zh"><strong>2. 分析貿易影響 (Analyze Trade Impact):</strong></span><br>
+            <span class="en">HKD stronger = Imports cheaper.</span><br>
+            <span class="zh">內地貨品在香港變平 $\to$ 競爭力上升 (Option C)。</span>
+        </p>
+        <p>
+            <span class="zh"><strong>3. 排除因果謬誤 (Eliminate Causality Errors):</strong></span><br>
+            <span class="en">Does HKD move the USD? No.</span><br>
+            <span class="zh">港元是被動的，不能選 A。</span>
+        </p>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="strategy-box" style="background-color: #fff1f2; border-color: #fca5a5;">
+        <div class="strategy-title" style="color: #991b1b;">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        <ul>
+            <li>
+                <span class="zh"><strong>因果關係混亂 (Causality Confusion):</strong></span>
+                <span class="en">Students often see that HKD and USD move together and select Option A. Remember: In the Linked Exchange Rate System, USD is the driver, HKD is the passenger. The passenger's movement doesn't cause the car to move.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>混淆「競爭力」的主語 (Subject of Competitiveness):</strong></span>
+                <span class="en">"Competitiveness increases" usually means the goods become cheaper to buy. Since RMB depreciated against HKD, Mainland goods are cheaper for HK buyers, hence more competitive.</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

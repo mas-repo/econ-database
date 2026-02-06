@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money & Banking Analysis</title>
+    
+    <!-- MathJax Configuration -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #64748b; /* Slate Grey */
+            --accent-color: #0ea5e9; /* Sky Blue */
+            --success-color: #10b981; /* Emerald */
+            --warning-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #475569;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        h1, h2, h3 { margin-top: 0; color: var(--text-main); }
+        h2 { font-size: 1.4rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 20px; }
+        
+        /* Header Specifics */
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .meta-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .difficulty-stars { color: var(--warning-color); }
+
+        /* Bilingual Styling */
+        .zh-text {
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .en-text {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        /* Answer Section */
+        .correct-option {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--success-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .step-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Pivot Point / Tricks */
+        .pivot-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+        }
+
+        /* Responsive Table for Question Data */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #e2e8f0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .data-table th { background-color: #f8fafc; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            section { padding: 15px; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <section>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="header-meta">
+            <span class="meta-tag">Topic: Money & Banking (貨幣與銀行)</span>
+            <span class="meta-tag">Difficulty: <span class="difficulty-stars">★★★☆☆</span></span>
+        </div>
+        <p><strong>Key Concepts:</strong> Money Supply (貨幣供應), Monetary Base (貨幣基礎), Banking Multiplier (銀行乘數), Reserves (儲備)</p>
+    </section>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        
+        <div class="zh-text">假設某經濟體系的數據如下：</div>
+        <div class="en-text">Suppose an economy has the following data:</div>
+
+        <table class="data-table">
+            <tr>
+                <td><strong>貨幣供應 (Money Supply)</strong></td>
+                <td>$95 million</td>
+            </tr>
+            <tr>
+                <td><strong>公眾持有的現金 (Cash held by public)</strong></td>
+                <td>$15 million</td>
+            </tr>
+            <tr>
+                <td><strong>實際儲備比率 (Actual Reserve Ratio)</strong></td>
+                <td>25%</td>
+            </tr>
+            <tr>
+                <td><strong>超額儲備 (Excess Reserves)</strong></td>
+                <td>$4 million</td>
+            </tr>
+        </table>
+
+        <div class="zh-text">根據上述數據，下列哪項或哪些陳述是正確的？</div>
+        <div class="en-text">Based on the above data, which of the following statements is/are correct?</div>
+
+        <ol>
+            <li>
+                <span class="zh-text">貨幣基礎是 35 百萬元。</span><br>
+                <span class="en-text">The monetary base is $35 million.</span>
+            </li>
+            <li>
+                <span class="zh-text">最大銀行乘數是 5。</span><br>
+                <span class="en-text">The maximum banking multiplier is 5.</span>
+            </li>
+            <li>
+                <span class="zh-text">最大貨幣供應是 115 百萬元。</span><br>
+                <span class="en-text">The maximum money supply is $115 million.</span>
+            </li>
+        </ol>
+
+        <div style="margin-top: 15px; font-weight: bold;">
+            A. (1) only<br>
+            B. (1) and (2) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="zh-text"><strong>1. 貨幣供應與貨幣基礎的關係</strong></div>
+        <div class="en-text"><strong>The relationship between Money Supply and Monetary Base</strong></div>
+        <p>
+            <span class="zh-text">貨幣供應 \(M_s\) 是公眾持有的現金 \(C_p\) 加上存款 \(D\)。</span><br>
+            <span class="en-text">Money Supply \(M_s\) is cash held by public \(C_p\) plus deposits \(D\).</span>
+        </p>
+        <div class="math-block">$$ M_s = C_p + D $$</div>
+
+        <p>
+            <span class="zh-text">貨幣基礎 \(MB\) (或稱高能貨幣) 是公眾持有的現金 \(C_p\) 加上銀行儲備 \(R\)。</span><br>
+            <span class="en-text">Monetary Base \(MB\) (or High-powered Money) is cash held by public \(C_p\) plus reserves \(R\).</span>
+        </p>
+        <div class="math-block">$$ MB = C_p + R $$</div>
+
+        <div class="zh-text"><strong>2. 儲備的構成</strong></div>
+        <div class="en-text"><strong>Composition of Reserves</strong></div>
+        <p>
+            <span class="zh-text">實際儲備 \(R\) = 法定儲備 \(RR\) + 超額儲備 \(ER\)。</span><br>
+            <span class="en-text">Actual Reserves \(R\) = Required Reserves \(RR\) + Excess Reserves \(ER\).</span>
+        </p>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <span class="correct-option">Correct Option: D</span>
+
+        <div class="zh-text">在分析選項之前，我們必須先計算出隱藏的數值：存款 \(D\) 和 法定儲備比率 \(rrr\)。</div>
+        <div class="en-text">Before analyzing the options, we must first calculate the hidden values: Deposits \(D\) and Required Reserve Ratio \(rrr\).</div>
+
+        <div class="step-card">
+            <span class="step-title">Step 0: Preparation (準備工作)</span>
+            
+            <p><strong>Find Deposits (\(D\)):</strong></p>
+            $$ D = M_s - C_p = 95 - 15 = 80 $$
+            
+            <p><strong>Find Actual Reserves (\(R\)):</strong></p>
+            $$ R = D \times 25\% = 80 \times 0.25 = 20 $$
+
+            <p><strong>Find Required Reserves (\(RR\)):</strong></p>
+            $$ RR = R - ER = 20 - 4 = 16 $$
+
+            <p><strong>Find Required Reserve Ratio (\(rrr\)):</strong> <span style="color:red;">(Crucial Step!)</span></p>
+            $$ rrr = \frac{RR}{D} = \frac{16}{80} = 20\% $$
+        </div>
+
+        <div class="step-card">
+            <span class="step-title">Analysis of Statement (1)</span>
+            <div class="zh-text"><strong>「貨幣基礎是 35 百萬元。」</strong></div>
+            <div class="en-text"><strong>"The monetary base is $35 million."</strong></div>
+            
+            <p>
+                <span class="zh-text">貨幣基礎等於公眾持有現金加上實際儲備。</span><br>
+                <span class="en-text">Monetary Base equals cash held by public plus actual reserves.</span>
+            </p>
+            $$ MB = C_p + R = 15 + 20 = 35 $$
+            <p style="color: var(--success-color); font-weight: bold;">Statement (1) is CORRECT.</p>
+        </div>
+
+        <div class="step-card">
+            <span class="step-title">Analysis of Statement (2)</span>
+            <div class="zh-text"><strong>「最大銀行乘數是 5。」</strong></div>
+            <div class="en-text"><strong>"The maximum banking multiplier is 5."</strong></div>
+            
+            <p>
+                <span class="zh-text">最大銀行乘數取決於<strong>法定</strong>儲備比率，而不是實際儲備比率。</span><br>
+                <span class="en-text">The maximum banking multiplier depends on the <strong>required</strong> reserve ratio, not the actual reserve ratio.</span>
+            </p>
+            $$ \text{Max Multiplier} = \frac{1}{rrr} = \frac{1}{20\%} = 5 $$
+            <p style="color: var(--success-color); font-weight: bold;">Statement (2) is CORRECT.</p>
+        </div>
+
+        <div class="step-card">
+            <span class="step-title">Analysis of Statement (3)</span>
+            <div class="zh-text"><strong>「最大貨幣供應是 115 百萬元。」</strong></div>
+            <div class="en-text"><strong>"The maximum money supply is $115 million."</strong></div>
+            
+            <p>
+                <span class="zh-text">要達到最大貨幣供應，銀行會借出所有超額儲備，使實際儲備 \(R\) 全部變為法定儲備。</span><br>
+                <span class="en-text">To reach maximum money supply, banks lend out all excess reserves, so Actual Reserves \(R\) become fully Required Reserves.</span>
+            </p>
+            
+            <p><strong>Max Deposits (\(D_{max}\)):</strong></p>
+            $$ D_{max} = \frac{R}{rrr} = \frac{20}{20\%} = 100 $$
+            
+            <p><strong>Max Money Supply (\(M_{s,max}\)):</strong></p>
+            $$ M_{s,max} = C_p + D_{max} = 15 + 100 = 115 $$
+            <p style="color: var(--success-color); font-weight: bold;">Statement (3) is CORRECT.</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="pivot-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        
+        <h3>The Pivot Point (關鍵轉折點)</h3>
+        <p>
+            <span class="zh-text">這道題目的成敗關鍵在於計算 <strong>法定儲備比率 (rrr)</strong>。</span><br>
+            <span class="en-text">The pivot point of this question is calculating the <strong>Required Reserve Ratio (rrr)</strong>.</span>
+        </p>
+        <p>
+            <span class="zh-text">題目給了「實際儲備比率」(25%)，這是一個<strong>陷阱</strong>。你不能直接用 25% 來計算最大乘數。你必須先扣除超額儲備，算出真正的法定要求。</span><br>
+            <span class="en-text">The question gives the "Actual Reserve Ratio" (25%), which is a <strong>distractor</strong>. You cannot use 25% to calculate the max multiplier. You must deduct excess reserves first to find the true legal requirement.</span>
+        </p>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="trap-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>Mistake 1:</strong> 
+                <span class="zh-text">誤用實際儲備比率計算乘數。</span>
+                <span class="en-text">Using the Actual Reserve Ratio (25%) to calculate the multiplier.</span>
+                <br><em>Incorrect: \(1 / 0.25 = 4\).</em>
+            </li>
+            <li>
+                <strong>Mistake 2:</strong> 
+                <span class="zh-text">計算最大貨幣供應時忘記加上現金 \(C_p\)。</span>
+                <span class="en-text">Forgetting to add Cash \(C_p\) when calculating Max Money Supply.</span>
+                <br><em>Incorrect: Max \(M_s\) = Max Deposits = 100.</em>
+            </li>
+            <li>
+                <strong>Mistake 3:</strong> 
+                <span class="zh-text">混淆貨幣基礎與貨幣供應。</span>
+                <span class="en-text">Confusing Monetary Base with Money Supply.</span>
+                <br><em>Remember: Base = Cash + Reserves; Supply = Cash + Deposits.</em>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

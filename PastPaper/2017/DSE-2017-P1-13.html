@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Law of Demand & Relative Price</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --box-bg-concept: #eff6ff;
+            --box-border-concept: #3b82f6;
+            --box-bg-answer: #f0fdf4;
+            --box-border-answer: #22c55e;
+            --box-bg-trap: #fef2f2;
+            --box-border-trap: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--box-border-concept);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .answer-box {
+            background-color: var(--box-bg-answer);
+            border-left: 5px solid var(--box-border-answer);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trap-box {
+            background-color: var(--box-bg-trap);
+            border-left: 5px solid var(--box-border-trap);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .correct-badge {
+            display: inline-block;
+            background: var(--box-border-answer);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+            .meta-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <span class="meta-label">課題 Topic:</span>
+                <span>需求定律與相對價格 (Law of Demand & Relative Price)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">難度 Difficulty:</span>
+                <span class="stars">★★★★☆</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">關鍵概念 Key Concepts:</span>
+                <span>Alchian-Allen Effect, Relative Price, Per-unit Tax/Tariff</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h2>題目 The Question</h2>
+        <p class="bilingual-text">
+            下列哪項與需求定律<strong>並不相符</strong>？<br>
+            <span class="en-text">Which of the following is <strong>INCONSISTENT</strong> with the law of demand?</span>
+        </p>
+        
+        <div class="option">
+            <strong>A.</strong> 取消對成衣的從量進口關稅令進口成衣的質素上升。<br>
+            <span class="en-text">The abolishment of per unit import tariff on garment results in a rise in the quality of imported garments.</span>
+        </div>
+        <div class="option">
+            <strong>B.</strong> 與距離養魚場較遠的市場售出的冰鮮魚比較，在養魚場附近市場售出的活魚價格較高。<br>
+            <span class="en-text">Live fishes sold in a market near the fish farm have a higher price than frozen fishes sold in a faraway market.</span>
+        </div>
+        <div class="option">
+            <strong>C.</strong> 當政府對白酒開徵從價稅，高檔白酒售出量相對於白酒總售出量的比率維持不變。<br>
+            <span class="en-text">The ratio of high-quality white wine sold to total white wine sold remains unchanged when the government imposes an ad valorem tax on white wine.</span>
+        </div>
+        <div class="option">
+            <strong>D.</strong> 發展商傾向在一幅擁有良好景觀的地皮上興建較優質的住宅。<br>
+            <span class="en-text">Developers tend to build higher-quality housing units on a piece of land with a good view.</span>
+        </div>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h2>概念重溫 Concept Review</h2>
+        
+        <div class="bilingual-text">
+            此題的核心概念是<strong>相對價格 (Relative Price)</strong> 對需求量的影響，這通常被稱為「艾智仁－艾倫效應」(Alchian-Allen Effect)。<br>
+            <span class="en-text">The core concept here is the effect of <strong>Relative Price</strong> on quantity demanded, often referred to as the "Alchian-Allen Effect".</span>
+        </div>
+
+        <h3>1. 相對價格公式 (Formula of Relative Price)</h3>
+        <div class="math-block">
+            $$ \text{相對價格 (Relative Price)} = \frac{P_{\text{高質素 (High Quality)}}}{P_{\text{低質素 (Low Quality)}}} $$
+        </div>
+
+        <h3>2. 固定收費/從量稅的影響 (Effect of Fixed Charge / Per-unit Tax)</h3>
+        <div class="bilingual-text">
+            當高質素和低質素的產品同時加上一個<strong>相同的固定金額</strong>（如運費、從量稅）時，高質素產品的相對價格會<strong>下降</strong>。<br>
+            <span class="en-text">When a <strong>fixed amount</strong> (like transportation cost or per-unit tax) is added to both high-quality and low-quality products, the relative price of the high-quality product <strong>decreases</strong>.</span>
+        </div>
+        <div class="math-block">
+            $$ \frac{P_H + T}{P_L + T} < \frac{P_H}{P_L} \quad (\text{其中 } P_H > P_L) $$
+        </div>
+        <div class="bilingual-text">
+            結果：人們會傾向購買更多高質素產品（「買貴價貨」現象）。<br>
+            <span class="en-text">Result: People tend to buy more high-quality products.</span>
+        </div>
+
+        <h3>3. 從價稅的影響 (Effect of Ad Valorem Tax)</h3>
+        <div class="bilingual-text">
+            如果徵收的是<strong>從價稅</strong>（例如收取價格的 10%），兩者的價格會按相同比例上升，相對價格<strong>維持不變</strong>。<br>
+            <span class="en-text">If an <strong>ad valorem tax</strong> is imposed (e.g., 10% of the price), both prices rise by the same proportion, so the relative price <strong>remains unchanged</strong>.</span>
+        </div>
+        <div class="math-block">
+            $$ \frac{P_H (1+t)}{P_L (1+t)} = \frac{P_H}{P_L} $$
+        </div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="answer-box">
+        <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+        <div class="correct-badge">正確答案 Correct Option: A</div>
+
+        <div class="bilingual-text">
+            <strong>題目要求：</strong>找出與需求定律（具體來說是相對價格理論）<strong>不相符</strong>的選項。<br>
+            <span class="en-text"><strong>Requirement:</strong> Find the option that is <strong>INCONSISTENT</strong> with the law of demand (specifically relative price theory).</span>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 20px 0;">
+
+        <h3>選項 A 分析 (Option A Analysis) - <span style="color:red">不相符 Inconsistent</span></h3>
+        <div class="bilingual-text">
+            <strong>情境：</strong>取消從量關稅 (Abolishment of per unit tariff)。<br>
+            <strong>理論推導：</strong>加上從量稅會令高質素產品相對便宜（相對價格下降），導致質素上升。相反，<strong>取消</strong>從量稅即是減去一個固定金額 \(T\)。<br>
+            $$ \frac{P_H - T}{P_L - T} > \frac{P_H}{P_L} $$
+            取消關稅後，高質素成衣的相對價格會<strong>上升</strong>。根據需求定律，人們應減少購買高質素成衣，導致進口成衣的平均質素<strong>下降</strong>。<br>
+            <strong>結論：</strong>選項 A 聲稱質素上升，這與理論預測相反，因此是<strong>不相符</strong>的。<br>
+            
+            <span class="en-text"><strong>Scenario:</strong> Abolishment of per unit tariff.<br>
+            <strong>Theoretical Deduction:</strong> Adding a per unit tax makes high-quality goods relatively cheaper, increasing average quality. Conversely, <strong>removing</strong> the tax means subtracting a fixed amount \(T\).<br>
+            After removing the tariff, the relative price of high-quality garments <strong>increases</strong>. According to the law of demand, people should buy fewer high-quality garments, leading to a <strong>drop</strong> in average quality.<br>
+            <strong>Conclusion:</strong> Option A claims quality rises, which contradicts the theory. Thus, it is <strong>INCONSISTENT</strong>.</span>
+        </div>
+
+        <h3>選項 B 分析 (Option B Analysis) - <span style="color:green">無關 Irrelevant / 混淆視聽 Distractor</span></h3>
+        <div class="bilingual-text">
+            這選項比較的是「養魚場附近的活魚」與「遠處的冰鮮魚」。這兩者並非同一種商品在不同市場的比較，而且涉及運輸導致的產品性質改變（活魚變冰鮮）。這更像是供應成本或產品質素的差異，而非單純的相對價格需求分析。即使它描述了一個現象，它並沒有直接違反需求定律，但也不是本題考核相對價格效應的最佳例子。不過，由於我們要找「明顯違反」的，A 選項在邏輯上是完全錯誤的，而 B 只是描述事實。<br>
+            <span class="en-text">This compares "live fish near farm" vs "frozen fish far away". These are different products. While it describes a market phenomenon, it doesn't directly test the Alchian-Allen effect regarding relative prices of the <em>same</em> good categories. However, since we are looking for a direct violation, A is logically the opposite of the law, making B a distractor.</span>
+        </div>
+
+        <h3>選項 C 分析 (Option C Analysis) - <span style="color:green">相符 Consistent</span></h3>
+        <div class="bilingual-text">
+            <strong>情境：</strong>開徵從價稅 (Imposing ad valorem tax)。<br>
+            <strong>理論推導：</strong>如概念重溫所述，從價稅不會改變相對價格。因此，高檔白酒與普通白酒的銷售比例應該維持不變。<br>
+            <strong>結論：</strong>這與需求定律相符。<br>
+            
+            <span class="en-text"><strong>Scenario:</strong> Imposing ad valorem tax.<br>
+            <strong>Theoretical Deduction:</strong> As mentioned in the concept review, ad valorem tax does not change relative price. Thus, the ratio of sales should remain unchanged.<br>
+            <strong>Conclusion:</strong> This is consistent with the law of demand.</span>
+        </div>
+
+        <h3>選項 D 分析 (Option D Analysis) - <span style="color:green">相符 Consistent</span></h3>
+        <div class="bilingual-text">
+            <strong>情境：</strong>地價是固定成本 (Land cost is a fixed cost)。<br>
+            <strong>理論推導：</strong>地價（尤其是景觀好的地皮）對於建築成本來說是一個巨大的固定成本 (Fixed Cost)。假設建築成本（優質 vs 普通）差異不大，加上昂貴的地價後：<br>
+            $$ \frac{\text{優質建築費} + \text{高地價}}{\text{普通建築費} + \text{高地價}} < \frac{\text{優質建築費}}{\text{普通建築費}} $$
+            高地價降低了優質住宅的相對價格。因此，發展商在貴地皮上建豪宅更划算。<br>
+            <strong>結論：</strong>這與需求定律（艾智仁－艾倫效應）相符。<br>
+            
+            <span class="en-text"><strong>Scenario:</strong> Land cost is a fixed cost.<br>
+            <strong>Theoretical Deduction:</strong> High land cost acts as a large fixed cost. Adding this fixed cost to the construction cost reduces the relative price of building high-quality units compared to low-quality ones.<br>
+            <strong>Conclusion:</strong> This is consistent with the law of demand (Alchian-Allen effect).</span>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="concept-box" style="background-color: #fff7ed; border-left-color: #f97316;">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <div class="bilingual-text">
+            這類題目的<strong>關鍵點 (Pivot Point)</strong> 在於分辨「固定金額」(Fixed Amount) 還是「比例金額」(Percentage)。<br>
+            <span class="en-text">The <strong>Pivot Point</strong> of this question is distinguishing between a "Fixed Amount" and a "Percentage".</span>
+        </div>
+        
+        <ul>
+            <li>
+                <strong>加上固定金額 (Adding Fixed Cost):</strong> 相對價格下降 \(\rightarrow\) 質素上升。<br>
+                <span class="en-text">Relative price drops \(\rightarrow\) Quality rises. (e.g., Option D, Export goods)</span>
+            </li>
+            <li>
+                <strong>減去固定金額 (Removing Fixed Cost):</strong> 相對價格上升 \(\rightarrow\) 質素下降。<br>
+                <span class="en-text">Relative price rises \(\rightarrow\) Quality drops. (e.g., Option A)</span>
+            </li>
+            <li>
+                <strong>從價稅 (Ad Valorem Tax):</strong> 相對價格不變 \(\rightarrow\) 質素組合不變。<br>
+                <span class="en-text">Relative price unchanged \(\rightarrow\) Quality mix unchanged. (e.g., Option C)</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="trap-box">
+        <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        
+        <div class="bilingual-text">
+            <strong>1. 忽略「取消」二字 (Ignoring the word "Abolishment")</strong><br>
+            學生常背誦「有運費/關稅 \(\rightarrow\) 買貴價貨」。看到選項 A 提及關稅，就直覺認為質素會上升，卻忽略了題目說是<strong>取消 (Abolishment)</strong> 關稅。取消關稅的效果與徵收關稅剛好相反。<br>
+            <span class="en-text">Students often memorize "Transport cost/Tariff \(\rightarrow\) Buy expensive goods". Seeing Option A mentions tariff, they assume quality rises, ignoring the word <strong>"Abolishment"</strong>. Removing a tariff has the opposite effect of imposing one.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>2. 混淆從量稅與從價稅 (Confusing Per-unit vs. Ad Valorem Tax)</strong><br>
+            必須清楚區分：從量稅 (Per unit) 改變相對價格；從價稅 (Ad Valorem / Percentage) 不改變相對價格。<br>
+            <span class="en-text">Must distinguish: Per unit tax changes relative price; Ad Valorem tax does not.</span>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

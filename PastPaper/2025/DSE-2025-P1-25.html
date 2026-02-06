@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - GDP & Living Standards</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .formula-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 30px;
+        }
+
+        .correct-tag {
+            color: var(--correct-green);
+            font-weight: bold;
+        }
+
+        .wrong-tag {
+            color: var(--wrong-red);
+            font-weight: bold;
+        }
+
+        /* Bilingual Text Styling */
+        .zh-text {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Tricks & Traps */
+        .trap-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .trick-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .meta-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: National Income Accounting (國民收入會計)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Concepts: Real GDP, Living Standard, Non-marketed Goods</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh-text">當某國的人均實質本地生產總值下降時，若 ___________，該國的一般生活水平仍可能提升。</p>
+            <p class="en-text">When the per capita real gross domestic product (GDP) of a country decreases, the general living standard of the country may still improve if ___________.</p>
+            
+            <div style="margin-left: 20px; margin-bottom: 15px;">
+                <div class="zh-text">(1) 該國有更多非市場物品</div>
+                <div class="en-text">(1) there are more non-marketed goods in the country</div>
+                
+                <div class="zh-text">(2) 該國居民的工作時間增加</div>
+                <div class="en-text">(2) the working hours of the country's residents increases</div>
+                
+                <div class="zh-text">(3) 該國的一般物價水平下降</div>
+                <div class="en-text">(3) the general price level of the country decreases</div>
+            </div>
+
+            <ul class="options-list">
+                <li>A. <span class="zh-text">只有 (1)</span> <span class="en-text">(1) only</span></li>
+                <li>B. <span class="zh-text">只有 (2)</span> <span class="en-text">(2) only</span></li>
+                <li>C. <span class="zh-text">只有 (1)、(3)</span> <span class="en-text">(1) and (3) only</span></li>
+                <li>D. <span class="zh-text">只有 (2)、(3)</span> <span class="en-text">(2) and (3) only</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <strong class="zh-text">1. 人均實質 GDP 的限制 (Limitations of Per Capita Real GDP)</strong>
+            <span class="en-text">GDP is often used as a proxy for living standards, but it has limitations. It measures production, not welfare.</span>
+            <p>
+                <span class="zh-text">GDP 統計數字忽略了以下因素，導致它可能低估或高估生活水平：</span>
+                <span class="en-text">GDP statistics ignore the following factors, causing it to potentially underestimate or overestimate living standards:</span>
+            </p>
+            <ul>
+                <li><span class="zh-text"><strong>非市場交易 (Non-marketed goods):</strong> 如家庭主婦的服務、自給自足的生產。這些物品有價值但未計入 GDP。</span><span class="en-text">E.g., services of housewives, self-consumption. These have value but are not counted in GDP.</span></li>
+                <li><span class="zh-text"><strong>閒暇 (Leisure):</strong> 閒暇增加能提升生活素質，但 GDP 不會反映，甚至可能因工時減少導致 GDP 下降。</span><span class="en-text">More leisure improves quality of life, but GDP doesn't reflect this; reduced working hours might even lower GDP.</span></li>
+                <li><span class="zh-text"><strong>環境質素 (Environmental Quality):</strong> 污染會降低生活水平，但可能伴隨高 GDP。</span><span class="en-text">Pollution lowers living standards but often accompanies high GDP.</span></li>
+            </ul>
+        </div>
+
+        <div class="concept-box">
+            <strong class="zh-text">2. 實質 GDP 與物價水平 (Real GDP & Price Level)</strong>
+            <div class="formula-block">
+                $$ \text{Real GDP} = \frac{\text{Nominal GDP}}{\text{GDP Deflator}} \times 100 $$
+            </div>
+            <p>
+                <span class="zh-text"><strong>關鍵概念：</strong>「實質 GDP」已經剔除了物價變動的影響。</span>
+                <span class="en-text"><strong>Key Concept:</strong> "Real GDP" has already adjusted for price level changes.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="background-color: #d1fae5; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+            <h3 style="margin:0; color: #065f46;">Correct Option: A</h3>
+        </div>
+
+        <div class="analysis-item">
+            <strong class="zh-text">選項 (1)：該國有更多非市場物品</strong>
+            <strong class="en-text">Option (1): There are more non-marketed goods in the country</strong>
+            <p>
+                <span class="zh-text"><span class="correct-tag">正確 (Correct)。</span>非市場物品（如自願服務、家庭內部的生產）雖然沒有市場價格，不被計入 GDP，但它們確實能滿足人們的慾望，提升生活素質。如果這些物品增加，即使官方統計的「人均實質 GDP」下降，實際的生活水平可能因為這些未被統計的物品而上升（即 GDP 低估了生活水平）。</span>
+            </p>
+            <p class="en-text">Non-marketed goods (like volunteer services, household production) do not have market prices and are not counted in GDP, but they satisfy wants and improve the quality of life. If these goods increase, the actual living standard may rise even if the official "per capita Real GDP" falls (meaning GDP underestimates the living standard).</p>
+        </div>
+
+        <div class="analysis-item">
+            <strong class="zh-text">選項 (2)：該國居民的工作時間增加</strong>
+            <strong class="en-text">Option (2): The working hours of the country's residents increases</strong>
+            <p>
+                <span class="zh-text"><span class="wrong-tag">錯誤 (Incorrect)。</span>工作時間增加意味著「閒暇」(Leisure) 減少。閒暇是美好事物（Good），閒暇減少會降低生活水平。如果人們為了維持產出而被迫工作更長時間，生活素質通常是變差的。</span>
+            </p>
+            <p class="en-text">An increase in working hours means a decrease in "leisure". Leisure is a good; less leisure reduces the standard of living. If people work longer hours, their quality of life generally deteriorates.</p>
+        </div>
+
+        <div class="analysis-item">
+            <strong class="zh-text">選項 (3)：該國的一般物價水平下降</strong>
+            <strong class="en-text">Option (3): The general price level of the country decreases</strong>
+            <p>
+                <span class="zh-text"><span class="wrong-tag">錯誤 (Incorrect)。</span>這是一個常見陷阱。題目已經說明是「實質」(Real) GDP 下降。實質變數已經扣除了物價變動的影響。物價下降會影響「名義」(Nominal) GDP 與「實質」GDP 之間的換算，但既然題目已鎖定「實質 GDP」數值下降，這代表經通脹調整後的購買力已經下降了。物價變動本身不解釋為何「實質產出下降但生活變好」。</span>
+            </p>
+            <p class="en-text">This is a common trap. The question specifies that "Real" GDP decreases. Real variables have already adjusted for price changes. A decrease in price level affects the conversion between Nominal and Real GDP, but since "Real GDP" is already stated to have fallen, it means purchasing power (adjusted for inflation) has dropped. Price changes alone do not explain why "living standards rise despite falling real output."</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>
+            <span class="zh-text">這類題目的核心在於找出導致 <strong>GDP 數據與真實福利 (Welfare) 脫節</strong> 的因素。</span>
+            <span class="en-text">The core of this type of question is to identify factors that cause a <strong>discrepancy between GDP data and actual welfare</strong>.</span>
+        </p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+            <div style="flex: 1; min-width: 250px; background: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+                <h4 style="margin-top:0;">Pivot Point (解題關鍵)</h4>
+                <p class="zh-text">尋找 GDP <strong>遺漏</strong>計算，但對人類有益的事物。</p>
+                <p class="en-text">Look for things that GDP <strong>omits</strong> but are beneficial to humans.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; background: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+                <h4 style="margin-top:0;">Logic Flow (邏輯流)</h4>
+                <ol>
+                    <li><span class="zh-text">實質 GDP 下降 \(\rightarrow\) 市場生產的物品減少。</span></li>
+                    <li><span class="zh-text">要生活水平上升 \(\rightarrow\) 必須有「非市場」的得益補償了市場產出的損失。</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="section">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="trap-box">
+            <h3 style="margin-top: 0; color: var(--wrong-red);">Trap: Real vs. Nominal (實質與名義的混淆)</h3>
+            <p>
+                <span class="zh-text"><strong>誤區：</strong> 學生常以為物價下降能讓錢「更好用」，所以生活水平上升。</span>
+                <span class="en-text"><strong>Misconception:</strong> Students often think falling prices make money "worth more," so living standards rise.</span>
+            </p>
+            <p>
+                <span class="zh-text"><strong>真相：</strong> 題目講的是「實質 GDP」。實質 GDP 已經是用基年價格計算的，物價變動已被剔除。如果實質 GDP 跌了，代表實際生產的數量（Quantity）真的少了。</span>
+                <span class="en-text"><strong>Reality:</strong> The question refers to "Real GDP". Real GDP is calculated using base year prices, so price changes are already accounted for. If Real GDP falls, the actual quantity of production has truly decreased.</span>
+            </p>
+        </div>
+
+        <div class="trap-box">
+            <h3 style="margin-top: 0; color: var(--wrong-red);">Trap: Working Hours (工時的誤解)</h3>
+            <p>
+                <span class="zh-text"><strong>誤區：</strong> 以為工時長 \(\rightarrow\) 產出多 \(\rightarrow\) 生活好。</span>
+                <span class="en-text"><strong>Misconception:</strong> Thinking longer hours \(\rightarrow\) more output \(\rightarrow\) better life.</span>
+            </p>
+            <p>
+                <span class="zh-text"><strong>真相：</strong> 產出多已經會反映在 GDP 數字上。但題目設定 GDP 已經下降了。如果 GDP 下降的同時還要增加工時（犧牲閒暇），那是雙重打擊（產出少且更辛苦），生活水平肯定下降。</span>
+                <span class="en-text"><strong>Reality:</strong> Higher output would be reflected in the GDP figures. But the question states GDP has decreased. If GDP falls while working hours increase (sacrificing leisure), it's a double blow (less output AND harder work), so living standards definitely fall.</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

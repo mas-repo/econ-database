@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Externalities & Efficiency</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .concept-box {
+            background-color: #f0f9ff; /* Light blue */
+            border-left: 5px solid #0ea5e9;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid #e2e8f0;
+        }
+        .option-box {
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: white;
+            transition: all 0.2s;
+        }
+        .option-box:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .correct-answer {
+            background-color: #dcfce7; /* Light green */
+            border-color: #22c55e;
+            color: #14532d;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .keyword-tag {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        h2 {
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .bilingual-split {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-4xl mx-auto">
+
+    <!-- 1. Header -->
+    <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="bg-blue-600 text-white px-3 py-1 rounded text-sm font-bold">HKDSE Economics</span>
+            <span class="text-yellow-500 text-lg">★★★☆☆ (Level 3)</span>
+        </div>
+        <h1 class="text-3xl font-bold text-slate-900 mb-4">市場干預與外部性 (Market Intervention & Externalities)</h1>
+        <div class="flex flex-wrap gap-2">
+            <span class="keyword-tag">負界外效應 (Negative Externality)</span>
+            <span class="keyword-tag">社會成本 (Social Cost)</span>
+            <span class="keyword-tag">無謂損失 (Deadweight Loss)</span>
+            <span class="keyword-tag">經濟效率 (Economic Efficiency)</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 mb-8">
+        <h2 class="text-xl font-bold mt-0">題目 (Question)</h2>
+        
+        <div class="mb-6 bilingual-split">
+            <p class="font-medium">近年，越來越多人在公共交通工具上用智能電話大聲地播放影片，對其他乘客造成滋擾。</p>
+            <p class="en-text">In recent years, more and more people play videos loudly with their smartphones on public transport, disturbing other passengers.</p>
+        </div>
+
+        <div class="mb-6 bilingual-split">
+            <p class="font-medium">根據上述資料，下列哪些陳述是正確的？</p>
+            <p class="en-text">Based on the above information, which of the following statements are correct?</p>
+        </div>
+
+        <div class="space-y-4 ml-4">
+            <div class="bilingual-split">
+                <p>(1) 假如政府禁止在公共交通工具上用智能電話大聲地播放影片，總社會盈餘可能會下降。</p>
+                <p class="en-text">(1) Total social surplus may decrease if playing videos loudly with smartphones on public transport is banned by the government.</p>
+            </div>
+            <div class="bilingual-split">
+                <p>(2) 假如公共交通服務的供應者在其交通工具上設立靜音區，不准乘客在靜音區內用智能電話大聲地播放影片，經濟效率可能會有所改善。</p>
+                <p class="en-text">(2) Economic efficiency may improve if suppliers of public transportation services designate quiet zones in their vehicles where passengers are not allowed to play videos loudly with their smartphones.</p>
+            </div>
+            <div class="bilingual-split">
+                <p>(3) 假如在公共交通工具上用智能電話大聲地播放影片會被罰款，私人成本與社會成本的分歧可能會下降。</p>
+                <p class="en-text">(3) The divergence between private and social costs may decrease if people playing videos loudly with their smartphones on public transport are fined.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 font-semibold">
+            <div class="p-2 bg-slate-50 rounded">A. 只有 (1)、(2) <span class="block text-sm font-normal text-gray-500">(1) and (2) only</span></div>
+            <div class="p-2 bg-slate-50 rounded">B. 只有 (1)、(3) <span class="block text-sm font-normal text-gray-500">(1) and (3) only</span></div>
+            <div class="p-2 bg-slate-50 rounded">C. 只有 (2)、(3) <span class="block text-sm font-normal text-gray-500">(2) and (3) only</span></div>
+            <div class="p-2 bg-slate-50 rounded">D. (1)、(2) 及 (3) <span class="block text-sm font-normal text-gray-500">(1), (2) and (3)</span></div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h3 class="text-xl font-bold text-blue-800 mb-3">概念重溫 (Concept Review)</h3>
+        
+        <div class="mb-4">
+            <h4 class="font-bold text-blue-700">1. 負生產/消費界外效應 (Negative Externality)</h4>
+            <p>當個人的行為對第三方造成負面影響，而該個人無需為此賠償時，便會出現負界外效應。在本題中，乘客大聲播放影片對他人造成滋擾，這是一種<strong>負消費界外效應 (Negative Consumption Externality)</strong>。</p>
+            <p class="en-text mt-1">A negative externality occurs when an individual's action imposes a cost on a third party without compensation. In this question, passengers playing loud videos disturb others, representing a <strong>Negative Consumption Externality</strong>.</p>
+        </div>
+
+        <div class="math-block">
+            <p class="font-mono text-sm mb-2"><strong>關鍵公式 (Key Formulas):</strong></p>
+            $$ MSC = MPC + MEC $$
+            $$ MSB = MPB + MEB $$
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>\(MSC\): 邊際社會成本 (Marginal Social Cost)</li>
+                <li>\(MPC\): 邊際私人成本 (Marginal Private Cost)</li>
+                <li>\(MEC\): 邊際界外成本 (Marginal External Cost) - 即滋擾 (The disturbance)</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4 class="font-bold text-blue-700">2. 市場失效與效率 (Market Failure & Efficiency)</h4>
+            <p>在沒有干預的情況下，個人只考慮 \(MPC\) 而忽略 \(MEC\)，導致過度消費 (\(Q_{actual} > Q_{efficient}\))，產生<strong>無謂損失 (Deadweight Loss)</strong>。</p>
+            <p class="en-text mt-1">Without intervention, individuals only consider \(MPC\) and ignore \(MEC\), leading to over-consumption (\(Q_{actual} > Q_{efficient}\)) and creating <strong>Deadweight Loss</strong>.</p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2 class="text-2xl font-bold">答案與詳細分析 (Answer & Analysis)</h2>
+        
+        <div class="correct-answer">
+            正確答案：選項 D (Correct Option: D)
+        </div>
+
+        <div class="space-y-6">
+            <!-- Analysis (1) -->
+            <div class="option-box border-l-4 border-l-green-500">
+                <h4 class="font-bold text-lg mb-2">分析陳述 (1): 正確 (Correct)</h4>
+                <p class="mb-2"><strong>「假如政府禁止...總社會盈餘可能會下降。」</strong></p>
+                <p>雖然大聲播放影片有界外成本，但這並不代表「最優數量 (Optimal Quantity)」一定是零。如果播放者從中獲得的邊際利益極大，大於其造成的滋擾成本，那麼完全禁止（將數量強制降為 0）可能會導致<strong>消費不足 (Under-consumption)</strong>。這會消除原本存在的潛在社會盈餘，導致總社會盈餘下降。</p>
+                <p class="en-text border-t pt-2 mt-2"><strong>"Total social surplus may decrease if... banned..."</strong><br>
+                Although loud videos create external costs, the "Optimal Quantity" is not necessarily zero. If the marginal benefit to the user is extremely high (exceeding the disturbance cost), a total ban (forcing quantity to 0) causes <strong>under-consumption</strong>. This eliminates potential social surplus, causing total social surplus to decrease.</p>
+            </div>
+
+            <!-- Analysis (2) -->
+            <div class="option-box border-l-4 border-l-green-500">
+                <h4 class="font-bold text-lg mb-2">分析陳述 (2): 正確 (Correct)</h4>
+                <p class="mb-2"><strong>「設立靜音區...經濟效率可能會有所改善。」</strong></p>
+                <p>這是一種界定產權 (Defining Property Rights) 或市場分割的方法。通過設立靜音區，供應商將乘客分流。想安靜的乘客去靜音區，想喧嘩的去非靜音區。這減少了雙方的衝突（減少了界外成本），使得資源配置更符合乘客的偏好，從而提升經濟效率。</p>
+                <p class="en-text border-t pt-2 mt-2"><strong>"Designate quiet zones... efficiency may improve."</strong><br>
+                This is a method of defining property rights or market segmentation. By creating quiet zones, suppliers segregate passengers. Those wanting silence go to the quiet zone; others go elsewhere. This reduces conflict (lowers external costs) and allocates resources better according to preferences, improving economic efficiency.</p>
+            </div>
+
+            <!-- Analysis (3) -->
+            <div class="option-box border-l-4 border-l-green-500">
+                <h4 class="font-bold text-lg mb-2">分析陳述 (3): 正確 (Correct)</h4>
+                <p class="mb-2"><strong>「罰款...私人成本與社會成本的分歧可能會下降。」</strong></p>
+                <p>罰款是一種將外部性內部化 (Internalizing Externality) 的手段。原本播放者的私人成本 (\(MPC\)) 很低。罰款令 \(MPC\) 上升（\(MPC_{new} = MPC + \text{Fine}\)）。這使得私人成本更接近社會成本 (\(MSC\))，兩者之間的差距（分歧）因此縮小。</p>
+                <p class="en-text border-t pt-2 mt-2"><strong>"Fined... divergence between private and social costs may decrease."</strong><br>
+                Fines are a way to internalize externalities. Originally, the user's \(MPC\) is low. The fine increases the \(MPC\) (\(MPC_{new} = MPC + \text{Fine}\)). This moves the private cost closer to the social cost (\(MSC\)), thereby reducing the divergence (gap) between them.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="mt-8">
+        <h2 class="text-xl font-bold">題目拆解 (Problem Decomposition)</h2>
+        <div class="bg-white p-5 rounded shadow-sm">
+            <h3 class="font-bold text-indigo-600 mb-2">解題關鍵點 (Pivot Point)</h3>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>
+                    <strong>關鍵詞「可能 (May)」：</strong> 題目中的三個選項都使用了「可能」一詞。在經濟學MC中，這通常意味著只要存在一種合理的情況支持該陳述，該陳述即為正確。
+                    <br><span class="en-text text-sm"><strong>Keyword "May":</strong> All options use "may". In Econ MC, this implies if there is at least one logical scenario supporting the statement, it is correct.</span>
+                </li>
+                <li>
+                    <strong>完全禁止 vs 最優數量：</strong> 學生必須明白，消除界外效應（零污染/零噪音）並不等於達到經濟效率。效率要求 \(MSB = MSC\)，而不是 \(Q=0\)。
+                    <br><span class="en-text text-sm"><strong>Total Ban vs. Optimal Quantity:</strong> Eliminating externalities (zero pollution/noise) is not the same as efficiency. Efficiency requires \(MSB = MSC\), not \(Q=0\).</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="mt-8">
+        <h2 class="text-xl font-bold text-red-600">常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-red-50 p-4 rounded border border-red-200">
+                <h4 class="font-bold text-red-800 mb-2">誤解 1：界外效應必定要完全消除</h4>
+                <p class="text-sm">很多同學認為只要有噪音就是無效率，所以禁止（數量變為0）一定好。這是錯的。如果聽音樂帶來的快樂大於對他人的滋擾，完全禁止反而是無效率。</p>
+                <p class="en-text text-xs mt-2"><strong>Misconception 1:</strong> Externalities must be eliminated completely. Students often think any noise is inefficient, so a ban is always good. This is wrong. If the joy of music exceeds the disturbance, a ban is inefficient.</p>
+            </div>
+            <div class="bg-red-50 p-4 rounded border border-red-200">
+                <h4 class="font-bold text-red-800 mb-2">誤解 2：混淆「分歧」與「總成本」</h4>
+                <p class="text-sm">選項 (3) 提到「分歧 (Divergence)」下降。分歧是指 \(MSC - MPC\) 的垂直距離。罰款令 \(MPC\) 增加，使其向上移動靠近 \(MSC\)，所以分歧減少。</p>
+                <p class="en-text text-xs mt-2"><strong>Misconception 2:</strong> Confusing "Divergence" with "Total Cost". Option (3) mentions divergence decreases. Divergence is the vertical gap \(MSC - MPC\). A fine raises \(MPC\) closer to \(MSC\), reducing the gap.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section class="mt-8 mb-12">
+        <h2 class="text-xl font-bold text-amber-600">考試技巧 (Exam Tricks)</h2>
+        <div class="bg-amber-50 p-4 rounded border border-amber-200">
+            <p class="font-medium">💡 技巧：注意極端字眼與溫和字眼 (Watch for Extreme vs. Moderate Words)</p>
+            <p class="mt-2">
+                當題目出現「禁止 (Ban)」這種極端措施時，通常會伴隨效率損失的風險（除非該活動百害而無一利）。而「罰款 (Fine)」或「產權界定 (Quiet Zones)」通常是經濟學推崇的解決方案，往往能改善效率。
+            </p>
+            <p class="en-text mt-2">
+                When "Ban" appears, it often risks efficiency loss (unless the activity is purely harmful). "Fines" or "Defining Rights (Quiet Zones)" are usually preferred economic solutions that tend to improve efficiency.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>

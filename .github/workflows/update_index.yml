@@ -1,0 +1,101 @@
+name: Update Index and Protect Files
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'PastPaper/**/*.html'
+      - 'PastPaper/generate_index.py'
+      - 'PastPaper/protect.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # === 1. Notify Google Sheets (Optional) ===
+      - name: Notify Google Sheets for Changed Files
+        env:
+          GAS_URL: "https://script.google.com/macros/s/AKfycby2ekiIw6zSJoCEQTo1XskkKVmO84IqZ4rsZHWi7kxWoSl1uXk59XqIXblddHlbvmap/exec"
+          SECRET_KEY: ${{ secrets.ACTION_KEY }}
+        run: |
+          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep "PastPaper/.*\.html" || true)
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No HTML files changed in the user commit."
+          else
+            echo "Found changed files:"
+            echo "$CHANGED_FILES"
+
+            for file in $CHANGED_FILES; do
+              filename=$(basename "$file")
+              uniqueId="${filename%.*}"
+              if [ "$uniqueId" == "index" ]; then continue; fi
+
+              echo "Updating Sheet for ID: $uniqueId"
+              if [ -n "${SECRET_KEY}" ]; then
+                  curl -s -L -G "${GAS_URL}" \
+                    --data-urlencode "action=update_deploy_status" \
+                    --data-urlencode "secret=${SECRET_KEY}" \
+                    --data-urlencode "uniqueId=${uniqueId}"
+              fi
+            done
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # === 2. Run generation script ===
+      - name: Run generation script
+        run: python PastPaper/generate_index.py
+
+      # === 3. Inject Protection into ALL HTML Files ===
+      - name: Inject Protection Script
+        working-directory: ./PastPaper
+        run: |
+          PROTECT_JS="/econ-database/PastPaper/protect.js"
+          SCRIPT_TAG="<script src=\"$PROTECT_JS\"></script>"
+          
+          echo "Starting injection process..."
+
+          if [ -d "." ]; then
+            find . -type f -name "*.html" | while read file; do
+              # Skip index.html itself
+              if [[ "$file" == *"index.html"* ]]; then continue; fi
+
+              if grep -Fq "/econ-database/PastPaper/protect.js" "$file"; then
+                echo "Skipping: $file (Already protected)"
+              else
+                echo "Protecting: $file"
+                
+                # Cleanup old relative links
+                sed -i 's|<script src="econ-database/PastPaper/protect.js"></script>||g' "$file"
+
+                # Inject after <head>
+                if grep -q "<head>" "$file"; then
+                  sed -i "s|<head>|<head>$SCRIPT_TAG|i" "$file"
+                else
+                  sed -i "1i $SCRIPT_TAG" "$file"
+                fi
+              fi
+            done
+          fi
+
+      # === 4. Commit and Push ALL changes ===
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-generate index and protect files"
+          # UPDATED: Changed pattern to catch files in root PastPaper folder AND subfolders
+          file_pattern: "PastPaper/**"

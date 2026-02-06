@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Producer Surplus Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-concept: #f0f9ff; /* Light Blue */
+            --bg-math: #f3f4f6; /* Light Gray */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --correct-bg: #dcfce7; /* Light Green */
+            --wrong-bg: #fee2e2; /* Light Red */
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 0;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f3f4f6;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--bg-concept);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: "Times New Roman", serif;
+        }
+
+        /* Answer Analysis */
+        .option-analysis {
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .correct-option {
+            background-color: var(--correct-bg);
+            border-color: #86efac;
+        }
+
+        .wrong-option {
+            background-color: var(--wrong-bg);
+            border-color: #fca5a5;
+        }
+
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Tricks & Traps */
+        .trap-box {
+            background-color: #fff7ed; /* Light Orange */
+            border: 1px solid #fdba74;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .trick-box {
+            background-color: #f0fdf4; /* Light Green */
+            border: 1px solid #86efac;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Bilingual Text */
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis / 經濟科試題分析</h1>
+        <div class="meta-info">
+            <span><strong>Topic:</strong> Firms & Production / 廠商與生產</span>
+            <span><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+            <span><strong>Key Concepts:</strong> Producer Surplus, Marginal Cost, Profit Maximization</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p>下表顯示某受價者廠商的生產成本。</p>
+            <p class="en-text">The table below shows the production costs of a price-taking firm.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>總產出 (單位)<br><span class="en-text">Total output (units)</span></th>
+                            <th>平均成本 ($)<br><span class="en-text">Average cost ($)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>20</td></tr>
+                        <tr><td>2</td><td>25</td></tr>
+                        <tr><td>3</td><td>30</td></tr>
+                        <tr><td>4</td><td>35</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>假設該廠商的固定成本是$5，而產品價格是$30。該廠商最大的生產者盈餘是 _____________。</p>
+            <p class="en-text">Suppose the fixed cost of the firm is $5 and the product price is $30. The firm’s maximum producer surplus is _____________.</p>
+
+            <ul style="list-style-type: none; padding: 0;">
+                <li>A. $0</li>
+                <li>B. $5</li>
+                <li>C. $10</li>
+                <li>D. $15</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Concept Review Section -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>要解答此題，必須掌握以下核心概念：</p>
+            <p class="en-text">To solve this problem, you must master the following core concepts:</p>
+
+            <h3>1. 利潤極大化條件 (Profit Maximization Condition)</h3>
+            <p>受價者廠商會生產至邊際收益等於邊際成本的產量水平。</p>
+            <p class="en-text">A price-taking firm produces at the output level where Marginal Revenue equals Marginal Cost.</p>
+            <div class="math-block">
+                $$ MR = MC = P $$
+            </div>
+            <p>若 \(MR > MC\)，廠商應增加生產；若 \(MR < MC\)，廠商應減少生產。</p>
+            <p class="en-text">If \(MR > MC\), the firm should increase production; if \(MR < MC\), the firm should decrease production.</p>
+
+            <h3>2. 生產者盈餘 (Producer Surplus, PS)</h3>
+            <p>生產者盈餘是總收益減去總可變成本。</p>
+            <p class="en-text">Producer Surplus is Total Revenue minus Total Variable Cost.</p>
+            <div class="math-block">
+                $$ PS = TR - TVC $$
+            </div>
+            <p>或者，它也可以理解為總利潤加上總固定成本：</p>
+            <p class="en-text">Alternatively, it can be understood as Total Profit plus Total Fixed Cost:</p>
+            <div class="math-block">
+                $$ PS = \text{Profit} + TFC = (TR - TC) + TFC $$
+            </div>
+            <p><strong>注意：</strong> 許多學生混淆了「利潤」與「生產者盈餘」。利潤扣除了固定成本，而生產者盈餘則沒有。</p>
+            <p class="en-text"><strong>Note:</strong> Many students confuse "Profit" with "Producer Surplus". Profit deducts fixed costs, while Producer Surplus does not.</p>
+
+            <h3>3. 成本公式 (Cost Formulas)</h3>
+            <div class="math-block">
+                $$ TC = AC \times Q $$
+                $$ MC_n = TC_n - TC_{n-1} $$
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這道題目的關鍵在於找出<strong>邊際成本 (MC)</strong>，從而決定最優產量。</p>
+        <p class="en-text">The key to this problem is finding the <strong>Marginal Cost (MC)</strong> to determine the optimal output level.</p>
+        
+        <ol>
+            <li><strong>計算總成本 (TC)：</strong> 利用 \(TC = AC \times Q\) 填補數據。</li>
+            <li><strong>計算邊際成本 (MC)：</strong> 利用 \(MC = \Delta TC / \Delta Q\) 找出每單位的增量成本。</li>
+            <li><strong>決定產量：</strong> 比較 \(P\) ($30) 與 \(MC\)。只要 \(P \ge MC\)，廠商就會生產該單位。</li>
+            <li><strong>計算盈餘：</strong> 在該產量下，計算 \(TR - TVC\) 或 \(\text{Profit} + TFC\)。</li>
+        </ol>
+
+        <div class="table-container">
+            <table style="text-align: center;">
+                <tr style="background-color: #e0f2fe;">
+                    <th>Q</th>
+                    <th>AC ($)</th>
+                    <th>TC ($)<br>\(= AC \times Q\)</th>
+                    <th>MC ($)<br>\(= \Delta TC\)</th>
+                    <th>Decision<br>(\(P = 30\))</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>-</td>
+                    <td>5 (TFC)</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>\(20 \times 1 = 20\)</td>
+                    <td>\(20 - 5 = 15\)</td>
+                    <td>Produce (\(30 > 15\))</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>25</td>
+                    <td>\(25 \times 2 = 50\)</td>
+                    <td>\(50 - 20 = 30\)</td>
+                    <td>Produce (\(30 = 30\))</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>30</td>
+                    <td>\(30 \times 3 = 90\)</td>
+                    <td>\(90 - 50 = 40\)</td>
+                    <td>Stop (\(30 < 40\))</td>
+                </tr>
+            </table>
+        </div>
+        <p><strong>注意：</strong> 當產量為 0 時，總成本等於固定成本 ($5)。這一點在計算第一單位的 MC 時非常重要。</p>
+        <p class="en-text"><strong>Note:</strong> When output is 0, Total Cost equals Fixed Cost ($5). This is crucial for calculating the MC of the first unit.</p>
+    </section>
+
+    <!-- Answer & Analysis Section -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option correct-option">
+            <span class="label">Correct Option: D ($15)</span>
+            <p><strong>分析：</strong></p>
+            <p>1. <strong>決定產量：</strong> 根據上表，當產量 \(Q=2\) 時，\(MC = 30\)。由於價格 \(P = 30\)，廠商會生產 2 單位以達至利潤極大化（\(P = MC\)）。</p>
+            <p class="en-text">1. <strong>Determine Output:</strong> Based on the table above, when output \(Q=2\), \(MC = 30\). Since price \(P = 30\), the firm produces 2 units to maximize profit (\(P = MC\)).</p>
+            
+            <p>2. <strong>計算總收益 (TR)：</strong></p>
+            <div class="math-block">$$ TR = P \times Q = 30 \times 2 = 60 $$</div>
+            
+            <p>3. <strong>計算總可變成本 (TVC)：</strong></p>
+            <p>總成本 (TC) 在 \(Q=2\) 時為 50。固定成本 (TFC) 為 5。</p>
+            <div class="math-block">$$ TVC = TC - TFC = 50 - 5 = 45 $$</div>
+            
+            <p>4. <strong>計算生產者盈餘 (PS)：</strong></p>
+            <div class="math-block">$$ PS = TR - TVC = 60 - 45 = 15 $$</div>
+            
+            <p>或者使用利潤法：</p>
+            <div class="math-block">
+                $$ \text{Profit} = TR - TC = 60 - 50 = 10 $$
+                $$ PS = \text{Profit} + TFC = 10 + 5 = 15 $$
+            </div>
+        </div>
+
+        <div class="option wrong-option">
+            <span class="label">Option A ($0)</span>
+            <p>這是錯誤的。這可能是誤以為廠商不生產，或者計算錯誤導致利潤為負數。</p>
+            <p class="en-text">Incorrect. This implies the firm produces nothing or a calculation error leading to zero surplus.</p>
+        </div>
+
+        <div class="option wrong-option">
+            <span class="label">Option B ($5)</span>
+            <p>這是錯誤的。$5 是固定成本 (TFC) 的數值，並非生產者盈餘。</p>
+            <p class="en-text">Incorrect. $5 is the value of the Fixed Cost (TFC), not the Producer Surplus.</p>
+        </div>
+
+        <div class="option wrong-option">
+            <span class="label">Option C ($10)</span>
+            <p>這是錯誤的。$10 是<strong>利潤 (Profit)</strong>，不是生產者盈餘。這是最常見的陷阱。</p>
+            <p class="en-text">Incorrect. $10 is the <strong>Profit</strong>, not the Producer Surplus. This is the most common trap.</p>
+            <p>$$ \text{Profit} = TR - TC = 60 - 50 = 10 $$</p>
+            <p>學生忘記了生產者盈餘包含固定成本，或者不需要扣除固定成本。</p>
+            <p class="en-text">Students forget that Producer Surplus includes fixed costs, or that fixed costs should not be deducted.</p>
+        </div>
+    </section>
+
+    <!-- Common Mistakes & Tricks -->
+    <section>
+        <h2>Common Mistakes & Exam Tricks (常犯錯誤與考試技巧)</h2>
+        
+        <div class="trap-box">
+            <h3>⚠️ Common Mistake: Confusing Profit with Producer Surplus</h3>
+            <p><strong>錯誤觀念：</strong> 很多同學算出 \(TR - TC = 10\) 後就直接選 C。</p>
+            <p class="en-text"><strong>Misconception:</strong> Many students calculate \(TR - TC = 10\) and immediately choose C.</p>
+            <p><strong>糾正：</strong> 題目問的是「生產者盈餘」。請記住口訣：「盈餘不扣固定」。</p>
+            <p class="en-text"><strong>Correction:</strong> The question asks for "Producer Surplus". Remember: "Surplus does not deduct fixed costs".</p>
+            <p>$$ PS = \text{Profit} + TFC $$</p>
+        </div>
+
+        <div class="trap-box" style="margin-top: 15px;">
+            <h3>⚠️ Common Mistake: Calculating MC for the 1st Unit</h3>
+            <p><strong>錯誤觀念：</strong> 計算第 1 單位的 MC 時，直接用 \(TC_1 - 0\)。</p>
+            <p class="en-text"><strong>Misconception:</strong> Calculating MC for the 1st unit as \(TC_1 - 0\).</p>
+            <p><strong>糾正：</strong> 必須記得 \(TC_0 = TFC = 5\)。所以 \(MC_1 = TC_1 - TC_0 = 20 - 5 = 15\)。如果忽略這一點，會導致 TVC 計算錯誤。</p>
+            <p class="en-text"><strong>Correction:</strong> You must remember \(TC_0 = TFC = 5\). So \(MC_1 = 20 - 5 = 15\). Ignoring this leads to incorrect TVC calculations.</p>
+        </div>
+
+        <div class="trick-box">
+            <h3>🚀 Exam Shortcut (速解技巧)</h3>
+            <p>如果你已經算出了利潤 (Profit) 是 $10，而你知道固定成本 (TFC) 是 $5。</p>
+            <p class="en-text">If you have already calculated the Profit is $10, and you know the Fixed Cost (TFC) is $5.</p>
+            <p>直接相加即可，無需重新計算 TVC：</p>
+            <p class="en-text">Simply add them up, no need to recalculate TVC:</p>
+            <p style="font-weight: bold; text-align: center; font-size: 1.1em;">
+                Profit ($10) + TFC ($5) = PS ($15)
+            </p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

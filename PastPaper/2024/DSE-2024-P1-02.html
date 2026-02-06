@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Scarcity Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --box-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: #fffbeb; /* Cream/Light Yellow */
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .formula-block {
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .option-analysis {
+            margin-top: 15px;
+        }
+
+        .option-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-item.correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-text);
+            color: var(--success-text);
+        }
+
+        .option-item.incorrect {
+            background-color: var(--box-bg);
+            border-left: 4px solid #94a3b8;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        .star-rating {
+            color: var(--accent-color);
+        }
+
+        .trap-box {
+            background-color: #fee2e2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .trick-box {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div class="header-item">
+            <span class="tag">Topic</span> 基本經濟概念 (Basic Economic Concepts)
+        </div>
+        <div class="header-item">
+            <span class="tag">Difficulty</span> 
+            <span class="star-rating">★★☆☆☆</span> (Level 2)
+        </div>
+        <div class="header-item">
+            <span class="tag">Keywords</span> 稀少性 (Scarcity), 競爭 (Competition), 代價 (Cost)
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>題目 (The Question)</h2>
+        <p><strong>下列哪些情況意味着稀少性的存在？</strong></p>
+        <p>
+            (1) 人們須從兩個選項中擇其一。<br>
+            (2) 人們可支付市價以獲得想要的東西。<br>
+            (3) 人們即使排隊輪候數小時仍未能獲得想要的東西。
+        </p>
+        <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+        <p><strong>Which of the following situations imply the existence of scarcity?</strong></p>
+        <p>
+            (1) People need to choose between two options.<br>
+            (2) People can obtain what they want by paying the market price.<br>
+            (3) People cannot obtain what they want even after queuing up for hours.
+        </p>
+        
+        <div style="margin-top: 20px; font-weight: bold;">
+            A. 只有 (1)、(2) &nbsp;&nbsp; [ (1) and (2) only ]<br>
+            B. 只有 (1)、(3) &nbsp;&nbsp; [ (1) and (3) only ]<br>
+            C. 只有 (2)、(3) &nbsp;&nbsp; [ (2) and (3) only ]<br>
+            D. (1)、(2) 及 (3) &nbsp;&nbsp; [ (1), (2) and (3) ]
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>概念重溫 (Concept Review)</h2>
+        
+        <h3>1. 稀少性的定義 (Definition of Scarcity)</h3>
+        <p class="bilingual-text">稀少性是指資源有限，但人類的慾望無窮。這是一個相對的概念。</p>
+        <span class="en-text">Scarcity refers to the situation where resources are limited while human wants are unlimited. It is a relative concept.</span>
+        
+        <div class="formula-block">
+            $$ \text{稀少性 (Scarcity)} \iff \text{資源 (Resources)} < \text{慾望 (Wants)} $$
+        </div>
+
+        <h3>2. 稀少性的後果 (Consequences of Scarcity)</h3>
+        <p class="bilingual-text">因為稀少性的存在，我們必須面對三個必然結果：</p>
+        <span class="en-text">Due to the existence of scarcity, we must face three inevitable consequences:</span>
+        <ul>
+            <li>
+                <strong>選擇 (Choice):</strong> 我們不能擁有一切，必須作出取捨。
+                <br><span class="en-text">We cannot have everything; trade-offs must be made.</span>
+            </li>
+            <li>
+                <strong>代價 / 機會成本 (Cost / Opportunity Cost):</strong> 作出選擇時被放棄的最高價值選項。
+                <br><span class="en-text">The highest-valued option forgone when a choice is made.</span>
+            </li>
+            <li>
+                <strong>競爭 (Competition):</strong> 為了分配稀缺資源，社會必須建立分配準則（如價格競爭或非價格競爭）。
+                <br><span class="en-text">To allocate scarce resources, society must establish allocation criteria (e.g., price competition or non-price competition).</span>
+            </li>
+        </ul>
+        
+        <p class="bilingual-text"><strong>重要邏輯：</strong> 只要有選擇、有代價、或有競爭，就證明了稀少性的存在。</p>
+        <span class="en-text"><strong>Key Logic:</strong> As long as there is choice, cost, or competition, it proves the existence of scarcity.</span>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div>
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        
+        <div style="font-size: 1.2em; margin-bottom: 20px;">
+            正確答案： <strong>D. (1)、(2) 及 (3)</strong>
+            <br>
+            <span class="en-text">Correct Option: <strong>D. (1), (2) and (3)</strong></span>
+        </div>
+
+        <div class="option-analysis">
+            <!-- Statement 1 -->
+            <div class="option-item correct">
+                <strong>(1) 人們須從兩個選項中擇其一。 (正確)</strong>
+                <br>
+                <strong>(1) People need to choose between two options. (Correct)</strong>
+                <hr style="border-top: 1px solid #bbf7d0; margin: 10px 0;">
+                <p class="bilingual-text">
+                    <strong>分析：</strong>「選擇」是稀少性的直接後果。如果資源無限（沒有稀少性），我們可以同時擁有所有選項，根本不需要「擇其一」。因此，需要作出選擇直接暗示了資源不足以滿足所有慾望。
+                </p>
+                <span class="en-text">
+                    <strong>Analysis:</strong> "Choice" is a direct consequence of scarcity. If resources were infinite (no scarcity), we could have all options simultaneously and would not need to "choose one". Therefore, the need to make a choice directly implies that resources are insufficient to satisfy all wants.
+                </span>
+            </div>
+
+            <!-- Statement 2 -->
+            <div class="option-item correct">
+                <strong>(2) 人們可支付市價以獲得想要的東西。 (正確)</strong>
+                <br>
+                <strong>(2) People can obtain what they want by paying the market price. (Correct)</strong>
+                <hr style="border-top: 1px solid #bbf7d0; margin: 10px 0;">
+                <p class="bilingual-text">
+                    <strong>分析：</strong>支付「市價」代表人們願意付出代價（金錢）來換取物品。這是一種「價格競爭」的形式。只有當物品是稀缺的（經濟物品），人們才需要競爭並付出代價來獲得它。如果沒有稀少性，物品應是免費物品 (Free Good)，無需付費。
+                </p>
+                <span class="en-text">
+                    <strong>Analysis:</strong> Paying the "market price" means people are willing to pay a cost (money) to exchange for the good. This is a form of "price competition". Only when a good is scarce (an economic good) do people need to compete and pay a cost to obtain it. If there were no scarcity, the good would be a free good, requiring no payment.
+                </span>
+            </div>
+
+            <!-- Statement 3 -->
+            <div class="option-item correct">
+                <strong>(3) 人們即使排隊輪候數小時仍未能獲得想要的東西。 (正確)</strong>
+                <br>
+                <strong>(3) People cannot obtain what they want even after queuing up for hours. (Correct)</strong>
+                <hr style="border-top: 1px solid #bbf7d0; margin: 10px 0;">
+                <p class="bilingual-text">
+                    <strong>分析：</strong>「排隊」是一種「非價格競爭」的形式，而付出的時間就是代價（時間成本）。未能獲得想要的東西反映了資源（物品數量）少於人們的慾望。這清楚地展示了競爭的存在以及資源的不足。
+                </p>
+                <span class="en-text">
+                    <strong>Analysis:</strong> "Queuing" is a form of "non-price competition", and the time spent is the cost (time cost). The failure to obtain the desired item reflects that resources (quantity of goods) are less than people's wants. This clearly demonstrates the existence of competition and the insufficiency of resources.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="question-box" style="background-color: #f0fdf4; border-color: #86efac;">
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        
+        <p class="bilingual-text">這類題目的核心在於測試學生是否理解<strong>稀少性與其後果之間的邏輯關係</strong>。</p>
+        <span class="en-text">The core of this type of question is to test whether students understand the <strong>logical relationship between scarcity and its consequences</strong>.</span>
+
+        <h3>解題關鍵點 (Pivot Point):</h3>
+        <p class="bilingual-text">
+            只要看到以下任何一個現象，即代表<strong>稀少性存在</strong>：
+        </p>
+        <ul>
+            <li>需要<strong>選擇 (Making Choices)</strong></li>
+            <li>需要付出<strong>代價 (Incurring Cost)</strong>（無論是金錢、時間或放棄其他東西）</li>
+            <li>存在<strong>競爭 (Existence of Competition)</strong>（無論是價格競爭還是排隊、抽籤等非價格競爭）</li>
+        </ul>
+
+        <p class="bilingual-text">
+            <strong>應用於本題：</strong>
+            <br>(1) 涉及「選擇」。
+            <br>(2) 涉及「價格競爭」及「代價」。
+            <br>(3) 涉及「非價格競爭」及「代價」。
+            <br>三者皆是稀少性的鐵證。
+        </p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="trap-box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        
+        <p class="bilingual-text"><strong>誤解 1：以為「未能獲得」才算稀少。</strong></p>
+        <span class="en-text"><strong>Misconception 1: Thinking scarcity only exists when you "cannot obtain" something.</strong></span>
+        <p class="bilingual-text">
+            有些學生認為選項 (2) 既然「可獲得」東西，就沒有稀少性。這是錯的！只要你為了獲得它而付出了代價（市價），就證明它不夠多到可以讓大家免費拿取，因此它依然是稀缺的。
+        </p>
+        <span class="en-text">
+            Some students think that since option (2) allows people to "obtain" the item, there is no scarcity. This is wrong! As long as you paid a cost (market price) to get it, it proves the item is not abundant enough for everyone to take for free, so it is still scarce.
+        </span>
+
+        <p class="bilingual-text" style="margin-top: 15px;"><strong>誤解 2：混淆「短缺 (Shortage)」與「稀少 (Scarcity)」。</strong></p>
+        <span class="en-text"><strong>Misconception 2: Confusing "Shortage" with "Scarcity".</strong></span>
+        <p class="bilingual-text">
+            選項 (3) 描述的情況類似短缺（排隊也買不到），但短缺必定隱含稀少性。稀少性是永恆的（只要資源有限慾望無窮），而短缺是市場不均衡的狀態。題目問的是稀少性，所以即使是短缺現象，也意味著稀少性的存在。
+        </p>
+        <span class="en-text">
+            Option (3) describes a situation similar to a shortage (cannot buy even after queuing), but shortage necessarily implies scarcity. Scarcity is permanent (as long as resources are limited and wants are unlimited), while shortage is a state of market disequilibrium. The question asks about scarcity, so even a shortage phenomenon implies the existence of scarcity.
+        </span>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="trick-box">
+        <h3>⚡ 考試技巧 (Exam Tricks)</h3>
+        <p class="bilingual-text">
+            <strong>「免費物品」反證法 (Free Good Test):</strong>
+        </p>
+        <span class="en-text"><strong>The "Free Good" Counter-proof:</strong></span>
+        
+        <p class="bilingual-text">
+            問自己：「如果空氣（典型的免費物品）是主角，這句話還成立嗎？」
+            <br>
+            (1) 我們需要從兩口空氣中擇其一嗎？不需要。 -> 所以 (1) 暗示稀少。
+            <br>
+            (2) 我們需要付錢呼吸空氣嗎？不需要。 -> 所以 (2) 暗示稀少。
+            <br>
+            (3) 我們需要排隊吸空氣嗎？不需要。 -> 所以 (3) 暗示稀少。
+        </p>
+        <span class="en-text">
+            Ask yourself: "If air (a typical free good) were the subject, would this statement still hold?"
+            <br>
+            (1) Do we need to choose between two breaths of air? No. -> So (1) implies scarcity.
+            <br>
+            (2) Do we need to pay to breathe air? No. -> So (2) implies scarcity.
+            <br>
+            (3) Do we need to queue to breathe air? No. -> So (3) implies scarcity.
+        </span>
+    </div>
+
+</div>
+
+</body>
+</html>

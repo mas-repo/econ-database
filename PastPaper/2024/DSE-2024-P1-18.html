@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Perfect Competition Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue BG */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --warning-yellow: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--warning-yellow);
+            border-radius: 3px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .option {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .key-term {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .analysis-item.correct {
+            border-color: var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .analysis-item.incorrect {
+            border-color: var(--wrong-red); /* Actually marks the distractor options in the explanation context */
+        }
+        
+        /* Specific for this question: The "Correct Answer" to the question is the "Incorrect Statement" */
+        .answer-reveal {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--wrong-red); /* Red because we found the error */
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #fef2f2;
+            border-radius: 6px;
+            text-align: center;
+            border: 2px solid var(--wrong-red);
+        }
+
+        /* Bilingual Text Styling */
+        .tc {
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .en {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        /* Math Block */
+        .math-block {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; align-items: center; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Market Structure (市場結構)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key: Perfect Competition, Price Taker</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p class="tc"><strong>下列哪項關於完全競爭的陳述是不正確的？</strong></p>
+            <p class="en"><strong>Which of the following statements about perfect competition is INCORRECT?</strong></p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+            
+            <div class="option">
+                <span class="tc">A. 市場價格傾向穩定，因為沒有廠商能夠影響市場價格。</span><br>
+                <span class="en">A. The market price tends to be stable as no firm can affect the market price.</span>
+            </div>
+            <div class="option">
+                <span class="tc">B. 價格是決定物品分配的唯一競爭準則。</span><br>
+                <span class="en">B. Price is the only competitive criterion in determining the distribution of goods.</span>
+            </div>
+            <div class="option">
+                <span class="tc">C. 當廠商利潤極大化時，所有廠商的最後一單位的邊際成本相等。</span><br>
+                <span class="en">C. The marginal cost of the last unit of all firms is equal when the firms maximise their profits.</span>
+            </div>
+            <div class="option">
+                <span class="tc">D. 廠商出售同質物品。</span><br>
+                <span class="en">D. Firms sell homogeneous products.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p class="tc"><span class="key-term">完全競爭 (Perfect Competition)</span> 的特徵：</p>
+            <p class="en">Features of <span class="key-term">Perfect Competition</span>:</p>
+            <ul>
+                <li>
+                    <span class="tc"><strong>眾多買家與賣家：</strong>沒有單一廠商能影響價格（受價者）。</span>
+                    <span class="en"><strong>Many buyers and sellers:</strong> No single firm can affect the price (Price Taker).</span>
+                </li>
+                <li>
+                    <span class="tc"><strong>同質產品：</strong>產品完全相同，沒有非價格競爭。</span>
+                    <span class="en"><strong>Homogeneous products:</strong> Products are identical; no non-price competition.</span>
+                </li>
+                <li>
+                    <span class="tc"><strong>自由進出：</strong>長期利潤為零（正常利潤）。</span>
+                    <span class="en"><strong>Free entry and exit:</strong> Zero economic profit in the long run (Normal Profit).</span>
+                </li>
+                <li>
+                    <span class="tc"><strong>資訊完全流通。</strong></span>
+                    <span class="en"><strong>Perfect information.</strong></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="concept-box" style="border-left-color: var(--warning-yellow);">
+            <p class="tc"><strong>利潤極大化條件 (Profit Maximization Condition):</strong></p>
+            <div class="math-block">
+                $$ MC = MR $$
+            </div>
+            <p class="tc">在完全競爭市場中，由於廠商是受價者 (Price Taker)，邊際收益 (MR) 等於價格 (P)。</p>
+            <p class="en">In Perfect Competition, since the firm is a price taker, Marginal Revenue (MR) equals Price (P).</p>
+            <div class="math-block">
+                $$ P = AR = MR $$
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="answer-reveal">
+            Correct Option (The Incorrect Statement): A
+        </div>
+
+        <!-- Option A Analysis -->
+        <div class="analysis-item correct">
+            <p class="tc"><strong>選項 A (答案)：市場價格傾向穩定，因為沒有廠商能夠影響市場價格。</strong></p>
+            <p class="en"><strong>Option A (Answer): The market price tends to be stable as no firm can affect the market price.</strong></p>
+            
+            <p class="tc"><strong>分析：</strong>這是<strong>錯誤</strong>的陳述（所以是正確答案）。</p>
+            <p class="en"><strong>Analysis:</strong> This statement is <strong>INCORRECT</strong> (making it the right answer).</p>
+            
+            <p class="tc">雖然個別廠商是「受價者」(Price Taker)，面對水平的需求曲線，無法單獨改變價格，但這<strong>不代表</strong>整個市場的均衡價格是穩定的。</p>
+            <p class="en">Although individual firms are "price takers" facing a horizontal demand curve and cannot influence the price alone, this <strong>does not mean</strong> the market equilibrium price is stable.</p>
+            
+            <p class="tc">完全競爭市場（如農產品）的價格往往波動很大。只要市場的總需求 \(D\) 或總供應 \(S\) 發生變化，市場價格 \(P\) 就會隨之改變。個別廠商無法影響價格，並不保證價格本身不變。</p>
+            <p class="en">Prices in perfectly competitive markets (e.g., agricultural products) are often volatile. Whenever aggregate Demand \(D\) or aggregate Supply \(S\) shifts, the market Price \(P\) changes. The inability of a single firm to affect price does not guarantee price stability.</p>
+        </div>
+
+        <!-- Option B Analysis -->
+        <div class="analysis-item">
+            <p class="tc"><strong>選項 B：價格是決定物品分配的唯一競爭準則。</strong></p>
+            <p class="en"><strong>Option B: Price is the only competitive criterion in determining the distribution of goods.</strong></p>
+            
+            <p class="tc"><strong>分析：</strong>這是<strong>正確</strong>的陳述。</p>
+            <p class="en"><strong>Analysis:</strong> This statement is <strong>CORRECT</strong>.</p>
+            
+            <p class="tc">由於產品是同質的 (Homogeneous)，且資訊完全流通，消費者只在乎價格。不存在廣告、品牌效應或服務差異等「非價格競爭」(Non-price competition)。因此，價格是唯一的分配準則。</p>
+            <p class="en">Since products are homogeneous and information is perfect, consumers only care about price. There is no "non-price competition" (like advertising, branding, or service differences). Thus, price is the sole criterion for allocation.</p>
+        </div>
+
+        <!-- Option C Analysis -->
+        <div class="analysis-item">
+            <p class="tc"><strong>選項 C：當廠商利潤極大化時，所有廠商的最後一單位的邊際成本相等。</strong></p>
+            <p class="en"><strong>Option C: The marginal cost of the last unit of all firms is equal when the firms maximise their profits.</strong></p>
+            
+            <p class="tc"><strong>分析：</strong>這是<strong>正確</strong>的陳述。</p>
+            <p class="en"><strong>Analysis:</strong> This statement is <strong>CORRECT</strong>.</p>
+            
+            <p class="tc">邏輯推演如下：</p>
+            <ol>
+                <li><span class="tc">所有廠商面對相同的市場價格 \(P\)。</span> <span class="en">(All firms face the same market price \(P\).)</span></li>
+                <li><span class="tc">利潤極大化條件是 \(MC = MR\)。</span> <span class="en">(Profit max condition is \(MC = MR\).)</span></li>
+                <li><span class="tc">在完全競爭中，\(MR = P\)。</span> <span class="en">(In Perfect Competition, \(MR = P\).)</span></li>
+                <li><span class="tc">因此，對於廠商 A：\(MC_A = P\)；對於廠商 B：\(MC_B = P\)。</span></li>
+                <li><span class="tc">結論：\(MC_A = MC_B = P\)。</span> <span class="en">(Conclusion: All firms' MC are equal.)</span></li>
+            </ol>
+        </div>
+
+        <!-- Option D Analysis -->
+        <div class="analysis-item">
+            <p class="tc"><strong>選項 D：廠商出售同質物品。</strong></p>
+            <p class="en"><strong>Option D: Firms sell homogeneous products.</strong></p>
+            
+            <p class="tc"><strong>分析：</strong>這是<strong>正確</strong>的陳述。</p>
+            <p class="en"><strong>Analysis:</strong> This statement is <strong>CORRECT</strong>.</p>
+            
+            <p class="tc">這是完全競爭市場的基本定義之一。產品在質量、外觀、功能上完全無異。</p>
+            <p class="en">This is one of the fundamental definitions of a perfectly competitive market. Products are identical in quality, appearance, and function.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition & Tricks -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition & Exam Tricks (題目拆解與考試技巧)</div>
+        
+        <div class="concept-box" style="background-color: #fffbeb; border-left-color: #f59e0b;">
+            <p class="tc"><strong>💡 破題關鍵 (Pivot Point)</strong></p>
+            <p class="tc">分辨 <strong>「個別廠商 (Individual Firm)」</strong> 與 <strong>「整個市場 (Whole Market)」</strong> 的區別。</p>
+            <p class="en">Distinguish between the <strong>"Individual Firm"</strong> and the <strong>"Whole Market"</strong>.</p>
+            <p class="tc">選項 A 混淆了這兩個概念：個別廠商面對的需求曲線是水平的（價格固定），但整個市場的供需隨時在變，導致市場價格波動。</p>
+            <p class="en">Option A confuses these concepts: The individual firm faces a horizontal demand curve (fixed price), but the whole market's supply and demand shift constantly, causing market price volatility.</p>
+        </div>
+
+        <p class="tc"><strong>⚠️ 常犯錯誤 (Common Mistakes):</strong></p>
+        <ul>
+            <li>
+                <span class="tc"><strong>誤解「價格穩定」：</strong>學生常誤以為「受價者」意味著價格永遠不會變。其實受價者只是「被動接受」市場決定的價格，而那個價格本身是可以大起大落的。</span>
+                <span class="en"><strong>Misinterpreting "Stable Price":</strong> Students often think "Price Taker" means price never changes. It only means the firm "passively accepts" the market price, which itself can be very volatile.</span>
+            </li>
+            <li>
+                <span class="tc"><strong>忽略題目問「不正確」：</strong>這類題目最容易因為看太快，選了一個「正確」的描述（如選項 D）而失分。</span>
+                <span class="en"><strong>Ignoring "INCORRECT":</strong> It's easy to rush and select a "correct" statement (like Option D) instead of the false one.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

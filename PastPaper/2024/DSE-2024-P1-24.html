@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - GDP Calculation Guide</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .header-item {
+            margin: 5px 10px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .data-table th, .data-table td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .data-table td:last-child {
+            text-align: right;
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .formula-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed var(--concept-border);
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-top: 20px;
+        }
+
+        .option-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-item.correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-text);
+        }
+
+        .option-item.incorrect {
+            background-color: var(--bg-light);
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .badge-correct {
+            background-color: var(--success-text);
+            color: white;
+        }
+
+        .badge-incorrect {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        .trap-box {
+            background-color: var(--error-bg);
+            border-left: 5px solid var(--error-text);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+            .header-item {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="header-info">
+            <div class="header-item"><strong>Topic (課題):</strong> National Income Accounting (國民收入會計)</div>
+            <div class="header-item"><strong>Difficulty (難度):</strong> ★★★☆☆</div>
+            <div class="header-item"><strong>Key Concepts (核心概念):</strong> Expenditure Approach (支出面), Gross vs Net (總值與淨值), Net Exports (淨出口)</div>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <p class="bilingual-text">參考下列有關某經濟的資料。<span class="en-text">Refer to the following data of an economy.</span></p>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Components (成分)</th>
+                    <th>$ million (百萬元)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Private consumption expenditure (私人消費開支)</td><td>100</td></tr>
+                <tr><td>Net domestic fixed capital formation (本地固定資本形成淨值)</td><td>20</td></tr>
+                <tr><td>Government consumption expenditure (政府消費開支)</td><td>30</td></tr>
+                <tr><td>Change in inventories (存貨改變)</td><td>-5</td></tr>
+                <tr><td>Net exports of goods (物品出口淨值)</td><td>60</td></tr>
+                <tr><td>Re-exports (轉口)</td><td>27</td></tr>
+                <tr><td>Import of services (服務進口)</td><td>80</td></tr>
+                <tr><td>Export of services (服務出口)</td><td>40</td></tr>
+                <tr><td>Depreciation (折舊)</td><td>11</td></tr>
+                <tr><td>Indirect tax (間接稅)</td><td>18</td></tr>
+            </tbody>
+        </table>
+
+        <p class="bilingual-text">以市價計算的本地生產總值是 ____________ 百萬元。<span class="en-text">The gross domestic product (GDP) at market price is $ ____________ million.</span></p>
+
+        <div style="margin-top: 15px; font-weight: bold;">
+            A. 165<br>
+            B. 176<br>
+            C. 194<br>
+            D. 203
+        </div>
+    </section>
+
+    <!-- Concept Review Section -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <p class="bilingual-text">
+            本題考核使用<strong>支出面 (Expenditure Approach)</strong> 計算 GDP。
+            <span class="en-text">This question tests the calculation of GDP using the <strong>Expenditure Approach</strong>.</span>
+        </p>
+
+        <div class="formula-block">
+            \( \text{GDP} = C + I + G + (X - M) \)
+        </div>
+
+        <ul>
+            <li>
+                <strong>C (Private Consumption Expenditure / 私人消費開支):</strong> 
+                <span class="en-text">Spending by households on goods and services.</span>
+            </li>
+            <li>
+                <strong>I (Gross Investment / 總投資):</strong> 
+                這是關鍵！公式中的 \(I\) 是「本地固定資本形成<strong>總</strong>值」加上「存貨改變」。
+                <br>
+                \( \text{Gross Investment} = \text{Net Fixed Capital Formation} + \text{Depreciation} + \text{Change in Inventories} \)
+                <span class="en-text">This is key! \(I\) in the formula is "Gross domestic fixed capital formation" plus "Change in inventories". Note that Gross = Net + Depreciation.</span>
+            </li>
+            <li>
+                <strong>G (Government Consumption Expenditure / 政府消費開支):</strong> 
+                <span class="en-text">Spending by the government.</span>
+            </li>
+            <li>
+                <strong>NX (Net Exports / 淨出口):</strong> 
+                \( (X - M) = (\text{Goods Exports} + \text{Service Exports}) - (\text{Goods Imports} + \text{Service Imports}) \)
+                <span class="en-text">Total exports minus total imports (including both goods and services).</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Answer & Analysis Section -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option-item correct">
+            <span class="badge badge-correct">Correct Answer: B</span>
+            <h3>Step-by-Step Calculation (逐步計算)</h3>
+            
+            <p><strong>Step 1: Calculate Investment (I) / 計算投資 (I)</strong></p>
+            <p class="bilingual-text">
+                題目給出的是「本地固定資本形成<strong>淨</strong>值」。我們需要將其轉換為「總值」並加上存貨改變。
+                <span class="en-text">The question gives "<strong>Net</strong> domestic fixed capital formation". We need to convert it to "Gross" and add change in inventories.</span>
+            </p>
+            <div class="formula-block">
+                $$ \begin{align*} 
+                I &= (\text{Net Fixed Capital} + \text{Depreciation}) + \text{Change in Inventories} \\
+                I &= (20 + 11) + (-5) \\
+                I &= 31 - 5 = 26 
+                \end{align*} $$
+            </div>
+
+            <p><strong>Step 2: Calculate Net Exports (NX) / 計算淨出口 (NX)</strong></p>
+            <p class="bilingual-text">
+                題目直接給出了「物品出口淨值」(Net exports of goods)，即 \( (X_{goods} - M_{goods}) = 60 \)。我們還需要計算服務的淨出口。
+                <span class="en-text">The question directly gives "Net exports of goods", which is \( (X_{goods} - M_{goods}) = 60 \). We still need to calculate net exports of services.</span>
+            </p>
+            <div class="formula-block">
+                $$ \begin{align*} 
+                NX &= \text{Net exports of goods} + (\text{Export of services} - \text{Import of services}) \\
+                NX &= 60 + (40 - 80) \\
+                NX &= 60 - 40 = 20
+                \end{align*} $$
+            </div>
+
+            <p><strong>Step 3: Summing up GDP / 匯總 GDP</strong></p>
+            <div class="formula-block">
+                $$ \begin{align*} 
+                \text{GDP} &= C + I + G + NX \\
+                \text{GDP} &= 100 + 26 + 30 + 20 \\
+                \text{GDP} &= 176
+                \end{align*} $$
+            </div>
+            
+            <p class="bilingual-text">
+                因此，以市價計算的本地生產總值為 176 百萬元。
+                <span class="en-text">Therefore, the GDP at market price is $176 million.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <h3>Distractor Analysis (干擾項分析)</h3>
+            
+            <div class="option-item incorrect">
+                <span class="badge badge-incorrect">Option A (165)</span>
+                <p class="bilingual-text">
+                    <strong>錯誤原因：</strong> 忘記加上折舊。如果計算投資時只用「淨值」(20) 加「存貨改變」(-5)，得出 \(I = 15\)。
+                    <br> \( 100 + 15 + 30 + 20 = 165 \)。
+                    <span class="en-text"><strong>Error:</strong> Forgot to add Depreciation. If Investment is calculated using only "Net value" (20) + "Change in inventories" (-5), resulting in \(I = 15\).</span>
+                </p>
+            </div>
+
+            <div class="option-item incorrect">
+                <span class="badge badge-incorrect">Option C (194)</span>
+                <p class="bilingual-text">
+                    <strong>錯誤原因：</strong> 錯誤處理間接稅。GDP (市價) 不需要減去間接稅，也不需要加上間接稅（因為市價已包含）。如果錯誤地加上間接稅 (18)：\( 176 + 18 = 194 \)。
+                    <span class="en-text"><strong>Error:</strong> Mishandled Indirect Tax. GDP (at market price) does not need indirect tax added or subtracted (it's already included in market prices). If you wrongly add indirect tax (18): \( 176 + 18 = 194 \).</span>
+                </p>
+            </div>
+
+            <div class="option-item incorrect">
+                <span class="badge badge-incorrect">Option D (203)</span>
+                <p class="bilingual-text">
+                    <strong>錯誤原因：</strong> 錯誤地加上了「轉口」(27)。轉口已經包含在總出口數字中，或者在計算淨出口時已經處理，不應單獨再加一次。
+                    <br> \( 176 + 27 = 203 \)。
+                    <span class="en-text"><strong>Error:</strong> Wrongly added "Re-exports" (27). Re-exports are already part of total export figures or accounted for in net exports; they should not be added separately.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="tips-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="bilingual-text">
+            <strong>1. 尋找「總」與「淨」 (Find "Gross" vs "Net"):</strong><br>
+            題目要求 GDP (<strong>Gross</strong> Domestic Product)。<br>
+            數據給出的是「本地固定資本形成<strong>淨</strong>值」(<strong>Net</strong> domestic fixed capital formation)。<br>
+            <span style="color: var(--primary-color);">Pivot Point (關鍵點):</span> 必須加上折舊 (Depreciation) 才能從 Net 變 Gross。
+            <span class="en-text">The question asks for GDP (Gross). The data gives "Net domestic fixed capital formation". You MUST add Depreciation to convert Net to Gross.</span>
+        </p>
+        
+        <p class="bilingual-text">
+            <strong>2. 處理淨出口 (Handle Net Exports):</strong><br>
+            題目混合了「物品出口淨值」和分開的「服務進/出口」。<br>
+            <span style="color: var(--primary-color);">Pivot Point (關鍵點):</span> 物品部分已經淨額結算 (Net-off)，服務部分需要自己計算 (出口 - 進口)。
+            <span class="en-text">The question mixes "Net exports of goods" with separate "Import/Export of services". Goods are already netted off; Services must be calculated manually (Export - Import).</span>
+        </p>
+
+        <p class="bilingual-text">
+            <strong>3. 識別多餘資訊 (Identify Redundant Info):</strong><br>
+            - <strong>轉口 (Re-exports):</strong> 這是干擾項。轉口包含在物品出口中，題目已給出「物品出口淨值」，無需理會轉口。
+            <br>
+            - <strong>間接稅 (Indirect Tax):</strong> 這是干擾項。題目求「市價」(Market Price)，支出面的數據本身就是市價，無需調整。只有求「要素成本」(Factor Cost) 時才需要減去間接稅。
+            <span class="en-text">- <strong>Re-exports:</strong> Distractor. Included in goods exports; ignore it as "Net exports of goods" is given.
+            <br>- <strong>Indirect Tax:</strong> Distractor. The question asks for Market Price. Expenditure data is already at market price. Only subtract indirect tax if calculating at "Factor Cost".</span>
+        </p>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="trap-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>陷阱 1：忽略折舊 (Ignoring Depreciation)</strong>
+                <p class="bilingual-text">
+                    學生常直接把「本地固定資本形成淨值」當作 \(I\) 的一部分，忘記 \( \text{Gross} = \text{Net} + \text{Depreciation} \)。
+                    <span class="en-text">Students often treat "Net domestic fixed capital formation" directly as part of \(I\), forgetting that \( \text{Gross} = \text{Net} + \text{Depreciation} \).</span>
+                </p>
+            </li>
+            <li>
+                <strong>陷阱 2：服務進出口方向搞反 (Reversing Service Trade)</strong>
+                <p class="bilingual-text">
+                    公式是 \( (X - M) \)。服務出口是 40，進口是 80。結果應該是 \( 40 - 80 = -40 \)。很多學生會算成 \( 80 - 40 = +40 \)。
+                    <span class="en-text">The formula is \( (X - M) \). Service Export is 40, Import is 80. Result should be \( 40 - 80 = -40 \). Many students calculate it as \( 80 - 40 = +40 \).</span>
+                </p>
+            </li>
+            <li>
+                <strong>陷阱 3：重複計算轉口 (Double Counting Re-exports)</strong>
+                <p class="bilingual-text">
+                    看到數據表上有數字就想加進去。記住，轉口是出口的一部分，如果題目給了總出口或淨出口，通常不需要額外處理轉口。
+                    <span class="en-text">Adding numbers just because they are in the table. Remember, re-exports are part of exports. If Total/Net Exports are given, usually you don't need to add re-exports separately.</span>
+                </p>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

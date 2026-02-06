@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Private Property Rights Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .badge {
+            background-color: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .options li:last-child {
+            border-bottom: none;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-title::before {
+            content: "📚";
+            margin-right: 10px;
+        }
+
+        /* Analysis Section */
+        .analysis-section h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border: 1px solid #bbf7d0;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        .status-correct {
+            color: var(--success-text);
+            font-weight: bold;
+        }
+
+        .status-incorrect {
+            color: var(--error-text);
+            font-weight: bold;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .en {
+            display: block;
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        /* Tricks & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .trap-card {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+        }
+
+        .trick-card {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .trap-card .card-title { color: #991b1b; }
+        .trick-card .card-title { color: #166534; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Private Property Rights (私有產權)</span>
+            <span class="badge">Difficulty: <span class="stars">★★☆☆☆</span></span>
+            <span class="badge">Key Concepts: Exclusive Use, Transferability, Rent Dissipation</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <div class="q-text">
+            <span class="zh">題目：當私有產權被削弱時，______________。</span>
+            <span class="en">Question: When private property rights are weakened, ______________.</span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <div class="zh">(1) 資源被分配到其最高價值的用途的可能性較低</div>
+            <div class="en">(1) resources are less likely to be allocated to their highest-valued use</div>
+            
+            <div class="zh">(2) 從資產所衍生的收入很可能減少</div>
+            <div class="en">(2) income derived from assets is likely to decrease</div>
+            
+            <div class="zh">(3) 非價格競爭較有可能出現</div>
+            <div class="en">(3) non-price competition is more likely to arise</div>
+        </div>
+
+        <ul class="options">
+            <li>A. <span class="zh">只有 (1)、(2)</span> <span class="en">(1) and (2) only</span></li>
+            <li>B. <span class="zh">只有 (1)、(3)</span> <span class="en">(1) and (3) only</span></li>
+            <li>C. <span class="zh">只有 (2)、(3)</span> <span class="en">(2) and (3) only</span></li>
+            <li>D. <span class="zh">(1)、(2) 及 (3)</span> <span class="en">(1), (2) and (3)</span></li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">
+            <span class="zh">概念重溫</span> / <span class="en">Concept Review</span>
+        </div>
+        <p>
+            <span class="zh"><strong>私有產權 (Private Property Rights)</strong> 包含三項重要權利：</span><br>
+            <span class="en"><strong>Private Property Rights</strong> consist of three crucial rights:</span>
+        </p>
+        <ol>
+            <li>
+                <span class="zh"><strong>獨有使用權 (Exclusive right to use):</strong> 擁有者可決定如何使用該物品，並排除他人使用。</span>
+                <span class="en"><strong>Exclusive right to use:</strong> The owner can decide how to use the good and exclude others from using it.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>獨有收入權 (Exclusive right to derive income):</strong> 擁有者可獨享使用該物品所產生的收入。</span>
+                <span class="en"><strong>Exclusive right to derive income:</strong> The owner has the exclusive right to the income generated from the use of the good.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>轉讓權 (Right to transfer):</strong> 擁有者可將物品轉讓（出售或贈送）給他人。</span>
+                <span class="en"><strong>Right to transfer:</strong> The owner can transfer (sell or give) the good to others.</span>
+            </li>
+        </ol>
+        <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin: 15px 0;">
+        <p>
+            <span class="zh"><strong>重要推論 (Key Implications):</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="zh"><strong>市場交易 (Market Exchange):</strong> 只有在產權界定清晰時，市場交易才能順利進行，價格機制才能運作。</span>
+                <span class="en"><strong>Market Exchange:</strong> Market exchange and the price mechanism can only function smoothly when property rights are clearly defined.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>租值消散 (Rent Dissipation):</strong> 當產權不清（例如共用品 Common Property），人們會爭奪資源，導致非價格競爭，資源價值會因競爭成本而流失。</span>
+                <span class="en"><strong>Rent Dissipation:</strong> When property rights are unclear (e.g., Common Property), people compete for resources, leading to non-price competition, and the value of resources dissipates due to competition costs.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-section">
+        <h2><span class="zh">答案與詳細分析</span> / <span class="en">The Answer & Detailed Analysis</span></h2>
+        
+        <div class="correct-answer">
+            <span class="zh">正確答案：選項 D</span><br>
+            <span class="en">Correct Option: D</span>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-label">Statement (1)</div>
+            <span class="status-correct">✅ <span class="zh">正確</span> / <span class="en">Correct</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>當私有產權清晰時，擁有者有誘因將資源轉讓給出價最高的人（即對該資源評價最高的使用者），從而實現資源的最優配置。若產權被削弱（例如轉讓權受限），資源便難以透過市場機制流向最高價值的用途。</span>
+                <span class="en"><strong>Analysis:</strong> When private property rights are clear, owners have the incentive to transfer resources to the highest bidder (the user who values the resource the most), achieving optimal allocation. If property rights are weakened (e.g., restricted transfer rights), resources cannot easily flow to their highest-valued use through the market mechanism.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-label">Statement (2)</div>
+            <span class="status-correct">✅ <span class="zh">正確</span> / <span class="en">Correct</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>私有產權包含「獨有收入權」。若此權利被削弱（例如政府徵收重稅、或無法阻止他人盜用成果），擁有者從資產獲得的回報會減少，這會降低他們投資或有效管理資產的誘因，最終導致資產產生的總收入下降。</span>
+                <span class="en"><strong>Analysis:</strong> Private property rights include the "exclusive right to derive income." If this right is weakened (e.g., heavy government taxation or inability to prevent theft of output), the returns owners get from assets decrease. This reduces their incentive to invest in or manage the assets effectively, ultimately leading to a decrease in the total income derived from the assets.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-label">Statement (3)</div>
+            <span class="status-correct">✅ <span class="zh">正確</span> / <span class="en">Correct</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>當私有產權被削弱至模糊不清（例如變成共有產權）時，價格機制無法有效運作來分配資源。人們必須透過其他準則（如排隊、武力、先到先得）來爭奪資源，這就是「非價格競爭」。這會導致租值消散。</span>
+                <span class="en"><strong>Analysis:</strong> When private property rights are weakened to the point of ambiguity (e.g., becoming common property), the price mechanism cannot function effectively to allocate resources. People must compete for resources through other criteria (e.g., queuing, violence, first-come-first-served), which is "non-price competition." This leads to rent dissipation.</span>
+            </p>
+        </div>
+
+        <p style="margin-top: 20px; font-weight: bold;">
+            <span class="zh">結論：(1)、(2) 及 (3) 皆正確，故選 D。</span><br>
+            <span class="en">Conclusion: (1), (2) and (3) are all correct, so the answer is D.</span>
+        </p>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="analysis-section">
+        <h2><span class="zh">題目拆解</span> / <span class="en">Problem Decomposition</span></h2>
+        <p>
+            <span class="zh">這類題目的核心在於理解<strong>「產權完整性」與「市場效率」</strong>之間的關係。</span>
+            <span class="en">The core of this type of question lies in understanding the relationship between <strong>"integrity of property rights" and "market efficiency"</strong>.</span>
+        </p>
+        <ul>
+            <li>
+                <span class="zh"><strong>關鍵點 (Pivot Point)：</strong>只要看到「產權被削弱」或「沒有私有產權」，腦海中應立刻浮現三個後果：</span>
+                <span class="en"><strong>Pivot Point:</strong> Whenever you see "property rights are weakened" or "absence of private property rights," three consequences should immediately come to mind:</span>
+                <ol>
+                    <li><span class="zh">交易成本上升 (Transaction costs rise)</span></li>
+                    <li><span class="zh">非價格競爭出現 (Non-price competition arises)</span></li>
+                    <li><span class="zh">租值消散 (Rent dissipation occurs)</span></li>
+                </ol>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Tricks & Traps -->
+    <div class="tips-grid">
+        <div class="tip-card trap-card">
+            <span class="card-title">⚠️ <span class="zh">常犯錯誤</span> / <span class="en">Common Mistakes</span></span>
+            <p>
+                <span class="zh"><strong>誤解：</strong>學生常誤以為「收入減少」僅指擁有者個人的收入，而忽略了資產本身的生產力也會因缺乏管理誘因而下降。</span>
+                <span class="en"><strong>Misconception:</strong> Students often mistake "decrease in income" as referring only to the owner's personal income, ignoring that the asset's productivity itself will drop due to a lack of management incentives.</span>
+            </p>
+            <p>
+                <span class="zh"><strong>混淆：</strong>誤以為只有「沒有產權」才會導致非價格競爭。其實只要產權<strong>界定不清</strong>或<strong>被削弱</strong>（例如價格管制其實也是削弱產權的一種），非價格競爭就會出現。</span>
+                <span class="en"><strong>Confusion:</strong> Mistakenly thinking that only "absence of property rights" leads to non-price competition. In reality, as long as property rights are <strong>poorly defined</strong> or <strong>weakened</strong> (e.g., price control is a form of weakening property rights), non-price competition will arise.</span>
+            </p>
+        </div>
+
+        <div class="tip-card trick-card">
+            <span class="card-title">💡 <span class="zh">考試技巧</span> / <span class="en">Exam Tricks</span></span>
+            <p>
+                <span class="zh"><strong>連鎖邏輯法：</strong></span>
+                <span class="en"><strong>Chain Logic Method:</strong></span>
+            </p>
+            <p>
+                <span class="zh">削弱產權 \(\rightarrow\) 價格機制失效 \(\rightarrow\) 無法用價高者得分配 \(\rightarrow\) 資源錯配 (1) & 非價格競爭 (3)。</span><br>
+                <span class="en">Weakened Property Rights \(\rightarrow\) Price mechanism fails \(\rightarrow\) Cannot allocate to highest bidder \(\rightarrow\) Resource mismatch (1) & Non-price competition (3).</span>
+            </p>
+            <p>
+                <span class="zh">削弱產權 \(\rightarrow\) 努力的回報沒保障 \(\rightarrow\) 減少努力 \(\rightarrow\) 產值/收入下降 (2)。</span><br>
+                <span class="en">Weakened Property Rights \(\rightarrow\) Returns on effort not guaranteed \(\rightarrow\) Reduce effort \(\rightarrow\) Output/Income drops (2).</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Externalities & Efficiency</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --box-bg: #eff6ff;
+            --box-border: #60a5fa;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .lang-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .zh-text {
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--box-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Answer Section */
+        .option-analysis {
+            margin-top: 15px;
+        }
+
+        .option-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+
+        .option-item.correct {
+            border: 2px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .correct-tag {
+            color: var(--correct-green);
+            font-weight: bold;
+        }
+
+        /* Tips & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .trap {
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5;
+        }
+
+        .trick {
+            background-color: #f0fdf4;
+            border: 1px solid #86efac;
+        }
+
+        .trap h3 { color: var(--wrong-red); margin-top: 0; font-size: 1.1rem; }
+        .trick h3 { color: var(--correct-green); margin-top: 0; font-size: 1.1rem; }
+
+        /* Bilingual Paragraphs */
+        .bilingual-p {
+            margin-bottom: 15px;
+        }
+        .bilingual-p .zh {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+        .bilingual-p .en {
+            display: block;
+            color: #64748b;
+            font-size: 0.95em;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Externalities & Efficiency (外部性與效率)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Coase Theorem, Social Cost</span>
+        </div>
+    </header>
+
+    <!-- SECTION 1: THE QUESTION -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="zh-text">
+                某發展商計劃興建一座高聳的建築物。該建築物將會擋着另一座建築物部分住戶享有的海景。<br><br>
+                在上述情況中，若 ___________，則可能達至有效率。<br>
+                (1) 政府限制該幢新建築物的高度<br>
+                (2) 該發展商向每一個受影響住戶就阻擋海景支付賠償<br>
+                (3) 受影響住戶向該發展商付費，要求它降低該幢新建築物的高度
+            </div>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+            <div class="en-text">
+                A developer plans to construct a tall building. The building will block the sea view enjoyed by some households living in another building.<br><br>
+                In the above situation, efficiency may be attained if _________.<br>
+                (1) the government restricts the height of the new building<br>
+                (2) the developer pays a compensation to each affected household for blocking the sea view<br>
+                (3) the affected households pay the developer to request it to reduce the height of the new building
+            </div>
+            <br>
+            <strong>
+                A. 只有 (1)、(2) &nbsp;&nbsp; [(1) and (2) only]<br>
+                B. 只有 (1)、(3) &nbsp;&nbsp; [(1) and (3) only]<br>
+                C. 只有 (2)、(3) &nbsp;&nbsp; [(2) and (3) only]<br>
+                D. (1)、(2) 及 (3) &nbsp; [(1), (2) and (3)]
+            </strong>
+        </div>
+    </div>
+
+    <!-- SECTION 2: CONCEPT REVIEW -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="bilingual-p">
+                <span class="zh"><strong>1. 外部性 (Externalities):</strong> 當一個人的行為影響了旁觀者的福利，而沒有為此付費或獲得補償時，便會出現外部性。本題涉及<strong>負外部性 (Negative Externality)</strong>，因為建築物阻擋了海景（對鄰居造成損害）。</span>
+                <span class="en"><strong>1. Externalities:</strong> An externality arises when a person's actions affect the well-being of a bystander without paying or being compensated. This question involves a <strong>Negative Externality</strong> because the building blocks the sea view (harming neighbors).</span>
+            </div>
+
+            <div class="math-block">
+                $$MSC = MPC + MEC$$
+                <small>Marginal Social Cost = Marginal Private Cost + Marginal External Cost</small>
+            </div>
+
+            <div class="bilingual-p">
+                <span class="zh"><strong>2. 效率條件 (Efficiency Condition):</strong> 為了達至經濟效率，我們必須在邊際社會利益等於邊際社會成本的水平生產。</span>
+                <span class="en"><strong>2. Efficiency Condition:</strong> To achieve economic efficiency, production must occur at the level where Marginal Social Benefit equals Marginal Social Cost.</span>
+            </div>
+
+            <div class="math-block">
+                $$MSB = MSC$$
+            </div>
+
+            <div class="bilingual-p">
+                <span class="zh"><strong>3. 高斯定律 (Coase Theorem):</strong> 如果產權界定清晰，且交易費用低廉，私人各方可以通過協商解決外部性問題，達至有效率的資源配置，無論產權歸誰所有。</span>
+                <span class="en"><strong>3. Coase Theorem:</strong> If property rights are clearly defined and transaction costs are low, private parties can bargain to solve the externality problem and reach an efficient allocation of resources, regardless of who holds the property rights.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: ANSWER & ANALYSIS -->
+    <div class="section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="font-size: 1.2rem; margin-bottom: 20px;">
+            Correct Answer: <strong>Option D</strong> <span style="color: #64748b;">((1), (2) and (3))</span>
+        </div>
+
+        <div class="option-analysis">
+            <!-- Analysis (1) -->
+            <div class="option-item correct">
+                <span class="option-label">Option (1): Government Restriction (政府限制) - CORRECT</span>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>分析：</strong>這是「命令與控制」的政策。如果政府擁有充分的資訊，將建築物的高度限制在社會最優水平（即 $MSB = MSC$ 的水平），那麼效率是可以達成的。題目問的是「可能 (may)」，所以這是正確的。</span>
+                    <span class="en"><strong>Analysis:</strong> This is a "Command and Control" policy. If the government has perfect information and restricts the building height to the socially optimal level (where $MSB = MSC$), efficiency is achieved. Since the question asks "may", this is correct.</span>
+                </div>
+            </div>
+
+            <!-- Analysis (2) -->
+            <div class="option-item correct">
+                <span class="option-label">Option (2): Developer Pays Compensation (發展商支付賠償) - CORRECT</span>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>分析：</strong>這暗示了「海景權」屬於住戶。發展商為了興建高樓，必須賠償住戶的損失。這使得外部成本（MEC）變成了發展商的私人成本（MPC）。發展商會考慮這筆成本，只在興建收益大於賠償金額時才興建。這令 $MPC$ 上升至 $MSC$ 水平，達至效率。</span>
+                    <span class="en"><strong>Analysis:</strong> This implies the "right to the view" belongs to the households. To build tall, the developer must compensate households. This turns the External Cost (MEC) into the developer's Private Cost (MPC). The developer will consider this cost and only build if the gain exceeds the compensation. This raises $MPC$ to the $MSC$ level, achieving efficiency.</span>
+                </div>
+            </div>
+
+            <!-- Analysis (3) -->
+            <div class="option-item correct">
+                <span class="option-label">Option (3): Households Pay Developer (住戶向發展商付費) - CORRECT</span>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>分析：</strong>這暗示了「興建權」屬於發展商。根據高斯定律，住戶可以賄賂（支付）發展商減少高度。對發展商來說，拒絕這筆款項變成了興建高樓的「機會成本」。只要住戶願意支付的金額（反映了他們對海景的估值）高於發展商減少高度的損失，交易就會發生，最終高度會回落到有效率的水平。</span>
+                    <span class="en"><strong>Analysis:</strong> This implies the "right to build" belongs to the developer. According to the Coase Theorem, households can bribe (pay) the developer to reduce the height. For the developer, refusing this payment becomes an "opportunity cost" of building taller. As long as the households' payment (reflecting their valuation of the view) exceeds the developer's loss from reducing height, a deal occurs, and the height settles at the efficient level.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: PROBLEM DECOMPOSITION -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="bilingual-p">
+            <span class="zh"><strong>關鍵詞 (Pivot Point):</strong> 「可能達至有效率」(Efficiency may be attained)。</span>
+            <span class="en"><strong>Pivot Point:</strong> "Efficiency may be attained".</span>
+        </div>
+        <div class="bilingual-p">
+            <span class="zh">這道題目的核心在於區分<strong>「公平」(Equity)</strong> 與 <strong>「效率」(Efficiency)</strong>。</span>
+            <span class="en">The core of this question is distinguishing between <strong>"Equity"</strong> and <strong>"Efficiency"</strong>.</span>
+        </div>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>
+                <span class="zh">選項 (2) 覺得比較公平（發展商賠錢），它是有效率的。</span>
+                <br><span class="en">Option (2) feels fairer (developer pays), and it is efficient.</span>
+            </li>
+            <li>
+                <span class="zh">選項 (3) 覺得不公平（受害者還要付錢？），但在經濟學邏輯上，只要資源（海景/建築高度）最終落入最珍視它的人手中，它就是<strong>有效率</strong>的。</span>
+                <br><span class="en">Option (3) feels unfair (victims have to pay?), but in economic logic, as long as the resource (view/building height) ends up with the party who values it most, it is <strong>efficient</strong>.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- SECTION 5: COMMON MISTAKES & TRICKS -->
+    <div class="section">
+        <h2>Mistakes & Tricks (常犯錯誤與技巧)</h2>
+        <div class="tips-grid">
+            <div class="tip-card trap">
+                <h3>⚠️ Common Trap (常犯陷阱)</h3>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>誤解：</strong> 認為只有造成污染/問題的一方（發展商）付費才算有效率。</span>
+                    <span class="en"><strong>Misconception:</strong> Thinking that efficiency is only achieved if the polluter/problem-maker (developer) pays.</span>
+                </div>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>真相：</strong> 誰付費只影響<strong>財富分配 (Wealth Distribution)</strong>，不影響<strong>資源配置的效率 (Allocative Efficiency)</strong>（假設交易費用為零）。</span>
+                    <span class="en"><strong>Truth:</strong> Who pays only affects <strong>Wealth Distribution</strong>, not <strong>Allocative Efficiency</strong> (assuming zero transaction costs).</span>
+                </div>
+            </div>
+
+            <div class="tip-card trick">
+                <h3>⚡ Exam Trick (考試速解)</h3>
+                <div class="bilingual-p">
+                    <span class="zh"><strong>高斯定律速記：</strong> 看到「雙方協商」、「支付賠償」或「支付費用以減少滋擾」的選項，只要題目沒有提及巨大的交易費用，通常 (2) 和 (3) 都是正確的解決方案。它們是一體兩面。</span>
+                    <span class="en"><strong>Coase Theorem Shortcut:</strong> When you see options about "negotiation", "paying compensation", or "paying to reduce nuisance", as long as high transaction costs aren't mentioned, usually both (2) and (3) are correct solutions. They are two sides of the same coin.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

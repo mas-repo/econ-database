@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balance of Payments Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+        .option {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .key-term {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .analysis-item.correct {
+            border-color: var(--correct-green);
+            background-color: #ecfdf5;
+        }
+        .analysis-item.wrong {
+            border-left: 4px solid var(--wrong-red);
+        }
+        .status-badge {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .status-correct { color: var(--correct-green); }
+        .status-wrong { color: var(--wrong-red); }
+
+        /* Bilingual Text Styling */
+        .zh { display: block; margin-bottom: 6px; font-weight: 500; }
+        .en { display: block; color: #64748b; font-size: 0.95em; margin-bottom: 10px; }
+
+        /* Math Block */
+        .math-block {
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Balance of Payments (國際收支平衡)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Keywords: Current Account, Capital Flow</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">下列哪項<strong>不包括</strong>在香港經常帳差額的計算之內？</p>
+            <p class="en">Which of the following is <strong>NOT</strong> included in the calculation of Hong Kong’s current account balance?</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+            
+            <div class="option">
+                <span class="zh">A. 一位香港居民收到她住在倫敦的兒子所轉來的一筆銀行轉賬</span>
+                <span class="en">A. a bank transfer received by a Hong Kong resident from her son residing in London</span>
+            </div>
+            <div class="option">
+                <span class="zh">B. 一間香港零售商向內地遊客銷售紀念品所賺取的收入</span>
+                <span class="en">B. the revenue earned by a Hong Kong retailer from selling souvenirs to Mainland tourists</span>
+            </div>
+            <div class="option">
+                <span class="zh">C. 一位香港業主向一名在巴黎的投資者出售其餐廳鋪位所收到的款項</span>
+                <span class="en">C. the sum of money received by a Hong Kong landlord from selling his restaurant premises to an investor in Paris</span>
+            </div>
+            <div class="option">
+                <span class="zh">D. 一位香港居民向一名在香港逗留四個月的內地教授出租其住宅所收到的租金</span>
+                <span class="en">D. the rental income received by a Hong Kong resident from renting his apartment to a Mainland professor who stayed in Hong Kong for four months</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p class="zh">要解答此題，我們必須區分國際收支平衡表（BoP）中的兩個主要賬戶：</p>
+            <p class="en">To solve this, we must distinguish between the two main accounts in the Balance of Payments (BoP):</p>
+
+            <div class="math-block">
+                $$ \text{Balance of Payments (BoP)} = \text{Current Account (CA)} + \text{Capital and Financial Account (CFA)} $$
+            </div>
+
+            <h3 style="margin-top: 15px; color: var(--secondary-color);">1. 經常帳 (Current Account)</h3>
+            <p class="zh">記錄實質資源的流動，包括：</p>
+            <p class="en">Records the flow of real resources, including:</p>
+            <ul>
+                <li><span class="key-term">貨物 (Goods):</span> 進出口商品 (Exports/Imports of goods).</li>
+                <li><span class="key-term">服務 (Services):</span> 進出口服務，如旅遊、運輸 (Exports/Imports of services, e.g., tourism, transport).</li>
+                <li><span class="key-term">初次收入 (Primary Income):</span> 投資收益（利息、股息）及僱員報酬 (Investment income like interest/dividends, and compensation of employees).</li>
+                <li><span class="key-term">二次收入 (Secondary Income):</span> 單向轉移，無回報的款項，如匯款、捐贈 (Unilateral transfers with no return, e.g., remittances, donations).</li>
+            </ul>
+
+            <h3 style="margin-top: 15px; color: var(--secondary-color);">2. 資本及金融帳 (Capital and Financial Account)</h3>
+            <p class="zh">記錄資產擁有權的變動（金融資產或實質資產的買賣）。</p>
+            <p class="en">Records changes in asset ownership (buying/selling of financial or physical assets).</p>
+            <ul>
+                <li><span class="key-term">資產買賣 (Asset Transactions):</span> 股票、債券、房地產的買賣 (Buying/selling stocks, bonds, real estate).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">
+            <span class="zh">正確答案：</span> <strong>Option C</strong>
+        </p>
+
+        <!-- Option A -->
+        <div class="analysis-item wrong">
+            <span class="status-badge status-wrong">Option A: Included (包括)</span>
+            <p class="zh"><strong>分析：</strong>這是單向的現金轉移（匯款）。兒子給母親的錢沒有涉及貨物或服務的交換，屬於經常轉移（Current Transfers）或二次收入。</p>
+            <p class="en"><strong>Analysis:</strong> This is a unilateral cash transfer (remittance). The money sent by the son to the mother involves no exchange of goods or services, classifying it as Current Transfers (Secondary Income).</p>
+            <p class="zh" style="font-size: 0.9em; color: #666;">歸類：經常帳 (二次收入) / Classification: Current Account (Secondary Income)</p>
+        </div>
+
+        <!-- Option B -->
+        <div class="analysis-item wrong">
+            <span class="status-badge status-wrong">Option B: Included (包括)</span>
+            <p class="zh"><strong>分析：</strong>向遊客銷售商品屬於「服務輸出」（旅遊業）。雖然賣的是實物（紀念品），但在國際收支會計中，遊客在境內的消費通常歸類為服務貿易。</p>
+            <p class="en"><strong>Analysis:</strong> Selling goods to tourists counts as an "Export of Services" (Tourism). Although physical goods (souvenirs) are sold, tourist expenditure within the territory is typically classified under trade in services.</p>
+            <p class="zh" style="font-size: 0.9em; color: #666;">歸類：經常帳 (服務) / Classification: Current Account (Services)</p>
+        </div>
+
+        <!-- Option C -->
+        <div class="analysis-item correct">
+            <span class="status-badge status-correct">Option C: NOT Included (不包括) - CORRECT</span>
+            <p class="zh"><strong>分析：</strong>這涉及出售「鋪位」（房地產）。房地產是一種<strong>資產 (Asset)</strong>。出售資產屬於資產擁有權的轉移，不屬於當期生產或收入，因此記錄在<strong>金融帳 (Financial Account)</strong>。</p>
+            <p class="en"><strong>Analysis:</strong> This involves selling "premises" (real estate). Real estate is an <strong>Asset</strong>. The sale of an asset represents a transfer of asset ownership, not current production or income, so it is recorded in the <strong>Financial Account</strong>.</p>
+            <p class="zh" style="font-size: 0.9em; color: #666;">歸類：金融帳 (直接投資) / Classification: Financial Account (Direct Investment)</p>
+        </div>
+
+        <!-- Option D -->
+        <div class="analysis-item wrong">
+            <span class="status-badge status-wrong">Option D: Included (包括)</span>
+            <p class="zh"><strong>分析：</strong>這是出租物業賺取的「租金」。在經濟學定義中，這是提供服務（住房服務）所賺取的收入，或者視為投資收益。無論如何，這是一種收入流，而非資產買賣。</p>
+            <p class="en"><strong>Analysis:</strong> This is "rental income" earned from leasing property. In economic terms, this is income earned from providing a service (housing service) or investment income. Either way, it is a flow of income, not the sale of an asset.</p>
+            <p class="zh" style="font-size: 0.9em; color: #666;">歸類：經常帳 (服務輸出) / Classification: Current Account (Export of Services)</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這類題目的關鍵在於區分<strong>「收入流 (Flow of Income)」</strong>與<strong>「資產買賣 (Asset Transaction)」</strong>。</p>
+        <p class="en">The key to this type of question is distinguishing between a <strong>"Flow of Income"</strong> and an <strong>"Asset Transaction"</strong>.</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+            <div style="background: #e0f2fe; padding: 10px; border-radius: 6px;">
+                <strong style="color: #0369a1;">經常帳 (Current Account)</strong>
+                <ul style="margin: 5px 0 0 20px; padding: 0; font-size: 0.9em;">
+                    <li>賺錢 (Earning money)</li>
+                    <li>花費 (Spending)</li>
+                    <li>給予/接收禮物 (Gifts/Transfers)</li>
+                </ul>
+            </div>
+            <div style="background: #fce7f3; padding: 10px; border-radius: 6px;">
+                <strong style="color: #be185d;">金融帳 (Financial Account)</strong>
+                <ul style="margin: 5px 0 0 20px; padding: 0; font-size: 0.9em;">
+                    <li>買樓 (Buying property)</li>
+                    <li>賣樓 (Selling property)</li>
+                    <li>買賣股票 (Trading stocks)</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="zh" style="margin-top: 15px;"><strong>解題樞紐 (Pivot Point):</strong> 選項 C 提到「出售鋪位」(Selling premises)。鋪位是不動產，屬於資產。資產的交換<strong>永遠</strong>不計入經常帳。</p>
+        <p class="en"><strong>Pivot Point:</strong> Option C mentions "Selling premises". Premises are real estate, which are assets. The exchange of assets is <strong>NEVER</strong> included in the Current Account.</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="section">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="tips-box">
+            <h3 style="margin-top: 0; font-size: 1.1rem;">Trap 1: 混淆「租金」與「賣樓款項」</h3>
+            <p class="zh">學生常誤以為凡是與房地產有關的都在同一賬戶。記住：<strong>收租</strong>是經常帳（服務/收入），<strong>賣樓</strong>是金融帳（資產變現）。</p>
+            <p class="en">Students often confuse "Rental Income" with "Proceeds from Selling Property". Remember: <strong>Collecting Rent</strong> is Current Account (Service/Income), while <strong>Selling Property</strong> is Financial Account (Asset Liquidation).</p>
+
+            <h3 style="margin-top: 15px; font-size: 1.1rem;">Trap 2: 忽略「居民」身份</h3>
+            <p class="zh">題目中提到的「內地遊客」、「倫敦兒子」、「巴黎投資者」都是為了確立這是<strong>對外交易 (External Transaction)</strong>。如果雙方都是香港居民，則根本不會計入國際收支平衡表。</p>
+            <p class="en">Terms like "Mainland tourist", "Son in London", or "Investor in Paris" are there to establish that these are <strong>External Transactions</strong>. If both parties were Hong Kong residents, it wouldn't be in the BoP at all.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
