@@ -2,6 +2,7 @@
     // === CONFIGURATION ===
     const GAS_URL = "https://script.google.com/macros/s/AKfycby2ekiIw6zSJoCEQTo1XskkKVmO84IqZ4rsZHWi7kxWoSl1uXk59XqIXblddHlbvmap/exec"; 
     const LOGIN_PAGE = "https://mas-repo.github.io/econ-database/";
+    const INDEX_URL = "https://mas-repo.github.io/econ-database/PastPaper/";
 
     // 1. Immediate Block: Hide content while checking
     // This must run immediately in the <head>
@@ -58,6 +59,10 @@
 
     function revealContent() {
         safeDOMAction(() => {
+            // 1. Add the navigation footer first
+            addNavigationFooter();
+
+            // 2. Remove the hiding style to show the page
             const styleNode = document.getElementById('protect-style');
             if (styleNode) styleNode.remove();
         });
@@ -70,10 +75,40 @@
             document.body.style.backgroundColor = "white";
             
             // 2. THEN remove the hiding style
-            // This prevents the content from flashing before being deleted
             const styleNode = document.getElementById('protect-style');
             if (styleNode) styleNode.remove();
-            
         });
+    }
+
+    function addNavigationFooter() {
+        // Create a footer container
+        const footer = document.createElement('div');
+        
+        // Style the footer to look clean and centered at the bottom
+        footer.style.marginTop = '50px';
+        footer.style.padding = '20px';
+        footer.style.borderTop = '1px solid #ddd';
+        footer.style.textAlign = 'center';
+        footer.style.fontFamily = 'sans-serif';
+        footer.style.backgroundColor = '#f9f9f9';
+
+        // Create the link
+        const link = document.createElement('a');
+        link.href = INDEX_URL;
+        link.innerText = "⬅ 返回目錄 (Back to Index)";
+        
+        // Style the link
+        link.style.textDecoration = 'none';
+        link.style.color = '#007bff';
+        link.style.fontSize = '16px';
+        link.style.fontWeight = 'bold';
+        
+        // Hover effect logic
+        link.onmouseover = () => { link.style.textDecoration = 'underline'; };
+        link.onmouseout = () => { link.style.textDecoration = 'none'; };
+
+        // Append link to footer, and footer to body
+        footer.appendChild(link);
+        document.body.appendChild(footer);
     }
 })();
