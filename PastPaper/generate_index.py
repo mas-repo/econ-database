@@ -14,7 +14,7 @@ HTML_TEMPLATE = """
     <script src="/econ-database/PastPaper/protect.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSE Question Bank</title>
+    <title>DSE Question Explanation</title>
     <style>
         :root { --primary: #2563eb; --bg: #f8fafc; --text: #1e293b; --border: #e2e8f0; }
         body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
@@ -32,7 +32,7 @@ HTML_TEMPLATE = """
 <body>
 <div class="container">
     <header>
-        <h1 style="color: var(--primary)">DSE Question Bank</h1>
+        <h1 style="color: var(--primary)">DSE Question Explanation</h1>
         <input type="text" id="search" class="search-box" placeholder="Search year or question...">
     </header>
     <div id="grid" class="grid"></div>
