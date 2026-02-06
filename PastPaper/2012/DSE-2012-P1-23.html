@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: GDP Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .meta-item {
+            margin: 5px 10px;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            margin: 10px 0;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .answer-section {
+            margin-top: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--success-text);
+            background-color: var(--success-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .analysis-item.correct {
+            border-color: var(--success-text);
+            background-color: #f0fdf4;
+        }
+
+        .analysis-item.incorrect {
+            border-color: #e2e8f0;
+            opacity: 0.9;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .decomposition-box {
+            background-color: #fff7ed; /* Light orange */
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trap-box {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .trick-box {
+            background-color: #f0f9ff;
+            border: 2px dashed var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .meta-info {
+                flex-direction: column;
+            }
+            .meta-item {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <span class="meta-label">Topic / 課題:</span> 
+                National Income Accounting (國民收入會計)
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Difficulty / 難度:</span> 
+                ★★★☆☆
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Key Concepts / 核心概念:</span> 
+                Nominal GDP, Real GDP, Per-capita GDP
+            </div>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <div class="question-text">
+            <p>甲國的一般物價水平上升了10%，總產出和人口則分別下降了2%及10%，由此可知，甲國的名義本地產總值會__________，而人均實質本地生產總值會__________。</p>
+            <p class="en-text">Country A’s general price level increases by 10% and its aggregate output and population drop by 2% and 10% respectively. As a result, Country A’s nominal GDP will _______ and the per-capita real GDP will _______.</p>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 上升 … 上升 (rise … rise)</li>
+            <li><strong>B.</strong> 上升 … 下降 (rise … fall)</li>
+            <li><strong>C.</strong> 維持不變 … 上升 (remain unchanged … rise)</li>
+            <li><strong>D.</strong> 維持不變 … 下降 (remain unchanged … fall)</li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <p>要解決這道題目，我們需要掌握三個核心定義及其關係：</p>
+        <p class="en-text">To solve this problem, we need to master three core definitions and their relationships:</p>
+
+        <h3>1. 名義 GDP 與 實質 GDP (Nominal vs. Real GDP)</h3>
+        <p><strong>名義 GDP (Nominal GDP)</strong> 是以當前價格計算的總產值。它受「價格」和「產量」兩者影響。<br>
+        <strong>實質 GDP (Real GDP)</strong> 是剔除了價格變動因素，僅反映「總產出」的變化。</p>
+        
+        <div class="formula-block">
+            $$ \text{Nominal GDP} \approx \text{Price Level} \times \text{Real GDP (Output)} $$
+            $$ \text{名義 GDP} \approx \text{物價水平} \times \text{實質 GDP (總產出)} $$
+        </div>
+        
+        <p><strong>百分比變動近似公式 (Percentage Change Approximation):</strong></p>
+        <div class="formula-block">
+            $$ \%\Delta \text{Nominal GDP} \approx \%\Delta \text{Price} + \%\Delta \text{Real GDP} $$
+            $$ \text{名義 GDP 變動率} \approx \text{物價變動率} + \text{實質 GDP 變動率} $$
+        </div>
+
+        <h3>2. 人均 GDP (Per-capita GDP)</h3>
+        <p>人均 GDP 反映平均每人的產值，計算方法是將 GDP 除以人口總數。</p>
+        <div class="formula-block">
+            $$ \text{Per-capita Real GDP} = \frac{\text{Real GDP}}{\text{Population}} $$
+            $$ \text{人均實質 GDP} = \frac{\text{實質 GDP}}{\text{人口}} $$
+        </div>
+
+        <p><strong>百分比變動近似公式 (Percentage Change Approximation):</strong></p>
+        <div class="formula-block">
+            $$ \%\Delta \text{Per-capita Real GDP} \approx \%\Delta \text{Real GDP} - \%\Delta \text{Population} $$
+            $$ \text{人均實質 GDP 變動率} \approx \text{實質 GDP 變動率} - \text{人口變動率} $$
+        </div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="answer-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: A (上升 … 上升 / rise … rise)
+        </div>
+
+        <h3>Step 1: Analyze Nominal GDP (名義 GDP)</h3>
+        <div class="analysis-item correct">
+            <p><strong>已知數據 (Given Data):</strong></p>
+            <ul>
+                <li>物價水平 (Price Level, \(P\)): \(+10\%\)</li>
+                <li>總產出 / 實質 GDP (Aggregate Output / Real GDP, \(Q\)): \(-2\%\)</li>
+            </ul>
+            
+            <p><strong>計算 (Calculation):</strong><br>
+            利用公式：\(\%\Delta \text{Nominal GDP} \approx \%\Delta P + \%\Delta Q\)<br>
+            Using the formula: \(\%\Delta \text{Nominal GDP} \approx \%\Delta P + \%\Delta Q\)</p>
+            
+            <p>$$ +10\% + (-2\%) = +8\% $$</p>
+            
+            <p><strong>結論 (Conclusion):</strong><br>
+            結果是正數，代表名義 GDP <strong>上升 (Rise)</strong>。<br>
+            The result is positive, meaning Nominal GDP will <strong>rise</strong>.</p>
+        </div>
+
+        <h3>Step 2: Analyze Per-capita Real GDP (人均實質 GDP)</h3>
+        <div class="analysis-item correct">
+            <p><strong>已知數據 (Given Data):</strong></p>
+            <ul>
+                <li>總產出 / 實質 GDP (Real GDP): \(-2\%\)</li>
+                <li>人口 (Population): \(-10\%\)</li>
+            </ul>
+
+            <p><strong>注意 (Note):</strong> 題目問的是「人均<strong>實質</strong> GDP」，所以我們不需要考慮物價變動。<br>
+            The question asks for "Per-capita <strong>Real</strong> GDP", so we do not consider price changes here.</p>
+            
+            <p><strong>計算 (Calculation):</strong><br>
+            利用公式：\(\%\Delta \text{Per-capita Real GDP} \approx \%\Delta \text{Real GDP} - \%\Delta \text{Population}\)<br>
+            Using the formula: \(\%\Delta \text{Per-capita Real GDP} \approx \%\Delta \text{Real GDP} - \%\Delta \text{Population}\)</p>
+            
+            <p>$$ -2\% - (-10\%) = -2\% + 10\% = +8\% $$</p>
+            
+            <p><strong>結論 (Conclusion):</strong><br>
+            結果是正數，代表人均實質 GDP <strong>上升 (Rise)</strong>。<br>
+            The result is positive, meaning Per-capita Real GDP will <strong>rise</strong>.</p>
+        </div>
+
+        <h3>Final Check (最終檢查)</h3>
+        <p>名義 GDP 上升，人均實質 GDP 上升。因此，選項 A 是正確的。<br>
+        Nominal GDP rises, Per-capita Real GDP rises. Therefore, Option A is correct.</p>
+
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="decomposition-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這類題目是典型的「百分比變動算術題」。解題關鍵在於將文字轉化為數學符號。</p>
+        <p class="en-text">This type of question is a typical "percentage change arithmetic problem". The key is to translate text into mathematical symbols.</p>
+
+        <ol>
+            <li>
+                <strong>識別關鍵詞 (Identify Keywords):</strong>
+                <ul>
+                    <li>一般物價水平 (Price Level) \(\rightarrow P\)</li>
+                    <li>總產出 (Aggregate Output) \(\rightarrow Q\) (即 Real GDP)</li>
+                    <li>人口 (Population) \(\rightarrow Pop\)</li>
+                </ul>
+            </li>
+            <li>
+                <strong>應用「加減法則」 (Apply "Add/Subtract Rules"):</strong>
+                <ul>
+                    <li>兩者相乘 (A = B × C) \(\rightarrow\) 變動率相加 (\(\%\Delta A \approx \%\Delta B + \%\Delta C\))</li>
+                    <li>兩者相除 (A = B / C) \(\rightarrow\) 變動率相減 (\(\%\Delta A \approx \%\Delta B - \%\Delta C\))</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="trap-box">
+        <h3>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <ul>
+            <li>
+                <strong>混淆「總產出」與「名義 GDP」 (Confusing "Aggregate Output" with "Nominal GDP"):</strong><br>
+                題目中的「總產出」(Aggregate Output) 實際上是指「實質 GDP」(Real GDP)。很多學生誤以為總產出下降，名義 GDP 就一定下降，忽略了物價上升的抵銷作用。<br>
+                <span class="en-text">"Aggregate Output" in the question refers to "Real GDP". Many students mistakenly think that if output falls, Nominal GDP must fall, ignoring the offsetting effect of rising prices.</span>
+            </li>
+            <li>
+                <strong>計算人均變動時忘記負負得正 (Sign Errors in Per-capita Calculation):</strong><br>
+                計算人均值時是「分子變動率」<strong>減去</strong>「分母變動率」。<br>
+                公式是：\(-2\% - (-10\%)\)。很多學生會算成 \(-2\% - 10\% = -12\%\)，導致選錯答案。<br>
+                <span class="en-text">When calculating per-capita values, it's numerator change <strong>minus</strong> denominator change. The math is \(-2\% - (-10\%)\). Students often calculate it as \(-2\% - 10\% = -12\%\), leading to the wrong answer.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Exam Tricks -->
+    <section class="trick-box">
+        <h3>🚀 Exam Tricks (考試技巧)</h3>
+        <p><strong>數值代入法 (Substitution Method):</strong></p>
+        <p>如果你對百分比加減感到混亂，可以設簡單的數字來計算：</p>
+        <p class="en-text">If you are confused by percentage addition/subtraction, use simple numbers:</p>
+        <ul>
+            <li>設原來的物價 \(P=1\)，產出 \(Q=100\)，人口 \(Pop=100\)。</li>
+            <li><strong>原況 (Original):</strong>
+                <ul>
+                    <li>Nominal GDP = \(1 \times 100 = 100\)</li>
+                    <li>Per-capita Real GDP = \(100 / 100 = 1\)</li>
+                </ul>
+            </li>
+            <li><strong>新況 (New):</strong>
+                <ul>
+                    <li>\(P\) 變 \(1.1\) (+10%)</li>
+                    <li>\(Q\) 變 \(98\) (-2%)</li>
+                    <li>\(Pop\) 變 \(90\) (-10%)</li>
+                </ul>
+            </li>
+            <li><strong>計算新值 (Calculate New Values):</strong>
+                <ul>
+                    <li>New Nominal GDP = \(1.1 \times 98 = 107.8\) (大於 100 \(\rightarrow\) 上升)</li>
+                    <li>New Per-capita Real GDP = \(98 / 90 \approx 1.088\) (大於 1 \(\rightarrow\) 上升)</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>結論：兩者皆上升 (Both rise)。</strong></p>
+    </section>
+
+</div>
+
+</body>
+</html>

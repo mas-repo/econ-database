@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - GDP & Inflation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #eff6ff; /* Light Blue */
+            --accent-color: #f59e0b; /* Amber for difficulty */
+            --text-color: #1f2937;
+            --bg-color: #f3f4f6;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-bottom: 4px solid #1e40af;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border-left: 5px solid var(--text-color);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 10px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: default;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .formula-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Analysis Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            margin-bottom: 20px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .analysis-step h4 {
+            margin: 0 0 5px 0;
+            color: #374151;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Traps & Tricks */
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--wrong-color);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .trick-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid var(--correct-color);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .meta-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>Topic: National Income Accounting & Inflation<br><span style="font-size:0.8em">課題：國民收入會計與通脹</span></h1>
+        <div class="meta-info">
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Nominal vs Real GDP, Inflation Rate</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p><strong>[Traditional Chinese]</strong><br>
+            在一段時間內，某經濟以當時市價計算的本地生產總值增加15%，而通脹率則由10%減至5%。<br>
+            根據以上資料，實質本地生產總值_______，而一般物價水平_______。</p>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+
+            <p><strong>[English]</strong><br>
+            Over a given period, the GDP at current market prices of an economy increases by 15% and the rate of inflation decreases from 10% to 5%.<br>
+            Based on the above information, the real GDP _______ and the general price level _______.</p>
+        </div>
+
+        <div class="options-grid">
+            <div class="option">A. 增加 increases … 上升 rises</div>
+            <div class="option">B. 增加 increases … 下降 falls</div>
+            <div class="option">C. 減少 decreases … 上升 rises</div>
+            <div class="option">D. 減少 decreases … 下降 falls</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p><strong>1. 名義與實質 GDP 的關係 (Relation between Nominal and Real GDP)</strong></p>
+            <p>實質變動百分比大約等於名義變動百分比減去通脹率。</p>
+            <p class="en-text">The percentage change in Real GDP is approximately equal to the percentage change in Nominal GDP minus the Inflation Rate.</p>
+            
+            <div class="formula-box">
+                $$ \%\Delta \text{Real GDP} \approx \%\Delta \text{Nominal GDP} - \text{Inflation Rate} $$
+            </div>
+
+            <p><strong>2. 通脹率與物價水平 (Inflation Rate vs. Price Level)</strong></p>
+            <p><strong>通脹率 (Inflation Rate)</strong> 是物價水平變動的百分比。只要通脹率是<strong>正數 (Positive)</strong>，物價水平就在<strong>上升</strong>。</p>
+            <p class="en-text"><strong>Inflation Rate</strong> is the percentage change in the price level. As long as the inflation rate is <strong>positive</strong>, the price level is <strong>rising</strong>.</p>
+            <ul>
+                <li>通脹率上升 (Rising inflation rate) \(\rightarrow\) 物價升得更快 (Prices rise faster).</li>
+                <li>通脹率下降但仍是正數 (Falling positive inflation rate) \(\rightarrow\) 物價升得較慢 (Prices rise slower), <strong>但仍在上升 (but still rising)</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: A (增加 increases … 上升 rises)</div>
+
+        <div class="analysis-step">
+            <h4>Step 1: 分析一般物價水平 (Analyze General Price Level)</h4>
+            <p class="bilingual-text">題目指出通脹率由 10% 減至 5%。雖然通脹率下降了，但 5% 仍然是一個<strong>正數</strong>。</p>
+            <p class="en-text">The question states the inflation rate decreased from 10% to 5%. Although the rate fell, 5% is still a <strong>positive number</strong>.</p>
+            <p class="bilingual-text">正的通脹率意味著物價水平正在上升（只是上升速度放緩）。因此，物價水平是<strong>上升</strong>的。</p>
+            <p class="en-text">A positive inflation rate means the price level is rising (just at a slower pace). Therefore, the general price level <strong>rises</strong>.</p>
+            <p><strong>\(\rightarrow\) 排除選項 (Eliminate options) B, D.</strong></p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 2: 分析實質本地生產總值 (Analyze Real GDP)</h4>
+            <p class="bilingual-text">題目給出：名義 GDP (以當時市價計算) 增加 15%，通脹率 (物價升幅) 為 5%。</p>
+            <p class="en-text">Given: Nominal GDP (at current market prices) increases by 15%, Inflation Rate (price increase) is 5%.</p>
+            
+            <p class="bilingual-text">利用公式：</p>
+            <div class="formula-box">
+                $$ \%\Delta \text{Real GDP} \approx 15\% - 5\% = +10\% $$
+            </div>
+            
+            <p class="bilingual-text">由於結果是正數 (+10%)，實質 GDP <strong>增加</strong>。</p>
+            <p class="en-text">Since the result is positive (+10%), Real GDP <strong>increases</strong>.</p>
+            <p><strong>\(\rightarrow\) 選項 A 是正確答案 (Option A is correct).</strong></p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p><strong>關鍵轉折點 (The Pivot Point):</strong></p>
+        <p>這題最關鍵的陷阱在於理解「通脹率下降」(Inflation rate decreases) 的含義。</p>
+        <p class="en-text">The crucial trap is understanding the meaning of "Inflation rate decreases".</p>
+        
+        <ul>
+            <li><strong>資訊 (Info):</strong> 通脹率 10% \(\rightarrow\) 5%。</li>
+            <li><strong>解讀 (Interpretation):</strong> 這是「通脹放緩」(Disinflation)，即物價上升的速度減慢，而不是「通縮」(Deflation)。物價<strong>沒有</strong>下跌。</li>
+            <li><strong>干擾項 (Distractor):</strong> 數字 "10%" 其實不影響計算，重要的是最後的通脹率 "5%" 用於調整名義 GDP。</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="section">
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        
+        <div class="trap-box">
+            <strong>⚠️ 致命錯誤：混淆「變動率」與「水平」 (Confusing Rate of Change vs. Level)</strong>
+            <p>很多學生看到「通脹率下降」(decreases)，就直覺以為「物價水平下降」(price level falls)。</p>
+            <p class="en-text">Many students see "inflation rate decreases" and intuitively think "price level falls".</p>
+            <p><strong>糾正 (Correction):</strong> 就像開車一樣，車速由 100km/h 減至 50km/h (速度下降)，車子仍然在<strong>向前行</strong> (距離增加)。只有速度變成負數 (倒車)，距離才會減少。</p>
+            <p class="en-text">It's like driving: if speed drops from 100km/h to 50km/h, the car is still <strong>moving forward</strong>. Only if speed becomes negative (reversing) does the distance decrease.</p>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="section">
+        <div class="section-title">Exam Tricks (考試技巧)</div>
+        <div class="trick-box">
+            <strong>⚡ 速解法 (Quick Solve Method)</strong>
+            <ol>
+                <li>先看物價：通脹率 = 5% (>0)。正數 = 物價升。刪去 B、D。</li>
+                <li class="en-text">Check Prices first: Inflation = 5% (>0). Positive = Prices Rise. Eliminate B, D.</li>
+                <li>再看 GDP：名義升 15%，物價只升 5%。名義升幅跑贏通脹 (15 > 5)，實質必定升。選 A。</li>
+                <li class="en-text">Check GDP: Nominal up 15%, Prices up only 5%. Nominal growth beats inflation (15 > 5), so Real must rise. Choose A.</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
