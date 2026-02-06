@@ -33,7 +33,6 @@ if (!window.triStateFilters) {
 
 function toggleDropdown(dropdownId) {
     // 1. Check if this is actually a Collapsible Section (Curriculum, Feature, Chapter)
-    // These sections use style.display logic instead of class toggling.
     const collapsibleMap = {
         'curriculum-options': 'curriculum-arrow',
         'feature-options': 'feature-arrow',
@@ -45,7 +44,7 @@ function toggleDropdown(dropdownId) {
         return;
     }
 
-    // 2. Standard Dropdown Logic (for Exam, QType, etc.)
+    // 2. Standard Dropdown Logic
     const dropdown = document.getElementById(dropdownId);
     const allDropdowns = document.querySelectorAll('.dropdown-content');
     
@@ -56,22 +55,18 @@ function toggleDropdown(dropdownId) {
         }
     });
     
-    // Force close ALL collapsible sections when opening a standard dropdown
-    // (This replaces the hardcoded chapter-options check in the previous version)
+    // Force close ALL collapsible sections
     const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
     collapsibleTypes.forEach(type => {
         const section = document.getElementById(`${type}-options`);
         const arrow = document.getElementById(`${type}-arrow`);
-        const arrowInner = document.getElementById(`${type}-arrow-inner`); // Handle inner arrow if exists
         
         if (section && section.style.display !== 'none') {
             section.style.display = 'none';
             if (arrow) arrow.textContent = '▶';
-            if (arrowInner) arrowInner.textContent = '▶';
         }
     });
     
-    // Toggle the requested standard dropdown
     if (dropdown) {
         dropdown.classList.toggle('active');
     }
@@ -83,8 +78,8 @@ function toggleCollapsibleSection(sectionId, arrowId) {
     
     if (!section) return;
     
-    // If opening a collapsible section, close all standard dropdowns first
     if (section.style.display === 'none' || !section.style.display) {
+        // If opening, close standard dropdowns
         document.querySelectorAll('.dropdown-content').forEach(d => {
             d.classList.remove('active');
         });
@@ -105,19 +100,17 @@ document.addEventListener('click', function(event) {
     // Check if click is outside filter areas
     if (!event.target.closest('.dropdown-filter') && !event.target.closest('.dropdown-section') && !event.target.closest('.advanced-header')) {
         
-        // 1. Close standard dropdowns (remove .active class)
+        // 1. Close standard dropdowns
         document.querySelectorAll('.dropdown-content:not(.input-dropdown-list):not(.static-position)').forEach(d => {
             d.classList.remove('active');
         });
         
-        // 2. Force close collapsible sections (Curriculum, Chapter, Feature)
-        // These use style.display, so we must manually set them to none
+        // 2. Force close collapsible sections
         const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
         collapsibleTypes.forEach(type => {
             const section = document.getElementById(`${type}-options`);
             const arrow = document.getElementById(`${type}-arrow`);
             
-            // If section exists and is currently visible (not none), hide it
             if (section && section.style.display && section.style.display !== 'none') {
                 section.style.display = 'none';
                 if (arrow) arrow.textContent = '▶';
@@ -211,17 +204,9 @@ function filterDropdownList(input, listId) {
 }
 
 function updateFilterIndicators() {
-    // 1. Handle Tri-State Filters (Dropdowns)
     const triStateTypes = [
-        'exam', 
-        'qtype', 
-        'curriculum', 
-        'chapter', 
-        'feature',
-        'multipleSelection', 
-        'graph', 
-        'table', 
-        'calculation'
+        'exam', 'qtype', 'curriculum', 'chapter', 'feature',
+        'multipleSelection', 'graph', 'table', 'calculation'
     ];
     
     triStateTypes.forEach(type => {
@@ -231,21 +216,18 @@ function updateFilterIndicators() {
         const hasActiveFilters = window.triStateFilters[type] && 
                                  Object.keys(window.triStateFilters[type]).length > 0;
         
-        // Toggle the visual dot
         if (hasActiveFilters) {
             indicator.classList.add('visible');
         } else {
             indicator.classList.remove('visible');
         }
 
-        // Also handle the border color for input fields (for dynamic filters)
         const input = document.querySelector(`input[data-filter-type="${type}"]`);
         if (input) {
             input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
         }
     });
 
-    // 2. Handle Year Filter
     const yearIndicator = document.getElementById('indicator-year');
     if (yearIndicator) {
         const yearValue = document.getElementById('year-filter').value;
@@ -256,7 +238,6 @@ function updateFilterIndicators() {
         }
     }
 
-    // 3. Handle Percentage Filter
     const pctIndicator = document.getElementById('indicator-percentage');
     if (pctIndicator) {
         if (window.percentageFilter && window.percentageFilter.active) {
@@ -266,7 +247,6 @@ function updateFilterIndicators() {
         }
     }
 
-    // 4. Handle Marks Filter
     const marksIndicator = document.getElementById('indicator-marks');
     if (marksIndicator) {
         if (window.marksFilter && window.marksFilter.active) {
@@ -281,7 +261,6 @@ function updateFilterIndicators() {
 // DYNAMIC DROPDOWN LOGIC (Context-Aware)
 // ============================================
 
-// Helper to gather all current filters into one object
 function gatherFilterState() {
     return {
         search: document.getElementById('search').value,
@@ -289,24 +268,28 @@ function gatherFilterState() {
         year: document.getElementById('year-filter').value,
         percentageFilter: window.percentageFilter,
         marksFilter: window.marksFilter,
-        triState: window.triStateFilters // This includes Chapter, Curriculum, etc.
+        triState: window.triStateFilters
     };
 }
 
-// Fetches data, applies "Context Filters" (everything EXCEPT the 4 dynamic ones),
-// and repopulates the dropdown options.
 async function updateDynamicDropdowns() {
-    if (!window.storage) return; // Guard clause if storage isn't ready
+    if (!window.storage) return;
+
+    // ==========================================================
+    // CONFIG: DEFINE YOUR PRIORITY SORT OPTIONS HERE
+    // ==========================================================
+    const PRIORITY_CONFIG = { // These will appear first
+        multipleSelection: ['並非複選型', '不適用'], 
+        graph: ['沒有圖', '未命名圖表'],
+        table: ['沒有表格', '未命名表格'],
+        calculation: ['沒有計算', '未命名計算題']
+    };
+    // ==========================================================
 
     const allQuestions = await window.storage.getQuestions();
     const currentFilters = gatherFilterState();
 
-    // Create a "Context Filter" object.
-    // We want to filter the available options based on Chapter, Year, etc.
-    // BUT we must NOT filter by Graph/Table/Calc/Multi when populating their own lists,
-    // otherwise selecting "Table A" would hide "Table B".
-    // We use a "Common Context" approach: Filter by everything EXCEPT these 4 fields.
-    const contextFilters = JSON.parse(JSON.stringify(currentFilters)); // Deep copy
+    const contextFilters = JSON.parse(JSON.stringify(currentFilters));
     
     if (contextFilters.triState) {
         delete contextFilters.triState.multipleSelection;
@@ -315,8 +298,6 @@ async function updateDynamicDropdowns() {
         delete contextFilters.triState.calculation;
     }
 
-    // Get the subset of questions that match the context
-    // Using window.storage.applyFilters directly
     const contextQuestions = window.storage.applyFilters(allQuestions, contextFilters);
 
     // Helper to generate HTML for a specific list
@@ -324,11 +305,32 @@ async function updateDynamicDropdowns() {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        // Get valid values from the CONTEXT (narrowed down by Chapter/Year)
-        // Using window.storage.getUniqueValues directly
-        const validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
+        // 1. Get Values
+        let validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
         
-        // Check existing selections. If a selected item is no longer in validValues, remove it.
+        // 2. Apply Custom Sorting based on PRIORITY_CONFIG
+        const priorities = PRIORITY_CONFIG[filterType] || [];
+        
+        if (priorities.length > 0) {
+            validValues.sort((a, b) => {
+                const indexA = priorities.indexOf(a);
+                const indexB = priorities.indexOf(b);
+
+                // If both are in priority list, sort by their order in config
+                if (indexA !== -1 && indexB !== -1) {
+                    return indexA - indexB;
+                }
+                // If only A is in priority list, it comes first
+                if (indexA !== -1) return -1;
+                // If only B is in priority list, it comes first
+                if (indexB !== -1) return 1;
+
+                // Otherwise, standard string comparison (Chinese-aware)
+                return a.localeCompare(b, 'zh-HK');
+            });
+        }
+
+        // 3. Clean up filters for non-existent values
         if (window.triStateFilters[filterType]) {
             Object.keys(window.triStateFilters[filterType]).forEach(val => {
                 if (!validValues.includes(val)) {
@@ -344,7 +346,6 @@ async function updateDynamicDropdowns() {
 
         let html = '';
         validValues.forEach(item => {
-            // Check if this item is currently selected in the global state
             const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][item];
             
             let wrapperClass = 'tri-state-label';
@@ -369,19 +370,15 @@ async function updateDynamicDropdowns() {
         container.innerHTML = html;
     };
 
-    // Update the 4 specific dropdowns
     populateList('multiple-selection-options', 'multipleSelectionType', 'multipleSelection');
     populateList('graph-options', 'graphType', 'graph');
     populateList('table-options', 'tableType', 'table');
     populateList('calculation-options', 'calculationType', 'calculation');
     
-    // Update indicators in case some filters were removed
     updateFilterIndicators();
 }
 
-// Initial setup function (called on page load)
 async function populateDynamicFilters() {
-    // Initial population (Context is "All")
     await updateDynamicDropdowns();
     setupInputDropdownListeners();
 }
@@ -454,7 +451,6 @@ function clearFilters() {
     document.getElementById('search').value = '';
     document.getElementById('year-filter').value = '';
     
-    // Explicitly collapse these sections instead of toggling them
     const pctSection = document.getElementById('percentage-options');
     const pctArrow = document.getElementById('percentage-arrow');
     if (pctSection) pctSection.style.display = 'none';
@@ -465,7 +461,6 @@ function clearFilters() {
     if (marksSection) marksSection.style.display = 'none';
     if (marksArrow) marksArrow.textContent = '▶';
 
-    // Explicitly collapse curriculum, chapter, and feature sections
     const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
     collapsibleTypes.forEach(type => {
         const section = document.getElementById(`${type}-options`);
@@ -523,7 +518,6 @@ function clearFilters() {
         window.paginationState.questions.page = 1;
     }
     
-    // Reset dynamic dropdowns to show full list again
     updateDynamicDropdowns().then(() => {
         if (typeof renderQuestions === 'function') renderQuestions();
     });
@@ -596,14 +590,13 @@ function updateSearchInfo() {
 
     if (hasFilters) {
         container.innerHTML = `<div class="search-info-title">🔍 篩選條件:</div><div class="badges-list">${html}</div>`;
-        container.style.display = 'flex'; // Changed from block to flex to match CSS
+        container.style.display = 'flex';
     } else {
         container.innerHTML = '';
         container.style.display = 'none';
     }
 }
 
-// Main entry point to trigger a re-render based on filters
 async function filterQuestions() {
     if (window.paginationState && window.paginationState.questions) {
         window.paginationState.questions.page = 1;
@@ -614,19 +607,14 @@ async function filterQuestions() {
         window.searchScope = scopeSelect.value;
     }
 
-    // Update indicators immediately when any filter action is triggered
     updateFilterIndicators();
-
-    // Update the dynamic dropdown options based on the new filter context
-    // This ensures that if Chapter 3 is selected, only Tables from Chapter 3 are shown
     await updateDynamicDropdowns();
-
     updateSearchInfo();
     if (typeof renderQuestions === 'function') await renderQuestions();
 }
 
 // ============================================
-// RANGE FILTER FUNCTIONS (Percentage & Marks)
+// RANGE FILTER FUNCTIONS
 // ============================================
 
 function updatePercentageRange() {
