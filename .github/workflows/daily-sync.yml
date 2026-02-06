@@ -1,8 +1,8 @@
 name: Daily Database Sync
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
-  workflow_dispatch: # Allows you to run it manually via the "Actions" tab
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   sync-all-files:
@@ -16,8 +16,17 @@ jobs:
         with:
           python-version: '3.x'
 
+      # === YOU MUST ADD THIS STEP ===
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
       - name: Run Sync Script
         env:
-          GAS_URL: ${{ secrets.GAS_URL }} # Store your Google Script URL in GitHub Secrets
+          # Left side: Name used in Python script (os.environ.get)
+          # Right side: Name stored in GitHub Secrets
+          GAS_URL: ${{ secrets.GAS_URL }} 
+          GITHUB_ACTION_KEY: ${{ secrets.ACTION_KEY }} 
         run: |
           python PastPaper/sync_database.py

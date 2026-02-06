@@ -26,6 +26,13 @@ def sync_to_google_sheets(data):
         print("Error: GAS_URL environment variable is missing.")
         return
 
+    # === Retrieve the secret key from environment ===
+    secret_key = os.environ.get("ACTION_KEY")
+    
+    if not secret_key:
+        print("Error: ACTION_KEY environment variable is missing.")
+        return
+
     try:
         # Send data as a POST request to handle large payloads
         response = requests.post(
