@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico?v2" sizes="any">
+    <!-- SVG Favicon (Modern Browsers) -->
+    <link rel="icon" href="icon.svg?v2" type="image/svg+xml">
+    <title>HKDSE Economics Questions Database</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Loading Indicator -->
+    <div id="loading-indicator">載入中...</div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>📚 HKDSE 經濟科題目資料庫</h1>
+            <p>管理及搜尋 HKDSE、HKCEE、HKALE 經濟科試題</p>
+            <!-- Storage status and reload button on same line -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 15px;">
+                <div id="storage-status" style="color: rgba(255,255,255,0.9); font-size: 14px; min-width: 150px;">檢查資料庫...</div>
+                <button onclick="manualSync()" class="btn btn-info">🔄 重新載入資料</button>
+            </div>
+        </header>      
+        <nav class="tabs">
+            <button class="tab active" onclick="switchTab('questions')">題目</button>
+            <!-- <button class="tab" onclick="switchTab('publishers')">出版商</button> -->
+            <!-- <button class="tab" onclick="switchTab('topics')">課程分類</button> -->
+            <!-- <button class="tab" onclick="switchTab('concepts')">涉及概念</button> -->
+            <!-- <button class="tab" onclick="switchTab('patterns')">題目類型</button> -->
+        </nav>
+
+        <main>
+            <!-- Questions Tab -->
+            <div id="questions-tab" class="tab-content active">
+                <!-- Search & Primary Filters Section -->
+                <div class="filters-container">
+              
+                    <!-- Row 1: Search Bar Group -->
+                    <div class="search-row">
+                        <div class="search-input-group">
+                            <div class="scope-select-wrapper">
+                                <select id="search-scope">
+                                    <!-- Options populated by JS -->
+                                    <option value="all">全部欄位</option>
+                                </select>
+                            </div>
+                            <input type="text" id="search" placeholder="輸入關鍵字搜尋..." autocomplete="off">
+                            <div class="search-icon">🔍</div>
+                        </div>
+                    </div>
+                    <!-- Active Filters Display (Badges) -->
+                    <div id="active-filters-display" class="active-filters-panel" style="display: none;"></div>     
+                    <!-- Row 2: Primary Filters Grid -->
+                    <div class="filter-primary-grid">
+                        <!-- Exam Type Dropdown -->
+                        <div class="filter-item dropdown-filter">
+                            <div class="dropdown-btn" onclick="toggleDropdown('exam-options')">
+                                <span>🎓 考試類型</span>
+                                <span id="indicator-exam" class="active-indicator"></span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div id="exam-options" class="dropdown-content">
+                                <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKDSE">
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKDSE"><span>HKDSE</span></div>
+                                </div>
+                                <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKCEE">
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKCEE"><span>HKCEE</span></div>
+                                </div>
+                                <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKALE">
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKALE"><span>HKALE</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Year Select -->
+                        <div class="filter-item">
+                            <div style="position: relative; width: 100%;">
+                                <span id="indicator-year" class="active-indicator" style="top: 5px; right: 25px;"></span>
+                                <select id="year-filter" class="modern-select" onchange="filterQuestions()">
+                                    <option value="">📅 全部年份</option>
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Question Type Dropdown -->
+                        <div class="filter-item dropdown-filter">
+                            <div class="dropdown-btn" onclick="toggleDropdown('qtype-options')">
+                                <span>📝 題目類型</span>
+                                <span id="indicator-qtype" class="active-indicator"></span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div id="qtype-options" class="dropdown-content">
+                                <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="qtype" data-value="MC">
+                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="MC"><span>MC</span></div>
+                                </div>
+                                <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="qtype" data-value="文字題 (SQ/LQ)">
+                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="文字題 (SQ/LQ)"><span>文字題 (SQ/LQ)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Filter -->
+                        <div class="filter-item dropdown-filter">
+                            <div class="dropdown-btn" onclick="toggleCollapsibleSection('percentage-options', 'percentage-arrow')">
+                                <span>📊 答對率</span>
+                                <span id="indicator-percentage" class="active-indicator"></span>
+                                <span id="percentage-arrow" class="arrow">▼</span>
+                            </div>
+                            <div id="percentage-options" class="dropdown-content range-dropdown">
+                                <div class="range-filter-wrapper">
+                                    <div class="range-filter-header">
+                                        <button class="range-clear-btn" onclick="clearPercentageFilter()">🗑️ 清除</button>
+                                    </div>
+                                    <div class="range-info">
+                                        範圍: <span id="min-percentage-display">0</span>% - <span id="max-percentage-display">100</span>%
+                                    </div>
+                                    <div class="range-slider-container">
+                                        <div class="range-slider-track"></div>
+                                        <div class="range-slider-fill" id="percentage-range-fill" style="left: 0%; width: 100%;"></div>
+                                        <input type="range" class="range-slider-input" id="min-percentage" min="0" max="100" value="0" oninput="updatePercentageRange()" onchange="applyPercentageFilter()">
+                                        <input type="range" class="range-slider-input" id="max-percentage" min="0" max="100" value="100" oninput="updatePercentageRange()" onchange="applyPercentageFilter()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marks Filter -->
+                        <div class="filter-item dropdown-filter">
+                            <div class="dropdown-btn" onclick="toggleCollapsibleSection('marks-options', 'marks-arrow')">
+                                <span>💯 分數</span>
+                                <span id="indicator-marks" class="active-indicator"></span>
+                                <span id="marks-arrow" class="arrow">▼</span>
+                            </div>
+                            <div id="marks-options" class="dropdown-content range-dropdown marks-filter">
+                                <div class="range-filter-wrapper">
+                                    <div class="range-filter-header">
+                                        <button class="range-clear-btn" onclick="clearMarksFilter()">🗑️ 清除</button>
+                                    </div>
+                                    <div class="range-info">
+                                        範圍: <span id="min-marks-display">0</span> - <span id="max-marks-display">30</span> 分
+                                    </div>
+                                    <div class="range-slider-container">
+                                        <div class="range-slider-track"></div>
+                                        <div class="range-slider-fill" id="marks-range-fill" style="left: 0%; width: 100%;"></div>
+                                        <input type="range" class="range-slider-input" id="min-marks" min="0" max="30" value="0" step="1" oninput="updateMarksRange()" onchange="applyMarksFilter()">
+                                        <input type="range" class="range-slider-input" id="max-marks" min="0" max="30" value="30" step="1" oninput="updateMarksRange()" onchange="applyMarksFilter()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Clear All Button -->
+                        <div class="filter-item">
+                            <button class="btn btn-clear-filter full-width" onclick="clearFilters()">
+                                🔄 重置
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Advanced Filters Panel -->
+                    <div class="advanced-filters">
+                        <div class="advanced-header" onclick="toggleCollapsibleSection('advanced-options-grid', 'adv-arrow')">
+                            <span>⚡ 進階篩選 (課程、課題、特徵)</span>
+                            <span id="adv-arrow" class="arrow">▼</span>
+                        </div>
+                        
+                        <div id="advanced-options-grid" class="advanced-grid">
+                            <!-- Curriculum -->
+                            <div class="adv-column">
+                                <div class="dropdown-section" style="margin-bottom: 15px;">
+                                    <div class="dropdown-btn" onclick="toggleDropdown('curriculum-options')">
+                                        <span>📚 課程分類</span>
+                                        <span id="indicator-curriculum" class="active-indicator"></span>
+                                        <span class="arrow">▼</span>
+                                    </div>
+                                    <div id="curriculum-options" class="dropdown-content static-position">
+                                        <!-- Populated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chapters -->
+                            <div class="adv-column">
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-btn" onclick="toggleCollapsibleSection('chapter-options', 'chapter-arrow-inner')">
+                                            <span>📖 Chapters</span>
+                                            <span id="indicator-chapter" class="active-indicator"></span>
+                                            <span id="chapter-arrow-inner" class="arrow">▶</span>
+                                        </div>
+                                        <div id="chapter-options" class="dropdown-content static-position">
+                                            <!-- Populated by JS -->
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="adv-column">
+                    <div class="dropdown-section">
+                                    <div class="dropdown-btn" onclick="toggleDropdown('feature-options')">
+                                        <span>🎯 特徵</span>
+                                        <span id="indicator-feature" class="active-indicator"></span>
+                                        <span class="arrow">▼</span>
+                                    </div>
+                                    <div id="feature-options" class="dropdown-content static-position">
+                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含圖表">
+                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含圖表"><span>含圖表</span></div>
+                                        </div>
+                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含表格">
+                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含表格"><span>含表格</span></div>
+                                        </div>
+                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含計算">
+                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含計算"><span>含計算</span></div>
+                                        </div>
+                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="複選">
+                                            <div class="tri-state-checkbox" data-filter="feature" data-value="複選"><span>複選</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Filters Grid -->
+                    <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+                        
+                        <!-- Multiple Selection Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="複選類型" data-filter-type="multipleSelection" onkeyup="filterDropdownList(this, 'multiple-selection-options')">
+                                <span class="active-indicator" id="indicator-multipleSelection"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="multiple-selection-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Graph Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="圖表類型" data-filter-type="graph" onkeyup="filterDropdownList(this, 'graph-options')">
+                                <span class="active-indicator" id="indicator-graph"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="graph-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Table Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="表格類型" data-filter-type="table" onkeyup="filterDropdownList(this, 'table-options')">
+                                <span class="active-indicator" id="indicator-table"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="table-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Calculation Filter -->
+                        <div class="filter-item input-dropdown-container">
+                            <div class="filter-input-wrapper">
+                                <input type="text" class="filter-input" placeholder="計算類型" data-filter-type="calculation" onkeyup="filterDropdownList(this, 'calculation-options')">
+                                <span class="active-indicator" id="indicator-calculation"></span>
+                                <span class="input-arrow">▼</span>
+                            </div>
+                            <div id="calculation-options" class="dropdown-content scrollable-options input-dropdown-list">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Add after filter controls, before questions list -->
+                <div class="sort-controls">
+                    <label for="sort-order">排序方式：</label>
+                    <select id="sort-order" onchange="refreshViews()">
+                        <option value="default">預設 (年份新→舊，題號小→大)</option>
+                        <option value="year-desc">年份 (新→舊)</option>
+                        <option value="year-asc">年份 (舊→新)</option>
+                        <option value="question-asc">題號 (小→大)</option>
+                        <option value="question-desc">題號 (大→小)</option>
+                        <option value="marks-asc">分數 (低→高)</option>
+                        <option value="marks-desc">分數 (高→低)</option>
+                     </select>
+                </div>            
+
+                <!-- Question Count and Actions -->
+                <div class="action-bar">
+                    <h2 id="question-count">總題目數: 0</h2>
+                    <div>
+                        <button class="btn btn-admin-only btn-outline-primary" onclick="exportJSON()">📥 匯出 JSON</button>
+                        <button class="btn btn-admin-only btn-outline-primary" onclick="importJSON()">📤 匯入 JSON</button>
+                        <button class="btn btn-admin-only btn-outline-danger" onclick="clearDatabase()">🗑️ 清除資料庫</button>
+                        <button class="btn btn-admin-only btn-primary" onclick="toggleForm()">➕ 新增題目</button>
+                    </div>
+                </div>
+
+                <!-- Add/Edit Question Form (Hidden by default) -->
+                <div id="form-section" class="form-container hidden">
+                    <h2 id="form-title">新增題目</h2>
+                    <form id="question-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="question-id">題目 ID *</label>
+                                <input type="text" id="question-id" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="publisher">出版商</label>
+                                <input type="text" id="publisher" value="HKEAA">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="examination">考試類型 *</label>
+                                <select id="examination" required>
+                                    <option value="HKDSE">HKDSE</option>
+                                    <option value="HKCEE">HKCEE</option>
+                                    <option value="HKALE">HKALE</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="year">年份 *</label>
+                                <input type="number" id="year" required min="1990" max="2030">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paper">試卷</label>
+                                <input type="text" id="paper" placeholder="例如：P1, P2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="question-type">題目類型 *</label>
+                                <select id="question-type" required>
+                                    <option value="MC">MC</option>
+                                    <option value="文字題 (SQ/LQ)">文字題 (SQ/LQ)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="marks">分數</label>
+                                <input type="number" id="marks" step="0.5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="section">Section</label>
+                                <input type="text" id="section">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="question-number">題號</label>
+                                <input type="text" id="question-number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question-text-chi">題目內容 (中文)</label>
+                            <textarea id="question-text-chi" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question-text-eng">題目內容 (英文)</label>
+                            <textarea id="question-text-eng" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="multiple-selection-type">複選類型</label>
+                                <input type="text" id="multiple-selection-type" placeholder="留空則自動填入 '-'">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="graph-type">圖表類型</label>
+                                <input type="text" id="graph-type" placeholder="留空則自動填入 '-'">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="table-type">表格類型</label>
+                                <input type="text" id="table-type" placeholder="留空則自動填入 '-'">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="calculation-type">計算類型</label>
+                                <input type="text" id="calculation-type" placeholder="例如：百分比計算、彈性計算">
+                            </div>                            
+
+                            <div class="form-group">
+                                <label for="aristo-chapter-classification">Aristo Chapters (用逗號分隔)</label>
+                                <input type="text" id="aristo-chapter-classification" placeholder="例如：Ch01, Ch09, Ch11">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="answer">答案</label>
+                                <input type="text" id="answer">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="correct-percentage">答對率 (%)</label>
+                                <input type="number" id="correct-percentage" step="0.1" min="0" max="100">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="markers-report">評卷報告</label>
+                            <textarea id="markers-report" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="curriculum-classification">課程分類 *</label>
+                                <div class="multi-select-dropdown simple" id="curriculum-dropdown-container">
+                                    <div class="multi-select-selected" id="curriculum-selected-display">
+                                        <span class="placeholder">選擇課程分類...</span>
+                                    </div>
+                                    <div class="multi-select-options" id="curriculum-options">
+                                        <div class="options-list" id="curriculum-options-list">
+                                            <!-- Dynamically populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    <!-- 隱藏欄位，儲存逗號分隔字串 -->
+                                    <input type="hidden" id="curriculum-classification" name="curriculum-classification">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="chapter-classification">Chapters (用逗號分隔)</label>
+                                <input type="text" id="chapter-classification">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="concepts">涉及概念 (標籤，用逗號分隔)</label>
+                            <input type="text" id="concepts" placeholder="例: 機會成本, 彈性, 市場失效">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pattern-tags">題型標籤 (用逗號分隔)</label>
+                            <input type="text" id="pattern-tags" placeholder="例: 計算題, 繪圖題, 解釋題">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="option-design">選項設計</label>
+                            <textarea id="option-design" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="remarks">備註</label>
+                            <textarea id="remarks" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">💾 儲存題目</button>
+                            <button type="button" class="btn btn-cancel" onclick="cancelEdit()">❌ 取消</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Questions Grid -->
+                <div id="question-grid" class="question-grid"></div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div id="pagination-info">
+                        <span id="pagination-info-text">顯示 0 題目</span>
+                        <select id="items-per-page" onchange="changeItemsPerPage('questions')">
+                            <option value="10">每頁 10 題</option>
+                            <option value="20" selected>每頁 20 題</option>
+                            <option value="50">每頁 50 題</option>
+                            <option value="-1">全部</option>
+                        </select>
+                    </div>
+                    <div id="pagination-buttons"></div>
+                </div>
+            </div>
+
+            <!-- Publishers Tab -->
+            <div id="publishers-tab" class="tab-content">
+                <h2>出版商統計</h2>
+                <div id="publishers-grid" class="stats-grid"></div>
+            </div>
+
+            <!-- Topics Tab -->
+            <div id="topics-tab" class="tab-content">
+                <h2>課程分類統計</h2>
+                <div id="topics-grid" class="stats-grid"></div>
+            </div>
+
+            <!-- Chapters Tab -->
+            <div id="chapters-tab" class="tab-content">
+                <h2>Chapters統計</h2>
+                <div id="chapters-grid" class="stats-grid"></div>
+            </div>
+
+            <!-- Concepts Tab -->
+            <div id="concepts-tab" class="tab-content">
+                <h2>涉及概念統計</h2>
+                <div id="concepts-grid" class="stats-grid"></div>
+            </div>
+
+            <!-- Patterns Tab -->
+            <div id="patterns-tab" class="tab-content">
+                <h2>題型統計</h2>
+                <div id="patterns-grid" class="stats-grid"></div>
+            </div>
+        </main>
+    </div>
+    <!-- End of Container -->
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="modal hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10001; display: none; align-items: center; justify-content: center;">
+        <div class="modal-content" style="background: white; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h2 style="margin-top: 0; color: #2c3e50;">📝 題目回報 / 建議</h2>
+            <p style="color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px;">
+                題目 ID: <span id="feedback-question-id" style="font-weight: bold; color: #2980b9;"></span>
+            </p>
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">回報內容:</label>
+                <textarea id="feedback-text" rows="5" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;" placeholder="請描述題目錯誤、排版問題或提供建議..."></textarea>
+            </div>
+            
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button onclick="closeFeedbackModal()" style="padding: 8px 16px; background: #95a5a6; color: white; border: none; border-radius: 4px; cursor: pointer;">取消</button>
+                <button onclick="submitFeedback()" style="padding: 8px 16px; background: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer;">送出回報</button>
+            </div>
+        </div>
+    </div>
+    <button id="scroll-to-top" onclick="scrollToTop()" title="回到頂部">↑</button>
+        <!-- Hidden Admin Toggle -->
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--border-color);">
+            <button onclick="toggleAdminMode()" class="btn-secondary" style="opacity: 0.3;">
+                🔒 管理員模式
+            </button>
+            <button id="logout-btn" onclick="window.authManager.logout()" class="btn btn-danger" style="display: none;">
+                🚪 登出
+            </button>            
+            <span id="admin-status" style="margin-left: 10px; color: #95a5a6; font-size: 12px;"></span>
+        </div> 
+
+<!-- Core dependencies first -->
+<script src="js/globals.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+
+<!-- Storage layer -->
+<script src="js/storage-core.js"></script>
+<script src="js/storage-filters.js"></script>
+<script src="js/storage-sync.js"></script>
+
+<!-- UI components -->
+<script src="js/utils.js"></script>
+<script src="js/pagination.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/sort.js"></script>
+<script src="js/render.js"></script>
+<script src="js/statistics.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/import-export.js"></script>
+<script src="js/admin.js"></script>
+
+<!-- Main initialization last -->
+<script src="js/main.js"></script>
+</body>
+</html>
