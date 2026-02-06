@@ -3,7 +3,7 @@
     const GAS_URL = "https://script.google.com/macros/s/AKfycby2ekiIw6zSJoCEQTo1XskkKVmO84IqZ4rsZHWi7kxWoSl1uXk59XqIXblddHlbvmap/exec"; 
     const LOGIN_PAGE = "https://mas-repo.github.io/econ-database/";
     const INDEX_URL = "https://mas-repo.github.io/econ-database/PastPaper/";
-    const DATABASE_URL = "https://mas-repo.github.io/econ-database/"; // New URL
+    const DATABASE_URL = "https://mas-repo.github.io/econ-database/";
 
     // 1. Immediate Block: Hide content while checking
     const style = document.createElement('style');
@@ -59,13 +59,8 @@
 
     function revealContent() {
         safeDOMAction(() => {
-            // 1. Add the navigation footer (Now with 2 links)
             addNavigationFooter();
-            
-            // 2. Add the scroll to top button
-            addScrollToTopButton();
-
-            // 3. Remove the hiding style
+            addScrollButtons(); // Updated function name
             const styleNode = document.getElementById('protect-style');
             if (styleNode) styleNode.remove();
         });
@@ -82,8 +77,8 @@
 
     function addNavigationFooter() {
         const footer = document.createElement('div');
+        footer.id = "page-footer"; // Added ID for scrolling target
         
-        // Footer Container Styles
         footer.style.clear = 'both';
         footer.style.position = 'relative';
         footer.style.zIndex = '9999';
@@ -95,9 +90,8 @@
         footer.style.backgroundColor = '#f9f9f9';
         footer.style.width = '100%'; 
         footer.style.boxSizing = 'border-box'; 
-        footer.style.lineHeight = '2'; // Add spacing for mobile wrapping
+        footer.style.lineHeight = '2'; 
 
-        // Helper to create a styled link
         const createLink = (text, url) => {
             const link = document.createElement('a');
             link.href = url;
@@ -106,24 +100,20 @@
             link.style.color = '#007bff';
             link.style.fontSize = '16px';
             link.style.fontWeight = 'bold';
-            link.style.margin = '0 15px'; // Spacing between links
-            link.style.display = 'inline-block'; // Better for mobile
+            link.style.margin = '0 15px'; 
+            link.style.display = 'inline-block'; 
             
             link.onmouseover = () => { link.style.textDecoration = 'underline'; };
             link.onmouseout = () => { link.style.textDecoration = 'none'; };
             return link;
         };
 
-        // Create Links
         const linkIndex = createLink("⬅ 返回目錄 (Back to Index)", INDEX_URL);
         const linkDb = createLink("🏠 返回資料庫 (Back to Database)", DATABASE_URL);
-
-        // Separator (Visual pipe)
         const separator = document.createElement('span');
         separator.innerText = "|";
         separator.style.color = "#ccc";
 
-        // Append elements
         footer.appendChild(linkIndex);
         footer.appendChild(separator);
         footer.appendChild(linkDb);
@@ -131,43 +121,56 @@
         document.body.appendChild(footer);
     }
 
-    function addScrollToTopButton() {
-        const btn = document.createElement('button');
-        btn.innerHTML = "⬆"; 
-        
-        // Styling
-        btn.style.position = 'fixed';
-        btn.style.bottom = '20px';
-        btn.style.right = '20px'; 
-        btn.style.zIndex = '10000'; 
-        btn.style.display = 'none'; 
-        
-        // Appearance
-        btn.style.backgroundColor = '#007bff';
-        btn.style.color = 'white';
-        btn.style.border = 'none';
-        btn.style.borderRadius = '50%';
-        btn.style.width = '50px';
-        btn.style.height = '50px';
-        btn.style.fontSize = '24px';
-        btn.style.cursor = 'pointer';
-        btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
-        btn.style.transition = 'opacity 0.3s';
+    function addScrollButtons() {
+        // Container for both buttons
+        const container = document.createElement('div');
+        container.style.position = 'fixed';
+        container.style.bottom = '20px';
+        container.style.right = '20px';
+        container.style.zIndex = '10000';
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column'; // Stack vertically
+        container.style.gap = '10px'; // Space between buttons
 
-        // Scroll Logic
-        btn.onclick = () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Helper to create a button
+        const createBtn = (symbol, onClick) => {
+            const btn = document.createElement('button');
+            btn.innerHTML = symbol;
+            btn.style.backgroundColor = '#007bff';
+            btn.style.color = 'white';
+            btn.style.border = 'none';
+            btn.style.borderRadius = '50%';
+            btn.style.width = '40px'; // Slightly smaller since there are two
+            btn.style.height = '40px';
+            btn.style.fontSize = '20px';
+            btn.style.cursor = 'pointer';
+            btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
+            btn.style.transition = 'opacity 0.3s, transform 0.2s';
+            
+            btn.onmouseover = () => btn.style.transform = "scale(1.1)";
+            btn.onmouseout = () => btn.style.transform = "scale(1)";
+            btn.onclick = onClick;
+            return btn;
         };
 
-        // Visibility Logic
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                btn.style.display = 'block';
+        // 1. Scroll to Top Button
+        const btnUp = createBtn("⬆", () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 2. Scroll to Bottom Button
+        const btnDown = createBtn("⬇", () => {
+            // Scroll to the footer we created
+            const footer = document.getElementById('page-footer');
+            if(footer) {
+                footer.scrollIntoView({ behavior: 'smooth' });
             } else {
-                btn.style.display = 'none';
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             }
         });
 
-        document.body.appendChild(btn);
+        container.appendChild(btnUp);
+        container.appendChild(btnDown);
+        document.body.appendChild(container);
     }
 })();
