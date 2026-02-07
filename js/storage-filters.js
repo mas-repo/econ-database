@@ -229,10 +229,10 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             const checked = Object.keys(filters.triState.ai).filter(k => filters.triState.ai[k] === 'checked');
             const excluded = Object.keys(filters.triState.ai).filter(k => filters.triState.ai[k] === 'excluded');
 
-            if (checked.length > 0 && checked.includes('有 AI 詳解')) {
+            if (checked.length > 0 && checked.includes('AI 詳解')) {
                 questions = questions.filter(q => q.AIExplanation && q.AIExplanation.trim() !== '');
             }
-            if (excluded.length > 0 && excluded.includes('有 AI 詳解')) {
+            if (excluded.length > 0 && excluded.includes('AI 詳解')) {
                 questions = questions.filter(q => !q.AIExplanation || q.AIExplanation.trim() === '');
             }
         }
