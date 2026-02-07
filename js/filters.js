@@ -447,7 +447,7 @@ async function updateDynamicDropdowns() {
                 if (wrapper) wrapper.style.display = 'block'; 
 
                 // 3. Render the checkbox option (Existing Logic)
-                const item = '有 AI 詳解';
+                const item = 'AI 詳解';
                 const currentState = window.triStateFilters.ai && window.triStateFilters.ai[item];
                 
                 let wrapperClass = 'tri-state-label';
