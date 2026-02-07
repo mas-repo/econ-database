@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Externalities (外部性)</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a; /* Dark Blue */
+        }
+        .concept-box {
+            background-color: #f0f9ff; /* Light Blue */
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .correct-option {
+            background-color: #dcfce7; /* Light Green */
+            border: 1px solid #22c55e;
+            border-radius: 6px;
+        }
+        .wrong-option {
+            background-color: #fee2e2; /* Light Red */
+            border: 1px solid #ef4444;
+            border-radius: 6px;
+        }
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .tag-topic { background-color: #e0e7ff; color: #3730a3; }
+        .tag-difficulty { background-color: #ffedd5; color: #9a3412; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header class="mb-8 border-b pb-4">
+        <h1 class="text-2xl font-bold mb-2">HKDSE Economics Analysis</h1>
+        <div class="flex flex-wrap gap-2">
+            <span class="tag tag-topic">Topic: Efficiency & Equity / Externalities (效率與公平 / 外部性)</span>
+            <span class="tag tag-difficulty">Difficulty: ⭐⭐ (2/5)</span>
+        </div>
+        <p class="mt-2 text-gray-600">
+            <strong>Key Concepts:</strong> Divergence between Private and Social Benefits, Positive Externality, Non-paying Third Party.<br>
+            <strong>核心概念：</strong> 私人利益與社會利益的分歧、正面外部性（外部利益）、非付費第三方。
+        </p>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-blue-800 pl-3">The Question (題目)</h2>
+        
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <p class="font-bold text-lg mb-2">下列哪項是私人利益和社會利益分歧的一個例子？</p>
+            <p class="text-gray-600 italic mb-4">Which of the following is an example of the divergence between private and social benefits?</p>
+
+            <div class="space-y-3">
+                <div class="p-2 hover:bg-gray-100 rounded">
+                    <span class="font-bold mr-2">A.</span> 一名保安員在演奏廳當值時觀看到現場音樂會。<br>
+                    <span class="text-sm text-gray-500 ml-6">A security guard watches live concerts when he is working in a concert hall.</span>
+                </div>
+                <div class="p-2 hover:bg-gray-100 rounded">
+                    <span class="font-bold mr-2">B.</span> 一名遊客欣賞街頭歌手的音樂表演而沒有付費。<br>
+                    <span class="text-sm text-gray-500 ml-6">A tourist enjoys the music performed by a singer on the street and he does not pay for that.</span>
+                </div>
+                <div class="p-2 hover:bg-gray-100 rounded">
+                    <span class="font-bold mr-2">C.</span> 一名住在卡拉OK酒廊隔鄰的居民因噪音不能入睡。<br>
+                    <span class="text-sm text-gray-500 ml-6">A resident living next to a karaoke lounge cannot fall asleep because of the noise.</span>
+                </div>
+                <div class="p-2 hover:bg-gray-100 rounded">
+                    <span class="font-bold mr-2">D.</span> 機場遷離後，該地區的住宅樓宇的市場價值上升。<br>
+                    <span class="text-sm text-gray-500 ml-6">After the removal of the airport, the market value of the residential flats in that region increases.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-blue-800 pl-3">Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <h3 class="font-bold text-lg mb-2">1. 外部性 (Externalities)</h3>
+            <p class="bilingual-text">
+                當一個人的生產或消費行為影響到<strong>第三方 (Third Party)</strong>，而該第三方沒有因此而付出代價或獲得補償，這就是外部性。
+                <span class="en-text">Externalities exist when a person's production or consumption affects a <strong>third party</strong> without payment or compensation.</span>
+            </p>
+        </div>
+
+        <div class="concept-box">
+            <h3 class="font-bold text-lg mb-2">2. 私人利益與社會利益的分歧 (Divergence between Private and Social Benefits)</h3>
+            <p class="bilingual-text">
+                這通常指<strong>正面外部性 (Positive Externality)</strong> 或稱<strong>外部利益 (External Benefit)</strong>。
+                <span class="en-text">This usually refers to <strong>Positive Externality</strong> or <strong>External Benefit</strong>.</span>
+            </p>
+            
+            <div class="math-block">
+                $$ \text{Social Benefit (MB}_s\text{)} = \text{Private Benefit (MB}_p\text{)} + \text{External Benefit (MB}_e\text{)} $$
+            </div>
+
+            <ul class="list-disc ml-5 mt-2">
+                <li class="mb-2">
+                    <strong>分歧 (Divergence):</strong> 當 \(\text{MB}_e > 0\) 時，\(\text{MB}_s > \text{MB}_p\)。
+                    <span class="en-text">When \(\text{MB}_e > 0\), then \(\text{MB}_s > \text{MB}_p\).</span>
+                </li>
+                <li>
+                    <strong>含義 (Implication):</strong> 某人的行為令其他人（第三方）得益，但該人無法向受益者收費。
+                    <span class="en-text">Someone's action benefits others (third parties), but the doer cannot charge the beneficiaries for it.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="concept-box">
+            <h3 class="font-bold text-lg mb-2">3. 外部成本 (External Cost)</h3>
+            <p class="bilingual-text">
+                這是私人成本與社會成本的分歧。
+                <span class="en-text">This is the divergence between private and social costs.</span>
+            </p>
+            <div class="math-block">
+                $$ \text{Social Cost (MC}_s\text{)} = \text{Private Cost (MC}_p\text{)} + \text{External Cost (MC}_e\text{)} $$
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-blue-800 pl-3">Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="p-4 bg-green-100 border-l-4 border-green-500 mb-6">
+            <p class="text-xl font-bold text-green-800">Correct Answer: Option B (選項 B)</p>
+        </div>
+
+        <!-- Option A Analysis -->
+        <div class="option-analysis wrong-option">
+            <h4 class="font-bold text-red-700">Option A: 錯誤 (Incorrect)</h4>
+            <p class="bilingual-text">
+                <strong>分析：</strong> 保安員是受僱於演奏廳的，他是交易中的參與者（僱員），並非第三方。他在工作期間觀看音樂會，這通常被視為工作的附帶利益 (fringe benefit) 或工作環境的一部分，已包含在僱傭合約的考慮中（例如工資水平）。
+                <span class="en-text"><strong>Analysis:</strong> The security guard is employed by the concert hall. He is a participant in the transaction (employee), not a third party. Watching the concert while working is considered a fringe benefit or part of the working conditions, which is internalized in the employment contract (e.g., wage level).</span>
+            </p>
+        </div>
+
+        <!-- Option B Analysis -->
+        <div class="option-analysis correct-option">
+            <h4 class="font-bold text-green-700">Option B: 正確 (Correct)</h4>
+            <p class="bilingual-text">
+                <strong>分析：</strong> 街頭歌手（生產者）表演音樂，遊客（第三方）在沒有付費的情況下享受了音樂（獲得利益）。
+                <br>這裡存在<strong>外部利益 (External Benefit)</strong>。歌手無法向路過的遊客收費，但遊客卻獲得了滿足感。因此，社會利益（包括了遊客的利益）大於歌手的私人利益（僅指歌手自己獲得的得益）。這就是利益的分歧。
+                <span class="en-text"><strong>Analysis:</strong> The street singer (producer) performs music, and the tourist (third party) enjoys the music without paying (receives benefit). <br>There is an <strong>External Benefit</strong>. The singer cannot charge the passing tourist, yet the tourist gains satisfaction. Thus, Social Benefit (including the tourist's benefit) is greater than Private Benefit (singer's own gain). This is a divergence of benefits.</span>
+            </p>
+        </div>
+
+        <!-- Option C Analysis -->
+        <div class="option-analysis wrong-option">
+            <h4 class="font-bold text-red-700">Option C: 錯誤 (Incorrect)</h4>
+            <p class="bilingual-text">
+                <strong>分析：</strong> 這是<strong>外部成本 (External Cost)</strong> 的例子，即私人成本與社會成本的分歧，而非利益的分歧。卡拉OK酒廊的運作對鄰居造成了滋擾（噪音），鄰居受損卻沒有得到賠償。
+                <span class="en-text"><strong>Analysis:</strong> This is an example of <strong>External Cost</strong>, which is a divergence between private and social <em>costs</em>, not benefits. The operation of the karaoke lounge causes nuisance (noise) to the neighbor, who suffers without compensation.</span>
+            </p>
+        </div>
+
+        <!-- Option D Analysis -->
+        <div class="option-analysis wrong-option">
+            <h4 class="font-bold text-red-700">Option D: 錯誤 (Incorrect)</h4>
+            <p class="bilingual-text">
+                <strong>分析：</strong> 這是價格變動帶來的財富效應，或是市場供需變動的結果。當機場遷離，環境改善，需求增加導致樓價上升。業主可以通過出售樓宇獲取這部分利益（價格機制運作正常）。這並非市場失效中的外部性問題。
+                <span class="en-text"><strong>Analysis:</strong> This is a wealth effect due to price changes or a result of market supply/demand shifts. When the airport moves, the environment improves, demand rises, and prices go up. Owners can capture this benefit by selling the flats (price mechanism works). This is not an externality issue in the context of market failure.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-blue-800 pl-3">Problem Decomposition (題目拆解)</h2>
+        
+        <div class="bg-white border rounded-lg p-4 shadow-sm">
+            <h3 class="font-bold text-blue-600 mb-2">Pivot Point (破題關鍵)</h3>
+            <p class="mb-4">
+                題目問的是「利益分歧 (Divergence of Benefits)」。你需要尋找的是：<br>
+                1. <strong>正面外部性 (Positive Externality)</strong>。<br>
+                2. 涉及<strong>第三方 (Third Party)</strong>。<br>
+                3. <strong>沒有付費 (Unpaid)</strong> 的得益。
+            </p>
+            <hr class="my-3">
+            <p class="mb-2"><strong>邏輯檢查 (Logic Check):</strong></p>
+            <ul class="list-disc ml-5 space-y-2">
+                <li>
+                    看到「噪音」、「污染」 \(\rightarrow\) 通常是<strong>成本 (Cost)</strong> 分歧 \(\rightarrow\) 排除 C。
+                    <span class="text-gray-500 text-sm block">See "noise", "pollution" \(\rightarrow\) Usually Divergence of <strong>Costs</strong> \(\rightarrow\) Eliminate C.</span>
+                </li>
+                <li>
+                    看到「市場價值上升」、「價格改變」 \(\rightarrow\) 這是金錢上的外部性 (Pecuniary Externality)，不是真正的效率缺失 \(\rightarrow\) 排除 D。
+                    <span class="text-gray-500 text-sm block">See "market value increases", "price change" \(\rightarrow\) Pecuniary Externality, not real efficiency loss \(\rightarrow\) Eliminate D.</span>
+                </li>
+                <li>
+                    比較 A 和 B：A 是僱員（內部人士），B 是路人（外部人士）。外部性必須涉及外部人士。
+                    <span class="text-gray-500 text-sm block">Compare A and B: A is an employee (insider), B is a passerby (outsider). Externalities must involve outsiders.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-blue-800 pl-3">Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="bg-red-50 border-l-4 border-red-400 p-4">
+            <h3 class="font-bold text-red-800 mb-2">Trap 1: 混淆利益與成本 (Confusing Benefits and Costs)</h3>
+            <p class="bilingual-text">
+                學生常看到「外部性」就選 C（噪音），卻忽略了題目問的是「利益」(Benefits) 而非「成本」(Costs)。
+                <span class="en-text">Students often see "externality" and pick C (noise), ignoring that the question asks for "Benefits", not "Costs".</span>
+            </p>
+
+            <h3 class="font-bold text-red-800 mb-2 mt-4">Trap 2: 誤解價格變動 (Misinterpreting Price Changes)</h3>
+            <p class="bilingual-text">
+                選項 D 是一個常見陷阱。如果利益已經反映在市場價格上（例如樓價上升），這就不屬於導致市場失效的外部性。真正的外部性是指<strong>沒有</strong>透過價格機制反映的影響。
+                <span class="en-text">Option D is a common trap. If the benefit is already reflected in market prices (e.g., rising flat prices), it is not the type of externality that causes market failure. Real externalities are effects <strong>not</strong> reflected via the price mechanism.</span>
+            </p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

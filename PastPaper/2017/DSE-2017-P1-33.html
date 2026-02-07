@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Supply Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .data-table th, .data-table td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .data-table th {
+            background-color: #e2e8f0;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            font-weight: 500;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: #fffbeb; /* Cream */
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .concept-title {
+            color: #92400e;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .formula-box {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border: 1px dashed #d97706;
+            text-align: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success-text);
+            background-color: var(--success-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .step {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .bilingual-text p {
+            margin: 5px 0;
+        }
+        
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Decomposition & Tricks */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .tip-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Utilities */
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .strike {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money Supply (貨幣供應)</span>
+            <span class="difficulty">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: M1, M2, Legal Tender</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <h3>題目 (The Question)</h3>
+        <p>參閱以下有關香港貨幣供應的資料。<br>Refer to the following data about Hong Kong’s money supply.</p>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>組成部分 (Components)</th>
+                    <th>$ Billion (十億元)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>法定貨幣的總發行量<br><span class="en-text">Total issue of legal tender</span></td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td>全部認可機構持有的法定貨幣<br><span class="en-text">Legal tender held by all authorized institutions</span></td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>活期存款<br><span class="en-text">Demand deposits</span></td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>持牌銀行所有種類的存款及持牌銀行發行的可轉讓存款證(而非由認可機構持有)<br><span class="en-text">All types of deposits with licensed banks and negotiable certificates of deposit issued by licensed banks (other than those held by authorized institutions)</span></td>
+                    <td>3 000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>貨幣供應定義二 (M2)是 __________。<br>The money supply M2 is __________.</p>
+
+        <ul class="options-list">
+            <li>A. $320 billion (十億元)</li>
+            <li>B. $3 180 billion (十億元)</li>
+            <li>C. $3 220 billion (十億元)</li>
+            <li>D. $3 300 billion (十億元)</li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-section">
+        <div class="concept-title">📚 概念重溫 (Concept Review)</div>
+        
+        <div class="bilingual-text">
+            <p><strong>1. 公眾持有的法定貨幣 (Legal Tender in Circulation, \( C_p \)):</strong></p>
+            <p class="en-text">Money supply only counts money held by the <strong>public</strong>. Money held by banks (reserves) is NOT part of the money supply.</p>
+            <div class="formula-box">
+                $$ C_p = \text{Total Issue} - \text{Held by Authorized Institutions} $$
+            </div>
+
+            <p><strong>2. 貨幣供應定義一 (M1):</strong></p>
+            <p class="en-text">Sum of cash in public circulation and demand deposits.</p>
+            <div class="formula-box">
+                $$ M1 = C_p + \text{Demand Deposits} $$
+            </div>
+
+            <p><strong>3. 貨幣供應定義二 (M2):</strong></p>
+            <p class="en-text">M2 is a broader definition. It includes M1 plus savings deposits, time deposits, and NCDs issued by licensed banks held by the public.</p>
+            <div class="formula-box">
+                $$ M2 = C_p + \text{Total Deposits with Licensed Banks} + \text{NCDs} $$
+            </div>
+            <p><em>注意：題目中的「所有種類的存款」(All types of deposits) 已經包含了活期存款、儲蓄存款及定期存款。</em></p>
+            <p class="en-text"><em>Note: "All types of deposits" in the question already aggregates demand, savings, and time deposits.</em></p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="analysis-section">
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        
+        <div class="correct-answer">
+            ✅ 正確答案 (Correct Option): C ($3 220 billion)
+        </div>
+
+        <div class="step">
+            <div class="step-title">步驟 1：計算公眾持有的現金 (Step 1: Calculate Cash in Public)</div>
+            <div class="bilingual-text">
+                <p>貨幣供應只計算公眾手上的現金。我們必須從總發行量中減去銀行（認可機構）持有的現金。</p>
+                <p class="en-text">Money supply counts only cash in the hands of the public. We must subtract cash held by banks (authorized institutions) from the total issue.</p>
+                <p>\[ C_p = 300 - 80 = 220 \]</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">步驟 2：識別存款部分 (Step 2: Identify Deposit Components)</div>
+            <div class="bilingual-text">
+                <p>題目提供了一個總數：「持牌銀行所有種類的存款... ($3 000)」。這是一個<strong>總和 (Aggregate)</strong> 數字。</p>
+                <p class="en-text">The question provides an aggregate figure: "All types of deposits with licensed banks... ($3 000)".</p>
+                <p>這個數字已經包括了活期存款 ($100)。計算 M2 時，我們直接使用這個總數，不需要再額外加上活期存款，否則會重複計算。</p>
+                <p class="en-text">This figure already includes Demand Deposits ($100). When calculating M2, we use this total directly. We do NOT add the $100 separately, or we would be double-counting.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">步驟 3：計算 M2 (Step 3: Calculate M2)</div>
+            <div class="bilingual-text">
+                <p>\[ M2 = C_p + \text{Total Deposits & NCDs} \]</p>
+                <p>\[ M2 = 220 + 3 000 = 3 220 \]</p>
+            </div>
+        </div>
+
+        <h3>選項分析 (Options Analysis)</h3>
+        <ul class="options-list">
+            <li>❌ <strong>A ($320):</strong> 這是 M1 的數值 (\(220 + 100\))。 <span class="en-text">(This is the value of M1.)</span></li>
+            <li>❌ <strong>B ($3 180):</strong> 可能是計算錯誤，例如誤將現金減去活期存款。 <span class="en-text">(Likely a calculation error.)</span></li>
+            <li>✅ <strong>C ($3 220):</strong> 正確答案。 <span class="en-text">(Correct answer.)</span></li>
+            <li>❌ <strong>D ($3 300):</strong> 忘記減去銀行持有的現金 (\(300 + 3000\))。 <span class="en-text">(Forgot to subtract reserves held by banks.)</span></li>
+        </ul>
+    </section>
+
+    <!-- 5. Problem Decomposition & 6. Common Mistakes -->
+    <section class="tips-grid">
+        <div class="tip-card">
+            <div class="tip-title">🔍 題目拆解 (Problem Decomposition)</div>
+            <div class="bilingual-text">
+                <p><strong>關鍵點 (Pivot Point):</strong> 區分「總發行量」(Total Issue) 與「公眾持有量」(Public Circulation)。</p>
+                <p class="en-text">Distinguish between "Total Issue" and "Public Circulation".</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+                <p><strong>干擾資訊 (Distractor):</strong> 「活期存款 100」。因為題目已經給了「所有種類的存款 3000」，這個 100 只是 3000 的一部分。如果你計算 M1 才需要它；計算 M2 時，它已經包含在 3000 內了。</p>
+                <p class="en-text">"Demand deposits 100" is a distractor for M2 calculation because "All types of deposits 3000" already encompasses it.</p>
+            </div>
+        </div>
+
+        <div class="tip-card" style="border-top-color: var(--error-text);">
+            <div class="tip-title">⚠️ 常犯錯誤 (Common Mistakes)</div>
+            <div class="bilingual-text">
+                <p><strong>1. 重複計算 (Double Counting):</strong></p>
+                <p>誤以為 \( M2 = C_p + \text{活期} + \text{所有存款} \)。<br>錯誤算式：\( 220 + 100 + 3000 = 3320 \)。</p>
+                <p class="en-text">Mistakenly adding Demand Deposits separately to the Total Deposits.</p>
+                
+                <p><strong>2. 忘記扣除庫存現金 (Forgetting Reserves):</strong></p>
+                <p>直接使用總發行量 300 計算。<br>錯誤算式：\( 300 + 3000 = 3300 \) (選項 D)。</p>
+                <p class="en-text">Using the Total Issue (300) directly without subtracting cash held by banks.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

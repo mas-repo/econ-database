@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Subsidy & Elasticity</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #475569; /* Slate */
+            --accent-bg: #eff6ff; /* Light Blue */
+            --accent-border: #3b82f6;
+            --success-color: #16a34a;
+            --danger-color: #dc2626;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            border-left: 5px solid var(--accent-border);
+            padding-left: 10px;
+            margin-top: 0;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .options li:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .en {
+            display: block;
+            color: var(--secondary-color);
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--accent-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        /* Analysis Section */
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+        
+        .correct-tag {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .incorrect-tag {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+
+        /* Tricks & Traps */
+        .trap-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .meta-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Market Intervention (Subsidy)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Subsidy Incidence, Elasticity</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p>
+                <span class="zh">政府對生產綠色產品提供$10的從量補貼，市場價格因而下降了$6。下列哪項/些有關綠色產品市場的陳述是正確的？</span>
+                <span class="en">The government provides a per-unit subsidy of $10 on producing green products. The market price drops by $6 as a result. Which of the following statements about the green product market is/are correct?</span>
+            </p>
+            
+            <p>
+                <span class="zh">(1) 綠色產品供應較其需求更具彈性</span>
+                <span class="en">(1) The supply of green products is more elastic than their demand.</span>
+            </p>
+            <p>
+                <span class="zh">(2) 消費者所獲得的補貼得益比生產者多</span>
+                <span class="en">(2) Consumers enjoy more subsidy benefit than producers.</span>
+            </p>
+            <p>
+                <span class="zh">(3) 綠色產品的需求上升</span>
+                <span class="en">(3) The demand for green products increases.</span>
+            </p>
+
+            <ul class="options">
+                <li>A. <span class="zh">只有(2)</span> <span class="en">(2) only</span></li>
+                <li>B. <span class="zh">只有(1)、(2)</span> <span class="en">(1) and (2) only</span></li>
+                <li>C. <span class="zh">只有(1)、(3)</span> <span class="en">(1) and (3) only</span></li>
+                <li>D. <span class="zh">(1)、(2)及(3)</span> <span class="en">(1), (2) and (3)</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>
+                <span class="zh">要解答此題，你需要掌握以下關於<strong>補貼 (Subsidy)</strong> 的核心概念：</span>
+                <span class="en">To solve this problem, you need to master the following core concepts regarding <strong>Subsidy</strong>:</span>
+            </p>
+
+            <h3>1. 補貼得益的分配 (Distribution of Subsidy Benefit)</h3>
+            <p>
+                <span class="zh">總補貼金額會由消費者和生產者共同分享。</span>
+                <span class="en">The total subsidy amount is shared between consumers and producers.</span>
+            </p>
+            <p style="background: white; padding: 10px; border-radius: 4px; text-align: center;">
+                $$ \text{Unit Subsidy} = \text{Consumer's Share} + \text{Producer's Share} $$
+            </p>
+            <ul>
+                <li>
+                    <span class="zh"><strong>消費者得益 (Consumer's Share):</strong> 市場價格下降的幅度 \( |\Delta P| \)。</span>
+                    <span class="en"><strong>Consumer's Share:</strong> The magnitude of the drop in market price \( |\Delta P| \).</span>
+                </li>
+                <li>
+                    <span class="zh"><strong>生產者得益 (Producer's Share):</strong> 單位補貼減去消費者得益。</span>
+                    <span class="en"><strong>Producer's Share:</strong> Unit subsidy minus Consumer's Share.</span>
+                </li>
+            </ul>
+
+            <h3>2. 彈性與得益的關係 (Elasticity and Benefit)</h3>
+            <p>
+                <span class="zh"><strong>黃金定律：</strong>彈性越<strong>低</strong> (Inelastic) 的一方，獲得的補貼得益越<strong>多</strong>。</span>
+                <span class="en"><strong>Golden Rule:</strong> The side with <strong>lower</strong> elasticity (more inelastic) enjoys <strong>more</strong> subsidy benefit.</span>
+            </p>
+            <p style="text-align: center;">
+                \( E_d < E_s \Rightarrow \text{Consumer Share} > \text{Producer Share} \)
+            </p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p style="font-size: 1.2rem;">
+            <span class="zh">正確答案：</span> <strong>Option B</strong>
+            <br>
+            <span class="en">Correct Answer: <strong>Option B</strong></span>
+        </p>
+
+        <div class="analysis-step">
+            <h3>Step 1: Calculate the Shares (計算份額)</h3>
+            <p>
+                <span class="zh">題目資料：單位補貼 = $10，價格下降 = $6。</span>
+                <span class="en">Given: Unit Subsidy = $10, Price Drop = $6.</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="zh"><strong>消費者得益 (Consumer Benefit):</strong> $6 (因為價格便宜了$6)</span>
+                    <span class="en"><strong>Consumer Benefit:</strong> $6 (Since price is $6 cheaper)</span>
+                </li>
+                <li>
+                    <span class="zh"><strong>生產者得益 (Producer Benefit):</strong> \( \$10 - \$6 = \$4 \)</span>
+                    <span class="en"><strong>Producer Benefit:</strong> \( \$10 - \$6 = \$4 \)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 2: Evaluate Statements (評估陳述)</h3>
+            
+            <h4>Statement (2): Consumers enjoy more subsidy benefit than producers.</h4>
+            <p>
+                <span class="zh">比較兩者得益：\( \$6 > \$4 \)。消費者得益確實比生產者多。</span>
+                <span class="en">Comparing the benefits: \( \$6 > \$4 \). Consumers indeed enjoy more benefit than producers.</span>
+            </p>
+            <p class="correct-tag">✔ Statement (2) is CORRECT (正確).</p>
+
+            <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+
+            <h4>Statement (1): The supply of green products is more elastic than their demand.</h4>
+            <p>
+                <span class="zh">根據「彈性越低，得益越多」的原則：</span>
+                <span class="en">According to the principle "The lower the elasticity, the greater the benefit":</span>
+            </p>
+            <p>
+                <span class="zh">因為 消費者得益 ($6) > 生產者得益 ($4)</span>
+                <span class="en">Since Consumer Benefit ($6) > Producer Benefit ($4)</span>
+            </p>
+            <p>
+                <span class="zh">所以 <strong>需求彈性 < 供應彈性</strong> (需求較低彈性，供應較高彈性)。</span>
+                <span class="en">Therefore, <strong>Demand Elasticity < Supply Elasticity</strong> (Demand is less elastic, Supply is more elastic).</span>
+            </p>
+            <p>
+                <span class="zh">陳述句說「供應較需求更具彈性」，這與我們的推論一致。</span>
+                <span class="en">The statement says "supply is more elastic than demand," which matches our deduction.</span>
+            </p>
+            <p class="correct-tag">✔ Statement (1) is CORRECT (正確).</p>
+
+            <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+
+            <h4>Statement (3): The demand for green products increases.</h4>
+            <p>
+                <span class="zh">這是一個常見陷阱。補貼會降低生產成本，導致<strong>供應增加</strong> (供應曲線向右/下移動)。</span>
+                <span class="en">This is a common trap. A subsidy lowers production costs, causing <strong>Supply to Increase</strong> (Supply curve shifts right/down).</span>
+            </p>
+            <p>
+                <span class="zh">這會導致沿著需求曲線的移動 (Movement along the curve)，即<strong>需求量 (Quantity Demanded)</strong> 上升，而不是需求 (Demand) 上升。除非有其他非價格因素改變，否則需求曲線本身不會移動。</span>
+                <span class="en">This leads to a movement along the demand curve, meaning <strong>Quantity Demanded</strong> increases, not Demand itself. The Demand curve does not shift unless other non-price factors change.</span>
+            </p>
+            <p class="incorrect-tag">✘ Statement (3) is INCORRECT (錯誤).</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>
+            <span class="zh">這類題目的<strong>關鍵樞紐 (Pivot Point)</strong> 在於迅速計算出生產者的得益。</span>
+            <span class="en">The <strong>Pivot Point</strong> of this question types lies in quickly calculating the producer's benefit.</span>
+        </p>
+        <ol>
+            <li>
+                <span class="zh"><strong>識別數字：</strong>看到 $10 (總數) 和 $6 (消費者部分)。</span>
+                <span class="en"><strong>Identify Numbers:</strong> See $10 (Total) and $6 (Consumer part).</span>
+            </li>
+            <li>
+                <span class="zh"><strong>做減法：</strong>立刻算出剩餘的 $4 是生產者的。</span>
+                <span class="en"><strong>Subtract:</strong> Immediately calculate that the remaining $4 belongs to the producer.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>比大小：</strong>$6 vs $4。</span>
+                <span class="en"><strong>Compare:</strong> $6 vs $4.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>套用定律：</strong>贏家 (拿得多的) = 彈性低。</span>
+                <span class="en"><strong>Apply Law:</strong> The Winner (who gets more) = Low Elasticity.</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="section">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="trap-box">
+            <h3>⚠️ Trap: Demand vs. Quantity Demanded (需求 vs 需求量)</h3>
+            <p>
+                <span class="zh">這是 DSE 經濟科最致命的陷阱之一。</span>
+                <span class="en">This is one of the most fatal traps in HKDSE Economics.</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="zh"><strong>補貼/稅項 (Subsidy/Tax)：</strong>只會移動供應曲線 (Supply Curve)。</span>
+                    <span class="en"><strong>Subsidy/Tax:</strong> Only shifts the Supply Curve.</span>
+                </li>
+                <li>
+                    <span class="zh"><strong>結果：</strong>價格改變導致「需求量」改變。</span>
+                    <span class="en"><strong>Result:</strong> Price change leads to a change in "Quantity Demanded".</span>
+                </li>
+                <li>
+                    <span class="zh"><strong>錯誤觀念：</strong>以為價格跌了，大家多買了，就是「需求上升」。(錯！這只是點在線上移動)。</span>
+                    <span class="en"><strong>Misconception:</strong> Thinking that because price dropped and people bought more, "Demand Increased". (Wrong! This is just a movement along the line).</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
