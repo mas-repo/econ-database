@@ -172,8 +172,8 @@ async function renderPatterns() {
     const stats = {};
     
     questions.forEach(q => {
-        if (q.patternTags && Array.isArray(q.patternTags)) {
-            q.patternTags.forEach(pattern => {
+        if (q.patterns && Array.isArray(q.patterns)) {
+            q.patterns.forEach(pattern => {
                 if (!stats[pattern]) {
                     stats[pattern] = { total: 0, mc: 0, text: 0 };
                 }

@@ -199,11 +199,11 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
                 
-                ${q.patternTags && q.patternTags.length > 0 ? `
+                ${q.patterns && q.patterns.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">題型：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${q.patternTags.map(p => `<span class="tag">${p}</span>`).join('')}
+                            ${q.patterns.map(p => `<span class="tag">${p}</span>`).join('')}
                         </div>
                     </div>
                 ` : ''} 

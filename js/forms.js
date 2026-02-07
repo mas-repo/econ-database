@@ -85,7 +85,7 @@ function setupFormHandler() {
             curriculumClassification: document.getElementById('curriculum-classification').value.split(',').map(s => s.trim()).filter(s => s),
             AristochapterClassification: document.getElementById('chapter-classification').value.split(',').map(s => s.trim()).filter(s => s),
             concepts: document.getElementById('concepts').value.split(',').map(s => s.trim()).filter(s => s),
-            patternTags: document.getElementById('pattern-tags').value.split(',').map(s => s.trim()).filter(s => s),
+            patterns: document.getElementById('patterns').value.split(',').map(s => s.trim()).filter(s => s),
             optionDesign: document.getElementById('option-design').value.trim(),
             AIExplanation: aiExplanationValue,
             remarks: document.getElementById('remarks').value.trim(),
@@ -165,7 +165,7 @@ async function editQuestion(id) {
     document.getElementById('curriculum-classification').value = (question.curriculumClassification || []).join(', ');
     document.getElementById('chapter-classification').value = (question.AristochapterClassification || []).join(', ');
     document.getElementById('concepts').value = (question.concepts || []).join(', ');
-    document.getElementById('pattern-tags').value = (question.patternTags || []).join(', ');
+    document.getElementById('patterns').value = (question.patterns || []).join(', ');
     document.getElementById('option-design').value = question.optionDesign || '';
     // Safely populate AI Explanation if input exists
     const aiExplanationInput = document.getElementById('ai-explanation');
