@@ -24,7 +24,7 @@ HTML_TEMPLATE = """
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
         .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid var(--border); }
         .card-header { background: var(--primary); color: white; padding: 10px 15px; font-weight: bold; display: flex; justify-content: space-between; }
-        .file-list { list-style: none; padding: 0; margin: 0; max-height: 300px; overflow-y: auto; }
+        .file-list { list-style: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto; }
         .file-list li a { display: block; padding: 10px 15px; text-decoration: none; color: var(--text); border-bottom: 1px solid var(--border); }
         .file-list li a:hover { background: #eff6ff; color: var(--primary); padding-left: 20px; transition: 0.2s; }
     </style>
