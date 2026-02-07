@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Basic Economic Problems</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .star-rating { color: var(--accent-color); }
+
+        /* General Card Style */
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid transparent;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .q-text-zh { font-weight: 600; margin-bottom: 8px; }
+        .q-text-en { color: #4b5563; margin-bottom: 15px; font-style: italic; }
+        
+        .options-list { list-style: none; padding: 0; }
+        .options-list li { 
+            padding: 8px 12px; 
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .options-list li:last-child { border-bottom: none; }
+
+        /* Concept Review */
+        .concept-card { border-left-color: var(--accent-color); }
+        .concept-box {
+            background-color: #fffbeb; /* Light yellow/cream */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .concept-term { font-weight: bold; color: #92400e; }
+
+        /* Answer Section */
+        .answer-card { border-left-color: var(--success-color); }
+        .correct-answer {
+            font-size: 1.5rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            background-color: #ecfdf5;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #d1d5db;
+        }
+
+        .bilingual-block { margin-bottom: 10px; }
+        .zh { display: block; margin-bottom: 4px; color: var(--text-main); }
+        .en { display: block; color: var(--text-light); font-size: 0.95em; }
+
+        /* Decomposition & Tricks */
+        .tips-card { border-left-color: #8b5cf6; } /* Purple */
+        .pivot-point {
+            background-color: #f3e8ff;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #6b21a8;
+        }
+
+        /* Math Styling */
+        .math-block {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header-title { font-size: 1.25rem; }
+            .card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-card">
+        <div class="header-title">HKDSE Economics Analysis</div>
+        <div class="meta-info">
+            <span><strong>Topic:</strong> Basic Economic Problems (基本經濟問題)</span>
+            <span><strong>Difficulty:</strong> <span class="star-rating">★★☆☆☆</span></span>
+            <span><strong>Key Concepts:</strong> Scarcity, Resource Allocation, What/How/For Whom</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="card">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p class="q-text-zh">香港政府建議在北區興建有住宅樓宇和商場的新市鎮。其中公共房屋與私人房屋的比例引起不少人關注。另外，亦有人憂慮商場的規模，指這些商場可能主要為內地遊客服務。</p>
+            <p class="q-text-en">The Hong Kong government proposes to build new towns with residential flats and shopping malls in the North District. However, there are concerns about the ratio of public housing to private housing. Some people are also worried about the size of shopping malls, which may mainly serve mainland tourists.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+            <p class="q-text-zh">上述個案和經濟學中的___________問題有關。</p>
+            <p class="q-text-en">The above case is related to the ___________ question(s) in Economics.</p>
+
+            <ul class="options-list">
+                <li>A. 「為誰生產」 ("for whom to produce")</li>
+                <li>B. 「生產什麼」及「怎樣生產」 ("what to produce" and "how to produce")</li>
+                <li>C. 「生產什麼」及「為誰生產」 ("what to produce" and "for whom to produce")</li>
+                <li>D. 「怎樣生產」及「為誰生產」 ("how to produce" and "for whom to produce")</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="card concept-card">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <p class="bilingual-block">
+            <span class="zh">由於資源稀缺（Scarcity），社會必須做出選擇。這引申出三個基本經濟問題：</span>
+            <span class="en">Due to scarcity, society must make choices. This leads to three basic economic problems:</span>
+        </p>
+
+        <div class="concept-box">
+            <div class="concept-term">1. 生產什麼 (What to produce)</div>
+            <p class="zh">涉及選擇生產貨品或服務的<strong>種類</strong>及<strong>數量</strong>。</p>
+            <p class="en">Involves choosing the <strong>types</strong> and <strong>quantities</strong> of goods or services to produce.</p>
+            <div class="math-block">
+                \( \text{Decision} \rightarrow \{ \text{Goods X vs. Goods Y} \} \)
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <div class="concept-term">2. 怎樣生產 (How to produce)</div>
+            <p class="zh">涉及選擇生產的<strong>方法</strong>或<strong>技術</strong>（例如：勞力密集 vs 資本密集）。</p>
+            <p class="en">Involves choosing the <strong>method</strong> or <strong>technology</strong> of production (e.g., labor-intensive vs. capital-intensive).</p>
+        </div>
+
+        <div class="concept-box">
+            <div class="concept-term">3. 為誰生產 (For whom to produce)</div>
+            <p class="zh">涉及產品的<strong>分配</strong>，即誰最終獲得並享用這些產品。</p>
+            <p class="en">Involves the <strong>distribution</strong> of output, i.e., who eventually gets to consume the goods.</p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="card answer-card">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: C</div>
+
+        <div class="analysis-step">
+            <strong>Step 1: Analyze "Ratio of public housing to private housing"</strong>
+            <div class="bilingual-block">
+                <span class="zh">題目提到「公共房屋與私人房屋的比例」。這是在決定社會資源應該分配去建造哪一種類型的房屋（公屋 vs 私樓）以及各自的數量。</span>
+                <span class="en">The question mentions the "ratio of public housing to private housing". This is a decision about which type of housing (public vs. private) to allocate resources to, and in what quantities.</span>
+            </div>
+            <div class="bilingual-block">
+                <span class="zh">這屬於<strong>「生產什麼」</strong>的問題。</span>
+                <span class="en">This belongs to the problem of <strong>"What to produce"</strong>.</span>
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <strong>Step 2: Analyze "Shopping malls... mainly serve mainland tourists"</strong>
+            <div class="bilingual-block">
+                <span class="zh">題目提到商場可能「主要為內地遊客服務」。這關注的是誰是最終的使用者。是本地居民還是遊客？這是關於產品分配的問題。</span>
+                <span class="en">The question mentions that malls may "mainly serve mainland tourists". This concerns who the final users are. Is it local residents or tourists? This is about the distribution of the product.</span>
+            </div>
+            <div class="bilingual-block">
+                <span class="zh">這屬於<strong>「為誰生產」</strong>的問題。</span>
+                <span class="en">This belongs to the problem of <strong>"For whom to produce"</strong>.</span>
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <strong>Step 3: Why not "How to produce"?</strong>
+            <div class="bilingual-block">
+                <span class="zh">題目並沒有提及建築的方法（例如使用預製組件還是現場澆築，或者使用多少工人與機器）。因此不涉及「怎樣生產」。</span>
+                <span class="en">The question does not mention the method of construction (e.g., using pre-fabricated components vs. on-site casting, or the ratio of labor to machines). Therefore, "How to produce" is not involved.</span>
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <strong>Conclusion</strong>
+            <div class="bilingual-block">
+                <span class="zh">結合以上兩點，答案涉及「生產什麼」及「為誰生產」。</span>
+                <span class="en">Combining the above points, the answer involves "What to produce" and "For whom to produce".</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="card tips-card">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        
+        <p class="zh">這類題目通常會提供一個情境，你需要像偵探一樣找出關鍵詞：</p>
+        <p class="en">These questions usually provide a scenario where you need to act like a detective to find keywords:</p>
+
+        <div style="margin-top: 15px;">
+            <div class="pivot-point">🔑 Pivot Point 1: "Ratio" / "Mix" (比例 / 組合)</div>
+            <p class="zh" style="margin-left: 10px;">看到「比例」、「多建 A 少建 B」、「種類」，直接聯想 \(\rightarrow\) <strong>生產什麼 (What)</strong>。</p>
+            <p class="en" style="margin-left: 10px;">See "Ratio", "Build more A less B", "Types", link directly to \(\rightarrow\) <strong>What to produce</strong>.</p>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <div class="pivot-point">🔑 Pivot Point 2: "Serve whom" / "Beneficiaries" (服務對象 / 受益人)</div>
+            <p class="zh" style="margin-left: 10px;">看到「為...服務」、「長者優先」、「遊客專用」，直接聯想 \(\rightarrow\) <strong>為誰生產 (For whom)</strong>。</p>
+            <p class="en" style="margin-left: 10px;">See "Serve...", "Priority for elderly", "For tourists", link directly to \(\rightarrow\) <strong>For whom to produce</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="card" style="border-left-color: var(--error-color);">
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        
+        <div class="bilingual-block">
+            <span class="zh"><strong>錯誤觀念：</strong> 誤以為「興建新市鎮」本身是「怎樣生產」。</span>
+            <span class="en"><strong>Misconception:</strong> Mistakenly thinking that "building a new town" itself is "How to produce".</span>
+        </div>
+        <div class="bilingual-block" style="background-color: #fef2f2; padding: 10px; border-radius: 6px; margin-top: 5px;">
+            <span class="zh"><strong>糾正：</strong> 「怎樣生產」必須涉及<strong>生產過程中的技術或投入組合</strong>（Input mix）。單純決定「要建新市鎮」是決定產品的存在（生產什麼），而不是方法。</span>
+            <span class="en"><strong>Correction:</strong> "How to produce" must involve the <strong>technology or input mix during the production process</strong>. Simply deciding "to build a new town" is deciding on the existence of the product (What to produce), not the method.</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
