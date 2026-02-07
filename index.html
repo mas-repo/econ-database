@@ -56,61 +56,93 @@
                     <div id="active-filters-display" class="active-filters-panel" style="display: none;"></div>     
                     <!-- Row 2: Primary Filters Grid -->
                     <div class="filter-primary-grid">
-                        <!-- Exam Type Dropdown -->
+                        
+                        <!-- Exam Type Filter -->
                         <div class="filter-item dropdown-filter">
-                            <div class="dropdown-btn" onclick="toggleDropdown('exam-options')">
-                                <span>🎓 考試類型</span>
-                                <span id="indicator-exam" class="active-indicator"></span>
-                                <span class="arrow">▼</span>
-                            </div>
-                            <div id="exam-options" class="dropdown-content">
+                            <button class="dropdown-btn" onclick="toggleDropdown('exam-list')">
+                                考試類型 <span class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-exam" class="active-indicator"></div>
+                            <div id="exam-list" class="dropdown-content">
                                 <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKDSE">
-                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKDSE"><span>HKDSE</span></div>
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKDSE">HKDSE</div>
                                 </div>
                                 <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKCEE">
-                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKCEE"><span>HKCEE</span></div>
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKCEE">HKCEE</div>
                                 </div>
                                 <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="exam" data-value="HKALE">
-                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKALE"><span>HKALE</span></div>
+                                    <div class="tri-state-checkbox" data-filter="exam" data-value="HKALE">HKALE</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Year Select -->
+                        <!-- Year Filter (Select) -->
                         <div class="filter-item">
-                            <div style="position: relative; width: 100%;">
-                                <span id="indicator-year" class="active-indicator" style="top: 5px; right: 25px;"></span>
-                                <select id="year-filter" class="modern-select" onchange="filterQuestions()">
-                                    <option value="">📅 全部年份</option>
-                                    <!-- Populated by JS -->
-                                </select>
-                            </div>
+                            <div id="indicator-year" class="active-indicator"></div>
+                            <select id="year-filter" class="modern-select">
+                                <option value="">📅 全部年份</option>
+                                <!-- Populated by JS -->
+                            </select>
                         </div>
 
-                        <!-- Question Type Dropdown -->
+                        <!-- Question Type -->
                         <div class="filter-item dropdown-filter">
-                            <div class="dropdown-btn" onclick="toggleDropdown('qtype-options')">
-                                <span>📝 題目類型</span>
-                                <span id="indicator-qtype" class="active-indicator"></span>
-                                <span class="arrow">▼</span>
-                            </div>
-                            <div id="qtype-options" class="dropdown-content">
+                            <button class="dropdown-btn" onclick="toggleDropdown('qtype-list')">
+                               📝 題目類型 <span class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-qtype" class="active-indicator"></div>
+                            <div id="qtype-list" class="dropdown-content">
                                 <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="qtype" data-value="MC">
-                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="MC"><span>MC</span></div>
+                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="MC">MC</div>
                                 </div>
                                 <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="qtype" data-value="文字題 (SQ/LQ)">
-                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="文字題 (SQ/LQ)"><span>文字題 (SQ/LQ)</span></div>
+                                    <div class="tri-state-checkbox" data-filter="qtype" data-value="文字題 (SQ/LQ)">文字題 (SQ/LQ)</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Percentage Filter -->
+                        <!-- Curriculum -->
                         <div class="filter-item dropdown-filter">
-                            <div class="dropdown-btn" onclick="toggleCollapsibleSection('percentage-options', 'percentage-arrow')">
-                                <span>📊 答對率</span>
-                                <span id="indicator-percentage" class="active-indicator"></span>
-                                <span id="percentage-arrow" class="arrow">▼</span>
+                            <button class="dropdown-btn" onclick="toggleDropdown('curriculum-options')">
+                               📚 課程分類 <span id="curriculum-arrow" class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-curriculum" class="active-indicator"></div>
+                            <!-- This ID is targeted by utils.js to populate options -->
+                            <div id="curriculum-options" class="dropdown-content custom-grid-dropdown">
+                                <!-- Populated by JS -->
                             </div>
+                        </div>
+
+                        <!-- Chapters -->
+                        <div class="filter-item dropdown-filter">
+                            <button class="dropdown-btn" onclick="toggleDropdown('chapter-options')">
+                               📖 Chapters <span id="chapter-arrow" class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-chapter" class="active-indicator"></div>
+                            <!-- This ID is targeted by utils.js to populate options -->
+                            <div id="chapter-options" class="dropdown-content custom-grid-dropdown chapter-grid-width">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="filter-item dropdown-filter">
+                            <button class="dropdown-btn" onclick="toggleDropdown('feature-options')">
+                               🎯 特徵 <span id="feature-arrow" class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-feature" class="active-indicator"></div>
+                            <!-- This ID is targeted by utils.js to populate options -->
+                            <div id="feature-options" class="dropdown-content custom-grid-dropdown">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Percentage Range -->
+                        <div class="filter-item dropdown-filter">
+                            <button class="dropdown-btn" onclick="toggleDropdown('percentage-options')">
+                               📊 答對率 <span id="percentage-arrow" class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-percentage" class="active-indicator"></div>
                             <div id="percentage-options" class="dropdown-content range-dropdown">
                                 <div class="range-filter-wrapper">
                                     <div class="range-filter-header">
@@ -122,20 +154,19 @@
                                     <div class="range-slider-container">
                                         <div class="range-slider-track"></div>
                                         <div class="range-slider-fill" id="percentage-range-fill" style="left: 0%; width: 100%;"></div>
-                                        <input type="range" class="range-slider-input" id="min-percentage" min="0" max="100" value="0" oninput="updatePercentageRange()" onchange="applyPercentageFilter()">
-                                        <input type="range" class="range-slider-input" id="max-percentage" min="0" max="100" value="100" oninput="updatePercentageRange()" onchange="applyPercentageFilter()">
+                                        <input type="range" id="min-percentage" min="0" max="100" value="0" step="5" class="range-slider-input" oninput="updatePercentageRange()">
+                                        <input type="range" id="max-percentage" min="0" max="100" value="100" step="5" class="range-slider-input" oninput="updatePercentageRange()">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Marks Filter -->
+                        <!-- Marks Range -->
                         <div class="filter-item dropdown-filter">
-                            <div class="dropdown-btn" onclick="toggleCollapsibleSection('marks-options', 'marks-arrow')">
-                                <span>💯 分數</span>
-                                <span id="indicator-marks" class="active-indicator"></span>
-                                <span id="marks-arrow" class="arrow">▼</span>
-                            </div>
+                            <button class="dropdown-btn" onclick="toggleDropdown('marks-options')">
+                                💯 分數 <span id="marks-arrow" class="arrow">▶</span>
+                            </button>
+                            <div id="indicator-marks" class="active-indicator"></div>
                             <div id="marks-options" class="dropdown-content range-dropdown marks-filter">
                                 <div class="range-filter-wrapper">
                                     <div class="range-filter-header">
@@ -147,84 +178,22 @@
                                     <div class="range-slider-container">
                                         <div class="range-slider-track"></div>
                                         <div class="range-slider-fill" id="marks-range-fill" style="left: 0%; width: 100%;"></div>
-                                        <input type="range" class="range-slider-input" id="min-marks" min="0" max="30" value="0" step="1" oninput="updateMarksRange()" onchange="applyMarksFilter()">
-                                        <input type="range" class="range-slider-input" id="max-marks" min="0" max="30" value="30" step="1" oninput="updateMarksRange()" onchange="applyMarksFilter()">
+                                        <input type="range" id="min-marks" min="0" max="30" value="0" step="1" class="range-slider-input" oninput="updateMarksRange()">
+                                        <input type="range" id="max-marks" min="0" max="30" value="30" step="1" class="range-slider-input" oninput="updateMarksRange()">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Clear All Button -->
+
+                        <!-- Clear Button -->
                         <div class="filter-item">
-                            <button class="btn btn-clear-filter full-width" onclick="clearFilters()">
+                            <button class="btn-clear-filter full-width" onclick="clearFilters()">
                                 🔄 重置
                             </button>
                         </div>
+
                     </div>
-
-                    <!-- Row 3: Advanced Filters Panel -->
-                    <div class="advanced-filters">
-                        <div class="advanced-header" onclick="toggleCollapsibleSection('advanced-options-grid', 'adv-arrow')">
-                            <span>⚡ 進階篩選 (課程、課題、特徵)</span>
-                            <span id="adv-arrow" class="arrow">▼</span>
-                        </div>
-                        
-                        <div id="advanced-options-grid" class="advanced-grid">
-                            <!-- Curriculum -->
-                            <div class="adv-column">
-                                <div class="dropdown-section" style="margin-bottom: 15px;">
-                                    <div class="dropdown-btn" onclick="toggleDropdown('curriculum-options')">
-                                        <span>📚 課程分類</span>
-                                        <span id="indicator-curriculum" class="active-indicator"></span>
-                                        <span class="arrow">▼</span>
-                                    </div>
-                                    <div id="curriculum-options" class="dropdown-content static-position">
-                                        <!-- Populated by JS -->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Chapters -->
-                            <div class="adv-column">
-                                    <div class="dropdown-section">
-                                        <div class="dropdown-btn" onclick="toggleCollapsibleSection('chapter-options', 'chapter-arrow-inner')">
-                                            <span>📖 Chapters</span>
-                                            <span id="indicator-chapter" class="active-indicator"></span>
-                                            <span id="chapter-arrow-inner" class="arrow">▶</span>
-                                        </div>
-                                        <div id="chapter-options" class="dropdown-content static-position">
-                                            <!-- Populated by JS -->
-                                        </div>
-                                    </div>
-                            </div>
-
-                            <!-- Features -->
-                            <div class="adv-column">
-                    <div class="dropdown-section">
-                                    <div class="dropdown-btn" onclick="toggleDropdown('feature-options')">
-                                        <span>🎯 特徵</span>
-                                        <span id="indicator-feature" class="active-indicator"></span>
-                                        <span class="arrow">▼</span>
-                                    </div>
-                                    <div id="feature-options" class="dropdown-content static-position">
-                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含圖表">
-                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含圖表"><span>含圖表</span></div>
-                                        </div>
-                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含表格">
-                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含表格"><span>含表格</span></div>
-                                        </div>
-                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="含計算">
-                                            <div class="tri-state-checkbox" data-filter="feature" data-value="含計算"><span>含計算</span></div>
-                                        </div>
-                                        <div class="tri-state-label" onclick="toggleTriState(this)" data-filter="feature" data-value="複選">
-                                            <div class="tri-state-checkbox" data-filter="feature" data-value="複選"><span>複選</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+              
                     <!-- Dynamic Filters Grid -->
                     <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
                         
@@ -233,7 +202,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="📊 搜尋圖表類型..." data-filter-type="graph" onkeyup="filterDropdownList(this, 'graph-options')">
                                 <span class="active-indicator" id="indicator-graph"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="graph-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -245,7 +214,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="📅 搜尋表格類型..." data-filter-type="table" onkeyup="filterDropdownList(this, 'table-options')">
                                 <span class="active-indicator" id="indicator-table"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="table-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -257,7 +226,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="🧮 搜尋計算類型..." data-filter-type="calculation" onkeyup="filterDropdownList(this, 'calculation-options')">
                                 <span class="active-indicator" id="indicator-calculation"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="calculation-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -269,7 +238,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="🔍 搜尋複選類型..." data-filter-type="multipleSelection" onkeyup="filterDropdownList(this, 'multiple-selection-options')">
                                 <span class="active-indicator" id="indicator-multipleSelection"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="multiple-selection-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -285,7 +254,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="搜尋概念類型..." data-filter-type="conceptsSelection" onkeyup="filterDropdownList(this, 'concepts-options')">
                                 <span class="active-indicator" id="indicator-concepts"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="concepts-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -296,7 +265,7 @@
                             <div class="filter-input-wrapper">
                                 <input type="text" class="filter-input" placeholder="搜尋題型類型..." data-filter-type="patternSelection" onkeyup="filterDropdownList(this, 'patterns-options')">
                                 <span class="active-indicator" id="indicator-patterns"></span>
-                                <span class="input-arrow">▼</span>
+                                <span class="input-arrow">▶</span>
                             </div>
                             <div id="patterns-options" class="dropdown-content scrollable-options input-dropdown-list">
                                 <!-- Populated by JS -->
@@ -307,7 +276,7 @@
                             <button class="dropdown-btn" onclick="toggleDropdown('ai-options')" id="ai-filter-btn">
                                 <span>🤖 AI 詳解</span>
                                 <div id="indicator-ai" class="filter-indicator"></div>
-                                <span class="arrow">▼</span>
+                                <span class="arrow">▶</span>
                             </button>
                             <div id="ai-options" class="dropdown-content">
                                 <!-- Populated by JS (Single option: "Has AI Explanation") -->

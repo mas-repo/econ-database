@@ -32,97 +32,95 @@ if (!window.triStateFilters) {
 // DROPDOWN & UI FUNCTIONS
 // ============================================
 
-function toggleDropdown(dropdownId) {
-    // 1. Check if this is actually a Collapsible Section (Curriculum, Feature, Chapter)
-    const collapsibleMap = {
-        'curriculum-options': 'curriculum-arrow',
-        'feature-options': 'feature-arrow',
-        'chapter-options': 'chapter-arrow'
-    };
-
-    if (collapsibleMap[dropdownId]) {
-        toggleCollapsibleSection(dropdownId, collapsibleMap[dropdownId]);
-        return;
-    }
-
-    // 2. Standard Dropdown Logic
-    const dropdown = document.getElementById(dropdownId);
-    const allDropdowns = document.querySelectorAll('.dropdown-content');
-    
-    // Close other standard dropdowns
-    allDropdowns.forEach(d => {
-        if (d.id !== dropdownId && !d.classList.contains('input-dropdown-list')) {
-            d.classList.remove('active');
-        }
+/**
+ * Helper: Closes ALL dropdowns (both standard and custom grids)
+ * and resets all arrow icons.
+ */
+function closeAllDropdowns() {
+    // 1. Close standard CSS-based dropdowns (remove .active)
+    document.querySelectorAll('.dropdown-content').forEach(d => {
+        d.classList.remove('active');
     });
-    
-    // Force close ALL collapsible sections
-    const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
-    collapsibleTypes.forEach(type => {
+
+    // 2. Close custom inline-style grids (Curriculum, Chapter, Feature)
+    ['curriculum', 'chapter', 'feature'].forEach(type => {
         const section = document.getElementById(`${type}-options`);
         const arrow = document.getElementById(`${type}-arrow`);
         
-        if (section && section.style.display !== 'none') {
-            section.style.display = 'none';
-            if (arrow) arrow.textContent = '▶';
-        }
+        if (section) section.style.display = 'none';
+        if (arrow) arrow.textContent = '▶';
     });
-    
-    if (dropdown) {
-        dropdown.classList.toggle('active');
-    }
+
+    // 3. Reset arrows for Range dropdowns (Percentage, Marks)
+    // These use standard .active class, but have specific arrow IDs we need to reset
+    ['percentage', 'marks', 'ai'].forEach(type => {
+        const arrow = document.getElementById(`${type}-arrow`);
+        if (arrow) arrow.textContent = '▶';
+    });
 }
 
-function toggleCollapsibleSection(sectionId, arrowId) {
-    const section = document.getElementById(sectionId);
-    const arrow = document.getElementById(arrowId);
-    
-    if (!section) return;
-    
-    if (section.style.display === 'none' || !section.style.display) {
-        // If opening, close standard dropdowns
-        document.querySelectorAll('.dropdown-content').forEach(d => {
-            d.classList.remove('active');
-        });
-    }
-    
-    const isHidden = section.style.display === 'none' || !section.style.display;
-    
-    if (isHidden) {
-        section.style.display = 'grid';
-        if (arrow) arrow.textContent = '▼';
-    } else {
-        section.style.display = 'none';
-        if (arrow) arrow.textContent = '▶';
+/**
+ * Master Toggle Function
+ * Handles opening/closing for ALL filter types
+ */
+function toggleDropdown(dropdownId) {
+    const target = document.getElementById(dropdownId);
+    if (!target) return;
+
+    // 1. Determine if the target is CURRENTLY open
+    // It is open if it has class 'active' OR display is 'grid'/'block'
+    const isStandardActive = target.classList.contains('active');
+    const isGridActive = target.style.display === 'grid' || target.style.display === 'block';
+    const wasOpen = isStandardActive || isGridActive;
+
+    // 2. Close EVERYTHING first (Exclusive Mode)
+    closeAllDropdowns();
+
+    // 3. If it was NOT open before, open it now
+    if (!wasOpen) {
+        
+        // Configuration for special grid filters
+        const gridMap = {
+            'curriculum-options': 'curriculum-arrow',
+            'feature-options': 'feature-arrow',
+            'chapter-options': 'chapter-arrow'
+        };
+
+        // Configuration for range filters (standard behavior but specific arrows)
+        const rangeMap = {
+            'percentage-options': 'percentage-arrow',
+            'marks-options': 'marks-arrow',
+            'ai-options': 'ai-arrow'
+        };
+
+        if (gridMap[dropdownId]) {
+            // === Case A: Custom Grid Filters ===
+            target.style.display = 'grid';
+            const arrow = document.getElementById(gridMap[dropdownId]);
+            if (arrow) arrow.textContent = '▼';
+
+        } else {
+            // === Case B: Standard & Range Filters ===
+            target.classList.add('active');
+            
+            // If it's a range filter, update its specific arrow
+            if (rangeMap[dropdownId]) {
+                const arrow = document.getElementById(rangeMap[dropdownId]);
+                if (arrow) arrow.textContent = '▼';
+            }
+        }
     }
 }
 
 document.addEventListener('click', function(event) {
-    // Check if click is outside filter areas
-    if (!event.target.closest('.dropdown-filter') && !event.target.closest('.dropdown-section') && !event.target.closest('.advanced-header')) {
-        
-        // 1. Close standard dropdowns
-        document.querySelectorAll('.dropdown-content:not(.input-dropdown-list):not(.static-position)').forEach(d => {
-            d.classList.remove('active');
-        });
-        
-        // 2. Force close collapsible sections
-        const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
-        collapsibleTypes.forEach(type => {
-            const section = document.getElementById(`${type}-options`);
-            const arrow = document.getElementById(`${type}-arrow`);
-            
-            if (section && section.style.display && section.style.display !== 'none') {
-                section.style.display = 'none';
-                if (arrow) arrow.textContent = '▶';
-            }
-        });
-    }
+    // Check if click is inside any filter container
+    const isFilterClick = event.target.closest('.dropdown-filter') || 
+                          event.target.closest('.dropdown-section') || 
+                          event.target.closest('.advanced-header') ||
+                          event.target.closest('.input-dropdown-container');
 
-    if (!event.target.closest('.input-dropdown-container')) {
-        document.querySelectorAll('.input-dropdown-list').forEach(d => {
-            d.classList.remove('active');
-        });
+    if (!isFilterClick) {
+        closeAllDropdowns();
     }
 });
 

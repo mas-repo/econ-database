@@ -154,8 +154,8 @@
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
-    width: 100%;
-    min-width: 200px;
+    width: 100%;       /* Match parent width exactly */
+    min-width: auto;   /* REMOVE the 200px minimum width */
     background: white;
     border: 1px solid var(--border-light);
     border-radius: 8px;
@@ -164,6 +164,7 @@
     display: none;
     padding: 5px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .dropdown-content.active {
@@ -178,12 +179,12 @@
 
 /* Range Dropdown Specifics */
 .range-dropdown {
-    min-width: 280px;
-    padding: 15px;
+    min-width: auto;
+    width: 100%;
 }
 
 /* ============================================
-   NEW: Input-First Dropdown Styles
+   Input-First Dropdown Styles
    ============================================ */
 
 /* Container for the input + dropdown */
@@ -316,70 +317,6 @@
 .filter-badge.green { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
 .filter-badge.red { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
 
-/* --- Row 3: Advanced Filters --- */
-.advanced-filters {
-    background: var(--light-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border-light);
-}
-
-.advanced-header {
-    padding: 12px 15px;
-    background: #f1f2f6;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 14px;
-    user-select: none;
-}
-
-.advanced-header:hover {
-    background: #e4e6eb;
-}
-
-.advanced-grid {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 15px;
-    background: white;
-    border-top: 1px solid var(--border-light);
-}
-
-/* Advanced Columns */
-.adv-column .dropdown-section strong {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    text-align: left;
-    font-size: 13px;
-    color: var(--text-color);
-}
-
-.adv-column .dropdown-section strong:hover {
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
-}
-
-/* Static position for dropdowns inside the advanced grid */
-.dropdown-content.static-position {
-    position: static;
-    box-shadow: none;
-    border: 1px solid #eee;
-    margin-top: 5px;
-    display: none;
-}
-
-.dropdown-content.static-position.active {
-    display: block;
-}
 
 /* --- Sort Controls --- */
 .sort-controls-wrapper {
@@ -639,4 +576,76 @@
 .input-dropdown-container:has(#concepts-options),
 .input-dropdown-container:has(#patterns-options) {
     display: none;
+}
+
+/* Style the moved filters to behave like dropdowns */
+.custom-grid-dropdown {
+    display: none; 
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%; /* Force match parent width */
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 10px;
+    
+    /* Grid layout inside the dropdown */
+    grid-template-columns: 1fr;
+    gap: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* When active, show as grid (overriding JS toggle logic if necessary) */
+.custom-grid-dropdown[style*="display: grid"] {
+    display: grid !important;
+}
+
+/* Specific width for the Chapters grid to fit numbers */
+.chapter-grid-width {
+    width: 100%; /* Force match parent width */
+    /* Use auto-fill to adapt to the button's width */
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr)) !important;
+    gap: 4px;
+}
+
+/* Ensure the chapter items look like buttons */
+#chapter-options .tri-state-checkbox {
+    text-align: center;
+    justify-content: center;
+    padding: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Adjust Curriculum items to be list-like */
+#curriculum-options .tri-state-label,
+#feature-options .tri-state-label {
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+#curriculum-options .tri-state-label:hover,
+#feature-options .tri-state-label:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-grid-dropdown {
+        width: 100%;
+        position: static; /* Stack on mobile */
+        box-shadow: none;
+        border: 1px solid #eee;
+        margin-top: 5px;
+    }
+    
+    .chapter-grid-width {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)) !important;
+    }
 }
