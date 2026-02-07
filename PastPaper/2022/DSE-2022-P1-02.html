@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Basic Economic Problems</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #475569; /* Slate */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --trick-bg: #fff7ed;
+            --trick-border: #f97316;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; border-left: 5px solid var(--primary-color); padding-left: 10px; margin-bottom: 15px; }
+        h3 { font-size: 1.1rem; font-weight: 700; color: var(--secondary-color); }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .meta-item { display: flex; align-items: center; gap: 5px; }
+        .stars { color: var(--accent-color); letter-spacing: 2px; }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text { font-weight: 500; margin-bottom: 15px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin-bottom: 8px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .options li:hover { background-color: #f8fafc; }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .analysis-step:last-child { border-bottom: none; }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .trick-box {
+            background-color: var(--trick-bg);
+            border-left: 5px solid var(--trick-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+        }
+
+        .lang-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .tc { background-color: #e0e7ff; color: #3730a3; }
+        .en { background-color: #fae8ff; color: #86198f; }
+
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d946ef;
+        }
+
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th { background-color: #e2e8f0; padding: 10px; border: 1px solid #cbd5e1; text-align: left; }
+        td { padding: 10px; border: 1px solid #cbd5e1; vertical-align: top; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; gap: 5px; }
+            th, td { display: block; width: 100%; box-sizing: border-box; }
+            th { text-align: center; text-decoration: underline; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <strong>Topic / 課題:</strong> Basic Economic Problems (Resource Allocation) / 基本經濟問題（資源分配）
+            </div>
+            <div class="meta-item">
+                <strong>Difficulty / 難度:</strong> <span class="stars">★★☆☆☆</span>
+            </div>
+            <div class="meta-item">
+                <strong>Keywords / 關鍵字:</strong> What to produce, How to produce, For whom to produce
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question / 題目</h2>
+        <div class="question-box">
+            <p><span class="lang-label tc">中文</span> 參考以下有關新冠肺炎疫苗接種計劃的資料。</p>
+            <ul>
+                <li>所有居民可以免費參加該計劃</li>
+                <li>政府在一些政府大樓設立了疫苗接種中心，並調派公務員往中心工作。</li>
+            </ul>
+            <p>以上資料和經濟學中的 ____________________ 問題有關。</p>
+            <p>
+                (1) 「生產什麼」<br>
+                (2) 「如何生產」<br>
+                (3) 「為誰生產」
+            </p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            
+            <p><span class="lang-label en">ENG</span> Refer to the following information of the COVID-19 vaccination programme.</p>
+            <ul>
+                <li>All residents are eligible for joining the programme free-of-charge.</li>
+                <li>The government has set up vaccination centres in some government buildings and deployed civil servants to work in these centres.</li>
+            </ul>
+            <p>The above information is related to the ______________ question(s) in Economics.</p>
+            <p>
+                (1) ‘what to produce’<br>
+                (2) ‘how to produce’<br>
+                (3) ‘for whom to produce’
+            </p>
+
+            <div style="margin-top: 20px; font-weight: bold;">
+                Options / 選項:<br>
+                A. (3) only / 只有 (3)<br>
+                B. (1) and (2) only / 只有 (1)、(2)<br>
+                C. (1) and (3) only / 只有 (1)、(3)<br>
+                D. (2) and (3) only / 只有 (2)、(3)
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review / 概念重溫</h2>
+        <div class="concept-box">
+            <p>
+                In Economics, every society faces scarcity and must answer three basic questions regarding resource allocation:
+                <br>
+                在經濟學中，每個社會都面對稀少性，因此必須回答關於資源分配的三個基本問題：
+            </p>
+            <ol>
+                <li>
+                    <strong>What to produce (生產什麼):</strong>
+                    <br>
+                    Deciding the <em>types</em> and <em>quantities</em> of goods/services to produce.
+                    <br>
+                    決定生產<em>甚麼種類</em>的物品或服務，以及生產<em>多少</em>（數量）。
+                </li>
+                <li style="margin-top: 10px;">
+                    <strong>How to produce (如何生產):</strong>
+                    <br>
+                    Deciding the <em>method of production</em> or the combination of inputs (e.g., Labor \(L\) vs. Capital \(K\)).
+                    <br>
+                    決定<em>生產方法</em>或投入要素的組合（例如：勞力 \(L\) 對 資本 \(K\)）。
+                </li>
+                <li style="margin-top: 10px;">
+                    <strong>For whom to produce (為誰生產):</strong>
+                    <br>
+                    Deciding the <em>distribution</em> of goods. Who gets to consume them? (e.g., Price mechanism vs. Queuing/First-come-first-served).
+                    <br>
+                    決定物品的<em>分配</em>。誰可以享用這些物品？（例如：價格機制 對 排隊/先到先得）。
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis / 答案與詳細分析</h2>
+        
+        <div class="correct-answer">
+            Correct Option: D (2) & (3) only
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 1: Analyze Statement 1 (分析陳述一)</h3>
+            <p><em>"All residents are eligible for joining the programme free-of-charge." / 「所有居民可以免費參加該計劃」</em></p>
+            
+            <p><span class="lang-label tc">中文</span> 這句話說明了誰有資格獲得疫苗（所有居民）以及分配的準則（免費）。這涉及物品的<strong>分配 (Distribution)</strong>。在市場經濟中，通常由「價格」決定誰能獲得物品（付得起錢的人）；但在這裡，政府決定「免費」並讓「所有居民」獲得。這解決了<strong>「為誰生產」 (For whom to produce)</strong> 的問題。</p>
+            
+            <p><span class="lang-label en">ENG</span> This statement specifies who is eligible to receive the vaccine (all residents) and the criterion for allocation (free of charge). This concerns the <strong>distribution</strong> of the good. In a market economy, "price" usually determines who gets the good (those who can pay); here, the government decides it is "free" and for "all residents". This addresses the problem of <strong>'for whom to produce'</strong>.</p>
+            
+            <p><strong>Conclusion: (3) is correct.</strong></p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 2: Analyze Statement 2 (分析陳述二)</h3>
+            <p><em>"The government has set up vaccination centres in some government buildings and deployed civil servants to work in these centres." / 「政府在一些政府大樓設立了疫苗接種中心，並調派公務員往中心工作。」</em></p>
+            
+            <p><span class="lang-label tc">中文</span> 這句話描述了疫苗接種服務是如何被提供出來的。它涉及了<strong>生產要素的組合</strong>：使用了「政府大樓」（資本/土地）和「公務員」（勞力）。這是在選擇<strong>生產方法 (Method of production)</strong>。這解決了<strong>「如何生產」 (How to produce)</strong> 的問題。</p>
+            
+            <p><span class="lang-label en">ENG</span> This statement describes how the vaccination service is provided. It involves the <strong>combination of inputs</strong>: using "government buildings" (capital/land) and "civil servants" (labor). This is a choice regarding the <strong>method of production</strong>. This addresses the problem of <strong>'how to produce'</strong>.</p>
+            
+            <p><strong>Conclusion: (2) is correct.</strong></p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 3: Why not ‘what to produce’? (為什麼不是 「生產什麼」？)</h3>
+            <p><span class="lang-label tc">中文</span> 題目雖然提到了「疫苗接種計劃」，這暗示了社會決定生產疫苗。但是，題目提供的<strong>具體資料 (Specific Information)</strong> 並沒有討論「我們應該生產疫苗還是口罩？」或者「我們應該生產 100 萬劑還是 200 萬劑？」。資料的重點在於<strong>運作模式</strong>（公務員、政府大樓）和<strong>分配方式</strong>（免費、全民）。因此，資料主要與 (2) 和 (3) 相關。</p>
+            
+            <p><span class="lang-label en">ENG</span> Although the question mentions a "vaccination programme," which implies a decision to produce vaccines was made, the <strong>specific information</strong> provided does not discuss "Should we produce vaccines or masks?" or "Should we produce 1 million or 2 million doses?". The focus of the data is on the <strong>operational mode</strong> (civil servants, buildings) and the <strong>allocation method</strong> (free, universal). Therefore, the data specifically relates to (2) and (3).</p>
+        </div>
+
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition / 題目拆解</h2>
+        <p>To solve this type of question, look for the <strong>"Pivot Words" (關鍵字眼)</strong>:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Concept / 概念</th>
+                    <th>Pivot Words (Look for these) / 關鍵字眼（尋找這些）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>What to produce<br>(生產什麼)</strong></td>
+                    <td>
+                        Quantity, Numbers (e.g., 1000 units), Choice between Product A vs Product B.
+                        <br>
+                        <span style="color: var(--secondary-color); font-size: 0.9em;">數量、數字（如 1000 單位）、產品 A 與產品 B 之間的選擇。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>How to produce<br>(如何生產)</strong></td>
+                    <td>
+                        Method, Technology, Labor vs Capital, Machine vs Handmade, Government vs Private resources.
+                        <br>
+                        <span style="color: var(--secondary-color); font-size: 0.9em;">方法、技術、勞力對資本、機器對手工、政府對私人資源。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>For whom to produce<br>(為誰生產)</strong></td>
+                    <td>
+                        Price, Free, Rich vs Poor, Age groups, Residents, Queuing, Lottery.
+                        <br>
+                        <span style="color: var(--secondary-color); font-size: 0.9em;">價格、免費、富人對窮人、年齡組別、居民、排隊、抽籤。</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 6. Common Mistakes & Tricks -->
+    <section>
+        <h2>Common Mistakes & Traps / 常犯錯誤與陷阱</h2>
+        <div class="trick-box">
+            <h3>⚠️ The "Existence" Trap (「存在」的陷阱)</h3>
+            <p><span class="lang-label tc">中文</span> 很多學生認為只要題目提到某種產品（如疫苗），就一定涉及「生產什麼」。這是錯的。必須看題目提供的<strong>描述重點</strong>。如果描述的是「用什麼去造」或「誰能拿到」，那就是「如何」或「為誰」。</p>
+            <p><span class="lang-label en">ENG</span> Many students think that as long as a product (like vaccines) is mentioned, it must involve "what to produce". This is wrong. You must look at the <strong>focus of the description</strong>. If the description is about "what is used to make it" or "who gets it", it is "how" or "for whom".</p>
+            
+            <div style="margin-top: 15px; border-top: 1px solid #f97316; padding-top: 10px;">
+                <strong>Exam Trick / 考試技巧:</strong>
+                <br>
+                Identify the specific bullet points provided in the question. Match each bullet point to one concept.
+                <br>
+                將題目中的每一點資料逐一配對。
+                <ul>
+                    <li>Bullet 1: "Free" \(\rightarrow\) Allocation \(\rightarrow\) <strong>For Whom</strong></li>
+                    <li>Bullet 2: "Civil Servants" \(\rightarrow\) Input \(\rightarrow\) <strong>How</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

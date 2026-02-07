@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Division of Labour</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --light-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --concept-bg: #eff6ff;
+            --concept-border: #60a5fa;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background-color: #f8fafc;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #e2e8f0;
+        }
+
+        .concept-section {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+        }
+
+        .correct-answer {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--success-text);
+            background-color: var(--success-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .analysis-header {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .status-correct {
+            color: var(--success-text);
+            font-weight: bold;
+        }
+
+        .status-incorrect {
+            color: var(--error-text);
+            font-weight: bold;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+
+        .en-trans {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .trap-box {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics: Division of Labour</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <span class="meta-label">Topic (課題):</span> 
+                Firms & Production (廠商與生產) - Division of Labour (分工)
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Difficulty (難度):</span> 
+                <span class="stars">★★☆☆☆</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Key Concepts (核心概念):</span> 
+                Productivity (生產力), Human Capital (人力資本), Division of Labour (分工)
+            </div>
+        </div>
+    </header>
+
+    <!-- The Question Section -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                一位教授決定改變所任教的科目的試卷評改方法：他不再要求其助教們批改他們所屬班別的整份試卷，而是指派每位助教批改全體考生整份試卷的其中一題。下列哪些情況可能會出現？
+                <span class="en-trans">A professor has decided to change the way of marking the exam papers of his subject. Instead of asking his teaching assistants to mark the whole paper for their own classes, he assigns each teaching assistant to mark one question of the paper for the entire candidature. Which of the following situations would likely occur?</span>
+            </div>
+
+            <div class="bilingual-text" style="margin-top: 15px;">
+                (1) 評改會更準確，因為熟能生巧。
+                <span class="en-trans">(1) The marking will be more accurate since practice makes perfect.</span>
+            </div>
+            <div class="bilingual-text">
+                (2) 訓練的時間會減少，因為每位助教只需要了解評卷參考的一部分。
+                <span class="en-trans">(2) Training time will be reduced as each assistant only needs to know part of the marking schemes.</span>
+            </div>
+            <div class="bilingual-text">
+                (3) 評改所需的工具減少，例如需用較少的紅色原子筆。
+                <span class="en-trans">(3) The tools required for marking will be reduced such as fewer red pens are needed.</span>
+            </div>
+
+            <ul class="options-list" style="margin-top: 20px;">
+                <li>A. 只有 (1)、(2) <span class="en-trans" style="display:inline; margin-left:10px;">(1) and (2) only</span></li>
+                <li>B. 只有 (1)、(3) <span class="en-trans" style="display:inline; margin-left:10px;">(1) and (3) only</span></li>
+                <li>C. 只有 (2)、(3) <span class="en-trans" style="display:inline; margin-left:10px;">(2) and (3) only</span></li>
+                <li>D. (1)、(2) 及 (3) <span class="en-trans" style="display:inline; margin-left:10px;">(1), (2) and (3)</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Concept Review Section -->
+    <section class="concept-section">
+        <h3>Concept Review (概念重溫)</h3>
+        <p>
+            這道題目考查的是<strong>分工 (Division of Labour)</strong> 的優點。當生產過程被分拆成不同的小步驟，並由不同的人專責處理時，我們稱之為分工。
+            <span class="en-trans">This question tests the advantages of <strong>Division of Labour</strong>. When a production process is broken down into smaller steps, with different people specializing in different tasks, this is called division of labour.</span>
+        </p>
+
+        <h4>分工的主要優點 (Main Advantages of Division of Labour):</h4>
+        <ol>
+            <li>
+                <strong>熟能生巧 (Practice makes perfect):</strong> 
+                工人重複做同一件工作，技術會提升。
+                <span class="en-trans">Workers repeat the same task and their skills improve.</span>
+            </li>
+            <li>
+                <strong>節省訓練時間 (Saves training time):</strong> 
+                工人只需學習整個生產過程的一小部分。
+                <span class="en-trans">Workers only need to learn a small part of the production process.</span>
+            </li>
+            <li>
+                <strong>人盡其才 (Assigning right person to right job):</strong> 
+                可根據工人的天賦分配工作。
+                <span class="en-trans">Jobs can be assigned according to workers' natural talents.</span>
+            </li>
+            <li>
+                <strong>節省資本 (Saves capital):</strong> 
+                避免工具閒置，或減少每人所需的專用工具（通常指大型機械）。
+                <span class="en-trans">Prevents tools from sitting idle, or reduces the need for specialized tools per person (usually referring to machinery).</span>
+            </li>
+        </ol>
+
+        <p>雖然這題是定性分析，但記得勞力生產力的公式：</p>
+        <div class="math-block">
+            $$ \text{Average Labor Productivity} = \frac{\text{Total Output (Q)}}{\text{Total Labor Hours (L)}} $$
+        </div>
+        <p style="font-size: 0.9em; color: #666;">
+            分工通常會提升 \(Q\) 或減少生產所需的 \(L\)，從而提升生產力。
+            <span class="en-trans">Division of labour usually increases \(Q\) or reduces the \(L\) required for production, thereby increasing productivity.</span>
+        </p>
+    </section>
+
+    <!-- Answer & Analysis Section -->
+    <section class="answer-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: A (Option A)
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-header">Statement (1): <span class="status-correct">CORRECT (正確)</span></span>
+            <p>
+                <strong>分析：</strong> 當助教只需批改同一條題目（例如全級的 Q1），他會不斷重複閱讀相同的答案和評分標準。這種重複性讓他能更快判斷答案的對錯，減少猶豫，並提高評分的準確度與一致性。這正是「熟能生巧」的體現。
+                <span class="en-trans"><strong>Analysis:</strong> When a TA only marks the same question (e.g., Q1 for the whole form), they repeatedly read similar answers and apply the same marking criteria. This repetition allows them to judge answers faster and with less hesitation, improving accuracy and consistency. This is the embodiment of "practice makes perfect".</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-header">Statement (2): <span class="status-correct">CORRECT (正確)</span></span>
+            <p>
+                <strong>分析：</strong> 如果要批改整份試卷，助教需要學習整份試卷（例如 Q1 到 Q10）的所有評分準則。如果只批改 Q1，他只需要學習 Q1 的評分準則。學習內容減少，所需的訓練時間自然減少。
+                <span class="en-trans"><strong>Analysis:</strong> To mark a whole paper, a TA needs to learn the marking criteria for all questions (e.g., Q1 to Q10). If they only mark Q1, they only need to learn the criteria for Q1. Since the content to be learned is less, the training time is naturally reduced.</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-header">Statement (3): <span class="status-incorrect">INCORRECT (錯誤)</span></span>
+            <p>
+                <strong>分析：</strong> 這是常見的陷阱。「節省資本」通常指共用昂貴的機械或設備。但在這個例子中，「工具」是紅筆。無論分工與否，每位助教仍然需要一支筆來工作。更重要的是，批改的總字數（墨水消耗量）並沒有因為分工而減少。因此，所需的紅筆數量不會顯著改變。
+                <span class="en-trans"><strong>Analysis:</strong> This is a common trap. "Saving capital" usually refers to sharing expensive machinery or equipment. In this case, the "tool" is a red pen. Regardless of division of labour, each TA still needs a pen to work. More importantly, the total number of words marked (ink consumption) does not decrease due to division of labour. Therefore, the quantity of red pens required will not change significantly.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>
+            這類題目要求學生比較兩種生產模式：
+            <span class="en-trans">This type of question asks students to compare two modes of production:</span>
+        </p>
+        <ul>
+            <li><strong>模式 A (舊):</strong> 簡單分工 / 沒分工 (Simple Division of Labour) — 一人做完所有步驟 (One person does all steps).</li>
+            <li><strong>模式 B (新):</strong> 複雜分工 (Complex Division of Labour) — 一人專注一個步驟 (One person specializes in one step).</li>
+        </ul>
+        <p>
+            <strong>解題關鍵 (Pivot Point):</strong> 
+            你需要逐一檢視分工的四大優點，看看在這個特定情境（改卷）中是否適用。
+            <span class="en-trans"><strong>Pivot Point:</strong> You need to check the four main advantages of division of labour one by one to see if they apply in this specific context (marking papers).</span>
+        </p>
+        <p>
+            <strong>關鍵判斷：</strong> 
+            (3) 選項中的「紅筆」是消耗品 (consumables)，不是固定資本 (fixed capital) 如機器。分工不會減少消耗品的使用量。
+            <span class="en-trans"><strong>Critical Judgment:</strong> The "red pens" in option (3) are consumables, not fixed capital like machines. Division of labour does not reduce the usage of consumables.</span>
+        </p>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="trap-box">
+        <h3>Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <p>
+            <strong>誤區：混淆「資本工具」與「消耗性物資」</strong>
+            <br>
+            學生常誤以為分工一定能節省所有類型的工具。
+            <br>
+            <span class="en-trans"><strong>Misconception: Confusing "Capital Tools" with "Consumable Materials"</strong><br>Students often mistakenly believe that division of labour saves all types of tools.</span>
+        </p>
+        <p>
+            <em>例子：</em> 如果題目說「所需的電腦掃描器減少」，這可能是正確的（因為只需少數人負責掃描）。但如果是「紅筆」、「紙張」等每人必備或按量消耗的物品，分工通常無法節省。
+            <br>
+            <span class="en-trans"><em>Example:</em> If the question said "fewer computer scanners required", this might be correct (as only a few people would handle scanning). But for items like "red pens" or "paper" that everyone needs or are consumed by volume, division of labour usually doesn't save them.</span>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
