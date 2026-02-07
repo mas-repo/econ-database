@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money & Banking Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-question: #f8fafc; /* Light Gray */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: var(--bg-question);
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+
+        .analysis-box {
+            margin-top: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.incorrect {
+            border-color: var(--danger);
+            background-color: #fef2f2;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .tag-correct { background-color: var(--success); color: white; }
+        .tag-incorrect { background-color: var(--danger); color: white; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; }
+            th, td { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">Topic: Money & Banking (貨幣與銀行)</div>
+        <div class="header-item">Difficulty: ★★★★☆</div>
+        <div class="header-item">Key Concepts: Balance Sheet, Money Multiplier, Money Supply</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>題目 (The Question)</h3>
+        <p>下表顯示某銀行系統的資產負債表。</p>
+        <span class="en-text">The following table shows the balance sheet of a banking system.</span>
+        
+        <table>
+            <tr>
+                <th colspan="2">資產 Assets ($)</th>
+                <th colspan="2">負債 Liabilities ($)</th>
+            </tr>
+            <tr>
+                <td>儲備 Reserves</td>
+                <td>300</td>
+                <td>存款 Deposits</td>
+                <td>900</td>
+            </tr>
+            <tr>
+                <td>貸款 Loans</td>
+                <td>600</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p>假設公眾並沒有持有現金，而法定儲備比率調低至25%。在存款創造後，銀行系統的貸款額是$750。下列哪項有關該銀行系統的陳述是正確的？</p>
+        <span class="en-text">Suppose the public does not hold cash and the required reserve ratio is reduced to 25%. After deposit creation, the amount of loans in the banking system is $750. Which of the following statements about the banking system is correct?</span>
+
+        <ul>
+            <li>A. 貨幣供應增加$300。<br><span class="en-text">The money supply increases by $300.</span></li>
+            <li>B. 實際銀行乘數為3.5。<br><span class="en-text">The actual banking multiplier is 3.5.</span></li>
+            <li>C. 存款增加$600。<br><span class="en-text">The deposits increase by $600.</span></li>
+            <li>D. 銀行儲備是$450。<br><span class="en-text">Bank reserves are $450.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>概念重溫 (Concept Review)</h3>
+        
+        <div class="bilingual-text">
+            <strong>1. 資產負債表恆等式 (Balance Sheet Identity):</strong><br>
+            銀行的資產必須等於負債。
+            <span class="en-text">Assets must equal Liabilities.</span>
+            $$ \text{Reserves (儲備)} + \text{Loans (貸款)} = \text{Deposits (存款)} $$
+        </div>
+
+        <div class="bilingual-text">
+            <strong>2. 貨幣供應 (Money Supply) \(M_s\):</strong><br>
+            定義為公眾持有的現金加上存款。
+            <span class="en-text">Defined as cash held by the public plus deposits.</span>
+            $$ M_s = C_p + D $$
+            <small>由於題目假設公眾不持有現金 ($C_p=0$)，所以 \(M_s = D\)。</small>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>3. 銀行乘數 (Banking Multiplier):</strong><br>
+            這是存款總額與儲備總額的比率。
+            <span class="en-text">This is the ratio of total deposits to total reserves.</span>
+            $$ \text{Actual Banking Multiplier} = \frac{\text{Total Deposits}}{\text{Total Reserves}} = \frac{1}{\text{Actual Reserve Ratio}} $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-box">
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        <p><strong>正確選項 Correct Option: <span style="color: var(--primary-color); font-size: 1.2em;">B</span></strong></p>
+
+        <div class="tips-box" style="margin-bottom: 20px;">
+            <strong>關鍵計算 (Critical Calculation):</strong><br>
+            在這個封閉的銀行系統中（公眾不持有現金），除非中央銀行注入資金，否則<strong>系統的總儲備 (Total Reserves) 保持不變</strong>，仍然是 $300。
+            <span class="en-text">In this closed banking system (no cash leakage), unless the Central Bank injects funds, the <strong>Total Reserves remain constant</strong> at $300.</span>
+            <br><br>
+            新狀態 (New State):
+            <ul>
+                <li>儲備 Reserves ($R$) = $300 (不變 constant)</li>
+                <li>貸款 Loans ($L$) = $750 (題目給定 given)</li>
+                <li>存款 Deposits ($D$) = $R + L = 300 + 750 = 1050$</li>
+            </ul>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis incorrect">
+            <span class="tag tag-incorrect">錯誤 Incorrect</span> <strong>選項 A (Option A)</strong>
+            <p><strong>分析：</strong><br>
+            原來的存款是 $900，新的存款是 $1050。<br>
+            由於 \(M_s = C_p + D\) 且 \(C_p=0\)，貨幣供應等於存款額。<br>
+            貨幣供應增加 = $1050 - 900 = $150，而不是 $300。</p>
+            <span class="en-text"><strong>Analysis:</strong><br>
+            Original deposits were $900, new deposits are $1050.<br>
+            Since \(M_s = C_p + D\) and \(C_p=0\), Money Supply equals Deposits.<br>
+            Increase in Money Supply = $1050 - 900 = $150, not $300.</span>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis correct">
+            <span class="tag tag-correct">正確 Correct</span> <strong>選項 B (Option B)</strong>
+            <p><strong>分析：</strong><br>
+            實際銀行乘數定義為 \(\frac{\text{存款總額}}{\text{儲備總額}}\)。<br>
+            $$ \text{Multiplier} = \frac{1050}{300} = 3.5 $$
+            注意：雖然法定儲備比率是 25% (最大乘數為 4)，但銀行並未借盡所有超額儲備（貸款僅為 750），所以<strong>實際</strong>乘數較小。</p>
+            <span class="en-text"><strong>Analysis:</strong><br>
+            The actual banking multiplier is defined as \(\frac{\text{Total Deposits}}{\text{Total Reserves}}\).<br>
+            $$ \text{Multiplier} = \frac{1050}{300} = 3.5 $$
+            Note: Although the Required Reserve Ratio is 25% (Max Multiplier is 4), the bank has not fully lent out all excess reserves (Loans are only 750), so the <strong>actual</strong> multiplier is smaller.</span>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis incorrect">
+            <span class="tag tag-incorrect">錯誤 Incorrect</span> <strong>選項 C (Option C)</strong>
+            <p><strong>分析：</strong><br>
+            存款由 $900 增加至 $1050。<br>
+            存款增加額 = $1050 - 900 = $150。</p>
+            <span class="en-text"><strong>Analysis:</strong><br>
+            Deposits increased from $900 to $1050.<br>
+            Increase in deposits = $1050 - 900 = $150.</span>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis incorrect">
+            <span class="tag tag-incorrect">錯誤 Incorrect</span> <strong>選項 D (Option D)</strong>
+            <p><strong>分析：</strong><br>
+            如前所述，公眾不持有現金，資金只是在銀行系統內的「儲備」與「貸款」之間轉換，或是在不同銀行間轉移。總現金（儲備）沒有離開過銀行系統。<br>
+            因此，銀行儲備維持 $300 不變。</p>
+            <span class="en-text"><strong>Analysis:</strong><br>
+            As mentioned, the public holds no cash. Money only shifts between "Reserves" and "Loans" or between banks. The physical cash (Reserves) never left the banking system.<br>
+            Therefore, bank reserves remain constant at $300.</span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #fff1f2; border-left-color: #e11d48;">
+        <h3>題目拆解 (Problem Decomposition)</h3>
+        <p><strong>破題關鍵 (Pivot Point):</strong></p>
+        <p>這題最容易讓人困惑的地方是「存款創造後」(After deposit creation) 這句話。學生通常會以為這代表「創造至最大值」(Maximized creation)。</p>
+        <p>然而，題目給了一個<strong>具體約束條件 (Constraint)</strong>：貸款額是 $750。這意味著我們不能直接用 \( \text{Reserves} \times \frac{1}{RRR} \) 來計算存款，而必須用資產負債表的平衡原則來推算。</p>
+        
+        <span class="en-text">
+            <strong>Pivot Point:</strong> The most confusing part is the phrase "After deposit creation". Students often assume this means "Maximized creation".<br>
+            However, the question gives a specific <strong>constraint</strong>: Loans are $750. This means we cannot simply use \( \text{Reserves} \times \frac{1}{RRR} \) to find deposits. We must use the balance sheet identity.
+        </span>
+        
+        <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+        
+        <p><strong>解題邏輯 (Logic Flow):</strong></p>
+        <ol>
+            <li>確認系統總儲備不變 ($R=300$)。 <span class="en-text">(Confirm Total Reserves are constant.)</span></li>
+            <li>利用新貸款額 ($L=750$) 計算新存款 ($D = 300 + 750 = 1050$)。 <span class="en-text">(Calculate New Deposits using New Loans.)</span></li>
+            <li>檢查各選項數據。 <span class="en-text">(Verify data in options.)</span></li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="concept-box" style="background-color: #f0fdf4; border-left-color: #16a34a;">
+        <h3>常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <ul>
+            <li>
+                <strong>誤以為儲備會改變 (Mistaking Reserves change):</strong><br>
+                學生常誤以為貸款增加，儲備就會減少。但在整個銀行<strong>系統</strong>中，貸款借出去的錢最終會存回銀行，變回儲備。只要沒有現金流失 (Cash Leakage)，系統總儲備不變。
+                <span class="en-text">Students often think if loans increase, reserves decrease. But in the whole banking <strong>system</strong>, money lent out is deposited back, becoming reserves again. Total reserves stay constant if there's no cash leakage.</span>
+            </li>
+            <li>
+                <strong>混淆「最大乘數」與「實際乘數」 (Confusing Max vs. Actual Multiplier):</strong><br>
+                最大乘數 = \(1/0.25 = 4\)。但這題銀行還持有超額儲備 (Excess Reserves)，所以實際乘數只有 3.5。
+                <span class="en-text">Max multiplier = \(1/0.25 = 4\). But here, banks still hold excess reserves, so the actual multiplier is only 3.5.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
