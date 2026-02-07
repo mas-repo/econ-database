@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Basic Economic Problems</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue-600 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --accent-color: #f59e0b; /* Amber-500 */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .zh {
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .en {
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background-color: #f8fafc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .options li:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .step-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .status-yes {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+        }
+
+        .status-no {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+        }
+
+        /* Pivot & Tricks */
+        .pivot-box, .trap-box {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .pivot-box {
+            background-color: #fff7ed; /* Orange-50 */
+            border: 1px solid #fed7aa;
+        }
+
+        .trap-box {
+            background-color: #fef2f2; /* Red-50 */
+            border: 1px solid #fecaca;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Basic Economic Problems (基本經濟問題)</span>
+            <span class="badge">Difficulty: <span class="stars">★★☆☆☆</span></span>
+            <span class="badge">Key Concepts: Resource Allocation, For whom to produce</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="q-text">
+            <span class="zh">下列哪些陳述與「為誰生產」的問題有關？</span>
+            <span class="en">Which of the following statements are related to the problem of ‘for whom to produce’?</span>
+        </div>
+
+        <div style="margin-left: 20px; margin-bottom: 20px;">
+            <p>
+                <span class="zh">(1) 只有長者和合資格的傷殘人士才可以享有「公共交通票價優惠計劃」的每程$2票價優惠。</span><br>
+                <span class="en">(1) Only the elderly and eligible persons with disabilities can enjoy a concessionary fare of $2 per trip under the Public Transport Fare Concession Scheme.</span>
+            </p>
+            <p>
+                <span class="zh">(2) 若公共租住房屋（公屋）的住戶其家庭入息超過公屋入息限額五倍，便須遷出其公屋單位。</span><br>
+                <span class="en">(2) Public rental housing (PRH) households whose family income exceeds 5 times the PRH income limits should vacate their PRH flats.</span>
+            </p>
+            <p>
+                <span class="zh">(3) 電競音樂節由香港會議展覽中心轉移到香港體育館舉行，以容納更多來自世界各地的電競迷。</span><br>
+                <span class="en">(3) The e-Sports & Music Festival moved from Hong Kong Convention and Exhibition Centre to Hong Kong Coliseum to house more fans from all over the world.</span>
+            </p>
+        </div>
+
+        <ul class="options">
+            <li>A. <span class="zh">只有 (1)、(2)</span> <span class="en">(1) and (2) only</span></li>
+            <li>B. <span class="zh">只有 (1)、(3)</span> <span class="en">(1) and (3) only</span></li>
+            <li>C. <span class="zh">只有 (2)、(3)</span> <span class="en">(2) and (3) only</span></li>
+            <li>D. <span class="zh">(1)、(2) 及 (3)</span> <span class="en">(1), (2) and (3)</span></li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Concept Review (概念重溫)
+        </div>
+        <p>
+            <span class="zh"><strong>三個基本經濟問題 (Three Basic Economic Problems):</strong></span>
+        </p>
+        <ol>
+            <li>
+                <strong>生產甚麼 (What to produce):</strong>
+                <span class="zh">涉及產品的種類和數量。</span>
+                <span class="en">Concerns the types and quantities of goods/services to be produced.</span>
+            </li>
+            <li>
+                <strong>如何生產 (How to produce):</strong>
+                <span class="zh">涉及生產方法、技術或投入要素的組合（例如：勞力密集 vs 資本密集，或生產地點的選擇）。</span>
+                <span class="en">Concerns the method of production, technology, or mix of inputs (e.g., labor-intensive vs. capital-intensive, or choice of production location).</span>
+            </li>
+            <li>
+                <strong>為誰生產 (For whom to produce):</strong>
+                <span class="zh">涉及產品的<strong>分配 (Distribution)</strong>。即是誰可以獲得該產品？通常取決於收入分配、價格機制或非價格分配準則（如排隊、抽籤、資格審查）。</span>
+                <span class="en">Concerns the <strong>distribution</strong> of output. Who gets the goods? It depends on income distribution, price mechanism, or non-price allocation criteria (e.g., queuing, lucky draw, eligibility checks).</span>
+            </li>
+        </ol>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>Answer & Detailed Analysis (答案與詳細分析)</h3>
+        
+        <div class="correct-answer">
+            Correct Option: A
+        </div>
+
+        <div class="step-item">
+            <span class="step-label">Statement (1): $2 Fare Concession (2元乘車優惠) <span class="status-badge status-yes">YES</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>這項政策規定只有「長者」和「合資格傷殘人士」才能享有優惠。這是一個關於<strong>誰能獲得產品/服務</strong>（或誰能以特定價格獲得服務）的問題。這是根據年齡和身體狀況來分配資源，屬於「為誰生產」。</span>
+            </p>
+            <p>
+                <span class="en"><strong>Analysis:</strong> This policy stipulates that only "elderly" and "eligible persons with disabilities" can enjoy the concession. This is a question of <strong>who gets the good/service</strong> (or who gets it at a specific price). It allocates resources based on age and physical status, which falls under "For whom to produce".</span>
+            </p>
+        </div>
+
+        <div class="step-item">
+            <span class="step-label">Statement (2): Public Housing Income Limit (公屋入息限額) <span class="status-badge status-yes">YES</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>這項政策規定若收入過高（\( \text{Income} > 5 \times \text{Limit} \)），就必須遷出。這是利用「收入水平」作為準則，來決定<strong>誰有資格居住</strong>在公屋單位內。這直接涉及最終產品（公屋單位）的分配，屬於「為誰生產」。</span>
+            </p>
+            <p>
+                <span class="en"><strong>Analysis:</strong> This policy states that if income is too high (\( \text{Income} > 5 \times \text{Limit} \)), tenants must move out. This uses "income level" as a criterion to decide <strong>who is eligible to live</strong> in the public housing units. This directly concerns the distribution of the final good (housing), falling under "For whom to produce".</span>
+            </p>
+        </div>
+
+        <div class="step-item">
+            <span class="step-label">Statement (3): Venue Change (更換場地) <span class="status-badge status-no">NO</span></span>
+            <p>
+                <span class="zh"><strong>分析：</strong>主辦單位決定將地點由「會展」轉到「紅館」。這改變了生產的<strong>地點</strong>和<strong>配套</strong>，屬於生產方法的改變。雖然結果是「容納更多觀眾」（產量增加），但這主要是關於<strong>「如何生產」</strong>（地點選擇）或<strong>「生產甚麼」</strong>（產量增加）。它沒有提及門票是如何分配給觀眾的（例如是否價高者得或抽籤），因此與「為誰生產」無關。</span>
+            </p>
+            <p>
+                <span class="en"><strong>Analysis:</strong> The organizer decided to move the venue from "HKCEC" to "HK Coliseum". This changes the <strong>location</strong> and <strong>logistics</strong> of production, which is a change in production method. Although the result is "housing more fans" (increased quantity), this is primarily about <strong>"How to produce"</strong> (choice of location) or <strong>"What to produce"</strong> (quantity). It does not mention how tickets are distributed to fans (e.g., via price mechanism or lottery), so it is unrelated to "For whom to produce".</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <div class="pivot-box">
+            <p>
+                <span class="zh"><strong>解題關鍵點 (Pivot Point):</strong> 尋找<strong>「分配準則」(Allocation Criteria)</strong>。</span><br>
+                <span class="en"><strong>Key Strategy:</strong> Look for <strong>"Allocation Criteria"</strong>.</span>
+            </p>
+            <p>
+                <span class="zh">問自己：這項陳述是否在定義<strong>誰</strong>有資格獲得該物品？</span><br>
+                <span class="en">Ask yourself: Does this statement define <strong>WHO</strong> is eligible to receive the good?</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="zh">陳述 (1) 的準則：年齡 / 傷殘狀況。 (Yes)</span>
+                    <br><span class="en">Statement (1) criterion: Age / Disability status. (Yes)</span>
+                </li>
+                <li>
+                    <span class="zh">陳述 (2) 的準則：家庭入息水平。 (Yes)</span>
+                    <br><span class="en">Statement (2) criterion: Family income level. (Yes)</span>
+                </li>
+                <li>
+                    <span class="zh">陳述 (3) 的重點：地點轉移 / 產量增加。 (No - 這是生產決策)</span>
+                    <br><span class="en">Statement (3) focus: Location shift / Capacity increase. (No - This is a production decision)</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section>
+        <h3>Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <div class="trap-box">
+            <p>
+                <span class="zh"><strong>陷阱：混淆「目的」與「問題性質」</strong></span><br>
+                <span class="en"><strong>Trap: Confusing the "Purpose" with the "Nature of the Problem"</strong></span>
+            </p>
+            <p>
+                <span class="zh">在陳述 (3) 中，學生看到「容納更多來自世界各地的電競迷」，可能會誤以為這是指「為這些電競迷生產」。</span>
+                <br>
+                <span class="en">In statement (3), students see "to house more fans from all over the world" and might mistakenly think this means "producing FOR these fans".</span>
+            </p>
+            <p>
+                <span class="zh"><strong>糾正：</strong>只要涉及「地點」、「技術」或「投入要素」的改變，通常歸類為<strong>「如何生產」</strong>。單純增加座位數量（產量）而不涉及分配規則，則不屬於「為誰生產」。</span>
+                <br>
+                <span class="en"><strong>Correction:</strong> Changes involving "location", "technology", or "inputs" are usually classified as <strong>"How to produce"</strong>. Simply increasing seat capacity (quantity) without specifying allocation rules does not constitute "For whom to produce".</span>
+            </p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Barter Economy</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f8fafc;
+            --text-color: #1f2937;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        .badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #f3f4f6;
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-title::before {
+            content: "💡";
+            margin-right: 10px;
+        }
+
+        /* Analysis Section */
+        .analysis-section h3 {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9fafb;
+        }
+
+        .option-analysis.correct {
+            border: 1px solid var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .correct-tag {
+            color: var(--correct-color);
+            font-weight: bold;
+        }
+
+        .wrong-tag {
+            color: var(--wrong-color);
+            font-weight: bold;
+        }
+
+        /* Bilingual Text Styling */
+        .tc {
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .en {
+            color: #555;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .tips-title {
+            color: #92400e;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Trade / 貨幣與貿易</span>
+            <span>Difficulty: <span class="difficulty">★★★☆☆</span></span>
+            <span>Key Concepts: Barter (以物易物), Real vs. Nominal (實質與名義)</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="q-text">
+            下列哪些可在以物易物的經濟中存在？<br>
+            Which of the following may exist in a barter economy?
+        </div>
+        <div style="margin-left: 20px; margin-bottom: 15px;">
+            (1) 專門化 / Specialisation<br>
+            (2) 通脹 / Inflation<br>
+            (3) 利息 / Interest
+        </div>
+        <ul class="options">
+            <li>A. 只有 (1)、(2) / (1) and (2) only</li>
+            <li>B. 只有 (1)、(3) / (1) and (3) only</li>
+            <li>C. 只有 (2)、(3) / (2) and (3) only</li>
+            <li>D. (1)、(2) 及 (3) / (1), (2) and (3)</li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">概念重溫 (Concept Review)</div>
+        
+        <p>
+            <span class="tc"><strong>以物易物 (Barter Economy)：</strong>指沒有使用貨幣作為交易媒介的經濟體系。交易必須依賴「慾望雙重巧合」。</span>
+            <span class="en"><strong>Barter Economy:</strong> An economy without money as a medium of exchange. Trade relies on the "double coincidence of wants".</span>
+        </p>
+
+        <p>
+            <span class="tc"><strong>名義變量 vs 實質變量 (Nominal vs Real Variables)：</strong></span>
+            <span class="en"><strong>Nominal vs Real Variables:</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="tc"><strong>名義 (Nominal)：</strong>以貨幣單位衡量（例如：港幣 $100）。</span>
+                <span class="en"><strong>Nominal:</strong> Measured in monetary units (e.g., HKD $100).</span>
+            </li>
+            <li>
+                <span class="tc"><strong>實質 (Real)：</strong>以物品數量衡量（例如：10 個蘋果）。</span>
+                <span class="en"><strong>Real:</strong> Measured in terms of goods (e.g., 10 apples).</span>
+            </li>
+        </ul>
+
+        <p>
+            <span class="tc"><strong>費沙方程式 (Fisher Equation) [參考用]：</strong></span><br>
+            $$ i = r + \pi^e $$
+            <span class="tc">其中 \(i\) 是名義利率，\(r\) 是實質利率，\(\pi^e\) 是預期通脹率。在沒有貨幣的經濟中，\(i\) 和 \(\pi\) 不存在，但 \(r\) 依然存在。</span>
+            <span class="en">Where \(i\) is nominal interest rate, \(r\) is real interest rate, and \(\pi^e\) is expected inflation. In an economy without money, \(i\) and \(\pi\) do not exist, but \(r\) still exists.</span>
+        </p>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">
+            <span class="tc">正確答案：<strong>B</strong></span>
+            <span class="en">Correct Answer: <strong>B</strong></span>
+        </p>
+
+        <!-- Option 1 -->
+        <div class="option-analysis correct">
+            <span class="option-label">(1) 專門化 (Specialisation) <span class="correct-tag">✔ 正確 (Correct)</span></span>
+            <p>
+                <span class="tc"><strong>分析：</strong>專門化是指生產者集中生產他們較擅長的物品。即使沒有貨幣，人們依然可以根據「比較優勢」(Comparative Advantage) 進行分工，然後透過以物易物交換產品。雖然交易成本較高，但專門化依然存在。</span>
+                <span class="en"><strong>Analysis:</strong> Specialisation means producers focus on producing goods they are good at. Even without money, people can still divide labor based on "Comparative Advantage" and trade via barter. Although transaction costs are higher, specialisation still exists.</span>
+            </p>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="option-analysis">
+            <span class="option-label">(2) 通脹 (Inflation) <span class="wrong-tag">✘ 錯誤 (Incorrect)</span></span>
+            <p>
+                <span class="tc"><strong>分析：</strong>通脹定義為「一般物價水平持續上升」。物價水平是指以貨幣表示的價格。在以物易物的經濟中，沒有貨幣作為「記帳單位」(Unit of Account)，因此不存在一般的物價水平，自然也不會有通脹。</span>
+                <span class="en"><strong>Analysis:</strong> Inflation is defined as a "continuous increase in the general price level". Price level refers to prices expressed in money. In a barter economy, there is no money serving as a "unit of account", so there is no general price level, and thus no inflation.</span>
+            </p>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="option-analysis correct">
+            <span class="option-label">(3) 利息 (Interest) <span class="correct-tag">✔ 正確 (Correct)</span></span>
+            <p>
+                <span class="tc"><strong>分析：</strong>利息的本質是「提早獲得資源的代價」或「延遲消費的回報」。這可以用物品來計算（實質利率）。例如：我今天借給你 10 斤米，明年你要還我 11 斤米。那多出的 1 斤米就是利息。這不需要貨幣也能發生。</span>
+                <span class="en"><strong>Analysis:</strong> The essence of interest is the "cost of obtaining resources earlier" or the "reward for deferring consumption". This can be calculated in goods (real interest rate). For example: I lend you 10kg of rice today, and you return 11kg next year. The extra 1kg is interest. This can happen without money.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="concept-box" style="background-color: #fff7ed; border-color: #f97316;">
+        <div class="concept-title" style="color: #c2410c;">題目拆解 (Problem Decomposition)</div>
+        
+        <p>
+            <span class="tc"><strong>關鍵判斷點 (Pivot Point)：</strong>區分「貨幣現象」與「實質經濟活動」。</span>
+            <span class="en"><strong>Pivot Point:</strong> Distinguish between "Monetary Phenomena" and "Real Economic Activities".</span>
+        </p>
+        <ul>
+            <li>
+                <span class="tc"><strong>必須有貨幣才存在的：</strong>價格水平、通脹、通縮、名義利率。</span>
+                <span class="en"><strong>Requires Money:</strong> Price level, Inflation, Deflation, Nominal Interest Rate.</span>
+            </li>
+            <li>
+                <span class="tc"><strong>不需要貨幣也能存在的：</strong>生產、專門化、貿易、儲蓄、投資、利息（實質）、收入（實質）。</span>
+                <span class="en"><strong>Exists without Money:</strong> Production, Specialisation, Trade, Saving, Investment, Interest (Real), Income (Real).</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="tips-box">
+        <div class="tips-title">⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</div>
+        
+        <p>
+            <span class="tc"><strong>陷阱 1：誤以為利息必須是錢。</strong><br>學生常認為「利息」就是銀行戶口裡的錢。其實在經濟學上，利息是跨期選擇的價格。只要有時間和資源的借貸，就有利息。</span>
+            <span class="en"><strong>Trap 1: Thinking interest must be money.</strong><br>Students often think "interest" is just money in a bank account. In economics, interest is the price of intertemporal choice. As long as there is lending of resources over time, there is interest.</span>
+        </p>
+
+        <p>
+            <span class="tc"><strong>陷阱 2：誤以為沒有貨幣就不能專門化。</strong><br>學生可能覺得沒有錢發工資就無法分工。其實古代農民專門種田，獵人專門打獵，這就是專門化，他們可以直接交換成果。</span>
+            <span class="en"><strong>Trap 2: Thinking specialisation is impossible without money.</strong><br>Students might feel division of labor is impossible without money to pay wages. In reality, ancient farmers farming and hunters hunting is specialisation; they simply exchanged their outputs directly.</span>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Opportunity Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #60a5fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background-color: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ecfdf5;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .analysis-item.correct {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .lang-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Decomposition & Traps */
+        .strategy-box, .trap-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .trap-box {
+            border-left: 5px solid var(--wrong-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-tags">
+            <span class="tag">Topic: Basic Economic Concepts (基本經濟概念)</span>
+            <span class="tag">Sub-topic: Opportunity Cost (機會成本)</span>
+            <span class="tag difficulty">Difficulty: ★★☆☆☆</span>
+        </div>
+        <p style="margin-top: 10px; color: #64748b;">
+            <strong>Key Concepts:</strong> Opportunity Cost (機會成本), Sunk Cost (沉沒成本), Risk as Cost (風險作為成本)
+        </p>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <div class="section-title">The Question (題目)</div>
+        <div class="q-text">
+            <p>著名足球隊曼聯到訪香港進行一場友誼賽。比賽的前一天，該隊發現香港大球場的草地被連場大雨破壞，該隊考慮取消比賽。曼聯繼續在該惡劣草地進行比賽的機會成本會_______，因為_______。</p>
+            <p class="lang-en">A famous football team, Manchester United, visited Hong Kong for a friendly match. The day before the match, the team found the pitch in the Hong Kong Stadium had been damaged by prolonged rain and it considered cancelling the match. The opportunity cost for Manchester United to continue playing in such a poor pitch would _______ because _______.</p>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 上升 …… 球員受傷的機會增加了 <br> <span class="lang-en">increase …… there was a higher chance for the players to get injured</span></li>
+            <li><strong>B.</strong> 上升 …… 球隊很有可能表現差劣 <br> <span class="lang-en">increase …… the team was likely to have poor performance</span></li>
+            <li><strong>C.</strong> 維持不變 …… 球隊已經支付了到訪香港的開支 <br> <span class="lang-en">remain unchanged …… the expense on the visit to Hong Kong had already been paid</span></li>
+            <li><strong>D.</strong> 維持不變 …… 球員在香港所花的時間是相同的 <br> <span class="lang-en">remain unchanged …… the players spent the same amount of time in Hong Kong</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <p><strong>1. 機會成本 (Opportunity Cost):</strong><br>
+        機會成本是被放棄的選擇中，價值最高的一個。它包括<strong>顯性成本 (Explicit Cost)</strong> 和 <strong>隱性成本 (Implicit Cost)</strong>。
+        <br>
+        <span class="lang-en">Opportunity cost is the highest-valued option forgone. It includes both <strong>Explicit Cost</strong> and <strong>Implicit Cost</strong>.</span>
+        </p>
+        
+        <p><strong>公式 (Formula):</strong><br>
+        $$ \text{Opportunity Cost} = \text{Explicit Cost} + \text{Implicit Cost} $$
+        </p>
+
+        <p><strong>2. 沉沒成本 (Sunk Cost):</strong><br>
+        已經支付且無法收回的成本。在做決定時，沉沒成本不應被計算在內，因為它不會隨選擇而改變。
+        <br>
+        <span class="lang-en">Costs that have already been incurred and cannot be recovered. Sunk costs should be ignored in decision-making as they do not change regardless of the choice.</span>
+        </p>
+
+        <p><strong>3. 風險作為成本 (Risk as a Cost):</strong><br>
+        如果一個行動會增加資產受損的風險，該預期損失 (Expected Loss) 視為機會成本的一部分。
+        <br>
+        <span class="lang-en">If an action increases the risk of damage to an asset, that expected loss is considered part of the opportunity cost.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: A</div>
+
+        <div class="analysis-item correct">
+            <span class="option-label">Option A (Correct):</span>
+            <p><strong>分析：</strong>機會成本是指為了選擇某個選項而必須放棄的價值。在這個情境中，選擇「繼續比賽」意味著球員必須在惡劣的草地上奔跑。這大大增加了球員受傷的風險。受傷是一種代價（放棄了健康或未來的比賽機會）。因為草地變差，這個潛在的代價（受傷機率）上升了，所以機會成本上升。</p>
+            <p class="lang-en"><strong>Analysis:</strong> Opportunity cost refers to the value forgone to choose an option. In this scenario, choosing to "continue playing" means players must run on a poor pitch. This significantly increases the risk of injury. Injury is a cost (forgoing health or future playing opportunities). Because the pitch condition worsened, this potential cost (probability of injury) increased, so the opportunity cost increased.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option B (Incorrect):</span>
+            <p><strong>分析：</strong>「表現差劣」是指這場比賽本身的質素下降，這代表比賽帶來的<strong>價值 (Value) 下降</strong>，而不是成本上升。成本是我們為了得到某樣東西而「付出」的代價，而表現差是我們「得到」的結果變差了。因此，這不屬於機會成本的增加。</p>
+            <p class="lang-en"><strong>Analysis:</strong> "Poor performance" implies that the quality of the match itself decreases. This represents a <strong>decrease in the value</strong> of the activity, not an increase in cost. Cost is what we "give up" to get something, whereas poor performance means what we "get" (the result) is worse. Therefore, this is not an increase in opportunity cost.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option C (Incorrect):</span>
+            <p><strong>分析：</strong>到訪香港的開支已經支付（Already paid），屬於<strong>沉沒成本 (Sunk Cost)</strong>。無論球隊決定比賽還是取消，這筆錢都已經花了，不會改變。因此，這不是導致機會成本「改變」的原因。</p>
+            <p class="lang-en"><strong>Analysis:</strong> The expense of visiting Hong Kong has already been paid, making it a <strong>Sunk Cost</strong>. Whether the team decides to play or cancel, this money is gone and will not change. Therefore, this is not the reason for any "change" in opportunity cost.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option D (Incorrect):</span>
+            <p><strong>分析：</strong>雖然時間成本是機會成本的一部分，但題目問的是成本是否「改變」。如果比賽時間長度不變，這部分的時間成本確實維持不變。然而，題目強調了環境變化（草地變差），這引入了新的成本因素（受傷風險），所以總機會成本不應該是維持不變。</p>
+            <p class="lang-en"><strong>Analysis:</strong> While time cost is part of opportunity cost, the question asks if the cost "changes." If the match duration is the same, this portion of the time cost indeed remains unchanged. However, the question highlights a change in environment (poor pitch), which introduces a new cost factor (injury risk), so the total opportunity cost should not remain unchanged.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="strategy-box">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p><strong>關鍵點 (Pivot Point):</strong> 題目強調了<strong>「草地被破壞」 (Pitch damaged)</strong> 這一新資訊。</p>
+        <p>解題邏輯如下：</p>
+        <ol>
+            <li><strong>識別改變 (Identify Change):</strong> 情況由「正常草地」變為「惡劣草地」。</li>
+            <li><strong>評估後果 (Evaluate Consequence):</strong> 惡劣草地 \(\rightarrow\) 容易滑倒/受傷。</li>
+            <li><strong>聯繫概念 (Link to Concept):</strong> 受傷 \(\rightarrow\) 這是隱性成本 (Implicit Cost)。</li>
+            <li><strong>結論 (Conclusion):</strong> 隱性成本增加 \(\rightarrow\) 總機會成本增加。</li>
+        </ol>
+        <p class="lang-en"><strong>Logic:</strong> Bad Pitch \(\rightarrow\) Higher Risk of Injury \(\rightarrow\) Higher Expected Loss \(\rightarrow\) Higher Opportunity Cost.</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="trap-box">
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        <p><strong>1. 混淆「價值」與「成本」 (Confusing Value with Cost):</strong><br>
+        學生常誤選 B。必須分清楚：表現差是這場比賽的「價值」降低（收益減少），而受傷是為了打這場比賽額外付出的代價（成本增加）。</p>
+        
+        <p><strong>2. 被「沉沒成本」誤導 (Misled by Sunk Costs):</strong><br>
+        看到選項 C 提到「錢已經付了」，很多學生會聯想到「成本不變」。雖然沉沒成本確實不影響決策，但這裡的問題是草地變差帶來了<strong>額外</strong>的成本（風險），所以總成本是變了，而不是不變。</p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="strategy-box" style="border-left: 5px solid #8b5cf6;">
+        <div class="section-title">Exam Tricks (考試技巧)</div>
+        <p><strong>「壞天氣/壞環境」定律：</strong><br>
+        在 DSE 選擇題中，如果題目涉及「天氣變壞」、「路況變差」、「設施損壞」並問及繼續進行該活動的機會成本：
+        <br>
+        答案通常是 <strong>「上升 (Increase)」</strong>，理由通常是 <strong>「受傷風險增加 (Higher chance of injury)」</strong> 或 <strong>「所需時間增加 (Time cost increases)」</strong>。
+        </p>
+        <p class="lang-en"><strong>The "Bad Weather/Condition" Rule:</strong> In DSE MC questions, if the scenario involves worsening conditions (weather, road, facilities) and asks about the opportunity cost of continuing: The answer is usually <strong>"Increase"</strong> due to <strong>"Higher chance of injury"</strong> or <strong>"Increased time cost"</strong>.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

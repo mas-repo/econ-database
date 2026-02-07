@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Law of Demand & Relative Price</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th { background-color: #f1f5f9; }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .math-block {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-text);
+            color: var(--success-text);
+        }
+
+        .option-wrong {
+            background-color: #fff;
+            border-left: 4px solid var(--error-text);
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Decomposition & Tricks */
+        .strategy-box {
+            background-color: #fffbeb; /* Amber light */
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .pivot-point {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            th, td { padding: 5px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <span class="tag">Topic: Law of Demand (Relative Price) / 需求定律（相對價格）</span>
+        <span class="tag">Difficulty: ★★★☆☆</span>
+        <span class="tag">Key Concepts: Alchian-Allen Effect, Relative Price</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        
+        <p class="zh">下表顯示日本產優質水果和普通水果在日本和香港兩地的銷量。假設兩地消費者對日本產水果的偏好相近。</p>
+        <p class="en">The table shows the quantities of high-quality and average-quality Japanese fruits sold in Japan and Hong Kong. Assume the consumers’ preferences on Japanese fruits are similar in both economies.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Location / 地點</th>
+                    <th>High-quality (Units)<br>優質水果銷量</th>
+                    <th>Average-quality (Units)<br>普通水果銷量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Japan / 日本</td>
+                    <td>50</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>Hong Kong / 香港</td>
+                    <td>Q1</td>
+                    <td>Q2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="zh">假設這兩種水果由日本運至香港的費用相同。下列哪項／些數據與需求定律相符？</p>
+        <p class="en">Suppose the cost of transporting both types of fruits from Japan to Hong Kong are the same. Which of the following figures is/are consistent with the law of demand?</p>
+
+        <div style="margin-left: 20px;">
+            <p>(1) Q1 = 30; Q2 = 140</p>
+            <p>(2) Q1 = 40; Q2 = 150</p>
+            <p>(3) Q1 = 45; Q2 = 180</p>
+        </div>
+
+        <p>
+            A. Only (1) / 只有 (1)<br>
+            B. Only (2) / 只有 (2)<br>
+            C. Only (3) / 只有 (3)<br>
+            D. (1) and (3) only / 只有 (1)、(3)
+        </p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <p class="zh"><strong>相對價格與需求定律 (The Alchian-Allen Effect)：</strong></p>
+        <p class="en"><strong>Relative Price and Law of Demand (The Alchian-Allen Effect):</strong></p>
+
+        <p class="zh">當一項<strong>固定費用</strong>（如運費、從量稅）同時加在優質產品和普通產品上時，優質產品的價格升幅百分比會較小，導致其<strong>相對價格下降</strong>。</p>
+        <p class="en">When a <strong>fixed charge</strong> (like transportation cost or per-unit tax) is added to both high-quality and low-quality goods, the percentage increase in the price of the high-quality good is smaller, causing its <strong>relative price to fall</strong>.</p>
+
+        <div class="math-block">
+            Let \( P_H \) = Price of High Quality (優質價格)<br>
+            Let \( P_L \) = Price of Low Quality (普通價格)<br>
+            Let \( T \) = Fixed Transport Cost (固定運費)<br>
+            Assumption: \( P_H > P_L \)
+        </div>
+
+        <p class="zh">在日本（原產地）的相對價格：</p>
+        <p class="en">Relative Price in Japan (Origin):</p>
+        <div class="math-block">
+            $$ \text{Relative Price} = \frac{P_H}{P_L} $$
+        </div>
+
+        <p class="zh">在香港（出口地）的相對價格：</p>
+        <p class="en">Relative Price in Hong Kong (Destination):</p>
+        <div class="math-block">
+            $$ \text{New Relative Price} = \frac{P_H + T}{P_L + T} $$
+        </div>
+
+        <p class="zh"><strong>數學結論：</strong>加上常數 \(T\) 後，分數的值會變小（趨向於1）。</p>
+        <p class="en"><strong>Mathematical Conclusion:</strong> Adding a constant \(T\) makes the fraction smaller (closer to 1).</p>
+        <div class="math-block">
+            $$ \frac{P_H + T}{P_L + T} < \frac{P_H}{P_L} $$
+        </div>
+
+        <p class="zh">根據<strong>需求定律</strong>，若優質產品的相對價格下降，其<strong>相對需求量</strong>（優質品佔總量的比例）必須上升。</p>
+        <p class="en">According to the <strong>Law of Demand</strong>, if the relative price of the high-quality good falls, its <strong>relative quantity demanded</strong> (the proportion of high-quality goods) must rise.</p>
+    </div>
+
+    <!-- 4. Detailed Analysis -->
+    <div>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option-analysis option-correct">
+            <h3 style="margin-top:0;">Correct Option: B (Only 2)</h3>
+            <p class="zh"><strong>第一步：計算日本的基準比例</strong></p>
+            <p class="en"><strong>Step 1: Calculate the Base Ratio in Japan</strong></p>
+            <p>
+                \( \text{Ratio}_{\text{Japan}} = \frac{\text{High Quality}}{\text{Average Quality}} = \frac{50}{200} = \mathbf{0.25} \)
+            </p>
+            <p class="zh">這代表在日本，每賣出 1 單位普通水果，就會賣出 0.25 單位優質水果。</p>
+            <p class="en">This means for every 1 unit of average fruit sold in Japan, 0.25 units of high-quality fruit are sold.</p>
+
+            <hr style="border: 0; border-top: 1px solid #166534; margin: 15px 0;">
+
+            <p class="zh"><strong>第二步：分析香港的情況</strong></p>
+            <p class="en"><strong>Step 2: Analyze the Situation in Hong Kong</strong></p>
+            <p class="zh">由於加上固定運費，優質水果在香港的相對價格較低。因此，香港的優質水果相對銷量（比例）必須<strong>高於 0.25</strong>。</p>
+            <p class="en">Due to the fixed transport cost, the relative price of high-quality fruit is lower in Hong Kong. Therefore, the relative quantity (ratio) of high-quality fruit in Hong Kong must be <strong>higher than 0.25</strong>.</p>
+            <div class="math-block">
+                $$ \text{Target: } \frac{Q1}{Q2} > 0.25 $$
+            </div>
+        </div>
+
+        <h3>Check Each Statement (逐項檢查):</h3>
+
+        <div class="option-analysis option-wrong">
+            <h4>Statement (1): Q1 = 30, Q2 = 140</h4>
+            <p class="zh">計算比例：\( \frac{30}{140} \approx \mathbf{0.214} \)</p>
+            <p class="en">Calculate Ratio: \( \frac{30}{140} \approx \mathbf{0.214} \)</p>
+            <p class="zh">分析：0.214 < 0.25。優質水果的比例下降了，這與相對價格下降導致需求量上升的定律<strong>不符</strong>。</p>
+            <p class="en">Analysis: 0.214 < 0.25. The proportion of high-quality fruit decreased. This is <strong>inconsistent</strong> with the law of demand, which predicts an increase when relative price falls.</p>
+        </div>
+
+        <div class="option-analysis option-correct">
+            <h4>Statement (2): Q1 = 40, Q2 = 150</h4>
+            <p class="zh">計算比例：\( \frac{40}{150} \approx \mathbf{0.267} \)</p>
+            <p class="en">Calculate Ratio: \( \frac{40}{150} \approx \mathbf{0.267} \)</p>
+            <p class="zh">分析：0.267 > 0.25。優質水果的比例上升了，符合需求定律。</p>
+            <p class="en">Analysis: 0.267 > 0.25. The proportion of high-quality fruit increased, which is consistent with the law of demand.</p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <h4>Statement (3): Q1 = 45, Q2 = 180</h4>
+            <p class="zh">計算比例：\( \frac{45}{180} = \mathbf{0.25} \)</p>
+            <p class="en">Calculate Ratio: \( \frac{45}{180} = \mathbf{0.25} \)</p>
+            <p class="zh">分析：0.25 = 0.25。比例維持不變。如果相對價格下降，相對需求量應該改變。比例不變意味著對價格變化沒有反應，嚴格來說不符合需求定律（通常預期會有負斜率的需求曲線）。</p>
+            <p class="en">Analysis: 0.25 = 0.25. The ratio remained unchanged. If relative price falls, relative quantity should change. No change in ratio implies no response to the price incentive, which strictly speaking does not demonstrate the Law of Demand (which implies a downward sloping curve).</p>
+        </div>
+
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="strategy-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        
+        <p class="zh"><span class="pivot-point">關鍵點 (Pivot Point)：</span> 不要比較絕對數字，要比較「比例」(Ratio)。</p>
+        <p class="en"><span class="pivot-point">Pivot Point:</span> Do not compare absolute numbers; compare the "Ratio".</p>
+
+        <p class="zh">很多學生看到香港的銷量 (Q1, Q2) 比日本 (50, 200) 少，就以為這是需求定律（價格高，數量少）。這是錯的！</p>
+        <p class="en">Many students see that sales in HK (Q1, Q2) are lower than in Japan (50, 200) and assume this proves the Law of Demand (higher price, lower quantity). This is wrong!</p>
+
+        <ul>
+            <li>
+                <span class="zh"><strong>絕對銷量下降</strong>是因為運費令整體價格上升（這是名義價格的影響）。</span>
+                <span class="en"><strong>Absolute quantity drop</strong> is because transport costs raised the total price (Nominal Price effect).</span>
+            </li>
+            <li>
+                <span class="zh"><strong>題目問的是「兩種水果」的比較</strong>，這暗示了「相對價格」的影響。</span>
+                <span class="en"><strong>The question compares "two types of fruits"</strong>, implying the effect of "Relative Price".</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Exam Tricks -->
+    <div class="strategy-box" style="background-color: #f0fdf4; border-color: #86efac;">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        
+        <h3 style="margin-top:0;">The "Ratio Rule" (比例法則)</h3>
+        <p class="zh">遇到「運費/從量稅」題目，直接使用以下步驟：</p>
+        <p class="en">When you see "Transport Cost / Per-unit Tax" questions, use these steps:</p>
+        
+        <ol>
+            <li>
+                <span class="zh">計算原產地（無稅/無運費）的比例：\( \frac{\text{高質}}{\text{低質}} \)</span>
+                <span class="en">Calculate Origin Ratio (No tax/cost): \( \frac{\text{High}}{\text{Low}} \)</span>
+            </li>
+            <li>
+                <span class="zh">目的地（有稅/有運費）的比例必須<strong>大於</strong>原產地比例。</span>
+                <span class="en">Destination Ratio (With tax/cost) must be <strong>GREATER</strong> than Origin Ratio.</span>
+            </li>
+            <li>
+                <span class="zh">即：\( \frac{Q_{\text{High}}}{Q_{\text{Low}}} > 0.25 \)</span>
+                <span class="en">i.e., \( \frac{Q_{\text{High}}}{Q_{\text{Low}}} > 0.25 \)</span>
+            </li>
+        </ol>
+        <p class="zh">只需按計算機檢查哪個選項大於 0.25 即可秒殺！</p>
+        <p class="en">Just use your calculator to check which option is greater than 0.25 to solve it instantly!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

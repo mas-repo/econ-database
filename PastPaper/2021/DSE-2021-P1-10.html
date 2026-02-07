@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Shutdown Condition</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --warning-bg: #fef9c3;
+            --warning-text: #854d0e;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .stars { color: #fbbf24; }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .q-text { margin-bottom: 15px; font-weight: 500; }
+        .options-list { list-style-type: none; padding: 0; }
+        .options-list li { margin-bottom: 10px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .options-list li:hover { background-color: #f3f4f6; }
+        
+        .zh { margin-bottom: 4px; display: block; }
+        .en { color: var(--text-secondary); font-size: 0.95em; display: block; margin-bottom: 8px; }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .analysis-item:last-child { border-bottom: none; }
+        .option-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+        .status-wrong { color: #dc2626; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
+        .status-correct { color: #166534; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span><strong>Topic:</strong> Firms & Production (廠商與生產)</span>
+            <span><strong>Difficulty:</strong> <span class="stars">★★★☆☆</span></span>
+            <span><strong>Key Concepts:</strong> Shutdown Condition (結業條件), Sunk Cost (沉沒成本)</span>
+        </div>
+    </div>
+
+    <!-- The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="q-text">
+                <span class="zh">因為新冠肺炎爆發，某國政府宣佈臨時禁制餐廳提供堂食服務。在該臨時禁制下，下列哪項有關餐廳的陳述是正確的？</span>
+                <span class="en">Because of the outbreak of COVID-19, the government of a country announced a temporary ban of dine-in services in restaurants. Which of the following statements about restaurants under the temporary ban is correct?</span>
+            </div>
+            <ul class="options-list">
+                <li>
+                    <span class="zh">A. 若從外賣食品所得的預期銷售收入超過營運餐廳的可變成本，餐廳會繼續經營。</span>
+                    <span class="en">A. If the expected sales revenue generated from takeaway food exceeds the variable cost of running a restaurant, the restaurant will continue to operate.</span>
+                </li>
+                <li>
+                    <span class="zh">B. 當違反租賃合約的成本極高，固定租金會影響東主是否繼續經營餐廳。</span>
+                    <span class="en">B. With the extremely high cost of breaking the rental contract, the fixed rental will affect whether the owners continue to operate their restaurant.</span>
+                </li>
+                <li>
+                    <span class="zh">C. 外賣食品的價格下降必然會令餐廳的銷售收入下降。</span>
+                    <span class="en">C. A decrease in prices of takeaway food will necessarily decrease the sales revenue of the restaurants.</span>
+                </li>
+                <li>
+                    <span class="zh">D. 不受歡迎的餐廳會早於受歡迎的餐廳倒閉。</span>
+                    <span class="en">D. Unpopular restaurants will close down before popular ones.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <h3 style="margin-top:0;">Short-run Shutdown Condition (短期結業條件)</h3>
+            <p>
+                <span class="zh">在短期內，廠商必須支付固定成本（Fixed Cost, FC），無論是否生產。因此，廠商決定是否繼續營業的關鍵在於能否收回<strong>可變成本（Variable Cost, VC）</strong>。</span>
+                <span class="en">In the short run, firms must pay Fixed Costs (FC) regardless of whether they produce. Therefore, the key to deciding whether to continue operating is whether they can cover the <strong>Variable Costs (VC)</strong>.</span>
+            </p>
+
+            <div class="math-block">
+                $$ \text{Total Revenue (TR)} \ge \text{Total Variable Cost (TVC)} $$
+                <div style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                    OR / 或
+                </div>
+                $$ \text{Price (P)} \ge \text{Average Variable Cost (AVC)} $$
+            </div>
+
+            <p>
+                <span class="zh"><strong>邏輯：</strong>如果收入大於可變成本（\(TR > TVC\)），多出的收入可以用來支付部分固定成本，虧損會比直接結業（虧損全部 TFC）少。</span>
+                <span class="en"><strong>Logic:</strong> If revenue exceeds variable costs (\(TR > TVC\)), the excess revenue can contribute to paying off some fixed costs. The loss incurred is smaller than shutting down immediately (where loss equals total TFC).</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">
+            Correct Option: A
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option A</span> <span class="status-correct">Correct</span>
+            <p class="zh"><strong>分析：</strong>這是標準的短期結業條件定義。在「臨時」禁制下（短期），租金是固定成本（沉沒成本）。只要外賣收入（TR）能覆蓋食材、水電、員工薪金等可變成本（TVC），繼續經營的虧損會小於直接關門。因此餐廳會繼續經營。</p>
+            <p class="en"><strong>Analysis:</strong> This is the standard definition of the short-run shutdown condition. Under a "temporary" ban (short run), rent is a fixed cost (sunk cost). As long as takeaway revenue (TR) covers variable costs (TVC) like ingredients, utilities, and wages, the loss from operating is smaller than closing down immediately. Thus, the restaurant will continue to operate.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option B</span> <span class="status-wrong">Incorrect</span>
+            <p class="zh"><strong>分析：</strong>題目提到違反合約成本極高，暗示租金是<strong>沉沒成本 (Sunk Cost)</strong>。在經濟學決策中，沉沒成本不應影響當前的生產決策。無論經營與否，這筆錢都要付，所以它不會影響「是否繼續經營」的決定。</p>
+            <p class="en"><strong>Analysis:</strong> The question mentions the high cost of breaking the contract, implying rent is a <strong>Sunk Cost</strong>. In economic decision-making, sunk costs should not affect current production decisions. Since this cost must be paid whether operating or not, it does not influence the decision of "whether to continue operating."</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option C</span> <span class="status-wrong">Incorrect</span>
+            <p class="zh"><strong>分析：</strong>價格下降對總收入的影響取決於<strong>需求價格彈性 (Price Elasticity of Demand)</strong>。如果外賣需求是高彈性的（Elastic），價格下降反而會令銷售收入增加。使用「必然 (Necessarily)」一詞使其成為錯誤陳述。</p>
+            <p class="en"><strong>Analysis:</strong> The effect of a price decrease on total revenue depends on the <strong>Price Elasticity of Demand</strong>. If the demand for takeaway is elastic, a decrease in price will actually lead to an increase in sales revenue. The use of the word "necessarily" makes this statement incorrect.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option D</span> <span class="status-wrong">Incorrect</span>
+            <p class="zh"><strong>分析：</strong>受歡迎程度與結業無直接關係。受歡迎的餐廳可能成本極高（如昂貴食材、大量人手），導致 \(TR < TVC\) 而結業；不受歡迎的餐廳若成本極低，反而可能生存。經濟決策是基於財務數據，而非名氣。</p>
+            <p class="en"><strong>Analysis:</strong> Popularity is not directly related to shutting down. A popular restaurant might have extremely high costs (expensive ingredients, large staff), leading to \(TR < TVC\) and closure. An unpopular restaurant with very low costs might survive. Economic decisions are based on financial data, not fame.</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>
+            <span class="zh"><strong>關鍵點 (Pivot Point)：</strong>識別題目中的「臨時 (Temporary)」二字。這暗示了我們處於<strong>短期 (Short Run)</strong>。</span>
+            <span class="en"><strong>Pivot Point:</strong> Identify the word "temporary" in the question. This implies we are in the <strong>Short Run</strong>.</span>
+        </p>
+        <p>
+            <span class="zh"><strong>干擾項 (Distractor)：</strong>選項 B 中關於「違反租賃合約的成本極高」是一個陷阱。</span>
+            <span class="en"><strong>Distractor:</strong> The mention of "extremely high cost of breaking the rental contract" in Option B is a trap.</span>
+        </p>
+        <ul style="background-color: #f3f4f6; padding: 15px; border-radius: 8px;">
+            <li>
+                <span class="zh">許多學生會想：「因為很難解約，所以租金很重要。」</span>
+                <span class="en">Many students think: "Since it's hard to break the contract, rent is important."</span>
+            </li>
+            <li>
+                <span class="zh"><strong>經濟學思維：</strong>正因為很難解約，這筆錢是「逃不掉的」，所以它是沉沒成本，做決策時應該將其<strong>剔除</strong>。</span>
+                <span class="en"><strong>Economic Thinking:</strong> Precisely because it's hard to break, this cost is "unavoidable," making it a sunk cost. It should be <strong>ignored</strong> when making the decision.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="section">
+        <div class="section-title">Common Mistakes (常犯錯誤)</div>
+        <div class="tips-box">
+            <p>
+                <span class="zh"><strong>誤區：</strong>以為「虧本（Profit < 0）」就一定要結業。</span>
+                <span class="en"><strong>Misconception:</strong> Thinking that "Making a loss (Profit < 0)" means you must shut down.</span>
+            </p>
+            <p>
+                <span class="zh"><strong>糾正：</strong>只要 \(TR \ge TVC\)，即使總利潤是負數，繼續經營也是理性的，因為這樣可以「止蝕」（減少虧損）。</span>
+                <span class="en"><strong>Correction:</strong> As long as \(TR \ge TVC\), even if total profit is negative, it is rational to continue operating to "minimize loss."</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Basic Economic Problems</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue Background */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --correct-color: #10b981; /* Green */
+            --wrong-color: #ef4444; /* Red */
+            --warning-bg: #fff7ed;
+            --warning-border: #f97316;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 10px;
+            border-radius: 15px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .q-text {
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-item {
+            margin-bottom: 15px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            margin-bottom: 15px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .step-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .bilingual-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Tips & Traps */
+        .tips-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .tips-title {
+            color: #c2410c; /* Dark Orange */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header { padding: 15px 20px; }
+            .section { padding: 20px; }
+            .meta-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>Topic: Basic Economic Problems (基本經濟問題)</h1>
+        <div class="meta-info">
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Resource Allocation, Price Mechanism</span>
+            <span class="badge">DSE Economics</span>
+        </div>
+    </div>
+
+    <!-- Question Section -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="q-text">
+                <p><strong>[Chinese]</strong> 面對電動車需求上升，一間製造商決定生產更多電動車，並提高電動車的售價。<br>
+                上述製造商的決定與經濟學中的 ___________ 問題相關，因為該決定與 ___________ 相關。</p>
+                
+                <p><strong>[English]</strong> In response to a rise in the demand for electric vehicles, a manufacturer decided to produce more electric vehicles and sell them at a higher price.<br>
+                The above decision of the manufacturer is related to the ___________ question(s) in Economics because it is related _____________.</p>
+            </div>
+
+            <div class="q-text">
+                (1) 「生產什麼」 …… 產量的選擇 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘what to produce’...... the choice on the quantity of outputs<br>
+                (2) 「怎樣生產」 …… 要素投入的選擇 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘how to produce’...... the choice on factor inputs<br>
+                (3) 「為誰生產」 …… 產出的分配 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘for whom to produce’...... the distribution of outputs
+            </div>
+
+            <ul class="options-list">
+                <li>A. 只有 (1) / (1) only</li>
+                <li>B. 只有 (2) / (2) only</li>
+                <li>C. 只有 (3) / (3) only</li>
+                <li>D. 只有 (1)、(3) / (1) and (3) only</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <p>To solve this problem, we must understand the <strong>Three Basic Economic Problems</strong> faced by every society due to scarcity.</p>
+        
+        <div class="concept-box">
+            <div class="concept-item">
+                <div class="concept-title">1. What to produce? (生產什麼？)</div>
+                <div class="bilingual-text">
+                    <span>涉及選擇生產貨品的<strong>種類</strong>及<strong>數量</strong>。</span>
+                    <span class="en-text">Concerns the choice of the <strong>types</strong> and <strong>quantities</strong> of goods to be produced.</span>
+                </div>
+            </div>
+            
+            <div class="concept-item">
+                <div class="concept-title">2. How to produce? (怎樣生產？)</div>
+                <div class="bilingual-text">
+                    <span>涉及<strong>生產方法</strong>及<strong>要素投入</strong>的選擇（例如：勞力密集 vs 資本密集）。</span>
+                    <span class="en-text">Concerns the choice of <strong>production methods</strong> and <strong>factor inputs</strong> (e.g., labor-intensive vs. capital-intensive).</span>
+                </div>
+            </div>
+
+            <div class="concept-item">
+                <div class="concept-title">3. For whom to produce? (為誰生產？)</div>
+                <div class="bilingual-text">
+                    <span>涉及產品的<strong>分配</strong>。在市場經濟中，通常由<strong>價格機制</strong>決定（誰付得起錢，誰就獲得產品）。</span>
+                    <span class="en-text">Concerns the <strong>distribution</strong> of products. In a market economy, this is usually determined by the <strong>price mechanism</strong> (whoever is willing and able to pay the price gets the product).</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: D</div>
+
+        <div class="analysis-step">
+            <span class="step-label">Statement (1): "Produce more electric vehicles" (生產更多電動車)</span>
+            <div class="bilingual-text">
+                <span><strong>正確。</strong>這句話明確提到了「更多」（More），這是一個關於<strong>數量 (Quantity)</strong> 的決定。決定生產多少數量屬於「生產什麼」的問題。</span>
+                <span class="en-text"><strong>Correct.</strong> The phrase "produce more" explicitly refers to <strong>quantity</strong>. Deciding on the quantity of output falls under the problem of "What to produce".</span>
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-label">Statement (2): "How to produce" (怎樣生產)</span>
+            <div class="bilingual-text">
+                <span><strong>錯誤。</strong>題目中完全沒有提及製造商使用什麼技術、機器或勞工來生產電動車。沒有涉及生產方法的選擇。</span>
+                <span class="en-text"><strong>Incorrect.</strong> The question does not mention anything about the technology, machinery, or labor used to make the vehicles. There is no choice regarding production methods involved here.</span>
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-label">Statement (3): "Sell them at a higher price" (提高電動車的售價)</span>
+            <div class="bilingual-text">
+                <span><strong>正確。</strong>這是最關鍵的一點。價格決定了產品的分配。提高價格意味著只有那些願意並有能力支付較高價格的人才能獲得電動車。這是關於<strong>產品分配 (Distribution of outputs)</strong>，即「為誰生產」。</span>
+                <span class="en-text"><strong>Correct.</strong> This is the critical point. Price determines the allocation of goods. Raising the price means only those willing and able to pay the higher price will obtain the vehicle. This concerns the <strong>distribution of outputs</strong>, which is "For whom to produce".</span>
+            </div>
+        </div>
+
+        <p style="margin-top: 15px;">
+            Therefore, statements (1) and (3) are correct.<br>
+            \( \therefore \) Option <strong>D</strong> is the answer.
+        </p>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>When you see questions about the "Three Basic Economic Problems," look for these <strong>Pivot Points (關鍵字眼)</strong>:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+            <tr style="background-color: #e5e7eb;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #d1d5db;">Keyword in Question (題目關鍵字)</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #d1d5db;">Economic Problem (經濟問題)</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">
+                    Types of goods / Quantity<br>
+                    <span class="en-text" style="font-size: 0.9em; color: #555;">(e.g., "Produce more" / "Stop producing X")</span><br>
+                    <strong>貨品種類 / 數量</strong><br>
+                    <span class="en-text" style="font-size: 0.9em; color: #555;">(例如：「生產更多」、「停止生產 X」)</span>
+                </td>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">What to produce (生產什麼)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">
+                    Method / Technology / Labor vs Capital<br>
+                    <strong>生產方法 / 技術 / 勞力與資本</strong>
+                </td>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">How to produce (怎樣生產)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">
+                    <strong>Price</strong> / Target Audience / Distribution<br>
+                    <strong>價格 / 目標對象 / 分配</strong>
+                </td>
+                <td style="padding: 10px; border: 1px solid #d1d5db;">For whom to produce (為誰生產)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="section">
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        <div class="tips-box">
+            <div class="tips-title">⚠️ The "Price" Trap (價格陷阱)</div>
+            <div class="bilingual-text">
+                <span>很多學生誤以為「價格」只與供求有關，而忘記了價格在資源分配中的角色。在基本經濟問題中，<strong>價格設定 (Pricing)</strong> 直接影響誰能買到產品，因此它屬於「為誰生產」。</span>
+                <span class="en-text">Many students mistakenly think "Price" is only about supply and demand, forgetting its role in resource allocation. In the context of basic economic problems, <strong>pricing</strong> directly affects who can buy the product, so it belongs to "For whom to produce".</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
