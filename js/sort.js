@@ -90,6 +90,32 @@ function sortQuestions(questions, sortBy = 'default') {
                 }
                 return b.year - a.year;
 
+            case 'percentage-asc':
+                // Correct Percentage ASC (Hardest first), then Year DESC
+                // Treat null/undefined as 0 or 100 depending on preference, here treating as -1 to push to bottom or top
+                const pA1 = (a.correctPercentage !== undefined && a.correctPercentage !== null && a.correctPercentage !== '') ? parseFloat(a.correctPercentage) : -1;
+                const pB1 = (b.correctPercentage !== undefined && b.correctPercentage !== null && b.correctPercentage !== '') ? parseFloat(b.correctPercentage) : -1;
+                
+                if (pA1 !== pB1) {
+                    // If one is missing (-1), push it to the end
+                    if (pA1 === -1) return 1;
+                    if (pB1 === -1) return -1;
+                    return pA1 - pB1;
+                }
+                return b.year - a.year;
+
+            case 'percentage-desc':
+                // Correct Percentage DESC (Easiest first), then Year DESC
+                const pA2 = (a.correctPercentage !== undefined && a.correctPercentage !== null && a.correctPercentage !== '') ? parseFloat(a.correctPercentage) : -1;
+                const pB2 = (b.correctPercentage !== undefined && b.correctPercentage !== null && b.correctPercentage !== '') ? parseFloat(b.correctPercentage) : -1;
+                
+                if (pA2 !== pB2) {
+                    // If one is missing (-1), push it to the end
+                    if (pA2 === -1) return 1;
+                    if (pB2 === -1) return -1;
+                    return pB2 - pA2;
+                }
+                return b.year - a.year;
                 
             default:
                 return 0;
