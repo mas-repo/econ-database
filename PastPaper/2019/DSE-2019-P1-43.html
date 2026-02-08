@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Import Quota Analysis</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
+    </script>
+    <!-- MathJax Library -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .badge {
+            background-color: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: #eff6ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 30px;
+        }
+
+        .correct-tag {
+            color: var(--correct-green);
+            font-weight: bold;
+        }
+
+        .wrong-tag {
+            color: var(--wrong-red);
+            font-weight: bold;
+        }
+
+        /* Bilingual Styling */
+        .lang-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Tips & Traps */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .tips-title {
+            color: #92400e;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>國際貿易：進口配額與價格變動</h1>
+        <div class="lang-en">International Trade: Import Quota & Price Changes</div>
+        <div class="meta-info">
+            <span class="badge">Topic: International Trade</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Keywords: Import Quota, Small Open Economy</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <h3>題目 (The Question)</h3>
+        <p class="question-text">
+            以下是某小型開放經濟中物品X的供需圖。原初該經濟以國際價格 \(P_w\) 進口物品X，而政府實施的進口配額為 \((Q_2 - Q_1)\) 單位。假設物品X的國際價格下降，下列哪項陳述是正確的？
+            <span class="lang-en">The following is the supply-demand diagram of Good X in a small open economy. Initially the economy imports Good X at the world price \(P_w\) and the government imposes an import quota of \((Q_2 - Q_1)\) units. Suppose the world price of Good X drops. Which of the following statements is correct?</span>
+        </p>
+        
+        <ul class="options-list">
+            <li><strong>A.</strong> 物品X的本地價格會維持在 \(P_w\)。<br><span class="lang-en">The domestic price of Good X will remain at \(P_w\).</span></li>
+            <li><strong>B.</strong> 物品X的本地價格會下跌。<br><span class="lang-en">The domestic price of Good X will fall.</span></li>
+            <li><strong>C.</strong> 本地供應曲線會向右移。<br><span class="lang-en">The domestic supply curve will shift to the right.</span></li>
+            <li><strong>D.</strong> 本地所生產的物品X的數量會增加。<br><span class="lang-en">The quantity of domestically produced Good X will increase.</span></li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">
+            📚 概念重溫 (Concept Review)
+        </div>
+        <p>
+            <strong>1. 進口配額的定義 (Definition of Import Quota):</strong><br>
+            進口配額是對進口商品數量的直接限制。在配額下，總供應曲線 \(S_{total}\) 等於本地供應曲線 \(S_{dom}\) 向右平移配額的數量。
+            <span class="lang-en">An import quota is a direct restriction on the quantity of a good that can be imported. Under a quota, the total supply curve \(S_{total}\) is the domestic supply curve \(S_{dom}\) shifted to the right by the amount of the quota.</span>
+        </p>
+        <p>
+            <strong>2. 本地價格的決定 (Determination of Domestic Price):</strong><br>
+            本地價格 \(P_d\) 由本地需求 \(D\) 與總供應 \(S_{total}\) 的交點決定。
+            <span class="lang-en">The domestic price \(P_d\) is determined by the intersection of domestic demand \(D\) and total supply \(S_{total}\).</span>
+            $$ S_{total} = S_{dom} + \text{Quota} $$
+        </p>
+        <p>
+            <strong>3. 配額與關稅的區別 (Quota vs. Tariff):</strong><br>
+            這是本題的關鍵。關稅會將本地價格與世界價格掛鉤 \(P_d = P_w + \text{Tariff}\)，因此當 \(P_w\) 下跌，含關稅的價格也會下跌。但<strong>配額切斷了這種價格聯繫</strong>，只要配額仍然有效（即進口需求大於配額），本地價格僅取決於本地供需狀況。
+            <span class="lang-en">This is the key to this question. A tariff links the domestic price to the world price \(P_d = P_w + \text{Tariff}\), so if \(P_w\) falls, the price with tariff falls. However, an <strong>quota severs this price link</strong>. As long as the quota is binding (import demand > quota), the domestic price depends solely on domestic supply and demand conditions.</span>
+        </p>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        
+        <div class="option-analysis correct">
+            <p><strong>正確答案 (Correct Answer): Option A</strong></p>
+        </div>
+
+        <div class="option-analysis correct">
+            <span class="option-label">A.</span> <span class="correct-tag">正確 (Correct)</span>
+            <p>
+                題目指出原初的配額量剛好等於在 \(P_w\) 時的進口量 \((Q_2 - Q_1)\)。這意味著「本地供應 + 配額」的總供應曲線 \(S_{total}\) 剛好在價格 \(P_w\) 與需求曲線相交。
+                <br><br>
+                當世界價格下跌時：
+                <ol>
+                    <li><strong>配額數量不變：</strong>政府限制的進口量仍然是 \((Q_2 - Q_1)\)。</li>
+                    <li><strong>本地供應不變：</strong>本地生產成本沒有改變，所以 \(S\) 線不動。</li>
+                    <li><strong>本地需求不變：</strong>消費者的偏好沒有改變，所以 \(D\) 線不動。</li>
+                </ol>
+                由於決定本地價格的三個因素（\(S, D, \text{Quota}\)）都沒有改變，市場均衡價格 \(P_d\) 必須維持不變，即停留在原來的 \(P_w\) 水平。
+            </p>
+            <span class="lang-en">
+                The question states the initial quota is exactly equal to the import volume at \(P_w\), which is \((Q_2 - Q_1)\). This implies that the Total Supply curve (\(S_{dom} + \text{Quota}\)) intersects the Demand curve exactly at price \(P_w\).
+                <br><br>
+                When the world price drops:
+                <ol>
+                    <li><strong>Quota quantity is unchanged:</strong> The limit is still \((Q_2 - Q_1)\).</li>
+                    <li><strong>Domestic Supply is unchanged:</strong> Production costs didn't change, so \(S\) stays put.</li>
+                    <li><strong>Domestic Demand is unchanged:</strong> Consumer preferences didn't change, so \(D\) stays put.</li>
+                </ol>
+                Since the three factors determining domestic price (\(S, D, \text{Quota}\)) remain unchanged, the market equilibrium price \(P_d\) must remain unchanged at the original level of \(P_w\).
+            </span>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">B.</span> <span class="wrong-tag">錯誤 (Incorrect)</span>
+            <p>
+                只有當本地供應增加、配額增加或需求減少時，本地價格才會下跌。世界價格下跌只會增加配額持有者的利潤（配額租值），因為他們可以以更低的成本進口，但在本地市場上，由於供應量被配額「鎖死」了，價格無法下降。
+                <span class="lang-en">The domestic price would only fall if domestic supply increased, the quota increased, or demand decreased. A drop in world price only increases the profit (quota rent) for quota holders because they buy cheaper, but in the domestic market, since supply is "locked" by the quota, the price cannot fall.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">C.</span> <span class="wrong-tag">錯誤 (Incorrect)</span>
+            <p>
+                本地供應曲線 \(S\) 的移動通常是由生產成本（如工資、原材料價格）或技術改變引起的。世界價格 \(P_w\) 的變動不會直接影響本地生產商的成本結構，因此 \(S\) 線不會移動。
+                <span class="lang-en">Shifts in the domestic supply curve \(S\) are usually caused by changes in production costs (e.g., wages, raw materials) or technology. A change in world price \(P_w\) does not directly affect the cost structure of domestic producers, so the \(S\) curve does not shift.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">D.</span> <span class="wrong-tag">錯誤 (Incorrect)</span>
+            <p>
+                本地生產量 \(Q_s\) 取決於本地價格 \(P_d\)。根據供應定律，只有當本地價格上升時，本地生產量才會增加。既然我們在選項 A 已證實本地價格維持在 \(P_w\) 不變，那麼本地生產量也會維持在 \(Q_1\) 不變。
+                <span class="lang-en">The quantity of domestic production \(Q_s\) depends on the domestic price \(P_d\). According to the Law of Supply, domestic production only increases if the domestic price rises. Since we established in Option A that the domestic price remains at \(P_w\), the domestic production quantity will also remain unchanged at \(Q_1\).</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="tips-box">
+        <h3 class="tips-title">🔍 題目拆解與常犯錯誤 (Decomposition & Common Mistakes)</h3>
+        
+        <p><strong>1. 破題關鍵 (Pivot Point):</strong></p>
+        <p>
+            這題的關鍵在於分辨<strong>「關稅」(Tariff)</strong> 與 <strong>「配額」(Quota)</strong> 的機制差異。
+            <ul>
+                <li><strong>關稅：</strong>價格傳導機制存在。 \(P_{local} = P_{world} + t\)。世界價格跌，本地價格跟著跌。</li>
+                <li><strong>配額：</strong>價格傳導機制切斷。數量固定後，本地價格由本地供需決定，與世界價格脫鉤（只要世界價格低於本地均衡價格）。</li>
+            </ul>
+            <span class="lang-en">The pivot point is distinguishing the mechanism between a <strong>Tariff</strong> and a <strong>Quota</strong>.
+            <ul>
+                <li><strong>Tariff:</strong> Price transmission exists. \(P_{local} = P_{world} + t\). If world price drops, local price drops.</li>
+                <li><strong>Quota:</strong> Price transmission is severed. Once quantity is fixed, local price is determined by local S & D, decoupled from world price (as long as world price is below local equilibrium).</li>
+            </ul></span>
+        </p>
+
+        <p><strong>2. 常犯錯誤 (Common Mistake):</strong></p>
+        <p>
+            學生常直覺認為「進貨成本便宜了（世界價格跌），售價一定會跌」。這在自由市場或關稅下是對的，但在配額下是錯的。在配額下，進口商雖然成本低了，但因為不能多賣（數量被限制），他們不會減價促銷，而是將差價放入自己口袋（配額租值增加）。
+            <span class="lang-en">Students often intuitively think "Import cost is cheaper (world price drops), so selling price must drop." This is true in a free market or under a tariff, but false under a quota. Under a quota, even though importers' costs are lower, they cannot sell more (quantity is restricted), so they won't lower prices to boost sales. Instead, they keep the difference as profit (Quota Rent increases).</span>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
