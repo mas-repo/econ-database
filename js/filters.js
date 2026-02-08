@@ -214,8 +214,6 @@ function toggleTriState(element) {
     filterQuestions();
 }
 
-// === UPDATED FUNCTION ===
-// This now handles toggling AND calls the full filter pipeline
 window.filterByTag = async function(category, value) {
     // Ensure the category object exists in the global filter state
     if (!window.triStateFilters[category]) {
@@ -233,13 +231,6 @@ window.filterByTag = async function(category, value) {
         window.triStateFilters[category][value] = 'checked';
     }
 
-    // Call filterQuestions() instead of just renderQuestions()
-    // This ensures:
-    // 1. Pagination is reset to page 1
-    // 2. Sidebar indicators (red dots) are updated
-    // 3. Sidebar lists are re-generated (syncing checkboxes)
-    // 4. The "Active Filters" panel (search info) is updated
-    // 5. The questions grid is re-rendered
     await filterQuestions();
 };
 
@@ -698,6 +689,30 @@ function clearFilters() {
     });
 }
 
+// === Handle Filter Removal from Active Panel ===
+window.removeFilter = function(type, param1, param2) {
+    if (type === 'search') {
+        document.getElementById('search').value = '';
+    } else if (type === 'year') {
+        document.getElementById('year-filter').value = '';
+    } else if (type === 'percentage') {
+        clearPercentageFilter(); // This function already calls filterQuestions
+        return;
+    } else if (type === 'marks') {
+        clearMarksFilter(); // This function already calls filterQuestions
+        return;
+    } else if (type === 'tag') {
+        const category = param1;
+        const value = param2;
+        if (window.triStateFilters[category]) {
+            delete window.triStateFilters[category][value];
+        }
+    }
+    
+    // Refresh the UI
+    filterQuestions();
+};
+
 function updateSearchInfo() {
     const container = document.getElementById('active-filters-display');
     if (!container) return;
@@ -705,8 +720,18 @@ function updateSearchInfo() {
     let html = '';
     let hasFilters = false;
 
-    const createBadge = (label, value, colorClass = 'blue') => {
-        return `<span class="filter-badge ${colorClass}">${label}: ${value}</span>`;
+    // Helper to create badge with a close button
+    const createBadge = (label, value, colorClass = 'blue', removeType, p1, p2) => {
+        // Prepare arguments for the remove function
+        let removeArgs = `'${removeType}'`;
+        if (p1) removeArgs += `, '${p1.replace(/'/g, "\\'")}'`; // Escape quotes
+        if (p2) removeArgs += `, '${p2.replace(/'/g, "\\'")}'`;
+
+        return `
+        <span class="filter-badge ${colorClass}">
+            <span class="remove-filter-btn" onclick="removeFilter(${removeArgs})" style="cursor: pointer; margin-right: 6px; font-weight: bold; opacity: 0.7; display: inline-block;">✕</span>
+            ${label}: ${value}
+        </span>`;
     };
 
     const searchText = document.getElementById('search').value.trim();
@@ -716,23 +741,23 @@ function updateSearchInfo() {
         : '全部';
     
     if (searchText) {
-        html += createBadge(`搜尋 (${scopeText})`, searchText);
+        html += createBadge(`搜尋 (${scopeText})`, searchText, 'blue', 'search');
         hasFilters = true;
     }
 
     const yearVal = document.getElementById('year-filter').value;
     if (yearVal) {
-        html += createBadge('年份', yearVal);
+        html += createBadge('年份', yearVal, 'blue', 'year');
         hasFilters = true;
     }
 
     if (window.percentageFilter && window.percentageFilter.active) {
-        html += createBadge('答對率', `${window.percentageFilter.min}% - ${window.percentageFilter.max}%`, 'green');
+        html += createBadge('答對率', `${window.percentageFilter.min}% - ${window.percentageFilter.max}%`, 'green', 'percentage');
         hasFilters = true;
     }
 
     if (window.marksFilter && window.marksFilter.active) {
-        html += createBadge('分數', `${window.marksFilter.min} - ${window.marksFilter.max}`, 'green');
+        html += createBadge('分數', `${window.marksFilter.min} - ${window.marksFilter.max}`, 'green', 'marks');
         hasFilters = true;
     }
 
@@ -755,10 +780,10 @@ function updateSearchInfo() {
         Object.entries(items).forEach(([itemVal, state]) => {
             const label = categories[catKey] || catKey;
             if (state === 'checked') {
-                html += createBadge(label, itemVal, 'blue');
+                html += createBadge(label, itemVal, 'blue', 'tag', catKey, itemVal);
                 hasFilters = true;
             } else if (state === 'excluded') {
-                html += createBadge(`排除 ${label}`, itemVal, 'red');
+                html += createBadge(`排除 ${label}`, itemVal, 'red', 'tag', catKey, itemVal);
                 hasFilters = true;
             }
         });
