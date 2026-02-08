@@ -214,26 +214,43 @@ function toggleTriState(element) {
     filterQuestions();
 }
 
-window.filterByTag = function(type, value) {
-    if (!window.triStateFilters[type]) {
-        window.triStateFilters[type] = {};
+window.filterByTag = function(category, value) {
+    // Ensure the category object exists in the global filter state
+    if (!window.triStateFilters[category]) {
+        window.triStateFilters[category] = {};
     }
 
-    window.triStateFilters[type][value] = 'checked';
+    // Check the current state of this specific tag
+    const currentState = window.triStateFilters[category][value];
 
-    const checkbox = document.querySelector(`.tri-state-checkbox[data-filter="${type}"][data-value="${value}"]`);
-    if (checkbox) {
-        checkbox.classList.remove('excluded');
-        checkbox.classList.add('checked');
-        const label = checkbox.closest('.tri-state-label');
-        if(label) {
-            label.classList.add('checked');
-            label.classList.remove('excluded');
+    if (currentState === 'checked') {
+        // TOGGLE OFF: If currently active, remove it (return to neutral)
+        delete window.triStateFilters[category][value];
+    } else {
+        // TOGGLE ON: If inactive (or excluded), set to checked
+        window.triStateFilters[category][value] = 'checked';
+    }
+
+    // 1. Re-render the questions 
+    // This updates the grid and applies/removes the blue styling on the tags
+    renderQuestions();
+
+    // 2. Sync the Sidebar Checkboxes (Optional but recommended)
+    // This ensures the checkboxes in the left sidebar visually match the tags you clicked
+    const filterContainer = document.getElementById(`${category}-filters`);
+    if (filterContainer) {
+        // Find the specific checkbox input for this value
+        const checkbox = Array.from(filterContainer.querySelectorAll('input[type="checkbox"]'))
+            .find(input => input.value === value);
+
+        if (checkbox) {
+            // Update the checkbox checked state
+            checkbox.checked = (window.triStateFilters[category][value] === 'checked');
+            
+            // Ensure the checkbox is not in the "indeterminate" (minus sign) state
+            checkbox.indeterminate = false;
         }
     }
-
-    updateFilterIndicators();
-    filterQuestions();
 };
 
 function filterDropdownList(input, listId) {
