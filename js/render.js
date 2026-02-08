@@ -111,7 +111,7 @@ async function renderQuestions() {
             if (sortedChapters.length > 0) {
                 classificationHtml += `
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Ch:</strong>
+                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Chapter:</strong>
                         ${sortedChapters.map(c => {
                             // Extract the number for the filter value logic (existing logic)
                             const match = c.match(/(\d+)/);
