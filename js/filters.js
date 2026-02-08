@@ -214,7 +214,9 @@ function toggleTriState(element) {
     filterQuestions();
 }
 
-window.filterByTag = function(category, value) {
+// === UPDATED FUNCTION ===
+// This now handles toggling AND calls the full filter pipeline
+window.filterByTag = async function(category, value) {
     // Ensure the category object exists in the global filter state
     if (!window.triStateFilters[category]) {
         window.triStateFilters[category] = {};
@@ -224,33 +226,21 @@ window.filterByTag = function(category, value) {
     const currentState = window.triStateFilters[category][value];
 
     if (currentState === 'checked') {
-        // TOGGLE OFF: If currently active, remove it (return to neutral)
+        // TOGGLE OFF: If currently active, remove it
         delete window.triStateFilters[category][value];
     } else {
         // TOGGLE ON: If inactive (or excluded), set to checked
         window.triStateFilters[category][value] = 'checked';
     }
 
-    // 1. Re-render the questions 
-    // This updates the grid and applies/removes the blue styling on the tags
-    renderQuestions();
-
-    // 2. Sync the Sidebar Checkboxes (Optional but recommended)
-    // This ensures the checkboxes in the left sidebar visually match the tags you clicked
-    const filterContainer = document.getElementById(`${category}-filters`);
-    if (filterContainer) {
-        // Find the specific checkbox input for this value
-        const checkbox = Array.from(filterContainer.querySelectorAll('input[type="checkbox"]'))
-            .find(input => input.value === value);
-
-        if (checkbox) {
-            // Update the checkbox checked state
-            checkbox.checked = (window.triStateFilters[category][value] === 'checked');
-            
-            // Ensure the checkbox is not in the "indeterminate" (minus sign) state
-            checkbox.indeterminate = false;
-        }
-    }
+    // Call filterQuestions() instead of just renderQuestions()
+    // This ensures:
+    // 1. Pagination is reset to page 1
+    // 2. Sidebar indicators (red dots) are updated
+    // 3. Sidebar lists are re-generated (syncing checkboxes)
+    // 4. The "Active Filters" panel (search info) is updated
+    // 5. The questions grid is re-rendered
+    await filterQuestions();
 };
 
 function filterDropdownList(input, listId) {
