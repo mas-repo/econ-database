@@ -112,9 +112,13 @@ function setupFormHandler() {
                     return;
                 }
             }
-        }        
+            // Use addQuestion for new items
+            await window.storage.addQuestion(question);
+        } else {
+            // Use updateQuestion for existing items
+            await window.storage.updateQuestion(question);
+        }       
 
-        await window.storage.addQuestion(question);
         await refreshViews();
         
         document.getElementById('form-section').classList.add('hidden');
@@ -213,7 +217,7 @@ function openFeedbackModal(questionId) {
 function closeFeedbackModal() {
     const modal = document.getElementById('feedback-modal');
     if (modal) {
-        // Fix: Add 'hidden' class back
+        // Add 'hidden' class back
         modal.classList.add('hidden');
         modal.style.display = 'none';
     }

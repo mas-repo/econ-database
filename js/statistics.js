@@ -16,7 +16,7 @@ function getCurriculumSortKey(topic) {
 
 
 // Dependencies: storage-core.js (window.storage)
-async function renderPublishers() {
+async function renderPublisherStats() {
     const questions = await window.storage.getQuestions();
     const stats = {};
     
@@ -46,7 +46,7 @@ async function renderPublishers() {
 }
 
 // Dependencies: storage-core.js (window.storage), constants.js (CURRICULUM_ORDER)
-async function renderTopics() {
+async function renderTopicStats() {
     const questions = await window.storage.getQuestions();
     const stats = {};
     
@@ -84,7 +84,7 @@ async function renderTopics() {
 }
 
 // Dependencies: storage-core.js (window.storage)
-async function renderChapters() {
+async function renderChapterStats() {
     const questions = await window.storage.getQuestions();
     const stats = {};
     
@@ -128,7 +128,7 @@ async function renderChapters() {
 }
 
 // Dependencies: storage-core.js (window.storage)
-async function renderConcepts() {
+async function renderConceptStats() {
     const questions = await window.storage.getQuestions();
     const stats = {};
     
@@ -167,7 +167,7 @@ async function renderConcepts() {
 }
 
 // Dependencies: storage-core.js (window.storage)
-async function renderPatterns() {
+async function renderPatternStats() {
     const questions = await window.storage.getQuestions();
     const stats = {};
     
@@ -207,9 +207,9 @@ async function renderPatterns() {
 
 // Dependencies: None (calls all render functions)
 async function refreshStatistics() {
-    await renderPublishers();
-    await renderTopics();
-    await renderChapters();
-    await renderConcepts();
-    await renderPatterns();
+    await renderPublisherStats();
+    await renderTopicStats();
+    await renderChapterStats();
+    await renderConceptStats();
+    await renderPatternStats();
 }

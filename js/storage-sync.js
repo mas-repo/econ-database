@@ -138,12 +138,12 @@ class GoogleSheetsSync {
                 questions.push(question);
             } else {
                 skippedCount++;
-                console.log(`⚠️ Row ${i + 1} skipped - missing required fields`);
+                // console.log(`⚠️ Row ${i + 1} skipped - missing required fields`);
             }
         }
         
         if (skippedCount > 0) {
-            console.log(`\n⚠️ Total rows skipped: ${skippedCount}`);
+            // console.log(`\n⚠️ Total rows skipped: ${skippedCount}`);
         }
         
         return { questions };

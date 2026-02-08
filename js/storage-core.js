@@ -58,6 +58,18 @@ class IndexedDBStorage {
         });
     }
 
+    // Added update method using put()
+    async updateQuestion(question) {
+        return new Promise((resolve, reject) => {
+            const transaction = this.db.transaction(['questions'], 'readwrite');
+            const store = transaction.objectStore('questions');
+            const request = store.put(question); // put() updates if exists, inserts if not
+
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
+    }
+
     async getQuestions(filters = {}) {
         return new Promise((resolve, reject) => {
             const transaction = this.db.transaction(['questions'], 'readonly');

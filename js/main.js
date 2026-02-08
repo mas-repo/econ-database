@@ -128,7 +128,6 @@ async function initializeApp() {
 async function refreshViews() {
     await populateYearFilter();
     
-    // NEW
     if (typeof populateDynamicFilters === 'function') {
         await populateDynamicFilters();
     }
@@ -212,40 +211,44 @@ function hideLoading() {
     if (loader) loader.remove();
 }
 
-async function refreshViews() {
-    await populateYearFilter();
-    await renderQuestions();
-    await refreshStatistics();
-}
-
 // Tab switching
-function switchTab(tabName) {
+function switchTab(tabName, event) {
     window.currentTab = tabName;
     
     // Update tab buttons
     document.querySelectorAll('.tab').forEach(tab => {
         tab.classList.remove('active');
     });
-    event.target.classList.remove('active');
-    document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+    
+    if (event && event.target) {
+        event.target.classList.add('active');
+    } else {
+        // Fallback if event not passed
+        const btn = document.querySelector(`[onclick*="switchTab('${tabName}')"]`);
+        if (btn) btn.classList.add('active');
+    }
     
     // Update tab content
     document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
     });
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+    const content = document.getElementById(`${tabName}-tab`);
+    if (content) content.classList.add('active');
     
     // Render content based on tab
     if (tabName === 'publishers') {
-        renderPublishers();
+        // Note: calling renderPublishers here triggers the one in tabs.js (metadata)
+        // or statistics.js (stats) depending on load order.
+        // We will rename statistics.js functions to avoid conflict.
+        if (typeof renderPublishers === 'function') renderPublishers();
     } else if (tabName === 'topics') {
-        renderTopics();
+        if (typeof renderTopics === 'function') renderTopics();
     } else if (tabName === 'chapters') {
-        renderChapters();     
+        if (typeof renderChapters === 'function') renderChapters();     
     } else if (tabName === 'concepts') {
-        renderConcepts();
+        if (typeof renderConcepts === 'function') renderConcepts();
     } else if (tabName === 'patterns') {
-        renderPatterns();
+        if (typeof renderPatterns === 'function') renderPatterns();
     }
 }
 
@@ -296,7 +299,15 @@ function debounce(func, wait) {
 // Populate year filter
 async function populateYearFilter() {
     const questions = await window.storage.getQuestions();
-    const years = [...new Set(questions.map(q => q.year))].sort((a, b) => b - a);
+    // Safer sort for mixed types
+    const years = [...new Set(questions.map(q => q.year))].sort((a, b) => {
+        const numA = parseInt(a);
+        const numB = parseInt(b);
+        if (!isNaN(numA) && !isNaN(numB)) return numB - numA;
+        if (!isNaN(numA)) return -1; // numbers first
+        if (!isNaN(numB)) return 1;
+        return String(a).localeCompare(String(b));
+    });
     
     const yearFilter = document.getElementById('year-filter');
     yearFilter.innerHTML = '<option value="">全部年份</option>';

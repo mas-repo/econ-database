@@ -23,7 +23,14 @@ async function hashPassword(password) {
 async function verifyPasswordWithServer(passwordHash) {
     try {
         const scriptUrl = CONFIG.GOOGLE_APPS_SCRIPT_URL;
-        const response = await fetch(`${scriptUrl}?action=verify_admin&hash=${passwordHash}`);
+        // Use POST instead of GET
+        const response = await fetch(scriptUrl, {
+            method: 'POST',
+            body: JSON.stringify({
+                action: 'verify_admin',
+                hash: passwordHash
+            })
+        });
         
         if (!response.ok) {
             throw new Error('Server verification failed');

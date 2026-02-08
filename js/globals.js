@@ -13,8 +13,6 @@ var triStateFilters = {
     concepts: {},
     patterns: {},
     ai: {},
-    concepts: {},
-    patterns: {},
     multipleSelection: {},
     graph: {},
     table: {},

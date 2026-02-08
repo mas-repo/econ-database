@@ -489,7 +489,6 @@ async function loadAuthenticatedData(data) {
                 
                 // Handle different field types
                 switch (fieldName) {
-                    case 'year':
                     case 'marks':
                     case 'correctPercentage':
                         const trimmedNum = value.trim();
@@ -549,4 +548,3 @@ async function loadAuthenticatedData(data) {
         alert('❌ 資料載入失敗: ' + error.message);
     }
 }
-

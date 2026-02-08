@@ -196,7 +196,7 @@ async function renderQuestions() {
                                 📋
                             </button>
                         </div>
-                        <div class="question-text-content collapsed">${q.questionTextChi.trim()}</div>
+                        <div class="question-text-content collapsed">${escapeHTML(q.questionTextChi.trim())}</div>
                     </div>
                 ` : ''}
                 ${q.questionTextEng ? `
@@ -210,14 +210,14 @@ async function renderQuestions() {
                                 📋
                             </button>
                         </div>
-                        <div class="question-text-content collapsed">${q.questionTextEng.trim()}</div>
+                        <div class="question-text-content collapsed">${escapeHTML(q.questionTextEng.trim())}</div>
                     </div>
                 ` : ''}
 
                     ${q.answer ? (isShortAnswer ? `
                         <div class="info-item" style="display: flex; align-items: center; gap: 8px;">
                             <strong>答案：</strong> 
-                            <span style="flex: 1;">${q.answer}</span>
+                            <span style="flex: 1;">${escapeHTML(q.answer)}</span>
                             <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
                                 📋
                             </button>
@@ -233,14 +233,14 @@ async function renderQuestions() {
                                     📋
                                 </button>
                             </div>
-                            <div class="question-text-content collapsed">${q.answer.trim()}</div>
+                            <div class="question-text-content collapsed">${escapeHTML(q.answer.trim())}</div>
                         </div>
                     `) : ''}                  
 
                 ${q.markersReport ? `
                     <div class="info-item" style="margin-top: 10px; display: flex; align-items: flex-start; gap: 8px;">
                         <div style="flex: 1;">
-                            <strong>評卷報告：</strong> ${q.markersReport.substring(0, 150)}${q.markersReport.length > 150 ? '...' : ''}
+                            <strong>評卷報告：</strong> ${escapeHTML(q.markersReport.substring(0, 150))}${q.markersReport.length > 150 ? '...' : ''}
                         </div>
                         <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.markersReport).replace(/"/g, '&quot;')}, this)" title="複製評卷報告" style="flex-shrink: 0;">
                             📋

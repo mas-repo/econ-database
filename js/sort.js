@@ -28,12 +28,25 @@ function sortQuestions(questions, sortBy = 'default') {
         return secA.localeCompare(secB, undefined, { numeric: true });
     }
     
+    // Safe year comparison
+    function compareYears(a, b) {
+        const yA = parseInt(a.year);
+        const yB = parseInt(b.year);
+        // If both are numbers, compare them
+        if (!isNaN(yA) && !isNaN(yB)) return yA - yB;
+        // If one is NaN (e.g. "Sample Paper"), handle it
+        if (isNaN(yA) && !isNaN(yB)) return -1; // Non-numbers first? Or last?
+        if (!isNaN(yA) && isNaN(yB)) return 1;
+        // Both strings
+        return String(a.year).localeCompare(String(b.year));
+    }
+    
     sorted.sort((a, b) => {
         switch(sortBy) {
             case 'default':
                 // 1. Year DESC (newest first)
                 if (a.year !== b.year) {
-                    return b.year - a.year; 
+                    return compareYears(b, a); // DESC
                 }
                 
                 // 2. Paper ASC (Paper 1 before Paper 2)
@@ -55,7 +68,7 @@ function sortQuestions(questions, sortBy = 'default') {
             case 'year-asc':
                 // 1. Year ASC (oldest first)
                 if (a.year !== b.year) {
-                    return a.year - b.year;
+                    return compareYears(a, b); // ASC
                 }
                 // 2. Paper ASC
                 const paperDiffAsc = comparePapers(a, b);
@@ -76,7 +89,7 @@ function sortQuestions(questions, sortBy = 'default') {
             case 'year-desc':
                 // 1. Year DESC (newest first)
                 if (a.year !== b.year) {
-                    return b.year - a.year;
+                    return compareYears(b, a); // DESC
                 }
                 // 2. Paper ASC
                 const paperDiffDesc = comparePapers(a, b);
@@ -104,7 +117,7 @@ function sortQuestions(questions, sortBy = 'default') {
                 if (aQ3.letter !== bQ3.letter) {
                     return aQ3.letter.localeCompare(bQ3.letter);
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
                 
             case 'question-desc':
                 // Question Number DESC, then Year DESC
@@ -116,35 +129,33 @@ function sortQuestions(questions, sortBy = 'default') {
                 if (aQ4.letter !== bQ4.letter) {
                     return bQ4.letter.localeCompare(aQ4.letter);
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
                 
             case 'marks-asc':
                 // Marks ASC, then Year DESC
                 if (a.marks !== b.marks) {
                     return (a.marks || 0) - (b.marks || 0);
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
                 
             case 'marks-desc':
                 // Marks DESC, then Year DESC
                 if (a.marks !== b.marks) {
                     return (b.marks || 0) - (a.marks || 0);
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
 
             case 'percentage-asc':
                 // Correct Percentage ASC (Hardest first), then Year DESC
-                // Treat null/undefined as 0 or 100 depending on preference, here treating as -1 to push to bottom or top
                 const pA1 = (a.correctPercentage !== undefined && a.correctPercentage !== null && a.correctPercentage !== '') ? parseFloat(a.correctPercentage) : -1;
                 const pB1 = (b.correctPercentage !== undefined && b.correctPercentage !== null && b.correctPercentage !== '') ? parseFloat(b.correctPercentage) : -1;
                 
                 if (pA1 !== pB1) {
-                    // If one is missing (-1), push it to the end
                     if (pA1 === -1) return 1;
                     if (pB1 === -1) return -1;
                     return pA1 - pB1;
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
 
             case 'percentage-desc':
                 // Correct Percentage DESC (Easiest first), then Year DESC
@@ -152,12 +163,11 @@ function sortQuestions(questions, sortBy = 'default') {
                 const pB2 = (b.correctPercentage !== undefined && b.correctPercentage !== null && b.correctPercentage !== '') ? parseFloat(b.correctPercentage) : -1;
                 
                 if (pA2 !== pB2) {
-                    // If one is missing (-1), push it to the end
                     if (pA2 === -1) return 1;
                     if (pB2 === -1) return -1;
                     return pB2 - pA2;
                 }
-                return b.year - a.year;
+                return compareYears(b, a);
                 
             default:
                 return 0;
