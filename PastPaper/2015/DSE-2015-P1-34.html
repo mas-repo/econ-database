@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Direct vs Indirect Taxes</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .header-item {
+            flex: 1 1 30%;
+            min-width: 200px;
+            margin: 5px;
+        }
+
+        .header-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-title::before {
+            content: "💡";
+            margin-right: 10px;
+        }
+
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--correct-bg);
+            border-left: 5px solid var(--correct-border);
+        }
+
+        .option-analysis.wrong {
+            background-color: var(--wrong-bg);
+            border-left: 5px solid var(--wrong-border);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .tag-correct { background-color: #22c55e; color: white; }
+        .tag-wrong { background-color: #ef4444; color: white; }
+
+        .bilingual-text p {
+            margin-bottom: 0.5em;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .trap-box {
+            background-color: #fff7ed;
+            border: 2px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div class="header-item">
+            <span class="header-label">Topic / 課題</span>
+            Public Finance / Taxation<br>
+            公共財政 / 稅務
+        </div>
+        <div class="header-item">
+            <span class="header-label">Difficulty / 難度</span>
+            ★★☆☆☆ (Basic Concept / 基礎概念)
+        </div>
+        <div class="header-item">
+            <span class="header-label">Key Concepts / 關鍵概念</span>
+            Direct Tax, Indirect Tax, Tax Burden<br>
+            直接稅、間接稅、稅務負擔
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question / 題目</h2>
+        <p><strong>下列哪些屬香港的間接稅？</strong></p>
+        <p class="en-text"><strong>Which of the following are indirect taxes in Hong Kong?</strong></p>
+        
+        <ol style="list-style-type: decimal;">
+            <li>物業稅 (Property tax)</li>
+            <li>物業的差餉 (Rates on property)</li>
+            <li>股票轉讓的印花稅 (Stamp duty on transfer of stock)</li>
+            <li>一般銷售稅 (General sales tax)</li>
+        </ol>
+
+        <ul class="options-list">
+            <li>A. 只有(1)、(2) &nbsp;&nbsp; <span class="en-text">(1) and (2) only</span></li>
+            <li>B. 只有(2)、(3) &nbsp;&nbsp; <span class="en-text">(2) and (3) only</span></li>
+            <li>C. 只有(1)、(3)及(4) &nbsp;&nbsp; <span class="en-text">(1), (3) and (4) only</span></li>
+            <li>D. 只有(2)、(3)及(4) &nbsp;&nbsp; <span class="en-text">(2), (3) and (4) only</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">Concept Review / 概念重溫</div>
+        
+        <h3>直接稅 vs 間接稅 (Direct Tax vs Indirect Tax)</h3>
+        <p>在經濟學中，我們根據<strong>稅務負擔能否轉嫁 (Shift of tax burden)</strong> 來分類稅項。</p>
+        <p class="en-text">In Economics, we classify taxes based on whether the <strong>tax burden can be shifted</strong>.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+            <div>
+                <strong>直接稅 (Direct Tax)</strong>
+                <hr>
+                <p>納稅人<strong>不能</strong>將稅務負擔轉嫁給他人。</p>
+                <p class="en-text">Taxpayers <strong>cannot</strong> shift the tax burden to others.</p>
+                <p><em>例子：薪俸稅、利得稅、物業稅。</em></p>
+                <p class="en-text"><em>Examples: Salaries tax, Profits tax, Property tax.</em></p>
+            </div>
+            <div>
+                <strong>間接稅 (Indirect Tax)</strong>
+                <hr>
+                <p>納稅人<strong>可以</strong>將稅務負擔轉嫁給他人（通常轉嫁給消費者）。</p>
+                <p class="en-text">Taxpayers <strong>can</strong> shift the tax burden to others (usually to consumers).</p>
+                <p><em>例子：差餉、印花稅、博彩稅。</em></p>
+                <p class="en-text"><em>Examples: Rates, Stamp duties, Betting duty.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="analysis-section">
+        <h2>Answer & Detailed Analysis / 答案與詳細分析</h2>
+        
+        <div style="font-size: 1.2em; margin-bottom: 20px;">
+            <strong>Correct Answer / 正確答案: <span style="color: var(--correct-border);">Option B</span></strong>
+        </div>
+
+        <!-- Item 1 Analysis -->
+        <div class="option-analysis wrong">
+            <span class="tag tag-wrong">Direct Tax / 直接稅</span>
+            <strong>(1) 物業稅 (Property Tax)</strong>
+            <p><strong>錯誤。</strong>物業稅是向物業擁有人徵收的稅項，按物業的應課差餉租值計算。根據香港稅務局定義，這屬於直接稅，因為法律上的納稅人（業主）被視為最終承擔者，不能將法律責任轉移。</p>
+            <p class="en-text"><strong>Incorrect.</strong> Property tax is levied on property owners based on the assessable value of the property. According to the Inland Revenue Department, this is a direct tax because the legal taxpayer (the owner) is considered the final bearer and cannot shift the legal liability.</p>
+        </div>
+
+        <!-- Item 2 Analysis -->
+        <div class="option-analysis correct">
+            <span class="tag tag-correct">Indirect Tax / 間接稅</span>
+            <strong>(2) 物業的差餉 (Rates on property)</strong>
+            <p><strong>正確。</strong>差餉是對物業使用權徵收的稅項。雖然法律上由業主或住戶繳交，但業主可以透過提高租金將差餉轉嫁給租客。因此，它被歸類為間接稅。</p>
+            <p class="en-text"><strong>Correct.</strong> Rates are a tax on the occupation of property. Although legally paid by the owner or occupier, the owner can shift the burden to the tenant through higher rent. Thus, it is classified as an indirect tax.</p>
+        </div>
+
+        <!-- Item 3 Analysis -->
+        <div class="option-analysis correct">
+            <span class="tag tag-correct">Indirect Tax / 間接稅</span>
+            <strong>(3) 股票轉讓的印花稅 (Stamp duty on transfer of stock)</strong>
+            <p><strong>正確。</strong>印花稅是在資產轉讓或租賃文件上徵收的稅項。買賣雙方可以透過調整交易價格來分擔或轉嫁稅項。這是一種對交易 (Transaction) 徵收的稅，屬間接稅。</p>
+            <p class="en-text"><strong>Correct.</strong> Stamp duty is levied on documents for the transfer or lease of assets. Buyers and sellers can share or shift the tax burden by adjusting the transaction price. It is a tax on transactions, making it an indirect tax.</p>
+        </div>
+
+        <!-- Item 4 Analysis -->
+        <div class="option-analysis wrong">
+            <span class="tag tag-wrong">Not Applicable / 不適用</span>
+            <strong>(4) 一般銷售稅 (General Sales Tax - GST)</strong>
+            <p><strong>錯誤。</strong>雖然銷售稅在本質上是間接稅（可以轉嫁給消費者），但題目問的是「香港的間接稅」。<strong>香港目前並沒有徵收一般銷售稅 (GST) 或增值稅 (VAT)。</strong></p>
+            <p class="en-text"><strong>Incorrect.</strong> Although a sales tax is inherently an indirect tax (burden can be shifted to consumers), the question asks for indirect taxes "in Hong Kong". <strong>Hong Kong currently does NOT levy a General Sales Tax (GST) or Value Added Tax (VAT).</strong></p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+        <div class="concept-title" style="color: #db2777;">Problem Decomposition / 題目拆解</div>
+        
+        <p><strong>關鍵判斷點 (Pivot Point):</strong></p>
+        <ol>
+            <li>
+                <strong>定義分類 (Classification):</strong> 分清楚「物業稅」與「差餉」。
+                <br><span class="en-text">Distinguish between "Property Tax" and "Rates".</span>
+            </li>
+            <li>
+                <strong>事實查核 (Fact Check):</strong> 檢查該稅項是否在香港存在。
+                <br><span class="en-text">Check if the tax actually exists in Hong Kong.</span>
+            </li>
+        </ol>
+
+        <p><strong>解題邏輯 (Logic Flow):</strong></p>
+        <ul>
+            <li>看到 (1) 物業稅 \(\rightarrow\) 直接稅 \(\rightarrow\) 排除 A, C。</li>
+            <li>看到 (4) 一般銷售稅 \(\rightarrow\) 香港沒有 \(\rightarrow\) 排除 C, D。</li>
+            <li><strong>等等！</strong> 如果你排除了 (4)，選項 D 就錯了。如果你排除了 (1)，選項 A 和 C 就錯了。剩下的唯一可能就是 B。</li>
+            <li><span class="en-text">See (1) Property Tax \(\rightarrow\) Direct Tax \(\rightarrow\) Eliminate A, C.</span></li>
+            <li><span class="en-text">See (4) GST \(\rightarrow\) Not in HK \(\rightarrow\) Eliminate C, D.</span></li>
+            <li><span class="en-text"><strong>Wait!</strong> If you eliminate (4), Option D is wrong. If you eliminate (1), Options A and C are wrong. The only remaining possibility is B.</span></li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="trap-box">
+        <h3>⚠️ Common Mistakes & Traps / 常犯錯誤與陷阱</h3>
+        
+        <p><strong>陷阱 1：混淆「物業稅」與「差餉」</strong></p>
+        <p>很多同學以為與樓宇有關的都是間接稅。記住：<strong>物業稅 (Property Tax)</strong> 是針對「收入」(租金收入) 徵收，屬直接稅；<strong>差餉 (Rates)</strong> 是針對「支出/使用」徵收，屬間接稅。</p>
+        <p class="en-text"><strong>Trap 1: Confusing "Property Tax" with "Rates".</strong> Many students think all property-related taxes are indirect. Remember: <strong>Property Tax</strong> is on "Income" (rental income), making it Direct; <strong>Rates</strong> are on "Expenditure/Occupation", making it Indirect.</p>
+
+        <p><strong>陷阱 2：忽略「香港」這個關鍵詞</strong></p>
+        <p>題目問的是「香港的」稅項。雖然銷售稅 (GST) 在經濟學定義上絕對是間接稅，但因為香港沒有實施，所以不能選。</p>
+        <p class="en-text"><strong>Trap 2: Ignoring the keyword "Hong Kong".</strong> The question asks for taxes "in Hong Kong". While GST is definitely an indirect tax by economic definition, it cannot be selected because Hong Kong does not implement it.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
