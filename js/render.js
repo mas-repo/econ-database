@@ -1,6 +1,19 @@
 // Render questions
 // Dependencies: storage-core.js (storage), storage-filters.js (applyFilters), globals.js (paginationState, triStateFilters, window.percentageFilter, window.marksFilter), pagination.js (updatePaginationInfo, generatePagination), admin.js (isAdminMode), utils.js (copyToClipboard, toggleQuestionText), sort.js, constants.js (CURRICULUM_ORDER)
 
+// ==========================================
+// Tag Visibility
+// ==========================================
+if (typeof window.showQuestionTags === 'undefined') {
+    window.showQuestionTags = true;
+}
+
+window.toggleTags = function(checkbox) {
+    window.showQuestionTags = checkbox.checked;
+    renderQuestions(); // Re-render immediately
+};
+// ==========================================
+
 async function renderQuestions() {
     // Added searchScope to the filters object
     const filters = {
@@ -120,7 +133,7 @@ async function renderQuestions() {
                 ` : ''}
                 
                 <div class="question-info">
-                    ${q.multipleSelectionType && q.multipleSelectionType !== '-' ? `
+                    ${(window.showQuestionTags && q.multipleSelectionType && q.multipleSelectionType !== '-') ? `
                         <div class="info-item">
                             <strong>複選：</strong> 
                             <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
@@ -129,7 +142,7 @@ async function renderQuestions() {
                         </div>
                     ` : ''}
                     
-                    ${q.graphType && q.graphType !== '-' ? `
+                    ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
                             <span class="tag clickable-tag" onclick="filterByTag('graph', '${q.graphType}')" style="${getTagStyle('graph', q.graphType)}">
@@ -138,7 +151,7 @@ async function renderQuestions() {
                         </div>
                     ` : ''}
                     
-                    ${q.tableType && q.tableType !== '-' ? `
+                    ${(window.showQuestionTags && q.tableType && q.tableType !== '-') ? `
                         <div class="info-item">
                             <strong>表格：</strong> 
                             <span class="tag clickable-tag" onclick="filterByTag('table', '${q.tableType}')" style="${getTagStyle('table', q.tableType)}">
@@ -147,7 +160,7 @@ async function renderQuestions() {
                         </div>
                     ` : ''}
                     
-                    ${q.calculationType && q.calculationType !== '-' ? `
+                    ${(window.showQuestionTags && q.calculationType && q.calculationType !== '-') ? `
                         <div class="info-item">
                             <strong>計算：</strong> 
                             <span class="tag clickable-tag" onclick="filterByTag('calculation', '${q.calculationType}')" style="${getTagStyle('calculation', q.calculationType)}">
@@ -183,8 +196,8 @@ async function renderQuestions() {
                 `) : ''}
                 <div></div>
                 
-                <!-- MODIFIED: Active State for Curriculum -->
-                ${sortedCurriculum.length > 0 ? `
+                <!-- Active State for Curriculum -->
+                ${(window.showQuestionTags && sortedCurriculum.length > 0) ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">課程分類：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
@@ -197,8 +210,8 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
 
-                <!-- MODIFIED: Active State for Chapters -->
-                ${sortedChapters.length > 0 ? `
+                <!-- Active State for Chapters -->
+                ${(window.showQuestionTags && sortedChapters.length > 0) ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">Chapter(s):</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
@@ -214,10 +227,10 @@ async function renderQuestions() {
                             }).join('')}
                         </div>
                     </div>
-                ` : ''}                
+                ` : ''}                  
 
-                <!-- MODIFIED: Active State for Concepts -->
-                ${q.concepts && q.concepts.length > 0 ? `
+                <!-- Active State for Concepts -->
+                 ${(window.showQuestionTags && q.concepts && q.concepts.length > 0) ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">涉及概念：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
@@ -230,8 +243,8 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
                 
-                <!-- MODIFIED: Active State for Patterns -->
-                ${q.patterns && q.patterns.length > 0 ? `
+                <!-- Active State for Patterns -->
+                ${(window.showQuestionTags && q.patterns && q.patterns.length > 0) ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">題型：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
