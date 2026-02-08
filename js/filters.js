@@ -160,13 +160,14 @@ function toggleDropdown(dropdownId) {
                 }
             }
         }
-        // Force a resort when opening, just in case state changed while closed
-        // We trigger this by calling updateDynamicDropdowns, but since it's async and we just opened it,
-        // we might need to rely on the next interaction or the fact that it was sorted on close/load.
-        // Actually, the previous sort order is preserved in the DOM until we rebuild it.
-        // So when we open, we see the state from the LAST update.
-        updateDynamicDropdowns();
     }
+
+    // UPDATED LOGIC: Trigger update regardless of open/close state.
+    // 1. If we just OPENED the dropdown: It is now visible. updateDynamicDropdowns will see 'isVisible=true' 
+    //    and perform a "Soft Update" (counts/checks only), preserving the order so items don't jump.
+    // 2. If we just CLOSED the dropdown: It is now hidden. updateDynamicDropdowns will see 'isVisible=false'
+    //    and perform a "Full Rebuild", sorting selected items to the top for the next time it opens.
+    updateDynamicDropdowns();
 }
 
 document.addEventListener('click', function(event) {
@@ -178,6 +179,8 @@ document.addEventListener('click', function(event) {
 
     if (!isFilterClick) {
         closeAllDropdowns();
+        // UPDATED: When clicking outside to close, trigger the sort on the now-hidden elements.
+        updateDynamicDropdowns();
     }
 });
 
@@ -670,21 +673,14 @@ function populateSearchScope() {
 // CLEAR & RESET FUNCTIONS
 // ============================================
 
-// NEW: Clear Chapter Filter Button Logic
 window.clearChapterFilter = function() {
-    // 1. Reset the state
     window.triStateFilters.chapter = {};
-    
-    // 2. Visually reset checkboxes in the Chapter dropdown immediately
-    // (This helps if the dropdown is currently open)
     const container = document.getElementById('chapter-options');
     if (container) {
         container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
             el.classList.remove('checked', 'excluded');
         });
     }
-
-    // 3. Re-run filters
     filterQuestions();
 };
 
@@ -786,7 +782,6 @@ window.removeFilter = function(type, param1, param2) {
         }
     }
     
-    // Refresh the UI
     filterQuestions();
 };
 
