@@ -36,6 +36,16 @@ async function renderQuestions() {
         grid.innerHTML = '<p style="text-align: center; padding: 40px; color: #7f8c8d;">未找到題目</p>';
         return;
     }
+
+    // Helper function to determine tag style based on filter state
+    const getTagStyle = (category, value) => {
+        const isChecked = triStateFilters[category] && triStateFilters[category][value] === 'checked';
+        // If active: Light blue background, blue border, bold text
+        // If inactive: Standard link color, pointer cursor
+        return isChecked 
+            ? 'cursor:pointer; background-color: #e3f2fd; border: 1px solid #2196f3; color: #1565c0; font-weight: 600;' 
+            : 'cursor:pointer; color:var(--secondary-color);';
+    };
     
     grid.innerHTML = paginatedQuestions.map(q => {
         // Check if answer is short (single character or very brief)
@@ -113,7 +123,7 @@ async function renderQuestions() {
                     ${q.multipleSelectionType && q.multipleSelectionType !== '-' ? `
                         <div class="info-item">
                             <strong>複選：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="cursor:pointer; color:var(--secondary-color);">
+                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
                                 ${q.multipleSelectionType}
                             </span>
                         </div>
@@ -122,7 +132,7 @@ async function renderQuestions() {
                     ${q.graphType && q.graphType !== '-' ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('graph', '${q.graphType}')" style="cursor:pointer; color:var(--secondary-color);">
+                            <span class="tag clickable-tag" onclick="filterByTag('graph', '${q.graphType}')" style="${getTagStyle('graph', q.graphType)}">
                                 ${q.graphType}
                             </span>
                         </div>
@@ -131,7 +141,7 @@ async function renderQuestions() {
                     ${q.tableType && q.tableType !== '-' ? `
                         <div class="info-item">
                             <strong>表格：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('table', '${q.tableType}')" style="cursor:pointer; color:var(--secondary-color);">
+                            <span class="tag clickable-tag" onclick="filterByTag('table', '${q.tableType}')" style="${getTagStyle('table', q.tableType)}">
                                 ${q.tableType}
                             </span>
                         </div>
@@ -140,7 +150,7 @@ async function renderQuestions() {
                     ${q.calculationType && q.calculationType !== '-' ? `
                         <div class="info-item">
                             <strong>計算：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('calculation', '${q.calculationType}')" style="cursor:pointer; color:var(--secondary-color);">
+                            <span class="tag clickable-tag" onclick="filterByTag('calculation', '${q.calculationType}')" style="${getTagStyle('calculation', q.calculationType)}">
                                 ${q.calculationType}
                             </span>
                         </div>
@@ -172,12 +182,14 @@ async function renderQuestions() {
                     </div>
                 `) : ''}
                 <div></div>
+                
+                <!-- MODIFIED: Active State for Curriculum -->
                 ${sortedCurriculum.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">課程分類：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
                             ${sortedCurriculum.map(c => `
-                                <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="cursor:pointer; color:var(--secondary-color);">
+                                <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="${getTagStyle('curriculum', c)}">
                                     ${c}
                                 </span>
                             `).join('')}
@@ -185,30 +197,32 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
 
+                <!-- MODIFIED: Active State for Chapters -->
                 ${sortedChapters.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">Chapter(s):</strong>
+                        <strong style="white-space: nowrap;">Chapter:</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
                             ${sortedChapters.map(c => {
                                 // Extract the number (e.g., "Chapter 01" -> "01") to match the sidebar filter logic
                                 const match = c.match(/(\d+)/);
                                 const val = match ? match[0] : c; 
                                 return `
-                                <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="cursor:pointer; color:var(--secondary-color);">
+                                <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="${getTagStyle('chapter', val)}">
                                     ${c}
                                 </span>
                                 `;
                             }).join('')}
                         </div>
                     </div>
-                ` : ''}                 
+                ` : ''}                
 
+                <!-- MODIFIED: Active State for Concepts -->
                 ${q.concepts && q.concepts.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">涉及概念：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
                             ${q.concepts.map(c => `
-                                <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="cursor:pointer; color:var(--secondary-color);">
+                                <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="${getTagStyle('concepts', c)}">
                                     ${c}
                                 </span>
                             `).join('')}
@@ -216,12 +230,13 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
                 
+                <!-- MODIFIED: Active State for Patterns -->
                 ${q.patterns && q.patterns.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">題型：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
                             ${q.patterns.map(p => `
-                                <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="cursor:pointer; color:var(--secondary-color);">
+                                <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="${getTagStyle('patterns', p)}">
                                     ${p}
                                 </span>
                             `).join('')}
