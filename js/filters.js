@@ -32,6 +32,33 @@ if (!window.triStateFilters) {
 // DROPDOWN & UI FUNCTIONS
 // ============================================
 
+// Configuration map for all filters that have arrow icons
+// Maps the Dropdown ID -> The Arrow Span ID
+const ARROW_MAP = {
+    // Custom Grid Filters
+    'curriculum-options': 'curriculum-arrow',
+    'feature-options': 'feature-arrow',
+    'chapter-options': 'chapter-arrow',
+    
+    // Standard Filters
+    'exam-options': 'exam-arrow',
+    'year-options': 'year-arrow',
+    'qtype-options': 'qtype-arrow',
+    
+    // Range Filters
+    'percentage-options': 'percentage-arrow',
+    'marks-options': 'marks-arrow',
+    
+    // Input-First / Dynamic Filters
+    'multiple-selection-options': 'multiple-selection-arrow',
+    'graph-options': 'graph-arrow',
+    'table-options': 'table-arrow',
+    'calculation-options': 'calculation-arrow',
+    'concepts-options': 'concepts-arrow',
+    'patterns-options': 'patterns-arrow',
+    'ai-options': 'ai-arrow'
+};
+
 /**
  * Helper: Closes ALL dropdowns (both standard and custom grids)
  * and resets all arrow icons.
@@ -41,20 +68,21 @@ function closeAllDropdowns() {
     document.querySelectorAll('.dropdown-content').forEach(d => {
         d.classList.remove('active');
     });
+    
+    // Close input-dropdown lists specifically
+    document.querySelectorAll('.input-dropdown-list').forEach(d => {
+        d.classList.remove('active');
+    });
 
     // 2. Close custom inline-style grids (Curriculum, Chapter, Feature)
     ['curriculum', 'chapter', 'feature'].forEach(type => {
         const section = document.getElementById(`${type}-options`);
-        const arrow = document.getElementById(`${type}-arrow`);
-        
         if (section) section.style.display = 'none';
-        if (arrow) arrow.textContent = '▶';
     });
 
-    // 3. Reset arrows for Range dropdowns (Percentage, Marks)
-    // These use standard .active class, but have specific arrow IDs we need to reset
-    ['percentage', 'marks', 'ai'].forEach(type => {
-        const arrow = document.getElementById(`${type}-arrow`);
+    // 3. Reset ALL arrows using the centralized map
+    Object.values(ARROW_MAP).forEach(arrowId => {
+        const arrow = document.getElementById(arrowId);
         if (arrow) arrow.textContent = '▶';
     });
 }
@@ -71,7 +99,12 @@ function toggleDropdown(dropdownId) {
     // It is open if it has class 'active' OR display is 'grid'/'block'
     const isStandardActive = target.classList.contains('active');
     const isGridActive = target.style.display === 'grid' || target.style.display === 'block';
-    const wasOpen = isStandardActive || isGridActive;
+    
+    // Note: We must check if it's actually visible. If clearFilters set display:none, 
+    // it might have .active but be hidden.
+    const isActuallyVisible = isGridActive || (isStandardActive && target.style.display !== 'none');
+    
+    const wasOpen = isActuallyVisible;
 
     // 2. Close EVERYTHING first (Exclusive Mode)
     closeAllDropdowns();
@@ -79,35 +112,25 @@ function toggleDropdown(dropdownId) {
     // 3. If it was NOT open before, open it now
     if (!wasOpen) {
         
-        // Configuration for special grid filters
-        const gridMap = {
-            'curriculum-options': 'curriculum-arrow',
-            'feature-options': 'feature-arrow',
-            'chapter-options': 'chapter-arrow'
-        };
+        // Configuration for special grid filters that need display: grid
+        const gridFilters = ['curriculum-options', 'feature-options', 'chapter-options'];
 
-        // Configuration for range filters (standard behavior but specific arrows)
-        const rangeMap = {
-            'percentage-options': 'percentage-arrow',
-            'marks-options': 'marks-arrow',
-            'ai-options': 'ai-arrow'
-        };
-
-        if (gridMap[dropdownId]) {
+        if (gridFilters.includes(dropdownId)) {
             // === Case A: Custom Grid Filters ===
             target.style.display = 'grid';
-            const arrow = document.getElementById(gridMap[dropdownId]);
-            if (arrow) arrow.textContent = '▼';
-
         } else {
-            // === Case B: Standard & Range Filters ===
+            // === Case B: Standard, Range, & Input Filters ===
+            // FIX Issue 3: Explicitly clear inline display style.
+            // This fixes the bug where "Reset" sets display:none and prevents reopening.
+            target.style.display = ''; 
             target.classList.add('active');
-            
-            // If it's a range filter, update its specific arrow
-            if (rangeMap[dropdownId]) {
-                const arrow = document.getElementById(rangeMap[dropdownId]);
-                if (arrow) arrow.textContent = '▼';
-            }
+        }
+
+        // Update the specific arrow for this dropdown (FIX Issue 1)
+        const arrowId = ARROW_MAP[dropdownId];
+        if (arrowId) {
+            const arrow = document.getElementById(arrowId);
+            if (arrow) arrow.textContent = '▼';
         }
     }
 }
@@ -493,8 +516,23 @@ function setupInputDropdownListeners() {
         const list = document.getElementById(listId);
         
         input.addEventListener('focus', () => {
-            document.querySelectorAll('.input-dropdown-list').forEach(el => el.classList.remove('active'));
-            if(list) list.classList.add('active');
+            // FIX Issue 2: Close other dropdowns (like Marks/Percentage) when focusing an input
+            closeAllDropdowns();
+
+            // Open this specific list
+            if(list) {
+                list.classList.add('active');
+                // Ensure it's visible if it was hidden by Reset
+                list.style.display = ''; 
+            }
+
+            // FIX Issue 1 (Part B): Rotate the arrow for this specific input
+            // We find the arrow ID by reverse lookup in ARROW_MAP based on the listId
+            const arrowId = ARROW_MAP[listId];
+            if (arrowId) {
+                const arrow = document.getElementById(arrowId);
+                if (arrow) arrow.textContent = '▼';
+            }
         });
     });
 }
@@ -547,21 +585,22 @@ function clearFilters() {
     document.getElementById('search').value = '';
     document.getElementById('year-filter').value = '';
     
+    // Explicitly hide sections to visually reset
     const pctSection = document.getElementById('percentage-options');
-    const pctArrow = document.getElementById('percentage-arrow');
     if (pctSection) pctSection.style.display = 'none';
-    if (pctArrow) pctArrow.textContent = '▶';
 
     const marksSection = document.getElementById('marks-options');
-    const marksArrow = document.getElementById('marks-arrow');
     if (marksSection) marksSection.style.display = 'none';
-    if (marksArrow) marksArrow.textContent = '▶';
 
     const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
     collapsibleTypes.forEach(type => {
         const section = document.getElementById(`${type}-options`);
-        const arrow = document.getElementById(`${type}-arrow`);
         if (section) section.style.display = 'none';
+    });
+
+    // Reset all arrows
+    Object.values(ARROW_MAP).forEach(arrowId => {
+        const arrow = document.getElementById(arrowId);
         if (arrow) arrow.textContent = '▶';
     });
 
