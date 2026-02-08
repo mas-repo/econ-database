@@ -35,7 +35,7 @@ function sortQuestions(questions, sortBy = 'default') {
         // If both are numbers, compare them
         if (!isNaN(yA) && !isNaN(yB)) return yA - yB;
         // If one is NaN (e.g. "Sample Paper"), handle it
-        if (isNaN(yA) && !isNaN(yB)) return -1; // Non-numbers first? Or last?
+        if (isNaN(yA) && !isNaN(yB)) return -1; // Non-numbers
         if (!isNaN(yA) && isNaN(yB)) return 1;
         // Both strings
         return String(a.year).localeCompare(String(b.year));
