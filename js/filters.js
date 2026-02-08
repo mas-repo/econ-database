@@ -160,6 +160,12 @@ function toggleDropdown(dropdownId) {
                 }
             }
         }
+        // Force a resort when opening, just in case state changed while closed
+        // We trigger this by calling updateDynamicDropdowns, but since it's async and we just opened it,
+        // we might need to rely on the next interaction or the fact that it was sorted on close/load.
+        // Actually, the previous sort order is preserved in the DOM until we rebuild it.
+        // So when we open, we see the state from the LAST update.
+        updateDynamicDropdowns();
     }
 }
 
@@ -351,7 +357,7 @@ async function updateDynamicDropdowns() {
     // ==========================================================
     // CONFIG: DEFINE YOUR PRIORITY SORT OPTIONS HERE
     // ==========================================================
-    const PRIORITY_CONFIG = { // These will appear first
+    const PRIORITY_CONFIG = { 
         multipleSelection: ['並非複選型', '不適用'], 
         graph: ['沒有圖', '未命名圖表'],
         table: ['沒有表格', '未命名表格'],
@@ -401,7 +407,50 @@ async function updateDynamicDropdowns() {
             }
         });
 
-        // 2. Get Values (Only those that exist in context)
+        // 2. Check if Dropdown is Open (Visible)
+        // If it is open, we do NOT want to re-sort (rebuild HTML), because it makes items jump.
+        // We only want to update the visual state (checked/excluded) and the counts.
+        const isVisible = container.classList.contains('active') || 
+                          container.style.display === 'block' || 
+                          container.style.display === 'grid' ||
+                          (container.offsetParent !== null && container.closest('.active'));
+
+        if (isVisible) {
+            // SOFT UPDATE: Update existing DOM elements without reordering
+            const existingItems = container.querySelectorAll('.tri-state-label');
+            existingItems.forEach(el => {
+                const itemValue = el.dataset.value;
+                const count = counts[itemValue] || 0;
+                const checkbox = el.querySelector('.tri-state-checkbox');
+                
+                // Update State Classes
+                const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
+                
+                el.classList.remove('checked', 'excluded');
+                if (checkbox) checkbox.classList.remove('checked', 'excluded');
+
+                if (currentState === 'checked') {
+                    el.classList.add('checked');
+                    if (checkbox) checkbox.classList.add('checked');
+                } else if (currentState === 'excluded') {
+                    el.classList.add('excluded');
+                    if (checkbox) checkbox.classList.add('excluded');
+                }
+
+                // Update Count Text
+                const countSpan = el.querySelector('small');
+                if (countSpan) {
+                    countSpan.textContent = `(${count})`;
+                }
+            });
+            return; // EXIT HERE - Do not rebuild/sort
+        }
+
+        // ============================================================
+        // FULL REBUILD (Only happens when dropdown is closed)
+        // ============================================================
+
+        // 3. Get Values (Only those that exist in context)
         let validValues;
         if (isArrayField) {
             const set = new Set();
@@ -412,26 +461,41 @@ async function updateDynamicDropdowns() {
                     });
                 }
             });
-            validValues = Array.from(set).sort();
+            validValues = Array.from(set);
         } else {
             validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
         }
         
-        // 3. Apply Custom Sorting
+        // 4. Apply Custom Sorting (Active items first)
         const priorities = PRIORITY_CONFIG[filterType] || [];
         
-        if (priorities.length > 0) {
-            validValues.sort((a, b) => {
-                const indexA = priorities.indexOf(a);
-                const indexB = priorities.indexOf(b);
-                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-                if (indexA !== -1) return -1;
-                if (indexB !== -1) return 1;
-                return a.localeCompare(b, 'zh-HK');
-            });
-        }
+        validValues.sort((a, b) => {
+            // Priority 1: Checked Items
+            const isAChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'checked';
+            const isBChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'checked';
+            
+            if (isAChecked && !isBChecked) return -1;
+            if (!isAChecked && isBChecked) return 1;
 
-        // 4. Clean up filters for non-existent values
+            // Priority 2: Excluded Items
+            const isAExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'excluded';
+            const isBExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'excluded';
+            
+            if (isAExcluded && !isBExcluded) return -1;
+            if (!isAExcluded && isBExcluded) return 1;
+
+            // Priority 3: Config Priority (e.g. "No Graph")
+            const indexA = priorities.indexOf(a);
+            const indexB = priorities.indexOf(b);
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+
+            // Priority 4: Alphabetical
+            return a.localeCompare(b, 'zh-HK');
+        });
+
+        // 5. Clean up filters for non-existent values
         if (window.triStateFilters[filterType]) {
             Object.keys(window.triStateFilters[filterType]).forEach(val => {
                 if (!validValues.includes(val)) {
