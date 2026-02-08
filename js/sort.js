@@ -12,15 +12,39 @@ function sortQuestions(questions, sortBy = 'default') {
             letter: match[2].toLowerCase()
         };
     }
+
+    // Helper to compare Papers (handles "Paper 1", "1", "Paper 2", "2")
+    function comparePapers(a, b) {
+        const paperA = a.paper ? String(a.paper) : '';
+        const paperB = b.paper ? String(b.paper) : '';
+        // Use numeric sort so "Paper 2" comes before "Paper 10" if that ever happens
+        return paperA.localeCompare(paperB, undefined, { numeric: true });
+    }
+
+    // Helper to compare Sections (handles "A", "B", "-")
+    function compareSections(a, b) {
+        const secA = (a.section && a.section !== '-') ? String(a.section) : '';
+        const secB = (b.section && b.section !== '-') ? String(b.section) : '';
+        return secA.localeCompare(secB, undefined, { numeric: true });
+    }
     
     sorted.sort((a, b) => {
         switch(sortBy) {
             case 'default':
-                // Year DESC (newest first), then Question Number ASC
+                // 1. Year DESC (newest first)
                 if (a.year !== b.year) {
-                    return b.year - a.year; // Newer years first
+                    return b.year - a.year; 
                 }
-                // Same year: sort by question number
+                
+                // 2. Paper ASC (Paper 1 before Paper 2)
+                const paperDiff = comparePapers(a, b);
+                if (paperDiff !== 0) return paperDiff;
+
+                // 3. Section ASC (Section A before Section B)
+                const secDiff = compareSections(a, b);
+                if (secDiff !== 0) return secDiff;
+
+                // 4. Question Number ASC
                 const aQ = parseQuestionNumber(a.questionNumber);
                 const bQ = parseQuestionNumber(b.questionNumber);
                 if (aQ.num !== bQ.num) {
@@ -29,10 +53,19 @@ function sortQuestions(questions, sortBy = 'default') {
                 return aQ.letter.localeCompare(bQ.letter); // Then by letter
                 
             case 'year-asc':
-                // Year ASC (oldest first), then Question Number ASC
+                // 1. Year ASC (oldest first)
                 if (a.year !== b.year) {
                     return a.year - b.year;
                 }
+                // 2. Paper ASC
+                const paperDiffAsc = comparePapers(a, b);
+                if (paperDiffAsc !== 0) return paperDiffAsc;
+
+                // 3. Section ASC
+                const secDiffAsc = compareSections(a, b);
+                if (secDiffAsc !== 0) return secDiffAsc;
+
+                // 4. Question Number ASC
                 const aQ1 = parseQuestionNumber(a.questionNumber);
                 const bQ1 = parseQuestionNumber(b.questionNumber);
                 if (aQ1.num !== bQ1.num) {
@@ -41,10 +74,19 @@ function sortQuestions(questions, sortBy = 'default') {
                 return aQ1.letter.localeCompare(bQ1.letter);
                 
             case 'year-desc':
-                // Year DESC (newest first), then Question Number ASC
+                // 1. Year DESC (newest first)
                 if (a.year !== b.year) {
                     return b.year - a.year;
                 }
+                // 2. Paper ASC
+                const paperDiffDesc = comparePapers(a, b);
+                if (paperDiffDesc !== 0) return paperDiffDesc;
+
+                // 3. Section ASC
+                const secDiffDesc = compareSections(a, b);
+                if (secDiffDesc !== 0) return secDiffDesc;
+
+                // 4. Question Number ASC
                 const aQ2 = parseQuestionNumber(a.questionNumber);
                 const bQ2 = parseQuestionNumber(b.questionNumber);
                 if (aQ2.num !== bQ2.num) {
