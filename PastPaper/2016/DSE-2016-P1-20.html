@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Monopoly</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #60a5fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-intro {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+
+        .q-statement {
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .q-statement-num {
+            font-weight: bold;
+            min-width: 25px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .options-list li {
+            padding: 10px 12px;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: background 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .statement-header {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .status-correct {
+            color: var(--correct-color);
+            background: #d1fae5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .status-wrong {
+            color: var(--wrong-color);
+            background: #fee2e2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            margin-bottom: 6px;
+            display: block;
+        }
+        .en {
+            color: #475569;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        .inline-bilingual {
+            display: inline;
+        }
+        .inline-bilingual .en {
+            display: inline;
+            color: #64748b;
+            font-size: 0.95em;
+            margin-left: 8px;
+        }
+
+        /* Tricks & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .options-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tip-box {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+        }
+
+        .trick-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .box-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Math Block */
+        .math-block {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Market Structure (市場結構)</span>
+            <span class="badge">Sub-topic: Monopoly (壟斷)</span>
+            <span>Difficulty: <span class="stars">★★★☆☆</span></span>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.9rem; color: #64748b;">
+            <strong>Key Concepts:</strong> Price Searcher (覓價者), Natural Monopoly (自然壟斷), Substitutes (替代品)
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="q-intro">
+            下列哪些有關壟斷的陳述是正確的？<br>
+            <span style="font-weight: normal; color: #64748b;">Which of the following statements about monopoly are correct?</span>
+        </div>
+        
+        <div class="q-statement">
+            <span class="q-statement-num">(1)</span>
+            <span>壟斷者訂立市場價格。 / A monopolist sets the market price.</span>
+        </div>
+        <div class="q-statement">
+            <span class="q-statement-num">(2)</span>
+            <span>當沒有廠商可獲准進入該市場，便會出現自然壟斷。 / A natural monopoly arises when no firms are permitted to enter the market.</span>
+        </div>
+        <div class="q-statement">
+            <span class="q-statement-num">(3)</span>
+            <span>壟斷者所提供的產品是有替代品的。 / There are substitutes for the products provided by a monopolist.</span>
+        </div>
+
+        <ul class="options-list">
+            <li><strong>A.</strong> 只有(1)、(2) / (1) and (2) only</li>
+            <li><strong>B.</strong> 只有(1)、(3) / (1) and (3) only</li>
+            <li><strong>C.</strong> 只有(2)、(3) / (2) and (3) only</li>
+            <li><strong>D.</strong> (1)、(2)及(3) / (1), (2) and (3)</li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-section">
+        <h3 class="section-title">💡 Concept Review (概念重溫)</h3>
+        
+        <div class="zh">
+            <strong>1. 壟斷者的特徵 (Features of Monopoly):</strong><br>
+            壟斷者是市場上唯一的賣家。由於面對整條向下傾斜的市場需求曲線，壟斷者是<strong>覓價者 (Price Searcher)</strong>，可以決定價格或產量（但不能同時決定兩者）。
+        </div>
+        <div class="en">
+            <strong>1. Features of Monopoly:</strong><br>
+            A monopolist is the single seller in the market. Facing the entire downward-sloping market demand curve, a monopolist is a <strong>Price Searcher</strong> and can set either the price or the quantity (but not both simultaneously).
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #bfdbfe; margin: 15px 0;">
+
+        <div class="zh">
+            <strong>2. 自然壟斷 (Natural Monopoly):</strong><br>
+            這並非指「法律禁止進入」。自然壟斷發生在當單一廠商能夠以低於兩間或以上廠商的平均成本，供應整個市場的需求。這通常涉及龐大的固定成本，導致<strong>規模經濟 (Economies of Scale)</strong>。
+        </div>
+        <div class="math-block">
+            $$ \text{Long Run Average Cost (LRAC) is falling} $$
+        </div>
+        <div class="en">
+            <strong>2. Natural Monopoly:</strong><br>
+            This does NOT refer to "legal prohibition of entry." A natural monopoly occurs when a single firm can supply the entire market demand at a lower average cost than two or more firms could. This usually involves huge fixed costs, leading to significant <strong>Economies of Scale</strong>.
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h3 class="section-title">✅ Answer & Detailed Analysis (答案與詳細分析)</h3>
+        
+        <div style="background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <strong>Correct Option: B</strong> <span style="color: #64748b;">(Only 1 and 3)</span>
+        </div>
+
+        <!-- Statement 1 -->
+        <div class="analysis-item">
+            <div class="statement-header">
+                <span class="status-correct">Correct</span>
+                Statement (1): Price Setting
+            </div>
+            <div class="zh">
+                <strong>正確。</strong> 壟斷者面對向下傾斜的需求曲線。作為覓價者，它會根據邊際成本等於邊際收益 \( (MC = MR) \) 的原則來決定產量，並在需求曲線上訂立相應的市場價格。
+            </div>
+            <div class="en">
+                <strong>Correct.</strong> A monopolist faces a downward-sloping demand curve. As a price searcher, it determines output where Marginal Cost equals Marginal Revenue \( (MC = MR) \) and sets the corresponding market price along the demand curve.
+            </div>
+        </div>
+
+        <!-- Statement 2 -->
+        <div class="analysis-item">
+            <div class="statement-header">
+                <span class="status-wrong">Incorrect</span>
+                Statement (2): Natural Monopoly Definition
+            </div>
+            <div class="zh">
+                <strong>錯誤。</strong> 這是常見的陷阱。「沒有廠商獲准進入」是指<strong>人為/法律進入壁壘 (Artificial/Legal Barriers)</strong>，例如政府發牌（如專營權）。自然壟斷的成因是<strong>成本結構</strong>（平均成本隨產量增加而持續下降），而非法律限制。
+            </div>
+            <div class="en">
+                <strong>Incorrect.</strong> This is a common trap. "No firms permitted to enter" refers to <strong>Artificial/Legal Barriers</strong>, such as government licensing (franchises). A natural monopoly arises due to <strong>cost structure</strong> (Average Cost falls continuously as output increases), not merely legal restrictions.
+            </div>
+        </div>
+
+        <!-- Statement 3 -->
+        <div class="analysis-item">
+            <div class="statement-header">
+                <span class="status-correct">Correct</span>
+                Statement (3): Substitutes
+            </div>
+            <div class="zh">
+                <strong>正確。</strong> 雖然壟斷的定義是「沒有<strong>密切</strong>替代品 (No close substitutes)」，但這不代表「完全沒有替代品」。例如，港鐵可能有壟斷地位，但巴士、的士仍是其替代品（雖然可能不是完美的密切替代品）。如果完全沒有任何替代品，需求將會是完全無彈性，這在現實世界幾乎不存在。
+            </div>
+            <div class="en">
+                <strong>Correct.</strong> While the definition of monopoly involves "no <strong>close</strong> substitutes," this does not mean "absolutely no substitutes." For example, MTR may be a monopoly, but buses and taxis are still substitutes (even if not perfect/close ones). If there were absolutely no substitutes, demand would be perfectly inelastic, which rarely exists in reality.
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h3 class="section-title">🔍 Problem Decomposition (題目拆解)</h3>
+        <div class="zh">
+            <strong>解題關鍵 (Pivot Point)：</strong>
+            此題的決勝點在於分辨<strong>陳述 (2)</strong>。
+            <br>
+            只要你能識別出「獲准進入 (permitted to enter)」描述的是「政府專營權 (Government Franchise)」而非「自然壟斷 (Natural Monopoly)」，你就能排除選項 A、C 和 D。
+        </div>
+        <div class="en">
+            <strong>Pivot Point:</strong>
+            The crucial step is identifying the error in <strong>Statement (2)</strong>.
+            <br>
+            Once you recognize that "permitted to enter" describes a "Government Franchise" rather than a "Natural Monopoly," you can immediately eliminate Options A, C, and D.
+        </div>
+        
+        <div style="margin-top: 15px; padding: 10px; background: #f1f5f9; border-radius: 6px;">
+            <strong>Logic Flow (邏輯推演):</strong><br>
+            1. Statement (2) is False \( \rightarrow \) Eliminate A, C, D.<br>
+            2. Therefore, B must be the answer.<br>
+            3. This confirms that Statement (3) is considered correct in this context.
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <section style="margin-top: 30px;">
+        <div class="tips-grid">
+            <!-- Trap -->
+            <div class="tip-box trap-box">
+                <span class="box-title" style="color: #be123c;">⚠️ Common Trap (常犯錯誤)</span>
+                <div class="zh">
+                    學生常誤以為「壟斷 = 只有一家廠商 = 自然壟斷」。
+                    <br><strong>記住：</strong>只有當長期平均成本 (LRAC) 隨產量增加而持續下降，導致一家廠商生產比多兩家更有效率時，才是自然壟斷。
+                </div>
+                <div class="en">
+                    Students often confuse "Monopoly = One Firm = Natural Monopoly."
+                    <br><strong>Remember:</strong> It is only a Natural Monopoly if the Long Run Average Cost (LRAC) falls continuously, making it more efficient for one firm to produce than for two or more.
+                </div>
+            </div>
+
+            <!-- Trick -->
+            <div class="tip-box trick-box">
+                <span class="box-title" style="color: #15803d;">🚀 Exam Trick (考試技巧)</span>
+                <div class="zh">
+                    <strong>利用消去法 (Elimination Method)：</strong>
+                    在 DSE 選擇題中，如果你確定 (2) 是錯的，你根本不需要糾結 (3) 是否正確（因為 (3) 有時會引起爭議）。排除法是確保得分的最快途徑。
+                </div>
+                <div class="en">
+                    <strong>Use Elimination:</strong>
+                    In DSE MC questions, if you are certain (2) is false, you don't even need to debate whether (3) is strictly true (as (3) can sometimes be tricky). Elimination is the fastest way to secure the mark.
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

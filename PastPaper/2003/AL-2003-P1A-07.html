@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Indifference Curves Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #475569;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            color: white;
+            padding: 24px;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* Analysis Section */
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .correct-answer {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: var(--secondary);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Diagrams */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+
+        /* Math Block Styling */
+        .math-block {
+            overflow-x: auto;
+            padding: 10px;
+            background-color: #f8fafc;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>Topic: Consumer Theory (Indifference Curves)</h1>
+        <h1>課題：消費者理論（等優曲線）</h1>
+        <div class="meta-tags">
+            <span class="tag">Difficulty: ★★★★☆</span>
+            <span class="tag">Key Concept: Quasi-linear Preferences</span>
+            <span class="tag">Income Effect</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">The Question 題目</div>
+        <div class="question-box">
+            <p><strong>Condition / 條件:</strong></p>
+            <p>
+                假若兩件物品之間的等優曲線是垂直平行的（即是說，這些等優曲線沿任何一條垂直線都有相同的斜率），
+                <br>
+                <span class="en-text">If indifference curves are vertically parallel (i.e., they have the same slope along any vertical straight line) in a two-good example,</span>
+            </p>
+            
+            <div class="diagram-container">
+                <!-- SVG Recreation of the graph -->
+                <svg width="350" height="220" viewBox="0 0 350 220">
+                    <!-- Definitions for markers -->
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="black" />
+                        </marker>
+                    </defs>
+
+                    <!-- Axes -->
+                    <line x1="40" y1="200" x2="320" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                    <line x1="40" y1="200" x2="40" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                    
+                    <!-- Labels -->
+                    <text x="300" y="215" font-size="14" font-family="sans-serif">Good A (甲)</text>
+                    <text x="10" y="20" font-size="14" font-family="sans-serif">Good B (乙)</text>
+                    <text x="25" y="215" font-size="14" font-family="sans-serif">0</text>
+
+                    <!-- Indifference Curves (Convex to origin) -->
+                    <!-- U1 (Lowest) -->
+                    <path d="M 80 160 Q 80 190 200 190" stroke="black" fill="none" stroke-width="1.5" />
+                    <text x="210" y="190" font-size="12" font-family="sans-serif">U1</text>
+
+                    <!-- U2 (Shift Up by 30px) -->
+                    <path d="M 80 130 Q 80 160 200 160" stroke="black" fill="none" stroke-width="1.5" />
+                    <text x="210" y="160" font-size="12" font-family="sans-serif">U2</text>
+
+                    <!-- U3 (Shift Up by 30px) -->
+                    <path d="M 80 100 Q 80 130 200 130" stroke="black" fill="none" stroke-width="1.5" />
+                    <text x="210" y="130" font-size="12" font-family="sans-serif">U3</text>
+
+                    <!-- U4 (Shift Up by 30px) -->
+                    <path d="M 80 70 Q 80 100 200 100" stroke="black" fill="none" stroke-width="1.5" />
+                    <text x="210" y="100" font-size="12" font-family="sans-serif">U4</text>
+
+                    <!-- Vertical Dashed Line -->
+                    <line x1="120" y1="50" x2="120" y2="190" stroke="black" stroke-dasharray="4" stroke-width="1" />
+                </svg>
+            </div>
+
+            <ul class="options-list">
+                <li>
+                    <strong>A.</strong> 甲物品的需求曲線，在金錢收入維持不變時與在實質收入維持不變時，都是一樣的。
+                    <span class="en-text">The demand curve for Good A is the same whether we hold money income constant or real income constant.</span>
+                </li>
+                <li>
+                    <strong>B.</strong> 甲物品的收入效應為正數。
+                    <span class="en-text">The income effect of Good A is positive.</span>
+                </li>
+                <li>
+                    <strong>C.</strong> 甲物品為貧窮物品（又稱劣等物品）。
+                    <span class="en-text">Good A is an inferior good.</span>
+                </li>
+                <li>
+                    <strong>D.</strong> 以上均不正確。
+                    <span class="en-text">None of the above.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review 概念重溫</div>
+        <div class="concept-box">
+            <h3>1. 邊際替代率 (MRS) 與 斜率</h3>
+            <p>
+                等優曲線 (Indifference Curve, IC) 的斜率代表邊際替代率 (\(MRS_{AB}\))。題目指出 IC 是「垂直平行」的，這意味著對於任何固定的甲物品數量 \(x\)，無論乙物品數量 \(y\) 是多少，IC 的斜率都相同。
+                <br>
+                <span class="en-text">The slope of the Indifference Curve (IC) represents the Marginal Rate of Substitution (\(MRS_{AB}\)). "Vertically parallel" means that for any fixed quantity of Good A (\(x\)), the slope is constant regardless of the quantity of Good B (\(y\)).</span>
+            </p>
+
+            <h3>2. 均衡條件 (Equilibrium Condition)</h3>
+            <p>
+                消費者均衡發生在 IC 斜率等於預算線 (Budget Line) 斜率時：
+                $$ MRS_{AB} = \frac{P_A}{P_B} $$
+                <span class="en-text">Consumer equilibrium occurs where the slope of the IC equals the slope of the budget line.</span>
+            </p>
+
+            <h3>3. 收入效應 (Income Effect)</h3>
+            <p>
+                當相對價格不變（預算線斜率不變），但收入增加時，預算線會平行向外移動。如果新的均衡點保持在相同的 \(x\) 軸位置（甲物品數量不變），則甲物品的收入效應為零。
+                <br>
+                <span class="en-text">When relative prices are constant but income increases, the budget line shifts outward in parallel. If the new equilibrium stays at the same vertical x-coordinate (quantity of A unchanged), the Income Effect for Good A is zero.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis 答案與詳細分析</div>
+        
+        <div class="correct-answer">Correct Answer: Option A (正確答案：A)</div>
+
+        <div class="analysis-step">
+            <h4>Step 1: 理解幾何意義 (Understanding the Geometry)</h4>
+            <p>
+                題目指出「沿任何一條垂直線都有相同的斜率」。這意味著邊際替代率（MRS）只取決於甲物品的數量（X軸），而與乙物品的數量（Y軸）無關。
+                <br>
+                <span class="en-text">The question states "slope is the same along any vertical straight line". This implies that the MRS depends only on the quantity of Good A (X-axis), not Good B (Y-axis).</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 2: 分析收入變動的影響 (Analyzing Income Change)</h4>
+            <p>
+                假設收入增加，但價格不變。預算線會平行向外移動（斜率 \(P_A/P_B\) 保持不變）。
+                <br>
+                因為消費者會在 \(MRS = P_A/P_B\) 處最大化效用，而 \(MRS\) 只受甲物品數量影響，所以消費者會選擇相同的甲物品數量來維持 \(MRS\) 等於價格比率。
+                <br>
+                <strong>結論：收入改變，甲物品的需求量不變。即收入效應 = 0。</strong>
+                <br>
+                <span class="en-text">Suppose income increases with prices constant. The budget line shifts out parallel (slope \(P_A/P_B\) constant). Since the consumer maximizes utility where \(MRS = P_A/P_B\), and MRS only depends on the quantity of A, the consumer chooses the SAME quantity of A to keep MRS equal to the price ratio. Conclusion: Income changes, quantity of A stays constant. Income Effect = 0.</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 3: 檢視選項 (Evaluating Options)</h4>
+            
+            <p><strong>Option A (Correct):</strong></p>
+            <p>
+                斯盧茨基方程 (Slutsky Equation) 指出：總效應 = 替代效應 + 收入效應。
+                <br>
+                「金錢收入不變的需求曲線」是指普通需求曲線 (Marshallian Demand)，包含收入效應。
+                <br>
+                「實質收入不變的需求曲線」是指補償需求曲線 (Hicksian Demand)，只包含替代效應。
+                <br>
+                由於<strong>收入效應為零</strong>，總效應等於替代效應。因此，兩條需求曲線是重疊（一樣）的。
+                <br>
+                <span class="en-text">Slutsky Equation: Total Effect = Substitution Effect + Income Effect. "Money income constant" refers to Marshallian Demand (includes IE). "Real income constant" refers to Hicksian Demand (SE only). Since <strong>Income Effect is zero</strong>, Total Effect = Substitution Effect. Thus, the two demand curves are identical.</span>
+            </p>
+
+            <p><strong>Option B (Incorrect):</strong></p>
+            <p>
+                如上所述，收入效應是<strong>零</strong>，不是正數。
+                <br>
+                <span class="en-text">As derived, the income effect is <strong>zero</strong>, not positive.</span>
+            </p>
+
+            <p><strong>Option C (Incorrect):</strong></p>
+            <p>
+                貧窮物品（Inferior good）意味著收入效應是負數。這裡是零，這被稱為「收入中性物品」(Income neutral good)。
+                <br>
+                <span class="en-text">An inferior good implies a negative income effect. Here it is zero (Income neutral).</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition 題目拆解</div>
+        <p>
+            這類題目是關於<strong>準線性效用函數 (Quasi-linear Utility Function)</strong> 的圖形化表達。
+            <br>
+            <span class="en-text">This question is a graphical representation of a <strong>Quasi-linear Utility Function</strong>.</span>
+        </p>
+        <div class="math-block">
+            $$ U(A, B) = v(A) + B $$
+        </div>
+        <p>
+            <strong>關鍵點 (Pivot Point):</strong>
+            <br>
+            看到「垂直平行」(Vertically Parallel) \(\rightarrow\) 聯想到「X 軸物品的邊際替代率只與 X 有關」 \(\rightarrow\) 聯想到「收入效應為零」(Zero Income Effect)。
+            <br>
+            <span class="en-text">See "Vertically Parallel" \(\rightarrow\) Think "MRS depends only on X" \(\rightarrow\) Think "Zero Income Effect".</span>
+        </p>
+    </div>
+
+    <!-- 6. Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">Exam Tricks 考試技巧</div>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>
+                <strong>畫圖法 (Draw it out):</strong> 
+                <br>
+                試著在圖上畫一條平行向外移動的預算線（代表收入增加）。要在哪裡切到更高的等優曲線？因為垂直方向斜率一樣，切點必須在垂直上方。這直接告訴你 X 的數量沒變 \(\rightarrow\) 收入效應 = 0。
+                <br>
+                <span class="en-text">Draw a budget line shifting outward parallel (income increase). Where is the tangency? Since slopes are identical vertically, the tangency must be directly above. This tells you quantity of X is unchanged \(\rightarrow\) IE = 0.</span>
+            </li>
+            <li>
+                <strong>記憶口訣 (Memory Aid):</strong>
+                <br>
+                IC 垂直平行 \(\rightarrow\) X 的收入效應 = 0。
+                <br>
+                IC 水平平行 \(\rightarrow\) Y 的收入效應 = 0。
+                <br>
+                <span class="en-text">IC Vertically Parallel \(\rightarrow\) IE of X = 0. <br> IC Horizontally Parallel \(\rightarrow\) IE of Y = 0.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

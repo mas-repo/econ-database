@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Total Revenue & Elasticity Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .options-list li:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #eff6ff; /* Light Blue */
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .concept-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 1.5rem;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+        }
+
+        .correct {
+            background-color: var(--success-color);
+        }
+
+        .incorrect {
+            background-color: var(--danger-color);
+        }
+
+        .bilingual-text p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 10px;
+        }
+
+        /* Tips & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            background-color: #fffbeb; /* Light Yellow */
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .trap-card {
+            background-color: #fef2f2; /* Light Red */
+            border: 1px solid #fca5a5;
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Demand & Supply (需求與供應)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Total Revenue, Substitutes, Elasticity</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>題目 The Question</h2>
+        <div class="question-box">
+            <p><strong>下列哪項會引致活雞農場的總收入上升？</strong></p>
+            <p class="en-text" style="font-style: normal; color: var(--text-main);">Which of the following will result in a rise in the total revenue of chicken farms?</p>
+            
+            <ul class="options-list">
+                <li>
+                    <strong>A.</strong> 活雞飼料的價格下降。<br>
+                    <span class="en-text">The price of chicken feed falls.</span>
+                </li>
+                <li>
+                    <strong>B.</strong> 政府調低對活雞農場的利得稅率。<br>
+                    <span class="en-text">The government reduces the profits tax rate on chicken farms.</span>
+                </li>
+                <li>
+                    <strong>C.</strong> 出售活雞的有效配額有所提高。<br>
+                    <span class="en-text">The effective quota on the sale of chickens is increased.</span>
+                </li>
+                <li>
+                    <strong>D.</strong> 政府減少對豬肉生產商的補貼。<br>
+                    <span class="en-text">The government reduces the subsidy for the producers of pork.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>概念重溫 Concept Review</h2>
+        
+        <div class="concept-box">
+            <span class="concept-title">1. 總收入 (Total Revenue, TR)</span>
+            <p>總收入是價格 (P) 與交易量 (Q) 的乘積。</p>
+            <p class="en-text">Total Revenue is the product of Price (P) and Quantity Transacted (Q).</p>
+            <div class="math-block">
+                $$ TR = P \times Q $$
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <span class="concept-title">2. 需求彈性與總收入的關係 (Elasticity & TR)</span>
+            <p>當供應改變時，總收入的變化取決於<strong>需求價格彈性 (Ed)</strong>：</p>
+            <ul style="margin-top: 5px;">
+                <li>若需求屬<strong>低彈性 (Inelastic, \(E_d < 1\))</strong>：價格與總收入同方向變動 (P↓ → TR↓)。</li>
+                <li>若需求屬<strong>高彈性 (Elastic, \(E_d > 1\))</strong>：價格與總收入反方向變動 (P↓ → TR↑)。</li>
+            </ul>
+            <p class="en-text">When supply changes, the change in TR depends on Price Elasticity of Demand (Ed). If demand is inelastic, P and TR move in the same direction. If elastic, they move in opposite directions.</p>
+        </div>
+
+        <div class="concept-box">
+            <span class="concept-title">3. 替代品 (Substitutes)</span>
+            <p>若物品 X 與物品 Y 是替代品（如雞肉與豬肉）：</p>
+            <p>物品 Y 價格上升 \(\rightarrow\) 物品 X 的需求增加 \(\rightarrow\) 物品 X 的 P 上升及 Q 上升 \(\rightarrow\) TR 必定上升。</p>
+            <p class="en-text">If Good X and Good Y are substitutes: An increase in Price of Y leads to an increase in Demand for X, causing both P and Q of X to rise, thus TR must rise.</p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>答案與詳細分析 Answer & Analysis</h2>
+        
+        <div style="background-color: #dcfce7; color: #166534; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: bold; font-size: 1.2em;">
+            正確答案 Correct Option: D
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis">
+            <div><span class="option-label incorrect">A</span> <strong>活雞飼料的價格下降 (Price of chicken feed falls)</strong></div>
+            <div class="bilingual-text">
+                <p>飼料是生產要素。飼料價格下降會令生產成本下降，導致活雞的<strong>供應增加</strong>。供應曲線向右移會令價格 (P) 下降，交易量 (Q) 上升。由於題目沒有提供活雞的需求彈性 (Ed)，我們無法確定 P 下降的百分比是否大於 Q 上升的百分比，因此<strong>無法確定總收入是上升還是下降</strong>。</p>
+                <p class="en-text">Feed is a factor of production. A fall in feed price lowers production cost, increasing the <strong>supply</strong> of chickens. Supply curve shifts right, causing P to fall and Q to rise. Since the question does not specify the elasticity of demand (Ed), we cannot determine if the % drop in P outweighs the % rise in Q. Thus, the change in TR is uncertain.</p>
+            </div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis">
+            <div><span class="option-label incorrect">B</span> <strong>政府調低對活雞農場的利得稅率 (Reduces profits tax rate)</strong></div>
+            <div class="bilingual-text">
+                <p><strong>利得稅 (Profits Tax)</strong> 是針對「利潤」徵收的，並不會影響邊際生產成本 (Marginal Cost)。因此，利得稅的改變<strong>不會影響供應曲線或需求曲線</strong>的位置。價格 (P) 和數量 (Q) 維持不變，總收入 (TR) 亦不變。</p>
+                <p class="en-text"><strong>Profits Tax</strong> is levied on realized profits and does not affect Marginal Cost. Therefore, a change in profits tax <strong>does not shift the supply or demand curves</strong>. P and Q remain unchanged, so TR remains unchanged.</p>
+            </div>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis">
+            <div><span class="option-label incorrect">C</span> <strong>出售活雞的有效配額有所提高 (Effective quota is increased)</strong></div>
+            <div class="bilingual-text">
+                <p>配額 (Quota) 限制了供應量。提高有效配額意味著供應量增加（供應曲線向右移）。結果是價格 (P) 下降，數量 (Q) 上升。這與選項 A 的情況相同，由於不知道需求彈性，我們<strong>無法確定</strong>總收入的變化方向。</p>
+                <p class="en-text">A quota limits the quantity supplied. Increasing an effective quota means supply increases (supply curve shifts right). The result is P falls and Q rises. Similar to Option A, without knowing elasticity, the change in TR is <strong>uncertain</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis">
+            <div><span class="option-label correct">D</span> <strong>政府減少對豬肉生產商的補貼 (Reduces subsidy for pork producers)</strong></div>
+            <div class="bilingual-text">
+                <p>這是一個跨市場的影響。
+                <br>1. 減少對豬肉補貼 \(\rightarrow\) 豬肉生產成本上升 \(\rightarrow\) 豬肉供應減少 \(\rightarrow\) <strong>豬肉價格上升</strong>。
+                <br>2. 豬肉與活雞是<strong>替代品 (Substitutes)</strong>。
+                <br>3. 豬肉價格上升 \(\rightarrow\) 消費者轉而購買活雞 \(\rightarrow\) <strong>活雞的需求增加</strong> (需求曲線向右移)。
+                <br>4. 當需求增加時，活雞的價格 (P) 上升，交易量 (Q) 亦上升。
+                <br>5. 由於 \(TR = P \times Q\)，P 和 Q 同時上升，<strong>總收入必定上升</strong>。</p>
+                
+                <p class="en-text">This involves cross-market effects.
+                <br>1. Reducing pork subsidy \(\rightarrow\) Cost of pork production rises \(\rightarrow\) Pork supply decreases \(\rightarrow\) <strong>Price of pork rises</strong>.
+                <br>2. Pork and chicken are <strong>substitutes</strong>.
+                <br>3. Price of pork rises \(\rightarrow\) Consumers switch to chicken \(\rightarrow\) <strong>Demand for chicken increases</strong> (Demand curve shifts right).
+                <br>4. When demand increases, both Price (P) and Quantity (Q) of chicken rise.
+                <br>5. Since \(TR = P \times Q\), and both P and Q rise, <strong>Total Revenue must rise</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <div class="bilingual-text">
+            <p><strong>關鍵點 (Pivot Point)：供應改變 vs 需求改變</strong></p>
+            <p>這類題目的核心在於分辨事件是影響「供應」還是「需求」。</p>
+            <ul>
+                <li><strong>供應改變 (Supply Shift)：</strong> P 與 Q 反向變動 (例如 P↓ Q↑)。此時必須知道<strong>彈性 (Elasticity)</strong> 才能判斷 TR 的走勢。如果題目沒給彈性，這通常不是答案。</li>
+                <li><strong>需求改變 (Demand Shift)：</strong> P 與 Q 同向變動 (例如 P↑ Q↑)。此時<strong>不需要</strong>知道彈性，TR 必定與 P/Q 同方向變動。</li>
+            </ul>
+            <p class="en-text"><strong>Pivot Point: Supply Shift vs. Demand Shift</strong><br>
+            The core is to distinguish whether the event affects Supply or Demand.
+            <br>- <strong>Supply Shift:</strong> P and Q move in opposite directions. You MUST know <strong>Elasticity</strong> to determine TR. If elasticity isn't given, this is usually not the answer.
+            <br>- <strong>Demand Shift:</strong> P and Q move in the same direction. You <strong>DO NOT</strong> need elasticity; TR moves in the same direction as P/Q.</p>
+        </div>
+    </div>
+
+    <!-- 6. Mistakes & Tricks -->
+    <div class="section">
+        <h2>常犯錯誤與考試技巧 Mistakes & Tricks</h2>
+        <div class="tips-grid">
+            <div class="trap-card">
+                <div class="card-title">⚠️ 常犯錯誤 Common Mistakes</div>
+                <p><strong>混淆利得稅 (Profits Tax) 與從量稅 (Per-unit Tax)</strong></p>
+                <p>學生常誤以為所有稅項都會影響供應。只有影響邊際成本的稅（如從量稅）才會移動供應曲線。利得稅通常被視為固定成本或事後扣減，不影響 MC。</p>
+                <p class="en-text"><strong>Confusing Profits Tax with Per-unit Tax.</strong> Students often think all taxes affect supply. Only taxes affecting Marginal Cost (like per-unit tax) shift the supply curve. Profits tax is usually treated as not affecting MC.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="card-title">🚀 考試速解 Exam Shortcut</div>
+                <p><strong>找「需求移動」 (Look for Demand Shifts)</strong></p>
+                <p>當題目問「總收入上升」且<strong>未提及彈性</strong>時，答案極大機會是導致<strong>需求增加</strong>的選項。因為只有需求增加能保證 P 和 Q 都上升，從而令 TR 肯定上升。</p>
+                <p class="en-text"><strong>Look for Demand Shifts.</strong> When asked about a rise in TR and <strong>elasticity is not mentioned</strong>, the answer is highly likely the one causing an <strong>Increase in Demand</strong>. Only an increase in demand guarantees both P and Q rise, ensuring TR rises.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
