@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Market Intervention & Taxation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --box-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: #f0fdf4; /* Light Green tint */
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: #15803d;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .analysis-section {
+            margin-top: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-correct {
+            background-color: var(--success-bg);
+            border-color: #bbf7d0;
+            color: var(--success-text);
+        }
+
+        .option-wrong {
+            background-color: var(--error-bg);
+            border-color: #fecaca;
+            color: var(--error-text);
+        }
+
+        .pivot-point {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .diagram-note {
+            font-size: 0.9em;
+            color: #64748b;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div class="header-item">📚 Topic: Market Intervention (Taxation) & Efficiency<br><span class="en-text">課題：市場干預（徵稅）與效率</span></div>
+        <div class="header-item">⭐ Difficulty: ★★★☆☆</div>
+        <div class="header-item">🔑 Key Concepts: Tax Burden, Deadweight Loss, Perfectly Elastic Demand<br><span class="en-text">關鍵概念：稅項負擔、無謂損失、完全彈性需求</span></div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p class="bilingual-text">
+            下圖顯示某物品的供需曲線。假設政府對該物品的生產徵收一項從量稅。<br>
+            <span class="en-text">The following diagram shows the supply and demand curves of a good. Suppose the government imposes a per-unit tax on the production of the good.</span>
+        </p>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <!-- Simple SVG representation of the provided graph -->
+            <svg width="300" height="250" viewBox="0 0 300 250" style="border: 1px solid #ccc; background: white;">
+                <!-- Axes -->
+                <line x1="40" y1="220" x2="40" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                <line x1="40" y1="220" x2="280" y2="220" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                <text x="20" y="30" font-size="14">P</text>
+                <text x="270" y="240" font-size="14">Q</text>
+                <text x="25" y="235" font-size="14">0</text>
+
+                <!-- Demand Curve (Horizontal) -->
+                <line x1="40" y1="120" x2="260" y2="120" stroke="black" stroke-width="2" />
+                <text x="265" y="125" font-size="14">D</text>
+
+                <!-- Supply Curve S0 -->
+                <line x1="40" y1="220" x2="220" y2="80" stroke="black" stroke-width="2" />
+                <text x="225" y="80" font-size="14">S0</text>
+                
+                <!-- Supply Curve S1 -->
+                <line x1="40" y1="180" x2="200" y2="60" stroke="black" stroke-width="2" />
+                <text x="205" y="60" font-size="14">S1</text>
+
+                <!-- Points a, b, c -->
+                <text x="25" y="185" font-size="14">a</text> <!-- Intercept of S1 -->
+                <text x="95" y="115" font-size="14">b</text> <!-- Intersection S1/D -->
+                <text x="145" y="115" font-size="14">c</text> <!-- Intersection S0/D -->
+            </svg>
+            <p class="diagram-note">
+                注意：需求曲線 (D) 是水平的。<br>
+                <span class="en-text">Note: The Demand curve (D) is horizontal.</span>
+            </p>
+        </div>
+
+        <p class="bilingual-text">
+            下列哪些關於徵收上述從量稅的陳述是正確的？<br>
+            <span class="en-text">Which of the following statements about the imposition of the per-unit tax are correct?</span>
+        </p>
+        <ol>
+            <li>
+                消費者沒有任何稅項負擔。<br>
+                <span class="en-text">The consumers bear no tax burden.</span>
+            </li>
+            <li>
+                總社會盈餘的下降是面積 0abc。<br>
+                <span class="en-text">The decrease in total social surplus is area 0abc.</span>
+            </li>
+            <li>
+                徵收該稅項後出現效率損失。<br>
+                <span class="en-text">There is deadweight loss after the imposition of the tax.</span>
+            </li>
+        </ol>
+
+        <p>
+            A. 只有 (1)、(2) <span class="en-text">((1) and (2) only)</span><br>
+            B. 只有 (1)、(3) <span class="en-text">((1) and (3) only)</span><br>
+            C. 只有 (2)、(3) <span class="en-text">((2) and (3) only)</span><br>
+            D. (1)、(2) 及 (3) <span class="en-text">((1), (2) and (3))</span>
+        </p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <span class="concept-title">💡 Concept Review (概念重溫)</span>
+        
+        <p class="bilingual-text">
+            <strong>1. 稅項分擔 (Tax Incidence):</strong><br>
+            稅項負擔取決於需求彈性 (\(E_d\)) 與供應彈性 (\(E_s\)) 的相對大小。原則是「彈性較低者，負擔較重」。<br>
+            <span class="en-text"><strong>Tax Incidence:</strong> The burden of tax depends on the relative price elasticities of demand (\(E_d\)) and supply (\(E_s\)). The principle is "the side with lower elasticity bears a heavier burden."</span>
+        </p>
+        <ul>
+            <li>
+                若 \(E_d = \infty\) (完全彈性需求)，消費者對價格極度敏感，價格不能上升，否則需求量跌至零。因此，<strong>賣家承擔所有稅項</strong>。<br>
+                <span class="en-text">If \(E_d = \infty\) (perfectly elastic demand), consumers are extremely sensitive to price. Price cannot rise; otherwise, quantity demanded drops to zero. Thus, <strong>sellers bear the entire tax burden</strong>.</span>
+            </li>
+        </ul>
+
+        <p class="bilingual-text">
+            <strong>2. 總社會盈餘 (Total Social Surplus, TSS):</strong><br>
+            $$ TSS = \text{消費者盈餘 (CS)} + \text{生產者盈餘 (PS)} $$
+            徵稅後，部分盈餘轉移給政府成為稅收，部分消失成為無謂損失。<br>
+            <span class="en-text">After taxation, part of the surplus is transferred to the government as tax revenue, and part disappears as deadweight loss.</span>
+        </p>
+
+        <p class="bilingual-text">
+            <strong>3. 無謂損失 (Deadweight Loss, DWL):</strong><br>
+            這是由於市場扭曲（如徵稅）導致交易量低於效率水平而損失的社會福利。只要交易量減少（\(Q_1 < Q_0\)），通常就會出現無謂損失。<br>
+            <span class="en-text">This is the loss of social welfare due to market distortions (like taxes) causing the quantity traded to be below the efficient level. As long as quantity decreases (\(Q_1 < Q_0\)), deadweight loss usually occurs.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option-correct" style="text-align: center; font-size: 1.2em; font-weight: bold; margin-bottom: 20px;">
+            ✅ Correct Answer: B (Option 1 & 3 only)
+        </div>
+
+        <!-- Statement 1 Analysis -->
+        <div class="option-analysis option-correct">
+            <h3>陳述 (1)：消費者沒有任何稅項負擔 (正確)</h3>
+            <h3>Statement (1): The consumers bear no tax burden (Correct)</h3>
+            <p>
+                <strong>分析：</strong> 圖中的需求曲線 (D) 是水平線，代表<strong>完全彈性需求 (Perfectly Elastic Demand, \(E_d = \infty\))</strong>。這意味著市場價格由需求決定，賣家無法將任何稅項轉嫁給消費者。價格維持不變，消費者支付的價格沒有上升，所以消費者不承擔稅項負擔。<br>
+                <span class="en-text"><strong>Analysis:</strong> The demand curve (D) in the diagram is a horizontal line, representing <strong>Perfectly Elastic Demand (\(E_d = \infty\))</strong>. This means the market price is determined by demand, and sellers cannot pass any tax burden to consumers. The price remains unchanged, so consumers do not pay a higher price and thus bear no tax burden.</span>
+            </p>
+        </div>
+
+        <!-- Statement 2 Analysis -->
+        <div class="option-analysis option-wrong">
+            <h3>陳述 (2)：總社會盈餘的下降是面積 0abc (錯誤)</h3>
+            <h3>Statement (2): The decrease in total social surplus is area 0abc (Incorrect)</h3>
+            <p>
+                <strong>分析：</strong> 這是一個概念混淆的陷阱。面積 0abc 實際上代表的是<strong>生產者盈餘的減少 (Decrease in Producer Surplus)</strong>，而非總社會盈餘的減少。<br>
+                <ul>
+                    <li><strong>原本的生產者盈餘 (Original PS):</strong> 價格線以下、\(S_0\) 以上的面積 (即三角形 \(P\)-\(c\)-\(0\))。</li>
+                    <li><strong>新的生產者盈餘 (New PS):</strong> 價格線以下、\(S_1\) 以上的面積 (即三角形 \(P\)-\(b\)-\(a\))。</li>
+                    <li><strong>生產者盈餘的減少:</strong> 原本 PS 減去 新 PS = 面積 \(0abc\)。</li>
+                </ul>
+                然而，題目問的是<strong>總社會盈餘 (Total Social Surplus)</strong> 的下降（即無謂損失）。總社會盈餘的下降僅僅是三角形 <strong>abc</strong>。由於面積 \(0abc\) 包含了稅收收入（轉移給政府的部分）和無謂損失，所以它不等於總社會盈餘的淨損失。<br>
+                <br>
+                <span class="en-text"><strong>Analysis:</strong> This is a conceptual trap. Area 0abc actually represents the <strong>decrease in Producer Surplus</strong>, not the decrease in Total Social Surplus.<br>
+                <ul>
+                    <li><strong>Original Producer Surplus (PS):</strong> The area below the Price line and above \(S_0\) (Triangle \(P\)-\(c\)-\(0\)).</li>
+                    <li><strong>New Producer Surplus (PS):</strong> The area below the Price line and above \(S_1\) (Triangle \(P\)-\(b\)-\(a\)).</li>
+                    <li><strong>Decrease in PS:</strong> Original PS minus New PS = Area \(0abc\).</li>
+                </ul>
+                However, the question asks for the decrease in <strong>Total Social Surplus</strong> (which is the Deadweight Loss). The decrease in Total Social Surplus is specifically the triangle <strong>abc</strong>. Since area \(0abc\) includes both the tax revenue (transferred to government) and the deadweight loss, it is incorrect to say it represents the loss in social surplus.</span>
+            </p>
+        </div>
+
+        <!-- Statement 3 Analysis -->
+        <div class="option-analysis option-correct">
+            <h3>陳述 (3)：徵收該稅項後出現效率損失 (正確)</h3>
+            <h3>Statement (3): There is deadweight loss after the imposition of the tax (Correct)</h3>
+            <p>
+                <strong>分析：</strong> 徵稅導致供應曲線由 \(S_0\) 向左移至 \(S_1\)。均衡數量由 c 點對應的數量減少至 b 點對應的數量。由於交易數量低於效率水平（邊際利益 > 邊際成本），市場出現了<strong>無謂損失 (Deadweight Loss)</strong>。這部分損失由三角形 abc 表示。<br>
+                <span class="en-text"><strong>Analysis:</strong> The tax shifts the supply curve from \(S_0\) to \(S_1\). The equilibrium quantity decreases from point c to point b. Since the quantity traded is below the efficient level (Marginal Benefit > Marginal Cost), <strong>Deadweight Loss</strong> occurs. This efficiency loss is represented by the triangle abc.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="pivot-point">
+    <h3>🔍 Problem Decomposition (題目拆解)</h3>
+    <ul>
+        <li><strong>圖表類型 (Chart Type):</strong> 供需模型 (Supply and Demand Model)。
+            <ul>
+                <li><strong>D (需求曲線):</strong> 水平線 (Horizontal)，代表完全彈性需求 (Perfectly Elastic Demand)。這意味著消費者對價格極度敏感，價格固定在 \(P\)。</li>
+                <li><strong>S (供給曲線):</strong> 從 \(S_0\) 向左上移動到 \(S_1\)，反映從量稅 (Per-unit Tax) 的徵收。</li>
+            </ul>
+        </li>
+        <li><strong>關鍵點與區域 (Key Points & Areas):</strong>
+            <ul>
+                <li><strong>均衡點 (Equilibrium):</strong> 由點 \(c\) 移動到點 \(b\)。</li>
+                <li><strong>數量 (Quantity):</strong> 交易量由 \(c\) 對應的數量減少至 \(b\) 對應的數量。</li>
+                <li><strong>面積 abc:</strong> 這是<strong>無謂損失 (Deadweight Loss)</strong>，也就是總社會盈餘的下降 (Decrease in Total Social Surplus)。這是由於交易量低於效率水平造成的。</li>
+                <li><strong>面積 0abc:</strong> 這是<strong>生產者盈餘的減少 (Decrease in Producer Surplus)</strong>。它包含了轉移給政府的稅收收入（矩形部分）以及無謂損失（三角形部分），因此不等於總社會盈餘的淨損失。</li>
+            </ul>
+        </li>
+        <li><strong>關鍵破題點 (The Pivot Point):</strong>
+            <ul>
+                <li>看到<strong>水平需求曲線</strong>，立即鎖定：<strong>消費者不付稅 (Consumer Burden = 0)</strong> 且 <strong>價格不變</strong>。</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="en-text">
+        <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+        <ul>
+            <li><strong>Chart Type:</strong> Supply and Demand Model.
+                <ul>
+                    <li><strong>D (Demand Curve):</strong> Horizontal line, representing Perfectly Elastic Demand. This implies consumers are infinitely sensitive to price, and price is fixed at \(P\).</li>
+                    <li><strong>S (Supply Curve):</strong> Shifts from \(S_0\) to \(S_1\), reflecting the imposition of a per-unit tax.</li>
+                </ul>
+            </li>
+            <li><strong>Key Points & Areas:</strong>
+                <ul>
+                    <li><strong>Equilibrium:</strong> Moves from point \(c\) to point \(b\).</li>
+                    <li><strong>Quantity:</strong> The quantity traded decreases.</li>
+                    <li><strong>Area abc:</strong> This is the <strong>Deadweight Loss</strong>, which equals the Decrease in Total Social Surplus. It occurs because the quantity traded is below the efficient level.</li>
+                    <li><strong>Area 0abc:</strong> This is the <strong>Decrease in Producer Surplus</strong>. It includes the tax revenue transferred to the government (the rectangular part) and the deadweight loss (the triangular part), so it is NOT the net loss to society.</li>
+                </ul>
+            </li>
+            <li><strong>The Pivot Point:</strong>
+                <ul>
+                    <li>Seeing a <strong>Horizontal Demand Curve</strong> immediately implies: <strong>Consumers bear no tax burden</strong> and <strong>Price remains unchanged</strong>.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- 6. Exam Tricks -->
+    <div class="concept-box" style="background-color: #fff7ed; border-left-color: #f97316;">
+        <span class="concept-title" style="color: #c2410c;">⚡ Exam Tricks (考試技巧)</span>
+        <p class="bilingual-text">
+            <strong>「誰線平，誰不付；誰線直，誰全付」</strong><br>
+            這是一個關於彈性的口訣。<br>
+            - 線越平 (彈性大) -> 越有能力逃避加價 -> 稅負越少。<br>
+            - 線越直 (彈性小) -> 越依賴該產品 -> 稅負越重。<br>
+            此題 D 線完全平 (水平)，所以消費者稅負為 0。<br>
+            <span class="en-text"><strong>"Flat line pays nothing; Vertical line pays all"</strong><br>
+            - Flatter curve (High Elasticity) -> Can easily switch/quit -> Low tax burden.<br>
+            - Steeper curve (Low Elasticity) -> Dependent on good -> High tax burden.<br>
+            Here, D is perfectly flat, so consumer burden is 0.</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
