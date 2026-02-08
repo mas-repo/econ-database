@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balance of Payments Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #10b981; /* Emerald Green */
+            --wrong-color: #ef4444; /* Red */
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dbeafe;
+        }
+
+        .meta-item {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .question-box {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .formula-box {
+            background-color: #f1f5f9;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        .pivot-point {
+            background-color: #fdf4ff;
+            border: 1px dashed #d946ef;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .lang-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">📚 Topic: International Trade & Finance (國際貿易與金融)</div>
+            <div class="meta-item">⭐ Difficulty: ★★★☆☆ (Level 3)</div>
+            <div class="meta-item">🔑 Key Concepts: Current Account (經常帳), Service Import/Export (服務輸出/輸入), Capital Account (資本帳)</div>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>下列哪項包括在香港經常帳差額的計算之內？</strong></p>
+            <p>A. 一位內地投資者在香港購買一間房屋。<br>
+               B. 一位香港投資者購買一家內地上市公司發行的股票。<br>
+               C. 一位內地居民從一家內地航空公司購買前往香港的機票。<br>
+               D. 一位香港居民從一家內地保險公司購買人壽保險。</p>
+            
+            <hr style="border-top: 1px dashed #ccc; margin: 15px 0;">
+
+            <p><strong>Which of the following is included in the calculation of the balance of Hong Kong's current account?</strong></p>
+            <p>A. A mainland investor purchases a house in Hong Kong.<br>
+               B. A Hong Kong investor buys shares issued by a mainland listed company.<br>
+               C. A mainland resident buys an air ticket to Hong Kong from a mainland airline.<br>
+               D. A Hong Kong resident buys a life insurance policy from a mainland insurance company.</p>
+        </div>
+    </section>
+
+    <!-- Concept Review Section -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>要解答此題，必須清楚區分<strong>國際收支平衡表 (Balance of Payments)</strong> 中的兩個主要組成部分：</p>
+            <span class="lang-en">To solve this, you must distinguish between the two main components of the Balance of Payments:</span>
+
+            <h3>1. 經常帳 (Current Account)</h3>
+            <p>反映一個經濟體與世界其他地方的實質資源流動。主要包括：</p>
+            <ul>
+                <li><strong>貨物 (Goods):</strong> 有形商品的進出口。</li>
+                <li><strong>服務 (Services):</strong> 無形服務的進出口 (例如：旅遊、運輸、保險、金融服務)。</li>
+                <li><strong>初次收入 (Primary Income):</strong> 投資收益 (如股息、利息) 及僱員報酬。</li>
+                <li><strong>二次收入 (Secondary Income):</strong> 單向轉移 (如匯款、捐贈)。</li>
+            </ul>
+
+            <h3>2. 資本及金融帳 (Capital and Financial Account)</h3>
+            <p>反映資產擁有權的變動 (即資金流動)。主要包括：</p>
+            <ul>
+                <li><strong>直接投資 / 證券投資:</strong> 購買股票、債券、房地產等資產。</li>
+            </ul>
+
+            <div class="formula-box">
+                \[ \text{Current Account Balance} = (\text{Exports} - \text{Imports})_{\text{Goods}} + (\text{Exports} - \text{Imports})_{\text{Services}} + \text{Net Income} + \text{Net Transfers} \]
+            </div>
+        </div>
+    </section>
+
+    <!-- Answer & Analysis Section -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; font-weight: bold; color: var(--correct-color);">Correct Option: D</span>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option A</span> <strong>一位內地投資者在香港購買一間房屋。</strong>
+            <p><strong>分析：</strong>購買房屋屬於購買<strong>資產 (Asset)</strong>。資產擁有權由香港轉移至內地投資者，這涉及資金流入，屬於<strong>金融帳 (Financial Account)</strong> 中的直接投資或證券投資，而非經常帳。</p>
+            <span class="lang-en"><strong>Analysis:</strong> Purchasing a house is purchasing an <strong>asset</strong>. The ownership of the asset transfers from HK to the mainland investor. This involves capital inflow and belongs to the <strong>Financial Account</strong> (Direct Investment), not the Current Account.</span>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option B</span> <strong>一位香港投資者購買一家內地上市公司發行的股票。</strong>
+            <p><strong>分析：</strong>購買股票同樣屬於購買<strong>金融資產 (Financial Asset)</strong>。這屬於資金流出，記錄在<strong>金融帳 (Financial Account)</strong> 的證券投資項目下。</p>
+            <p><em>注意：如果是收到股票派發的「股息」，才屬於經常帳中的「初次收入」。</em></p>
+            <span class="lang-en"><strong>Analysis:</strong> Buying shares is buying <strong>financial assets</strong>. This is a capital outflow recorded under Portfolio Investment in the <strong>Financial Account</strong>. <br><em>Note: Only the "dividends" received from shares would be under "Primary Income" in the Current Account.</em></span>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option C</span> <strong>一位內地居民從一家內地航空公司購買前往香港的機票。</strong>
+            <p><strong>分析：</strong>這是內地居民與內地公司之間的交易。雖然目的地是香港，但交易雙方均非香港居民/機構，因此<strong>不涉及香港的國際收支平衡表</strong>。</p>
+            <span class="lang-en"><strong>Analysis:</strong> This is a transaction between a mainland resident and a mainland company. Although the destination is HK, both parties are non-HK residents/entities. Therefore, it is <strong>not recorded in Hong Kong's Balance of Payments</strong> at all.</span>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis correct">
+            <span class="badge badge-correct">Option D</span> <strong>一位香港居民從一家內地保險公司購買人壽保險。</strong>
+            <p><strong>分析：</strong>保險是一種<strong>服務 (Service)</strong>。香港居民向非本地（內地）機構購買服務，屬於<strong>服務輸入 (Service Import)</strong>。服務輸入是經常帳的減項，因此包括在經常帳差額計算內。</p>
+            <span class="lang-en"><strong>Analysis:</strong> Insurance is a <strong>service</strong>. A HK resident purchasing a service from a non-resident (mainland) company constitutes <strong>Service Import</strong>. Service imports are a debit item in the Current Account, so this is included.</span>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="pivot-point">
+            <h3>🎯 破題關鍵 (The Pivot Point)</h3>
+            <p>面對這類題目，請使用「二步過濾法」：</p>
+            <ol>
+                <li><strong>是「資產」還是「產品/服務」？</strong>
+                    <ul>
+                        <li>資產 (樓、股票、債券) \(\rightarrow\) 金融帳 (剔除 A, B)。</li>
+                        <li>產品/服務/收入 \(\rightarrow\) 經常帳 (保留)。</li>
+                    </ul>
+                </li>
+                <li><strong>是否涉及「本地居民」與「非本地居民」的交易？</strong>
+                    <ul>
+                        <li>C 選項是「內地人」對「內地公司」，與香港無關 (剔除 C)。</li>
+                        <li>D 選項是「香港人」對「內地公司」，符合定義。</li>
+                    </ul>
+                </li>
+            </ol>
+            <span class="lang-en">Use the "Two-Step Filter":
+            <br>1. <strong>Is it "Asset" or "Product/Service"?</strong> Assets (House, Stocks) go to Financial Account (Eliminate A, B). Products/Services go to Current Account.
+            <br>2. <strong>Is it a transaction between "Resident" and "Non-resident"?</strong> Option C is Mainland vs Mainland (Eliminate C). Option D is HK vs Mainland (Keep D).</span>
+        </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>混淆「投資本金」與「投資回報」：</strong>
+                <p>學生常誤以為買股票 (B) 是經常帳。記住：買股票本身是交換資產擁有權 (金融帳)；股票賺到的<strong>股息 (Dividends)</strong> 才是經常帳 (初次收入)。</p>
+                <span class="lang-en"><strong>Confusing "Investment Principal" with "Investment Return":</strong> Buying the stock itself is Financial Account. The <strong>dividends</strong> earned from the stock are Current Account (Primary Income).</span>
+            </li>
+            <li>
+                <strong>忽略交易對象的身分：</strong>
+                <p>如選項 C，學生看到「前往香港」就以為與香港有關。必須檢查付錢的人和收錢的人是否分屬不同經濟體。</p>
+                <span class="lang-en"><strong>Ignoring the identity of transacting parties:</strong> In Option C, seeing "to Hong Kong" is a trap. You must check if the payer and payee belong to different economies.</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

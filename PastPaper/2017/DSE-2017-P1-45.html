@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Linked Exchange Rate System</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-box {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed var(--concept-border);
+        }
+
+        /* Analysis Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success-text);
+            background-color: var(--success-bg);
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 25px;
+        }
+
+        .status-wrong {
+            color: var(--error-text);
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .status-correct {
+            color: var(--success-text);
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 4px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Tips & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .trap-card {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Banking / LERS</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Pegged Rate, Imported Inflation</span>
+        </div>
+    </header>
+
+    <!-- 1. The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p class="zh">在香港聯繫匯率制度之下，下列哪項陳述是正確的？</p>
+            <p class="en">Under the linked exchange rate system of Hong Kong, which of the following statements is correct?</p>
+            
+            <ul class="options-list">
+                <li>
+                    <span class="zh">A. 非銀行公眾可以在任何時間將所持有的港幣賣給香港金融管理局以換取美元。</span>
+                    <span class="en">A. The non-bank public can sell their Hong Kong dollar to the Hong Kong Monetary Authority in exchange for US Dollars at any time.</span>
+                </li>
+                <li>
+                    <span class="zh">B. 它讓香港金融管理局可以實施擴張性貨幣政策以刺激私人投資。</span>
+                    <span class="en">B. It enables the Hong Kong Monetary Authority to carry out an expansionary monetary policy to stimulate private investment.</span>
+                </li>
+                <li>
+                    <span class="zh">C. 美元兌港元的市場匯率是固定於1美元 = 7.8港元。</span>
+                    <span class="en">C. The market exchange rate of the US Dollar against HK Dollar is fixed at US$1 = HK$7.8.</span>
+                </li>
+                <li>
+                    <span class="zh">D. 人民幣兌美元持續貶值，會對本港消費物價指數構成向下壓力。</span>
+                    <span class="en">D. There would be a downward pressure on the consumer price indices of Hong Kong when the Renminbi continuously depreciates against the US Dollar.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <div class="concept-box">
+            <span class="zh"><strong>1. 聯繫匯率制度 (Linked Exchange Rate System):</strong></span><br>
+            <span class="en">The HKD is pegged to the USD at a rate of 7.80. This is a Currency Board System.</span>
+            <p class="zh">香港實行貨幣發行局制度。發鈔銀行在發行港幣現鈔時，必須按 7.80 港元兌 1 美元的匯率向金管局提交等值美元。</p>
+            <p class="en">Hong Kong operates a Currency Board system. Note-issuing banks must submit US dollars to the HKMA at the rate of HK$7.80 to US$1 for the issue of HK dollar banknotes.</p>
+        </div>
+
+        <div class="concept-box">
+            <span class="zh"><strong>2. 貨幣政策的自主權 (Monetary Policy Autonomy):</strong></span><br>
+            <span class="en">Under the peg, HK loses independent monetary policy.</span>
+            <div class="formula-box">
+                $$ i_{HK} \approx i_{US} $$
+            </div>
+            <p class="zh">由於資金自由流動，香港的利率必須跟隨美國利率，否則會出現套戥 (Arbitrage) 活動。金管局不能獨立控制貨幣供應來調控經濟。</p>
+            <p class="en">Due to free capital flow, HK's interest rates must follow US rates to prevent arbitrage. The HKMA cannot independently control money supply to fine-tune the economy.</p>
+        </div>
+
+        <div class="concept-box">
+            <span class="zh"><strong>3. 匯率與通脹 (Exchange Rate & Inflation):</strong></span><br>
+            <span class="en">Exchange rate movements affect import prices.</span>
+            <p class="zh">若港元隨美元升值（相對於其他貨幣），進口貨品價格（以港元計算）會下降，導致輸入性通縮壓力。</p>
+            <p class="en">If HKD appreciates (following USD) against other currencies, import prices (in HKD) fall, leading to downward pressure on inflation (imported deflation).</p>
+        </div>
+    </div>
+
+    <!-- 3. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: D</div>
+
+        <div class="option-analysis">
+            <span class="option-label">A</span> <span class="status-wrong">[Incorrect / 錯誤]</span>
+            <p class="zh"><strong>分析：</strong> 只有<strong>發鈔銀行</strong>（如匯豐、渣打、中銀）可以直接按 7.80 的匯率與金管局進行美元兌換（這稱為「兌換保證」）。公眾只能在市場上與銀行或找換店交易，匯率由市場供求決定。</p>
+            <p class="en"><strong>Analysis:</strong> Only the <strong>three note-issuing banks</strong> can trade HKD for USD with the HKMA at the fixed 7.80 rate (Convertibility Undertaking). The public trades in the open market where rates fluctuate based on supply and demand.</p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">B</span> <span class="status-wrong">[Incorrect / 錯誤]</span>
+            <p class="zh"><strong>分析：</strong> 這是聯繫匯率制度的主要代價。香港<strong>失去了</strong>獨立的貨幣政策。金管局不能隨意增加貨幣供應或降低利率來刺激經濟，因為利率必須跟隨美國。</p>
+            <p class="en"><strong>Analysis:</strong> This is the main cost of the LERS. Hong Kong <strong>loses</strong> independent monetary policy. The HKMA cannot arbitrarily increase money supply or lower interest rates to stimulate the economy, as interest rates must track the US.</p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">C</span> <span class="status-wrong">[Incorrect / 錯誤]</span>
+            <p class="zh"><strong>分析：</strong> 「官方掛鉤匯率」是 7.80，但<strong>「市場匯率」</strong>是會波動的。金管局設有強方兌換保證（7.75）和弱方兌換保證（7.85），市場匯率會在此區間內浮動。</p>
+            <p class="en"><strong>Analysis:</strong> The "official peg" is 7.80, but the <strong>"market exchange rate"</strong> fluctuates. The HKMA maintains a trading band between 7.75 (strong-side) and 7.85 (weak-side), within which the market rate moves.</p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">D</span> <span class="status-correct">[Correct / 正確]</span>
+            <p class="zh"><strong>分析：</strong> 邏輯鏈如下：
+                <br>1. 港元與美元掛鉤 \( (HKD \approx USD) \)。
+                <br>2. 人民幣(RMB) 兌 美元(USD) 貶值 \( (\downarrow) \)。
+                <br>3. 因此，人民幣 兌 港元 也貶值（即港元兌人民幣升值）。
+                <br>4. 香港從中國內地進口大量商品。
+                <br>5. 人民幣貶值令中國貨品變得更便宜（以港元計價）。
+                <br>6. 進口價格下降，導致消費物價指數 (CPI) 出現向下壓力。</p>
+            <p class="en"><strong>Analysis:</strong> The logic chain is:
+                <br>1. HKD is pegged to USD \( (HKD \approx USD) \).
+                <br>2. RMB depreciates against USD \( (\downarrow) \).
+                <br>3. Therefore, RMB depreciates against HKD (HKD appreciates against RMB).
+                <br>4. HK imports heavily from Mainland China.
+                <br>5. Weaker RMB makes Chinese goods cheaper in HKD terms.
+                <br>6. Lower import prices put downward pressure on the Consumer Price Index (CPI).</p>
+        </div>
+    </div>
+
+    <!-- 4. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p class="zh">這類題目的關鍵在於分辨<strong>「制度規則」</strong>與<strong>「經濟後果」</strong>。</p>
+        <p class="en">The key to this question is distinguishing between <strong>"System Rules"</strong> and <strong>"Economic Consequences"</strong>.</p>
+        
+        <ul style="padding-left: 20px;">
+            <li>
+                <strong>Pivot Point (關鍵點):</strong> 第三方貨幣（人民幣）的變動如何通過掛鉤制度影響本地經濟。
+                <br><span style="color: var(--text-gray); font-size: 0.9em;">Pivot Point: How third-party currency (RMB) movements affect the local economy via the peg.</span>
+            </li>
+            <li>
+                <strong>Distractors (干擾項):</strong> 選項 A 和 C 測試你對制度細節的準確度（誰可以兌換？市場匯率是否絕對固定？）。選項 B 測試你對「不可能的三位一體」(Impossible Trinity) 的理解。
+                <br><span style="color: var(--text-gray); font-size: 0.9em;">Distractors: Options A and C test precision regarding system details (Who can convert? Is market rate absolutely fixed?). Option B tests understanding of the "Impossible Trinity".</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 5. Common Mistakes & Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">Common Mistakes & Exam Tricks (常犯錯誤與考試技巧)</div>
+        
+        <div class="tips-grid">
+            <div class="trap-card">
+                <span class="card-title" style="color: var(--error-text);">⚠️ Common Trap (常犯錯誤)</span>
+                <p class="zh">學生常誤以為「聯繫匯率」等於「所有匯率固定」。其實港元只對美元固定，對其他貨幣（如日圓、歐元、人民幣）是<strong>浮動</strong>的。</p>
+                <p class="en">Students often mistake "Linked Rate" for "Fixed Rate against everything". HKD is only fixed against USD; it <strong>floats</strong> against other currencies (JPY, EUR, RMB).</p>
+            </div>
+
+            <div class="tip-card">
+                <span class="card-title" style="color: #b45309;">💡 Exam Trick (考試技巧)</span>
+                <p class="zh"><strong>三角關係法：</strong> 當題目涉及三種貨幣（HKD, USD, RMB），先把 HKD 視為 USD。
+                <br>題目說 "RMB 兌 USD 跌"，你就直接讀成 "RMB 兌 HKD 跌"。這樣能快速判斷進口價格變動。</p>
+                <p class="en"><strong>Triangle Method:</strong> When 3 currencies are involved (HKD, USD, RMB), treat HKD as USD.
+                <br>If the question says "RMB falls vs USD", read it as "RMB falls vs HKD". This quickly reveals import price trends.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

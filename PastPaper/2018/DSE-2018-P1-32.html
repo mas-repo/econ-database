@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money & Banking Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue-600 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --bg-color: #f8fafc; /* Slate-50 */
+            --card-bg: #ffffff;
+            --accent-light: #eff6ff; /* Blue-50 */
+            --accent-border: #bfdbfe; /* Blue-200 */
+            --text-main: #1e293b; /* Slate-800 */
+            --text-muted: #64748b; /* Slate-500 */
+            --success: #16a34a; /* Green-600 */
+            --error: #dc2626; /* Red-600 */
+            --warning: #d97706; /* Amber-600 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--text-muted);
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .formula-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px dashed var(--accent-border);
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .step-header {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .correct-answer {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .option-analysis {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .status-wrong { color: var(--error); font-weight: bold; }
+        .status-correct { color: var(--success); font-weight: bold; }
+
+        /* Decomposition & Tricks */
+        .highlight-box {
+            background-color: #fff7ed; /* Orange-50 */
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .bilingual-text p {
+            margin-bottom: 6px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .meta-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            header h1 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics / DSE 經濟</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Banking (貨幣與銀行)</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key Concepts: Money Supply, Reserves, Multiplier</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <p><strong>參考有關某經濟的以下資料：</strong></p>
+                <p>貨幣供應 $35 000<br>實際儲備比率 25%<br>超額儲備 $1 150</p>
+                <p>假設公眾總是持有現金$12 000。若所有銀行借出其超額儲備，而所有貸款均再存入銀行系統，則</p>
+                
+                <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+
+                <p class="en-text" style="color: var(--text-main);"><strong>Refer to the following information about an economy.</strong></p>
+                <p class="en-text" style="color: var(--text-main);">Money supply $35 000<br>Actual reserve ratio 25%<br>Excess reserves $1 150</p>
+                <p class="en-text" style="color: var(--text-main);">Suppose the public always holds $12 000 cash. If all banks loan out their excess reserves and all the loans are re-deposited into the banking system,</p>
+            </div>
+
+            <ul class="options-list">
+                <li>A. 貨幣供應的最大可能金額會是$28 750。<br><span class="en-text">the maximum possible amount of money supply will be $28 750.</span></li>
+                <li>B. 該經濟的貨幣基礎會是$16 600。<br><span class="en-text">the monetary base of the economy will be $16 600.</span></li>
+                <li>C. 貸款的最大可能金額會是$23 000。<br><span class="en-text">the maximum possible amount of loans will be $23 000.</span></li>
+                <li>D. 最大銀行乘數會是4。<br><span class="en-text">the maximum banking multiplier will be 4.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p><strong>1. 貨幣供應定義 (Money Supply Definitions):</strong></p>
+            <div class="formula-block">
+                $$M_s = C_p + D$$
+            </div>
+            <p class="en-text">Where \(M_s\) is Money Supply, \(C_p\) is Cash held by public, and \(D\) is Deposits.</p>
+
+            <p><strong>2. 儲備與比率 (Reserves & Ratios):</strong></p>
+            <div class="formula-block">
+                $$R_a = RR + ER$$
+            </div>
+            <div class="formula-block">
+                $$r_a = \frac{R_a}{D} \quad , \quad r_r = \frac{RR}{D}$$
+            </div>
+            <p class="en-text">\(R_a\): Actual Reserves, \(RR\): Required Reserves, \(ER\): Excess Reserves.<br>\(r_a\): Actual Reserve Ratio, \(r_r\): Required Reserve Ratio.</p>
+
+            <p><strong>3. 最大存款創造 (Maximum Deposit Creation):</strong></p>
+            <p>當銀行借出所有超額儲備時，實際儲備比率會下降至法定儲備比率 (\(r_a \rightarrow r_r\))。</p>
+            <p class="en-text">When banks lend out all excess reserves, the actual reserve ratio drops to the required reserve ratio.</p>
+            <div class="formula-block">
+                $$D_{max} = \frac{R}{r_r}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: C</div>
+
+        <div class="analysis-step">
+            <div class="step-header">Step 1: Calculate Initial Situation (計算初始狀態)</div>
+            <p>首先，我們需要找出初始的存款額 (\(D\)) 和法定儲備比率 (\(r_r\))。</p>
+            <p class="en-text">First, we need to find the initial Deposits (\(D\)) and the Required Reserve Ratio (\(r_r\)).</p>
+            
+            <div class="formula-block">
+                $$M_s = C_p + D \Rightarrow 35,000 = 12,000 + D$$
+                $$\therefore D = 23,000$$
+            </div>
+
+            <p>接著計算實際儲備 (\(R_a\))：</p>
+            <p class="en-text">Next, calculate Actual Reserves (\(R_a\)):</p>
+            <div class="formula-block">
+                $$R_a = D \times r_a = 23,000 \times 25\% = 5,750$$
+            </div>
+
+            <p>找出法定儲備 (\(RR\)) 與法定儲備比率 (\(r_r\))：</p>
+            <p class="en-text">Find Required Reserves (\(RR\)) and Required Reserve Ratio (\(r_r\)):</p>
+            <div class="formula-block">
+                $$R_a = RR + ER \Rightarrow 5,750 = RR + 1,150$$
+                $$\therefore RR = 4,600$$
+                $$r_r = \frac{RR}{D} = \frac{4,600}{23,000} = 0.2 \text{ (or 20\%)}$$
+            </div>
+            <p><strong>關鍵發現：</strong>銀行系統擴張的極限是由 <strong>20%</strong> 的法定比率決定的，而不是 25%。</p>
+            <p class="en-text"><strong>Key Finding:</strong> The limit of banking expansion is determined by the <strong>20%</strong> required ratio, not 25%.</p>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-header">Step 2: Analyze Each Option (分析各選項)</div>
+            
+            <div class="option-analysis">
+                <p><span class="option-label">Option A:</span> <span class="status-wrong">WRONG</span></p>
+                <p>最大存款 (\(D_{max}\)) = \(\frac{R}{r_r} = \frac{5,750}{0.2} = 28,750\)。<br>
+                最大貨幣供應 (\(M_{max}\)) = \(C_p + D_{max} = 12,000 + 28,750 = 40,750\)。<br>
+                選項 A 混淆了存款與貨幣供應。</p>
+                <p class="en-text">Max Deposits (\(D_{max}\)) = 28,750. Max Money Supply is \(C_p + D_{max} = 40,750\). Option A confuses Deposits with Money Supply.</p>
+            </div>
+
+            <div class="option-analysis">
+                <p><span class="option-label">Option B:</span> <span class="status-wrong">WRONG</span></p>
+                <p>貨幣基礎 (\(MB\)) = \(C_p + R\)。在借貸過程中，儲備留在銀行體系內，現金持有量不變，故 \(MB\) 不變。<br>
+                \(MB = 12,000 + 5,750 = 17,750\)。</p>
+                <p class="en-text">Monetary Base (\(MB\)) = \(C_p + R\). During lending, reserves stay in the system and cash holding is constant, so \(MB\) is unchanged. \(MB = 17,750\).</p>
+            </div>
+
+            <div class="option-analysis">
+                <p><span class="option-label">Option C:</span> <span class="status-correct">CORRECT</span></p>
+                <p>資產負債表恆等式：\(R + L = D\)。<br>
+                在最大擴張時：\(R = 5,750\)，\(D_{max} = 28,750\)。<br>
+                \(L_{max} = D_{max} - R = 28,750 - 5,750 = 23,000\)。</p>
+                <p class="en-text">Balance Sheet Identity: \(R + L = D\). At max expansion: \(R = 5,750\), \(D_{max} = 28,750\). So \(L_{max} = 23,000\).</p>
+            </div>
+
+            <div class="option-analysis">
+                <p><span class="option-label">Option D:</span> <span class="status-wrong">WRONG</span></p>
+                <p>最大銀行乘數 = \(\frac{1}{r_r} = \frac{1}{0.2} = 5\)。<br>
+                選項 D 使用了實際儲備比率 (25%) 計算，這是錯誤的。</p>
+                <p class="en-text">Max Banking Multiplier = \(\frac{1}{r_r} = 5\). Option D incorrectly uses the actual reserve ratio (25%).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>這類題目的<strong>「破題點」(Pivot Point)</strong> 在於找出隱藏的<strong>法定儲備比率 (Required Reserve Ratio)</strong>。</p>
+        <p class="en-text">The <strong>Pivot Point</strong> of this question is finding the hidden <strong>Required Reserve Ratio</strong>.</p>
+        
+        <div class="highlight-box">
+            <p><strong>邏輯鏈 (Logic Chain):</strong></p>
+            <ol>
+                <li>題目給了「實際比率」和「超額儲備金額」。 (Given Actual Ratio & Excess Amount)</li>
+                <li>這暗示：實際比率 \(\neq\) 法定比率。 (Implies Actual \(\neq\) Required)</li>
+                <li>必須先算出金額，相減得到法定儲備，再算出法定比率。 (Must calculate amounts, subtract to get Required Reserves, then find the Required Ratio.)</li>
+                <li>所有「最大值」(Max) 的計算都必須使用<strong>法定比率 (0.2)</strong>，而非實際比率 (0.25)。 (All "Max" calculations must use the Required Ratio.)</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>
+                <strong>混淆 \(M_s\) 與 \(D\) (Confusing \(M_s\) and \(D\)):</strong>
+                <p>學生常算出最大存款 \(28,750\) 後就直接選 A，忘記加上現金 \(12,000\)。</p>
+                <p class="en-text">Students often calculate Max Deposits ($28,750) and pick A, forgetting to add Cash ($12,000).</p>
+            </li>
+            <li>
+                <strong>誤用實際儲備比率 (Using Actual Reserve Ratio):</strong>
+                <p>計算乘數時直接用 \(1/0.25 = 4\)。記住：乘數是基於法定要求的限制。</p>
+                <p class="en-text">Calculating multiplier as \(1/0.25 = 4\). Remember: The multiplier is based on the legal requirement limit.</p>
+            </li>
+            <li>
+                <strong>誤解貨幣基礎 (Misunderstanding Monetary Base):</strong>
+                <p>以為借貸創造貨幣會改變貨幣基礎。事實上，沒有央行介入，\(MB\) 保持不變。</p>
+                <p class="en-text">Thinking credit creation changes the Monetary Base. Actually, without Central Bank intervention, \(MB\) remains constant.</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

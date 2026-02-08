@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Supply & Monetary Base</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            padding: 8px 0;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .formula-box {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border: 1px solid #fda4af;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .trap-title {
+            color: var(--error-text);
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div><span class="tag">Topic</span> Money & Banking (貨幣與銀行)</div>
+        <div><span class="tag">Difficulty</span> <span class="difficulty">★★☆☆☆</span> (Level 2)</div>
+        <div><span class="tag">Key Concepts</span> Monetary Base (貨幣基礎), Money Supply Definitions (貨幣供應定義)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <div class="question-text">
+            <p>在香港，持牌銀行持有的法定貨幣包括在 _______________ 之內。</p>
+            <p class="en-text">The legal tender in Hong Kong held by licensed banks is included in _______________.</p>
+        </div>
+        
+        <div style="margin-left: 20px; margin-bottom: 15px;">
+            (1) 貨幣基礎 (monetary base)<br>
+            (2) 貨幣供應定義二 (money supply M2)<br>
+            (3) 貨幣供應定義三 (money supply M3)
+        </div>
+
+        <ul class="options">
+            <li>A. 只有 (1) (1) only</li>
+            <li>B. 只有 (2) (2) only</li>
+            <li>C. 只有 (2)、(3) (2) and (3) only</li>
+            <li>D. (1)、(2) 及 (3) (1), (2) and (3)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要解答此題，我們必須清楚了解香港的<strong>貨幣基礎</strong>及<strong>貨幣供應</strong>的定義。</p>
+        <p class="en-text">To answer this question, we must clearly understand the definitions of <strong>Monetary Base</strong> and <strong>Money Supply</strong> in Hong Kong.</p>
+
+        <h3>1. 貨幣基礎 (Monetary Base)</h3>
+        <p>貨幣基礎（亦稱「強力貨幣」High-powered Money）包括：</p>
+        <div class="formula-box">
+            $$ \text{Monetary Base} = C_p + R $$
+        </div>
+        <ul>
+            <li>\( C_p \)：公眾持有的法定貨幣 (Legal tender held by public)</li>
+            <li>\( R \)：銀行體系的儲備 (Reserves of the banking system)
+                <br><small>（註：銀行儲備正是由銀行持有的法定貨幣組成的。 Note: Bank reserves consist exactly of legal tender held by banks.）</small>
+            </li>
+        </ul>
+
+        <h3>2. 貨幣供應 (Money Supply)</h3>
+        <p>貨幣供應是指<strong>非銀行公眾 (Non-bank public)</strong> 持有的貨幣數量。重點是「公眾」持有，<strong>不包括</strong>銀行本身持有的現金。</p>
+        <p class="en-text">Money Supply refers to the money held by the <strong>non-bank public</strong>. The key is "public" holding; it does <strong>NOT</strong> include cash held by banks themselves.</p>
+        
+        <div class="formula-box">
+            $$ M1 = C_p + D_d $$
+            $$ M2 = M1 + D_s + D_t + NCDs_{(held\ by\ public)} $$
+            $$ M3 = M2 + \text{Restricted Licence Banks & Deposit-taking Companies deposits} $$
+        </div>
+        <p><strong>關鍵原則：</strong>所有貨幣供應定義（M1, M2, M3）都只計算公眾持有的資產，銀行體系內的資產（如銀行持有的現金）均<strong>被排除在外</strong>。</p>
+        <p class="en-text"><strong>Key Principle:</strong> All money supply definitions (M1, M2, M3) only count assets held by the public. Assets within the banking system (like cash held by banks) are <strong>excluded</strong>.</p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="correct-answer">
+        Correct Option: A
+    </div>
+
+    <div class="analysis-item">
+        <h3>(1) 貨幣基礎 (Monetary Base) — <span style="color: green;">CORRECT (正確)</span></h3>
+        <p><strong>分析：</strong>貨幣基礎的定義包括「公眾持有的現金」加上「銀行體系的儲備」。題目中「持牌銀行持有的法定貨幣」，正是銀行儲備的主要部分。因此，它包含在貨幣基礎內。</p>
+        <p class="en-text"><strong>Analysis:</strong> The definition of Monetary Base includes "cash held by the public" plus "reserves of the banking system". The "legal tender held by licensed banks" mentioned in the question is exactly the main component of bank reserves. Therefore, it is included in the monetary base.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>(2) 貨幣供應定義二 (Money Supply M2) — <span style="color: red;">INCORRECT (錯誤)</span></h3>
+        <p><strong>分析：</strong>貨幣供應 M2 的定義是 M1 加上持牌銀行的儲蓄存款及定期存款等。M1 中的現金部分只計算 \( C_p \)（公眾持有的現金）。銀行持有的現金被視為銀行儲備，並不屬於公眾持有的貨幣供應。如果我們計算貨幣供應時包括銀行持有的現金，就會出現重複計算。</p>
+        <p class="en-text"><strong>Analysis:</strong> Money Supply M2 is defined as M1 plus savings and time deposits with licensed banks, etc. The cash component in M1 only counts \( C_p \) (cash held by the public). Cash held by banks is treated as bank reserves and is not part of the money supply held by the public. If we included cash held by banks in money supply, it would result in double counting.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>(3) 貨幣供應定義三 (Money Supply M3) — <span style="color: red;">INCORRECT (錯誤)</span></h3>
+        <p><strong>分析：</strong>M3 是 M2 加上接受存款公司及有限制牌照銀行的存款。既然 M2 不包括銀行持有的現金（見上點），包含 M2 的 M3 自然也不會包括銀行持有的現金。所有「貨幣供應」的定義均排除了銀行體系持有的現金。</p>
+        <p class="en-text"><strong>Analysis:</strong> M3 is M2 plus deposits with deposit-taking companies and restricted licence banks. Since M2 does not include cash held by banks (see above), M3, which encompasses M2, naturally does not include it either. All definitions of "Money Supply" exclude cash held within the banking system.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fdf4ff; border-left-color: #d946ef;">
+        <h3>Pivot Point (破題關鍵)</h3>
+        <p>這題的關鍵在於區分<strong>「持有者」(Holder)</strong>：</p>
+        <p class="en-text">The pivot point of this question lies in distinguishing the <strong>"Holder"</strong>:</p>
+        <ul>
+            <li><strong>公眾 (Public)</strong> 持有的現金 \(\rightarrow\) 屬於貨幣供應 (Money Supply) 及 貨幣基礎 (Monetary Base)。</li>
+            <li><strong>銀行 (Banks)</strong> 持有的現金 \(\rightarrow\) 屬於儲備 (Reserves)，只計算在貨幣基礎 (Monetary Base) 內，<strong>絕不</strong>計算在貨幣供應內。</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <span class="trap-title">⚠️ Trap: Confusing "Money" with "Money Supply"</span>
+        <p>學生常誤以為「凡是現金（法定貨幣）就是貨幣供應」。這是錯誤的。</p>
+        <p><strong>謹記：</strong>放在銀行金庫裡的錢，或者銀行櫃檯裡的錢，雖然是「錢」，但在經濟學定義上，它退出了流通領域，成為了儲備，所以不算作貨幣供應。</p>
+        <p class="en-text">Students often mistakenly think "All cash (legal tender) is Money Supply". This is wrong.</p>
+        <p class="en-text"><strong>Remember:</strong> Money inside a bank vault or at a bank teller, while being "money", has technically exited circulation to become reserves. Therefore, it does not count as Money Supply.</p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <h2>Exam Tricks (考試技巧)</h2>
+    <p>在處理這類題目時，可以使用<strong>「排除法」(Elimination Method)</strong>：</p>
+    <p class="en-text">When dealing with this type of question, use the <strong>"Elimination Method"</strong>:</p>
+    <ol>
+        <li>一看到「銀行持有」(Held by banks)，立即在腦海中劃掉所有「貨幣供應」(Money Supply, M1/M2/M3) 的選項。</li>
+        <li>因為貨幣供應的定義必須是「公眾持有」。</li>
+        <li>選項 (2) 和 (3) 都是貨幣供應，所以必須排除。</li>
+        <li>剩下的唯一答案就是 A。</li>
+    </ol>
+
+</div>
+
+</body>
+</html>

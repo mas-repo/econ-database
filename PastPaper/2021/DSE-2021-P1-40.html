@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balanced Budget Multiplier</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span {
+            margin-right: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .option-item {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .option-item.correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            color: #14532d;
+        }
+
+        .option-item.wrong {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #7f1d1d;
+            opacity: 0.7;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .tag-blue { background-color: #e0f2fe; color: #0369a1; }
+        .tag-yellow { background-color: #fef9c3; color: #a16207; }
+
+        .bilingual-text p {
+            margin-bottom: 0.5rem;
+        }
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 1rem !important;
+        }
+
+        /* Pivot Point Animation */
+        .pivot-point {
+            position: relative;
+            padding-left: 20px;
+        }
+        .pivot-point::before {
+            content: '💡';
+            position: absolute;
+            left: -5px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-4xl mx-auto">
+
+    <!-- Header Section -->
+    <div class="card border-t-4 border-blue-600">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">財政政策與乘數效應</h1>
+                <h2 class="text-lg text-gray-600">Fiscal Policy & Multiplier Effect</h2>
+            </div>
+            <div class="mt-2 md:mt-0 flex flex-wrap gap-2">
+                <span class="tag tag-yellow">難度 Difficulty: ★★★☆☆</span>
+                <span class="tag tag-blue">平衡預算乘數 Balanced Budget Multiplier</span>
+            </div>
+        </div>
+        <div class="text-sm text-gray-500">
+            <strong>Key Concepts:</strong> Aggregate Demand (AD), Government Expenditure (G), Taxation (T), Marginal Propensity to Consume (MPC)
+        </div>
+    </div>
+
+    <!-- Question Section -->
+    <div class="card">
+        <div class="section-title">
+            <span>❓</span> 題目 The Question
+        </div>
+        <div class="bilingual-text">
+            <p class="font-medium text-lg mb-2">假設政府向住戶收取稅款為其支出融資，該支出和所收稅款的金額相同。這對總需求的影響屬__________。</p>
+            <p class="en-text mb-6">Suppose a government finances its expenditure by collecting tax from the households and the amount of expenditure equals the amount of tax collected. The effect on aggregate demand will be __________.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3 bg-gray-50 rounded border hover:bg-gray-100 cursor-pointer">A. 擴張性 (expansionary)</div>
+                <div class="p-3 bg-gray-50 rounded border hover:bg-gray-100 cursor-pointer">B. 收縮性 (contractionary)</div>
+                <div class="p-3 bg-gray-50 rounded border hover:bg-gray-100 cursor-pointer">C. 中性 (neutral)</div>
+                <div class="p-3 bg-gray-50 rounded border hover:bg-gray-100 cursor-pointer">D. 未能決定 (indeterminate)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="card">
+        <div class="section-title">
+            <span>📚</span> 概念重溫 Concept Review
+        </div>
+        
+        <div class="bilingual-text">
+            <p><strong>1. 總需求 (Aggregate Demand, AD)</strong></p>
+            <p class="en-text">AD represents the total demand for goods and services in an economy. The formula is:</p>
+            <div class="math-block">
+                $$AD = C + I + G + (X - M)$$
+            </div>
+            <p>其中 \(C\) 是私人消費，\(G\) 是政府支出。</p>
+            <p class="en-text">Where \(C\) is private consumption and \(G\) is government expenditure.</p>
+
+            <hr class="my-4 border-gray-200">
+
+            <p><strong>2. 乘數效應 (Multiplier Effect)</strong></p>
+            <p>政府支出 (\(G\)) 的增加會直接增加總需求，而稅收 (\(T\)) 的增加會減少可支配收入 (\(Y_d\))，從而減少消費 (\(C\))。</p>
+            <p class="en-text">An increase in government expenditure (\(G\)) directly increases AD, while an increase in tax (\(T\)) reduces disposable income (\(Y_d\)), thereby reducing consumption (\(C\)).</p>
+
+            <div class="highlight-box">
+                <p><strong>關鍵公式 Key Formulas:</strong></p>
+                <ul class="list-disc ml-5 mt-2">
+                    <li>政府支出乘數 (Government Expenditure Multiplier): \(\frac{1}{1 - MPC}\)</li>
+                    <li>稅收乘數 (Tax Multiplier): \(\frac{-MPC}{1 - MPC}\)</li>
+                </ul>
+                <p class="text-sm mt-2 text-gray-500">*MPC = 邊際消費傾向 (Marginal Propensity to Consume), \(0 < MPC < 1\)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Section -->
+    <div class="card">
+        <div class="section-title">
+            <span>✅</span> 答案與詳細分析 Answer & Analysis
+        </div>
+
+        <div class="mb-6">
+            <span class="text-xl font-bold text-green-600">正確答案 Correct Option: A</span>
+        </div>
+
+        <div class="bilingual-text">
+            <h3 class="font-bold text-lg mb-2">邏輯推導 Logical Deduction:</h3>
+            <p>題目指出政府支出增加的金額等於稅收增加的金額 (\(\Delta G = \Delta T\))。這被稱為<strong>平衡預算 (Balanced Budget)</strong>。</p>
+            <p class="en-text">The question states that the increase in government expenditure equals the increase in tax collected (\(\Delta G = \Delta T\)). This is known as a <strong>Balanced Budget</strong>.</p>
+
+            <div class="bg-gray-50 p-4 rounded-lg my-4">
+                <p><strong>第一步：政府支出的影響 (Effect of G)</strong></p>
+                <p>政府支出 \(G\) 是總需求 \(AD\) 的直接組成部分。增加 \(1\) 元的 \(G\) 會令 \(AD\) 增加 \(1\) 元 (未計乘數效應前)。</p>
+                <p class="en-text">Government expenditure \(G\) is a direct component of \(AD\). An increase of $1 in \(G\) increases \(AD\) by $1 (before multiplier effects).</p>
+                <p>$$ \Delta AD_{from G} = \Delta G \times \frac{1}{1-MPC} $$</p>
+
+                <p class="mt-4"><strong>第二步：稅收的影響 (Effect of T)</strong></p>
+                <p>稅收 \(T\) 增加會減少可支配收入。但住戶不會將所有減少的收入都反映在減少消費上，部分會反映在減少儲蓄上。因此，增加 \(1\) 元的稅收，消費只會減少 \(MPC\) 元 (即少於 \(1\) 元)。</p>
+                <p class="en-text">An increase in tax \(T\) reduces disposable income. However, households do not reduce consumption by the full amount of the tax; part of it comes from reduced savings. Therefore, a $1 increase in tax reduces consumption by only \(MPC\) dollars (which is less than $1).</p>
+                <p>$$ \Delta AD_{from T} = \Delta T \times \frac{-MPC}{1-MPC} $$</p>
+            </div>
+
+            <p><strong>淨影響 Net Effect:</strong></p>
+            <p>由於 \(\Delta G = \Delta T\)，我們將兩者相加：</p>
+            <p class="en-text">Since \(\Delta G = \Delta T\), we sum the two effects:</p>
+            
+            <div class="math-block text-left">
+                $$ \text{Total Change} = (\Delta G \times \frac{1}{1-MPC}) + (\Delta G \times \frac{-MPC}{1-MPC}) $$
+                <br>
+                $$ = \Delta G \times (\frac{1 - MPC}{1 - MPC}) $$
+                <br>
+                $$ = \Delta G \times 1 $$
+                <br>
+                $$ = \Delta G $$
+            </div>
+
+            <p><strong>結論 Conclusion:</strong></p>
+            <p>總需求會增加，增加的幅度剛好等於政府支出的金額。因為總需求增加了，所以效果是<strong>擴張性</strong>的。</p>
+            <p class="en-text">Aggregate demand will increase by exactly the amount of the government expenditure. Since AD increases, the effect is <strong>expansionary</strong>.</p>
+        </div>
+
+        <div class="mt-6">
+            <div class="option-item correct">
+                <strong>A. 擴張性 (Expansionary)</strong>
+                <p class="text-sm mt-1">正確。因為政府支出的注入效應大於稅收的流失效應（因為部分稅款來自儲蓄）。</p>
+                <p class="text-sm text-gray-600">Correct. The injection effect of government spending is larger than the withdrawal effect of taxation (since part of the tax is paid from savings).</p>
+            </div>
+            <div class="option-item wrong">
+                <strong>B. 收縮性 (Contractionary)</strong>
+                <p class="text-sm mt-1">錯誤。這只會在稅收乘數大於支出乘數時發生，但在簡單凱恩斯模型中並非如此。</p>
+                <p class="text-sm text-gray-600">Incorrect. This would only happen if the tax multiplier were larger than the expenditure multiplier, which is not the case in the simple Keynesian model.</p>
+            </div>
+            <div class="option-item wrong">
+                <strong>C. 中性 (Neutral)</strong>
+                <p class="text-sm mt-1">錯誤。許多學生誤以為收支平衡就等於對經濟沒有影響，忽略了乘數效應的差異。</p>
+                <p class="text-sm text-gray-600">Incorrect. Many students mistakenly believe that a balanced budget means zero impact on the economy, ignoring the difference in multiplier effects.</p>
+            </div>
+            <div class="option-item wrong">
+                <strong>D. 未能決定 (Indeterminate)</strong>
+                <p class="text-sm mt-1">錯誤。只要 \(0 < MPC < 1\)，結果就是確定的。</p>
+                <p class="text-sm text-gray-600">Incorrect. As long as \(0 < MPC < 1\), the result is determinate.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="card">
+        <div class="section-title">
+            <span>🔍</span> 題目拆解 Problem Decomposition
+        </div>
+        <div class="bilingual-text">
+            <div class="pivot-point mb-4">
+                <strong>破題關鍵 Pivot Point:</strong>
+                <p>要比較「直接注入」與「間接流失」的力度。</p>
+                <p class="en-text">Compare the strength of "Direct Injection" vs. "Indirect Withdrawal".</p>
+            </div>
+            <ul class="list-disc ml-5 space-y-2">
+                <li>
+                    <strong>政府支出 (G):</strong> 每一塊錢都<strong>直接</strong>變成需求。
+                    <br><span class="text-gray-500 text-sm">Government Spending (G): Every dollar directly becomes demand.</span>
+                </li>
+                <li>
+                    <strong>稅收 (T):</strong> 每一塊錢的稅，只有一部分會減少消費 (C)，另一部分是減少了儲蓄 (S)。儲蓄的減少不會影響當前的總需求。
+                    <br><span class="text-gray-500 text-sm">Tax (T): For every dollar taxed, only a portion reduces consumption (C); the rest reduces savings (S). Reduced savings do not affect current AD.</span>
+                </li>
+                <li>
+                    <strong>結果:</strong> \(G\) 的推動力 > \(T\) 的阻力。
+                    <br><span class="text-gray-500 text-sm">Result: The push from \(G\) > The drag from \(T\).</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="card bg-red-50 border-red-100">
+        <div class="section-title" style="border-color: #fecaca;">
+            <span class="text-red-500">⚠️</span> 常犯錯誤 Common Mistakes
+        </div>
+        <div class="bilingual-text">
+            <p><strong>誤解 Misconception:</strong> 「收支平衡 = 經濟中立」</p>
+            <p class="en-text">"Balanced Budget = Economic Neutrality"</p>
+            <p>學生常直覺地認為，政府收了多少錢又花出去多少錢，一加一減應該互相抵消。這是錯的！因為政府是<strong>全額</strong>花費，但市民交稅後是<strong>部分</strong>減少消費。</p>
+            <p class="en-text">Students often intuitively think that if the government collects and spends the same amount, they cancel out. This is wrong! The government spends the <strong>full amount</strong>, but citizens only reduce consumption <strong>partially</strong> after paying taxes.</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="card bg-indigo-50 border-indigo-100">
+        <div class="section-title" style="border-color: #c7d2fe;">
+            <span class="text-indigo-600">⚡</span> 考試速解 Exam Trick
+        </div>
+        <div class="bilingual-text">
+            <p><strong>平衡預算乘數定理 (Balanced Budget Multiplier Theorem):</strong></p>
+            <p>在簡單模型中，若 \(\Delta G = \Delta T\)，則 \(\Delta Y = \Delta G\)。</p>
+            <p class="en-text">In a simple model, if \(\Delta G = \Delta T\), then \(\Delta Y = \Delta G\).</p>
+            <p class="mt-2"><strong>速記法:</strong> 只要看到「稅收融資支出」且「金額相等」，對 GDP 的影響永遠是<strong>正數 (Positive)</strong> 且等於<strong>支出金額</strong>。</p>
+            <p class="en-text"><strong>Shortcut:</strong> Whenever you see "tax-financed expenditure" with "equal amounts", the effect on GDP is always <strong>Positive</strong> and equal to the <strong>amount of expenditure</strong>.</p>
+        </div>
+    </div>
+
+</body>
+</html>

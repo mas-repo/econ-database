@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Lorenz Curve Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-concept: #eff6ff;
+            --border-concept: #3b82f6;
+            --bg-answer: #f0fdf4;
+            --border-answer: #22c55e;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: var(--text-light);
+            background: #f3f4f6;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--border-concept);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .answer-box {
+            background-color: var(--bg-answer);
+            border-left: 5px solid var(--border-answer);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .option-analysis:last-child { border-bottom: none; }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .math-block {
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Income Inequality & Lorenz Curve (收入不均與洛倫茨曲線)</div>
+        <div><strong>Difficulty (難度):</strong> ⭐⭐⭐☆☆</div>
+        <div><strong>Key Concepts (核心概念):</strong> <span class="tag">Gini Coefficient</span> <span class="tag">Cumulative Percentage</span> <span class="tag">Income Distribution</span></div>
+    </div>
+
+    <h1>HKDSE Economics Analysis</h1>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p class="bilingual-text">
+            細閱以下甲國和乙國的洛倫茨曲線。<br>
+            <span class="en-text">Study the Lorenz curves of Country A and Country B below.</span>
+        </p>
+        
+        <p style="font-style: italic; color: #666; font-size: 0.9em;">
+            [Graph Description: Two Lorenz Curves. Country A's curve is closer to the 45-degree line. Country B's curve is more bowed (further from the line).<br>
+            Key Data Point for A: (80% households, 40% income).<br>
+            Key Data Point for B: (80% households, 20% income).]
+        </p>
+
+        <p class="bilingual-text">
+            假設兩國的總收入相等。根據上述資料，可得出的結論是：___________。<br>
+            <span class="en-text">Suppose the total incomes in the two countries are equal. Based on the above information, we can conclude that ___________.</span>
+        </p>
+
+        <div style="margin-left: 20px;">
+            <p class="bilingual-text">
+                (1) 甲國的堅尼系數較乙國的低<br>
+                <span class="en-text">Country A has a lower Gini coefficient than Country B</span>
+            </p>
+            <p class="bilingual-text">
+                (2) 甲國最低端20%的住戶的總收入高於乙國最低端20%的住戶的總收入<br>
+                <span class="en-text">the bottom 20% households in Country A earn a higher total income than the bottom 20% households in Country B</span>
+            </p>
+            <p class="bilingual-text">
+                (3) 甲國最高端20%的住戶的收入佔其國家總收入的比例較乙國的小<br>
+                <span class="en-text">the top 20% households in Country A earn a smaller proportion of the country's total income than that in Country B</span>
+            </p>
+        </div>
+
+        <p>
+            A. 只有 (1)、(2) <span class="en-text" style="display:inline">(1) and (2) only</span><br>
+            B. 只有 (1)、(3) <span class="en-text" style="display:inline">(1) and (3) only</span><br>
+            C. 只有 (2)、(3) <span class="en-text" style="display:inline">(2) and (3) only</span><br>
+            D. (1)、(2) 及 (3) <span class="en-text" style="display:inline">(1), (2) and (3)</span>
+        </p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <h3>1. 洛倫茨曲線 (Lorenz Curve)</h3>
+        <p class="bilingual-text">
+            洛倫茨曲線顯示了家庭累積百分比與收入累積百分比之間的關係。45度線代表<strong>絕對平均 (Perfect Equality)</strong>。<br>
+            <span class="en-text">The Lorenz curve shows the relationship between the cumulative percentage of households and the cumulative percentage of income. The 45-degree line represents <strong>Perfect Equality</strong>.</span>
+        </p>
+        <p class="bilingual-text">
+            曲線越接近45度線，收入分佈越平均；曲線越彎曲（離45度線越遠），收入分佈越不平均。<br>
+            <span class="en-text">The closer the curve is to the 45-degree line, the more equal the income distribution. The more bowed the curve (further from the line), the more unequal the distribution.</span>
+        </p>
+
+        <h3>2. 堅尼系數 (Gini Coefficient)</h3>
+        <p class="bilingual-text">
+            堅尼系數是用來量度收入不均的指標，數值介乎 0 至 1 之間。<br>
+            <span class="en-text">The Gini coefficient is a measure of income inequality, ranging from 0 to 1.</span>
+        </p>
+        <div class="math-block">
+            $$ \text{Gini} = \frac{\text{Area between diagonal and curve}}{\text{Total area under diagonal}} $$
+        </div>
+        <ul class="bilingual-text">
+            <li>數值越<strong>大</strong> \(\rightarrow\) 越<strong>不平均</strong> (Higher value \(\rightarrow\) More unequal)</li>
+            <li>數值越<strong>小</strong> \(\rightarrow\) 越<strong>平均</strong> (Lower value \(\rightarrow\) More equal)</li>
+        </ul>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="answer-box">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option (正確選項): <span style="font-size: 1.2em;">D</span></strong></p>
+
+        <div class="option-analysis">
+            <h3>Statement (1): True (正確)</h3>
+            <p class="bilingual-text">
+                <strong>分析：</strong>觀察圖表，甲國的曲線較乙國的曲線更接近45度對角線（較平直）。這意味著甲國的收入分佈較平均。因此，甲國的堅尼系數較低。<br>
+                <span class="en-text"><strong>Analysis:</strong> Observing the graphs, Country A's curve is closer to the 45-degree diagonal (less bowed) than Country B's. This implies Country A has a more equal income distribution. Therefore, Country A has a lower Gini coefficient.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <h3>Statement (2): True (正確)</h3>
+            <p class="bilingual-text">
+                <strong>分析：</strong>我們需要比較最低端20%住戶的收入。看橫軸 (X軸) 的 20%：<br>
+                <span class="en-text"><strong>Analysis:</strong> We need to compare the income of the bottom 20% of households. Look at 20% on the horizontal axis (X-axis):</span>
+            </p>
+            <ul>
+                <li>
+                    甲國 (Country A): 曲線在 X=20 時，Y軸數值明顯高於 0 (目測約 5-8%)。<br>
+                    <span class="en-text">At X=20, the Y-value is visibly above 0 (approx. 5-8%).</span>
+                </li>
+                <li>
+                    乙國 (Country B): 曲線在 X=20 時，Y軸數值非常低 (目測約 1-2%)。<br>
+                    <span class="en-text">At X=20, the Y-value is very low (approx. 1-2%).</span>
+                </li>
+            </ul>
+            <p class="bilingual-text">
+                題目指明「兩國總收入相等」。由於甲國最低端20%住戶佔總收入的百分比較高，且總收入基數相同，所以他們的<strong>實際總收入</strong>也較高。<br>
+                <span class="en-text">The question states "total incomes in the two countries are equal". Since the bottom 20% in Country A command a larger percentage share of the total income, and the base total income is the same, their <strong>actual total income</strong> is also higher.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <h3>Statement (3): True (正確)</h3>
+            <p class="bilingual-text">
+                <strong>分析：</strong>「最高端20%」是指由第80%到第100%的住戶。我們需要計算這部分的收入佔比。<br>
+                <span class="en-text"><strong>Analysis:</strong> The "top 20%" refers to households from the 80th percentile to the 100th percentile. We need to calculate the income share for this segment.</span>
+            </p>
+            <div class="math-block">
+                $$ \text{Top 20\% Share} = 100\% - \text{Cumulative Income at 80\%} $$
+            </div>
+            <ul>
+                <li>
+                    <strong>甲國 (Country A):</strong> 在 X=80 時，Y=40。<br>
+                    最高端 20% 收入佔比 = \(100\% - 40\% = 60\%\)。<br>
+                    <span class="en-text">At X=80, Y=40. Top 20% income share = \(100\% - 40\% = 60\%\).</span>
+                </li>
+                <li>
+                    <strong>乙國 (Country B):</strong> 在 X=80 時，Y=20。<br>
+                    最高端 20% 收入佔比 = \(100\% - 20\% = 80\%\)。<br>
+                    <span class="en-text">At X=80, Y=20. Top 20% income share = \(100\% - 20\% = 80\%\).</span>
+                </li>
+            </ul>
+            <p class="bilingual-text">
+                \(60\% < 80\%\)，所以甲國最高端20%住戶的收入佔比確實較小。<br>
+                <span class="en-text">\(60\% < 80\%\), so the proportion of income earned by the top 20% households in Country A is indeed smaller.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="tips-box">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p class="bilingual-text">
+            <strong>關鍵點 (Pivot Point):</strong> 比較曲線的彎曲程度以及讀取特定座標點 (X=20 和 X=80)。<br>
+            <span class="en-text"><strong>Pivot Point:</strong> Comparing the curvature and reading specific coordinates (X=20 and X=80).</span>
+        </p>
+        <p class="bilingual-text">
+            <strong>重要提示 (Crucial Info):</strong> 「假設兩國的總收入相等」這句話至關重要。如果沒有這句話，我們只能比較百分比 (Statement 1 & 3)，而無法比較實際金額 (Statement 2)。<br>
+            <span class="en-text"><strong>Crucial Info:</strong> The phrase "Suppose the total incomes in the two countries are equal" is vital. Without this, we could only compare percentages (Statements 1 & 3), but not absolute amounts (Statement 2).</span>
+        </p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="tips-box" style="border-color: #f87171; background-color: #fef2f2;">
+        <h3 style="color: #b91c1c;">Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <ul class="bilingual-text">
+            <li>
+                <strong>誤解累積概念 (Misinterpreting Cumulative Data):</strong><br>
+                學生常誤以為 Y軸上的數值直接代表該組別的收入。例如看到 X=80, Y=20，誤以為那 20% 的人賺取 20% 收入。事實上，Y=20 代表<strong>最底層 80% 的人總共</strong>只賺取 20% 收入。<br>
+                <span class="en-text">Students often mistake the Y-axis value for the income of that specific group. E.g., seeing X=80, Y=20, they might think that 20% group earns 20%. In reality, Y=20 means the <strong>bottom 80% combined</strong> earn only 20%.</span>
+            </li>
+            <li>
+                <strong>計算最高層收入時忘記減法 (Forgetting Subtraction for Top Group):</strong><br>
+                計算最高端收入時，必須用 \(100\% - \text{累積百分比}\)。<br>
+                <span class="en-text">When calculating the top group's income, you MUST use \(100\% - \text{Cumulative Percentage}\).</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
