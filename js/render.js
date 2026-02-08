@@ -113,11 +113,17 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Ch:</strong>
                         ${sortedChapters.map(c => {
+                            // Extract the number for the filter value logic (existing logic)
                             const match = c.match(/(\d+)/);
                             const val = match ? match[0] : c; 
+                            
+                            // Create a display label that removes "Ch" or "Chapter" (case insensitive)
+                            // This affects ONLY the visual text inside the span
+                            const displayLabel = c.replace(/^(Ch|Chapter)\s*/i, '');
+
                             return `
                             <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="${getTagStyle('chapter', val)}">
-                                ${c}
+                                ${displayLabel}
                             </span>
                             `;
                         }).join('')}
