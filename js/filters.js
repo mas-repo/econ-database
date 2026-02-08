@@ -34,6 +34,7 @@ if (!window.triStateFilters) {
 
 // Configuration map for all filters that have arrow icons
 // Maps the Dropdown ID -> The Arrow Span ID
+// NOTE: Ensure these IDs match your HTML exactly.
 const ARROW_MAP = {
     // Custom Grid Filters
     'curriculum-options': 'curriculum-arrow',
@@ -80,10 +81,17 @@ function closeAllDropdowns() {
         if (section) section.style.display = 'none';
     });
 
-    // 3. Reset ALL arrows using the centralized map
+    // 3. Reset ALL arrows
+    // Method A: Use the map
     Object.values(ARROW_MAP).forEach(arrowId => {
         const arrow = document.getElementById(arrowId);
         if (arrow) arrow.textContent = '▶';
+    });
+
+    // Method B: Fallback - Find all elements with class 'arrow' inside buttons and reset them
+    document.querySelectorAll('.dropdown-btn .arrow, .filter-input-wrapper .input-arrow').forEach(arrow => {
+        // Only reset if it looks like an arrow (avoid resetting other icons if any)
+        if (arrow.textContent === '▼') arrow.textContent = '▶';
     });
 }
 
@@ -96,12 +104,10 @@ function toggleDropdown(dropdownId) {
     if (!target) return;
 
     // 1. Determine if the target is CURRENTLY open
-    // It is open if it has class 'active' OR display is 'grid'/'block'
     const isStandardActive = target.classList.contains('active');
     const isGridActive = target.style.display === 'grid' || target.style.display === 'block';
     
-    // Note: We must check if it's actually visible. If clearFilters set display:none, 
-    // it might have .active but be hidden.
+    // Note: We must check if it's actually visible.
     const isActuallyVisible = isGridActive || (isStandardActive && target.style.display !== 'none');
     
     const wasOpen = isActuallyVisible;
@@ -120,17 +126,39 @@ function toggleDropdown(dropdownId) {
             target.style.display = 'grid';
         } else {
             // === Case B: Standard, Range, & Input Filters ===
-            // FIX Issue 3: Explicitly clear inline display style.
-            // This fixes the bug where "Reset" sets display:none and prevents reopening.
             target.style.display = ''; 
             target.classList.add('active');
         }
 
-        // Update the specific arrow for this dropdown (FIX Issue 1)
+        // === UPDATE ARROW LOGIC ===
+        // Attempt 1: Use the Map
+        let arrowUpdated = false;
         const arrowId = ARROW_MAP[dropdownId];
         if (arrowId) {
             const arrow = document.getElementById(arrowId);
-            if (arrow) arrow.textContent = '▼';
+            if (arrow) {
+                arrow.textContent = '▼';
+                arrowUpdated = true;
+            }
+        }
+
+        // Attempt 2: Dynamic Lookup (Fallback)
+        // If the map failed, look for the button that triggered this.
+        // We assume the button is a sibling or parent of the dropdown container.
+        if (!arrowUpdated) {
+            // Find the container wrapping the dropdown
+            const container = target.closest('.dropdown-filter') || target.closest('.input-dropdown-container');
+            if (container) {
+                // Find the button or input wrapper inside this container
+                const btn = container.querySelector('.dropdown-btn') || container.querySelector('.filter-input-wrapper');
+                if (btn) {
+                    // Find the arrow span inside that button
+                    const arrow = btn.querySelector('.arrow') || btn.querySelector('.input-arrow');
+                    if (arrow) {
+                        arrow.textContent = '▼';
+                    }
+                }
+            }
         }
     }
 }
@@ -516,7 +544,7 @@ function setupInputDropdownListeners() {
         const list = document.getElementById(listId);
         
         input.addEventListener('focus', () => {
-            // FIX Issue 2: Close other dropdowns (like Marks/Percentage) when focusing an input
+            // Close other dropdowns (like Marks/Percentage) when focusing an input
             closeAllDropdowns();
 
             // Open this specific list
@@ -526,11 +554,11 @@ function setupInputDropdownListeners() {
                 list.style.display = ''; 
             }
 
-            // FIX Issue 1 (Part B): Rotate the arrow for this specific input
-            // We find the arrow ID by reverse lookup in ARROW_MAP based on the listId
-            const arrowId = ARROW_MAP[listId];
-            if (arrowId) {
-                const arrow = document.getElementById(arrowId);
+            // Rotate the arrow for this specific input
+            // Using dynamic lookup logic similar to toggleDropdown
+            const container = input.closest('.filter-input-wrapper');
+            if (container) {
+                const arrow = container.querySelector('.input-arrow');
                 if (arrow) arrow.textContent = '▼';
             }
         });
@@ -599,10 +627,7 @@ function clearFilters() {
     });
 
     // Reset all arrows
-    Object.values(ARROW_MAP).forEach(arrowId => {
-        const arrow = document.getElementById(arrowId);
-        if (arrow) arrow.textContent = '▶';
-    });
+    closeAllDropdowns();
 
     const scopeSelect = document.getElementById('search-scope');
     if (scopeSelect) scopeSelect.value = 'all';
