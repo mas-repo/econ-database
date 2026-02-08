@@ -176,25 +176,42 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">課程分類：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${sortedCurriculum.map(c => `<span class="tag">${c}</span>`).join('')}
+                            ${sortedCurriculum.map(c => `
+                                <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="cursor:pointer; color:var(--secondary-color);">
+                                    ${c}
+                                </span>
+                            `).join('')}
                         </div>
                     </div>
                 ` : ''}
 
                 ${sortedChapters.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">Chapter:</strong>
+                        <strong style="white-space: nowrap;">Chapter(s):</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${sortedChapters.map(c => `<span class="tag">${c}</span>`).join('')}
+                            ${sortedChapters.map(c => {
+                                // Extract the number (e.g., "Chapter 01" -> "01") to match the sidebar filter logic
+                                const match = c.match(/(\d+)/);
+                                const val = match ? match[0] : c; 
+                                return `
+                                <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="cursor:pointer; color:var(--secondary-color);">
+                                    ${c}
+                                </span>
+                                `;
+                            }).join('')}
                         </div>
                     </div>
-                ` : ''}                
+                ` : ''}                 
 
                 ${q.concepts && q.concepts.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">涉及概念：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${q.concepts.map(c => `<span class="tag">${c}</span>`).join('')}
+                            ${q.concepts.map(c => `
+                                <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="cursor:pointer; color:var(--secondary-color);">
+                                    ${c}
+                                </span>
+                            `).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -203,7 +220,11 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap;">題型：</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${q.patterns.map(p => `<span class="tag">${p}</span>`).join('')}
+                            ${q.patterns.map(p => `
+                                <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="cursor:pointer; color:var(--secondary-color);">
+                                    ${p}
+                                </span>
+                            `).join('')}
                         </div>
                     </div>
                 ` : ''} 
