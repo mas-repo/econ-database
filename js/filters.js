@@ -385,7 +385,8 @@ async function updateDynamicDropdowns() {
         delete contextFilters.triState.patterns;
         delete contextFilters.triState.ai;
     }
-
+    
+    delete contextFilters.search;
     const contextQuestions = window.storage.applyFilters(allQuestions, contextFilters);
 
     // Helper to generate HTML for a specific list
