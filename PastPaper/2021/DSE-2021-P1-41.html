@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Taxation Analysis</title>
+    
+    <!-- MathJax for LaTeX Rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue Background */
+            --highlight-bg: #fef3c7; /* Light Yellow for emphasis */
+            --text-color: #1f2937;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .tag {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: #d97706; /* Amber */
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-top: 40px;
+            font-size: 1.4rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--accent-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct-answer {
+            background-color: #dcfce7; /* Light green */
+            color: #166534;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .en {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        /* Tips & Traps */
+        .tips-box {
+            background-color: #fff7ed; /* Orange tint */
+            border: 1px solid #fdba74;
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .trap-alert {
+            color: #c2410c;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="tag">Topic: Public Finance (Taxation)</span>
+            <span class="tag">課題：公共財政（稅務）</span>
+            <span class="difficulty">Difficulty: ★★★☆☆</span>
+        </div>
+        <p style="margin-top: 10px; color: #666;">
+            <strong>Key Concepts:</strong> Direct Tax, Profits Tax vs. Dividends, Stamp Duty, Property Tax.<br>
+            <strong>核心概念：</strong> 直接稅、利得稅與股息、印花稅、物業稅。
+        </p>
+    </header>
+
+    <!-- The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="question-text">
+                <p><strong>[Chinese]</strong> 李先生是本港一家上市公司的大股東，該公司賺取了大額的利潤。他賣出了他部分的住宅物業，並從出租一些商業大廈收取租金收入。<br>
+                根據以上資料，李先生需要支付哪些稅項予香港政府？</p>
+                
+                <p><strong>[English]</strong> Mr Li is a major shareholder of a Hong Kong listed company which makes huge profits. He has sold some of his residential properties, and received rental income from some leased commercial buildings.<br>
+                According to the above information, which types of tax does Mr Li need to pay to the Hong Kong government?</p>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                (1) 利得稅 Profits tax<br>
+                (2) 印花稅 Stamp duty<br>
+                (3) 物業稅 Property tax
+            </div>
+
+            <ul class="options-list">
+                <li>A. 只有 (1)、(2) &nbsp;/&nbsp; (1) and (2) only</li>
+                <li>B. 只有 (1)、(3) &nbsp;/&nbsp; (1) and (3) only</li>
+                <li>C. 只有 (2)、(3) &nbsp;/&nbsp; (2) and (3) only</li>
+                <li>D. (1)、(2) 及 (3) &nbsp;/&nbsp; (1), (2) and (3)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p class="zh">在香港，稅收主要分為直接稅和間接稅。本題涉及以下三種直接稅：</p>
+            <p class="en">In Hong Kong, taxes are mainly classified into direct and indirect taxes. This question involves the following three types of direct taxes:</p>
+
+            <hr style="border: 0; border-top: 1px solid #bfdbfe; margin: 15px 0;">
+
+            <p><strong>1. 利得稅 (Profits Tax):</strong></p>
+            <p class="zh">向在香港經營業務並獲得利潤的人士或法團徵收。有限公司是獨立的法人，需自行報稅。</p>
+            <p class="en">Levied on persons or corporations carrying on a trade, profession, or business in Hong Kong and making profits. A limited company is a separate legal entity and files its own tax return.</p>
+            
+            <p><strong>2. 物業稅 (Property Tax):</strong></p>
+            <p class="zh">向物業擁有者徵收，基於物業的租金收入。</p>
+            <p class="en">Levied on property owners based on rental income from the property.</p>
+            <div class="math-block">
+                $$ \text{Property Tax} = \text{Net Assessable Value} \times \text{Tax Rate} $$
+            </div>
+
+            <p><strong>3. 印花稅 (Stamp Duty):</strong></p>
+            <p class="zh">針對特定文件（如物業轉讓契約、股票轉讓）徵收的稅項。</p>
+            <p class="en">Tax levied on certain documents (e.g., assignment of property, transfer of shares).</p>
+        </div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: C (2 & 3 only)<br>
+            正確選項：C (只有 2 及 3)
+        </div>
+
+        <div class="analysis-item">
+            <h3>(1) 利得稅 (Profits Tax) - <span style="color: red;">False (錯誤)</span></h3>
+            <p class="zh"><strong>分析：</strong> 雖然公司賺取了大額利潤，但根據香港稅法，上市公司是一個「獨立法人」(Separate Legal Entity)。公司本身需要支付利得稅，而不是股東支付。李先生作為股東，收到的是「股息」(Dividends)。在香港，股息是<strong>免稅</strong>的。</p>
+            <p class="en"><strong>Analysis:</strong> Although the company makes huge profits, under Hong Kong tax law, a listed company is a "Separate Legal Entity." The company itself pays Profits Tax, not the shareholder. Mr. Li, as a shareholder, receives "dividends." In Hong Kong, dividends are <strong>tax-exempt</strong>.</p>
+        </div>
+
+        <div class="analysis-item">
+            <h3>(2) 印花稅 (Stamp Duty) - <span style="color: green;">True (正確)</span></h3>
+            <p class="zh"><strong>分析：</strong> 題目指出李先生「賣出了他部分的住宅物業」。在香港，物業買賣必須簽訂法律文件（買賣合約及轉讓契約），這些文件必須繳付印花稅。雖然通常由買方支付從價印花稅，但買賣雙方在法律上均有責任。此外，若涉及額外印花稅 (SSD)，賣方更需負責。</p>
+            <p class="en"><strong>Analysis:</strong> The question states Mr. Li "sold some of his residential properties." In Hong Kong, property transactions require legal documents (Sale and Purchase Agreement, Assignment), which are subject to Stamp Duty. While the buyer typically pays the Ad Valorem Stamp Duty, both buyer and seller are legally liable. Furthermore, if Special Stamp Duty (SSD) is involved, the seller is specifically liable.</p>
+        </div>
+
+        <div class="analysis-item">
+            <h3>(3) 物業稅 (Property Tax) - <span style="color: green;">True (正確)</span></h3>
+            <p class="zh"><strong>分析：</strong> 題目指出李先生「從出租一些商業大廈收取租金收入」。物業稅是針對物業擁有人收取的租金收入徵收的。因此，他必須支付物業稅。</p>
+            <p class="en"><strong>Analysis:</strong> The question states Mr. Li "received rental income from some leased commercial buildings." Property Tax is levied on the rental income received by property owners. Therefore, he must pay Property Tax.</p>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這類題目主要測試學生能否區分「公司責任」與「個人責任」，以及對香港稅制的具體認識。</p>
+        <p class="en">This type of question tests whether students can distinguish between "Corporate Liability" and "Personal Liability," as well as their specific knowledge of the HK tax system.</p>
+
+        <div style="background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <p><strong>關鍵判斷點 (Pivot Point):</strong></p>
+            <ul style="margin-top: 5px;">
+                <li>
+                    <span class="zh">看到「上市公司股東」 \(\rightarrow\) 聯想到「股息免稅」 \(\rightarrow\) 排除利得稅。</span><br>
+                    <span class="en">See "Listed Company Shareholder" \(\rightarrow\) Link to "Tax-exempt Dividends" \(\rightarrow\) Eliminate Profits Tax.</span>
+                </li>
+                <li>
+                    <span class="zh">看到「賣樓」 \(\rightarrow\) 聯想到「文件轉讓」 \(\rightarrow\) 確認印花稅。</span><br>
+                    <span class="en">See "Sold Property" \(\rightarrow\) Link to "Document Transfer" \(\rightarrow\) Confirm Stamp Duty.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="tips-box">
+            <p class="trap-alert">Trap 1: The "Rich Person" Fallacy (富人謬誤)</p>
+            <p class="zh">學生常誤以為「賺大錢」就一定要交「利得稅」。必須分清楚收入的性質。如果是股息或資本增值（如賣樓賺價差，非炒樓業務），在香港通常無需繳交利得稅。</p>
+            <p class="en">Students often mistakenly think that "making huge money" implies paying "Profits Tax." You must distinguish the nature of the income. If it is dividends or capital gains (e.g., selling property for profit, not as a trading business), it is usually not subject to Profits Tax in HK.</p>
+
+            <br>
+
+            <p class="trap-alert">Trap 2: Stamp Duty Liability (印花稅責任)</p>
+            <p class="zh">學生常誤以為只有買家才要付印花稅。雖然習慣上由買家支付，但在法律文件上，買賣雙方均有責任確保印花稅已繳付。</p>
+            <p class="en">Students often mistakenly think only the buyer pays Stamp Duty. While customarily paid by the buyer, legally, both the buyer and seller are liable to ensure the duty is paid.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

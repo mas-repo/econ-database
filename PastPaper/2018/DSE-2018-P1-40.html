@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Taxation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #475569; /* Slate */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #334155;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            padding: 24px;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .stars { color: #fbbf24; }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .q-text { margin-bottom: 15px; }
+        .options-list { list-style-type: none; padding: 0; }
+        .options-list li { padding: 5px 0; }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-term {
+            font-weight: bold;
+            color: #1e40af;
+        }
+
+        /* Analysis Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success-text);
+            background-color: var(--success-bg);
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .step-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .status-yes { background-color: var(--success-bg); color: var(--success-text); }
+        .status-no { background-color: var(--error-bg); color: var(--error-text); }
+
+        /* Bilingual Text Styling */
+        .zh { display: block; margin-bottom: 4px; }
+        .en { display: block; color: #64748b; font-size: 0.95em; margin-bottom: 12px; }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fff7ed;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>Topic: Public Finance & Taxation (公共財政與稅收)</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <strong>Difficulty (難度):</strong>&nbsp;
+                <span class="stars">★★★☆☆</span>
+            </div>
+            <div class="meta-item">
+                <strong>Key Concepts:</strong>&nbsp;Direct vs. Indirect Tax, Territorial Source Principle
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="q-text">
+                <span class="zh">某香港居民在一家位處深圳的內地公司工作，賺取月薪。他亦收取恆生銀行所派發的股息，以及透過出租旺角某單位獲取租金。上個月他在香港國際機場乘坐往首爾的航班。</span>
+                <span class="en">A Hong Kong resident works for a Mainland company located in Shenzhen and he earns a monthly wage. He receives dividend from Hang Seng Bank and rental income from a leased apartment in Mongkok as well. He took a flight to Seoul departing from the Hong Kong International Airport last month.</span>
+            </div>
+            <div class="q-text">
+                <span class="zh">他須要在香港繳付哪(些)<strong>直接稅</strong>？</span>
+                <span class="en">Which type(s) of <strong>direct tax</strong> does he need to pay in Hong Kong?</span>
+            </div>
+            <div class="q-text">
+                (1) 物業稅 Property tax<br>
+                (2) 利得稅 Profits tax<br>
+                (3) 薪俸稅 Salaries tax<br>
+                (4) 機場離境稅 Air passenger departure tax
+            </div>
+            <ul class="options-list">
+                <li>A. 只有 (1) only</li>
+                <li>B. 只有 (1) & (4) only</li>
+                <li>C. 只有 (1), (2) & (3) only</li>
+                <li>D. 只有 (2), (3) & (4) only</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <div class="concept-box">
+            <span class="zh concept-term">1. 直接稅 vs 間接稅 (Direct vs. Indirect Tax)</span>
+            <span class="en concept-term">1. Direct vs. Indirect Tax</span>
+            <p>
+                <span class="zh"><strong>直接稅：</strong>稅項負擔不能轉嫁給他人。納稅人即是負稅人。例子：薪俸稅、利得稅、物業稅。</span>
+                <span class="en"><strong>Direct Tax:</strong> The burden of taxation cannot be shifted to others. The taxpayer is the tax bearer. Examples: Salaries tax, Profits tax, Property tax.</span>
+            </p>
+            <p>
+                <span class="zh"><strong>間接稅：</strong>稅項負擔可以轉嫁給他人（通常轉嫁給消費者）。例子：機場離境稅、博彩稅、應課稅品稅。</span>
+                <span class="en"><strong>Indirect Tax:</strong> The burden of taxation can be shifted to others (usually to consumers). Examples: Departure tax, Betting duty, Excise duty.</span>
+            </p>
+        </div>
+
+        <div class="concept-box">
+            <span class="zh concept-term">2. 地域來源原則 (Territorial Source Principle)</span>
+            <span class="en concept-term">2. Territorial Source Principle</span>
+            <p>
+                <span class="zh">香港稅制採用「地域來源原則」。一般而言，只有源自香港的收入才須繳稅。源自海外的收入無須在香港繳稅。</span>
+                <span class="en">Hong Kong adopts the "Territorial Source Principle". Generally, only income arising in or derived from Hong Kong is chargeable to tax. Income derived from outside Hong Kong is not taxable in HK.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Option: A</div>
+
+        <div class="analysis-step">
+            <span class="step-label">(1) 物業稅 (Property Tax) <span class="status-badge status-yes">YES</span></span>
+            <p>
+                <span class="zh">該居民出租位於<strong>旺角</strong>（香港境內）的單位收取租金。這是源自香港的物業收入，且物業稅是<strong>直接稅</strong>（業主直接支付，不能轉嫁）。因此，他須繳付物業稅。</span>
+                <span class="en">The resident receives rental income from an apartment in <strong>Mongkok</strong> (within Hong Kong). This is income derived from HK property. Property tax is a <strong>Direct Tax</strong> (paid directly by the owner, burden cannot be shifted). Therefore, he must pay Property tax.</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-label">(2) 利得稅 (Profits Tax) <span class="status-badge status-no">NO</span></span>
+            <p>
+                <span class="zh">雖然他收取股息，但在香港，個人投資者收取的<strong>股息</strong>通常不視為應課稅利潤（除非他是全職股票交易商）。此外，他沒有在香港經營業務。因此，無須繳付利得稅。</span>
+                <span class="en">Although he receives dividends, <strong>dividends</strong> received by individual investors are generally not considered assessable profits in Hong Kong (unless he is a professional stock trader). Also, he is not carrying on a business in HK. Therefore, no Profits tax is payable.</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-label">(3) 薪俸稅 (Salaries Tax) <span class="status-badge status-no">NO</span></span>
+            <p>
+                <span class="zh">他在<strong>深圳</strong>（香港境外）的內地公司工作。根據地域來源原則，其受僱工作的來源地並非香港。因此，該筆薪金收入無須在香港繳納薪俸稅。</span>
+                <span class="en">He works for a Mainland company in <strong>Shenzhen</strong> (outside Hong Kong). Under the Territorial Source Principle, the source of his employment is not Hong Kong. Therefore, this wage income is not subject to Salaries tax in HK.</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-label">(4) 機場離境稅 (Air Passenger Departure Tax) <span class="status-badge status-no">NO (Not Direct)</span></span>
+            <p>
+                <span class="zh">他在香港機場離境，確實需要繳付機場離境稅。<strong>但是</strong>，題目問的是「直接稅」。機場離境稅屬於<strong>間接稅</strong>（由航空公司代收，稅負轉嫁給乘客）。因此，這不符合題目的要求。</span>
+                <span class="en">He departed from HKIA, so he indeed pays the Air Passenger Departure Tax. <strong>However</strong>, the question asks for "Direct Tax". Departure tax is an <strong>Indirect Tax</strong> (collected by the airline, burden shifted to the passenger). Thus, it does not fit the question's requirement.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>
+            <span class="zh">這類題目通常包含兩個過濾層：</span>
+            <span class="en">This type of question usually involves two layers of filtering:</span>
+        </p>
+        <ol>
+            <li>
+                <span class="zh"><strong>第一層：是否需要在香港繳稅？</strong> (應用地域來源原則)</span>
+                <span class="en"><strong>Layer 1: Is tax payable in HK?</strong> (Apply Territorial Source Principle)</span>
+                <ul>
+                    <li><span class="zh">深圳工作 \(\rightarrow\) 境外 \(\rightarrow\) 不用繳薪俸稅。</span></li>
+                    <li><span class="en">Work in Shenzhen \(\rightarrow\) Offshore \(\rightarrow\) No Salaries Tax.</span></li>
+                </ul>
+            </li>
+            <li>
+                <span class="zh"><strong>第二層：稅項的性質是什麼？</strong> (分辨直接稅與間接稅)</span>
+                <span class="en"><strong>Layer 2: What is the nature of the tax?</strong> (Distinguish Direct vs. Indirect)</span>
+                <ul>
+                    <li><span class="zh">離境稅 \(\rightarrow\) 雖然要付，但是間接稅 \(\rightarrow\) 排除。</span></li>
+                    <li><span class="en">Departure Tax \(\rightarrow\) Payable, but Indirect \(\rightarrow\) Exclude.</span></li>
+                </ul>
+            </li>
+        </ol>
+        <p>
+            <span class="zh"><strong>關鍵字 (Pivot Point)：</strong>「直接稅」(Direct Tax)。如果忽略了這個詞，你可能會誤選包含 (4) 的選項。</span>
+            <span class="en"><strong>Pivot Point:</strong> "Direct Tax". If you miss this keyword, you might mistakenly choose an option including (4).</span>
+        </p>
+    </div>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <div class="section">
+        <div class="section-title">Common Mistakes & Exam Tricks (常犯錯誤與考試技巧)</div>
+        
+        <div class="tips-box">
+            <p>
+                <span class="zh"><strong>陷阱 (Trap)：</strong>學生常誤以為「自己付錢」就是直接稅。</span>
+                <span class="en"><strong>Trap:</strong> Students often mistakenly think that "paying out of one's own pocket" means it is a direct tax.</span>
+            </p>
+            <p>
+                <span class="zh"><strong>糾正：</strong>經濟學上的定義是看「稅負能否轉嫁」。離境稅雖然是你付的，但它是包含在機票價格中，由航空公司代收並轉交政府，屬於對服務/消費徵稅，歸類為間接稅。</span>
+                <span class="en"><strong>Correction:</strong> The economic definition depends on "whether the tax burden can be shifted". Although you pay the departure tax, it is included in the ticket price, collected by the airline, and passed to the government. It is a tax on service/expenditure, classified as Indirect Tax.</span>
+            </p>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+            <p>
+                <span class="zh"><strong>速解技巧 (Shortcut)：</strong></span>
+                <span class="en"><strong>Shortcut:</strong></span>
+            </p>
+            <p>
+                <span class="zh">看到 (4) 機場離境稅，立刻聯想到「間接稅」。題目問「直接稅」，所以任何包含 (4) 的選項 (B, D) 均可立即刪除。</span>
+                <span class="en">See (4) Departure Tax \(\rightarrow\) Immediately think "Indirect Tax". Question asks for "Direct Tax", so eliminate any option containing (4) (i.e., B and D) immediately.</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
