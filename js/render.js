@@ -244,6 +244,9 @@ async function renderQuestions() {
 
                 <div class="question-info">             
 
+                    ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${q.correctPercentage}%</div>` : ''}
+
+
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
@@ -279,8 +282,6 @@ async function renderQuestions() {
                             </span>
                         </div>
                     ` : ''}                    
-
-                    ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${q.correctPercentage}%</div>` : ''}
 
                     </div>
                 
