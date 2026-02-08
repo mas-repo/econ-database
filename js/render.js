@@ -79,6 +79,82 @@ async function renderQuestions() {
                 const numB = parseInt(b.replace('Chapter ', ''));
                 return numA - numB;
             }) : [];
+
+        // --- PRE-GENERATE HTML FOR CLASSIFICATIONS TO GROUP THEM ---
+        
+        let classificationHtml = '';
+        const hasClassifications = window.showQuestionTags && (
+            sortedCurriculum.length > 0 || 
+            sortedChapters.length > 0 || 
+            (q.concepts && q.concepts.length > 0) || 
+            (q.patterns && q.patterns.length > 0)
+        );
+
+        if (hasClassifications) {
+            classificationHtml += `<div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e0e0e0; display: flex; flex-wrap: wrap; gap: 15px; row-gap: 8px; align-items: baseline;">`;
+
+            // 1. Curriculum
+            if (sortedCurriculum.length > 0) {
+                classificationHtml += `
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">課程:</strong>
+                        ${sortedCurriculum.map(c => `
+                            <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="${getTagStyle('curriculum', c)}">
+                                ${c}
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            // 2. Chapters
+            if (sortedChapters.length > 0) {
+                classificationHtml += `
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Ch:</strong>
+                        ${sortedChapters.map(c => {
+                            const match = c.match(/(\d+)/);
+                            const val = match ? match[0] : c; 
+                            return `
+                            <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="${getTagStyle('chapter', val)}">
+                                ${c}
+                            </span>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }
+
+            // 3. Concepts
+            if (q.concepts && q.concepts.length > 0) {
+                classificationHtml += `
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">概念:</strong>
+                        ${q.concepts.map(c => `
+                            <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="${getTagStyle('concepts', c)}">
+                                ${c}
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            // 4. Patterns
+            if (q.patterns && q.patterns.length > 0) {
+                classificationHtml += `
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                        <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">題型:</strong>
+                        ${q.patterns.map(p => `
+                            <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="${getTagStyle('patterns', p)}">
+                                ${p}
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            classificationHtml += `</div>`;
+        }
         
         return `
         <div class="question-card">
@@ -131,8 +207,32 @@ async function renderQuestions() {
                         <div class="question-text-content collapsed">${q.questionTextEng.trim()}</div>
                     </div>
                 ` : ''}
-                
-                <div class="question-info">                   
+
+                    ${q.answer ? (isShortAnswer ? `
+                        <div class="info-item" style="display: flex; align-items: center; gap: 8px;">
+                            <strong>答案：</strong> 
+                            <span style="flex: 1;">${q.answer}</span>
+                            <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
+                                📋
+                            </button>
+                        </div>
+                    ` : `
+                        <div class="question-text">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">
+                                    ▶
+                                </button>
+                                <strong style="flex: 1;">答案：</strong>
+                                <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
+                                    📋
+                                </button>
+                            </div>
+                            <div class="question-text-content collapsed">${q.answer.trim()}</div>
+                        </div>
+                    `) : ''}                  
+
+                <div class="question-info">             
+
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
@@ -173,90 +273,11 @@ async function renderQuestions() {
 
                     </div>
                 
-                ${q.answer ? (isShortAnswer ? `
-                    <div class="info-item" style="display: flex; align-items: center; gap: 8px;">
-                        <strong>答案：</strong> 
-                        <span style="flex: 1;">${q.answer}</span>
-                        <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
-                            📋
-                        </button>
-                    </div>
-                ` : `
-                    <div class="question-text">
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                            <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">
-                                ▶
-                            </button>
-                            <strong style="flex: 1;">答案：</strong>
-                            <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
-                                📋
-                            </button>
-                        </div>
-                        <div class="question-text-content collapsed">${q.answer.trim()}</div>
-                    </div>
-                `) : ''}
+
                 <div></div>
                 
-                <!-- Active State for Curriculum -->
-                ${(window.showQuestionTags && sortedCurriculum.length > 0) ? `
-                    <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">課程分類：</strong>
-                        <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${sortedCurriculum.map(c => `
-                                <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="${getTagStyle('curriculum', c)}">
-                                    ${c}
-                                </span>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''}
-
-                <!-- Active State for Chapters -->
-                ${(window.showQuestionTags && sortedChapters.length > 0) ? `
-                    <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">Chapter(s):</strong>
-                        <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${sortedChapters.map(c => {
-                                // Extract the number (e.g., "Chapter 01" -> "01") to match the sidebar filter logic
-                                const match = c.match(/(\d+)/);
-                                const val = match ? match[0] : c; 
-                                return `
-                                <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="${getTagStyle('chapter', val)}">
-                                    ${c}
-                                </span>
-                                `;
-                            }).join('')}
-                        </div>
-                    </div>
-                ` : ''}                  
-
-                <!-- Active State for Concepts -->
-                 ${(window.showQuestionTags && q.concepts && q.concepts.length > 0) ? `
-                    <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">涉及概念：</strong>
-                        <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${q.concepts.map(c => `
-                                <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="${getTagStyle('concepts', c)}">
-                                    ${c}
-                                </span>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''}
-                
-                <!-- Active State for Patterns -->
-                ${(window.showQuestionTags && q.patterns && q.patterns.length > 0) ? `
-                    <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">題型：</strong>
-                        <div class="tag-container" style="flex: 1; margin: 0;">
-                            ${q.patterns.map(p => `
-                                <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="${getTagStyle('patterns', p)}">
-                                    ${p}
-                                </span>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''} 
+                <!-- Combined Classifications Section -->
+                ${classificationHtml}
                 
                 ${q.markersReport ? `
                     <div class="info-item" style="margin-top: 10px; display: flex; align-items: flex-start; gap: 8px;">
