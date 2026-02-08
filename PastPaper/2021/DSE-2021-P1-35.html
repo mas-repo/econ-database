@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Crowding Out Effect</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --box-bg: #ffffff;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: var(--accent-color);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ccc;
+        }
+
+        .correct-option {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+
+        .wrong-option {
+            background-color: var(--wrong-bg);
+            border-left-color: var(--wrong-border);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
+            font-size: 0.95em;
+        }
+
+        .pivot-point {
+            background-color: #fff7ed;
+            border: 2px dashed var(--accent-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div><span class="tag">Topic</span> 財政政策與排擠效應 (Fiscal Policy & Crowding Out Effect)</div>
+        <div><span class="tag">Difficulty</span> <span class="stars">★★★☆☆</span></div>
+        <div style="width: 100%; margin-top: 10px;">
+            <span class="tag">Key Concepts</span> 擴張性財政政策 (Expansionary Fiscal Policy), 貨幣需求 (Money Demand), 利率 (Interest Rate)
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>題目 The Question</h2>
+        <p class="bilingual-text">
+            下列哪項會<strong>抵銷</strong>擴張性財政政策對總產出的影響？<br>
+            <span class="en-text">Which of the following would <strong>offset</strong> the effect on aggregate output of an expansionary fiscal policy?</span>
+        </p>
+        <ul class="options-list">
+            <li><strong>A.</strong> 公眾持有更多現金。<br><span class="en-text">The public held more cash.</span></li>
+            <li><strong>B.</strong> 使用電子錢包日漸普及。<br><span class="en-text">The use of electronic wallets became more popular.</span></li>
+            <li><strong>C.</strong> 銀行同業拆息下降。<br><span class="en-text">The interbank rate decreased.</span></li>
+            <li><strong>D.</strong> 政府增加外籍家傭入境的配額。<br><span class="en-text">The government increased quota on the importation of foreign domestic helpers.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>概念重溫 Concept Review</h2>
+        
+        <h3>1. 擴張性財政政策 (Expansionary Fiscal Policy)</h3>
+        <p>
+            政府增加支出 \(G\) 或減少稅收 \(T\)，導致總需求 \(AD\) 增加，使 \(AD\) 曲線向右移動，從而令收入（總產出）\(Y\) 上升。<br>
+            <span class="en-text">The government increases spending \(G\) or decreases taxes \(T\), leading to an increase in Aggregate Demand \(AD\). This shifts the AD curve to the right, causing income (aggregate output) \(Y\) to rise.</span>
+        </p>
+
+        <h3>2. 排擠效應 (Crowding Out Effect)</h3>
+        <p>
+            排擠效應解釋了為什麼財政政策的最終效果會小於預期。過程如下：<br>
+            <span class="en-text">The Crowding Out Effect explains why the final effect of fiscal policy is smaller than expected. The process is as follows:</span>
+        </p>
+        <ul>
+            <li>總產出上升 \(Y \uparrow\) \(\rightarrow\) 公眾需要更多現金進行交易（交易性貨幣需求上升 \(M_d \uparrow\)）。</li>
+            <li>在貨幣供應 \(M_s\) 不變的情況下，貨幣需求增加會導致<strong>利率上升 \(r \uparrow\)</strong>。</li>
+            <li>利率上升會導致私人投資 \(I\) 和私人消費 \(C\) 減少。</li>
+            <li>私人支出的減少會「抵銷」部分由政府支出帶來的增長。</li>
+        </ul>
+
+        <div class="math-block">
+            $$ Y \uparrow \Rightarrow M_d \uparrow \Rightarrow r \uparrow \Rightarrow I \downarrow, C \downarrow $$
+        </div>
+
+        <h3>3. 貨幣需求變動 (Changes in Money Demand)</h3>
+        <p>
+            除了收入影響交易需求外，如果公眾的偏好改變（例如更想持有現金），貨幣需求曲線 \(M_d\) 會自行向右移動，導致利率進一步上升。<br>
+            <span class="en-text">Besides income affecting transaction demand, if public preference changes (e.g., desiring to hold more cash), the Money Demand curve \(M_d\) shifts to the right, causing interest rates to rise further.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h2>答案與詳細分析 Answer & Detailed Analysis</h2>
+        
+        <p><strong>正確答案 Correct Option: <span style="color: var(--correct-border); font-size: 1.2em;">A</span></strong></p>
+
+        <div class="analysis-item correct-option">
+            <h3>選項 A (Option A) - 正確 Correct</h3>
+            <p>
+                <strong>公眾持有更多現金 (The public held more cash)</strong><br>
+                這代表在任何給定的利率下，公眾對貨幣的需求增加（貨幣需求曲線 \(M_d\) 向右移動）。
+                <br>
+                擴張性財政政策本身已經因為收入上升而推高了利率。如果公眾同時希望持有更多現金，這會令貨幣市場出現更嚴重的短缺，導致<strong>利率 \(r\) 升得更高</strong>。
+                <br>
+                極高的利率會大幅度減少私人投資 \(I\)，從而嚴重<strong>抵銷</strong>了財政政策原本帶來的產出增長。
+            </p>
+            <span class="en-text">
+                This implies that at any given interest rate, the public's demand for money increases (the Money Demand curve \(M_d\) shifts to the right).<br>
+                Expansionary fiscal policy already pushes up interest rates due to rising income. If the public simultaneously wants to hold more cash, this creates a larger shortage in the money market, causing the <strong>interest rate \(r\) to rise even higher</strong>.<br>
+                Extremely high interest rates will significantly reduce private investment \(I\), thereby heavily <strong>offsetting</strong> the output growth originally caused by the fiscal policy.
+            </span>
+        </div>
+
+        <div class="analysis-item wrong-option">
+            <h3>選項 B (Option B) - 錯誤 Incorrect</h3>
+            <p>
+                <strong>使用電子錢包日漸普及 (The use of electronic wallets became more popular)</strong><br>
+                電子錢包減少了人們對手持現金（交易媒介）的需求。這會導致貨幣需求 \(M_d\) 下降。當貨幣需求下降，利率 \(r\) 會有下行壓力。較低的利率有利於投資，這會<strong>加強</strong>擴張性財政政策的效果，而不是抵銷。
+            </p>
+            <span class="en-text">
+                Electronic wallets reduce the need for holding cash (medium of exchange). This leads to a decrease in Money Demand \(M_d\). When money demand falls, there is downward pressure on the interest rate \(r\). Lower interest rates encourage investment, which would <strong>strengthen</strong> the effect of expansionary fiscal policy, not offset it.
+            </span>
+        </div>
+
+        <div class="analysis-item wrong-option">
+            <h3>選項 C (Option C) - 錯誤 Incorrect</h3>
+            <p>
+                <strong>銀行同業拆息下降 (The interbank rate decreased)</strong><br>
+                銀行同業拆息是銀行之間的借貸成本。拆息下降通常意味著市場資金充裕，這會引導整體市場利率下降。利率下降會刺激投資 \(I\) 增加，這同樣會<strong>加強</strong>總產出的增長。
+            </p>
+            <span class="en-text">
+                The interbank rate is the cost of borrowing between banks. A decrease usually implies ample market liquidity, leading to a fall in general market interest rates. Lower interest rates stimulate an increase in investment \(I\), which would also <strong>strengthen</strong> the growth in aggregate output.
+            </span>
+        </div>
+
+        <div class="analysis-item wrong-option">
+            <h3>選項 D (Option D) - 錯誤 Incorrect</h3>
+            <p>
+                <strong>政府增加外籍家傭入境的配額 (The government increased quota on foreign domestic helpers)</strong><br>
+                這是一個供應面的政策。增加勞動力供應會增加長期總供應 (LRAS) 或短期總供應 (SRAS)。這會導致產出增加。由於這與擴張性財政政策的方向一致（都是令產出上升），所以這不是抵銷作用。
+            </p>
+            <span class="en-text">
+                This is a supply-side policy. Increasing the labor supply increases Long-run Aggregate Supply (LRAS) or Short-run Aggregate Supply (SRAS). This leads to an increase in output. Since this works in the same direction as expansionary fiscal policy (both cause output to rise), it is not an offsetting effect.
+            </span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div>
+        <h2>題目拆解 Problem Decomposition</h2>
+        
+        <div class="pivot-point">
+            <h3>🔑 關鍵點 (Pivot Point): 尋找推高利率的因素 (Look for factors raising interest rates)</h3>
+            <p>
+                題目問「抵銷」(Offset)。在財政政策的背景下，抵銷作用主要來自<strong>排擠效應 (Crowding Out Effect)</strong>，即<strong>利率上升</strong>導致私人投資減少。
+            </p>
+            <span class="en-text">
+                The question asks for "offset". In the context of fiscal policy, the offsetting effect primarily comes from the <strong>Crowding Out Effect</strong>, where <strong>rising interest rates</strong> lead to a decrease in private investment.
+            </span>
+        </div>
+
+        <p><strong>邏輯鏈 (Logic Chain):</strong></p>
+        <ol>
+            <li>擴張性財政政策 \(\rightarrow\) 產出 \(Y\) 增加。</li>
+            <li>產出 \(Y\) 增加 \(\rightarrow\) 交易性貨幣需求 \(M_d\) 增加 \(\rightarrow\) 利率 \(r\) 上升 (這是原本的排擠)。</li>
+            <li><strong>題目問：</strong>什麼會令這個抵銷更嚴重？</li>
+            <li><strong>答案：</strong>任何令<strong>利率 \(r\) 升得更高</strong>的因素。</li>
+            <li><strong>選項分析：</strong>只有 A (公眾想持有更多現金 = \(M_d\) 增加) 會令利率進一步上升。</li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="concept-box" style="background-color: #fff1f2; border-left-color: #e11d48;">
+        <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <ul>
+            <li>
+                <strong>忽略資產市場 (Asset Market) 的影響：</strong><br>
+                學生常只看商品市場（AD增加），忘記了背後必須有貨幣市場的配合。如果貨幣市場出現短缺（大家都要現金），利率必然飆升，這會反過來傷害實體經濟的產出。
+                <br><span class="en-text">Students often focus only on the goods market (AD increases) and forget the Asset Market. If there is a shortage in the money market (everyone wants cash), interest rates must spike, which hurts output in the real economy.</span>
+            </li>
+            <li>
+                <strong>誤判電子錢包的作用：</strong><br>
+                很多同學直覺認為電子錢包普及會增加消費。但在 DSE 經濟學模型中，電子錢包的主要功能是被視為「減少對現金的需求」(Reduce money demand)，這會導致利率下降，其實是擴張性的。
+                <br><span class="en-text">Many students intuitively think electronic wallets increase consumption. However, in the DSE Economics model, the primary function of electronic wallets is viewed as "reducing the demand for cash" (money demand), which lowers interest rates and is actually expansionary.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
