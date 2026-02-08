@@ -132,16 +132,7 @@ async function renderQuestions() {
                     </div>
                 ` : ''}
                 
-                <div class="question-info">
-                    ${(window.showQuestionTags && q.multipleSelectionType && q.multipleSelectionType !== '-') ? `
-                        <div class="info-item">
-                            <strong>複選：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
-                                ${q.multipleSelectionType}
-                            </span>
-                        </div>
-                    ` : ''}
-                    
+                <div class="question-info">                   
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
@@ -168,9 +159,19 @@ async function renderQuestions() {
                             </span>
                         </div>
                     ` : ''}
-                    
+
+                    ${(window.showQuestionTags && q.multipleSelectionType && q.multipleSelectionType !== '-') ? `
+                        <div class="info-item">
+                            <strong>複選：</strong> 
+                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
+                                ${q.multipleSelectionType}
+                            </span>
+                        </div>
+                    ` : ''}                    
+
                     ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${q.correctPercentage}%</div>` : ''}
-                </div>
+
+                    </div>
                 
                 ${q.answer ? (isShortAnswer ? `
                     <div class="info-item" style="display: flex; align-items: center; gap: 8px;">
