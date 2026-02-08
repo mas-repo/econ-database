@@ -243,6 +243,8 @@ function filterDropdownList(input, listId) {
     const items = list.getElementsByClassName('tri-state-label');
     for (let i = 0; i < items.length; i++) {
         const txtValue = items[i].textContent || items[i].innerText;
+        // Remove the count number for search matching (e.g. "Algebra (5)" -> match "Algebra")
+        // We assume the text content starts with the value. 
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             items[i].style.display = "";
         } else {
@@ -271,7 +273,7 @@ function updateFilterIndicators() {
         } else {
             indicator.classList.remove('visible');
         }
-        // Handle Input Borders (for dropdowns with search inputs)
+        
         const input = document.querySelector(`input[data-filter-type="${type}"]`);
         if (input) {
             input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
@@ -382,10 +384,26 @@ async function updateDynamicDropdowns() {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        // 1. Get Values
+        // 1. Calculate Counts First
+        const counts = {};
+        contextQuestions.forEach(q => {
+            const val = q[fieldName];
+            if (isArrayField && Array.isArray(val)) {
+                val.forEach(v => {
+                    if (v && v.trim() !== '') {
+                        const key = v.trim();
+                        counts[key] = (counts[key] || 0) + 1;
+                    }
+                });
+            } else if (val) {
+                const key = typeof val === 'string' ? val.trim() : val;
+                if(key !== '') counts[key] = (counts[key] || 0) + 1;
+            }
+        });
+
+        // 2. Get Values (Only those that exist in context)
         let validValues;
         if (isArrayField) {
-            // Flatten array fields
             const set = new Set();
             contextQuestions.forEach(q => {
                 if (Array.isArray(q[fieldName])) {
@@ -399,29 +417,21 @@ async function updateDynamicDropdowns() {
             validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
         }
         
-        // 2. Apply Custom Sorting based on PRIORITY_CONFIG
+        // 3. Apply Custom Sorting
         const priorities = PRIORITY_CONFIG[filterType] || [];
         
         if (priorities.length > 0) {
             validValues.sort((a, b) => {
                 const indexA = priorities.indexOf(a);
                 const indexB = priorities.indexOf(b);
-
-                // If both are in priority list, sort by their order in config
-                if (indexA !== -1 && indexB !== -1) {
-                    return indexA - indexB;
-                }
-                // If only A is in priority list, it comes first
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
                 if (indexA !== -1) return -1;
-                // If only B is in priority list, it comes first
                 if (indexB !== -1) return 1;
-
-                // Otherwise, standard string comparison (Chinese-aware)
                 return a.localeCompare(b, 'zh-HK');
             });
         }
 
-        // 3. Clean up filters for non-existent values
+        // 4. Clean up filters for non-existent values
         if (window.triStateFilters[filterType]) {
             Object.keys(window.triStateFilters[filterType]).forEach(val => {
                 if (!validValues.includes(val)) {
@@ -430,20 +440,18 @@ async function updateDynamicDropdowns() {
             });
         }
 
-        // Determine the wrapper to hide/show (supports both old and new styles)
         const wrapper = container.closest('.input-dropdown-container') || container.closest('.dropdown-filter');
 
         if (validValues.length === 0) {
-            // Hide the entire dropdown container if no values exist
             if (wrapper) wrapper.style.display = 'none';
             return;
         } else {
-             // Show it if it was hidden
             if (wrapper) wrapper.style.display = 'block'; 
         }
 
         let html = '';
         validValues.forEach(item => {
+            const count = counts[item] || 0;
             const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][item];
             
             let wrapperClass = 'tri-state-label';
@@ -457,10 +465,11 @@ async function updateDynamicDropdowns() {
                 checkboxClass += ' excluded';
             }
 
+            // Added Count Badge Logic
             html += `
                 <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="${filterType}" data-value="${item}">
                     <div class="${checkboxClass}" data-filter="${filterType}" data-value="${item}">
-                        <span>${item}</span>
+                        <span>${item} <small style="opacity: 0.6; font-size: 0.85em; margin-left: 4px;">(${count})</small></span>
                     </div>
                 </div>
             `;
@@ -468,57 +477,50 @@ async function updateDynamicDropdowns() {
         container.innerHTML = html;
     };
 
-    // Populate standard dynamic lists
     populateList('multiple-selection-options', 'multipleSelectionType', 'multipleSelection');
     populateList('graph-options', 'graphType', 'graph');
     populateList('table-options', 'tableType', 'table');
     populateList('calculation-options', 'calculationType', 'calculation');
     
-    // Populate new array-based lists
     populateList('concepts-options', 'concepts', 'concepts', true);
     populateList('patterns-options', 'patterns', 'patterns', true);
 
-    // Dynamic AI Option (Modified to check for data existence)
-        const aiContainer = document.getElementById('ai-options');
-        if (aiContainer) {
-            // 1. Check if any question in the current context has an AI Explanation
-            const hasAI = contextQuestions.some(q => q.AIExplanation && q.AIExplanation.trim() !== '');
+    const aiContainer = document.getElementById('ai-options');
+    if (aiContainer) {
+        const hasAI = contextQuestions.some(q => q.AIExplanation && q.AIExplanation.trim() !== '');
+        const wrapper = aiContainer.closest('.dropdown-filter') || aiContainer.parentElement;
 
-            // 2. Find the wrapper element to hide/show
-            // This usually wraps both the button and the dropdown div
-            const wrapper = aiContainer.closest('.dropdown-filter') || aiContainer.parentElement;
+        if (!hasAI) {
+            if (wrapper) wrapper.style.display = 'none';
+        } else {
+            if (wrapper) wrapper.style.display = 'block'; 
+            
+            // Calculate AI Count
+            const aiCount = contextQuestions.filter(q => q.AIExplanation && q.AIExplanation.trim() !== '').length;
 
-            if (!hasAI) {
-                // No questions have AI explanations -> Hide the filter
-                if (wrapper) wrapper.style.display = 'none';
-            } else {
-                // Questions exist -> Show the filter
-                if (wrapper) wrapper.style.display = 'block'; 
-
-                // 3. Render the checkbox option (Existing Logic)
-                const item = 'AI 詳解';
-                const currentState = window.triStateFilters.ai && window.triStateFilters.ai[item];
-                
-                let wrapperClass = 'tri-state-label';
-                let checkboxClass = 'tri-state-checkbox';
-                
-                if (currentState === 'checked') {
-                    wrapperClass += ' checked';
-                    checkboxClass += ' checked';
-                } else if (currentState === 'excluded') {
-                    wrapperClass += ' excluded';
-                    checkboxClass += ' excluded';
-                }
-
-                aiContainer.innerHTML = `
-                    <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="ai" data-value="${item}">
-                        <div class="${checkboxClass}" data-filter="ai" data-value="${item}">
-                            <span>${item}</span>
-                        </div>
-                    </div>
-                `;
+            const item = 'AI 詳解';
+            const currentState = window.triStateFilters.ai && window.triStateFilters.ai[item];
+            
+            let wrapperClass = 'tri-state-label';
+            let checkboxClass = 'tri-state-checkbox';
+            
+            if (currentState === 'checked') {
+                wrapperClass += ' checked';
+                checkboxClass += ' checked';
+            } else if (currentState === 'excluded') {
+                wrapperClass += ' excluded';
+                checkboxClass += ' excluded';
             }
+
+            aiContainer.innerHTML = `
+                <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="ai" data-value="${item}">
+                    <div class="${checkboxClass}" data-filter="ai" data-value="${item}">
+                        <span>${item} <small style="opacity: 0.6; font-size: 0.85em; margin-left: 4px;">(${aiCount})</small></span>
+                    </div>
+                </div>
+            `;
         }
+    }
     
     updateFilterIndicators();
 }
@@ -542,18 +544,11 @@ function setupInputDropdownListeners() {
         const list = document.getElementById(listId);
         
         input.addEventListener('focus', () => {
-            // Close other dropdowns (like Marks/Percentage) when focusing an input
             closeAllDropdowns();
-
-            // Open this specific list
             if(list) {
                 list.classList.add('active');
-                // Ensure it's visible if it was hidden by Reset
                 list.style.display = ''; 
             }
-
-            // Rotate the arrow for this specific input
-            // Using dynamic lookup logic similar to toggleDropdown
             const container = input.closest('.filter-input-wrapper');
             if (container) {
                 const arrow = container.querySelector('.input-arrow');
@@ -607,11 +602,32 @@ function populateSearchScope() {
     }
 }
 
+// ============================================
+// CLEAR & RESET FUNCTIONS
+// ============================================
+
+// NEW: Clear Chapter Filter Button Logic
+window.clearChapterFilter = function() {
+    // 1. Reset the state
+    window.triStateFilters.chapter = {};
+    
+    // 2. Visually reset checkboxes in the Chapter dropdown immediately
+    // (This helps if the dropdown is currently open)
+    const container = document.getElementById('chapter-options');
+    if (container) {
+        container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
+            el.classList.remove('checked', 'excluded');
+        });
+    }
+
+    // 3. Re-run filters
+    filterQuestions();
+};
+
 function clearFilters() {
     document.getElementById('search').value = '';
     document.getElementById('year-filter').value = '';
     
-    // Explicitly hide sections to visually reset
     const pctSection = document.getElementById('percentage-options');
     if (pctSection) pctSection.style.display = 'none';
 
@@ -624,7 +640,6 @@ function clearFilters() {
         if (section) section.style.display = 'none';
     });
 
-    // Reset all arrows
     closeAllDropdowns();
 
     const scopeSelect = document.getElementById('search-scope');
@@ -654,7 +669,6 @@ function clearFilters() {
         }
     });
 
-    // Reset AI button style
     const aiBtn = document.getElementById('ai-filter-btn');
     if (aiBtn) {
         aiBtn.style.borderColor = '';
@@ -689,17 +703,16 @@ function clearFilters() {
     });
 }
 
-// === Handle Filter Removal from Active Panel ===
 window.removeFilter = function(type, param1, param2) {
     if (type === 'search') {
         document.getElementById('search').value = '';
     } else if (type === 'year') {
         document.getElementById('year-filter').value = '';
     } else if (type === 'percentage') {
-        clearPercentageFilter(); // This function already calls filterQuestions
+        clearPercentageFilter();
         return;
     } else if (type === 'marks') {
-        clearMarksFilter(); // This function already calls filterQuestions
+        clearMarksFilter();
         return;
     } else if (type === 'tag') {
         const category = param1;
@@ -720,11 +733,9 @@ function updateSearchInfo() {
     let html = '';
     let hasFilters = false;
 
-    // Helper to create badge with a close button
     const createBadge = (label, value, colorClass = 'blue', removeType, p1, p2) => {
-        // Prepare arguments for the remove function
         let removeArgs = `'${removeType}'`;
-        if (p1) removeArgs += `, '${p1.replace(/'/g, "\\'")}'`; // Escape quotes
+        if (p1) removeArgs += `, '${p1.replace(/'/g, "\\'")}'`; 
         if (p2) removeArgs += `, '${p2.replace(/'/g, "\\'")}'`;
 
         return `

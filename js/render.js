@@ -200,7 +200,7 @@ async function renderQuestions() {
                 <!-- MODIFIED: Active State for Chapters -->
                 ${sortedChapters.length > 0 ? `
                     <div style="display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
-                        <strong style="white-space: nowrap;">Chapter:</strong>
+                        <strong style="white-space: nowrap;">Chapter(s):</strong>
                         <div class="tag-container" style="flex: 1; margin: 0;">
                             ${sortedChapters.map(c => {
                                 // Extract the number (e.g., "Chapter 01" -> "01") to match the sidebar filter logic
