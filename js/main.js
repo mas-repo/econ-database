@@ -336,3 +336,11 @@ if (document.readyState === 'loading') {
     populateCurriculumFormOptions();
     init();
 }
+
+// === Hotkey Listener (Suggestion 3) ===
+document.addEventListener('keydown', function(e) {
+    // Press Escape to clear filters
+    if (e.key === 'Escape') {
+        clearFilters();
+    }
+});

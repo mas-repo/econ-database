@@ -37,7 +37,7 @@ function toggleQuestionText(button) {
     }
 }
 
-// Added HTML escaping for security
+// HTML escaping for security
 function escapeHTML(str) {
     if (!str) return '';
     return str.replace(/&/g, '&amp;')
@@ -45,6 +45,11 @@ function escapeHTML(str) {
               .replace(/>/g, '&gt;')
               .replace(/"/g, '&quot;')
               .replace(/'/g, '&#039;');
+}
+// HTML escaping for security
+function escapeAttr(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 }
 
 // Populate chapter filter options dynamically

@@ -99,7 +99,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">課程:</strong>
                         ${sortedCurriculum.map(c => `
-                            <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${c}')" style="${getTagStyle('curriculum', c)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${escapeAttr(c)}')" style="${getTagStyle('curriculum', c)}">
                                 ${c}
                             </span>
                         `).join('')}
@@ -122,7 +122,7 @@ async function renderQuestions() {
                             const displayLabel = c.replace(/^(Ch|Chapter)\s*/i, '');
 
                             return `
-                            <span class="tag clickable-tag" onclick="filterByTag('chapter', '${val}')" style="${getTagStyle('chapter', val)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('chapter', '${escapeAttr(val)}')" style="${getTagStyle('chapter', val)}">
                                 ${displayLabel}
                             </span>
                             `;
@@ -137,7 +137,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">概念:</strong>
                         ${q.concepts.map(c => `
-                            <span class="tag clickable-tag" onclick="filterByTag('concepts', '${c}')" style="${getTagStyle('concepts', c)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('concepts', '${escapeAttr(c)}')" style="${getTagStyle('concepts', c)}">
                                 ${c}
                             </span>
                         `).join('')}
@@ -151,7 +151,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">題型:</strong>
                         ${q.patterns.map(p => `
-                            <span class="tag clickable-tag" onclick="filterByTag('patterns', '${p}')" style="${getTagStyle('patterns', p)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('patterns', '${escapeAttr(p)}')" style="${getTagStyle('patterns', p)}">
                                 ${p}
                             </span>
                         `).join('')}

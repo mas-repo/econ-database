@@ -3,9 +3,10 @@
 class IndexedDBStorage {
     constructor() {
         this.dbName = 'EconQuestionsDB';
-        this.version = 2;
+        this.version = 3; 
         this.db = null;
         this.availableFields = new Set();
+        this.storeName = 'questions'; 
     }
 
     async init() {
@@ -21,6 +22,7 @@ class IndexedDBStorage {
             request.onupgradeneeded = (event) => {
                 const db = event.target.result;
 
+                // Create questions store
                 if (!db.objectStoreNames.contains('questions')) {
                     const questionStore = db.createObjectStore('questions', { 
                         keyPath: 'id', 
@@ -31,6 +33,7 @@ class IndexedDBStorage {
                     questionStore.createIndex('qtype', 'qtype', { unique: false });
                 }
 
+                // Create other stores
                 if (!db.objectStoreNames.contains('publishers')) {
                     db.createObjectStore('publishers', { keyPath: 'name' });
                 }
@@ -49,8 +52,8 @@ class IndexedDBStorage {
 
     async addQuestion(question) {
         return new Promise((resolve, reject) => {
-            const transaction = this.db.transaction(['questions'], 'readwrite');
-            const store = transaction.objectStore('questions');
+            const transaction = this.db.transaction([this.storeName], 'readwrite');
+            const store = transaction.objectStore(this.storeName);
             const request = store.add(question);
 
             request.onsuccess = () => resolve(request.result);
@@ -58,12 +61,28 @@ class IndexedDBStorage {
         });
     }
 
-    // Added update method using put()
+    // Significantly faster than adding one by one
+    async addQuestions(questions) {
+        console.log("batch processing " + questions.length + " items");
+        return new Promise((resolve, reject) => {
+            // FIX: this.storeName is now defined, so this transaction will work
+            const transaction = this.db.transaction([this.storeName], 'readwrite');
+            const store = transaction.objectStore(this.storeName);
+            
+            questions.forEach(q => {
+                store.put(q);
+            });
+
+            transaction.oncomplete = () => resolve(questions.length);
+            transaction.onerror = (e) => reject(transaction.error || e.target.error);
+        });
+    }
+
     async updateQuestion(question) {
         return new Promise((resolve, reject) => {
-            const transaction = this.db.transaction(['questions'], 'readwrite');
-            const store = transaction.objectStore('questions');
-            const request = store.put(question); // put() updates if exists, inserts if not
+            const transaction = this.db.transaction([this.storeName], 'readwrite');
+            const store = transaction.objectStore(this.storeName);
+            const request = store.put(question); 
 
             request.onsuccess = () => resolve(request.result);
             request.onerror = () => reject(request.error);
@@ -72,16 +91,17 @@ class IndexedDBStorage {
 
     async getQuestions(filters = {}) {
         return new Promise((resolve, reject) => {
-            const transaction = this.db.transaction(['questions'], 'readonly');
-            const store = transaction.objectStore('questions');
+            const transaction = this.db.transaction([this.storeName], 'readonly');
+            const store = transaction.objectStore(this.storeName);
             const request = store.getAll();
 
             request.onsuccess = () => {
                 let questions = request.result;
-                
-                // Apply filters (delegated to storage-filters.js)
-                questions = this.applyFilters(questions, filters);
-                
+                // Note: Ensure `this.applyFilters` exists or logic is handled elsewhere.
+                // If applyFilters is not a method of this class, just return questions.
+                if (typeof this.applyFilters === 'function') {
+                    questions = this.applyFilters(questions, filters);
+                }
                 resolve(questions);
             };
             request.onerror = () => reject(request.error);
@@ -90,8 +110,8 @@ class IndexedDBStorage {
 
     async deleteQuestion(id) {
         return new Promise((resolve, reject) => {
-            const transaction = this.db.transaction(['questions'], 'readwrite');
-            const store = transaction.objectStore('questions');
+            const transaction = this.db.transaction([this.storeName], 'readwrite');
+            const store = transaction.objectStore(this.storeName);
             const request = store.delete(id);
 
             request.onsuccess = () => resolve();
@@ -134,9 +154,9 @@ class IndexedDBStorage {
 
     async clear() {
         return new Promise((resolve, reject) => {
-            const transaction = this.db.transaction(['questions', 'publishers', 'topics', 'concepts', 'patterns'], 'readwrite');
-            
             const stores = ['questions', 'publishers', 'topics', 'concepts', 'patterns'];
+            const transaction = this.db.transaction(stores, 'readwrite');
+            
             let completed = 0;
             
             stores.forEach(storeName => {

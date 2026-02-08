@@ -478,7 +478,7 @@ async function loadAuthenticatedData(data) {
                 
                 if (!value) {
                     // Initialize array fields as empty arrays
-                    if (['curriculumClassification', 'chapterClassification', 'concepts', 'patterns'].includes(fieldName)) {
+                    if (['curriculumClassification', 'AristochapterClassification', 'concepts', 'patterns'].includes(fieldName)) {
                         question[fieldName] = [];
                     }
                     return;
@@ -537,9 +537,8 @@ async function loadAuthenticatedData(data) {
         // Clear and reload database
         await window.storage.clear();
         
-        for (const question of questions) {
-            await window.storage.addQuestion(question);
-        }
+        // === Use Batch Add ===
+        await window.storage.addQuestions(questions);
         
         hideLoading();
         

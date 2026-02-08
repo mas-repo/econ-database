@@ -1010,7 +1010,6 @@ function clearPercentageFilter() {
     maxSlider.value = 100;
     window.percentageFilter = { min: 0, max: 100, active: false };
     updatePercentageRange();
-    filterQuestions();
 }
 
 function updateMarksRange() {
@@ -1067,5 +1066,4 @@ function clearMarksFilter() {
     maxSlider.value = 30;
     window.marksFilter = { min: 0, max: 30, active: false };
     updateMarksRange();
-    filterQuestions();
 }

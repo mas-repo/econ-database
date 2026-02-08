@@ -50,24 +50,24 @@ async function renderTopics() {
     const topicsMap = new Map();
     
     questions.forEach(q => {
-        if (q.topic) {
-            if (!topicsMap.has(q.topic)) {
-                topicsMap.set(q.topic, []);
+        if (q.curriculumClassification) {
+            if (!topicsMap.has(q.curriculumClassification)) {
+                topicsMap.set(q.curriculumClassification, []);
             }
-            topicsMap.get(q.topic).push(q);
+            topicsMap.get(q.curriculumClassification).push(q);
         }
     });
 
     const topicsData = await Promise.all(
         Array.from(topicsMap.entries()).map(async ([name, qs]) => {
-            const metadata = await window.storage.getMetadata('topics', name);
+            const metadata = await window.storage.getMetadata('curriculumClassification', name);
             return { name, count: qs.length, comment: metadata.comment || '' };
         })
     );
 
     topicsData.sort((a, b) => b.count - a.count);
 
-    const container = document.getElementById('topics-grid');
+    const container = document.getElementById('curriculumClassification-grid');
     
     if (topicsData.length === 0) {
         container.innerHTML = '<p class="empty-state">暫無主題資料</p>';
@@ -97,7 +97,7 @@ async function renderConcepts() {
     
     questions.forEach(q => {
         if (q.concepts) {
-            // ✅ FIX: Handle both array and string formats
+            // ✅ Handle both array and string formats
             let conceptsList = [];
             
             if (Array.isArray(q.concepts)) {
@@ -158,11 +158,11 @@ async function renderPatterns() {
     const patternsMap = new Map();
     
     questions.forEach(q => {
-        if (q.pattern) {
-            if (!patternsMap.has(q.pattern)) {
-                patternsMap.set(q.pattern, []);
+        if (q.patterns) {
+            if (!patternsMap.has(q.patterns)) {
+                patternsMap.set(q.patterns, []);
             }
-            patternsMap.get(q.pattern).push(q);
+            patternsMap.get(q.patterns).push(q);
         }
     });
 

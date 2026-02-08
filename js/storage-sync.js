@@ -61,12 +61,14 @@ class GoogleSheetsSync {
             this.availableFields.add(header);
         });
         window.availableFields = this.availableFields;
-        
+
+        /**
         console.log('\n========================================');
         console.log('📊 可用欄位 (Available Fields)');
         console.log('========================================');
         console.log(Array.from(this.availableFields).join(', '));
         console.log('========================================\n');
+        */
         
         const questions = [];
         let skippedCount = 0;
