@@ -116,12 +116,26 @@
                         <!-- Chapters -->
                         <div class="filter-item dropdown-filter">
                             <button class="dropdown-btn" onclick="toggleDropdown('chapter-options')">
-                               📖 Chapters <span id="chapter-arrow" class="arrow">▶</span>
+                            📖 Chapters <span id="chapter-arrow" class="arrow">▶</span>
                             </button>
                             <div id="indicator-chapter" class="active-indicator"></div>
-                            <!-- This ID is targeted by utils.js to populate options -->
+                            
+
                             <div id="chapter-options" class="dropdown-content custom-grid-dropdown chapter-grid-width">
-                                <!-- Populated by JS -->
+                                
+                                <!-- The Clear Button Row -->
+                                <!-- grid-column: 1 / -1 ensures it spans the full width of the grid -->
+                                <div style="grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
+                                    <button onclick="clearChapterFilter()" style="background:none; border:none; cursor:pointer; color:#666; font-size:0.9rem; display: flex; align-items: center; gap: 4px;">
+                                        🗑️ 清除
+                                    </button>
+                                </div>
+
+                                <!-- The Container for JS to populate -->
+                                <!-- style="display: contents" makes these items act as direct children of the grid -->
+                                <div id="chapter-list" style="display: contents;">
+                                    <!-- Your utils.js should populate options HERE -->
+                                </div>
                             </div>
                         </div>
 

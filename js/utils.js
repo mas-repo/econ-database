@@ -41,16 +41,24 @@ function toggleQuestionText(button) {
 // Populate chapter filter options dynamically
 // Dependencies: constants.js (CHAPTER_RANGE)
 function populateChapterFilter() {
-    const container = document.getElementById('chapter-options');
-    if (!container) return;
+    // CHANGE 1: Target the new inner container 'chapter-list'
+    // instead of the main dropdown 'chapter-options'
+    const container = document.getElementById('chapter-list');
+    
+    // Safety check: if the new container doesn't exist yet, stop or fallback
+    if (!container) {
+        console.warn('Element #chapter-list not found. Make sure HTML is updated.');
+        return;
+    }
     
     let html = '';
     for (let i = CHAPTER_RANGE.min; i <= CHAPTER_RANGE.max; i++) {
         const chNumber = String(i).padStart(2, '0');
-        // Note: For chapters, we apply the class directly to the item, 
-        // unlike the list items which use a wrapper.
+        // Note: For chapters, we apply the class directly to the item
         html += `<div class="tri-state-checkbox" data-filter="chapter" data-value="${chNumber}" onclick="toggleTriState(this)">${chNumber}</div>`;
     }
+    
+    // This now only updates the list area, leaving the Clear button (which is above this div) alone.
     container.innerHTML = html;
 }
 
