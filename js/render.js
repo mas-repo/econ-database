@@ -231,6 +231,17 @@ async function renderQuestions() {
                         </div>
                     `) : ''}                  
 
+                ${q.markersReport ? `
+                    <div class="info-item" style="margin-top: 10px; display: flex; align-items: flex-start; gap: 8px;">
+                        <div style="flex: 1;">
+                            <strong>評卷報告：</strong> ${q.markersReport.substring(0, 150)}${q.markersReport.length > 150 ? '...' : ''}
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.markersReport).replace(/"/g, '&quot;')}, this)" title="複製評卷報告" style="flex-shrink: 0;">
+                            📋
+                        </button>
+                    </div>
+                ` : ''}
+
                 <div class="question-info">             
 
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
@@ -279,16 +290,6 @@ async function renderQuestions() {
                 <!-- Combined Classifications Section -->
                 ${classificationHtml}
                 
-                ${q.markersReport ? `
-                    <div class="info-item" style="margin-top: 10px; display: flex; align-items: flex-start; gap: 8px;">
-                        <div style="flex: 1;">
-                            <strong>評卷報告：</strong> ${q.markersReport.substring(0, 150)}${q.markersReport.length > 150 ? '...' : ''}
-                        </div>
-                        <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.markersReport).replace(/"/g, '&quot;')}, this)" title="複製評卷報告" style="flex-shrink: 0;">
-                            📋
-                        </button>
-                    </div>
-                ` : ''}
             </div>
             
             ${isAdminMode ? `
