@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Consumer Surplus Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #475569;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            margin-bottom: 24px;
+            border-top: 4px solid var(--primary);
+        }
+
+        /* Header Section */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .badge-topic { background-color: var(--primary-light); color: var(--primary); }
+        .badge-difficulty { background-color: #fff7ed; color: var(--accent); }
+
+        h1, h2, h3 { color: var(--secondary); margin-top: 0; }
+        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.5em; }
+        
+        /* Question Table */
+        .q-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        .q-table th, .q-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+        .q-table th { background-color: #f1f5f9; }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        /* Answer Options */
+        .options-list { list-style: none; padding: 0; }
+        .option-item {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .option-item.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+            font-weight: bold;
+        }
+        .option-item.wrong {
+            border-color: var(--danger);
+            background-color: #fef2f2;
+            opacity: 0.7;
+        }
+
+        /* Bilingual Text Styling */
+        .zh { display: block; margin-bottom: 4px; font-weight: 500; }
+        .en { display: block; color: #64748b; font-size: 0.95em; margin-bottom: 12px; }
+
+        /* Pivot Point Box */
+        .pivot-box {
+            background-color: #fff7ed;
+            border: 2px dashed var(--accent);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .card { padding: 15px; }
+            .q-table { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="card">
+        <div class="header-info">
+            <span class="badge badge-topic">Topic: Utility & Demand (效用與需求)</span>
+            <span class="badge badge-difficulty">Difficulty: ★★☆☆☆</span>
+        </div>
+        <h1>Consumer Surplus Calculation<br><span style="font-size:0.7em; color:#666;">消費者盈餘計算</span></h1>
+        <p><strong>Key Concepts:</strong> Marginal Benefit (邊際利益), Consumer Surplus (消費者盈餘), Optimal Consumption (最優消費).</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="card">
+        <h2>The Question (題目)</h2>
+        
+        <p class="zh">下表顯示某消費者對牛油果的邊際利益表。</p>
+        <p class="en">The following table shows the marginal benefit schedule of a consumer for avocados.</p>
+
+        <div style="overflow-x:auto;">
+            <table class="q-table">
+                <tr>
+                    <th>數量 (Quantity)</th>
+                    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                </tr>
+                <tr>
+                    <th>邊際利益 (MB) ($)</th>
+                    <td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td>
+                </tr>
+            </table>
+        </div>
+
+        <p class="zh">當牛油果的價格由$5上升至$6，消費者盈餘會 ____________。</p>
+        <p class="en">When the price of avocados increases from $5 to $6, the consumer surplus will ___________. </p>
+
+        <ul class="options-list">
+            <li class="option-item">A. 增加$1 (increase by $1)</li>
+            <li class="option-item">B. 增加$3 (increase by $3)</li>
+            <li class="option-item">C. 減少$1 (decrease by $1)</li>
+            <li class="option-item">D. 減少$3 (decrease by $3)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="card">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <h3 style="margin-top:0;">1. 最優消費規則 (Optimal Consumption Rule)</h3>
+            <p class="zh">消費者會購買直到 <strong>邊際利益 (MB)</strong> 等於或大於 <strong>價格 (P)</strong>。</p>
+            <p class="en">A consumer will purchase up to the point where <strong>Marginal Benefit (MB)</strong> is greater than or equal to <strong>Price (P)</strong>.</p>
+            <div class="math-block">
+                Condition: \( MB \ge P \)
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <h3 style="margin-top:0;">2. 消費者盈餘 (Consumer Surplus, CS)</h3>
+            <p class="zh">消費者願意支付的最高金額 (MB) 與實際支付金額 (P) 之間的差額。</p>
+            <p class="en">The difference between the maximum amount a consumer is willing to pay (MB) and the amount they actually pay (P).</p>
+            <div class="math-block">
+                $$ CS = \text{Total Benefit} - \text{Total Expenditure} $$
+                $$ CS = \sum (MB - P) $$
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="card">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 1.5em; font-weight: bold; color: var(--success);">Correct Answer: Option D</span>
+        </div>
+
+        <h3>Step 1: Calculate CS when Price = $5 (步驟一：計算價格為$5時的CS)</h3>
+        <p class="zh">當 \( P = 5 \) 時，消費者會購買直到 \( MB \ge 5 \)。</p>
+        <p class="en">When \( P = 5 \), the consumer buys as long as \( MB \ge 5 \).</p>
+        <ul>
+            <li>Unit 1: \( MB = 8 \) (Buy)</li>
+            <li>Unit 2: \( MB = 7 \) (Buy)</li>
+            <li>Unit 3: \( MB = 6 \) (Buy)</li>
+            <li>Unit 4: \( MB = 5 \) (Buy)</li>
+            <li>Unit 5: \( MB = 4 \) (Stop, because \( 4 < 5 \))</li>
+        </ul>
+        <p class="zh">購買數量 (Q) = 4。我們可以將每一單位的 \( (MB - P) \) 加起來：</p>
+        <p class="en">Quantity purchased (Q) = 4. We sum up \( (MB - P) \) for each unit:</p>
+        <div class="math-block">
+            \( CS_{old} = (8-5) + (7-5) + (6-5) + (5-5) \) <br>
+            \( CS_{old} = 3 + 2 + 1 + 0 = \$6 \)
+        </div>
+
+        <h3>Step 2: Calculate CS when Price = $6 (步驟二：計算價格為$6時的CS)</h3>
+        <p class="zh">當 \( P = 6 \) 時，消費者會購買直到 \( MB \ge 6 \)。</p>
+        <p class="en">When \( P = 6 \), the consumer buys as long as \( MB \ge 6 \).</p>
+        <ul>
+            <li>Unit 1: \( MB = 8 \) (Buy)</li>
+            <li>Unit 2: \( MB = 7 \) (Buy)</li>
+            <li>Unit 3: \( MB = 6 \) (Buy)</li>
+            <li>Unit 4: \( MB = 5 \) (Stop, because \( 5 < 6 \))</li>
+        </ul>
+        <p class="zh"><strong>注意：</strong> 購買數量由 4 減少至 3。</p>
+        <p class="en"><strong>Note:</strong> The quantity purchased decreases from 4 to 3.</p>
+        <div class="math-block">
+            \( CS_{new} = (8-6) + (7-6) + (6-6) \) <br>
+            \( CS_{new} = 2 + 1 + 0 = \$3 \)
+        </div>
+
+        <h3>Step 3: Calculate the Change (步驟三：計算變動)</h3>
+        <div class="math-block">
+            \( \Delta CS = CS_{new} - CS_{old} \) <br>
+            \( \Delta CS = 3 - 6 = -3 \)
+        </div>
+        <p class="zh">消費者盈餘減少了 $3。</p>
+        <p class="en">Consumer surplus decreases by $3.</p>
+
+        <hr>
+
+        <h3>Why other options are wrong (為何其他選項是錯的):</h3>
+        <ul class="options-list">
+            <li class="option-item wrong">
+                <strong>A & B (Increase):</strong>
+                <span class="zh">價格上升通常會導致消費者盈餘減少，除非是季芬物品 (Giffen Goods) 等極端情況（不適用於此題）。</span>
+                <span class="en">An increase in price generally leads to a decrease in consumer surplus.</span>
+            </li>
+            <li class="option-item wrong">
+                <strong>C (Decrease by $1):</strong>
+                <span class="zh">這是一個常見錯誤。學生可能忘記了價格上升會影響所有購買單位的盈餘，或者忘記了購買數量會改變。</span>
+                <span class="en">This is a common calculation error. Students might calculate the change for only one unit or forget that the quantity demanded changes.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="card">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        
+        <div class="pivot-box">
+            <h3>🔑 The Pivot Point (關鍵點)</h3>
+            <p class="zh"><strong>數量隨價格改變 (Quantity changes with Price)</strong></p>
+            <p class="en">The crucial realization is that when Price rises from $5 to $6, the consumer <strong>stops buying the 4th unit</strong>.</p>
+            <p class="zh">很多學生錯誤地假設數量維持在 4 單位不變，從而計算錯誤。</p>
+            <p class="en">Many students incorrectly assume the quantity remains at 4 units, leading to calculation errors.</p>
+        </div>
+
+        <h3>Distractors (干擾項)</h3>
+        <p class="zh">表格中的第 5 和第 6 單位 (MB = 4, 3) 是多餘資訊，因為在 $5 和 $6 的價格下，消費者都不會購買這些單位。</p>
+        <p class="en">Units 5 and 6 (MB = 4, 3) in the table are irrelevant information because the consumer will not buy these units at either $5 or $6.</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="card">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <h3>Trap 1: Ignoring Quantity Adjustment (忽略數量調整)</h3>
+        <p class="zh">錯誤計算：假設數量仍為 4。</p>
+        <p class="en">Incorrect Calculation: Assuming quantity stays at 4.</p>
+        <p style="color: var(--danger); font-style: italic;">
+            Wrong Logic: At P=5, CS=6. At P=6, if Q is still 4, Total Benefit is 26, Expenditure is 24, CS=2. Change = 6-2 = 4 (Not an option, but logic is flawed).
+        </p>
+
+        <h3>Trap 2: Confusing Marginal with Total (混淆邊際與總額)</h3>
+        <p class="zh">有些學生直接看邊際利益的變動，而忘記扣除價格。</p>
+        <p class="en">Some students look only at the change in Marginal Benefit without subtracting the Price.</p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="card">
+        <h2>Exam Tricks (考試技巧)</h2>
+        <p class="zh"><strong>圖形化思考 (Visual Thinking):</strong></p>
+        <p class="en">即使題目是表格，你也可以在腦海中（或草稿紙上）想像一個階梯狀的需求曲線。</p>
+        
+        <p class="zh"><strong>速算法 (Shortcut):</strong></p>
+        <p class="en">計算損失的盈餘 (Lost Surplus) = [原有購買量 × 價格升幅] + [因減少購買量而損失的淨值]。</p>
+        <div class="math-block" style="text-align: left;">
+            1. <strong>原有購買量 (3 units) 支付多了:</strong> \( 3 \text{ units} \times \$1 = \$3 \text{ loss} \) <br>
+            2. <strong>第4單位不再購買:</strong> 原本在 P=5 時，第4單位的盈餘是 \( 5 - 5 = 0 \)。所以放棄第4單位沒有損失額外盈餘。<br>
+            3. <strong>總損失:</strong> \( \$3 + 0 = \$3 \)。
+        </div>
+        <p class="zh">這個方法更快：前 3 個單位每個貴了 $1 (共貴$3)，第 4 個單位本身盈餘是 0 (放棄了也沒損失)。所以總共減少 $3。</p>
+        <p class="en">This is faster: The first 3 units each cost $1 more (Total $3 loss). The 4th unit had a surplus of 0 (MB=P=5), so dropping it causes no loss. Total decrease = $3.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
