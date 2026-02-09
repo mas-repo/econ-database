@@ -1,4 +1,4 @@
-// Dependencies: globals.js, render.js, storage-core.js, storage-filters.js
+// Dependencies: globals.js, render.js, storage-core.js, storage-filters.js, constants.js
 
 // ============================================
 // GLOBAL FILTER STATE INITIALIZATION
@@ -96,6 +96,38 @@ function closeAllDropdowns() {
 }
 
 /**
+ * Helper: Applies tooltips to Chapter options based on constants.js
+ * This allows users to see the Chapter Name on hover.
+ */
+function applyChapterTooltips() {
+
+    if (window.authManager && window.authManager.userGroup === 'Colleagues') return;
+    
+    // Ensure constants are loaded
+    if (typeof CHAPTER_DESCRIPTIONS === 'undefined') return;
+
+    const container = document.getElementById('chapter-options');
+    if (!container) return;
+
+    // Find all elements that represent a chapter value
+    const items = container.querySelectorAll('[data-value]');
+
+    items.forEach(item => {
+        const rawVal = item.getAttribute('data-value');
+        if (!rawVal) return;
+
+        // Pad value to match keys in constants.js (e.g. "1" -> "01")
+        const paddedVal = rawVal.toString().padStart(2, '0');
+        const description = CHAPTER_DESCRIPTIONS[paddedVal];
+
+        if (description) {
+            // Set the native browser tooltip
+            item.setAttribute('title', `${paddedVal}: ${description}`);
+        }
+    });
+}
+
+/**
  * Master Toggle Function
  * Handles opening/closing for ALL filter types
  */
@@ -124,6 +156,11 @@ function toggleDropdown(dropdownId) {
         if (gridFilters.includes(dropdownId)) {
             // === Case A: Custom Grid Filters ===
             target.style.display = 'grid';
+            
+            // Special handling for Chapter: Apply tooltips when opening
+            if (dropdownId === 'chapter-options') {
+                applyChapterTooltips();
+            }
         } else {
             // === Case B: Standard, Range, & Input Filters ===
             target.style.display = ''; 
@@ -600,6 +637,8 @@ async function updateDynamicDropdowns() {
 async function populateDynamicFilters() {
     await updateDynamicDropdowns();
     setupInputDropdownListeners();
+    // Also try to apply tooltips initially in case elements are already there
+    applyChapterTooltips();
 }
 
 function setupInputDropdownListeners() {
