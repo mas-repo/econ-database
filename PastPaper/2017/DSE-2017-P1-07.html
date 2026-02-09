@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Labour Productivity Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --bg-concept: #eff6ff;
+            --bg-answer: #f0fdf4;
+            --bg-mistake: #fef2f2;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 0;
+        }
+
+        .question-box {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .option-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .option-list li:hover {
+            background-color: #e2e8f0;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .formula-box {
+            background-color: white;
+            border: 1px dashed var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .answer-section {
+            background-color: var(--bg-answer);
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #15803d; /* Green */
+            margin-bottom: 16px;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+        }
+
+        .analysis-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .mistake-box {
+            background-color: var(--bg-mistake);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ef4444; /* Red */
+        }
+
+        .bilingual-text {
+            margin-bottom: 12px;
+        }
+        
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 0;
+            }
+            body {
+                padding: 0;
+            }
+            header {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Production & Factors of Production (生產與生產要素)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Labour Productivity, Capital-Labour Substitution</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="bilingual-text">
+                某些中國的餐廳發現能運用機械人代替部分工人接待顧客而不會令產出下降。這會<br>
+                <span class="en-text">Certain restaurants in China found that they can introduce robots to replace some workers in serving customers without reducing their output. This will</span>
+            </p>
+            <ul class="option-list">
+                <li><strong>A.</strong> 增加餐廳工人的供應量。<br><span class="en-text">increase the quantity supplied of restaurant workers.</span></li>
+                <li><strong>B.</strong> 增加這些餐廳的勞工生產力。<br><span class="en-text">increase the labour productivity of those restaurants.</span></li>
+                <li><strong>C.</strong> 減低餐廳工人的地域流動性。<br><span class="en-text">decrease the geographical mobility of restaurant workers.</span></li>
+                <li><strong>D.</strong> 減低餐廳工人的職業流動性。<br><span class="en-text">decrease the occupational mobility of restaurant workers.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p class="bilingual-text">
+                <strong>1. 勞工生產力 (Labour Productivity):</strong><br>
+                勞工生產力是指平均每單位勞工（或工時）的產出量。它衡量勞工的生產效率。<br>
+                <span class="en-text">Labour productivity refers to the output per unit of labour (or man-hour). It measures the productive efficiency of labour.</span>
+            </p>
+            
+            <div class="formula-box">
+                $$ \text{Average Labour Productivity} = \frac{\text{Total Output}}{\text{Total Labour Input (Man-hours / Workers)}} $$
+                $$ \text{平均勞工生產力} = \frac{\text{總產出}}{\text{總勞工投入 (工時 / 工人數目)}} $$
+            </div>
+
+            <p class="bilingual-text">
+                <strong>2. 資本代替勞力 (Capital Substituting Labour):</strong><br>
+                當廠商使用機器（資本）來取代工人（勞力）進行生產，這改變了生產要素的組合。如果產出維持不變但工人減少，平均每個工人的產出就會上升。<br>
+                <span class="en-text">When firms use machines (capital) to replace workers (labour) in production, the combination of factors changes. If output remains constant while the number of workers decreases, the average output per worker rises.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <section class="answer-section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-answer">Correct Option: B</div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option B (Correct / 正確):</span>
+            <p class="bilingual-text">
+                題目指出機械人代替了「部分工人」，而「產出沒有下降」。這意味著總產出（\(Q\)）保持不變，但勞工投入量（\(L\)）減少了。<br>
+                根據公式 \(\text{AP}_L = Q / L\)，當分子不變而分母變小時，數值會變大。因此，勞工生產力上升。<br>
+                <span class="en-text">The question states that robots replaced "some workers" while "output did not reduce". This means Total Output (\(Q\)) remained constant, but Labour Input (\(L\)) decreased. According to the formula \(\text{AP}_L = Q / L\), when the numerator stays the same and the denominator gets smaller, the value increases. Therefore, labour productivity increases.</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option A (Incorrect / 錯誤):</span>
+            <p class="bilingual-text">
+                機械人取代工人會減少對工人的<strong>需求 (Demand)</strong>，而不是影響供應量。這可能導致工資下降，從而在供應線上移動（供應量減少），但題目描述的是生產技術的改變，直接影響的是生產力而非工人的供應意願。<br>
+                <span class="en-text">Replacing workers with robots decreases the <strong>demand</strong> for workers, not the supply. While this might lower wages and cause a movement along the supply curve (decrease in quantity supplied), the question describes a change in production technology, which directly impacts productivity, not the workers' willingness to supply labour.</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option C & D (Incorrect / 錯誤):</span>
+            <p class="bilingual-text">
+                <strong>流動性 (Mobility)</strong> 指工人轉工或轉行的容易程度。引入機械人是廠商的生產決定，這並不會直接改變工人本身的技能、轉換工作的成本或地理限制。工人是否容易轉行（職業流動性）或搬遷（地域流動性）取決於他們的技能通用性、交通網絡等因素，與餐廳是否使用機械人無直接關係。<br>
+                <span class="en-text"><strong>Mobility</strong> refers to the ease with which workers can change jobs or locations. Introducing robots is a production decision by the firm; it does not directly alter the workers' skills, cost of switching jobs, or geographical constraints. Whether workers can easily switch occupations (occupational mobility) or locations (geographical mobility) depends on skill transferability and transport networks, not directly on whether a restaurant uses robots.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="bilingual-text">
+            <strong>關鍵點 (Pivot Point):</strong><br>
+            題目中有兩個關鍵變量：<br>
+            1. 工人數量減少 (\(\downarrow L\))<br>
+            2. 產出不變 (\(= Q\))<br>
+            <span class="en-text">There are two key variables in the question:<br>1. Number of workers decreases (\(\downarrow L\))<br>2. Output remains constant (\(= Q\))</span>
+        </p>
+        <p class="bilingual-text">
+            <strong>邏輯推演 (Logical Flow):</strong><br>
+            只要看到「產出與勞工數量的比例」發生變化，立即聯想到<strong>勞工生產力</strong>的公式。不需要考慮工人的心理狀態或市場供應，只需專注於數學上的比例變化。<br>
+            <span class="en-text">As soon as you see a change in the ratio between output and the number of workers, immediately think of the <strong>Labour Productivity</strong> formula. Do not worry about workers' psychology or market supply; focus solely on the mathematical ratio change.</span>
+        </p>
+    </section>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="mistake-box">
+            <p class="bilingual-text">
+                <strong>陷阱 1：混淆「需求」與「供應」</strong><br>
+                學生常誤以為機械人取代工人會增加工人的供應量（因為被解僱的工人出來找工作）。但在經濟學嚴格定義中，這屬於勞動市場的過剩 (Surplus) 或需求的減少，而非供應曲線本身的移動 (Change in Supply)。<br>
+                <span class="en-text"><strong>Trap 1: Confusing "Demand" and "Supply".</strong> Students often mistakenly think that robots replacing workers increases the supply of workers (because fired workers look for jobs). However, in strict economic definitions, this leads to a surplus in the labour market or a decrease in demand, not a shift in the supply curve itself.</span>
+            </p>
+            <p class="bilingual-text">
+                <strong>陷阱 2：誤解「流動性」</strong><br>
+                學生可能會想：「工人被解僱了，所以他們被迫流動。」但流動性是指「能力 (Ability)」，而不是「被迫的行為」。被解僱並不代表他們轉行變得更難或更容易。<br>
+                <span class="en-text"><strong>Trap 2: Misunderstanding "Mobility".</strong> Students might think, "Workers are fired, so they are forced to move." But mobility refers to the "ability" to move, not the "forced action". Being fired doesn't make it harder or easier for them to switch industries inherently.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section style="border-bottom: none;">
+        <h2>Exam Tricks (考試技巧)</h2>
+        <p class="bilingual-text">
+            <strong>代入數字法 (Substitution Method):</strong><br>
+            如果你對概念感到模糊，可以設想簡單的數字：<br>
+            原本：10個工人，生產100碗麵。生產力 = 10碗/人。<br>
+            現在：用機械人取代2個工人（剩8人），仍生產100碗麵。生產力 = 12.5碗/人。<br>
+            結果顯而易見：生產力上升。<br>
+            <span class="en-text">If the concept is vague, use simple numbers:<br>Original: 10 workers produce 100 bowls of noodles. Productivity = 10 bowls/person.<br>Now: Robots replace 2 workers (8 left), still producing 100 bowls. Productivity = 12.5 bowls/person.<br>The result is obvious: Productivity increases.</span>
+        </p>
+    </section>
+</div>
+
+</body>
+</html>

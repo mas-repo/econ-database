@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - MC vs Supply Curve</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .math-block {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .concept-box {
+            background-color: #eff6ff; /* Light blue */
+            border-left: 5px solid #3b82f6;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+        .option-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+        .option-box:hover {
+            border-color: #94a3b8;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .correct-option {
+            border: 2px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+        .trap-box {
+            background-color: #fffbeb; /* Amber/Yellow */
+            border-left: 5px solid #f59e0b;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0.5rem;
+        }
+        .highlight-term {
+            color: #0f172a;
+            font-weight: 700;
+            background-color: #e2e8f0;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+        }
+        h2 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #334155;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-4xl mx-auto">
+
+    <!-- 1. Header -->
+    <header class="mb-8 text-center bg-white p-6 rounded-lg shadow-sm">
+        <div class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide mb-2">
+            Microeconomics / 微觀經濟學
+        </div>
+        <h1 class="text-3xl font-bold text-slate-800 mb-2">Firm Behavior & Supply Curve</h1>
+        <h2 class="text-xl text-slate-600 border-none p-0 m-0">廠商行為與供應曲線</h2>
+        
+        <div class="flex justify-center gap-4 mt-4 text-sm text-slate-500">
+            <div class="flex items-center">
+                <span class="font-bold mr-1">Difficulty 難度:</span>
+                <span class="text-yellow-500">★★★☆☆</span>
+            </div>
+            <div class="flex items-center">
+                <span class="font-bold mr-1">Key Concepts:</span> 
+                Profit Maximization, Marginal Cost
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4 border-b-0">The Question (題目)</h2>
+        
+        <div class="mb-6">
+            <p class="font-medium text-lg mb-2">一家廠商生產一物品時，它的邊際成本表可被理解為它的供應表，這是因為</p>
+            <p class="text-slate-600 italic">The marginal cost schedule of a firm can be interpreted as its supply schedule in the production of a good because</p>
+        </div>
+
+        <div class="space-y-3">
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="font-bold mr-2">A.</span> 它的產出增加時，它的邊際成本會增加。<br>
+                <span class="text-slate-500 text-sm ml-6">marginal cost will increase when the output of the firm increases.</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="font-bold mr-2">B.</span> 在已知該物品價格情況下，我們可從邊際成本表得知它計劃生產該物品的數量。<br>
+                <span class="text-slate-500 text-sm ml-6">we can tell the quantity of the good the firm plans to produce from the marginal cost schedule given the price of the good.</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="font-bold mr-2">C.</span> 它計劃生產該物品的數量受到生產該物品的邊際成本所影響，兩者關係是正向的。<br>
+                <span class="text-slate-500 text-sm ml-6">the quantity of the good the firm plans to produce depends positively on the marginal cost of producing the good.</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="font-bold mr-2">D.</span> 在已知該物品數量的情況下，我們可從邊際成本表得知該物品的價格。<br>
+                <span class="text-slate-500 text-sm ml-6">we can tell the price of the good from the marginal cost schedule given the quantity of the good.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h2 class="text-blue-800 border-blue-200 mt-0">Concept Review (概念重溫)</h2>
+        
+        <div class="mb-4">
+            <h3 class="text-blue-700">1. Profit Maximization Condition (利潤極大化條件)</h3>
+            <p class="mb-2">
+                廠商為了賺取最大利潤，會生產至邊際收益等於邊際成本的產量水平。
+            </p>
+            <p class="text-slate-600 mb-2">
+                To maximize profit, a firm produces at the output level where Marginal Revenue equals Marginal Cost.
+            </p>
+            <div class="math-block text-center">
+                $$ MR = MC $$
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h3 class="text-blue-700">2. Price Taker (受價者)</h3>
+            <p class="mb-2">
+                在完全競爭市場(Perfect Competition)中，廠商是受價者，每多賣一單位的收入等於市價，即 \(MR = P\)。
+            </p>
+            <p class="text-slate-600 mb-2">
+                In a perfectly competitive market, the firm is a price taker. The revenue from selling one more unit equals the market price, so \(MR = P\).
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-blue-700">3. Derivation (推導)</h3>
+            <p class="mb-2">
+                結合上述兩點，廠商會根據市價 \(P\) 來決定產量 \(Q\)，使得：
+            </p>
+            <p class="text-slate-600 mb-2">
+                Combining the above, the firm decides quantity \(Q\) based on market price \(P\) such that:
+            </p>
+            <div class="math-block text-center font-bold text-xl">
+                $$ P = MC $$
+            </div>
+            <p>
+                這意味著，給定一個價格 \(P\)，邊際成本曲線告訴了我們廠商願意提供的數量 \(Q_s\)。這正是<strong>供應表</strong>的定義。
+            </p>
+            <p class="text-slate-600">
+                This means that given a price \(P\), the MC curve tells us the quantity \(Q_s\) the firm is willing to supply. This is exactly the definition of a <strong>Supply Schedule</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="p-4 bg-green-100 border-l-4 border-green-500 rounded mb-6">
+            <p class="font-bold text-green-800 text-lg">Correct Option: B</p>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-box">
+            <div class="flex items-start">
+                <span class="font-bold text-red-500 mr-3 text-xl">✕</span>
+                <div>
+                    <h4 class="font-bold text-slate-800">Option A: 它的產出增加時，它的邊際成本會增加。</h4>
+                    <p class="text-slate-600 text-sm mb-2">Marginal cost will increase when the output of the firm increases.</p>
+                    
+                    <p class="text-slate-700 mt-2">
+                        <strong>分析：</strong> 這描述了邊際回報遞減定律 (Law of Diminishing Marginal Returns)，解釋了為什麼供應曲線是<strong>向上傾斜</strong>的，但這不是邊際成本曲線「等同於」供應曲線的原因。
+                    </p>
+                    <p class="text-slate-500 text-sm mt-1">
+                        <strong>Analysis:</strong> This describes the Law of Diminishing Marginal Returns, explaining why the supply curve is <strong>upward sloping</strong>. However, this explains the <em>shape</em>, not the <em>identity</em> of why the MC curve acts as the supply curve.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-box correct-option">
+            <div class="flex items-start">
+                <span class="font-bold text-green-600 mr-3 text-xl">✓</span>
+                <div>
+                    <h4 class="font-bold text-slate-800">Option B: 在已知該物品價格情況下，我們可從邊際成本表得知它計劃生產該物品的數量。</h4>
+                    <p class="text-slate-600 text-sm mb-2">We can tell the quantity of the good the firm plans to produce from the marginal cost schedule given the price of the good.</p>
+                    
+                    <p class="text-slate-700 mt-2">
+                        <strong>分析：</strong> 這是正確答案。供應表的功能就是「給定價格，找出供應量」。由於廠商根據 \(P = MC\) 來決定產量，只要知道市價 \(P\)，我們就可以在 MC 曲線上找到對應的 \(Q\)。
+                    </p>
+                    <p class="text-slate-500 text-sm mt-1">
+                        <strong>Analysis:</strong> This is correct. The function of a supply schedule is "Given Price, find Quantity Supplied". Since the firm determines output where \(P = MC\), if we know the market price \(P\), we can look at the MC curve to find the corresponding \(Q\).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-box">
+            <div class="flex items-start">
+                <span class="font-bold text-red-500 mr-3 text-xl">✕</span>
+                <div>
+                    <h4 class="font-bold text-slate-800">Option C: 它計劃生產該物品的數量受到生產該物品的邊際成本所影響，兩者關係是正向的。</h4>
+                    <p class="text-slate-600 text-sm mb-2">The quantity of the good the firm plans to produce depends positively on the marginal cost of producing the good.</p>
+                    
+                    <p class="text-slate-700 mt-2">
+                        <strong>分析：</strong> 邏輯混亂。產量是由價格決定的（在 MC 的約束下）。我們通常說「價格上升導致供應量上升」，而不是產量依賴於邊際成本的正向關係。
+                    </p>
+                    <p class="text-slate-500 text-sm mt-1">
+                        <strong>Analysis:</strong> The logic is confused. Quantity is determined by Price (constrained by MC). We usually say "an increase in price leads to an increase in quantity supplied," not that quantity depends positively on marginal cost itself.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-box">
+            <div class="flex items-start">
+                <span class="font-bold text-red-500 mr-3 text-xl">✕</span>
+                <div>
+                    <h4 class="font-bold text-slate-800">Option D: 在已知該物品數量的情況下，我們可從邊際成本表得知該物品的價格。</h4>
+                    <p class="text-slate-600 text-sm mb-2">We can tell the price of the good from the marginal cost schedule given the quantity of the good.</p>
+                    
+                    <p class="text-slate-700 mt-2">
+                        <strong>分析：</strong> 雖然數學上 \(P=MC\) 兩邊相等，但經濟學定義上，供應是指「對價格的反應」(Response to Price)。選項 D 描述的是「供應價格」(Supply Price)，即生產特定數量所需的最低價格，這不是供應表的標準定義方向（由 \(P \rightarrow Q\)）。
+                    </p>
+                    <p class="text-slate-500 text-sm mt-1">
+                        <strong>Analysis:</strong> While mathematically \(P=MC\) works both ways, economically, Supply is defined as the "response to price". Option D describes "Supply Price" (the minimum price to induce a quantity), which is reading the curve inversely. The standard definition of a Supply Schedule flows from \(P \rightarrow Q\).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="mt-8">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-5 rounded shadow-sm border border-slate-200">
+                <h3 class="text-purple-600 mt-0">The Pivot Point (關鍵點)</h3>
+                <p class="mt-2 text-slate-700">
+                    這題的關鍵在於理解<strong>供應 (Supply)</strong> 的定義。
+                </p>
+                <p class="text-slate-500 text-sm mb-3">The key is understanding the definition of <strong>Supply</strong>.</p>
+                <ul class="list-disc list-inside text-slate-700 space-y-2">
+                    <li>供應 = 在不同價格下，廠商願意出售的數量。</li>
+                    <li>Supply = Quantity the firm is willing to sell at different prices.</li>
+                    <li>邏輯流向 Logic Flow: <strong>Price (\(P\)) \(\rightarrow\) Quantity (\(Q\))</strong></li>
+                </ul>
+            </div>
+            <div class="bg-white p-5 rounded shadow-sm border border-slate-200">
+                <h3 class="text-purple-600 mt-0">Why MC is the link? (連接點)</h3>
+                <p class="mt-2 text-slate-700">
+                    廠商是理性的 (Rational)，只會在 \(P \ge MC\) 時生產。
+                </p>
+                <p class="text-slate-500 text-sm mb-3">Firms are rational and only produce when \(P \ge MC\).</p>
+                <p class="text-slate-700">
+                    因此，MC 曲線實際上就是一張「價格-數量對照表」。
+                </p>
+                <p class="text-slate-500 text-sm">
+                    Therefore, the MC curve is effectively a "Price-Quantity lookup table".
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="trap-box">
+        <h2 class="text-amber-800 border-amber-200 mt-0">Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="mb-4">
+            <h3 class="text-amber-700">1. Confusing Slope with Definition (混淆斜率與定義)</h3>
+            <p class="text-slate-800">
+                很多學生選 <strong>Option A</strong>。
+                雖然 MC 上升解釋了為什麼供應曲線向上傾斜（Law of Supply），但它沒有解釋為什麼 MC 曲線本身<strong>就是</strong>供應曲線。
+            </p>
+            <p class="text-slate-600 text-sm mt-1">
+                Many students choose <strong>Option A</strong>. While rising MC explains <em>why</em> the supply curve slopes upwards (Law of Supply), it doesn't explain why the MC curve <em>is</em> the supply curve itself.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-amber-700">2. Causal Direction (因果方向)</h3>
+            <p class="text-slate-800">
+                記住：在完全競爭市場模型中，價格是<strong>自變量 (Independent Variable)</strong>，數量是<strong>應變量 (Dependent Variable)</strong>。
+                <br>
+                題目問的是「供應表」(Supply Schedule)，所以必須是 \(P \rightarrow Q\) 的關係。
+            </p>
+            <p class="text-slate-600 text-sm mt-1">
+                Remember: In the perfect competition model, Price is the <strong>Independent Variable</strong>, and Quantity is the <strong>Dependent Variable</strong>. The question asks about the "Supply Schedule", so it must describe the \(P \rightarrow Q\) relationship.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Externalities</title>
+    
+    <!-- MathJax Configuration for LaTeX rendering -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for tips */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-answer: #f0fdf4; /* Light Green */
+            --bg-trick: #fffbeb; /* Light Yellow */
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .tag {
+            background-color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #d1d5db;
+            font-weight: 600;
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .answer-box {
+            background-color: var(--bg-answer);
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .correct-option {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .trick-box {
+            background-color: var(--bg-trick);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>DSE Economics 試題分析</h1>
+        <div class="header-info">
+            <span class="tag">Topic: Externalities & Efficiency (外部性與效率)</span>
+            <span class="tag">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Key Concepts: Private/Social Cost, Internalization</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="question-text">
+            在下列哪種情況下，私人與社會的成本/利益將不會出現分歧？<br>
+            <span class="en-text">In which of the following situations will there be NO divergence between private and social costs / benefits?</span>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 一家位於上游的化工廠污染一條河流，而沒有考慮對下游漁民造成的損害。<br>
+                <span class="en-text">A chemical factory upstream pollutes a river without considering the damage inflicted upon fish farmers downstream.</span>
+            </li>
+            <li><strong>B.</strong> 一名食客於酒樓吸煙而沒有考慮對附近的人的影響。<br>
+                <span class="en-text">A diner smokes in a restaurant without considering the effects on people nearby.</span>
+            </li>
+            <li><strong>C.</strong> 一個農夫飼養的羊群破壞鄰近農地的農作物，而該農地是該農夫所擁有。<br>
+                <span class="en-text">A farmer raises some sheep which damage the crops of nearby farmland owned by the farmer.</span>
+            </li>
+            <li><strong>D.</strong> 一名鋼琴好手在家彈奏鋼琴而沒有向享受這些音樂的鄰居收取任何款項。<br>
+                <span class="en-text">A pianist plays the piano at home and receives no payment from his neighbour who enjoys the music.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h2>概念重溫 (Concept Review)</h2>
+        
+        <p class="bilingual-text">
+            <strong>1. 外部性 (Externalities):</strong><br>
+            當一個人的生產或消費行為影響了第三方(third party)，而該影響沒有反映在市場價格上，便會出現外部性。
+            <span class="en-text">Externalities occur when a person's production or consumption affects a third party, and this effect is not reflected in the market price.</span>
+        </p>
+
+        <p class="bilingual-text">
+            <strong>2. 分歧 (Divergence):</strong><br>
+            當存在外部性時，社會成本/利益與私人成本/利益不相等。
+            <span class="en-text">When externalities exist, social costs/benefits do not equal private costs/benefits.</span>
+        </p>
+
+        <div class="math-block">
+            $$ MSC = MPC + MEC $$
+            $$ MSB = MPB + MEB $$
+        </div>
+
+        <p class="bilingual-text">
+            <ul>
+                <li>\( MPC \): 邊際私人成本 (Marginal Private Cost)</li>
+                <li>\( MEC \): 邊際外部成本 (Marginal External Cost)</li>
+                <li>\( MSC \): 邊際社會成本 (Marginal Social Cost)</li>
+            </ul>
+        </p>
+
+        <p class="bilingual-text">
+            <strong>3. 沒有分歧的條件 (Condition for NO Divergence):</strong><br>
+            如果 \( MEC = 0 \) 或 \( MEB = 0 \)，則 \( MSC = MPC \) 或 \( MSB = MPB \)。這通常發生在<strong>外部性被內部化 (Internalization of externalities)</strong> 時。
+            <span class="en-text">If \( MEC = 0 \) or \( MEB = 0 \), then \( MSC = MPC \) or \( MSB = MPB \). This usually happens when externalities are internalized.</span>
+        </p>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="answer-box">
+        <h2>答案與詳細分析 (Answer & Analysis)</h2>
+        <span class="correct-option">正確答案 (Correct Answer): Option C</span>
+
+        <div class="analysis-item">
+            <strong>選項 A (Option A): 錯誤 (Incorrect)</strong>
+            <p>
+                化工廠（生產者）造成污染，損害了下游漁民（第三方）。這是一個<strong>負生產外部性 (Negative Production Externality)</strong>。工廠只考慮自己的生產成本，忽略了對漁民的損害。
+                <br>
+                <span class="en-text">The chemical factory (producer) causes pollution, damaging downstream fish farmers (third party). This is a <strong>Negative Production Externality</strong>. The factory only considers its own production costs, ignoring the damage to the fishermen.</span>
+            </p>
+            <p>
+                結果：\( MEC > 0 \)，所以 \( MSC > MPC \)。出現分歧。
+                <br>
+                <span class="en-text">Result: \( MEC > 0 \), so \( MSC > MPC \). Divergence exists.</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <strong>選項 B (Option B): 錯誤 (Incorrect)</strong>
+            <p>
+                吸煙者（消費者）影響了附近的其他人（第三方）。這是一個<strong>負消費外部性 (Negative Consumption Externality)</strong>。吸煙者沒有賠償受影響的人。
+                <br>
+                <span class="en-text">The smoker (consumer) affects others nearby (third party). This is a <strong>Negative Consumption Externality</strong>. The smoker does not compensate those affected.</span>
+            </p>
+            <p>
+                結果：\( MEC > 0 \)，所以 \( MSC > MPC \) (或視作 \( MSB < MPB \))。出現分歧。
+                <br>
+                <span class="en-text">Result: \( MEC > 0 \), so \( MSC > MPC \) (or viewed as \( MSB < MPB \)). Divergence exists.</span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <strong>選項 C (Option C): 正確 (Correct)</strong>
+            <p>
+                雖然羊群破壞了農作物，但關鍵在於<strong>「該農地是該農夫所擁有」</strong>。受害者和破壞者是<strong>同一個人</strong>。農夫在計算養羊的成本時，必須將自己農作物的損失計算在內（因為這是他自己的財產損失）。
+                <br>
+                <span class="en-text">Although the sheep damaged the crops, the key is <strong>"farmland owned by the farmer"</strong>. The victim and the damager are the <strong>same person</strong>. When calculating the cost of raising sheep, the farmer must account for the loss of his own crops (since it is his own property loss).</span>
+            </p>
+            <p>
+                這就是<strong>外部性內部化 (Internalization)</strong>。沒有涉及第三方。
+                <br>
+                <span class="en-text">This is <strong>Internalization of externalities</strong>. No third party is involved.</span>
+            </p>
+            <p>
+                結果：\( MEC = 0 \)，所以 \( MSC = MPC \)。<strong>沒有分歧。</strong>
+                <br>
+                <span class="en-text">Result: \( MEC = 0 \), so \( MSC = MPC \). <strong>NO Divergence.</strong></span>
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <strong>選項 D (Option D): 錯誤 (Incorrect)</strong>
+            <p>
+                鄰居（第三方）免費享受了音樂。這是一個<strong>正生產/消費外部性 (Positive Externality)</strong>。鋼琴家沒有收到報酬，鄰居獲得了利益但沒有付費。
+                <br>
+                <span class="en-text">The neighbor (third party) enjoys the music for free. This is a <strong>Positive Externality</strong>. The pianist receives no payment, and the neighbor gains a benefit without paying.</span>
+            </p>
+            <p>
+                結果：\( MEB > 0 \)，所以 \( MSB > MPB \)。出現分歧。
+                <br>
+                <span class="en-text">Result: \( MEB > 0 \), so \( MSB > MPB \). Divergence exists.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        <p>
+            <strong>關鍵點 (Pivot Point): 產權擁有者 (Ownership)</strong>
+        </p>
+        <p>
+            這類題目的核心在於判斷<strong>「誰承擔後果」</strong>。
+            <span class="en-text">The core of this type of question is to determine <strong>"who bears the consequences"</strong>.</span>
+        </p>
+        <ul>
+            <li>如果後果由<strong>其他人</strong>承擔 → 有外部性 (Divergence)。</li>
+            <li>如果後果由<strong>自己</strong>承擔 → 沒有外部性 (No Divergence)。</li>
+        </ul>
+        <p>
+            在選項 C 中，羊(加害者)和農地(受害者)都屬於<strong>同一個農夫</strong>。這就像你不小心打破了自己的花瓶，雖然有損失，但這是你的私人成本，不是社會問題。
+            <span class="en-text">In Option C, the sheep (damager) and the farmland (victim) belong to the <strong>same farmer</strong>. It's like accidentally breaking your own vase; although there is a loss, it is your private cost, not a social issue.</span>
+        </p>
+    </section>
+
+    <!-- 6. Exam Tricks -->
+    <section class="trick-box">
+        <h2>考試技巧與陷阱 (Exam Tricks & Traps)</h2>
+        
+        <p><strong>1. 尋找「合併」或「擁有」 (Look for "Merger" or "Ownership")</strong></p>
+        <p>
+            在 DSE 經濟科中，如果題目提到兩家公司<strong>合併 (merge)</strong>，或者受影響的資產由<strong>同一人擁有</strong>，這通常意味著外部性已被消除（內部化）。
+            <span class="en-text">In DSE Economics, if the question mentions that two companies <strong>merge</strong>, or the affected assets are <strong>owned by the same person</strong>, this usually implies that the externality has been eliminated (internalized).</span>
+        </p>
+
+        <p><strong>2. 不要只看「破壞」或「污染」 (Don't just look for "Damage" or "Pollution")</strong></p>
+        <p>
+            很多同學一看到「破壞農作物」就馬上認為有外部成本。必須冷靜檢查受害者是誰。如果是自己破壞自己，那只是愚蠢的生產決策或意外，不是外部性。
+            <span class="en-text">Many students immediately assume there is an external cost when they see "damage to crops". You must calmly check who the victim is. If you damage your own property, it's just a bad production decision or an accident, not an externality.</span>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
