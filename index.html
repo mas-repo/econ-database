@@ -101,15 +101,44 @@
                             </div>
                         </div>
 
-                        <!-- Curriculum -->
+                        <!-- Curriculum Filter Section -->
                         <div class="filter-item dropdown-filter">
                             <button class="dropdown-btn" onclick="toggleDropdown('curriculum-options')">
-                               📚 課程分類 <span id="curriculum-arrow" class="arrow">▶</span>
+                                <span>📚 課程分類</span>
+                                <span id="curriculum-arrow" class="arrow">▶</span>
                             </button>
                             <div id="indicator-curriculum" class="active-indicator"></div>
-                            <!-- This ID is targeted by utils.js to populate options -->
-                            <div id="curriculum-options" class="dropdown-content custom-grid-dropdown">
-                                <!-- Populated by JS -->
+                            
+                            <!-- Dropdown Content -->
+                            <div id="curriculum-options" class="custom-grid-dropdown">
+                                <!-- Header Area: Logic Toggle and Clear Button -->
+                                <div class="filter-header" style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
+                                    <!-- Logic Toggle Switch -->
+                                    <div class="logic-toggle" title="Toggle Logic: Any (OR) / All (AND)">
+                                        <input type="checkbox" id="curriculum-logic-toggle" onchange="toggleCurriculumLogic(this)">
+                                        <label for="curriculum-logic-toggle">
+                                            <span class="logic-text or">OR</span>
+                                            <span class="logic-text and">AND</span>
+                                        </label>
+                                    </div>
+                                    
+                                    <!-- Clear Button -->
+                                    <button class="clear-btn" onclick="clearCurriculumFilter()">
+                                        🗑️ 清除
+                                    </button>
+                                </div>
+
+                                <!-- Curriculum List Container (Populated by JS) -->
+                                <!-- Note: This ID 'curriculum-options' was previously used as the container for items. 
+                                    Since we added a header inside, the items should now go into a specific inner container 
+                                    or simply append after the header. However, 'populateCurriculumFilter' in utils.js 
+                                    targets 'curriculum-options'. We need to adjust the JS or structure slightly.
+                                    
+                                    BEST APPROACH: Keep 'curriculum-options' as the wrapper, and add a new ID for the list.
+                                -->
+                                <div id="curriculum-list" style="display: grid; grid-template-columns: 1fr; gap: 5px;">
+                                    <!-- JS will populate this -->
+                                </div>
                             </div>
                         </div>
 

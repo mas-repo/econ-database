@@ -79,9 +79,15 @@ function populateChapterFilter() {
 // Populate curriculum filter options dynamically
 // Dependencies: constants.js (CURRICULUM_ITEMS)
 function populateCurriculumFilter() {
-    // Matches the new HTML structure
-    const container = document.getElementById('curriculum-options');
-    if (!container) return;
+    // Target the new inner container 'curriculum-list'
+    // instead of the main dropdown 'curriculum-options' to preserve the header
+    const container = document.getElementById('curriculum-list');
+    
+    // Fallback for backward compatibility if HTML isn't updated yet
+    const fallbackContainer = document.getElementById('curriculum-options');
+    
+    const target = container || fallbackContainer;
+    if (!target) return;
     
     let html = '';
     CURRICULUM_ITEMS.forEach(item => {
@@ -94,7 +100,7 @@ function populateCurriculumFilter() {
         `;
     });
     
-    container.innerHTML = html;
+    target.innerHTML = html;
 }
 
 

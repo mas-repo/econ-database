@@ -142,25 +142,37 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             }
         }
 
-        // Curriculum filters
-        if (filters.triState.curriculum) {
-            const checkedCurr = Object.keys(filters.triState.curriculum).filter(k => filters.triState.curriculum[k] === 'checked');
-            const excludedCurr = Object.keys(filters.triState.curriculum).filter(k => filters.triState.curriculum[k] === 'excluded');
-            
-            if (checkedCurr.length > 0) {
-                questions = questions.filter(q => {
-                    if (!q.curriculumClassification || !Array.isArray(q.curriculumClassification)) return false;
-                    return checkedCurr.some(curr => q.curriculumClassification.includes(curr));
-                });
-            }
-            
-            if (excludedCurr.length > 0) {
-                questions = questions.filter(q => {
-                    if (!q.curriculumClassification || !Array.isArray(q.curriculumClassification)) return true;
-                    return !excludedCurr.some(curr => q.curriculumClassification.includes(curr));
-                });
-            }
-        }
+            // Curriculum filters
+                    if (filters.triState.curriculum) {
+                        const checkedCurr = Object.keys(filters.triState.curriculum).filter(k => filters.triState.curriculum[k] === 'checked');
+                        const excludedCurr = Object.keys(filters.triState.curriculum).filter(k => filters.triState.curriculum[k] === 'excluded');
+                        
+                        // Get current logic (Default to OR)
+                        const logic = (window.filterLogic && window.filterLogic.curriculum) || 'OR';
+
+                        if (checkedCurr.length > 0) {
+                            questions = questions.filter(q => {
+                                if (!q.curriculumClassification || !Array.isArray(q.curriculumClassification)) return false;
+                                
+                                // Logic Check: AND vs OR
+                                if (logic === 'AND') {
+                                    // AND Logic: Question must contain ALL selected curriculum tags
+                                    return checkedCurr.every(curr => q.curriculumClassification.includes(curr));
+                                } else {
+                                    // OR Logic (Default): Question must contain AT LEAST ONE selected tag
+                                    return checkedCurr.some(curr => q.curriculumClassification.includes(curr));
+                                }
+                            });
+                        }
+                        
+                        if (excludedCurr.length > 0) {
+                            questions = questions.filter(q => {
+                                if (!q.curriculumClassification || !Array.isArray(q.curriculumClassification)) return true;
+                                // Excluded logic remains the same (exclude if ANY match found)
+                                return !excludedCurr.some(curr => q.curriculumClassification.includes(curr));
+                            });
+                        }
+                    }
 
         // Chapter filters
         if (filters.triState.chapter) {
@@ -176,7 +188,7 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                 questions = questions.filter(q => {
                     if (!q.AristochapterClassification || !Array.isArray(q.AristochapterClassification)) return false;
                     
-                    // 核心修改：AND vs OR 邏輯
+                    // Logic Check: AND vs OR
                     if (logic === 'AND') {
                         // AND 邏輯: 題目必須包含所有被選中的 Chapter
                         return checkedChapter.every(chapter => q.AristochapterClassification.includes('Ch' + chapter));

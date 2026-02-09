@@ -19,7 +19,8 @@ var triStateFilters = {
     calculation: {}
 };
 var filterLogic = {
-    chapter: 'OR' 
+    chapter: 'OR',
+    curriculum: 'OR'
 };
 var paginationState = {
     questions: { page: 1, itemsPerPage: 20 }

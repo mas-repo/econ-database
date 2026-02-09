@@ -755,6 +755,21 @@ function clearFilters() {
         calculation: {}
     };
 
+    // === RESET LOGIC TOGGLES ===
+    // Reset Curriculum Logic Toggle
+    const currToggle = document.getElementById('curriculum-logic-toggle');
+    if (currToggle) {
+        currToggle.checked = false; // Uncheck = OR
+        if (window.filterLogic) window.filterLogic.curriculum = 'OR';
+    }
+
+    // Reset Chapter Logic Toggle
+    const chapToggle = document.getElementById('chapter-logic-toggle');
+    if (chapToggle) {
+        chapToggle.checked = false; // Uncheck = OR
+        if (window.filterLogic) window.filterLogic.chapter = 'OR';
+    }
+
     clearPercentageFilter();    
     clearMarksFilter();
     updateFilterIndicators();
@@ -1068,32 +1083,62 @@ function clearMarksFilter() {
     updateMarksRange();
 }
 
-// 切換 Chapter 的邏輯 (OR / AND)
+// Toggle Chapter Logic (OR / AND)
 function toggleChapterLogic(checkbox) {
-    // 如果 checkbox 被勾選，代表是 AND 模式，否則為 OR
+    // If checkbox is checked, it means AND mode; otherwise OR
     window.filterLogic.chapter = checkbox.checked ? 'AND' : 'OR';
     
-    // 立即重新篩選
+    // Immediately re-filter
     filterQuestions();
 }
 
-// 修改清除函數，重置邏輯開關
+// Modify clear function to reset logic switch
 window.clearChapterFilter = function() {
     window.triStateFilters.chapter = {};
     
-    // 重置 UI 上的選取狀態
+    // Reset UI selection state
     const container = document.getElementById('chapter-options');
     if (container) {
         container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
             el.classList.remove('checked', 'excluded');
         });
         
-        // 重置邏輯開關回 OR
+        // Reset logic switch back to OR
         const toggle = document.getElementById('chapter-logic-toggle');
         if (toggle) {
             toggle.checked = false;
-            // 手動觸發 change 事件或者直接更新狀態
+            // Manually trigger change event or update state directly
             window.filterLogic.chapter = 'OR';
+        }
+    }
+    filterQuestions();
+};
+
+// Toggle Curriculum Logic (OR / AND)
+function toggleCurriculumLogic(checkbox) {
+    // If checked, set to AND mode; otherwise OR
+    window.filterLogic.curriculum = checkbox.checked ? 'AND' : 'OR';
+    
+    // Trigger re-filter immediately
+    filterQuestions();
+}
+
+// Clear Curriculum Filter
+window.clearCurriculumFilter = function() {
+    window.triStateFilters.curriculum = {};
+    
+    // Reset visual selection state
+    const container = document.getElementById('curriculum-options');
+    if (container) {
+        container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
+            el.classList.remove('checked', 'excluded');
+        });
+        
+        // Reset logic toggle back to OR
+        const toggle = document.getElementById('curriculum-logic-toggle');
+        if (toggle) {
+            toggle.checked = false;
+            window.filterLogic.curriculum = 'OR';
         }
     }
     filterQuestions();
