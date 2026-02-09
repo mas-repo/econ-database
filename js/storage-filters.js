@@ -167,18 +167,30 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             const checkedChapter = Object.keys(filters.triState.chapter).filter(k => filters.triState.chapter[k] === 'checked');
             const excludedChapter = Object.keys(filters.triState.chapter).filter(k => filters.triState.chapter[k] === 'excluded');
             
+            // 獲取當前邏輯 (預設為 OR)
+            // 注意：我們需要從全局變量獲取，或者在 gatherFilterState 時傳入
+            // 這裡假設 window.filterLogic 可直接訪問，或者你已將其加入 filters 對象中
+            const logic = (window.filterLogic && window.filterLogic.chapter) || 'OR';
+
             if (checkedChapter.length > 0) {
                 questions = questions.filter(q => {
                     if (!q.AristochapterClassification || !Array.isArray(q.AristochapterClassification)) return false;
-                    // Add "Ch" prefix to filter values when comparing
-                    return checkedChapter.some(chapter => q.AristochapterClassification.includes('Ch' + chapter));
+                    
+                    // 核心修改：AND vs OR 邏輯
+                    if (logic === 'AND') {
+                        // AND 邏輯: 題目必須包含所有被選中的 Chapter
+                        return checkedChapter.every(chapter => q.AristochapterClassification.includes('Ch' + chapter));
+                    } else {
+                        // OR 邏輯 (預設): 題目包含任一被選中的 Chapter
+                        return checkedChapter.some(chapter => q.AristochapterClassification.includes('Ch' + chapter));
+                    }
                 });
             }
             
             if (excludedChapter.length > 0) {
                 questions = questions.filter(q => {
                     if (!q.AristochapterClassification || !Array.isArray(q.AristochapterClassification)) return true;
-                    // Add "Ch" prefix to filter values when comparing
+                    // Excluded 邏輯通常維持不變 (不包含任一被排除的)
                     return !excludedChapter.some(chapter => q.AristochapterClassification.includes('Ch' + chapter));
                 });
             }

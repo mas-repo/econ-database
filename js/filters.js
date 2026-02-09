@@ -1067,3 +1067,34 @@ function clearMarksFilter() {
     window.marksFilter = { min: 0, max: 30, active: false };
     updateMarksRange();
 }
+
+// 切換 Chapter 的邏輯 (OR / AND)
+function toggleChapterLogic(checkbox) {
+    // 如果 checkbox 被勾選，代表是 AND 模式，否則為 OR
+    window.filterLogic.chapter = checkbox.checked ? 'AND' : 'OR';
+    
+    // 立即重新篩選
+    filterQuestions();
+}
+
+// 修改清除函數，重置邏輯開關
+window.clearChapterFilter = function() {
+    window.triStateFilters.chapter = {};
+    
+    // 重置 UI 上的選取狀態
+    const container = document.getElementById('chapter-options');
+    if (container) {
+        container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
+            el.classList.remove('checked', 'excluded');
+        });
+        
+        // 重置邏輯開關回 OR
+        const toggle = document.getElementById('chapter-logic-toggle');
+        if (toggle) {
+            toggle.checked = false;
+            // 手動觸發 change 事件或者直接更新狀態
+            window.filterLogic.chapter = 'OR';
+        }
+    }
+    filterQuestions();
+};

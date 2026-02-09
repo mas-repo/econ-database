@@ -126,6 +126,14 @@
                                 <!-- The Clear Button Row -->
                                 <!-- grid-column: 1 / -1 ensures it spans the full width of the grid -->
                                 <div style="grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
+                                    <!-- 邏輯切換開關 -->
+                                    <div class="logic-toggle" title="切換篩選邏輯: 包含任一 (OR) / 同時包含 (AND)">
+                                        <input type="checkbox" id="chapter-logic-toggle" onchange="toggleChapterLogic(this)">
+                                        <label for="chapter-logic-toggle">
+                                            <span class="logic-text or">OR</span>
+                                            <span class="logic-text and">AND</span>
+                                        </label>
+                                    </div>                                    
                                     <button onclick="clearChapterFilter()" style="background:none; border:none; cursor:pointer; color:#666; font-size:0.9rem; display: flex; align-items: center; gap: 4px;">
                                         🗑️ 清除
                                     </button>

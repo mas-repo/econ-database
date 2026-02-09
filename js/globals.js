@@ -18,7 +18,9 @@ var triStateFilters = {
     table: {},
     calculation: {}
 };
-
+var filterLogic = {
+    chapter: 'OR' 
+};
 var paginationState = {
     questions: { page: 1, itemsPerPage: 20 }
 };
