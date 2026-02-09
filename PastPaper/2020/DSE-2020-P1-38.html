@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Taxation & Income Distribution</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue */
+            --secondary: #475569; /* Slate */
+            --accent: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --correct-bg: #dcfce7;
+            --correct-border: #16a34a;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #dc2626;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            border-left: 5px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: #fff;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .options-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .concept-term {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Answer Analysis */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .analysis-item.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .analysis-item.wrong {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .math-block {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Public Finance (公共財政)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key: Regressive Tax, Equity, Fiscal Balance</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="question-text">
+                <p>在2019年，日本政府調高了向大部分物品和服務所徵收的普及銷售稅，稅率由8%調高至10%。其結果是：</p>
+                <p class="en-text">In 2019, the Japanese government increases the general sales tax rate on most of the goods and services from 8% to 10%. As a result,</p>
+            </div>
+            <div style="margin-left: 20px;">
+                <p>(1) 收入不均會擴大。<br><span class="en-text">income inequality will be higher.</span></p>
+                <p>(2) 財政赤字會消除。<br><span class="en-text">the fiscal deficit will be eliminated.</span></p>
+                <p>(3) 無形貿易赤字會下降。<br><span class="en-text">the invisible trade deficit will decrease.</span></p>
+            </div>
+            <ul class="options-list">
+                <li>A. 只有 (1) <span class="en-text">(1) only</span></li>
+                <li>B. 只有 (2) <span class="en-text">(2) only</span></li>
+                <li>C. 只有 (3) <span class="en-text">(3) only</span></li>
+                <li>D. (1)、(2) 及 (3) <span class="en-text">(1), (2) and (3)</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <div class="concept-box">
+            <span class="concept-term">1. 累退稅 (Regressive Tax)</span>
+            <p>銷售稅是一種間接稅，通常被視為累退稅。這是因為低收入人士的消費佔收入比例（消費傾向）通常較高收入人士高。</p>
+            <p class="en-text">Sales tax is an indirect tax and is generally considered regressive. This is because low-income earners typically spend a higher proportion of their income (higher propensity to consume) compared to high-income earners.</p>
+            <div class="math-block">
+                $$ \text{Tax Burden \%} = \frac{\text{Tax Payment}}{\text{Income}} \times 100\% $$
+            </div>
+            <p>當收入 \(Y\) 上升，稅款佔收入的百分比下降。</p>
+            <p class="en-text">As income \(Y\) rises, the percentage of tax payment to income decreases.</p>
+        </div>
+
+        <div class="concept-box">
+            <span class="concept-term">2. 財政預算 (Fiscal Budget)</span>
+            <p>財政狀況取決於總收入與總支出的對比。</p>
+            <p class="en-text">Fiscal position depends on the comparison between Total Revenue and Total Expenditure.</p>
+            <div class="math-block">
+                $$ \text{Deficit (赤字)}: \text{Revenue} < \text{Expenditure} $$
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="analysis-item correct">
+            <span class="option-label">Correct Answer: Option A (只有 1)</span>
+            <p><strong>正確選項分析：</strong></p>
+            <p><strong>(1) 收入不均會擴大 (True)</strong><br>
+            銷售稅是累退的。當稅率劃一提高（由8%至10%），低收入家庭受到的打擊比高收入家庭大，因為他們將更大比例的收入用於消費。這導致稅後收入分配變得更不平均。</p>
+            <p class="en-text"><strong>(1) Income inequality will be higher (True)</strong><br>
+            Sales tax is regressive. When the flat tax rate increases (from 8% to 10%), low-income households are hit harder than high-income households because they spend a larger proportion of their income on consumption. This causes the post-tax income distribution to become more uneven.</p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <span class="option-label">Analysis of Distractors (錯誤選項分析)</span>
+            
+            <p><strong>(2) 財政赤字會消除 (False)</strong><br>
+            雖然加稅可能會增加政府收入（假設需求彈性並非極高），但題目沒有提供原本赤字的金額大小，也沒有提及政府支出的變化。「消除」一詞過於絕對。如果赤字龐大，加稅可能只會「減少」赤字，而非完全「消除」。</p>
+            <p class="en-text"><strong>(2) The fiscal deficit will be eliminated (False)</strong><br>
+            Although raising taxes may increase government revenue (assuming demand is not perfectly elastic), the question does not provide the size of the original deficit nor changes in government spending. The word "eliminated" is too absolute. If the deficit is huge, a tax hike might only "reduce" it, not completely "eliminate" it.</p>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+
+            <p><strong>(3) 無形貿易赤字會下降 (False)</strong><br>
+            無形貿易涉及服務的進出口（如旅遊、保險）。銷售稅主要針對國內消費。
+            <br>1. 如果此稅適用於外國遊客（服務出口），價格上升可能導致遊客減少，服務出口收入下降，反而可能惡化赤字。
+            <br>2. 即使不考慮遊客，銷售稅與服務貿易差額沒有必然的直接關係。</p>
+            <p class="en-text"><strong>(3) The invisible trade deficit will decrease (False)</strong><br>
+            Invisible trade involves the import and export of services (e.g., tourism, insurance). Sales tax targets domestic consumption.
+            <br>1. If this tax applies to foreign tourists (service exports), higher prices might reduce tourist numbers and service export revenue, potentially worsening the deficit.
+            <br>2. Even ignoring tourists, there is no necessary direct link between sales tax and the service trade balance.</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>這類題目考驗學生對經濟變量之間關係的嚴謹度。解題關鍵在於區分「方向性變化」與「絕對結果」。</p>
+        <p class="en-text">This type of question tests students' rigor regarding relationships between economic variables. The key is to distinguish between "directional changes" and "absolute results".</p>
+        
+        <ul style="margin-top: 10px;">
+            <li><strong>Pivot Point (關鍵點):</strong> 辨識銷售稅的性質（累退性）。這是唯一可以確定的理論結果。</li>
+            <li class="en-text"><strong>Pivot Point:</strong> Identify the nature of sales tax (regressive). This is the only theoretically certain outcome.</li>
+            
+            <li style="margin-top: 10px;"><strong>Trap Word (陷阱字眼):</strong> 選項 (2) 中的「消除 (Eliminated)」。在經濟學MC中，除非有數據支持，否則很難斷定一個存量（如赤字）會完全歸零。</li>
+            <li class="en-text"><strong>Trap Word:</strong> "Eliminated" in option (2). In Economics MC, unless data is provided, it is hard to conclude that a stock variable (like deficit) will drop to exactly zero.</li>
+        </ul>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <div class="section-title">Exam Tricks & Shortcuts (考試技巧與速解)</div>
+        <div class="tips-box">
+            <p><strong>技巧：絕對字眼排除法 (Elimination of Absolute Terms)</strong></p>
+            <p>當你看到「消除 (Eliminate)」、「必定 (Must)」、「所有 (All)」這類絕對字眼時，必須提高警覺。在宏觀經濟政策中，結果往往取決於多個變量（如彈性、初始狀態）。</p>
+            <p class="en-text"><strong>Trick:</strong> Be alert when you see absolute terms like "Eliminate", "Must", or "All". In macroeconomic policy, outcomes often depend on multiple variables (e.g., elasticity, initial state).</p>
+            <p>在此題中，只要判斷 (2) 是錯的（因為太絕對），選項 B 和 D 即可排除。剩下 A 和 C。再考慮銷售稅是國內稅項，與貿易赤字關係薄弱，C 也不太可能。故選 A。</p>
+            <p class="en-text">In this question, once you identify (2) is false (too absolute), options B and D are out. You are left with A and C. Considering sales tax is a domestic tax with a weak link to trade deficits, C is unlikely. Thus, choose A.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

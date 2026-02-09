@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Exchange Rate Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue-600 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --bg-color: #f8fafc; /* Slate-50 */
+            --card-bg: #ffffff;
+            --accent-bg: #eff6ff; /* Blue-50 */
+            --text-main: #1e293b; /* Slate-800 */
+            --text-muted: #64748b; /* Slate-500 */
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin-top: 0;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .options-list li:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dbeafe;
+        }
+
+        .concept-item {
+            margin-bottom: 15px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Analysis Section */
+        .step-card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ecfdf5;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #a7f3d0;
+        }
+
+        /* Tricks & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-card {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .trap-card {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .trick-card {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        .card-header {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .zh {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .en {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        /* Math Block Styling */
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span><strong>Topic:</strong> International Finance / Exchange Rates (國際金融 / 匯率)</span>
+            <span><strong>Difficulty:</strong> ★★★☆☆</span>
+        </div>
+        <div class="meta-info" style="background: none; margin-top: 5px;">
+            <small>Key Concepts: Exchange Rate Calculation, Interest Rate Return, Appreciation/Depreciation</small>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <span class="zh">細閱下表。</span>
+                <span class="en">Study the following table.</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date (日期)</th>
+                            <th>Exchange rate (匯率)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2019-12-03</td>
+                            <td>1 HKD = 0.902 RMB</td>
+                        </tr>
+                        <tr>
+                            <td>2020-12-03</td>
+                            <td>1 HKD = 0.923 RMB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bilingual-text">
+                <span class="zh">在2019年12月3日，陳先生用港幣兌換了300 000人民幣，並將該筆款項存入銀行作定期存款，年利率0.8%。假設他在2020年12月3日提取該筆款項，並把它兌回港幣。在上述的交易後，陳先生 ______________。</span>
+                <span class="en">On 3 December 2019, Mr Chan exchanged a total of RMB 300 000 from Hong Kong dollar and deposited the sum to a bank as time deposits at an annual interest rate of 0.8%. Suppose he withdrew the sum of 3 December 2020 and exchanged it back to Hong Kong dollar. From the above transactions, Mr Chan ______________.</span>
+            </div>
+
+            <ul class="options-list">
+                <li>A. <span class="zh">損失了約港幣$4 967</span> / <span class="en">lost about HK$4 967</span></li>
+                <li>B. <span class="zh">損失了約港幣$7 570</span> / <span class="en">lost about HK$7 570</span></li>
+                <li>C. <span class="zh">賺取了港幣$6 300</span> / <span class="en">gained about HK$6 300</span></li>
+                <li>D. <span class="zh">賺取了港幣$8 515</span> / <span class="en">gained about HK$8 515</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="concept-item">
+                <span class="concept-title">1. 外幣兌換本幣 (Converting Foreign Currency to Local Currency)</span>
+                <p class="zh">當匯率表示為 \( 1 \text{ HKD} = X \text{ RMB} \) 時：</p>
+                <p class="en">When the exchange rate is expressed as \( 1 \text{ HKD} = X \text{ RMB} \):</p>
+                <div class="math-block">
+                    $$ \text{HKD Amount} = \frac{\text{RMB Amount}}{X} $$
+                </div>
+                <p class="zh"><small>注意：如果匯率是 \( 1 \text{ RMB} = Y \text{ HKD} \)，則是用乘法。</small></p>
+                <p class="en"><small>Note: If the rate is \( 1 \text{ RMB} = Y \text{ HKD} \), you would multiply.</small></p>
+            </div>
+
+            <div class="concept-item">
+                <span class="concept-title">2. 投資回報計算 (Investment Return Calculation)</span>
+                <p class="zh">利息是基於外幣本金計算的，而不是港幣本金。</p>
+                <p class="en">Interest is calculated based on the foreign currency principal, not the HKD principal.</p>
+                <div class="math-block">
+                    $$ \text{Total Amount} = \text{Principal} \times (1 + \text{Interest Rate}) $$
+                </div>
+            </div>
+
+            <div class="concept-item">
+                <span class="concept-title">3. 匯率風險 (Exchange Rate Risk)</span>
+                <p class="zh">如果在持有外幣期間，港元升值（即兌換率數字變大，例如 0.902 -> 0.923），換回港元時會變得「不划算」。</p>
+                <p class="en">If the HKD appreciates (the exchange rate figure increases, e.g., 0.902 -> 0.923) while holding foreign currency, converting back to HKD becomes less favorable.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: A
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="bilingual-text">
+                <span class="zh"><strong>計算2019年的港幣成本 (Initial Cost in HKD)</strong></span>
+                <span class="en">Calculate how much HKD was spent to buy RMB 300,000 in 2019.</span>
+            </div>
+            <p class="zh">匯率：\( 1 \text{ HKD} = 0.902 \text{ RMB} \)</p>
+            <div class="math-block">
+                $$ \text{Cost} = \frac{300,000}{0.902} \approx 332,594.24 \text{ HKD} $$
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="bilingual-text">
+                <span class="zh"><strong>計算連本帶利的人民幣總額 (Total RMB after Interest)</strong></span>
+                <span class="en">Calculate the total RMB accumulated after 1 year at 0.8% interest.</span>
+            </div>
+            <p class="zh">本金：300,000 RMB，年利率：0.8%</p>
+            <div class="math-block">
+                $$ 300,000 \times (1 + 0.8\%) = 300,000 \times 1.008 = 302,400 \text{ RMB} $$
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="bilingual-text">
+                <span class="zh"><strong>計算2020年換回的港幣價值 (Final Value in HKD)</strong></span>
+                <span class="en">Convert the total RMB (principal + interest) back to HKD using the 2020 rate.</span>
+            </div>
+            <p class="zh">匯率：\( 1 \text{ HKD} = 0.923 \text{ RMB} \)</p>
+            <div class="math-block">
+                $$ \text{Value} = \frac{302,400}{0.923} \approx 327,627.30 \text{ HKD} $$
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="bilingual-text">
+                <span class="zh"><strong>計算損益 (Calculate Gain/Loss)</strong></span>
+                <span class="en">Compare the final value with the initial cost.</span>
+            </div>
+            <div class="math-block">
+                $$ \text{Profit/Loss} = 327,627.30 - 332,594.24 = -4,966.94 $$
+            </div>
+            <p class="zh">結果為負數，代表損失約 $4,967。</p>
+            <p class="en">The result is negative, indicating a loss of approximately $4,967.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這類題目通常由三個變數組成：<strong>買入匯率、利息回報、賣出匯率</strong>。</p>
+        <p class="en">This type of question usually involves three variables: <strong>Entry Exchange Rate, Interest Return, Exit Exchange Rate</strong>.</p>
+        
+        <div style="margin-top: 15px;">
+            <strong style="color: var(--primary-color);">關鍵轉折點 (The Pivot Point):</strong>
+            <p class="zh">注意匯率的變化方向。1港元兌換的人民幣由 0.902 變為 0.923。這代表<strong>港元升值 (HKD appreciated)</strong>，相對地<strong>人民幣貶值 (RMB depreciated)</strong>。當你持有貶值的貨幣（人民幣）時，即使有利息收入，如果貶值幅度大於利息，你最終仍會虧損。</p>
+            <p class="en">Notice the direction of the exchange rate. 1 HKD went from 0.902 to 0.923 RMB. This means <strong>HKD appreciated</strong>, and consequently <strong>RMB depreciated</strong>. When you hold a depreciating currency (RMB), even with interest income, if the depreciation is larger than the interest rate, you will suffer a loss.</p>
+        </div>
+    </div>
+
+    <!-- 6. Mistakes & Tricks -->
+    <div class="section">
+        <h2>Tips & Traps (技巧與陷阱)</h2>
+        <div class="tips-grid">
+            <!-- Common Mistakes -->
+            <div class="tip-card trap-card">
+                <div class="card-header" style="color: var(--danger);">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Common Mistakes (常犯錯誤)
+                </div>
+                <ul class="options-list" style="font-size: 0.9rem;">
+                    <li>
+                        <span class="zh"><strong>乘除混淆：</strong> 看到 0.902 就直接用乘法。記住：如果單位是 \(1 \text{ HKD} = \dots\)，計算 HKD 時要用<strong>除法</strong>。</span>
+                        <span class="en"><strong>Confusing Mult/Div:</strong> Multiplying by 0.902 directly. Remember: if the unit is \(1 \text{ HKD} = \dots\), use <strong>division</strong> to find HKD.</span>
+                    </li>
+                    <li>
+                        <span class="zh"><strong>忽略利息：</strong> 忘記把 0.8% 的利息加到人民幣本金上。</span>
+                        <span class="en"><strong>Ignoring Interest:</strong> Forgetting to add the 0.8% interest to the RMB principal.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Exam Tricks -->
+            <div class="tip-card trick-card">
+                <div class="card-header" style="color: var(--warning);">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Exam Shortcuts (考試速解)
+                </div>
+                <p class="zh" style="font-size: 0.9rem;"><strong>估算法 (Estimation):</strong></p>
+                <p class="en" style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Estimation Method:</strong></p>
+                
+                <p class="zh" style="font-size: 0.9rem;">
+                    1. 利息賺了 \(0.8\%\)。<br>
+                    2. 匯率虧損了多少？ \(\frac{0.923 - 0.902}{0.902} \approx 2.3\%\)。<br>
+                    3. 由於匯率虧損 (\(2.3\%\)) 遠大於利息收入 (\(0.8\%\))，結果必然是<strong>虧損 (Loss)</strong>。<br>
+                    4. 直接刪除選項 C 和 D。
+                </p>
+                <p class="en" style="font-size: 0.9rem;">
+                    1. Interest gain is \(0.8\%\).<br>
+                    2. Exchange rate loss? \(\approx 2.3\%\).<br>
+                    3. Since currency loss (\(2.3\%\)) > interest gain (\(0.8\%\)), it must be a <strong>Loss</strong>.<br>
+                    4. Eliminate options C and D immediately.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

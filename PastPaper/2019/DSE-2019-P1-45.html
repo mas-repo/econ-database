@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Exchange Rates & Arbitrage Correction</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue */
+            --secondary: #475569; /* Slate */
+            --accent: #0ea5e9; /* Light Blue */
+            --success: #10b981; /* Green */
+            --danger: #ef4444; /* Red */
+            --warning: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Question Section */
+        .section-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .question-box {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #eff6ff; /* Light blue tint */
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+            margin: 10px 0;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-top: 15px;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option.wrong {
+            border-color: var(--danger);
+            background-color: #fef2f2;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .correct-tag {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .wrong-tag {
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fff7ed; /* Orange tint */
+            border-left: 5px solid #f97316;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Trap Box */
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+
+        /* Bilingual Text Styling */
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.25rem; }
+            .section-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: International Finance / Exchange Rates</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key Concepts: Law of One Price, Transaction Costs</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <div class="section-card">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>細閱iPhone X在香港的價格（以港元計算）與在內地的價格（以人民幣計算）。</strong><br>
+            <span class="en-text">Study the prices of iPhone X in Hong Kong in terms of Hong Kong dollar (HKD) and in the Mainland in terms of Renminbi (RMB).</span></p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>香港 (Hong Kong)</th>
+                            <th>內地 (The Mainland)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8 588 港元 (HKD)</td>
+                            <td>8 316 人民幣 (RMB)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>已知匯率是1港元兌0.875元人民幣，下列哪項陳述是正確的？</strong><br>
+            <span class="en-text">Given the exchange rate of HKD 1 = RMB 0.875, which of the following statements is correct?</span></p>
+
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><strong>A.</strong> 遊客傾向於在內地而非香港購買iPhone X。<br><span class="en-text">Travellers tend to buy an iPhone X in the Mainland instead of in Hong Kong.</span></li>
+                <li><strong>B.</strong> 人民幣的幣值被低估，因為iPhone X在內地的價格比在香港的便宜。<br><span class="en-text">RMB is under-valued as the price of an iPhone X in the Mainland is lower than that in Hong Kong.</span></li>
+                <li><strong>C.</strong> 若運費是950港元，在香港購買一部iPhone X並在內地轉售便再不能獲利。<br><span class="en-text">If the transportation cost is HKD 950, buying an iPhone X in Hong Kong and re-selling it in the Mainland will no longer gain.</span></li>
+                <li><strong>D.</strong> 當本港iPhone X的價格高於9 504港元，「低買高賣」的潛在利益便會消失。<br><span class="en-text">The potential gain from ‘buy low, sell high’ will disappear when the price of iPhone X in Hong Kong is higher than HKD 9 504.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section-card">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>要解決此類問題，我們必須將所有價格轉換為<strong>同一種貨幣</strong>進行比較。</p>
+            <span class="en-text">To solve this problem, we must convert all prices into a <strong>common currency</strong> for comparison.</span>
+
+            <p><strong>1. 匯率轉換公式 (Exchange Rate Conversion):</strong></p>
+            <div class="formula-block">
+                $$ \text{Price in HKD} = \frac{\text{Price in RMB}}{\text{Exchange Rate (RMB per HKD)}} $$
+            </div>
+            
+            <p><strong>2. 交易成本與套戥 (Transaction Costs & Arbitrage):</strong></p>
+            <p>套戥利潤 = 價格差距 - 交易成本 (如運費)。<br>
+            若 <strong>交易成本 > 價格差距</strong>，則無法獲利。</p>
+            <span class="en-text">Arbitrage Profit = Price Gap - Transaction Costs (e.g., shipping).<br>
+            If <strong>Transaction Costs > Price Gap</strong>, no profit can be made.</span>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section-card">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="question-box" style="background-color: #ecfdf5; border-color: var(--success);">
+            <h3 style="margin-top:0; color: var(--success);">正確答案：C (Correct Option: C)</h3>
+        </div>
+
+        <p><strong>關鍵計算 (Key Calculation):</strong><br>
+        首先，將內地的價格轉換為港元。<br>
+        <span class="en-text">First, convert the Mainland price into HKD.</span></p>
+        
+        <div class="formula-block">
+            $$ \text{Mainland Price (HKD)} = \frac{8316}{0.875} = 9504 \text{ HKD} $$
+        </div>
+
+        <p><strong>現狀比較 (Current Comparison):</strong><br>
+        香港價格 (HK Price): <strong>$8,588</strong><br>
+        內地價格 (Mainland Price): <strong>$9,504</strong><br>
+        價格差距 (Price Gap): \( 9504 - 8588 = 916 \text{ HKD} \)。<br>
+        <span class="en-text">Conclusion: Hong Kong is cheaper. The gap is 916 HKD.</span></p>
+
+        <div class="option-analysis">
+            <!-- Option A -->
+            <div class="option wrong">
+                <span class="option-label">Option A:</span> <span class="wrong-tag">錯誤 (Incorrect)</span>
+                <p>遊客會傾向在價格較低的地方購買。香港 ($8,588) 比內地 ($9,504) 便宜，遊客應在香港購買。</p>
+                <span class="en-text">Travellers tend to buy where the price is lower. Since HK ($8,588) is cheaper than the Mainland ($9,504), they should buy in HK.</span>
+            </div>
+
+            <!-- Option B -->
+            <div class="option wrong">
+                <span class="option-label">Option B:</span> <span class="wrong-tag">錯誤 (Incorrect)</span>
+                <p>陳述指「內地價格比香港便宜」，這與計算結果相反（內地其實較貴）。</p>
+                <span class="en-text">The statement claims "price in the Mainland is lower", which contradicts our calculation (Mainland is actually more expensive).</span>
+            </div>
+
+            <!-- Option C -->
+            <div class="option correct">
+                <span class="option-label">Option C:</span> <span class="correct-tag">正確 (Correct)</span>
+                <p>目前的潛在毛利 (Gross Profit) 是 \( 9504 - 8588 = 916 \) 港元。<br>
+                如果運費是 950 港元，淨利潤 = \( 916 - 950 = -34 \) 港元。<br>
+                因為成本高於潛在收益，所以在香港購買並運往內地轉售確實無法獲利。</p>
+                <span class="en-text">The current gross profit is 916 HKD. If transport cost is 950 HKD, Net Profit = 916 - 950 = -34 HKD. Since the cost exceeds the potential gain, buying in HK and reselling in the Mainland will indeed yield no gain.</span>
+            </div>
+
+            <!-- Option D -->
+            <div class="option wrong">
+                <span class="option-label">Option D:</span> <span class="wrong-tag">陷阱 / 錯誤 (Trap / Incorrect)</span>
+                <p>這是一個邏輯陷阱。如果香港價格高於 9,504 港元（例如 10,000 港元），雖然「在香港買、內地賣」無利可圖，但<strong>交易方向會逆轉</strong>。<br>
+                人們會改為「在內地買（9,504）、在香港賣（10,000）」。<br>
+                因此，「低買高賣」的潛在利益<strong>並沒有消失</strong>，只是方向改變了。</p>
+                <span class="en-text">This is a logic trap. If the HK price rises above 9,504 HKD (e.g., to 10,000), while "buy in HK, sell in Mainland" is no longer profitable, the <strong>direction of trade reverses</strong>. People would simply "buy in Mainland (9,504) and sell in HK (10,000)". The potential gain from "buy low, sell high" does <strong>not disappear</strong>; it just shifts direction.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Mistakes & Traps -->
+    <div class="section-card">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="trap-box">
+            <h3 style="margin-top:0; color: var(--danger);">⚠️ 邏輯陷阱：交易方向逆轉 (Logic Trap: Reversal of Trade)</h3>
+            <p>很多學生誤選 <strong>Option D</strong>，因為他們只關注目前的交易方向（由香港賣往內地）。</p>
+            <p><strong>記住：</strong>套戥 (Arbitrage) 是雙向的。只要兩個市場的價格<strong>不相等</strong>，就存在獲利機會。</p>
+            <ul style="margin-bottom: 0;">
+                <li>\( P_{HK} < P_{Mainland} \): 買港貨，賣內地。</li>
+                <li>\( P_{HK} > P_{Mainland} \): 買國貨，賣香港。</li>
+                <li>只有當 \( P_{HK} = P_{Mainland} \) 時，獲利機會才真正消失。</li>
+            </ul>
+            <br>
+            <span class="en-text">Many students mistakenly choose Option D because they focus only on the current direction of trade (HK to Mainland).<br>
+            <strong>Remember:</strong> Arbitrage is bidirectional. As long as prices are <strong>not equal</strong>, an opportunity exists.<br>
+            Only when \( P_{HK} = P_{Mainland} \) does the opportunity truly disappear.</span>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section-card">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <ul>
+            <li><strong>第一步 (Step 1):</strong> 統一貨幣單位。計算出內地手機的港元價值 ($9,504)。
+                <br><span class="en-text">Unify currency. Calculate the HKD value of the Mainland phone ($9,504).</span>
+            </li>
+            <li><strong>第二步 (Step 2):</strong> 計算差價 (Gap)。\( 9504 - 8588 = 916 \)。
+                <br><span class="en-text">Calculate the Gap ($916).</span>
+            </li>
+            <li><strong>第三步 (Step 3):</strong> 驗證 C 選項。比較差價與運費。\( 916 < 950 \)，無利可圖。正確。
+                <br><span class="en-text">Verify Option C. Compare Gap vs. Freight. 916 < 950, no profit. Correct.</span>
+            </li>
+            <li><strong>第四步 (Step 4):</strong> 驗證 D 選項。思考「如果香港價格變貴會怎樣？」。會變成由內地倒賣回香港，利潤依然存在。
+                <br><span class="en-text">Verify Option D. Ask "What if HK gets expensive?". Trade reverses to Mainland -> HK. Profit still exists.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
