@@ -86,17 +86,25 @@ async function renderQuestions() {
         // Sort curriculum classifications by CURRICULUM_ORDER
         const sortedCurriculum = q.curriculumClassification ? 
             [...q.curriculumClassification].sort((a, b) => {
-                const indexA = CURRICULUM_ORDER.indexOf(a);
-                const indexB = CURRICULUM_ORDER.indexOf(b);
-                return indexA - indexB;
+                // Find the index of 'a' based on matching it against the full display names derived from CURRICULUM_ORDER
+                const indexA = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === a);
+                const indexB = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === b);
+                
+                // If found, use that index. If not found (e.g. -1), push to the end (999).
+                const valA = indexA === -1 ? 999 : indexA;
+                const valB = indexB === -1 ? 999 : indexB;
+                
+                return valA - valB;
             }) : [];
         
         // Sort chapter classifications numerically
         const sortedChapters = q.AristochapterClassification ? 
             [...q.AristochapterClassification].sort((a, b) => {
-                const numA = parseInt(a.replace('Chapter ', ''));
-                const numB = parseInt(b.replace('Chapter ', ''));
-                return numA - numB;
+                const getNum = (str) => {
+                    const match = str.match(/(\d+)/);
+                    return match ? parseInt(match[0], 10) : 9999; // No number = put at end
+                };
+                return getNum(a) - getNum(b);
             }) : [];
 
         // --- PRE-GENERATE HTML FOR CLASSIFICATIONS TO GROUP THEM ---
