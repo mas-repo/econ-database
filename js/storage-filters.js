@@ -348,6 +348,14 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                                 q.calculationType !== '' && 
                                 q.calculationType !== '-' && 
                                 q.calculationType !== '沒有計算';
+                        } else if (value === '跨課題') {
+                            return q.curriculumClassification && 
+                                Array.isArray(q.curriculumClassification) && 
+                                q.curriculumClassification.length > 1;
+                        } else if (value === '跨章節') {
+                            return q.AristochapterClassification && 
+                                Array.isArray(q.AristochapterClassification) && 
+                                q.AristochapterClassification.length > 1;
                         }
                         return true;
                     });
@@ -374,6 +382,14 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                                 q.calculationType === '' || 
                                 q.calculationType === '-' || 
                                 q.calculationType === '沒有計算';
+                        } else if (value === '跨課題') {
+                            return !q.curriculumClassification || 
+                                !Array.isArray(q.curriculumClassification) || 
+                                q.curriculumClassification.length <= 1;
+                        } else if (value === '跨章節') {
+                            return !q.AristochapterClassification || 
+                                !Array.isArray(q.AristochapterClassification) || 
+                                q.AristochapterClassification.length <= 1;
                         }                     
                         return true;
                     });
