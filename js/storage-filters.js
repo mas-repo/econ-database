@@ -27,6 +27,15 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             const checkContent = () => (q.questionTextChi && q.questionTextChi.toLowerCase().includes(searchLower)) ||
                                      (q.questionTextEng && q.questionTextEng.toLowerCase().includes(searchLower));
             const checkPublisher = () => q.publisher && q.publisher.toLowerCase().includes(searchLower);
+            const checkAnswer = () => {
+                return (q.answerMC && q.answerMC.toLowerCase().includes(searchLower)) ||
+                       (q.answerChi && q.answerChi.toLowerCase().includes(searchLower)) ||
+                       (q.answerEng && q.answerEng.toLowerCase().includes(searchLower));
+            };
+            const checkReport = () => {
+                return (q.markersReportChi && q.markersReportChi.toLowerCase().includes(searchLower)) ||
+                       (q.markersReportEng && q.markersReportEng.toLowerCase().includes(searchLower));
+            };            
 
             switch (scope) {
                 case 'id':
@@ -38,18 +47,18 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                 case 'exam':
                     return checkExam() || checkSection() || checkNum();
                 case 'answer':
-                    return q.answer && q.answer.toLowerCase().includes(searchLower);
+                    return checkAnswer();
                 case 'concepts':
                     return q.concepts && Array.isArray(q.concepts) && q.concepts.some(c => c.toLowerCase().includes(searchLower));
                 case 'patterns':
                     return q.patterns && Array.isArray(q.patterns) && q.patterns.some(p => p.toLowerCase().includes(searchLower));
                 case 'markersReport':
-                    return q.markersReport && q.markersReport.toLowerCase().includes(searchLower);
+                    return checkReport();
                 case 'section':
                     return checkSection();
                 case 'all':
                 default:
-                    return checkId() || checkExam() || checkSection() || checkNum() || checkContent() || checkPublisher();
+                    return checkId() || checkExam() || checkSection() || checkNum() || checkContent() || checkPublisher() || checkAnswer() || checkReport();
             }
         });
     }
@@ -179,9 +188,7 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             const checkedChapter = Object.keys(filters.triState.chapter).filter(k => filters.triState.chapter[k] === 'checked');
             const excludedChapter = Object.keys(filters.triState.chapter).filter(k => filters.triState.chapter[k] === 'excluded');
             
-            // 獲取當前邏輯 (預設為 OR)
-            // 注意：我們需要從全局變量獲取，或者在 gatherFilterState 時傳入
-            // 這裡假設 window.filterLogic 可直接訪問，或者你已將其加入 filters 對象中
+            // Get current logic (Default to OR)
             const logic = (window.filterLogic && window.filterLogic.chapter) || 'OR';
 
             if (checkedChapter.length > 0) {
@@ -190,10 +197,10 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                     
                     // Logic Check: AND vs OR
                     if (logic === 'AND') {
-                        // AND 邏輯: 題目必須包含所有被選中的 Chapter
+                        // AND Logic: Question must contain ALL selected chapter tags
                         return checkedChapter.every(chapter => q.AristochapterClassification.includes('Ch' + chapter));
                     } else {
-                        // OR 邏輯 (預設): 題目包含任一被選中的 Chapter
+                        // OR Logic (Default): Question must contain AT LEAST ONE selected chapter tag
                         return checkedChapter.some(chapter => q.AristochapterClassification.includes('Ch' + chapter));
                     }
                 });
@@ -202,7 +209,7 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             if (excludedChapter.length > 0) {
                 questions = questions.filter(q => {
                     if (!q.AristochapterClassification || !Array.isArray(q.AristochapterClassification)) return true;
-                    // Excluded 邏輯通常維持不變 (不包含任一被排除的)
+                    // Excluded logic remains the same (exclude if ANY match found)
                     return !excludedChapter.some(chapter => q.AristochapterClassification.includes('Ch' + chapter));
                 });
             }

@@ -79,9 +79,12 @@ function setupFormHandler() {
             graphType: graphType,
             tableType: tableType,
             calculationType: document.getElementById('calculation-type').value.trim() || '-',            
-            answer: document.getElementById('answer').value.trim(),
+            answerMC: document.getElementById('answer-mc').value.trim(),
+            answerChi: document.getElementById('answer-chi').value.trim(),
+            answerEng: document.getElementById('answer-eng').value.trim(),
             correctPercentage: parseFloat(document.getElementById('correct-percentage').value) || null,
-            markersReport: document.getElementById('markers-report').value.trim(),
+            markersReportChi: document.getElementById('markers-report-chi').value.trim(),
+            markersReportEng: document.getElementById('markers-report-eng').value.trim(),
             curriculumClassification: document.getElementById('curriculum-classification').value.split(',').map(s => s.trim()).filter(s => s),
             AristochapterClassification: document.getElementById('chapter-classification').value.split(',').map(s => s.trim()).filter(s => s),
             concepts: document.getElementById('concepts').value.split(',').map(s => s.trim()).filter(s => s),
@@ -157,15 +160,18 @@ async function editQuestion(id) {
     document.getElementById('question-number').value = question.questionNumber || '';
     document.getElementById('question-text-chi').value = question.questionTextChi || '';
     document.getElementById('question-text-eng').value = question.questionTextEng || '';
-    
     // Don't show '-' in the form, leave it empty
     document.getElementById('multiple-selection-type').value = question.multipleSelectionType === '-' ? '' : (question.multipleSelectionType || '');
     document.getElementById('graph-type').value = question.graphType === '-' ? '' : (question.graphType || '');
     document.getElementById('table-type').value = question.tableType === '-' ? '' : (question.tableType || '');
-    document.getElementById('calculation-type').value = question.calculationType === '-' ? '' : (question.calculationType || '');    
-    document.getElementById('answer').value = question.answer || '';
+    document.getElementById('calculation-type').value = question.calculationType === '-' ? '' : (question.calculationType || '');
     document.getElementById('correct-percentage').value = question.correctPercentage || '';
-    document.getElementById('markers-report').value = question.markersReport || '';
+    document.getElementById('answer-mc').value = question.answerMC || '';
+    document.getElementById('answer-chi').value = question.answerChi || '';    
+    document.getElementById('answer-eng').value = question.answerEng || '';    
+    document.getElementById('markers-report-chi').value = question.markersReportChi || '';
+    document.getElementById('markers-report-eng').value = question.markersReportEng || '';
+
     document.getElementById('curriculum-classification').value = (question.curriculumClassification || []).join(', ');
     document.getElementById('chapter-classification').value = (question.AristochapterClassification || []).join(', ');
     document.getElementById('concepts').value = (question.concepts || []).join(', ');

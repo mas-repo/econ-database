@@ -685,15 +685,27 @@ function populateSearchScope() {
     const hasContent = available.size === 0 || 
                       available.has('questionTextChi') || 
                       available.has('questionTextEng');
-    
+
+    const hasAnswer = available.size === 0 || 
+                      available.has('answerChi') || 
+                      available.has('answerEng');                      
+
+    const hasReports = available.size === 0 || 
+                      available.has('markersReportChi') || 
+                      available.has('markersReportEng'); 
+
     if (hasContent) {
         html += `<option value="content">題目內容</option>`;
     }
+    if (hasAnswer) {
+        html += `<option value="answer">答案</option>`;
+    }
+    if (hasReports) {
+        html += `<option value="markersReport">評卷報告</option>`;
+    }
 
     const fieldMapping = {
-        'answer': '答案',
         'concepts': '相關概念',
-        'markersReport': '評卷報告',
         'patterns': '題型標籤' 
     };
 

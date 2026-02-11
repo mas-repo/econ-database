@@ -53,16 +53,35 @@ async function renderQuestions() {
     // Helper function to determine tag style based on filter state
     const getTagStyle = (category, value) => {
         const isChecked = triStateFilters[category] && triStateFilters[category][value] === 'checked';
-        // If active: Light blue background, blue border, bold text
-        // If inactive: Standard link color, pointer cursor
         return isChecked 
             ? 'cursor:pointer; background-color: #e3f2fd; border: 1px solid #2196f3; color: #1565c0; font-weight: 600;' 
             : 'cursor:pointer; color:var(--secondary-color);';
     };
+
+    // Helper function to render collapsible text sections (Answers/Reports)
+    const renderCollapsibleSection = (label, content) => {
+        if (!content || content.trim() === '' || content === '-') return '';
+        
+        // Escape content for HTML display
+        const escapedContent = escapeHTML(content.trim());
+        // Escape content for the copy button function call
+        const jsonContent = JSON.stringify(content).replace(/"/g, '&quot;');
+
+        return `
+            <div class="question-text">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                    <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">▶</button>
+                    <strong style="flex: 1;">${label}</strong>
+                    <button class="copy-btn" onclick="copyToClipboard(${jsonContent}, this)" title="複製" style="flex-shrink: 0;">
+                        📋
+                    </button>
+                </div>
+                <div class="question-text-content collapsed">${escapedContent}</div>
+            </div>
+        `;
+    };
     
     grid.innerHTML = paginatedQuestions.map(q => {
-        // Check if answer is short (single character or very brief)
-        const isShortAnswer = q.answer && q.answer.trim().length <= 10;
         
         // Sort curriculum classifications by CURRICULUM_ORDER
         const sortedCurriculum = q.curriculumClassification ? 
@@ -113,14 +132,9 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Chapter:</strong>
                         ${sortedChapters.map(c => {
-                            // Extract the number for the filter value logic (existing logic)
                             const match = c.match(/(\d+)/);
                             const val = match ? match[0] : c; 
-                            
-                            // Create a display label that removes "Ch" or "Chapter" (case insensitive)
-                            // This affects ONLY the visual text inside the span
                             const displayLabel = c.replace(/^(Ch|Chapter)\s*/i, '');
-
                             return `
                             <span class="tag clickable-tag" onclick="filterByTag('chapter', '${escapeAttr(val)}')" style="${getTagStyle('chapter', val)}">
                                 ${displayLabel}
@@ -185,73 +199,26 @@ async function renderQuestions() {
             </div>
             
             <div class="question-content">
-                ${q.questionTextChi ? `
-                    <div class="question-text">
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                            <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">
-                                ▶
-                            </button>
-                            <strong style="flex: 1;">題目 (中)：</strong>
-                            <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.questionTextChi).replace(/"/g, '&quot;')}, this)" title="複製" style="flex-shrink: 0;">
-                                📋
-                            </button>
-                        </div>
-                        <div class="question-text-content collapsed">${escapeHTML(q.questionTextChi.trim())}</div>
-                    </div>
-                ` : ''}
-                ${q.questionTextEng ? `
-                    <div class="question-text">
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                            <button class="expand-btn" onclick="toggleQuestionText(this)" title="Expand/Collapse">
-                                ▶
-                            </button>
-                            <strong style="flex: 1;">Question (Eng):</strong>
-                            <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.questionTextEng).replace(/"/g, '&quot;')}, this)" title="Copy" style="flex-shrink: 0;">
-                                📋
-                            </button>
-                        </div>
-                        <div class="question-text-content collapsed">${escapeHTML(q.questionTextEng.trim())}</div>
+                ${renderCollapsibleSection('題目：', q.questionTextChi)}
+                ${renderCollapsibleSection('Question:', q.questionTextEng)}
+
+                <!-- Answer Display Logic -->
+                ${(q.answerMC && q.answerMC !== '-') ? `
+                    <div class="info-item" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                        <strong>答案：</strong> 
+                        <span style="font-weight: bold; color: #2c3e50;">${escapeHTML(q.answerMC)}</span>
                     </div>
                 ` : ''}
 
-                    ${q.answer ? (isShortAnswer ? `
-                        <div class="info-item" style="display: flex; align-items: center; gap: 8px;">
-                            <strong>答案：</strong> 
-                            <span style="flex: 1;">${escapeHTML(q.answer)}</span>
-                            <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
-                                📋
-                            </button>
-                        </div>
-                    ` : `
-                        <div class="question-text">
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                                <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">
-                                    ▶
-                                </button>
-                                <strong style="flex: 1;">答案：</strong>
-                                <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, this)" title="複製答案" style="flex-shrink: 0;">
-                                    📋
-                                </button>
-                            </div>
-                            <div class="question-text-content collapsed">${escapeHTML(q.answer.trim())}</div>
-                        </div>
-                    `) : ''}                  
+                ${renderCollapsibleSection('答案：', q.answerChi)}
+                ${renderCollapsibleSection('Answer:', q.answerEng)}
 
-                ${q.markersReport ? `
-                    <div class="info-item" style="margin-top: 10px; display: flex; align-items: flex-start; gap: 8px;">
-                        <div style="flex: 1;">
-                            <strong>評卷報告：</strong> ${escapeHTML(q.markersReport.substring(0, 150))}${q.markersReport.length > 150 ? '...' : ''}
-                        </div>
-                        <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(q.markersReport).replace(/"/g, '&quot;')}, this)" title="複製評卷報告" style="flex-shrink: 0;">
-                            📋
-                        </button>
-                    </div>
-                ` : ''}
+                <!-- Markers Report Display Logic -->
+                ${renderCollapsibleSection('評卷報告：', q.markersReportChi)}
+                ${renderCollapsibleSection('Markers Report:', q.markersReportEng)}
 
                 <div class="question-info">             
-
                     ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${q.correctPercentage}%</div>` : ''}
-
 
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
@@ -288,11 +255,7 @@ async function renderQuestions() {
                             </span>
                         </div>
                     ` : ''}                    
-
-                    </div>
-                
-
-                <div></div>
+                </div>
                 
                 <!-- Combined Classifications Section -->
                 ${classificationHtml}
