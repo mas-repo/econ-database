@@ -18,6 +18,7 @@ if (!window.triStateFilters) {
         feature: {}, 
         exam: {}, 
         qtype: {},
+        year: {},
         concepts: {},
         patterns: {},
         ai: {},
@@ -40,10 +41,10 @@ const ARROW_MAP = {
     'curriculum-options': 'curriculum-arrow',
     'feature-options': 'feature-arrow',
     'chapter-options': 'chapter-arrow',
+    'year-options': 'year-arrow',
     
     // Standard Filters
     'exam-options': 'exam-arrow',
-    'year-options': 'year-arrow',
     'qtype-options': 'qtype-arrow',
     
     // Range Filters
@@ -75,8 +76,8 @@ function closeAllDropdowns() {
         d.classList.remove('active');
     });
 
-    // 2. Close custom inline-style grids (Curriculum, Chapter, Feature)
-    ['curriculum', 'chapter', 'feature'].forEach(type => {
+    // 2. Close custom inline-style grids
+    ['curriculum', 'chapter', 'feature', 'year'].forEach(type => {
         const section = document.getElementById(`${type}-options`);
         if (section) section.style.display = 'none';
     });
@@ -100,10 +101,7 @@ function closeAllDropdowns() {
  * This allows users to see the Chapter Name on hover.
  */
 function applyChapterTooltips() {
-
     if (window.authManager && window.authManager.userGroup === 'Colleagues') return;
-    
-    // Ensure constants are loaded
     if (typeof CHAPTER_DESCRIPTIONS === 'undefined') return;
 
     const container = document.getElementById('chapter-options');
@@ -119,7 +117,6 @@ function applyChapterTooltips() {
         // Pad value to match keys in constants.js (e.g. "1" -> "01")
         const paddedVal = rawVal.toString().padStart(2, '0');
         const description = CHAPTER_DESCRIPTIONS[paddedVal];
-
         if (description) {
             // Set the native browser tooltip
             item.setAttribute('title', `${paddedVal}: ${description}`);
@@ -141,7 +138,6 @@ function toggleDropdown(dropdownId) {
     
     // Note: We must check if it's actually visible.
     const isActuallyVisible = isGridActive || (isStandardActive && target.style.display !== 'none');
-    
     const wasOpen = isActuallyVisible;
 
     // 2. Close EVERYTHING first (Exclusive Mode)
@@ -149,12 +145,11 @@ function toggleDropdown(dropdownId) {
 
     // 3. If it was NOT open before, open it now
     if (!wasOpen) {
-        
-        // Configuration for special grid filters that need display: grid
-        const gridFilters = ['curriculum-options', 'feature-options', 'chapter-options'];
+        const gridFilters = ['curriculum-options', 'feature-options', 'chapter-options', 'year-options'];
 
         if (gridFilters.includes(dropdownId)) {
-            // === Case A: Custom Grid Filters ===
+            // Treat year-options exactly like chapter-options (display: grid)
+            // This ensures it uses the .custom-grid-dropdown styles correctly.
             target.style.display = 'grid';
             
             // Special handling for Chapter: Apply tooltips when opening
@@ -167,7 +162,7 @@ function toggleDropdown(dropdownId) {
             target.classList.add('active');
         }
 
-        // === UPDATE ARROW LOGIC ===
+        // === ARROW LOGIC ===
         // Attempt 1: Use the map
         let arrowUpdated = false;
         const arrowId = ARROW_MAP[dropdownId];
@@ -180,16 +175,11 @@ function toggleDropdown(dropdownId) {
         }
 
         // Attempt 2: Dynamic Lookup (Fallback)
-        // If the map failed, look for the button that triggered this.
-        // We assume the button is a sibling or parent of the dropdown container.
         if (!arrowUpdated) {
-            // Find the container wrapping the dropdown
             const container = target.closest('.dropdown-filter') || target.closest('.input-dropdown-container');
             if (container) {
-                // Find the button or input wrapper inside this container
                 const btn = container.querySelector('.dropdown-btn') || container.querySelector('.filter-input-wrapper');
                 if (btn) {
-                    // Find the arrow span inside that button
                     const arrow = btn.querySelector('.arrow') || btn.querySelector('.input-arrow');
                     if (arrow) {
                         arrow.textContent = '▼';
@@ -199,11 +189,6 @@ function toggleDropdown(dropdownId) {
         }
     }
 
-    // UPDATED LOGIC: Trigger update regardless of open/close state.
-    // 1. If we just OPENED the dropdown: It is now visible. updateDynamicDropdowns will see 'isVisible=true' 
-    //    and perform a "Soft Update" (counts/checks only), preserving the order so items don't jump.
-    // 2. If we just CLOSED the dropdown: It is now hidden. updateDynamicDropdowns will see 'isVisible=false'
-    //    and perform a "Full Rebuild", sorting selected items to the top for the next time it opens.
     updateDynamicDropdowns();
 }
 
@@ -216,7 +201,7 @@ document.addEventListener('click', function(event) {
 
     if (!isFilterClick) {
         closeAllDropdowns();
-        // UPDATED: When clicking outside to close, trigger the sort on the now-hidden elements.
+        // When clicking outside to close, trigger the sort on the now-hidden elements.
         updateDynamicDropdowns();
     }
 });
@@ -290,7 +275,6 @@ function filterDropdownList(input, listId) {
     for (let i = 0; i < items.length; i++) {
         const txtValue = items[i].textContent || items[i].innerText;
         // Remove the count number for search matching (e.g. "Algebra (5)" -> match "Algebra")
-        // We assume the text content starts with the value. 
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             items[i].style.display = "";
         } else {
@@ -301,7 +285,7 @@ function filterDropdownList(input, listId) {
 
 function updateFilterIndicators() {
     const triStateTypes = [
-        'exam', 'qtype', 'curriculum', 'chapter', 'feature',
+        'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year',
         'multipleSelection', 'graph', 'table', 'calculation',
         'concepts', 'patterns', 'ai'
     ];
@@ -344,18 +328,6 @@ function updateFilterIndicators() {
         }
     }
 
-    // Handle Year Indicator
-    const yearIndicator = document.getElementById('indicator-year');
-    if (yearIndicator) {
-        const yearValue = document.getElementById('year-filter').value;
-        if (yearValue && yearValue !== '') {
-            yearIndicator.classList.add('visible');
-        } else {
-            yearIndicator.classList.remove('visible');
-        }
-    }
-
-    // Handle Percentage Indicator
     const pctIndicator = document.getElementById('indicator-percentage');
     if (pctIndicator) {
         if (window.percentageFilter && window.percentageFilter.active) {
@@ -384,7 +356,6 @@ function gatherFilterState() {
     return {
         search: document.getElementById('search').value,
         searchScope: window.searchScope || 'all',
-        year: document.getElementById('year-filter').value,
         percentageFilter: window.percentageFilter,
         marksFilter: window.marksFilter,
         triState: window.triStateFilters
@@ -421,16 +392,109 @@ async function updateDynamicDropdowns() {
         delete contextFilters.triState.concepts;
         delete contextFilters.triState.patterns;
         delete contextFilters.triState.ai;
+        delete contextFilters.triState.year; // Allow seeing other years
     }
     
     // Remove 'search' from the context used to populate dropdowns.
-    // This prevents the dropdowns from disappearing (becoming empty) 
-    // when the user types a term that has 0 results in the current scope.
     delete contextFilters.search;
 
     const contextQuestions = window.storage.applyFilters(allQuestions, contextFilters);
 
-    // Helper to generate HTML for a specific list
+    // --- Populate Year Filter Dynamically ---
+    const populateYearGrid = () => {
+        // UPDATED: Target the main options container directly, not a list inside it
+        const container = document.getElementById('year-options');
+        if (!container) return;
+
+        // 1. Calculate Counts (Optional, but good for data-driven logic)
+        const counts = {};
+        contextQuestions.forEach(q => {
+            if (q.year) {
+                const y = String(q.year).trim();
+                counts[y] = (counts[y] || 0) + 1;
+            }
+        });
+
+        // 2. Check Visibility (Soft Update vs Full Rebuild)
+        // If visible, we just update classes.
+        const isVisible = container.style.display === 'grid'; // Changed to check for grid
+
+        if (isVisible) {
+            // Soft Update
+            const existingItems = container.querySelectorAll('.tri-state-checkbox');
+            existingItems.forEach(el => {
+                const itemValue = el.dataset.value;
+                const currentState = window.triStateFilters.year && window.triStateFilters.year[itemValue];
+                
+                el.classList.remove('checked', 'excluded');
+
+                if (currentState === 'checked') {
+                    el.classList.add('checked');
+                } else if (currentState === 'excluded') {
+                    el.classList.add('excluded');
+                }
+            });
+            return;
+        }
+
+        // Full Rebuild
+        const validYears = window.storage.getUniqueValues(contextQuestions, 'year');
+        
+        // Sort Descending (Newest first), with PP/SP at the end
+        validYears.sort((a, b) => {
+            const strA = String(a).toUpperCase();
+            const strB = String(b).toUpperCase();
+            
+            const isSpecialA = strA === 'PP' || strA === 'SP';
+            const isSpecialB = strB === 'PP' || strB === 'SP';
+
+            if (isSpecialA && isSpecialB) {
+                 return strB.localeCompare(strA); 
+            }
+            
+            if (isSpecialA) return 1;
+            if (isSpecialB) return -1;
+            
+            return strB.localeCompare(strA, undefined, { numeric: true });
+        });
+
+        // UPDATED: Include the Header (Select All / Clear) inside the grid container
+        // Use grid-column: 1 / -1 to make it span the full width of the grid
+        let html = `
+            <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+                <button onclick="selectAllYears()" class="clear-btn" style="color: var(--secondary-color); font-weight: bold;">全選</button>
+                <button onclick="clearYearFilter()" class="clear-btn">🗑️ 清除</button>
+            </div>
+        `;
+
+        validYears.forEach(year => {
+            const currentState = window.triStateFilters.year && window.triStateFilters.year[year];
+            const displayYear = year.toString(); // add .slice(-2) to get last 2 digits if necessary
+
+            let itemClass = 'tri-state-checkbox';
+            
+            if (currentState === 'checked') {
+                itemClass += ' checked';
+            } else if (currentState === 'excluded') {
+                itemClass += ' excluded';
+            }
+
+            // Generate "Button-like" HTML structure similar to Chapters
+            html += `
+                <div class="${itemClass}" 
+                     data-filter="year" 
+                     data-value="${year}" 
+                     onclick="toggleTriState(this)"
+                     title="${year}">
+                    ${displayYear}
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    };
+    populateYearGrid();
+    // ---------------------------------------------
+
     const populateList = (containerId, fieldName, filterType, isArrayField = false) => {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -453,8 +517,6 @@ async function updateDynamicDropdowns() {
         });
 
         // 2. Check if Dropdown is Open (Visible)
-        // If it is open, we do NOT want to re-sort (rebuild HTML), because it makes items jump.
-        // We only want to update the visual state (checked/excluded) and the counts.
         const isVisible = container.classList.contains('active') || 
                           container.style.display === 'block' || 
                           container.style.display === 'grid' ||
@@ -488,7 +550,7 @@ async function updateDynamicDropdowns() {
                     countSpan.textContent = `(${count})`;
                 }
             });
-            return; // EXIT HERE - Do not rebuild/sort
+            return; 
         }
 
         // ============================================================
@@ -729,6 +791,36 @@ function populateSearchScope() {
 // CLEAR & RESET FUNCTIONS
 // ============================================
 
+window.clearYearFilter = function() {
+    window.triStateFilters.year = {};
+    const container = document.getElementById('year-options'); // UPDATED
+    if (container) {
+        // Updated selector to match new HTML structure (just .tri-state-checkbox)
+        container.querySelectorAll('.tri-state-checkbox').forEach(el => {
+            el.classList.remove('checked', 'excluded');
+        });
+    }
+    filterQuestions();
+};
+
+// Select All Years
+window.selectAllYears = function() {
+    const container = document.getElementById('year-options'); // UPDATED
+    if (!container) return;
+    
+    const items = container.querySelectorAll('[data-value]');
+    items.forEach(el => {
+        const val = el.getAttribute('data-value');
+        if (val) {
+            window.triStateFilters.year[val] = 'checked';
+            el.classList.add('checked');
+            el.classList.remove('excluded');
+        }
+    });
+    
+    filterQuestions();
+};
+
 window.clearChapterFilter = function() {
     window.triStateFilters.chapter = {};
     const container = document.getElementById('chapter-options');
@@ -737,12 +829,18 @@ window.clearChapterFilter = function() {
             el.classList.remove('checked', 'excluded');
         });
     }
+    
+    // Reset logic switch back to OR
+    const toggle = document.getElementById('chapter-logic-toggle');
+    if (toggle) {
+        toggle.checked = false;
+        window.filterLogic.chapter = 'OR';
+    }
     filterQuestions();
 };
 
 function clearFilters() {
     document.getElementById('search').value = '';
-    document.getElementById('year-filter').value = '';
     
     const pctSection = document.getElementById('percentage-options');
     if (pctSection) pctSection.style.display = 'none';
@@ -750,7 +848,7 @@ function clearFilters() {
     const marksSection = document.getElementById('marks-options');
     if (marksSection) marksSection.style.display = 'none';
 
-    const collapsibleTypes = ['curriculum', 'chapter', 'feature'];
+    const collapsibleTypes = ['curriculum', 'chapter', 'feature', 'year'];
     collapsibleTypes.forEach(type => {
         const section = document.getElementById(`${type}-options`);
         if (section) section.style.display = 'none';
@@ -797,6 +895,7 @@ function clearFilters() {
         feature: {}, 
         exam: {}, 
         qtype: {},
+        year: {},
         concepts: {},
         patterns: {},
         ai: {},
@@ -807,17 +906,16 @@ function clearFilters() {
     };
 
     // === RESET LOGIC TOGGLES ===
-    // Reset Curriculum Logic Toggle
     const currToggle = document.getElementById('curriculum-logic-toggle');
     if (currToggle) {
-        currToggle.checked = false; // Uncheck = OR
+        currToggle.checked = false; 
         if (window.filterLogic) window.filterLogic.curriculum = 'OR';
     }
 
     // Reset Chapter Logic Toggle
     const chapToggle = document.getElementById('chapter-logic-toggle');
     if (chapToggle) {
-        chapToggle.checked = false; // Uncheck = OR
+        chapToggle.checked = false; 
         if (window.filterLogic) window.filterLogic.chapter = 'OR';
     }
 
@@ -838,7 +936,16 @@ window.removeFilter = function(type, param1, param2) {
     if (type === 'search') {
         document.getElementById('search').value = '';
     } else if (type === 'year') {
-        document.getElementById('year-filter').value = '';
+        // Handle removing year filter (tri-state)
+        // If param1 is provided, it's a specific year tag removal
+        if (param1) {
+            if (window.triStateFilters.year) {
+                delete window.triStateFilters.year[param1];
+            }
+        } else {
+            // Fallback for full clear
+            window.triStateFilters.year = {};
+        }
     } else if (type === 'percentage') {
         clearPercentageFilter();
         return;
@@ -886,12 +993,6 @@ function updateSearchInfo() {
         hasFilters = true;
     }
 
-    const yearVal = document.getElementById('year-filter').value;
-    if (yearVal) {
-        html += createBadge('年份', yearVal, 'blue', 'year');
-        hasFilters = true;
-    }
-
     if (window.percentageFilter && window.percentageFilter.active) {
         html += createBadge('答對率', `${window.percentageFilter.min}% - ${window.percentageFilter.max}%`, 'green', 'percentage');
         hasFilters = true;
@@ -908,6 +1009,7 @@ function updateSearchInfo() {
         'feature': '特徵',
         'exam': '考試',
         'qtype': '題型',
+        'year': '年份',
         'concepts': '概念',
         'patterns': '題型標籤',
         'multipleSelection': '複選',
@@ -950,7 +1052,8 @@ function updateStaticFilterVisuals() {
         'chapter-options', 
         'feature-options', 
         'exam-options', 
-        'qtype-options'
+        'qtype-options',
+        'year-options'
     ];
 
     staticContainers.forEach(containerId => {
@@ -1018,9 +1121,9 @@ async function filterQuestions() {
     if (typeof renderQuestions === 'function') await renderQuestions();
 }
 
-// ============================================
-// RANGE FILTER FUNCTIONS
-// ============================================
+// ... (Rest of range functions remain the same) ...
+// Range Filter Functions (updatePercentageRange, applyPercentageFilter, etc.)
+// Toggle Logic Functions (toggleChapterLogic, etc.)
 
 function updatePercentageRange() {
     const minSlider = document.getElementById('min-percentage');
@@ -1134,58 +1237,23 @@ function clearMarksFilter() {
     updateMarksRange();
 }
 
-// Toggle Chapter Logic (OR / AND)
 function toggleChapterLogic(checkbox) {
-    // If checkbox is checked, it means AND mode; otherwise OR
     window.filterLogic.chapter = checkbox.checked ? 'AND' : 'OR';
-    
-    // Immediately re-filter
     filterQuestions();
 }
 
-// Modify clear function to reset logic switch
-window.clearChapterFilter = function() {
-    window.triStateFilters.chapter = {};
-    
-    // Reset UI selection state
-    const container = document.getElementById('chapter-options');
-    if (container) {
-        container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
-            el.classList.remove('checked', 'excluded');
-        });
-        
-        // Reset logic switch back to OR
-        const toggle = document.getElementById('chapter-logic-toggle');
-        if (toggle) {
-            toggle.checked = false;
-            // Manually trigger change event or update state directly
-            window.filterLogic.chapter = 'OR';
-        }
-    }
-    filterQuestions();
-};
-
-// Toggle Curriculum Logic (OR / AND)
 function toggleCurriculumLogic(checkbox) {
-    // If checked, set to AND mode; otherwise OR
     window.filterLogic.curriculum = checkbox.checked ? 'AND' : 'OR';
-    
-    // Trigger re-filter immediately
     filterQuestions();
 }
 
-// Clear Curriculum Filter
 window.clearCurriculumFilter = function() {
     window.triStateFilters.curriculum = {};
-    
-    // Reset visual selection state
     const container = document.getElementById('curriculum-options');
     if (container) {
         container.querySelectorAll('.tri-state-checkbox, .tri-state-label').forEach(el => {
             el.classList.remove('checked', 'excluded');
         });
-        
-        // Reset logic toggle back to OR
         const toggle = document.getElementById('curriculum-logic-toggle');
         if (toggle) {
             toggle.checked = false;

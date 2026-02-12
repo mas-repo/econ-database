@@ -114,8 +114,7 @@ async function initializeApp() {
     if (typeof populateSearchScope === 'function') {
         populateSearchScope();
     }
-    
-    await populateYearFilter();
+     
     // Populate the dynamic filters
     if (typeof populateDynamicFilters === 'function') {
         await populateDynamicFilters();
@@ -126,7 +125,6 @@ async function initializeApp() {
 
 // Also add to refreshViews() so they update if data changes (e.g. after sync)
 async function refreshViews() {
-    await populateYearFilter();
     
     if (typeof populateDynamicFilters === 'function') {
         await populateDynamicFilters();
@@ -265,12 +263,6 @@ function setupEventListeners() {
     if (searchScope) {
         searchScope.addEventListener('change', filterQuestions);
     }    
-
-    // Year filter (this is still a <select> element)
-    const yearFilter = document.getElementById('year-filter');
-    if (yearFilter) {
-        yearFilter.addEventListener('change', filterQuestions);
-    }
     
     // Scroll to top button
     window.addEventListener('scroll', () => {
@@ -296,29 +288,7 @@ function debounce(func, wait) {
     };
 }
 
-// Populate year filter
-async function populateYearFilter() {
-    const questions = await window.storage.getQuestions();
-    // Safer sort for mixed types
-    const years = [...new Set(questions.map(q => q.year))].sort((a, b) => {
-        const numA = parseInt(a);
-        const numB = parseInt(b);
-        if (!isNaN(numA) && !isNaN(numB)) return numB - numA;
-        if (!isNaN(numA)) return -1; // numbers first
-        if (!isNaN(numB)) return 1;
-        return String(a).localeCompare(String(b));
-    });
-    
-    const yearFilter = document.getElementById('year-filter');
-    yearFilter.innerHTML = '<option value="">全部年份</option>';
-    
-    years.forEach(year => {
-        const option = document.createElement('option');
-        option.value = year;
-        option.textContent = year;
-        yearFilter.appendChild(option);
-    });
-}
+// REMOVED: populateYearFilter function
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {

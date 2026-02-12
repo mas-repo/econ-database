@@ -18,8 +18,7 @@ async function renderQuestions() {
     // Added searchScope to the filters object
     const filters = {
         search: document.getElementById('search').value,
-        searchScope: window.searchScope || 'all', 
-        year: document.getElementById('year-filter').value,
+        searchScope: window.searchScope || 'all',        
         triState: triStateFilters,
         percentageFilter: window.percentageFilter,
         marksFilter: window.marksFilter

@@ -76,13 +76,22 @@
                             </div>
                         </div>
 
-                        <!-- Year Filter (Select) -->
-                        <div class="filter-item">
-                            <div id="indicator-year" class="active-indicator"></div>
-                            <select id="year-filter" class="modern-select">
-                                <option value="">📅 全部年份</option>
-                                <!-- Populated by JS -->
-                            </select>
+                        <!-- YEAR FILTER SECTION -->
+                        <div class="filter-group dropdown-filter">
+                            <button class="dropdown-btn" onclick="toggleDropdown('year-options')">
+                                📅 年份 <span id="year-arrow" class="arrow">▶</span>
+                                <div id="indicator-year" class="filter-indicator"></div>
+                            </button>
+                            <!-- Grid Layout similar to Chapters -->
+                            <div id="year-options" class="dropdown-content" style="display: none;">
+                                <div class="filter-actions" style="padding: 8px; border-bottom: 1px solid var(--border-color); margin-bottom: 8px; display: flex; gap: 10px;">
+                                    <button class="text-btn" onclick="selectAllYears()" style="font-size: 0.9em; cursor: pointer; color: var(--primary-color); background: none; border: none;">全選</button>
+                                    <button class="text-btn" onclick="clearYearFilter()" style="font-size: 0.9em; cursor: pointer; color: var(--danger-color); background: none; border: none;">🗑️ 清除</button>
+                                </div>
+                                <!-- The years will be injected here by JavaScript -->
+                                <div id="year-list" class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 8px; padding: 0 8px 8px 8px;">
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Question Type -->

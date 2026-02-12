@@ -68,10 +68,10 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
         questions = questions.filter(q => q.examination === filters.examination);
     }
     
-    // Apply year filter
-    if (filters.year) {
+    // REMOVED: Old single-value year filter
+    /* if (filters.year) {
         questions = questions.filter(q => String(q.year) === String(filters.year));
-    }
+    } */
     
     // Apply question type filter
     if (filters.questionType) {
@@ -134,6 +134,22 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             
             if (excludedExams.length > 0) {
                 questions = questions.filter(q => !excludedExams.includes(q.examination));
+            }
+        }
+
+        // ADDED: Year tri-state filter
+        if (filters.triState.year) {
+            const checkedYears = Object.keys(filters.triState.year).filter(k => filters.triState.year[k] === 'checked');
+            const excludedYears = Object.keys(filters.triState.year).filter(k => filters.triState.year[k] === 'excluded');
+            
+            if (checkedYears.length > 0) {
+                // OR Logic: Question matches any of the checked years
+                questions = questions.filter(q => checkedYears.includes(String(q.year)));
+            }
+            
+            if (excludedYears.length > 0) {
+                // Exclude if matches any of the excluded years
+                questions = questions.filter(q => !excludedYears.includes(String(q.year)));
             }
         }
 
