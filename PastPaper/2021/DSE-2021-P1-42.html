@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis - National Income Stats</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #eff6ff; /* Light Blue */
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Answer Analysis */
+        .option-analysis {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid transparent;
+        }
+
+        .option-analysis.correct {
+            background-color: #ecfdf5;
+            border-left-color: var(--success-color);
+        }
+
+        .option-analysis.incorrect {
+            background-color: #fef2f2;
+            border-left-color: var(--error-color);
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .en {
+            display: block;
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header { padding: 1.5rem; }
+            .section { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            table { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: National Income (國民收入)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key: Year-on-Year Change (按年變動)</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">參考以下有關香港的統計數據。</p>
+            <p class="en">Refer to the following statistical data about Hong Kong.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2020 Q1<br>(YoY / 按年變動)</th>
+                        <th>2020 Q2<br>(YoY / 按年變動)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>物品出口 / Exp. of goods</td>
+                        <td>-9.7%</td>
+                        <td>-2.5%</td>
+                    </tr>
+                    <tr>
+                        <td>服務出口 / Exp. of services</td>
+                        <td>-37.5%</td>
+                        <td>-47.5%</td>
+                    </tr>
+                    <tr>
+                        <td>物品進口 / Imp. of goods</td>
+                        <td>-10.7%</td>
+                        <td>-7.4%</td>
+                    </tr>
+                    <tr>
+                        <td>服務進口 / Imp. of services</td>
+                        <td>-26.2%</td>
+                        <td>-44.6%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="zh">根據以上資料，我們可得出結論：</p>
+            <p class="en">Based on the above information, we can conclude that</p>
+
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>A. 香港2020年第二季無形貿易出現赤字。<br><span class="en">Hong Kong had an invisible trade deficit in 2020 second quarter.</span></li>
+                <li style="margin-top: 10px;">B. 香港2020年第二季的淨出口較2019年第二季的為低。<br><span class="en">Hong Kong’s net exports in 2020 second quarter was lower than that in 2019 second quarter.</span></li>
+                <li style="margin-top: 10px;">C. 香港2020年第二季的物品出口較2020年第一季的為低。<br><span class="en">Hong Kong’s exports of goods in 2020 second quarter was lower than that in 2020 first quarter.</span></li>
+                <li style="margin-top: 10px;">D. 香港2020年第二季的物品和服務進口總值較2019年第二季的為低。<br><span class="en">Hong Kong’s total imports of goods and services in 2020 second quarter was lower than that in 2019 second quarter.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <span class="concept-title">1. 按年變動百分比 (Year-on-Year Percentage Change)</span>
+            <p class="zh">這是指將今年某個季度的數據與<strong>去年同一季度</strong>的數據進行比較。</p>
+            <p class="en">This refers to comparing data from a specific quarter of the current year with the <strong>same quarter of the previous year</strong>.</p>
+            <p style="background: #fff; padding: 10px; border-radius: 4px;">
+                \[ \text{% Change} = \frac{\text{Value}_{2020 Q2} - \text{Value}_{2019 Q2}}{\text{Value}_{2019 Q2}} \times 100\% \]
+            </p>
+            <p class="zh"><strong>重要提示：</strong>負數百分比（例如 -7.4%）意味著該數值比去年同期<strong>減少</strong>了。</p>
+            <p class="en"><strong>Key Note:</strong> A negative percentage (e.g., -7.4%) means the value has <strong>decreased</strong> compared to the same period last year.</p>
+
+            <hr style="border: 0; border-top: 1px dashed #bfdbfe; margin: 15px 0;">
+
+            <span class="concept-title">2. 總值 vs 變動率 (Total Value vs Rate of Change)</span>
+            <p class="zh">題目只提供了變動的<strong>百分比</strong>，沒有提供<strong>基數（絕對金額）</strong>。因此，我們不能單憑百分比來計算盈餘或赤字的具體金額。</p>
+            <p class="en">The question only provides the <strong>percentage change</strong>, not the <strong>base value (absolute amount)</strong>. Therefore, we cannot calculate the exact amount of surplus or deficit based solely on percentages.</p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; font-weight: bold; color: var(--success-color); border: 2px solid var(--success-color); padding: 10px 20px; border-radius: 8px;">
+                Correct Answer: D
+            </span>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis incorrect">
+            <span class="option-label">Option A: Incorrect (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>無形貿易差額 = 服務出口 - 服務進口。雖然我們知道兩者都下跌了（出口跌47.5%，進口跌44.6%），但我們不知道2019年的<strong>基數</strong>是多少。</p>
+            <p class="en"><strong>Analysis:</strong> Invisible trade balance = Exports of Services - Imports of Services. Although we know both dropped (Exports by 47.5%, Imports by 44.6%), we do not know the <strong>base values</strong> from 2019.</p>
+            <p class="zh">如果2019年服務出口是1000億，進口是10億，即使出口大跌，2020年仍可能有盈餘。資料不足。</p>
+            <p class="en">If 2019 Exports were $100 billion and Imports were $1 billion, even with a huge drop in exports, 2020 could still have a surplus. Insufficient data.</p>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis incorrect">
+            <span class="option-label">Option B: Incorrect (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>淨出口 = (物品出口 + 服務出口) - (物品進口 + 服務進口)。同樣地，由於缺乏絕對數值（金額），我們無法加減百分比來判斷整體的淨出口是升是跌。</p>
+            <p class="en"><strong>Analysis:</strong> Net Exports = (Exp Goods + Exp Services) - (Imp Goods + Imp Services). Similarly, due to the lack of absolute values (dollar amounts), we cannot add or subtract percentages to determine if the overall Net Exports rose or fell.</p>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis incorrect">
+            <span class="option-label">Option C: Incorrect (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>題目提供的是「按年變動」(Year-on-Year)。這比較的是 2020 Q2 與 2019 Q2。資料並沒有提供 2020 Q2 與 2020 Q1 之間的關係。</p>
+            <p class="en"><strong>Analysis:</strong> The data provided is "Year-on-Year". This compares 2020 Q2 with 2019 Q2. The data does not provide any link between 2020 Q2 and 2020 Q1.</p>
+            <p class="zh">即使Q2的跌幅（-2.5%）比Q1的跌幅（-9.7%）收窄，這只代表跌得慢了，並不代表Q2的數值比Q1高或低（受季節性因素影響，Q1和Q2的基數本來就不同）。</p>
+            <p class="en">Even though the decline in Q2 (-2.5%) is smaller than in Q1 (-9.7%), this only means it is falling at a slower rate relative to the previous year. It does not tell us if Q2 is higher or lower than Q1 (due to seasonality, the base values of Q1 and Q2 are inherently different).</p>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis correct">
+            <span class="option-label">Option D: Correct (正確)</span>
+            <p class="zh"><strong>分析：</strong>進口總值 = 物品進口 + 服務進口。</p>
+            <p class="en"><strong>Analysis:</strong> Total Imports = Imports of Goods + Imports of Services.</p>
+            <div style="background: #fff; padding: 10px; margin: 10px 0; border-left: 3px solid var(--success-color);">
+                <p class="zh">
+                    1. 2020 Q2 物品進口變動為 <strong>-7.4%</strong> (即少於 2019 Q2)。<br>
+                    2. 2020 Q2 服務進口變動為 <strong>-44.6%</strong> (即少於 2019 Q2)。
+                </p>
+                <p class="en">
+                    1. 2020 Q2 Imports of Goods change is <strong>-7.4%</strong> (i.e., less than 2019 Q2).<br>
+                    2. 2020 Q2 Imports of Services change is <strong>-44.6%</strong> (i.e., less than 2019 Q2).
+                </p>
+            </div>
+            <p class="zh">數學邏輯：如果 \(A\) 減少了，\(B\) 也減少了，那麼 \(A+B\) 的總和必然比去年同期減少。</p>
+            <p class="en">Mathematical Logic: If \(A\) has decreased and \(B\) has decreased, then the sum \(A+B\) must be lower than the same period last year.</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這類題目的關鍵在於區分<strong>「方向」</strong>與<strong>「數值」</strong>。</p>
+        <p class="en">The key to this type of question is distinguishing between <strong>"Direction"</strong> and <strong>"Value"</strong>.</p>
+        
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 10px;">
+                <strong>Pivot Point (破題關鍵):</strong> 
+                <span class="zh">尋找確定性。只有當兩個組成部分（物品和服務）都向同一個方向變動（都是負數）時，我們才能確定總和的方向。</span>
+                <span class="en">Look for certainty. Only when both components (Goods and Services) move in the same direction (both negative), can we be certain about the direction of the total sum.</span>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong>Distractor (干擾項):</strong> 
+                <span class="zh">2020 Q1 的數據完全是多餘的，用來引誘你選 C。</span>
+                <span class="en">The data for 2020 Q1 is completely irrelevant distractor information, designed to lure you into choosing option C.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div style="margin-bottom: 15px;">
+            <strong style="color: var(--secondary-color);">Q: 為什麼選項 C 不對？-2.5% 不是比 -9.7% 好嗎？</strong>
+            <br>
+            <strong style="color: #64748b; font-size: 0.9em;">Why is Option C wrong? Isn't -2.5% better than -9.7%?</strong>
+            <p class="zh" style="margin-top: 5px;">A: 「跌幅收窄」不代表數值上升。而且，這兩個百分比的基數不同。Q1是跟去年的Q1比，Q2是跟去年的Q2比。如果香港經濟本身有季節性（例如Q1通常很淡靜，Q2通常很旺），我們完全無法用「按年變動率」來比較Q1和Q2的絕對數值。</p>
+            <p class="en">A: A "narrowing decline" does not mean the value increased. Furthermore, the bases are different. Q1 is compared to last year's Q1, and Q2 to last year's Q2. If HK's economy has seasonality (e.g., Q1 is usually quiet, Q2 is usually busy), we absolutely cannot use "Year-on-Year rates" to compare the absolute values of Q1 and Q2.</p>
+        </div>
+
+        <div>
+            <strong style="color: var(--secondary-color);">Q: 如果物品進口是 +5%，服務進口是 -10%，選項 D 還正確嗎？</strong>
+            <br>
+            <strong style="color: #64748b; font-size: 0.9em;">If Imports of Goods were +5% and Imports of Services were -10%, would Option D still be correct?</strong>
+            <p class="zh" style="margin-top: 5px;">A: 不正確。那樣我們就無法判斷了（Uncertain）。因為我們不知道物品和服務各自佔總進口的比例（權重）。如果物品進口金額很大，升5%可能抵銷服務進口的跌幅。</p>
+            <p class="en">A: No. It would be uncertain. We don't know the weight/proportion of goods vs. services. If the dollar value of goods imports is huge, a 5% rise could offset the drop in services.</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <h2>Exam Tricks (考試技巧)</h2>
+        <div class="tips-box">
+            <p class="zh"><strong>技巧：符號檢查法 (Sign Check Method)</strong></p>
+            <p class="en"><strong>Trick: Sign Check Method</strong></p>
+            <p class="zh">看到這類只有百分比沒有金額的題目：</p>
+            <ul class="zh">
+                <li>涉及加減運算（如 A, B 項的盈餘/赤字/淨值） \(\rightarrow\) 通常是<strong>無法判斷</strong> (除非你知道基數)。</li>
+                <li>涉及跨季比較（如 C 項 Q1 vs Q2） \(\rightarrow\) 通常是<strong>無法判斷</strong> (因為季節性)。</li>
+                <li>涉及同方向變動的總和（如 D 項） \(\rightarrow\) <strong>負 + 負 = 必跌</strong>。這是唯一數學上肯定的。</li>
+            </ul>
+             <ul class="en">
+                <li>Involving addition/subtraction (like Surplus/Deficit/Net in A, B) \(\rightarrow\) Usually <strong>Cannot Determine</strong> (unless base is known).</li>
+                <li>Involving cross-quarter comparison (like Q1 vs Q2 in C) \(\rightarrow\) Usually <strong>Cannot Determine</strong> (due to seasonality).</li>
+                <li>Involving sum of same-direction changes (like D) \(\rightarrow\) <strong>Negative + Negative = Must Decrease</strong>. This is the only mathematical certainty.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Related Goods Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-green: #10b981; /* Emerald */
+            --accent-red: #ef4444; /* Red */
+            --bg-concept: #f0f9ff; /* Light Blue BG */
+            --bg-math: #f3f4f6; /* Gray BG */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            background-color: var(--bg-concept);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid #bae6fd;
+        }
+
+        .stars {
+            color: #f59e0b;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text-zh {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .q-text-en {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .options-list li:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-item {
+            margin-bottom: 15px;
+        }
+
+        .math-block {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Analysis Section */
+        .analysis-section h3 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ecfdf5;
+            border-radius: 8px;
+            border: 1px solid #a7f3d0;
+            text-align: center;
+        }
+
+        .step-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .step-header {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .status-correct { color: var(--accent-green); }
+        .status-wrong { color: var(--accent-red); }
+
+        /* Bilingual Text Styling */
+        .zh {
+            color: #111827;
+            margin-bottom: 4px;
+        }
+        .en {
+            color: #6b7280;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        /* Decomposition & Traps */
+        .decomposition-box, .mistakes-box, .qa-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .decomposition-box { border-top: 4px solid #8b5cf6; } /* Purple */
+        .mistakes-box { border-top: 4px solid #f59e0b; } /* Amber */
+        .qa-box { border-top: 4px solid #ec4899; } /* Pink */
+
+        .section-icon { margin-right: 8px; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Demand & Supply (Related Goods)</span>
+            <span class="badge">主題：需求與供應 (相關物品)</span>
+            <span class="badge">Difficulty: <span class="stars">★★★☆☆</span></span>
+        </div>
+        <div style="margin-top: 10px; color: #666; font-size: 0.9em;">
+            <strong>Key Concepts:</strong> Substitutes, Complements, Competitive Supply, Joint Supply
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="q-text-zh">在下列哪種情況下，物品X的價格下跌會令物品Y的價格下跌？</div>
+        <div class="q-text-en">A drop in the price for good X will lead to a drop in the price of good Y if...</div>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div style="margin-bottom: 15px;">
+            <div>(1) 物品X及物品Y是替代品 (Substitutes)</div>
+            <div>(2) 物品X及物品Y是輔助品 (Complements)</div>
+            <div>(3) 物品X及物品Y屬競爭性供應 (Competitive Supply)</div>
+            <div>(4) 物品X及物品Y屬聯合供應 (Joint Supply)</div>
+        </div>
+
+        <ul class="options-list">
+            <li><strong>A.</strong> 只有 (1)、(3) &nbsp; / &nbsp; (1) and (3) only</li>
+            <li><strong>B.</strong> 只有 (1)、(4) &nbsp; / &nbsp; (1) and (4) only</li>
+            <li><strong>C.</strong> 只有 (2)、(3) &nbsp; / &nbsp; (2) and (3) only</li>
+            <li><strong>D.</strong> 只有 (2)、(4) &nbsp; / &nbsp; (2) and (4) only</li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-section">
+        <div class="concept-title">
+            <span>💡 Concept Review (概念重溫)</span>
+        </div>
+        
+        <div class="concept-item">
+            <div class="zh"><strong>1. 需求面 (Demand Side):</strong> 影響消費者的購買意欲。</div>
+            <div class="en"><strong>Demand Side:</strong> Affects consumers' willingness to buy.</div>
+            <ul>
+                <li>
+                    <strong>替代品 (Substitutes):</strong> 可互相取代 (e.g., Coke & Pepsi)。
+                    <div class="math-block">\( P_x \downarrow \Rightarrow D_y \downarrow \)</div>
+                </li>
+                <li>
+                    <strong>輔助品 (Complements):</strong> 必須一起使用 (e.g., Cars & Petrol)。
+                    <div class="math-block">\( P_x \downarrow \Rightarrow D_y \uparrow \)</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="concept-item">
+            <div class="zh"><strong>2. 供應面 (Supply Side):</strong> 影響生產者的生產決定。</div>
+            <div class="en"><strong>Supply Side:</strong> Affects producers' production decisions.</div>
+            <ul>
+                <li>
+                    <strong>競爭性供應 (Competitive Supply):</strong> 爭奪同一種資源 (e.g., Vegetables & Flowers using the same land)。
+                    <div class="math-block">\( P_x \downarrow \Rightarrow S_y \uparrow \)</div>
+                </li>
+                <li>
+                    <strong>聯合供應 (Joint Supply):</strong> 來自同一來源的副產品 (e.g., Beef & Leather from cattle)。
+                    <div class="math-block">\( P_x \downarrow \Rightarrow S_y \downarrow \)</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        
+        <div class="correct-answer">
+            Correct Option: A (1 & 3)
+        </div>
+
+        <p style="margin-bottom: 20px;">
+            <strong>目標 (Goal):</strong> 我們需要找出導致 \( P_y \downarrow \) (Y 的價格下跌) 的情況。已知條件是 \( P_x \downarrow \) (X 的價格下跌)。
+            <br>
+            <em>We need to find the scenario where \( P_y \downarrow \) (Price of Y drops). Given condition is \( P_x \downarrow \) (Price of X drops).</em>
+        </p>
+
+        <!-- Analysis (1) -->
+        <div class="step-card">
+            <div class="step-header">
+                <span>(1) Substitutes (替代品)</span>
+                <span class="status-correct">✔ Correct</span>
+            </div>
+            <div class="zh">當 \( P_x \) 下跌，根據需求定律，X 的需求量上升 (\( Q_d^x \uparrow \))。由於 X 和 Y 是替代品，消費者會轉而購買較便宜的 X，減少購買 Y。這導致 Y 的需求減少 (\( D_y \downarrow \))。</div>
+            <div class="en">When \( P_x \) drops, quantity demanded for X increases (\( Q_d^x \uparrow \)). Since X and Y are substitutes, consumers switch to the cheaper X and buy less Y. This leads to a decrease in demand for Y (\( D_y \downarrow \)).</div>
+            <div class="math-block">
+                $$ D_y \downarrow \Rightarrow P_y \downarrow $$
+            </div>
+        </div>
+
+        <!-- Analysis (2) -->
+        <div class="step-card">
+            <div class="step-header">
+                <span>(2) Complements (輔助品)</span>
+                <span class="status-wrong">✘ Incorrect</span>
+            </div>
+            <div class="zh">當 \( P_x \) 下跌，X 的需求量上升 (\( Q_d^x \uparrow \))。由於 X 和 Y 必須一起使用，消費者買了更多的 X，自然也需要更多的 Y。這導致 Y 的需求增加 (\( D_y \uparrow \))。</div>
+            <div class="en">When \( P_x \) drops, quantity demanded for X increases (\( Q_d^x \uparrow \)). Since X and Y are complements, consumers buy more X and thus need more Y. This leads to an increase in demand for Y (\( D_y \uparrow \)).</div>
+            <div class="math-block">
+                $$ D_y \uparrow \Rightarrow P_y \uparrow $$
+            </div>
+        </div>
+
+        <!-- Analysis (3) -->
+        <div class="step-card">
+            <div class="step-header">
+                <span>(3) Competitive Supply (競爭性供應)</span>
+                <span class="status-correct">✔ Correct</span>
+            </div>
+            <div class="zh">當 \( P_x \) 下跌，X 的供應量減少 (\( Q_s^x \downarrow \))。生產商會將資源（如土地、勞力）從生產 X 轉移到生產 Y。這導致 Y 的供應增加 (\( S_y \uparrow \))。</div>
+            <div class="en">When \( P_x \) drops, quantity supplied for X decreases (\( Q_s^x \downarrow \)). Producers shift resources (like land, labor) from producing X to producing Y. This leads to an increase in supply of Y (\( S_y \uparrow \)).</div>
+            <div class="math-block">
+                $$ S_y \uparrow \Rightarrow P_y \downarrow $$
+            </div>
+        </div>
+
+        <!-- Analysis (4) -->
+        <div class="step-card">
+            <div class="step-header">
+                <span>(4) Joint Supply (聯合供應)</span>
+                <span class="status-wrong">✘ Incorrect</span>
+            </div>
+            <div class="zh">當 \( P_x \) 下跌，X 的供應量減少 (\( Q_s^x \downarrow \))。由於 Y 是 X 的副產品（生產 X 時自動產生 Y），X 生產少了，Y 的產量也自然減少。這導致 Y 的供應減少 (\( S_y \downarrow \))。</div>
+            <div class="en">When \( P_x \) drops, quantity supplied for X decreases (\( Q_s^x \downarrow \)). Since Y is a by-product of X (produced jointly), less production of X means less production of Y automatically. This leads to a decrease in supply of Y (\( S_y \downarrow \)).</div>
+            <div class="math-block">
+                $$ S_y \downarrow \Rightarrow P_y \uparrow $$
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="decomposition-box">
+        <h3 style="color: #6d28d9; margin-top: 0;">🔍 Problem Decomposition (題目拆解)</h3>
+        <p class="zh">這類題目的關鍵在於<strong>「連鎖反應」(Chain Reaction)</strong>。你必須分兩步思考：</p>
+        <p class="en">The key to this type of question is the <strong>"Chain Reaction"</strong>. You must think in two steps:</p>
+        <ol>
+            <li>
+                <strong>第一步 (Step 1):</strong> 物品 X 發生了什麼事？(沿著曲線移動 Movement along curve)
+                <br>
+                \( P_x \downarrow \Rightarrow Q_x \) 改變。
+            </li>
+            <li>
+                <strong>第二步 (Step 2):</strong> 這如何影響物品 Y？(曲線移動 Shift of curve)
+                <br>
+                是需求 (\( D \)) 變還是供應 (\( S \)) 變？方向如何？
+            </li>
+        </ol>
+        <p><strong>Pivot Point (關鍵點):</strong> 認清 (1) 和 (2) 是需求面，(3) 和 (4) 是供應面。</p>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="mistakes-box">
+        <h3 style="color: #b45309; margin-top: 0;">⚠️ Common Mistakes (常犯錯誤)</h3>
+        <ul>
+            <li>
+                <div class="zh"><strong>混淆「需求量」與「需求」:</strong> 學生常誤以為 \( P_x \) 變動會令 \( D_x \) 移動。記住：價格變動只會改變<strong>需求量 (Quantity Demanded)</strong>，不會改變需求曲線本身。</div>
+                <div class="en"><strong>Confusing "Quantity Demanded" vs "Demand":</strong> Students often think a change in \( P_x \) shifts \( D_x \). Remember: Price change only changes <strong>Quantity Demanded</strong>, not the Demand curve itself.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>死記硬背箭頭:</strong> 不要只背誦「同方向」或「反方向」。要在腦海中畫圖或用邏輯推演（例如：牛肉少了，牛皮自然少）。</div>
+                <div class="en"><strong>Rote memorization of arrows:</strong> Don't just memorize "same direction" or "opposite direction". Visualize the graph or use logic (e.g., less beef means less leather).</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section class="qa-box">
+        <h3 style="color: #be185d; margin-top: 0;">🙋 Student Q&A (學生常見疑問)</h3>
+        
+        <div style="margin-bottom: 15px;">
+            <strong>Q: 為什麼「競爭性供應」會令 Y 的價格下跌？</strong>
+            <br>
+            <span class="zh">因為資源是有限的。如果 X 的價格跌了，農夫覺得種 X 賺不到錢，就會把田地改種 Y。Y 的供應多了，價格自然就跌。</span>
+            <br>
+            <span class="en"><em>Because resources are limited. If the price of X drops, farmers feel producing X is less profitable, so they switch their land to grow Y. When supply of Y increases, its price drops.</em></span>
+        </div>
+
+        <div>
+            <strong>Q: 考試時如何快速判斷？ (Exam Trick)</strong>
+            <br>
+            <span class="zh">記住口訣：<strong>「替同補反」</strong> (替代品價格同向變動，輔助品反向)。<br>
+            對於供應面，競爭性供應就像「搶凳子」，X 離場，Y 就佔位 (供應增，價跌)。</span>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

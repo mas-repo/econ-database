@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balance of Payments Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9; /* Sky Blue */
+            --secondary-color: #f0f9ff; /* Light Blue Background */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --text-color: #1f2937; /* Dark Gray */
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 1.8rem;
+            color: #111827;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #6b7280;
+            flex-wrap: wrap;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+
+        .data-table td:last-child {
+            text-align: right;
+            font-family: monospace;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .concept-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            background-color: #dcfce7; /* Green-100 */
+            color: #166534; /* Green-800 */
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border: 1px solid #bbf7d0;
+        }
+
+        .step-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .bilingual-text {
+            margin-top: 8px;
+            color: #4b5563;
+            font-size: 0.95em;
+            border-top: 1px dashed #e5e7eb;
+            padding-top: 8px;
+        }
+
+        /* Strategy & Tricks */
+        .strategy-box {
+            background-color: #fff7ed; /* Orange tint */
+            border: 1px solid #fed7aa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+        
+        .strategy-title {
+            color: #c2410c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Math Block */
+        .math-block {
+            background: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .meta-info {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <span class="topic-tag">Topic: International Trade & Finance</span>
+        <h1>Balance of Payments (BoP)<br><span style="font-size: 0.8em; color: #666;">國際收支平衡</span></h1>
+        <div class="meta-info">
+            <span><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span><strong>Key Concepts:</strong> Current Account, GDP vs GNP, BoP Surplus</span>
+        </div>
+    </header>
+
+    <!-- Question -->
+    <div class="question-box">
+        <p><strong>題目 (Question):</strong></p>
+        <p>下表顯示甲國有關國際收支平衡的一些資料。</p>
+        <p class="bilingual-text" style="border:none; padding:0;">The following table shows some information about the balance of payments of Country A.</p>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>項目 (Items)</th>
+                    <th>百萬元 ($ million)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>物品差額 (Balance on goods)</td>
+                    <td>-1 200</td>
+                </tr>
+                <tr>
+                    <td>服務差額 (Balance on services)</td>
+                    <td>700</td>
+                </tr>
+                <tr>
+                    <td>海外要素收入淨值 (Net factor income from abroad)</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>經常轉移淨值 (Net current transfer)</td>
+                    <td>-100</td>
+                </tr>
+                <tr>
+                    <td>儲備資產上升 (Increase in reserve assets)</td>
+                    <td>180</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>根據以上資料，下列哪些陳述是正確的？</p>
+        <p class="bilingual-text" style="border:none; padding:0;">According to the above data, which of the following statements are correct?</p>
+        
+        <ol style="list-style-type: decimal; padding-left: 20px;">
+            <li>經常帳的赤字是400百萬元。<br><span style="color:#666; font-size:0.9em;">The current account deficit is $400 million.</span></li>
+            <li>甲國的本地生產總值小於其本地居民生產總值。<br><span style="color:#666; font-size:0.9em;">Country A’s GDP is smaller than its gross national product.</span></li>
+            <li>國際收支平衡的盈餘是180百萬元。<br><span style="color:#666; font-size:0.9em;">The balance of payments surplus is $180 million.</span></li>
+        </ol>
+
+        <ul style="list-style-type: none; padding: 0;">
+            <li>A. 只有(1)、(2) <span style="color:#888;">((1) and (2) only)</span></li>
+            <li>B. 只有(1)、(3) <span style="color:#888;">((1) and (3) only)</span></li>
+            <li>C. 只有(2)、(3) <span style="color:#888;">((2) and (3) only)</span></li>
+            <li>D. (1)、(2)及(3) <span style="color:#888;">((1), (2) and (3))</span></li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-section">
+        <div class="concept-title">💡 概念重溫 (Concept Review)</div>
+        
+        <p><strong>1. 經常帳 (Current Account):</strong></p>
+        <div class="math-block">
+            $$ \text{CA} = \text{Goods} + \text{Services} + \text{Net Factor Income} + \text{Net Transfers} $$
+        </div>
+        
+        <p><strong>2. GDP vs GNP (GNI):</strong></p>
+        <p>本地居民生產總值 (GNP) = 本地生產總值 (GDP) + 海外要素收入淨值 (NFIFA)。</p>
+        <div class="math-block">
+            $$ \text{GNP} = \text{GDP} + \text{NFIFA} $$
+        </div>
+        <p class="bilingual-text">If NFIFA > 0, then GNP > GDP.</p>
+
+        <p><strong>3. 國際收支盈餘 (BoP Surplus):</strong></p>
+        <p>國際收支盈餘反映在<strong>儲備資產的增加</strong>上。當一個國家收入大於支出，多餘的資金會變成官方儲備。</p>
+        <div class="math-block">
+            $$ \text{BoP Surplus} = \text{Increase in Reserve Assets} $$
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        
+        <div class="correct-answer">
+            ✅ 正確答案：選項 D (Option D)
+        </div>
+
+        <!-- Statement 1 Analysis -->
+        <div class="step-box">
+            <span class="step-title">陳述 (1) 分析 / Statement (1) Analysis</span>
+            <p><strong>計算經常帳 (Calculating Current Account):</strong></p>
+            <p>
+                \( \text{CA} = -1200 + 700 + 200 + (-100) \) <br>
+                \( \text{CA} = -400 \)
+            </p>
+            <p>負數表示赤字 (Deficit)。因此，經常帳赤字為 400 百萬元。</p>
+            <p><strong>結論：陳述 (1) 正確。</strong></p>
+            <div class="bilingual-text">
+                A negative number indicates a deficit. Therefore, the current account deficit is $400 million.<br>
+                <strong>Conclusion: Statement (1) is correct.</strong>
+            </div>
+        </div>
+
+        <!-- Statement 2 Analysis -->
+        <div class="step-box">
+            <span class="step-title">陳述 (2) 分析 / Statement (2) Analysis</span>
+            <p><strong>比較 GDP 與 GNP (Comparing GDP and GNP):</strong></p>
+            <p>根據公式：\( \text{GNP} = \text{GDP} + \text{NFIFA} \)</p>
+            <p>題目提供：海外要素收入淨值 (NFIFA) = \( +200 \)。</p>
+            <p>由於 \( \text{NFIFA} > 0 \)，所以 \( \text{GNP} > \text{GDP} \) (即 GDP 小於 GNP)。</p>
+            <p><strong>結論：陳述 (2) 正確。</strong></p>
+            <div class="bilingual-text">
+                According to the formula: \( \text{GNP} = \text{GDP} + \text{NFIFA} \).<br>
+                Given: NFIFA = \( +200 \).<br>
+                Since \( \text{NFIFA} > 0 \), it follows that \( \text{GNP} > \text{GDP} \) (i.e., GDP is smaller than GNP).<br>
+                <strong>Conclusion: Statement (2) is correct.</strong>
+            </div>
+        </div>
+
+        <!-- Statement 3 Analysis -->
+        <div class="step-box">
+            <span class="step-title">陳述 (3) 分析 / Statement (3) Analysis</span>
+            <p><strong>判斷國際收支盈餘 (Determining BoP Surplus):</strong></p>
+            <p>國際收支的盈餘或赤字，最終會由官方儲備資產的變動來平衡。如果一個國家的儲備資產<strong>上升</strong>，代表該國在國際交易中有淨流入（盈餘）。</p>
+            <p>題目指出「儲備資產上升 180」，這直接代表國際收支盈餘為 180 百萬元。</p>
+            <p><strong>結論：陳述 (3) 正確。</strong></p>
+            <div class="bilingual-text">
+                BoP surplus or deficit is balanced by changes in official reserve assets. If a country's reserve assets <strong>increase</strong>, it indicates a net inflow (surplus) from international transactions.<br>
+                The question states "Increase in reserve assets 180", which directly implies a BoP surplus of $180 million.<br>
+                <strong>Conclusion: Statement (3) is correct.</strong>
+            </div>
+        </div>
+
+        <p>由於 (1)、(2) 及 (3) 皆正確，故選 <strong>D</strong>。</p>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="strategy-box">
+        <div class="strategy-title">🔍 題目拆解 (Problem Decomposition)</div>
+        <p><strong>關鍵點 (Pivot Point):</strong></p>
+        <ul>
+            <li><strong>經常帳組成 (Components of CA):</strong> 必須記得包括「海外要素收入淨值」和「經常轉移」。很多學生會漏掉這兩項。</li>
+            <li><strong>儲備資產的意義 (Meaning of Reserves):</strong> 儲備資產增加 = 國際收支盈餘 (BoP Surplus)。這是定義性的知識。</li>
+        </ul>
+        
+        <p><strong>常犯錯誤 (Common Mistakes):</strong></p>
+        <ul>
+            <li><strong>正負號混淆 (Sign Errors):</strong> 在計算經常帳時，忘記將「物品差額」的負號納入計算，或者搞錯「經常轉移」的流向。</li>
+            <li><strong>GDP/GNP 混淆:</strong> 忘記誰大誰小取決於 NFIFA 的正負號。</li>
+        </ul>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="question-box" style="background-color: #f8fafc;">
+        <h3>🙋‍♂️ 學生常見疑問 (Student Q&A)</h3>
+        
+        <p><strong>Q: 為什麼「儲備資產上升」代表盈餘？會計上不是應該記為負數嗎？</strong></p>
+        <p><strong>A:</strong> 這是一個很好的問題！在<strong>國際收支會計帳 (BoP Accounting)</strong> 中，儲備資產的增加的確記為「借方 (Debit) / 負數」，以確保整個帳目平衡 (Sum = 0)。</p>
+        <p>但是，當我們談論<strong>國際收支盈餘 (BoP Surplus)</strong> 時，我們是指「官方儲備帳」<strong>以外</strong>的所有項目總和。如果這些項目的總和是正數（錢流進來），中央銀行就需要買入外匯，導致儲備資產增加。因此，經濟學上我們說「儲備增加 = 盈餘」。</p>
+        
+        <div class="bilingual-text">
+            <strong>Q: Why does "Increase in reserves" mean a surplus? Isn't it recorded as a negative number in accounting?</strong><br>
+            <strong>A:</strong> Great question! In <strong>BoP Accounting</strong>, an increase in reserves is indeed recorded as a "Debit / Negative" to ensure the account sums to zero.<br>
+            However, when we talk about a <strong>BoP Surplus</strong>, we refer to the sum of all items <strong>excluding</strong> the Official Reserves Account. If this sum is positive (money flowing in), the Central Bank buys foreign currency, increasing reserves. Thus, economically, "Increase in Reserves = Surplus".
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="strategy-box" style="background-color: #eff6ff; border-color: #bfdbfe;">
+        <div class="strategy-title" style="color: #1e40af;">⚡ 考試技巧 (Exam Tricks)</div>
+        <p><strong>快速判斷 GDP vs GNP:</strong></p>
+        <p>不用背複雜公式，只需看 <strong>NFIFA (海外要素收入淨值)</strong>：</p>
+        <ul>
+            <li>NFIFA 是<strong>正數 (+)</strong> \(\rightarrow\) GNP 比較大 (GNP > GDP)。</li>
+            <li>NFIFA 是<strong>負數 (-)</strong> \(\rightarrow\) GDP 比較大 (GDP > GNP)。</li>
+        </ul>
+        <div class="bilingual-text">
+            <strong>Quick check for GDP vs GNP:</strong> Just look at the sign of <strong>NFIFA</strong>. If positive, GNP is larger. If negative, GDP is larger.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
