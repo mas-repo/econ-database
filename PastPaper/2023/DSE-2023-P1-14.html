@@ -1,338 +1,397 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-<head><script src="/econ-database/PastPaper/protect.js"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKDSE Economics - Price Elasticity & Total Expenditure</title>
-    <!-- MathJax for LaTeX rendering -->
+    <title>HKDSE Economics - Elasticity & Expenditure</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- MathJax for LaTeX -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
-        :root {
-            --primary-color: #2563eb; /* Royal Blue */
-            --secondary-color: #1e40af; /* Darker Blue */
-            --accent-color: #f59e0b; /* Amber for highlights */
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-            --box-bg: #ffffff;
-            --correct-color: #10b981;
-            --wrong-color: #ef4444;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--box-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        h1, h2, h3 {
-            color: var(--secondary-color);
-            margin-top: 1.5em;
-        }
-
-        h1 {
-            text-align: center;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        .header-info {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            background-color: #eff6ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .header-item {
-            margin: 5px 10px;
-            font-weight: 600;
-        }
-
-        .question-box {
-            background-color: #fff;
-            border: 1px solid #e2e8f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .options-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .options-list li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
         .concept-box {
-            background-color: #f0fdf4; /* Light green tint */
-            border-left: 5px solid #10b981;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            background-color: #f0f9ff; /* Light Blue */
+            border-left: 5px solid #0ea5e9;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
         }
-
-        .formula-box {
-            background-color: #f1f5f9;
-            padding: 15px;
-            text-align: center;
-            border-radius: 6px;
-            margin: 10px 0;
-            font-family: "Times New Roman", serif;
-        }
-
-        .analysis-section {
-            margin-top: 20px;
-        }
-
-        .option-analysis {
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 8px;
+        .math-block {
+            background-color: #ffffff;
             border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            text-align: center;
         }
-
-        .option-analysis.correct {
-            background-color: #ecfdf5;
-            border-color: var(--correct-color);
+        .option-card {
+            transition: all 0.2s;
         }
-
-        .option-analysis.wrong {
-            background-color: #fef2f2;
-            border-color: var(--wrong-color);
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-
-        .tag {
-            display: inline-block;
-            padding: 2px 8px;
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+        /* Custom scrollbar for code blocks if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
             border-radius: 4px;
-            font-size: 0.85em;
-            font-weight: bold;
-            margin-right: 5px;
         }
-
-        .tag.correct { background-color: var(--correct-color); color: white; }
-        .tag.wrong { background-color: var(--wrong-color); color: white; }
-
-        .pivot-point {
-            background-color: #fffbeb;
-            border-left: 5px solid var(--accent-color);
-            padding: 15px;
-            margin-top: 20px;
-        }
-
-        .lang-en {
-            color: #64748b;
-            font-size: 0.95em;
-            margin-top: 4px;
-            display: block;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .container { padding: 15px; }
-            .header-info { flex-direction: column; }
-            h1 { font-size: 1.5em; }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
         }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-8 max-w-4xl mx-auto">
 
-<div class="container">
-
-    <!-- Header Section -->
-    <header>
-        <h1>HKDSE Economics Analysis</h1>
-        <div class="header-info">
-            <div class="header-item">
-                Topic / 課題: <br>
-                <span style="font-weight:normal">Price Elasticity & Total Expenditure (需求價格彈性與總支出)</span>
+    <!-- Header -->
+    <header class="mb-8 border-b pb-6">
+        <div class="flex flex-wrap gap-2 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Microeconomics</span>
+            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">HKDSE</span>
+        </div>
+        <h1 class="text-3xl font-bold mb-2">Topic: Price Elasticity & Total Expenditure</h1>
+        <h2 class="text-xl text-gray-600">課題：需求價格彈性與總支出</h2>
+        
+        <div class="flex items-center gap-4 mt-4 text-sm text-gray-500">
+            <div class="flex items-center">
+                <span class="font-bold mr-2">Difficulty 難度:</span>
+                <span class="text-yellow-500">★★★★☆</span>
             </div>
-            <div class="header-item">
-                Difficulty / 難度: <br>
-                <span style="color:var(--accent-color)">★★★★☆</span>
-            </div>
-            <div class="header-item">
-                Key Concepts / 關鍵概念: <br>
-                <span style="font-weight:normal">Linear Demand Curve (直線需求曲線), Unitary Elasticity (單一彈性)</span>
+            <div>
+                <span class="font-bold">Key Concepts:</span> Linear Demand Curve, Unitary Elasticity
             </div>
         </div>
     </header>
 
     <!-- Question Section -->
-    <section class="question-box">
-        <h2>The Question (題目)</h2>
-        <p>
-            假設口罩的需求曲線是一條向下傾斜的<strong>直線</strong>。當口罩價格由$5下降至$4時，消費者對口罩的總支出維持不變。若口罩價格再由$4下降至$3，消費者對口罩的總支出：
-            <br>
-            <span class="lang-en">Suppose the demand curve of face masks is a downward-sloping <strong>straight line</strong>. When the price of face masks falls from $5 to $4, consumers' total expenditure on face masks remains unchanged. If the price of face masks falls further from $4 to $3, consumers' total expenditure on face masks:</span>
-        </p>
-        <ul class="options-list">
-            <li><strong>A.</strong> 會上升。 <br><span class="lang-en">will increase.</span></li>
-            <li><strong>B.</strong> 會下降。 <br><span class="lang-en">will decrease.</span></li>
-            <li><strong>C.</strong> 會維持不變。 <br><span class="lang-en">will remain unchanged.</span></li>
-            <li><strong>D.</strong> 可能上升、下降或維持不變。 <br><span class="lang-en">may increase, decrease or remain unchanged.</span></li>
-        </ul>
+    <section class="bg-white shadow-sm rounded-lg p-6 mb-8 border border-gray-200">
+        <h3 class="text-lg font-bold mb-4 border-b pb-2">The Question (題目)</h3>
+        
+        <div class="mb-6 space-y-4">
+            <p class="font-medium text-lg">
+                假設口罩的需求曲線是一條向下傾斜的直線。當口罩價格由$5下降至$4時，消費者對口罩的總支出維持不變。若口罩價格再由$4下降至$3，消費者對口罩的總支出
+            </p>
+            <p class="text-gray-600 italic">
+                Suppose the demand curve of face masks is a downward-sloping straight line. When the price of face masks falls from $5 to $4, consumers' total expenditure on face masks remains unchanged. If the price of face masks falls further from $4 to $3, consumers' total expenditure on face masks
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3 border rounded hover:bg-gray-50 cursor-pointer">A. 會上升 (will increase).</div>
+            <div class="p-3 border rounded hover:bg-gray-50 cursor-pointer">B. 會下降 (will decrease).</div>
+            <div class="p-3 border rounded hover:bg-gray-50 cursor-pointer">C. 會維持不變 (will remain unchanged).</div>
+            <div class="p-3 border rounded hover:bg-gray-50 cursor-pointer">D. 可能上升、下降或維持不變 (may increase, decrease or remain unchanged).</div>
+        </div>
     </section>
 
-    <!-- Concept Review Section -->
+    <!-- Concept Review -->
     <section class="concept-box">
-        <h2>Concept Review (概念重溫)</h2>
+        <h3 class="text-xl font-bold mb-3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Concept Review (概念重溫)
+        </h3>
         
-        <h3>1. 總支出與價格彈性的關係 (Total Expenditure & PED)</h3>
-        <p>
-            消費者總支出 (Total Expenditure, \(TE\)) 等於價格乘以交易量 (\(TE = P \times Q\))。價格變動對 \(TE\) 的影響取決於需求價格彈性 (\(E_d\))：
-            <span class="lang-en">Total Expenditure (\(TE\)) equals Price times Quantity (\(TE = P \times Q\)). The effect of a price change on \(TE\) depends on the Price Elasticity of Demand (\(E_d\)):</span>
-        </p>
-        <div class="formula-box">
-            $$ \% \Delta TE \approx \% \Delta P + \% \Delta Q $$
-        </div>
-        <ul>
-            <li><strong>彈性需求 (Elastic, \(E_d > 1\)):</strong> 價格下降 \(\rightarrow\) 數量大幅上升 \(\rightarrow\) <strong>\(TE\) 上升</strong>。</li>
-            <li><strong>低彈性需求 (Inelastic, \(E_d < 1\)):</strong> 價格下降 \(\rightarrow\) 數量微幅上升 \(\rightarrow\) <strong>\(TE\) 下降</strong>。</li>
-            <li><strong>單一彈性需求 (Unitary, \(E_d = 1\)):</strong> 價格下降 \(\rightarrow\) 數量上升幅度剛好抵銷 \(\rightarrow\) <strong>\(TE\) 不變</strong>。</li>
-        </ul>
+        <div class="space-y-4">
+            <div>
+                <h4 class="font-bold text-blue-700">1. Linear Demand Curve & Elasticity (直線需求曲線與彈性)</h4>
+                <p>
+                    在一條向下傾斜的直線需求曲線上，<b>需求價格彈性 (Price Elasticity of Demand, \(E_d\)) 並非恆久不變</b>。
+                    <br>
+                    On a downward-sloping linear demand curve, <b>PED is NOT constant</b>.
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li><b>Top Half (上半部):</b> Elastic (\(E_d > 1\)). Price \(\downarrow\) \(\to\) Total Expenditure \(\uparrow\).</li>
+                    <li><b>Midpoint (中點):</b> Unitary Elastic (\(E_d = 1\)). Total Expenditure is at its <b>Maximum (最大值)</b>.</li>
+                    <li><b>Bottom Half (下半部):</b> Inelastic (\(E_d < 1\)). Price \(\downarrow\) \(\to\) Total Expenditure \(\downarrow\).</li>
+                </ul>
+            </div>
 
-        <h3>2. 直線需求曲線的特性 (Properties of a Linear Demand Curve)</h3>
-        <p>
-            這是本題的關鍵。對於一條向下傾斜的<strong>直線</strong>需求曲線，彈性並非恆定不變，而是隨價格改變：
-            <span class="lang-en">This is the key to this question. For a downward-sloping <strong>straight-line</strong> demand curve, elasticity is NOT constant but changes with price:</span>
-        </p>
-        <ul>
-            <li><strong>中點以上 (Top half):</strong> 彈性 \( > 1 \) (Elastic)。</li>
-            <li><strong>中點 (Midpoint):</strong> 彈性 \( = 1 \) (Unitary)。此時總支出 (\(TE\)) 達到<strong>最大值 (Maximum)</strong>。</li>
-            <li><strong>中點以下 (Bottom half):</strong> 彈性 \( < 1 \) (Inelastic)。</li>
-        </ul>
+            <div>
+                <h4 class="font-bold text-blue-700">2. Relationship between Price & Expenditure (價格與支出的關係)</h4>
+                <div class="math-block">
+                    Total Expenditure (TE) = Price (\(P\)) \(\times\) Quantity (\(Q\))
+                </div>
+                <p>
+                    當 \(E_d = 1\) 時，價格變動的百分比 = 需求量變動的百分比，因此總支出維持不變。
+                    <br>
+                    When \(E_d = 1\), % change in Price = % change in Quantity, so Total Expenditure remains unchanged.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <!-- Answer & Analysis Section -->
-    <section class="analysis-section">
-        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <!-- Interactive Component Placeholder -->
+    <div id="interactive-graph-root" class="mb-8"></div>
+
+    <!-- Answer & Analysis -->
+    <section class="mb-8">
+        <h3 class="text-xl font-bold mb-4">Answer & Detailed Analysis (答案與詳細分析)</h3>
         
-        <div class="option-analysis correct">
-            <h3>Correct Option: B</h3>
-            <p><strong>答案：會下降 (will decrease)</strong></p>
-            
-            <h4>Step 1: 定位中點 (Locating the Midpoint)</h4>
-            <p>
-                題目指出當價格由 $5 降至 $4 時，總支出 (\(TE\)) 維持不變。在直線需求曲線上，\(TE\) 呈現倒 U 型拋物線，峰值位於 \(E_d = 1\) 的中點。
-                <br>
-                若 \(TE\) 在 $5 和 $4 時相等，根據拋物線的對稱性，\(TE\) 的最大值（即 \(E_d=1\) 的點）必然位於這兩個價格的正中間，即 <strong>\(P = 4.5\)</strong>。
-                <br>
-                <span class="lang-en">The question states that \(TE\) remains unchanged when price falls from $5 to $4. On a straight-line demand curve, \(TE\) follows an inverted U-shape parabola, peaking at the midpoint where \(E_d = 1\). If \(TE\) is equal at $5 and $4, by symmetry, the maximum \(TE\) (where \(E_d=1\)) must be exactly in the middle, at <strong>\(P = 4.5\)</strong>.</span>
-            </p>
-
-            <h4>Step 2: 判斷新價格區間的彈性 (Determining Elasticity in the New Range)</h4>
-            <p>
-                現在價格由 $4 下降至 $3。由於中點（單一彈性點）是 $4.5，任何低於 $4.5 的價格都位於需求曲線的<strong>下半部 (Bottom half)</strong>。
-                <br>
-                這意味著從 $4 到 $3 的整個區間都屬於<strong>低彈性 (Inelastic, \(E_d < 1\))</strong> 區域。
-                <br>
-                <span class="lang-en">Now the price falls from $4 to $3. Since the midpoint (unitary elastic point) is $4.5, any price below $4.5 lies on the <strong>bottom half</strong> of the demand curve. This means the entire range from $4 to $3 is in the <strong>inelastic region (\(E_d < 1\))</strong>.</span>
-            </p>
-
-            <h4>Step 3: 推論結果 (Conclusion)</h4>
-            <p>
-                在低彈性區域 (\(E_d < 1\))，價格下降會導致總支出下降（因為數量增加的百分比小於價格下降的百分比）。因此，總支出會下降。
-                <br>
-                <span class="lang-en">In the inelastic region (\(E_d < 1\)), a decrease in price leads to a decrease in total expenditure (because the percentage increase in quantity is smaller than the percentage decrease in price). Therefore, total expenditure will decrease.</span>
-            </p>
+        <div class="p-4 bg-green-50 border border-green-200 rounded-lg mb-6">
+            <span class="font-bold text-green-800 text-lg">Correct Option: B (會下降 / will decrease)</span>
         </div>
 
-        <div class="option-analysis wrong">
-            <h3>Why other options are wrong (為何其他選項錯誤)</h3>
-            
-            <p><strong>A. 會上升 (will increase)</strong></p>
-            <p>
-                這只會在需求屬「彈性」(Elastic) 時發生。這需要價格位於中點 ($4.5) 之上。但我們現在是在 $4 降至 $3，位於低彈性區。
-                <br>
-                <span class="lang-en">This would only happen if demand were elastic. That requires the price to be above the midpoint ($4.5). However, we are moving from $4 to $3, which is in the inelastic zone.</span>
-            </p>
+        <div class="space-y-6">
+            <!-- Step 1 -->
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-gray-800 mb-2">Step 1: Analyze the first price drop ($5 \to $4)</h4>
+                <p class="mb-2">
+                    題目指出當價格由 $5 跌至 $4 時，總支出(TE) <b>維持不變</b>。這意味著在這段價格範圍內，需求彈性接近<b>單一彈性 (Unitary Elastic, \(E_d \approx 1\))</b>。
+                </p>
+                <p class="text-gray-600">
+                    The question states that when price falls from $5 to $4, TE <b>remains unchanged</b>. This implies that in this price range, the demand is <b>Unitary Elastic (\(E_d \approx 1\))</b>. Specifically, we are crossing the midpoint of the linear demand curve.
+                </p>
+            </div>
 
-            <p><strong>C. 會維持不變 (will remain unchanged)</strong></p>
-            <p>
-                這是一個常見陷阱。學生可能誤以為「既然之前不變，之後也不會變」。這只適用於「長方形雙曲線」(Rectangular Hyperbola) 的需求曲線（即 \(E_d = 1\) 恆定不變）。但題目明確指出是<strong>直線 (Straight Line)</strong>，直線的彈性是會隨位置改變的。
-                <br>
-                <span class="lang-en">This is a common trap. Students might assume "if it didn't change before, it won't change now." This is only true for a "Rectangular Hyperbola" demand curve (where \(E_d = 1\) everywhere). But the question specifies a <strong>straight line</strong>, where elasticity changes along the curve.</span>
-            </p>
+            <!-- Step 2 -->
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-gray-800 mb-2">Step 2: Locate position on the curve</h4>
+                <p class="mb-2">
+                    在直線需求曲線上，隨著價格下降，我們會由「高彈性區」移向「低彈性區」。既然 $5 \to $4 是單一彈性區（中點附近），那麼<b>低於 $4 的價格</b>必定位於需求曲線的<b>下半部 (Bottom Half)</b>。
+                </p>
+                <p class="text-gray-600">
+                    On a linear demand curve, as price falls, we move from the "Elastic zone" to the "Inelastic zone". Since the range $5 \to $4 is the unitary zone (near the midpoint), any price <b>lower than $4$</b> must be in the <b>Bottom Half</b> of the demand curve.
+                </p>
+            </div>
 
-            <p><strong>D. 可能上升、下降或維持不變</strong></p>
-            <p>
-                由於我們有足夠的資訊（直線特性 + 兩個價格點的 TE 關係）來確定我們處於低彈性區，因此結果是確定的，並非不確定。
-                <br>
-                <span class="lang-en">Since we have sufficient information (straight line property + TE relationship at two points) to determine we are in the inelastic zone, the result is definite, not uncertain.</span>
-            </p>
+            <!-- Step 3 -->
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-gray-800 mb-2">Step 3: Analyze the second price drop ($4 \to $3)</h4>
+                <p class="mb-2">
+                    當價格由 $4 跌至 $3，我們進入了<b>低彈性區 (Inelastic Zone, \(E_d < 1\))</b>。
+                    <br>
+                    在此區域，價格下降的百分比 > 需求量上升的百分比。雖然買的人多了，但價格跌幅太大，導致總收入/總支出<b>下降</b>。
+                </p>
+                <p class="text-gray-600">
+                    When price falls from $4 to $3, we enter the <b>Inelastic Zone (\(E_d < 1\))</b>.
+                    <br>
+                    In this zone, the % drop in Price is greater than the % rise in Quantity. Although quantity demanded increases, the price drop dominates, causing Total Expenditure to <b>decrease</b>.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Problem Decomposition -->
-    <section class="pivot-point">
-        <h2>Problem Decomposition (題目拆解)</h2>
-        <p>解決此類題目的思維流程 (Mental Flow to solve this):</p>
-        <ol>
-            <li>
-                <strong>識別關鍵字 (Identify Keywords):</strong> 
-                看到 "Straight Line" (直線) 和 "Total Expenditure" (總支出) \(\rightarrow\) 立即聯想到<strong>中點 (Midpoint)</strong> 概念。
-            </li>
-            <li>
-                <strong>尋找分界點 (Find the Pivot):</strong> 
-                題目說 $5 \to $4 支出不變。這鎖定了 \(E_d = 1\) 的位置大約在 $4.5。
-                <br>
-                <span class="lang-en">The question says TE is constant from $5 to $4. This locks the \(E_d = 1\) point around $4.5.</span>
-            </li>
-            <li>
-                <strong>定位新區間 (Locate New Range):</strong> 
-                新動作是 $4 \to $3。這完全在 $4.5$ 以下。
-                <br>
-                <span class="lang-en">The new move is $4 \to $3. This is entirely below $4.5.</span>
-            </li>
-            <li>
-                <strong>應用規則 (Apply Rule):</strong> 
-                中點以下 = 低彈性 = 價格與支出同向變動 (P \(\downarrow\) \(\rightarrow\) TE \(\downarrow\))。
-            </li>
-        </ol>
+    <section class="mb-8">
+        <h3 class="text-xl font-bold mb-4">Problem Decomposition (題目拆解)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-purple-50 p-4 rounded border border-purple-100">
+                <h4 class="font-bold text-purple-800 mb-2">Pivot Point (關鍵點)</h4>
+                <p>
+                    <b>"Total expenditure remains unchanged" (總支出維持不變)</b>
+                    <br>
+                    這句話是解題核心。它鎖定了我們在需求曲線上的位置——正中間（單一彈性點）。
+                    <br>
+                    This phrase is the key. It locks our position on the demand curve—exactly at the middle (Unitary Elasticity).
+                </p>
+            </div>
+            <div class="bg-orange-50 p-4 rounded border border-orange-100">
+                <h4 class="font-bold text-orange-800 mb-2">The Trap (陷阱)</h4>
+                <p>
+                    學生常誤以為「直線」代表「彈性不變」。
+                    <br>
+                    Students often mistakenly think "Straight Line" means "Constant Elasticity".
+                    <br>
+                    <b>Remember:</b> Slope is constant, but Elasticity changes!
+                </p>
+            </div>
+        </div>
     </section>
 
-    <!-- Exam Tricks -->
-    <section class="concept-box" style="background-color: #fff7ed; border-left-color: #f97316;">
-        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
-        <p>
-            <strong>幾何直覺法 (Geometric Intuition):</strong>
-        </p>
-        <p>
-            想像一個倒 U 型曲線代表總支出 (TE)。
-            <br>
-            1. $5 和 $4 處於同一高度（TE 相等）。
-            <br>
-            2. 頂峰 (Peak) 必須在它們中間 ($4.5)。
-            <br>
-            3. 從 $4 往左走到 $3（價格降低），你正在沿著倒 U 型曲線的<strong>右坡往下滑</strong>。
-            <br>
-            4. 往下滑 = TE 減少。
-            <br>
-            <span class="lang-en">Visualize an inverted U-curve representing TE. $5 and $4 are at the same height. The peak is in the middle ($4.5). Moving from $4 down to $3 means you are sliding down the slope away from the peak. Sliding down = TE decreases.</span>
-        </p>
+    <!-- Student Q&A -->
+    <section class="mb-8 bg-gray-50 p-6 rounded-lg">
+        <h3 class="text-xl font-bold mb-4">Student Q&A (學生常見疑問)</h3>
+        
+        <div class="space-y-4">
+            <div>
+                <p class="font-bold text-blue-800">Q: 為什麼直線需求曲線的彈性會變？斜率不是一樣嗎？</p>
+                <p class="font-bold text-gray-700 text-sm">Why does elasticity change on a straight line if the slope is constant?</p>
+                <p class="mt-2 text-gray-600">
+                    A: 沒錯，斜率 (Slope) 是常數。但彈性公式是 \(\frac{1}{\text{slope}} \times \frac{P}{Q}\)。
+                    <br>
+                    當價格 \(P\) 下降且數量 \(Q\) 上升時，分數 \(\frac{P}{Q}\) 的數值會越來越小。因此，彈性數值會隨著價格下降而變小。
+                </p>
+            </div>
+            <hr class="border-gray-300">
+            <div>
+                <p class="font-bold text-blue-800">Q: 如果題目說 $5 \to $4 時支出上升，那 $4 \to $3 會怎樣？</p>
+                <p class="font-bold text-gray-700 text-sm">What if TE increased from $5 to $4?</p>
+                <p class="mt-2 text-gray-600">
+                    A: 如果 \(P \downarrow\) 令 \(TE \uparrow\)，代表我們還在<b>高彈性區 (Elastic Zone)</b>。
+                    <br>
+                    由 $4 \to 3$，我們可能剛好到達單一彈性點（TE 不變），或者還在高彈性區（TE 繼續升），或者剛進入低彈性區（TE 跌）。這時答案就會變成 D (Uncertain) 或視乎具體數字。但原題說「不變」，就鎖定了位置。
+                </p>
+            </div>
+        </div>
     </section>
 
-</div>
+    <!-- React Component Script -->
+    <script type="text/babel">
+        const { useState, useMemo } = React;
+        const { TrendingDown, TrendingUp, Minus } = lucide;
+
+        function ElasticityGraph() {
+            // State for price. Range 0 to 10.
+            const [price, setPrice] = useState(5);
+            
+            // Demand Curve: Q = 10 - P (Simple linear model)
+            // Max P = 10, Max Q = 10. Midpoint P=5, Q=5.
+            const quantity = 10 - price;
+            const expenditure = price * quantity;
+            
+            // Determine Zone
+            let zone = "";
+            let zoneColor = "";
+            if (price > 5) {
+                zone = "Elastic (高彈性)";
+                zoneColor = "text-blue-600";
+            } else if (price === 5) {
+                zone = "Unitary (單一彈性)";
+                zoneColor = "text-purple-600";
+            } else {
+                zone = "Inelastic (低彈性)";
+                zoneColor = "text-orange-600";
+            }
+
+            return (
+                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 max-w-3xl mx-auto">
+                    <h3 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2">Interactive: Visualizing Expenditure (互動圖解)</h3>
+                    
+                    <div className="mb-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Adjust Price (調整價格): <span className="text-lg font-bold">${price}</span>
+                        </label>
+                        <input 
+                            type="range" 
+                            min="0" 
+                            max="10" 
+                            step="1" 
+                            value={price} 
+                            onChange={(e) => setPrice(Number(e.target.value))}
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                        />
+                        <div className="flex justify-between text-xs text-gray-500 mt-1">
+                            <span>$0</span>
+                            <span>$5 (Midpoint)</span>
+                            <span>$10</span>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Graph 1: Demand Curve */}
+                        <div className="relative h-64 border-l-2 border-b-2 border-gray-400">
+                            <div className="absolute -top-6 left-2 font-bold text-gray-600">Price ($)</div>
+                            <div className="absolute bottom-2 -right-6 font-bold text-gray-600">Qty</div>
+                            
+                            {/* Demand Line */}
+                            <svg className="w-full h-full overflow-visible">
+                                <line x1="0%" y1="0%" x2="100%" y2="100%" stroke="#94a3b8" strokeWidth="2" strokeDasharray="5,5" />
+                                <line x1="0%" y1="0%" x2="100%" y2="100%" stroke="#3b82f6" strokeWidth="3" />
+                                
+                                {/* Current Point */}
+                                <circle 
+                                    cx={`${quantity * 10}%`} 
+                                    cy={`${(10-price) * 10}%`} 
+                                    r="6" 
+                                    fill="#ef4444" 
+                                    stroke="white" 
+                                    strokeWidth="2"
+                                />
+                                {/* Dashed lines to axes */}
+                                <line x1={`${quantity * 10}%`} y1={`${(10-price) * 10}%`} x2={`${quantity * 10}%`} y2="100%" stroke="#cbd5e1" strokeDasharray="4" />
+                                <line x1={`${quantity * 10}%`} y1={`${(10-price) * 10}%`} x2="0%" y2={`${(10-price) * 10}%`} stroke="#cbd5e1" strokeDasharray="4" />
+                            </svg>
+                            
+                            <div className="absolute top-2 right-2 bg-white/90 p-2 rounded border text-sm shadow-sm">
+                                <div className={`font-bold ${zoneColor}`}>{zone}</div>
+                                <div>Q: {quantity} units</div>
+                            </div>
+                        </div>
+
+                        {/* Data Panel */}
+                        <div className="flex flex-col justify-center space-y-4">
+                            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <div className="text-gray-500 text-sm uppercase tracking-wide">Total Expenditure (總支出)</div>
+                                <div className="text-3xl font-bold text-gray-800">${expenditure}</div>
+                                <div className="text-xs text-gray-500 mt-1">Calculation: ${price} × {quantity}</div>
+                            </div>
+
+                            <div className={`p-4 rounded-lg border ${price < 5 ? 'bg-red-50 border-red-200' : (price > 5 ? 'bg-green-50 border-green-200' : 'bg-blue-50 border-blue-200')}`}>
+                                <div className="font-bold text-gray-700 mb-1">Analysis (分析):</div>
+                                {price === 5 && (
+                                    <p className="text-sm text-blue-800">
+                                        At Midpoint ($5). Total Expenditure is MAXIMIZED.
+                                        <br/>
+                                        在中點 ($5)，總支出達到最大值。
+                                    </p>
+                                )}
+                                {price > 5 && (
+                                    <p className="text-sm text-green-800">
+                                        Upper Half. Price Drop ↓ → TE Increases ↑.
+                                        <br/>
+                                        上半部。減價 ↓ → 支出上升 ↑。
+                                    </p>
+                                )}
+                                {price < 5 && (
+                                    <p className="text-sm text-red-800">
+                                        Lower Half. Price Drop ↓ → TE Decreases ↓.
+                                        <br/>
+                                        下半部。減價 ↓ → 支出下降 ↓。
+                                        <br/>
+                                        (Matches Question Scenario $4 → $3)
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('interactive-graph-root'));
+        root.render(<ElasticityGraph />);
+    </script>
 
 </body>
 </html>
