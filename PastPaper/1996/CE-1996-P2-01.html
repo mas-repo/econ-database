@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Opportunity Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* Dark Blue */
+            --secondary-color: #3b82f6; /* Blue */
+            --accent-color: #f59e0b; /* Amber/Orange for emphasis */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #10b981; /* Emerald Green */
+            --wrong-color: #ef4444; /* Red */
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #eff6ff; /* Light blue bg */
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-box {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--secondary-color);
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            background-color: #d1fae5;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .option-analysis.correct {
+            border-left: 4px solid var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .option-analysis.wrong {
+            border-left: 4px solid var(--wrong-color);
+            background-color: #fef2f2;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb; /* Amber light */
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .pivot-point {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Bilingual Styling */
+        .en-text {
+            color: #64748b; /* Lighter text for English translation */
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; align-items: flex-start; }
+            section { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item"><strong>Topic:</strong> Basic Economic Concepts (基本經濟概念)</div>
+            <div class="meta-item"><strong>Sub-topic:</strong> Opportunity Cost (機會成本)</div>
+            <div class="meta-item"><strong>Difficulty:</strong> ★★☆☆☆</div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>[Traditional Chinese]</strong><br>
+            大強居住於自己擁有的住宅單位，該單位價值一百萬元。他可以出售該單位，將所獲金錢存於銀行，以年息率5%來收息。他亦可以將該單位出租，每月收取租金 $5,000。對大強來說，他決定在該單位自住的機會成本是什麼？</p>
+            
+            <p><strong>[English]</strong><br>
+            John lives in his own apartment which is worth $1 million. He can sell the apartment and put the money in a bank at an interest rate of 5% per year. He can also rent out the apartment at $5000 a month. What is the opportunity cost to John if he decides to live in the apartment?</p>
+
+            <ul class="options-list">
+                <li>A. 一百萬元 ($1 million)</li>
+                <li>B. 每年 $50,000 ($50,000 a year)</li>
+                <li>C. 每月 $5,000 ($5,000 a month)</li>
+                <li>D. 沒有機會成本，因為他用來自住 (No opportunity cost because he lives in his own apartment)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>1. 機會成本的定義 (Definition of Opportunity Cost)</h3>
+            <p>機會成本是指在作出選擇時，所放棄的選項中<strong>價值最高</strong>的那個選項。</p>
+            <span class="en-text">Opportunity cost is the <strong>highest-valued</strong> option forgone when a choice is made.</span>
+
+            <div class="formula-box">
+                $$ \text{Opportunity Cost} = \text{Value of the Highest-valued Alternative Forgone} $$
+            </div>
+
+            <h3>2. 隱含成本 (Implicit Cost)</h3>
+            <p>即使沒有金錢易手（例如住在自己的房子裡不用交租），仍然存在成本。這是因為你放棄了將該資源用於其他用途（如出租或出售）所能獲得的收入。</p>
+            <span class="en-text">Even if no money changes hands (e.g., living in your own house), a cost exists. This is because you forgo the income you could have earned by using the resource differently (e.g., renting or selling).</span>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">Correct Answer: Option C</div>
+
+        <p><strong>題目分析 (Question Analysis):</strong><br>
+        大強選擇了「自住」(Live in)。他放棄了什麼？<br>
+        <span class="en-text">John chose to "Live in". What did he give up?</span></p>
+        <ul>
+            <li><strong>放棄選項 1 (Forgone Option 1):</strong> 出售單位並收息 (Sell and earn interest)。
+                <br>計算：\( \$1,000,000 \times 5\% = \$50,000 / \text{year} \)
+            </li>
+            <li><strong>放棄選項 2 (Forgone Option 2):</strong> 出租單位 (Rent out)。
+                <br>計算：\( \$5,000 / \text{month} \times 12 = \$60,000 / \text{year} \)
+            </li>
+        </ul>
+
+        <p><strong>比較 (Comparison):</strong><br>
+        我們必須比較放棄的選項，並找出<strong>最高價值</strong>的一個。<br>
+        <span class="en-text">We must compare the forgone options and identify the <strong>highest-valued</strong> one.</span><br>
+        由於 \( \$60,000 > \$50,000 \)，所以放棄「出租」的價值最高。</p>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+        <div class="option-analysis wrong">
+            <strong>A. 一百萬元 ($1 million) — 錯誤 (Wrong)</strong>
+            <p>這是單位的資產價值，不是成本。如果大強自住，他並沒有「失去」這一百萬，他仍然擁有這層樓。只有當樓價下跌時，資產價值才會受影響，但這不是機會成本的定義。</p>
+            <span class="en-text">This is the asset value, not the cost. By living in it, John doesn't "lose" the $1 million; he still owns the flat.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <strong>B. 每年 $50,000 ($50,000 a year) — 錯誤 (Wrong)</strong>
+            <p>這是放棄了的利息收入。雖然這是一個被放棄的選項，但它的價值（$50,000）低於租金收入（$60,000）。機會成本必須是<strong>最高</strong>價值的那個。</p>
+            <span class="en-text">This is the forgone interest. While it is an option given up, its value ($50,000) is lower than the rental income ($60,000). Opportunity cost must be the <strong>highest</strong> value.</span>
+        </div>
+
+        <div class="option-analysis correct">
+            <strong>C. 每月 $5,000 ($5,000 a month) — 正確 (Correct)</strong>
+            <p>這是放棄了的租金收入。將其年化計算為 $60,000，高於利息收入 ($50,000)。因此，這是最高價值的放棄選項。</p>
+            <span class="en-text">This is the forgone rental income. Annualized at $60,000, it is higher than the interest income ($50,000). Therefore, this is the highest-valued forgone option.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <strong>D. 沒有機會成本 (No opportunity cost) — 錯誤 (Wrong)</strong>
+            <p>這是典型的「零價非零成本」(Zero price but non-zero cost) 概念。雖然沒有支付現金（顯性成本為0），但存在隱含成本（放棄的收入）。</p>
+            <span class="en-text">This is a classic misconception. Although no cash is paid (zero explicit cost), there is an implicit cost (forgone income).</span>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="tips-box">
+            <h3><span style="font-size: 1.2em">🔑</span> 解題關鍵點 (Pivot Point)</h3>
+            <p>這類題目的關鍵在於<strong>「統一單位」</strong>和<strong>「互斥性」</strong>。</p>
+            <span class="en-text">The key to this type of question lies in <strong>"Standardizing Units"</strong> and <strong>"Exclusivity"</strong>.</span>
+            
+            <ol>
+                <li><strong>互斥選項 (Mutually Exclusive):</strong> 你不能同時「出售收息」又「出租收租」。你只能放棄其中一個。</li>
+                <li><strong>統一單位 (Standardize Units):</strong> 題目給出「年息」和「月租」。必須將它們轉換為相同的時間單位（通常是一年）才能比較大小。</li>
+            </ol>
+            <p>
+                $$ \text{Interest} = \$50,000 / \text{year} $$
+                $$ \text{Rent} = \$5,000 \times 12 = \$60,000 / \text{year} $$
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>陷阱 1：將所有放棄的選項相加 (Adding up all forgone options)</strong><br>
+                學生常誤以為機會成本 = 利息 + 租金 ($50,000 + $60,000)。這是錯的，因為你不可能同時賣樓又租樓給別人。
+                <br><span class="en-text">Students often mistakenly think Cost = Interest + Rent. This is wrong because you cannot sell the flat and rent it out at the same time.</span>
+            </li>
+            <li>
+                <strong>陷阱 2：忽略時間單位 (Ignoring time units)</strong><br>
+                直接比較數字 50,000 (年) 和 5,000 (月)，誤以為 50,000 較大。必須看清楚是 "per year" 還是 "a month"。
+                <br><span class="en-text">Comparing the raw numbers 50,000 (year) and 5,000 (month) directly, wrongly thinking 50,000 is larger. Always check "per year" vs "a month".</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

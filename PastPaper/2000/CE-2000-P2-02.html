@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Opportunity Cost & Time Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5282; /* Deep Blue */
+            --secondary-color: #4299e1; /* Bright Blue */
+            --accent-color: #ed8936; /* Orange */
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --correct-color: #38a169; /* Green */
+            --wrong-color: #e53e3e; /* Red */
+            --box-bg: #ffffff;
+            --code-bg: #edf2f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-left: 6px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .option-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #ebf8ff; /* Light blue bg */
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .formula-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px dashed var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Answer Section */
+        .correct-answer-banner {
+            background-color: #c6f6d5;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            border: 2px solid #48bb78;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .analysis-step.highlight {
+            border-left-color: var(--accent-color);
+            background-color: #fffaf0;
+        }
+
+        /* Tables for comparison */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #edf2f7;
+            color: var(--primary-color);
+        }
+
+        .winner {
+            background-color: #c6f6d5;
+            font-weight: bold;
+            color: #22543d;
+        }
+
+        /* Bilingual Styling */
+        .en-text {
+            color: #718096; /* Gray text for English translation */
+            font-size: 0.95em;
+            margin-top: 6px;
+            display: block;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fff5f5; /* Light red/pink */
+            border-left: 5px solid #fc8181;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .trick-box {
+            background-color: #f0fff4; /* Light green */
+            border-left: 5px solid #68d391;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            .meta-info { flex-direction: column; align-items: center; gap: 10px; }
+            section { padding: 20px; }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table th, .comparison-table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item"><strong>Topic:</strong> Opportunity Cost (機會成本)</div>
+            <div class="meta-item"><strong>Difficulty:</strong> ★★★☆☆</div>
+            <div class="meta-item"><strong>Key Concepts:</strong> Full Cost, Time Cost, Rational Choice</div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>[Traditional Chinese]</strong><br>
+            陳先生和黃先生分別前往X城，他們可以乘飛機或火車前往。飛機需時2小時而火車需時10小時。飛機票價$1000而火車票價$200。在前往X城的旅程中，陳先生放棄的收入是每小時$200而黃先生放棄的收入是每小時$80。<br>
+            若要前往X城，陳先生會乘搭 __________ 而黃先生會乘搭 __________。</p>
+            
+            <p><strong>[English]</strong><br>
+            Chan and Wong take a journey to City X separately. They can go there either by plane or by train. The plane takes 2 hours while the train takes 10 hours. The air ticket costs $1000 while the train fare is $200. During the journey to City X, the foregone earning of Chan is $200 per hour and that of Wong is $80 per hour.<br>
+            For the journey to City X, Chan would take the ______________ and Wong would take the ______________.</p>
+
+            <div class="options-grid">
+                <div class="option-item">A. 火車 … 火車 (train … train)</div>
+                <div class="option-item">B. 火車 … 飛機 (train … plane)</div>
+                <div class="option-item">C. 飛機 … 火車 (plane … train)</div>
+                <div class="option-item">D. 飛機 … 飛機 (plane … plane)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>1. 全部成本 (Full Cost)</h3>
+            <p>在經濟學中，做決定的成本不僅僅是金錢支出（票價），還包括時間成本。全部成本等於金錢成本加上時間成本。</p>
+            <span class="en-text">In economics, the cost of making a decision is not just the monetary expense (ticket fare) but also includes the time cost. Full Cost equals Monetary Cost plus Time Cost.</span>
+
+            <div class="formula-box">
+                $$ \text{Full Cost} = \text{Monetary Cost} + \text{Time Cost} $$
+                $$ \text{全部成本} = \text{金錢成本} + \text{時間成本} $$
+            </div>
+
+            <h3>2. 時間成本的計算 (Calculation of Time Cost)</h3>
+            <p>時間成本是指因為花費時間在某活動上，而放棄了原本可以賺取的收入（放棄的收入）。</p>
+            <span class="en-text">Time cost refers to the income forgone because time is spent on an activity instead of working (foregone earning).</span>
+
+            <div class="formula-box">
+                $$ \text{Time Cost} = \text{Time Spent} \times \text{Hourly Wage (Foregone Earning)} $$
+            </div>
+
+            <h3>3. 理性選擇 (Rational Choice)</h3>
+            <p>作為理性的人，我們會選擇<strong>全部成本最低</strong>的選項。</p>
+            <span class="en-text">As rational individuals, we choose the option with the <strong>lowest full cost</strong>.</span>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer-banner">Correct Answer: Option C</div>
+
+        <p>我們需要分別計算陳先生 (Chan) 和黃先生 (Wong) 乘搭飛機與火車的<strong>全部成本</strong>，然後比較哪個更低。</p>
+        <span class="en-text">We need to calculate the <strong>full cost</strong> of taking the plane vs. the train for both Chan and Wong separately, then compare which is lower.</span>
+
+        <h3>Step 1: 整理數據 (Organize Data)</h3>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+            <li><strong>飛機 (Plane):</strong> 時間 \( T_p = 2 \) hours, 票價 \( P_p = \$1000 \)</li>
+            <li><strong>火車 (Train):</strong> 時間 \( T_t = 10 \) hours, 票價 \( P_t = \$200 \)</li>
+        </ul>
+
+        <h3>Step 2: 分析陳先生的選擇 (Analyze Chan's Choice)</h3>
+        <div class="analysis-step highlight">
+            <p><strong>陳先生的時間價值 (Chan's Time Value):</strong> $200 / hour</p>
+            
+            <p><strong>選項 A: 乘搭飛機 (Take Plane)</strong><br>
+            \( \text{Cost} = \text{Ticket} + (\text{Time} \times \text{Wage}) \)<br>
+            \( \text{Cost} = \$1000 + (2 \times \$200) \)<br>
+            \( \text{Cost} = \$1000 + \$400 = \mathbf{\$1400} \)</p>
+
+            <p><strong>選項 B: 乘搭火車 (Take Train)</strong><br>
+            \( \text{Cost} = \text{Ticket} + (\text{Time} \times \text{Wage}) \)<br>
+            \( \text{Cost} = \$200 + (10 \times \$200) \)<br>
+            \( \text{Cost} = \$200 + \$2000 = \mathbf{\$2200} \)</p>
+
+            <p><strong>結論 (Conclusion):</strong> \( \$1400 < \$2200 \)。陳先生會選擇<strong>飛機 (Plane)</strong>。</p>
+        </div>
+
+        <h3>Step 3: 分析黃先生的選擇 (Analyze Wong's Choice)</h3>
+        <div class="analysis-step highlight">
+            <p><strong>黃先生的時間價值 (Wong's Time Value):</strong> $80 / hour</p>
+            
+            <p><strong>選項 A: 乘搭飛機 (Take Plane)</strong><br>
+            \( \text{Cost} = \$1000 + (2 \times \$80) \)<br>
+            \( \text{Cost} = \$1000 + \$160 = \mathbf{\$1160} \)</p>
+
+            <p><strong>選項 B: 乘搭火車 (Take Train)</strong><br>
+            \( \text{Cost} = \$200 + (10 \times \$80) \)<br>
+            \( \text{Cost} = \$200 + \$800 = \mathbf{\$1000} \)</p>
+
+            <p><strong>結論 (Conclusion):</strong> \( \$1000 < \$1160 \)。黃先生會選擇<strong>火車 (Train)</strong>。</p>
+        </div>
+
+        <h3>Step 4: 綜合結果 (Final Result)</h3>
+        <p>陳先生：飛機 (Plane)<br>黃先生：火車 (Train)<br>
+        因此，正確答案是 <strong>C</strong>。</p>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        
+        <p>這類題目是 DSE 經濟科非常經典的題型，考察學生是否明白「時間就是金錢」。</p>
+        <span class="en-text">This is a classic HKDSE Economics question type, testing if students understand that "time is money".</span>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>人物 (Person)</th>
+                        <th>時間成本 (Time Cost)</th>
+                        <th>選擇傾向 (Tendency)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>高收入人士 (High Income)</strong><br>(e.g., Chan $200/hr)</td>
+                        <td>高 (High)</td>
+                        <td>傾向選擇<strong>省時</strong>但昂貴的交通工具<br>(Prefers time-saving but expensive transport)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>低收入人士 (Low Income)</strong><br>(e.g., Wong $80/hr)</td>
+                        <td>低 (Low)</td>
+                        <td>傾向選擇<strong>省錢</strong>但費時的交通工具<br>(Prefers money-saving but time-consuming transport)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>關鍵點 (Pivot Point):</strong><br>
+        比較「節省下來的時間價值」是否大於「額外支付的票價」。<br>
+        <span class="en-text">Compare if "the value of time saved" is greater than "the extra ticket price paid".</span></p>
+        
+        <ul>
+            <li>飛機比火車快 \( 10 - 2 = 8 \) 小時。 (Plane is 8 hours faster.)</li>
+            <li>飛機比火車貴 \( \$1000 - \$200 = \$800 \)。 (Plane is $800 more expensive.)</li>
+            <li>這意味著，如果你花 $800 買這 8 小時，每小時成本是 $100。</li>
+            <li>如果你的時薪 > $100，你應該買時間（搭飛機）。</li>
+            <li>如果你的時薪 < $100，你不應該買時間（搭火車）。</li>
+        </ul>
+    </section>
+
+    <!-- 6. Common Mistakes & Exam Tricks -->
+    <section>
+        <h2>Mistakes & Tricks (常犯錯誤與技巧)</h2>
+
+        <div class="tips-box">
+            <h3>⚠️ 常犯錯誤 (Common Mistakes)</h3>
+            <ul>
+                <li><strong>只看票價 (Only looking at ticket price):</strong> 學生常誤以為火車票價 ($200) 永遠比飛機 ($1000) 便宜，所以兩人都選火車。這是忽略了隱含成本 (implicit cost)。</li>
+                <li><strong>計算錯誤 (Calculation Errors):</strong> 忘記將時薪乘以時數 (e.g., 忘記 \( \times 10 \) 或 \( \times 2 \))。</li>
+            </ul>
+        </div>
+
+        <div class="trick-box">
+            <h3>⚡ 考試速解法 (Exam Shortcut)</h3>
+            <p>不需要計算完整的總成本，只需計算<strong>邊際分別 (Marginal Difference)</strong>。</p>
+            <span class="en-text">No need to calculate the full total cost, just calculate the <strong>Marginal Difference</strong>.</span>
+            
+            <p><strong>邏輯 (Logic):</strong><br>
+            搭飛機多付出的錢 \( = \$800 \)<br>
+            搭飛機省下的時間 \( = 8 \text{ hours} \)</p>
+            
+            <p><strong>臨界點 (Threshold):</strong><br>
+            $$ \frac{\text{Extra Money}}{\text{Time Saved}} = \frac{\$800}{8} = \$100 / \text{hour} $$</p>
+            
+            <ul style="margin-top: 10px;">
+                <li>陳先生 ($200/hr) > $100 \(\rightarrow\) 值得花錢省時間 \(\rightarrow\) <strong>飛機</strong></li>
+                <li>黃先生 ($80/hr) < $100 \(\rightarrow\) 不值得花錢省時間 \(\rightarrow\) <strong>火車</strong></li>
+            </ul>
+            <p>這個方法比計算四個總成本快得多！(This method is much faster than calculating four total costs!)</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

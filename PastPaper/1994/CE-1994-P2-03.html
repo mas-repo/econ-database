@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue-600 */
+            --primary-light: #eff6ff; /* Blue-50 */
+            --secondary: #475569; /* Slate-600 */
+            --accent: #f59e0b; /* Amber-500 */
+            --success: #10b981; /* Emerald-500 */
+            --danger: #ef4444; /* Red-500 */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .q-text {
+            margin-bottom: 12px;
+        }
+
+        .en-text {
+            color: var(--secondary);
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .options-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .formula-block {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success);
+            margin-bottom: 16px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        /* Decomposition & Tricks */
+        .decomposition-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 600px) {
+            .decomposition-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .trap-alert {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #991b1b;
+        }
+
+        .trick-tip {
+            background-color: #ecfdf5;
+            border: 1px solid #d1fae5;
+            color: #065f46;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            background-color: #f1f5f9;
+        }
+
+        strong {
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Opportunity Cost (機會成本)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Implicit Cost (隱含成本)</span>
+        </div>
+    </div>
+
+    <!-- Question Section -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <div class="q-text">
+                <p><strong>李先生擁有一間攝影室。以往他出租攝影室時，每月可收到三萬元租金。現在，他不將攝影室出租，而用它來經營自己的生意，並且以月薪一萬元聘用一位模特兒。</strong></p>
+                <p class="en-text">Mr. Lee owns a photographic studio. Previously he received $30,000 per month by letting it out. He now does not let the studio, but, instead he uses the premises for his own business. He also employs a model at $10,000 per month.</p>
+                
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 16px 0;">
+
+                <p><strong>李先生自己使用這攝影室的機會成本是甚麼？</strong></p>
+                <p class="en-text">What is Mr. Lee’s opportunity cost of using the studio by himself?</p>
+            </div>
+            <ul class="options-list">
+                <li>A. 每月一萬元 ($10,000 per month)</li>
+                <li>B. 每月二萬元 ($20,000 per month)</li>
+                <li>C. 每月三萬元 ($30,000 per month)</li>
+                <li>D. 每月四萬元 ($40,000 per month)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p><strong>定義 (Definition):</strong></p>
+            <p>機會成本是指在作出選擇時，被放棄的選項中<strong>價值最高</strong>的一項。</p>
+            <p class="en-text">Opportunity cost is the <strong>highest-valued option forgone</strong> when a choice is made.</p>
+            
+            <div class="formula-block">
+                $$ \text{Opportunity Cost} = \text{Value of highest-valued option forgone} $$
+            </div>
+
+            <p><strong>隱含成本 vs 外顯成本 (Implicit vs Explicit Cost):</strong></p>
+            <ul>
+                <li><strong>外顯成本 (Explicit Cost):</strong> 實際支付的金錢 (Actual monetary payment).</li>
+                <li><strong>隱含成本 (Implicit Cost):</strong> 放棄了的收入，例如放棄的租金或利息 (Income forgone, e.g., forgone rent or interest).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">Correct Answer: Option C</div>
+
+        <div class="analysis-step">
+            <div class="step-title">1. 題目問什麼？ (What is the question asking?)</div>
+            <p>題目問的是「使用這攝影室」(using the studio) 的機會成本，而不是「經營生意」(running the business) 的總成本。</p>
+            <p class="en-text">The question specifically asks for the opportunity cost of <strong>"using the studio"</strong>, not the total cost of "running the business".</p>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">2. 分析選項 (Analyzing the Options)</div>
+            <p>李先生有兩個關於攝影室的選擇：</p>
+            <ol>
+                <li><strong>出租 (Rent it out):</strong> 獲得 $30,000。</li>
+                <li><strong>自用 (Use it himself):</strong> 放棄租金收入，並支付 $10,000 聘請模特兒。</li>
+            </ol>
+            <p class="en-text">Mr. Lee has two choices regarding the studio: (1) Rent it out for $30,000, or (2) Use it himself.</p>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">3. 計算機會成本 (Calculating the Cost)</div>
+            <p>當李先生選擇<strong>自用攝影室</strong>時，他放棄了什麼？他放棄了<strong>出租攝影室的租金收入</strong>。</p>
+            <p>因此，使用攝影室的機會成本 = 放棄的租金 = <strong>$30,000</strong>。</p>
+            <p class="en-text">When Mr. Lee chooses to use the studio himself, what does he give up? He gives up the <strong>rental income</strong>. Therefore, the opportunity cost of using the studio = Forgone Rent = <strong>$30,000</strong>.</p>
+        </div>
+
+        <div class="analysis-step">
+            <div class="step-title">為什麼其他選項是錯的？ (Why are others wrong?)</div>
+            <ul>
+                <li><strong>A ($10,000):</strong> 這是聘請模特兒的<strong>外顯成本 (Explicit Cost)</strong>。這是經營生意的勞工成本，並非「使用攝影室」本身的成本。 (This is the labor cost, not the cost of the premises.)</li>
+                <li><strong>D ($40,000):</strong> 這是經營這盤生意的<strong>總經濟成本 (Total Economic Cost)</strong>，即 $30,000 (隱含租金) + $10,000 (外顯薪金)。但題目只問「使用攝影室」的成本，所以不應包括模特兒薪金。 (This would be the cost of the whole business project, but the question isolates the cost of the studio.)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition & Tricks -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition & Tricks (題目拆解與技巧)</div>
+        
+        <div class="decomposition-grid">
+            <div class="card trap-alert">
+                <h3 style="margin-top:0; color:#991b1b;">⚠️ Common Trap (常犯陷阱)</h3>
+                <p><strong>混淆「資產成本」與「項目總成本」</strong></p>
+                <p>學生常誤以為要把所有數字加起來。必須看清楚題目問的是「某個資源」(攝影室) 的成本，還是「某個行動」(做生意) 的成本。</p>
+                <p class="en-text"><strong>Confusing "Asset Cost" with "Project Cost".</strong> Students often add all numbers together. You must identify if the question asks about a specific resource (the studio) or the whole action (doing business).</p>
+            </div>
+
+            <div class="card trick-tip">
+                <h3 style="margin-top:0; color:#065f46;">💡 Exam Trick (考試技巧)</h3>
+                <p><strong>關鍵字鎖定法 (Keyword Locking)</strong></p>
+                <p>圈出題目中的主語：<strong>「使用這攝影室」(Using the studio)</strong>。</p>
+                <p>問自己：如果不自用，這間攝影室原本可以拿來做什麼？答案：出租 ($30,000)。這就是答案。模特兒的薪金與攝影室的用途無關。</p>
+                <p class="en-text">Circle the subject: <strong>"Using the studio"</strong>. Ask yourself: If not used by himself, what could the studio do? Answer: Be rented out ($30,000). That is your answer.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © HKDSE Economics Tutor | Generated for Educational Purposes
+    </div>
+</div>
+
+</body>
+</html>
