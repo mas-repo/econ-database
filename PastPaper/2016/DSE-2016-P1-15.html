@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Elasticity Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --box-bg: #ffffff;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --mistake-bg: #fef2f2;
+            --mistake-border: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .header-item {
+            margin: 5px 10px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f8fafc;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .analysis-step:last-child {
+            border-bottom: none;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #16a34a; /* Green */
+            margin-bottom: 20px;
+        }
+
+        .mistake-box {
+            background-color: var(--mistake-bg);
+            border-left: 5px solid var(--mistake-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    
+    <div class="header-info">
+        <div class="header-item"><strong>Topic (課題):</strong> Demand & Supply / Elasticity (需求與供應 / 彈性)</div>
+        <div class="header-item"><strong>Difficulty (難度):</strong> ★★★☆☆</div>
+        <div class="header-item"><strong>Key Concepts (核心概念):</strong> Price Elasticity of Demand (需求價格彈性), Determinants of Elasticity (彈性的決定因素)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <div class="question-text">
+            <p>物品X的生產成本下降，導致其價格和交易量分別改變了5%及10%。下列哪項最能解釋上述的改變？</p>
+            <p class="en-text">A decrease in the cost of producing Good X results in a 5% and 10% change in its price and quantity transacted respectively. Which of the following best explains the above changes?</p>
+        </div>
+        <ul class="options-list">
+            <li>A. 物品X是一種耐用品。<br><span class="en-text">Good X is a durable good.</span></li>
+            <li>B. 物品X沒有接近的替代品。<br><span class="en-text">There are no close substitutes for Good X.</span></li>
+            <li>C. 生產物品X的廠商有剩餘的產能。<br><span class="en-text">Firms producing Good X have excess capacity in production.</span></li>
+            <li>D. 物品X的生產要素並不容易找到。<br><span class="en-text">The factors of production for Good X are not easily available.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>Concept Review (概念重溫)</h3>
+        
+        <p><strong>1. 需求價格彈性 (Price Elasticity of Demand, \(E_d\))</strong></p>
+        <p>它量度需求量對價格改變的反應程度。公式如下：</p>
+        <p class="en-text">It measures the responsiveness of quantity demanded to a change in price. The formula is:</p>
+        
+        $$ E_d = \frac{\%\Delta Q_d}{\%\Delta P} $$
+
+        <ul>
+            <li>如果 \(\%\Delta Q_d > \%\Delta P\)，即 \(E_d > 1\)，需求屬<strong>高彈性 (Elastic)</strong>。</li>
+            <li><span class="en-text">If \(\%\Delta Q_d > \%\Delta P\), i.e., \(E_d > 1\), demand is <strong>Elastic</strong>.</span></li>
+        </ul>
+
+        <p><strong>2. 供應改變與需求曲線 (Change in Supply and Demand Curve)</strong></p>
+        <p>當供應曲線移動 (Shift in Supply) 時，均衡點會沿著<strong>需求曲線</strong>移動。因此，價格與交易量的變化比例，反映了<strong>需求彈性</strong>。</p>
+        <p class="en-text">When the Supply curve shifts, the equilibrium point moves along the <strong>Demand curve</strong>. Therefore, the ratio of changes in price and quantity reflects the <strong>Elasticity of Demand</strong>.</p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-answer">Correct Option: A (選項 A)</div>
+
+        <div class="analysis-step">
+            <h4>Step 1: Analyze the Data (分析數據)</h4>
+            <p>題目指出生產成本下降，這代表<strong>供應增加 (Supply increases)</strong>，供應曲線向右移。</p>
+            <p class="en-text">The question states production cost decreases, which means <strong>Supply increases</strong>, shifting the supply curve to the right.</p>
+            
+            <p>結果：價格改變 5%，交易量改變 10%。</p>
+            <p class="en-text">Result: Price changes by 5%, Quantity changes by 10%.</p>
+
+            $$ E_d = \frac{10\%}{5\%} = 2 $$
+
+            <p>由於 \(E_d > 1\)，這表示物品X的<strong>需求屬高彈性 (Demand is elastic)</strong>。我們需要在選項中找出導致「高需求彈性」的原因。</p>
+            <p class="en-text">Since \(E_d > 1\), this implies the <strong>Demand for Good X is elastic</strong>. We need to find the option that causes "Elastic Demand".</p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option A: Good X is a durable good (物品X是一種耐用品) <span style="color:green">✔ CORRECT</span></h4>
+            <p><strong>分析：</strong>耐用品（如汽車、電器）的需求通常屬高彈性。因為當價格變動時，消費者可以選擇延遲更換或維修舊機，對價格較敏感。</p>
+            <p class="en-text"><strong>Analysis:</strong> Durable goods (like cars, appliances) usually have elastic demand. Consumers can postpone replacement or repair existing ones, making them sensitive to price changes.</p>
+            <p><strong>結論：</strong>這解釋了為何 \(E_d > 1\)。</p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option B: No close substitutes (沒有接近的替代品) <span style="color:red">✘ WRONG</span></h4>
+            <p><strong>分析：</strong>如果沒有替代品，消費者難以轉購其他產品，需求應屬<strong>低彈性 (Inelastic)</strong>。</p>
+            <p class="en-text"><strong>Analysis:</strong> If there are no substitutes, consumers cannot switch to other products easily, so demand should be <strong>Inelastic</strong>.</p>
+            <p><strong>結論：</strong>這會導致 \(\%\Delta P > \%\Delta Q\)，與題目數據不符。</p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option C: Excess capacity (有剩餘的產能) <span style="color:red">✘ WRONG</span></h4>
+            <p><strong>分析：</strong>這是<strong>供應彈性 (Elasticity of Supply)</strong> 的決定因素，而非需求彈性。這會影響供應曲線移動的幅度或形狀，但不能解釋為何沿著需求曲線移動時，量變大於價變。</p>
+            <p class="en-text"><strong>Analysis:</strong> This is a determinant of <strong>Price Elasticity of Supply</strong>, not Demand. It affects the magnitude or shape of the supply shift, but does not explain why quantity changes more than price when moving along the demand curve.</p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option D: Factors not easily available (生產要素並不容易找到) <span style="color:red">✘ WRONG</span></h4>
+            <p><strong>分析：</strong>這同樣是<strong>供應彈性 (Elasticity of Supply)</strong> 的決定因素（會導致低供應彈性）。這與需求曲線的斜率無關。</p>
+            <p class="en-text"><strong>Analysis:</strong> This is also a determinant of <strong>Price Elasticity of Supply</strong> (leading to inelastic supply). It is irrelevant to the slope of the demand curve.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #f0fdf4; border-color: #22c55e;">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p>這類題目的解題邏輯鏈 (Logic Chain) 如下：</p>
+        <ol>
+            <li>
+                <strong>識別衝擊 (Identify the Shock):</strong> 
+                <br>成本下降 \(\rightarrow\) 供應增加 (Supply shifts right)。
+            </li>
+            <li>
+                <strong>識別移動路徑 (Identify the Movement):</strong> 
+                <br>供應移動，均衡點沿著<strong>需求曲線 (Demand Curve)</strong> 滑動。
+            </li>
+            <li>
+                <strong>計算彈性 (Calculate Elasticity):</strong> 
+                <br>\(\%\Delta Q (10\%) > \%\Delta P (5\%)\) \(\rightarrow\) 需求是<strong>高彈性 (Elastic)</strong>。
+            </li>
+            <li>
+                <strong>配對因素 (Match Determinant):</strong> 
+                <br>哪個選項會導致高需求彈性？ \(\rightarrow\) 耐用品 (Durable goods)。
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="mistake-box">
+        <h3>Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <p><strong>錯誤觀念：混淆需求彈性與供應彈性</strong></p>
+        <p>很多學生看到「生產成本」、「廠商」等字眼，就直覺地去選有關供應彈性的選項（如 C 或 D）。</p>
+        <p class="en-text"><strong>Misconception: Confusing Demand Elasticity with Supply Elasticity.</strong> Many students see words like "production cost" or "firms" and intuitively choose options related to Supply Elasticity (like C or D).</p>
+        <p><strong>破解關鍵：</strong>記住「供應移動，測試需求」(Supply shifts, testing Demand)。當供應線移動時，市場結果的變化比例是由<strong>需求線</strong>的斜率決定的。</p>
+        <p class="en-text"><strong>Key to solve:</strong> Remember "Supply shifts, testing Demand". When the supply curve shifts, the ratio of market changes is determined by the slope of the <strong>Demand curve</strong>.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div>
+        <h3>Student Q&A (學生常見疑問)</h3>
+        
+        <p><strong>Q: 為什麼不是供應彈性？題目明明說「生產成本下降」。</strong><br>
+        <span class="en-text">Why isn't it about Supply Elasticity? The question clearly says "production cost decreases".</span></p>
+        
+        <p><strong>A:</strong> 生產成本下降是<strong>原因 (Cause)</strong>，它導致供應曲線移動。但是，價格和交易量最後的<strong>結果 (Result)</strong>，是取決於消費者如何反應（即需求曲線）。如果消費者反應很大（高需求彈性），量就會大增，價格只需微跌。所以我們要找的是影響消費者反應的因素。</p>
+        <p class="en-text">The decrease in production cost is the <strong>Cause</strong>, which shifts the Supply curve. However, the final <strong>Result</strong> of price and quantity depends on how consumers react (i.e., the Demand curve). If consumers react strongly (Elastic Demand), quantity increases significantly with only a small price drop. So we are looking for factors affecting consumer reaction.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="concept-box" style="background-color: #fff7ed; border-color: #f97316;">
+        <h3>Exam Tricks (考試技巧)</h3>
+        <p><strong>口訣：大Q細P是Elastic (Big Q, Small P is Elastic)</strong></p>
+        <p>看到 \(\%\Delta Q (10\%) > \%\Delta P (5\%)\)，馬上寫下 "Demand Elastic"。然後直接找導致 Demand Elastic 的選項，通常是：</p>
+        <ul style="margin-top: 5px;">
+            <li>有很多替代品 (Many substitutes)</li>
+            <li>奢侈品 (Luxury goods)</li>
+            <li>佔收入比例大 (Large proportion of income)</li>
+            <li>耐用品 (Durable goods)</li>
+        </ul>
+        <p>這樣可以快速排除干擾項 C 和 D。</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb; /* Royal Blue */
+            --secondary: #eff6ff; /* Light Blue */
+            --accent: #f59e0b; /* Amber */
+            --text: #1f2937; /* Dark Gray */
+            --bg: #f3f4f6; /* Light Gray Background */
+            --correct: #10b981; /* Green */
+            --wrong: #ef4444; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+            border-left: 5px solid var(--accent);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .options-list li:hover {
+            background: var(--secondary);
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula {
+            background: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Answer Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-left: 4px solid var(--wrong);
+        }
+
+        .tag {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .tag.correct { color: var(--correct); }
+        .tag.wrong { color: var(--wrong); }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Decomposition & Tricks */
+        .pivot-point {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .section { padding: 15px; }
+            header h1 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Guide</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Opportunity Cost (機會成本)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Highest-valued Option Forgone</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>題目 The Question</h2>
+        <div class="question-box">
+            <p class="zh">湯美中六畢業，正計劃將來。他有數個選項，其優先次序如下：</p>
+            <p class="en">Tommy is planning for his future after his S.6 graduation. He has several options and his order of preference is as follows.</p>
+            
+            <div style="background: #f9fafb; padding: 10px; border-radius: 6px; margin: 10px 0;">
+                <p><strong>1. 第一選項 (First option):</strong> 在咖啡店當一名咖啡師 (Being a barista in a café)</p>
+                <p><strong>2. 第二選項 (Second option):</strong> 當一名數碼市場推廣業的實習生 (Being a trainee in digital marketing)</p>
+                <p><strong>3. 第三選項 (Third option):</strong> 當一名初級消防員 (Being a junior fireman)</p>
+            </div>
+
+            <p class="zh">在湯美的就業選擇中，下列哪項因素最不可能影響他的成本效益分析？</p>
+            <p class="en">Which of the following factors would LEAST likely affect the cost-benefit analysis for Tommy’s career choice?</p>
+
+            <ul class="options-list">
+                <li><strong>A.</strong> 咖啡文化愈趨普及。<br><span class="en">Coffee culture becomes more popular.</span></li>
+                <li><strong>B.</strong> 更多公司擴張其數碼市場推廣部。<br><span class="en">More companies expand their digital marketing departments.</span></li>
+                <li><strong>C.</strong> 初級消防員的薪金下降。<br><span class="en">The remuneration of junior firemen worsens.</span></li>
+                <li><strong>D.</strong> 救火的安全措施大幅改善。<br><span class="en">Safety measures of fire-fighting are improved drastically.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>概念重溫 Concept Review</h2>
+        <div class="concept-box">
+            <p class="zh"><strong>機會成本 (Opportunity Cost)</strong> 是指在作出選擇時，被放棄的選項中，<strong>價值最高</strong>的那一個。</p>
+            <p class="en"><strong>Opportunity Cost</strong> is the value of the <strong>highest-valued option forgone</strong> when a choice is made.</p>
+            
+            <div class="formula">
+                $$ \text{Cost} = \text{Value of the Best Alternative Forgone} $$
+            </div>
+
+            <p class="zh">進行成本效益分析時，我們只會比較「被選中的選項的價值」(Benefit) 與「機會成本」(Cost)。任何價值低於「最高放棄選項」的選擇，都是<strong>不相關</strong>的。</p>
+            <p class="en">When conducting a cost-benefit analysis, we only compare the "Value of the Chosen Option" (Benefit) against the "Opportunity Cost" (Cost). Any option with a value lower than the "best alternative" is <strong>irrelevant</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>答案與詳細分析 Answer & Analysis</h2>
+        
+        <div class="option-analysis correct">
+            <span class="tag correct">Correct Answer: Option C</span>
+            <p class="zh"><strong>初級消防員的薪金下降。</strong></p>
+            <p class="en"><strong>The remuneration of junior firemen worsens.</strong></p>
+            <hr style="border: 0; border-top: 1px solid #bbf7d0; margin: 10px 0;">
+            <p class="zh"><strong>分析：</strong>湯美的選擇次序是：咖啡師 > 市場推廣 > 消防員。
+            <br>機會成本是「被放棄的選項中價值最高者」，即<strong>第二選項（市場推廣）</strong>。
+            <br>第三選項（消防員）的價值本來已經低於第二選項。如果消防員的薪金再下降，它的價值只會更低，依然無法超越第二選項。因此，機會成本仍然是「市場推廣」，對湯美的決定完全沒有影響。</p>
+            
+            <p class="en"><strong>Analysis:</strong> Tommy's preference order is: Barista > Marketing > Fireman.
+            <br>Opportunity Cost is the "highest-valued option forgone," which is the <strong>2nd Option (Marketing)</strong>.
+            <br>The 3rd Option (Fireman) is already valued lower than the 2nd. If the fireman's pay drops, its value decreases further, meaning it still cannot surpass the 2nd option. Thus, the opportunity cost remains "Marketing," and this factor has zero impact on his decision.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="tag wrong">Option A (Distractor)</span>
+            <p class="zh"><strong>咖啡文化愈趨普及。</strong></p>
+            <p class="en"><strong>Coffee culture becomes more popular.</strong></p>
+            <p class="zh">這會增加第一選項（咖啡師）的價值（Benefit）。這直接改變了成本效益分析中的「效益」部分。</p>
+            <p class="en">This increases the value (Benefit) of the 1st Option (Barista). This directly changes the "Benefit" side of the cost-benefit analysis.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="tag wrong">Option B (Distractor)</span>
+            <p class="zh"><strong>更多公司擴張其數碼市場推廣部。</strong></p>
+            <p class="en"><strong>More companies expand their digital marketing departments.</strong></p>
+            <p class="zh">這會增加第二選項（市場推廣）的價值。由於這是「被放棄的最高價值選項」，這會直接增加湯美選擇當咖啡師的<strong>機會成本</strong>。</p>
+            <p class="en">This increases the value of the 2nd Option (Marketing). Since this is the "highest-valued option forgone," it directly increases the <strong>Opportunity Cost</strong> of choosing to be a barista.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="tag wrong">Option D (Tricky Distractor)</span>
+            <p class="zh"><strong>救火的安全措施大幅改善。</strong></p>
+            <p class="en"><strong>Safety measures of fire-fighting are improved drastically.</strong></p>
+            <p class="zh">這會增加第三選項（消防員）的價值。雖然它目前排第三，但如果改善是「大幅」的，第三選項的價值<strong>有可能</strong>超越第二選項。如果發生這種情況，機會成本就會改變。因此，這是有可能影響分析的。</p>
+            <p class="en">This increases the value of the 3rd Option (Fireman). Although it is currently ranked 3rd, if the improvement is "drastic," the value of the 3rd option <strong>could potentially</strong> surpass the 2nd option. If that happens, the opportunity cost changes. Therefore, this is likely to affect the analysis.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <p class="zh">這類題目主要測試你是否能分辨「相關」與「不相關」的選項。</p>
+        <p class="en">This type of question tests your ability to distinguish between "relevant" and "irrelevant" options.</p>
+
+        <div class="pivot-point">
+            <h3>🔑 解題關鍵 Pivot Point</h3>
+            <p><strong>目前的價值排序 (Current Ranking):</strong></p>
+            <p style="text-align: center; font-size: 1.2em;">
+                \( V_1 \) (Barista) > \( V_2 \) (Marketing) > \( V_3 \) (Fireman)
+            </p>
+            <ul style="margin-top: 10px;">
+                <li><strong>Benefit (效益):</strong> \( V_1 \)</li>
+                <li><strong>Cost (成本):</strong> \( V_2 \)</li>
+                <li><strong>Irrelevant (不相關):</strong> \( V_3 \)</li>
+            </ul>
+        </div>
+
+        <p class="zh">要影響成本效益分析，變數必須改變 \( V_1 \) 或 \( V_2 \)。如果變數改變的是 \( V_3 \)，只有當 \( V_3 \) 上升並超過 \( V_2 \) 時才會有影響。</p>
+        <p class="en">To affect the cost-benefit analysis, a factor must change \( V_1 \) or \( V_2 \). If a factor changes \( V_3 \), it only matters if \( V_3 \) rises enough to overtake \( V_2 \).</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section">
+        <h2>學生常見疑問 Student Q&A</h2>
+        
+        <div style="margin-bottom: 20px;">
+            <p class="zh"><strong>Q: 為什麼 D 選項不是答案？它也是關於第三選項啊。</strong></p>
+            <p class="en"><strong>Q: Why is Option D not the answer? It is also about the 3rd option.</strong></p>
+            <p class="zh" style="color: var(--primary);"><strong>A:</strong> 關鍵在於變動的「方向」。<br>
+            選項 C 令第三選項變得<strong>更差</strong>，所以它永遠不可能超越第二選項，絕對不會影響成本。<br>
+            選項 D 令第三選項變得<strong>更好</strong>。題目用了「大幅」(drastically) 這個字，暗示它有可能變得比第二選項更吸引。一旦 \( V_3 > V_2 \)，機會成本就會變成 \( V_3 \)。所以 D 有可能影響，而 C 最不可能。</p>
+            <p class="en" style="color: var(--primary);"><strong>A:</strong> The key is the "direction" of the change.<br>
+            Option C makes the 3rd option <strong>worse</strong>, so it can never surpass the 2nd option, meaning it definitely won't affect the cost.<br>
+            Option D makes the 3rd option <strong>better</strong>. The word "drastically" implies it might become more attractive than the 2nd option. Once \( V_3 > V_2 \), the opportunity cost switches to \( V_3 \). So D <em>could</em> affect it, while C is the <em>least</em> likely.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <h2>考試技巧與速解 Exam Tricks</h2>
+        <div class="concept-box" style="background-color: #fff7ed; border-left-color: #f97316;">
+            <p class="zh"><strong>速解法：由下而上檢查 (Bottom-Up Check)</strong></p>
+            <p class="en"><strong>Quick Fix: Bottom-Up Check</strong></p>
+            <ol>
+                <li><span class="zh">找出排名最低的選項（這裡是 Option 3）。</span><br><span class="en">Identify the lowest-ranked option (Option 3 here).</span></li>
+                <li><span class="zh">如果它的價值<strong>下降</strong>，絕對不影響成本（選這個！）。</span><br><span class="en">If its value <strong>decreases</strong>, it definitely does not affect the cost (Pick this!).</span></li>
+                <li><span class="zh">如果它的價值<strong>上升</strong>，就要小心它可能變成新的機會成本。</span><br><span class="en">If its value <strong>increases</strong>, be careful; it might become the new opportunity cost.</span></li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

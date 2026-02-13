@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Economics - Price Control & Efficiency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <style>
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        .en-text { 
+            display: block; 
+            margin-top: 0.5rem; 
+            color: #4b5563; /* gray-600 */
+            font-size: 0.9em;
+            line-height: 1.5;
+            font-style: italic;
+            border-left: 2px solid #e5e7eb;
+            padding-left: 0.75rem;
+        }
+        .bilingual-block { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+        
+        <!-- Header Section -->
+        <header class="mb-8 border-b pb-6">
+            <div class="flex flex-wrap items-center gap-4 mb-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">HKDSE Economics</span>
+                <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Market Intervention</span>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Price Control & Efficiency / 價格管制與效率</h1>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                <p>📌 <strong>Topic:</strong> Price Control (價格管制)</p>
+                <p>⭐ <strong>Difficulty:</strong> ⭐⭐⭐☆☆</p>
+            </div>
+            <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm">
+                <span class="font-bold text-yellow-800">🔑 Keywords:</span> 
+                Shortage (短缺), Non-price Competition (非價格競爭), Opportunity Cost (機會成本), Total Revenue (總收益)
+            </div>
+        </header>
+
+        <!-- Question Section -->
+        <section class="mb-10 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 border-l-4 border-blue-500 pl-3">題目 / Question (DSE 2014 P1 Q15)</h2>
+            <p class="mb-2 leading-relaxed">
+                參閱有關海底隧道的供需圖。政府建議提高海底隧道的收費，以減輕繁忙時段的交通擠塞情況。假設隧道最大行車流量是固定的。下列哪些陳述是正確的？
+            </p>
+            <p class="mb-6 text-gray-600 text-sm leading-relaxed italic">
+                Refer to the supply-demand diagram for the Cross-Harbour Tunnel. The government proposed to raise the toll for the Cross-Harbour Tunnel so as to lessen the traffic congestion during rush hours. Suppose the maximum vehicular volume of the tunnel is fixed. Which of the following statements are correct?
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="space-y-2">
+                    <div class="p-2 bg-gray-50 rounded">
+                        <p>(1) 對海底隧道服務的需求會減少。</p>
+                        <p class="text-xs text-gray-500 italic">The demand for the service of the Cross-Harbour Tunnel will decrease.</p>
+                    </div>
+                    <div class="p-2 bg-gray-50 rounded">
+                        <p>(2) 海底隧道的總收益會上升。</p>
+                        <p class="text-xs text-gray-500 italic">The total revenue of the Cross-Harbour Tunnel will increase.</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="p-2 bg-gray-50 rounded">
+                        <p>(3) 由交通擠塞引起的效率損失會減少。</p>
+                        <p class="text-xs text-gray-500 italic">The deadweight loss caused by traffic congestion will decrease.</p>
+                    </div>
+                    <div class="p-2 bg-gray-50 rounded">
+                        <p>(4) 司機使用該隧道的機會成本會上升。</p>
+                        <p class="text-xs text-gray-500 italic">The opportunity cost of the drivers using the tunnel will increase.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                A. 只有 (1)、(3) / (1) and (3) only<br>
+                B. 只有 (1)、(4) / (1) and (4) only<br>
+                C. 只有 (2)、(3) / (2) and (3) only<br>
+                D. 只有 (2)、(4) / (2) and (4) only
+            </div>
+        </section>
+
+        <!-- Interactive Diagram Section -->
+        <section class="mb-10">
+            <div id="react-root"></div>
+        </section>
+
+        <!-- Concept Review -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 border-l-4 border-purple-500 pl-3">📚 概念重溫 / Concept Review</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-purple-700 mb-1">1. 需求量改變 vs 需求改變 (Change in Quantity Demanded vs Change in Demand)</h3>
+                    <p class="text-sm text-gray-800">
+                        價格本身的改變只會導致「需求量」沿著同一條需求曲線移動，而不會移動整條需求曲線。
+                    </p>
+                    <span class="en-text">A change in price itself leads to a movement along the demand curve (change in quantity demanded), not a shift of the demand curve (change in demand).</span>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-purple-700 mb-1">2. 短缺與非價格競爭 (Shortage and Non-price Competition)</h3>
+                    <p class="text-sm text-gray-800">
+                        當價格設定在均衡點之下（如圖中的「現在收費」），需求量大於供應量 \(Q_d > Q_s\)，會出現短缺（即交通擠塞）。這部分未能滿足的需求會引發非價格競爭（例如排隊等候）。
+                    </p>
+                    <span class="en-text">When the price is set below equilibrium (like "Existing toll" in the diagram), quantity demanded exceeds quantity supplied \(Q_d > Q_s\), resulting in a shortage (traffic congestion). This leads to non-price competition (e.g., queuing).</span>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-purple-700 mb-1">3. 總社會成本 (Full Cost / Total Social Cost)</h3>
+                    <p class="text-sm text-gray-800">
+                        對於消費者而言，真正的代價（機會成本）是：<br>
+                        \[ \text{機會成本} = \text{金錢價格 (Toll)} + \text{非金錢成本 (Time cost)} \]
+                        在短缺情況下，邊際消費者願意支付的最高價格（需求曲線上的點）等於這兩者的總和。
+                    </p>
+                    <span class="en-text">For consumers, the true cost (opportunity cost) is: Opportunity Cost = Money Price (Toll) + Non-money Cost (Time cost). Under shortage, the marginal consumer's willingness to pay equals the sum of these two.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Analysis -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 border-l-4 border-green-500 pl-3">✅ 答案與詳細分析 / The Answer & Detailed Analysis</h2>
+            
+            <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <span class="font-bold text-green-800 text-lg">正確選項 / Correct Option: C (只有 (2)、(3) / (2) and (3) only)</span>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Option 1 -->
+                <div class="flex gap-4 p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                    <div class="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">1</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">錯誤 / Incorrect</h4>
+                        <p class="text-sm text-gray-800 mt-1">
+                            <strong>分析：</strong> 這是典型的概念陷阱。題目說明是「提高收費」（價格改變）。根據需求定律，價格上升會導致<strong>需求量 (quantity demanded)</strong> 減少，是沿著需求曲線向上移動，而非整條<strong>需求 (demand)</strong> 曲線向左移動。
+                        </p>
+                        <span class="en-text"><strong>Analysis:</strong> This is a classic trap. The question states "raise the toll" (price change). According to the Law of Demand, an increase in price leads to a decrease in <strong>quantity demanded</strong> (movement along the curve), not a decrease in <strong>demand</strong> (shift of the curve).</span>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="flex gap-4 p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold">2</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">正確 / Correct</h4>
+                        <p class="text-sm text-gray-800 mt-1">
+                            <strong>分析：</strong> 留意圖中的供應曲線 \(S\) 是垂直的（完全無彈性），這代表行車流量（交易量）受限於隧道容量。目前的收費低於均衡點，存在短缺，交易量固定在 \(Q_s\)（供應量）。
+                            當收費提高（但仍低於或等於均衡價格時），交易量仍然維持在 \(Q_s\)（因為仍有足夠甚至過多的車輛想使用）。
+                            \[ \text{總收益} = P \times Q \]
+                            既然 \(Q\)（交易量）保持不變，而 \(P\)（收費）上升，總收益必然上升。
+                        </p>
+                        <span class="en-text"><strong>Analysis:</strong> Note that the supply curve \(S\) is vertical (perfectly inelastic), meaning the traffic volume (quantity transacted) is limited by capacity. At the existing toll (below equilibrium), there is a shortage, so the quantity transacted is fixed at \(Q_s\). When the toll is raised (but stays at or below equilibrium), the quantity transacted remains at \(Q_s\). Since \( \text{Total Revenue} = P \times Q \), if \(Q\) is constant and \(P\) increases, Total Revenue must increase.</span>
+                    </div>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="flex gap-4 p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold">3</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">正確 / Correct</h4>
+                        <p class="text-sm text-gray-800 mt-1">
+                            <strong>分析：</strong> 「交通擠塞」本身就是一種無謂損失 (Deadweight Loss, DWL)，因為司機花費時間排隊（非金錢成本），這部分價值耗損了但沒有轉移給隧道公司。提高收費（金錢價格），會減少短缺量（擠塞程度）。這意味著司機支付的成本中，更多部分變成了金錢（轉移給隧道公司），而更少部分浪費在排隊上。因此，因排隊（尋租行為）造成的社會浪費減少，效率提升。
+                        </p>
+                        <span class="en-text"><strong>Analysis:</strong> "Traffic congestion" represents a Deadweight Loss (DWL) because drivers spend time queuing (non-money cost), which is a waste of resources not transferred to the tunnel operator. Raising the toll (money price) reduces the shortage (congestion). This means a larger portion of the cost paid by drivers becomes money (transferred revenue) and less is wasted on queuing. Thus, the social waste caused by queuing (rent-seeking) decreases.</span>
+                    </div>
+                </div>
+
+                <!-- Option 4 -->
+                <div class="flex gap-4 p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                    <div class="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">4</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">錯誤 / Incorrect</h4>
+                        <p class="text-sm text-gray-800 mt-1">
+                            <strong>分析：</strong> 這是一個高階概念。在短缺情況下，邊際司機的<strong>總機會成本</strong>（金錢 + 時間）其實是由<strong>需求曲線的高度</strong>決定的。只要交易量 \(Q\) 仍然固定在供應上限 \(S\) 處，邊際使用者的支付意願（Willingness to pay）就固定在需求曲線對應 \(S\) 的那一點上。
+                            提高收費只是改變了成本的<strong>組合</strong>（金錢成本上升，時間成本下降），但對於邊際使用者來說，總代價（全價）維持不變。
+                        </p>
+                        <span class="en-text"><strong>Analysis:</strong> This is an advanced concept. Under shortage, the <strong>total opportunity cost</strong> (money + time) for the marginal driver is determined by the <strong>height of the demand curve</strong> at the quantity transacted. As long as the quantity remains fixed at the supply limit \(S\), the marginal user's willingness to pay remains fixed at that point on the demand curve. Raising the toll only changes the <strong>composition</strong> of the cost (higher money cost, lower time cost), but the total cost (full price) for the marginal user remains unchanged.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Decomposition -->
+        <section class="mb-10 bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">🔍 題目拆解 / Problem Decomposition</h2>
+            
+            <div class="mb-4">
+                <p class="text-sm text-gray-800">
+                    <strong>破題關鍵 (The Pivot Point):</strong> 垂直的供應曲線 \(S\)。<br>
+                    這意味著無論價格如何變動（只要低於均衡點），<strong>交易量 (Quantity Transacted) 都不會改變</strong>。
+                </p>
+                <span class="en-text"><strong>The Pivot Point:</strong> The vertical Supply curve \(S\). This implies that regardless of price changes (as long as it's below equilibrium), the <strong>Quantity Transacted remains constant</strong>.</span>
+            </div>
+
+            <div class="mb-4">
+                <p class="text-sm text-gray-800">
+                    <strong>邏輯鏈 (Logic Chain):</strong><br>
+                    1. 交易量 \(Q\) 不變 + 價格 \(P\) 上升 \(\rightarrow\) 總收益 \(TR\) 上升 (選項 2 ✅)。<br>
+                    2. 價格上升 \(\rightarrow\) 短缺減少 \(\rightarrow\) 排隊時間減少 \(\rightarrow\) 浪費減少 (選項 3 ✅)。<br>
+                    3. 價格改變 \(\rightarrow\) 沿著曲線移動 \(\neq\) 曲線移動 (選項 1 ❌)。
+                </p>
+                <span class="en-text">
+                    1. Quantity \(Q\) constant + Price \(P\) up \(\rightarrow\) Total Revenue \(TR\) up (Option 2 ✅).<br>
+                    2. Price up \(\rightarrow\) Shortage down \(\rightarrow\) Queuing time down \(\rightarrow\) Waste down (Option 3 ✅).<br>
+                    3. Price change \(\rightarrow\) Movement along curve \(\neq\) Shift of curve (Option 1 ❌).
+                </span>
+            </div>
+        </section>
+
+        <!-- Student Q&A -->
+        <section class="mb-10 bg-blue-50 p-6 rounded-xl border border-blue-100">
+            <h2 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                🙋 學生常見疑問 / Student Q&A
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="font-bold text-blue-800 text-sm">Q: 為什麼選項 (4) 是錯的？既然收費貴了，成本不是應該增加了嗎？</p>
+                    <p class="text-xs text-blue-600 italic mb-2">Q: Why is option (4) wrong? Since the toll is more expensive, shouldn't the cost increase?</p>
+                    
+                    <p class="text-sm text-blue-700 mt-1">
+                        A: 你只看到了「金錢成本」，忽略了「時間成本」。<br>
+                        想像一下：原本收費 $20，但要排隊 1 小時（假設時間價值 $100），總成本是 $120。<br>
+                        現在收費加到 $50，排隊的人少了，只需排隊 42 分鐘（價值 $70），總成本還是 $120。<br>
+                        只要供應量固定，競爭同一數量的車位，最終付出的「全價」（Full Price）是由需求強度決定的，不會因為政府收費多少而改變，只會改變「誰收到了這筆價值」（政府收錢 vs 時間浪費掉）。
+                    </p>
+                    <span class="en-text text-blue-600 border-blue-200">
+                        A: You are only looking at "money cost" and ignoring "time cost". Imagine: Originally toll is $20, but you queue for 1 hour (value $100), Total Cost = $120. Now toll raises to $50, fewer people queue, so you only queue 42 mins (value $70), Total Cost is still $120. As long as supply is fixed, the "Full Price" is determined by demand intensity. It doesn't change with the toll; only the composition changes (government revenue vs. wasted time).
+                    </span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- React Component Script -->
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Simple SVG Icons components to replace lucide-react
+        const IconInfo = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        );
+        const IconClock = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        );
+        const IconDollar = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        );
+        const IconArrowRight = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        );
+
+        const EfficiencyLossDemo = () => {
+            const [scenario, setScenario] = useState('before'); // 'before' or 'after'
+
+            // Chart dimensions and coordinates
+            const width = 500;
+            const height = 350;
+            const padding = 40;
+            
+            // Coordinates
+            const origin = { x: padding, y: height - padding };
+            const qS = 250; // Vertical Supply Line X
+            const dStart = { x: padding, y: 50 }; // Demand start
+            const dEnd = { x: 450, y: height - padding }; // Demand end
+            
+            // Math for Demand: y = mx + c
+            // (padding, 50) to (450, 310)
+            // slope = (310 - 50) / (450 - 40) = 260 / 410 = 0.634
+            const getDy = (x) => 0.634 * (x - padding) + 50;
+            const demandYatQs = getDy(qS); // The max price consumers are willing to pay (Full Cost)
+
+            // Prices (Y coordinates, lower value is higher on screen)
+            // Note: In SVG, smaller Y is higher up.
+            const pEquilibrium = demandYatQs; // This is the "Full Price" level visually
+            const pLow = demandYatQs + 100; // Lower price (visually lower, so higher Y value)
+            const pHigh = demandYatQs + 50; // Higher price (closer to equilibrium)
+
+            const currentP = scenario === 'before' ? pLow : pHigh;
+            
+            return (
+                <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 font-sans">
+                <div className="p-6 bg-blue-50 border-b border-blue-100">
+                    <h2 className="text-xl font-bold text-blue-900 flex items-center gap-2">
+                    <IconInfo />
+                    圖解：效率損失 (Efficiency Loss)
+                    </h2>
+                    <p className="text-sm text-blue-700 mt-1">
+                    Visualizing how raising tolls reduces waste (Time Cost).
+                    </p>
+                </div>
+
+                <div className="p-6">
+                    {/* Controls */}
+                    <div className="flex justify-center gap-4 mb-6">
+                    <button
+                        onClick={() => setScenario('before')}
+                        className={`px-4 py-2 rounded-lg font-medium transition-colors border-2 ${
+                        scenario === 'before' 
+                            ? 'bg-red-100 text-red-700 border-red-300' 
+                            : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
+                        }`}
+                    >
+                        情況 A: 收費較低 (Before)
+                    </button>
+                    <button
+                        onClick={() => setScenario('after')}
+                        className={`px-4 py-2 rounded-lg font-medium transition-colors border-2 ${
+                        scenario === 'after' 
+                            ? 'bg-green-100 text-green-700 border-green-300' 
+                            : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
+                        }`}
+                    >
+                        情況 B: 收費提高 (After)
+                    </button>
+                    </div>
+
+                    {/* The Graph */}
+                    <div className="relative w-full aspect-[5/3.5] bg-white select-none border border-gray-100 rounded-lg">
+                    <svg width="100%" height="100%" viewBox={`0 0 ${width} ${height}`}>
+                        {/* Definitions for gradients/patterns */}
+                        <defs>
+                        <pattern id="diagonalHatchRed" patternUnits="userSpaceOnUse" width="8" height="8">
+                            <path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#ef4444" strokeWidth="1" opacity="0.3" />
+                        </pattern>
+                        <pattern id="diagonalHatchGreen" patternUnits="userSpaceOnUse" width="8" height="8">
+                            <path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#22c55e" strokeWidth="1" opacity="0.3" />
+                        </pattern>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#000" />
+                        </marker>
+                        </defs>
+
+                        {/* Axes */}
+                        <line x1={padding} y1={height - padding} x2={width - 20} y2={height - padding} stroke="black" strokeWidth="2" markerEnd="url(#arrow)" />
+                        <line x1={padding} y1={height - padding} x2={padding} y2={20} stroke="black" strokeWidth="2" markerEnd="url(#arrow)" />
+                        <text x={width - 60} y={height - 10} className="text-sm font-bold">數量 (Q)</text>
+                        <text x={10} y={30} className="text-sm font-bold">收費 (P)</text>
+
+                        {/* Supply Curve (Vertical) */}
+                        <line x1={qS} y1={50} x2={qS} y2={height - padding} stroke="#64748b" strokeWidth="3" />
+                        <text x={qS + 5} y={60} className="text-lg font-bold text-slate-600">S</text>
+
+                        {/* Demand Curve */}
+                        <line x1={dStart.x} y1={dStart.y} x2={dEnd.x} y2={dEnd.y} stroke="#64748b" strokeWidth="3" />
+                        <text x={dEnd.x - 20} y={dEnd.y - 10} className="text-lg font-bold text-slate-600">D</text>
+
+                        {/* AREA: Revenue (Green) */}
+                        <rect 
+                        x={padding} 
+                        y={currentP} 
+                        width={qS - padding} 
+                        height={height - padding - currentP} 
+                        fill="url(#diagonalHatchGreen)" 
+                        stroke="#22c55e"
+                        className="transition-all duration-500"
+                        />
+
+                        {/* AREA: Efficiency Loss / Time Cost (Red) */}
+                        <rect 
+                        x={padding} 
+                        y={pEquilibrium} 
+                        width={qS - padding} 
+                        height={currentP - pEquilibrium} 
+                        fill="url(#diagonalHatchRed)" 
+                        stroke="#ef4444"
+                        className="transition-all duration-500"
+                        />
+
+                        {/* Price Line */}
+                        <line x1={padding} y1={currentP} x2={qS + 40} y2={currentP} stroke="#3b82f6" strokeWidth="2" strokeDasharray="5,5" className="transition-all duration-500" />
+                        <text x={qS + 45} y={currentP + 5} className="text-sm font-bold text-blue-600 transition-all duration-500">
+                        {scenario === 'before' ? '現在收費' : '新收費'}
+                        </text>
+
+                        {/* Labels for Areas */}
+                        <g className="transition-all duration-500" style={{ opacity: 1 }}>
+                        {/* Revenue Label */}
+                        <text x={padding + (qS - padding)/2} y={currentP + (height - padding - currentP)/2 + 5} textAnchor="middle" className="text-sm font-bold fill-green-800">
+                            總收益 (Revenue)
+                        </text>
+                        
+                        {/* Loss Label */}
+                        <text x={padding + (qS - padding)/2} y={pEquilibrium + (currentP - pEquilibrium)/2 + 5} textAnchor="middle" className="text-sm font-bold fill-red-800">
+                            效率損失 / 時間成本
+                        </text>
+                        <text x={padding + (qS - padding)/2} y={pEquilibrium + (currentP - pEquilibrium)/2 + 20} textAnchor="middle" className="text-xs fill-red-700">
+                            (Time Cost)
+                        </text>
+                        </g>
+
+                        {/* Full Price Indicator */}
+                        <line x1={padding} y1={pEquilibrium} x2={qS} y2={pEquilibrium} stroke="#94a3b8" strokeWidth="1" strokeDasharray="2,2" />
+                        <text x={padding + 5} y={pEquilibrium - 5} className="text-xs text-slate-500">
+                        消費者最高支付意願 (Full Price)
+                        </text>
+
+                    </svg>
+                    </div>
+
+                    {/* Explanation Text */}
+                    <div className="mt-6 space-y-4">
+                    <div className="flex items-start gap-3 p-3 bg-red-50 rounded-lg border border-red-100">
+                        <div className="mt-1 text-red-600"><IconClock /></div>
+                        <div>
+                        <h4 className="font-bold text-red-900">紅色區域：效率損失 (Efficiency Loss)</h4>
+                        <p className="text-sm text-red-800 mt-1">
+                            這是<strong>非金錢成本 (Non-money cost)</strong>。由於收費低於均衡點，司機願意支付的「全價」（Full Price）高於實際收費。中間的差額變成了<strong>排隊時間</strong>。這部分價值被浪費掉了（隧道公司收不到，司機也損失了時間）。
+                        </p>
+                        <p className="text-xs text-red-700 mt-2 italic border-l-2 border-red-300 pl-2">
+                            In English: This is the value dissipated through queuing. It represents the time cost wasted.
+                        </p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg border border-green-100">
+                        <div className="mt-1 text-green-600"><IconDollar /></div>
+                        <div>
+                        <h4 className="font-bold text-green-900">綠色區域：總收益 (Total Revenue)</h4>
+                        <p className="text-sm text-green-800 mt-1">
+                            這是隧道公司實際收到的錢。當收費提高（從 A 變 B），綠色區域變大，紅色區域變小。
+                        </p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                        <div className="mt-1 text-blue-600"><IconArrowRight /></div>
+                        <div>
+                        <h4 className="font-bold text-blue-900">結論：為何損失減少？</h4>
+                        <p className="text-sm text-blue-800 mt-1">
+                            當切換到 <strong>「情況 B」</strong> 時，你可以看到紅色區域（浪費的時間）縮小了，並轉化為綠色區域（收益）。雖然司機付的錢多了，但社會整體浪費的資源（時間）減少了，因此效率提升。
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('react-root'));
+        root.render(<EfficiencyLossDemo />);
+    </script>
+</body>
+</html>
