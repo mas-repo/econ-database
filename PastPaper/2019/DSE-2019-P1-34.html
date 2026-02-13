@@ -1,266 +1,279 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-<head><script src="/econ-database/PastPaper/protect.js"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKDSE Economics - Fiscal Drag Analysis</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- MathJax for LaTeX rendering -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
-        
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1e293b;
+            --gray-text: #475569;
+            --success-green: #10b981;
+            --success-bg: #ecfdf5;
+            --warning-yellow: #f59e0b;
+            --warning-bg: #fffbeb;
+            --accent-purple: #8b5cf6;
+            --accent-bg: #f5f3ff;
+        }
+
         body {
-            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
         }
-        .math-block {
-            overflow-x: auto;
-            padding: 1rem;
-            background-color: #f3f4f6;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--primary-blue);
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .tag {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: var(--warning-yellow);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
         .concept-box {
-            background-color: #f0f9ff;
-            border-left: 5px solid #0ea5e9;
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
         }
-        .correct-option {
-            background-color: #dcfce7;
-            border: 2px solid #22c55e;
-            color: #15803d;
+
+        .analysis-box {
+            margin-top: 15px;
         }
-        .wrong-option {
-            background-color: #fee2e2;
-            border: 1px solid #ef4444;
-            opacity: 0.9;
+
+        .option-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+        }
+
+        .option-item.correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-green);
+        }
+
+        .option-item.wrong {
+            background-color: #fef2f2;
+            border-color: #fee2e2;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .trick-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-yellow);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: var(--accent-bg);
+            border-left: 5px solid var(--accent-purple);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        strong {
+            color: var(--dark-text);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden my-8">
+<div class="container">
+    <!-- Header -->
+    <h1>HKDSE Economics - Fiscal Drag Analysis</h1>
+    <div class="meta-info">
+        <span class="tag">Public Finance & Taxation</span>
+        <span class="tag">DSE 2019 P1 Q34</span>
+        <span class="difficulty">Difficulty: ★★★☆☆</span>
+    </div>
+
+    <!-- Question Section -->
+    <div class="question-box">
+        <p>某年的工資率和一般物價水平上升 8%。若政府增加薪俸稅免稅額 5%，</p>
+        <p>Both the wage rate and general price level increase by 8% in a certain year. If the government increases the salaries tax allowance by 5%,</p>
+        <ul style="list-style-type: none; padding-left: 10px;">
+            <li><strong>A.</strong> 更多人會跌入稅網。 (more people will fall into the tax net.)</li>
+            <li><strong>B.</strong> 收入分佈會變得更平均。 (income distribution will become more even.)</li>
+            <li><strong>C.</strong> 政府的稅收會減少。 (government’s tax revenue will decrease.)</li>
+            <li><strong>D.</strong> 人們的稅後實質收入會增加。 (people’s real income after tax will increase.)</li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p><strong>1. Fiscal Drag (財政拖累):</strong><br>
+        當通脹發生時，若 <strong>免稅額 (Tax Allowance)</strong> 的調整幅度低於名義收入的增長幅度，納稅人會被迫繳納更高比例的稅款，或原本不用交稅的人跌入稅網。<br>
+        <em>Occurs when inflation pushes income into higher tax brackets or into the tax net because tax allowances do not increase as fast as nominal income.</em></p>
         
-        <!-- 1. Header -->
-        <div class="bg-slate-800 text-white p-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div>
-                    <h1 class="text-2xl font-bold mb-2">Public Finance & Taxation (公共財政與稅收)</h1>
-                    <p class="text-slate-300 text-sm">HKDSE Economics / DSE 經濟科</p>
-                </div>
-                <div class="mt-4 md:mt-0 text-right">
-                    <div class="text-yellow-400 font-bold text-lg">Difficulty: ★★★☆☆</div>
-                    <div class="text-xs text-slate-400 mt-1">
-                        Key Concepts: Fiscal Drag (財政拖累), Tax Net (稅網), Real Income (實質收入)
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p><strong>2. Tax Net (稅網):</strong><br>
+        只有當 \( \text{Nominal Income} > \text{Tax Allowance} \) 時，市民才需要繳交薪俸稅（跌入稅網）。<br>
+        <em>People only pay salaries tax (fall into the tax net) when their Nominal Income exceeds the Tax Allowance.</em></p>
 
-        <div class="p-6 md:p-8 space-y-8">
-
-            <!-- 2. The Question -->
-            <section>
-                <h2 class="text-xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">
-                    The Question (題目)
-                </h2>
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <p class="mb-4 text-lg font-medium">
-                        某年的工資率和一般物價水平上升 8%。若政府增加薪俸稅免稅額 5%，
-                    </p>
-                    <p class="mb-6 text-lg font-medium text-slate-600">
-                        Both the wage rate and general price level increase by 8% in a certain year. If the government increases the salaries tax allowance by 5%,
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-3 border rounded hover:bg-gray-100 cursor-pointer transition">
-                            <span class="font-bold mr-2">A.</span> 更多人會跌入稅網。<br>
-                            <span class="text-sm text-slate-500 ml-6">more people will fall into the tax net.</span>
-                        </div>
-                        <div class="p-3 border rounded hover:bg-gray-100 cursor-pointer transition">
-                            <span class="font-bold mr-2">B.</span> 收入分佈會變得更平均。<br>
-                            <span class="text-sm text-slate-500 ml-6">income distribution will become more even.</span>
-                        </div>
-                        <div class="p-3 border rounded hover:bg-gray-100 cursor-pointer transition">
-                            <span class="font-bold mr-2">C.</span> 政府的稅收會減少。<br>
-                            <span class="text-sm text-slate-500 ml-6">government’s tax revenue will decrease.</span>
-                        </div>
-                        <div class="p-3 border rounded hover:bg-gray-100 cursor-pointer transition">
-                            <span class="font-bold mr-2">D.</span> 人們的稅後實質收入會增加。<br>
-                            <span class="text-sm text-slate-500 ml-6">people’s real income after tax will increase.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3. Concept Review -->
-            <section class="concept-box p-6 rounded-lg">
-                <h2 class="text-xl font-bold text-sky-800 mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                    Concept Review (概念重溫)
-                </h2>
-                
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-bold text-sky-900">1. Fiscal Drag (財政拖累)</h3>
-                        <p class="text-sm md:text-base">
-                            當通脹發生時，若<b>免稅額 (Tax Allowance)</b> 或 <b>稅階 (Tax Brackets)</b> 的調整幅度低於名義收入的增長幅度，納稅人會被迫繳納更高比例的稅款，或原本不用交稅的人跌入稅網。
-                        </p>
-                        <p class="text-sm text-slate-600 mt-1">
-                            Occurs when inflation pushes income into higher tax brackets or into the tax net, because tax allowances or brackets do not increase as fast as nominal income.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-sky-900">2. Tax Net (稅網)</h3>
-                        <p class="text-sm md:text-base">
-                            只有當 <b>名義收入 \( > \) 免稅額</b> 時，市民才需要繳交薪俸稅（跌入稅網）。
-                        </p>
-                        <p class="text-sm text-slate-600 mt-1">
-                            People only pay salaries tax (fall into the tax net) when their <b>Nominal Income \( > \) Tax Allowance</b>.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-sky-900">3. Real Income (實質收入)</h3>
-                        <div class="math-block text-center text-sm md:text-base">
-                            \[ \text{Real Income} = \frac{\text{Nominal Income}}{\text{Price Level}} \]
-                            \[ \text{實質收入} = \frac{\text{名義收入}}{\text{物價水平}} \]
-                        </div>
-                        <p class="text-sm md:text-base">
-                            若名義收入上升幅度 \( = \) 物價上升幅度，則<b>稅前</b>實質收入不變。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 4. Analysis -->
-            <section>
-                <h2 class="text-xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">
-                    Answer & Detailed Analysis (答案與詳細分析)
-                </h2>
-
-                <div class="mb-6">
-                    <div class="inline-block px-4 py-2 bg-green-600 text-white font-bold rounded-lg text-lg shadow-md">
-                        Correct Answer: Option A
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Option A -->
-                    <div class="correct-option p-4 rounded-lg">
-                        <h3 class="font-bold text-green-800 text-lg mb-2">Option A: More people will fall into the tax net (Correct)</h3>
-                        <p class="mb-2">
-                            <b>分析：</b> 名義工資上升了 \(8\%\)，但免稅額只上升了 \(5\%\)。這意味著收入增長快於免稅額的調整。
-                            <br>假設某人原本的收入剛好等於舊的免稅額（未跌入稅網）。現在他的收入增加了 \(8\%\)，但保護傘（免稅額）只高了 \(5\%\)。因此，他的新收入會高於新免稅額，從而跌入稅網。
-                        </p>
-                        <p class="text-slate-700 text-sm border-t border-green-200 pt-2 mt-2">
-                            <b>Analysis:</b> Nominal wages increased by \(8\%\), while the tax allowance only increased by \(5\%\). Income grew faster than the allowance.
-                            <br>Consider a person whose income was previously exactly equal to the old allowance (paying no tax). Now, their income is \(8\%\) higher, but the threshold is only \(5\%\) higher. Their new income exceeds the new allowance, causing them to fall into the tax net.
-                        </p>
-                    </div>
-
-                    <!-- Option B -->
-                    <div class="wrong-option p-4 rounded-lg">
-                        <h3 class="font-bold text-red-800 text-lg mb-2">Option B: Income distribution will become more even</h3>
-                        <p class="mb-2">
-                            <b>分析：</b> 雖然高收入人士可能繳納更多稅款，但低收入人士（原本不用交稅的）現在可能被迫交稅（跌入稅網）。這種「財政拖累」通常對剛跌入稅網的低收入階層打擊較大，未必能改善收入分佈，甚至可能惡化貧富差距（視乎具體稅階結構）。因此不能確定收入分佈會變得更平均。
-                        </p>
-                        <p class="text-slate-700 text-sm border-t border-red-200 pt-2 mt-2">
-                            <b>Analysis:</b> While high-income earners pay more, low-income earners (previously tax-exempt) are now dragged into the tax net. This "fiscal drag" often hurts the lower-income group entering the system significantly. It does not necessarily make the distribution more even; it might even worsen it depending on the specific tax brackets.
-                        </p>
-                    </div>
-
-                    <!-- Option C -->
-                    <div class="wrong-option p-4 rounded-lg">
-                        <h3 class="font-bold text-red-800 text-lg mb-2">Option C: Government’s tax revenue will decrease</h3>
-                        <p class="mb-2">
-                            <b>分析：</b> 由於收入增長 (\(8\%\)) 大於免稅額增長 (\(5\%\))，應課稅收入 (Taxable Income) 增加了。加上更多人跌入稅網，政府的稅基擴大了，稅收總額必然<b>增加</b>而非減少。
-                        </p>
-                        <p class="text-slate-700 text-sm border-t border-red-200 pt-2 mt-2">
-                            <b>Analysis:</b> Since income growth (\(8\%\)) exceeds allowance growth (\(5\%\)), the taxable income increases. Additionally, more people fall into the tax net, expanding the tax base. Therefore, total tax revenue will definitely <b>increase</b>, not decrease.
-                        </p>
-                    </div>
-
-                    <!-- Option D -->
-                    <div class="wrong-option p-4 rounded-lg">
-                        <h3 class="font-bold text-red-800 text-lg mb-2">Option D: People’s real income after tax will increase</h3>
-                        <p class="mb-2">
-                            <b>分析：</b> 
-                            1. 稅前：名義工資 \( \uparrow 8\% \)，物價 \( \uparrow 8\% \) \(\rightarrow\) 稅前實質工資不變。<br>
-                            2. 稅後：由於免稅額調整滯後（只加 \(5\%\)），市民需繳交的實質稅款增加了（財政拖累）。<br>
-                            3. 結論：賺的一樣多（實質），但交的稅多了（實質），所以落袋的錢（稅後實質收入）<b>減少</b>了。
-                        </p>
-                        <p class="text-slate-700 text-sm border-t border-red-200 pt-2 mt-2">
-                            <b>Analysis:</b>
-                            1. Pre-tax: Nominal wages \( \uparrow 8\% \), Prices \( \uparrow 8\% \) \(\rightarrow\) Pre-tax real wages remain constant.<br>
-                            2. After-tax: Because the allowance adjustment lagged (\(5\%\)), the real tax burden increased (fiscal drag).<br>
-                            3. Conclusion: You earn the same in real terms, but pay more real tax. Therefore, real income after tax <b>decreases</b>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 5. Problem Decomposition -->
-            <section class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
-                <h2 class="text-xl font-bold text-indigo-900 mb-4">Problem Decomposition (題目拆解)</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold text-indigo-700 mb-2">The Pivot Point (關鍵點)</h4>
-                        <p class="text-sm">
-                            這題的勝負關鍵在於比較兩個百分比：
-                            <br>
-                            <span class="font-mono bg-white px-2 py-1 rounded border">Income \(\%\Delta\) vs Allowance \(\%\Delta\)</span>
-                        </p>
-                        <ul class="list-disc list-inside mt-2 text-sm text-slate-700 space-y-1">
-                            <li>Income: \(+8\%\)</li>
-                            <li>Allowance: \(+5\%\)</li>
-                            <li><b>Result:</b> Income wins. The "Tax Shield" shrinks relative to income.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-indigo-700 mb-2">Distractors (干擾項)</h4>
-                        <p class="text-sm">
-                            <b>"Price Level increases by 8%" (物價上升 8%)</b>
-                        </p>
-                        <p class="text-sm text-slate-600 mt-1">
-                            這個資訊對於判斷 Option A (跌入稅網) 是<b>無關的</b>。稅網只看「名義收入」和「免稅額」。
-                            <br>
-                            但這個資訊對於排除 Option D (實質收入) 是<b>至關重要的</b>，因為它鎖定了通脹率。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 6. Exam Tricks -->
-            <section>
-                <h2 class="text-xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-4">
-                    Exam Tricks & Shortcuts (考試技巧與速解)
-                </h2>
-                <div class="bg-yellow-50 p-4 rounded-l-4 border-l-4 border-yellow-400">
-                    <h3 class="font-bold text-yellow-800">Numerical Substitution Method (代數字法)</h3>
-                    <p class="text-sm text-slate-700 mt-2">
-                        如果覺得百分比很抽象，直接代入數字：
-                    </p>
-                    <div class="mt-3 bg-white p-3 rounded border border-yellow-200 text-sm font-mono">
-                        <p>假設舊收入 = $100, 舊免稅額 = $100 (不用交稅)</p>
-                        <p class="text-gray-400">--- 變化後 ---</p>
-                        <p>新收入 = $100 \times 1.08 = $108</p>
-                        <p>新免稅額 = $100 \times 1.05 = $105</p>
-                        <p class="text-red-600 font-bold">結果：收入 ($108) > 免稅額 ($105)。跌入稅網！</p>
-                    </div>
-                    <p class="text-sm text-slate-600 mt-2">
-                        Use simple numbers ($100) to verify logic instantly.
-                    </p>
-                </div>
-            </section>
-
+        <p><strong>3. Real Income (實質收入):</strong></p>
+        <div class="math-block">
+            $$ \text{Real Income} = \frac{\text{Nominal Income}}{\text{Price Level}} $$
         </div>
     </div>
+
+    <!-- Detailed Analysis -->
+    <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="option-item correct">
+        <span class="option-label">Option A (Correct):</span>
+        <strong>更多人會跌入稅網。 (More people will fall into the tax net.)</strong>
+        <p><strong>分析：</strong>名義工資上升了 \(8\%\)，但免稅額只上升了 \(5\%\)。這意味著收入增長快於免稅額的調整。假設某人原本的收入剛好等於舊的免稅額（未跌入稅網）。現在他的收入增加了 \(8\%\)，但保護傘（免稅額）只高了 \(5\%\)。因此，他的新收入會高於新免稅額，從而跌入稅網。</p>
+        <p><strong>Analysis:</strong> Nominal wages increased by \(8\%\), while the tax allowance only increased by \(5\%\). Income grew faster than the allowance. Consider a person whose income was previously exactly equal to the old allowance. Now, their income is \(8\%\) higher, but the threshold is only \(5\%\) higher. Their new income exceeds the new allowance, causing them to fall into the tax net.</p>
+    </div>
+
+    <div class="option-item wrong">
+        <span class="option-label">Option B:</span>
+        收入分佈會變得更平均。 (Income distribution will become more even.)
+        <p><strong>分析：</strong>雖然高收入人士可能繳納更多稅款，但低收入人士（原本不用交稅的）現在可能被迫交稅。這種「財政拖累」通常對剛跌入稅網的低收入階層打擊較大，未必能改善收入分佈，甚至可能惡化貧富差距。</p>
+        <p><strong>Analysis:</strong> While high-income earners pay more, low-income earners (previously tax-exempt) are now dragged into the tax net. This often hurts the lower-income group significantly and does not necessarily make the distribution more even.</p>
+    </div>
+
+    <div class="option-item wrong">
+        <span class="option-label">Option C:</span>
+        政府的稅收會減少。 (Government’s tax revenue will decrease.)
+        <p><strong>分析：</strong>由於收入增長 (\(8\%\)) 大於免稅額增長 (\(5\%\))，應課稅收入 (Taxable Income) 增加了。加上更多人跌入稅網，政府的稅基擴大了，稅收總額必然<strong>增加</strong>。</p>
+        <p><strong>Analysis:</strong> Since income growth (\(8\%\)) exceeds allowance growth (\(5\%\)), taxable income increases. Additionally, more people fall into the tax net, expanding the tax base. Tax revenue will <strong>increase</strong>.</p>
+    </div>
+
+    <div class="option-item wrong">
+        <span class="option-label">Option D:</span>
+        人們的稅後實質收入會增加。 (People’s real income after tax will increase.)
+        <p><strong>分析：</strong>
+        1. 稅前：名義工資 \( \uparrow 8\% \)，物價 \( \uparrow 8\% \) \(\rightarrow\) 稅前實質工資不變。<br>
+        2. 稅後：由於免稅額調整滯後（只加 \(5\%\)），市民需繳交的實質稅款增加了（財政拖累）。<br>
+        3. 結論：賺的一樣多（實質），但交的稅多了（實質），所以落袋的錢（稅後實質收入）<strong>減少</strong>了。</p>
+        <p><strong>Analysis:</strong> Pre-tax real wages remain constant (both wage and prices \( \uparrow 8\% \)). However, because the tax allowance lagged (\(5\%\)), the real tax burden increased. Therefore, real income after tax <strong>decreases</strong>.</p>
+    </div>
+
+    <!-- Exam Tricks -->
+    <h2>Exam Tricks: Numerical Substitution (代數字法)</h2>
+    <div class="trick-box">
+        <p>如果覺得百分比很抽象，直接代入數字 (Use simple numbers to verify logic)：</p>
+        <p>假設 (Assume):<br>
+        舊收入 (Old Income) = $100<br>
+        舊免稅額 (Old Allowance) = $100 (不用交稅 / No Tax)</p>
+        <hr style="border-top: 1px dashed #d97706; margin: 10px 0;">
+        <p>變化後 (After Change):<br>
+        新收入 (New Income) = \( 100 \times 1.08 = \$108 \)<br>
+        新免稅額 (New Allowance) = \( 100 \times 1.05 = \$105 \)</p>
+        <p><strong>結果 (Result):</strong> 收入 ($108) > 免稅額 ($105)。<br>
+        <strong>跌入稅網！ (Fall into the tax net!)</strong></p>
+    </div>
+
+    <!-- Student Q&A Section -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q1: 為什麼判斷 Option A (跌入稅網) 時，不需要考慮「物價上升 8%」？</strong><br>
+        <em>Why don't we consider the "8% price level increase" when analyzing Option A?</em></p>
+        <p><strong>A:</strong> 稅務局決定你是否需要交稅，只看你的「名義收入」(Nominal Income) 是否高於「免稅額」。物價水平只影響你的購買力（實質收入），但不影響你是否跌入稅網。稅網的門檻是名義數值 (Nominal value)。<br>
+        <em>The tax department determines if you pay tax based solely on whether your Nominal Income exceeds the Allowance. The price level affects your purchasing power (Real Income) but has no bearing on the legal threshold for the tax net, which is a nominal figure.</em></p>
+        
+        <br>
+        
+        <p><strong>Q2: 如果免稅額增加了 10% (高於通脹和工資增長)，結果會怎樣？</strong><br>
+        <em>What if the tax allowance increased by 10% (higher than inflation and wage growth)?</em></p>
+        <p><strong>A:</strong> 那就會出現相反的情況。因為免稅額的增長 (\(10\%\)) 快於收入增長 (\(8\%\))，保護傘變大了。原本剛好在稅網邊緣的人可能會跌出稅網 (fall out of the tax net)，而納稅人的實質稅務負擔會減輕。<br>
+        <em>The opposite would happen. Since the allowance growth (\(10\%\)) outpaces income growth (\(8\%\)), the "shield" gets larger. People on the margin might fall out of the tax net, and the real tax burden for taxpayers would decrease.</em></p>
+    </div>
+
+</div>
 
 </body>
 </html>

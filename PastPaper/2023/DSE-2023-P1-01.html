@@ -1,91 +1,73 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-<head><script src="/econ-database/PastPaper/protect.js"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKDSE Economics Guide: Opportunity Cost</title>
+    <title>HKDSE Economics Analysis: Opportunity Cost</title>
     <!-- MathJax for LaTeX rendering -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-bg: #eff6ff;
-            --text-color: #1f2937;
-            --light-text: #6b7280;
-            --success-color: #10b981;
-            --error-color: #ef4444;
-            --warning-bg: #fffbeb;
-            --warning-border: #fcd34d;
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-green: #10b981; /* Green for correct */
+            --accent-red: #ef4444; /* Red for wrong */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
-            background-color: #f9fafb;
+            padding: 20px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            min-height: 100vh;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
         }
 
-        /* Header Section */
         header {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .meta-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 0.9rem;
-            color: var(--light-text);
-        }
-
-        .badge {
-            background-color: var(--accent-bg);
-            color: var(--primary-color);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Question Section */
-        .question-box {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
             padding: 20px;
-            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .q-text {
-            margin-bottom: 15px;
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        header .meta-info {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .question-box {
+            background-color: #f1f5f9;
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .question-text {
             font-weight: 500;
-        }
-
-        .q-text.en {
-            color: #4b5563;
-            font-style: italic;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            font-weight: 400;
+            margin-bottom: 15px;
         }
 
         .options-list {
@@ -100,257 +82,247 @@
             transition: background-color 0.2s;
         }
 
-        .options-list li:hover {
-            background-color: #f3f4f6;
-        }
-
-        /* Concept Review */
-        .concept-section {
-            background-color: var(--accent-bg);
-            border-left: 5px solid var(--primary-color);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .concept-title {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .section-title {
             display: flex;
             align-items: center;
-        }
-
-        .math-block {
-            background-color: rgba(255, 255, 255, 0.6);
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-            text-align: center;
-            font-family: "Times New Roman", Times, serif;
-        }
-
-        /* Answer Analysis */
-        .answer-section {
-            margin-bottom: 30px;
-        }
-
-        .correct-answer {
-            font-size: 1.5rem;
-            color: var(--success-color);
+            font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 10px;
+            color: var(--secondary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
         }
 
-        .option-analysis {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .option-analysis.correct {
-            border-color: var(--success-color);
-            background-color: #ecfdf5;
-        }
-
-        .option-analysis.wrong {
-            border-left: 4px solid #d1d5db;
-        }
-
-        .option-label {
-            font-weight: bold;
+        .section-title span {
             margin-right: 10px;
         }
 
-        .bilingual-p {
-            margin-bottom: 8px;
-        }
-
-        .en-trans {
-            color: #555;
-            font-size: 0.95em;
-            margin-top: 4px;
-            display: block;
-        }
-
-        /* Decomposition & Tricks */
-        .strategy-box {
-            background-color: var(--warning-bg);
-            border: 1px solid var(--warning-border);
+        .concept-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
-        .strategy-title {
-            color: #92400e;
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .analysis-item.correct {
+            background-color: #ecfdf5;
+            border: 1px solid #a7f3d0;
+        }
+
+        .analysis-item.wrong {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            color: white;
+            margin-bottom: 5px;
         }
 
-        /* Responsive */
+        .badge.correct { background-color: var(--accent-green); }
+        .badge.wrong { background-color: var(--accent-red); }
+
+        .trick-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .qa-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-question {
+            font-weight: bold;
+            color: #86198f;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; }
-            .container { padding: 15px; }
+            body { padding: 10px; }
+            header h1 { font-size: 1.2rem; }
+            .content { padding: 15px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-
-    <!-- 1. Header -->
     <header>
         <h1>HKDSE Economics Analysis</h1>
         <div class="meta-info">
-            <span><strong>Topic:</strong> Basic Economic Concepts (基本經濟概念)</span>
-            <span><strong>Sub-topic:</strong> Opportunity Cost (機會成本)</span>
-            <span><strong>Difficulty:</strong> ★★★☆☆</span>
-            <span class="badge">Sunk Cost</span>
-            <span class="badge">Implicit Cost</span>
+            Topic: Basic Economic Concepts (基本經濟概念) | Opportunity Cost (機會成本)<br>
+            Difficulty: ★★★☆☆
         </div>
     </header>
 
-    <!-- 2. The Question -->
-    <section class="question-box">
-        <div class="q-text">
-            張先生兩年前以$5 000 000購入一個餐廳鋪位，並於該鋪位出售「兩餸飯」。由於他的店鋪附近最近開了一些新餐廳，導致他每月的利潤由$30 000下降至$10 000。一名商人提出以每月$15 000租金租用張先生的鋪位。
-            <br><br>
-            下列哪項屬張先生繼續於該鋪位經營「兩餸飯」生意的機會成本？
-        </div>
-        <div class="q-text en">
-            Mr Cheung bought restaurant premises 2 years ago for $5 000 000 and sells 'two-dish-rice' meal boxes at the premises. Recently, his monthly profit has decreased from $30 000 to $10 000 due to the opening of new restaurants nearby. A businessman offers to rent Mr Cheung's restaurant premises for a monthly rental of $15 000.
-            <br><br>
-            Which of the following would be included in Mr Cheung's opportunity cost of continuing to operate his 'two-dish-rice' business at the premises?
+    <div class="content">
+        <!-- Question Section -->
+        <div class="question-box">
+            <div class="question-text">
+                <p>張先生兩年前以$5 000 000購入一個餐廳鋪位，並於該鋪位出售「兩餸飯」。由於他的店鋪附近最近開了一些新餐廳，導致他每月的利潤由$30 000下降至$10 000。一名商人提出以每月$15 000租金租用張先生的鋪位。</p>
+                <p>下列哪項屬張先生繼續於該鋪位經營「兩餸飯」生意的機會成本？</p>
+                <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+                <p>Mr Cheung bought restaurant premises 2 years ago for $5 000 000 and sells 'two-dish-rice' meal boxes at the premises. Recently, his monthly profit has decreased from $30 000 to $10 000 due to the opening of new restaurants nearby. A businessman offers to rent Mr Cheung's restaurant premises for a monthly rental of $15 000.</p>
+                <p>Which of the following would be included in Mr Cheung's opportunity cost of continuing to operate his 'two-dish-rice' business at the premises?</p>
+            </div>
+            <ul class="options-list">
+                <li>A. 該鋪位的購入價$5 000 000 (the $5 000 000 purchase price of the restaurant premises)</li>
+                <li>B. 每月$10 000的利潤 (the $10 000 monthly profit)</li>
+                <li><strong>C. 每月$15 000的租金 (the $15 000 monthly rental) ✅</strong></li>
+                <li>D. 每月減少了的$20 000利潤 (the $20 000 drop in monthly profit)</li>
+            </ul>
         </div>
 
-        <ul class="options-list">
-            <li>A. 該鋪位的購入價$5 000 000 (the $5 000 000 purchase price of the restaurant premises)</li>
-            <li>B. 每月$10 000的利潤 (the $10 000 monthly profit)</li>
-            <li>C. 每月$15 000的租金 (the $15 000 monthly rental)</li>
-            <li>D. 每月減少了的$20 000利潤 (the $20 000 drop in monthly profit)</li>
-        </ul>
-    </section>
+        <!-- Concept Review -->
+        <div class="section-title">
+            <span>📚</span> Concept Review (概念重溫)
+        </div>
+        <div class="concept-box">
+            <p><strong>1. 機會成本 (Opportunity Cost):</strong><br>
+            定義為「被放棄的選擇中，價值最高的一項」。<br>
+            <em>Defined as "the highest-valued option forgone".</em></p>
+            
+            <div class="math-block">
+                $$ \text{Opportunity Cost} = \text{Explicit Cost} + \text{Implicit Cost} $$
+                $$ \text{機會成本} = \text{顯性成本} + \text{隱性成本} $$
+            </div>
 
-    <!-- 3. Concept Review -->
-    <section class="concept-section">
-        <div class="concept-title">📚 Concept Review (概念重溫)</div>
+            <p><strong>2. 隱性成本 (Implicit Cost):</strong><br>
+            使用擁有者自己提供的資源（如自己的店鋪、時間）而放棄的收入。<br>
+            <em>Income forgone by using the owner's own resources (e.g., own shop, time).</em></p>
+
+            <p><strong>3. 沉沒成本 (Sunk Cost):</strong><br>
+            已經支付且無法收回的成本。在做當前決定時，<strong>不應</strong>計算在內。<br>
+            <em>Costs that have already been incurred and cannot be recovered. They should <strong>NOT</strong> be included in current decision-making.</em></p>
+        </div>
+
+        <!-- Detailed Analysis -->
+        <div class="section-title">
+            <span>🔍</span> Option Analysis (選項分析)
+        </div>
+
+        <div class="analysis-item correct">
+            <span class="badge correct">Correct Answer: Option C</span>
+            <p><strong>每月$15 000的租金 (the $15 000 monthly rental)</strong></p>
+            <p>如果張先生選擇繼續經營生意（選項 1），他就不能將鋪位租給商人（選項 2）。因此，他放棄了每月 \( \$15\,000 \) 的租金收入。這是使用自己鋪位的<strong>隱性成本 (Implicit Cost)</strong>，屬於機會成本的一部分。</p>
+            <p><em>If Mr. Cheung chooses to continue the business (Option 1), he cannot rent the premises to the businessman (Option 2). Therefore, he forgoes the monthly rental income of \( \$15\,000 \). This is the <strong>Implicit Cost</strong> of using his own premises and is part of the opportunity cost.</em></p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <span class="badge wrong">Option A (Wrong)</span>
+            <p><strong>該鋪位的購入價$5 000 000</strong></p>
+            <p>這是兩年前已經支付的款項，屬於<strong>沉沒成本 (Sunk Cost)</strong>。無論張先生現在決定繼續經營還是出租鋪位，這筆錢都無法收回，因此不屬於現時決定的機會成本。</p>
+            <p><em>The \( \$5\,000\,000 \) is a payment made two years ago. It is a <strong>Sunk Cost</strong>. Whether Mr. Cheung continues business or rents out the shop, this money cannot be recovered. Therefore, it is not part of the current opportunity cost.</em></p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <span class="badge wrong">Option B (Wrong)</span>
+            <p><strong>每月$10 000的利潤</strong></p>
+            <p>這是張先生選擇繼續經營生意所獲得的<strong>回報 (Benefit)</strong>，而不是成本。機會成本是指你「放棄」了什麼，而不是你「得到」了什麼。</p>
+            <p><em>This is the <strong>benefit</strong> Mr. Cheung gains from continuing the business, not the cost. Opportunity cost refers to what you "give up", not what you "get".</em></p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <span class="badge wrong">Option D (Wrong)</span>
+            <p><strong>每月減少了的$20 000利潤</strong></p>
+            <p>這是過去利潤（\( \$30\,000 \)）與現在利潤（\( \$10\,000 \)）的比較。機會成本是比較「現在的選項」（經營 vs 出租），而不是比較「現在與過去」。過去的高利潤已經不存在，不是現時可供選擇的選項。</p>
+            <p><em>This is a comparison between past profit (\( \$30\,000 \)) and current profit (\( \$10\,000 \)). Opportunity cost compares "current options" (Operating vs. Renting), not "current vs. past". The past high profit no longer exists and is not an available option now.</em></p>
+        </div>
+
+        <!-- Problem Decomposition -->
+        <div class="section-title">
+            <span>🧩</span> Problem Decomposition (題目拆解)
+        </div>
+        <p>這類題目要求你找出<strong>「為了做這件事，我放棄了什麼？」</strong><br>
+        <em>(What did I give up to do this?)</em></p>
         
-        <p><strong>1. 機會成本 (Opportunity Cost):</strong><br>
-        定義為「被放棄的選擇中，價值最高的一項」。<br>
-        <span class="en-trans">Defined as "the highest-valued option forgone".</span>
-        </p>
-        
-        <div class="math-block">
-            $$ \text{Opportunity Cost} = \text{Explicit Cost} + \text{Implicit Cost} $$
-            $$ \text{機會成本} = \text{顯性成本} + \text{隱性成本} $$
-        </div>
-
-        <p><strong>2. 隱性成本 (Implicit Cost):</strong><br>
-        使用擁有者自己提供的資源（如自己的店鋪、時間）而放棄的收入。<br>
-        <span class="en-trans">Income forgone by using the owner's own resources (e.g., own shop, time).</span>
-        </p>
-
-        <p><strong>3. 沉沒成本 (Sunk Cost):</strong><br>
-        已經支付且無法收回的成本。在做當前決定時，<strong>不應</strong>計算在內。<br>
-        <span class="en-trans">Costs that have already been incurred and cannot be recovered. They should <strong>NOT</strong> be included in current decision-making.</span>
-        </p>
-    </section>
-
-    <!-- 4. Answer & Analysis -->
-    <section class="answer-section">
-        <div class="correct-answer">✅ Correct Answer: Option C</div>
-
-        <!-- Option A -->
-        <div class="option-analysis wrong">
-            <span class="option-label">Option A (Wrong):</span>
-            <div class="bilingual-p">
-                <strong>該鋪位的購入價$5 000 000</strong><br>
-                這是兩年前已經支付的款項，屬於<strong>沉沒成本 (Sunk Cost)</strong>。無論張先生現在決定繼續經營還是出租鋪位，這筆錢都無法收回，因此不屬於現時決定的機會成本。
-                <span class="en-trans">The $5 000 000 is a payment made two years ago. It is a <strong>Sunk Cost</strong>. Whether Mr. Cheung continues business or rents out the shop, this money cannot be recovered. Therefore, it is not part of the current opportunity cost.</span>
-            </div>
-        </div>
-
-        <!-- Option B -->
-        <div class="option-analysis wrong">
-            <span class="option-label">Option B (Wrong):</span>
-            <div class="bilingual-p">
-                <strong>每月$10 000的利潤</strong><br>
-                這是張先生選擇繼續經營生意所獲得的<strong>回報 (Benefit)</strong>，而不是成本。機會成本是指你「放棄」了什麼，而不是你「得到」了什麼。
-                <span class="en-trans">This is the <strong>benefit</strong> Mr. Cheung gains from continuing the business, not the cost. Opportunity cost refers to what you "give up", not what you "get".</span>
-            </div>
-        </div>
-
-        <!-- Option C -->
-        <div class="option-analysis correct">
-            <span class="option-label">Option C (Correct):</span>
-            <div class="bilingual-p">
-                <strong>每月$15 000的租金</strong><br>
-                如果張先生選擇繼續經營生意（選項 1），他就不能將鋪位租給商人（選項 2）。因此，他放棄了每月$15 000的租金收入。這是使用自己鋪位的<strong>隱性成本 (Implicit Cost)</strong>，屬於機會成本的一部分。
-                <span class="en-trans">If Mr. Cheung chooses to continue the business (Option 1), he cannot rent the premises to the businessman (Option 2). Therefore, he forgoes the monthly rental income of $15 000. This is the <strong>Implicit Cost</strong> of using his own premises and is part of the opportunity cost.</span>
-            </div>
-        </div>
-
-        <!-- Option D -->
-        <div class="option-analysis wrong">
-            <span class="option-label">Option D (Wrong):</span>
-            <div class="bilingual-p">
-                <strong>每月減少了的$20 000利潤</strong><br>
-                這是過去利潤（$30 000）與現在利潤（$10 000）的比較。機會成本是比較「現在的選項」（經營 vs 出租），而不是比較「現在與過去」。過去的高利潤已經不存在，不是現時可供選擇的選項。
-                <span class="en-trans">This is a comparison between past profit ($30 000) and current profit ($10 000). Opportunity cost compares "current options" (Operating vs. Renting), not "current vs. past". The past high profit no longer exists and is not an available option now.</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Problem Decomposition -->
-    <section class="strategy-box">
-        <div class="strategy-title">🔍 Problem Decomposition (題目拆解)</div>
-        <p>
-            這類題目要求你找出<strong>「為了做這件事，我放棄了什麼？」</strong> (What did I give up to do this?)
-        </p>
-        <ul>
-            <li>
-                <strong>第一步：識別選項 (Identify Options)</strong><br>
-                選項 A：繼續經營「兩餸飯」 (Continue Business)<br>
-                選項 B：出租鋪位 (Rent out premises) -> 價值 $15 000
-            </li>
-            <li>
-                <strong>第二步：找出被放棄的最高價值 (Identify Highest-Valued Option Forgone)</strong><br>
-                如果選擇 A，就必須放棄 B。<br>
-                被放棄的價值 = $15 000 租金。
-            </li>
-            <li>
-                <strong>第三步：剔除干擾項 (Eliminate Distractors)</strong><br>
+        <ol>
+            <li><strong>識別選項 (Identify Options):</strong>
                 <ul>
-                    <li>$5 000 000 (過去的錢 -> Sunk Cost) ❌</li>
-                    <li>$30 000 (過去的利潤 -> History) ❌</li>
-                    <li>$10 000 (得到的利益 -> Benefit) ❌</li>
+                    <li>選項 A：繼續經營「兩餸飯」 (Continue Business)</li>
+                    <li>選項 B：出租鋪位 (Rent out premises) &rarr; 價值 \( \$15\,000 \)</li>
                 </ul>
             </li>
-        </ul>
-    </section>
+            <li><strong>找出被放棄的最高價值 (Identify Highest-Valued Option Forgone):</strong><br>
+                如果選擇 A，就必須放棄 B。<br>
+                被放棄的價值 = \( \$15\,000 \) 租金。
+            </li>
+            <li><strong>剔除干擾項 (Eliminate Distractors):</strong>
+                <ul>
+                    <li>\( \$5\,000\,000 \) (過去的錢 &rarr; Sunk Cost) ❌</li>
+                    <li>\( \$30\,000 \) (過去的利潤 &rarr; History) ❌</li>
+                    <li>\( \$10\,000 \) (得到的利益 &rarr; Benefit) ❌</li>
+                </ul>
+            </li>
+        </ol>
 
-    <!-- 6. Common Mistakes & Exam Tricks -->
-    <section class="strategy-box" style="background-color: #f0fdf4; border-color: #86efac;">
-        <div class="strategy-title" style="color: #166534;">💡 Exam Tricks & Common Traps (考試技巧與陷阱)</div>
-        
-        <p><strong>陷阱 1：擁有者的資源是免費的？ (Are owner's resources free?)</strong><br>
-        很多學生以為自己買了鋪位就不用付租金，所以成本很低。但在經濟學上，<strong>放棄了的租金收入 (Forgone Rental Income)</strong> 必須計入成本（隱性成本）。<br>
-        <span class="en-trans">Many students think that because they own the shop, there is no cost. In Economics, <strong>Forgone Rental Income</strong> must be counted as a cost (Implicit Cost).</span>
-        </p>
+        <!-- Exam Tricks -->
+        <div class="trick-box">
+            <h3>💡 Exam Tricks & Common Traps (考試技巧與陷阱)</h3>
+            <p><strong>陷阱 1：擁有者的資源是免費的？ (Are owner's resources free?)</strong><br>
+            很多學生以為自己買了鋪位就不用付租金，所以成本很低。但在經濟學上，<strong>放棄了的租金收入 (Forgone Rental Income)</strong> 必須計入成本（隱性成本）。<br>
+            <em>Many students think that because they own the shop, there is no cost. In Economics, <strong>Forgone Rental Income</strong> must be counted as a cost (Implicit Cost).</em></p>
+            
+            <p><strong>速解技巧 (Quick Trick):</strong></p>
+            <ul>
+                <li>看到「幾年前購入」(Bought years ago) &rarr; 直接劃掉，那是<strong>沉沒成本 (Sunk Cost)</strong>。</li>
+                <li>看到「利潤下降」(Profit decreased) &rarr; 通常是干擾資訊，重點是<strong>現在</strong>放棄了什麼。</li>
+            </ul>
+        </div>
 
-        <p><strong>速解技巧 (Quick Trick):</strong><br>
-        看到「幾年前購入」(Bought years ago) ➔ 直接劃掉，那是<strong>沉沒成本 (Sunk Cost)</strong>。<br>
-        看到「利潤下降」(Profit decreased) ➔ 通常是干擾資訊，重點是<strong>現在</strong>放棄了什麼。<br>
-        <span class="en-trans">See "Bought years ago" ➔ Cross it out, it's <strong>Sunk Cost</strong>.<br>
-        See "Profit decreased" ➔ Usually a distractor. Focus on what is forgone <strong>NOW</strong>.</span>
-        </p>
-    </section>
+        <!-- Student Q&A Section -->
+        <div class="section-title">
+            <span>🙋</span> Student Q&A (學生常見疑問)
+        </div>
+        <div class="qa-box">
+            <div class="qa-item">
+                <span class="qa-question">Q1: 如果張先生決定把店鋪賣掉，那麼 $5,000,000 的購入價會變成機會成本嗎？</span>
+                <span class="qa-question"><em>(If Mr. Cheung decides to sell the shop, does the $5,000,000 purchase price become an opportunity cost?)</em></span>
+                <p><strong>答 (Answer):</strong> 不會。無論他現在做什麼決定，$5,000,000 都是過去已經支付且無法改變的歷史（沉沒成本）。如果他賣掉店鋪，機會成本將會是「如果不賣掉，他能獲得的最高價值」（例如繼續經營的利潤或出租的租金收入）。購入價永遠不會是現時決定的機會成本。</p>
+                <p><em>No. No matter what he decides now, the \( \$5\,000\,000 \) is a past payment that cannot be changed (Sunk Cost). If he sells the shop, the opportunity cost would be "the highest value he could get if he didn't sell" (e.g., profit from operating or rental income). The historical purchase price is never part of the current opportunity cost.</em></p>
+            </div>
+            
+            <div class="qa-item">
+                <span class="qa-question">Q2: 為什麼 $10,000 的利潤不是成本？我們不是在計算利潤減少了嗎？</span>
+                <span class="qa-question"><em>(Why isn't the $10,000 profit a cost? Aren't we calculating the drop in profit?)</em></span>
+                <p><strong>答 (Answer):</strong> 小心定義！機會成本是你「放棄」的東西。$10,000 利潤是你選擇繼續經營後「得到」的東西（Benefit）。我們不能把得到的東西算作成本。至於利潤減少（選項 D），那是和過去比較，但經濟學決策是看「向前看」(Forward-looking)，比較現在可行的選項（經營 vs 出租），而不是緬懷過去的光輝。</p>
+                <p><em>Be careful with the definition! Opportunity cost is what you "give up". The \( \$10\,000 \) profit is what you "get" (Benefit) from continuing the business. We cannot count what we gain as a cost. As for the drop in profit (Option D), that compares to the past. Economic decision-making is <strong>forward-looking</strong>, comparing current available options (Operating vs. Renting), not looking back at past glory.</em></p>
+            </div>
+        </div>
 
+    </div>
 </div>
 
 </body>
