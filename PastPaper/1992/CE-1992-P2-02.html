@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Economic Goods vs Free Goods</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #eff6ff; /* Light Blue Background */
+            --accent-color: #d97706; /* Amber for warnings */
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --correct-color: #10b981; /* Green */
+            --wrong-color: #ef4444; /* Red */
+            --deep-dive-bg: #f3e8ff; /* Light Purple */
+            --deep-dive-border: #9333ea; /* Purple */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Answer Section */
+        .answer-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            color: var(--correct-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .analysis-item.correct {
+            background-color: #ecfdf5;
+            border-color: var(--correct-color);
+        }
+
+        .analysis-item.wrong {
+            background-color: #fef2f2;
+            border-color: #fee2e2;
+        }
+
+        /* Deep Dive Box (New) */
+        .deep-dive-box {
+            background-color: var(--deep-dive-bg);
+            border: 1px solid var(--deep-dive-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .deep-dive-title {
+            color: var(--deep-dive-border);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Decomposition & Tricks */
+        .strategy-box {
+            background-color: #fffbeb; /* Amber-50 */
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .strategy-title {
+            color: #92400e;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Bilingual Text Styling */
+        .en-text {
+            color: #6b7280;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics: Basic Concepts</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Scarcity & Goods (稀少性與物品)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Economic Goods, Opportunity Cost</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="question-text">
+            對社會而言，飲用後的可口可樂鋁罐是______，因為______。<br>
+            <span class="en-text">To society, used aluminum Coca-Cola cans are ______ because ______.</span>
+        </div>
+        <ul class="options-list">
+            <li>A. 免費物品；沒有人想得到它們 <br><span class="en-text">free goods; nobody wants them</span></li>
+            <li>B. 免費物品；它們為數不少 <br><span class="en-text">free goods; there are plenty of them</span></li>
+            <li>C. 經濟物品；它們有其他用途 <br><span class="en-text">economic goods; they have alternative uses</span></li>
+            <li>D. 經濟物品；它們是「稀少性」資源製成的 <br><span class="en-text">economic goods; they were produced from scarce resources</span></li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-section">
+        <div class="concept-title">
+            📚 Concept Review (概念重溫)
+        </div>
+        
+        <p>
+            <strong>1. 經濟物品 (Economic Goods):</strong><br>
+            任何物品，如果其數量不足以滿足所有人的慾望（即具有稀少性），便是經濟物品。獲取它必須付出代價（機會成本）。<br>
+            <span class="en-text">Any good is an economic good if its quantity is insufficient to satisfy all wants (i.e., it is scarce). Obtaining it requires a cost (opportunity cost).</span>
+        </p>
+
+        <div class="math-block">
+            [ \text{Opportunity Cost} > 0 ]
+        </div>
+
+        <p>
+            <strong>2. 免費物品 (Free Goods):</strong><br>
+            其數量足以滿足所有人的慾望。獲取它不需要付出任何代價。<br>
+            <span class="en-text">Its quantity is sufficient to satisfy all wants. Obtaining it requires no cost.</span>
+        </p>
+
+        <p>
+            <strong>3. 關鍵判斷 (Key Test):</strong><br>
+            物品是否有「其他用途」？如果有其他用途，將其用於某一方面（如丟棄）就意味著放棄了其他用途（如回收再造），這就產生了機會成本。<br>
+            <span class="en-text">Does the good have "alternative uses"? If yes, using it in one way (e.g., throwing it away) implies giving up its other uses (e.g., recycling), which creates an opportunity cost.</span>
+        </p>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="answer-section">
+        <div class="correct-answer">Correct Answer: Option C</div>
+
+        <div class="analysis-item wrong">
+            <strong>❌ Option A: Free goods; nobody wants them</strong>
+            <p>即使是飲用後的鋁罐，回收商仍然想要它們。如果真的「沒有人想要」，它可能被視為廢物（Bad），但不一定是免費物品。<br>
+            <span class="en-text">Even used aluminum cans are wanted by recyclers. If truly "nobody wants them," they might be considered a "bad" (waste), but not necessarily a free good.</span></p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <strong>❌ Option B: Free goods; there are plenty of them</strong>
+            <p>「數量多」不代表「無限」。只要數量不足以滿足所有人的慾望（稀少），它就不是免費物品。<br>
+            <span class="en-text">"Plenty" does not mean "infinite". As long as the quantity is not enough to satisfy everyone's wants (scarce), it is not a free good.</span></p>
+        </div>
+
+        <div class="analysis-item correct">
+            <strong>✅ Option C: Economic goods; they have alternative uses</strong>
+            <p>這是最準確的解釋。鋁罐可以被回收再造變成新產品。因為它有其他用途，所以我們保留或處理它涉及放棄這些用途的價值，即機會成本大於零 \( (\text{Opportunity Cost} > 0) \)。<br>
+            <span class="en-text">This is the most accurate explanation. Aluminum cans can be recycled into new products. Because they have alternative uses, keeping or disposing of them involves giving up the value of these uses, meaning the opportunity cost is greater than zero.</span></p>
+        </div>
+
+        <div class="analysis-item wrong">
+            <strong>❌ Option D: Economic goods; they were produced from scarce resources</strong>
+            <p>雖然這是事實，但物品現在的屬性取決於它「現在」的稀少性，而不是過去的歷史。一個由稀少資源製成的東西，如果現在完全變成了無用的垃圾（沒有任何其他用途），它就不再是經濟物品。<br>
+            <span class="en-text">While factually true regarding its origin, the good's current status depends on its "current" scarcity, not its history. An item made from scarce resources could become useless trash (with no alternative uses), ceasing to be an economic good.</span></p>
+            
+            <!-- Deep Dive / Counter Examples for Option D -->
+            <div class="deep-dive-box">
+                <div class="deep-dive-title">🧐 Why is Option D wrong? (Counter Examples)</div>
+                <p>
+                    <strong>邏輯謬誤 (The Logic Flaw):</strong><br>
+                    「由稀少資源製成」只代表<strong>過去</strong>付出了成本，不代表<strong>現在</strong>有價值。如果製成品現在沒有用途，它就不是經濟物品。<br>
+                    <span class="en-text">"Produced from scarce resources" only means costs were incurred in the <strong>past</strong>, not that it has value <strong>now</strong>. If the product has no use now, it is not an economic good.</span>
+                </p>
+                <hr style="border: 0; border-top: 1px dashed #9333ea; margin: 15px 0;">
+                <p>
+                    <strong>反例 1：變壞的食物 (Rotten Food)</strong><br>
+                    一道用昂貴食材（稀少資源）烹調的菜餚，如果變壞了，便不能食用，甚至需要付費找人丟棄。它不再是經濟物品，儘管它是用稀少資源製成的。<br>
+                    <span class="en-text">A dish cooked with expensive ingredients (scarce resources). If it goes bad, it cannot be eaten and you might even pay to dispose of it. It is no longer an economic good, even though it was produced from scarce resources.</span>
+                </p>
+                <p>
+                    <strong>反例 2：失敗的畫作 (A Failed Painting)</strong><br>
+                    畫家用了畫布和顏料（稀少資源），但畫作畫壞了，沒人想要且不能回收。這變成了廢物，而非經濟物品。<br>
+                    <span class="en-text">A painter used canvas and paint (scarce resources), but the painting is ruined, unwanted, and cannot be recycled. It becomes waste, not an economic good.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="strategy-box">
+        <div class="strategy-title">🔍 Problem Decomposition (題目拆解)</div>
+        <p>
+            <strong>Pivot Point (破題關鍵):</strong><br>
+            看到「飲用後」(Used) 不要馬上聯想到垃圾或免費。要看到「鋁」(Aluminum) 這個字。<br>
+            <span class="en-text">When you see "Used", don't immediately think of trash or free goods. Focus on the word "Aluminum".</span>
+        </p>
+        <p>
+            <strong>Logic Flow (邏輯推演):</strong><br>
+            1. 鋁是金屬資源 (Aluminum is a resource).<br>
+            2. 資源可以回收 (It can be recycled).<br>
+            3. 回收 = 有其他用途 (Recycling = Alternative uses).<br>
+            4. 有其他用途 = 放棄了價值 = 機會成本 > 0 (Alternative uses = Value forgone = Opportunity Cost > 0).<br>
+            5. 結論：經濟物品 (Conclusion: Economic Good).
+        </p>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="strategy-box" style="background-color: #fff1f2; border-color: #fda4af;">
+        <div class="strategy-title" style="color: #9f1239;">⚠️ Common Mistakes (常犯錯誤)</div>
+        <ul>
+            <li>
+                <strong>誤解「免費」 (Misunderstanding "Free"):</strong><br>
+                學生常以為不用錢買（例如地上的空罐）就是免費物品。但在經濟學上，只要有機會成本，就不是免費物品。<br>
+                <span class="en-text">Students often think if it costs no money (like a can on the ground), it's a free good. In economics, if there is an opportunity cost, it is not a free good.</span>
+            </li>
+            <li>
+                <strong>忽略回收價值 (Ignoring Recycling Value):</strong><br>
+                忘記了廢物（如廢紙、鋁罐）通常是生產過程中的再造資源。<br>
+                <span class="en-text">Forgetting that waste (like waste paper, aluminum cans) is often a resource for recycling in production.</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>
