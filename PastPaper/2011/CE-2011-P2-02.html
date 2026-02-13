@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-mistake: #fef2f2; /* Light Red */
+            --bg-trick: #f0fdf4; /* Light Green */
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Concept & Analysis Sections */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border: 1px solid #bfdbfe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .formula {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-trans {
+            color: #555;
+            font-style: italic;
+            font-size: 0.95em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Answer Highlight */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #059669; /* Green */
+            background-color: #ecfdf5;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #059669;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Mistake & Trick Boxes */
+        .mistake-box {
+            background-color: var(--bg-mistake);
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .trick-box {
+            background-color: var(--bg-trick);
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Opportunity Cost (機會成本)</span>
+            <span>Difficulty: ★★☆☆☆</span>
+            <span>Keywords: Highest-valued option forgone, Mutually exclusive</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="question-box">
+        <div class="question-text">
+            <p>一塊土地可用來建造高速鐵路、高速公路、隧道或文化區綜合發展項目。假設以上各項可帶來的預期回報的金錢價值分別為 $800,000、$750,000、$650,000 及 $550,000。</p>
+            <p>使用該塊土地來建造高速公路的機會成本是__________;而使用該塊土地來建造隧道的機會成本是__________。</p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+            <p class="en-trans" style="font-style: normal; color: #333;">A piece of land can be used for the construction of a high speed railway, a highway, a tunnel or a cultural hub. Suppose the money value of the expected return generated by each project is $800,000, $750,000, $650,000 and $550,000 respectively.</p>
+            <p class="en-trans" style="font-style: normal; color: #333;">The opportunity cost of using this piece of land for the construction of a highway is _________ and the opportunity cost of using this piece of land for the construction of a tunnel is _________.</p>
+        </div>
+        <ul class="options-list">
+            <li>A. $650,000 ..... $550,000</li>
+            <li>B. $750,000 ..... $650,000</li>
+            <li>C. $800,000 ..... $750,000</li>
+            <li>D. $800,000 ..... $800,000</li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <h2 class="section-title">Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p><strong>定義 Definition:</strong></p>
+        <p>機會成本是指在作出選擇時，被放棄的選項中<strong>價值最高</strong>的一項。</p>
+        <span class="en-trans">Opportunity cost is the value of the <strong>highest-valued option forgone</strong> when a choice is made.</span>
+
+        <div class="formula">
+            $$ \text{Opportunity Cost} = \text{Value of the best alternative option} $$
+            $$ \text{機會成本} = \text{被放棄而價值最高的選擇之價值} $$
+        </div>
+
+        <p><strong>關鍵要點 Key Points:</strong></p>
+        <ul>
+            <li>機會成本<strong>不是</strong>所有被放棄選項的總和。<br><span class="en-trans">Opportunity cost is <strong>NOT</strong> the sum of all forgone options.</span></li>
+            <li>機會成本只看「第二好」的選擇 (如果選擇了最好的)。<br><span class="en-trans">It looks at the "next best" alternative.</span></li>
+        </ul>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <h2 class="section-title">Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="correct-answer">
+        Correct Option: D ($800,000 ... $800,000)
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 1: 排列價值 Ranking the Values</h3>
+        <p>首先，我們將所有選項按價值由高至低排列：<br>
+        <span class="en-trans">First, let's rank all options by value from highest to lowest:</span></p>
+        <ol>
+            <li><strong>高速鐵路 (High Speed Railway): $800,000 (Highest/最高)</strong></li>
+            <li>高速公路 (Highway): $750,000</li>
+            <li>隧道 (Tunnel): $650,000</li>
+            <li>文化區 (Cultural Hub): $550,000</li>
+        </ol>
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 2: 分析第一個情況 Analyzing Case 1</h3>
+        <p><strong>選擇：建造高速公路 ($750,000)</strong><br>
+        <span class="en-trans">Choice: Constructing a Highway ($750,000)</span></p>
+        
+        <p>被放棄的選項包括：高速鐵路 ($800k)、隧道 ($650k)、文化區 ($550k)。<br>
+        <span class="en-trans">Options forgone include: HSR ($800k), Tunnel ($650k), Cultural Hub ($550k).</span></p>
+        
+        <p>在被放棄的選項中，<strong>價值最高</strong>的是高速鐵路 ($800,000)。<br>
+        <span class="en-trans">Among the forgone options, the <strong>highest value</strong> is the High Speed Railway ($800,000).</span></p>
+        
+        <p>&#10140; 機會成本 = <strong>$800,000</strong></p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 3: 分析第二個情況 Analyzing Case 2</h3>
+        <p><strong>選擇：建造隧道 ($650,000)</strong><br>
+        <span class="en-trans">Choice: Constructing a Tunnel ($650,000)</span></p>
+        
+        <p>被放棄的選項包括：高速鐵路 ($800k)、高速公路 ($750k)、文化區 ($550k)。<br>
+        <span class="en-trans">Options forgone include: HSR ($800k), Highway ($750k), Cultural Hub ($550k).</span></p>
+        
+        <p>在被放棄的選項中，<strong>價值最高</strong>的依然是高速鐵路 ($800,000)。<br>
+        <span class="en-trans">Among the forgone options, the <strong>highest value</strong> is still the High Speed Railway ($800,000).</span></p>
+        
+        <p>&#10140; 機會成本 = <strong>$800,000</strong></p>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <h2 class="section-title">Problem Decomposition (題目拆解)</h2>
+    <p>這類題目的核心在於找出「首選」是什麼。<br>
+    <span class="en-trans">The core of this type of question is to identify the "First Choice".</span></p>
+    
+    <div class="trick-box">
+        <strong>Pivot Point (關鍵點):</strong>
+        <p>只要你沒有選擇價值最高的項目（高速鐵路 $800,000），無論你選擇了其他哪一個項目（公路、隧道或文化區），你放棄的「最好」選擇永遠都是高速鐵路。</p>
+        <span class="en-trans">As long as you do not choose the highest-valued project (HSR $800,000), no matter which other project you choose (Highway, Tunnel, or Hub), the "best" option you gave up is ALWAYS the High Speed Railway.</span>
+    </div>
+
+    <!-- Common Mistakes -->
+    <h2 class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    
+    <div class="mistake-box">
+        <strong>錯誤觀念 1：誤以為機會成本是「第二好」的價值</strong>
+        <p>有些同學在第二個情況（建隧道）時，會誤以為機會成本是高速公路 ($750,000)，因為它是剩餘選項中比隧道好的那一個。這是錯誤的！機會成本必須與<strong>所有</strong>被放棄的選項比較，而不僅僅是比自己好的選項。</p>
+        <span class="en-trans"><strong>Misconception 1: Thinking Opportunity Cost is the "Second Best" value relative to the choice.</strong><br>
+        Some students think in Case 2 (Tunnel), the cost is the Highway ($750,000) because it's the next one up. This is wrong! Opportunity cost compares against <strong>ALL</strong> forgone options. Since HSR ($800,000) was also forgone, it is the cost.</span>
+    </div>
+
+    <div class="mistake-box">
+        <strong>錯誤觀念 2：計算利潤而非成本</strong>
+        <p>有些同學會嘗試用 $800,000 減去 $750,000。這是在計算「經濟利潤」(Economic Profit) 或損失，而不是機會成本。</p>
+        <span class="en-trans"><strong>Misconception 2: Calculating Profit instead of Cost.</strong><br>
+        Some students try to subtract $750,000 from $800,000. This calculates Economic Profit/Loss, not Opportunity Cost.</span>
+    </div>
+
+    <!-- Exam Tricks -->
+    <h2 class="section-title">Exam Tricks (考試技巧)</h2>
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #fcd34d;">
+        <p><strong>快速檢查法 (The "Best Option" Rule):</strong></p>
+        <ol>
+            <li>找出價值最高的選項 (Find the Max Value) &#8594; <strong>$800,000</strong></li>
+            <li>問自己：題目中的選擇是這個 $800,000 嗎？ (Is the choice this $800,000?)</li>
+            <li>
+                如果<strong>不是</strong> (If NO): 機會成本就是 <strong>$800,000</strong>。<br>
+                (因為你放棄了最好的。)
+            </li>
+            <li>
+                如果<strong>是</strong> (If YES): 機會成本就是<strong>第二高</strong>的價值。<br>
+                (因為你選了最好的，放棄了第二好的。)
+            </li>
+        </ol>
+        <p>在本題中，兩次選擇都不是 $800,000，所以兩次的答案直接就是 $800,000。秒殺！<br>
+        <span class="en-trans">In this question, neither choice was the $800,000 option. Therefore, the answer for both is simply $800,000. Solved instantly!</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>
