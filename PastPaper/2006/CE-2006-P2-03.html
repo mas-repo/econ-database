@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Economic Goods</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22; /* Orange for scarcity focus */
+            --bg-light: #fdfefe;
+            --concept-bg: #fff8e1; /* Creamy yellow for concepts */
+            --concept-border: #f1c40f;
+            --correct-bg: #d4edda;
+            --correct-text: #155724;
+            --wrong-bg: #f8d7da;
+            --wrong-text: #721c24;
+            --text-main: #333;
+            --text-sub: #666;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f4f6f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .q-text-zh {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .q-text-en {
+            color: var(--text-sub);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .options-list li:hover {
+            background: #f1f1f1;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .math-block {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #ccc;
+            font-family: "Times New Roman", serif;
+        }
+
+        /* Analysis Section */
+        .analysis-box {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--correct-text);
+            background: var(--correct-bg);
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-text);
+            background-color: #f0fff4;
+        }
+        
+        .option-analysis.wrong {
+            border-color: #eecdd1;
+            background-color: #fffbfb;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .label-correct { color: var(--correct-text); }
+        .label-wrong { color: var(--wrong-text); }
+
+        /* Strategy & Traps */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .strategy-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .strategy-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 6px;
+            display: block;
+            color: #222;
+        }
+        .en {
+            color: #666;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <span><strong>Topic (課題):</strong> Basic Economic Concepts (基本經濟概念)</span>
+            <span><strong>Difficulty (難度):</strong> <span style="color: gold;">★★☆☆☆</span></span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge">Key Concepts</span>
+            <span style="font-size: 0.9em; color: #555;">Scarcity (稀少性), Economic Goods (經濟物品), Free Goods (免費物品)</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <h3 style="margin-top: 0;">The Question (題目)</h3>
+        
+        <div class="q-text-zh">這些免費米是經濟物品，因為</div>
+        <div class="q-text-en">These packs of charity rice are economic goods because</div>
+
+        <ul class="options-list">
+            <li>
+                <strong>A.</strong> 這些米的數量有限。<br>
+                <span class="q-text-en">the quantity of this rice is limited.</span>
+            </li>
+            <li>
+                <strong>B.</strong> 米能滿足人們的慾望。<br>
+                <span class="q-text-en">rice can satisfy people’s wants.</span>
+            </li>
+            <li>
+                <strong>C.</strong> 人們對這些米的慾望無窮。<br>
+                <span class="q-text-en">the wants for this rice are unlimited.</span>
+            </li>
+            <li>
+                <strong>D.</strong> 人們想獲得更多這些米。<br>
+                <span class="q-text-en">people want more of this rice.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h2 class="section-title">Concept Review (概念重溫)</h2>
+        
+        <div class="zh"><strong>1. 稀少性 (Scarcity)</strong></div>
+        <div class="en">Scarcity exists when resources are insufficient to satisfy unlimited human wants. It is a relative concept.</div>
+        <div class="math-block">
+            $$ \text{Quantity Demanded} > \text{Quantity Supplied (at Price = 0)} $$
+        </div>
+
+        <div class="zh"><strong>2. 經濟物品 (Economic Good)</strong></div>
+        <div class="en">An economic good is any good that is scarce. Because it is scarce, people prefer having more of it.</div>
+        <ul style="margin-top:5px; margin-bottom: 15px;">
+            <li><span class="zh"><strong>定義：</strong>其數量不足以滿足所有人的慾望（在價格為零時）。</span><br><span class="en"><strong>Definition:</strong> Its quantity is insufficient to satisfy all human wants (at zero price).</span></li>
+            <li><span class="zh"><strong>特徵：</strong>人們願意付出代價或成本去獲取它。</span><br><span class="en"><strong>Feature:</strong> People are willing to pay a price or cost to obtain it.</span></li>
+        </ul>
+
+        <div class="zh"><strong>3. 免費物品 (Free Good)</strong></div>
+        <div class="en">A free good is a good whose quantity is sufficient to satisfy all human wants even at zero price (e.g., sunshine, air in some contexts). One does not need to pay or forgo anything to get it.</div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-box">
+        <h2 class="section-title">Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">Correct Option: D</div>
+
+        <!-- Option A -->
+        <div class="option-analysis wrong">
+            <span class="option-label label-wrong">Option A (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>「數量有限」(Limited quantity) 並不足以構成稀少性。例如，「變壞的雞蛋」數量也是有限的，但沒有人想要，所以它不是經濟物品。稀少性是「相對」概念，必須比較「擁有的數量」與「想要的數量」。</div>
+            <div class="en"><strong>Analysis:</strong> "Limited quantity" alone does not constitute scarcity. For example, the quantity of "rotten eggs" is also limited, but no one wants them, so they are not economic goods. Scarcity is a "relative" concept; it requires comparing "quantity available" with "quantity desired".</div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis wrong">
+            <span class="option-label label-wrong">Option B (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>「能滿足慾望」只代表它是有用的物品 (Goods)，但不一定是「經濟物品」(Economic Goods)。免費物品（如陽光）也能滿足慾望，但它不是經濟物品。</div>
+            <div class="en"><strong>Analysis:</strong> "Can satisfy wants" only indicates that it is a "Good", but not necessarily an "Economic Good". Free goods (like sunshine) can also satisfy wants, but they are not economic goods.</div>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis wrong">
+            <span class="option-label label-wrong">Option C (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>這是一個常見的陷阱。人類的慾望「整體」是無窮的，但對「某一種特定物品」（如這包米）的慾望通常是有限的。此外，定義經濟物品的重點在於「現有數量不足以滿足慾望」，而不是慾望本身是否無窮。</div>
+            <div class="en"><strong>Analysis:</strong> This is a common trap. Human wants *as a whole* are unlimited, but the want for a *specific good* (like this rice) is usually limited. Furthermore, the definition of an economic good focuses on "available quantity being insufficient to satisfy wants," not whether the want itself is infinite.</div>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis correct">
+            <span class="option-label label-correct">Option D (Correct)</span>
+            <div class="zh"><strong>分析：</strong>這是稀少性（Scarcity）最直接的驗證方法。如果人們「想獲得更多」(want more of it)，即表示在價格為零時，需求量大於供應量 (\(Q_d > Q_s\))。因為還未被滿足，所以人們願意付出代價（如排隊的時間成本）去獲取，這正是經濟物品的定義。</div>
+            <div class="en"><strong>Analysis:</strong> This is the most direct verification of Scarcity. If people "want more of it", it implies that at zero price, the quantity demanded exceeds the quantity supplied (\(Q_d > Q_s\)). Because wants are not fully satisfied, people are willing to pay a cost (like time cost for queuing) to obtain it, which defines an economic good.</div>
+        </div>
+    </section>
+
+    <!-- Decomposition & Strategy -->
+    <section class="strategy-grid">
+        <div class="strategy-card">
+            <div class="strategy-title">Problem Decomposition (題目拆解)</div>
+            <div class="zh"><strong>關鍵字 (Keywords)：</strong>「經濟物品」(Economic Goods)。</div>
+            <div class="en"><strong>Keywords:</strong> "Economic Goods".</div>
+            <br>
+            <div class="zh"><strong>邏輯測試 (Logic Test)：</strong>
+            <br>要證明某物是經濟物品，我們只需問一個問題：
+            <br>「如果這東西免費放在這裡，人們是否想要拿走更多？」
+            <br>如果是，它就是稀少的，就是經濟物品。</div>
+            <div class="en"><strong>Logic Test:</strong>
+            <br>To prove something is an economic good, we just ask one question:
+            <br>"If this item is free, do people want to take more of it?"
+            <br>If yes, it is scarce, and thus an economic good.</div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-title">Common Mistakes (常犯錯誤)</div>
+            <div class="zh"><strong>混淆「有限」與「稀少」：</strong>
+            <br>學生常誤選 A。請記住：<strong>有限 \(\neq\) 稀少</strong>。
+            <br>稀少 = 想要 > 擁有。
+            <br>有限 = 數量不是無限大 (物理概念)。
+            <br>垃圾是有限的，但不是稀少的。</div>
+            <div class="en"><strong>Confusing "Limited" with "Scarce":</strong>
+            <br>Students often wrongly choose A. Remember: <strong>Limited \(\neq\) Scarce</strong>.
+            <br>Scarce = Wanted > Available.
+            <br>Limited = Quantity is not infinite (Physical concept).
+            <br>Trash is limited, but not scarce.</div>
+        </div>
+    </section>
+    
+    <!-- Exam Tricks -->
+    <section class="concept-box" style="margin-top: 30px; border-left-color: #e74c3c;">
+        <h2 class="section-title" style="color: #c0392b;">Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="zh"><strong>秒殺技巧：尋找「想要更多」(Want More)</strong></div>
+        <div class="en">在 DSE 選擇題中，如果題目問「為什麼 X 是經濟物品？」，正確答案通常包含以下字眼之一：
+        <ol>
+            <li>人們想獲得更多 (People want more of it)</li>
+            <li>其數量不足以滿足慾望 (Quantity is insufficient to satisfy wants)</li>
+            <li>獲取它涉及機會成本 (Obtaining it involves opportunity cost)</li>
+        </ol>
+        看到這些描述，幾乎可以確定是正確答案。</div>
+    </section>
+
+</div>
+
+</body>
+</html>

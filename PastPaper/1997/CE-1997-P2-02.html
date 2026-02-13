@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Opportunity Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --light-blue: #eff6ff;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .badge {
+            background-color: var(--light-blue);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-color);
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: #f0fdf4; /* Light Green tint */
+            border-left: 5px solid var(--success-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-color: var(--error-color);
+            background-color: #fef2f2;
+            opacity: 0.9;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Tips & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-box {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border-top: 4px solid var(--error-color);
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Utility */
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Basic Economic Concepts (基本經濟概念)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Opportunity Cost, Sunk Cost</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h3>題目 (The Question)</h3>
+        
+        <div class="question-text">
+            <p>麥氏百貨公司展開推廣活動：凡顧客每購物滿$1 000，便可獲得一張換物券，換取下列禮物：</p>
+            <span class="en-text">Max Department Store has launched a promotion campaign. For every purchase of $1 000, customers are given a coupon to exchange for the following gifts:</span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>換物券 (張數)<br><span class="en-text">Number of Coupons</span></th>
+                    <th>禮物<br><span class="en-text">Gifts</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>1部攝影機 (1 camera)</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>1部電視機 (1 TV set)</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>1張機票 (1 air ticket)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="question-text">
+            <p>大雄累積了30張換物券。若他拿來換取一張機票，他的機會成本是什麼？</p>
+            <span class="en-text">John has accumulated 30 coupons. What is the opportunity cost to John if he uses them to exchange for one air ticket?</span>
+        </div>
+
+        <div class="options">
+            <p>A. 一部電視機 (a TV set)</p>
+            <p>B. $30 000</p>
+            <p>C. 一部攝影機和一部電視機 (a camera and a TV set)</p>
+            <p>D. 一部攝影機、一部電視機和$30 000 (a camera, a TV set and $30 000)</p>
+        </div>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-section">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            概念重溫 (Concept Review)
+        </div>
+        
+        <p><strong>1. 機會成本 (Opportunity Cost):</strong></p>
+        <p>定義為「被放棄的選擇中，價值最高的那一項」。</p>
+        <span class="en-text">Defined as "the highest-valued option forgone".</span>
+        $$ \text{Opportunity Cost} = \text{Value of the best alternative forgone} $$
+        
+        <p><strong>2. 沉沒成本 (Sunk Cost):</strong></p>
+        <p>指已經付出且無法收回的成本。在做決定時，沉沒成本不應被計算在內。</p>
+        <span class="en-text">Costs that have already been incurred and cannot be recovered. Sunk costs should be ignored when making decisions.</span>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        
+        <div class="option-analysis correct">
+            <span class="option-label">正確答案 (Correct Answer): C</span>
+            <p><strong>分析：</strong>大雄擁有30張換物券。他選擇了機票（使用了30張券）。他放棄了什麼？</p>
+            <p>他原本可以用這30張券換取「1部電視機 (20張) + 1部攝影機 (10張)」。這是他在不選擇機票的情況下，能用30張券換到的最高價值組合。</p>
+            <span class="en-text"><strong>Analysis:</strong> John has 30 coupons. He chose the air ticket (using 30 coupons). What did he give up? He could have used those 30 coupons to exchange for "1 TV set (20 coupons) + 1 camera (10 coupons)". This is the highest-valued combination he could get with 30 coupons if he didn't choose the air ticket.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 A (Option A): 錯誤 (Incorrect)</span>
+            <p>雖然他確實放棄了電視機，但只換一部電視機只需20張券，還剩下10張券未被使用。這並未完全反映30張券的全部潛在價值（最高價值）。</p>
+            <span class="en-text">Although he gave up a TV set, getting only a TV requires 20 coupons, leaving 10 coupons unused. This does not fully reflect the full potential value (highest value) of the 30 coupons.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 B (Option B): 錯誤 (Incorrect)</span>
+            <p>這$30 000是為了獲得換物券而已經購物的金額。無論大雄換什麼禮物，甚至撕掉換物券，這筆錢都已經花掉了。這是<strong>沉沒成本 (Sunk Cost)</strong>，不是機會成本。</p>
+            <span class="en-text">The $30 000 is the amount already spent on shopping to get the coupons. Whether John exchanges for gifts or tears up the coupons, this money is already gone. This is a <strong>Sunk Cost</strong>, not an opportunity cost.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 D (Option D): 錯誤 (Incorrect)</span>
+            <p>此選項錯誤地包含了$30 000（沉沒成本）。機會成本只看「向前看」的放棄選項，不看「向後看」的歷史支出。</p>
+            <span class="en-text">This option incorrectly includes the $30 000 (sunk cost). Opportunity cost looks "forward" at forgone options, not "backward" at historical expenses.</span>
+        </div>
+    </section>
+
+    <!-- Decomposition & Tips -->
+    <section class="tips-grid">
+        <div class="tip-box trap-box">
+            <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes)</h3>
+            <ul>
+                <li>
+                    <strong>混淆歷史成本與機會成本：</strong> 學生常誤以為購買商品的錢 ($30,000) 是成本。記住：<span class="highlight">錢已經付了 = 沉沒成本 = 不計算在內</span>。
+                    <span class="en-text"><strong>Confusing historical cost with opportunity cost:</strong> Students often mistake the money spent ($30,000) as the cost. Remember: Money already paid = Sunk Cost = Do not count.</span>
+                </li>
+                <li>
+                    <strong>忽略資源的充分利用：</strong> 認為放棄的只是「電視機」。必須問自己：「剩下的10張券還能換什麼？」要把資源用到盡才是真正的「最高價值」。
+                    <span class="en-text"><strong>Ignoring full utilization of resources:</strong> Thinking the forgone option is just the "TV". You must ask: "What can the remaining 10 coupons get?" Using the resources fully represents the true "highest value".</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tip-box trick-box">
+            <h3>💡 題目拆解技巧 (Problem Decomposition)</h3>
+            <p>這類題目可以分為兩個步驟解決：</p>
+            <ol>
+                <li>
+                    <strong>剔除金錢 (Eliminate Money):</strong> 看到「購物滿$XXX換券」這類字眼，直接將金額視為無關資訊 (Irrelevant info)。
+                    <span class="en-text">See "Purchase $XXX to get coupons"? Treat the dollar amount as irrelevant immediately.</span>
+                </li>
+                <li>
+                    <strong>資源配對 (Resource Matching):</strong> 
+                    <br>持有資源：\(30\) 張券。
+                    <br>選擇：機票 (\(30\) 張)。
+                    <br>放棄的最佳替代品：找一個組合剛好等於或接近 \(30\) 張券 \(\rightarrow\) \(20 (\text{TV}) + 10 (\text{Camera})\)。
+                    <span class="en-text">Resource: 30 coupons. Choice: Air Ticket. Best Alternative: Find a combo that sums to 30 -> 20 (TV) + 10 (Camera).</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

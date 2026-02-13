@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Opportunity Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f8f9fa;
+            --concept-bg: #eef7fe;
+            --concept-border: #2980b9;
+            --correct-bg: #d4edda;
+            --correct-text: #155724;
+            --wrong-bg: #f8d7da;
+            --wrong-text: #721c24;
+            --text-main: #333;
+            --text-sub: #666;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .q-text-zh {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .q-text-en {
+            color: var(--text-sub);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--concept-border);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .math-block {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #ccc;
+        }
+
+        /* Analysis Section */
+        .analysis-box {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--correct-text);
+            background: var(--correct-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-text);
+            background-color: #f0fff4;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Strategy & Traps */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .strategy-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .strategy-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 5px;
+            display: block;
+        }
+        .en {
+            color: #555;
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Question Analysis</h1>
+        <div class="meta-info">
+            <span><strong>Topic (課題):</strong> Basic Economic Concepts (基本經濟概念)</span>
+            <span><strong>Sub-topic:</strong> Opportunity Cost (機會成本)</span>
+            <span><strong>Difficulty (難度):</strong> <span style="color: gold;">★★☆☆☆</span></span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge">Key Concepts</span>
+            <span style="font-size: 0.9em; color: #555;">Opportunity Cost (機會成本), Time Cost (時間成本), Full Cost (全部成本)</span>
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <h3 style="margin-top: 0;">The Question (題目)</h3>
+        
+        <div class="q-text-zh">每年農曆七月都有不少慈善團體派發免費米予市民。長時間輪候這些免費米的人多數是年長者。</div>
+        <div class="q-text-en">Every July of the Lunar calendar, many charity organizations distribute packs of rice to people free of charge. Those who spend a lot of time queuing up for this rice are mostly elderly people.</div>
+
+        <div class="q-text-zh" style="margin-top: 15px;">在上述個案中，長者而非青年人會花時間輪候免費米是因為</div>
+        <div class="q-text-en">In the above case, the elderly rather than the young people would spend time queuing up for these packs of charity rice because</div>
+
+        <ul class="options-list">
+            <li>
+                <strong>A.</strong> 輪候這些米是一種傳統活動。<br>
+                <span class="q-text-en">it is a tradition to queue up for this rice.</span>
+            </li>
+            <li>
+                <strong>B.</strong> 長者喜愛吃米多於其他食品。<br>
+                <span class="q-text-en">the elderly prefer rice to other kinds of food.</span>
+            </li>
+            <li>
+                <strong>C.</strong> 長者較青年人貧窮。<br>
+                <span class="q-text-en">the elderly are poorer than the young people.</span>
+            </li>
+            <li>
+                <strong>D.</strong> 對長者來說，他們在其他活動中最佳選擇的價值比青年人在其他活動中最佳選擇的價值為低。<br>
+                <span class="q-text-en">the elderly value their best choice of other activities less than that of the young people.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h2 class="section-title">Concept Review (概念重溫)</h2>
+        
+        <div class="zh"><strong>1. 機會成本 (Opportunity Cost)</strong></div>
+        <div class="en">Opportunity cost is the highest-valued option forgone.</div>
+        <div class="math-block">
+            $$ \text{Opportunity Cost} = \text{Value of the highest-valued option forgone} $$
+        </div>
+
+        <div class="zh"><strong>2. 全部成本 (Full Cost)</strong></div>
+        <div class="en">The full cost of obtaining a good includes both money cost (price) and non-money cost (e.g., time cost).</div>
+        <div class="math-block">
+            $$ \text{Full Cost} = \text{Money Price} + \text{Non-money Cost (Time)} $$
+        </div>
+
+        <div class="zh"><strong>3. 時間成本 (Time Cost)</strong></div>
+        <div class="en">Time is a scarce resource. When we spend time queuing, we forgo the income or utility we could have gained from doing something else (e.g., working, leisure). This is the opportunity cost of time.</div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-box">
+        <h2 class="section-title">Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">Correct Option: D</div>
+
+        <!-- Option A -->
+        <div class="option-analysis">
+            <span class="option-label">Option A (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>「傳統」並非經濟學解釋人類行為的主要因素。即使是傳統，如果成本極高，人們也不會去做。這選項無法解釋為何「長者」比「青年人」更多去排隊（除非假設青年人不重視傳統，但這不是經濟學的核心解釋）。</div>
+            <div class="en"><strong>Analysis:</strong> "Tradition" is not a primary economic factor explaining behavior. Even if it is a tradition, people would not do it if the cost were prohibitively high. This option fails to explain why the *elderly* queue more than the *young* (unless assuming young people disregard tradition, which is not a core economic explanation).</div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis">
+            <span class="option-label">Option B (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>這涉及「品味」(Taste)。雖然長者可能較喜歡吃米，但這不足以解釋為何他們願意花費「大量時間」排隊。即使青年人也喜歡吃米，如果他們的時間成本太高，他們也不會排隊。重點在於成本，而非單純的喜好。</div>
+            <div class="en"><strong>Analysis:</strong> This involves "Taste". While the elderly might prefer rice, this alone doesn't explain why they are willing to spend "a lot of time" queuing. Even if young people liked rice, they wouldn't queue if their time cost was too high. The key is cost, not just preference.</div>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis">
+            <span class="option-label">Option C (Wrong)</span>
+            <div class="zh"><strong>分析：</strong>這是一個強大的干擾項。「貧窮」通常意味著收入較低，雖然這暗示了時間成本可能較低，但「貧窮」本身是一個狀態描述，而非經濟學上解釋選擇行為的精確定義。經濟學關注的是「放棄了什麼」。</div>
+            <div class="en"><strong>Analysis:</strong> This is a strong distractor. "Poorer" usually implies lower income, and while this hints at lower time cost, "poverty" itself is a description of a state, not the precise economic definition explaining choice behavior. Economics focuses on "what is forgone".</div>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis correct">
+            <span class="option-label">Option D (Correct)</span>
+            <div class="zh"><strong>分析：</strong>這是機會成本的精確定義。排隊需要時間。
+            <br>• 對青年人來說，放棄的時間可能用來工作（高工資）或娛樂，價值很高。
+            <br>• 對長者來說（多為退休人士），放棄的時間可能價值較低（如閒暇）。
+            <br>因此，長者排隊的機會成本（放棄的價值）較低，所以他們更有可能去排隊。</div>
+            <div class="en"><strong>Analysis:</strong> This is the precise definition of opportunity cost. Queuing takes time.
+            <br>• For young people, the time forgone could be used for working (high wage) or leisure, which has high value.
+            <br>• For the elderly (mostly retired), the time forgone likely has a lower value.
+            <br>Therefore, the opportunity cost (value forgone) of queuing is lower for the elderly, making them more likely to queue.</div>
+        </div>
+    </section>
+
+    <!-- Decomposition & Strategy -->
+    <section class="strategy-grid">
+        <div class="strategy-card">
+            <div class="strategy-title">Problem Decomposition (題目拆解)</div>
+            <div class="zh"><strong>關鍵點 (Pivot Point)：</strong>題目強調「花時間輪候」(spend time queuing)。這暗示了我們必須比較「時間成本」。</div>
+            <div class="en"><strong>Pivot Point:</strong> The question emphasizes "spend time queuing". This implies we must compare "Time Cost".</div>
+            <br>
+            <div class="zh"><strong>邏輯鏈 (Logic Chain)：</strong>
+            <br>1. 免費米 = 金錢價格為 0。
+            <br>2. 全部成本 = 0 + 時間成本。
+            <br>3. 誰的時間成本較低？長者 (放棄的替代品價值較低)。</div>
+            <div class="en"><strong>Logic Chain:</strong>
+            <br>1. Free rice = Money price is 0.
+            <br>2. Full Cost = 0 + Time Cost.
+            <br>3. Who has lower time cost? Elderly (Value of forgone alternatives is lower).</div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-title">Common Mistakes (常犯錯誤)</div>
+            <div class="zh"><strong>誤選 C (貧窮)：</strong>學生常直覺認為窮人就會去排隊。雖然現實中相關，但在 DSE 經濟科中，必須選擇「定義最準確」的選項。選項 D 直接解釋了「為什麼」貧窮或退休會導致排隊（因為放棄的價值低），是更根本的原因。</div>
+            <div class="en"><strong>Choosing C (Poorer):</strong> Students intuitively think poor people queue. While correlated in reality, in HKDSE Economics, you must choose the "most theoretically accurate" option. Option D explains *why* being poor or retired leads to queuing (because the value forgone is low), which is the fundamental reason.</div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

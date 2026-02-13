@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Non-price Competition & Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #4f46e5; /* Indigo */
+            --secondary-color: #3730a3; /* Darker Indigo */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --light-blue: #e0e7ff;
+            --border-color: #cbd5e1;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --concept-bg: #fff7ed; /* Light Orange/Cream for concept */
+            --concept-border: #f97316;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .badge {
+            background-color: var(--light-blue);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .options p {
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .options p:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--concept-border);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-color: var(--error-color);
+            background-color: #fef2f2;
+            opacity: 0.95;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* Tips & Traps */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .tip-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f0f9ff;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .trap-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff1f2;
+            border-top: 4px solid var(--error-color);
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #52525b; /* Zinc 600 */
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+            border-left: 2px solid #e4e4e7;
+            padding-left: 8px;
+        }
+
+        /* Utility */
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Price & Non-price Competition (價格與非價格競爭)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Opportunity Cost, Time Cost, Shortage</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h3>題目 (The Question)</h3>
+        
+        <div class="question-text">
+            <p>後來，大雄發現用換物券來換取禮物必須排隊輸候。排隊輪候這件事顯示：</p>
+            <span class="en-text">Later, John finds that he has to queue up to exchange his coupons for gifts. The queue shows that:</span>
+        </div>
+
+        <div class="options">
+            <p>A. 這些禮物是真正免費的。<br><span class="en-text">A. these gifts are truly free of charge.</span></p>
+            <p>B. 禮物數量短缺，不足以分派給全部顧客。<br><span class="en-text">B. there is a shortage of gifts for all the customers.</span></p>
+            <p>C. 該推廣活動是成功的，同時該公司的產品需求亦有所增加。<br><span class="en-text">C. the promotion campaign is successful and there is an increase in the demand for the company’s products.</span></p>
+            <p>D. 顧客要獲得禮物須付出額外的代價。<br><span class="en-text">D. customers has an extra cost to obtain the gifts.</span></p>
+        </div>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-section">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            概念重溫 (Concept Review)
+        </div>
+        
+        <p><strong>1. 全面成本 (Full Cost):</strong></p>
+        <p>獲得物品的成本不僅僅是金錢價格 (Money Price)，還包括非金錢成本 (Non-money Cost)，例如時間成本。</p>
+        <span class="en-text">The cost of obtaining a good is not just the money price, but also includes non-money costs, such as time cost.</span>
+        $$ \text{Full Cost} = \text{Money Price} + \text{Non-money Cost (e.g., Time)} $$
+        
+        <p><strong>2. 排隊與非價格競爭 (Queuing & Non-price Competition):</strong></p>
+        <p>當價格被定在低於均衡價格 (Equilibrium Price) 的水平（例如免費或極低價），會出現超額需求。由於價格機制未能分配資源，必須採用非價格準則，例如「先到先得」（排隊）。</p>
+        <span class="en-text">When the price is set below the equilibrium price (e.g., free or very low), excess demand occurs. Since the price mechanism fails to allocate resources, non-price criteria like "first-come, first-served" (queuing) must be used.</span>
+
+        <p><strong>3. 短缺 (Shortage) vs 稀少性 (Scarcity):</strong></p>
+        <p><strong>稀少性</strong>是指資源有限，慾望無窮，這是永恆存在的。<strong>短缺</strong>是指在特定價格下，需求量大於供應量 \( (Q_d > Q_s) \)。</p>
+        <span class="en-text"><strong>Scarcity</strong> means limited resources vs. unlimited wants; it always exists. <strong>Shortage</strong> means Quantity Demanded > Quantity Supplied \( (Q_d > Q_s) \) at a specific price.</span>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="analysis-section">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        
+        <div class="option-analysis correct">
+            <span class="option-label">正確答案 (Correct Answer): D</span>
+            <p><strong>分析：</strong>排隊需要時間。在經濟學中，時間是有價值的（時間成本）。因此，即使禮物本身不需要額外支付現金，顧客為了獲得禮物而排隊，實際上付出了「時間成本」。這構成了獲得禮物的「額外代價」。</p>
+            <span class="en-text"><strong>Analysis:</strong> Queuing takes time. In economics, time has value (time cost). Therefore, even if the gift itself requires no extra cash payment, customers incur a "time cost" by queuing. This constitutes an "extra cost" to obtain the gifts.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 A (Option A): 錯誤 (Incorrect)</span>
+            <p>經濟學名言：「世上沒有免費午餐」(There is no such thing as a free lunch)。即使金錢價格為零，只要涉及資源的使用（或排隊的時間），機會成本就不為零。排隊本身就證明了獲得禮物是有代價的（時間）。</p>
+            <span class="en-text">Economic adage: "There is no such thing as a free lunch." Even if the money price is zero, as long as resources are used (or time is spent queuing), the opportunity cost is not zero. The queue itself proves there is a cost (time) to get the gift.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 B (Option B): 錯誤 (Incorrect)</span>
+            <p>這是一個常見的陷阱。排隊只代表在「當前價格」（這裡是零金錢價格）下，需求量大於供應量。這並不一定意味著禮物總數不足以分派給所有顧客。可能所有排隊的人最終都能拿到禮物，只是處理速度慢導致了排隊。短缺是指 \(Q_d > Q_s\)，但題目只說要排隊，未說明是否有人拿不到。</p>
+            <span class="en-text">This is a common trap. Queuing only indicates that at the "current price" (zero money price here), Quantity Demanded > Quantity Supplied (rate of service). It does not necessarily mean the total stock of gifts is insufficient for all customers. Everyone in the queue might eventually get a gift, but slow processing caused the queue. Shortage means \(Q_d > Q_s\), but the question only mentions queuing, not that anyone went home empty-handed.</span>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="option-label">選項 C (Option C): 錯誤 (Incorrect)</span>
+            <p>排隊只能反映換領禮物的需求量高，或者換領處的效率低。它不能直接證明推廣活動整體是成功的，也不能直接證明對公司「產品」（即百貨公司的商品）的需求增加了（雖然可能是相關的，但排隊這個現象本身不能推導出這個結論）。</p>
+            <span class="en-text">The queue only reflects high quantity demanded for redeeming gifts or low efficiency at the redemption counter. It cannot directly prove the overall success of the campaign, nor does it directly prove an increase in demand for the company's "products" (merchandise). While likely related, the phenomenon of queuing itself does not logically imply this conclusion.</span>
+        </div>
+    </section>
+
+    <!-- Decomposition & Tips -->
+    <section class="tips-grid">
+        <div class="tip-box">
+            <h3>💡 題目拆解 (Problem Decomposition)</h3>
+            <p><strong>關鍵點 (Pivot Point):</strong> 「排隊」(Queue)。</p>
+            <p>在經濟學MC題中，一旦看到「排隊」，你的腦海中應該立刻浮現兩個概念：</p>
+            <ol>
+                <li><strong>非價格競爭 (Non-price competition):</strong> 因為價格機制未運作（通常是因為價格過低或免費）。</li>
+                <li><strong>時間成本 (Time Cost):</strong> 排隊代表付出了時間，這是機會成本的一部分。</li>
+            </ol>
+            <p>題目問排隊「顯示」什麼，即是問排隊的<strong>經濟含義</strong>。最直接的含義就是成本增加了（時間）。</p>
+            <span class="en-text"><strong>Pivot Point:</strong> "Queue". When you see "queue" in Econ MC, think: 1. Non-price competition (price mechanism not working). 2. Time Cost (part of opportunity cost). The question asks what queuing "shows", meaning the direct economic implication. The most direct implication is that cost has increased (time).</span>
+        </div>
+
+        <div class="trap-box">
+            <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes)</h3>
+            <ul>
+                <li>
+                    <strong>誤選 B (短缺):</strong> 學生常以為「排隊 = 不夠分」。其實排隊也可以是因為服務速度慢（瓶頸），但最終每個人都有份。除非題目明確說「有人排隊後拿不到」，否則不能斷定是總量不足。
+                    <span class="en-text"><strong>Mistaking B (Shortage):</strong> Students often think "Queue = Not enough to go around". Actually, queuing can be due to slow service speed, yet everyone gets one eventually. Unless the question states "some people queued but got nothing", you cannot assume total shortage.</span>
+                </li>
+                <li>
+                    <strong>忽略非金錢成本:</strong> 學生常只看錢。覺得換物券是送的，就是免費。忘記了「時間就是金錢」。
+                    <span class="en-text"><strong>Ignoring non-money costs:</strong> Students often focus only on money. Thinking coupons are gifts means they are free. Forgetting that "Time is money".</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
