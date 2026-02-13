@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Tax Systems Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #eff6ff;
+            --accent-color: #f59e0b;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --danger-bg: #fee2e2;
+            --danger-text: #991b1b;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 1.8rem;
+            color: #111827;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            flex-wrap: wrap;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .options-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .concept-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+        }
+
+        .option-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .bilingual-text {
+            margin-top: 8px;
+            color: var(--light-text);
+            font-size: 0.95em;
+            border-top: 1px dashed #e5e7eb;
+            padding-top: 8px;
+        }
+
+        /* Decomposition & Tricks */
+        .strategy-box {
+            background-color: #fff7ed; /* Orange tint */
+            border: 1px solid #fed7aa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+        
+        .strategy-title {
+            color: #c2410c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Utility for math blocks */
+        .math-block {
+            background: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <span class="topic-tag">Topic: Public Finance (公共財政)</span>
+        <h1>Tax Principles & Systems<br><span style="font-size: 0.8em; color: #666;">稅收原則與制度</span></h1>
+        <div class="meta-info">
+            <span><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span><strong>Key Concepts:</strong> Progressive/Proportional/Regressive Tax, Tax Rate vs. Tax Payment</span>
+        </div>
+    </header>
+
+    <!-- Question -->
+    <div class="question-box">
+        <div class="question-text">
+            <p><strong>題目：</strong>政府計劃開徵一項新稅：當應課稅收入下降，它的稅款亦下降。下列哪項有關該項新稅的陳述是正確的？</p>
+            <p style="color: #555; margin-top: 5px;"><strong>Question:</strong> The government plans to impose a new tax under which the tax payment drops when taxable income drops. Which of the following statements about the new tax is correct?</p>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 該稅屬累退稅，因為隨著應課稅收入下降，稅率會上升。<br><span style="color:#666; font-size:0.9em;">The tax is regressive as the tax rate increases when the taxable income drops.</span></li>
+            <li><strong>B.</strong> 該稅屬比例稅，因為應課稅收入和稅款金額有正向的關係。<br><span style="color:#666; font-size:0.9em;">The tax is proportional as the taxable income and the tax payment are positively related.</span></li>
+            <li><strong>C.</strong> 該稅不會是累進稅，因為隨著稅款金額下降，稅率會上升。<br><span style="color:#666; font-size:0.9em;">The tax cannot be progressive as the tax rate increases when the tax payment drops.</span></li>
+            <li><strong>D.</strong> 該稅可能是累進稅、比例稅或累退稅。<br><span style="color:#666; font-size:0.9em;">The tax can be progressive, proportional or regressive.</span></li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-section">
+        <div class="concept-title">💡 概念重溫 (Concept Review)</div>
+        <p>要判斷稅制（累進、比例、累退），我們必須觀察<strong>平均稅率 (Average Tax Rate)</strong> 的變化，而不是稅款金額 (Tax Payment) 的變化。</p>
+        <p>To determine the tax system (Progressive, Proportional, Regressive), we must observe the change in the <strong>Average Tax Rate</strong>, not the absolute Tax Payment.</p>
+        
+        <div class="math-block">
+            $$ \text{Average Tax Rate (ATR)} = \frac{\text{Tax Payment } (T)}{\text{Taxable Income } (Y)} \times 100\% $$
+        </div>
+
+        <ul>
+            <li><strong>累進稅 (Progressive):</strong> 收入 \(Y \uparrow\) \(\rightarrow\) 稅率 \(ATR \uparrow\)</li>
+            <li><strong>比例稅 (Proportional):</strong> 收入 \(Y \uparrow\) \(\rightarrow\) 稅率 \(ATR\) 不變 (Constant)</li>
+            <li><strong>累退稅 (Regressive):</strong> 收入 \(Y \uparrow\) \(\rightarrow\) 稅率 \(ATR \downarrow\)</li>
+        </ul>
+        
+        <p><strong>關鍵重點：</strong>題目僅提供了稅款金額 (Tax Payment) 的變化，這不足以直接斷定稅率 (Tax Rate) 的走勢。</p>
+        <p><strong>Key Point:</strong> The question only provides the change in Tax Payment, which is insufficient to determine the trend of the Tax Rate directly.</p>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        
+        <div class="correct-answer">
+            ✅ 正確答案：選項 D (Option D)
+        </div>
+
+        <p><strong>題目條件 (Given):</strong> 收入 \(Y \downarrow\) \(\rightarrow\) 稅款 \(T \downarrow\)。<br>這只表示收入與稅款呈正向關係 (Positive relationship between Income and Tax Payment)。</p>
+
+        <!-- Option A -->
+        <div class="option-analysis">
+            <span class="option-label">選項 A (Option A)</span> ❌ 錯誤 (Incorrect)
+            <p>雖然累退稅的定義是「收入下降，稅率上升」，但我們不能單憑「稅款下降」就斷定它是累退稅。累退稅的稅款可以下降、上升或不變。</p>
+            <div class="bilingual-text">
+                Although the definition of regressive tax is "tax rate increases as income drops", we cannot conclude it is regressive just because "tax payment drops". In a regressive tax, tax payment can drop, rise, or stay the same.
+            </div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis">
+            <span class="option-label">選項 B (Option B)</span> ❌ 錯誤 (Incorrect)
+            <p>比例稅的確有正向關係，但這不是比例稅獨有的特徵。累進稅和累退稅也可能出現此特徵。因此不能單憑此關係斷定它是比例稅。</p>
+            <div class="bilingual-text">
+                Proportional tax indeed has a positive relationship, but this is not unique to it. Progressive and regressive taxes can also share this feature. Thus, we cannot conclude it is proportional just based on this relationship.
+            </div>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis">
+            <span class="option-label">選項 C (Option C)</span> ❌ 錯誤 (Incorrect)
+            <p>這是錯誤的推論。累進稅下，當收入下降，稅率會下降，稅款也會下降。題目情況完全符合累進稅的特徵。</p>
+            <div class="bilingual-text">
+                This is a false deduction. Under a progressive tax, when income drops, the tax rate drops, and the tax payment also drops. The scenario fits the characteristics of a progressive tax perfectly well.
+            </div>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis">
+            <span class="option-label">選項 D (Option D)</span> ✅ 正確 (Correct)
+            <p>讓我們用數字舉例證明三者皆有可能 (Let's use numbers to prove all three are possible):</p>
+            <p>假設收入由 $20,000 下降至 $10,000 (Income drops from $20,000 to $10,000):</p>
+            
+            <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                <tr style="background-color: #f3f4f6; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 8px; text-align: left;">稅制 (System)</th>
+                    <th style="padding: 8px; text-align: left;">收入 $20,000 (High Y)</th>
+                    <th style="padding: 8px; text-align: left;">收入 $10,000 (Low Y)</th>
+                    <th style="padding: 8px; text-align: left;">結果 (Result)</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px;"><strong>累進 (Progressive)</strong><br><small>Rate \(\downarrow\) as Y \(\downarrow\)</small></td>
+                    <td style="padding: 8px;">Rate: 10%<br>Tax: <strong>$2,000</strong></td>
+                    <td style="padding: 8px;">Rate: 5%<br>Tax: <strong>$500</strong></td>
+                    <td style="padding: 8px; color: green;">Tax \(\downarrow\)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px;"><strong>比例 (Proportional)</strong><br><small>Rate constant</small></td>
+                    <td style="padding: 8px;">Rate: 10%<br>Tax: <strong>$2,000</strong></td>
+                    <td style="padding: 8px;">Rate: 10%<br>Tax: <strong>$1,000</strong></td>
+                    <td style="padding: 8px; color: green;">Tax \(\downarrow\)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;"><strong>累退 (Regressive)</strong><br><small>Rate \(\uparrow\) as Y \(\downarrow\)</small></td>
+                    <td style="padding: 8px;">Rate: 10%<br>Tax: <strong>$2,000</strong></td>
+                    <td style="padding: 8px;">Rate: 15%<br>Tax: <strong>$1,500</strong></td>
+                    <td style="padding: 8px; color: green;">Tax \(\downarrow\)</td>
+                </tr>
+            </table>
+            
+            <p style="margin-top: 10px;">由此可見，三種稅制都可能出現「收入下降，稅款下降」的情況。</p>
+            <div class="bilingual-text">
+                As shown above, the situation "income drops, tax payment drops" can occur in all three tax systems.
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="strategy-box">
+        <div class="strategy-title">🔍 題目拆解 (Problem Decomposition)</div>
+        <p><strong>破題關鍵 (Pivot Point):</strong> 區分「稅款 (Tax Payment)」與「稅率 (Tax Rate)」。</p>
+        <p><strong>Pivot Point:</strong> Distinguish between "Tax Payment" and "Tax Rate".</p>
+        <ul>
+            <li>題目給的是<strong>金額 ($)</strong> 的變化。</li>
+            <li>定義稅制需要的是<strong>百分比 (%)</strong> 的變化。</li>
+        </ul>
+        <p><strong>邏輯陷阱 (Logic Trap):</strong> 學生常誤以為「累退稅」意味著收入少的人交的稅款金額一定比收入高的人多。這是錯的！累退稅只是指收入少的人，稅款佔收入的<strong>比例</strong>較高，但實際金額可以較少、相同或較多。</p>
+        <div class="bilingual-text">
+            <strong>Logic Trap:</strong> Students often mistakenly think "Regressive Tax" means low-income earners pay a higher absolute amount of tax than high-income earners. This is wrong! Regressive tax simply means low-income earners pay a higher <strong>percentage</strong> of their income, but the absolute amount can be lower, the same, or higher.
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="qa-box">
+        <h3>🙋‍♂️ 學生常見疑問 (Student Q&A)</h3>
+        
+        <p><strong>Q: 累退稅 (Regressive Tax) 下，有沒有可能出現「收入下降，稅款反而上升」的情況？</strong></p>
+        <p><strong>A:</strong> 有可能的。累退稅的定義僅在於「收入下降，平均稅率上升」。由於稅款 = 收入 × 稅率 (\(T\) = \(Y\) \(×\) \(t\))，當收入 (\(Y\)) 下降但稅率 (\(t\)) 上升時，最終的稅款金額 (\(T\)) 之變動取決於兩者的幅度。因此，累退稅下的稅款金額可以上升、下跌或維持不變。</p>
+        
+        <div class="bilingual-text">
+            <strong>Q: Is it possible for the tax payment to increase when income drops under a Regressive Tax?</strong><br>
+            <strong>A:</strong> Yes, it is possible. The definition of a regressive tax relies solely on the "Average Tax Rate increasing as income drops." Since Tax Payment = Income × Tax Rate (\(T\) = \(Y\) \(×\) \(t\) ), when Income (\(Y\)) drops while Tax Rate (\(t\)) rises, the change in the final Tax Payment (\(T\)) depends on the magnitude of these changes. Therefore, under a regressive tax, the tax payment can increase, decrease, or remain constant.
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="strategy-box" style="background-color: #eff6ff; border-color: #bfdbfe;">
+        <div class="strategy-title" style="color: #1e40af;">⚡ 考試技巧 (Exam Tricks)</div>
+        <p>看到題目只提及 <strong>\(Y\) 與 \(T\) 同方向變動</strong> (Positive relationship between \(Y\) and \(T\))，結論通常是：<strong>資料不足 (Insufficient Information)</strong> 或 <strong>三者皆有可能 (All three are possible)</strong>。</p>
+        <p>只有當題目提及 \(\frac{T}{Y}\) (即稅率) 的變化時，才能確定稅制。</p>
+        <div class="bilingual-text">
+            When the question only mentions that <strong>\(Y\) and \(T\) move in the same direction</strong>, the conclusion is usually: <strong>Insufficient Information</strong> or <strong>All three are possible</strong>. You can only determine the tax system when the question mentions the change in \(\frac{T}{Y}\) (the tax rate).
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
