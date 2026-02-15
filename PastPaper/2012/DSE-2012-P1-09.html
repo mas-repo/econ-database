@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Profit Maximization</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .concept-box {
+            background-color: #f0f9ff; /* Light Blue */
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .correct-option {
+            background-color: #dcfce7; /* Green */
+            border: 1px solid #22c55e;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .wrong-option {
+            background-color: #fee2e2; /* Red */
+            border: 1px solid #ef4444;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .pivot-point {
+            background-color: #fff7ed; /* Orange */
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+        .bilingual-split {
+            margin-bottom: 0.5rem;
+        }
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="border-b-2 border-gray-200 pb-4 mb-6">
+        <h1 class="text-2xl font-bold text-blue-800">HKDSE Economics Analysis</h1>
+        <div class="flex flex-wrap gap-4 mt-2 text-sm text-gray-600">
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"><strong>Topic:</strong> Firms & Production (廠商與生產)</span>
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded"><strong>Keywords:</strong> Profit Maximization, Perfect Competition, Marginal Cost</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">題目 The Question</h2>
+        
+        <div class="bg-white p-4 border rounded shadow-sm">
+            <p class="mb-2"><strong>細閱下表有關某受價廠商的生產成本。</strong><br>
+            <span class="en-text">Refer to the following table showing the production costs of a price-taking firm.</span></p>
+
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>產出 (Output)</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>邊際成本 (MC)</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>平均可變成本 (AVC)</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>固定成本 (FC)</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="mb-4"><strong>若產品價格為$6，</strong><br>
+            <span class="en-text">If the product price is $6,</span></p>
+
+            <ul class="list-none space-y-2">
+                <li class="p-2 hover:bg-gray-50 rounded"><strong>A.</strong> 該廠商會生產5單位的產出以爭取最高利潤。<br><span class="en-text">the firm will produce 5 units of output to maximize its profit.</span></li>
+                <li class="p-2 hover:bg-gray-50 rounded"><strong>B.</strong> 該廠商可賺取的最高利潤是$5。<br><span class="en-text">the maximum profit the firm can make is $5.</span></li>
+                <li class="p-2 hover:bg-gray-50 rounded"><strong>C.</strong> 當該廠商的利潤為最高時，其平均可變成本是$5。<br><span class="en-text">the average variable cost is $5 when the firm maximizes its profit.</span></li>
+                <li class="p-2 hover:bg-gray-50 rounded"><strong>D.</strong> 該廠商的最低總成本是$13。<br><span class="en-text">the minimum total cost of the firm is $13.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3 class="text-lg font-bold text-blue-700 mb-2">概念重溫 Concept Review</h3>
+        
+        <div class="mb-3">
+            <strong>1. 利潤極大化條件 (Profit Maximization Condition):</strong>
+            <p class="bilingual-split">廠商會生產至邊際收益等於邊際成本的產量水平。</p>
+            <span class="en-text">Firms produce at the output level where Marginal Revenue equals Marginal Cost.</span>
+            <div class="math-block">$$ MR = MC $$</div>
+        </div>
+
+        <div class="mb-3">
+            <strong>2. 受價者 (Price Taker):</strong>
+            <p class="bilingual-split">在完全競爭市場中，廠商是受價者，因此邊際收益等於市場價格。</p>
+            <span class="en-text">In a perfectly competitive market, the firm is a price taker, so Marginal Revenue equals Price.</span>
+            <div class="math-block">$$ P = MR $$</div>
+            <p class="text-sm text-gray-600 mt-1">因此，均衡條件變為：\( P = MC \)</p>
+        </div>
+
+        <div class="mb-3">
+            <strong>3. 成本公式 (Cost Formulas):</strong>
+            <ul class="list-disc list-inside text-sm">
+                <li>總成本 (Total Cost): \( TC = TFC + TVC \)</li>
+                <li>總可變成本 (Total Variable Cost): \( TVC = AVC \times Q \)</li>
+                <li>利潤 (Profit): \( \pi = TR - TC \) 或 \( (P - ATC) \times Q \)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h2 class="text-xl font-bold mb-4">答案與詳細分析 Answer & Detailed Analysis</h2>
+        
+        <div class="correct-option">
+            <strong>正確答案 Correct Option: B</strong>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Step 1: Determine Output -->
+            <div class="border-l-4 border-gray-400 pl-4 py-2 bg-gray-50">
+                <h4 class="font-bold">第一步：找出利潤極大化的產量 (Step 1: Find Profit-Maximizing Output)</h4>
+                <p>題目給定價格 \( P = 6 \)。<br>
+                根據 \( P = MC \) 的原則，我們在表格中尋找 \( MC = 6 \) 的產量。</p>
+                <span class="en-text">Given Price \( P = 6 \). According to the \( P = MC \) rule, we look for the output level where \( MC = 6 \) in the table.</span>
+                <p class="mt-2 text-blue-600 font-semibold">結果：當產出 (Output) = 3 時，MC = 6。</p>
+            </div>
+
+            <!-- Option A Analysis -->
+            <div class="wrong-option">
+                <strong>選項 A (Option A): 錯誤 (Incorrect)</strong>
+                <p>在產出為 5 時，\( MC = 10 \)。<br>
+                因為 \( MC (10) > P (6) \)，生產第 5 單位的成本高於收益，廠商會虧損，所以不會生產 5 單位。</p>
+                <span class="en-text">At output 5, \( MC = 10 \). Since \( MC (10) > P (6) \), the cost of producing the 5th unit is higher than the revenue, causing a loss on that unit. The firm will not produce 5 units.</span>
+            </div>
+
+            <!-- Option B Analysis -->
+            <div class="correct-option">
+                <strong>選項 B (Option B): 正確 (Correct)</strong>
+                <p>我們計算產出為 3 時的利潤：</p>
+                <span class="en-text">Let's calculate the profit at output level 3:</span>
+                <div class="bg-white p-3 border rounded mt-2 text-sm">
+                    <p>1. 總收益 (Total Revenue, TR) = \( P \times Q = 6 \times 3 = 18 \)</p>
+                    <p>2. 總可變成本 (TVC) = \( AVC \times Q = 4 \times 3 = 12 \)</p>
+                    <p>3. 總固定成本 (TFC) = 1 (題目中的 "固定成本" 欄位顯示為常數 1)</p>
+                    <p>4. 總成本 (Total Cost, TC) = \( TFC + TVC = 1 + 12 = 13 \)</p>
+                    <hr class="my-2">
+                    <p><strong>利潤 (Profit) = \( TR - TC = 18 - 13 = \$5 \)</strong></p>
+                </div>
+            </div>
+
+            <!-- Option C Analysis -->
+            <div class="wrong-option">
+                <strong>選項 C (Option C): 錯誤 (Incorrect)</strong>
+                <p>當產出為 3 (利潤極大化產量) 時，查表可知平均可變成本 (AVC) 為 <strong>$4</strong>，而不是 $5。</p>
+                <span class="en-text">At output 3 (the profit-maximizing level), checking the table shows the Average Variable Cost (AVC) is <strong>$4</strong>, not $5.</span>
+            </div>
+
+            <!-- Option D Analysis -->
+            <div class="wrong-option">
+                <strong>選項 D (Option D): 錯誤 (Incorrect)</strong>
+                <p>「最低總成本」是指在整個生產表中，總成本數值最小的那個。<br>
+                當產出 = 2 時：\( TC = 1 + (3 \times 2) = 7 \)。<br>
+                $7 顯然小於 $13，所以最低總成本不是 $13。</p>
+                <span class="en-text">"Minimum total cost" refers to the lowest TC value across the entire schedule. At output 2: \( TC = 1 + (3 \times 2) = 7 \). Since $7 is clearly less than $13, the minimum total cost is not $13.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="pivot-point">
+        <h3 class="text-lg font-bold text-orange-800 mb-2">題目拆解 Problem Decomposition</h3>
+        <p class="mb-2"><strong>關鍵點 (Pivot Point):</strong> 價格 $6 (Price = $6)</p>
+        <p>這類題目的解題核心在於將題目給出的<strong>價格</strong>直接連結到表格中的<strong>邊際成本 (MC)</strong>。</p>
+        <span class="en-text">The core of solving this problem is to link the given <strong>Price</strong> directly to the <strong>Marginal Cost (MC)</strong> column in the table.</span>
+        
+        <ul class="list-disc list-inside mt-3 text-sm text-gray-700">
+            <li><strong>干擾資訊 (Distractors):</strong> 表格中 \( Q=4, 5, 6 \) 的數據大多是用來混淆視聽的，一旦確定 \( Q=3 \)，其他列的數據只需用來驗證選項 A。</li>
+            <li><strong>隱藏陷阱 (Hidden Trap):</strong> 題目中的 "固定成本" 寫著 1, 1, 1... 這代表總固定成本 (TFC) 是 $1，而不是平均固定成本 (AFC)。如果誤以為是 AFC，計算 TC 時就會出錯。</li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="mt-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">學生常見疑問 Student Q&A</h3>
+        
+        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+            <p class="font-bold text-blue-800">Q: 為什麼不是生產到 $MC > P$ 之前的那一個單位？</p>
+            <p class="font-bold text-blue-600 text-sm mb-2">Why don't we produce up to the unit before MC > P?</p>
+            <p class="text-gray-700">
+                A: 只要 \( P \ge MC \)，生產該單位都能增加（或至少不減少）總利潤。在這個題目中，第 3 單位的 \( MC = 6 \)，價格也是 6，這意味著生產第 3 單位的邊際利潤是 0。雖然它沒有增加額外利潤，但經濟學上我們定義均衡點為 \( P = MC \)。如果只生產 2 單位 (\( MC=4 \))，你便放棄了第 3 單位潛在的生產機會（雖然這題剛好第3單位淨利是0，但在連續函數中這點是頂點）。
+            </p>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <p class="font-bold text-blue-800">Q: 如何快速計算總成本 (TC)？</p>
+            <p class="font-bold text-blue-600 text-sm mb-2">How to calculate Total Cost (TC) quickly?</p>
+            <p class="text-gray-700">
+                A: 記住公式：\( TC = (AVC \times Q) + TFC \)。<br>
+                題目給了 AVC 和 Output，直接相乘得到 TVC，再加上固定的 $1 即可。
+                <br><span class="text-sm text-gray-500">Remember: \( TC = (AVC \times Q) + TFC \). Multiply AVC by Output to get TVC, then add the fixed $1.</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

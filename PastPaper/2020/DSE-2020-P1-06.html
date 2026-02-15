@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Factors of Production Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #475569; /* Slate Gray */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-question: #f8fafc; /* Very Light Gray */
+            --bg-correct: #dcfce7; /* Light Green */
+            --text-correct: #166534; /* Dark Green */
+            --bg-wrong: #fee2e2; /* Light Red */
+            --text-wrong: #991b1b; /* Dark Red */
+            --accent-yellow: #fef08a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: var(--bg-question);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dialogue {
+            font-style: italic;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--bg-concept);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #60a5fa;
+        }
+
+        .concept-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+        }
+
+        .concept-table th, .concept-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .concept-table th {
+            background-color: #e2e8f0;
+        }
+
+        /* Answer Analysis */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-correct);
+            background-color: var(--bg-correct);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .analysis-step {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Pivot Point & Tricks */
+        .pivot-box {
+            background-color: #fffbeb;
+            border: 2px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .qa-box {
+            background-color: #fdf2f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #db2777;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .concept-table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="tag">Topic: Production & Factor Income (生產與要素收入)</span>
+            <span><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+            <span><strong>Key Concepts:</strong> Factors of Production, Imputed Income, Residual Claimant</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>Refer to the following dialogue / 參閱以下對話:</strong></p>
+            
+            <div class="dialogue">
+                <p><strong>Landlord Li:</strong> I own a lake with great natural views. How can I earn income from it, Capital Cook?</p>
+                <p><strong>李地主：</strong>我擁有一個自然風景怡人的湖泊。曲船長，我怎樣靠它賺取收入？</p>
+                <br>
+                <p><strong>Capital Cook:</strong> I have a fishing boat! I can be the captain of some boat trips in the lake!</p>
+                <p><strong>曲船長：</strong>我有一艘漁船！舉辦一些遊湖活動，我來當船長。</p>
+                <br>
+                <p><strong>Landlord Li:</strong> Let's organise fishing tours and charge the tourists a large sum! I will pay you a daily rate, Capital Cook. And I will pocket the remaining income. We will earn a lot of money together.</p>
+                <p><strong>李地主：</strong>讓我們辦一些釣魚湖上遊，向遊客收取大額費用！曲船長，我會按日支付你薪水。餘下的收入歸我。我們會一起發大財！</p>
+            </div>
+
+            <p>Given the return of land is rent, the return of labour is wage, the return of capital is interest while the return of entrepreneur is profit. The income earned by Captain Cook consists of _________ while the remaining income earned by Landlord Li consists of _________.</p>
+            <p>已知土地的回報是租金，勞工的回報是工資，資本的回報是利息，企業家的回報是利潤。曲船長的收入包含了 _________，而李地主所賺取的餘下收入包含了_________。</p>
+
+            <ul class="options-list">
+                <li>A. wage …… profit / 工資 …… 利潤</li>
+                <li>B. interest …… rent and profit / 利息 …… 租金及利潤</li>
+                <li>C. wage and interest …… rent / 工資及利息 …… 租金</li>
+                <li>D. wage and interest…… rent and profit / 工資及利息 …… 租金及利潤</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>To solve this, we must correctly classify the resources provided by each person and match them to their economic return.</p>
+            <p>要解答此題，我們必須正確分類每人提供的資源，並將其與經濟回報配對。</p>
+
+            <table class="concept-table">
+                <thead>
+                    <tr>
+                        <th>Factor (生產要素)</th>
+                        <th>Definition (定義)</th>
+                        <th>Return (回報)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Land (土地)</strong></td>
+                        <td>Natural resources not created by man (e.g., lake, ocean, sunlight).<br>非人造的天然資源（如湖泊、海洋、陽光）。</td>
+                        <td><strong>Rent (租金)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Labour (勞力)</strong></td>
+                        <td>Human effort (mental or physical) in production.<br>生產過程中的人力付出（腦力或體力）。</td>
+                        <td><strong>Wage (工資)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Capital (資本)</strong></td>
+                        <td>Man-made resources used for further production (e.g., machinery, boats, tools).<br>用於協助生產的人造資源（如機器、船隻、工具）。</td>
+                        <td><strong>Interest (利息)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entrepreneurship (企業家職能)</strong></td>
+                        <td>Making decisions, organizing other factors, and bearing risks.<br>制定決策、組織其他要素並承擔風險。</td>
+                        <td><strong>Profit (利潤)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: D (正確選項：D)
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 1: Analyze Captain Cook's Contribution (分析曲船長的貢獻)</h3>
+            <p><strong>Contribution:</strong> Cook provides two things:</p>
+            <ol>
+                <li>He works as the captain (Human effort \(\rightarrow\) <strong>Labour</strong>).</li>
+                <li>He brings his own fishing boat (Man-made resource \(\rightarrow\) <strong>Capital</strong>).</li>
+            </ol>
+            <p><strong>Income:</strong> Although he receives a single "daily rate" (salary), economically, this payment compensates him for both his labor and the use of his capital (the boat).</p>
+            <p><strong>Conclusion:</strong> His income consists of <strong>Wage</strong> (for labor) and <strong>Interest</strong> (for capital).</p>
+            
+            <p class="en-text"><strong>貢獻：</strong>曲船長提供了兩樣東西：1. 他擔任船長（人力 \(\rightarrow\) <strong>勞力</strong>）。 2. 他自備漁船（人造資源 \(\rightarrow\) <strong>資本</strong>）。<br>
+            <strong>收入：</strong>雖然他收到的是一筆「日薪」，但在經濟學上，這筆款項同時補償了他的勞力和資本（船隻）的使用。<br>
+            <strong>結論：</strong>他的收入包含<strong>工資</strong>（勞力回報）及<strong>利息</strong>（資本回報）。</p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 2: Analyze Landlord Li's Contribution (分析李地主的貢獻)</h3>
+            <p><strong>Contribution:</strong> Li provides two things:</p>
+            <ol>
+                <li>He owns the lake (Natural resource \(\rightarrow\) <strong>Land</strong>).</li>
+                <li>He suggests the idea, organizes the tour, and takes the "remaining income" (Risk-taking \(\rightarrow\) <strong>Entrepreneurship</strong>).</li>
+            </ol>
+            <p><strong>Income:</strong> He earns income from the lake itself and acts as the residual claimant (taking the profit or loss after paying Cook).</p>
+            <p><strong>Conclusion:</strong> His income consists of <strong>Rent</strong> (for land) and <strong>Profit</strong> (for entrepreneurship).</p>
+
+            <p class="en-text"><strong>貢獻：</strong>李地主提供了兩樣東西：1. 他擁有湖泊（天然資源 \(\rightarrow\) <strong>土地</strong>）。 2. 他提出主意、組織活動並收取「餘下收入」（承擔風險 \(\rightarrow\) <strong>企業家職能</strong>）。<br>
+            <strong>收入：</strong>他從湖泊本身獲得回報，並作為剩餘索償人（在支付曲船長後賺取利潤或承擔虧損）。<br>
+            <strong>結論：</strong>他的收入包含<strong>租金</strong>（土地回報）及<strong>利潤</strong>（企業家職能回報）。</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="pivot-box">
+            <h3>🔑 The Pivot Point (關鍵轉折點)</h3>
+            <p>The key to this question is identifying <strong>Implicit Returns (隱含回報)</strong>.</p>
+            <p>Even if a payment is called a "salary" or "daily rate," you must look at <strong>what resources are being supplied</strong> to earn that money.</p>
+            <p class="en-text">此題的關鍵在於識別<strong>隱含回報</strong>。即使付款被稱為「薪水」或「日薪」，你必須觀察是<strong>什麼資源被提供</strong>來換取這筆錢。</p>
+            <ul>
+                <li>Cook brings the <strong>Boat</strong> \(\rightarrow\) Must include <strong>Interest</strong>.</li>
+                <li>Li takes the <strong>Risk</strong> (remaining income) \(\rightarrow\) Must include <strong>Profit</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>Trap 1: "Captain Cook is an employee, so he only gets wages."</strong>
+                <p>Students often forget that if an employee brings their own tools (capital) to work, part of their pay is conceptually interest on that capital.</p>
+                <p class="en-text"><strong>陷阱 1：「曲船長是僱員，所以只賺工資。」</strong> 學生常忘記如果僱員自備工具（資本）上班，其薪酬在概念上部分屬於資本的利息。</p>
+            </li>
+            <li>
+                <strong>Trap 2: "Landlord Li owns the land, so he only gets rent."</strong>
+                <p>Students miss the fact that Li is the one organizing the business and taking the residual income. Mere ownership yields rent; active organization yields profit.</p>
+                <p class="en-text"><strong>陷阱 2：「李地主擁有土地，所以只賺租金。」</strong> 學生忽略了李地主是組織生意並收取剩餘收入的人。單純擁有權帶來租金；主動組織帶來利潤。</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="qa-box">
+            <p><strong>Q: Why is the return on the boat "Interest" and not "Rent"? In daily life, we "rent" a boat.</strong></p>
+            <p><strong>問：為什麼船的回報是「利息」而不是「租金」？日常生活中我們說「租」船。</strong></p>
+            <hr style="border: 0; border-top: 1px solid #db2777; margin: 10px 0;">
+            <p><strong>A:</strong> In Economics, definitions are strict. "Rent" is <strong>exclusively</strong> the return on <strong>Land</strong> (natural resources). The return on <strong>Capital</strong> (man-made resources like a boat) is always defined as <strong>Interest</strong>, even if we call it "rental income" in casual conversation.</p>
+            <p class="en-text"><strong>答：</strong>在經濟學中，定義非常嚴格。「租金」<strong>專指土地</strong>（天然資源）的回報。<strong>資本</strong>（人造資源如船隻）的回報在經濟學上定義為<strong>利息</strong>，即使我們在日常對話中稱之為「租金收入」。</p>
+        </div>
+    </section>
+
+    <!-- 8. Exam Tricks -->
+    <section>
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p>Use the <strong>"Who provides what?"</strong> checklist method:</p>
+        <p>使用<strong>「誰提供了什麼？」</strong>清單法：</p>
+        
+        <ol>
+            <li>
+                List the person.
+                <span class="en-text">列出人物。</span>
+            </li>
+            <li>
+                List every item they bring to the table.
+                <span class="en-text">列出他們提供的每一項物品/資源。</span>
+            </li>
+            <li>
+                Map item to factor \(\rightarrow\) Map factor to return.
+                <span class="en-text">將物品對應至生產要素 \(\rightarrow\) 將要素對應至回報。</span>
+            </li>
+        </ol>
+
+        <p><strong>Quick Check (快速檢查):</strong></p>
+        <ul>
+            <li>
+                Did the person provide a man-made tool? \(\rightarrow\) Add <strong>Interest</strong>.
+                <span class="en-text">該人是否提供了人造工具？ \(\rightarrow\) 加入 <strong>利息</strong>。</span>
+            </li>
+            <li>
+                Is the person the "boss" keeping the rest of the money? \(\rightarrow\) Add <strong>Profit</strong>.
+                <span class="en-text">該人是否是保留餘下款項的「老闆」？ \(\rightarrow\) 加入 <strong>利潤</strong>。</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

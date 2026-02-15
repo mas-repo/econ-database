@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Firm Behavior Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --accent-bg: #eff6ff;
+            --border-color: #e2e8f0;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            background: var(--accent-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: var(--accent-bg);
+        }
+
+        .concept-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--correct-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-section {
+            margin-top: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .math-block {
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .tips-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .data-table { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><span class="header-item">Topic:</span> Firms & Production / Cost & Supply (廠商與生產 / 成本與供應)</div>
+        <div><span class="header-item">Difficulty:</span> ★★★★☆ (Level 4)</div>
+        <div><span class="header-item">Key Concepts:</span> Profit Maximization (利潤極大化), Fixed vs Variable Cost (固定與可變成本)</div>
+    </div>
+
+    <!-- The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        
+        <div class="bilingual-text">
+            下表顯示在完全競爭市場內某廠商的邊際成本。
+            <span class="en-text">The schedule below shows the marginal cost of a firm in a perfectly competitive market.</span>
+        </div>
+
+        <table class="data-table">
+            <tr>
+                <th>產量 (單位) / Output (units)</th>
+                <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+            </tr>
+            <tr>
+                <th>邊際成本 ($) / Marginal Cost ($)</th>
+                <td>5</td><td>5.5</td><td>6</td><td>6.5</td><td>7</td><td>8</td><td>9.5</td>
+            </tr>
+        </table>
+
+        <div class="bilingual-text">
+            假設租用機器的租金(屬固定成本)上升了$2，而每單位產出的邊際成本減少了$0.5。該廠商利潤極大化的產量因此_________，而利潤 _________。
+            <span class="en-text">Suppose the rental of the machine hired, a fixed cost, increases by $2 while the marginal cost for each unit of the output is reduced by $0.5. As a result, the profit-maximising output of the firm _________ while the profit of the firm _________.</span>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <p>A. 上升 … 下跌 (increases … decreases)</p>
+            <p>B. 上升 … 可能上升或下跌 (increases … may increase or decrease)</p>
+            <p>C. 下跌 … 下跌 (decreases … decreases)</p>
+            <p>D. 下跌 … 可能上升或下跌 (decreases … may increase or decrease)</p>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-box">
+        <h3>Concept Review (概念重溫)</h3>
+        
+        <p><strong>1. 利潤極大化條件 (Profit Maximization Condition):</strong></p>
+        <div class="bilingual-text">
+            廠商會生產至邊際收益等於邊際成本的水平。在完全競爭市場中，價格 (P) 等於邊際收益 (MR)。
+            <span class="en-text">Firms produce where Marginal Revenue equals Marginal Cost. In Perfect Competition, Price (P) equals Marginal Revenue (MR).</span>
+        </div>
+        <div class="math-block">
+            $$ MR = MC \implies P = MC $$
+        </div>
+
+        <p><strong>2. 固定成本 vs 邊際成本 (Fixed Cost vs Marginal Cost):</strong></p>
+        <ul>
+            <li>
+                <strong>固定成本 (Fixed Cost, FC):</strong> 不隨產量改變的成本（如租金）。FC 的改變<strong>不會</strong>影響 MC，因此<strong>不會</strong>影響利潤極大化的產量 (除非導致停業)。
+                <span class="en-text">Costs that do not change with output (e.g., rent). Changes in FC do <strong>not</strong> affect MC, and thus do <strong>not</strong> affect the profit-maximizing output (unless it causes a shutdown).</span>
+            </li>
+            <li>
+                <strong>邊際成本 (Marginal Cost, MC):</strong> 生產多一單位產品的額外成本。MC 的改變會直接影響產量決定。
+                <span class="en-text">The additional cost of producing one more unit. Changes in MC directly affect the output decision.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option-analysis correct">
+            <h3 style="margin-top:0; color: var(--correct-color);">Correct Option: B</h3>
+            <p><strong>上升 … 可能上升或下跌 (Increases … may increase or decrease)</strong></p>
+            
+            <h4>第一步：分析產量 (Step 1: Analyze Output)</h4>
+            <div class="bilingual-text">
+                題目指出「每單位產出的邊際成本減少了$0.5」。這代表整條 MC 曲線向下移動 (或向右移動)。
+                <span class="en-text">The question states "marginal cost for each unit of the output is reduced by $0.5". This means the entire MC curve shifts downward (or to the right).</span>
+            </div>
+            <div class="bilingual-text">
+                由於市場價格 \(P\) (即 \(MR\)) 保持不變，當 \(MC\) 下跌時，原本 \(P = MC\) 的均衡點會改變。現在 \(P > New MC\)，廠商會增加產量以獲取更多利潤，直到 \(P\) 再次等於新的 \(MC\)。因此，<strong>產量上升</strong>。
+                <span class="en-text">Since the market price \(P\) (which is \(MR\)) remains constant, when \(MC\) falls, the original equilibrium where \(P = MC\) is disrupted. Now \(P > New MC\), so the firm will increase output to capture more profit until \(P\) equals the new \(MC\). Therefore, <strong>output increases</strong>.</span>
+            </div>
+            <p><em>注意：租金上升 (固定成本) 不會影響邊際成本，所以不影響產量決定。</em></p>
+
+            <h4>第二步：分析利潤 (Step 2: Analyze Profit)</h4>
+            <div class="bilingual-text">
+                利潤的變化受兩個相反因素影響：
+                <span class="en-text">The change in profit is affected by two opposing factors:</span>
+            </div>
+            <ol>
+                <li>
+                    <strong>成本增加 (Cost Increase):</strong> 固定成本 (租金) 上升 $2。這會令總利潤<strong>減少 $2</strong>。
+                    <span class="en-text">Fixed cost (rent) rises by $2. This <strong>reduces total profit by $2</strong>.</span>
+                </li>
+                <li>
+                    <strong>成本節省 (Cost Saving):</strong> 邊際成本每單位減少 $0.5。這代表生產每一單位都節省了 $0.5 的可變成本。總節省額 = \(0.5 \times Q\) (產量)。這會令總利潤<strong>增加</strong>。
+                    <span class="en-text">Marginal cost falls by $0.5 per unit. This means variable cost is saved by $0.5 for every unit produced. Total saving = \(0.5 \times Q\) (Output). This <strong>increases</strong> total profit.</span>
+                </li>
+            </ol>
+            
+            <div class="math-block">
+                $$ \Delta \text{Profit} = (\text{Total Saving}) - (\text{Rent Increase}) $$
+                $$ \Delta \text{Profit} = 0.5Q - 2 $$
+            </div>
+
+            <div class="bilingual-text">
+                <strong>關鍵點：</strong>我們不知道原本的市場價格 \(P\)，因此不知道產量 \(Q\) 是多少。
+                <span class="en-text"><strong>Key Point:</strong> We do not know the original market price \(P\), so we do not know what the output quantity \(Q\) is.</span>
+            </div>
+            <ul>
+                <li>如果 \(Q = 3\)，利潤改變 = \(0.5(3) - 2 = -0.5\) (下跌)。</li>
+                <li>如果 \(Q = 8\)，利潤改變 = \(0.5(8) - 2 = +2.0\) (上升)。</li>
+            </ul>
+            <div class="bilingual-text">
+                因為結果取決於未知的產量，所以利潤<strong>可能上升或下跌</strong>。
+                <span class="en-text">Since the result depends on the unknown output level, the profit <strong>may increase or decrease</strong>.</span>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <h4>Why A, C, D are wrong (為何 A, C, D 錯誤)</h4>
+            <ul>
+                <li>
+                    <strong>Option A:</strong> 錯誤地假設利潤必然下跌。如果廠商產量很大 (例如 \(Q=9\))，節省的可變成本 ($4.5) 會超過租金升幅 ($2)。
+                    <span class="en-text">Incorrectly assumes profit must decrease. If the firm produces a large output (e.g., \(Q=9\)), the variable cost savings ($4.5) would exceed the rent increase ($2).</span>
+                </li>
+                <li>
+                    <strong>Option C & D:</strong> 錯誤地指出產量下跌。當邊際成本下降時，廠商為了極大化利潤，必然會增加 (或維持) 產量，絕不會減少。
+                    <span class="en-text">Incorrectly state that output decreases. When marginal cost falls, to maximize profit, a firm will always increase (or maintain) output, never decrease it.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="tips-box">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p><strong>1. 尋找「轉折點」 (Identify the Pivot Point):</strong></p>
+        <div class="bilingual-text">
+            題目的核心在於分辨<strong>固定成本 (FC)</strong> 與 <strong>邊際成本 (MC)</strong> 的不同影響。
+            <br>FC 改變 \(\rightarrow\) 只影響利潤，不影響產量。
+            <br>MC 改變 \(\rightarrow\) 影響產量，同時影響利潤。
+            <span class="en-text">The core of the problem is distinguishing the different effects of <strong>Fixed Cost (FC)</strong> and <strong>Marginal Cost (MC)</strong>.
+            <br>FC change \(\rightarrow\) Affects Profit only, NOT Output.
+            <br>MC change \(\rightarrow\) Affects Output AND Profit.</span>
+        </div>
+
+        <p><strong>2. 數據陷阱 (Data Trap):</strong></p>
+        <div class="bilingual-text">
+            題目給出了一個詳細的數字表格，但沒有給出<strong>市場價格 (Price)</strong>。沒有價格，你就無法鎖定具體的產量 \(Q\)。這是一個暗示，答案很可能涉及「不確定性」(Uncertainty)。
+            <span class="en-text">The question provides a detailed numerical table but does NOT provide the <strong>Market Price</strong>. Without the price, you cannot pinpoint the specific output \(Q\). This is a hint that the answer likely involves "uncertainty".</span>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="qa-box">
+        <h3>Student Q&A (學生常見疑問)</h3>
+        
+        <div class="qa-item">
+            <div class="qa-q">Q: 為什麼固定成本上升不會令廠商減少產量來省錢？ (Why doesn't an increase in fixed cost make the firm reduce output to save money?)</div>
+            <div class="bilingual-text">
+                A: 因為固定成本（如租金）是「必須支付」的，無論你生產 1 件還是 100 件，租金都一樣。減少產量並不能節省租金，反而可能因為減少了銷售收入而損失更多。只要 \(P \ge AVC\) (價格高於平均可變成本)，廠商就會繼續生產。
+                <span class="en-text">A: Because fixed costs (like rent) must be paid regardless of whether you produce 1 unit or 100 units. Reducing output does not save rent; instead, it might cause you to lose more money by reducing sales revenue. As long as \(P \ge AVC\) (Price covers Average Variable Cost), the firm continues to produce.</span>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q: 考試時如果沒有時間計算，有什麼速解法？ (Is there a shortcut if I'm running out of time?)</div>
+            <div class="bilingual-text">
+                A: 有。看到 MC 下降 \(\rightarrow\) 產量一定上升 (刪除 C, D)。看到有「成本上升」($2) 和「成本下降」($0.5Q) 同時出現，且不知道 \(Q\) 是多少 \(\rightarrow\) 淨效果通常是不確定的。直接選 B。
+                <span class="en-text">A: Yes. See MC falls \(\rightarrow\) Output must increase (Eliminate C, D). See "Cost Increase" ($2) and "Cost Decrease" ($0.5Q) happening simultaneously, and you don't know \(Q\) \(\rightarrow\) Net effect is usually uncertain. Choose B directly.</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
