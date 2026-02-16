@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis - Fisher Equation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --success-bg: #d1fae5;
+            --success-text: #065f46;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .formula-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .correct-option {
+            border: 2px solid var(--success-text);
+            background-color: var(--success-bg);
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Banking / Inflation</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key: Fisher Equation, Real Interest Rate</span>
+        </div>
+    </div>
+
+    <!-- The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p><strong>假設名義利率維持不變。當實際通脹率低於預期通脹率時，實際實質利率會高於 ___________。</strong></p>
+            <p class="en-text">Suppose the nominal interest rate remains constant. When the actual inflation rate is lower than the expected inflation rate, the actual real interest rate will be higher than the ___________.</p>
+            
+            <div style="margin: 15px 0;">
+                (1) 預期實質利率 (expected real interest rate)<br>
+                (2) 名義利率 (nominal interest rate)<br>
+                (3) 實際通脹率 (actual inflation rate)
+            </div>
+
+            <ul class="options-list">
+                <li>A. 只有 (1) only</li>
+                <li>B. 只有 (1)、(2) only</li>
+                <li>C. 只有 (2)、(3) only</li>
+                <li>D. (1)、(2) 及 (3)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p><strong>費沙公式 (Fisher Equation)</strong></p>
+            <p>要解決這類題目，我們必須掌握名義利率、實質利率與通脹率之間的關係。</p>
+            <p class="en-text">To solve this problem, we must understand the relationship between nominal interest rate, real interest rate, and inflation rate.</p>
+
+            <div class="formula-block">
+                $$ r = R - \pi $$
+            </div>
+            
+            <ul>
+                <li>\( R \): 名義利率 (Nominal Interest Rate) - 銀行報價的利率。</li>
+                <li>\( r \): 實質利率 (Real Interest Rate) - 扣除通脹後的購買力回報。</li>
+                <li>\( \pi \): 通脹率 (Inflation Rate) - 物價上升的幅度。</li>
+            </ul>
+
+            <p><strong>預期 vs 實際 (Expected vs Actual)</strong></p>
+            <ul>
+                <li><strong>預期實質利率 (Expected Real Interest Rate):</strong> \( r_{expected} = R - \pi_{expected} \)</li>
+                <li><strong>實際實質利率 (Actual Real Interest Rate):</strong> \( r_{actual} = R - \pi_{actual} \)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="option-analysis correct-option">
+            <span class="option-label">Correct Answer: Option A (只有 1)</span>
+            <p><strong>題目給定條件 (Given):</strong></p>
+            <ol>
+                <li>名義利率 \( R \) 不變 (Constant).</li>
+                <li>實際通脹率 \( < \) 預期通脹率 (\( \pi_{actual} < \pi_{expected} \)).</li>
+            </ol>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Analysis of Statement (1): Correct (正確)</span>
+            <p><strong>比較實際實質利率與預期實質利率。</strong></p>
+            <p>根據公式：<br>
+            \( r_{actual} = R - \pi_{actual} \)<br>
+            \( r_{expected} = R - \pi_{expected} \)</p>
+            <p>由於 \( R \) 是常數，而我們減去一個<strong>較小</strong>的數值 (\( \pi_{actual} \))，所得的結果 \( r_{actual} \) 自然會<strong>較大</strong>。</p>
+            <p class="en-text">Compare actual real interest rate with expected real interest rate. Since \( R \) is constant, and we are subtracting a smaller value (\( \pi_{actual} \)), the result \( r_{actual} \) will be larger.</p>
+            <p>數學推導: \( R - \pi_{actual} > R - \pi_{expected} \)</p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Analysis of Statement (2): Incorrect (錯誤)</span>
+            <p><strong>比較實際實質利率與名義利率。</strong></p>
+            <p>公式：\( r_{actual} = R - \pi_{actual} \)</p>
+            <p>除非出現<strong>通縮</strong> (Deflation, 即 \( \pi_{actual} < 0 \))，否則實質利率通常低於名義利率。題目只說「實際通脹低於預期」，並沒有說實際通脹是負數。</p>
+            <p class="en-text">Compare actual real interest rate with nominal interest rate. Unless there is deflation (\( \pi_{actual} < 0 \)), the real interest rate is usually lower than the nominal interest rate. The question only states actual inflation is lower than expected, not that it is negative.</p>
+            <p>例子：若 \( R=5\% \), \( \pi_{actual}=2\% \)，則 \( r_{actual}=3\% \)。顯然 \( 3\% < 5\% \)。</p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Analysis of Statement (3): Incorrect (錯誤)</span>
+            <p><strong>比較實際實質利率與實際通脹率。</strong></p>
+            <p>公式：\( r_{actual} = R - \pi_{actual} \)</p>
+            <p>題目問是否 \( r_{actual} > \pi_{actual} \)？即是否 \( R - \pi_{actual} > \pi_{actual} \) (或 \( R > 2\pi_{actual} \))？</p>
+            <p>我們無法確定。這取決於名義利率和通脹率的具體數值。</p>
+            <p class="en-text">Compare actual real interest rate with actual inflation rate. We cannot determine if \( r_{actual} > \pi_{actual} \) without knowing the specific values of \( R \) and \( \pi \).</p>
+            <p>例子：若 \( R=5\% \), \( \pi_{actual}=4\% \)，則 \( r_{actual}=1\% \)。此時 \( 1\% < 4\% \)，陳述不成立。</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p><strong>關鍵點 (Pivot Point):</strong> 理解費沙公式中的減法關係。</p>
+        <p class="en-text">Key Point: Understand the subtraction relationship in the Fisher Equation.</p>
+        
+        <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px dashed #ccc; margin-top: 10px;">
+            <p>試想像 <strong>名義利率 (R)</strong> 是一個大蛋糕。</p>
+            <ul>
+                <li><strong>通脹率 (\( \pi \))</strong> 是被通脹怪獸吃掉的部分。</li>
+                <li><strong>實質利率 (r)</strong> 是剩下給你享用的部分。</li>
+            </ul>
+            <p>題目說：怪獸實際吃掉的 (\( \pi_{actual} \)) 比預期 (\( \pi_{expected} \)) <strong>少</strong>。</p>
+            <p><strong>結論：</strong> 既然被吃掉的少了，剩下的蛋糕 (實際實質利率) 自然就比預期的<strong>多</strong>了。</p>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <div class="section-title">Student Q&A (學生常見疑問)</div>
+        
+        <p><strong>Q1: 為什麼選項 (2) 說「實質利率高於名義利率」通常是錯的？</strong></p>
+        <p><strong>A:</strong> 因為 \( \text{實質} = \text{名義} - \text{通脹} \)。只要通脹率是正數 (例如物價上漲 1%)，實質利率就會被扣減，變得比名義利率小。只有在通縮 (物價下跌) 時，減去負數變成加數，實質利率才會高於名義利率。</p>
+        <p class="en-text"><strong>Q1: Why is option (2) usually wrong?</strong><br>Because \( Real = Nominal - Inflation \). As long as inflation is positive, the real rate is reduced. It is only higher than nominal rate during deflation.</p>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <p><strong>Q2: 題目沒有提供具體數字，我怎麼知道選項 (3) 是錯的？</strong></p>
+        <p><strong>A:</strong> 正因為沒有提供數字，我們不能斷定它「一定」是對的。在經濟學 MC 題中，如果一個陳述在某些情況下是對的，但在其他情況下是錯的 (Depends on values)，我們就不能選它為正確答案。</p>
+        <p class="en-text"><strong>Q2: Without numbers, how do I know (3) is wrong?</strong><br>Because it's not *always* true. In MC questions, if a statement depends on specific values to be true, it is considered incorrect as a general rule.</p>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <div class="section-title">Exam Tricks (考試技巧)</div>
+        <div class="tips-box">
+            <strong>代入數字法 (Plug-in Numbers Method)</strong>
+            <p>當題目只有抽象概念沒有數字時，自己設一組簡單的數字來驗證。</p>
+            <p class="en-text">When the question is abstract, set up simple numbers to verify.</p>
+            <ul>
+                <li>設 \( R = 10\% \) (固定)</li>
+                <li>設 \( \pi_{expected} = 5\% \)</li>
+                <li>設 \( \pi_{actual} = 2\% \) (符合「實際低於預期」)</li>
+            </ul>
+            <p><strong>計算：</strong></p>
+            <ul>
+                <li>\( r_{expected} = 10 - 5 = 5\% \)</li>
+                <li>\( r_{actual} = 10 - 2 = 8\% \)</li>
+            </ul>
+            <p><strong>驗證選項：</strong></p>
+            <ul>
+                <li>(1) \( 8\% > 5\% \) ? <strong>YES</strong></li>
+                <li>(2) \( 8\% > 10\% \) ? <strong>NO</strong></li>
+                <li>(3) \( 8\% > 2\% \) ? <strong>YES</strong> (但在這組數字是對的，試試另一組：若 \( R=3\%, \pi=2\% \rightarrow r=1\% \)，則 \( 1\% > 2\% \) 是錯的)。</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
