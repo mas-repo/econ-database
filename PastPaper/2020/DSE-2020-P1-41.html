@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Tax Exemption Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue 600 */
+            --secondary-color: #1e40af; /* Blue 800 */
+            --bg-color: #f8fafc; /* Slate 50 */
+            --card-bg: #ffffff;
+            --text-main: #1f2937; /* Gray 800 */
+            --text-muted: #4b5563; /* Gray 600 */
+            --accent-light: #eff6ff; /* Blue 50 */
+            --border-color: #e5e7eb; /* Gray 200 */
+            --correct-color: #16a34a; /* Green 600 */
+            --wrong-color: #dc2626; /* Red 600 */
+            --highlight-bg: #fef3c7; /* Amber 100 */
+            --highlight-text: #92400e; /* Amber 800 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: var(--accent-light);
+            color: var(--secondary-color);
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: var(--accent-light);
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-box {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Analysis */
+        .analysis-card {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .analysis-header {
+            font-weight: bold;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .comparison-result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--highlight-bg);
+            color: var(--highlight-text);
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Bilingual Text */
+        .zh {
+            margin-bottom: 4px;
+            font-weight: 500;
+            display: block;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: var(--bg-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+            .data-table { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>Topic: Public Finance & Taxation</h1>
+        <h1>課題：公共財政與稅收</h1>
+        <div class="meta-info">
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key Concepts: Tax Exemption, Maximum Limit (Cap)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">
+            <span>📝 The Question (題目)</span>
+        </div>
+        <div class="question-box">
+            <p class="zh">在沒有稅項豁免的情況下，約翰需繳付入息稅$15 000，而瑪莉則需繳付$35 000。</p>
+            <p class="en">In the case WITHOUT tax exemption, John needs to pay $15 000 and Mary needs to pay $35 000 as income tax.</p>
+            
+            <p class="zh">假設政府建議以下入息稅的豁免措施：</p>
+            <p class="en">Suppose the government proposes the following income tax exemption measures:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Measure (措施)</th>
+                        <th>Amount of tax exemption (豁免稅額)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>I</td>
+                        <td>
+                            <span class="zh">入息稅的75%，最高$30 000</span><br>
+                            <span class="en">75% of income tax, maximum $30 000</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>II</td>
+                        <td>
+                            <span class="zh">入息稅的100%，最高$20 000</span><br>
+                            <span class="en">100% of income tax, maximum $20 000</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="zh">約翰會偏好 _________，而瑪莉會偏好 _________。</p>
+            <p class="en">John will prefer _________ while Mary will prefer _________.</p>
+
+            <ul class="options-list">
+                <li>A. <span class="zh">措施I …… 措施I</span> <span class="en">measure I …… measure I</span></li>
+                <li>B. <span class="zh">措施I …… 措施II</span> <span class="en">measure I …… measure II</span></li>
+                <li>C. <span class="zh">措施II …… 措施I</span> <span class="en">measure II …… measure I</span></li>
+                <li>D. <span class="zh">措施II …… 措施II</span> <span class="en">measure II …… measure II</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">
+            <span>📚 Concept Review (概念重溫)</span>
+        </div>
+        
+        <div class="concept-box">
+            <span class="zh"><strong>理性選擇 (Rational Choice)</strong></span>
+            <span class="en"><strong>Rational Choice</strong></span>
+            <p class="zh">納稅人會選擇能最大程度減少其稅務負擔的方案。換言之，他們會選擇<strong>豁免金額最高</strong>的措施。</p>
+            <p class="en">Taxpayers will choose the option that maximizes their tax reduction. In other words, they will prefer the measure that offers the <strong>highest exemption amount</strong>.</p>
+        </div>
+
+        <div class="concept-box">
+            <span class="zh"><strong>豁免上限 (Maximum Cap)</strong></span>
+            <span class="en"><strong>Maximum Cap</strong></span>
+            <p class="zh">計算豁免額時，必須比較「計算出來的百分比金額」與「最高限額」，取兩者中較小的一個。</p>
+            <p class="en">When calculating the exemption, one must compare the "calculated percentage amount" with the "maximum limit" and take the smaller of the two.</p>
+            
+            <div class="formula-box">
+                \[ \text{Actual Exemption} = \min(\text{Tax} \times \%, \text{Maximum Cap}) \]
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="section">
+        <div class="section-title">
+            <span>✅ Answer & Detailed Analysis (答案與詳細分析)</span>
+        </div>
+
+        <div style="background-color: #dcfce7; padding: 15px; border-radius: 8px; border: 1px solid #86efac; margin-bottom: 20px;">
+            <h3 style="margin:0; color: #166534;">Correct Option: C</h3>
+        </div>
+
+        <!-- John's Analysis -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                👤 John (Original Tax: $15,000) / 約翰 (原稅款: $15,000)
+            </div>
+            
+            <p class="zh"><strong>措施 I (Measure I):</strong> 75% 豁免 (上限 $30,000)</p>
+            <p class="en"><strong>Measure I:</strong> 75% exemption (Max $30,000)</p>
+            <p>
+                \[ 15,000 \times 75\% = 11,250 \]
+                <span class="zh" style="font-size:0.9em; color:gray;">($11,250 < $30,000，未過上限)</span>
+            </p>
+
+            <p class="zh"><strong>措施 II (Measure II):</strong> 100% 豁免 (上限 $20,000)</p>
+            <p class="en"><strong>Measure II:</strong> 100% exemption (Max $20,000)</p>
+            <p>
+                \[ 15,000 \times 100\% = 15,000 \]
+                <span class="zh" style="font-size:0.9em; color:gray;">($15,000 < $20,000，未過上限)</span>
+            </p>
+
+            <div class="comparison-result">
+                John's Choice: $15,000 > $11,250 <br>
+                👉 Measure II (措施 II)
+            </div>
+        </div>
+
+        <!-- Mary's Analysis -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                👤 Mary (Original Tax: $35,000) / 瑪莉 (原稅款: $35,000)
+            </div>
+            
+            <p class="zh"><strong>措施 I (Measure I):</strong> 75% 豁免 (上限 $30,000)</p>
+            <p class="en"><strong>Measure I:</strong> 75% exemption (Max $30,000)</p>
+            <p>
+                \[ 35,000 \times 75\% = 26,250 \]
+                <span class="zh" style="font-size:0.9em; color:gray;">($26,250 < $30,000，未過上限)</span>
+            </p>
+
+            <p class="zh"><strong>措施 II (Measure II):</strong> 100% 豁免 (上限 $20,000)</p>
+            <p class="en"><strong>Measure II:</strong> 100% exemption (Max $20,000)</p>
+            <p>
+                \[ 35,000 \times 100\% = 35,000 \]
+                <span class="zh" style="font-size:0.9em; color:red;">(BUT Max Cap is $20,000 / 但上限為 $20,000)</span><br>
+                Actual Exemption = <strong>$20,000</strong>
+            </p>
+
+            <div class="comparison-result">
+                Mary's Choice: $26,250 > $20,000 <br>
+                👉 Measure I (措施 I)
+            </div>
+        </div>
+
+        <p class="zh"><strong>結論：</strong>約翰選擇措施II，瑪莉選擇措施I。</p>
+        <p class="en"><strong>Conclusion:</strong> John chooses Measure II, Mary chooses Measure I.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">
+            <span>🔍 Problem Decomposition (題目拆解)</span>
+        </div>
+        <p class="zh">這類題目的解題關鍵在於檢查<strong>「上限」(Cap)</strong> 是否被觸發。</p>
+        <p class="en">The key to solving this type of question is to check if the <strong>"Cap"</strong> is triggered.</p>
+        
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 15px; padding: 10px; background: #fff; border-left: 4px solid #f59e0b;">
+                <strong style="color: #d97706;">Step 1: Calculate Raw Exemption (計算原始豁免額)</strong><br>
+                <span class="zh">用稅款乘以豁免百分比。</span><br>
+                <span class="en">Multiply tax liability by the exemption percentage.</span>
+            </li>
+            <li style="margin-bottom: 15px; padding: 10px; background: #fff; border-left: 4px solid #f59e0b;">
+                <strong style="color: #d97706;">Step 2: Check Against Cap (檢查上限)</strong><br>
+                <span class="zh">這是最重要的一步！如果 Step 1 的數字大於上限，則只能獲得上限的金額。</span><br>
+                <span class="en">This is the pivot point! If the figure from Step 1 is larger than the cap, they only get the cap amount.</span>
+            </li>
+            <li style="padding: 10px; background: #fff; border-left: 4px solid #f59e0b;">
+                <strong style="color: #d97706;">Step 3: Compare (比較)</strong><br>
+                <span class="zh">比較兩個措施最終的「實際豁免額」，選較大者。</span><br>
+                <span class="en">Compare the final "actual exemption amounts" of both measures and pick the larger one.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="section">
+        <div class="section-title">
+            <span>⚠️ Common Mistakes (常犯錯誤)</span>
+        </div>
+        <div class="concept-box" style="border-left-color: var(--wrong-color); background-color: #fef2f2;">
+            <p class="zh"><strong>錯誤觀念：</strong> 看到 100% 就以為一定最好。</p>
+            <p class="en"><strong>Misconception:</strong> Assuming 100% is always better.</p>
+            <p class="zh"><strong>解釋：</strong> 對於瑪莉來說，雖然措施II提供100%豁免，但因為上限只有$20,000，遠低於她原本應繳的$35,000，所以實際上她無法享受全額豁免。</p>
+            <p class="en"><strong>Explanation:</strong> For Mary, although Measure II offers 100% exemption, the cap is only $20,000, which is far below her liability of $35,000. Thus, she cannot enjoy the full exemption.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section">
+        <div class="section-title">
+            <span>🙋 Student Q&A (學生常見疑問)</span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <p class="zh"><strong>問：為什麼我們比較的是「豁免額」而不是「最終繳稅額」？</strong></p>
+            <p class="en"><strong>Q: Why do we compare "Exemption Amount" instead of "Final Tax Payable"?</strong></p>
+            <p class="zh" style="color: var(--text-muted); margin-top: 5px;">
+                <strong>答：</strong> 兩者其實是一樣的。豁免額越大，最終繳稅額就越小。直接計算豁免額通常比較快，因為不需要做減法（原稅款 - 豁免額）。
+            </p>
+            <p class="en" style="color: var(--text-muted);">
+                <strong>A:</strong> They lead to the same result. The larger the exemption, the smaller the final tax payable. Calculating the exemption amount directly is usually faster because you skip the subtraction step (Original Tax - Exemption).
+            </p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">
+            <span>⚡ Exam Tricks (考試技巧)</span>
+        </div>
+        <ul style="padding-left: 20px;">
+            <li class="zh"><strong>快速檢查法：</strong> 如果原稅款<strong>小於</strong>兩個措施的上限，直接選百分比高那個（如約翰的情況）。</li>
+            <li class="en"><strong>Quick Check:</strong> If the original tax is <strong>smaller</strong> than the caps of both measures, simply choose the one with the higher percentage (like John's case).</li>
+            
+            <li class="zh" style="margin-top: 10px;">如果原稅款<strong>很大</strong>（如瑪莉），一定要先看上限。通常高百分比的選項會有較低的上限作為陷阱。</li>
+            <li class="en" style="margin-bottom: 0;">If the original tax is <strong>large</strong> (like Mary's), check the cap first. Usually, the high-percentage option has a lower cap as a trap.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Generated by AI Economics Tutor | HKDSE Focus
+    </div>
+</div>
+
+</body>
+</html>
