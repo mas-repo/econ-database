@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Banking System Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #eff6ff; /* Light Blue */
+            border: 1px solid #bfdbfe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .formula-box {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Analysis Section */
+        .correct-answer {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .option-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 5px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Tips & Q&A */
+        .tips-box {
+            background-color: #fffbeb; /* Amber tint */
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header { padding: 1.5rem; }
+            .section { padding: 1.5rem; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Master Class</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Banking (貨幣與銀行)</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+        </div>
+        <div class="meta-info">
+            <span class="badge">Key Concepts: Excess Reserves, Money Creation</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>在一個銀行系統中，若實際儲備大於法定儲備，則：</strong></p>
+            <p class="en-text">If the actual reserve is larger than the required reserve in a banking system, it follows that:</p>
+            
+            <ul class="options-list">
+                <li>A. 該銀行系統有現金流失現象。<br><span class="en-text">there is cash leakage in the banking system.</span></li>
+                <li>B. 有些銀行決定持有超額儲備。<br><span class="en-text">some banks decide to hold excess reserves.</span></li>
+                <li>C. 市場對銀行的放款需求不足。<br><span class="en-text">the demand for loans is insufficient.</span></li>
+                <li>D. 該銀行系統可以創造更多存款。<br><span class="en-text">the banking system can create more deposits.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>1. 儲備的分類 (Classification of Reserves)</h3>
+            <p>銀行持有的實際儲備 (\(R_a\)) 由兩部分組成：</p>
+            <div class="formula-box">
+                $$ R_a = R_r + R_e $$
+            </div>
+            <ul>
+                <li><strong>\(R_a\) (Actual Reserves 實際儲備):</strong> 銀行實際持有的現金資產。</li>
+                <li><strong>\(R_r\) (Required Reserves 法定儲備):</strong> 根據中央銀行規定的法定儲備率 (\(rrr\)) 必須持有的最低儲備。<br> \( R_r = \text{Deposits} \times rrr \)</li>
+                <li><strong>\(R_e\) (Excess Reserves 超額儲備):</strong> 超出法定要求的儲備。</li>
+            </ul>
+        </div>
+
+        <div class="concept-box">
+            <h3>2. 存款創造的條件 (Conditions for Deposit Creation)</h3>
+            <p>銀行能夠創造存款（借貸）的前提是擁有<strong>超額儲備 (\(R_e > 0\))</strong>。</p>
+            <p class="en-text">Banks can create deposits (lend out money) only if they have excess reserves (\(R_e > 0\)).</p>
+            <p>如果 \(R_a > R_r\)，這意味著 \(R_e > 0\)。銀行系統尚未用盡其借貸能力。</p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <span class="correct-answer">Correct Option: D</span>
+
+        <div class="option-analysis">
+            <span class="option-label">Option A (Wrong):</span>
+            <p class="bilingual-text"><strong>現金流失 (Cash Leakage)</strong> 是指公眾持有現金增加，導致銀行儲備減少的過程。雖然現金流失會影響貨幣乘數，但「實際儲備 > 法定儲備」這個狀態本身並不證明發生了現金流失。即使沒有現金流失，銀行也可以持有超額儲備。</p>
+            <span class="en-text">Cash leakage refers to the public holding more cash, reducing bank reserves. While leakage affects the money multiplier, the state of "Actual > Required" does not prove leakage occurred. Banks can hold excess reserves even without any cash leakage.</span>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option B (Wrong):</span>
+            <p class="bilingual-text">這是一個很有吸引力的干擾項。雖然銀行確實持有超額儲備，但選項使用了「決定 (decide)」一詞，暗示這是銀行<strong>自願 (voluntary)</strong> 的行為。然而，銀行持有超額儲備可能是<strong>非自願 (involuntary)</strong> 的（例如因為沒有人來借錢）。因此，我們不能斷定這是銀行「決定」的結果。</p>
+            <span class="en-text">This is a strong distractor. While banks are holding excess reserves, the word "decide" implies a <strong>voluntary</strong> action. However, holding excess reserves could be <strong>involuntary</strong> (e.g., no one wants to borrow). Thus, we cannot conclude it is purely a "decision" by the banks.</span>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option C (Wrong):</span>
+            <p class="bilingual-text">這只是導致超額儲備的<strong>其中一個可能原因</strong>。銀行持有超額儲備也可能是因為銀行自身避險意識強（不願借），而不是因為市場需求不足。題目問的是「則 (it follows that)」，即必然的邏輯結果，而不是猜測原因。</p>
+            <span class="en-text">This is just <strong>one possible reason</strong> for excess reserves. Banks might hold excess reserves because they are risk-averse, not necessarily because demand is low. The question asks for a logical consequence, not a speculative cause.</span>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option D (Correct):</span>
+            <p class="bilingual-text">這是最準確的邏輯推論。若 \(R_a > R_r\)，則必然存在超額儲備 (\(R_e > 0\))。只要有超額儲備，銀行系統在數學上和理論上就具備了<strong>進一步借貸和創造存款的能力 (Capacity)</strong>。無論銀行最終是否借出，這個「可以 (can)」的潛力是客觀存在的。</p>
+            <span class="en-text">This is the most accurate logical inference. If \(R_a > R_r\), then Excess Reserves (\(R_e > 0\)) must exist. As long as there are excess reserves, the banking system theoretically has the <strong>capacity</strong> to lend more and create deposits. Whether they actually do it or not, the potential ("can") objectively exists.</span>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="tips-box" style="background-color: #f0fdf4; border-color: #86efac;">
+            <p><strong>🎯 Pivot Point (解題關鍵點):</strong></p>
+            <p>區分<strong>「能力 (Capacity)」</strong>與<strong>「行為 (Behavior)」</strong>。</p>
+            <p class="en-text">Distinguish between <strong>Capacity</strong> and <strong>Behavior</strong>.</p>
+            <ul>
+                <li><strong>現狀 (Fact):</strong> \(R_a > R_r\) \(\rightarrow\) 有多餘的錢。</li>
+                <li><strong>選項 B & C (Behavior/Reason):</strong> 試圖解釋「為什麼」有多餘的錢（是自願的？還是沒人借？）。這些是不確定的。</li>
+                <li><strong>選項 D (Capacity):</strong> 描述「有了多餘的錢可以做什麼」。這是確定的物理/數學事實。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-item">
+            <p class="qa-q">Q: 如果銀行不想借錢出去（因為經濟很差），選項 D 還正確嗎？</p>
+            <p><strong>A:</strong> 正確。請注意選項 D 的用詞是「可以 (can)」，而不是「會 (will)」。</p>
+            <p class="en-text">Yes. Notice that Option D uses the word "can", not "will". Even if banks refuse to lend due to a bad economy, the <em>system's capacity</em> to create deposits exists because the reserves are available. They have the "fuel" to drive the car, even if they choose not to drive it.</p>
+        </div>
+
+        <div class="qa-item">
+            <p class="qa-q">Q: 什麼時候選項 B 會是正確答案？</p>
+            <p><strong>A:</strong> 如果題目問的是「以下哪項是實際儲備大於法定儲備的<strong>可能原因</strong>？(Which of the following is a possible reason...?)」，那麼 B 和 C 都是可接受的答案。但題目問的是推論結果 (consequence)，所以必須選 D。</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <h2>Exam Tricks (考試技巧)</h2>
+        <div class="tips-box">
+            <p><strong>⚡ 邏輯排除法 (Logical Elimination):</strong></p>
+            <p>當你看到題目問 "It follows that..." (則...)：</p>
+            <ol>
+                <li>尋找<strong>必然發生 (Must happen)</strong> 的事，而不是<strong>可能發生 (Might happen)</strong> 的事。</li>
+                <li>選項 B (銀行決定...) 和 C (需求不足...) 都是「可能的原因」。通常在邏輯題中，單一的「可能原因」不能作為「必然結果」。</li>
+                <li>選項 D 描述的是一種<strong>狀態 (State)</strong> 或 <strong>潛力 (Potential)</strong>，這通常是定義上的必然結果。</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

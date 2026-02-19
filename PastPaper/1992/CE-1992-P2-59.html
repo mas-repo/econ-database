@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Barter System Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #eff6ff; /* Light Blue */
+            --accent-color: #d97706; /* Amber */
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .topic-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 { margin: 10px 0; font-size: 1.8em; }
+        .difficulty { color: #fbbf24; font-size: 1.2em; }
+
+        /* Section Styling */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .option:hover { background-color: var(--secondary-color); }
+        .option-label { font-weight: bold; margin-right: 8px; color: var(--primary-color); }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--secondary-color);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+        }
+        .key-term { font-weight: bold; color: var(--primary-color); }
+
+        /* Answer Analysis */
+        .correct-answer {
+            font-size: 1.2em;
+            color: var(--correct-green);
+            font-weight: bold;
+            margin-bottom: 16px;
+            padding: 10px;
+            background-color: #ecfdf5;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .analysis-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .analysis-item:last-child { border-bottom: none; }
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+        .status-correct { background-color: #d1fae5; color: #065f46; } /* Statement is True */
+        .status-wrong { background-color: #fee2e2; color: #991b1b; } /* Statement is False */
+
+        /* Bilingual Text */
+        .zh { display: block; margin-bottom: 4px; font-weight: 500; }
+        .en { display: block; color: var(--text-light); font-size: 0.95em; font-style: italic; }
+
+        /* Problem Decomposition */
+        .pivot-point {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px;
+            margin-top: 10px;
+        }
+
+        /* Q&A */
+        .qa-item { margin-bottom: 15px; }
+        .question { font-weight: bold; color: var(--accent-color); }
+        .answer { margin-top: 5px; padding-left: 15px; border-left: 2px solid #e5e7eb; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 16px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <span class="topic-badge">Money & Banking (貨幣與銀行)</span>
+        <h1>Barter System & Functions of Money<br><span style="font-size:0.7em">實物交易與貨幣功能</span></h1>
+        <div class="difficulty">
+            難度 Difficulty: ★★☆☆☆
+        </div>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.9;">
+            Keywords: Barter (以物易物), Double Coincidence of Wants (需求的雙重巧合), Medium of Exchange (交易媒介)
+        </p>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p class="zh">以下哪一項關於「實物交易」的描述是<strong>錯誤</strong>的？</p>
+            <p class="en">Which of the following descriptions about "barter" is <strong>FALSE</strong>?</p>
+            
+            <div class="option">
+                <span class="option-label">A.</span>
+                <span class="zh">實物交易指直接以物易物。</span><br>
+                <span class="en">Barter means a direct exchange of goods and services.</span>
+            </div>
+            <div class="option">
+                <span class="option-label">B.</span>
+                <span class="zh">只有當雙方的需求有雙重巧合時才能出現實物交易。</span><br>
+                <span class="en">Barter is possible only when there is double coincidence of wants.</span>
+            </div>
+            <div class="option">
+                <span class="option-label">C.</span>
+                <span class="zh">實物交易只存在於沒有交易媒介的社會。</span><br>
+                <span class="en">Barter exists only in societies without a medium of exchange.</span>
+            </div>
+            <div class="option">
+                <span class="option-label">D.</span>
+                <span class="zh">以實物交易方式進行國際貿易通常較進行本土貿易為困難。</span><br>
+                <span class="en">Usually it is more difficult to practise barter in international trade than in domestic trade.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p>
+                <span class="key-term">實物交易 (Barter):</span><br>
+                <span class="zh">指不使用貨幣，直接以商品或服務交換其他商品或服務的交易制度。</span><br>
+                <span class="en">A system of exchange where goods or services are directly exchanged for other goods or services without using money.</span>
+            </p>
+            <hr style="border: 0; border-top: 1px solid #bfdbfe; margin: 10px 0;">
+            <p>
+                <span class="key-term">需求的雙重巧合 (Double Coincidence of Wants):</span><br>
+                <span class="zh">交易雙方必須剛好都擁有對方想要的物品，交易才能發生。這是實物交易的主要困難。</span><br>
+                <span class="en">Each party must possess the specific good the other party desires for a transaction to occur. This is the main drawback of barter.</span>
+            </p>
+            <div style="margin-top: 10px; background: #fff; padding: 8px; border-radius: 4px;">
+                <strong>Formula Logic:</strong><br>
+                If Person A has Good \(X\) and wants Good \(Y\),<br>
+                AND Person B has Good \(Y\) and wants Good \(X\),<br>
+                \(\rightarrow\) Trade happens.
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div class="correct-answer">
+            Correct Option (正確選項): C
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option A</span> <span class="status-badge status-correct">True Statement</span>
+            <p class="zh"><strong>分析：</strong>這是實物交易的定義。它不涉及任何貨幣媒介。</p>
+            <p class="en"><strong>Analysis:</strong> This is the definition of barter. It involves no monetary medium.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option B</span> <span class="status-badge status-correct">True Statement</span>
+            <p class="zh"><strong>分析：</strong>這是實物交易發生的必要條件。如果沒有「雙重巧合」（我不想要你的東西，或者你不需要我的東西），交易就不會發生。</p>
+            <p class="en"><strong>Analysis:</strong> This is a necessary condition for barter. Without "double coincidence" (if I don't want your item, or you don't need mine), the trade fails.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option C</span> <span class="status-badge status-wrong">FALSE Statement (The Answer)</span>
+            <p class="zh"><strong>分析：</strong>這是錯誤的描述。即使在現代有貨幣（港元、美元）的社會，實物交易仍然存在。例如：小朋友交換貼紙、鄰居交換食物、或者國家之間以石油換取基建服務。</p>
+            <p class="en"><strong>Analysis:</strong> This statement is incorrect. Barter still exists in modern societies that use money (HKD, USD). Examples include kids trading stickers, neighbors swapping food, or nations trading oil for infrastructure projects.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option D</span> <span class="status-badge status-correct">True Statement</span>
+            <p class="zh"><strong>分析：</strong>國際貿易涉及更長的距離、運輸成本及資訊成本。要在國際層面尋找「需求的雙重巧合」比在本地（如鄰居之間）更困難。</p>
+            <p class="en"><strong>Analysis:</strong> International trade involves greater distances, transport costs, and information costs. Finding a "double coincidence of wants" is usually harder internationally than locally (e.g., between neighbors).</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p class="zh">這類題目要求找出<strong>錯誤</strong>的選項。解題關鍵在於識別「絕對性」的字眼。</p>
+        <p class="en">This type of question asks for the <strong>FALSE</strong> statement. The key is to identify "absolute" qualifiers.</p>
+        
+        <div class="pivot-point">
+            <strong>The Pivot Point (關鍵點): Option C's "Only" (只)</strong>
+            <p class="zh">選項 C 使用了「只存在於」(exists only) 這樣絕對的字眼。在經濟學中，如果某個制度（如貨幣）出現，並不代表舊的制度（如實物交易）會完全消失。兩者是可以並存的。</p>
+            <p class="en">Option C uses the absolute phrase "exists only". In Economics, the introduction of a new system (like money) does not mean the old system (barter) disappears completely. They can coexist.</p>
+        </div>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="section">
+        <div class="section-title">Student Q&A (學生常見疑問)</div>
+        
+        <div class="qa-item">
+            <div class="question">Q: 為什麼選項 D 是正確的描述？現在網上交易不是很方便嗎？</div>
+            <div class="question" style="font-size: 0.9em; font-style: italic;">Q: Why is Option D true? Isn't online trading very convenient now?</div>
+            <div class="answer">
+                <span class="zh">雖然互聯網降低了資訊成本，但選項 D 比較的是「實物交易」。在國際間進行「以物易物」仍然非常困難，因為你需要找到一個外國賣家，他剛好想要你手上的貨物，而且你們還要處理跨國運輸和法律問題。相比之下，本地鄰居交換物品容易得多。</span>
+                <br>
+                <span class="en">While the internet lowers information costs, Option D compares "barter". Practicing "barter" internationally is still very hard because you need to find a foreign seller who wants exactly what you have, plus deal with cross-border shipping and laws. Swapping items with a local neighbor is much easier.</span>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="question">Q: 現代社會真的還有實物交易嗎？</div>
+            <div class="question" style="font-size: 0.9em; font-style: italic;">Q: Does barter really still exist in modern society?</div>
+            <div class="answer">
+                <span class="zh">有的。除了小朋友交換玩具外，在惡性通脹（Hyperinflation）的國家（如津巴布韋或委內瑞拉），當貨幣失去價值時，人們會回歸實物交易（例如用雞蛋換麵包）。</span>
+                <br>
+                <span class="en">Yes. Besides kids trading toys, in countries with hyperinflation (like Zimbabwe or Venezuela), when money loses its value, people revert to barter (e.g., trading eggs for bread).</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">Exam Tricks (考試技巧)</div>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>
+                <strong>Watch out for "Only" / "Must":</strong> 
+                <span class="zh">看到「只有」、「一定」等字眼要特別警惕。經濟學中很少有絕對的情況。</span>
+                <span class="en" style="font-size: 0.9em; color: #666;">(Be alert when you see "Only" or "Must". Absolutes are rare in Economics.)</span>
+            </li>
+            <li>
+                <strong>Definition Check:</strong> 
+                <span class="zh">如果題目問「錯誤」的選項，先快速掃描定義性的選項（如 A 和 B）。如果定義正確，就可以排除它們，專注分析情境題（如 C 和 D）。</span>
+                <span class="en" style="font-size: 0.9em; color: #666;">(If asked for the FALSE option, quickly scan definition options like A & B. If they are correct definitions, eliminate them and focus on situational options like C & D.)</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
