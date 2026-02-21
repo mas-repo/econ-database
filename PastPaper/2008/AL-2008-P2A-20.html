@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Asset Demand for Money</title>
+    <!-- MathJax for LaTeX rendering -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid transparent;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            display: block;
+        }
+
+        /* Specific Section Colors */
+        .concept-review {
+            border-left-color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .question-box {
+            border-left-color: var(--accent-color);
+        }
+
+        .answer-box {
+            border-left-color: #22c55e;
+        }
+
+        .mistakes-box {
+            border-left-color: #ef4444;
+            background-color: #fff1f2;
+        }
+
+        /* Options List */
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        .correct-option {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Diagram Container */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            section {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>貨幣需求與利率 (Money Demand & Interest Rate)</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Money & Banking</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Asset Demand, Speculative Motive</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <h2>題目 (The Question)</h2>
+        
+        <!-- SVG Diagram -->
+        <div class="diagram-container">
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Axes -->
+                <line x1="50" y1="250" x2="380" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                <line x1="50" y1="250" x2="50" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                
+                <!-- Axis Labels -->
+                <text x="360" y="280" font-family="Arial" font-size="14">Money (貨幣)</text>
+                <text x="10" y="20" font-family="Arial" font-size="14">Interest Rate</text>
+                <text x="10" y="40" font-family="Arial" font-size="14">(利率)</text>
+                <text x="35" y="270" font-family="Arial" font-size="14">0</text>
+
+                <!-- Curve Ma0 -->
+                <path d="M 80 80 Q 100 200 350 230" stroke="black" stroke-width="2" fill="none" />
+                <text x="355" y="235" font-family="Arial" font-size="14">Ma0</text>
+
+                <!-- Curve Ma1 -->
+                <path d="M 120 60 Q 150 180 380 200" stroke="black" stroke-width="2" fill="none" />
+                <text x="385" y="205" font-family="Arial" font-size="14">Ma1</text>
+
+                <!-- Arrow indicating shift -->
+                <line x1="200" y1="200" x2="250" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+                <!-- Arrow Marker Definition -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="black" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="bilingual-block">
+            <span class="zh">參考上圖。當 ______________ ，資產貨幣需求會由 \(M_{a0}\) 移至 \(M_{a1}\)。</span>
+            <span class="en">Refer to the diagram above. The asset demand for money will shift from \(M_{a0}\) to \(M_{a1}\) when ______________.</span>
+        </div>
+        
+        <ul class="options-list">
+            <li>
+                <span class="zh">A. 收入上升</span><br>
+                <span class="en">A. income increases.</span>
+            </li>
+            <li>
+                <span class="zh">B. 利率下降</span><br>
+                <span class="en">B. the interest rate decreases.</span>
+            </li>
+            <li>
+                <span class="zh">C. 一般物價水平上升</span><br>
+                <span class="en">C. the general price level increases.</span>
+            </li>
+            <li>
+                <span class="zh">D. 人們預期利率上升</span><br>
+                <span class="en">D. the interest rate is expected to increase.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-review">
+        <h2>概念重溫 (Concept Review)</h2>
+        
+        <div class="bilingual-block">
+            <span class="zh"><strong>資產性貨幣需求 (Asset Demand for Money, \(M_a\))：</strong></span>
+            <span class="en">這源於凱恩斯的流動性偏好理論 (Liquidity Preference Theory)。人們持有貨幣作為價值儲存的一種形式，主要與持有債券 (Bonds) 作比較。</span>
+            <span class="en">Based on Keynes' Liquidity Preference Theory. People hold money as a store of value, primarily weighing it against holding bonds.</span>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Bond Price (債券價格)} \propto \frac{1}{\text{Interest Rate (利率)}} $$
+        </div>
+
+        <div class="bilingual-block">
+            <span class="zh"><strong>關鍵關係：</strong></span>
+            <span class="en">
+                <ul>
+                    <li><strong>利率與債券價格成反比：</strong> 當利率上升，債券價格下跌。</li>
+                    <li><strong>投機動機 (Speculative Motive)：</strong> 如果人們預期利率會<strong>上升</strong>，即預期債券價格會<strong>下跌</strong> (資本虧損 Capital Loss)。為了避免虧損，人們會賣出債券，持有現金。</li>
+                </ul>
+            </span>
+            <span class="en">
+                <ul>
+                    <li><strong>Inverse Relationship:</strong> When interest rates rise, bond prices fall.</li>
+                    <li><strong>Speculative Motive:</strong> If people expect interest rates to <strong>rise</strong>, they expect bond prices to <strong>fall</strong> (Capital Loss). To avoid this loss, they sell bonds and hold cash.</li>
+                </ul>
+            </span>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="answer-box">
+        <h2>答案與詳細分析 (Answer & Analysis)</h2>
+        
+        <div class="correct-option">
+            正確答案：選項 D (Correct Option: D)
+        </div>
+
+        <div class="bilingual-block">
+            <strong class="zh">分析選項 D (預期利率上升)：正確</strong>
+            <p class="zh">圖中顯示 \(M_a\) 曲線向右移動（在同一利率水平下，人們想持有更多貨幣）。當人們<strong>預期利率上升</strong>，意味著他們預期<strong>債券價格將會下跌</strong>。為了避免持有債券帶來的資本虧損 (Capital Loss)，人們會現在賣出債券並轉為持有現金。因此，對資產貨幣的需求增加，曲線向右移動。</p>
+            <p class="en"><strong>Analysis of D (Expected interest rate increase): Correct.</strong> The diagram shows a rightward shift of the \(M_a\) curve (people want to hold more money at the same interest rate). When people <strong>expect the interest rate to increase</strong>, they expect <strong>bond prices to fall</strong>. To avoid capital loss from holding bonds, they sell bonds now and hold cash instead. Thus, the asset demand for money increases, shifting the curve to the right.</p>
+        </div>
+
+        <hr>
+
+        <div class="bilingual-block">
+            <strong class="zh">分析選項 A (收入上升)：錯誤</strong>
+            <p class="zh">收入 (Income, \(Y\)) 主要影響<strong>交易性貨幣需求 (Transactions Demand, \(M_t\))</strong>，而不是資產性需求 (\(M_a\))。雖然總貨幣需求會上升，但題目特定指明是 \(M_a\) 曲線。在簡單凱恩斯模型中，\(M_a\) 是利率的函數，不隨收入改變。</p>
+            <p class="en"><strong>Analysis of A (Income increases): Incorrect.</strong> Income (\(Y\)) primarily affects <strong>Transactions Demand (\(M_t\))</strong>, not Asset Demand (\(M_a\)). While total money demand would rise, the question specifically labels the curve \(M_a\). In the simple Keynesian model, \(M_a\) is a function of interest rates, not income.</p>
+        </div>
+
+        <div class="bilingual-block">
+            <strong class="zh">分析選項 B (利率下降)：錯誤</strong>
+            <p class="zh">利率 (Interest Rate) 是縱軸 (Y-axis) 的變量。利率的改變只會導致<strong>沿著曲線移動 (Movement along the curve)</strong>，而不會導致整條曲線移動 (Shift)。利率下降會導致沿著 \(M_{a0}\) 向右下方移動。</p>
+            <p class="en"><strong>Analysis of B (Interest rate decreases): Incorrect.</strong> The interest rate is the variable on the Y-axis. A change in interest rate causes a <strong>movement along the curve</strong>, not a shift of the curve. A decrease in interest rate leads to a downward movement along \(M_{a0}\).</p>
+        </div>
+
+        <div class="bilingual-block">
+            <strong class="zh">分析選項 C (一般物價水平上升)：錯誤</strong>
+            <p class="zh">與收入類似，物價水平 (Price Level, \(P\)) 上升意味著人們需要更多現金進行日常交易，這主要影響<strong>交易性貨幣需求 (\(M_t\))</strong>。它不直接導致人們為了投機或資產配置目的而改變對貨幣的需求。</p>
+            <p class="en"><strong>Analysis of C (General price level increases): Incorrect.</strong> Similar to income, an increase in the Price Level (\(P\)) means people need more cash for daily transactions, primarily affecting <strong>Transactions Demand (\(M_t\))</strong>. It does not directly cause a shift in the asset demand for money for speculative purposes.</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        <div class="bilingual-block">
+            <span class="zh"><strong>1. 識別變量 (Identify Variables)：</strong></span>
+            <span class="en">縱軸是利率 (\(R\))，橫軸是貨幣量 (\(M\))。曲線標記為 \(M_a\) (Asset Demand)。</span>
+        </div>
+        <div class="bilingual-block">
+            <span class="zh"><strong>2. 區分「移動」與「沿線移動」 (Shift vs. Movement)：</strong></span>
+            <span class="en">題目顯示的是<strong>整條曲線向右移動</strong> (Shift)。這意味著除了現行利率以外的因素發生了變化。這直接排除了選項 B (利率改變)。</span>
+        </div>
+        <div class="bilingual-block">
+            <span class="zh"><strong>3. 鎖定決定因素 (Locate Determinants)：</strong></span>
+            <span class="en">資產性貨幣需求 (\(M_a\)) 的主要移動因素是<strong>預期 (Expectations)</strong> 或<strong>風險 (Risk)</strong>。收入和物價主要影響交易性需求。因此，只有選項 D 涉及「預期」，且邏輯正確。</span>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="mistakes-box">
+        <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <ul class="options-list">
+            <li>
+                <div class="bilingual-block">
+                    <span class="zh"><strong>混淆 \(M_t\) 與 \(M_a\)：</strong></span>
+                    <span class="en">學生常誤以為所有「對錢的需求增加」都會移動同一條線。必須分清：<br>
+                    - \(M_t\) (交易用) 受收入 \(Y\) 和物價 \(P\) 影響。<br>
+                    - \(M_a\) (資產/投機用) 受利率 \(r\) (沿線移動) 和 預期利率 \(r^e\) (整線移動) 影響。</span>
+                </div>
+            </li>
+            <li>
+                <div class="bilingual-block">
+                    <span class="zh"><strong>搞錯利率與債券價格的關係：</strong></span>
+                    <span class="en">記住口訣：<strong>利率升，債價跌 (Inverse relationship)</strong>。如果你預期利率升，你就是預期債券會虧錢，所以你會賣債券、拿現金 (需求曲線右移)。</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <h2>學生常見疑問 (Student Q&A)</h2>
+        <div class="bilingual-block">
+            <p class="zh"><strong>問：為什麼收入上升 (Option A) 不會增加資產貨幣需求？有錢人不是會有更多資產嗎？</strong></p>
+            <p class="en"><strong>Q: Why doesn't an increase in income (Option A) increase asset demand? Don't rich people have more assets?</strong></p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh"><strong>答：</strong>在經濟學定義中，「資產性貨幣需求」特指持有<strong>現金</strong>作為資產，而不是持有股票或房地產。當收入上升，人們確實更有錢，但通常會增加消費（交易需求 \(M_t\)）或購買生息資產（如債券）。單純的收入增加並不直接導致人們想在同一利率下持有更多「零回報的現金」作為價值儲存。</p>
+            <p class="en"><strong>A:</strong> In economics, "Asset Demand for Money" specifically refers to holding <strong>cash</strong> as an asset, not stocks or real estate. When income rises, people do get richer, but they usually increase consumption (Transactions Demand \(M_t\)) or buy interest-bearing assets (like bonds). An increase in income alone doesn't directly cause people to want to hold more "zero-return cash" as a store of value at the same interest rate.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

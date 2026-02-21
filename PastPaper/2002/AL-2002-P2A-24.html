@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Demand Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #475569; /* Slate */
+            --success-color: #16a34a; /* Green */
+            --danger-color: #dc2626; /* Red */
+            --bg-concept: #f0f9ff;
+            --border-concept: #0ea5e9;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; border-left: 5px solid var(--primary-color); padding-left: 10px; }
+        h3 { font-size: 1.1rem; font-weight: 600; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            background: var(--bg-light);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .header-item {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--border-concept);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .correct-opt { background-color: #dcfce7; border: 1px solid #86efac; }
+        .wrong-opt { background-color: #fee2e2; border: 1px solid #fca5a5; }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .tag-correct { background: var(--success-color); color: white; }
+        .tag-wrong { background: var(--danger-color); color: white; }
+
+        .math-block {
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: "Times New Roman", serif;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>Economic Analysis Guide</h1>
+        <div class="header-info">
+            <span class="header-item"><strong>Topic:</strong> Money & Banking (貨幣與銀行)</span>
+            <span class="header-item"><strong>Sub-topic:</strong> Demand for Money (貨幣需求)</span>
+            <span class="header-item"><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span class="header-item"><strong>Keywords:</strong> Asset Demand, Liquidity Preference, Bond Prices</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            
+            <!-- SVG Diagram -->
+            <div class="diagram-container">
+                <svg width="350" height="250" viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Axes -->
+                    <line x1="40" y1="210" x2="330" y2="210" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                    <line x1="40" y1="210" x2="40" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+                    
+                    <!-- Axis Labels -->
+                    <text x="25" y="230" font-family="Arial" font-size="14">0</text>
+                    <text x="20" y="20" font-family="Arial" font-size="14">Interest Rate (%) / 利率 (%)</text>
+                    <text x="200" y="240" font-family="Arial" font-size="14">Quantity of money / 貨幣量</text>
+
+                    <!-- Curves -->
+                    <!-- Md0 (Right) -->
+                    <line x1="100" y1="60" x2="250" y2="180" stroke="black" stroke-width="2" />
+                    <text x="260" y="180" font-family="Arial" font-size="14">Md₀</text>
+
+                    <!-- Md1 (Left) -->
+                    <line x1="60" y1="80" x2="190" y2="200" stroke="black" stroke-width="2" />
+                    <text x="200" y="200" font-family="Arial" font-size="14">Md₁</text>
+
+                    <!-- Shift Arrow -->
+                    <line x1="160" y1="120" x2="120" y2="120" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+
+                    <!-- Arrow Definition -->
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="black" />
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <p><strong>Question:</strong> Which of the following can explain the shift of the total demand for money curve from \(Md_0\) to \(Md_1\)?</p>
+            <p><strong>題目：</strong>下列哪一項能解釋貨幣總需求曲線由 \(Md_0\) 移至 \(Md_1\)？</p>
+            
+            <ul class="options-list">
+                <li><strong>A.</strong> Expectations of a rise in bond prices (預期債券價格上升)</li>
+                <li><strong>B.</strong> A rise in bond prices (債券價格上升)</li>
+                <li><strong>C.</strong> An increase in inflationary expectations (預期通脹上升)</li>
+                <li><strong>D.</strong> An increase in the real income of households (住戶的實質收入增加)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>Keynesian Liquidity Preference Theory (凱恩斯流動性偏好理論)</h3>
+            <p>The demand for money (\(M_d\)) consists of two main components:</p>
+            <p>貨幣需求 (\(M_d\)) 主要由兩個部分組成：</p>
+
+            <ol>
+                <li>
+                    <strong>Transaction Demand (交易性需求):</strong> 
+                    Money held to buy goods. It depends positively on Income (\(Y\)) and Price Level (\(P\)).<br>
+                    持有貨幣是為了購買商品。它與收入 (\(Y\)) 和物價水平 (\(P\)) 成正比。
+                </li>
+                <li>
+                    <strong>Asset Demand (資產性需求) / Speculative Motive (投機動機):</strong>
+                    Money held as a store of value instead of bonds. It depends negatively on the Interest Rate (\(R\)).<br>
+                    持有貨幣作為價值儲存，而非持有債券。它與利率 (\(R\)) 成反比。
+                </li>
+            </ol>
+
+            <div class="math-block">
+                $$ \text{Bond Price} (P_b) \propto \frac{1}{\text{Interest Rate} (R)} $$
+            </div>
+            <p><strong>Crucial Logic:</strong> If you expect bond prices to <strong>rise</strong> in the future, you will want to buy bonds <strong>now</strong> to earn capital gains later. To buy bonds, you reduce your money holdings.<br>
+            <strong>關鍵邏輯：</strong>如果你預期債券價格將來會<strong>上升</strong>，你會想<strong>現在</strong>買入債券以賺取資本增值。為了買債券，你會減少手持的貨幣。</p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option: <span style="color: var(--success-color);">A</span></strong></p>
+
+        <div class="analysis-item correct-opt">
+            <span class="tag tag-correct">Option A (Correct)</span>
+            <strong>Expectations of a rise in bond prices (預期債券價格上升)</strong>
+            <p>If people expect bond prices to rise, they anticipate a capital gain (profit) from holding bonds. Therefore, the attractiveness of bonds increases relative to money. People will convert their money into bonds <em>now</em>. This decreases the demand for money (Asset Demand), causing the \(M_d\) curve to shift to the left.<br>
+            如果人們預期債券價格上升，他們預期持有債券會帶來資本增值（利潤）。因此，相對於貨幣，債券的吸引力增加。人們會<em>現在</em>將貨幣兌換成債券。這減少了對貨幣的需求（資產性需求），導致 \(M_d\) 曲線向左移動。</p>
+        </div>
+
+        <div class="analysis-item wrong-opt">
+            <span class="tag tag-wrong">Option B (Trap)</span>
+            <strong>A rise in bond prices (債券價格上升)</strong>
+            <p>The current bond price is inversely related to the current interest rate (the Y-axis). A change in the variable on the axis (Interest Rate) causes a movement <strong>along</strong> the curve, not a shift of the curve. A rise in bond prices means a fall in interest rates, which corresponds to a downward movement along the \(M_d\) curve.<br>
+            當前的債券價格與當前的利率（縱軸）成反比。軸上變量（利率）的改變會導致沿著曲線的<strong>移動</strong>，而不是曲線的平移。債券價格上升意味著利率下降，這對應於沿著 \(M_d\) 曲線向下的移動。</p>
+        </div>
+
+        <div class="analysis-item wrong-opt">
+            <span class="tag tag-wrong">Option C (Distractor)</span>
+            <strong>An increase in inflationary expectations (預期通脹上升)</strong>
+            <p>While high inflation makes money a poor store of value, in the context of the Liquidity Preference Theory (Money vs. Bonds), Option A is the direct definition of the Speculative Motive shift. Furthermore, if expected inflation rises, nominal interest rates often rise (Fisher Effect), but the specific shift in the <em>Asset Demand</em> curve is most directly explained by the expected return on alternative assets (Bonds) via price changes.<br>
+            雖然高通脹使貨幣成為糟糕的價值儲存工具，但在流動性偏好理論（貨幣對債券）的背景下，選項 A 是投機動機移動的直接定義。此外，如果預期通脹上升，名義利率通常會上升（費雪效應），但<em>資產性需求</em>曲線的具體移動最直接由替代資產（債券）的預期回報（價格變動）解釋。</p>
+        </div>
+
+        <div class="analysis-item wrong-opt">
+            <span class="tag tag-wrong">Option D (Incorrect)</span>
+            <strong>An increase in real income of households (住戶的實質收入增加)</strong>
+            <p>Higher income means people make more transactions. This increases the Transaction Demand for money. The \(M_d\) curve would shift to the <strong>right</strong>, not the left.<br>
+            較高的收入意味著人們進行更多的交易。這增加了交易性貨幣需求。\(M_d\) 曲線會向<strong>右</strong>移動，而不是向左。</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>To solve this problem, follow these steps:</p>
+        <ol>
+            <li><strong>Identify the Direction:</strong> The arrow points Left. \(M_d\) decreases. (確認方向：箭頭向左，貨幣需求減少。)</li>
+            <li><strong>Distinguish Movement vs. Shift:</strong> The Y-axis is Interest Rate. Anything related to the <em>current</em> interest rate or <em>current</em> bond price causes a movement along the curve. Eliminate Option B immediately. (區分移動與平移：縱軸是利率。任何與<em>當前</em>利率或<em>當前</em>債券價格有關的因素都會導致沿曲線移動。立即排除選項 B。)</li>
+            <li><strong>Analyze Determinants:</strong>
+                <ul>
+                    <li>Income \(\uparrow\) \(\rightarrow\) \(M_d\) shifts Right (Eliminate D).</li>
+                    <li>Expected Bond Price \(\uparrow\) \(\rightarrow\) Buy Bonds \(\rightarrow\) Hold less Money \(\rightarrow\) \(M_d\) shifts Left.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <!-- 6. Student Q&A -->
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="tips-box" style="background-color: #f0fdf4; border-color: #86efac;">
+            <p><strong>Q: Why isn't it Option C? Doesn't inflation make me want to get rid of money?</strong><br>
+            <strong>問：為什麼不是選項 C？通脹不是會讓我不想持有貨幣嗎？</strong></p>
+            
+            <p><strong>A:</strong> You are partially right that inflation reduces the value of money. However, in HKDSE Economics (Keynesian framework), we focus on the choice between <strong>Money and Bonds</strong>. 
+            <br><br>
+            The "Speculative Motive" is strictly defined by expectations of bond prices (interest rates). Option A hits this definition exactly. Option C is less precise because while it reduces money demand, it might also affect the demand for real assets (like houses), which is outside the simple Money-Bond model. In exams, always choose the answer that directly fits the theoretical definition (Asset Demand \(\leftrightarrow\) Bond Price Expectations).
+            <br><br>
+            <strong>答：</strong>你部分正確，通脹確實降低了貨幣的價值。然而，在 HKDSE 經濟學（凱恩斯框架）中，我們關注的是<strong>貨幣與債券</strong>之間的選擇。
+            <br><br>
+            「投機動機」嚴格由債券價格（利率）的預期定義。選項 A 完全符合這個定義。選項 C 不夠精確，因為雖然它減少了貨幣需求，但它也可能影響對實質資產（如房屋）的需求，這超出了簡單的貨幣-債券模型。在考試中，總是選擇最直接符合理論定義的答案（資產需求 \(\leftrightarrow\) 債券價格預期）。</p>
+        </div>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section>
+        <h2>Exam Tricks (考試技巧)</h2>
+        <div class="tips-box">
+            <p><strong>The "Inverse Rule" of Bonds and Money:</strong></p>
+            <p>Memorize this chain of logic for Asset Demand:</p>
+            <div class="math-block">
+                Expected \(P_{\text{bond}}\) \(\uparrow\) \(\Rightarrow\) Buy Bonds NOW \(\Rightarrow\) Sell Money \(\Rightarrow\) \(M_d\) \(\downarrow\) (Left Shift)
+            </div>
+            <div class="math-block">
+                Expected \(P_{\text{bond}}\) \(\downarrow\) \(\Rightarrow\) Sell Bonds NOW \(\Rightarrow\) Hold Money \(\Rightarrow\) \(M_d\) \(\uparrow\) (Right Shift)
+            </div>
+            <p><strong>記憶口訣：</strong>預期債價升，現在快買債，拋售手中錢，貨幣需求跌。</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
