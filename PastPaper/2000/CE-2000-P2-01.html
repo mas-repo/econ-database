@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Free Goods (免費物品)</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #10b981; /* Emerald */
+            --wrong-color: #ef4444; /* Red */
+            --concept-bg: #eff6ff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .badge {
+            background-color: #e2e8f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .stars { color: var(--accent-color); }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .q-text { font-weight: 600; margin-bottom: 15px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin-bottom: 8px; padding-left: 10px; }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .concept-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Answer Section */
+        .answer-section { margin-bottom: 30px; }
+        .correct-answer {
+            font-size: 1.5rem;
+            color: var(--correct-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e2e8f0;
+        }
+
+        .analysis-item.correct { border-color: var(--correct-color); background-color: #ecfdf5; }
+        .analysis-item.wrong { border-color: #e2e8f0; background-color: #fff; }
+        
+        .option-label { font-weight: bold; margin-right: 10px; }
+        .correct .option-label { color: var(--correct-color); }
+        .wrong .option-label { color: var(--wrong-color); }
+
+        /* Bilingual Text Styling */
+        .tc { margin-bottom: 5px; display: block; }
+        .en { color: #64748b; font-size: 0.95em; display: block; margin-bottom: 10px; }
+
+        /* Other Sections */
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .tip-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .qa-item { margin-bottom: 20px; }
+        .question { font-weight: bold; color: var(--secondary-color); }
+        .answer { margin-top: 5px; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Basic Economic Concepts (基本經濟概念)</span>
+            <span class="badge">Difficulty: <span class="stars">★★☆☆☆</span></span>
+            <span class="badge">Keywords: Scarcity, Free Goods, Opportunity Cost</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="q-text">
+            <span class="tc">在下列哪一種情況中，物品X屬於「免費物品」?</span>
+            <span class="en">Good X is a ‘free good’ when</span>
+        </div>
+        <ul class="options">
+            <li>
+                A. <span class="tc">使用它沒有任何機會成本。</span> / <span class="en">there is no opportunity cost involved in using it.</span>
+            </li>
+            <li>
+                B. <span class="tc">它的供應量超過消費者願意在市場上購買的數量。</span> / <span class="en">its quantity supplied is greater than what consumers are willing to purchase in the market.</span>
+            </li>
+            <li>
+                C. <span class="tc">沒有人想獲得更多數量的X。</span> / <span class="en">nobody wants more of it.</span>
+            </li>
+            <li>
+                D. <span class="tc">它的供應十分充裕，因此消費者認為它沒有價值。</span> / <span class="en">its supply is so abundant that consumers place no value on it.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">Concept Review (概念重溫)</div>
+        
+        <p>
+            <span class="tc"><strong>稀少性 (Scarcity)：</strong> 當人類的慾望是無限的，而資源是有限的。</span>
+            <span class="en"><strong>Scarcity:</strong> Exists when human wants are unlimited, but resources are limited.</span>
+        </p>
+        <p>
+            <span class="tc"><strong>經濟物品 (Economic Good)：</strong> 供應量不足以滿足所有人的慾望。即使價格為零，需求量仍大於供應量。</span>
+            <span class="en"><strong>Economic Good:</strong> The quantity supplied is insufficient to satisfy all human wants. Even at zero price, Quantity Demanded > Quantity Supplied.</span>
+            <br>
+            $$ \text{At } P=0, \quad Q_d > Q_s $$
+        </p>
+        <p>
+            <span class="tc"><strong>免費物品 (Free Good)：</strong> 供應量足以滿足所有人的慾望。在價格為零時，供應量大於或等於需求量。</span>
+            <span class="en"><strong>Free Good:</strong> The quantity supplied is sufficient to satisfy all human wants. At zero price, Quantity Supplied is greater than or equal to Quantity Demanded.</span>
+            <br>
+            $$ \text{At } P=0, \quad Q_s \ge Q_d $$
+        </p>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="answer-section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        <div class="correct-answer">Correct Option: C</div>
+
+        <!-- Option A -->
+        <div class="analysis-item wrong">
+            <span class="option-label">Option A (Wrong):</span>
+            <span class="tc"><strong>使用它沒有任何機會成本。</strong></span>
+            <br>
+            <span class="tc">這是一個常見的陷阱。「使用」物品通常涉及<strong>時間成本</strong>。即使陽光是免費物品，但你「曬太陽」這個行為需要花費時間，而時間是稀缺的（有機會成本）。因此，使用免費物品仍可能涉及機會成本。</span>
+            <span class="en"><strong>There is no opportunity cost involved in using it.</strong></span>
+            <br>
+            <span class="en">This is a common trap. "Using" a good usually involves <strong>time cost</strong>. Even if sunlight is a free good, the act of "sunbathing" takes time, and time is scarce (has an opportunity cost). Therefore, using a free good may still involve opportunity cost.</span>
+        </div>
+
+        <!-- Option B -->
+        <div class="analysis-item wrong">
+            <span class="option-label">Option B (Wrong):</span>
+            <span class="tc"><strong>它的供應量超過消費者願意在市場上購買的數量。</strong></span>
+            <br>
+            <span class="tc">這描述的是市場出現<strong>盈餘 (Surplus)</strong> 的情況，通常發生在價格高於均衡價格時。這並不代表該物品本質上是免費物品。經濟物品在價格過高時也會出現供過於求。</span>
+            <span class="en"><strong>Its quantity supplied is greater than what consumers are willing to purchase in the market.</strong></span>
+            <br>
+            <span class="en">This describes a market <strong>surplus</strong>, which usually happens when the price is set above the equilibrium level. This does not mean the good is inherently a free good. Even economic goods can have excess supply if the price is too high.</span>
+        </div>
+
+        <!-- Option C -->
+        <div class="analysis-item correct">
+            <span class="option-label">Option C (Correct):</span>
+            <span class="tc"><strong>沒有人想獲得更多數量的X。</strong></span>
+            <br>
+            <span class="tc">這是免費物品的定義核心。如果「沒有人想獲得更多」，意味著所有人的慾望都已經被滿足了（飽和）。既然慾望已滿足，就沒有稀少性問題，因此它是免費物品。</span>
+            <span class="en"><strong>Nobody wants more of it.</strong></span>
+            <br>
+            <span class="en">This is the core definition of a free good. If "nobody wants more," it means everyone's wants are fully satisfied (satiated). Since wants are satisfied, there is no scarcity, making it a free good.</span>
+        </div>
+
+        <!-- Option D -->
+        <div class="analysis-item wrong">
+            <span class="option-label">Option D (Wrong):</span>
+            <span class="tc"><strong>它的供應十分充裕，因此消費者認為它沒有價值。</strong></span>
+            <br>
+            <span class="tc">免費物品（如空氣）通常有極高的<strong>使用價值 (Use Value)</strong>，因為它對生存至關重要。它們只是沒有<strong>交換價值 (Exchange Value)</strong>（即市價為零）。說它「沒有價值」是錯誤的。</span>
+            <span class="en"><strong>Its supply is so abundant that consumers place no value on it.</strong></span>
+            <br>
+            <span class="en">Free goods (like air) usually have very high <strong>use value</strong> because they are essential for survival. They simply have no <strong>exchange value</strong> (price is zero). Saying they have "no value" is incorrect.</span>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <p>
+            <span class="tc"><strong>關鍵判斷點 (Pivot Point)：</strong> 區分「價格 (Price)」與「稀少性 (Scarcity)」。</span>
+            <span class="en"><strong>Pivot Point:</strong> Distinguish between "Price" and "Scarcity".</span>
+        </p>
+        <p>
+            <span class="tc">這類題目在測試你是否明白「免費物品」的定義是基於<strong>供應與慾望的關係</strong>，而不僅僅是價格。</span>
+            <span class="en">This question tests if you understand that a "free good" is defined by the <strong>relationship between supply and wants</strong>, not just the price.</span>
+        </p>
+        <ul>
+            <li><span class="tc">如果 \( \text{Wants} > \text{Supply} \) \(\rightarrow\) 稀少 \(\rightarrow\) 經濟物品。</span></li>
+            <li><span class="tc">如果 \( \text{Supply} \ge \text{Wants} \) \(\rightarrow\) 不稀少 \(\rightarrow\) 免費物品 (即選項 C)。</span></li>
+        </ul>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section>
+        <div class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</div>
+        <div class="tip-box">
+            <p>
+                <strong>Trap 1: Confusing "Free of Charge" with "Free Good"</strong><br>
+                <span class="tc">誤區：以為「不用錢」就是「免費物品」。</span><br>
+                <span class="en">Example: A free sample at a supermarket. It is free of charge ($P=0$), but it is an <strong>Economic Good</strong> because it took resources to produce, and if everyone wanted one, there wouldn't be enough.</span>
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Trap 2: Ignoring Time Cost</strong><br>
+                <span class="tc">誤區：忽略時間成本。</span><br>
+                <span class="en">Students often choose Option A. Remember: "Using" something takes time. Time is limited. Therefore, using a free good has an opportunity cost (the value of the time spent).</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <div class="section-title">Student Q&A (學生常見疑問)</div>
+        
+        <div class="qa-item">
+            <div class="question">Q: 為什麼空氣是免費物品，但潛水氧氣樽裡的空氣是經濟物品？</div>
+            <div class="answer">
+                <span class="tc"><strong>A:</strong> 一般環境下的空氣極其充裕，滿足所有人慾望（\(Q_s > Q_d\)），所以是免費物品。但潛水氧氣樽裡的空氣經過壓縮、淨化和運輸，涉及了資源投入，且在深海中是稀缺的（你想要更多，但樽裡有限），所以變成了經濟物品。</span>
+                <br>
+                <span class="en"><strong>A:</strong> Air in the general environment is abundant enough to satisfy everyone's wants (\(Q_s > Q_d\)), making it a free good. However, air in a scuba tank has been compressed, purified, and transported. This involves resources, and underwater, it is scarce (you want more, but the tank is limited), making it an economic good.</span>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="question">Q: 選項 B 說「供應量超過購買量」，這不就是供過於求嗎？為什麼不是免費物品？</div>
+            <div class="answer">
+                <span class="tc"><strong>A:</strong> 重點在於「在市場上購買」。如果價格定得很高（例如 $1000 一個麵包），供應量肯定超過購買量（會有賣剩的麵包），但这只是市場盈餘。只要價格降回 $0 時，大家想要的數量多於現有供應，它依然是經濟物品。免費物品必須是<strong>即使價格為 $0</strong>，供應量依然足夠。</span>
+                <br>
+                <span class="en"><strong>A:</strong> The key is "purchase in the market". If the price is set very high (e.g., $1000 for a bread), quantity supplied will exceed quantity demanded (surplus). But this is just a market surplus. As long as people want more than what is available when the price drops to $0, it remains an economic good. A free good must have sufficient supply <strong>even at $0 price</strong>.</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
