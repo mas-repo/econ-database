@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Law of Demand & Alchian-Allen Effect</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue-600 */
+            --primary-light: #eff6ff; /* Blue-50 */
+            --secondary: #475569; /* Slate-600 */
+            --accent: #f59e0b; /* Amber-500 */
+            --danger: #ef4444; /* Red-500 */
+            --success: #22c55e; /* Green-500 */
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: var(--bg-body);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+        .header h1 { margin: 0 0 10px 0; font-size: 1.8rem; }
+        .meta-info { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 0.9rem; }
+        .badge { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; }
+
+        /* Content Sections */
+        .section { padding: 24px; border-bottom: 1px solid #e2e8f0; }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Question Box */
+        .question-box { background-color: #fff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .option { margin-bottom: 12px; padding-left: 24px; position: relative; cursor: pointer; }
+        .option:hover { background-color: var(--primary-light); }
+        .option strong { color: var(--primary); margin-right: 8px; }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .formula-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Answer Analysis */
+        .correct-answer { color: var(--success); font-weight: bold; font-size: 1.2rem; margin-bottom: 16px; }
+        .analysis-item { margin-bottom: 20px; }
+        .analysis-label { font-weight: bold; display: block; margin-bottom: 4px; }
+        .tag-correct { color: var(--success); font-weight: bold; }
+        .tag-wrong { color: var(--danger); font-weight: bold; }
+        
+        .bilingual-text { margin-bottom: 8px; }
+        .en-trans { color: var(--secondary); font-size: 0.95em; font-style: italic; display: block; margin-top: 4px; }
+
+        /* Tips & Traps */
+        .tips-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        @media (min-width: 600px) { .tips-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .tip-card { padding: 16px; border-radius: 8px; }
+        .trap-card { background-color: #fef2f2; border: 1px solid #fecaca; }
+        .trick-card { background-color: #f0fdf4; border: 1px solid #bbf7d0; }
+        .card-title { font-weight: bold; margin-bottom: 8px; display: block; }
+
+        /* Q&A */
+        .qa-item { margin-bottom: 16px; }
+        .question { font-weight: bold; color: var(--primary); }
+        .answer { margin-top: 5px; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>HKDSE Economics: Law of Demand Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Demand & Relative Price</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key: Alchian-Allen Effect</span>
+        </div>
+    </div>
+
+    <!-- The Question -->
+    <div class="section">
+        <div class="section-title">
+            <span>📝 The Question (題目)</span>
+        </div>
+        <div class="question-box">
+            <p class="bilingual-text">
+                下列哪項與需求定律<strong>並不相符</strong>？<br>
+                <span class="en-trans">Which of the following is <strong>INCONSISTENT</strong> with the law of demand?</span>
+            </p>
+            
+            <div class="option">
+                <strong>A.</strong> 當某主題公園降低其門票價格，平均而言，遊客於該主題公園逗留更長時間。<br>
+                <span class="en-trans">When a theme park reduces its ticket price, visitors stay in the theme park for longer hours on average.</span>
+            </div>
+            <div class="option">
+                <strong>B.</strong> 當人們預期按揭利率上升，私人住宅單位的價格與交易量同時下降。<br>
+                <span class="en-trans">Both the price and quantity transacted of private housing units decrease when people expect an increase in mortgage interest rates.</span>
+            </div>
+            <div class="option">
+                <strong>C.</strong> 相比居於超市附近的顧客，居所遠離超市的顧客每次到超市時傾向購買較多物品。<br>
+                <span class="en-trans">Compared with customers living close to supermarkets, customers living far away from supermarkets tend to buy more items in each visit to supermarkets.</span>
+            </div>
+            <div class="option">
+                <strong>D.</strong> 若香港政府缩短入境人士的隔離檢疫期，訪港旅客人數會上升。<br>
+                <span class="en-trans">If the Hong Kong Government shortens the quarantine period for incoming arrivals, the number of tourists visiting Hong Kong would increase.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <div class="section-title">
+            <span>📚 Concept Review (概念重溫)</span>
+        </div>
+        <div class="concept-box">
+            <p><strong>1. 需求定律 (Law of Demand):</strong><br>
+            在其他因素不變下，某物品的價格(\(P\))與其需求量(\(Q_d\))呈反向關係。<br>
+            <span class="en-trans">Ceteris paribus, there is an inverse relationship between the price (\(P\)) and quantity demanded (\(Q_d\)) of a good.</span>
+            </p>
+            <div class="formula-block">
+                \( P \uparrow \implies Q_d \downarrow \)
+            </div>
+
+            <p><strong>2. 相對價格與固定成本 (Relative Price & Fixed Cost):</strong><br>
+            這也被稱為<strong>艾智仁－艾倫效應 (Alchian-Allen Effect)</strong>。當兩個相關物品（如高質素與低質素）同時加上一個<strong>固定費用 (Fixed Charge)</strong>，高質素物品的<strong>相對價格 (Relative Price)</strong> 會下降，導致人們傾向購買更多高質素物品。<br>
+            <span class="en-trans">Also known as the Alchian-Allen Effect. When a fixed charge is added to two related goods (e.g., high quality vs. low quality), the relative price of the high-quality good decreases, leading people to consume more of it.</span>
+            </p>
+            
+            <div class="formula-block">
+                Relative Price of High Quality = \( \frac{P_{High} + \text{Fixed}}{P_{Low} + \text{Fixed}} \)
+            </div>
+            <p>
+                ⚠️ <strong>關鍵推論：</strong> 如果固定費用<strong>減少</strong>，高質素物品的相對價格會<strong>上升</strong>，人們會減少購買高質素物品（轉而選擇低質素）。<br>
+                <span class="en-trans">Key Inference: If the fixed charge <strong>decreases</strong>, the relative price of the high-quality good <strong>increases</strong>, causing people to buy less of it (substituting towards low quality).</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <div class="section-title">
+            <span>✅ Answer & Detailed Analysis (答案與詳細分析)</span>
+        </div>
+        
+        <div class="correct-answer">Correct Option: A</div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option A (The Answer / 答案): <span class="tag-wrong">INCONSISTENT (不相符)</span></span>
+            <p>
+                <strong>分析：</strong> 這是對「相對價格」概念的測試。我們可以將「逗留短時間」視為低質素產品，「逗留長時間」視為高質素產品。門票價格是入場的<strong>固定成本 (Fixed Cost)</strong>。
+                <br>
+                根據數學邏輯，當固定成本（門票）<strong>下降</strong>，高質素產品（長時間逗留）的<strong>相對價格會上升</strong>。根據需求定律，相對價格上升應導致需求量下降。因此，遊客應該選擇<strong>較短</strong>的逗留時間。選項 A 聲稱遊客逗留更長時間，這與需求定律的推論相反。
+            </p>
+            <p class="en-trans">
+                <strong>Analysis:</strong> This tests the "Relative Price" concept. Treat "Short Stay" as the low-quality good and "Long Stay" as the high-quality good. The ticket price is a <strong>Fixed Cost</strong>.
+                <br>
+                Mathematically, when the fixed cost (ticket) <strong>decreases</strong>, the <strong>relative price</strong> of the high-quality good (Long Stay) <strong>increases</strong>. According to the Law of Demand, an increase in relative price should lead to a decrease in quantity demanded. Thus, visitors should choose <strong>shorter</strong> stays. Option A claims they stay longer, which contradicts the implication of the Law of Demand.
+            </p>
+            <div class="formula-block" style="font-size: 0.9em;">
+                Example:<br>
+                \(P_{Long} = \$20\) (time cost), \(P_{Short} = \$10\) (time cost)<br>
+                Scenario 1 (Ticket = $100): Ratio = \(\frac{120}{110} \approx 1.09\)<br>
+                Scenario 2 (Ticket = $10): Ratio = \(\frac{30}{20} = 1.5\)<br>
+                Ticket \(\downarrow\) ($100 to $10) \(\implies\) Relative Price of Long Stay \(\uparrow\) (1.09 to 1.5)
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option B: <span class="tag-correct">CONSISTENT (相符)</span></span>
+            <p>
+                <strong>分析：</strong> 預期利率上升會導致現時的住屋需求減少（需求曲線向左移）。結果是均衡價格下降，交易量下降。這是需求改變 (Change in Demand) 的結果，完全符合供需理論，並沒有違反需求定律。
+            </p>
+            <p class="en-trans">
+                <strong>Analysis:</strong> Expecting interest rates to rise reduces current housing demand (Demand curve shifts left). The result is a lower equilibrium price and lower quantity. This is a "Change in Demand" consistent with supply and demand theory, not a violation of the Law of Demand.
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option C: <span class="tag-correct">CONSISTENT (相符)</span></span>
+            <p>
+                <strong>分析：</strong> 這是經典的艾智仁－艾倫效應。交通費是固定成本。對於住得遠的顧客，高昂的固定交通費降低了「購買大量物品」相對於「購買少量物品」的相對價格。因此，他們傾向每次買更多。這符合需求定律。
+            </p>
+            <p class="en-trans">
+                <strong>Analysis:</strong> This is the classic Alchian-Allen effect. Transport cost is a fixed cost. For customers living far away, the high fixed transport cost lowers the relative price of "buying more" vs. "buying less". Thus, they tend to buy more per visit. This is consistent with the Law of Demand.
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="analysis-label">Option D: <span class="tag-correct">CONSISTENT (相符)</span></span>
+            <p>
+                <strong>分析：</strong> 隔離檢疫期是訪港的成本（時間成本）。縮短隔離期等於降低價格（成本）。根據需求定律，價格下降，需求量（旅客人數）上升。這完全相符。
+            </p>
+            <p class="en-trans">
+                <strong>Analysis:</strong> The quarantine period is a cost (time cost) of visiting. Shortening it is equivalent to a price (cost) reduction. According to the Law of Demand, when price falls, quantity demanded (number of tourists) rises. This is perfectly consistent.
+            </p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <div class="section-title">
+            <span>🔍 Problem Decomposition (題目拆解)</span>
+        </div>
+        <p>
+            這類題目通常尋找邏輯上的<strong>矛盾 (Contradiction)</strong>。解題關鍵在於區分「簡單價格改變」與「相對價格改變」。
+            <br>
+            <span class="en-trans">These questions look for logical <strong>contradictions</strong>. The key is distinguishing between "Simple Price Changes" and "Relative Price Changes".</span>
+        </p>
+        <ul>
+            <li>
+                <strong>Pivot Point (關鍵點):</strong> 選項 A 和 C 都涉及<strong>固定成本 (Fixed Cost)</strong>。這是一個信號，提示你要使用<strong>相對價格 (Relative Price)</strong> 的概念來分析。
+                <br>
+                <span class="en-trans">Options A and C both involve <strong>Fixed Costs</strong>. This is a signal to use the concept of <strong>Relative Price</strong>.</span>
+            </li>
+            <li>
+                <strong>Distractor (干擾項):</strong> 選項 B 描述的是 \(P \downarrow, Q \downarrow\)。很多學生以為這違反了需求定律（\(P\) 與 \(Q\) 反向）。但題目清楚說明這是因為「預期」(Expectation)，即需求曲線移動，而非沿曲線移動。
+                <br>
+                <span class="en-trans">Option B describes \(P \downarrow, Q \downarrow\). Many students think this violates the Law of Demand. However, the question specifies "Expectation", implying a Shift in Demand, not a movement along the curve.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tips & Traps -->
+    <div class="section">
+        <div class="section-title">
+            <span>⚠️ Common Mistakes & Exam Tricks (常犯錯誤與考試技巧)</span>
+        </div>
+        <div class="tips-grid">
+            <div class="tip-card trap-card">
+                <span class="card-title">Trap: Sunk Cost Fallacy (沉沒成本謬誤)</span>
+                <p>
+                    學生常誤以為：「門票便宜了，我省了錢，所以可以玩久一點（收入效應）。」雖然這在心理學上可能發生，但在這類 DSE 題目中，我們主要考慮<strong>替代效應 (Substitution Effect)</strong> 和相對價格。
+                    <br>
+                    <span class="en-trans">Students often think: "Ticket is cheaper, I saved money, so I stay longer (Income Effect)." While psychologically plausible, in DSE questions, we focus on the <strong>Substitution Effect</strong> and Relative Price.</span>
+                </p>
+            </div>
+            <div class="tip-card trick-card">
+                <span class="card-title">Trick: The "Fixed Cost" Rule</span>
+                <p>
+                    記住這個口訣：<br>
+                    固定費<strong>加</strong> \(\rightarrow\) 相對價格<strong>跌</strong> \(\rightarrow\) 買<strong>貴</strong>野。<br>
+                    固定費<strong>減</strong> \(\rightarrow\) 相對價格<strong>升</strong> \(\rightarrow\) 買<strong>平</strong>野。<br>
+                    <span class="en-trans">Remember this rule:<br>
+                    Fixed Cost <strong>UP</strong> \(\rightarrow\) Relative Price <strong>DOWN</strong> \(\rightarrow\) Buy <strong>Expensive</strong>.<br>
+                    Fixed Cost <strong>DOWN</strong> \(\rightarrow\) Relative Price <strong>UP</strong> \(\rightarrow\) Buy <strong>Cheap</strong>.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <div class="section-title">
+            <span>❓ Student Q&A (學生常見疑問)</span>
+        </div>
+        <div class="qa-item">
+            <div class="question">Q: 為什麼選項 B 不違反需求定律？需求定律不是說 \(P\) 與 \(Q\) 反向嗎？</div>
+            <div class="answer">
+                A: 需求定律的前提是「其他因素不變」(Ceteris Paribus)。選項 B 中，「預期」(Expectation) 改變了，所以需求曲線本身移動了。這是一個<strong>需求改變 (Change in Demand)</strong>，而不是違反定律。
+                <br>
+                <span class="en-trans">The Law of Demand assumes "Ceteris Paribus" (other things being equal). In Option B, "Expectation" changes, shifting the demand curve itself. This is a <strong>Change in Demand</strong>, not a violation of the law.</span>
+            </div>
+        </div>
+        <div class="qa-item">
+            <div class="question">Q: 如果我把門票看作「沉沒成本」(Sunk Cost)，會怎樣？</div>
+            <div class="answer">
+                A: 如果門票是沉沒成本，它不應影響邊際決策（逗留多久）。因此，無論門票價格是高是低，逗留時間應該不變。如果選項 A 說「逗留時間改變」，這本身就暗示了非理性的行為，這也是一種「不相符」的解釋。
+                <br>
+                <span class="en-trans">If the ticket is a sunk cost, it shouldn't affect marginal decisions (how long to stay). Thus, regardless of ticket price, stay duration should remain unchanged. If Option A says "duration changes", it implies irrational behavior, which is another way to see it as "inconsistent".</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

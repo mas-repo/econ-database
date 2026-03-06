@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Law of Demand Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber/Orange */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --box-bg-concept: #eff6ff;
+            --box-border-concept: #60a5fa;
+            --box-bg-question: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background: #e2e8f0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .question-box {
+            background-color: var(--box-bg-question);
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .question-text { font-weight: 600; margin-bottom: 15px; }
+        .options-list { list-style-type: none; padding-left: 0; }
+        .options-list li { margin-bottom: 8px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .options-list li:hover { background-color: #f1f5f9; }
+
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--box-border-concept);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .analysis-step:last-child { border-bottom: none; }
+
+        .correct-answer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--correct-green);
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #ecfdf5;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .bilingual-text { margin-bottom: 8px; }
+        .en-text { color: #64748b; font-size: 0.95em; font-style: italic; display: block; margin-top: 4px; }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .trap-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="header-info">
+            <div><strong>Topic (課題):</strong> Price Theory / Relative Price (價格理論 / 相對價格)</div>
+            <div><strong>Difficulty (難度):</strong> ⭐⭐⭐⭐☆</div>
+            <div><strong>Key Concepts (核心概念):</strong> Law of Demand (需求定律), Alchian-Allen Effect (艾智仁—艾倫效應), Relative Price (相對價格)</div>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <div class="question-text">
+            下列哪項與需求定律並不相符？<br>
+            <span class="en-text">Which of the following is INCONSISTENT with the law of demand?</span>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 對成衣實施進口配額會令進口成衣的平均質素改善。<br>
+                <span class="en-text">An imposition of an import quota on garments will lead to an improvement in the average quality of imported garments.</span>
+            </li>
+            <li><strong>B.</strong> 居住在偏遠地區的人士購買於市中心舉行的音樂會門票時，會傾向選擇較佳的座位。<br>
+                <span class="en-text">People who live in remote areas tend to buy better seats at concerts held in the town centre.</span>
+            </li>
+            <li><strong>C.</strong> 增加失業援助金會推高失業率。<br>
+                <span class="en-text">An increase in unemployment allowance raises the unemployment rate.</span>
+            </li>
+            <li><strong>D.</strong> 若每程的士徵收一定額的額外費用，短程乘搭次數下跌的百分率會小於長程乘搭次數下跌的百分率。<br>
+                <span class="en-text">If an additional lump-sum charge is imposed per taxi trip, the number of short-distance trips will fall by a smaller percentage than the number of long-distance trips.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h3>📚 Concept Review (概念重溫)</h3>
+        
+        <p><strong>1. 需求定律 (Law of Demand):</strong><br>
+        在其他因素不變下，價格與需求量呈反向關係。<br>
+        <span class="en-text">Ceteris paribus, price and quantity demanded are inversely related.</span></p>
+
+        <p><strong>2. 相對價格與固定成本 (Relative Price & Fixed Cost):</strong><br>
+        這是本題的核心，通常稱為「艾智仁—艾倫效應」(Alchian-Allen Effect)。當兩個替代品（高質素 \(H\) 與低質素 \(L\)，價格 \(P_H > P_L\)）同時加上一個<strong>固定費用 (Fixed Cost, \(F\))</strong>（如運費、定額稅、配額成本）：<br>
+        <span class="en-text">This is the core of the question, often called the Alchian-Allen Effect. When a fixed cost \(F\) is added to two substitutes (High quality \(H\) and Low quality \(L\), where \(P_H > P_L\)):</span>
+        </p>
+
+        <div class="math-block">
+            原相對價格 (Original Relative Price): \( \frac{P_H}{P_L} \)
+        </div>
+        <div class="math-block">
+            新相對價格 (New Relative Price): \( \frac{P_H + F}{P_L + F} \)
+        </div>
+
+        <p>數學上，當分子分母同加一個正數，數值會趨向 1。由於 \(P_H > P_L\)，該比率會<strong>下降</strong>。<br>
+        即：\( \frac{P_H + F}{P_L + F} < \frac{P_H}{P_L} \)<br>
+        <span class="en-text">Mathematically, adding a positive constant to both numerator and denominator brings the ratio closer to 1. Since \(P_H > P_L\), the ratio <strong>decreases</strong>.</span></p>
+
+        <p><strong>結論：</strong>高質素產品的相對價格下降，消費者會傾向購買更多高質素產品（以低質素產品作替代）。<br>
+        <span class="en-text"><strong>Conclusion:</strong> The relative price of the high-quality product falls, so consumers tend to buy more high-quality products (substituting away from low-quality ones).</span></p>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h3>✅ Answer & Detailed Analysis (答案與詳細分析)</h3>
+        <div class="correct-answer">Correct Option: D</div>
+
+        <div class="analysis-step">
+            <h4>Option A: Consistent (相符)</h4>
+            <p><strong>分析：</strong>進口配額限制了數量，這相當於增加了每一件進口成衣的「隱含成本」(Implicit cost) 或「配額租值」(Quota rent)。這就像加上一個固定稅項。根據上述公式，高質素成衣的相對價格下降，進口商為了在有限配額下賺取最高利潤，會傾向進口高質素成衣。<br>
+            <span class="en-text"><strong>Analysis:</strong> An import quota restricts quantity, acting like an added "implicit cost" or "quota rent" per unit. This is equivalent to a fixed tax. According to the formula, the relative price of high-quality garments falls. To maximize profit per unit of quota, importers will prefer high-quality garments.</span></p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option B: Consistent (相符)</h4>
+            <p><strong>分析：</strong>這是經典教科書例子。前往市中心的交通費（或時間成本）對所有座位來說都是一樣的（固定成本）。加上交通費後，較佳座位（原本較貴）的相對價格會下降。因此，遠道而來的人更有誘因購買貴價票。<br>
+            <span class="en-text"><strong>Analysis:</strong> This is a classic textbook example. The transport cost (or time cost) to the town centre is the same for all seats (fixed cost). Adding this cost lowers the relative price of better seats (which are originally more expensive). Thus, people traveling from afar have a higher incentive to buy expensive tickets.</span></p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option C: Consistent (相符)</h4>
+            <p><strong>分析：</strong>這看似宏觀經濟，其實是價格理論。失業援助金是「保持失業狀態」的收益（或減少了失業的成本）。當失業援助金增加，尋找工作的機會成本上升（或閒暇的價格相對下降），人們會選擇「購買」更多閒暇（即保持失業），導致失業率上升。這符合需求定律。<br>
+            <span class="en-text"><strong>Analysis:</strong> This looks like Macro, but it's Price Theory. Unemployment allowance is the benefit of staying unemployed (or reduces the cost of being unemployed). When the allowance increases, the opportunity cost of job searching rises (or the relative price of leisure falls), so people choose to "buy" more leisure (stay unemployed), raising the unemployment rate. This is consistent with the Law of Demand.</span></p>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Option D: Inconsistent (不相符) - The Correct Answer</h4>
+            <p><strong>分析：</strong>這題需要比較價格變化的百分比。<br>
+            設短程車費 \(P_S = \$20\)，長程車費 \(P_L = \$100\)。<br>
+            徵收定額附加費 \(T = \$10\)。</p>
+            <ul>
+                <li>短程新價格：\(20 + 10 = 30\) (升幅 50%)</li>
+                <li>長程新價格：\(100 + 10 = 110\) (升幅 10%)</li>
+            </ul>
+            <p>短程車費的<strong>升幅百分比遠高於</strong>長程車費。根據需求定律，價格升幅越大，需求量跌幅通常越大。因此，短程乘搭次數的下跌百分率應該<strong>大於</strong>長程。<br>
+            題目卻說短程下跌百分率「小於」長程，這與邏輯相反。<br>
+            <span class="en-text"><strong>Analysis:</strong> This requires comparing percentage changes in price.<br>
+            Let Short trip \(P_S = \$20\), Long trip \(P_L = \$100\).<br>
+            Lump-sum charge \(T = \$10\).<br>
+            - New Short Price: \(30\) (50% increase)<br>
+            - New Long Price: \(110\) (10% increase)<br>
+            The percentage increase for short trips is <strong>much higher</strong>. According to the Law of Demand, a larger price rise leads to a larger drop in quantity demanded. Thus, the percentage fall in short trips should be <strong>greater</strong> than long trips.<br>
+            The statement claims the fall is "smaller", which contradicts the logic.</span></p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="trick-box">
+        <h3>🔍 Problem Decomposition (題目拆解)</h3>
+        <p><strong>關鍵點 (Pivot Point):</strong> 區分「相對價格下降」導致的替代效應，以及「價格百分比升幅」導致的需求量變化。</p>
+        <p>對於選項 D，我們可以用另一個角度看相對價格：<br>
+        原本：1 次長程 = 5 次短程 (\(100/20\))<br>
+        加費後：1 次長程 = 3.67 次短程 (\(110/30\))<br>
+        這代表<strong>短程變得相對昂貴了</strong>（以前放棄 5 次短程才換到 1 次長程，現在只需放棄 3.67 次）。既然短程相對變貴，人們會減少短程，轉而乘搭長程（或合併行程）。所以短程的跌幅應該更大。</p>
+        <span class="en-text"><strong>Pivot Point:</strong> Distinguish between the substitution effect caused by "falling relative price" and the change in quantity demanded caused by "percentage price increase".<br>
+        For Option D, look at relative price differently: Short trips become relatively MORE expensive (you give up fewer short trips to afford one long trip). Since short trips become relatively pricier, the drop in short trips should be larger.</span>
+    </section>
+
+    <!-- 6. Student Q&A -->
+    <section>
+        <h3>🙋 Student Q&A (學生常見疑問)</h3>
+        
+        <p><strong>Q: 為什麼選項 C 是需求定律？失業不是宏觀經濟嗎？<br>
+        (Why is Option C about the Law of Demand? Isn't unemployment Macroeconomics?)</strong></p>
+        <p><strong>A:</strong> 在微觀經濟學中，我們將「閒暇」(Leisure) 視為一種物品。失業援助金降低了「不工作」的成本。當某物品（閒暇）的價格（機會成本）下降，需求量就會上升。這正是需求定律的直接應用。<br>
+        <span class="en-text">In Microeconomics, we treat "Leisure" as a good. Unemployment allowance lowers the cost of "not working". When the price (opportunity cost) of a good (leisure) falls, the quantity demanded rises. This is a direct application of the Law of Demand.</span></p>
+
+        <p><strong>Q: 選項 D 如果改成「按比例收費」(e.g., 加價 10%)，結果會怎樣？<br>
+        (What if Option D was a "proportional charge" e.g., 10% surcharge, instead of a lump-sum?)</strong></p>
+        <p><strong>A:</strong> 如果兩者都加價 10%，相對價格 \( \frac{1.1 P_L}{1.1 P_S} = \frac{P_L}{P_S} \) 保持不變。純粹的替代效應會消失，只剩下收入效應。兩者的需求量都會下跌，但跌幅差異取決於各自的需求彈性，而不能單憑相對價格判斷。<br>
+        <span class="en-text">If both increase by 10%, the relative price remains unchanged. The pure substitution effect disappears, leaving only the income effect. Both quantities would fall, but the difference depends on their respective elasticities, not just relative price logic.</span></p>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section class="concept-box" style="border-color: var(--accent-color); background-color: #fff7ed;">
+        <h3>⚡ Exam Trick: The "Dummy Number" Method (代入數字法)</h3>
+        <p>遇到這種比較「百分比變化」或「相對價格」的題目，不要憑空想像，直接代入數字！</p>
+        <ol>
+            <li>設 \(P_{High} = 100\), \(P_{Low} = 10\)。</li>
+            <li>設固定費 \(F = 10\)。</li>
+            <li>計算新舊比例或升幅百分比。</li>
+        </ol>
+        <p>這能讓你馬上看到：低價物品受固定費用的影響（百分比上）遠大於高價物品。<br>
+        <span class="en-text">When facing questions about "percentage change" or "relative price", don't imagine it. Plug in numbers! Set \(P_{High} = 100\), \(P_{Low} = 10\), and Fixed Cost \(F = 10\). You will immediately see that the low-priced item is affected much more (percentage-wise) than the high-priced item.</span></p>
+    </section>
+
+</div>
+
+</body>
+</html>
