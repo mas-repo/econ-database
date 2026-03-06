@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Supply Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --highlight-bg: #eff6ff;
+            --highlight-border: #60a5fa;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* Question Box */
+        .question-box {
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--highlight-bg);
+            border-left: 5px solid var(--highlight-border);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+            color: white;
+        }
+
+        .status-correct { background-color: var(--correct-color); }
+        .status-wrong { background-color: var(--wrong-color); }
+
+        /* Bilingual Text Styling */
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .card { padding: 15px; }
+            header h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>Topic: Factors Affecting Supply (供給的因素)</h1>
+        <div class="meta-info">
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: Competitive Supply, Joint Supply, Input Prices</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="card">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p>若 __________ 的價格上升， __________ 的供應會下降。</p>
+            <span class="en-text">If the price of ____________ increases, the supply of ____________ will decrease.</span>
+            
+            <ul class="options-list">
+                <li>(1) 麵粉 …… 麵包 <br><span class="en-text">flour …… bread</span></li>
+                <li>(2) 牛肉 …… 皮革 <br><span class="en-text">beef …… leather</span></li>
+                <li>(3) 汽車 …… 汽油 <br><span class="en-text">cars …… gasoline</span></li>
+                <li>(4) 商業樓宇 …… 工業樓宇 <br><span class="en-text">commercial buildings …… industrial buildings</span></li>
+            </ul>
+
+            <hr>
+            <p><strong>Options:</strong></p>
+            <ul class="options-list">
+                <li>A. 只有 (1)、(3) <span class="en-text">(1) and (3) only</span></li>
+                <li>B. 只有 (1)、(4) <span class="en-text">(1) and (4) only</span></li>
+                <li>C. 只有 (2)、(3) <span class="en-text">(2) and (3) only</span></li>
+                <li>D. 只有 (2)、(4) <span class="en-text">(2) and (4) only</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="card">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <span class="concept-title">1. 生產成本 (Cost of Production)</span>
+            <p>當投入要素（如原材料）的價格上升，生產成本增加，利潤減少，導致產品供應下降。</p>
+            <span class="en-text">When the price of inputs (e.g., raw materials) rises, production costs increase, profits decrease, leading to a decrease in the supply of the product.</span>
+            <div class="math-block">
+                \( P_{input} \uparrow \rightarrow Cost \uparrow \rightarrow Supply_{output} \downarrow \)
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <span class="concept-title">2. 競逐供應 (Competitive Supply)</span>
+            <p>兩種物品需要使用<strong>相同</strong>的資源來生產。若物品 A 的價格上升，生產者會將資源轉移去生產 A，導致物品 B 的供應下降。</p>
+            <span class="en-text">Two goods use the <strong>same</strong> resources for production. If the price of Good A rises, producers shift resources to produce A, causing the supply of Good B to decrease.</span>
+            <div class="math-block">
+                \( P_A \uparrow \rightarrow QS_A \uparrow \rightarrow Supply_B \downarrow \)
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <span class="concept-title">3. 聯合供應 (Joint Supply)</span>
+            <p>兩種物品是源自同一來源的副產品。若物品 A 的價格上升，其供應量增加，自然會產生更多的物品 B，導致物品 B 的供應上升。</p>
+            <span class="en-text">Two goods are by-products from the same source. If the price of Good A rises, its quantity supplied increases, naturally producing more of Good B, leading to an increase in the supply of Good B.</span>
+            <div class="math-block">
+                \( P_A \uparrow \rightarrow QS_A \uparrow \rightarrow Supply_B \uparrow \)
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="card">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p style="font-size: 1.2rem; font-weight: bold; color: var(--primary-color);">
+            Correct Answer: Option B (1) & (4)
+        </p>
+
+        <div class="analysis-item">
+            <span class="status-badge status-correct">Correct</span> <strong>(1) 麵粉 (Flour) ... 麵包 (Bread)</strong>
+            <p>麵粉是生產麵包的原材料（投入要素）。當麵粉價格上升，生產麵包的邊際成本上升，供應曲線向左移動（供應下降）。</p>
+            <span class="en-text">Flour is a raw material (input) for producing bread. When the price of flour rises, the marginal cost of producing bread increases, shifting the supply curve to the left (supply decreases).</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="status-badge status-wrong">Incorrect</span> <strong>(2) 牛肉 (Beef) ... 皮革 (Leather)</strong>
+            <p>這是<strong>聯合供應 (Joint Supply)</strong>。牛肉和皮革都來自牛。當牛肉價格上升，農夫會飼養更多牛來出售牛肉（牛肉供應量上升），這會順帶產生更多的牛皮，因此皮革的供應會<strong>上升</strong>，而不是下降。</p>
+            <span class="en-text">This is <strong>Joint Supply</strong>. Beef and leather both come from cattle. When the price of beef rises, farmers raise more cattle to sell beef (quantity supplied of beef rises), which incidentally produces more cowhides, so the supply of leather <strong>increases</strong>, not decreases.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="status-badge status-wrong">Incorrect</span> <strong>(3) 汽車 (Cars) ... 汽油 (Gasoline)</strong>
+            <p>這是<strong>互補品 (Complements)</strong>，但這是<strong>需求面 (Demand side)</strong> 的關係。汽車價格上升，汽車的需求量下降，導致對汽油的<strong>需求 (Demand)</strong> 下降。題目問的是「供應 (Supply)」，汽油的供應曲線本身不會因為汽車價格變動而直接移動。</p>
+            <span class="en-text">These are <strong>Complements</strong>, but this is a <strong>Demand side</strong> relationship. When the price of cars rises, the quantity demanded for cars falls, leading to a decrease in the <strong>Demand</strong> for gasoline. The question asks about "Supply"; the supply curve of gasoline does not shift directly just because car prices change.</span>
+        </div>
+
+        <div class="analysis-item">
+            <span class="status-badge status-correct">Correct</span> <strong>(4) 商業樓宇 (Commercial Bldgs) ... 工業樓宇 (Industrial Bldgs)</strong>
+            <p>這是<strong>競逐供應 (Competitive Supply)</strong>。兩者都需要土地和建築資源。當商業樓宇價格上升，發展商會將資源轉去興建商業樓宇，導致工業樓宇的供應<strong>下降</strong>。</p>
+            <span class="en-text">This is <strong>Competitive Supply</strong>. Both require land and construction resources. When the price of commercial buildings rises, developers shift resources to build commercial buildings, causing the supply of industrial buildings to <strong>decrease</strong>.</span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="card">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這類題目的關鍵在於分辨兩個物品之間的關係 (Identify the relationship between the two goods)：</p>
+        
+        <ol>
+            <li>
+                <strong>投入與產出 (Input-Output):</strong> 原料貴 \(\rightarrow\) 產品供應少。 <br>
+                <span class="en-text">Input expensive \(\rightarrow\) Output supply drops. (Matches Option 1)</span>
+            </li>
+            <li>
+                <strong>生產上的關係 (Production Relationship):</strong>
+                <ul>
+                    <li>搶奪資源 (Competitive Supply) \(\rightarrow\) 此消彼長 (Inverse relationship). (Matches Option 4)</li>
+                    <li>共同生產 (Joint Supply) \(\rightarrow\) 同生共死 (Direct relationship). (Matches Option 2)</li>
+                </ul>
+            </li>
+            <li>
+                <strong>消費上的關係 (Consumption Relationship):</strong> 這是陷阱！
+                <br><span class="en-text">This is a trap! Complements/Substitutes in demand affect the Demand curve, not the Supply curve. (Matches Option 3)</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="card">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div class="concept-box" style="background-color: #fffbeb; border-left-color: #fbbf24;">
+            <strong>Q: 為什麼 (3) 汽車和汽油不對？如果沒人買車，汽油供應商不是會減少供應嗎？</strong>
+            <br>
+            <span class="en-text">Why is (3) wrong? If no one buys cars, won't gas stations reduce supply?</span>
+            <hr style="border-top: 1px dashed #ccc; margin: 10px 0;">
+            <p><strong>A:</strong> 這是經濟學定義的嚴謹性問題。
+            <br>汽車價格上升 \(\rightarrow\) 汽油<strong>需求</strong>減少 \(\rightarrow\) 汽油價格下降 \(\rightarrow\) 汽油<strong>供應量 (Quantity Supplied)</strong> 沿著線減少。
+            <br>這只是沿著供應線移動 (Movement along the curve)，而不是供應線本身的移動 (Shift in Supply)。題目問的是「供應下降 (Supply decreases)」，指的是整條線向左移。</p>
+            
+            <span class="en-text"><strong>A:</strong> This is about strict economic definitions.
+            <br>Price of cars \(\uparrow\) \(\rightarrow\) <strong>Demand</strong> for gas \(\downarrow\) \(\rightarrow\) Price of gas \(\downarrow\) \(\rightarrow\) <strong>Quantity Supplied</strong> of gas decreases along the curve.
+            <br>This is a movement <em>along</em> the supply curve, not a shift <em>of</em> the supply curve. The question asks for "Supply decreases", which implies a leftward shift of the entire curve.</span>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="card">
+        <h2>Exam Tricks (考試技巧)</h2>
+        <ul>
+            <li>
+                <strong>分辨「需求」與「供應」：</strong> 看到題目問「供應」，立刻刪除所有屬於「消費者行為」或「互補品/替代品 (需求面)」的選項。選項 (3) 是典型的需求面互補品，可以直接排除。
+                <br><span class="en-text"><strong>Distinguish Demand vs. Supply:</strong> When asked about "Supply", immediately eliminate options related to "consumer behavior" or "complements/substitutes in demand". Option (3) is a classic demand-side complement and can be eliminated instantly.</span>
+            </li>
+            <li>
+                <strong>分辨「競逐」與「聯合」：</strong> 
+                <br>競逐 (Competitive) = 爭奪資源 = 方向相反 (Inverse)。
+                <br>聯合 (Joint) = 同一來源 = 方向相同 (Direct)。
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

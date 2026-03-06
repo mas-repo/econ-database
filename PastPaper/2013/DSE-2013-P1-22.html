@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: National Income Accounting</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-bg: #dcfce7;
+            --correct-text: #166534;
+            --wrong-bg: #fee2e2;
+            --wrong-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .meta-info { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; }
+        .stars { color: var(--accent-color); letter-spacing: 2px; }
+        .tags span {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0 4px;
+            display: inline-block;
+        }
+
+        /* Content Sections */
+        .section { padding: 24px; border-bottom: 1px solid #e5e7eb; }
+        .section:last-child { border-bottom: none; }
+        
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        h3 { color: #4b5563; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem; }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        .data-table th, .data-table td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .data-table th { background-color: #f9fafb; }
+        .data-table td:last-child { text-align: right; font-family: monospace; font-weight: bold; }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+
+        /* Answer Section */
+        .correct-option {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--correct-text);
+            background-color: var(--correct-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .step { margin-bottom: 15px; }
+        .step-title { font-weight: bold; color: var(--primary-color); }
+
+        /* Decomposition & Traps */
+        .trap-box {
+            background-color: #fff7ed;
+            border: 1px solid #fdba74;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .trap-title { color: #c2410c; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+
+        /* Q&A */
+        .qa-item { margin-bottom: 15px; }
+        .question { font-weight: bold; color: var(--secondary-color); }
+        .answer { margin-top: 5px; padding-left: 15px; border-left: 3px solid #e5e7eb; }
+
+        /* Utilities */
+        .bilingual { margin-bottom: 8px; }
+        .en { color: #555; font-size: 0.95em; margin-top: 4px; display: block; }
+        .highlight { font-weight: bold; color: var(--primary-color); }
+
+        @media (max-width: 600px) {
+            header { padding: 16px; }
+            h1 { font-size: 1.4rem; }
+            .section { padding: 16px; }
+            .data-table { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>國民收入會計<br><span style="font-size: 0.8em; font-weight: normal;">National Income Accounting</span></h1>
+        <div class="meta-info">
+            難度 Difficulty: <span class="stars">★★★☆☆</span>
+        </div>
+        <div class="tags" style="margin-top: 10px;">
+            <span>GDP (本地生產總值)</span>
+            <span>Expenditure Approach (支出面)</span>
+            <span>Investment (投資)</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="section">
+        <h2>題目 The Question</h2>
+        <div class="question-box">
+            <p class="bilingual">參閱下列某國本地生產總值的資料。<br><span class="en">Refer to the following table regarding the GDP of a country.</span></p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>成分 / Components</th>
+                        <th>百萬元 / $ million</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>以市價計算的本地生產總值 (GDP at market price)</td><td>200</td></tr>
+                    <tr><td>私人消費支出 (Private consumption expenditure)</td><td>120</td></tr>
+                    <tr><td>本地固定資本形成總額 (Gross domestic fixed capital formation)</td><td>40</td></tr>
+                    <tr><td>存貨改變 (Changes in inventories)</td><td>10</td></tr>
+                    <tr><td>物品出口總值 (Total exports of goods)</td><td>80</td></tr>
+                    <tr><td>本地物品出口 (Domestic exports of goods)</td><td>70</td></tr>
+                    <tr><td>物品進口 (Imports of goods)</td><td>60</td></tr>
+                    <tr><td>服務出口 (Exports of services)</td><td>20</td></tr>
+                    <tr><td>服務進口 (Imports of services)</td><td>30</td></tr>
+                    <tr><td>海外收入淨值 (Net income from abroad)</td><td>25</td></tr>
+                    <tr><td>折舊 (Depreciation)</td><td>35</td></tr>
+                    <tr><td>間接商業稅 (Indirect business tax)</td><td>28</td></tr>
+                    <tr><td>津貼 (Subsidies)</td><td>18</td></tr>
+                </tbody>
+            </table>
+
+            <p class="bilingual">該年的政府消費支出是_______百萬元。<br><span class="en">The government consumption expenditure for that year is $ _______ million.</span></p>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div>A. 20</div>
+                <div>B. 30</div>
+                <div>C. 40</div>
+                <div>D. 50</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>概念重溫 Concept Review</h2>
+        <div class="concept-box">
+            <p class="bilingual">
+                <strong>支出面計算法 (Expenditure Approach)</strong><br>
+                本地生產總值 (GDP) 是所有最終支出成分的總和。<br>
+                <span class="en">GDP is the sum of all final expenditure components.</span>
+            </p>
+
+            <div class="math-block">
+                $$ \text{GDP} = C + I + G + (X - M) $$
+            </div>
+
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>
+                    <strong>\(C\)</strong>: 私人消費支出 (Private Consumption Expenditure)
+                </li>
+                <li>
+                    <strong>\(I\)</strong>: 投資總額 (Gross Investment)
+                    <br><span class="en" style="font-size: 0.9em; color: #666;">注意：\(I\) = 本地固定資本形成總額 + 存貨改變<br>Note: \(I\) = Gross domestic fixed capital formation + Changes in inventories</span>
+                </li>
+                <li>
+                    <strong>\(G\)</strong>: 政府消費支出 (Government Consumption Expenditure)
+                </li>
+                <li>
+                    <strong>\(X - M\)</strong>: 淨出口 (Net Exports)
+                    <br><span class="en" style="font-size: 0.9em; color: #666;">包括物品及服務 (Includes both goods and services).</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <h2>答案與詳細分析 Answer & Analysis</h2>
+        <div class="correct-option">正確答案 Correct Option: A</div>
+
+        <div class="step">
+            <div class="step-title">步驟 1：計算投資總額 (Calculate Gross Investment, \(I\))</div>
+            <p class="bilingual">
+                投資總額包括「固定資本」和「存貨改變」。<br>
+                <span class="en">Gross Investment includes "Fixed Capital" and "Changes in Inventories".</span>
+            </p>
+            <div class="math-block">
+                \( I = 40 + 10 = 50 \)
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">步驟 2：計算淨出口 (Calculate Net Exports, \(NX\))</div>
+            <p class="bilingual">
+                我們需要計算總出口 (\(X\)) 和總進口 (\(M\))，包括物品和服務。<br>
+                <span class="en">We need to calculate Total Exports (\(X\)) and Total Imports (\(M\)), including both goods and services.</span>
+            </p>
+            <p>
+                \( X = \text{物品出口總值} + \text{服務出口} = 80 + 20 = 100 \)<br>
+                \( M = \text{物品進口} + \text{服務進口} = 60 + 30 = 90 \)
+            </p>
+            <div class="math-block">
+                \( NX = (X - M) = 100 - 90 = 10 \)
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">步驟 3：建立方程並求解 (Setup Equation and Solve)</div>
+            <p class="bilingual">
+                使用 GDP 公式：<br>
+                <span class="en">Using the GDP formula:</span>
+            </p>
+            <div class="math-block">
+                $$ \text{GDP} = C + I + G + NX $$
+                $$ 200 = 120 + 50 + G + 10 $$
+            </div>
+            <p>
+                $$ 200 = 180 + G $$
+                $$ G = 20 $$
+            </p>
+            <p class="bilingual">
+                因此，政府消費支出為 20 百萬元。<br>
+                <span class="en">Therefore, Government Consumption Expenditure is $20 million.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <p class="bilingual">
+            這類題目的關鍵在於<strong>數據篩選 (Data Filtering)</strong>。題目提供了大量無關數據（干擾項），你需要準確識別哪些數據屬於 GDP 的支出面成分。<br>
+            <span class="en">The key to this type of question is <strong>Data Filtering</strong>. The question provides a lot of irrelevant data (distractors), and you need to accurately identify which data belongs to the expenditure components of GDP.</span>
+        </p>
+
+        <h3>關鍵點 Pivot Point</h3>
+        <p class="bilingual">
+            必須將「本地固定資本形成總額」與「存貨改變」相加才能得到完整的投資 (\(I\))。<br>
+            <span class="en">You must add "Gross domestic fixed capital formation" and "Changes in inventories" to get the complete Investment (\(I\)).</span>
+        </p>
+
+        <div class="trap-box">
+            <div class="trap-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                干擾項分析 Distractor Analysis
+            </div>
+            <ul style="margin-top: 10px; padding-left: 20px;">
+                <li><strong>本地物品出口 (Domestic exports):</strong> 這是「物品出口總值」的一部分。計算時只需用「總值」，否則會重複計算。<br><span class="en">Part of "Total exports". Only use the "Total" value to avoid double counting.</span></li>
+                <li><strong>海外收入淨值 (Net income from abroad):</strong> 用於計算 GNP，與 GDP 無關。<br><span class="en">Used for GNP calculation, irrelevant to GDP.</span></li>
+                <li><strong>折舊 (Depreciation):</strong> 用於計算「淨值」(Net) 數據，但題目給的是「總值」(Gross) 數據，故無關。<br><span class="en">Used for "Net" calculations. Since we are using "Gross" data, it's irrelevant.</span></li>
+                <li><strong>間接商業稅 & 津貼 (Indirect tax & Subsidies):</strong> 用於「市價」與「要素成本」之間的轉換。題目給出的 GDP 已經是市價，故無需調整。<br><span class="en">Used to convert between "Market Price" and "Factor Cost". The given GDP is already at market price, so no adjustment is needed.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <h2>學生常見疑問 Student Q&A</h2>
+        
+        <div class="qa-item">
+            <div class="question">Q: 為什麼不用減去「進口」(Imports)？公式不是 \(X - M\) 嗎？<br><span class="en">Why didn't we just subtract imports? Isn't the formula \(X - M\)?</span></div>
+            <div class="answer bilingual">
+                我們確實減去了！在步驟 2 中，我們計算了淨出口 \(NX = 100 - 90 = 10\)。這裡的 90 就是總進口。如果不先算出淨出口，你也可以直接寫成 \(200 = 120 + 50 + G + (100 - 90)\)，結果是一樣的。<br>
+                <span class="en">We did! In Step 2, we calculated Net Exports \(NX = 100 - 90 = 10\). The 90 is the total imports. You can also write the equation directly as \(200 = 120 + 50 + G + (100 - 90)\), the result is the same.</span>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="question">Q: 為什麼不需要處理「間接商業稅」和「津貼」？<br><span class="en">Why don't we need to handle "Indirect business tax" and "Subsidies"?</span></div>
+            <div class="answer bilingual">
+                因為題目給出的 GDP 是<strong>「以市價計算」(at market price)</strong>，而我們求的 \(C, I, G, X, M\) 都是市價概念的支出。如果題目給的是「以要素成本計算的 GDP」(GDP at factor cost)，我們才需要加上間接稅並減去津貼來轉換成市價。<br>
+                <span class="en">Because the given GDP is <strong>"at market price"</strong>, and the components \(C, I, G, X, M\) are all market price expenditures. If the question gave "GDP at factor cost", we would need to add indirect taxes and subtract subsidies to convert it to market price.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <h2>考試技巧與速解 Exam Tricks</h2>
+        <p class="bilingual">
+            <strong>劃掉法 (Strike-through Method):</strong><br>
+            在閱讀題目時，立即用筆劃掉那些明顯無關的數據（如海外收入、稅項、折舊）。這能讓你的視線集中在剩餘的有效數據上，減少計算錯誤的機會。<br>
+            <span class="en">When reading the question, immediately strike through clearly irrelevant data (like Net income from abroad, Taxes, Depreciation). This focuses your attention on the remaining valid data and reduces calculation errors.</span>
+        </p>
+        <p class="bilingual">
+            <strong>檢查單位 (Check Units):</strong><br>
+            雖然這題所有單位都是「百萬元」，但在有些題目中，可能會混雜不同的數量級。養成檢查單位的習慣。<br>
+            <span class="en">Although all units here are "$ million", some questions might mix different magnitudes. Develop the habit of checking units.</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Arc Elasticity Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f4c81; /* Classic Blue */
+            --secondary-color: #e0f2fe; /* Light Blue */
+            --accent-color: #0ea5e9; /* Sky Blue */
+            --success-color: #22c55e; /* Green */
+            --warning-color: #f59e0b; /* Amber */
+            --danger-color: #ef4444; /* Red */
+            --text-color: #334155; /* Slate 700 */
+            --bg-color: #f8fafc; /* Slate 50 */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--primary-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .options-list li:hover {
+            background-color: #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: #fffbeb; /* Cream */
+            border-left: 5px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .answer-box {
+            border: 2px solid var(--success-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            background-color: #f0fdf4;
+        }
+
+        .step-analysis {
+            margin-top: 15px;
+        }
+
+        .step-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .mistake-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--danger-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .trick-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .qa-box {
+            background-color: #fafafa;
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="header-info">
+            <span class="tag">Topic: Price Elasticity of Demand (需求價格彈性)</span>
+            <span class="tag">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Key Concepts: Arc Elasticity, Midpoint Formula</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <p>
+            <strong>當澳洲紅酒的價格由$70下降至$50，其需求量自100單位上升至122單位。在上述的價格範圍內，澳洲紅酒需求的弧彈性是多少？</strong>
+            <span class="en-text">When the price of Australia's red wine decreases from $70 to $50, the quantity demanded increases from 100 units to 122 units. What is the arc elasticity of demand for Australia's red wine within the above price range?</span>
+        </p>
+        <ul class="options-list">
+            <li>A. 0.59</li>
+            <li>B. 0.77</li>
+            <li>C. 1.30</li>
+            <li>D. 1.68</li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <p>
+            <strong>弧彈性 (Arc Elasticity):</strong><br>
+            當價格變動幅度較大時，我們使用「弧彈性」來計算需求曲線上兩點之間的平均彈性。這需要使用「中點公式」(Midpoint Formula)。
+            <span class="en-text">When the price change is significant, we use "Arc Elasticity" to calculate the average elasticity between two points on the demand curve. This requires the "Midpoint Formula".</span>
+        </p>
+
+        <div class="math-block">
+            $$ E_d = \frac{\% \Delta Q}{\% \Delta P} = \frac{\frac{Q_2 - Q_1}{(Q_1 + Q_2) / 2}}{\frac{P_2 - P_1}{(P_1 + P_2) / 2}} $$
+        </div>
+
+        <p>
+            <strong>簡化公式 (Simplified Formula):</strong><br>
+            為了方便計算，我們可以將公式簡化為：
+            <span class="en-text">For easier calculation, we can simplify the formula to:</span>
+        </p>
+
+        <div class="math-block">
+            $$ E_d = \frac{Q_2 - Q_1}{Q_2 + Q_1} \times \frac{P_2 + P_1}{P_2 - P_1} $$
+        </div>
+
+        <p>
+            <em>注意：需求價格彈性通常為負數，但一般我們只取其絕對值 (Absolute Value)。</em>
+            <span class="en-text">Note: Price elasticity of demand is usually negative, but we generally take the absolute value.</span>
+        </p>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section class="answer-box">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p style="font-size: 1.2em; font-weight: bold; color: var(--success-color);">
+            Correct Option: A
+        </p>
+
+        <h3>Step-by-Step Calculation (逐步計算):</h3>
+        
+        <div class="step-analysis">
+            <div class="step-item">
+                <p><strong>1. 識別數據 (Identify Data):</strong></p>
+                <ul>
+                    <li>\(P_1 = 70\), \(P_2 = 50\)</li>
+                    <li>\(Q_1 = 100\), \(Q_2 = 122\)</li>
+                </ul>
+            </div>
+
+            <div class="step-item">
+                <p><strong>2. 代入弧彈性公式 (Apply Arc Elasticity Formula):</strong></p>
+                <div class="math-block">
+                    $$ E_d = \left| \frac{122 - 100}{122 + 100} \times \frac{50 + 70}{50 - 70} \right| $$
+                </div>
+            </div>
+
+            <div class="step-item">
+                <p><strong>3. 計算各部分 (Calculate Parts):</strong></p>
+                <p>
+                    數量變動部分 (Quantity part): \( \frac{22}{222} \) <br>
+                    價格變動部分 (Price part): \( \frac{120}{-20} = -6 \)
+                </p>
+            </div>
+
+            <div class="step-item">
+                <p><strong>4. 最終計算 (Final Calculation):</strong></p>
+                <div class="math-block">
+                    $$ E_d = \left| \frac{22}{222} \times (-6) \right| $$
+                    $$ E_d = \left| 0.09909... \times (-6) \right| $$
+                    $$ E_d = \left| -0.5945... \right| \approx 0.59 $$
+                </div>
+                <p>
+                    因此，答案是 <strong>0.59</strong>。
+                    <span class="en-text">Therefore, the answer is 0.59.</span>
+                </p>
+            </div>
+        </div>
+
+        <h3>Why other options are wrong (為什麼其他選項是錯的):</h3>
+        <ul>
+            <li>
+                <strong>Option B (0.77):</strong> 這是最常見的錯誤。這是使用了<strong>點彈性 (Point Elasticity)</strong> 公式，即以初始價格和數量 \(P_1, Q_1\) 為基數計算的結果。
+                <span class="en-text">This is the most common mistake. It is the result of using the <strong>Point Elasticity</strong> formula, calculating based on the initial price and quantity \(P_1, Q_1\).</span>
+                <br>
+                \( \frac{22}{100} \times \frac{70}{20} = 0.22 \times 3.5 = 0.77 \).
+            </li>
+            <li>
+                <strong>Option C (1.30):</strong> 這是選項 B 的倒數 (大約值)，或者是計算過程中弄反了分子分母。
+                <span class="en-text">This is roughly the inverse of Option B, or a result of flipping the numerator and denominator during calculation.</span>
+            </li>
+            <li>
+                <strong>Option D (1.68):</strong> 這是正確答案 (0.59) 的倒數 \(1 / 0.59 \approx 1.69\)。這通常發生在學生記錯公式，將價格變動百分比除以需求量變動百分比。
+                <span class="en-text">This is the inverse of the correct answer (0.59). This usually happens when students memorize the formula incorrectly, dividing % change in price by % change in quantity.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="trick-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>
+            <strong>關鍵字 (Pivot Point): "弧彈性" (Arc Elasticity)</strong>
+        </p>
+        <p>
+            這條題目唯一的難點在於選擇正確的公式。題目明確要求「弧彈性」，這是一個信號，告訴你<strong>不能</strong>只用原本的 \(P\) 和 \(Q\) 做分母，而必須用<strong>平均值 (Average)</strong>。
+            <span class="en-text">The only difficulty in this question is choosing the right formula. The question explicitly asks for "Arc Elasticity". This is a signal telling you that you <strong>cannot</strong> just use the original \(P\) and \(Q\) as denominators, but must use the <strong>Average</strong>.</span>
+        </p>
+        <p>
+            <strong>解題邏輯 (Logic):</strong>
+            <br>
+            1. 看到「價格範圍」或「弧彈性」 -> 2. 聯想到 (P1+P2) 和 (Q1+Q2) -> 3. 代入公式計算。
+            <span class="en-text">1. See "price range" or "arc elasticity" -> 2. Think of (P1+P2) and (Q1+Q2) -> 3. Apply formula.</span>
+        </p>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section class="mistake-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>混淆點彈性與弧彈性 (Confusing Point vs. Arc Elasticity):</strong>
+                <br>
+                學生常習慣性地使用 \( \frac{\%\Delta Q}{\%\Delta P} \) 並以 \(P_1, Q_1\) 計算百分比。這會導致算出選項 B (0.77)。
+                <span class="en-text">Students often habitually use \( \frac{\%\Delta Q}{\%\Delta P} \) calculating percentages based on \(P_1, Q_1\). This leads to Option B (0.77).</span>
+            </li>
+            <li>
+                <strong>公式倒置 (Inverting the Formula):</strong>
+                <br>
+                記住彈性是 Quantity 隨 Price 變動的反應，所以 Q 在上 (分子)，P 在下 (分母)。
+                <span class="en-text">Remember elasticity is the response of Quantity to Price changes, so Q is on top (numerator), P is on bottom (denominator).</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section class="qa-box">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-item">
+            <p class="qa-q">Q: 為什麼要有弧彈性？只用點彈性不行嗎？ (Why do we need Arc Elasticity? Can't we just use Point Elasticity?)</p>
+            <p>
+                A: 點彈性只適用於價格變動極微小的情況。當價格由 $70 變到 $50 (變動很大) 時，如果我們從 $70 算起是 0.77，但如果反過來從 $50 漲到 $70 算，結果會完全不同。弧彈性取兩者的「中間點」，提供了一個更客觀的區間平均值。
+                <span class="en-text">Point elasticity applies to very small price changes. When price moves from $70 to $50 (a large change), calculating from $70 gives 0.77, but calculating the reverse (rise from $50 to $70) gives a different result. Arc elasticity takes the "midpoint", providing a more objective average for the range.</span>
+            </p>
+        </div>
+
+        <div class="qa-item">
+            <p class="qa-q">Q: 計算時那個負號怎麼辦？ (What about the negative sign in calculation?)</p>
+            <p>
+                A: 根據需求定律，價格與需求量呈反向變動，所以算出來一定是負數。但在 DSE 經濟學中，談論彈性數值大小時，我們通常只看<strong>絕對值 (Magnitude)</strong>。
+                <span class="en-text">According to the Law of Demand, price and quantity move inversely, so the result is always negative. However, in DSE Economics, when discussing the magnitude of elasticity, we usually look at the <strong>Absolute Value</strong>.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. Exam Tricks -->
+    <section class="trick-box" style="border-left-color: var(--primary-color);">
+        <h2>Exam Tricks (考試速解技巧)</h2>
+        <p>
+            <strong>估算法 (Estimation Method):</strong>
+        </p>
+        <p>
+            如果你忘記了複雜的公式，可以試著估算百分比：
+            <span class="en-text">If you forget the complex formula, try estimating percentages:</span>
+        </p>
+        <ul>
+            <li>
+                \(\Delta Q = 22\)。基數在 100 到 122 之間 (平均約 110)。變動約為 <strong>20%</strong>。
+                <span class="en-text">\(\Delta Q = 22\). Base is between 100 and 122 (avg ~110). Change is approx <strong>20%</strong>.</span>
+            </li>
+            <li>
+                \(\Delta P = 20\)。基數在 70 到 50 之間 (平均 60)。變動 \(20/60\) 約為 <strong>33%</strong>。
+                <span class="en-text">\(\Delta P = 20\). Base is between 70 and 50 (avg 60). Change \(20/60\) is approx <strong>33%</strong>.</span>
+            </li>
+            <li>
+                彈性 = \(\frac{\% Q}{\% P} \approx \frac{20\%}{33\%}\)。
+                <span class="en-text">Elasticity = \(\frac{\% Q}{\% P} \approx \frac{20\%}{33\%}\).</span>
+            </li>
+            <li>
+                分子小於分母，結果一定小於 1。排除 C 和 D。
+                <span class="en-text">Numerator is smaller than denominator, result must be < 1. Eliminate C and D.</span>
+            </li>
+            <li>
+                \(20 / 33\) 略大於 0.5 但遠小於 0.8。選 A。
+                <span class="en-text">\(20 / 33\) is slightly more than 0.5 but far less than 0.8. Choose A.</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

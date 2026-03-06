@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis - Elasticity</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --box-bg-concept: #eff6ff;
+            --box-border-concept: #3b82f6;
+            --box-bg-answer: #f0fdf4;
+            --box-border-answer: #22c55e;
+            --box-bg-trap: #fef2f2;
+            --box-border-trap: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .difficulty { color: #f59e0b; font-weight: bold; }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--box-border-concept);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .answer-box {
+            background-color: var(--box-bg-answer);
+            border: 1px solid var(--box-border-answer);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .trap-box {
+            background-color: var(--box-bg-trap);
+            border-left: 5px solid var(--box-border-trap);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .bilingual-text p {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .option {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .option:hover { background-color: #f1f5f9; }
+        .correct-option { font-weight: bold; color: var(--accent-green); }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><strong>課題 (Topic):</strong> <span class="tag">需求與供應 (Demand & Supply)</span> <span class="tag">彈性 (Elasticity)</span></div>
+        <div><strong>難度 (Difficulty):</strong> <span class="difficulty">★★★☆☆</span></div>
+        <div><strong>關鍵概念 (Key Concepts):</strong> 聯合需求 (Joint Demand), 供應價格彈性 (Price Elasticity of Supply)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>題目 (The Question)</h3>
+        <div class="bilingual-text">
+            <p><strong>參考以下一則新聞。</strong><br>
+            為了減少污染，政府對所有種類的車輛徵收一項生產稅（電動車除外）。<br>
+            結果，汽油的價格改變了22%及其交易量改變了35%。下列哪項陳述是正確的？</p>
+            
+            <p class="en-text"><strong>Refer to the following news.</strong><br>
+            In order to reduce pollution, the government imposes a production tax on all kinds of motor vehicles (except electric vehicles).<br>
+            As a result, the price of gasoline changes by 22% and its quantity transacted changes by 35%. Which of the following statements is correct?</p>
+
+            <div class="option">A. 汽油的需求屬高彈性。<br><span class="en-text">The demand for gasoline is elastic.</span></div>
+            <div class="option">B. 汽油的需求屬低彈性。<br><span class="en-text">The demand for gasoline is inelastic.</span></div>
+            <div class="option">C. 汽油的供應屬高彈性。<br><span class="en-text">The supply of gasoline is elastic.</span></div>
+            <div class="option">D. 汽油的供應屬低彈性。<br><span class="en-text">The supply of gasoline is inelastic.</span></div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>概念重溫 (Concept Review)</h3>
+        
+        <h4>1. 互補品與聯合需求 (Complements & Joint Demand)</h4>
+        <p>汽車與汽油是互補品。當汽車的價格上升（或數量減少），消費者對汽油的需求會下降（需求曲線向左移）。</p>
+        <p class="en-text">Cars and gasoline are complements. When the price of cars increases (or quantity decreases), the demand for gasoline decreases (Demand curve shifts left).</p>
+
+        <h4>2. 沿著曲線移動 vs 曲線移動 (Movement along vs Shift)</h4>
+        <p>計算彈性時，我們必須觀察哪一條曲線<strong>沒有移動</strong>。如果需求曲線 (D) 移動，我們是在沿著供應曲線 (S) 移動，因此計算出來的是<strong>供應彈性</strong>。</p>
+        <p class="en-text">When calculating elasticity, we must observe which curve <strong>did not shift</strong>. If the Demand curve (D) shifts, we are moving along the Supply curve (S), so the calculation reflects the <strong>Elasticity of Supply</strong>.</p>
+
+        <h4>3. 彈性公式 (Elasticity Formula)</h4>
+        <p>價格彈性是用來量度數量改變對價格改變的反應程度：</p>
+        <p class="en-text">Price elasticity measures the responsiveness of quantity change to price change:</p>
+        
+        $$ E = \frac{\%\Delta Q}{\%\Delta P} $$
+        
+        <ul>
+            <li>若 \( E > 1 \)：高彈性 (Elastic)</li>
+            <li>若 \( E < 1 \)：低彈性 (Inelastic)</li>
+        </ul>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="answer-box">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        <p><strong>正確答案 (Correct Option): <span style="font-size: 1.2em;">C</span></strong></p>
+
+        <h4>詳細拆解 (Step-by-Step Breakdown):</h4>
+        
+        <p><strong>第一步：分辨受影響的市場 (Identify the Market Impact)</strong><br>
+        政府向車輛徵稅 \(\rightarrow\) 車輛供應減少 \(\rightarrow\) 車輛價格上升。<br>
+        由於車輛與汽油是互補品，車輛昂貴了，人們少買車，連帶對<strong>汽油的需求減少</strong>。</p>
+        <p class="en-text"><strong>Step 1:</strong> The government taxes vehicles \(\rightarrow\) Supply of vehicles decreases \(\rightarrow\) Price of vehicles increases. Since vehicles and gasoline are complements, fewer people buy cars, leading to a <strong>decrease in Demand for gasoline</strong>.</p>
+
+        <p><strong>第二步：確定移動的曲線 (Identify the Shifting Curve)</strong><br>
+        汽油市場中，<strong>需求曲線 (D) 向左移</strong>。題目沒有提及任何影響汽油生產成本的因素，所以汽油的<strong>供應曲線 (S) 保持不變</strong>。</p>
+        <p class="en-text"><strong>Step 2:</strong> In the gasoline market, the <strong>Demand curve (D) shifts to the left</strong>. The question mentions nothing affecting the production cost of gasoline, so the <strong>Supply curve (S) remains unchanged</strong>.</p>
+
+        <p><strong>第三步：計算彈性 (Calculate Elasticity)</strong><br>
+        既然我們是沿著供應曲線移動，我們計算的是<strong>供應彈性 (Elasticity of Supply)</strong>。<br>
+        利用公式：</p>
+        <p class="en-text"><strong>Step 3:</strong> Since we are moving along the Supply curve, we are calculating the <strong>Elasticity of Supply</strong>. Using the formula:</p>
+
+        $$ E_s = \frac{\%\Delta Q}{\%\Delta P} = \frac{35\%}{22\%} \approx 1.59 $$
+
+        <p>因為 \( 1.59 > 1 \)，所以供應屬<strong>高彈性</strong>。</p>
+        <p class="en-text">Since \( 1.59 > 1 \), the supply is <strong>elastic</strong>.</p>
+
+        <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+
+        <h4>選項分析 (Options Analysis):</h4>
+        <ul>
+            <li><strong>A & B (錯誤):</strong> 由於需求曲線移動了，我們無法單憑這兩個均衡點計算需求彈性。我們觀察到的是供應曲線的斜率特性。</li>
+            <li class="en-text"><strong>A & B (Incorrect):</strong> Since the Demand curve shifted, we cannot calculate demand elasticity using just these two equilibrium points. We are observing the properties of the Supply curve.</li>
+            
+            <li><strong>C (正確):</strong> 這是供應彈性，且數值大於 1。</li>
+            <li class="en-text"><strong>C (Correct):</strong> This is supply elasticity, and the value is greater than 1.</li>
+            
+            <li><strong>D (錯誤):</strong> 雖然是供應彈性，但 \(35\% > 22\%\)，分子大於分母，應為高彈性。</li>
+            <li class="en-text"><strong>D (Incorrect):</strong> While it is supply elasticity, since \(35\% > 22\%\), the numerator is larger than the denominator, so it should be elastic.</li>
+        </ul>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #fdf4ff; border-color: #d946ef;">
+        <h3>題目拆解：解題關鍵 (Problem Decomposition)</h3>
+        <p>這類題目的「破題點」在於判斷<strong>「誰在動，誰不動」</strong>。</p>
+        <p class="en-text">The "Pivot Point" of this question is determining <strong>"Who moves, and who stays?"</strong></p>
+        
+        <ol>
+            <li><strong>事件 (Event):</strong> 汽車稅 (Tax on cars)。</li>
+            <li><strong>傳導 (Transmission):</strong> 影響汽車市場 \(\rightarrow\) 影響汽油市場的<strong>需求</strong> (Demand)。</li>
+            <li><strong>結論 (Conclusion):</strong> 汽油需求移動，汽油供應不動。</li>
+            <li><strong>計算 (Calculation):</strong> 既然供應不動，價格與數量的變化反映<strong>供應曲線</strong>的形狀（彈性）。</li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="trap-box">
+        <h3>常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <p><strong>陷阱 1：搞錯主角 (Confusing the Subject)</strong><br>
+        學生常誤以為稅是加在汽油上，認為汽油供應減少。請仔細閱讀：稅是加在<strong>車輛</strong>上。</p>
+        <p class="en-text"><strong>Trap 1:</strong> Students often mistake the tax as being on gasoline, thinking gasoline supply decreases. Read carefully: the tax is on <strong>vehicles</strong>.</p>
+
+        <p><strong>陷阱 2：倒轉公式 (Inverting the Formula)</strong><br>
+        彈性公式永遠是 \(\frac{\%\Delta Q}{\%\Delta P}\) (數量在分子)。<br>
+        錯誤計算：\(\frac{22}{35} \approx 0.6\)，誤以為是低彈性。</p>
+        <p class="en-text"><strong>Trap 2:</strong> The elasticity formula is always \(\frac{\%\Delta Q}{\%\Delta P}\) (Quantity on top). Incorrect calculation: \(\frac{22}{35} \approx 0.6\), leading to the wrong conclusion of inelasticity.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-box">
+        <h3>學生常見疑問 (Student Q&A)</h3>
+        
+        <p><strong>Q: 為什麼需求曲線移動，我們就算不到需求彈性？ (Why can't we calculate demand elasticity if the demand curve shifts?)</strong></p>
+        <p><strong>A:</strong> 彈性是量度<strong>同一條曲線</strong>上，價格對數量的影響。當需求曲線由 \(D_1\) 移至 \(D_2\)，我們只有兩個點：\(D_1\) 上的一點和 \(D_2\) 上的一點。這兩點不在同一條需求曲線上，所以無法計算需求彈性。相反，這兩點都在同一條供應曲線 \(S\) 上，所以我們算出的是供應彈性。</p>
+        <p class="en-text">Elasticity measures the responsiveness along <strong>one single curve</strong>. When Demand shifts from \(D_1\) to \(D_2\), we have two points on two different demand curves. We cannot calculate demand elasticity. However, both points lie on the same Supply curve \(S\), so we calculate Supply Elasticity.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="concept-box" style="background-color: #fff7ed; border-color: #f97316;">
+        <h3>考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <p><strong>口訣：動者不計，不計者動 (Calculate the Static Curve)</strong></p>
+        <ul>
+            <li>如果題目說<strong>需求變</strong>（如：收入變、偏好變、互補品價格變）\(\rightarrow\) 答案一定是關於<strong>供應彈性</strong>。</li>
+            <li>如果題目說<strong>供應變</strong>（如：原材料變、科技變、生產稅）\(\rightarrow\) 答案一定是關於<strong>需求彈性</strong>。</li>
+        </ul>
+        <p>在本題，因為是互補品導致需求變，直接刪除選項 A 和 B！只需比較 \(35\%\) 和 \(22\%\) 即可得出答案。</p>
+        <p class="en-text"><strong>Shortcut:</strong> If Demand shifts \(\rightarrow\) Answer is about Supply Elasticity. If Supply shifts \(\rightarrow\) Answer is about Demand Elasticity. In this question, Demand shifts, so eliminate A and B immediately!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

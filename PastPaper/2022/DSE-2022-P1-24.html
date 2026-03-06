@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - National Income Accounting</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .data-table th, .data-table td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f1f5f9;
+        }
+
+        .data-table td:last-child {
+            text-align: right;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .concept-box {
+            background-color: #fffbeb; /* Cream */
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: #b45309;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .analysis-step {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .option-analysis {
+            margin-top: 20px;
+        }
+
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option.correct {
+            background-color: #dcfce7;
+            border-color: #86efac;
+            color: #166534;
+        }
+
+        .option.wrong {
+            background-color: #fee2e2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .tips-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Guide</h1>
+    <div class="header-info">
+        <span class="header-item">Topic (課題): National Income Accounting (國民收入會計)</span>
+        <span class="header-item">Difficulty (難度): ★★★☆☆</span>
+        <span class="header-item">Key Concepts: GDP at factor cost, Expenditure Approach, Inventory Changes</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p class="bilingual-text">
+            細閱以下某經濟的數據。
+            <span class="en-text">Study the following data of an economy.</span>
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Components (組成部分)</th>
+                    <th>$ million (百萬元)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Private consumption expenditure (私人消費支出)</td><td>500</td></tr>
+                <tr><td>Gross domestic fixed capital formation (本地固定資本形成總值)</td><td>260</td></tr>
+                <tr><td>Decrease in stock (存貨減少)</td><td>120</td></tr>
+                <tr><td>Government consumption expenditure (政府消費支出)</td><td>470</td></tr>
+                <tr><td>Total exports of goods (物品出口總值)</td><td>380</td></tr>
+                <tr><td>Re-exports of goods (物品轉口)</td><td>140</td></tr>
+                <tr><td>Total imports of goods (物品進口總值)</td><td>220</td></tr>
+                <tr><td>Net exports of services (服務淨出口)</td><td>730</td></tr>
+                <tr><td>Depreciation (折舊)</td><td>90</td></tr>
+                <tr><td>Indirect taxes (間接稅)</td><td>75</td></tr>
+            </tbody>
+        </table>
+
+        <p class="bilingual-text">
+            以要素成本計算的本地生產總值是 __________ 百萬元。
+            <span class="en-text">The gross domestic product (GDP) at factor cost is $ __________ million.</span>
+        </p>
+
+        <div style="margin-top: 15px;">
+            <strong>A.</strong> 1925<br>
+            <strong>B.</strong> 2065<br>
+            <strong>C.</strong> 2075<br>
+            <strong>D.</strong> 2165
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <span class="concept-title">Concept Review (概念重溫)</span>
+        
+        <p class="bilingual-text">
+            <strong>1. 支出面計算法 (Expenditure Approach):</strong><br>
+            基本公式為：
+            <span class="en-text"><strong>1. Expenditure Approach:</strong><br> The basic formula is:</span>
+        </p>
+        <div class="math-block">
+            $$ \text{GDP}_\text{MP} = C + I + G + (X - M) $$
+        </div>
+        <p class="bilingual-text">
+            其中 \(I\) (投資總額) 包含兩個部分：
+            <span class="en-text">Where \(I\) (Gross Investment) consists of two parts:</span>
+        </p>
+        <div class="math-block">
+            $$ I = \text{Gross Fixed Capital Formation} + \text{Change in Stock} $$
+            $$ I = \text{本地固定資本形成總值} + \text{存貨變動} $$
+        </div>
+
+        <p class="bilingual-text">
+            <strong>2. 市價 vs 要素成本 (Market Price vs Factor Cost):</strong><br>
+            要從市價 (MP) 轉換為要素成本 (FC)，我們需要扣除間接稅並加上補貼。
+            <span class="en-text"><strong>2. Market Price vs Factor Cost:</strong><br> To convert from Market Price (MP) to Factor Cost (FC), we deduct indirect taxes and add subsidies.</span>
+        </p>
+        <div class="math-block">
+            $$ \text{GDP}_\text{FC} = \text{GDP}_\text{MP} - \text{Indirect Taxes} + \text{Subsidies} $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option correct">
+            <strong>Correct Option: A (1925)</strong>
+        </div>
+
+        <h3>Step-by-Step Calculation (逐步計算):</h3>
+
+        <div class="analysis-step">
+            <h4>Step 1: Calculate Gross Investment (計算投資總額 \(I\))</h4>
+            <p class="bilingual-text">
+                題目給出「本地固定資本形成總值」為 260，但「存貨減少」為 120。注意「減少」代表負數。
+                <span class="en-text">The question gives "Gross domestic fixed capital formation" as 260, but "Decrease in stock" is 120. Note that "Decrease" implies a negative value.</span>
+            </p>
+            <div class="math-block">
+                \( I = 260 + (-120) = 140 \)
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 2: Calculate Net Exports (計算淨出口 \(X-M\))</h4>
+            <p class="bilingual-text">
+                淨出口 = (物品出口 - 物品進口) + 服務淨出口。<br>
+                注意：「物品出口總值」通常已包含「物品轉口」，所以不需要額外處理轉口數據。
+                <span class="en-text">Net Exports = (Total exports of goods - Total imports of goods) + Net exports of services.<br> Note: "Total exports of goods" usually includes "Re-exports", so no extra calculation is needed for re-exports.</span>
+            </p>
+            <div class="math-block">
+                \( (X - M) = (380 - 220) + 730 = 160 + 730 = 890 \)
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 3: Calculate GDP at Market Price (計算以市價計算的 GDP)</h4>
+            <div class="math-block">
+                \( \text{GDP}_\text{MP} = C + I + G + (X - M) \) <br>
+                \( \text{GDP}_\text{MP} = 500 + 140 + 470 + 890 = 2000 \)
+            </div>
+        </div>
+
+        <div class="analysis-step">
+            <h4>Step 4: Convert to Factor Cost (轉換為要素成本)</h4>
+            <p class="bilingual-text">
+                最後，扣除間接稅。
+                <span class="en-text">Finally, deduct indirect taxes.</span>
+            </p>
+            <div class="math-block">
+                \( \text{GDP}_\text{FC} = 2000 - 75 = 1925 \)
+            </div>
+        </div>
+
+        <h3>Why other options are wrong (為何其他選項是錯誤的):</h3>
+        <div class="option-analysis">
+            <p><strong>B. 2065:</strong> <br>
+                這可能是錯誤地加上了「物品轉口」(140)。<br>
+                \( 1925 + 140 = 2065 \)。這是重複計算 (Double Counting)。
+            </p>
+            <p><strong>C. 2075:</strong> <br>
+                這可能是錯誤地<strong>加上</strong>了間接稅，而不是減去。<br>
+                \( 2000 + 75 = 2075 \)。
+            </p>
+            <p><strong>D. 2165:</strong> <br>
+                這可能是錯誤地處理了存貨變動，將「存貨減少 120」當作「增加」來計算。<br>
+                如果 \( I = 260 + 120 = 380 \)，則 \( \text{GDP}_\text{MP} = 2240 \)。<br>
+                \( 2240 - 75 = 2165 \)。這是學生最常犯的錯誤。
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #f0f9ff; border-left-color: #0ea5e9;">
+        <span class="concept-title">Problem Decomposition (題目拆解)</span>
+        <p class="bilingual-text">
+            這類題目的關鍵在於分辨哪些數據是<strong>「陷阱 (Distractors)」</strong>，哪些是<strong>「核心數據 (Core Data)」</strong>。
+            <span class="en-text">The key to this type of question is distinguishing between <strong>"Distractors"</strong> and <strong>"Core Data"</strong>.</span>
+        </p>
+        <ul>
+            <li>
+                <strong>陷阱 1 (Trap 1) - Depreciation (折舊):</strong> 
+                題目問的是 GDP (Gross/總值)，不是 NDP (Net/淨值)。所以折舊是多餘資訊。
+                <br><span class="en-text">The question asks for GDP (Gross), not NDP (Net). So depreciation is irrelevant info.</span>
+            </li>
+            <li>
+                <strong>陷阱 2 (Trap 2) - Re-exports (轉口):</strong> 
+                「物品出口總值 (Total exports)」已經包含了轉口。單獨列出轉口是為了引誘你重複計算。
+                <br><span class="en-text">"Total exports" already includes re-exports. Listing it separately is to tempt you into double counting.</span>
+            </li>
+            <li>
+                <strong>關鍵點 (Pivot Point) - Decrease in Stock (存貨減少):</strong> 
+                必須記住公式是 \( + \text{Change in Stock} \)。如果是減少，就要加上一個負數 (即減去)。
+                <br><span class="en-text">Remember the formula is \( + \text{Change in Stock} \). If it's a decrease, you add a negative number (i.e., subtract).</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <p><strong>Q: 為什麼不用減去折舊 (Depreciation)?</strong></p>
+        <p><strong>A:</strong> 因為題目要求計算的是「本地生產<strong>總</strong>值 (Gross Domestic Product)」。"Gross" (總) 的意思就是尚未扣除折舊。如果題目問的是「本地生產<strong>淨</strong>值 (Net Domestic Product)」，我們才需要減去折舊。</p>
+        <p class="en-text"><strong>Why didn't we subtract depreciation?</strong><br>Because the question asks for "<strong>Gross</strong> Domestic Product". "Gross" means depreciation has not been deducted yet. If the question asked for "<strong>Net</strong> Domestic Product", then we would subtract depreciation.</p>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <p><strong>Q: 為什麼「物品轉口」不需要加進去？</strong></p>
+        <p><strong>A:</strong> 在香港的統計定義中，「物品出口總值 (Total Exports)」=「本地產品出口 (Domestic Exports)」+「轉口 (Re-exports)」。既然題目已經給了「總值 (Total)」，轉口就已經包含在內了。</p>
+        <p class="en-text"><strong>Why isn't "Re-exports" added?</strong><br>In HK statistics, "Total Exports" = "Domestic Exports" + "Re-exports". Since the question gave the "Total", re-exports are already included.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="tips-box">
+        <h3>Exam Tricks (考試技巧)</h3>
+        <p class="bilingual-text">
+            <strong>快速檢查正負號 (Sign Check):</strong><br>
+            做這類題目時，先在試卷上把所有需要「減」的項目圈出來或標上負號。
+            <span class="en-text"><strong>Sign Check:</strong><br> When doing this type of question, first circle or mark with a minus sign all items that need to be "subtracted" on the question paper.</span>
+        </p>
+        <ul>
+            <li>Imports (進口) \(\rightarrow\) \(-\)</li>
+            <li>Decrease in stock (存貨減少) \(\rightarrow\) \(-\)</li>
+            <li>Indirect Taxes (間接稅) \(\rightarrow\) \(-\) (若求 FC)</li>
+        </ul>
+        <p>這樣計算機輸入時就不容易出錯！</p>
+    </div>
+
+</div>
+
+</body>
+</html>

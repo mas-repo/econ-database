@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: National Income Accounting</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #10b981; /* Green */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item { margin-right: 20px; }
+        .difficulty-stars { color: var(--accent-color); letter-spacing: 2px; }
+
+        .section-box {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-box { background-color: #fff; border: 2px solid #e2e8f0; }
+        .concept-box { background-color: #f0fdf4; border-left: 5px solid var(--secondary-color); }
+        .analysis-box { background-color: #fff7ed; border-left: 5px solid var(--accent-color); }
+        .mistake-box { background-color: #fef2f2; border-left: 5px solid #ef4444; }
+        .trick-box { background-color: #f5f3ff; border-left: 5px solid #8b5cf6; }
+
+        .bilingual-text { margin-bottom: 15px; }
+        .zh { font-weight: 500; color: #0f172a; margin-bottom: 4px; display: block; }
+        .en { color: #475569; font-size: 0.95em; display: block; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th { background-color: #f1f5f9; }
+
+        .option-list { list-style-type: none; padding: 0; }
+        .option-list li { margin-bottom: 8px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .option-list li:hover { background-color: #f8fafc; }
+        .correct-option { font-weight: bold; color: var(--secondary-color); }
+        .wrong-option { color: #ef4444; }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">
+            <strong>Topic (課題):</strong> National Income Accounting (國民收入會計)
+        </div>
+        <div class="header-item">
+            <strong>Difficulty (難度):</strong> <span class="difficulty-stars">★★☆☆☆</span>
+        </div>
+        <div class="header-item">
+            <strong>Key Concepts (核心概念):</strong> GDP vs GNI, Market Price vs Factor Cost, Depreciation
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section-box question-box">
+        <h2>The Question (題目)</h2>
+        
+        <div class="bilingual-text">
+            <span class="zh">下表顯示某經濟某一年本地生產總值的資料：</span>
+            <span class="en">The following table shows the gross domestic product (GDP) data of an economy in a particular year:</span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>GDP components (本地生產總值的組成)</th>
+                    <th>$ billion (十億元)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Capital consumption allowance (資本消耗額)</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Net factor income from abroad (外地要素收入淨額)</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>Production subsidies (生產補貼)</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Direct taxes (直接稅)</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Indirect taxes (間接稅)</td>
+                    <td>47</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bilingual-text">
+            <span class="zh">下列哪些有關該經濟的陳述是正確的？</span>
+            <span class="en">Which of the following statements about the economy are correct?</span>
+        </div>
+
+        <div class="bilingual-text">
+            <span class="zh">(1) 本地生產總值低於國民總收入。</span>
+            <span class="en">(1) The GDP is smaller than the gross national income (GNI).</span>
+        </div>
+        <div class="bilingual-text">
+            <span class="zh">(2) 以市價計算的本地生產總值低於以要素成本計算的本地生產總值。</span>
+            <span class="en">(2) The GDP at market price is smaller than the GDP at factor cost.</span>
+        </div>
+        <div class="bilingual-text">
+            <span class="zh">(3) 該經濟折舊的數值大於零。</span>
+            <span class="en">(3) Depreciation is positive in the economy.</span>
+        </div>
+
+        <ul class="option-list">
+            <li>A. Only (1) and (2) / 只有 (1)、(2)</li>
+            <li>B. Only (1) and (3) / 只有 (1)、(3)</li>
+            <li>C. Only (2) and (3) / 只有 (2)、(3)</li>
+            <li>D. (1), (2) and (3) / (1)、(2) 及 (3)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section-box concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="bilingual-text">
+            <span class="zh">要解決這道題目，我們需要掌握以下三個核心公式與定義：</span>
+            <span class="en">To solve this problem, we need to master the following three core formulas and definitions:</span>
+        </div>
+
+        <h3>1. GDP vs GNI (本地生產總值 與 國民總收入)</h3>
+        <p class="math-block">
+            $$ \text{GNI} = \text{GDP} + \text{Net factor income from abroad (外地要素收入淨額)} $$
+        </p>
+        <div class="bilingual-text">
+            <span class="zh">如果「外地要素收入淨額」是<strong>正數</strong>，GNI 便會大於 GDP。</span>
+            <span class="en">If "Net factor income from abroad" is <strong>positive</strong>, GNI will be larger than GDP.</span>
+        </div>
+
+        <h3>2. Market Price vs Factor Cost (市價 與 要素成本)</h3>
+        <p class="math-block">
+            $$ \text{Market Price (市價)} = \text{Factor Cost (要素成本)} + \text{Indirect Taxes (間接稅)} - \text{Subsidies (生產補貼)} $$
+        </p>
+        <div class="bilingual-text">
+            <span class="zh">「間接稅」會提高市價，「補貼」會降低市價。我們通常將兩者合併稱為「間接稅淨額」(Net Indirect Taxes)。</span>
+            <span class="en">"Indirect taxes" raise the market price, while "subsidies" lower it. We often combine them as "Net Indirect Taxes".</span>
+        </div>
+
+        <h3>3. Depreciation (折舊)</h3>
+        <div class="bilingual-text">
+            <span class="zh"><strong>資本消耗額 (Capital Consumption Allowance)</strong> 是折舊的另一個名稱。它代表在生產過程中損耗的資本價值。</span>
+            <span class="en"><strong>Capital Consumption Allowance</strong> is another name for Depreciation. It represents the value of capital worn out during the production process.</span>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="section-box analysis-box">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p style="font-size: 1.2em;"><strong>Correct Option: <span style="color: var(--secondary-color);">B</span></strong></p>
+
+        <h3>Statement (1): Correct / 正確</h3>
+        <div class="bilingual-text">
+            <span class="zh">根據題目，外地要素收入淨額 = 36 (十億元)。<br>由於數值是正數 (+36)，根據公式 \( \text{GNI} = \text{GDP} + 36 \)，GNI 必然大於 GDP。</span>
+            <span class="en">According to the data, Net factor income from abroad = 36 ($ billion).<br>Since the value is positive (+36), based on the formula \( \text{GNI} = \text{GDP} + 36 \), GNI must be larger than GDP.</span>
+        </div>
+        <p class="math-block">
+            \( \text{GNI} > \text{GDP} \implies \text{GDP} < \text{GNI} \)
+        </p>
+
+        <h3>Statement (2): Incorrect / 錯誤</h3>
+        <div class="bilingual-text">
+            <span class="zh">讓我們計算市價 (MP) 與要素成本 (FC) 的差異：<br>
+            \( \text{MP} = \text{FC} + \text{間接稅} - \text{生產補貼} \)<br>
+            \( \text{MP} = \text{FC} + 47 - 14 \)<br>
+            \( \text{MP} = \text{FC} + 33 \)<br>
+            這表示以市價計算的數值比以要素成本計算的數值<strong>大</strong> 330 億元。陳述 (2) 聲稱「低於」是錯誤的。</span>
+            <span class="en">Let's calculate the difference between Market Price (MP) and Factor Cost (FC):<br>
+            \( \text{MP} = \text{FC} + \text{Indirect Taxes} - \text{Subsidies} \)<br>
+            \( \text{MP} = \text{FC} + 47 - 14 \)<br>
+            \( \text{MP} = \text{FC} + 33 \)<br>
+            This means the value at market price is <strong>larger</strong> than the value at factor cost by $33 billion. Statement (2) claiming it is "smaller" is incorrect.</span>
+        </div>
+
+        <h3>Statement (3): Correct / 正確</h3>
+        <div class="bilingual-text">
+            <span class="zh">題目給出「資本消耗額」為 40。<br>由於「資本消耗額」即等於「折舊」，而 40 > 0，所以折舊數值大於零。</span>
+            <span class="en">The question provides "Capital consumption allowance" as 40.<br>Since "Capital consumption allowance" equals "Depreciation", and 40 > 0, the depreciation value is positive.</span>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+        
+        <div class="bilingual-text">
+            <span class="zh"><strong>結論：</strong> 只有陳述 (1) 和 (3) 是正確的。</span>
+            <span class="en"><strong>Conclusion:</strong> Only statements (1) and (3) are correct.</span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        
+        <div class="bilingual-text">
+            <span class="zh"><strong>關鍵點 (Pivot Point):</strong> 這類題目不需要計算出 GDP 的總數值，只需要比較各組成部分的<strong>正負關係</strong>。</span>
+            <span class="en"><strong>Pivot Point:</strong> You do not need to calculate the total value of GDP for this type of question. You only need to compare the <strong>positive/negative relationships</strong> of the components.</span>
+        </div>
+
+        <ul class="option-list">
+            <li>
+                <strong>Distractor (干擾項): Direct Taxes (直接稅)</strong>
+                <br>
+                <span class="zh">直接稅（如薪俸稅、利得稅）不涉及市價與要素成本的轉換，也不影響 GDP 與 GNI 的關係。這是題目中的無用資訊。</span>
+                <span class="en">Direct taxes (like salaries tax, profits tax) are not involved in converting market price to factor cost, nor do they affect the GDP/GNI relationship. This is irrelevant information.</span>
+            </li>
+            <li>
+                <strong>Crucial Info (關鍵資訊): Subsidies vs Indirect Taxes</strong>
+                <br>
+                <span class="zh">只需比較這兩個數字的大小：間接稅 (47) > 補貼 (14)，即代表市價 > 要素成本。</span>
+                <span class="en">Just compare the magnitude of these two: Indirect Taxes (47) > Subsidies (14), which immediately implies Market Price > Factor Cost.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="section-box mistake-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="bilingual-text">
+            <span class="zh"><strong>1. 混淆直接稅與間接稅：</strong><br>有些同學會誤將「直接稅」加入市價的計算公式中。請記住，只有「間接稅」會導致市價與要素成本出現差異。</span>
+            <span class="en"><strong>1. Confusing Direct and Indirect Taxes:</strong><br>Some students mistakenly add "Direct Taxes" into the market price formula. Remember, only "Indirect Taxes" cause a divergence between market price and factor cost.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <span class="zh"><strong>2. 術語不熟悉：</strong><br>不知道「資本消耗額」就是「折舊」。這是考試中常見的同義詞替換。</span>
+            <span class="en"><strong>2. Unfamiliarity with Terminology:</strong><br>Not knowing that "Capital consumption allowance" is "Depreciation". This is a common synonym swap in exams.</span>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section-box">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div style="margin-bottom: 15px;">
+            <p><strong>Q: Why didn't we use the "Direct Taxes = 5" in any calculation? (為什麼我們在計算中完全沒有用到「直接稅 = 5」？)</strong></p>
+            <p class="zh">A: 因為直接稅（如薪俸稅）是從收入中扣除的，它影響的是「可支配收入」，而不是產品的「市價」或「要素成本」。在國民收入會計的這三個特定比較中，直接稅是無關的。</p>
+            <p class="en">A: Because direct taxes (like income tax) are deducted from income. They affect "Disposable Income", not the "Market Price" or "Factor Cost" of products. For the three specific comparisons in this question, direct taxes are irrelevant.</p>
+        </div>
+
+        <div>
+            <p><strong>Q: What if Production Subsidies were 50? (如果生產補貼是 50 呢？)</strong></p>
+            <p class="zh">A: 如果補貼 (50) > 間接稅 (47)，那麼公式會變成：\( \text{MP} = \text{FC} + 47 - 50 = \text{FC} - 3 \)。這時，市價就會<strong>低於</strong>要素成本，陳述 (2) 就會變成正確。</p>
+            <p class="en">A: If Subsidies (50) > Indirect Taxes (47), the formula becomes: \( \text{MP} = \text{FC} + 47 - 50 = \text{FC} - 3 \). In that case, Market Price would be <strong>smaller</strong> than Factor Cost, and statement (2) would become correct.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
