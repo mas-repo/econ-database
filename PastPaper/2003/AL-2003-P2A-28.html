@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: EERI & LERS</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --box-bg: #ffffff;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; border-left: 5px solid var(--accent-color); padding-left: 10px; }
+        h3 { font-size: 1.2rem; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .options { list-style-type: none; padding: 0; }
+        .options li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+        .options li:last-child { border-bottom: none; }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .analysis-step {
+            margin-bottom: 15px;
+        }
+
+        .correct-option {
+            background-color: var(--correct-bg);
+            border: 1px solid var(--correct-border);
+            color: #14532d;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .option-analysis.correct { background-color: var(--correct-bg); border-left: 4px solid var(--correct-border); }
+        .option-analysis.wrong { background-color: var(--wrong-bg); border-left: 4px solid var(--wrong-border); }
+
+        .trap-box {
+            background-color: #fff7ed;
+            border: 1px solid #fdba74;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .qa-box {
+            background-color: #f0fdf4;
+            border: 1px solid #86efac;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .zh { font-weight: 500; margin-bottom: 5px; display: block; }
+        .en { color: #475569; font-size: 0.95em; display: block; margin-bottom: 15px; }
+        
+        /* MathJax Adjustments */
+        mjx-container { font-size: 1.1em !important; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> International Finance / Exchange Rate (國際金融 / 匯率)</div>
+        <div><strong>Difficulty (難度):</strong> ★★★☆☆</div>
+        <div><strong>Key Concepts (關鍵概念):</strong> <span class="tag">LERS (聯繫匯率)</span> <span class="tag">EERI (匯率指數)</span> <span class="tag">Pegged System (掛鈎制度)</span></div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh">假設亞洲區貨幣的價值(港幣除外)相對美元下降，而亞洲區以外的貨幣價值相對美元則維持不變。在香港的聯繫匯率制度下，港幣匯率指數會有什麼變化？</p>
+        <p class="en">Suppose the values of Asian currencies, other than the Hong Kong dollar, fall against the US dollar while the values of non-Asian currencies remain unchanged against the US dollar. Under the linked exchange rate system in Hong Kong, the effective exchange rate index for the Hong Kong dollar will</p>
+        
+        <ul class="options">
+            <li><strong>A.</strong> <span class="zh">上升。</span> / <span class="en">rise.</span></li>
+            <li><strong>B.</strong> <span class="zh">下降。</span> / <span class="en">fall.</span></li>
+            <li><strong>C.</strong> <span class="zh">維持不變。</span> / <span class="en">remain constant.</span></li>
+            <li><strong>D.</strong> <span class="zh">未能確定。</span> / <span class="en">be indeterminate.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>1. Linked Exchange Rate System (聯繫匯率制度)</h3>
+        <p class="zh">港元與美元掛鈎 (Pegged)。這意味著港元與美元的走勢是同步的。</p>
+        <p class="en">The HKD is pegged to the USD. This means the movement of the HKD is synchronized with the USD.</p>
+        <p>
+            \[ \text{USD} \uparrow \implies \text{HKD} \uparrow \]
+            \[ \text{USD} \downarrow \implies \text{HKD} \downarrow \]
+        </p>
+
+        <h3>2. Effective Exchange Rate Index, EERI (港幣匯率指數)</h3>
+        <p class="zh">這是一個指標，用來量度港元相對於主要貿易夥伴貨幣的<strong>加權平均匯率</strong>。</p>
+        <p class="en">This is an indicator that measures the <strong>trade-weighted average exchange rate</strong> of the HKD against its major trading partners.</p>
+        <p class="zh">如果港元相對於大部分主要貿易夥伴的貨幣升值，指數就會上升。</p>
+        <p class="en">If the HKD appreciates against the currencies of most major trading partners, the index rises.</p>
+        
+        <div style="background: #e0f2fe; padding: 10px; border-radius: 5px; margin-top: 10px;">
+            <strong>Formula Logic (公式邏輯):</strong><br>
+            \[ \text{EERI} \propto \sum (\text{Exchange Rate vs Partner}_i \times \text{Trade Weight}_i) \]
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="correct-option">
+        Correct Answer: Option A (上升 / rise)
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 1: Analyze the USD (分析美元走勢)</h3>
+        <p class="zh">題目指出「亞洲區貨幣相對美元下降」。這等同於說：<strong>美元相對亞洲貨幣升值</strong>。</p>
+        <p class="en">The question states "Asian currencies fall against the US dollar". This is equivalent to saying: <strong>The USD appreciates against Asian currencies</strong>.</p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 2: Apply the Link (應用聯繫匯率)</h3>
+        <p class="zh">由於港元與美元掛鈎，港元會跟隨美元走勢。因此，<strong>港元相對亞洲貨幣升值</strong>。</p>
+        <p class="en">Since the HKD is pegged to the USD, the HKD follows the USD's trend. Therefore, <strong>the HKD appreciates against Asian currencies</strong>.</p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>Step 3: Analyze the Index (分析指數)</h3>
+        <p class="zh">題目亦指出「亞洲區以外的貨幣相對美元維持不變」，即港元相對這些貨幣也維持不變。既然港元對一部分貨幣（亞洲）升值，而對另一部分不變，整體的加權平均值（EERI）必然<strong>上升</strong>。</p>
+        <p class="en">The question also states non-Asian currencies remain unchanged against the USD, meaning HKD remains unchanged against them too. Since HKD appreciates against one group (Asia) and stays constant against the other, the overall weighted average (EERI) must <strong>rise</strong>.</p>
+    </div>
+
+    <h3>Option Breakdown (選項分析):</h3>
+    <div class="option-analysis correct">
+        <strong>A. 上升 (Rise) - CORRECT</strong>
+        <p class="zh">因為港元跟隨美元，對亞洲貨幣升值，拉高了整體匯率指數。</p>
+        <p class="en">Because the HKD follows the USD, it appreciates against Asian currencies, pulling up the overall exchange rate index.</p>
+    </div>
+    <div class="option-analysis wrong">
+        <strong>B. 下降 (Fall) - INCORRECT</strong>
+        <p class="zh">這是相反的邏輯。只有當美元（及港元）相對其他貨幣貶值時，指數才會下降。</p>
+        <p class="en">This is the opposite logic. The index would only fall if the USD (and thus HKD) depreciated against other currencies.</p>
+    </div>
+    <div class="option-analysis wrong">
+        <strong>C. 維持不變 (Remain constant) - INCORRECT</strong>
+        <p class="zh">這是常見錯誤。聯繫匯率只保證港元對「美元」不變，並不保證對「其他貨幣」不變。</p>
+        <p class="en">This is a common mistake. The LERS only guarantees the HKD is stable against the "USD", not against "other currencies".</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <p class="zh">解這類題目的關鍵在於「三步跳」邏輯：</p>
+    <p class="en">The key to solving this type of question lies in a "Three-Step Jump" logic:</p>
+    
+    <ol style="background: #f8fafc; padding: 20px 40px; border-radius: 8px; border: 1px dashed #94a3b8;">
+        <li>
+            <strong>Partner vs USD (外幣對美元):</strong>
+            <br>
+            <span class="zh">亞洲貨幣 \(\downarrow\) vs USD \(\implies\) USD \(\uparrow\) vs 亞洲貨幣</span>
+        </li>
+        <li style="margin-top: 10px;">
+            <strong>HKD vs USD (港幣對美元):</strong>
+            <br>
+            <span class="zh">HKD \(\approx\) USD (Locked/鎖定)</span>
+        </li>
+        <li style="margin-top: 10px;">
+            <strong>HKD vs Partner (港幣對外幣):</strong>
+            <br>
+            <span class="zh">因此，HKD \(\uparrow\) vs 亞洲貨幣 \(\implies\) EERI \(\uparrow\)</span>
+        </li>
+    </ol>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <h3>Trap: "Linked" means "Fixed"? (陷阱：「聯繫」等於「固定」？)</h3>
+        <p class="zh"><strong>錯誤觀念：</strong> 很多學生看到「聯繫匯率」，就直覺以為港幣匯率指數永遠不變。</p>
+        <p class="en"><strong>Misconception:</strong> Many students see "Linked Exchange Rate" and intuitively think the HKD EERI never changes.</p>
+        <p class="zh"><strong>正確觀念：</strong> 港幣只對<strong>美元</strong>固定。對日圓、歐元、人民幣等其他貨幣，港幣是浮動的（隨美元浮動）。EERI 反映的是對<strong>全世界</strong>的匯率，所以會經常變動。</p>
+        <p class="en"><strong>Correction:</strong> HKD is only fixed against the <strong>USD</strong>. Against JPY, EUR, CNY, etc., the HKD floats (moves with the USD). The EERI reflects the rate against the <strong>world</strong>, so it changes frequently.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: <span class="zh">為什麼亞洲貨幣下跌，港幣就是升值？</span> / <span class="en">Why does Asian currencies falling mean HKD appreciates?</span></strong></p>
+        <p><strong>A:</strong> 
+            <span class="zh">匯率是相對的。如果對方變弱（下跌），相對來說你就變強（升值）。想像兩個人站在蹺蹺板上，對方沉下去，你自然就升上來。</span>
+            <span class="en">Exchange rates are relative. If the other side gets weaker (falls), relatively speaking, you get stronger (appreciate). Imagine a seesaw: if the other person goes down, you naturally go up.</span>
+        </p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>Exam Tricks (考試技巧)</h2>
+    <p class="zh"><strong>代入法 (Substitution):</strong> 想像你是美國人。</p>
+    <p class="en"><strong>Substitution Method:</strong> Imagine you are an American.</p>
+    <ul>
+        <li><span class="zh">題目說亞洲貨幣跌了，即是你手上的美元更值錢了（可以買更多泰銖/日圓）。</span></li>
+        <li><span class="zh">因為港幣就是美元的「影子」，所以港幣也更值錢了。</span></li>
+        <li><span class="zh">港幣更值錢 = 匯率指數上升。選 A。</span></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

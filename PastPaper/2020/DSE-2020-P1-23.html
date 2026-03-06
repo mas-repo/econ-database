@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Income Inequality Analysis</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .concept-box {
+            background-color: #f0f9ff; /* Light Blue */
+            border-left: 5px solid #0ea5e9;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Times New Roman', serif;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .correct-answer {
+            color: #16a34a; /* Green */
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: #dc2626; /* Red */
+        }
+        .bilingual-text {
+            margin-bottom: 0.5rem;
+        }
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 0.2rem;
+            display: block;
+        }
+        .highlight-keyword {
+            background-color: #fef3c7;
+            padding: 0 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+        /* Table Styling */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .data-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-4xl mx-auto">
+
+    <!-- 1. Header -->
+    <header class="mb-8 border-b pb-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">HKDSE Economics Analysis</h1>
+                <p class="text-gray-600">Topic: Income Determination & Inequality (收入決定與不均)</p>
+            </div>
+            <div class="mt-2 md:mt-0">
+                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Difficulty: ★★★☆☆</span>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Human Capital 人力資本</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Discrimination 歧視</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Income Gap 收入差距</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="bg-white p-6 rounded-lg shadow-sm mb-8 border border-gray-200">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-indigo-500 pl-3">The Question (題目)</h2>
+        
+        <div class="mb-4">
+            <p class="bilingual-text">下表顯示2018年女性與男性按年齡劃分的平均年收入資料。</p>
+            <span class="en-text">The following table shows the data of average annual income earned by women and men according to their age in 2018.</span>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>年齡 / Age</th>
+                        <th>女性平均年收入 (港幣$) <br> Avg. annual income of women (HK$)</th>
+                        <th>男性平均年收入 (港幣$) <br> Avg. annual income of men (HK$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20 – 29</td>
+                        <td>122 000</td>
+                        <td>121 000</td>
+                    </tr>
+                    <tr>
+                        <td>50 – 59</td>
+                        <td>482 000</td>
+                        <td>645 000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mb-4">
+            <p class="bilingual-text">下列哪些可能解釋以上資料所示的現象？</p>
+            <span class="en-text">Which of the following may explain the phenomena shown by the above data?</span>
+        </div>
+
+        <div class="space-y-2 ml-4 mb-6">
+            <p>(1) 女性傾向於比男性更早離開職場以照顧家庭，以致擔任公司高職的女性較少。<br>
+            <span class="en-text text-sm">Women tend to leave the job market earlier than men for taking care of the family, leading to fewer women to take up senior positions in companies.</span></p>
+            
+            <p>(2) 勞動市場的性別歧視存在於年長一輩中。<br>
+            <span class="en-text text-sm">Sex discrimination in labour market exists in the older generations.</span></p>
+            
+            <p>(3) 人力資本的積累導致不同年齡組別的收入差異。<br>
+            <span class="en-text text-sm">Accumulation of human capital contributes to the difference in income between different age groups.</span></p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 font-semibold">
+            <div>A. 只有 (1) <span class="text-gray-500 font-normal">(1) only</span></div>
+            <div>B. 只有 (2) <span class="text-gray-500 font-normal">(2) only</span></div>
+            <div>C. 只有 (3) <span class="text-gray-500 font-normal">(3) only</span></div>
+            <div>D. (1)、(2) 及 (3) <span class="text-gray-500 font-normal">(1), (2) and (3)</span></div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concept-box">
+        <h3 class="text-lg font-bold text-blue-800 mb-3">Concept Review (概念重溫)</h3>
+        
+        <div class="mb-4">
+            <h4 class="font-bold text-gray-700">1. 人力資本 (Human Capital)</h4>
+            <p class="text-sm text-gray-600 mb-1">
+                指工人擁有的知識、技能、經驗和健康。人力資本越高，生產力通常越高，收入也越高。
+            </p>
+            <p class="text-sm text-gray-500 italic">
+                Refers to the knowledge, skills, experience, and health possessed by workers. Higher human capital usually leads to higher productivity and higher income.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h4 class="font-bold text-gray-700">2. 收入差異的成因 (Causes of Income Inequality)</h4>
+            <ul class="list-disc list-inside text-sm text-gray-600">
+                <li><strong>生產力差異 (Productivity differences):</strong> 教育、經驗、天賦。</li>
+                <li><strong>非價格競爭/歧視 (Non-price competition / Discrimination):</strong> 同工不同酬。</li>
+                <li><strong>職業性質 (Nature of job):</strong> 風險、工作環境。</li>
+            </ul>
+        </div>
+
+        <div class="math-block">
+            基本原則：\( Wage \approx MRP \)
+            <br>
+            <span class="text-xs text-gray-500">工資 (Wage) 大致等於邊際收入產量 (Marginal Revenue Product)</span>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="mb-8">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-green-500 pl-3">Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="bg-green-50 border border-green-200 p-4 rounded-lg mb-6">
+            <p class="text-lg"><strong>Correct Option: <span class="text-green-700">D</span></strong></p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Statement 1 -->
+            <div class="border-b pb-4">
+                <h4 class="font-bold text-gray-800 mb-2">分析選項 (1) / Analysis of (1): <span class="text-green-600">正確 Correct</span></h4>
+                <p class="mb-2">
+                    <strong>觀察：</strong> 50-59歲組別中，男性收入 ($645k) 遠高於女性 ($482k)。
+                </p>
+                <p class="mb-2">
+                    <strong>解釋：</strong> 如果女性因照顧家庭而較早離開職場或中斷事業，她們累積的工作經驗（人力資本的一種）會比持續工作的男性少。這導致她們較難晉升至高層職位（通常高薪職位需要長年資）。這解釋了為何在年長組別出現巨大的性別收入差距。
+                </p>
+                <p class="text-gray-600 text-sm">
+                    <strong>Explanation:</strong> In the 50-59 age group, men earn significantly more than women. If women leave the workforce earlier or have career interruptions for family reasons, they accumulate less work experience (a form of human capital) compared to men who work continuously. This makes it harder to reach senior positions (which require long tenure). This explains the large gender income gap in the older age group.
+                </p>
+            </div>
+
+            <!-- Statement 2 -->
+            <div class="border-b pb-4">
+                <h4 class="font-bold text-gray-800 mb-2">分析選項 (2) / Analysis of (2): <span class="text-green-600">正確 Correct</span></h4>
+                <p class="mb-2">
+                    <strong>觀察：</strong> 20-29歲組別男女收入相若（甚至女性稍高），但50-59歲組別男性明顯較高。
+                </p>
+                <p class="mb-2">
+                    <strong>解釋：</strong> 數據顯示性別差距主要存在於「年長一輩」。這可能反映了該世代的社會文化存在性別歧視（如同工不同酬，或晉升機會不均）。年輕一代收入相若，暗示年輕勞動市場的歧視可能較少。因此，歧視存在於年長一輩是合理的解釋。
+                </p>
+                <p class="text-gray-600 text-sm">
+                    <strong>Explanation:</strong> The data shows the gender gap exists primarily in the "older generation." This could reflect sex discrimination (unequal pay for equal work or unequal promotion opportunities) embedded in the culture of that generation. Since the younger generation has similar incomes, it implies less discrimination in the younger labor market. Thus, discrimination existing in the older generation is a plausible explanation.
+                </p>
+            </div>
+
+            <!-- Statement 3 -->
+            <div>
+                <h4 class="font-bold text-gray-800 mb-2">分析選項 (3) / Analysis of (3): <span class="text-green-600">正確 Correct</span></h4>
+                <p class="mb-2">
+                    <strong>觀察：</strong> 無論男女，50-59歲組別的收入都遠高於20-29歲組別（例如男性由 $121k 升至 $645k）。
+                </p>
+                <p class="mb-2">
+                    <strong>解釋：</strong> 題目問的是解釋「以上資料所示的現象」，這包含了「年齡組別之間的收入差異」。隨著年齡增長，工人累積了更多經驗、人脈和技能（即人力資本積累）。根據 \( MRP \) 理論，生產力上升，收入隨之上升。這解釋了為何年長組別收入普遍較高。
+                </p>
+                <p class="text-gray-600 text-sm">
+                    <strong>Explanation:</strong> The question asks to explain "the phenomena shown by the above data," which includes the "income difference between age groups." As workers age, they accumulate more experience, networks, and skills (accumulation of human capital). According to \( MRP \) theory, as productivity rises, income rises. This explains why the older age group generally earns much more than the younger group.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h3 class="text-lg font-bold text-indigo-800 mb-3">Problem Decomposition (題目拆解)</h3>
+        <p class="mb-4">
+            這類題目要求你解釋數據中的<strong>所有主要趨勢 (All major trends)</strong>。
+            <br>
+            <span class="text-sm text-gray-600">This type of question asks you to explain <strong>all major trends</strong> in the data.</span>
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded shadow-sm border-l-4 border-pink-400">
+                <h4 class="font-bold text-pink-600">Trend 1: Horizontal (Gender)</h4>
+                <p class="text-sm">比較同一行 (Row)。<br>年輕時男女收入相近，年老時差距擴大。<br><strong>對應選項：(1) & (2)</strong></p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-sm border-l-4 border-blue-400">
+                <h4 class="font-bold text-blue-600">Trend 2: Vertical (Age)</h4>
+                <p class="text-sm">比較同一列 (Column)。<br>年長組別收入遠高於年輕組別。<br><strong>對應選項：(3)</strong></p>
+            </div>
+        </div>
+        
+        <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded text-sm">
+            <strong>關鍵點 (Pivot Point):</strong> 不要只看性別差異！題目問的是「以上資料」，這包括了年齡帶來的收入增長。
+            <br>
+            <span class="text-gray-500"><strong>Pivot Point:</strong> Don't just look at the gender gap! The question asks about "the above data," which includes the income growth caused by age.</span>
+        </div>
+    </section>
+
+    <!-- 6. Student Q&A -->
+    <section class="mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-3">Student Q&A (學生常見疑問)</h3>
+        
+        <div class="space-y-4">
+            <div class="bg-white border rounded-lg p-4">
+                <p class="font-bold text-indigo-600 mb-1">Q: 為什麼選項 (3) 是正確的？它沒有提到性別差異啊？</p>
+                <p class="font-bold text-indigo-400 text-sm mb-2">Why is option (3) correct? It doesn't mention gender differences.</p>
+                <p class="text-gray-700">
+                    <strong>A:</strong> 題目問的是解釋「資料所示的現象」(phenomena，複數)。資料顯示了兩個現象：(1) 性別差距，(2) 年齡差距。選項 (3) 解釋了為何50-59歲的人賺得比20-29歲的人多。即使它不能解釋性別差距，它仍然解釋了數據的一部分，因此是正確的。
+                </p>
+                <p class="text-gray-500 text-sm mt-1">
+                    The question asks to explain the "phenomena" (plural). The data shows two phenomena: (1) Gender gap, and (2) Age gap. Option (3) explains why 50-59 year olds earn more than 20-29 year olds. Even though it doesn't explain the gender gap, it explains a valid part of the data, making it correct.
+                </p>
+            </div>
+
+            <div class="bg-white border rounded-lg p-4">
+                <p class="font-bold text-indigo-600 mb-1">Q: 選項 (1) 說女性「傾向離開職場」，這不是性別定型 (Stereotyping) 嗎？</p>
+                <p class="font-bold text-indigo-400 text-sm mb-2">Option (1) says women "tend to leave," isn't that stereotyping?</p>
+                <p class="text-gray-700">
+                    <strong>A:</strong> 在經濟學題目中，我們尋找能夠解釋數據的「實證陳述」(Positive Statement)。這並非價值判斷，而是描述一種社會現象。如果統計上女性確實較常因家庭中斷事業，這就會導致數據中顯示的結果。我們是在分析成因，而非評論對錯。
+                </p>
+                <p class="text-gray-500 text-sm mt-1">
+                    In Economics questions, we look for "positive statements" that can explain the data. This is not a value judgment, but a description of a social phenomenon. If statistically women do interrupt careers more often for family, it leads to the result shown in the data. We are analyzing the cause, not judging right or wrong.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section class="bg-purple-50 p-6 rounded-lg border border-purple-200">
+        <h3 class="text-lg font-bold text-purple-800 mb-2">Exam Tricks & Shortcuts (考試技巧與速解)</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+                <strong>尋找「複數」現象 (Look for Plural Phenomena):</strong> 當題目給你一個表格，通常行 (Row) 和列 (Column) 的變化都有意義。不要只盯著其中一個維度看。
+                <br><span class="text-sm text-gray-500">When given a table, usually both row and column changes are significant. Don't fixate on just one dimension.</span>
+            </li>
+            <li>
+                <strong>排除法 (Elimination):</strong> 
+                看選項 (3)，「人力資本積累導致年齡組別收入差異」。這是一個經濟學常識（老手通常比新手賺得多）。如果 (3) 是對的，答案只能是 C 或 D。再看 (1) 或 (2) 是否合理，即可鎖定答案。
+                <br><span class="text-sm text-gray-500">Look at (3). "Human capital accumulation leads to income diff across ages." This is common economic sense (seniors earn more than juniors). If (3) is true, the answer must be C or D. Then check if (1) or (2) is plausible.</span>
+            </li>
+        </ul>
+    </section>
+
+</body>
+</html>
