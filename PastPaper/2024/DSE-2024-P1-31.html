@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Functions & Properties</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --box-bg: #ffffff;
+            --correct-color: #10b981; /* Emerald */
+            --wrong-color: #ef4444; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .meta-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fffbeb;
+            border: 2px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .analysis-step.correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .analysis-step.wrong {
+            border-left: 5px solid var(--wrong-color);
+            background-color: #fef2f2;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        .pivot-point {
+            background-color: #2d3748;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .qa-section details {
+            background-color: #f1f5f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .qa-section summary {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .meta-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">
+                <span class="tag">Topic</span> 
+                Money & Banking (貨幣與銀行)
+            </div>
+            <div class="meta-item">
+                <span class="tag">Difficulty</span> 
+                ★★★☆☆ (3/5)
+            </div>
+            <div class="meta-item">
+                <span class="tag">Concepts</span> 
+                Properties of Money (貨幣特質), Functions of Money (貨幣功能)
+            </div>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <p><strong>9999金比鑽石更能發揮貨幣的 __________ 功能，因為前者的 __________ 較高。</strong></p>
+        <p class="en-text">9999 gold is better than diamond in performing the __________ function of money because the former has a higher __________.</p>
+
+        <div style="margin: 15px 0;">
+            <p>(1) 交易媒介 …… 可分割性 <br> <span class="en-text">(1) medium of exchange …… divisibility</span></p>
+            <p>(2) 記帳單位 …… 同質性 <br> <span class="en-text">(2) unit of account …… homogeneity</span></p>
+            <p>(3) 價值儲藏 …… 可攜性 <br> <span class="en-text">(3) store of value …… portability</span></p>
+        </div>
+
+        <ul class="options-list">
+            <li><strong>A.</strong> 只有 (1) <span class="en-text">(1) only</span></li>
+            <li><strong>B.</strong> 只有 (3) <span class="en-text">(3) only</span></li>
+            <li><strong>C.</strong> 只有 (1)、(2) <span class="en-text">(1) and (2) only</span></li>
+            <li><strong>D.</strong> 只有 (2)、(3) <span class="en-text">(2) and (3) only</span></li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h3>Concept Review (概念重溫)</h3>
+        
+        <p>要解答此題，我們必須比較<strong>黃金 (Gold)</strong> 與 <strong>鑽石 (Diamond)</strong> 在物理特質上的差異，以及這些特質如何影響貨幣功能。</p>
+        <span class="en-text">To solve this, we must compare the physical properties of <strong>Gold</strong> and <strong>Diamond</strong> and how these properties affect the functions of money.</span>
+
+        <h4>1. 可分割性 (Divisibility)</h4>
+        <p>貨幣應該容易被分割成較小的單位，且分割後<strong>總價值不變</strong>。</p>
+        <span class="en-text">Money should be easily divided into smaller units without losing its total value.</span>
+        <p>數學表達：\( V_{total} = \sum V_{parts} \)</p>
+
+        <h4>2. 同質性 (Homogeneity)</h4>
+        <p>每一單位的貨幣品質必須相同，這樣大眾才能輕易判斷其價值，無須每次交易都進行檢驗。</p>
+        <span class="en-text">Every unit of money must be of the same quality so that people can easily judge its value without inspecting it every time.</span>
+
+        <h4>3. 可攜性 (Portability)</h4>
+        <p>貨幣應該輕便，容易攜帶。即「價值/重量」比率 (Value-to-weight ratio) 要高。</p>
+        <span class="en-text">Money should be light and easy to carry. The "value-to-weight ratio" should be high.</span>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div style="text-align: center; font-size: 1.2em; margin-bottom: 20px;">
+            <strong>Correct Option (正確選項): <span style="color: var(--primary-color);">C</span></strong>
+        </div>
+
+        <!-- Statement 1 Analysis -->
+        <div class="analysis-step correct">
+            <h4>(1) 交易媒介 …… 可分割性 (Medium of exchange ... divisibility) <span style="color:var(--correct-color)">✔ CORRECT</span></h4>
+            <p><strong>分析：</strong>黃金具有極高的可分割性。如果你將一塊 10 安士的金條切成 10 塊 1 安士的金塊，其總價值不變。這使得黃金適合作為交易媒介，因為它可以找續 (make change)。</p>
+            <span class="en-text"><strong>Analysis:</strong> Gold has high divisibility. If you cut a 10oz gold bar into ten 1oz pieces, the total value remains unchanged. This makes gold suitable as a medium of exchange because it allows for making change.</span>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 10px 0;">
+            <p><strong>對比鑽石：</strong>鑽石若被分割，價值會大幅下跌（一顆 5 卡的鑽石價值遠高於 5 顆 1 卡的鑽石總和）。因此，黃金在這方面確實優勝。</p>
+            <span class="en-text"><strong>Vs Diamond:</strong> If a diamond is divided, its value drops significantly (one 5-carat diamond is worth much more than five 1-carat diamonds combined). Thus, gold is indeed superior here.</span>
+        </div>
+
+        <!-- Statement 2 Analysis -->
+        <div class="analysis-step correct">
+            <h4>(2) 記帳單位 …… 同質性 (Unit of account ... homogeneity) <span style="color:var(--correct-color)">✔ CORRECT</span></h4>
+            <p><strong>分析：</strong>記帳單位要求貨幣必須標準化。9999 黃金是標準的，品質均一 (Homogeneous)。我們可以輕易說某物品價值「5 安士黃金」。</p>
+            <span class="en-text"><strong>Analysis:</strong> A unit of account requires money to be standardized. 9999 Gold is standard and uniform (Homogeneous). We can easily say an item is worth "5 oz of gold".</span>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 10px 0;">
+            <p><strong>對比鑽石：</strong>鑽石具有異質性 (Heterogeneous)。每一顆鑽石的顏色、淨度、切工都不同。如果標價寫「1 顆鑽石」，沒有人知道具體價值是多少。因此，黃金因同質性較高，更適合作為記帳單位。</p>
+            <span class="en-text"><strong>Vs Diamond:</strong> Diamonds are heterogeneous. Every diamond differs in color, clarity, and cut. If a price tag says "1 diamond", no one knows the specific value. Therefore, gold is better as a unit of account due to higher homogeneity.</span>
+        </div>
+
+        <!-- Statement 3 Analysis -->
+        <div class="analysis-step wrong">
+            <h4>(3) 價值儲藏 …… 可攜性 (Store of value ... portability) <span style="color:var(--wrong-color)">✘ INCORRECT</span></h4>
+            <p><strong>分析：</strong>雖然黃金可以儲藏價值，但題目聲稱黃金優勝是因為「可攜性較高」，這是<strong>錯誤</strong>的。</p>
+            <span class="en-text"><strong>Analysis:</strong> While gold is a store of value, the statement claims gold is better because it has "higher portability", which is <strong>FALSE</strong>.</span>
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin: 10px 0;">
+            <p><strong>事實：</strong>鑽石的「價值/重量」比率極高。一小袋鑽石可能價值數千萬，可以輕鬆放入口袋帶走；同樣價值的黃金則非常沉重，難以攜帶。因此，鑽石的可攜性其實比黃金<strong>高</strong>。</p>
+            <span class="en-text"><strong>Fact:</strong> Diamonds have an extremely high "value-to-weight" ratio. A small bag of diamonds can be worth millions and fits in a pocket; the same value in gold would be very heavy and hard to carry. Therefore, diamonds actually have <strong>higher</strong> portability than gold.</span>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section>
+        <div class="pivot-point">
+            <h3>🚀 Problem Decomposition (題目拆解)</h3>
+            <p><strong>關鍵點 (Pivot Point)：</strong> 必須同時驗證「功能 (Function)」與「特質 (Property)」之間的<strong>因果關係</strong>。</p>
+            <span class="en-text"><strong>Pivot Point:</strong> You must verify the <strong>causal relationship</strong> between the "Function" and the "Property".</span>
+            
+            <ul style="margin-top: 10px;">
+                <li>第一步：比較特質。黃金比鑽石更可分割嗎？(是)。黃金比鑽石更同質嗎？(是)。黃金比鑽石更易攜帶嗎？(否)。</li>
+                <li>第二步：如果特質比較正確，再看該特質是否支持該功能。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="concept-box" style="background-color: #fff1f2; border-left-color: #e11d48;">
+        <h3>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <ul>
+            <li>
+                <strong>誤解「可攜性」(Misunderstanding Portability):</strong>
+                <p>學生常以為黃金做成金幣所以很易攜帶。但在經濟學比較中，我們看的是<strong>同等價值</strong>下的重量。鑽石濃縮了極高價值，所以可攜性勝過黃金。</p>
+                <span class="en-text">Students often think gold is portable because of gold coins. But in economics, we compare weight for <strong>equal value</strong>. Diamonds concentrate immense value, so they beat gold in portability.</span>
+            </li>
+            <li>
+                <strong>混淆「耐用性」與「同質性」 (Confusing Durability with Homogeneity):</strong>
+                <p>兩者都很耐用 (Durable)，這不是區分它們的關鍵。關鍵在於每一塊黃金都是一樣的 (同質)，但每一顆鑽石都是獨一無二的 (異質)。</p>
+                <span class="en-text">Both are durable. The key distinction is that every piece of gold is the same (homogeneous), while every diamond is unique (heterogeneous).</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Student Q&A -->
+    <section class="qa-section">
+        <h3>🙋 Student Q&A (學生常見疑問)</h3>
+        
+        <details>
+            <summary>Q: 為什麼鑽石不能分割？切開不就變小鑽石了嗎？ (Why can't diamonds be divided?)</summary>
+            <p><strong>A:</strong> 經濟學上的「可分割性」是指分割後<strong>總價值不變</strong>。一顆 10 卡的鑽石價值連城，如果切成 10 顆 1 卡的鑽石，總價值會暴跌 (Loss of value)。相反，10 安士金條切開後，價值剛好等於原本的總和。</p>
+            <span class="en-text"><strong>A:</strong> In economics, "divisibility" means the <strong>total value remains unchanged</strong> after division. A 10-carat diamond is worth a fortune; if cut into ten 1-carat stones, the total value plummets. In contrast, cut gold retains its proportional value.</span>
+        </details>
+
+        <details>
+            <summary>Q: 為什麼選項 (3) 是錯的？黃金不是很好的價值儲藏嗎？ (Why is option 3 wrong? Isn't gold a good store of value?)</summary>
+            <p><strong>A:</strong> 這是邏輯陷阱。黃金<strong>是</strong>好的價值儲藏，但題目說它是因為「可攜性較高」。這個<strong>理由 (Reason)</strong> 是錯的。因為鑽石比黃金更易攜帶。如果題目改為「因為黃金的流動性 (Liquidity) 較高」，那可能就成立了。</p>
+            <span class="en-text"><strong>A:</strong> This is a logic trap. Gold <strong>is</strong> a good store of value, but the question claims it is because of "higher portability". This <strong>reason</strong> is false. Diamonds are more portable. If the question said "because of higher liquidity", it might have been correct.</span>
+        </details>
+    </section>
+
+    <!-- Exam Tricks -->
+    <section class="concept-box" style="background-color: #f3f4f6; border-left-color: #4b5563;">
+        <h3>⚡ Exam Tricks (考試速解)</h3>
+        <p><strong>"The Cutting Test" (切割測試):</strong></p>
+        <p>遇到 Commodity Money (商品貨幣) 的題目，想像你手上有把刀：</p>
+        <ul>
+            <li>切下去會心痛 (價值大跌) \(\rightarrow\) 缺乏可分割性 (如：鑽石、牛皮)。</li>
+            <li>切下去沒感覺 (價值按比例) \(\rightarrow\) 具備可分割性 (如：黃金、白銀)。</li>
+        </ul>
+        <span class="en-text">Imagine you have a knife. If cutting it makes you cry (value loss) \(\rightarrow\) lacks divisibility. If cutting it feels fine (proportional value) \(\rightarrow\) has divisibility.</span>
+    </section>
+
+</div>
+
+</body>
+</html>

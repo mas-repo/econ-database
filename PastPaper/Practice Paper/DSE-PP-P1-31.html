@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Unexpected Inflation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber/Gold */
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --box-bg: #ffffff;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-color: #10b981; /* Green */
+            --wrong-color: #ef4444; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 16px;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #e5e7eb;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .formula-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--concept-border);
+        }
+
+        /* Answer Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .correct-label {
+            color: var(--correct-color);
+            font-weight: bold;
+        }
+
+        .wrong-label {
+            color: var(--wrong-color);
+            font-weight: bold;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 6px;
+            display: block;
+            font-weight: 500;
+        }
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Tips & Tricks */
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics: Inflation & Wealth Redistribution<br><span style="font-size: 0.8em; font-weight: normal;">通脹與財富再分配</span></h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Macroeconomics</span>
+            <span class="badge">Difficulty: ★★☆☆☆</span>
+            <span class="badge">Key: Real Interest Rate</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2 class="section-title">The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">當非預期通脹出現時，下列哪位人士會有損失？</p>
+            <p class="en">Which of the following people will lose when unexpected inflation occurs?</p>
+            
+            <ul class="options-list">
+                <li>
+                    <span class="zh">A. 一位銀行定期存款持有人</span>
+                    <span class="en">A. an individual holding time deposits in a bank</span>
+                </li>
+                <li>
+                    <span class="zh">B. 一名政府債券持有人，而該債券利率隨通脹率調整</span>
+                    <span class="en">B. a holder of government bonds with interest rates adjusted according to the inflation rate</span>
+                </li>
+                <li>
+                    <span class="zh">C. 一名正在償還固定息率按揭貸款的樓宇業主</span>
+                    <span class="en">C. a flat owner repaying a fixed-rate mortgage loan</span>
+                </li>
+                <li>
+                    <span class="zh">D. 一名以黃金保存全部財富的億萬富翁</span>
+                    <span class="en">D. a billionaire keeping all his wealth in the form of gold</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2 class="section-title">Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <p class="zh">要解答此題，我們必須理解<strong>費沙公式 (Fisher Equation)</strong> 與<strong>購買力 (Purchasing Power)</strong> 的關係。</p>
+            <p class="en">To solve this, we must understand the relationship between the <strong>Fisher Equation</strong> and <strong>Purchasing Power</strong>.</p>
+
+            <div class="formula-box">
+                $$ r = R - \pi $$
+                <div style="text-align: left; margin-top: 10px; font-size: 0.9em;">
+                    \( r \) = 實質利率 (Real Interest Rate) <br>
+                    \( R \) = 名義利率 (Nominal Interest Rate) <br>
+                    \( \pi \) = 通脹率 (Inflation Rate)
+                </div>
+            </div>
+
+            <p class="zh"><strong>核心邏輯：</strong></p>
+            <ul style="margin-top: 0;">
+                <li><span class="zh"><strong>實質利率 \( r \)</strong> 代表了真正的購買力回報。</span></li>
+                <li><span class="zh">當通脹率 \( \pi \) 上升，而名義利率 \( R \) 維持不變（固定）時，實質利率 \( r \) 會下降。</span></li>
+                <li><span class="zh"><strong>輸家 (Losers)：</strong> 收取固定名義收入的人（如：債權人、定期存款者）。因為他們收到的錢「縮水」了。</span></li>
+                <li><span class="zh"><strong>贏家 (Winners)：</strong> 支付固定名義金額的人（如：債務人）。因為他們還的錢「變便宜」了。</span></li>
+            </ul>
+
+            <p class="en" style="margin-top: 15px;"><strong>Core Logic:</strong></p>
+            <ul style="margin-top: 0;">
+                <li><span class="en"><strong>Real Interest Rate \( r \)</strong> represents the return in actual purchasing power.</span></li>
+                <li><span class="en">When Inflation Rate \( \pi \) rises, and Nominal Interest Rate \( R \) stays constant (fixed), the Real Interest Rate \( r \) falls.</span></li>
+                <li><span class="en"><strong>Losers:</strong> People receiving fixed nominal income (e.g., creditors, savers). The money they receive is worth less.</span></li>
+                <li><span class="en"><strong>Winners:</strong> People paying fixed nominal amounts (e.g., debtors). The money they pay back is "cheaper" in real terms.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <div class="section">
+        <h2 class="section-title">Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="margin-bottom: 20px; font-size: 1.2rem;">
+            Correct Option: <strong>A</strong>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis correct">
+            <strong class="correct-label">Option A (Correct)</strong>
+            <p class="zh"><strong>分析：</strong> 定期存款通常鎖定了一個固定的名義利率 \( R \)。當非預期通脹 \( \pi \) 出現（上升）時，根據公式 \( r = R - \pi \)，存款者的實質回報 \( r \) 會下降，甚至變成負數。存款者收回的本金加利息，購買力比預期低。</p>
+            <p class="en"><strong>Analysis:</strong> Time deposits usually lock in a fixed Nominal Interest Rate \( R \). When unexpected inflation \( \pi \) occurs (rises), according to \( r = R - \pi \), the depositor's Real Interest Rate \( r \) falls, possibly becoming negative. The purchasing power of the principal plus interest received is lower than expected.</p>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis">
+            <strong class="wrong-label">Option B (Incorrect)</strong>
+            <p class="zh"><strong>分析：</strong> 這是「與通脹掛鈎」的債券。題目說明利率隨通脹率調整，即 \( R \) 會隨 \( \pi \) 上升而增加。這保證了實質利率 \( r \) 保持不變。這類人士受到保護，不受通脹影響。</p>
+            <p class="en"><strong>Analysis:</strong> This is an "index-linked" bond. The question states the interest rate adjusts with inflation, meaning \( R \) increases as \( \pi \) increases. This ensures the Real Interest Rate \( r \) remains constant. This person is protected from inflation.</p>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis">
+            <strong class="wrong-label">Option C (Incorrect)</strong>
+            <p class="zh"><strong>分析：</strong> 這位業主是<strong>債務人 (Debtor)</strong>。他借了錢，並鎖定了固定的還款利率。通脹發生時，貨幣貶值，他償還給銀行的錢的購買力下降了。換句話說，他用「更便宜」的錢來還債。他是<strong>贏家</strong>。</p>
+            <p class="en"><strong>Analysis:</strong> This owner is a <strong>debtor</strong>. They borrowed money and locked in a fixed repayment rate. When inflation occurs, money loses value, so the purchasing power of the money they pay back to the bank decreases. In other words, they are repaying with "cheaper" money. They are a <strong>winner</strong>.</p>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis">
+            <strong class="wrong-label">Option D (Incorrect)</strong>
+            <p class="zh"><strong>分析：</strong> 黃金屬於<strong>實質資產 (Real Asset)</strong>。實質資產的價格通常會隨通脹上升（因為通脹就是物價普遍上升）。因此，持有黃金通常能對沖通脹風險，購買力得以保存。</p>
+            <p class="en"><strong>Analysis:</strong> Gold is a <strong>Real Asset</strong>. The price of real assets usually rises with inflation (since inflation is a general rise in price levels). Therefore, holding gold usually acts as a hedge against inflation, preserving purchasing power.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2 class="section-title">Problem Decomposition (題目拆解)</h2>
+        
+        <p class="zh">這類題目的解題關鍵在於識別角色的<strong>「資產負債屬性」</strong>：</p>
+        <p class="en">The key to solving this type of question is identifying the <strong>"Asset/Liability Nature"</strong> of the role:</p>
+        
+        <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>
+                <span class="zh"><strong>Pivot Point (關鍵點):</strong> 尋找誰持有「固定名義回報」的資產（如現金、定息存款、定息債券）。這些人是通脹的受害者。</span>
+                <br>
+                <span class="en"><strong>Pivot Point:</strong> Look for who holds assets with "fixed nominal returns" (e.g., cash, fixed deposits, fixed-rate bonds). These are the victims of inflation.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>Distractor (干擾項):</strong> 選項 D 的「億萬富翁」。財富的多寡與通脹的輸贏無關，關鍵在於財富的<strong>形式</strong>（現金 vs 實質資產）。</span>
+                <br>
+                <span class="en"><strong>Distractor:</strong> The "billionaire" in Option D. The amount of wealth is irrelevant to winning or losing from inflation; the key is the <strong>form</strong> of wealth (Cash vs. Real Assets).</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="section">
+        <h2 class="section-title">Student Q&A (學生常見疑問)</h2>
+        
+        <div style="margin-bottom: 15px;">
+            <p class="zh"><strong>Q: 為什麼選項 C 的銀行（債權人）會輸，但業主（債務人）會贏？</strong></p>
+            <p class="en"><strong>Q: Why does the bank (creditor) lose, but the owner (debtor) win in Option C?</strong></p>
+            <p class="zh" style="color: var(--secondary-color); margin-left: 15px;">
+                A: 想像一下，你向朋友借了 $100 買一個漢堡包。一年後通脹令漢堡包變成 $200。如果你只需還 $100 給朋友，你（債務人）賺了一個漢堡包的價值，而朋友（債權人）收回的 $100 現在只能買半個漢堡包了。
+            </p>
+            <p class="en" style="color: var(--secondary-color); margin-left: 15px;">
+                A: Imagine you borrowed $100 from a friend to buy a burger. A year later, inflation makes the burger cost $200. If you only have to pay back $100, you (the debtor) gained the value of a burger, while your friend (the creditor) received $100 that can now only buy half a burger.
+            </p>
+        </div>
+
+        <div>
+            <p class="zh"><strong>Q: 如果通脹是「預期之內」的 (Expected Inflation)，答案會改變嗎？</strong></p>
+            <p class="en"><strong>Q: If the inflation was "Expected", would the answer change?</strong></p>
+            <p class="zh" style="color: var(--secondary-color); margin-left: 15px;">
+                A: 會。如果是預期通脹，銀行在設定定期存款利率或貸款利率時，會把預期的通脹率加進去（提高名義利率）。這樣，實質利率就不會受影響，沒有人會因此有無故的得失。
+            </p>
+            <p class="en" style="color: var(--secondary-color); margin-left: 15px;">
+                A: Yes. If inflation is expected, banks will add the expected inflation rate into the nominal interest rate when setting deposit or loan rates. Thus, the real interest rate remains unaffected, and no one gains or loses arbitrarily.
+            </p>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="section" style="border-bottom: none;">
+        <h2 class="section-title">Exam Tricks (考試速解)</h2>
+        <div class="tips-box">
+            <p class="zh"><strong>速記口訣：</strong></p>
+            <p class="zh">通脹來了錢變薄，<strong>借錢的人(Debtor)</strong>笑呵呵，<strong>存錢的人(Saver)</strong>淚成河。</p>
+            <p class="zh">實質資產(樓/金)不用怕，浮動利率(Floating Rate)也沒差。</p>
+            <hr style="border: 0; border-top: 1px dashed #fcd34d; margin: 10px 0;">
+            <p class="en"><strong>Quick Mnemonic:</strong></p>
+            <p class="en">Inflation makes money thin. <strong>Borrowers (Debtors)</strong> grin, <strong>Savers (Creditors)</strong> can't win.</p>
+            <p class="en">Real assets (Gold/Flats) are safe, Floating Rates are safe.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

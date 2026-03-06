@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Price Elasticity of Demand</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue Background */
+            --text-color: #334155; /* Slate 700 */
+            --correct-color: #16a34a; /* Green */
+            --wrong-color: #dc2626; /* Red */
+            --warning-bg: #fefce8; /* Light Yellow */
+            --warning-border: #facc15; /* Yellow */
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: #f0fdf4;
+            border-color: var(--correct-color);
+        }
+
+        .option-analysis.wrong {
+            background-color: #fef2f2;
+            border-color: #fecaca;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+
+        .badge-correct {
+            background-color: var(--correct-color);
+            color: white;
+        }
+
+        .badge-wrong {
+            background-color: var(--wrong-color);
+            color: white;
+        }
+
+        .en-text {
+            color: #64748b; /* Lighter slate for English */
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        .decomposition-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        ul.options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul.options-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">Topic: Demand & Supply (需求與供應)</div>
+        <div class="header-item">Difficulty: ★★★☆☆</div>
+        <div class="header-item">Key Concepts: Price Elasticity of Demand (需求價格彈性), Substitutes (替代品)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項會令香港家庭對外籍家庭傭工的需求價格彈性下降？</strong></p>
+        <p class="en-text">Which of the following will lower Hong Kong households’ price elasticity of demand for foreign domestic helpers?</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <ul class="options-list">
+            <li>
+                A. 更多香港人接受培訓成為兼職家庭傭工。
+                <span class="en-text">More Hong Kong people are trained to work as part-time domestic helpers.</span>
+            </li>
+            <li>
+                B. 為雙職家長提供的托兒中心減少。
+                <span class="en-text">Fewer child care centres are provided in Hong Kong for parents who both work.</span>
+            </li>
+            <li>
+                C. 香港政府減少外籍家庭傭工的配額。
+                <span class="en-text">The Hong Kong Government reduces the quota of foreign domestic helpers.</span>
+            </li>
+            <li>
+                D. 在香港的外籍家庭傭工的工資率上升。
+                <span class="en-text">The wage rate of foreign domestic helpers in Hong Kong increases.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <span class="concept-title">需求價格彈性 (Price Elasticity of Demand, Ed)</span>
+        
+        <p>
+            需求價格彈性衡量需求量對價格變動的敏感程度。
+            <span class="en-text">Price elasticity of demand measures the responsiveness of quantity demanded to a change in price.</span>
+        </p>
+
+        <div class="math-block">
+            $$ E_d = \frac{\%\Delta Q_d}{\%\Delta P} $$
+        </div>
+
+        <p><strong>影響需求彈性的因素 (Factors affecting Elasticity):</strong></p>
+        <ul>
+            <li>
+                <strong>替代品的供應 (Availability of Substitutes):</strong> 替代品越多，彈性越高；替代品越少，彈性越低。
+                <span class="en-text">The more substitutes available, the higher the elasticity; the fewer substitutes, the lower the elasticity.</span>
+            </li>
+            <li>
+                <strong>必需品程度 (Degree of Necessity):</strong> 越是必需品，彈性越低。
+                <span class="en-text">The more necessary the good is, the lower the elasticity.</span>
+            </li>
+            <li>
+                <strong>佔收入比例 (Proportion of Income):</strong> 佔收入比例越小，彈性越低。
+                <span class="en-text">The smaller the proportion of income spent on the good, the lower the elasticity.</span>
+            </li>
+        </ul>
+        
+        <p>
+            <strong>題目關鍵詞 (Key Term):</strong> 「彈性下降」(Lower Elasticity) 意味著需求變得<strong>更缺乏彈性 (Inelastic)</strong>，即消費者對價格變動反應變小。這通常是因為<strong>替代品減少</strong>。
+            <span class="en-text">"Lower Elasticity" means demand becomes <strong>more inelastic</strong>. Consumers become less responsive to price changes. This is usually caused by a <strong>decrease in substitutes</strong>.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <h2>Answer & Analysis (答案與詳細分析)</h2>
+    
+    <div style="margin-bottom: 20px;">
+        <strong>正確答案 (Correct Answer): <span style="color: var(--correct-color); font-size: 1.2em;">Option B</span></strong>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge badge-wrong">Option A</span> <strong>更多香港人接受培訓成為兼職家庭傭工</strong>
+        <p>
+            <strong>分析：</strong> 本地兼職家務助理是外籍家庭傭工的<strong>替代品 (Substitute)</strong>。如果更多人受訓，意味著替代品的供應增加。當替代品增加，消費者更容易轉用其他選擇，因此對外籍傭工的需求彈性會<strong>上升</strong>，而非下降。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> Local part-time domestic helpers are <strong>substitutes</strong> for foreign domestic helpers. If more people are trained, the availability of substitutes increases. When substitutes increase, consumers can switch more easily, so the price elasticity of demand will <strong>increase</strong> (rise), not lower.
+        </p>
+    </div>
+
+    <div class="option-analysis correct">
+        <span class="badge badge-correct">Option B</span> <strong>為雙職家長提供的托兒中心減少</strong>
+        <p>
+            <strong>分析：</strong> 托兒中心服務是外籍家庭傭工的<strong>替代品</strong>（兩者都能照顧兒童）。當托兒中心減少，意味著替代品減少。家長在面對外傭工資變動時，更難找到其他照顧兒童的方法，因此變得更依賴外傭。替代品減少會導致需求彈性<strong>下降</strong>。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> Child care centres are <strong>substitutes</strong> for foreign domestic helpers (both provide child care). When there are fewer child care centres, the availability of substitutes decreases. Parents will find it harder to switch to other options if helper wages change, making them more dependent. A decrease in substitutes leads to <strong>lower</strong> price elasticity of demand.
+        </p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge badge-wrong">Option C</span> <strong>香港政府減少外籍家庭傭工的配額</strong>
+        <p>
+            <strong>分析：</strong> 這是關於<strong>供應 (Supply)</strong> 的變化，或者是數量的限制。配額減少會使供應曲線向左移動，或者設定一個垂直的供應上限。這會改變均衡價格或數量，但<strong>不會直接改變需求曲線的形狀或彈性</strong>。需求彈性是由消費者的偏好和替代品決定的，而不是由政府的供應配額決定的。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> This refers to a change in <strong>Supply</strong> or a quantity restriction. Reducing the quota shifts the supply curve to the left or sets a vertical limit. While this affects equilibrium price/quantity, it does <strong>not directly change the shape or elasticity of the demand curve</strong>. Elasticity is determined by consumer preferences and substitutes, not by government supply quotas.
+        </p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge badge-wrong">Option D</span> <strong>在香港的外籍家庭傭工的工資率上升</strong>
+        <p>
+            <strong>分析：</strong> 這是價格（工資率）的變動。價格變動會導致需求量沿著同一條需求曲線移動 (Movement along the curve)，但<strong>不會改變整條曲線的彈性屬性</strong>（除非我們討論的是點彈性在曲線不同位置的變化，但在DSE一般概念題中，我們尋找的是影響彈性的外在因素）。價格變動是結果或沿線移動，不是改變彈性的原因。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> This is a change in price (wage rate). A change in price leads to a movement along the demand curve, but it does <strong>not shift the curve or change the factors affecting elasticity</strong> (like substitutes). We are looking for a factor that changes the elasticity itself, not just a movement along the curve.
+        </p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="decomposition-box">
+        <h3>解題關鍵點 (Pivot Point)</h3>
+        <p>
+            題目的核心在於分辨什麼因素會改變<strong>需求彈性 (Elasticity of Demand)</strong>。
+            <span class="en-text">The core of the question is to identify what factors change the <strong>Price Elasticity of Demand</strong>.</span>
+        </p>
+        
+        <h3>思考步驟 (Step-by-Step Approach):</h3>
+        <ol>
+            <li>
+                <strong>鎖定目標：</strong> 題目問的是「需求彈性下降」(Lower Elasticity)。
+                <span class="en-text"><strong>Target:</strong> The question asks for "Lower Elasticity".</span>
+            </li>
+            <li>
+                <strong>翻譯概念：</strong> 彈性下降 = 需求變得更缺乏彈性 = <strong>替代品減少</strong> (Fewer Substitutes)。
+                <span class="en-text"><strong>Translate Concept:</strong> Lower Elasticity = Demand becomes more inelastic = <strong>Fewer Substitutes</strong>.</span>
+            </li>
+            <li>
+                <strong>掃描選項：</strong> 尋找哪個選項代表「外籍家庭傭工的替代品減少了」。
+                <span class="en-text"><strong>Scan Options:</strong> Look for the option that represents "a decrease in substitutes for foreign domestic helpers".</span>
+            </li>
+            <li>
+                <strong>配對：</strong>
+                <ul>
+                    <li>A: 替代品增加 (彈性上升)</li>
+                    <li>B: 替代品減少 (彈性下降) -> <strong>BINGO!</strong></li>
+                    <li>C: 供應面因素 (不直接影響需求彈性)</li>
+                    <li>D: 價格變動 (沿曲線移動)</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div style="background-color: #fff1f2; border-left: 5px solid #e11d48; padding: 15px; margin-bottom: 20px;">
+        <h3>陷阱：混淆「需求改變」與「需求彈性改變」</h3>
+        <p>
+            學生常誤以為任何對外傭不利的消息（如配額減少）都會影響彈性。必須記住，<strong>彈性 (Elasticity)</strong> 是關於「敏感度」，主要由<strong>替代品</strong>決定。
+            <span class="en-text"><strong>Trap: Confusing "Change in Demand" with "Change in Elasticity".</strong> Students often think any negative news (like quotas) affects elasticity. Remember, <strong>Elasticity</strong> is about "responsiveness," primarily determined by <strong>substitutes</strong>.</span>
+        </p>
+        
+        <h3>陷阱：誤選價格變動 (選項 D)</h3>
+        <p>
+            很多學生看到工資上升會想到需求量減少，就覺得有關。但題目問的是「彈性」（曲線的斜率/形狀特徵），而不是問「需求量」是多少。
+            <span class="en-text"><strong>Trap: Choosing Price Change (Option D).</strong> Many students see wage increases and think of quantity dropping. But the question asks about "Elasticity" (the characteristic of the curve), not the "Quantity Demanded".</span>
+        </p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    
+    <div style="background-color: #fff; border-left: 4px solid #8b5cf6; padding: 15px; margin-bottom: 15px;">
+        <p><strong>Q: 為什麼選項 C (政府減少配額) 不會影響彈性？如果配額少了，人們不是更難請到工人嗎？</strong></p>
+        <p class="en-text"><strong>Q: Why doesn't Option C (Government reduces quota) affect elasticity? If the quota is lower, isn't it harder to hire helpers?</strong></p>
+        
+        <p style="margin-top: 10px; color: var(--text-color);">
+            <strong>A:</strong> 這是一個很好的問題。配額減少確實讓請工人變難，但這是<strong>供應 (Supply)</strong> 的限制。
+            <br>
+            需求彈性反映的是「消費者<strong>內心</strong>對價格變動的反應程度」。
+            即便政府限制了供應，消費者心中對於「如果工資升 10%，我會不會解僱工人？」這個問題的答案（即偏好和替代選擇）並沒有改變。改變的是市場上的貨源，而不是消費者對貨品的依賴程度。
+        </p>
+        <p class="en-text">
+            <strong>A:</strong> This is a great question. Reducing quotas does make it harder to hire, but that is a <strong>Supply</strong> constraint.
+            <br>
+            Demand elasticity reflects "how consumers <strong>internally</strong> react to price changes."
+            Even if the government restricts supply, the consumer's answer to "If wages rise 10%, will I fire my helper?" (which depends on preferences and substitutes) hasn't changed. The availability of the good in the market changed, not the consumer's dependency on the good itself.
+        </p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div style="background-color: #ecfdf5; border: 1px solid #a7f3d0; padding: 15px; border-radius: 8px;">
+        <h3>替代品法則 (The Substitute Rule)</h3>
+        <p>
+            看到「需求彈性」(Price Elasticity of Demand) 的題目，90% 的情況下直接找<strong>替代品 (Substitutes)</strong> 的關鍵字。
+            <span class="en-text">When you see a question about "Price Elasticity of Demand", 90% of the time, look directly for keywords related to <strong>Substitutes</strong>.</span>
+        </p>
+        <ul>
+            <li>問彈性<strong>上升</strong> (Higher Elasticity) -> 找替代品<strong>增加</strong> (More Substitutes)。</li>
+            <li>問彈性<strong>下降</strong> (Lower Elasticity) -> 找替代品<strong>減少</strong> (Fewer Substitutes)。</li>
+        </ul>
+        <p>
+            在此題中：
+            <br>A = 替代品增加
+            <br>B = 替代品減少
+            <br>直接選 B，秒殺！
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

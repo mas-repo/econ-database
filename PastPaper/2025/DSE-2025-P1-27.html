@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: AD-AS Model</title>
+    <!-- MathJax for LaTeX Rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for difficulty */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --concept-bg: #eff6ff; /* Light Blue */
+            --concept-border: #3b82f6;
+            --correct-bg: #dcfce7; /* Light Green */
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2; /* Light Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .topic-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: var(--secondary-color);
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #64748b;
+            flex-wrap: wrap;
+        }
+
+        .stars { color: var(--accent-color); }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #64748b;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        /* Answer Analysis */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .option-label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .bilingual-text p {
+            margin: 5px 0;
+        }
+        
+        .en-text {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Decomposition & Mistakes */
+        .strategy-box, .mistakes-box, .qa-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .math-block {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-section">
+        <span class="topic-badge">Macroeconomics (宏觀經濟)</span>
+        <h1>Aggregate Demand & Supply<br>總需求與總供給</h1>
+        <div class="meta-info">
+            <span><strong>Difficulty (難度):</strong> <span class="stars">★★★☆☆</span></span>
+            <span><strong>Key Concepts:</strong> Aggregate Output (總產出), AD-AS Model (總供需模型), Fiscal & Monetary Policy (財政與貨幣政策)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <div class="question-text">
+            下列哪項最可能令某經濟在短期的總產出上升？<br>
+            <span class="en-text" style="font-style: normal; font-weight: normal;">Which of the following is most likely to cause an increase in the short run aggregate output of an economy?</span>
+        </div>
+        <ul class="options-list">
+            <li><strong>A.</strong> 該經濟的儲蓄比率上升以及勞工生產力上升<br><span class="en-text">an increase in the rate of savings and an increase in the labour productivity in the economy</span></li>
+            <li><strong>B.</strong> 該經濟的入息稅稅率上升以及其貿易伙伴的經濟增長加快<br><span class="en-text">an increase in the income tax rate in the economy and a faster economic growth in its trading partners</span></li>
+            <li><strong>C.</strong> 該經濟的貼現率下降和國際油價下降<br><span class="en-text">a decrease in the discount rate in the economy and a decrease in the world oil price</span></li>
+            <li><strong>D.</strong> 該經濟降低對進口消費品徵收的關稅稅率和增加高技術工人入境<br><span class="en-text">a decrease in the tariff rate imposed on imported consumer goods and an increase in the quota for the immigration of skilled workers in the economy</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2 class="section-title">Concept Review (概念重溫)</h2>
+        <p>要解答此題，我們必須分析事件如何影響<strong>總需求 (AD)</strong> 和<strong>短期總供給 (SRAS)</strong>。</p>
+        <p class="en-text">To solve this, we must analyze how events affect <strong>Aggregate Demand (AD)</strong> and <strong>Short Run Aggregate Supply (SRAS)</strong>.</p>
+
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+        
+        <ul>
+            <li><strong>總產出 (Y) 上升的條件：</strong> AD 增加（向右移）或 SRAS 增加（向右移）。<br>
+            <span class="en-text"><strong>Conditions for Output (Y) to rise:</strong> AD increases (shifts right) or SRAS increases (shifts right).</span></li>
+            <li><strong>貼現率 (Discount Rate)：</strong> 中央銀行向商業銀行貸款的利率。貼現率下降 \(\rightarrow\) 貨幣供應上升 \(\rightarrow\) 利率下降 \(\rightarrow\) 投資及消費上升。<br>
+            <span class="en-text">The interest rate charged by the central bank to commercial banks. Lower discount rate \(\rightarrow\) Money Supply \(\uparrow\) \(\rightarrow\) Interest Rate \(\downarrow\) \(\rightarrow\) Investment & Consumption \(\uparrow\).</span></li>
+            <li><strong>生產成本 (Production Cost)：</strong> 油價是主要的生產成本。油價下降 \(\rightarrow\) SRAS 上升。<br>
+            <span class="en-text">Oil price is a major production cost. Lower oil price \(\rightarrow\) SRAS \(\uparrow\).</span></li>
+        </ul>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h2 class="section-title">The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option-analysis correct">
+            <span class="option-label">Correct Option: C (正確選項)</span>
+            <div class="bilingual-text">
+                <p><strong>分析：</strong> 這是唯一一個兩個因素都明確導致產出上升的選項。</p>
+                <p>1. <strong>貼現率下降：</strong> 這是一種擴張性貨幣政策。銀行借貸成本下降，貨幣供應增加，導致市場利率下降。這會刺激投資 \((I)\) 和消費 \((C)\)，使總需求 \((AD)\) 增加（向右移）。</p>
+                <p>2. <strong>國際油價下降：</strong> 油價是生產投入要素。成本下降會令短期總供給 \((SRAS)\) 增加（向右移）。</p>
+                <p><strong>結論：</strong> 當 \(AD\) 增加且 \(SRAS\) 增加時，均衡產出 \((Y)\) 必然上升。</p>
+                <hr style="border: 0; border-top: 1px solid #bbf7d0; margin: 10px 0;">
+                <p class="en-text"><strong>Analysis:</strong> This is the only option where both factors clearly lead to an increase in output.</p>
+                <p class="en-text">1. <strong>Decrease in discount rate:</strong> This is expansionary monetary policy. Borrowing costs for banks drop, money supply increases, leading to lower interest rates. This stimulates Investment \((I)\) and Consumption \((C)\), increasing Aggregate Demand \((AD)\) (shift right).</p>
+                <p class="en-text">2. <strong>Decrease in oil price:</strong> Oil is a production input. Lower costs increase Short Run Aggregate Supply \((SRAS)\) (shift right).</p>
+                <p class="en-text"><strong>Conclusion:</strong> When both \(AD\) increases and \(SRAS\) increases, equilibrium output \((Y)\) must rise.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option A (選項 A)</span>
+            <div class="bilingual-text">
+                <p><strong>儲蓄比率上升：</strong> 代表消費 \((C)\) 減少，導致 \(AD\) 下降（產出 \(\downarrow\)）。<br>
+                <strong>勞工生產力上升：</strong> 導致 \(SRAS\) 上升（產出 \(\uparrow\)）。<br>
+                <strong>結果：</strong> 效果互相抵銷，產出變動<strong>不確定</strong>。</p>
+                <p class="en-text"><strong>Increase in savings rate:</strong> Means Consumption \((C)\) falls, leading to lower \(AD\) (Output \(\downarrow\)).<br>
+                <strong>Increase in labour productivity:</strong> Leads to higher \(SRAS\) (Output \(\uparrow\)).<br>
+                <strong>Result:</strong> Effects offset each other; change in output is <strong>uncertain</strong>.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option B (選項 B)</span>
+            <div class="bilingual-text">
+                <p><strong>入息稅稅率上升：</strong> 可支配收入減少，消費 \((C)\) 下降，導致 \(AD\) 下降（產出 \(\downarrow\)）。<br>
+                <strong>貿易伙伴經濟增長：</strong> 出口 \((X)\) 增加，導致 \(AD\) 上升（產出 \(\uparrow\)）。<br>
+                <strong>結果：</strong> 兩者皆影響 \(AD\) 但方向相反，產出變動<strong>不確定</strong>。</p>
+                <p class="en-text"><strong>Increase in income tax rate:</strong> Disposable income falls, Consumption \((C)\) drops, leading to lower \(AD\) (Output \(\downarrow\)).<br>
+                <strong>Growth in trading partners:</strong> Exports \((X)\) rise, leading to higher \(AD\) (Output \(\uparrow\)).<br>
+                <strong>Result:</strong> Both affect \(AD\) in opposite directions; change in output is <strong>uncertain</strong>.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <span class="option-label">Option D (選項 D)</span>
+            <div class="bilingual-text">
+                <p><strong>降低進口消費品關稅：</strong> 進口品價格下降，進口量 \((M)\) 上升。由於 \(AD = C+I+G+X-M\)，\(M\) 上升會導致 \(AD\) 下降（產出 \(\downarrow\)）。<br>
+                <strong>高技術工人入境：</strong> 勞動力增加，\(SRAS\)（及 LRAS）上升（產出 \(\uparrow\)）。<br>
+                <strong>結果：</strong> 效果互相抵銷，產出變動<strong>不確定</strong>。</p>
+                <p class="en-text"><strong>Decrease in tariff on imported consumer goods:</strong> Price of imports falls, quantity of Imports \((M)\) rises. Since \(AD = C+I+G+X-M\), higher \(M\) leads to lower \(AD\) (Output \(\downarrow\)).<br>
+                <strong>Immigration of skilled workers:</strong> Labour force grows, \(SRAS\) (and LRAS) rises (Output \(\uparrow\)).<br>
+                <strong>Result:</strong> Effects offset each other; change in output is <strong>uncertain</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="decomposition-section">
+        <h2 class="section-title">Problem Decomposition (題目拆解)</h2>
+        <p>這類題目要求找出「最可能 (Most Likely)」的情況，通常意味著我們要尋找一個<strong>「雙重正面效應 (Double Positive Effect)」</strong>的選項，或者至少是一個正面效應且另一個無效應的選項。</p>
+        <p class="en-text">Questions asking for the "most likely" outcome usually require finding a <strong>"Double Positive Effect"</strong>, or at least one positive effect with no negative offset.</p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+            <div style="flex: 1; min-width: 200px; background: #f0f9ff; padding: 10px; border-radius: 6px;">
+                <strong>Step 1: Check AD</strong><br>
+                Does the event increase C, I, G, or NX?<br>
+                (檢查 AD：事件是否增加 C, I, G 或 NX？)
+            </div>
+            <div style="flex: 1; min-width: 200px; background: #fff7ed; padding: 10px; border-radius: 6px;">
+                <strong>Step 2: Check SRAS</strong><br>
+                Does the event lower costs or increase productivity?<br>
+                (檢查 SRAS：事件是否降低成本或提高生產力？)
+            </div>
+            <div style="flex: 1; min-width: 200px; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+                <strong>Step 3: Net Effect</strong><br>
+                If both push Y up, that's the answer.<br>
+                (淨效果：若兩者都推高 Y，那就是答案。)
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="mistakes-box">
+        <h2 class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>陷阱：混淆進口關稅的對象 (Confusion over Tariffs)</strong><br>
+                <span class="text-sm">學生常以為「減關稅」一定對經濟好。在選項 D 中，減的是「消費品 (Consumer Goods)」關稅，這直接鼓勵進口 \((M \uparrow)\)，對本地 GDP (AD) 是扣減項。如果減的是「原材料 (Raw Materials)」關稅，則會降低生產成本 \((SRAS \uparrow)\)。</span><br>
+                <span class="en-text">Students often think "lower tariffs" is always good. In Option D, it's on "Consumer Goods", which encourages Imports \((M \uparrow)\), a subtraction from AD. If it were on "Raw Materials", it would lower costs \((SRAS \uparrow)\).</span>
+            </li>
+            <li>
+                <strong>陷阱：忽略互相抵銷 (Ignoring Offsetting Effects)</strong><br>
+                <span class="text-sm">在 A、B、D 中，一個因素推高產出，另一個拉低產出。在經濟學 MC 中，除非題目給出幅度（例如「大幅增加」vs「輕微減少」），否則我們不能假設哪一個力量較大，結果視為「不確定」。</span><br>
+                <span class="en-text">In A, B, and D, one factor pushes output up, the other pulls it down. In Economics MC, unless magnitudes are given (e.g., "huge increase" vs "slight decrease"), we cannot assume which force is stronger, so the result is "uncertain".</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-box">
+        <h2 class="section-title">Student Q&A (學生常見疑問)</h2>
+        <div style="margin-bottom: 15px;">
+            <p><strong>Q: 為什麼選項 C 的物價水平 (Price Level) 變動不影響答案？</strong></p>
+            <p><strong>A:</strong> 題目只問「總產出 (Aggregate Output)」。<br>
+            在選項 C 中，AD 增加（推高物價）且 SRAS 增加（壓低物價）。雖然我們不知道最終物價是升是跌（取決於幅度），但這兩股力量都令<strong>產出 (Y)</strong> 增加。所以我們不需要知道物價的最終去向。</p>
+            <p class="en-text"><strong>Q: Why doesn't the change in Price Level in Option C affect the answer?</strong><br>
+            <strong>A:</strong> The question only asks about "Aggregate Output".<br>
+            In Option C, AD increases (pushes price up) and SRAS increases (pushes price down). While we don't know the final price level (ambiguous), BOTH forces cause <strong>Output (Y)</strong> to rise. So we don't need to know the price outcome.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="strategy-box" style="border-left: 5px solid #f59e0b;">
+        <h2 class="section-title">Exam Tricks (考試速解技巧)</h2>
+        <p><strong>「方向一致法」 (Direction Alignment Method):</strong></p>
+        <p>在這種題目中，快速在每個選項旁畫箭頭：</p>
+        <ul>
+            <li>A: Savings \(\uparrow\) (AD \(\downarrow\)), Productivity \(\uparrow\) (SRAS \(\uparrow\)) \(\rightarrow\) <strong>\(\downarrow\) vs \(\uparrow\) (撞)</strong></li>
+            <li>B: Tax \(\uparrow\) (AD \(\downarrow\)), Partners Growth \(\uparrow\) (AD \(\uparrow\)) \(\rightarrow\) <strong>\(\downarrow\) vs \(\uparrow\) (撞)</strong></li>
+            <li>C: Discount Rate \(\downarrow\) (AD \(\uparrow\)), Oil Price \(\downarrow\) (SRAS \(\uparrow\)) \(\rightarrow\) <strong>\(\uparrow\) & \(\uparrow\) (一致!)</strong></li>
+            <li>D: Tariff \(\downarrow\) (AD \(\downarrow\)), Immigration \(\uparrow\) (SRAS \(\uparrow\)) \(\rightarrow\) <strong>\(\downarrow\) vs \(\uparrow\) (撞)</strong></li>
+        </ul>
+        <p>選方向一致的那個就對了！</p>
+        <p class="en-text">Quickly draw arrows next to options. Pick the one where both arrows point to "Output Increase".</p>
+    </div>
+
+</div>
+
+</body>
+</html>

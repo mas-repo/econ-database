@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: International Trade</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb; /* Blue */
+            --secondary: #475569; /* Slate */
+            --accent: #f59e0b; /* Amber */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-question: #f8fafc; /* Very Light Gray */
+            --success: #16a34a; /* Green */
+            --danger: #dc2626; /* Red */
+            --text-main: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .topic-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 { margin: 10px 0; font-size: 1.8rem; }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: var(--bg-question);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li { margin-bottom: 8px; }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--bg-concept);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .formula-block {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            text-align: center;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            font-size: 1.5rem;
+            color: var(--success);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
+        }
+        
+        .analysis-step.correct { border-left-color: var(--success); }
+        .analysis-step.incorrect { border-left-color: var(--danger); }
+
+        /* Pivot & Tricks */
+        .pivot-box {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .qa-box {
+            background: #fdf2f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh { font-weight: 600; color: #334155; display: block; margin-bottom: 4px; }
+        .en { color: #64748b; display: block; margin-bottom: 12px; font-size: 0.95em; }
+        
+        /* MathJax fix for mobile */
+        mjx-container { overflow-x: auto; overflow-y: hidden; }
+
+        @media (max-width: 600px) {
+            .meta-info { flex-direction: column; gap: 5px; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Header -->
+    <header>
+        <span class="topic-badge">International Trade (國際貿易)</span>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span><strong>Topic:</strong> Comparative Advantage & Gains from Trade</span>
+            <span><strong>Difficulty:</strong> ★★★★☆ (High)</span>
+        </div>
+        <div class="meta-info" style="margin-top: 10px; font-size: 0.85em; opacity: 0.9;">
+            Keywords: Opportunity Cost, Terms of Trade, Total Gain
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="section">
+        <div class="section-title">
+            <span>📝 The Question (題目)</span>
+        </div>
+        <div class="question-box">
+            <p class="zh">兩國對某物品進行貿易。假設我們知道兩國各自生產該物品的機會成本，在不知道貿易比率的情況下，我們可以判斷</p>
+            <p class="en">Consider the trade of a good between two countries. Suppose we know their opportunity costs of producing the good. Without knowing the terms of trade, we can determine</p>
+
+            <div style="margin: 15px 0;">
+                <p class="zh">(1) 貿易比率的可能範圍。</p>
+                <p class="en">(1) the possible range of the terms of trade.</p>
+                
+                <p class="zh">(2) 兩國交易一單位該物品各自的得益。</p>
+                <p class="en">(2) the gain of each country from trading one unit of the good.</p>
+                
+                <p class="zh">(3) 兩國交易一單位該物品的總得益。</p>
+                <p class="en">(3) the total gain of both countries from trading one unit of the good.</p>
+            </div>
+
+            <ul class="options-list">
+                <li>A. 只有(1)、(2) &nbsp; / &nbsp; (1) and (2) only</li>
+                <li>B. 只有(1)、(3) &nbsp; / &nbsp; (1) and (3) only</li>
+                <li>C. 只有(2)、(3) &nbsp; / &nbsp; (2) and (3) only</li>
+                <li>D. (1)、(2)及(3) &nbsp; / &nbsp; (1), (2) and (3)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="section">
+        <div class="section-title">
+            <span>📚 Concept Review (概念重溫)</span>
+        </div>
+        <div class="concept-box">
+            <p class="zh">要解決此題，必須掌握以下三個核心概念：</p>
+            <p class="en">To solve this problem, you must master these three core concepts:</p>
+
+            <ol>
+                <li>
+                    <span class="zh"><strong>互惠貿易的條件 (Condition for Mutually Beneficial Trade):</strong></span>
+                    <br>
+                    <span class="en">Trade occurs only if the Terms of Trade (TOT) falls between the opportunity costs of the two countries.</span>
+                    <div class="formula-block">
+                        \( \text{OC}_{\text{exporter}} < \text{TOT} < \text{OC}_{\text{importer}} \)
+                    </div>
+                </li>
+                <li>
+                    <span class="zh"><strong>每單位交易得益 (Per Unit Gain from Trade):</strong></span>
+                    <br>
+                    <span class="en">The gain for a specific country depends on the difference between the TOT and their own opportunity cost.</span>
+                    <div class="formula-block">
+                        \( \text{Gain} = | \text{TOT} - \text{Domestic OC} | \)
+                    </div>
+                </li>
+                <li>
+                    <span class="zh"><strong>每單位總得益 (Total Gain Per Unit):</strong></span>
+                    <br>
+                    <span class="en">The sum of gains for both the importer and the exporter.</span>
+                    <div class="formula-block">
+                        \( \text{Total Gain} = \text{Gain}_{\text{exporter}} + \text{Gain}_{\text{importer}} \)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Answer & Analysis -->
+    <section class="section">
+        <div class="section-title">
+            <span>💡 Answer & Detailed Analysis (答案與詳細分析)</span>
+        </div>
+        
+        <div class="correct-answer">Correct Option: B (只有 1 和 3)</div>
+
+        <!-- Statement 1 Analysis -->
+        <div class="analysis-step correct">
+            <strong class="zh">分析 (1)：貿易比率的可能範圍 (正確)</strong>
+            <strong class="en">Analysis (1): The possible range of the terms of trade (Correct)</strong>
+            <p class="zh">貿易比率的範圍完全取決於兩國的機會成本。賣方不會以低於成本的價格出售，買方不會以高於自製成本的價格購買。既然題目說我們「知道兩國的機會成本」，我們自然可以確定這個範圍。</p>
+            <p class="en">The range of TOT is determined exclusively by the opportunity costs of the two countries. The seller won't sell below their cost, and the buyer won't buy above their cost. Since the question states we "know their opportunity costs," we can definitely determine this range.</p>
+            <p style="font-size: 0.9em; color: var(--secondary);">
+                Example: If Country A's OC is 2Y and Country B's OC is 5Y, the range is \( 2Y < 1X < 5Y \).
+            </p>
+        </div>
+
+        <!-- Statement 2 Analysis -->
+        <div class="analysis-step incorrect">
+            <strong class="zh">分析 (2)：兩國各自的得益 (不正確)</strong>
+            <strong class="en">Analysis (2): The gain of each country (Incorrect)</strong>
+            <p class="zh">各自的得益取決於實際的成交價格（貿易比率）。公式是 \( \text{得益} = \text{貿易比率} - \text{機會成本} \)。雖然我們知道機會成本，但題目明確指出「不知道貿易比率」。因此，我們無法計算各自賺了多少。</p>
+            <p class="en">Individual gain depends on the actual transaction price (TOT). The formula is \( \text{Gain} = \text{TOT} - \text{Opportunity Cost} \). Although we know the opportunity cost, the question explicitly states we "do not know the terms of trade." Therefore, we cannot calculate how much each country earns.</p>
+        </div>
+
+        <!-- Statement 3 Analysis -->
+        <div class="analysis-step correct">
+            <strong class="zh">分析 (3)：兩國的總得益 (正確 - 關鍵難點)</strong>
+            <strong class="en">Analysis (3): The total gain of both countries (Correct - Key Difficulty)</strong>
+            <p class="zh">這是此題最巧妙的地方。總得益等於出口國的得益加上進口國的得益。當我們將兩者相加時，<strong>貿易比率 (TOT) 會互相抵銷</strong>。</p>
+            <p class="en">This is the trickiest part. Total gain equals the exporter's gain plus the importer's gain. When we sum them up, the <strong>Terms of Trade (TOT) cancels out</strong>.</p>
+            
+            <div class="formula-block" style="text-align: left; padding-left: 20px;">
+                Let \( C_x \) be Exporter's Cost, \( C_m \) be Importer's Cost, \( T \) be TOT.<br><br>
+                \( \text{Gain}_{\text{exporter}} = T - C_x \)<br>
+                \( \text{Gain}_{\text{importer}} = C_m - T \)<br>
+                --------------------------------<br>
+                \( \text{Total Gain} = (T - C_x) + (C_m - T) \)<br>
+                \( \text{Total Gain} = C_m - C_x \)
+            </div>
+            
+            <p class="zh">由此可見，總得益只取決於兩國機會成本的差額。既然我們知道機會成本，我們就能算出總得益，與貿易比率無關。</p>
+            <p class="en">As shown, Total Gain depends only on the difference between the two opportunity costs. Since we know the opportunity costs, we can determine the total gain, regardless of the TOT.</p>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="section">
+        <div class="section-title">
+            <span>🔍 Problem Decomposition (題目拆解)</span>
+        </div>
+        <div class="pivot-box">
+            <h3 style="margin-top:0;">The Pivot Point (解題關鍵)</h3>
+            <p class="zh"><strong>總得益 = 效率的提升 (Total Gain = Efficiency Improvement)</strong></p>
+            <p class="en">Students often think "Gain requires Price". This is true for <em>individual</em> gain, but not for <em>total</em> gain. The total gain represents the "size of the pie" created by specialization. The Terms of Trade only decides how to slice the pie.</p>
+            <hr style="border: 0; border-top: 1px dashed #d97706; margin: 15px 0;">
+            <p class="zh"><strong>數學邏輯 (Mathematical Logic):</strong></p>
+            <p class="en">If you have variable \( T \) (Terms of Trade) in your equation, check if it cancels out. <br> \( (+T) + (-T) = 0 \).</p>
+        </div>
+    </section>
+
+    <!-- Student Q&A -->
+    <section class="section">
+        <div class="section-title">
+            <span>🙋 Student Q&A (學生常見疑問)</span>
+        </div>
+        
+        <div class="qa-box">
+            <p class="zh"><strong>Q: 如果貿易比率改變，總得益真的不會變嗎？</strong></p>
+            <p class="en"><strong>Q: If the terms of trade change, does the total gain really remain unchanged?</strong></p>
+            
+            <p class="zh"><strong>A:</strong> 是的（針對每一單位的交易而言）。假設出口國成本是 $2，進口國成本是 $5。總共有 $3 的潛在利益 ($5-$2)。<br>如果成交價是 $3，出口國賺 $1，進口國賺 $2 (總共 $3)。<br>如果成交價是 $4，出口國賺 $2，進口國賺 $1 (總共 $3)。<br>只要有交易，這 $3 的總利益是固定的。</p>
+            
+            <p class="en"><strong>A:</strong> Yes (for each unit traded). Suppose Exporter's cost is $2 and Importer's cost is $5. There is a total potential benefit of $3 ($5-$2).<br>If price is $3, Exporter earns $1, Importer earns $2 (Total $3).<br>If price is $4, Exporter earns $2, Importer earns $1 (Total $3).<br>As long as trade occurs, this $3 total benefit is fixed.</p>
+        </div>
+    </section>
+
+    <!-- Exam Tricks -->
+    <section class="section" style="border-bottom: none;">
+        <div class="section-title">
+            <span>⚡ Exam Tricks (考試技巧)</span>
+        </div>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 10px;">
+                <span class="zh"><strong>看到「總得益」(Total Gain) 時：</strong></span> 立即聯想「機會成本之差」(Difference in Opportunity Costs)。不要去想成交價。
+                <br>
+                <span class="en"><strong>When you see "Total Gain":</strong> Immediately think "Difference in Opportunity Costs". Do not think about the transaction price.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>看到「各自得益」(Individual Gain) 時：</strong></span> 必須知道「貿易比率」(TOT)。
+                <br>
+                <span class="en"><strong>When you see "Individual Gain":</strong> You MUST know the "Terms of Trade" (TOT).</span>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

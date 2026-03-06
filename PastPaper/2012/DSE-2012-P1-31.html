@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Macro Analysis</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for difficulty */
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .difficulty-stars {
+            color: var(--accent-color);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin-top: 0;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .options-list li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .key-term {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Answer Section */
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .analysis-step {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            display: block;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Q&A and Tricks */
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .trick-box {
+            background-color: #fdf2f8;
+            border: 1px solid #fbcfe8;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.25rem; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>Topic: National Income Determination & External Sector<br><span style="font-size: 0.8em; font-weight: normal;">課題：國民收入決定與對外部門</span></h1>
+        <div class="meta-info">
+            <span><strong>Difficulty:</strong> <span class="difficulty-stars">★★★☆☆</span></span>
+            <span><strong>Key Concepts:</strong> Multiplier Effect, Induced Imports, Fiscal Balance</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p>
+                在某開放經濟，政府支出等於稅收收入而出口值等於進口值。若私人消費支出上升，政府會有 _______，而 _______ 會出現。
+            </p>
+            <p class="en-text">
+                In an open economy, the government expenditure is equal to tax revenue and the value of exports is equal to the value of imports. If there is an increase in private consumption expenditure, the government will have _______ and there will be _______.
+            </p>
+            
+            <ul class="options-list">
+                <li>A. 財政赤字 … 貿易逆差 (a budget deficit … a trade deficit)</li>
+                <li>B. 財政赤字 … 貿易順差 (a budget deficit … a trade surplus)</li>
+                <li>C. 財政盈餘 … 貿易逆差 (a budget surplus … a trade deficit)</li>
+                <li>D. 財政盈餘 … 貿易順差 (a budget surplus … a trade surplus)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <p><span class="key-term">1. 總需求與國民收入 (Aggregate Demand & National Income)</span></p>
+            <p>
+                當私人消費支出 (\(C\)) 上升，總需求 (\(AD\)) 會上升。透過乘數效應，國民收入 (\(Y\)) 會倍大上升。
+                <span class="en-text">When private consumption expenditure (\(C\)) increases, Aggregate Demand (\(AD\)) increases. Through the multiplier effect, National Income (\(Y\)) will increase by a multiple.</span>
+            </p>
+            $$ C \uparrow \Rightarrow AD \uparrow \Rightarrow Y \uparrow $$
+        </div>
+
+        <div class="concept-box">
+            <p><span class="key-term">2. 稅收與收入的關係 (Relationship between Tax and Income)</span></p>
+            <p>
+                在DSE經濟學模型中，我們通常假設稅收 (\(T\)) 與收入 (\(Y\)) 成正比（例如薪俸稅或利得稅），或消費稅隨消費上升而增加。
+                <span class="en-text">In the DSE Economics model, we usually assume Tax (\(T\)) is positively related to Income (\(Y\)) (e.g., salaries tax or profits tax), or consumption tax rises as consumption rises.</span>
+            </p>
+            $$ Y \uparrow \Rightarrow T \uparrow $$
+        </div>
+
+        <div class="concept-box">
+            <p><span class="key-term">3. 進口與收入的關係 (Relationship between Imports and Income)</span></p>
+            <p>
+                進口 (\(M\)) 是收入的函數（誘發性進口）。當人們收入增加，他們會購買更多商品，包括外國進口貨。
+                <span class="en-text">Imports (\(M\)) are a function of income (induced imports). When people's income increases, they buy more goods, including foreign imports.</span>
+            </p>
+            $$ Y \uparrow \Rightarrow M \uparrow $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: C (財政盈餘 … 貿易逆差)
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 1: 分析收入變化 (Analyze the Change in Income)</h3>
+            <p>
+                題目指出私人消費支出 (\(C\)) 上升。這會導致總支出上升，進而令均衡國民收入 (\(Y\)) 上升。
+                <span class="en-text">The question states that private consumption expenditure (\(C\)) increases. This leads to an increase in aggregate expenditure, causing equilibrium National Income (\(Y\)) to rise.</span>
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 2: 分析財政狀況 (Analyze the Fiscal Position)</h3>
+            <p>
+                <strong>初始狀態 (Initial):</strong> \( G = T \) (平衡預算 Balanced Budget)<br>
+                <strong>變化 (Change):</strong> 由於 \( Y \uparrow \)，政府的稅收收入 (\(T\)) 會隨之上升（因為稅收取決於收入或消費）。題目沒有提及政府支出 (\(G\)) 有變，故假設 \(G\) 不變。
+                <span class="en-text">Since \( Y \uparrow \), government tax revenue (\(T\)) will rise (as tax depends on income or consumption). The question does not mention any change in government expenditure (\(G\)), so assume \(G\) is constant.</span>
+            </p>
+            <p>
+                <strong>結果 (Result):</strong> \( T > G \) <br>
+                這代表<strong>財政盈餘 (Budget Surplus)</strong>。
+            </p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>Step 3: 分析貿易狀況 (Analyze the Trade Position)</h3>
+            <p>
+                <strong>初始狀態 (Initial):</strong> \( X = M \) (貿易平衡 Balanced Trade)<br>
+                <strong>變化 (Change):</strong> 由於 \( Y \uparrow \)，市民會購買更多進口貨，導致進口支出 (\(M\)) 上升。出口 (\(X\)) 主要受外國收入影響，在此視為不變。
+                <span class="en-text">Since \( Y \uparrow \), citizens buy more imports, causing import expenditure (\(M\)) to rise. Exports (\(X\)) are mainly affected by foreign income and are assumed constant here.</span>
+            </p>
+            <p>
+                <strong>結果 (Result):</strong> \( M > X \) <br>
+                這代表<strong>貿易逆差 (Trade Deficit)</strong>。
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這類題目的關鍵在於找出<strong>「傳導機制」(Transmission Mechanism)</strong>：</p>
+        <ol>
+            <li>
+                <strong>觸發點 (Trigger):</strong> \(C \uparrow\) (消費增加)
+            </li>
+            <li>
+                <strong>樞紐 (Pivot Point):</strong> \(Y \uparrow\) (國民收入增加)
+                <br>
+                <small>這是解題的核心。必須意識到消費增加會透過乘數效應令整體經濟產出增加。</small>
+            </li>
+            <li>
+                <strong>連鎖反應 (Chain Reaction):</strong>
+                <ul>
+                    <li>對政府：\(Y \uparrow \rightarrow T \uparrow\) (庫房收入增加)</li>
+                    <li>對外貿：\(Y \uparrow \rightarrow M \uparrow\) (買多了外國貨)</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-box">
+            <p><strong>Q: 為什麼假設稅收 (T) 會上升？題目沒說有入息稅啊？</strong></p>
+            <p>
+                <strong>A:</strong> 在宏觀經濟學模型中，除非題目特別指明是「定額稅」(Lump-sum tax)，否則我們通常假設稅收是「誘導性」(Induced) 的，即 \(T = tY\)。即使是消費稅，當 \(C\) 上升，政府從消費稅收到的錢也會直接上升。因此，經濟好轉通常意味著稅收增加。
+                <span class="en-text">In macro models, unless specified as "lump-sum tax", we assume taxes are "induced" (\(T = tY\)). Even with consumption tax, if \(C\) rises, tax revenue rises directly. Thus, a booming economy implies higher tax revenue.</span>
+            </p>
+        </div>
+
+        <div class="qa-box">
+            <p><strong>Q: 出口 (X) 為什麼不變？國內經濟好不是應該出口更多嗎？</strong></p>
+            <p>
+                <strong>A:</strong> 這是常見誤解。出口 (\(X\)) 取決於<strong>外國的</strong>國民收入，而不是本國的。本國經濟好 (\(Y\) 上升)，我們有錢買別人的貨 (\(M\) 上升)，但不代表外國人會買更多我們的貨。
+                <span class="en-text">Common misconception. Exports (\(X\)) depend on <strong>foreign</strong> national income, not domestic. When our economy grows (\(Y\) rises), we buy their goods (\(M\) rises), but it doesn't mean they buy more of ours.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="section">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="trick-box">
+            <p><strong>速記口訣 (Quick Mnemonic):</strong></p>
+            <p style="font-size: 1.1em; font-weight: bold; color: var(--secondary-color);">
+                "經濟好 (\(Y \uparrow\))，政府富 (\(T \uparrow\)，盈餘)，買外國貨 (\(M \uparrow\)，逆差)。"
+            </p>
+            <p class="en-text">
+                "Economy booms (\(Y \uparrow\)) -> Gov gets rich (\(T \uparrow\), Surplus) -> We buy foreign stuff (\(M \uparrow\), Deficit)."
+            </p>
+            <p>
+                只要確定是擴張性 (Expansionary) 的變化，通常結果就是走向<strong>財政盈餘</strong>和<strong>貿易逆差</strong>。
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

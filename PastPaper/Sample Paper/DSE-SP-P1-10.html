@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Price Mechanism Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --box-bg: #ffffff;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+            --correct-bg: #dcfce7;
+            --correct-text: #166534;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .header-item { flex: 1 1 200px; }
+        .header-label { font-weight: bold; color: #64748b; display: block; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; }
+        .stars { color: var(--accent-color); }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text { font-weight: 500; margin-bottom: 15px; }
+        .options-list { list-style-type: none; padding: 0; }
+        .options-list li { margin-bottom: 8px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .options-list li:hover { background-color: #f8fafc; }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-section { margin-bottom: 30px; }
+        
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .option-analysis:last-child { border-bottom: none; }
+        
+        .correct-answer {
+            background-color: var(--correct-bg);
+            color: var(--correct-text);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .bilingual-text { margin-bottom: 8px; }
+        .en-text { color: #475569; font-size: 0.95em; font-style: italic; margin-top: 4px; display: block; }
+
+        .pivot-box {
+            background-color: #fff7ed; /* Orange tint */
+            border: 1px solid #fdba74;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .qa-box {
+            background-color: #f0fdf4; /* Green tint */
+            border: 1px solid #86efac;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .badge-price { background-color: #dbeafe; color: #1e40af; }
+        .badge-nonprice { background-color: #fee2e2; color: #991b1b; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor</h1>
+    
+    <div class="header-info">
+        <div class="header-item">
+            <span class="header-label">Topic / 課題</span>
+            <strong>Price Mechanism & Resource Allocation</strong><br>
+            價格機制與資源分配
+        </div>
+        <div class="header-item">
+            <span class="header-label">Difficulty / 難度</span>
+            <span class="stars">★★☆☆☆</span> (2/5)
+        </div>
+        <div class="header-item">
+            <span class="header-label">Key Concepts / 核心概念</span>
+            Price Signals (價格訊號), Market vs Non-market (市場與非市場), Competition (競爭)
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question / 題目</h2>
+    <div class="question-box">
+        <p class="question-text">
+            彭樹德是一位男性新界原居民。下列哪項是由價格訊息指導的？<br>
+            <span class="en-text" style="font-style: normal;">Peter Pang is an indigenous male resident in the New Territories. Which of the following are guided by price signals?</span>
+        </p>
+
+        <div style="margin-left: 20px; margin-bottom: 20px;">
+            (1) 他向堂兄購買一幢「丁屋」。<br>
+            <span class="en-text" style="font-style: normal;">He buys a concessionary house (Ding House) from his cousin.</span><br>
+            (2) 在農曆新年時，他獲原居民代表分派紅封包。<br>
+            <span class="en-text" style="font-style: normal;">He is given a red packet by the Indigenous Inhabitant Representative during the Lunar New Year.</span><br>
+            (3) 他將名下的其中一幢「丁屋」出租給一位非原居民。<br>
+            <span class="en-text" style="font-style: normal;">He rents one of his concessionary houses to a tenant who is not an indigenous resident.</span>
+        </div>
+
+        <ul class="options-list">
+            <li>A. 只有(1)、(2) &nbsp; <span class="en-text" style="display:inline;">(1) and (2) only</span></li>
+            <li>B. 只有(1)、(3) &nbsp; <span class="en-text" style="display:inline;">(1) and (3) only</span></li>
+            <li>C. 只有(2)、(3) &nbsp; <span class="en-text" style="display:inline;">(2) and (3) only</span></li>
+            <li>D. (1)、(2)、(3) &nbsp; <span class="en-text" style="display:inline;">(1), (2) and (3)</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review / 概念重溫</h2>
+    <div class="concept-box">
+        <h3>1. Price Mechanism (價格機制)</h3>
+        <p>
+            在市場經濟中，資源分配由<strong>價格訊號 (Price Signals)</strong> 決定。價格決定了「生產什麼」、「如何生產」以及「為誰生產」。
+            <span class="en-text">In a market economy, resource allocation is determined by <strong>Price Signals</strong>. Price determines "what to produce", "how to produce", and "for whom to produce".</span>
+        </p>
+        <p>
+            <strong>關鍵特徵 (Key Feature):</strong> 價高者得 (Willingness and ability to pay)。如果有金錢交易（買賣、租賃）作為分配準則，這就是價格機制。
+            <span class="en-text"><strong>Key Feature:</strong> Allocated to those willing and able to pay. If there is a monetary transaction (buying, selling, renting) as the allocation criterion, it is the price mechanism.</span>
+        </p>
+
+        <h3>2. Non-Price Competition (非價格競爭)</h3>
+        <p>
+            當價格不起作用或不存在市場交易時，資源會通過其他準則分配，例如：暴力、排隊（先到先得）、抽籤、<strong>傳統/習俗 (Tradition/Custom)</strong> 或由政府指令分配。
+            <span class="en-text">When price does not function or there is no market transaction, resources are allocated via other criteria, such as: violence, queuing (first-come-first-served), drawing lots, <strong>Tradition/Custom</strong>, or government command.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <h2>Answer & Detailed Analysis / 答案與詳細分析</h2>
+    <div class="analysis-section">
+        <div class="correct-answer">Correct Option / 正確選項: B</div>
+
+        <div class="option-analysis">
+            <span class="badge badge-price">Price Signal</span>
+            <strong>(1) 他向堂兄購買一幢「丁屋」。 / He buys a concessionary house from his cousin.</strong>
+            <p>
+                <strong>分析：</strong> 雖然這是親戚之間的交易，但關鍵詞是「購買」(Buys)。這意味著涉及金錢交易，房屋的擁有權轉移是基於彭樹德支付的價格（即使是親情價）。這是一個市場交易行為。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> Although this is a transaction between relatives, the keyword is "Buys". This implies a monetary transaction involved. The transfer of ownership is based on the price Peter pays (even if it's a discounted family price). This is a market transaction behavior.
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="badge badge-nonprice">Non-Price (Tradition)</span>
+            <strong>(2) 在農曆新年時，他獲原居民代表分派紅封包。 / He is given a red packet by the Indigenous Inhabitant Representative.</strong>
+            <p>
+                <strong>分析：</strong> 這是基於「傳統」和「身份」。彭樹德獲得紅封包並不是因為他出價最高，而是因為他是「男性原居民」且適逢「農曆新年」。這裡沒有市場交換，屬於非價格競爭（基於身份/習俗的分配）。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> This is based on "Tradition" and "Status". Peter receives the red packet not because he pays the highest price, but because he is an "indigenous male" and it is "Lunar New Year". There is no market exchange here; it is non-price competition (allocation based on status/custom).
+            </p>
+        </div>
+
+        <div class="option-analysis">
+            <span class="badge badge-price">Price Signal</span>
+            <strong>(3) 他將名下的其中一幢「丁屋」出租給一位非原居民。 / He rents one of his concessionary houses to a tenant.</strong>
+            <p>
+                <strong>分析：</strong> 「出租」(Rents) 意味著租客支付租金（價格）以換取房屋的使用權。租金的高低會影響誰能租住該房屋（價高者得）。這是典型的價格機制運作。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> "Rents" implies the tenant pays rent (price) in exchange for the right to use the house. The level of rent determines who can live in the house (allocated to those willing/able to pay). This is a typical operation of the price mechanism.
+            </p>
+        </div>
+
+        <p>
+            <strong>結論：</strong> 只有 (1) 和 (3) 涉及價格（買價與租金）作為分配資源的準則。
+            <span class="en-text"><strong>Conclusion:</strong> Only (1) and (3) involve price (purchase price and rent) as the criterion for allocating resources.</span>
+        </p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition / 題目拆解</h2>
+    <div class="pivot-box">
+        <h3>🔍 The Pivot Point (關鍵轉折點)</h3>
+        <p>
+            這類題目的關鍵在於分辨<strong>「交易性質」(Nature of Transaction)</strong>。
+            <span class="en-text">The key to this type of question is distinguishing the <strong>Nature of Transaction</strong>.</span>
+        </p>
+        <ul>
+            <li>
+                看到 <strong>買 (Buy)、賣 (Sell)、租 (Rent)、僱用 (Hire)</strong> \(\rightarrow\) 涉及交換比率 (Exchange Ratio) \(\rightarrow\) <strong>價格訊號 (Price Signal)</strong>。
+            </li>
+            <li>
+                看到 <strong>分派 (Distribute)、給予 (Given)、排隊 (Queue)、抽籤 (Draw lots)</strong> \(\rightarrow\) 不涉及金錢交換 \(\rightarrow\) <strong>非價格訊號 (Non-price Signal)</strong>。
+            </li>
+        </ul>
+        <p>
+            <strong>干擾資訊 (Distractors):</strong> 題目中強調的「原居民」、「堂兄」等身份背景，主要是為了測試你是否會誤以為親戚交易或特定身份就不算市場交易。實際上，只要有「買賣/租賃」，就是價格機制。
+            <span class="en-text"><strong>Distractors:</strong> The emphasis on "indigenous resident" or "cousin" is to test if you mistakenly think transactions between relatives or specific statuses are not market transactions. In reality, as long as there is "buying/selling/renting", it is the price mechanism.</span>
+        </p>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <h2>Student Q&A / 學生常見疑問</h2>
+    <div class="qa-box">
+        <p><strong>Q1: 紅封包裡面是錢，為什麼不是價格訊號？ (The red packet contains money, why isn't it a price signal?)</strong></p>
+        <p>
+            <strong>A:</strong> 價格是獲取物品的<strong>代價 (Cost)</strong>。在這個情況下，彭樹德並沒有支付代價去換取紅封包，紅封包是一個<strong>轉移支付 (Transfer Payment)</strong> 或禮物。價格訊號必須涉及雙向的交換（錢換貨/服務）。
+            <span class="en-text"><strong>A:</strong> Price is the <strong>cost</strong> to obtain a good. In this case, Peter did not pay a cost to exchange for the red packet; the red packet is a <strong>Transfer Payment</strong> or a gift. A price signal must involve a two-way exchange (money for goods/services).</span>
+        </p>
+
+        <p><strong>Q2: 向堂兄買屋可能比市價便宜很多，這還算價格引導嗎？ (Buying from a cousin might be much cheaper than market price, is it still guided by price?)</strong></p>
+        <p>
+            <strong>A:</strong> 是的。只要有價格存在（\(P > 0\)），並且分配是基於支付這個價格的能力，它就是由價格引導。價格的高低（是否市價）只影響供需數量，不改變它是價格機制的本質。
+            <span class="en-text"><strong>A:</strong> Yes. As long as a price exists (\(P > 0\)) and allocation is based on the ability to pay this price, it is guided by price. The level of the price (whether market rate or not) only affects the quantity of supply/demand, not the nature of it being a price mechanism.</span>
+        </p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <h2>Exam Tricks / 考試技巧</h2>
+    <ul>
+        <li>
+            <strong>動詞檢測法 (Verb Check):</strong> 圈出句子中的動詞。如果是「買、賣、租」，直接選價格機制。如果是「獲贈、獲派」，則是傳統或指令。
+            <span class="en-text"><strong>Verb Check:</strong> Circle the verb in the sentence. If it is "buy, sell, rent", choose price mechanism. If it is "given, distributed", it is tradition or command.</span>
+        </li>
+        <li>
+            <strong>忽略身份 (Ignore Identity):</strong> 在判斷機制時，不要被「原居民」這個特殊身份嚇倒。經濟學原理適用於所有人。
+            <span class="en-text"><strong>Ignore Identity:</strong> When determining the mechanism, don't be intimidated by the specific status of "indigenous resident". Economic principles apply to everyone.</span>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

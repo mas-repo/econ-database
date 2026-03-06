@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Unemployment Rate Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for stars */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --border-concept: #60a5fa;
+            --bg-correct: #dcfce7; /* Light Green */
+            --text-correct: #166534;
+            --bg-wrong: #fee2e2; /* Light Red */
+            --text-wrong: #991b1b;
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .stars { color: var(--accent-color); }
+
+        /* Question Section */
+        .question-box {
+            background: #fafafa;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--border-concept);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--bg-concept);
+            border-color: var(--border-concept);
+        }
+
+        .option-analysis.incorrect {
+            background-color: #fff;
+            border-color: #e5e7eb;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .tag-correct { background: var(--bg-correct); color: var(--text-correct); }
+        .tag-wrong { background: var(--bg-wrong); color: var(--text-wrong); }
+
+        /* Decomposition & Tricks */
+        .decomposition-box, .qa-box {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .pivot-point {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>DSE Economics: Unemployment Rate Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Measurement of Economic Performance</span>
+            <span class="badge">Difficulty: <span class="stars">★★★☆☆</span></span>
+            <span class="badge">Key Concepts: Unemployment Rate, Labour Force, Underemployment</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>題目：</strong> 假設某經濟的失業率是5%。下列哪些情況會令該經濟的失業率下降？<br>
+            <span class="en-text"><strong>Question:</strong> Suppose the unemployment rate of an economy is 5%. Which of the following situations would lead to a decrease in the unemployment rate of the economy?</span>
+        </div>
+
+        <div class="bilingual-text">
+            (1) 輸入外勞以填補不同行業的職位空缺。<br>
+            <span class="en-text">(1) Foreign workers are imported to fill the vacancies in various industries.</span>
+        </div>
+        <div class="bilingual-text">
+            (2) 加入勞動市場的應屆大學畢業生中，96%成功獲得聘用。<br>
+            <span class="en-text">(2) 96% of the new university graduates who enter the labour market are employed.</span>
+        </div>
+        <div class="bilingual-text">
+            (3) 一些就業不足的工人的工時增加。<br>
+            <span class="en-text">(3) Some underemployed workers work for more hours.</span>
+        </div>
+
+        <ul class="options-list">
+            <li>A. 只有 (1)、(2) &nbsp; / &nbsp; (1) and (2) only</li>
+            <li>B. 只有 (1)、(3) &nbsp; / &nbsp; (1) and (3) only</li>
+            <li>C. 只有 (2)、(3) &nbsp; / &nbsp; (2) and (3) only</li>
+            <li>D. (1)、(2) 及 (3) &nbsp; / &nbsp; (1), (2) and (3)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            概念重溫 Concept Review
+        </div>
+        
+        <p><strong>1. 失業率公式 (Unemployment Rate Formula):</strong></p>
+        $$ \text{Unemployment Rate} (u) = \frac{\text{Unemployed Population} (U)}{\text{Labour Force} (L)} \times 100\% $$
+        <p>
+            其中，勞動人口 \( L = \text{就業人口} (E) + \text{失業人口} (U) \)。<br>
+            <span class="en-text">Where Labour Force \( L = \text{Employed} (E) + \text{Unemployed} (U) \).</span>
+        </p>
+
+        <p><strong>2. 就業不足 (Underemployment):</strong></p>
+        <p>
+            就業不足的人士（例如兼職想轉全職但找不到工作的人）在統計上被視為<strong>就業人口 (Employed)</strong>。<br>
+            <span class="en-text">Underemployed persons (e.g., part-timers seeking full-time jobs involuntarily) are statistically counted as <strong>Employed</strong>.</span>
+        </p>
+
+        <p><strong>3. 邊際與平均的關係 (Marginal vs. Average):</strong></p>
+        <p>
+            如果新加入群體的失業率<strong>低於</strong>原有的平均失業率，整體失業率會下降。<br>
+            <span class="en-text">If the unemployment rate of the new group is <strong>lower</strong> than the original average rate, the overall rate will decrease.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>答案與詳細分析 Answer & Detailed Analysis</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">
+            <strong>正確選項 Correct Option: <span style="color: var(--primary-color);">A</span></strong>
+        </p>
+
+        <!-- Option 1 Analysis -->
+        <div class="option-analysis correct">
+            <span class="status-tag tag-correct">Correct 正確</span>
+            <p><strong>(1) 輸入外勞以填補職位空缺 / Importing foreign workers to fill vacancies</strong></p>
+            <p>
+                <strong>分析：</strong> 輸入外勞意味著就業人口 \(E\) 增加，因此勞動人口 \(L\) 亦增加（因為 \(L = E + U\)）。由於外勞是填補「空缺」，原本的失業人口 \(U\) 數量不變。
+                <br>
+                根據公式 \( u = \frac{U}{L} \)，分子 \(U\) 不變，分母 \(L\) 增加，數值必然<strong>下降</strong>。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> Importing workers means the Employed population \(E\) increases, so the Labour Force \(L\) also increases (since \(L = E + U\)). Since they fill "vacancies", the number of Unemployed \(U\) remains constant.
+                <br>
+                According to the formula \( u = \frac{U}{L} \), if the numerator \(U\) is constant and the denominator \(L\) increases, the rate must <strong>decrease</strong>.
+            </p>
+        </div>
+
+        <!-- Option 2 Analysis -->
+        <div class="option-analysis correct">
+            <span class="status-tag tag-correct">Correct 正確</span>
+            <p><strong>(2) 應屆畢業生 96% 獲聘用 / 96% of new graduates are employed</strong></p>
+            <p>
+                <strong>分析：</strong> 這批新加入勞動市場的人士中，96% 就業，即只有 4% 失業。這批新人的「邊際失業率」是 4%。
+                <br>
+                由於新人的失業率 (4%) <strong>低於</strong> 原本經濟體的平均失業率 (5%)，這會拉低整體的平均數。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> Among this new group entering the labour market, 96% are employed, meaning only 4% are unemployed. The "marginal unemployment rate" of this group is 4%.
+                <br>
+                Since the new group's rate (4%) is <strong>lower</strong> than the economy's original average (5%), it will pull down the overall average.
+            </p>
+        </div>
+
+        <!-- Option 3 Analysis -->
+        <div class="option-analysis incorrect">
+            <span class="status-tag tag-wrong">Incorrect 錯誤</span>
+            <p><strong>(3) 就業不足工人工時增加 / Underemployed workers work more hours</strong></p>
+            <p>
+                <strong>分析：</strong> 就業不足人士本身已經被界定為「就業人口」。當他們增加工時，只是由「就業不足」變為「充分就業」，但他們的身份依然是<strong>就業人口 (Employed)</strong>。
+                <br>
+                因此，失業人口 \(U\) 和勞動人口 \(L\) 的總數都沒有改變，失業率維持不變。
+            </p>
+            <p class="en-text">
+                <strong>Analysis:</strong> Underemployed workers are already defined as "Employed". When they work more hours, they shift from "underemployed" to "fully employed", but their status remains <strong>Employed</strong>.
+                <br>
+                Therefore, neither the total Unemployed \(U\) nor the Labour Force \(L\) changes. The unemployment rate remains unchanged.
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="decomposition-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            題目拆解 Problem Decomposition
+        </div>
+        <p>
+            <strong>關鍵點 (Pivot Point):</strong> 必須區分「人數變動」與「身份變動」。
+            <br>
+            <span class="en-text"><strong>Pivot Point:</strong> Distinguish between "change in numbers" and "change in status".</span>
+        </p>
+        <ul>
+            <li><strong>選項 (1)</strong> 是分母增大效應 (Denominator Effect)。</li>
+            <li><strong>選項 (2)</strong> 是平均數拉動效應 (Weighted Average Effect)。關鍵數字是 \(100\% - 96\% = 4\%\)，這個 \(4\%\) 必須與題目開頭的 \(5\%\) 作比較。</li>
+            <li><strong>選項 (3)</strong> 是定義陷阱。就業不足 \(\neq\) 失業。</li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="qa-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            學生常見疑問 Student Q&A
+        </div>
+        
+        <p><strong>Q: 為什麼選項 (2) 如果只有 94% 獲聘用，失業率就會上升？</strong></p>
+        <p>
+            <strong>A:</strong> 如果只有 94% 獲聘，代表這批新人的失業率是 \(6\%\)。因為 \(6\% > 5\%\)（原有平均），新加入的高失業率群體會把整體平均數拉高。
+            <br>
+            <span class="en-text"><strong>A:</strong> If only 94% were employed, the unemployment rate of this new group would be \(6\%\). Since \(6\% > 5\%\) (original average), adding a group with a higher rate pulls the overall average up.</span>
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <p><strong>Q: 職位空缺 (Vacancies) 減少會直接影響失業率嗎？</strong></p>
+        <p>
+            <strong>A:</strong> 不會直接影響。失業率只計算「人」(就業或失業)，不計算「職位」。除非空缺被填補（就業增加）或被裁員（失業增加），否則單純空缺數量的變化不進入公式計算。
+            <br>
+            <span class="en-text"><strong>A:</strong> Not directly. The unemployment rate counts "people" (employed or unemployed), not "jobs". Unless vacancies are filled (employment rises) or people are fired (unemployment rises), changes in vacancy numbers alone do not enter the formula.</span>
+        </p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #f59e0b;">
+        <div class="concept-title" style="color: #b45309;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            考試技巧 Exam Tricks
+        </div>
+        <p>
+            <strong>快速排除法 (Elimination Method):</strong>
+        </p>
+        <p>
+            一看到「就業不足 (Underemployed)」，立即聯想它屬於「就業 (Employed)」。
+            <br>
+            只要題目問的是失業率變化，而情境僅涉及就業不足人士的工時改變，該選項<strong>必定錯誤</strong>。
+            <br>
+            排除選項 (3) 後，答案只剩下 A。你甚至不需要詳細分析 (1) 和 (2) 就能得分！
+        </p>
+        <p class="en-text">
+            <strong>Logic Check:</strong> As soon as you see "Underemployed", immediately link it to "Employed". If the scenario only involves changing hours for underemployed workers, it <strong>cannot</strong> affect the unemployment rate. Eliminate option (3), and the only remaining choice is A. You can solve this without even analyzing (1) and (2)!
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

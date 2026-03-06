@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Fisher Equation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue Background */
+            --text-color: #334155; /* Slate 700 */
+            --correct-color: #16a34a; /* Green */
+            --wrong-color: #dc2626; /* Red */
+            --warning-bg: #fefce8; /* Light Yellow */
+            --warning-border: #facc15; /* Yellow */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .concept-box {
+            background-color: var(--accent-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: #f0fdf4;
+            border-color: var(--correct-color);
+        }
+
+        .option-analysis.wrong {
+            background-color: #fef2f2;
+            border-color: #fecaca;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+
+        .badge-correct {
+            background-color: var(--correct-color);
+            color: white;
+        }
+
+        .badge-wrong {
+            background-color: var(--wrong-color);
+            color: white;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #64748b; /* Lighter slate for English */
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .decomposition-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">Topic: Macroeconomics - Interest Rates (宏觀經濟 - 利率)</div>
+        <div class="header-item">Difficulty: ★★☆☆☆</div>
+        <div class="header-item">Keywords: Fisher Equation, Nominal vs Real Rate</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>當名義利率高於實質利率，預期通脹率必定</strong></p>
+        <p class="en-text">When the nominal interest rate is higher than the real interest rate, the expected inflation rate must be</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 是正數。 <span class="en-text" style="display:inline">(positive)</span></li>
+            <li>B. 是負數。 <span class="en-text" style="display:inline">(negative)</span></li>
+            <li>C. 在上升。 <span class="en-text" style="display:inline">(rising)</span></li>
+            <li>D. 在下降。 <span class="en-text" style="display:inline">(falling)</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <span class="concept-title">費雪效應 / 費雪方程式 (The Fisher Equation)</span>
+        
+        <p>
+            要解決這道題目，我們必須了解名義利率、實質利率與通脹率之間的關係。這通常由費雪方程式表示：
+            <span class="en-text">To solve this problem, we must understand the relationship between nominal interest rate, real interest rate, and inflation rate. This is typically represented by the Fisher Equation:</span>
+        </p>
+
+        <div class="math-block">
+            $$ \text{名義利率} \approx \text{實質利率} + \text{預期通脹率} $$
+            $$ \text{Nominal Interest Rate} (R) \approx \text{Real Interest Rate} (r) + \text{Expected Inflation Rate} (\pi^e) $$
+        </div>
+
+        <p>
+            <strong>定義 (Definitions):</strong>
+        </p>
+        <ul>
+            <li>
+                <strong>名義利率 (Nominal Interest Rate):</strong> 銀行掛牌的利率，以貨幣計算的回報率。
+                <span class="en-text">The interest rate quoted by banks; the rate of return in monetary terms.</span>
+            </li>
+            <li>
+                <strong>實質利率 (Real Interest Rate):</strong> 扣除通脹影響後的購買力回報率。
+                <span class="en-text">The rate of return in terms of purchasing power, adjusted for inflation.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <h2>Answer & Analysis (答案與詳細分析)</h2>
+    
+    <div style="margin-bottom: 20px;">
+        <strong>正確答案 (Correct Answer): <span style="color: var(--correct-color); font-size: 1.2em;">Option A</span></strong>
+    </div>
+
+    <div class="option-analysis correct">
+        <span class="badge badge-correct">Option A</span> <strong>是正數 (Positive)</strong>
+        <p>
+            <strong>分析：</strong> 根據費雪方程式 \( R = r + \pi^e \)，我們可以將公式重寫為 \( \pi^e = R - r \)。
+            題目指出「名義利率高於實質利率」，即 \( R > r \)。
+            如果 \( R \) 大於 \( r \)，那麼 \( R - r \) 必定是一個大於零的數字（正數）。因此，預期通脹率 \( \pi^e \) 必定是正數。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> According to the Fisher Equation \( R = r + \pi^e \), we can rewrite the formula as \( \pi^e = R - r \).
+            The question states "nominal interest rate is higher than real interest rate", meaning \( R > r \).
+            If \( R \) is greater than \( r \), then \( R - r \) must be greater than zero (positive). Therefore, the expected inflation rate \( \pi^e \) must be positive.
+        </p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge badge-wrong">Option B</span> <strong>是負數 (Negative)</strong>
+        <p>
+            <strong>分析：</strong> 只有當名義利率<strong>低於</strong>實質利率時（\( R < r \)），通脹率才會是負數（即出現通縮）。這與題目條件不符。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> The inflation rate would only be negative (deflation) if the nominal interest rate were <strong>lower</strong> than the real interest rate (\( R < r \)). This contradicts the condition given in the question.
+        </p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge badge-wrong">Option C & D</span> <strong>在上升 / 在下降 (Rising / Falling)</strong>
+        <p>
+            <strong>分析：</strong> 這兩個選項描述的是通脹率的<strong>趨勢 (Trend)</strong> 或變化方向，而題目只提供了兩者在某一點的<strong>數值關係 (Level)</strong>。
+            通脹率可以是正數（例如 5%），但同時正在下降（例如由上個月的 6% 跌至 5%）。單憑 \( R > r \)，我們只能知道通脹率大於 0，無法得知它正在變大還是變小。
+        </p>
+        <p class="en-text">
+            <strong>Analysis:</strong> These options describe the <strong>trend</strong> or direction of change of the inflation rate. The question only provides the <strong>numerical relationship (level)</strong> at a specific point.
+            The inflation rate can be positive (e.g., 5%) while simultaneously falling (e.g., dropping from 6% last month to 5%). Knowing only that \( R > r \) tells us the inflation rate is greater than 0, but not whether it is increasing or decreasing.
+        </p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="decomposition-box">
+        <h3>解題關鍵點 (Pivot Point)</h3>
+        <p>
+            這題的關鍵在於區分<strong>「數值的正負」(Sign/Level)</strong> 與 <strong>「數值的變化」(Change/Trend)</strong>。
+            <span class="en-text">The key to this problem is distinguishing between the <strong>"sign/level of the value"</strong> and the <strong>"change/trend of the value"</strong>.</span>
+        </p>
+        
+        <h3>思考步驟 (Step-by-Step Approach):</h3>
+        <ol>
+            <li>
+                <strong>寫下公式：</strong> 腦海中浮現 \( \text{Nominal} = \text{Real} + \text{Inflation} \)。
+                <span class="en-text"><strong>Write the formula:</strong> Recall \( \text{Nominal} = \text{Real} + \text{Inflation} \).</span>
+            </li>
+            <li>
+                <strong>代入條件：</strong> 題目說 \( \text{Nominal} > \text{Real} \)。
+                <span class="en-text"><strong>Apply condition:</strong> The question says \( \text{Nominal} > \text{Real} \).</span>
+            </li>
+            <li>
+                <strong>數學推導：</strong> 為了讓等式成立，如果左邊比右邊的第一項大，那麼右邊的第二項（通脹）必須是正數來填補差距。
+                <span class="en-text"><strong>Mathematical deduction:</strong> For the equation to hold, if the left side is larger than the first term on the right, the second term on the right (inflation) must be positive to make up the difference.</span>
+            </li>
+            <li>
+                <strong>排除干擾：</strong> 題目沒有提及時間的變化（例如「今年比去年...」），所以排除所有關於「上升」或「下降」的選項。
+                <span class="en-text"><strong>Eliminate distractors:</strong> The question mentions no time change (e.g., "compared to last year..."), so eliminate all options regarding "rising" or "falling".</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    
+    <div style="background-color: #fff; border-left: 4px solid #8b5cf6; padding: 15px; margin-bottom: 15px;">
+        <p><strong>Q: 為什麼不是「上升」？通脹率是正數不就代表物價在上升嗎？</strong></p>
+        <p><strong>Why not "rising"? Doesn't a positive inflation rate mean prices are rising?</strong></p>
+        <p style="margin-top: 10px; color: var(--text-color);">
+            <strong>A:</strong> 小心文字陷阱！通脹率是正數，確實代表<strong>「物價水平」(Price Level)</strong> 正在上升。但是，選項 C 指的是<strong>「通脹率本身」(The Inflation Rate itself)</strong> 在上升。
+            <br><br>
+            例子：
+            <ul>
+                <li>1月通脹率 = 5%</li>
+                <li>2月通脹率 = 2%</li>
+            </ul>
+            在這個例子中，通脹率是正數（符合題目），物價水平在上升，但通脹率本身卻在<strong>下降</strong>（由 5% 跌至 2%）。所以我們不能選 C。
+        </p>
+        <p class="en-text">
+            <strong>A:</strong> Watch out for the wording trap! A positive inflation rate indeed means the <strong>"Price Level"</strong> is rising. However, Option C suggests that the <strong>"Inflation Rate itself"</strong> is rising.
+            <br>
+            Example: Jan Inflation = 5%, Feb Inflation = 2%. Here, inflation is positive (fits the question), and prices are rising, but the inflation rate itself is <strong>falling</strong>. Thus, we cannot choose C.
+        </p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div style="background-color: #ecfdf5; border: 1px solid #a7f3d0; padding: 15px; border-radius: 8px;">
+        <h3>代入數字法 (Substitution Method)</h3>
+        <p>
+            如果你在考試時忘記了代數關係，直接代入簡單的數字：
+            <span class="en-text">If you forget the algebraic relationship during the exam, simply substitute simple numbers:</span>
+        </p>
+        <ol>
+            <li>設名義利率 (Nominal) = <strong>10%</strong></li>
+            <li>設實質利率 (Real) = <strong>6%</strong> (必須比名義利率小)</li>
+            <li>計算： \( 10\% = 6\% + \text{通脹率} \)</li>
+            <li>通脹率 = \( 4\% \)</li>
+        </ol>
+        <p>
+            <strong>結論：</strong> 4 是正數 (Positive)。它不是負數，我們也無法單憑這一個數字判斷它正在上升還是下降。選 A。
+            <span class="en-text"><strong>Conclusion:</strong> 4 is a positive number. It is not negative, and we cannot determine if it is rising or falling from a single number. Choose A.</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

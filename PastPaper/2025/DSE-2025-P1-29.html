@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - LRAS Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #eef2f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .topic-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            flex-wrap: wrap;
+        }
+
+        .stars { color: var(--accent-color); }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .q-text { font-weight: 600; margin-bottom: 15px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin-bottom: 8px; padding-left: 10px; }
+
+        .lang-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* Concept Review */
+        .concept-section {
+            background-color: #eff6ff; /* Light Blue */
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .analysis-item:last-child { border-bottom: none; }
+
+        .option-tag {
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .correct-tag { color: var(--success-text); background: var(--success-bg); padding: 2px 8px; border-radius: 4px; font-size: 0.8em; }
+        .incorrect-tag { color: var(--error-text); background: var(--error-bg); padding: 2px 8px; border-radius: 4px; font-size: 0.8em; }
+
+        /* Bilingual Text Styling */
+        .en-text {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Callouts */
+        .pivot-point {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .trap-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <span class="topic-badge">Macroeconomics (宏觀經濟)</span>
+        <h1>Aggregate Supply (總供應)</h1>
+        <div class="meta-info">
+            <span><strong>Difficulty:</strong> <span class="stars">★★★☆☆</span></span>
+            <span><strong>Key Concepts:</strong> LRAS (長期總供應), Flexible Prices (價格彈性), Potential Output (潛在產出)</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <span class="lang-label">Question (題目)</span>
+        <div class="q-text">
+            下列哪項/些能夠解釋為什麼長期總供應曲線是垂直的？<br>
+            Which of the following can explain why a long run aggregate supply curve is vertical?
+        </div>
+        
+        <div style="margin-bottom: 15px; background: #f8fafc; padding: 10px; border-radius: 6px;">
+            (1) 投入的價格在長期可被完全調整。<br>
+            <span class="en-text">Input prices can be perfectly adjusted in the long run.</span><br>
+            (2) 廠商在長期無法調整其產出水平。<br>
+            <span class="en-text">Firms are unable to adjust their output levels in the long run.</span><br>
+            (3) 科技水平在長期不是固定的。<br>
+            <span class="en-text">Technological level is not constant in the long run.</span>
+        </div>
+
+        <ul class="options">
+            <li>A. 只有 (1) <span class="en-text" style="display:inline; margin-left:10px;">(1) only</span></li>
+            <li>B. 只有 (3) <span class="en-text" style="display:inline; margin-left:10px;">(3) only</span></li>
+            <li>C. 只有 (1)、(2) <span class="en-text" style="display:inline; margin-left:10px;">(1) and (2) only</span></li>
+            <li>D. 只有 (2)、(3) <span class="en-text" style="display:inline; margin-left:10px;">(2) and (3) only</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        
+        <p><strong>1. 長期總供應曲線 (LRAS) / Long Run Aggregate Supply</strong></p>
+        <p>
+            LRAS 是一條垂直線，位於<strong>潛在產出水平</strong> \(Y_f\) (Full Employment Output)。<br>
+            <span class="en-text">The LRAS is a vertical line positioned at the <strong>potential output level</strong> \(Y_f\).</span>
+        </p>
+
+        <p><strong>2. 為什麼是垂直的？ / Why is it vertical?</strong></p>
+        <p>
+            這代表在長期，總產出 \(Y\) <strong>獨立於</strong> 物價水平 \(P\)。<br>
+            <span class="en-text">This implies that in the long run, aggregate output \(Y\) is <strong>independent</strong> of the price level \(P\).</span>
+        </p>
+        <p>
+            這是因為在長期，所有<strong>名義變數</strong>（如工資、原料價格）都是<strong>完全彈性</strong> (Fully Flexible) 的。當物價 \(P\) 上升時，成本也會同比例上升，廠商的實質利潤不變，因此沒有誘因增加產量。<br>
+            <span class="en-text">This is because, in the long run, all <strong>nominal variables</strong> (like wages, input prices) are <strong>fully flexible</strong>. When price \(P\) rises, costs rise proportionally. Real profit remains unchanged, so there is no incentive to increase output.</span>
+        </p>
+        
+        <div style="background: #e0f2fe; padding: 10px; border-radius: 6px; margin-top: 10px;">
+            <strong>Formula Logic:</strong><br>
+            $$ \text{Real Profit} = \frac{\text{Nominal Profit}}{P} $$
+            If \(P \uparrow\) and Input Prices \(\uparrow\) by the same \%, Real Profit is constant.
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <p style="font-size: 1.1rem; margin-bottom: 20px;">
+            <strong>Correct Option: <span style="color: var(--primary-color);">A</span></strong>
+        </p>
+
+        <div class="analysis-item">
+            <span class="option-tag">Statement (1)</span> <span class="correct-tag">Correct (正確)</span>
+            <p>
+                <strong>投入的價格在長期可被完全調整。</strong><br>
+                這是 LRAS 垂直的核心原因。在短期 (Short Run)，由於工資僵固 (Sticky Wages)，物價上升會導致實質工資下降，廠商有利可圖而增加產出（SRAS 向右上方傾斜）。但在長期，投入價格（成本）會隨物價水平完全調整，消除了這種「利潤錯覺」，使產出回歸到 \(Y_f\)。
+            </p>
+            <p class="en-text">
+                <strong>Input prices can be perfectly adjusted in the long run.</strong><br>
+                This is the core reason for the vertical LRAS. In the Short Run, due to sticky wages, a price rise lowers real wages, incentivizing firms to increase output (upward sloping SRAS). However, in the Long Run, input prices (costs) fully adjust to the price level, eliminating this "profit illusion" and returning output to \(Y_f\).
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-tag">Statement (2)</span> <span class="incorrect-tag">Incorrect (錯誤)</span>
+            <p>
+                <strong>廠商在長期無法調整其產出水平。</strong><br>
+                這是一個概念陷阱。第一，在微觀經濟學中，「長期」定義為廠商可以調整所有生產要素（包括設廠規模），所以廠商絕對「可以」調整產出。第二，LRAS 垂直並非因為廠商「無能為力」，而是因為在充分就業下，資源已被充分利用，且價格變動不再影響實質利潤。
+            </p>
+            <p class="en-text">
+                <strong>Firms are unable to adjust their output levels in the long run.</strong><br>
+                This is a conceptual trap. First, in Microeconomics, the "Long Run" is defined as a period where firms can adjust all factors of production (including plant size), so firms definitely "can" adjust output. Second, LRAS is vertical not because firms are "physically unable" to change, but because at full employment, resources are fully utilized, and price changes no longer affect real profits.
+            </p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-tag">Statement (3)</span> <span class="incorrect-tag">Incorrect (錯誤)</span>
+            <p>
+                <strong>科技水平在長期不是固定的。</strong><br>
+                這解釋了為什麼 LRAS 曲線會<strong>移動 (Shift)</strong>，而不是解釋為什麼它是<strong>垂直 (Vertical)</strong> 的。如果科技進步，\(Y_f\) 會增加，整條垂直線會向右移動。這與曲線的「斜率」無關。
+            </p>
+            <p class="en-text">
+                <strong>Technological level is not constant in the long run.</strong><br>
+                This explains why the LRAS curve <strong>shifts</strong>, not why it is <strong>vertical</strong>. If technology improves, \(Y_f\) increases, and the entire vertical line shifts to the right. This is irrelevant to the "slope" of the curve.
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="pivot-point">
+        <div class="section-title" style="margin-top:0; font-size: 1rem;">Problem Decomposition (題目拆解)</div>
+        <p>
+            <strong>Pivot Point (關鍵點):</strong><br>
+            區分 <strong>"Movement along / Slope" (沿線移動/斜率)</strong> 與 <strong>"Shift" (移動)</strong>。
+        </p>
+        <ul>
+            <li>題目問的是「垂直」(Vertical)，即關於<strong>斜率 (Slope)</strong> 的問題。</li>
+            <li>斜率取決於 \(Y\) 對 \(P\) 的敏感度。</li>
+            <li>(1) 解釋了為何 \(Y\) 對 \(P\) 不敏感（垂直）。</li>
+            <li>(3) 解釋了 \(Y\) 隨時間的增長（曲線本身的移動）。</li>
+        </ul>
+        <p class="en-text">
+            <strong>Key Distinction:</strong> Distinguish between the <strong>Slope</strong> (why it stands straight) and the <strong>Shift</strong> (why it moves left/right). The question asks about the vertical shape (Slope). Statement (1) explains the lack of sensitivity to Price. Statement (3) explains economic growth (Shift).
+        </p>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div style="margin-top: 30px;">
+        <div class="section-title">Student Q&A (學生常見疑問)</div>
+        
+        <div style="background: #fff; border-left: 4px solid var(--accent-color); padding: 15px; margin-bottom: 15px;">
+            <p style="margin-top: 0; font-weight: bold; color: var(--secondary-color);">Q: 為什麼選項 (2) 是錯的？既然資源有限，產出不是應該固定嗎？</p>
+            <p style="margin-top: 0; font-weight: bold; color: var(--secondary-color); font-size: 0.9em;" class="en-text">Q: Why is option (2) wrong? Since resources are limited, shouldn't output be fixed?</p>
+            
+            <p>
+                <strong>A:</strong> 小心字眼。「固定」(Fixed) 和「垂直」(Vertical) 是不同的概念。
+                LRAS 垂直是指產出不隨<strong>物價</strong>改變。選項 (2) 說廠商「無法調整」，這暗示了一種物理上的不可能。
+                事實上，如果人口增加或發現新資源，廠商<strong>會</strong>在長期增加產出。所以說廠商「無法調整」是錯誤的描述。我們只是說，單純的<strong>物價上升</strong>不會導致產出增加。
+            </p>
+            <p class="en-text">
+                <strong>A:</strong> Be careful with the wording. "Fixed" and "Vertical" are different concepts. 
+                Vertical LRAS means output doesn't change with <strong>Price</strong>. Option (2) says firms are "unable to adjust," implying a physical impossibility. 
+                In reality, if population grows or new resources are found, firms <strong>will</strong> increase output in the long run. So saying they are "unable" is factually wrong. We only mean that a mere <strong>Price Level increase</strong> won't cause output to increase.
+            </p>
+        </div>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="trap-box">
+        <div class="section-title" style="margin-top:0; font-size: 1rem; color: var(--error-text);">Exam Trick: The "Shift vs. Slope" Trap</div>
+        <p>
+            看到關於「科技」、「資源增長」的選項時，問自己：
+            <br>
+            這會改變 \(Y\) 的數值（移動曲線），還是解釋 \(Y\) 與 \(P\) 的關係（曲線形狀）？
+        </p>
+        <p>
+            <strong>速記口訣：</strong><br>
+            - <strong>Input Prices Flexible (投入價格彈性)</strong> \(\rightarrow\) 解釋垂直 (Vertical)。<br>
+            - <strong>Technology/Resources (科技/資源)</strong> \(\rightarrow\) 解釋移動 (Shift)。
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

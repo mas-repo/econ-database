@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Gini Coefficient Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 20px;
+            display: inline-flex;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            font-weight: bold;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Times New Roman', serif; /* Mimic exam paper */
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .concept-term {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .correct-option {
+            background-color: var(--success-bg);
+            border-left: 4px solid var(--success-text);
+        }
+
+        .incorrect-option {
+            background-color: var(--bg-color);
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        .en-text {
+            color: #64748b;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .tag-correct { background: #dcfce7; color: #166534; }
+        .tag-incorrect { background: #fee2e2; color: #991b1b; }
+
+        /* Decomposition & Q&A */
+        .decomposition-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.5rem; }
+            .meta-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item"><span>📚 Topic: Income Inequality (收入不均)</span></div>
+            <div class="meta-item"><span>⭐ Difficulty: ★★★☆☆</span></div>
+            <div class="meta-item"><span>🔑 Key: Gini Coefficient (堅尼系數)</span></div>
+        </div>
+    </header>
+
+    <!-- QUESTION SECTION -->
+    <div class="section">
+        <div class="section-title">The Question (題目)</div>
+        <div class="question-box">
+            <p>下表顯示某經濟中按行業分類的堅尼系數。</p>
+            <p class="en-text">The table below shows the Gini coefficients by industry of an economy.</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>行業 / Industry</th>
+                        <th>堅尼系數 / Gini coefficient</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>住宿及膳食服務<br><span class="en-text">Accommodation and food services</span></td>
+                        <td>0.34</td>
+                    </tr>
+                    <tr>
+                        <td>金融及保險<br><span class="en-text">Finance and insurance</span></td>
+                        <td>0.51</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>下列哪些是上述堅尼系數差異的可能解釋？</p>
+            <p class="en-text">Which of the following are possible explanations for the above difference in the Gini coefficient?</p>
+
+            <ol style="list-style-type: decimal;">
+                <li>
+                    住宿及膳食服務業工人的薪金較金融及保險業專才的低。
+                    <span class="en-text">The salaries of workers in the accommodation and food services industry are lower than that of professionals in the finance and insurance industry.</span>
+                </li>
+                <li>
+                    與金融及保險業專才相比，住宿及膳食服務業工人之間的人力資本水平傾向較同質。
+                    <span class="en-text">Compared to professionals in the finance and insurance industry, the levels of human capital tend to be more homogeneous among workers in the accommodation and food services industry.</span>
+                </li>
+                <li>
+                    金融及保險業專才的付酬方式多為底薪加佣金，而住宿及膳食服務業工人的付酬方式多為以時計薪。
+                    <span class="en-text">The wage payment method for professionals in the finance and insurance industry is mostly basic salary plus commission while that for workers in the accommodation and food services industry is mostly time rate.</span>
+                </li>
+            </ol>
+
+            <p>
+                A. 只有 (1)、(2) <span class="en-text">(1) and (2) only</span><br>
+                B. 只有 (1)、(3) <span class="en-text">(1) and (3) only</span><br>
+                C. 只有 (2)、(3) <span class="en-text">(2) and (3) only</span><br>
+                D. (1)、(2) 及 (3) <span class="en-text">(1), (2) and (3)</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- CONCEPT REVIEW -->
+    <div class="section">
+        <div class="section-title">Concept Review (概念重溫)</div>
+        <div class="concept-box">
+            <p><span class="concept-term">堅尼系數 (Gini Coefficient):</span></p>
+            <p>
+                是用來量度收入分配不平均程度的指標。數值介乎 0 與 1 之間。
+                <br>
+                \( \text{數值愈大} \rightarrow \text{收入愈不平均 (貧富懸殊愈嚴重)} \)
+                <br>
+                \( \text{數值愈小} \rightarrow \text{收入愈平均} \)
+            </p>
+            <p class="en-text">
+                A measure of income inequality. The value ranges from 0 to 1.
+                <br>
+                Higher value \(\rightarrow\) More unequal income distribution.
+                <br>
+                Lower value \(\rightarrow\) More equal income distribution.
+            </p>
+            
+            <hr style="border-top: 1px dashed #bfdbfe; margin: 15px 0;">
+
+            <p><span class="concept-term">關鍵概念 (Key Concept):</span></p>
+            <p>
+                題目比較的是兩個<strong>行業內部 (Intra-industry)</strong> 的收入分佈，而不是兩個行業<strong>之間 (Inter-industry)</strong> 的平均收入水平。
+            </p>
+            <p class="en-text">
+                The question compares the income distribution <strong>within</strong> each industry, not the average income level <strong>between</strong> the two industries.
+            </p>
+        </div>
+    </div>
+
+    <!-- ANSWER & ANALYSIS -->
+    <div class="section">
+        <div class="section-title">Answer & Detailed Analysis (答案與詳細分析)</div>
+        
+        <div style="font-size: 1.2rem; margin-bottom: 20px;">
+            <strong>正確答案 Correct Answer: <span style="color: var(--primary-color);">C</span></strong>
+        </div>
+
+        <!-- Option 1 Analysis -->
+        <div class="option-analysis incorrect-option">
+            <div class="tag tag-incorrect">錯誤 Incorrect</div>
+            <strong>選項 (1) 分析 Analysis of Option (1)</strong>
+            <p>
+                <strong>陳述：</strong>住宿業薪金 < 金融業薪金。
+                <br>
+                <strong>解釋：</strong>這解釋了為何兩個行業的<strong>平均收入</strong>不同，但不能解釋為何行業<strong>內部</strong>的收入分佈不均。
+                <br>
+                即使住宿業所有人薪金都很低（例如每人月薪 $10,000），如果大家都賺一樣的錢，堅尼系數就是 0。收入水平的高低與堅尼系數無直接關係。
+            </p>
+            <p class="en-text">
+                <strong>Statement:</strong> Accommodation salaries < Finance salaries.
+                <br>
+                <strong>Explanation:</strong> This explains the difference in <strong>average income</strong> between industries, but not the inequality <strong>within</strong> the industry.
+                <br>
+                Even if everyone in the accommodation sector earns a low salary (e.g., $10,000 each), if they all earn the same amount, the Gini coefficient is 0. The <em>level</em> of income is not directly related to the Gini coefficient.
+            </p>
+        </div>
+
+        <!-- Option 2 Analysis -->
+        <div class="option-analysis correct-option">
+            <div class="tag tag-correct">正確 Correct</div>
+            <strong>選項 (2) 分析 Analysis of Option (2)</strong>
+            <p>
+                <strong>陳述：</strong>住宿業人力資本較同質 (Homogeneous)。
+                <br>
+                <strong>解釋：</strong>「同質」指工人的技能、教育水平和生產力相近。如果工人的生產力相近，他們的工資差異就會較小，導致較低的堅尼系數 (0.34)。
+                <br>
+                相反，金融業包括櫃員（低薪）和投資銀行家（極高薪），人力資本差異大（異質），導致收入差距大，堅尼系數較高 (0.51)。
+            </p>
+            <p class="en-text">
+                <strong>Statement:</strong> Accommodation human capital is more homogeneous.
+                <br>
+                <strong>Explanation:</strong> "Homogeneous" means workers have similar skills, education, and productivity. If productivity is similar, wage differences will be small, leading to a lower Gini coefficient (0.34).
+                <br>
+                Conversely, Finance includes tellers (low pay) and investment bankers (very high pay). The large difference in human capital (heterogeneous) leads to a large income gap and a higher Gini coefficient (0.51).
+            </p>
+        </div>
+
+        <!-- Option 3 Analysis -->
+        <div class="option-analysis correct-option">
+            <div class="tag tag-correct">正確 Correct</div>
+            <strong>選項 (3) 分析 Analysis of Option (3)</strong>
+            <p>
+                <strong>陳述：</strong>金融業多佣金制，住宿業多計時制。
+                <br>
+                <strong>解釋：</strong>
+                <ul>
+                    <li><strong>計時制 (Time rate):</strong> 工資通常較固定，差異較小 \(\rightarrow\) 低堅尼系數。</li>
+                    <li><strong>佣金制 (Commission):</strong> 收入取決於表現。表現好的專才收入極高，表現一般的收入較低。這種「表現掛鉤」的制度會拉大高收入與低收入者的距離 \(\rightarrow\) 高堅尼系數。</li>
+                </ul>
+            </p>
+            <p class="en-text">
+                <strong>Statement:</strong> Finance uses commission; Accommodation uses time rate.
+                <br>
+                <strong>Explanation:</strong>
+                <ul>
+                    <li><strong>Time rate:</strong> Wages are generally fixed and standard, leading to small differences \(\rightarrow\) Low Gini.</li>
+                    <li><strong>Commission:</strong> Income depends on performance. Top performers earn significantly more than average performers. This performance-based system widens the gap between high and low earners \(\rightarrow\) High Gini.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <!-- PROBLEM DECOMPOSITION -->
+    <div class="section">
+        <div class="section-title">Problem Decomposition (題目拆解)</div>
+        <div class="decomposition-box">
+            <p><strong>💡 解題關鍵 (Pivot Point):</strong></p>
+            <p>
+                必須分清楚<strong>「收入水平 (Income Level)」</strong>與<strong>「收入分佈 (Income Distribution)」</strong>的分別。
+            </p>
+            <p class="en-text">
+                You must distinguish between <strong>"Income Level"</strong> and <strong>"Income Distribution"</strong>.
+            </p>
+            <ul>
+                <li>堅尼系數只關心「差距」(Gap/Spread)。</li>
+                <li>選項 (1) 談論的是「誰比較富有」，這是干擾項 (Distractor)。</li>
+                <li>選項 (2) 和 (3) 談論的是「為何同一行業內有人賺得多、有人賺得少」，這才是解釋堅尼系數的關鍵。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- STUDENT Q&A -->
+    <div class="section">
+        <div class="section-title">Student Q&A (學生常見疑問)</div>
+        
+        <div class="qa-item">
+            <p class="qa-q">Q: 為什麼薪金高 (選項 1) 不會導致堅尼系數高？有錢人的世界不是通常比較不公平嗎？</p>
+            <p>
+                <strong>A:</strong> 不一定。想像一個只有百萬富翁的俱樂部，如果每個人都剛好擁有 100 萬，雖然他們很有錢，但他們之間是「絕對平等」的 (堅尼系數 = 0)。
+                <br>
+                題目中的數據是「行業堅尼系數」。如果金融業每個人都賺很多錢，而且賺的錢都差不多，堅尼系數會很低。金融業堅尼系數高，是因為<strong>行業內</strong>有極高薪的高層，也有普通薪水的文員，差距被拉大了。
+            </p>
+            <p class="en-text">
+                <strong>Q: Why doesn't high salary (Option 1) lead to a high Gini coefficient? Isn't a rich society usually more unequal?</strong>
+                <br>
+                <strong>A:</strong> Not necessarily. Imagine a club of millionaires. If everyone has exactly 1 million, they are "perfectly equal" (Gini = 0), despite being rich.
+                <br>
+                The question asks about "Industry Gini". If everyone in Finance earned a lot, and roughly the same amount, the Gini would be low. The Finance Gini is high because there is a huge gap <strong>within</strong> the industry (e.g., between CEOs and clerks).
+            </p>
+        </div>
+    </div>
+
+    <!-- EXAM TRICKS -->
+    <div class="section">
+        <div class="section-title">Exam Tricks (考試技巧)</div>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 10px;">
+                ✅ <strong>看到「同質 (Homogeneous)」：</strong> 聯想到 \(\rightarrow\) 替代性高 \(\rightarrow\) 收入差異小 \(\rightarrow\) 堅尼系數低。
+            </li>
+            <li style="margin-bottom: 10px;">
+                ✅ <strong>看到「佣金 / 分紅 (Commission / Profit-sharing)」：</strong> 聯想到 \(\rightarrow\) 收入波動大 \(\rightarrow\) 收入差異大 \(\rightarrow\) 堅尼系數高。
+            </li>
+            <li>
+                🚫 <strong>看到「平均收入高低」：</strong> 通常與堅尼系數無直接因果關係，小心是陷阱！
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

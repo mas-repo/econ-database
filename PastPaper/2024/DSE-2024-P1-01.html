@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Royal Blue */
+            --secondary: #475569; /* Slate Grey */
+            --accent: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --success: #10b981;
+            --danger: #ef4444;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .badge {
+            background-color: #eff6ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .lang-section {
+            margin-bottom: 15px;
+        }
+
+        .lang-label {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #f0f9ff; /* Light Blue */
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .concept-title {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.incorrect {
+            border-color: var(--danger);
+            background-color: #fef2f2;
+        }
+
+        .status-icon {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Decomposition & Q&A */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 5px;
+        }
+
+        .qa-item {
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Utility */
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .bilingual-text p {
+            margin-bottom: 0.5em;
+        }
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Opportunity Cost (機會成本)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Keywords: Highest-valued option forgone, Interest vs Rent</span>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <div class="question-box">
+        <div class="lang-section">
+            <span class="lang-label">Chinese Version</span>
+            <p>陳先生居住在自己擁有的住宅單位，該單位價值$8 000 000。他可以出售該單位，並將所得的$8 000 000存入銀行，以年利率5%來收取利息。他亦可以將該單位出租， 每月收取租金$25 000。</p>
+            <p>根據上述資料，下列哪些陳述是正確的？</p>
+            <ol style="list-style-type: decimal; margin-left: 20px;">
+                <li>當陳先生的住宅單位的市值上升時，他居住在自己擁有的住宅單位的機會成本不會受影響。</li>
+                <li>當存款利率上升時，陳先生居住在自己擁有的住宅單位的機會成本會上升。</li>
+                <li>當陳先生的住宅單位的租值上升時，他居住在自己擁有的住宅單位的機會成本可能上升。</li>
+            </ol>
+            <p>A. 只有 (1)、(2)<br>B. 只有 (1)、(3)<br>C. 只有 (2)、(3)<br>D. (1)、(2) 及 (3)</p>
+        </div>
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 20px 0;">
+        <div class="lang-section">
+            <span class="lang-label">English Version</span>
+            <p>Mr Chan lives in his own apartment which is worth $8 000 000. He can sell the apartment and deposit the $8 000 000 in a bank at an interest rate of 5% per year. He can also rent out the apartment at $25 000 a month.</p>
+            <p>Based on the above information, which of the following statements are correct?</p>
+            <ol style="list-style-type: decimal; margin-left: 20px;">
+                <li>When the market value of his apartment increases, the opportunity cost for Mr Chan to live in his own apartment will not be affected.</li>
+                <li>When the deposit interest rate increases, the opportunity cost for Mr Chan to live in his own apartment will increase.</li>
+                <li>When the rental value of his apartment increases, the opportunity cost for Mr Chan to live in his own apartment may increase.</li>
+            </ol>
+            <p>A. (1) and (2) only<br>B. (1) and (3) only<br>C. (2) and (3) only<br>D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Concept Review (概念重溫)
+        </div>
+        
+        <div class="bilingual-text">
+            <p><strong>機會成本 (Opportunity Cost):</strong> 被放棄的選擇中，價值最高者。</p>
+            <p class="en-text"><strong>Opportunity Cost:</strong> The value of the highest-valued option forgone.</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 10px; border-radius: 6px; margin: 10px 0; border: 1px solid #bfdbfe;">
+            $$ \text{Cost} = \max(\text{Option A}, \text{Option B}, \dots) $$
+        </div>
+
+        <div class="bilingual-text">
+            <p>在本題中，陳先生選擇「自住」。他放棄了兩個主要選擇：</p>
+            <ol>
+                <li><strong>出租 (Rent out):</strong> 收取租金收入。</li>
+                <li><strong>出售並存款 (Sell and Deposit):</strong> 收取利息收入。</li>
+            </ol>
+            <p>因此，自住的機會成本 = <strong>最高者 (Max)</strong> { 租金收入, 利息收入 }。</p>
+            <p class="en-text">In this question, Mr. Chan chooses to "Live in". He forgoes two main options: (1) Renting it out, or (2) Selling and depositing the money. Therefore, the Opportunity Cost = <strong>Max</strong> { Rental Income, Interest Income }.</p>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="analysis-section">
+        <h2 class="section-title">The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div style="background-color: #ecfdf5; padding: 15px; border-radius: 8px; border: 1px solid #10b981; margin-bottom: 20px;">
+            <strong>Correct Option: C</strong> (只有 (2)、(3) / (2) and (3) only)
+        </div>
+
+        <div class="bilingual-text" style="margin-bottom: 20px;">
+            <p><strong>第一步：計算現有的放棄價值 (Step 1: Calculate current forgone values)</strong></p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>
+                    <strong>選項 A (租金 Rent):</strong> \( \$25,000 \times 12 = \$300,000 \) / year
+                </li>
+                <li>
+                    <strong>選項 B (利息 Interest):</strong> \( \$8,000,000 \times 5\% = \$400,000 \) / year
+                </li>
+            </ul>
+            <p>
+                因為 \( \$400,000 > \$300,000 \)，目前的機會成本是<strong>利息收入 ($400,000)</strong>。
+            </p>
+            <p class="en-text">
+                Since \( \$400,000 > \$300,000 \), the current opportunity cost is the <strong>Interest Income ($400,000)</strong>.
+            </p>
+        </div>
+
+        <!-- Analysis of Statement 1 -->
+        <div class="option-analysis incorrect">
+            <div class="status-icon" style="color: var(--danger)">✗</div>
+            <strong>陳述 (1) 分析 / Statement (1) Analysis</strong>
+            <div class="bilingual-text" style="margin-top: 10px;">
+                <p><strong>錯。</strong>當住宅市值上升，出售單位所得的金額增加，因此利息收入（本金 \(\times\) 利率）也會增加。</p>
+                <p>由於利息收入（$400,000）原本已經是最高的放棄價值，當它進一步上升時，機會成本必然上升。所以「不會受影響」是錯誤的。</p>
+                <p class="en-text"><strong>Incorrect.</strong> When the market value rises, the proceeds from selling the apartment increase, so the interest income (Principal \(\times\) Rate) also increases. Since Interest Income ($400,000) was already the highest forgone value, as it increases further, the opportunity cost must increase. Thus, saying it "will not be affected" is wrong.</p>
+            </div>
+        </div>
+
+        <!-- Analysis of Statement 2 -->
+        <div class="option-analysis correct">
+            <div class="status-icon" style="color: var(--success)">✓</div>
+            <strong>陳述 (2) 分析 / Statement (2) Analysis</strong>
+            <div class="bilingual-text" style="margin-top: 10px;">
+                <p><strong>正確。</strong>當存款利率上升（例如由 5% 升至 6%），利息收入會增加（\( > \$400,000 \)）。</p>
+                <p>因為利息收入是當前最高的放棄價值，它的數值上升直接導致機會成本上升。</p>
+                <p class="en-text"><strong>Correct.</strong> When the deposit interest rate increases (e.g., from 5% to 6%), the interest income increases (\( > \$400,000 \)). Since interest income is currently the highest forgone value, an increase in its value directly causes the opportunity cost to increase.</p>
+            </div>
+        </div>
+
+        <!-- Analysis of Statement 3 -->
+        <div class="option-analysis correct">
+            <div class="status-icon" style="color: var(--success)">✓</div>
+            <strong>陳述 (3) 分析 / Statement (3) Analysis</strong>
+            <div class="bilingual-text" style="margin-top: 10px;">
+                <p><strong>正確。</strong>題目使用了「可能」(may) 這個字眼。</p>
+                <p>目前租金是 $300,000（低於利息）。</p>
+                <ul>
+                    <li>情況 A：如果租金微升至 $350,000，最高放棄價值仍是利息 ($400,000)，成本<strong>不變</strong>。</li>
+                    <li>情況 B：如果租金大升至 $500,000，它會超越利息，成為最高放棄價值，成本<strong>上升</strong>。</li>
+                </ul>
+                <p>因為存在情況 B，所以說「可能上升」是正確的。</p>
+                <p class="en-text"><strong>Correct.</strong> The question uses the word "may". Currently, rent is $300,000 (lower than interest).
+                <br>- Case A: If rent rises slightly to $350,000, the highest forgone value is still Interest ($400,000), so cost is <strong>unchanged</strong>.
+                <br>- Case B: If rent rises significantly to $500,000, it surpasses Interest, becoming the highest forgone value, so cost <strong>increases</strong>.
+                <br>Since Case B is possible, stating it "may increase" is correct.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section-title">Problem Decomposition (題目拆解)</div>
+    <div class="bilingual-text">
+        <p><strong>關鍵點 (Pivot Point):</strong> 必須先統一單位並進行數值比較。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> You must first unify the units and compare the numerical values.</p>
+        <p>很多學生只看文字邏輯，忽略了數字。這題的關鍵在於：</p>
+        <ol>
+            <li>將租金換算成年收入：\( \$25,000 \times 12 = \$300,000 \)。</li>
+            <li>計算潛在利息收入：\( \$8,000,000 \times 5\% = \$400,000 \)。</li>
+            <li>確認 <strong>利息 > 租金 (Interest > Rent)</strong>。</li>
+        </ol>
+        <p>一旦確立了「利息是最高價值」，所有選項的分析都必須基於這個事實。</p>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section-title">Student Q&A (學生常見疑問)</div>
+    
+    <div class="qa-item">
+        <div class="question-text">Q: 為什麼計算機會成本時，不把租金和利息加起來 ($300,000 + $400,000)？</div>
+        <div class="bilingual-text">
+            <p>A: 因為你不能同時擁有這兩個選項。如果你賣了房子賺取利息，你就失去了房子的擁有權，自然不能再把它出租。這兩個選項是<strong>互相排斥 (Mutually Exclusive)</strong> 的。機會成本只計算「最高」的那一個。</p>
+            <p class="en-text">A: Because you cannot have both options simultaneously. If you sell the house to earn interest, you lose ownership of the house and naturally cannot rent it out. These two options are <strong>mutually exclusive</strong>. Opportunity cost only counts the "highest" one.</p>
+        </div>
+    </div>
+
+    <div class="qa-item">
+        <div class="question-text">Q: 如果題目沒有給具體數字，答案會變嗎？</div>
+        <div class="bilingual-text">
+            <p>A: 會變。如果沒有數字，我們不知道利息高還是租金高。那麼陳述 (1) 和 (2) 就會變成「可能」上升（因為如果原本租金才是最高，利息變動未必影響成本）。但因為這題給了數字，我們確定利息較高，所以答案是確定的。</p>
+            <p class="en-text">A: Yes. Without numbers, we wouldn't know if Interest or Rent is higher. Then Statements (1) and (2) would become "may" increase (because if Rent was originally higher, changes in Interest might not affect the cost). But since numbers are provided, we know Interest is higher, so the answer is definite.</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div style="background-color: #fffbeb; border: 1px solid #fcd34d; padding: 15px; border-radius: 8px; margin-top: 30px;">
+        <h3 style="margin-top: 0; color: #b45309;">⚡ Exam Trick: "May" vs "Must" (考試技巧：可能 vs 必然)</h3>
+        <p>在經濟學 MC 題中，留意助動詞：</p>
+        <ul style="margin-bottom: 0;">
+            <li><strong>"Must" (必然/會):</strong> 需要在<strong>所有</strong>情況下都成立才算正確。</li>
+            <li><strong>"May" (可能):</strong> 只要存在<strong>最少一個</strong>情況成立，就算正確。</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #78350f;">
+            在本題陳述 (3)，只要你能想到一個租金大升導致成本改變的情境，該選項就是正確的。
+            <br>
+            In Statement (3), as long as you can imagine <em>one</em> scenario where a huge rent hike changes the cost, the option is correct.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

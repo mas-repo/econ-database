@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: Inflation & Wealth Redistribution</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-bg: #eff6ff; /* Light Blue Background */
+            --correct-color: #16a34a; /* Green */
+            --wrong-color: #dc2626; /* Red */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background-color: #e5e7eb;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: #d97706; /* Amber */
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .options li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .options li:hover {
+            background-color: #f9fafb;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Answer Analysis */
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #dcfce7;
+            border-radius: var(--border-radius);
+            display: inline-block;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .status-correct { color: var(--correct-color); font-weight: bold; }
+        .status-wrong { color: var(--wrong-color); font-weight: bold; }
+
+        /* Bilingual Text Styling */
+        .zh {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+        .en {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* Decomposition & Tricks */
+        .pivot-point {
+            background-color: #fffbeb; /* Yellow tint */
+            padding: 15px;
+            border-left: 5px solid #f59e0b;
+            border-radius: var(--border-radius);
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 10px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>Topic: Inflation & Redistribution of Wealth<br><span style="font-size: 0.8em;">課題：通脹與財富再分配</span></h1>
+        <div class="meta-tags">
+            <span class="tag difficulty">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Unexpected Inflation (非預期通脹)</span>
+            <span class="tag">Real Value of Debt (債務實質價值)</span>
+            <span class="tag">Fisher Equation (費雪方程式)</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question">
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p class="zh">美國政府已累積的債務金額非常龐大，在2011年約為14萬億美元。若美國出現非預期通脹，下列哪類人士／機構最有可能從中得益？</p>
+            <p class="en">The US government has accumulated a huge amount of debt, about US$14 trillion in 2011. If there is unexpected inflation in the US, which of the following parties will most likely gain?</p>
+            
+            <ul class="options">
+                <li>A. <span class="zh">在聯繫匯率制度下，持有港元現金的香港居民</span> <br> <span class="en">Hong Kong residents holding cash in Hong Kong dollars under the linked exchange rate system</span></li>
+                <li>B. <span class="zh">持有定期存款的美國國民</span> <br> <span class="en">US citizens holding time deposits</span></li>
+                <li>C. <span class="zh">持有大量美國國庫債券的國家，如中國及日本</span> <br> <span class="en">Countries holding a large amount of US government bonds, like China and Japan</span></li>
+                <li>D. <span class="zh">美國政府</span> <br> <span class="en">The US government</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section class="concepts">
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p class="zh">要解答此題，我們必須理解<strong>非預期通脹 (Unexpected Inflation)</strong> 如何影響借貸雙方。</p>
+            <p class="en">To solve this, we must understand how <strong>Unexpected Inflation</strong> affects borrowers and lenders.</p>
+
+            <h3>1. 購買力下降 (Drop in Purchasing Power)</h3>
+            <p class="zh">通脹意味著貨幣的購買力下降。今天的一元在明天能買到的東西變少了。</p>
+            <p class="en">Inflation means the purchasing power of money drops. A dollar today buys less tomorrow.</p>
+
+            <h3>2. 費雪方程式 (The Fisher Equation)</h3>
+            <div class="math-block">
+                $$ r = R - \pi $$
+            </div>
+            <p class="zh">其中 \(r\) 是實質利率，\(R\) 是名義利率，\(\pi\) 是通脹率。</p>
+            <p class="en">Where \(r\) is the Real Interest Rate, \(R\) is the Nominal Interest Rate, and \(\pi\) is the Inflation Rate.</p>
+            
+            <p class="zh">當出現<strong>非預期通脹</strong>（實際通脹率 > 預期通脹率）時，名義利率 \(R\)（通常在借貸合約中已固定）未能及時調整。因此，<strong>實質利率 \(r\) 會下降</strong>。</p>
+            <p class="en">When <strong>unexpected inflation</strong> occurs (Actual Inflation > Expected Inflation), the Nominal Interest Rate \(R\) (usually fixed in loan contracts) cannot adjust in time. Therefore, the <strong>Real Interest Rate \(r\) falls</strong>.</p>
+
+            <h3>3. 誰是贏家？誰是輸家？ (Winners and Losers)</h3>
+            <ul>
+                <li><strong><span style="color:var(--correct-color)">贏家 (Winners):</span> 債務人 (Debtors/Borrowers)</strong>
+                    <br><span class="en">They pay back money that is worth <em>less</em> than when they borrowed it. 他們償還的貨幣價值比借入時<em>低</em>。</span>
+                </li>
+                <li><strong><span style="color:var(--wrong-color)">輸家 (Losers):</span> 債權人 (Creditors/Lenders) & 現金持有者</strong>
+                    <br><span class="en">They receive money that has <em>less</em> purchasing power. 他們收回的貨幣購買力<em>下降</em>。</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section class="analysis">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">Correct Option: D</div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option A</span> <span class="status-wrong">WRONG (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>在聯繫匯率制度下，港元與美元掛鉤。如果美元出現通脹（貶值），港元的購買力亦會隨之下降。持有現金（資產）的人，其財富的實質價值會因通脹而減少，因此他們是受損者。</p>
+            <p class="en"><strong>Analysis:</strong> Under the Linked Exchange Rate System, HKD is pegged to USD. If USD experiences inflation (depreciation), the purchasing power of HKD also drops. People holding cash (an asset) see the real value of their wealth decrease due to inflation, making them losers.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option B</span> <span class="status-wrong">WRONG (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>定期存款通常有固定的名義利率。當非預期通脹發生時，存款的實質回報（實質利率）會下降。存款者收到的利息購買力不如預期，因此他們是受損者。</p>
+            <p class="en"><strong>Analysis:</strong> Time deposits usually have fixed nominal interest rates. When unexpected inflation occurs, the real return (real interest rate) on deposits falls. The interest received buys less than expected, making depositors losers.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option C</span> <span class="status-wrong">WRONG (錯誤)</span>
+            <p class="zh"><strong>分析：</strong>持有美國國庫債券的國家（如中國及日本）是<strong>債權人 (Creditors)</strong>。他們借錢給美國政府。通脹發生後，美國政府償還的美元「縮水」了（購買力下降），導致債權人收回的實質價值減少。</p>
+            <p class="en"><strong>Analysis:</strong> Countries holding US government bonds (like China and Japan) are <strong>Creditors</strong>. They lent money to the US government. With inflation, the dollars paid back by the US government "shrink" in value (lower purchasing power), reducing the real value received by the creditors.</p>
+        </div>
+
+        <div class="analysis-item">
+            <span class="option-label">Option D</span> <span class="status-correct">CORRECT (正確)</span>
+            <p class="zh"><strong>分析：</strong>題目指出美國政府累積了龐大債務，這表示美國政府是<strong>債務人 (Debtor)</strong>。在非預期通脹下，債務的實質價值 (Real value of debt) 下降。政府可以用「貶值了的錢」來償還之前的債務，變相減輕了債務負擔。</p>
+            <p class="en"><strong>Analysis:</strong> The question states the US government has accumulated huge debt, meaning the US government is the <strong>Debtor</strong>. Under unexpected inflation, the real value of debt decreases. The government can pay back previous debts with "depreciated money," effectively reducing its debt burden.</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section class="decomposition">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="pivot-point">
+            <h3>🔑 Pivot Point (解題關鍵)</h3>
+            <p class="zh">這道題的核心在於分辨<strong>誰是借錢的人 (Debtor)</strong>，誰是<strong>借出錢的人 (Creditor)</strong>。</p>
+            <p class="en">The core of this question is to distinguish <strong>who is the Borrower (Debtor)</strong> and <strong>who is the Lender (Creditor)</strong>.</p>
+            <p class="zh">題目第一句已經給了最大的提示：「美國政府已累積...債務」。這直接定義了美國政府的角色。</p>
+            <p class="en">The first sentence gives the biggest hint: "The US government has accumulated... debt". This directly defines the role of the US government.</p>
+        </div>
+        
+        <h3>Distractors (干擾資訊)</h3>
+        <ul>
+            <li><span class="zh"><strong>「14萬億美元」與「2011年」：</strong> 這些具體數字和年份並不影響經濟邏輯。無論債務是1元還是14萬億，通脹對債務人的影響方向是一樣的。</span>
+            <br><span class="en"><strong>"US$14 trillion" and "2011":</strong> These specific numbers and dates do not affect the economic logic. Whether the debt is $1 or $14 trillion, the direction of inflation's impact on the debtor is the same.</span></li>
+        </ul>
+    </section>
+
+    <!-- 6. Student Q&A -->
+    <section class="qa">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-box">
+            <p class="qa-q">Q: 為什麼選項 A 的香港居民也會受損？題目不是說美國通脹嗎？</p>
+            <p class="zh"><strong>A:</strong> 這是因為<strong>聯繫匯率制度 (Linked Exchange Rate System)</strong>。港元與美元掛鉤，如果美元因通脹而大幅貶值，港元相對於其他貨幣或實質商品也會面臨貶值壓力（或輸入性通脹）。持有現金（沒有利息回報）在通脹環境下，購買力必然受損。</p>
+            <p class="en"><strong>Q: Why do Hong Kong residents in Option A also lose? Doesn't the question say inflation is in the US?</strong><br>
+            <strong>A:</strong> This is due to the <strong>Linked Exchange Rate System</strong>. HKD is pegged to USD. If USD depreciates significantly due to inflation, HKD also faces depreciation pressure (or imported inflation) relative to other currencies or real goods. Holding cash (which earns no interest) inevitably leads to a loss of purchasing power in an inflationary environment.</p>
+        </div>
+
+        <div class="qa-box">
+            <p class="qa-q">Q: 如果通脹是「預期之內」的，結果會一樣嗎？</p>
+            <p class="zh"><strong>A:</strong> 不一樣。如果是<strong>預期通脹 (Expected Inflation)</strong>，債權人（如銀行或債券持有者）會要求更高的名義利率來補償通脹帶來的損失。這樣實質利率可能保持不變，財富再分配的效果就不會那麼明顯。</p>
+            <p class="en"><strong>Q: If the inflation was "expected", would the result be the same?</strong><br>
+            <strong>A:</strong> No. If it is <strong>Expected Inflation</strong>, creditors (like banks or bondholders) would demand a higher nominal interest rate to compensate for the loss caused by inflation. In this case, the real interest rate might remain unchanged, and the wealth redistribution effect would be minimal.</p>
+        </div>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section class="tricks">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="concept-box" style="background-color: #fff7ed; border-left-color: #f97316;">
+            <h3>⚡ The "Inflation Identity" Shortcut</h3>
+            <p class="zh">遇到「非預期通脹」題目，只需記住這口訣：</p>
+            <p class="en">When facing "Unexpected Inflation" questions, just remember this mnemonic:</p>
+            
+            <ul style="font-weight: bold; font-size: 1.1em;">
+                <li>Inflation helps Borrowers (通脹幫借款人) → IB</li>
+                <li>Inflation hurts Lenders (通脹害貸款人) → IL</li>
+            </ul>
+            
+            <p class="zh"><strong>應用：</strong> 題目問誰得益 (Gain)？ → 找借款人 (Borrower)。<br>看選項：A (持現金), B (存款), C (債券持有者) 都是資產持有者/借出者。只有 D (政府欠債) 是借款人。秒選 D。</p>
+            <p class="en"><strong>Application:</strong> Question asks who gains? → Find the Borrower.<br>Look at options: A (Cash holder), B (Depositor), C (Bondholder) are all asset holders/lenders. Only D (Gov with debt) is the Borrower. Pick D instantly.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
