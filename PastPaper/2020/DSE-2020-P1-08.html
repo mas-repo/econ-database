@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Law of Diminishing Marginal Returns</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #eff6ff; /* Light Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+        }
+
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f3f4f6;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-top: 15px;
+        }
+
+        .option-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+        }
+
+        .option-item.correct {
+            background-color: #ecfdf5;
+            border-color: var(--correct-color);
+        }
+
+        .option-item.wrong {
+            background-color: #fef2f2;
+            border-color: #fca5a5;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            display: block;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 5px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Analysis</h1>
+        <div>
+            <span class="tag">Topic: Production (Short Run)</span>
+            <span class="tag">主題：生產（短期）</span>
+        </div>
+        <p style="margin-top: 10px;">
+            <strong>Difficulty / 難度:</strong> <span class="difficulty">★★★☆☆ (3.5/5)</span><br>
+            <strong>Key Concepts / 關鍵概念:</strong> Law of Diminishing Marginal Returns (邊際回報遞減定律), Average Product (平均產量), Marginal Product (邊際產量)
+        </p>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question / 題目</h2>
+        <div class="bilingual-text">
+            <span class="zh">下表顯示某廠商的生產計劃。該廠商只採用兩種要素，即勞力和機器。</span>
+            <span class="en">The following table shows the production plan of a firm which employs two factors only, namely labour and machinery.</span>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>機器 (單位)<br>Machinery (units)</th>
+                        <th>勞力 (單位)<br>Labour (units)</th>
+                        <th>勞力的平均產量 (單位)<br>Average product of labour (units)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>4</td><td>1</td><td>20</td></tr>
+                    <tr><td>4</td><td>2</td><td>21</td></tr>
+                    <tr><td>4</td><td>3</td><td>22</td></tr>
+                    <tr><td>4</td><td>4</td><td>X</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bilingual-text">
+            <span class="zh">若上述資料說明邊際回報遞減定律，X的值 _________。</span>
+            <span class="en">If the above data illustrate the law of diminishing marginal returns, the value of X _________.</span>
+        </div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 可以是 23 / can be 23</li>
+            <li>B. 可以小於 22 / can be smaller than 22</li>
+            <li>C. 必然大於 22 / must be larger than 22</li>
+            <li>D. 必然小於 22 / must be smaller than 22</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>Concept Review / 概念重溫</h2>
+        
+        <div class="bilingual-text">
+            <span class="zh"><strong>1. 邊際回報遞減定律 (Law of Diminishing Marginal Returns):</strong><br>
+            在短期內，當可變要素（如勞力）不斷增加到固定要素（如機器）時，邊際產量 (MP) 最終會下降。</span>
+            <span class="en"><strong>1. Law of Diminishing Marginal Returns:</strong><br>
+            In the short run, as variable factors (e.g., labour) are continuously added to fixed factors (e.g., machinery), the Marginal Product (MP) will eventually decrease.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <span class="zh"><strong>2. 重要公式 (Key Formulas):</strong></span>
+            <span class="en">To solve this, we must convert Average Product (AP) to Total Product (TP), and then to Marginal Product (MP).</span>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Total Product (TP)} = \text{AP} \times \text{Labour (L)} $$
+            $$ \text{Marginal Product (MP)}_n = \text{TP}_n - \text{TP}_{n-1} $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-section">
+        <h2>Answer & Detailed Analysis / 答案與詳細分析</h2>
+        
+        <div class="option-item correct">
+            <strong>Correct Answer: Option B</strong>
+        </div>
+
+        <h3>Step 1: Calculate Total Product (TP) and Marginal Product (MP) / 計算總產量與邊際產量</h3>
+        <p>
+            <span class="zh">我們不能只看平均產量 (AP)，必須計算出邊際產量 (MP) 才能應用定律。</span>
+            <span class="en">We cannot rely solely on Average Product (AP); we must calculate Marginal Product (MP) to apply the law.</span>
+        </p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>L</th>
+                        <th>AP (Given)</th>
+                        <th>TP (\(AP \times L\))</th>
+                        <th>MP (\(TP_n - TP_{n-1}\))</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>\(20 \times 1 = 20\)</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>21</td>
+                        <td>\(21 \times 2 = 42\)</td>
+                        <td>\(42 - 20 = 22\)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>22</td>
+                        <td>\(22 \times 3 = 66\)</td>
+                        <td>\(66 - 42 = \mathbf{24}\)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>X</td>
+                        <td>\(X \times 4 = 4X\)</td>
+                        <td>\(4X - 66\)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Step 2: Apply the Law / 應用定律</h3>
+        <div class="bilingual-text">
+            <span class="zh">題目指出資料「說明」(illustrate) 了邊際回報遞減定律。觀察上表，MP 從 22 上升到 24。為了在第 4 單位「說明」此定律，MP 必須開始下降。</span>
+            <span class="en">The question states the data "illustrate" the law. Observing the table, MP rises from 22 to 24. To "illustrate" the law at the 4th unit, MP must start to fall.</span>
+        </div>
+
+        <div class="math-block">
+            $$ MP_4 < MP_3 $$
+            $$ 4X - 66 < 24 $$
+            $$ 4X < 90 $$
+            $$ X < 22.5 $$
+        </div>
+
+        <div class="bilingual-text">
+            <span class="zh"><strong>結論：</strong> 只要 \(X < 22.5\)，邊際回報遞減定律就成立。</span>
+            <span class="en"><strong>Conclusion:</strong> As long as \(X < 22.5\), the Law of Diminishing Marginal Returns holds.</span>
+        </div>
+
+        <h3>Step 3: Evaluate Options / 評估選項</h3>
+        
+        <div class="option-analysis">
+            <div class="option-item wrong">
+                <strong>A. Can be 23 / 可以是 23</strong><br>
+                <span class="zh">錯誤。23 大於 22.5。如果 X=23，MP 會變成 \(4(23)-66 = 26\)，MP 仍在上升 (24 -> 26)。</span>
+                <span class="en">Incorrect. 23 is greater than 22.5. If X=23, MP becomes \(4(23)-66 = 26\), meaning MP is still rising (24 -> 26).</span>
+            </div>
+
+            <div class="option-item correct">
+                <strong>B. Can be smaller than 22 / 可以小於 22</strong><br>
+                <span class="zh">正確。因為 \(X\) 必須小於 22.5，所以它「可以」是 21、20 等數值（這些都小於 22）。這是一個可能的陳述。</span>
+                <span class="en">Correct. Since \(X\) must be less than 22.5, it "can" be values like 21 or 20 (which are smaller than 22). This is a valid possibility.</span>
+            </div>
+
+            <div class="option-item wrong">
+                <strong>C. Must be larger than 22 / 必然大於 22</strong><br>
+                <span class="zh">錯誤。X 可以是 21（滿足 \(X < 22.5\)），所以不必大於 22。</span>
+                <span class="en">Incorrect. X could be 21 (which satisfies \(X < 22.5\)), so it doesn't have to be larger than 22.</span>
+            </div>
+
+            <div class="option-item wrong">
+                <strong>D. Must be smaller than 22 / 必然小於 22</strong><br>
+                <span class="zh">錯誤。X 可以是 22.4（滿足 \(X < 22.5\)），但 22.4 並不小於 22。</span>
+                <span class="en">Incorrect. X could be 22.4 (which satisfies \(X < 22.5\)), but 22.4 is not smaller than 22.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #f0fdf4; border-left-color: #10b981;">
+        <h2>Problem Decomposition / 題目拆解</h2>
+        <div class="bilingual-text">
+            <span class="zh"><strong>關鍵轉折點 (The Pivot Point):</strong> 學生必須意識到題目給的是 AP，但定律關於 MP。</span>
+            <span class="en"><strong>The Pivot Point:</strong> Students must realize the data provides AP, but the law is about MP.</span>
+        </div>
+        <ul>
+            <li>
+                <span class="zh"><strong>陷阱數據:</strong> 看到 AP 上升 (20, 21, 22)，直覺可能認為 X 也要上升或下降，但這與 MP 的轉折點不同步。</span>
+                <span class="en"><strong>Distractor Data:</strong> Seeing AP rise (20, 21, 22) might lead to intuition about X rising or falling, but AP trends do not perfectly sync with MP turning points.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>邏輯檢查:</strong> 題目問的是「X 的值」，但其實是在問「MP 下跌的條件」。</span>
+                <span class="en"><strong>Logic Check:</strong> The question asks for "the value of X", but it is mathematically asking for "the condition where MP falls".</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="question-box">
+        <h2>Student Q&A / 學生常見疑問</h2>
+        
+        <p><strong>Q: Why isn't the answer "Must be smaller than 22" (Option D)? / 為什麼答案不是「必然小於 22」(選項 D)？</strong></p>
+        <p>
+            <span class="zh"><strong>A:</strong> 這是數學邏輯問題。我們計算出的條件是 \(X < 22.5\)。這意味著 X 可以是 22.1, 22.2, 22.3 等等。這些數字都<strong>大於</strong> 22。因此，我們不能說 X <strong>必然(Must)</strong> 小於 22。</span>
+            <span class="en"><strong>A:</strong> This is a logic issue. Our calculated condition is \(X < 22.5\). This means X could be 22.1, 22.2, 22.3, etc. These numbers are <strong>larger</strong> than 22. Therefore, we cannot say X <strong>must</strong> be smaller than 22.</span>
+        </p>
+
+        <p><strong>Q: Does "illustrate the law" mean MP must fall immediately? / 「說明定律」是指 MP 必須立刻下降嗎？</strong></p>
+        <p>
+            <span class="zh"><strong>A:</strong> 是的。在這個表格的語境下，如果 MP 繼續上升（例如 MP=26），那麼這組數據就顯示了「邊際回報遞增」，而不是遞減。要讓這組數據符合定律，MP 必須在最後一個數據點顯示下降。</span>
+            <span class="en"><strong>A:</strong> Yes. In the context of this table, if MP continued to rise (e.g., MP=26), the data would illustrate "increasing marginal returns". For the data to fit the law, MP must show a decrease at the final data point provided.</span>
+        </p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="tips-box">
+        <h3>⚡ Exam Tricks & Shortcuts / 考試技巧與速解</h3>
+        <div class="bilingual-text">
+            <span class="zh"><strong>AP 與 MP 的關係速記：</strong></span>
+            <span class="en"><strong>AP vs MP Relationship Shortcut:</strong></span>
+        </div>
+        <ul>
+            <li>
+                <span class="zh">當 AP 上升時，MP 必定大於 AP (MP > AP)。</span>
+                <span class="en">When AP is rising, MP must be greater than AP (MP > AP).</span>
+            </li>
+            <li>
+                <span class="zh">在 L=3 時，AP=22 且正在上升，所以 MP (24) > AP (22)。這是合理的。</span>
+                <span class="en">At L=3, AP=22 and rising, so MP (24) > AP (22). This checks out.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>速解思路：</strong> 如果 X=22 (AP持平)，MP 會等於 AP (即 MP=22)。從 24 跌到 22，符合定律！所以 X=22 是可能的。既然 X=22 可能，選項 D (必然小於22) 和 C (必然大於22) 立刻刪除。剩下 A 和 B，稍微計算一下即可。</span>
+                <span class="en"><strong>Quick Logic:</strong> If X=22 (AP is constant), then MP equals AP (MP=22). Falling from 24 to 22 fits the law! So X=22 is possible. Since X=22 is possible, Option D (Must be < 22) and C (Must be > 22) are eliminated immediately. Left with A and B, a quick calc confirms B.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

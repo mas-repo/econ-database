@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Functions of Price</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Royal Blue */
+            --secondary: #1e40af; /* Darker Blue */
+            --accent: #f59e0b; /* Amber */
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --error: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .meta-info { margin-top: 10px; font-size: 0.9rem; opacity: 0.9; }
+        .stars { color: var(--accent); letter-spacing: 2px; }
+
+        /* Section Styling */
+        section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-left: 5px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .price-table {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px auto;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: left;
+        }
+        .price-table th { background-color: #f1f5f9; }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Answer Options */
+        .option {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .option.correct {
+            background-color: #ecfdf5;
+            border-color: var(--success);
+            border-width: 2px;
+        }
+
+        .option.incorrect {
+            background-color: #fef2f2;
+            border-color: var(--error);
+            opacity: 0.8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .badge-correct { background-color: var(--success); color: white; }
+        .badge-wrong { background-color: var(--error); color: white; }
+
+        /* Bilingual Styling */
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+            font-style: italic;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <strong>Topic:</strong> Functions of Price (價格的功能)<br>
+            <strong>Difficulty:</strong> <span class="stars">★★★☆☆</span> (3/5)<br>
+            <strong>Key Concepts:</strong> Rationing Function (配給功能), Allocative Function (分配功能), Scarcity (稀少性)
+        </div>
+    </header>
+
+    <!-- 1. The Question -->
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>[Traditional Chinese]</strong><br>
+            在2021年，一個香港的YouTube頻道「試當真Trial & Error」舉辦首個現場表演。以下是門票價格的安排。<br>
+            票價在每天上午10時調整。</p>
+            
+            <table class="price-table">
+                <tr><th>日期</th><th>票價</th></tr>
+                <tr><td>8月9日</td><td>$10 000</td></tr>
+                <tr><td>8月10日</td><td>$ 5 000</td></tr>
+                <tr><td>...</td><td>...</td></tr>
+                <tr><td>8月31日</td><td>$20</td></tr>
+                <tr><td>9月1日及以後</td><td>$10</td></tr>
+            </table>
+
+            <p>上述個案說明了價格的 __________ 功能，因為 _______________。</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>A. 分配 …… 更多資源可以分配到該表演的製作</li>
+                <li>B. 分配 …… 這安排可以確保門票沽清</li>
+                <li>C. 配給 …… 這些門票售予最高價值的買家</li>
+                <li>D. 配給 …… 這些門票是以先到先得的準則分派</li>
+            </ul>
+
+            <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+
+            <p><strong>[English]</strong><br>
+            In 2021, Trial & Error, a Hong Kong YouTube channel, held its first live show. The following was the pricing arrangement of its tickets.<br>
+            Ticket price adjusts daily at 10am.</p>
+
+            <table class="price-table">
+                <tr><th>Date</th><th>Ticket Price</th></tr>
+                <tr><td>9 August</td><td>$10 000</td></tr>
+                <tr><td>10 August</td><td>$ 5 000</td></tr>
+                <tr><td>...</td><td>...</td></tr>
+                <tr><td>31 August</td><td>$20</td></tr>
+                <tr><td>1 Sept onwards</td><td>$10</td></tr>
+            </table>
+
+            <p>The above case illustrates the __________ function of price because _______________.</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>A. allocative …… more resources can be allocated to the production of the show</li>
+                <li>B. allocative …… the arrangement can guarantee a sell-out of the tickets</li>
+                <li>C. rationing …… the tickets are sold to the highest-valued buyers</li>
+                <li>D. rationing …… the tickets are distributed on a first-come, first-served basis</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 2. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>1. 稀少性與競爭 (Scarcity & Competition)</h3>
+            <p>由於資源稀少，我們必須決定誰能獲得物品。這就是<strong>競爭</strong>。我們需要一個準則來決定勝負。</p>
+            <span class="lang-en">Due to scarcity, we must decide who gets the goods. This implies <strong>competition</strong>. A criterion is needed to determine the winners.</span>
+
+            <h3>2. 價格的配給功能 (Rationing Function of Price)</h3>
+            <p><strong>定義：</strong>價格作為一個準則，將有限的商品分配給對該商品<strong>估值最高</strong>（願意並有能力支付最高價格）的消費者。</p>
+            <span class="lang-en"><strong>Definition:</strong> Price serves as a criterion to distribute limited goods to consumers who have the <strong>highest valuation</strong> (willing and able to pay the highest price) for the good.</span>
+            <div class="math-block">
+                \( \text{Role: Distributing output (Who gets it?)} \)
+            </div>
+
+            <h3>3. 價格的分配功能 (Allocative Function of Price)</h3>
+            <p><strong>定義：</strong>價格引導資源流向需求最高的生產用途。當某產品價格上升，利潤增加，生產商會投入更多資源（如勞力、土地）去生產該產品。</p>
+            <span class="lang-en"><strong>Definition:</strong> Price guides resources to their most highly valued uses in production. When the price of a product rises, profits increase, signaling producers to allocate more resources (labor, land) to produce it.</span>
+            <div class="math-block">
+                \( \text{Role: Guiding resource allocation (What/How to produce?)} \)
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Answer & Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="option correct">
+            <span class="badge badge-correct">Correct Answer</span> <strong>Option C / 選項 C</strong>
+        </div>
+
+        <h3>詳細拆解 (Step-by-Step Breakdown)</h3>
+
+        <div class="option correct">
+            <strong>C. 配給 …… 這些門票售予最高價值的買家<br>
+            (Rationing …… the tickets are sold to the highest-valued buyers)</strong>
+            <p><strong>正確原因：</strong> 題目中的機制是「荷蘭式拍賣」(Dutch Auction) 的變奏。價格由高位 ($10,000) 開始下降。誰會第一時間用 $10,000 買票？就是那些認為門票價值高於或等於 $10,000 的超級粉絲。價格在此充當了篩選工具，將有限的門票「配給」給那些願意支付最高價格的人。</p>
+            <span class="lang-en"><strong>Why Correct:</strong> The mechanism is a variation of a "Dutch Auction." Prices start high ($10,000) and drop. Who buys at $10,000 immediately? Superfans who value the ticket at or above $10,000. Price acts as a screening device, "rationing" the limited tickets to those willing to pay the highest price.</span>
+        </div>
+
+        <div class="option incorrect">
+            <strong>A. 分配 …… 更多資源可以分配到該表演的製作<br>
+            (Allocative …… more resources can be allocated to the production of the show)</strong>
+            <p><strong>錯誤原因：</strong> 分配功能是指引導資源（如勞工、場地）去<strong>生產</strong>。題目討論的是門票（製成品）如何賣給觀眾，屬於消費層面的分配，即「配給」。而且，表演已經籌備好，門票正在發售，短期內很難因為票價高而突然增加「製作資源」。</p>
+            <span class="lang-en"><strong>Why Wrong:</strong> The allocative function refers to guiding resources (labor, venue) into <strong>production</strong>. The question discusses how existing tickets (finished goods) are sold to the audience, which is "rationing" at the consumption level. Also, the show is already organized; high ticket prices during the sale don't immediately pump more resources into the production.</span>
+        </div>
+
+        <div class="option incorrect">
+            <strong>B. 分配 …… 這安排可以確保門票沽清<br>
+            (Allocative …… the arrangement can guarantee a sell-out of the tickets)</strong>
+            <p><strong>錯誤原因：</strong> 「沽清」並不是分配功能的定義。即使價格降到 $10，如果表演極不受歡迎，也未必能沽清。此外，這仍然是在描述產品的銷售（配給），而非資源的流向。</p>
+            <span class="lang-en"><strong>Why Wrong:</strong> "Selling out" is not the definition of the allocative function. Even if the price drops to $10, a sell-out isn't guaranteed if the show is unpopular. Furthermore, this still describes the sale of the product (rationing), not the flow of resources.</span>
+        </div>
+
+        <div class="option incorrect">
+            <strong>D. 配給 …… 這些門票是以先到先得的準則分派<br>
+            (Rationing …… the tickets are distributed on a first-come, first-served basis)</strong>
+            <p><strong>錯誤原因：</strong> 這是一個巨大的陷阱！雖然買票有時間先後（8月9日先買），但決定你能不能在8月9日買到的關鍵是<strong>你是否願意支付 $10,000</strong>。如果是純粹的「先到先得」(非價格競爭)，票價應該是固定的（例如全部 $500），然後大家排隊，排前面的先得。這裡是以「願付價格」作為主要準則。</p>
+            <span class="lang-en"><strong>Why Wrong:</strong> This is a major trap! Although there is a time element (buying on Aug 9th), the key factor determining if you get a ticket on Aug 9th is <strong>your willingness to pay $10,000</strong>. If it were purely "first-come, first-served" (non-price competition), the price would likely be fixed (e.g., all at $500), and ownership would be determined by queue position. Here, "willingness to pay" is the primary criterion.</span>
+        </div>
+    </section>
+
+    <!-- 4. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這類題目通常包含兩個關鍵步驟：</p>
+        <ol>
+            <li>
+                <strong>識別功能 (Identify the Function):</strong> 
+                <br>題目涉及的是「資源投入生產」(Input) 還是「製成品分發給消費者」(Output)？
+                <br><em>本題：門票賣給誰 $\rightarrow$ Output $\rightarrow$ <strong>配給功能 (Rationing)</strong>。</em>
+            </li>
+            <li>
+                <strong>識別準則 (Identify the Criterion):</strong>
+                <br>是用什麼方法來決定誰獲得物品？是排隊（時間）？抽籤（運氣）？還是出價（金錢）？
+                <br><em>本題：隨時間降價 $\rightarrow$ 高價者先買 $\rightarrow$ <strong>價高者得 (Highest-valued)</strong>。</em>
+            </li>
+        </ol>
+        
+        <div class="concept-box" style="background-color: #fff7ed; border-color: #f97316;">
+            <strong>💡 關鍵點 (Pivot Point):</strong> 
+            不要被「日期」迷惑。雖然價格隨日期變動，但該機制的核心是<strong>價格歧視 (Price Discrimination)</strong>，目的是榨取消費者的消費者盈餘 (Consumer Surplus)，讓願意出高價的人先買。
+            <br>
+            <span class="lang-en"><strong>Pivot Point:</strong> Don't be misled by the "dates." Although price changes with dates, the core of the mechanism is <strong>Price Discrimination</strong>, aiming to extract Consumer Surplus by letting those willing to pay high prices buy first.</span>
+        </div>
+    </section>
+
+    <!-- 5. Student Q&A -->
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        
+        <div style="margin-bottom: 15px;">
+            <p><strong>Q: 為什麼不是「先到先得」？8月9日買的人確實比8月31日的人「先」得到門票啊？</strong></p>
+            <p><strong>A:</strong> 在經濟學上，「先到先得」通常指<strong>非價格競爭 (Non-price competition)</strong>。例如：免費派發口罩，大家排隊，排在前面的人拿到。
+            <br>但在這個題目中，8月9日的人之所以能買到，是因為他<strong>願意支付 $10,000</strong>。如果他排第一但只願付 $500，他也不能在8月9日買到。所以，決定性的準則是<strong>價格</strong>，而非單純的<strong>時間</strong>。</p>
+            <span class="lang-en"><strong>Q: Why isn't it "first-come, first-served"? People buying on Aug 9th do get tickets "before" those on Aug 31st.</strong>
+            <br><strong>A:</strong> In Economics, "first-come, first-served" usually refers to <strong>non-price competition</strong>. E.g., Free masks distribution where people queue up. In this question, the person on Aug 9th gets the ticket because they are <strong>willing to pay $10,000</strong>. If they were first in line but only willing to pay $500, they couldn't buy it on Aug 9th. Thus, the decisive criterion is <strong>Price</strong>, not just <strong>Time</strong>.</span>
+        </div>
+
+        <div>
+            <p><strong>Q: 什麼情況下才是「分配功能」？</strong></p>
+            <p><strong>A:</strong> 如果題目說：「由於門票價格高企，主辦單位決定加開三場表演，並租用更大的場館。」這就是分配功能。因為價格信號吸引了更多資源（場館、人力）進入這個市場。</p>
+            <span class="lang-en"><strong>Q: When would it be the "Allocative Function"?</strong>
+            <br><strong>A:</strong> If the question said: "Due to high ticket prices, the organizer decided to add three more shows and rent a larger venue." That would be the allocative function, as the price signal attracted more resources (venue, labor) into this market.</span>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

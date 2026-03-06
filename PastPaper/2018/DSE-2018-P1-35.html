@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Question Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --correct-color: #16a34a; /* Green */
+            --wrong-color: #dc2626; /* Red */
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .header-item {
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+        }
+
+        .concept-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .analysis-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+        }
+
+        .option.correct {
+            background-color: #dcfce7;
+            border-color: #86efac;
+        }
+
+        .option.wrong {
+            background-color: #fee2e2;
+            border-color: #fca5a5;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: white;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        .eng-text {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .math-block {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .tips-box {
+            background-color: #f3f4f6;
+            border-left: 5px solid #6b7280;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Table */
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 0.8em;
+            }
+            th, td {
+                padding: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div class="header-item">Topic: Public Finance (Taxation) <br> <span class="eng-text">課題：公共財政（稅收）</span></div>
+        <div class="header-item">Difficulty: ★★★☆☆ <br> <span class="eng-text">難度：3/5</span></div>
+        <div class="header-item">Key Concepts: Progressive Tax, Standard Rate, Tax Bands <br> <span class="eng-text">關鍵概念：累進稅、標準稅率、稅階</span></div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>題目 (Question):</h3>
+        <p>假設本港的薪俸稅制有如下的改變：<br>
+        <span class="eng-text">Suppose the salaries tax system in Hong Kong has the following changes:</span></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">舊制 (Old System)</th>
+                    <th colspan="2">新制 (New System)</th>
+                </tr>
+                <tr>
+                    <th>應課稅入息<br><span class="eng-text">Net chargeable income</span></th>
+                    <th>稅率<br><span class="eng-text">Tax rate</span></th>
+                    <th>應課稅入息<br><span class="eng-text">Net chargeable income</span></th>
+                    <th>稅率<br><span class="eng-text">Tax rate</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>首 $50,000</td>
+                    <td>2%</td>
+                    <td>首 $60,000</td>
+                    <td>2%</td>
+                </tr>
+                <tr>
+                    <td>另 $50,000</td>
+                    <td>7%</td>
+                    <td>另 $60,000</td>
+                    <td>7%</td>
+                </tr>
+                <tr>
+                    <td>另 $50,000</td>
+                    <td>12%</td>
+                    <td>另 $60,000</td>
+                    <td>12%</td>
+                </tr>
+                <tr>
+                    <td>餘額 (Remainder)</td>
+                    <td>17%</td>
+                    <td>餘額 (Remainder)</td>
+                    <td>17%</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><strong>標準稅率 15% (Standard rate 15%)</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>若基本免稅額維持不變，下列哪項最有可能是上述稅制改變的結果？<br>
+        <span class="eng-text">If the basic tax allowance remains unchanged, which of the following is most likely to be a result of the above changes in the tax system?</span></p>
+
+        <ul>
+            <li>A. 更少人會跌入稅網。<br><span class="eng-text">Fewer people will fall into the tax net.</span></li>
+            <li>B. 更少人須繳付標準稅率。<br><span class="eng-text">Fewer people will have to pay at the standard tax rate.</span></li>
+            <li>C. 人們的工作意慾會減少。<br><span class="eng-text">People’s work incentive will decrease.</span></li>
+            <li>D. 消費支出會減少。<br><span class="eng-text">Consumption expenditure will decrease.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>概念重溫 (Concept Review)</h3>
+        
+        <p><strong>1. 應課稅入息 (Net Chargeable Income):</strong></p>
+        <div class="math-block">
+            $$ \text{應課稅入息} = \text{總入息} - \text{扣除項目} - \text{免稅額} $$
+            $$ \text{Net Chargeable Income} = \text{Total Income} - \text{Deductions} - \text{Allowances} $$
+        </div>
+
+        <p><strong>2. 薪俸稅計算機制 (Salaries Tax Mechanism):</strong></p>
+        <p>香港薪俸稅採用「累進稅率」(Progressive Rate) 與「標準稅率」(Standard Rate) 兩者中<strong>較低者</strong>為準。<br>
+        <span class="eng-text">Hong Kong Salaries Tax is charged at the <strong>lower</strong> of the "Progressive Rate" or the "Standard Rate".</span></p>
+        
+        <ul>
+            <li><strong>累進稅 (Progressive Tax):</strong> 入息越高，邊際稅率越高。稅階 (Tax Bands) 越闊，代表更多收入可以按較低稅率徵稅。<br>
+            <span class="eng-text">Higher income attracts a higher marginal tax rate. Wider tax bands mean more income is taxed at lower rates.</span></li>
+            <li><strong>標準稅率 (Standard Rate):</strong> 以固定稅率（如 15%）計算總入息（扣除後，不減免稅額）。這通常是高收入人士的稅務上限。<br>
+            <span class="eng-text">A fixed rate (e.g., 15%) applied to total income (after deductions, but before allowances). This acts as a tax ceiling for high-income earners.</span></li>
+        </ul>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-box">
+        <h3>答案與詳細分析 (Answer & Detailed Analysis)</h3>
+        <p><strong>正確答案 (Correct Answer): <span style="font-size: 1.2em;">B</span></strong></p>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 (Wrong)</span> <strong>A. 更少人會跌入稅網 (Fewer people will fall into the tax net)</strong>
+            <p><strong>分析：</strong>跌入稅網的定義是「收入高於免稅額」。題目明確指出「基本免稅額維持不變」(Basic tax allowance remains unchanged)。因此，原本不用交稅的人，現在依然不用交；原本要交稅的人，現在依然要交。門檻沒有改變。<br>
+            <span class="eng-text"><strong>Analysis:</strong> Falling into the tax net depends on having income higher than the tax allowance. The question states "basic tax allowance remains unchanged". Therefore, the entry threshold hasn't changed.</span></p>
+        </div>
+
+        <div class="option correct">
+            <span class="badge badge-correct">正確 (Correct)</span> <strong>B. 更少人須繳付標準稅率 (Fewer people will have to pay at the standard tax rate)</strong>
+            <p><strong>分析：</strong>這是題目的核心。
+            <br>1. <strong>稅階擴闊 (Widening Bands):</strong> 每個稅階由 $50,000 增加至 $60,000。這意味著納稅人在進入下一個更高稅率（如 2% 跳到 7%）之前，有更多收入是按低稅率計算的。
+            <br>2. <strong>累進稅負下降 (Lower Progressive Liability):</strong> 由於更多收入享受了低稅率，對於同一筆高收入，按累進稅計算出來的稅款會<strong>減少</strong>。
+            <br>3. <strong>標準稅率門檻 (Standard Rate Threshold):</strong> 納稅人只有在「累進稅款 > 標準稅款」時才繳付標準稅率。現在累進稅款變便宜了，要超過標準稅款（上限）變得更難，需要更高的收入才能觸發標準稅率機制。
+            <br><strong>結論：</strong>原本處於邊緣繳付標準稅率的人，現在會發現按累進稅計算更便宜，因此轉回繳付累進稅。<br>
+            <span class="eng-text"><strong>Analysis:</strong> 
+            <br>1. <strong>Widening Bands:</strong> Each band increased from $50k to $60k. More income is taxed at lower rates before hitting higher brackets.
+            <br>2. <strong>Lower Progressive Liability:</strong> For the same income, the tax calculated under the progressive system decreases.
+            <br>3. <strong>Standard Rate Threshold:</strong> People only pay the Standard Rate if "Progressive Tax > Standard Tax". Since the Progressive Tax calculation is now cheaper, it is harder to exceed the Standard Rate cap. You need a higher income to trigger the Standard Rate.
+            <br><strong>Conclusion:</strong> People who were marginally paying the Standard Rate will now find the Progressive Rate cheaper, so fewer people pay the Standard Rate.</span></p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 (Wrong)</span> <strong>C. 人們的工作意慾會減少 (People’s work incentive will decrease)</strong>
+            <p><strong>分析：</strong>稅階擴闊實際上是一種<strong>減稅</strong>措施（Tax Cut）。這會增加人們的稅後收入（可支配收入）。一般而言，較低的稅負會增加工作意慾（替代效應 > 收入效應），或者至少不會減少意慾。<br>
+            <span class="eng-text"><strong>Analysis:</strong> Widening tax bands is effectively a <strong>tax cut</strong>. This increases after-tax income (disposable income). Generally, a lower tax burden increases work incentive (Substitution Effect > Income Effect), or at least does not decrease it.</span></p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 (Wrong)</span> <strong>D. 消費支出會減少 (Consumption expenditure will decrease)</strong>
+            <p><strong>分析：</strong>如上所述，這是減稅。可支配收入上升 (Disposable Income \(\uparrow\))，通常會導致消費支出增加 (Consumption \(\uparrow\))，而非減少。<br>
+            <span class="eng-text"><strong>Analysis:</strong> As mentioned, this is a tax cut. Disposable income rises, which typically leads to an increase in consumption expenditure, not a decrease.</span></p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="tips-box">
+        <h3>題目拆解 (Problem Decomposition)</h3>
+        <p>這類題目考驗你對稅務系統運作機制的理解，而非繁複的計算。解題關鍵點 (Pivot Point) 在於：</p>
+        <ul>
+            <li><strong>關鍵變動 (Key Change):</strong> 稅階 (Tax Bands) 變闊了 ($50k \rightarrow $60k)。</li>
+            <li><strong>經濟含義 (Economic Meaning):</strong> 這是<strong>減稅 (Tax Cut)</strong>。對於絕大多數納稅人來說，稅務負擔減輕了。</li>
+            <li><strong>干擾項 (Distractors):</strong> 稅率 (2%, 7%...) 和標準稅率 (15%) 的數字本身沒有變，不要被這些數字迷惑。</li>
+        </ul>
+        <p><strong>邏輯鏈 (Logic Chain):</strong><br>
+        稅階闊 \(\rightarrow\) 更多收入按低稅率徵稅 \(\rightarrow\) 累進稅款減少 \(\rightarrow\) 難以觸及標準稅率上限 \(\rightarrow\) 繳付標準稅率人數減少。</p>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="concept-box" style="background-color: #f0f9ff; border-left-color: #0ea5e9;">
+        <h3>學生常見疑問 (Student Q&A)</h3>
+        
+        <p><strong>Q: 為什麼稅階闊了，繳付標準稅率的人會變少？我不明白兩者的關係。</strong><br>
+        <span class="eng-text">Why does widening tax bands mean fewer people pay the standard rate? I don't see the connection.</span></p>
+        
+        <p><strong>A:</strong> 想像標準稅率是一個「封頂位」(Ceiling)。<br>
+        累進稅就像是一條樓梯，讓你一步步往上爬去接近那個天花板。舊制樓梯比較陡峭（稅階窄），你很快就爬升到天花板的高度（稅款超過標準稅率），所以很多人撞到天花板（要交標準稅）。<br>
+        新制把樓梯變平緩了（稅階闊），你要走很遠的路、賺很多很多的錢，累進稅款才會高到撞到天花板。所以，原本剛好撞到天花板的人，現在因為樓梯平緩了，就不再撞到天花板了。<br>
+        <span class="eng-text">Imagine the Standard Rate is a "Ceiling". Progressive tax is a staircase leading up to it. The old staircase was steep (narrow bands), so you hit the ceiling quickly. The new staircase is flatter (wider bands), so you need to climb much higher (earn much more income) to hit the ceiling. People who were previously just hitting the ceiling are now below it.</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>
