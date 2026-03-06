@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Market Intervention Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-bg: #eff6ff;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--accent-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .meta-item { font-weight: bold; font-size: 0.95em; }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th { background-color: #f3f4f6; }
+
+        .concept-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .option-analysis.wrong {
+            border-left: 4px solid var(--wrong-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .pivot-point {
+            background-color: #e0e7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .math-block {
+            background: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.8em; }
+            th, td { padding: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <div class="meta-item">Topic: Market Intervention (市場干預)</div>
+            <div class="meta-item">Difficulty: ★★★☆☆</div>
+            <div class="meta-item">Key Concepts: Perfectly Inelastic Supply, Tax Burden, Price Ceiling</div>
+        </div>
+    </header>
+
+    <!-- Question Section -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <p><strong>參閱以下物品X的供需表。</strong><br>
+        <span class="en-text">Refer to the following market demand and supply schedules of Good X.</span></p>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>單位價格 ($)<br><span style="font-weight:normal">Unit price</span></th>
+                    <td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td>
+                </tr>
+                <tr>
+                    <th>需求量 (單位)<br><span style="font-weight:normal">Quantity demanded</span></th>
+                    <td>140</td><td>120</td><td>100</td><td>80</td><td>60</td><td>40</td>
+                </tr>
+                <tr>
+                    <th>供應量 (單位)<br><span style="font-weight:normal">Quantity supplied</span></th>
+                    <td>80</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td>
+                </tr>
+            </table>
+        </div>
+
+        <p><strong>下列哪項有關物品X市場的陳述是正確的？</strong><br>
+        <span class="en-text">Which of the following statements about the market of Good X is correct?</span></p>
+
+        <ul>
+            <li>A. 若價格上限設於$10，物品X的交易量會是140單位。<br>
+                <span class="en-text">If a price ceiling is set at $10, the quantity transacted of Good X will be 140 units.</span>
+            </li>
+            <li>B. 若生產配額設於40單位，物品X的價格及交易量會維持不變。<br>
+                <span class="en-text">If a production quota is set at 40 units, the price and quantity transacted of Good X will remain unchanged.</span>
+            </li>
+            <li>C. 若提供$5的從量補貼，物品X的均衡價格會下降至$20。<br>
+                <span class="en-text">If a per-unit subsidy of $5 is provided, the equilibrium price of Good X will decrease to $20.</span>
+            </li>
+            <li>D. 若徵收$5的從量稅，物品X的除稅後總收入會下降至$1600。<br>
+                <span class="en-text">If a per-unit tax of $5 is imposed, the net-of-tax revenue of Good X will decrease to $1600.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="bilingual-text">
+            <strong>1. 均衡點 (Equilibrium):</strong> 需求量等於供應量 (\(Q_d = Q_s\)) 的價格與數量。
+            <span class="en-text">The price and quantity where quantity demanded equals quantity supplied.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>2. 完全無彈性供應 (Perfectly Inelastic Supply):</strong> 當供應量固定不變（垂直的供應曲線），無論價格如何變動，供應量都維持在同一水平。
+            <span class="en-text">When quantity supplied is fixed (vertical supply curve). The quantity supplied remains the same regardless of price changes.</span>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>3. 交易量 (Quantity Transacted):</strong> 在不均衡市場中，交易量取決於較小的一方。
+            <span class="en-text">In a disequilibrium market, quantity transacted is determined by the smaller of \(Q_d\) or \(Q_s\).</span>
+            $$ Q_t = \min(Q_d, Q_s) $$
+        </div>
+
+        <div class="bilingual-text">
+            <strong>4. 除稅後總收入 (Net-of-tax Revenue):</strong> 廠商實際落袋的收入。
+            <span class="en-text">The revenue actually received by producers.</span>
+            $$ \text{Net Revenue} = (P_{\text{market}} - \text{Tax}) \times Q_t $$
+        </div>
+    </section>
+
+    <!-- Detailed Analysis -->
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <p><strong>Correct Option: <span style="color: var(--correct-color); font-size: 1.2em;">D</span></strong></p>
+
+        <!-- Initial Analysis -->
+        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <strong>初始狀態分析 (Initial State Analysis):</strong><br>
+            觀察表格，當價格為 $25 時，\(Q_d = 80\) 且 \(Q_s = 80\)。<br>
+            因此，均衡價格 (\(P_0\)) = $25，均衡數量 (\(Q_0\)) = 80。<br>
+            注意：供應量在所有價格下都是 80，這代表供應是<strong>完全無彈性 (Vertical Supply)</strong>。
+            <span class="en-text">Looking at the table, at price $25, \(Q_d = 80\) and \(Q_s = 80\).<br>
+            Thus, Equilibrium Price (\(P_0\)) = $25, Equilibrium Quantity (\(Q_0\)) = 80.<br>
+            Note: Quantity supplied is 80 at all prices, meaning Supply is <strong>Perfectly Inelastic</strong>.</span>
+        </div>
+
+        <!-- Option A -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option A</span> <strong>錯誤 (Incorrect)</strong>
+            <div class="bilingual-text">
+                價格上限設於 $10（低於均衡 $25），這是有效的上限。
+                在 $10 時，\(Q_d = 140\)，但 \(Q_s = 80\)。
+                交易量受限於較少的供應量，即 80 單位，而非 140 單位。
+            </div>
+            <span class="en-text">
+                A price ceiling at $10 (below equilibrium $25) is effective.
+                At $10, \(Q_d = 140\), but \(Q_s = 80\).
+                Quantity transacted is limited by the smaller quantity supplied, which is 80 units, not 140 units.
+            </span>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option B</span> <strong>錯誤 (Incorrect)</strong>
+            <div class="bilingual-text">
+                生產配額設於 40 單位（低於均衡 80），這是有效的配額。
+                供應量被限制在 40。根據需求表，當數量為 40 時，消費者願意支付的價格是 $35。
+                因此，價格會由 $25 上升至 $35，交易量由 80 下降至 40。並非「維持不變」。
+            </div>
+            <span class="en-text">
+                A production quota at 40 units (below equilibrium 80) is effective.
+                Quantity supplied is restricted to 40. According to the demand schedule, at quantity 40, consumers are willing to pay $35.
+                Therefore, price rises from $25 to $35, and quantity drops from 80 to 40. It does NOT "remain unchanged".
+            </span>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis wrong">
+            <span class="badge badge-wrong">Option C</span> <strong>錯誤 (Incorrect)</strong>
+            <div class="bilingual-text">
+                由於供應是完全無彈性（垂直線），供應數量固定在 80。
+                即使有補貼，供應量仍固定在 80。需求曲線沒有改變，因此在 \(Q=80\) 時，消費者願意支付的價格（市價）仍然是 $25。
+                補貼的利益完全由生產者獲得（生產者實收 $25 + 5 = $30）。均衡價格（消費者支付的價格）維持 $25，不會下降。
+            </div>
+            <span class="en-text">
+                Since supply is perfectly inelastic (vertical line), quantity is fixed at 80.
+                Even with a subsidy, quantity remains fixed at 80. The demand curve hasn't changed, so at \(Q=80\), the price consumers are willing to pay (market price) remains $25.
+                The full benefit of the subsidy goes to producers (Producers receive $25 + 5 = $30). Equilibrium price (paid by consumers) remains $25, it does not decrease.
+            </span>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis correct">
+            <span class="badge badge-correct">Option D</span> <strong>正確 (Correct)</strong>
+            <div class="bilingual-text">
+                同樣地，供應完全無彈性。徵稅後，供應曲線垂直向上移動（其實幾何上看起來沒變，因為還是垂直於 80）。
+                稅項負擔完全由供應者（缺乏彈性的一方）承擔。
+                <br>1. <strong>交易量</strong>：維持 80 單位。
+                <br>2. <strong>市價 (消費者支付)</strong>：維持 $25（因為 \(Q=80\) 時需求價格是 $25）。
+                <br>3. <strong>生產者實收價格</strong>：\( \$25 - \$5 (\text{Tax}) = \$20 \)。
+                <br>4. <strong>除稅後總收入</strong>：\( \$20 \times 80 = \$1600 \)。
+                <br>原收入為 \( \$25 \times 80 = \$2000 \)，確實下降至 $1600。
+            </div>
+            <span class="en-text">
+                Similarly, supply is perfectly inelastic. With a tax, the supply curve shifts vertically up (geometrically looks the same, vertical at 80).
+                The tax burden is fully borne by the supplier (the inelastic side).
+                <br>1. <strong>Quantity</strong>: Remains 80 units.
+                <br>2. <strong>Market Price (Paid by consumers)</strong>: Remains $25 (since demand price at \(Q=80\) is $25).
+                <br>3. <strong>Producer Net Price</strong>: \( \$25 - \$5 (\text{Tax}) = \$20 \).
+                <br>4. <strong>Net-of-tax Revenue</strong>: \( \$20 \times 80 = \$1600 \).
+                <br>Original revenue was \( \$25 \times 80 = \$2000 \), so it indeed decreases to $1600.
+            </span>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="pivot-point">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p><strong>關鍵點 (The Pivot Point):</strong><br>
+        這題的關鍵在於發現<strong>供應量 (Qs) 永遠是 80</strong>。這意味著供應曲線是一條垂直線（完全無彈性）。<br>
+        <span class="en-text">The crucial insight is noticing that <strong>Quantity Supplied (Qs) is always 80</strong>. This means the Supply Curve is a vertical line (Perfectly Inelastic).</span></p>
+
+        <p><strong>干擾資訊 (Distractors):</strong><br>
+        題目中 \(Q_d\) 的變化數字（140, 120...）主要是用來找出特定數量下的對應價格。在分析選項 C 和 D 時，如果不理解「垂直供應」的特性，很容易誤以為價格會像一般情況那樣上升或下降。<br>
+        <span class="en-text">The changing \(Q_d\) numbers (140, 120...) are mainly used to find the corresponding price for a specific quantity. Without understanding "Vertical Supply", one might wrongly assume price shifts normally in Options C and D.</span></p>
+    </section>
+
+    <!-- Student Q&A -->
+    <section>
+        <h3>Student Q&A (學生常見疑問)</h3>
+        
+        <div style="margin-bottom: 20px;">
+            <p><strong>Q: 為什麼徵稅後，市價（消費者支付的價格）沒有上升？通常徵稅不是會令價格變貴嗎？</strong><br>
+            <span class="en-text">Why didn't the market price (paid by consumers) rise after the tax? Doesn't tax usually make things more expensive?</span></p>
+            
+            <p><strong>A:</strong> 這是因為供應<strong>完全無彈性 (Perfectly Inelastic)</strong>。想像這些貨物是「易腐爛的海鮮」或是「土地」，賣家無論如何都要賣出這 80 單位。如果賣家想加價轉嫁稅項，消費者就會少買（需求定律），賣家就賣不出這 80 單位了。為了賣出所有存貨，賣家只能自行吸收所有稅項，維持市價不變。<br>
+            <span class="en-text">This is because supply is <strong>Perfectly Inelastic</strong>. Imagine the goods are "perishable seafood" or "land". The seller must sell these 80 units no matter what. If the seller tries to raise the price to pass on the tax, consumers will buy less (Law of Demand), and the seller won't clear the 80 units. To sell all stock, the seller must absorb the entire tax, keeping the market price unchanged.</span></p>
+        </div>
+    </section>
+
+    <!-- Exam Tricks -->
+    <section style="background-color: #fdf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #db2777;">
+        <h3>Exam Tricks (考試技巧)</h3>
+        <p><strong>垂直供應法則 (The Vertical Supply Rule):</strong></p>
+        <ul>
+            <li>當供應曲線垂直 (Vertical Supply) 時：
+                <ul>
+                    <li><strong>從量稅 (Unit Tax):</strong> 價格不變，數量不變，賣家承擔所有稅項。</li>
+                    <li><strong>從量補貼 (Unit Subsidy):</strong> 價格不變，數量不變，賣家獲得所有補貼。</li>
+                </ul>
+            </li>
+        </ul>
+        <p>看到表格中供應量數字全部一樣，立刻畫一條垂直線在腦海中，這題就解決了一半！<br>
+        <span class="en-text">When you see all quantity supplied numbers are the same in a table, immediately visualize a vertical line. Half the problem is solved!</span></p>
+    </section>
+
+</div>
+
+</body>
+</html>

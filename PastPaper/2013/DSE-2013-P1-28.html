@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Monetary Policy Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f8f9fa;
+            --concept-bg: #eef7fc;
+            --concept-border: #2980b9;
+            --correct-bg: #d4edda;
+            --correct-text: #155724;
+            --wrong-bg: #f8d7da;
+            --wrong-text: #721c24;
+            --highlight: #fff3cd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        .header-box {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+        }
+
+        .concept-section {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--correct-bg);
+            border-color: #c3e6cb;
+            color: var(--correct-text);
+        }
+
+        .option-analysis.wrong {
+            background-color: var(--bg-light); /* Neutral for wrong options explanation */
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .trap-box {
+            background-color: #fff5f5;
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .trap-title {
+            color: #cc0000;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qa-box {
+            background-color: #fdfdfe;
+            border: 1px solid #eef;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .math-block {
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #eee;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .meta-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="tag"><strong>Topic:</strong> Money & Banking / Macroeconomic Policies</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+            <span class="tag"><strong>Key Concepts:</strong> Monetary Policy, Fiscal Policy, Central Bank vs. Commercial Bank</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        
+        <div class="question-text">
+            <p>在下列哪種情況下，中國正採取擴張性貨幣政策？</p>
+            <span class="en-text">An expansionary monetary policy is adopted in China when</span>
+        </div>
+
+        <div class="options-list">
+            <p>(1) 財政部向農民提供現金補貼<br>
+            <span class="en-text">the Ministry of Finance provides cash subsidies to agricultural workers.</span></p>
+            
+            <p>(2) 中國人民銀行調低所有商業銀行的存款準備金率（即法定儲備比率）<br>
+            <span class="en-text">the People’s Bank of China reduces the required reserve ratio of all commercial banks.</span></p>
+            
+            <p>(3) 中國銀行減低對中小企業的借貸利率<br>
+            <span class="en-text">the Bank of China lowers its lending rate to small and medium-sized enterprises.</span></p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+        <div class="options-list">
+            <p>A. 只有 (1) only</p>
+            <p>B. 只有 (2) only</p>
+            <p>C. 只有 (3) only</p>
+            <p>D. (1), (2) 及 and (3)</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-section">
+        <h3>Concept Review (概念重溫)</h3>
+        
+        <p><strong>1. 貨幣政策 vs 財政政策 (Monetary Policy vs Fiscal Policy)</strong></p>
+        <ul>
+            <li>
+                <b>貨幣政策 (Monetary Policy):</b> 由<b>中央銀行</b>（在中國是中國人民銀行 PBOC）執行。通過控制貨幣供應 \(M_s\) 或利率 \(r\) 來影響經濟。
+                <span class="en-text">Implemented by the <b>Central Bank</b> (PBOC in China). Affects the economy by controlling Money Supply \(M_s\) or Interest Rates \(r\).</span>
+            </li>
+            <li>
+                <b>財政政策 (Fiscal Policy):</b> 由<b>政府部門</b>（如財政部）執行。涉及政府支出 \(G\) 和稅收 \(T\)。
+                <span class="en-text">Implemented by the <b>Government</b> (e.g., Ministry of Finance). Involves Government Spending \(G\) and Taxation \(T\).</span>
+            </li>
+        </ul>
+
+        <p><strong>2. 擴張性政策 (Expansionary Policy)</strong></p>
+        <p>
+            目標是增加總需求 (AD)。對於貨幣政策，這意味著增加貨幣供應或降低利率。
+            <span class="en-text">Aims to increase Aggregate Demand (AD). For monetary policy, this means increasing Money Supply or lowering interest rates.</span>
+        </p>
+
+        <p><strong>3. 法定儲備比率 (Required Reserve Ratio, RRR)</strong></p>
+        <p>
+            中央銀行規定商業銀行必須持有的儲備佔存款的最低比例。
+            <span class="en-text">The minimum percentage of deposits that commercial banks must hold as reserves, mandated by the Central Bank.</span>
+        </p>
+        <div class="math-block">
+            $$ \text{Max. Money Creation} = \frac{1}{\text{RRR}} \times \text{Reserves} $$
+        </div>
+        <p>
+            降低 RRR \(\rightarrow\) 銀行可借出更多資金 \(\rightarrow\) 貨幣供應上升。
+            <span class="en-text">Lowering RRR \(\rightarrow\) Banks can lend more \(\rightarrow\) Money Supply increases.</span>
+        </p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="analysis-section">
+        <h3>The Answer & Detailed Analysis (答案與詳細分析)</h3>
+        
+        <div class="option-analysis correct">
+            <h4>✅ Correct Option: B (只有 2 / (2) only)</h4>
+        </div>
+
+        <div class="option-analysis wrong">
+            <p><strong>(1) 財政部向農民提供現金補貼 (Ministry of Finance provides cash subsidies)</strong></p>
+            <p>❌ <b>錯誤 (Incorrect)</b></p>
+            <p>
+                這是政府支出（轉移支付）的增加，屬於<b>擴張性財政政策</b>，而非貨幣政策。關鍵在於執行機構是「財政部」。
+                <span class="en-text">This is an increase in government spending (transfer payments), which is <b>Expansionary Fiscal Policy</b>, not Monetary Policy. The key is the executing agency: "Ministry of Finance".</span>
+            </p>
+        </div>
+
+        <div class="option-analysis correct">
+            <p><strong>(2) 中國人民銀行調低法定儲備比率 (PBOC reduces RRR)</strong></p>
+            <p>✅ <b>正確 (Correct)</b></p>
+            <p>
+                中國人民銀行是中國的<b>中央銀行</b>。調低 RRR 會增加銀行體系的超額儲備，使銀行能創造更多信貸，增加貨幣供應。這是典型的擴張性貨幣政策。
+                <span class="en-text">The PBOC is China's <b>Central Bank</b>. Lowering the RRR increases excess reserves in the banking system, allowing banks to create more credit and increase the money supply. This is a classic Expansionary Monetary Policy.</span>
+            </p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <p><strong>(3) 中國銀行減低借貸利率 (Bank of China lowers lending rate)</strong></p>
+            <p>❌ <b>錯誤 (Incorrect)</b></p>
+            <p>
+                <b>中國銀行 (Bank of China)</b> 是一間<b>商業銀行</b>，不是中央銀行。商業銀行調整利率通常是商業決定或對市場/政策的反應，而不是「採取政策」本身。只有中央銀行的行動才被定義為貨幣政策。
+                <span class="en-text"><b>Bank of China</b> is a <b>Commercial Bank</b>, not the Central Bank. A commercial bank adjusting rates is a business decision or a reaction to market/policy, not the "adoption of policy" itself. Only the Central Bank's actions are defined as Monetary Policy.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-section" style="background-color: #fff8e1; border-color: #ffc107;">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p>To solve this, you need to identify the <b>Actor</b> (Who is doing it?) and the <b>Action</b> (What are they doing?).</p>
+        
+        <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+            <thead>
+                <tr style="background-color: #eee;">
+                    <th style="border: 1px solid #ddd; padding: 8px;">Scenario</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Actor (機構)</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Role (角色)</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Policy Type (政策類型)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">(1)</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Ministry of Finance<br>財政部</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Government<br>政府</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Fiscal<br>財政</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">(2)</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">PBOC<br>中國人民銀行</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><b>Central Bank<br>中央銀行</b></td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><b>Monetary<br>貨幣</b></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">(3)</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Bank of China<br>中國銀行</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Commercial Bank<br>商業銀行</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Business Decision<br>商業決定</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 15px;">
+            <b>Pivot Point (關鍵點):</b> Distinguish between the Central Bank (Policymaker) and Commercial Banks (Policy takers).
+        </p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="trap-box">
+        <div class="trap-title">
+            ⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)
+        </div>
+        <ul>
+            <li>
+                <b>Confusing Bank Names:</b> Students often confuse "Bank of China" (BOC - Commercial) with "People's Bank of China" (PBOC - Central). In HKDSE, names matter!
+                <br><span class="en-text">學生常混淆「中國銀行」（商業銀行）與「中國人民銀行」（中央銀行）。</span>
+            </li>
+            <li>
+                <b>Fiscal vs. Monetary:</b> Seeing "money" (cash subsidies) and assuming it's "monetary policy". Remember: If it involves government budget/spending, it's Fiscal. If it involves money supply/banking reserves, it's Monetary.
+                <br><span class="en-text">看到「現金」補貼就以為是「貨幣」政策。記住：涉及政府預算的是財政政策；涉及貨幣供應/銀行儲備的才是貨幣政策。</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-box">
+        <h3>Student Q&A (學生常見疑問)</h3>
+        
+        <p><b>Q: If the PBOC buys government bonds from the public, is that expansionary monetary policy?</b></p>
+        <p><b>A:</b> Yes! This is called <b>Open Market Operations (公開市場運作)</b>. Buying bonds injects money into the market, increasing the monetary base and money supply. This is another tool alongside the RRR.</p>
+        
+        <p><b>Q: Isn't Bank of China state-owned? Doesn't that make its actions government policy?</b></p>
+        <p><b>A:</b> While it is state-owned, in Economics (and HKDSE), we strictly classify institutions by their <i>function</i>. A commercial bank's function is to accept deposits and make loans for profit. The Central Bank's function is to manage the currency and money supply. We only count the Central Bank's actions as "Monetary Policy".</p>
+    </div>
+
+</div>
+
+</body>
+</html>
