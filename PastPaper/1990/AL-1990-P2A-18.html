@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Creation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-trap: #fef2f2; /* Light Red */
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .tag {
+            background-color: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .options li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Analysis Section */
+        .analysis-section h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .correct-option {
+            background-color: #d1fae5;
+            border: 1px solid var(--success);
+        }
+
+        .step-box {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        /* Traps & Q&A */
+        .trap-box {
+            background-color: var(--bg-trap);
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .qa-box {
+            background-color: #f0fdf4;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #bbf7d0;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: #166534;
+        }
+
+        /* Utility */
+        .bilingual-split {
+            margin-bottom: 10px;
+        }
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+        
+        .math-block {
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="tag">Topic: Money & Banking (貨幣與銀行)</span>
+            <span class="tag difficulty">Difficulty: ★★★☆☆</span>
+            <span class="tag">Keywords: Money Supply M1, Deposit Creation, Banking Multiplier</span>
+        </div>
+    </header>
+
+    <!-- Question -->
+    <div class="question-box">
+        <p><strong>題目 / Question:</strong></p>
+        <div class="bilingual-split">
+            某人存入$1 000至銀行系統。法定儲備比率是0.25。結果，最大創造的存款為_______________，而最大創造的貨幣供應為________________。
+            <span class="en-text">A person deposits $1 000 with the banking system. The required reserve ratio is 0.25. As a result of the deposit, the maximum amount of deposit created would be _______________ and the maximum amount of money supply created would be ____________.</span>
+        </div>
+
+        <ul class="options">
+            <li>A. $4 000；$4 000</li>
+            <li>B. $4 000；$3 000</li>
+            <li>C. $3 000；$4 000</li>
+            <li>D. $3 000；$3 000</li>
+        </ul>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="concept-box">
+        <div class="concept-title">💡 概念重溫 / Concept Review</div>
+        
+        <p><strong>1. 銀行乘數 (Banking Multiplier):</strong></p>
+        <div class="math-block">
+            $$ \text{Multiplier (乘數)} = \frac{1}{\text{Required Reserve Ratio (法定儲備比率)}} = \frac{1}{r} $$
+        </div>
+
+        <p><strong>2. 存款最大變動 (Max. Change in Deposits):</strong></p>
+        <div class="bilingual-split">
+            當現金存入銀行時，這筆錢成為「初始存款」。
+            <span class="en-text">When cash is deposited into a bank, this becomes the "Initial Deposit".</span>
+        </div>
+        <div class="math-block">
+            $$ \Delta \text{Deposits} = \text{Initial Deposit} \times \frac{1}{r} $$
+        </div>
+
+        <p><strong>3. 貨幣供應定義 (Money Supply Definition - M1):</strong></p>
+        <div class="math-block">
+            $$ M1 = C_p + D $$
+        </div>
+        <ul>
+            <li>\( C_p \): 公眾持有的現金 (Cash held by public)</li>
+            <li>\( D \): 客戶存款 (Customer Deposits)</li>
+        </ul>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="analysis-section">
+        <h3>✅ 答案與詳細分析 / Answer & Analysis</h3>
+        
+        <div class="option-analysis correct-option">
+            <p><strong>Correct Option: B</strong> ($4 000; $3 000)</p>
+        </div>
+
+        <div class="step-box">
+            <h4>步驟 1：計算最大存款創造 (Step 1: Calculate Max Deposit Created)</h4>
+            <p>
+                題目問的是「最大創造的存款」(Maximum amount of deposit created)。這通常指銀行體系內的<strong>存款總變動 (Total Change in Deposits)</strong>。
+                <br>
+                <span class="en-text">The question asks for the "maximum amount of deposit created". This refers to the <strong>Total Change in Deposits</strong> within the banking system.</span>
+            </p>
+            <p>
+                初始存款 (Initial Deposit) = $1,000<br>
+                法定儲備比率 (RRR) = 0.25
+            </p>
+            <div class="math-block">
+                $$ \Delta \text{Deposits} = \$1,000 \times \frac{1}{0.25} = \$1,000 \times 4 = \$4,000 $$
+            </div>
+            <p>
+                銀行體系最終會擁有 $4,000 的存款。由於最初這筆錢是現金（存款為0），所以存款增加了 $4,000。
+                <br>
+                <span class="en-text">The banking system will end up with $4,000 in deposits. Since the money was originally cash (deposits were 0), deposits increased by $4,000.</span>
+            </p>
+        </div>
+
+        <div class="step-box">
+            <h4>步驟 2：計算最大貨幣供應創造 (Step 2: Calculate Max Money Supply Created)</h4>
+            <p>
+                這是最關鍵的一步。貨幣供應 (M1) = 公眾持有現金 (\(C_p\)) + 存款 (\(D\))。
+                <br>
+                <span class="en-text">This is the critical step. Money Supply (M1) = Cash held by public (\(C_p\)) + Deposits (\(D\)).</span>
+            </p>
+            
+            <p><strong>變動分析 (Change Analysis):</strong></p>
+            <ul>
+                <li>
+                    <strong>\(\Delta C_p\) (現金變動):</strong> 市民把 $1,000 現金存入銀行，所以公眾手上的現金<strong>減少</strong>了 $1,000。
+                    <br><span class="en-text">The person deposited $1,000 cash into the bank, so cash held by the public <strong>decreased</strong> by $1,000.</span>
+                    <br> \(\Delta C_p = -\$1,000\)
+                </li>
+                <li>
+                    <strong>\(\Delta D\) (存款變動):</strong> 如步驟 1 計算，存款總額增加了 $4,000。
+                    <br><span class="en-text">As calculated in Step 1, total deposits increased by $4,000.</span>
+                    <br> \(\Delta D = +\$4,000\)
+                </li>
+            </ul>
+
+            <div class="math-block">
+                $$ \Delta M1 = \Delta C_p + \Delta D $$
+                $$ \Delta M1 = -\$1,000 + \$4,000 = +\$3,000 $$
+            </div>
+        </div>
+
+        <p><strong>結論 (Conclusion):</strong><br>
+        存款創造 = $4,000<br>
+        貨幣供應創造 = $3,000<br>
+        因此，答案是 <strong>B</strong>。</p>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="analysis-section">
+        <h3>🔍 題目拆解 / Problem Decomposition</h3>
+        <p>
+            這類題目的「決勝點」(Pivot Point) 在於分辨<strong>資金來源</strong>。
+            <br>
+            <span class="en-text">The "Pivot Point" of this question is identifying the <strong>source of funds</strong>.</span>
+        </p>
+        <ul>
+            <li>
+                <strong>情況 A：現金存入 (Cash Deposit)</strong><br>
+                如果題目說「某人存入現金」(A person deposits...)，這意味著現金從公眾手中消失，進入銀行。計算貨幣供應時，必須<strong>扣除</strong>這筆現金。
+                <br>
+                <span class="en-text">If the question implies a cash deposit, cash disappears from the public hands. You MUST <strong>subtract</strong> this cash when calculating the change in Money Supply.</span>
+            </li>
+            <li>
+                <strong>情況 B：央行注入 (Central Bank Injection)</strong><br>
+                如果題目說「中央銀行購買債券」(Central bank buys bonds...)，這筆錢是憑空創造的新錢，公眾沒有損失現金。那樣的話，\(\Delta MS = \Delta Deposits\)。
+                <br>
+                <span class="en-text">If the central bank injects money, the public didn't lose any cash. In that case, \(\Delta MS = \Delta Deposits\).</span>
+            </li>
+        </ul>
+        <p>本題屬於<strong>情況 A</strong>。</p>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="trap-box">
+        <div class="concept-title">⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</div>
+        <ul>
+            <li>
+                <strong>陷阱 1：忘記扣除現金 (Forgetting to subtract cash)</strong><br>
+                學生常誤以為貨幣供應增加量等於存款增加量 ($4,000)，從而誤選 A。記住：存款增加了，但你手上的現金減少了！
+                <br>
+                <span class="en-text">Students often mistakenly think the increase in Money Supply equals the increase in Deposits ($4,000), leading to Option A. Remember: Deposits went up, but the cash in your hand went down!</span>
+            </li>
+            <li>
+                <strong>陷阱 2：混淆「存款創造」與「信貸創造」 (Confusing Deposit Creation vs Credit Creation)</strong><br>
+                有時學生會計算「信貸創造」(Loans Created = $4,000 - $1,000 = $3,000) 並將其填入第一格。雖然邏輯上沒錯，但在 DSE 考試慣例中，「最大創造的存款」通常指<strong>最終存款總額 (Total Deposits)</strong>。
+                <br>
+                <span class="en-text">Sometimes students calculate "Credit Creation" (Loans = $3,000) for the first blank. While logically sound, in DSE convention, "Maximum deposit created" usually refers to the <strong>Total Deposits</strong> generated.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="qa-box">
+        <div class="concept-title">🙋 學生常見疑問 / Student Q&A</div>
+        
+        <div class="qa-item">
+            <div class="qa-q">Q: 為什麼「存款創造」不是 $3,000 (即是貸款額)？ (Why is "Deposit Created" not $3,000, i.e., the loan amount?)</div>
+            <p>A: 這是一個定義問題。銀行資產負債表上的「存款」一欄最終變成了 $4,000。雖然其中 $1,000 是原本的現金，但作為「存款」這個項目，它確實從 $0 變成了 $4,000。如果題目問「最大信貸創造」(Maximum credit creation)，答案才是 $3,000。</p>
+            <p class="en-text">A: This is a definition issue. The "Deposits" column on the bank's balance sheet ends up at $4,000. Even though $1,000 was the original cash, as a "Deposit" item, it went from $0 to $4,000. If the question asked for "Maximum credit creation", the answer would be $3,000.</p>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q: 如果題目沒有說「最大」(Maximum)，答案會不同嗎？ (If the question didn't say "Maximum", would the answer differ?)</div>
+            <p>A: 會的。如果銀行持有超額儲備 (Excess Reserves) 或者公眾持有現金流失 (Cash Leakage)，實際創造的存款會少於 $4,000。「最大」假設了銀行借出所有錢，且公眾不持有額外現金。</p>
+            <p class="en-text">A: Yes. If banks hold Excess Reserves or if there is Cash Leakage held by the public, the actual deposit created would be less than $4,000. "Maximum" assumes banks lend out everything and the public holds no extra cash.</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="analysis-section">
+        <h3>⚡ 考試技巧 / Exam Tricks</h3>
+        <p><strong>「減一法則」 (The "Minus One" Rule)</strong></p>
+        <p>
+            當題目涉及<strong>現金存入 (Cash Deposit)</strong> 時：
+        </p>
+        <ul>
+            <li>存款變動倍數 = \( \frac{1}{r} \) (這裡是 4倍)</li>
+            <li>貨幣供應變動倍數 = \( \frac{1}{r} - 1 \) (這裡是 3倍)</li>
+        </ul>
+        <p>
+            直接用 $1,000 乘以 3，即可秒殺第二部分答案 ($3,000)。
+            <br>
+            <span class="en-text">Multiply $1,000 directly by 3 to instantly get the answer for the second part ($3,000).</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
