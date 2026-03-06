@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Labour Market Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #475569; /* Slate Gray */
+            --accent-green: #10b981; /* Emerald */
+            --accent-red: #ef4444; /* Red */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #eff6ff; /* Light Blue */
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .formula {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #93c5fd;
+        }
+
+        /* Analysis Styles */
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+
+        .correct-answer {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Special Boxes */
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .trick-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--accent-green);
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .qa-box {
+            background-color: #fdf4ff; /* Light Purple */
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .data-table {
+                font-size: 0.8rem;
+            }
+            header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="meta-info">
+            <span class="badge">Topic: Factor Market (要素市場)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Keywords: Derived Demand, MRP, Nominal Income</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        
+        <p><strong>下表顯示有關兩個頂級足球聯賽的資料。</strong><br>
+        <span class="en-text">The following table shows the information about two top-tier football leagues.</span></p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">足球聯賽<br><span style="font-weight:normal; font-size:0.8em">Football league</span></th>
+                    <th colspan="2">球員的每年平均收入 (£)<br><span style="font-weight:normal; font-size:0.8em">Average annual income of the players (£)</span></th>
+                </tr>
+                <tr>
+                    <th>防守球員<br><span style="font-weight:normal; font-size:0.8em">Defensive players</span></th>
+                    <th>進攻球員<br><span style="font-weight:normal; font-size:0.8em">Attacking players</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>英格蘭 (England)</td>
+                    <td>2 751 537</td>
+                    <td>3 839 875</td>
+                </tr>
+                <tr>
+                    <td>意大利 (Italy)</td>
+                    <td>1 536 945</td>
+                    <td>2 625 975</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>下列哪項／些是球員之間收入差異的可能原因？</strong><br>
+        <span class="en-text">Which of the following is/are possible reason(s) for the income differences among players?</span></p>
+
+        <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px;">
+            <p>(1) 英格蘭頂級足球聯賽的電視轉播收入較意大利的為高。<br>
+            <span class="en-text">The television broadcast revenue generated by the top-tier football league in England is higher than that in Italy.</span></p>
+            
+            <p>(2) 英格蘭的物價水平較意大利的為高。<br>
+            <span class="en-text">The price level in England is higher than that in Italy.</span></p>
+            
+            <p>(3) 進攻球員的商業價值較防守球員的為高，因為進攻球員較受歡迎。<br>
+            <span class="en-text">The commercial values of attacking players are higher than those of defensive players since attacking players are more popular.</span></p>
+        </div>
+
+        <ul class="options-list">
+            <li>A. 只有 (1) <span class="en-text">(1) only</span></li>
+            <li>B. 只有 (2) <span class="en-text">(2) only</span></li>
+            <li>C. 只有 (3) <span class="en-text">(3) only</span></li>
+            <li>D. (1)、(2) 及 (3) <span class="en-text">(1), (2) and (3)</span></li>
+        </ul>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <p>要解答此題，我們需要運用以下勞工市場的核心概念：<br>
+            <span class="en-text">To solve this problem, we need to apply the following core concepts of the labour market:</span></p>
+
+            <h3>1. 衍生需求 (Derived Demand)</h3>
+            <p>對生產要素（如球員）的需求是源自對其產品（如球賽、轉播）的需求。如果產品的收益上升，對生產要素的需求也會上升。<br>
+            <span class="en-text">The demand for factors of production (e.g., players) is derived from the demand for the product (e.g., matches, broadcasts). If product revenue rises, demand for the factor rises.</span></p>
+
+            <h3>2. 邊際收入產量 (Marginal Revenue Product, MRP)</h3>
+            <p>這是決定勞工需求的主要因素。廠商願意支付的最高工資等於勞工的邊際收入產量。<br>
+            <span class="en-text">This is the main determinant of labour demand. The maximum wage a firm is willing to pay equals the worker's MRP.</span></p>
+            
+            <div class="formula">
+                $$ MRP = MPP \times MR $$
+            </div>
+            <p style="font-size: 0.9em; text-align: center;">
+                \(MPP\) = 邊際產量 (Marginal Physical Product)<br>
+                \(MR\) = 邊際收入 (Marginal Revenue)
+            </p>
+
+            <h3>3. 名義與實質工資 (Nominal vs. Real Wage)</h3>
+            <p>表格顯示的是<strong>名義收入 (Nominal Income)</strong>（以貨幣單位 £ 計算）。如果某地的物價水平較高，工人會要求較高的名義工資以維持購買力。<br>
+            <span class="en-text">The table shows <strong>Nominal Income</strong> (in £). If the price level in a region is higher, workers demand higher nominal wages to maintain purchasing power.</span></p>
+        </div>
+    </section>
+
+    <!-- 4. Answer & Analysis -->
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">正確答案：D (Option D)</div>
+
+        <div class="analysis-step">
+            <h3>分析選項 (1) / Analysis of (1)</h3>
+            <p><strong>陳述：</strong>英格蘭的電視轉播收入較高。<br>
+            <span class="en-text"><strong>Statement:</strong> TV broadcast revenue in England is higher.</span></p>
+            
+            <p><strong>解釋：</strong>這是正確的。較高的轉播收入意味著球會的邊際收入 (\(MR\)) 較高。根據 \(MRP = MPP \times MR\)，球員的邊際收入產量 (\(MRP\)) 會上升。這增加了對球員的需求，從而推高了他們的工資。這解釋了為何<strong>英格蘭球員的收入普遍高於意大利球員</strong>。<br>
+            <span class="en-text"><strong>Explanation:</strong> This is correct. Higher broadcast revenue implies higher Marginal Revenue (\(MR\)) for the clubs. According to \(MRP = MPP \times MR\), the Marginal Revenue Product (\(MRP\)) of players increases. This raises the demand for players, pushing up their wages. This explains why <strong>players in England earn more than in Italy</strong> generally.</span></p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>分析選項 (2) / Analysis of (2)</h3>
+            <p><strong>陳述：</strong>英格蘭的物價水平較高。<br>
+            <span class="en-text"><strong>Statement:</strong> The price level in England is higher.</span></p>
+            
+            <p><strong>解釋：</strong>這是正確的。表格中的數據是名義收入 (£)。如果英格蘭的生活成本（物價）較高，球員會要求更高的名義工資來維持相同的生活水平（勞工供應減少/向左移）。同時，球會也必須支付更高的名義工資才能吸引人才。這也是解釋<strong>英格蘭名義工資較高</strong>的合理原因。<br>
+            <span class="en-text"><strong>Explanation:</strong> This is correct. The data in the table is nominal income (£). If the cost of living (price level) in England is higher, players will demand higher nominal wages to maintain the same standard of living (Labour supply decreases/shifts left). Also, clubs must pay higher nominal wages to attract talent. This is a plausible reason for the <strong>higher nominal wages in England</strong>.</span></p>
+        </div>
+
+        <div class="analysis-step">
+            <h3>分析選項 (3) / Analysis of (3)</h3>
+            <p><strong>陳述：</strong>進攻球員較受歡迎，商業價值較高。<br>
+            <span class="en-text"><strong>Statement:</strong> Attacking players are more popular and have higher commercial value.</span></p>
+            
+            <p><strong>解釋：</strong>這是正確的。這解釋了<strong>同一聯賽內不同位置的收入差異</strong>。進攻球員受歡迎意味著他們能為球會帶來更多門票或商品銷售收入（較高的 \(MRP\)）。因此，對進攻球員的需求較高，導致他們的工資高於防守球員。<br>
+            <span class="en-text"><strong>Explanation:</strong> This is correct. This explains the <strong>income difference between positions within the same league</strong>. Popularity implies attacking players generate more revenue from tickets or merchandise (higher \(MRP\)). Therefore, demand for attacking players is higher, leading to higher wages compared to defensive players.</span></p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>這類題目通常包含兩個維度的比較。要選出正確答案，你必須意識到「收入差異」包含：<br>
+        <span class="en-text">This type of question usually involves comparison across two dimensions. To choose the right answer, you must realize "income differences" includes:</span></p>
+        
+        <ul>
+            <li><strong>維度 A：國家之間的差異 (Country vs. Country)</strong><br>
+            為何英格蘭 > 意大利？ <span style="color:var(--primary-color)">&#8594; 由選項 (1) 和 (2) 解釋。</span></li>
+            <li><strong>維度 B：職位之間的差異 (Position vs. Position)</strong><br>
+            為何進攻球員 > 防守球員？ <span style="color:var(--primary-color)">&#8594; 由選項 (3) 解釋。</span></li>
+        </ul>
+
+        <div class="trick-box">
+            <strong>解題關鍵 (Pivot Point):</strong><br>
+            不要只尋找解釋「為何英格蘭工資較高」的原因，也要尋找解釋「為何進攻球員由資較高」的原因。題目問的是所有觀察到的差異。<br>
+            <span class="en-text">Don't just look for reasons explaining "why England pays more". Also look for reasons explaining "why attackers earn more". The question asks about ALL observed differences.</span>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="trap-box">
+            <h3>陷阱：忽視名義工資 (Ignoring Nominal Wages)</h3>
+            <p><strong>錯誤想法：</strong>「經濟學只關心實質變量，物價高只代表通脹，不代表球員真的比較富有，所以 (2) 不是原因。」<br>
+            <span class="en-text"><strong>Misconception:</strong> "Economics only cares about real variables. High prices just mean inflation, not that players are richer, so (2) is not a reason."</span></p>
+            
+            <p><strong>糾正：</strong>題目問的是表格中數字（名義工資）差異的原因。物價高正是導致名義工資高的直接原因之一（補償性工資差異）。<br>
+            <span class="en-text"><strong>Correction:</strong> The question asks for the reason behind the numbers (nominal wages) in the table. High price levels are a direct cause of high nominal wages (compensating wage differentials).</span></p>
+        </div>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+
+        <div class="qa-box">
+            <p><strong>Q: 如果選項 (1) 說「英格蘭的所得稅率較意大利高」，這會是原因嗎？</strong><br>
+            <span class="en-text"><strong>Q: If option (1) said "Income tax rates in England are higher than in Italy", would that be a reason?</strong></span></p>
+            
+            <p><strong>A:</strong> 是的，這也是可能的！如果英格蘭稅率較高，球員會要求更高的「稅前名義工資」來維持相同的「稅後收入」。這會使勞工供應曲線向左移，推高均衡工資。<br>
+            <span class="en-text"><strong>A:</strong> Yes, that is also possible! If tax rates are higher in England, players would demand higher "pre-tax nominal wages" to maintain the same "after-tax income". This shifts the labour supply curve to the left, pushing up the equilibrium wage.</span></p>
+        </div>
+
+        <div class="qa-box">
+            <p><strong>Q: 為何防守球員的邊際產量 (MPP) 不一定比進攻球員低？</strong><br>
+            <span class="en-text"><strong>Q: Why isn't the Marginal Physical Product (MPP) of defensive players necessarily lower than attackers?</strong></span></p>
+            
+            <p><strong>A:</strong> 防守球員對球隊獲勝的貢獻（MPP）可能很高。但工資取決於 \(MRP = MPP \times MR\)。即使 MPP 相同，如果進攻球員能吸引更多粉絲（較高的 MR），他們的 MRP 仍會較高。<br>
+            <span class="en-text"><strong>A:</strong> Defensive players' contribution to winning (MPP) might be high. But wages depend on \(MRP = MPP \times MR\). Even if MPP is the same, if attackers attract more fans (higher MR), their MRP will still be higher.</span></p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

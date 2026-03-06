@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money & Banking Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f59e0b; /* Amber for highlights */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --concept-bg: #eff6ff;
+            --concept-border: #60a5fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background-color: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: var(--accent-color);
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .q-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concept-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Analysis Section */
+        .analysis-section h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--correct-border);
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-analysis.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .option-analysis.wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+        }
+
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Pivot & Tricks */
+        .pivot-box, .trick-box {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .pivot-title {
+            font-weight: bold;
+            color: #4b5563;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .math-block {
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>HKDSE Economics Analysis</h1>
+        <div class="tags">
+            <span class="tag">Topic: Money & Banking (貨幣與銀行)</span>
+            <span class="tag">Sub-topic: Money Creation (貨幣創造)</span>
+            <span class="tag difficulty">Difficulty: ★★★☆☆</span>
+        </div>
+        <p style="margin-top: 10px; color: #64748b;">
+            <strong>Key Concepts:</strong> Money Multiplier (貨幣乘數), Money Supply (貨幣供應), Balance Sheet (資產負債表)
+        </p>
+    </header>
+
+    <!-- The Question -->
+    <section class="question-box">
+        <div class="q-text">
+            <p><strong>題目 / Question:</strong></p>
+            <p>假設整個銀行系統都不持有超額儲備，而法定儲蓄比率是20%。若某甲從一家銀行提取$100，則：</p>
+            <p>Assume the whole banking system does not hold excess reserves and the required reserve ratio is 20%. If a person withdraws $100 from a bank,</p>
+        </div>
+        <ul class="options-list">
+            <li>A. 該銀行系統的放貸最多減少$400。<br>the amount of loans made by the banks to the public will fall by at most $400.</li>
+            <li>B. 貨幣供應量最少減少$400。<br>money supply will fall by at least $400.</li>
+            <li>C. 該銀行系統的存款最少減少$500。<br>the amount of deposits in the banking system will fall by at least $500.</li>
+            <li>D. 該銀行系統的現金儲備最多減少$80。<br>the amount of each cash reserve of the banks will fall by at most $80.</li>
+        </ul>
+    </section>
+
+    <!-- Concept Review -->
+    <section class="concept-box">
+        <div class="concept-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            概念重溫 / Concept Review
+        </div>
+        <p><strong>1. 銀行乘數效應 (Banking Multiplier Effect):</strong></p>
+        <p>當現金流出銀行體系（提取存款）時，會引發存款收縮。最大收縮量取決於法定儲備率 (\(r\))。</p>
+        <p>When cash leaks out of the banking system (withdrawal), it triggers a contraction in deposits. The maximum contraction depends on the required reserve ratio (\(r\)).</p>
+        
+        <div class="math-block">
+            $$ \text{Max. Change in Deposits} (\Delta D) = \Delta \text{Reserves} (\Delta R) \times \frac{1}{r} $$
+        </div>
+
+        <p><strong>2. 貨幣供應定義 (Money Supply Definition):</strong></p>
+        <p>貨幣供應 (\(M_s\)) = 公眾持有的現金 (\(C_p\)) + 存款 (\(D\))。</p>
+        <p>Money Supply (\(M_s\)) = Cash held by public (\(C_p\)) + Deposits (\(D\)).</p>
+        
+        <div class="math-block">
+            $$ \Delta M_s = \Delta C_p + \Delta D $$
+        </div>
+    </section>
+
+    <!-- Detailed Analysis -->
+    <section class="analysis-section">
+        <h2>答案與詳細分析 / Answer & Detailed Analysis</h2>
+        <div class="correct-answer">正確答案 / Correct Option: A</div>
+
+        <p><strong>計算步驟 / Calculation Steps:</strong></p>
+        <ul>
+            <li><strong>法定儲備率 (Required Reserve Ratio, \(r\)):</strong> 20% = 0.2</li>
+            <li><strong>銀行乘數 (Banking Multiplier, \(k\)):</strong> \(1 / 0.2 = 5\)</li>
+            <li><strong>初始變動 (Initial Change):</strong>
+                <ul>
+                    <li>公眾持有現金 (\(C_p\)): +$100 (提取 / withdrawal)</li>
+                    <li>銀行儲備 (\(R\)): -$100</li>
+                </ul>
+            </li>
+            <li><strong>最大存款變動 (Max. Change in Deposits, \(\Delta D\)):</strong>
+                $$ \Delta D = -100 \times 5 = -500 $$
+            </li>
+            <li><strong>最大放貸變動 (Max. Change in Loans, \(\Delta L\)):</strong>
+                $$ \Delta L = \Delta D - \Delta R = -500 - (-100) = -400 $$
+            </li>
+            <li><strong>最大貨幣供應變動 (Max. Change in \(M_s\)):</strong>
+                $$ \Delta M_s = \Delta C_p + \Delta D = +100 - 500 = -400 $$
+            </li>
+        </ul>
+
+        <div class="option-analysis correct">
+            <span class="label">Option A: 正確 / Correct</span>
+            <p><strong>該銀行系統的放貸最多減少$400。 / The amount of loans made by the banks to the public will fall by at most $400.</strong></p>
+            <p>由於存款最大減少 $500，而儲備減少了 $100，根據資產負債表平衡原則，放貸必然減少 $400（這是最大收縮幅度）。如果過程未完成，減少量會少於 $400。因此，「最多減少 $400」是正確的描述。</p>
+            <p>Since deposits fall by a maximum of $500 and reserves fall by $100, loans must fall by $400 to balance the books (this is the maximum contraction). If the process is incomplete, loans fall by less than $400. Thus, "fall by at most $400" is correct.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="label">Option B: 錯誤 / Incorrect</span>
+            <p><strong>貨幣供應量最少減少$400。 / Money supply will fall by at least $400.</strong></p>
+            <p>貨幣供應量的<strong>最大</strong>跌幅是 $400（計算：\(+100 - 500\)）。如果收縮過程未完成，跌幅會<strong>小於</strong> $400（例如只跌 $200）。因此應該是「最多」減少 $400，而非「最少」。</p>
+            <p>The <strong>maximum</strong> fall in money supply is $400 (Calc: \(+100 - 500\)). If the contraction is partial, the fall would be <strong>smaller</strong> than $400 (e.g., only drops by $200). So it should be "at most", not "at least".</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="label">Option C: 錯誤 / Incorrect</span>
+            <p><strong>該銀行系統的存款最少減少$500。 / The amount of deposits in the banking system will fall by at least $500.</strong></p>
+            <p>存款的<strong>最大</strong>潛在跌幅是 $500。實際跌幅介乎 $100 至 $500 之間。因此應該是「最多」減少 $500。</p>
+            <p>The <strong>maximum</strong> potential fall in deposits is $500. The actual fall is between $100 and $500. Therefore, it should be "at most" $500.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="label">Option D: 錯誤 / Incorrect</span>
+            <p><strong>該銀行系統的現金儲備最多減少$80。 / The amount of each cash reserve of the banks will fall by at most $80.</strong></p>
+            <p>當客戶提取 $100 現金時，這 $100 實實在在地離開了銀行金庫。銀行系統的實際儲備<strong>剛好</strong>減少了 $100，而不是 $80。</p>
+            <p>When the customer withdraws $100, that $100 physically leaves the bank vault. The banking system's actual reserves fall by <strong>exactly</strong> $100, not $80.</p>
+        </div>
+    </section>
+
+    <!-- Problem Decomposition -->
+    <section class="pivot-box">
+        <div class="pivot-title">題目拆解 / Problem Decomposition</div>
+        <p><strong>關鍵點 (The Pivot Point):</strong> 不要忘記 \(M_s\) 的定義！</p>
+        <p>很多學生只計算了存款 (\(D\)) 的變動，而忘記了公眾持有的現金 (\(C_p\)) 增加了。提取現金是一個「資產轉移」的過程：現金從銀行轉到公眾手中。</p>
+        <p><strong>Key Insight:</strong> Don't forget the definition of \(M_s\)! Many students calculate the change in Deposits (\(D\)) but forget that Cash held by the public (\(C_p\)) has increased. Withdrawal is an asset transfer: cash moves from the bank to the public.</p>
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+        <p><strong>文字陷阱 (Word Trap):</strong> 「最多 (At most)」 vs 「最少 (At least)」</p>
+        <p>在收縮過程中，乘數效應計算出來的數值通常是<strong>上限 (Upper Bound)</strong>。因此，正確的描述通常涉及「最多減少...」。</p>
+        <p>In the contraction process, the calculated multiplier value is usually the <strong>Upper Bound</strong>. Therefore, the correct description usually involves "falls by at most...".</p>
+    </section>
+
+    <!-- Student Q&A -->
+    <section class="analysis-section" style="margin-top: 30px;">
+        <h2>學生常見疑問 / Student Q&A</h2>
+        
+        <p><strong>Q: 為什麼放貸減少不是 $500？ (Why isn't the fall in loans $500?)</strong></p>
+        <p><strong>A:</strong> 存款減少了 $500，這代表銀行少了 $500 的資金來源。但是，銀行不需要減少 $500 的放貸，因為這 $500 裡面，有 $100 本來就是銀行不再需要持有的法定儲備（因為存款少了，需要的儲備也少了）。銀行只需要追回 $400 的貸款來填補資金缺口。</p>
+        <p>Deposits fell by $500, meaning the bank lost $500 in funding. However, the bank doesn't need to cut loans by $500. Out of that $500 drop, $100 represents required reserves the bank no longer needs to hold (since deposits are lower). The bank only needs to recall $400 in loans to balance the books.</p>
+
+        <p><strong>Q: 題目說「不持有超額儲備」，這有什麼重要性？ (Why is "no excess reserves" important?)</strong></p>
+        <p><strong>A:</strong> 這意味著銀行一開始是「借盡」的。當儲備減少 $100 時，銀行<strong>立刻</strong>出現儲備不足 (Reserve shortage)，必須馬上收回貸款，從而啟動乘數收縮過程。</p>
+        <p>This means the bank is fully loaned out initially. When reserves fall by $100, the bank <strong>immediately</strong> faces a reserve shortage and must recall loans, triggering the multiplier contraction process.</p>
+    </section>
+
+    <!-- Exam Tricks -->
+    <section class="trick-box">
+        <div class="pivot-title">考試技巧與速解 / Exam Tricks</div>
+        <p><strong>速算法 (Quick Check):</strong></p>
+        <p>看到「提取現金 (Withdrawal)」，直接記住以下規律：</p>
+        <ol>
+            <li><strong>存款 (\(D\))：</strong> 大幅減少 (乘數效應)。</li>
+            <li><strong>貨幣供應 (\(M_s\))：</strong> 減少，但幅度小於存款 (因為 \(+\text{Cash}\) 抵銷了部分跌幅)。</li>
+            <li><strong>公式：</strong> \(\Delta M_s = \Delta \text{Loans}\)。</li>
+        </ol>
+        <p>在這個題目中：放貸減少 $400 \rightarrow M_s$ 減少 $400。這是一個恆等式 (Identity)。</p>
+        <p><strong>Shortcut:</strong> When you see "Withdrawal", remember:</p>
+        <ol>
+            <li><strong>Deposits (\(D\)):</strong> Drop significantly (Multiplier effect).</li>
+            <li><strong>Money Supply (\(M_s\)):</strong> Drops, but less than deposits (because \(+\text{Cash}\) offsets some drop).</li>
+            <li><strong>Formula:</strong> \(\Delta M_s = \Delta \text{Loans}\).</li>
+        </ol>
+        <p>In this question: Loans drop $400 \rightarrow M_s$ drops $400. This is an identity.</p>
+    </section>
+
+</div>
+
+</body>
+</html>

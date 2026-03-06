@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Market Equilibrium Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue-600 */
+            --secondary-color: #1e40af; /* Blue-800 */
+            --bg-color: #f8fafc; /* Slate-50 */
+            --card-bg: #ffffff;
+            --accent-bg: #eff6ff; /* Blue-50 */
+            --text-main: #1e293b; /* Slate-800 */
+            --text-muted: #64748b; /* Slate-500 */
+            --border-color: #e2e8f0; /* Slate-200 */
+            --success-color: #10b981; /* Emerald-500 */
+            --error-color: #ef4444; /* Red-500 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 1.5rem; font-weight: 700; }
+        .meta-info { margin-top: 10px; font-size: 0.9rem; opacity: 0.9; }
+        .difficulty { color: #fbbf24; font-weight: bold; }
+
+        /* Content Sections */
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin-top: 0;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #fff;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--accent-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+        }
+        .formula {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Analysis Section */
+        .analysis-step {
+            margin-bottom: 20px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Correct Answer Highlight */
+        .correct-answer {
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 1px solid #34d399;
+        }
+
+        /* Tips & Q&A */
+        .tip-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header { padding: 16px; }
+            h1 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>市場均衡分析 (Market Equilibrium Analysis)</h1>
+        <div class="meta-info">
+            <span>Topic: Demand & Supply (需求與供應)</span> | 
+            <span>Difficulty: <span class="difficulty">★★★☆☆</span></span>
+        </div>
+        <div class="meta-info">
+            Keywords: Shift in Demand (需求改變), Shift in Supply (供應改變), Exchange Rate (匯率)
+        </div>
+    </header>
+
+    <!-- The Question -->
+    <div class="section">
+        <h2>題目 (The Question)</h2>
+        <div class="question-box">
+            <p><strong>中文：</strong>下圖顯示香港人往日本旅遊的市場，起始均衡點是 \(E_0\)。由於經濟衰退，香港人減少前往日本度假。此外，日圓兌港元升值。市場的新均衡點是？</p>
+            <p class="en-text"><strong>English:</strong> The diagram below shows the market of tours for Hong Kong people to Japan. The initial equilibrium is at \(E_0\). Because of economic recession, fewer Hong Kong people spend their holiday in Japan. Moreover, the Japanese Yen appreciates against the Hong Kong dollar. The new equilibrium point in the market will be at?</p>
+            
+            <ul class="options-list">
+                <li>A. \(E_a\)</li>
+                <li>B. \(E_b\)</li>
+                <li>C. \(E_c\)</li>
+                <li>D. \(E_d\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>概念重溫 (Concept Review)</h2>
+        <div class="concept-box">
+            <p>要解決此問題，我們必須了解導致需求曲線（D）和供應曲線（S）移動的因素。</p>
+            <p class="en-text">To solve this, we must understand the factors that shift the Demand (D) and Supply (S) curves.</p>
+
+            <div class="analysis-step">
+                <span class="step-title">1. 需求改變 (Change in Demand)</span>
+                當價格以外的因素改變（如收入、偏好），整條需求曲線會移動。
+                <br>
+                <span class="en-text">When factors other than price change (e.g., income, preferences), the entire demand curve shifts.</span>
+                <div class="formula">
+                    Income \(\downarrow\) \(\rightarrow\) Demand \(\downarrow\) (Shift Left)
+                </div>
+            </div>
+
+            <div class="analysis-step">
+                <span class="step-title">2. 供應改變 (Change in Supply)</span>
+                當生產成本改變，整條供應曲線會移動。對於旅遊業，匯率上升代表成本增加。
+                <br>
+                <span class="en-text">When production costs change, the entire supply curve shifts. For tourism, a rising exchange rate implies higher costs.</span>
+                <div class="formula">
+                    Cost \(\uparrow\) \(\rightarrow\) Supply \(\downarrow\) (Shift Left/Up)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer & Analysis -->
+    <div class="section">
+        <h2>答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        
+        <div class="correct-answer">
+            正確答案 (Correct Option): B (\(E_b\))
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-title">步驟 1：分析「經濟衰退」 (Step 1: Analyzing "Economic Recession")</span>
+            <p>經濟衰退導致香港人收入下降。旅遊通常被視為正常物品（Normal Good）或奢侈品。收入減少，需求下降。</p>
+            <p class="en-text">Economic recession leads to a drop in income for Hong Kong people. Tourism is usually considered a normal good or luxury good. As income falls, demand decreases.</p>
+            <p><strong>圖表移動：</strong>需求曲線由 \(D_0\) 向左移動至 \(D_2\)。</p>
+            <p class="en-text"><strong>Graph Shift:</strong> The Demand curve shifts left from \(D_0\) to \(D_2\).</p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-title">步驟 2：分析「日圓升值」 (Step 2: Analyzing "Yen Appreciation")</span>
+            <p>對於舉辦日本旅行團的香港旅行社來說，日圓升值意味著他們需要用更多的港元來支付日本當地的酒店、交通和餐飲費用。這代表<strong>生產成本上升</strong>。</p>
+            <p class="en-text">For HK travel agencies organizing tours to Japan, an appreciation of the Yen means they need to pay more HKD for hotels, transport, and meals in Japan. This represents an <strong>increase in production costs</strong>.</p>
+            <p><strong>圖表移動：</strong>供應曲線由 \(S_0\) 向左（向上）移動至 \(S_2\)。</p>
+            <p class="en-text"><strong>Graph Shift:</strong> The Supply curve shifts left (upward) from \(S_0\) to \(S_2\).</p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-title">步驟 3：找出交點 (Step 3: Finding the Intersection)</span>
+            <p>我們需要找出新需求曲線 \(D_2\) 與新供應曲線 \(S_2\) 的交點。</p>
+            <p class="en-text">We need to find the intersection of the new Demand curve \(D_2\) and the new Supply curve \(S_2\).</p>
+            <p>觀察圖表：\(D_2\)（左下方）與 \(S_2\)（左上方）相交於點 <strong>\(E_b\)</strong>。</p>
+            <p class="en-text">Looking at the diagram: \(D_2\) (bottom-left) intersects with \(S_2\) (top-left) at point <strong>\(E_b\)</strong>.</p>
+        </div>
+
+        <div class="analysis-step">
+            <span class="step-title">為什麼其他選項是錯誤的？ (Why are other options wrong?)</span>
+            <ul class="options-list">
+                <li>
+                    <strong>A (\(E_a\)):</strong> 這是 \(D_2\) 與 \(S_0\) 的交點。這只反映了需求下降，忽略了日圓升值對供應的影響。
+                    <br><span class="en-text">This is the intersection of \(D_2\) and \(S_0\). It only reflects the decrease in demand, ignoring the supply shock from the Yen appreciation.</span>
+                </li>
+                <li>
+                    <strong>C (\(E_c\)):</strong> 這是 \(D_0\) 與 \(S_2\) 的交點。這只反映了供應下降，忽略了經濟衰退對需求的影響。
+                    <br><span class="en-text">This is the intersection of \(D_0\) and \(S_2\). It only reflects the decrease in supply, ignoring the demand shock from the recession.</span>
+                </li>
+                <li>
+                    <strong>D (\(E_d\)):</strong> 這是 \(D_0\) 與 \(S_1\) 的交點（或附近）。這暗示供應增加（成本下降），與題目情況相反。
+                    <br><span class="en-text">This involves \(S_1\), implying an increase in supply (lower costs), which contradicts the question.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        <p>這類題目是典型的「雙重移動」（Simultaneous Shifts）問題。解題關鍵在於將兩個事件分開處理：</p>
+        <p class="en-text">This is a classic "Simultaneous Shifts" problem. The key is to process the two events separately:</p>
+        
+        <div class="tip-box" style="border-left-color: var(--primary-color); background-color: var(--accent-bg);">
+            <ol>
+                <li><strong>事件 A (Event A):</strong> 經濟衰退 \(\rightarrow\) 影響買家 \(\rightarrow\) <strong>需求 (D) 減少</strong>。</li>
+                <li><strong>事件 B (Event B):</strong> 成本上升 (匯率) \(\rightarrow\) 影響賣家 \(\rightarrow\) <strong>供應 (S) 減少</strong>。</li>
+                <li><strong>結論 (Conclusion):</strong> 尋找 \(D \downarrow\) 和 \(S \downarrow\) 的交集。</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <h2>學生常見疑問 (Student Q&A)</h2>
+        
+        <div class="qa-item">
+            <p class="qa-q">問：為什麼日圓升值是影響供應（S）而不是需求（D）？</p>
+            <p class="en-text">Q: Why does Yen appreciation affect Supply (S) instead of Demand (D)?</p>
+            <p><strong>答：</strong>這取決於市場的定義。題目是指「香港人往日本旅遊的市場」（通常指旅行團）。旅行社是生產者，他們需要購買日本的服務（酒店、車票）並包裝成產品賣給港人。日圓升值直接增加了旅行社的<strong>生產成本</strong>，所以供應減少（S 左移）。</p>
+            <p>即使你認為日圓升值令去日本「變貴了」從而減少需求，這會令需求曲線進一步左移。但在考試標準圖表中，通常將匯率視為進口服務的成本因素（供應面）。無論如何，需求和供應都向左移，結果依然是 \(E_b\)。</p>
+            <p class="en-text"><strong>A:</strong> It depends on the market definition. The market is "tours to Japan". Travel agencies are the producers; they buy Japanese services (hotels, tickets) to package for HK people. Yen appreciation increases the <strong>production cost</strong> for agencies, so Supply decreases (shifts left). Even if you argue it makes travel "expensive" for consumers (Demand side), Demand would shift left. Since Demand is already shifting left due to recession, adding another Demand shift keeps us on the left. However, standard DSE economics treats exchange rates for tours as a cost factor (Supply side). Both D and S shift left, leading to \(E_b\).</p>
+        </div>
+    </div>
+
+    <!-- Exam Tricks -->
+    <div class="section">
+        <h2>考試技巧 (Exam Tricks)</h2>
+        <div class="tip-box">
+            <strong>方向判斷法 (Directional Logic):</strong>
+            <ul>
+                <li>需求減少 (D decrease) \(\rightarrow\) 數量 (Q) 減少，價格 (P) 下降。</li>
+                <li>供應減少 (S decrease) \(\rightarrow\) 數量 (Q) 減少，價格 (P) 上升。</li>
+                <li><strong>結合兩者：</strong> 數量 (Q) <strong>肯定大幅減少</strong>。</li>
+            </ul>
+            <p>看圖表：\(E_b\) 是所有點中數量 (Q) 最少的點（最靠左）。這是一個快速確認答案的方法！</p>
+            <p class="en-text"><strong>Combined Logic:</strong> D decreases (Q down), S decreases (Q down). Therefore, the new Quantity MUST be significantly lower. Looking at the graph, \(E_b\) is the point with the lowest Quantity (furthest to the left). This is a quick way to verify!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

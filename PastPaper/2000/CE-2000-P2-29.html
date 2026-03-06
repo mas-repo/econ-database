@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Credit Creation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Dark Blue */
+            --accent-color: #f59e0b; /* Amber */
+            --bg-concept: #eff6ff; /* Light Blue */
+            --bg-question: #ffffff;
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { margin-top: 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .formula-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        .answer-section {
+            margin-top: 30px;
+        }
+
+        .correct-answer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #16a34a; /* Green */
+            margin-bottom: 15px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+        }
+
+        .option-analysis.correct {
+            background-color: #f0fdf4;
+            border-color: #86efac;
+        }
+
+        .option-analysis.incorrect {
+            background-color: #fef2f2;
+            border-color: #fecaca;
+        }
+
+        .bilingual-text {
+            margin-bottom: 8px;
+        }
+        
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .decomposition-box {
+            background-color: #fffbeb; /* Amber light */
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+        }
+
+        .qa-section {
+            margin-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            padding-top: 20px;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Money & Banking (貨幣與銀行)</div>
+        <div><strong>Difficulty (難度):</strong> ⭐⭐⭐☆☆ (3/5)</div>
+        <div><strong>Key Concepts (核心概念):</strong> Credit Creation (信用創造), Money Supply (貨幣供應), Multiplier (乘數)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>Question (題目)</h3>
+        <p class="bilingual-text">
+            銀行接受一筆從外國來的存款$1 000。在創造存款的過程完成後，該筆從海外來的匯款使整個銀行系統的存款額增加$4 000。
+            <span class="en-text">A bank accepts a deposit of $1 000 from a foreign country. Through the credit creation process, the amount of deposit of the whole banking system increases by $4 000.</span>
+        </p>
+        
+        <p class="bilingual-text">
+            根據以上資料，我們可得結論如下︰
+            <span class="en-text">Based on the above information, we can conclude that</span>
+        </p>
+
+        <ul class="options-list">
+            <li>
+                <strong>A.</strong> 法定儲備率是25%。
+                <span class="en-text">the legal reserve ratio is 25%.</span>
+            </li>
+            <li>
+                <strong>B.</strong> 銀行並不持有超額儲備。
+                <span class="en-text">banks do not keep excess reserves.</span>
+            </li>
+            <li>
+                <strong>C.</strong> 總貨幣供應量最少增加了$4 000。
+                <span class="en-text">the total money supply has increased by at least $4 000.</span>
+            </li>
+            <li>
+                <strong>D.</strong> 在存款創造的過程中，有現金流失的現象。
+                <span class="en-text">there is a cash leakage in the credit creation process.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>Concept Review (概念重溫)</h3>
+        
+        <p><strong>1. 銀行乘數 (Banking Multiplier)</strong></p>
+        <p class="bilingual-text">
+            銀行乘數反映了初始存款能創造出多少總存款。
+            <span class="en-text">The banking multiplier indicates how much total deposit can be created from an initial deposit.</span>
+        </p>
+        <div class="formula-block">
+            $$ \text{Banking Multiplier} = \frac{\text{Total Change in Deposits}}{\text{Initial Deposit}} $$
+        </div>
+        <div class="formula-block">
+            $$ \text{Max Multiplier} = \frac{1}{\text{Required Reserve Ratio (RRR)}} $$
+        </div>
+
+        <p><strong>2. 貨幣供應定義 (Money Supply Definition)</strong></p>
+        <p class="bilingual-text">
+            貨幣供應量 (M1/M2) = 公眾持有的現金 (\(C_p\)) + 存款 (\(D\))
+            <span class="en-text">Money Supply (M1/M2) = Cash held by public (\(C_p\)) + Deposits (\(D\))</span>
+        </p>
+        <div class="formula-block">
+            $$ \Delta M_s = \Delta C_p + \Delta D $$
+        </div>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div class="answer-section">
+        <h3>Answer & Detailed Analysis (答案與詳細分析)</h3>
+        
+        <div class="correct-answer">Correct Option: C</div>
+
+        <!-- Option A -->
+        <div class="option-analysis incorrect">
+            <strong>Option A: Incorrect (不正確)</strong>
+            <p class="bilingual-text">
+                雖然 \(1000 \times 4 = 4000\) 吻合 25% 的法定儲備率（\(1/0.25 = 4\)），但這不是唯一的可能性。如果法定儲備率是 20%，而銀行持有 5% 的超額儲備，乘數同樣是 4。題目沒有說明銀行是否持有超額儲備，因此不能斷定法定儲備率<strong>必然</strong>是 25%。
+                <span class="en-text">Although \(1000 \times 4 = 4000\) fits a 25% legal reserve ratio (\(1/0.25 = 4\)), this is not the only possibility. If the legal reserve ratio is 20% and banks hold 5% excess reserves, the multiplier is also 4. The question does not state whether banks hold excess reserves, so we cannot conclude the legal reserve ratio <strong>must</strong> be 25%.</span>
+            </p>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-analysis incorrect">
+            <strong>Option B: Incorrect (不正確)</strong>
+            <p class="bilingual-text">
+                我們無法得知銀行是否持有超額儲備。實際乘數是 4，這可能是由「法定儲備率 + 超額儲備率 + 現金流失」共同組成的結果。
+                <span class="en-text">We do not know if banks hold excess reserves. The actual multiplier is 4, which could be the combined result of "legal reserve ratio + excess reserve ratio + cash leakage".</span>
+            </p>
+        </div>
+
+        <!-- Option C -->
+        <div class="option-analysis correct">
+            <strong>Option C: Correct (正確)</strong>
+            <p class="bilingual-text">
+                <strong>分析：</strong> 貨幣供應改變 (\(\Delta M_s\)) = 公眾持有現金改變 (\(\Delta C_p\)) + 存款改變 (\(\Delta D\))。
+                <br>已知 \(\Delta D = +4000\)。
+                <br>由於初始存款來自「外國」（新資金），並非公眾將手上的現金存入，所以 \(\Delta C_p\) 不會是負數。
+                <br>如果在過程中有現金流失，公眾持有的現金會增加 (\(\Delta C_p > 0\))，那麼 \(\Delta M_s > 4000\)。
+                <br>如果沒有現金流失，公眾持有的現金不變 (\(\Delta C_p = 0\))，那麼 \(\Delta M_s = 4000\)。
+                <br>結論：總貨幣供應量<strong>最少</strong>增加了 $4 000。
+                <span class="en-text"><strong>Analysis:</strong> Change in Money Supply (\(\Delta M_s\)) = Change in Cash held by public (\(\Delta C_p\)) + Change in Deposits (\(\Delta D\)).
+                <br>We know \(\Delta D = +4000\).
+                <br>Since the deposit came from "abroad" (new money), it wasn't cash deposited from the public's pockets, so \(\Delta C_p\) is not negative.
+                <br>If there is cash leakage, public cash holdings increase (\(\Delta C_p > 0\)), so \(\Delta M_s > 4000\).
+                <br>If there is no cash leakage, public cash holdings remain constant (\(\Delta C_p = 0\)), so \(\Delta M_s = 4000\).
+                <br>Conclusion: The total money supply has increased by <strong>at least</strong> $4 000.</span>
+            </p>
+        </div>
+
+        <!-- Option D -->
+        <div class="option-analysis incorrect">
+            <strong>Option D: Incorrect (不正確)</strong>
+            <p class="bilingual-text">
+                我們無法確定是否有現金流失。如果法定儲備率剛好是 25% 且沒有超額儲備，那麼在沒有現金流失的情況下，存款也會增加 $4 000。
+                <span class="en-text">We cannot determine if there is cash leakage. If the legal reserve ratio is exactly 25% with no excess reserves, deposits would increase by $4 000 even without any cash leakage.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="decomposition-box">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p class="bilingual-text">
+            <strong>關鍵點 (Pivot Point)：</strong> 區分「必然性」(Must be true) 與「可能性」(Could be true)。
+            <span class="en-text"><strong>Pivot Point:</strong> Distinguish between what "Must be true" and what "Could be true".</span>
+        </p>
+        <ul>
+            <li>
+                <strong>實際乘數 (Actual Multiplier):</strong> \( 4000 / 1000 = 4 \)。這是一個確定的事實。
+            </li>
+            <li>
+                <strong>陷阱 (Trap):</strong> 看到乘數是 4，學生很容易直接聯想到 \(1/0.25 = 4\)，從而誤選 A。但你要記住，實際乘數的分母包含所有「流失」的因素（法定儲備、超額儲備、現金流失）。
+            </li>
+            <li>
+                <strong>解題邏輯 (Logic):</strong> 選項 C 運用了不等式邏輯（最少 / At least）。只要 \(\Delta C_p \ge 0\)，且 \(\Delta D = 4000\)，那麼 \(\Delta M_s \ge 4000\) 必定成立。
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="qa-section">
+        <h3>Student Q&A (學生常見疑問)</h3>
+        
+        <div class="qa-item">
+            <div class="qa-q">Q: 為什麼這筆錢來自「外國」這麼重要？ (Why is it important that the money comes from a "foreign country"?)</div>
+            <p class="bilingual-text">
+                A: 如果這筆 $1 000 是你從家裡的夾萬拿去銀行存（本地現金），那麼公眾持有現金會先減少 $1 000 (\(\Delta C_p = -1000\))。雖然存款增加了，但貨幣供應的淨增長會少於 $4 000。
+                <br>因為錢來自外國，這是一筆<strong>新注入的資金</strong>，所以初始的 \(\Delta C_p\) 不是負數。
+                <span class="en-text">A: If you took this $1 000 from your home safe to deposit (local cash), public cash holding would initially drop by $1 000 (\(\Delta C_p = -1000\)). Although deposits increase, the net increase in money supply would be less than $4 000.
+                <br>Because the money is from abroad, it is a <strong>new injection</strong>, so the initial \(\Delta C_p\) is not negative.</span>
+            </p>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q: 如果題目說「銀行沒有超額儲備」，答案會變嗎？ (If the question said "banks hold no excess reserves", would the answer change?)</div>
+            <p class="bilingual-text">
+                A: 如果題目說「沒有超額儲備」且「沒有現金流失」，那麼 A 才是對的。但在目前題目資訊不足的情況下，C 是唯一在任何假設下都安全的結論。
+                <span class="en-text">A: If the question stated "no excess reserves" AND "no cash leakage", then A would be correct. But with the limited information currently provided, C is the only conclusion that is safe under any assumption.</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
