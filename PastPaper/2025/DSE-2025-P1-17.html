@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Market Intervention</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #10b981;
+            --secondary-light: #ecfdf5;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --gray-100: #f3f4f6;
+            --gray-800: #1f2937;
+            --text-main: #374151;
+            --text-en: #6b7280;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: var(--gray-800);
+            margin-top: 0;
+        }
+        .header-section {
+            border-bottom: 2px solid var(--gray-100);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: var(--primary-light);
+            color: var(--primary);
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            background: var(--gray-100);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .analysis-box {
+            background-color: var(--secondary-light);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .mistake-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .zh-text {
+            margin-bottom: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--gray-100);
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 10px 0;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor</h1>
+        <div>
+            <span class="badge">Topic: Market Intervention 市場干預</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Concepts: Quota 配額, Per-unit Tax 從量稅, Deadweight Loss 淨損失</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>題目 The Question</h2>
+        <p class="zh-text">參考下列物品X的供需表。</p>
+        <p class="en-text">Refer to the following supply and demand schedules of Good X.</p>
+        
+        <table>
+            <tr>
+                <th>價格 Price ($)</th>
+                <td>18</td><td>16</td><td>14</td><td>12</td><td>10</td><td>8</td><td>6</td>
+            </tr>
+            <tr>
+                <th>需求量 Qd</th>
+                <td>100</td><td>150</td><td>200</td><td>250</td><td>300</td><td>350</td><td>400</td>
+            </tr>
+            <tr>
+                <th>供應量 Qs</th>
+                <td>400</td><td>350</td><td>300</td><td>250</td><td>200</td><td>150</td><td>100</td>
+            </tr>
+        </table>
+
+        <p class="zh-text">假設政府對物品X實施100單位的配額。下列哪項陳述是正確的？</p>
+        <p class="en-text">Suppose the government imposes a quota on Good X at 100 units. Which of the following statements is correct?</p>
+        
+        <ol type="A">
+            <li>
+                <div class="zh-text">若政府增加配額，物品X的總收入可能下降。</div>
+                <div class="en-text">If the government increases the quota, the total revenue of Good X may decrease.</div>
+            </li>
+            <li>
+                <div class="zh-text">若政府增加配額，效率損失可能上升。</div>
+                <div class="en-text">If the government increases the quota, the deadweight loss may increase.</div>
+            </li>
+            <li>
+                <div class="zh-text">若政府以徵收$6從量稅取代配額，兩項措施對價格的影響是相等的。</div>
+                <div class="en-text">Instead of imposing the quota, the imposition of a per-unit tax of $6 would have equivalent effect on the price.</div>
+            </li>
+            <li>
+                <div class="zh-text">若政府以徵收$12從量稅取代配額，兩項措施對交易量的影響是相等的。</div>
+                <div class="en-text">Instead of imposing the quota, the imposition of a per-unit tax of $12 would have equivalent effect on the quantity transacted.</div>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>概念重溫 Concept Review</h2>
+        <p class="zh-text">要解答這條題目，我們需要理解<strong>市場均衡 (Market Equilibrium)</strong>、<strong>配額 (Quota)</strong> 及 <strong>從量稅 (Per-unit Tax)</strong> 的運作機制。</p>
+        <p class="en-text">To solve this question, we must understand the mechanisms of <strong>Market Equilibrium</strong>, <strong>Quota</strong>, and <strong>Per-unit Tax</strong>.</p>
+        
+        <ul>
+            <li>
+                <span class="zh-text"><strong>配額 (Quota):</strong> 政府設定的最高交易量限制。當配額生效時，市場價格由需求者願意支付的最高價格決定。</span>
+                <span class="en-text"><strong>Quota:</strong> A legal limit on the quantity transacted. When effective, the market price is determined by the maximum price consumers are willing to pay for that quantity.</span>
+            </li>
+            <li>
+                <span class="zh-text"><strong>從量稅 (Per-unit Tax):</strong> 政府對每單位交易物品徵收的固定稅款。這會導致買家支付的價格 \(P_d\) 與賣家實收的價格 \(P_s\) 之間出現差距。</span>
+                <span class="en-text"><strong>Per-unit Tax:</strong> A fixed tax levied on each unit transacted. It creates a wedge between the price buyers pay \(P_d\) and the price sellers receive \(P_s\).</span>
+            </li>
+        </ul>
+        <div class="math-block">
+            $$ \text{Tax} = P_d - P_s $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="analysis-box">
+        <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+        <h3>正確答案 Correct Option: <span style="color: var(--secondary); font-size: 1.5em;">D</span></h3>
+        
+        <p class="zh-text"><strong>步驟一：找出自由市場均衡</strong><br>在沒有干預的情況下，當價格為 $12 時，需求量等於供應量（250單位）。</p>
+        <p class="en-text"><strong>Step 1: Find the free market equilibrium</strong><br>Without intervention, at a price of $12, quantity demanded equals quantity supplied (250 units).</p>
+
+        <p class="zh-text"><strong>步驟二：分析配額為100單位的影響</strong><br>當配額為100單位時，交易量被限制在100。根據需求表，消費者願意為100單位支付的最高價格是 $18。因此，市場價格為 $18。</p>
+        <p class="en-text"><strong>Step 2: Analyze the effect of a 100-unit quota</strong><br>With a quota of 100 units, the transacted quantity is restricted to 100. From the demand schedule, the maximum price consumers are willing to pay for 100 units is $18. Thus, the market price is $18.</p>
+
+        <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+
+        <h4>選項分析 Option Breakdown:</h4>
+        <p class="zh-text"><strong>A 錯誤:</strong> 當配額從100增加（例如增至150），價格會降至$16，總收入從 \(18 \times 100 = 1800\) 升至 \(16 \times 150 = 2400\)。只要配額未超過均衡數量(250)，增加配額會使交易量上升，總收入增加。</p>
+        <p class="en-text"><strong>A is Incorrect:</strong> If the quota increases (e.g., to 150), price falls to $16, and total revenue rises from \(18 \times 100 = 1800\) to \(16 \times 150 = 2400\). As long as the quota is below equilibrium (250), increasing it raises total revenue.</p>
+
+        <p class="zh-text"><strong>B 錯誤:</strong> 增加配額會使交易量更接近自由市場均衡數量(250)，因此會<strong>減少</strong>效率損失（無謂損失）。</p>
+        <p class="en-text"><strong>B is Incorrect:</strong> Increasing the quota moves the transacted quantity closer to the free market equilibrium (250), which <strong>decreases</strong> the deadweight loss.</p>
+
+        <p class="zh-text"><strong>C 錯誤:</strong> 如果徵收$6從量稅，我們需要尋找 \(P_d - P_s = 6\) 的情況。這不會發生在交易量為100的時候（此時差距為 \(18 - 6 = 12\)）。因此價格不會與配額時相同。</p>
+        <p class="en-text"><strong>C is Incorrect:</strong> If a $6 tax is imposed, we look for a point where \(P_d - P_s = 6\). This does not happen at Q=100 (where the gap is \(18 - 6 = 12\)). Thus, the price effect is not equivalent.</p>
+
+        <p class="zh-text"><strong>D 正確:</strong> 在交易量為100單位時，買家願意支付的價格 \(P_d = \$18\)，賣家願意接受的最低價格 \(P_s = \$6\)。兩者差距為 \(18 - 6 = \$12\)。因此，徵收$12的從量稅會剛好令交易量減少至100單位，與配額的影響完全相同。</p>
+        <p class="en-text"><strong>D is Correct:</strong> At a quantity of 100 units, the buyers' price \(P_d = \$18\) and the sellers' price \(P_s = \$6\). The difference is \(18 - 6 = \$12\). Therefore, a per-unit tax of $12 would reduce the transacted quantity to exactly 100 units, having an equivalent effect on quantity as the quota.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="trick-box">
+        <h2>題目拆解 Problem Decomposition & Exam Tricks</h2>
+        <p class="zh-text"><strong>關鍵點 (Pivot Point)：</strong> 解決此類「配額與稅收等效性」題目的核心在於找出目標交易量（此題為100）對應的需求價格 \(P_d\) 和供應價格 \(P_s\)。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> The core to solving "quota-tax equivalence" questions is finding the demand price \(P_d\) and supply price \(P_s\) at the target quantity (100 in this case).</p>
+        
+        <p class="zh-text"><strong>速解法 (Shortcut)：</strong><br>
+        1. 看到配額 = 100，立刻在表格找 Qd = 100 及 Qs = 100。<br>
+        2. Qd = 100 時，P = 18。<br>
+        3. Qs = 100 時，P = 6。<br>
+        4. 等效稅款 (Equivalent Tax) = \(18 - 6 = 12\)。直接選 D！</p>
+        <p class="en-text"><strong>Shortcut:</strong><br>
+        1. See Quota = 100, immediately find Qd = 100 and Qs = 100 in the table.<br>
+        2. At Qd = 100, P = 18.<br>
+        3. At Qs = 100, P = 6.<br>
+        4. Equivalent Tax = \(18 - 6 = 12\). Choose D directly!</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="mistake-box">
+        <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <p class="zh-text"><strong>混淆配額下的定價機制：</strong> 很多學生誤以為配額為100時，價格會是供應量為100時的價格（$6）。記住，在供不應求的情況下，買家會互相競爭，推高價格直到等於他們願意支付的最高價格（需求曲線上的價格，$18）。</p>
+        <p class="en-text"><strong>Confusing the pricing mechanism under a quota:</strong> Many students mistakenly think the price under a 100-unit quota will be the supply price ($6). Remember, with excess demand, buyers compete and bid up the price to their maximum willingness to pay (the price on the demand curve, $18).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

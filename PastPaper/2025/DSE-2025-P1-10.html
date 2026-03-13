@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Shares vs Bonds</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --answer-bg: #f0fdf4;
+            --answer-border: #22c55e;
+            --warning-bg: #fef2f2;
+            --warning-border: #ef4444;
+            --trick-bg: #fffbeb;
+            --trick-border: #f59e0b;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .box {
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 5px solid;
+            margin-bottom: 16px;
+        }
+
+        .concept-box { background-color: var(--concept-bg); border-color: var(--concept-border); }
+        .answer-box { background-color: var(--answer-bg); border-color: var(--answer-border); }
+        .warning-box { background-color: var(--warning-bg); border-color: var(--warning-border); }
+        .trick-box { background-color: var(--trick-bg); border-color: var(--trick-border); }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .zh-text {
+            margin-bottom: 4px;
+        }
+
+        .option {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .option.correct {
+            border-color: var(--answer-border);
+            background-color: #f0fdf4;
+            font-weight: bold;
+        }
+
+        .qa-item {
+            margin-bottom: 16px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 16px; }
+            header { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Tutor 經濟學導師</h1>
+        <div class="tags">
+            <span class="tag">Topic: 企業融資 (Corporate Financing)</span>
+            <span class="tag">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Key Concepts: Shares, Bonds, Risk & Return</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>📝 題目 (The Question)</h2>
+        <p class="zh-text">王先生決定投資某上市公司的債券，而非投資該公司的股票。下列哪項<strong>最不可能</strong>是王先生作上述投資決定背後的原因？</p>
+        <p class="en-text">Mr Wong decides to invest in the bonds of a listed company instead of the shares of that company. Which of the following is the <strong>LEAST likely</strong> reason behind Mr Wong's investment decision above?</p>
+
+        <div class="option correct">
+            <div class="zh-text">A. 王先生對該公司的經營前景感到樂觀。</div>
+            <div class="en-text">A. Mr Wong is optimistic about the business prospects of the company.</div>
+        </div>
+        <div class="option">
+            <div class="zh-text">B. 王先生偏好較穩定的投資回報。</div>
+            <div class="en-text">B. Mr Wong prefers a more stable return from investment.</div>
+        </div>
+        <div class="option">
+            <div class="zh-text">C. 王先生想有較低的蒙受損失的風險。</div>
+            <div class="en-text">C. Mr Wong wants to have a lower risk of suffering from a loss.</div>
+        </div>
+        <div class="option">
+            <div class="zh-text">D. 王先生想在該公司一旦清盤時，可較優先取回他的投資。</div>
+            <div class="en-text">D. Mr Wong wants to have a higher priority in getting back his investment in case the company liquidates.</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>🧠 概念重溫 (Concept Review)</h2>
+        <div class="box concept-box">
+            <p class="zh-text">要解答這條題目，我們必須清楚區分<strong>股票 (Shares)</strong> 和 <strong>債券 (Bonds)</strong> 的核心特徵。這牽涉到投資者的身份、回報方式以及風險承擔。</p>
+            <p class="en-text">To answer this question, we must clearly distinguish the core characteristics of <strong>Shares</strong> and <strong>Bonds</strong>. This involves the investor's identity, return mechanism, and risk exposure.</p>
+
+            <ul>
+                <li>
+                    <strong class="zh-text">股票 (Shares):</strong> 
+                    <span class="zh-text">代表公司的擁有權 (Ownership)。回報來自股息 (Dividends) 和資本增值 (Capital Gain)。回報不固定，風險較高。公司盈利越高，股東回報越大。</span><br>
+                    <span class="en-text">Represents ownership of the company. Returns come from dividends and capital gains. Returns are variable, and risk is higher. The higher the company's profit, the greater the shareholders' return.</span>
+                </li>
+                <li>
+                    <strong class="zh-text">債券 (Bonds):</strong> 
+                    <span class="zh-text">代表公司的債務 (Debt)。投資者是債權人 (Creditors)。回報來自固定的利息 (Fixed Interest)。風險較低，且在公司清盤時有優先索償權。</span><br>
+                    <span class="en-text">Represents the company's debt. Investors are creditors. Returns come from fixed interest. Risk is lower, and they have priority of claim in case of liquidation.</span>
+                </li>
+            </ul>
+
+            <div class="math-block">
+                $$ \text{Total Return of Shares} = \text{Dividends} + \text{Capital Gain} $$
+                $$ \text{Total Return of Bonds} = \text{Fixed Interest} + \text{Principal Repayment} $$
+            </div>
+            
+            <p class="zh-text">在經濟學中，風險與預期回報通常成正比：\( \text{Expected Return} \propto \text{Risk} \)。</p>
+            <p class="en-text">In economics, risk and expected return are generally directly proportional: \( \text{Expected Return} \propto \text{Risk} \).</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="section">
+        <h2>✅ 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        <div class="box answer-box">
+            <h3 style="margin-top:0;">正確答案 Correct Option: A</h3>
+            
+            <p class="zh-text"><strong>分析選項 A (正確答案):</strong> 如果王先生對公司的經營前景感到樂觀，這意味著他預期公司未來會賺取豐厚的利潤。由於股票持有人（股東）可以分享公司的利潤（透過增加派息或股價上升），而債券持有人只能收取<strong>固定</strong>的利息，因此，如果他看好公司前景，他應該購買<strong>股票</strong>而非債券。所以，這是他選擇債券「最不可能」的原因。</p>
+            <p class="en-text"><strong>Analysis of Option A (Correct Answer):</strong> If Mr Wong is optimistic about the company's prospects, he expects the company to make huge profits. Since shareholders share the profits (via higher dividends or rising stock prices) while bondholders only receive <strong>fixed</strong> interest, he should buy <strong>shares</strong> if he is optimistic. Therefore, this is the "LEAST likely" reason for him to choose bonds.</p>
+
+            <hr style="border:0; border-top:1px solid #ccc; margin:15px 0;">
+
+            <p class="zh-text"><strong>分析選項 B (錯誤干擾項):</strong> 債券提供固定的利息收入，回報確實比股票穩定。這是選擇債券的合理原因。</p>
+            <p class="en-text"><strong>Analysis of Option B (Distractor):</strong> Bonds provide fixed interest income, making the return more stable than shares. This is a valid reason to choose bonds.</p>
+
+            <p class="zh-text"><strong>分析選項 C (錯誤干擾項):</strong> 債券的價格波動通常較小，且有固定利息，因此蒙受損失的風險較低。這也是選擇債券的合理原因。</p>
+            <p class="en-text"><strong>Analysis of Option C (Distractor):</strong> Bond prices generally fluctuate less and provide fixed interest, hence a lower risk of loss. This is also a valid reason to choose bonds.</p>
+
+            <p class="zh-text"><strong>分析選項 D (錯誤干擾項):</strong> 債券持有人是債權人。在公司清盤 (Liquidation) 時，債權人取回資金的優先次序高於股東。這是債券的一大優點。</p>
+            <p class="en-text"><strong>Analysis of Option D (Distractor):</strong> Bondholders are creditors. In the event of liquidation, creditors have a higher priority in getting their money back than shareholders. This is a major advantage of bonds.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point):</strong> 題目的關鍵眼在於「<strong>最不可能 (LEAST likely)</strong>」這四個字。這意味著我們要在四個選項中，找出一個<strong>支持買股票</strong>（或反對買債券）的理由。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> The key to this question lies in the words "<strong>LEAST likely</strong>". This means we need to find the one option among the four that is a reason to <strong>buy shares</strong> (or a reason against buying bonds).</p>
+        
+        <p class="zh-text">當你看到「前景樂觀」(Optimistic prospects) 時，你應該立刻聯想到利潤上升。誰能從利潤上升中獲益最大？是擁有者（股東），而不是收取固定利息的債權人。</p>
+        <p class="en-text">When you see "Optimistic prospects", you should immediately associate it with rising profits. Who benefits most from rising profits? The owners (shareholders), not the creditors who receive fixed interest.</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="section">
+        <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <div class="box warning-box">
+            <p class="zh-text"><strong>陷阱一：忽略了「最不可能」</strong><br>很多同學在考試緊張時，看漏了「最不可能」或 "LEAST likely"，結果一看到 B、C 或 D 這些正確描述債券好處的選項就立刻選了。</p>
+            <p class="en-text"><strong>Trap 1: Ignoring "LEAST likely"</strong><br>Many students, when nervous during exams, miss the word "LEAST likely". As a result, they immediately choose B, C, or D because these accurately describe the benefits of bonds.</p>
+            
+            <p class="zh-text"><strong>陷阱二：誤解債券的回報機制</strong><br>有些同學以為公司賺大錢，債券的利息也會跟著增加。記住，傳統債券的票面息率 \( (Coupon Rate) \) 是在發行時已經固定好的，不會因為公司盈利創新高而改變。</p>
+            <p class="en-text"><strong>Trap 2: Misunderstanding Bond Returns</strong><br>Some students think that if a company makes huge profits, bond interest will also increase. Remember, the coupon rate \( (Coupon Rate) \) of a traditional bond is fixed at issuance and will not change even if the company's profits hit record highs.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section">
+        <h2>🙋 學生常見疑問 (Student Q&A)</h2>
+        
+        <div class="qa-item">
+            <div class="qa-q">Q: 既然買股票在公司前景好時賺得比較多，為什麼還會有人買債券？ (Why would anyone buy bonds if shares earn more when the company does well?)</div>
+            <p class="zh-text">A: 因為未來是充滿不確定性的！雖然前景「看起來」樂觀，但如果預測錯誤，公司虧損甚至倒閉，股票的價值可能會跌至零。債券提供了下行保護（固定利息和清盤優先權），適合風險承受能力較低的投資者。</p>
+            <p class="en-text">A: Because the future is uncertain! Although prospects "look" optimistic, if the prediction is wrong and the company suffers losses or goes bankrupt, the value of shares could drop to zero. Bonds provide downside protection (fixed interest and liquidation priority), suitable for investors with lower risk tolerance.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="section">
+        <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <div class="box trick-box">
+            <p class="zh-text"><strong>排除法 (Elimination Method):</strong><br>在處理這類比較題時，你可以快速掃描選項的「性質」。<br>
+            選項 B (穩定)、C (低風險)、D (優先取回) 全都是教科書上列明的「債券特徵/優點」。既然這三個選項性質相同（都是買債券的好處），那麼唯一性質不同（買股票的好處）的選項 A，必定是答案！</p>
+            <p class="en-text"><strong>Elimination Method:</strong><br>When dealing with comparison questions, you can quickly scan the "nature" of the options.<br>
+            Options B (stable), C (low risk), and D (priority) are all textbook "characteristics/advantages of bonds". Since these three share the same nature (reasons to buy bonds), the only odd one out, Option A (a reason to buy shares), must be the answer!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

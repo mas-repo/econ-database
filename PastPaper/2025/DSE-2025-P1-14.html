@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-light: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+
+        .option-analysis.correct {
+            border-left: 4px solid var(--success-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.incorrect {
+            border-left: 4px solid var(--danger-color);
+            background-color: #fef2f2;
+        }
+
+        .warning-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning-border);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 12px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+
+        .qa-item {
+            margin-bottom: 16px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .qa-a {
+            margin-top: 4px;
+            padding-left: 16px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>HKDSE Economics Analysis<br><span style="font-size: 1.2rem; font-weight: normal;">經濟學試題分析</span></h1>
+        <div class="tags">
+            <span class="tag">Topic: Demand & Supply (需求與供應)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Keywords: Substitutes, Quantity Supplied, Total Revenue</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>📝 The Question (題目)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <strong>物品X和物品Y是代替品。假如物品X的生產成本上升，___________。</strong><br>
+                (1) 物品Y的需求量下降<br>
+                (2) 物品Y的供應量上升<br>
+                (3) 物品Y的供應上升<br>
+                (4) 物品Y的總收入上升<br><br>
+                A. 只有 (1)、(3)<br>
+                B. 只有 (1)、(4)<br>
+                C. 只有 (2)、(3)<br>
+                D. 只有 (2)、(4)
+            </div>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 16px 0;">
+            <div class="en-text">
+                <strong>Good X and Good Y are substitutes. If the cost of production of Good X increases, __________.</strong><br>
+                (1) the quantity demanded for Good Y decreases<br>
+                (2) the quantity supplied of Good Y increases<br>
+                (3) the supply of Good Y increases<br>
+                (4) the total revenue of Good Y increases<br><br>
+                A. (1) and (3) only<br>
+                B. (1) and (4) only<br>
+                C. (2) and (3) only<br>
+                D. (2) and (4) only
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="bilingual-text">
+                <strong>1. 代替品 (Substitutes):</strong> 兩種可以互相替代以滿足同一慾望的物品。當物品X的價格上升時，消費者會轉而購買物品Y，導致物品Y的需求增加（需求曲線向右移）。
+                <div class="en-text">Two goods that can replace each other to satisfy the same want. When the price of Good X increases, consumers switch to Good Y, causing an increase in the demand for Good Y (demand curve shifts right).</div>
+            </div>
+            <div class="bilingual-text">
+                <strong>2. 供應 (Supply) vs 供應量 (Quantity Supplied):</strong> 
+                「供應」改變是指整條供應曲線移動（例如因為成本改變）；「供應量」改變是指在同一條供應曲線上移動（純粹因為該物品自身的價格改變）。
+                <div class="en-text">A change in "Supply" means a shift of the entire curve (e.g., due to cost changes); a change in "Quantity Supplied" means a movement along the same curve (due solely to a change in the good's own price).</div>
+            </div>
+            <div class="bilingual-text">
+                <strong>3. 總收入 (Total Revenue):</strong> 總收入等於價格乘以交易量。
+                <div class="en-text">Total revenue equals price multiplied by quantity transacted.</div>
+            </div>
+            <div class="math-block">
+                $$ TR = P \times Q $$
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="section">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option (正確答案): <span style="color: var(--primary-color); font-size: 1.2em;">Option D</span></strong></p>
+        
+        <div class="option-analysis incorrect">
+            <div class="bilingual-text">
+                <strong>(1) 物品Y的需求量下降 (the quantity demanded for Good Y decreases) - 錯誤 (False)</strong><br>
+                物品X生產成本上升，導致X的供應減少，X的價格上升。因為X和Y是代替品，消費者會轉買Y，令物品Y的<strong>需求 (Demand)</strong> 上升。在新的均衡點，物品Y的交易量（即需求量和供應量）是上升的，而非下降。
+                <div class="en-text">The increase in Good X's production cost decreases X's supply, raising X's price. Since X and Y are substitutes, consumers switch to Y, increasing the <strong>Demand</strong> for Y. At the new equilibrium, the transacted quantity of Y increases, not decreases.</div>
+            </div>
+        </div>
+
+        <div class="option-analysis correct">
+            <div class="bilingual-text">
+                <strong>(2) 物品Y的供應量上升 (the quantity supplied of Good Y increases) - 正確 (True)</strong><br>
+                當物品Y的需求增加（需求曲線向右移），會沿著原本的供應曲線向上移動。這導致物品Y的價格上升，從而令物品Y的<strong>供應量 (Quantity Supplied)</strong> 上升。
+                <div class="en-text">When the demand for Good Y increases (shifts right), there is an upward movement along the original supply curve. This leads to a higher price for Good Y, which increases the <strong>Quantity Supplied</strong> of Good Y.</div>
+            </div>
+        </div>
+
+        <div class="option-analysis incorrect">
+            <div class="bilingual-text">
+                <strong>(3) 物品Y的供應上升 (the supply of Good Y increases) - 錯誤 (False)</strong><br>
+                物品Y的生產成本或技術並沒有改變，因此物品Y的整條<strong>供應曲線 (Supply Curve)</strong> 不會移動。改變的只是「供應量」。
+                <div class="en-text">The production cost or technology for Good Y has not changed, so the entire <strong>Supply Curve</strong> of Good Y does not shift. Only the "quantity supplied" changes.</div>
+            </div>
+        </div>
+
+        <div class="option-analysis correct">
+            <div class="bilingual-text">
+                <strong>(4) 物品Y的總收入上升 (the total revenue of Good Y increases) - 正確 (True)</strong><br>
+                由於物品Y的需求增加，其均衡價格 \(P\) 和均衡交易量 \(Q\) 同時上升。根據公式 \(TR = P \times Q\)，總收入必然上升。
+                <div class="en-text">Because the demand for Good Y increases, both its equilibrium price \(P\) and quantity \(Q\) increase. According to the formula \(TR = P \times Q\), total revenue must increase.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        <div class="bilingual-text">
+            <strong>解題樞紐 (Pivot Point):</strong><br>
+            這題的關鍵在於「連鎖反應」以及區分「整條曲線移動」與「沿著曲線移動」。<br>
+            步驟一：X成本上升 \(\rightarrow\) X供應跌 \(\rightarrow\) X價格升。<br>
+            步驟二：X與Y是代替品 \(\rightarrow\) Y需求升（整條曲線向右移）。<br>
+            步驟三：Y需求升 \(\rightarrow\) 沿著Y的供應曲線向上移 \(\rightarrow\) Y價格升、Y供應量升。
+            <div class="en-text">
+                <strong>Pivot Point:</strong><br>
+                The key is the "chain reaction" and distinguishing between "a shift of the curve" and "a movement along the curve".<br>
+                Step 1: X cost up \(\rightarrow\) X supply down \(\rightarrow\) X price up.<br>
+                Step 2: X & Y are substitutes \(\rightarrow\) Y demand up (entire curve shifts right).<br>
+                Step 3: Y demand up \(\rightarrow\) movement up along Y's supply curve \(\rightarrow\) Y price up, Y quantity supplied up.
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="section">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="warning-box">
+            <div class="bilingual-text">
+                <strong>混淆「供應 (Supply)」與「供應量 (Quantity Supplied)」</strong><br>
+                很多學生看到交易量增加，就誤以為是「供應上升」(選項3)。記住，只有當生產成本、技術、政府稅收等外在因素改變時，供應曲線才會移動。如果只是因為需求改變導致價格上升，那只是「供應量」上升。
+                <div class="en-text">
+                    <strong>Confusing "Supply" with "Quantity Supplied"</strong><br>
+                    Many students see an increase in quantity and mistakenly choose "supply increases" (Statement 3). Remember, the supply curve only shifts when external factors like production costs or technology change. If the price rises solely due to a demand shift, it is only an increase in "quantity supplied".
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        <div class="qa-item">
+            <div class="qa-q bilingual-text">
+                Q: 為什麼選項(1)的「需求量下降」是錯的？價格上升不是會令需求量下降嗎？
+                <div class="en-text">Q: Why is statement (1) "quantity demanded decreases" wrong? Doesn't a price increase cause quantity demanded to decrease?</div>
+            </div>
+            <div class="qa-a bilingual-text">
+                A: 這是因為因果關係搞反了。在這裡，是<strong>需求先增加</strong>（整條曲線右移），才導致價格上升。在新的均衡點上，整體的交易量（即買家實際買到的數量）是比原來多的。
+                <div class="en-text">A: The cause-and-effect is reversed here. In this case, <strong>Demand increases first</strong> (curve shifts right), which causes the price to rise. At the new equilibrium, the overall transacted quantity (what buyers actually buy) is higher than before.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="section">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="bilingual-text">
+            <strong>畫圖速解法 (Quick Diagram Method):</strong><br>
+            在草稿紙上快速畫一個Y市場的供求圖。將需求曲線向右移。你會立刻看到：<br>
+            1. 均衡點沿著原有的供應曲線向右上移動 \(\rightarrow\) 證明「供應量」上升，排除(3)。<br>
+            2. 新的均衡點 \(P\) 和 \(Q\) 都比原來大 \(\rightarrow\) \(P \times Q\) 必然變大，證明(4)正確。<br>
+            結合這兩點，答案秒選D。
+            <div class="en-text">
+                <strong>Quick Diagram Method:</strong><br>
+                Quickly sketch a Supply & Demand diagram for Market Y on scratch paper. Shift the Demand curve to the right. You will instantly see:<br>
+                1. The equilibrium moves up along the original supply curve \(\rightarrow\) proves "quantity supplied" increases, eliminating (3).<br>
+                2. Both the new equilibrium \(P\) and \(Q\) are larger \(\rightarrow\) \(P \times Q\) must be larger, proving (4) is correct.<br>
+                Combining these, you can instantly choose D.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

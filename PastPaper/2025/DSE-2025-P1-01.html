@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Opportunity Cost</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --box-bg-concept: #f0f9ff;
+            --box-bg-math: #f3f4f6;
+            --box-bg-warning: #fffbeb;
+            --border-warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-info p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+
+        .zh-text {
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 0;
+            font-style: italic;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-math);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .warning-box {
+            background-color: var(--box-bg-warning);
+            border-left: 5px solid var(--border-warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            background: var(--bg-color);
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-option {
+            background-color: #dcfce7 !important;
+            border-color: #22c55e !important;
+            font-weight: bold;
+        }
+
+        .qa-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutorial</h1>
+    <div class="header-info">
+        <div>
+            <p>📚 Topic (課題): Opportunity Cost & Sunk Cost (機會成本與沉沒成本)</p>
+            <p>🔑 Key Concepts (關鍵概念): Opportunity Cost, Sunk Cost, Highest-valued Option Forgone</p>
+        </div>
+        <div>
+            <p>⭐ Difficulty (難度): ★★★☆☆</p>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="bilingual-block">
+        <p class="zh-text">珊珊計劃觀看一場演唱會，並以$1500購買了一張該場演唱會的門票。珊珊剛購買門票後，一間公司給予她一份薪酬$3000的兼職工作。然而，該兼職的工作時間與該場演唱會的時間相撞。與此同時，由於所有門票經已售罄，她的朋友提出以$1800購買她那張演唱會門票。</p>
+        <p class="zh-text">根據以上資料，在珊珊決定是否將演唱會門票出售予她的朋友時，她選擇觀看該場演唱會的機會成本是___________。</p>
+        
+        <p class="en-text">Susan planned to watch a concert and bought a ticket of the concert for $1500. Soon after Susan bought the ticket, a company offered to pay her $3000 for a part-time job. However, the work hours of the part-time job clashed with the time of the concert. At the same time, as all tickets were sold out, her friend offered to buy her concert ticket for $1800.</p>
+        <p class="en-text">Based on the above information, at the time when Susan was deciding whether to sell the concert ticket to her friend, her opportunity cost of choosing to watch the concert would be __________.</p>
+    </div>
+
+    <ul class="options-list">
+        <li>A. $3300</li>
+        <li>B. $4500</li>
+        <li class="correct-option">C. $4800</li>
+        <li>D. $6300</li>
+    </ul>
+    <p><em>Note: Stray text regarding "Mr Chan's apartment" from the input has been omitted as it belongs to a different question. (備註：輸入中關於「陳先生公寓」的無關文字已被省略，因其屬於另一道題目。)</em></p>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <p class="zh-text"><strong>機會成本 (Opportunity Cost):</strong> 被放棄的選項中價值最高者。在計算機會成本時，我們只考慮因為作出某個決定而「額外放棄」的價值。</p>
+            <p class="en-text"><strong>Opportunity Cost:</strong> The highest-valued option forgone. When calculating opportunity cost, we only consider the "extra value given up" as a result of making a decision.</p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh-text"><strong>沉沒成本 (Sunk Cost):</strong> 已經付出且無法收回的成本。沉沒成本不應計算在機會成本之內，因為無論你現在作甚麼決定，這筆錢都已經無法改變。</p>
+            <p class="en-text"><strong>Sunk Cost:</strong> A cost that has already been incurred and cannot be recovered. Sunk costs should not be included in opportunity cost because this amount cannot be changed regardless of your current decision.</p>
+        </div>
+        <div class="math-block">
+            $$ \text{Opportunity Cost} = \text{Highest-valued Option Forgone} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案): <span style="color: #22c55e; font-size: 1.2em;">C</span></strong></p>
+
+    <div class="bilingual-block">
+        <p class="zh-text"><strong>分析 (Analysis):</strong> 珊珊現在面臨兩個選擇：(1) 觀看演唱會，或 (2) 不觀看演唱會。如果她選擇觀看演唱會，她必須放棄「不觀看演唱會」所能帶來的最大利益。如果她不看演唱會，她可以同時做兩件事：把門票賣給朋友獲得 \( \$1800 \)，以及去做兼職獲得 \( \$3000 \)。因此，她放棄的總價值是 \( \$1800 + \$3000 = \$4800 \)。最初購買門票的 \( \$1500 \) 是歷史成本（沉沒成本），在決策時不應計算在內。</p>
+        <p class="en-text"><strong>Analysis:</strong> Susan faces two choices: (1) Watch the concert, or (2) Do not watch the concert. If she chooses to watch the concert, she must give up the maximum benefit of "not watching the concert". If she doesn't watch, she can do two things simultaneously: sell the ticket to her friend for \( \$1800 \) AND work the part-time job for \( \$3000 \). Therefore, the total value forgone is \( \$1800 + \$3000 = \$4800 \). The initial \( \$1500 \) paid for the ticket is a historical cost (sunk cost) and should not be included in the decision-making process.</p>
+    </div>
+
+    <h3>Option Breakdown (選項拆解):</h3>
+    <ul>
+        <li>
+            <div class="bilingual-block">
+                <p class="zh-text"><strong>A. $3300: 錯誤。</strong> 這可能是將兼職收入 \( \$3000 \) 加上門票轉售差價 \( (\$1800 - \$1500 = \$300) \) 計算得出。機會成本看的是「放棄的總價值」，而不是利潤差價。</p>
+                <p class="en-text"><strong>A. $3300: Incorrect.</strong> This might be calculated by adding the job income \( \$3000 \) to the resale profit difference \( (\$1800 - \$1500 = \$300) \). Opportunity cost looks at the "total value forgone", not the profit margin.</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-block">
+                <p class="zh-text"><strong>B. $4500: 錯誤。</strong> 這是將兼職收入 \( \$3000 \) 加上最初買票的成本 \( \$1500 \)。這錯誤地將沉沒成本當作了機會成本，並且忽略了門票的轉售價值。</p>
+                <p class="en-text"><strong>B. $4500: Incorrect.</strong> This adds the job income \( \$3000 \) to the initial ticket cost \( \$1500 \). This mistakenly includes the sunk cost as an opportunity cost and ignores the resale value of the ticket.</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-block">
+                <p class="zh-text"><strong>C. $4800: 正確。</strong> 放棄的兼職收入 \( \$3000 \) + 放棄的門票轉售收入 \( \$1800 \)。</p>
+                <p class="en-text"><strong>C. $4800: Correct.</strong> Forgone job income \( \$3000 \) + forgone ticket resale income \( \$1800 \).</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-block">
+                <p class="zh-text"><strong>D. $6300: 錯誤。</strong> 這是將所有數字相加：\( \$3000 + \$1800 + \$1500 \)。這犯了雙重計算和包含沉沒成本的嚴重錯誤。</p>
+                <p class="en-text"><strong>D. $6300: Incorrect.</strong> This adds all the numbers together: \( \$3000 + \$1800 + \$1500 \). This makes the severe mistake of double counting and including sunk costs.</p>
+            </div>
+        </li>
+    </ul>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <p class="zh-text">解答這類題目的<strong>關鍵點 (Pivot Point)</strong> 在於區分「決策時刻」。題目問的是「在珊珊決定是否將演唱會門票出售時」。在這個時間點：</p>
+        <p class="en-text">The <strong>Pivot Point</strong> in solving this type of question is distinguishing the "moment of decision". The question asks "at the time when Susan was deciding whether to sell the concert ticket". At this point in time:</p>
+        <ul>
+            <li><span class="zh-text">已發生的事 (Irrelevant): 買票花了 \( \$1500 \)。這筆錢已經給了主辦方，無論她去不去演唱會，這 \( \$1500 \) 都不會從主辦方那裡退回來。</span> <br> <span class="en-text">What has happened (Irrelevant): Spent \( \$1500 \) on the ticket. This money is already given to the organizer; whether she goes to the concert or not, this \( \$1500 \) will not be refunded by the organizer.</span></li>
+            <li><span class="zh-text">未來的選擇 (Crucial): 選擇一：看演唱會。選擇二：賣票得 \( \$1800 \) 並且去打工得 \( \$3000 \)。</span> <br> <span class="en-text">Future choices (Crucial): Choice 1: Watch the concert. Choice 2: Sell ticket for \( \$1800 \) AND work for \( \$3000 \).</span></li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="warning-box">
+        <div class="bilingual-block">
+            <p class="zh-text">⚠️ <strong>陷阱：被「買入價」迷惑</strong><br>很多學生看到 \( \$1500 \) 就覺得「這是我付出的代價，一定要算進去」。記住，經濟學上的成本是向前看的 (forward-looking)。歷史買入價只有在沒有轉售價值時才可能作為參考，但一旦有了明確的「轉售價 (Resale Value)」，歷史買入價就變成徹底的廢數據。</p>
+            <p class="en-text">⚠️ <strong>Trap: Confused by the "Purchase Price"</strong><br>Many students see \( \$1500 \) and think "This is the price I paid, it must be included". Remember, economic cost is forward-looking. The historical purchase price is only a completely useless piece of data once a clear "Resale Value" is established.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="question-text">Q: 如果朋友沒有提出用 $1800 買她的門票，機會成本會是多少？</p>
+        <p class="question-text" style="color: var(--text-muted); font-style: italic; margin-top: -10px;">Q: What if her friend didn't offer to buy her ticket for $1800, what would the opportunity cost be?</p>
+        <div class="bilingual-block">
+            <p class="zh-text"><strong>A:</strong> 如果門票不能轉售（轉售價值為 \( \$0 \)），那麼她不看演唱會唯一能得到的好處就是去打工賺取 \( \$3000 \)。在這種情況下，看演唱會的機會成本就是 \( \$3000 \)。買票的 \( \$1500 \) 依然是沉沒成本，不予計算。</p>
+            <p class="en-text"><strong>A:</strong> If the ticket could not be resold (resale value is \( \$0 \)), then the only benefit she could get from not watching the concert is working to earn \( \$3000 \). In this case, the opportunity cost of watching the concert would be \( \$3000 \). The \( \$1500 \) spent on the ticket remains a sunk cost and is not calculated.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="border-left-color: #8b5cf6; background-color: #f5f3ff;">
+        <div class="bilingual-block">
+            <p class="zh-text">⚡ <strong>速解法 (Shortcut):</strong><br>在做DSE選擇題時，一看到「過去已經支付的金額」（如：以 \( \$1500 \) 購買了...），立刻用鉛筆在試卷上把它劃掉！這樣你的大腦就不會被這個數字干擾。然後，找出「如果不做這件事，我能拿到什麼好處？」，直接把這些好處相加即可。</p>
+            <p class="en-text">⚡ <strong>Shortcut:</strong><br>When doing DSE MC questions, the moment you see an "amount already paid in the past" (e.g., bought for \( \$1500 \)...), immediately cross it out with a pencil on your question paper! This prevents your brain from being distracted by this number. Then, find "what benefits can I get if I don't do this?", and simply add those benefits together.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
