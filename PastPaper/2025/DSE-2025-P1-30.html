@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #0284c7;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --box-bg-blue: #f0f9ff;
+            --box-border-blue: #0ea5e9;
+            --box-bg-gray: #f3f4f6;
+            --box-bg-yellow: #fefce8;
+            --box-border-yellow: #eab308;
+            --box-bg-green: #f0fdf4;
+            --box-border-green: #22c55e;
+            --box-bg-red: #fef2f2;
+            --box-border-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--box-bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background: var(--bg-light);
+            border-radius: 6px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-blue);
+            border-left: 5px solid var(--box-border-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-box {
+            background-color: var(--box-bg-green);
+            border-left: 5px solid var(--box-border-green);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mistakes-box {
+            background-color: var(--box-bg-red);
+            border-left: 5px solid var(--box-border-red);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: var(--box-bg-yellow);
+            border-left: 5px solid var(--box-border-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor: Question Analysis</h1>
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 總需求及總供應模型與產出缺口 (AD-AS Model & Output Gap)</div>
+        <div><span class="badge">Difficulty</span> ★★★★☆</div>
+        <div><span class="badge">Key Concepts</span> 通脹缺口 (Inflationary Gap), 市場調節 (Market Adjustment), 貨幣政策 (Monetary Policy)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>當短期的總產出超過充分就業產出水平時，___________。</strong></p>
+        <p class="bilingual-en">When the short run aggregate output exceeds the full-employment output level,</p>
+        
+        <div class="option">A. 中央銀行上調法定儲備比率可能有助總產出回復至充分就業產出水平<br>
+        <span class="bilingual-en">an increase in the required reserve ratio by the central bank may help bring the aggregate output back to the full-employment output level</span></div>
+        
+        <div class="option">B. 透過市場調節機制，總產出會因總需求下跌而降回充分就業產出水平<br>
+        <span class="bilingual-en">the aggregate output would fall back to the full-employment output level due to a decrease in aggregate demand through the market adjustment mechanism</span></div>
+        
+        <div class="option">C. 要素市場會出現超額供應<br>
+        <span class="bilingual-en">there would be an excess supply in the factor market</span></div>
+        
+        <div class="option">D. 充分就業產出水平會上升，直至與短期的總產出相等<br>
+        <span class="bilingual-en">the full-employment output level would increase until it is equal to the short run aggregate output</span></div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p>要解答這道題目，我們需要理解<strong>總需求及總供應 (AD-AS) 模型</strong>中的產出缺口以及經濟如何回復均衡。</p>
+        <p class="bilingual-en">To answer this question, we need to understand output gaps in the <strong>Aggregate Demand and Aggregate Supply (AD-AS) model</strong> and how the economy returns to equilibrium.</p>
+
+        <ul>
+            <li><strong>通脹缺口 (Inflationary Gap):</strong> 當短期總產出 \(Y\) 大於充分就業產出水平 \(Y_f\) 時出現。這意味著經濟正在「超負荷」運作。
+            <div class="bilingual-en">Occurs when short-run aggregate output \(Y\) is greater than the full-employment output level \(Y_f\). This means the economy is "overheating".</div></li>
+            
+            <li><strong>要素市場 (Factor Market):</strong> 在通脹缺口下，廠商需要增聘勞工和其他生產要素來維持高產出，導致要素市場出現<strong>超額需求 (Excess Demand)</strong>。
+            <div class="bilingual-en">Under an inflationary gap, firms need to hire more labor and other factors to maintain high output, leading to an <strong>excess demand</strong> in the factor market.</div></li>
+            
+            <li><strong>市場調節機制 (Market Adjustment Mechanism):</strong> 要素市場的超額需求會推高要素價格（如工資）。生產成本上升會導致短期總供應 (SRAS) 減少（向左移），最終令產出降回 \(Y_f\)。
+            <div class="bilingual-en">Excess demand in the factor market pushes up factor prices (e.g., wages). Rising production costs cause Short-Run Aggregate Supply (SRAS) to decrease (shift left), eventually bringing output back to \(Y_f\).</div></li>
+        </ul>
+
+        <div class="math-block">
+            $$ Y > Y_f \implies \text{Inflationary Gap} $$
+            $$ \uparrow \text{Factor Prices} \implies \downarrow \text{SRAS} \implies Y \rightarrow Y_f $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <h3>正確答案 (Correct Option): A</h3>
+        
+        <p><strong>分析選項 A (正確):</strong> 中央銀行上調法定儲備比率 (Required Reserve Ratio) 是一種緊縮性貨幣政策。這會降低貨幣乘數，減少貨幣供應，從而推高利率。較高的利率會減少投資和消費，導致總需求 (AD) 下降（向左移）。這有助於消除通脹缺口，使產出降回充分就業水平。</p>
+        <p class="bilingual-en"><strong>Analysis of Option A (Correct):</strong> An increase in the required reserve ratio by the central bank is a contractionary monetary policy. It lowers the money multiplier, reduces money supply, and pushes up interest rates. Higher interest rates reduce investment and consumption, causing Aggregate Demand (AD) to decrease (shift left). This helps eliminate the inflationary gap and brings output back to the full-employment level.</p>
+
+        <p><strong>分析選項 B (錯誤):</strong> 市場調節機制是透過要素價格上升導致<strong>短期總供應 (SRAS) 下跌</strong>來運作的，而不是透過總需求 (AD) 下跌。</p>
+        <p class="bilingual-en"><strong>Analysis of Option B (Incorrect):</strong> The market adjustment mechanism works through an increase in factor prices leading to a <strong>decrease in Short-Run Aggregate Supply (SRAS)</strong>, not a decrease in Aggregate Demand (AD).</p>
+
+        <p><strong>分析選項 C (錯誤):</strong> 由於短期產出高於充分就業水平，廠商需要過度使用生產要素，因此要素市場會出現<strong>超額需求 (Excess Demand)</strong>，而非超額供應。</p>
+        <p class="bilingual-en"><strong>Analysis of Option C (Incorrect):</strong> Since short-run output is above the full-employment level, firms over-utilize factors of production, resulting in an <strong>excess demand</strong> in the factor market, not excess supply.</p>
+
+        <p><strong>分析選項 D (錯誤):</strong> 充分就業產出水平 (\(Y_f\)) 是由經濟體系的資源數量、勞動人口和技術水平決定的（長期因素），它不會單純為了迎合短期的總產出而自動上升。</p>
+        <p class="bilingual-en"><strong>Analysis of Option D (Incorrect):</strong> The full-employment output level (\(Y_f\)) is determined by the economy's quantity of resources, labor force, and technology (long-run factors). It does not automatically increase just to match the short-run aggregate output.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🧩 題目拆解 (Problem Decomposition)</h2>
+    <div class="tips-box">
+        <p><strong>解題樞紐 (Pivot Point):</strong> 看到「短期的總產出超過充分就業產出水平」，你的大腦應該立刻浮現三個字：<strong>通脹缺口</strong>。接著，你需要思考如何消除這個缺口（即如何減少產出）。</p>
+        <p class="bilingual-en"><strong>Pivot Point:</strong> When you see "short run aggregate output exceeds the full-employment output level", your brain should immediately flash three words: <strong>Inflationary Gap</strong>. Next, you need to think about how to close this gap (i.e., how to reduce output).</p>
+        
+        <p>消除通脹缺口有兩個途徑：<br>
+        1. <strong>政府/央行干預：</strong> 減少 AD（緊縮性財政或貨幣政策）。<br>
+        2. <strong>自然市場調節：</strong> 減少 SRAS（要素價格上升）。</p>
+        <p class="bilingual-en">There are two ways to close an inflationary gap:<br>
+        1. <strong>Govt/Central Bank Intervention:</strong> Decrease AD (contractionary fiscal or monetary policy).<br>
+        2. <strong>Natural Market Adjustment:</strong> Decrease SRAS (factor prices rise).</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistakes-box">
+        <p><strong>陷阱：混淆 AD 與 SRAS 的移動 (Confusing AD and SRAS shifts)</strong></p>
+        <p>很多學生會誤選 B，因為他們知道產出會降回 \(Y_f\)。然而，他們忘記了<strong>市場機制 (Market mechanism)</strong> 是透過改變生產成本來影響 <strong>SRAS</strong> 的。只有外部衝擊或政府政策才會直接移動 AD。</p>
+        <p class="bilingual-en">Many students mistakenly choose B because they know output will fall back to \(Y_f\). However, they forget that the <strong>market mechanism</strong> works by changing production costs, which affects <strong>SRAS</strong>. Only external shocks or government policies directly shift AD.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-item">
+        <p class="qa-q">Q: 為什麼在通脹缺口下，要素市場不是超額供應？失業率不是會很低嗎？</p>
+        <p class="bilingual-en">Q: Why isn't there an excess supply in the factor market during an inflationary gap? Isn't the unemployment rate very low?</p>
+        <p>A: 正是因為失業率極低（低於自然失業率），代表勞工（生產要素）供不應求。廠商想要聘請更多工人來維持高產量，但市場上已經沒有足夠的閒置勞工，這就是「超額需求」(Excess Demand)。</p>
+        <p class="bilingual-en">A: Exactly because the unemployment rate is extremely low (below the natural rate), it means labor (a factor of production) is in short supply. Firms want to hire more workers to maintain high production, but there aren't enough idle workers left in the market. This constitutes an "Excess Demand".</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>關鍵字配對法 (Keyword Matching Method):</strong></p>
+        <ul>
+            <li>看到「市場調節 (Market adjustment)」 ➔ 必須配對「SRAS 移動」或「要素價格改變」。選項 B 說 AD 下跌，立刻淘汰！</li>
+            <li>看到「通脹缺口」 ➔ 產出太高，需要「緊縮性政策 (Contractionary policy)」。選項 A 的「上調法定儲備比率」正是緊縮性政策，直接命中！</li>
+        </ul>
+        <div class="bilingual-en">
+            <ul>
+                <li>See "Market adjustment" ➔ Must pair with "SRAS shift" or "factor price changes". Option B says AD decreases, eliminate immediately!</li>
+                <li>See "Inflationary gap" ➔ Output is too high, needs "Contractionary policy". Option A's "increase in required reserve ratio" is exactly a contractionary policy, direct hit!</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Aggregate Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-light: #f0f9ff;
+            --text-main: #333;
+            --text-muted: #555;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .eng-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        /* Header Section */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        /* Question Section */
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9fafb;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        /* Concept Review */
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .correct-item {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .wrong-item {
+            border-left: 5px solid var(--wrong-color);
+        }
+        /* Other Sections */
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .qa-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+        .qa-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor 經濟學導師解析</h1>
+    <div class="header-info">
+        <div><span class="badge">Topic 主題</span> 總體經濟學：總需求 (Macroeconomics: Aggregate Demand)</div>
+        <div><span class="badge">Difficulty 難度</span> ★★☆☆☆ (2/5)</div>
+        <div><span class="badge">Key Concepts 關鍵概念</span> 總需求 (AD), 消費 (C), 儲蓄 (S), 淨出口 (NX)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>下列哪項會令總需求下降？</strong>
+            <div class="eng-text">Which of the following will lead to a decrease in aggregate demand?</div>
+        </div>
+        <ul class="options-list">
+            <li>
+                A. 私人儲蓄增加
+                <div class="eng-text">a rise in private saving</div>
+            </li>
+            <li>
+                B. 投資支出增加
+                <div class="eng-text">a rise in investment expenditure</div>
+            </li>
+            <li>
+                C. 進口減少
+                <div class="eng-text">a fall in imports</div>
+            </li>
+            <li>
+                D. 入息稅的累進程度減低
+                <div class="eng-text">a fall in the progressivity of income tax</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-text">
+            <strong>總需求 (Aggregate Demand, AD)</strong> 是指在特定物價水平下，經濟體系內對本地生產物品和服務的總需求量。它由四個主要部分組成：
+            <div class="eng-text"><strong>Aggregate Demand (AD)</strong> is the total demand for domestically produced goods and services in an economy at a given price level. It consists of four main components:</div>
+        </div>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+        
+        <div class="bilingual-text">
+            <ul>
+                <li>\( C \) = 私人消費開支 (Private Consumption Expenditure)</li>
+                <li>\( I \) = 投資開支 (Investment Expenditure)</li>
+                <li>\( G \) = 政府消費開支 (Government Consumption Expenditure)</li>
+                <li>\( X - M \) = 淨出口 (Net Exports, NX)，即出口 \( X \) 減去進口 \( M \)</li>
+            </ul>
+        </div>
+
+        <div class="bilingual-text">
+            <strong>可支配收入 (Disposable Income, \( Y_d \)) 的分配：</strong><br>
+            市民的可支配收入只能用於兩個用途：消費 \( C \) 或 儲蓄 \( S \)。因此，當收入不變時，儲蓄增加必然導致消費減少。
+            <div class="eng-text"><strong>Allocation of Disposable Income (\( Y_d \)):</strong><br>
+            Citizens' disposable income can only be used for two purposes: Consumption \( C \) or Saving \( S \). Therefore, assuming income is constant, an increase in saving must lead to a decrease in consumption.</div>
+        </div>
+        <div class="math-block">
+            $$ Y_d = C + S $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 Correct Option: <span style="color: var(--correct-color); font-size: 1.2em;">A</span></strong></p>
+
+    <div class="analysis-item correct-item">
+        <div class="bilingual-text">
+            <strong>選項 A (正確): 私人儲蓄增加 (a rise in private saving)</strong><br>
+            根據公式 \( Y_d = C + S \)，在給定的可支配收入下，私人儲蓄 \( S \) 增加意味著人們將更少比例的收入用於消費。因此，私人消費開支 \( C \) 會下降。由於 \( C \) 是總需求 \( AD \) 的重要組成部分，\( C \) 下降會直接導致總需求 \( AD \) 下降。
+            <div class="eng-text"><strong>Option A (Correct):</strong> According to the formula \( Y_d = C + S \), for a given level of disposable income, an increase in private saving \( S \) means people spend a smaller proportion of their income on consumption. Therefore, private consumption expenditure \( C \) falls. Since \( C \) is a major component of Aggregate Demand \( AD \), a fall in \( C \) directly leads to a decrease in \( AD \).</div>
+        </div>
+    </div>
+
+    <div class="analysis-item wrong-item">
+        <div class="bilingual-text">
+            <strong>選項 B (錯誤): 投資支出增加 (a rise in investment expenditure)</strong><br>
+            投資支出 \( I \) 是總需求的一部分。因此，\( I \) 增加會直接令總需求 \( AD \) <strong>上升</strong>，而不是下降。
+            <div class="eng-text"><strong>Option B (Incorrect):</strong> Investment expenditure \( I \) is a component of AD. Therefore, a rise in \( I \) will directly lead to an <strong>increase</strong> in \( AD \), not a decrease.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item wrong-item">
+        <div class="bilingual-text">
+            <strong>選項 C (錯誤): 進口減少 (a fall in imports)</strong><br>
+            淨出口公式為 \( NX = X - M \)。進口 \( M \) 減少會導致淨出口 \( NX \) 增加（因為減去的數值變小了）。淨出口增加會令總需求 \( AD \) <strong>上升</strong>。
+            <div class="eng-text"><strong>Option C (Incorrect):</strong> The formula for net exports is \( NX = X - M \). A fall in imports \( M \) leads to an increase in net exports \( NX \) (since the subtracted value is smaller). An increase in net exports will lead to an <strong>increase</strong> in \( AD \).</div>
+        </div>
+    </div>
+
+    <div class="analysis-item wrong-item">
+        <div class="bilingual-text">
+            <strong>選項 D (錯誤): 入息稅的累進程度減低 (a fall in the progressivity of income tax)</strong><br>
+            入息稅累進程度減低通常意味著高收入人士的稅務負擔相對減輕，或者整體稅率結構變得平緩，這往往會增加社會整體的稅後可支配收入 \( Y_d \)。可支配收入增加會刺激消費 \( C \)，從而令總需求 \( AD \) <strong>上升</strong>。
+            <div class="eng-text"><strong>Option D (Incorrect):</strong> A fall in the progressivity of income tax generally means a lower tax burden for higher-income earners or a flatter tax structure, which tends to increase the overall after-tax disposable income \( Y_d \) in society. An increase in disposable income stimulates consumption \( C \), thereby leading to an <strong>increase</strong> in \( AD \).</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-text">
+        <strong>解題核心 (Pivot Point):</strong><br>
+        這條題目的核心在於測試你對 \( AD \) 方程式的熟悉程度。你需要將每個選項翻譯成對 \( C, I, G, X, M \) 的影響。
+        <div class="eng-text"><strong>Pivot Point:</strong> The core of this question tests your familiarity with the \( AD \) equation. You need to translate each option into its effect on \( C, I, G, X, M \).</div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <div class="bilingual-text">
+            <strong>陷阱一：混淆進口與出口的影響</strong><br>
+            很多學生看到「減少」就直覺以為 \( AD \) 會下降。但請記住，進口 \( M \) 是 \( AD \) 的<strong>漏出 (Leakage)</strong>。進口減少代表市民減少購買外國貨，可能轉為購買本地貨，因此對本地生產的總需求反而會上升。
+            <div class="eng-text"><strong>Trap 1: Confusing the effects of imports and exports.</strong> Many students see the word "fall" and intuitively think \( AD \) will decrease. Remember that imports \( M \) are a <strong>leakage</strong> from \( AD \). A fall in imports means citizens buy fewer foreign goods and may switch to domestic goods, so the aggregate demand for domestic production actually increases.</div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-item">
+            <div class="bilingual-text">
+                <strong>Q1: 儲蓄不是對經濟有好處嗎？為什麼儲蓄增加會令總需求下降？</strong><br>
+                A: 在宏觀經濟學中，這被稱為「節儉的矛盾 (Paradox of Thrift)」。雖然對個人而言，儲蓄增加是好事；但對整體經濟而言，如果每個人都增加儲蓄（減少消費），企業的產品就會賣不出，導致總需求 \( AD \) 下降，最終可能引發經濟衰退。
+                <div class="eng-text"><strong>Q1: Isn't saving good for the economy? Why does an increase in saving cause AD to fall?</strong><br>
+                A: In macroeconomics, this relates to the "Paradox of Thrift". While saving more is good for an individual, if everyone in the economy saves more (and consumes less), businesses won't be able to sell their products. This leads to a fall in Aggregate Demand \( AD \), which could eventually trigger a recession.</div>
+            </div>
+        </div>
+        
+        <div class="qa-item">
+            <div class="bilingual-text">
+                <strong>Q2: 為什麼進口減少必定代表轉買本地貨？如果進口原本包含在消費 (C) 或投資 (I) 中，進口減少不也會令 C 或 I 同步減少，使總需求 (AD) 維持不變嗎？</strong><br>
+                A: 這是個非常敏銳的進階問題！的確，由於公式中的 \( C, I, G, X \) 包含了進口成分，如果進口減少是因為市民單純「減少整體消費」，那麼 \( C \) 和 \( M \) 會同步下降相同的幅度，\( AD \) 確實會<strong>維持不變</strong>。<br><br>
+                但請注意兩點：第一，題目要求選出會令 \( AD \) <strong>下降</strong>的選項，因此「維持不變」的選項 C 依然是錯誤的。第二，在標準宏觀經濟學分析中，若題目單獨列出「進口減少」（例如因外國貨品價格上升或關稅），通常隱含著「替代效應 (Substitution effect)」：消費者減少購買昂貴的外國貨，轉而購買相對便宜的本地貨。在這種情況下，對本地產品的消費增加，\( AD \) 就會上升。
+                <div class="eng-text"><strong>Q2: Why does a fall in imports necessarily mean switching to domestic goods? If imports were originally included in C or I, wouldn't a fall in imports decrease C or I simultaneously, leaving AD unchanged?</strong><br>
+                A: This is a very sharp, advanced question! Indeed, since \( C, I, G, X \) include imported components, if imports fall simply because overall consumption desire drops, both \( C \) and \( M \) would fall by the same amount simultaneously, and \( AD \) would indeed <strong>remain unchanged</strong>.<br><br>
+                However, note two things: First, the question asks what will lead to a <strong>decrease</strong> in \( AD \). Since Option C would at worst leave AD unchanged, it is still incorrect. Second, in standard macroeconomic analysis, an exogenous "fall in imports" (e.g., due to higher foreign prices or tariffs) usually implies a "substitution effect": consumers buy fewer foreign goods and switch to relatively cheaper domestic alternatives. In this case, consumption of domestic products increases, causing \( AD \) to rise.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual-text">
+        <strong>速解法：符號標記法</strong><br>
+        在考試時，一看到「總需求」，立刻在題目旁邊寫下 <code>AD = C + I + G + X - M</code>。然後在每個選項旁邊畫上箭頭：
+        <ul>
+            <li>A. 儲蓄↑ ➔ C↓ ➔ <strong>AD↓</strong> (找到答案！)</li>
+            <li>B. I↑ ➔ AD↑</li>
+            <li>C. M↓ ➔ -M↑ ➔ AD↑</li>
+            <li>D. 稅↓ ➔ 可支配收入↑ ➔ C↑ ➔ AD↑</li>
+        </ul>
+        <div class="eng-text"><strong>Shortcut: The Arrow Method</strong><br>
+        During the exam, as soon as you see "Aggregate Demand", write down <code>AD = C + I + G + X - M</code> next to the question. Then draw arrows next to each option:
+        <ul>
+            <li>A. Saving↑ ➔ C↓ ➔ <strong>AD↓</strong> (Answer found!)</li>
+            <li>B. I↑ ➔ AD↑</li>
+            <li>C. M↓ ➔ -M↑ ➔ AD↑</li>
+            <li>D. Tax↓ ➔ Disposable Income↑ ➔ C↑ ➔ AD↑</li>
+        </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

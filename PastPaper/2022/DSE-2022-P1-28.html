@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Aggregate Supply</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --warning-bg: #fef2f2;
+            --warning-border: #ef4444;
+            --box-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            background-color: #f1f5f9;
+            border-left: 5px solid #64748b;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .options-list {
+            list-style-type: upper-alpha;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .answer-box {
+            background-color: var(--correct-bg);
+            border-left: 5px solid var(--correct-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mistake-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .lang-en {
+            color: #475569;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .lang-zh {
+            margin-bottom: 5px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor</h1>
+    <div class="header-info">
+        <span class="badge">Topic: Aggregate Supply (總供應)</span>
+        <span class="badge">Difficulty: ★★☆☆☆</span>
+        <span class="badge">Key Concepts: SRAS, Cost of Production, Shifts vs. Movements</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="lang-zh">
+            <strong>下列哪項會令短期總供應曲線向左移？</strong>
+            <ol class="options-list">
+                <li>一般物價水平下降。</li>
+                <li>股票市場更趨波動。</li>
+                <li>出生率下降。</li>
+                <li>原料的運輸成本上升。</li>
+            </ol>
+        </div>
+        <hr>
+        <div class="lang-en">
+            <strong>Which of the following will result in a leftward shift of the short run aggregate supply curve?</strong>
+            <ol class="options-list">
+                <li>The general price level falls.</li>
+                <li>The stock market becomes more volatile.</li>
+                <li>There is a decrease in birth rate.</li>
+                <li>The transportation cost of raw materials rises.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="lang-zh">
+            <strong>短期總供應 (Short Run Aggregate Supply, SRAS)</strong> 代表在給定的一般物價水平下，經濟體系內所有廠商願意且能夠生產的實質產出總量。
+            <br><br>
+            影響 SRAS 曲線<strong>移動 (Shift)</strong> 的主要因素是<strong>生產成本 (Cost of Production)</strong>。當生產成本改變時，即使一般物價水平 \( P \) 維持不變，廠商的利潤也會改變，從而改變其生產意欲。
+        </div>
+        <div class="lang-en">
+            <strong>Short Run Aggregate Supply (SRAS)</strong> represents the total quantity of real output that all firms in an economy are willing and able to produce at a given general price level.
+            <br><br>
+            The main factor that causes a <strong>shift</strong> in the SRAS curve is the <strong>Cost of Production</strong>. When production costs change, even if the general price level \( P \) remains constant, firms' profits change, thereby altering their willingness to produce.
+        </div>
+
+        <div class="math-block">
+            $$ \text{Profit } (\pi) = \text{Total Revenue } (TR) - \text{Total Cost } (TC) $$
+        </div>
+
+        <div class="lang-zh">
+            如果生產成本上升（例如工資、原料價格或運輸成本增加），在相同的物價水平下，利潤會減少，導致 SRAS 曲線<strong>向左移 (Shift to the left)</strong>。
+        </div>
+        <div class="lang-en">
+            If production costs rise (e.g., increases in wages, raw material prices, or transportation costs), profit decreases at the same price level, causing the SRAS curve to <strong>shift to the left</strong>.
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="answer-box">
+        <h3 style="margin-top: 0; color: #15803d;">正確答案 Correct Option: D</h3>
+        
+        <p class="lang-zh"><strong>A. 錯誤：</strong> 一般物價水平下降只會導致「沿著」短期總供應曲線向下移動 (Movement along the curve)，而不會令整條曲線移動 (Shift)。</p>
+        <p class="lang-en"><strong>A. Incorrect:</strong> A fall in the general price level only causes a downward <em>movement along</em> the SRAS curve, not a <em>shift</em> of the entire curve.</p>
+
+        <p class="lang-zh"><strong>B. 錯誤：</strong> 股票市場更趨波動主要影響消費者的財富或投資者的信心，這會影響總需求 (Aggregate Demand, AD)，而不是短期總供應 (SRAS)。</p>
+        <p class="lang-en"><strong>B. Incorrect:</strong> A more volatile stock market primarily affects consumer wealth or investor confidence, which shifts Aggregate Demand (AD), not Short Run Aggregate Supply (SRAS).</p>
+
+        <p class="lang-zh"><strong>C. 錯誤：</strong> 出生率下降會減少未來的勞動人口，這會影響長期總供應 (Long Run Aggregate Supply, LRAS)。但在短期內，初生嬰兒並不會立即加入勞動市場，因此對目前的 SRAS 沒有直接影響。</p>
+        <p class="lang-en"><strong>C. Incorrect:</strong> A decrease in the birth rate reduces the future labor force, which affects Long Run Aggregate Supply (LRAS). In the short run, newborns do not immediately join the labor market, so there is no direct impact on the current SRAS.</p>
+
+        <p class="lang-zh"><strong>D. 正確：</strong> 原料的運輸成本上升會直接增加廠商的生產成本。根據利潤極大化原則，在任何給定的物價水平下，廠商的利潤空間收窄，導致整體產量減少，SRAS 曲線向左移。</p>
+        <p class="lang-en"><strong>D. Correct:</strong> A rise in the transportation cost of raw materials directly increases firms' production costs. Under the profit-maximization principle, firms' profit margins shrink at any given price level, leading to a decrease in overall production and a leftward shift of the SRAS curve.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="background-color: #f3e8ff; border-color: #9333ea;">
+        <div class="lang-zh">
+            <strong>解題樞紐 (Pivot Point)：</strong>
+            解答這類題目的關鍵在於區分三個概念：
+            <ol>
+                <li><strong>需求 (Demand) vs. 供應 (Supply)：</strong> 找出影響生產者（成本/技術）而非消費者（收入/偏好）的因素。</li>
+                <li><strong>移動 (Shift) vs. 沿著曲線移動 (Movement)：</strong> 題目問的是「向左移」(Shift)，所以必須排除由「一般物價水平」(General Price Level) 改變引起的選項。</li>
+                <li><strong>短期 (Short Run) vs. 長期 (Long Run)：</strong> 勞動人口的根本性改變（如出生率）屬於長期因素。</li>
+            </ol>
+        </div>
+        <div class="lang-en">
+            <strong>Pivot Point:</strong>
+            The key to solving this type of question lies in distinguishing three concepts:
+            <ol>
+                <li><strong>Demand vs. Supply:</strong> Identify factors affecting producers (costs/technology) rather than consumers (income/preferences).</li>
+                <li><strong>Shift vs. Movement:</strong> The question asks for a "shift", so you must eliminate options caused by a change in the "General Price Level".</li>
+                <li><strong>Short Run vs. Long Run:</strong> Fundamental changes in the labor force (like birth rates) are long-run factors.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistake-box">
+        <div class="lang-zh">
+            <strong>陷阱一：混淆物價水平與生產成本</strong><br>
+            很多學生看到「下降」或「上升」就急於選擇。記住，Y軸是「一般物價水平」\( P \)。任何 \( P \) 的改變只會導致「沿著曲線移動」(Movement along the curve)。只有 \( P \) 以外的因素（如成本、技術）才會導致「整條曲線移動」(Shift)。
+        </div>
+        <div class="lang-en">
+            <strong>Trap 1: Confusing Price Level with Production Costs</strong><br>
+            Many students rush to choose an option when they see "falls" or "rises". Remember, the Y-axis is the "General Price Level" \( P \). Any change in \( P \) only causes a "movement along the curve". Only factors other than \( P \) (like costs or technology) cause a "shift" of the entire curve.
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="lang-zh">
+            <strong>Q: 為什麼「出生率下降」不會令短期總供應減少？人少了不是生產力會下降嗎？</strong><br>
+            A: 這是一個時間性的問題（Time lag）。剛出生的嬰兒需要大約 15 到 18 年才會進入勞動市場。因此，今天的出生率下降，要到十幾年後才會導致勞動人口減少並使長期總供應 (LRAS) 向左移。在「短期」內，現有的勞動力數量並沒有改變。
+        </div>
+        <div class="lang-en">
+            <strong>Q: Why doesn't a "decrease in birth rate" reduce short-run aggregate supply? Doesn't fewer people mean lower productivity?</strong><br>
+            A: This is an issue of time lag. Newborn babies take about 15 to 18 years to enter the labor market. Therefore, a decrease in the birth rate today will only reduce the labor force and shift the Long Run Aggregate Supply (LRAS) leftwards decades later. In the "short run", the current size of the labor force remains unchanged.
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="concept-box" style="background-color: #ecfdf5; border-color: #10b981;">
+        <div class="lang-zh">
+            <strong>秒殺技巧 (Shortcut)：</strong><br>
+            在 DSE 經濟科中，當題目問及「短期總供應 (SRAS) 的移動」時，請立即在腦海中搜索<strong>「生產成本」(Cost of Production)</strong> 這個關鍵詞。選項 D 直接包含了「成本」(Cost) 一詞，通常這就是正確答案的強烈信號。
+        </div>
+        <div class="lang-en">
+            <strong>Shortcut:</strong><br>
+            In DSE Economics, when a question asks about a "shift in Short Run Aggregate Supply (SRAS)", immediately scan your brain for the keyword <strong>"Cost of Production"</strong>. Option D explicitly contains the word "cost", which is usually a very strong signal for the correct answer.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

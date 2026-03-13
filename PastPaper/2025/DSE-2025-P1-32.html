@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fff;
+            --border-color: #e5e7eb;
+            --math-bg: #f3f4f6;
+            --danger-color: #ef4444;
+            --danger-bg: #fef2f2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h1 { border-bottom: none; color: var(--primary-color); margin-top: 0; }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .header-info div { font-weight: bold; }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        .correct-option {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            border-left: 5px solid #22c55e;
+        }
+        .wrong-option {
+            background-color: #f3f4f6;
+        }
+        .bilingual { margin-bottom: 15px; }
+        .en { color: #4b5563; font-size: 0.95em; margin-top: 5px; }
+        .zh { font-weight: 500; }
+        .trap-box {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .trick-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+    
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div>📍 Topic: 貨幣供應 Money Supply (Macroeconomics)</div>
+        <div>⭐ Difficulty: ★★★★☆</div>
+        <div>🔑 Key Concepts: M1, M2, M3, Cash held by public (公眾持有的法定貨幣), Remittance (匯款)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <div class="zh">何小姐以港幣$500 000現金向黎先生購買某接受存款公司發行的可轉讓存款證。其後，黎先生將港幣$200 000現金存入其港元儲蓄戶口，並將餘款匯出予居於澳洲的父母。</div>
+            <div class="en">Miss Ho uses HK$500 000 cash to buy from Mr Lai a negotiable certificate of deposit issued by a deposit-taking company. Mr Lai then deposits HK$200 000 cash to his Hong Kong dollar savings account and remits the remaining amount to his parents in Australia.</div>
+        </div>
+        <div class="bilingual">
+            <div class="zh">上述行動對港元貨幣供應會有什麼即時的影響？</div>
+            <div class="en">What will be the immediate effect of the above actions on the Hong Kong dollar money supply?</div>
+        </div>
+        <div class="option">A. 貨幣供應M1會上升，而貨幣供應M3會維持不變。<br><span class="en">M1 will increase while M3 will remain unchanged.</span></div>
+        <div class="option">B. 貨幣供應M1會維持不變，而貨幣供應M3會下降。<br><span class="en">M1 will remain unchanged while M3 will decrease.</span></div>
+        <div class="option">C. 貨幣供應M1和M3皆會下降。<br><span class="en">Both M1 and M3 will decrease.</span></div>
+        <div class="option">D. 貨幣供應M1和M3皆會維持不變。<br><span class="en">Both M1 and M3 will remain unchanged.</span></div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <div class="zh">在香港，貨幣供應（Money Supply）分為三個層次。我們必須清楚各層次的定義：</div>
+            <div class="en">In Hong Kong, the money supply is classified into three tiers. We must clearly understand the definition of each tier:</div>
+        </div>
+        
+        <div class="math-block">
+            $$M1 = C_p + D_d$$
+            $$M2 = M1 + D_s + D_t + NCDs(LB)$$
+            $$M3 = M2 + Deposits(RLB, DTC) + NCDs(RLB, DTC)$$
+        </div>
+        
+        <ul class="bilingual">
+            <li><div class="zh">\(C_p\) = 公眾持有的法定貨幣 (Cash held by the public)</div><div class="en">\(C_p\) = Cash held by the public</div></li>
+            <li><div class="zh">\(D_d\) = 活期存款 (Demand deposits)</div><div class="en">\(D_d\) = Demand deposits</div></li>
+            <li><div class="zh">\(D_s, D_t\) = 儲蓄及定期存款 (Savings and Time deposits)</div><div class="en">\(D_s, D_t\) = Savings and Time deposits</div></li>
+        </ul>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div class="bilingual">
+        <div class="zh">正確答案是 <strong>C</strong>。</div>
+        <div class="en">The correct option is <strong>C</strong>.</div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="bilingual">
+            <div class="zh"><strong>第一步：何小姐以現金向黎先生購買可轉讓存款證 (NCD)</strong><br>這只是二手市場交易。現金 \(C_p\) 由何小姐轉移到黎先生手上，總 \(C_p\) 不變。NCD 的擁有權改變，但總量不變。因此，M1、M2 和 M3 均<strong>沒有變化</strong>。</div>
+            <div class="en"><strong>Step 1: Miss Ho buys an NCD from Mr Lai with cash</strong><br>This is merely a secondary market transaction. Cash \(C_p\) is transferred from Miss Ho to Mr Lai, so total \(C_p\) remains unchanged. The ownership of the NCD changes, but the total amount remains unchanged. Therefore, M1, M2, and M3 <strong>remain unchanged</strong>.</div>
+        </div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="bilingual">
+            <div class="zh"><strong>第二步：黎先生將 $200,000 現金存入儲蓄戶口</strong><br>現金存入銀行後，不再屬於公眾持有，因此 \(C_p\) 減少 $200,000。同時，儲蓄存款 \(D_s\) 增加 $200,000。<br>
+            對 M1 的影響：因為 \(C_p\) 下降而 \(D_d\) 不變，<strong>M1 下降</strong>。<br>
+            對 M2/M3 的影響：M1 下降了 $200,000，但 \(D_s\) 增加了 $200,000，兩者互相抵消，因此 <strong>M2 和 M3 維持不變</strong>。</div>
+            <div class="en"><strong>Step 2: Mr Lai deposits $200,000 cash into his savings account</strong><br>Once cash is deposited into a bank, it is no longer held by the public, so \(C_p\) decreases by $200,000. Meanwhile, savings deposits \(D_s\) increase by $200,000.<br>
+            Effect on M1: Since \(C_p\) decreases and \(D_d\) is unchanged, <strong>M1 decreases</strong>.<br>
+            Effect on M2/M3: M1 decreases by $200,000, but \(D_s\) increases by $200,000. The two offset each other, so <strong>M2 and M3 remain unchanged</strong>.</div>
+        </div>
+    </div>
+
+    <div class="option correct-option">
+        <div class="bilingual">
+            <div class="zh"><strong>第三步：黎先生將餘款 ($300,000) 匯出澳洲</strong><br>將現金匯出香港，意味著這筆資金完全離開了香港的貨幣體系。因此，公眾持有的法定貨幣 \(C_p\) 減少 $300,000。<br>
+            因為 \(C_p\) 下降，<strong>M1 下降</strong>。由於這筆錢沒有轉化為香港銀行體系內的任何存款，M2 和 M3 也會跟隨 M1 <strong>一同下降</strong>。</div>
+            <div class="en"><strong>Step 3: Mr Lai remits the remaining $300,000 to Australia</strong><br>Remitting cash out of Hong Kong means this money completely leaves the HK monetary system. Therefore, cash held by the public \(C_p\) decreases by $300,000.<br>
+            Because \(C_p\) decreases, <strong>M1 decreases</strong>. Since this money is not converted into any deposits within the HK banking system, M2 and M3 will also <strong>decrease</strong> along with M1.</div>
+        </div>
+    </div>
+    
+    <div class="bilingual" style="margin-top: 15px;">
+        <div class="zh"><strong>總結：</strong> M1 總共下降了 $500,000，而 M3 總共下降了 $300,000。兩者皆下降，故選 C。</div>
+        <div class="en"><strong>Conclusion:</strong> M1 decreases by a total of $500,000, and M3 decreases by a total of $300,000. Both decrease, hence Option C is correct.</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="bilingual">
+        <div class="zh">解答這類題目的關鍵在於「逐個動作分析」 (Step-by-step analysis)。</div>
+        <div class="en">The key to solving this type of question is "step-by-step analysis".</div>
+        <ul>
+            <li><div class="zh"><strong>干擾資訊 (Distractor)：</strong>「接受存款公司發行的可轉讓存款證」。這只是用來擾亂你的，因為這是個人之間的二手交易，不涉及新發行或贖回，對貨幣供應毫無影響。</div>
+                <div class="en"><strong>Distractor:</strong> "negotiable certificate of deposit issued by a deposit-taking company". This is just to confuse you, as it's a secondary transaction between individuals. It involves no new issuance or redemption, having zero effect on money supply.</div></li>
+            <li><div class="zh"><strong>轉捩點 (Pivot Point)：</strong>「匯出 (Remits)」。只要資金匯出香港，\(C_p\) 就會永久性減少（直到資金回流），這會直接拖低 M1、M2 和 M3。</div>
+                <div class="en"><strong>Pivot Point:</strong> "Remits". Whenever funds are remitted out of Hong Kong, \(C_p\) decreases permanently (until funds return), which directly drags down M1, M2, and M3.</div></li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <div class="bilingual">
+            <div class="zh">⚠️ <strong>陷阱一：</strong> 誤以為存入「儲蓄戶口」會增加 M1。請記住，M1 只包含「活期存款」\(D_d\)，不包含「儲蓄存款」\(D_s\)。</div>
+            <div class="en">⚠️ <strong>Trap 1:</strong> Mistakenly thinking that depositing into a "savings account" increases M1. Remember, M1 only includes "demand deposits" \(D_d\), not "savings deposits" \(D_s\).</div>
+        </div>
+        <div class="bilingual" style="margin-top: 10px;">
+            <div class="zh">⚠️ <strong>陷阱二：</strong> 忘記 M2 和 M3 是包含 M1 的。如果 M1 下降，而沒有其他存款成分上升來抵消，M2 和 M3 必然會跟著下降。</div>
+            <div class="en">⚠️ <strong>Trap 2:</strong> Forgetting that M2 and M3 include M1. If M1 decreases and no other deposit components increase to offset it, M2 and M3 must inevitably decrease as well.</div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <div class="zh"><strong>Q: 為什麼何小姐買 NCD 不會令 M3 增加？NCD 不是 M3 的一部分嗎？</strong></div>
+            <div class="en"><strong>Q: Why doesn't Miss Ho buying the NCD increase M3? Isn't NCD part of M3?</strong></div>
+        </div>
+        <div class="bilingual" style="margin-top: 5px;">
+            <div class="zh"><strong>A:</strong> 是的，接受存款公司發行的 NCD 屬於 M3。但是，這張 NCD <strong>早已存在</strong>於市場中（原本由黎先生持有）。何小姐只是從黎先生手上買過來，這屬於二手市場的擁有權轉移。市場上的 NCD 總額並沒有增加，所以 M3 不變。</div>
+            <div class="en"><strong>A:</strong> Yes, NCDs issued by DTCs belong to M3. However, this NCD <strong>already existed</strong> in the market (originally held by Mr Lai). Miss Ho simply bought it from Mr Lai, which is a transfer of ownership in the secondary market. The total amount of NCDs in the market did not increase, so M3 remains unchanged.</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="bilingual">
+            <div class="zh">💡 <strong>速解法：追蹤現金流失！</strong><br>
+            在考場上，看到「匯出 (Remit)」或「繳交外地稅款」等字眼，代表有資金流出香港體系。只要有現金流出，\(C_p\) 必定下跌。由於這筆錢沒有變成香港的任何存款，它對 M1, M2, M3 的影響是<strong>全線下跌</strong>。因此，只要看到「餘款匯出」，就可以立刻判斷 M3 必定下降，直接排除 A 和 D！</div>
+            <div class="en">💡 <strong>Shortcut: Track the cash leakage!</strong><br>
+            In the exam, when you see words like "Remit" or "paying foreign taxes", it means funds are leaking out of the HK system. Whenever cash flows out, \(C_p\) must drop. Since this money doesn't become any HK deposit, its effect on M1, M2, and M3 is an <strong>across-the-board decrease</strong>. Therefore, once you see "remits the remaining amount", you can immediately conclude M3 must decrease, instantly eliminating options A and D!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

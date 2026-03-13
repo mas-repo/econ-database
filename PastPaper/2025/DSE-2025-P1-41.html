@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Taxation Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #10b981;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-gray: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        h2::before {
+            content: "✦";
+            color: var(--primary);
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.2em;
+            font-style: italic;
+        }
+        .header-box {
+            background-color: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+        .header-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-box li {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .correct-ans {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fbf8cc;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #f4f4f5;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.5rem; }
+            .header-box, .question-box, .concept-box, .trap-box, .qa-box, .trick-box {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Tutor: Question Analysis</h1>
+
+    <div class="header-box">
+        <ul>
+            <li>📝 課題 Topic: 香港的稅制 (Taxation in Hong Kong)</li>
+            <li>⭐ 難度 Difficulty: ★★★☆☆</li>
+            <li>🔑 關鍵字 Key Concepts: 直接稅 (Direct Tax), 間接稅 (Indirect Tax), 印花稅 (Stamp Duty), 差餉 (Rates)</li>
+        </ul>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p>張先生以獨資經營者的身分在香港賺得巨額利潤。他在香港購買了一輛二手車和一所二手住宅自用。</p>
+        <p>根據上述資料，張先生須向香港政府支付哪些類別的<strong>間接稅</strong>？</p>
+        <p>
+            (1) 利得稅<br>
+            (2) 印花稅<br>
+            (3) 差餉<br>
+            (4) 汽車首次登記稅
+        </p>
+        <p>
+            A. 只有 (1)、(2)<br>
+            B. 只有 (2)、(3)<br>
+            C. 只有 (3)、(4)<br>
+            D. (1)、(2)、(3) 及 (4)
+        </p>
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+        <p class="en-text">Mr Cheung earned huge profits as a sole proprietor in Hong Kong. He purchased a second-hand car and a second-hand apartment in Hong Kong for his own use.</p>
+        <p class="en-text">Based on the above information, which types of <strong>indirect tax</strong> does Mr Cheung need to pay to the Hong Kong Government?</p>
+        <p class="en-text">
+            (1) profits tax<br>
+            (2) stamp duty<br>
+            (3) rates<br>
+            (4) motor vehicle first registration tax
+        </p>
+        <p class="en-text">
+            A. (1) and (2) only<br>
+            B. (2) and (3) only<br>
+            C. (3) and (4) only<br>
+            D. (1), (2), (3) and (4)
+        </p>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p><strong>直接稅 (Direct Tax) vs 間接稅 (Indirect Tax)</strong></p>
+        <p>在香港稅制中，稅收主要分為直接稅和間接稅。分類的標準在於<strong>稅務負擔能否轉嫁</strong> (Whether the tax burden can be shifted)。</p>
+        <p class="en-text">In the Hong Kong tax system, taxes are mainly divided into direct and indirect taxes. The classification criterion is based on whether the tax burden can be shifted.</p>
+        
+        <ul>
+            <li><strong>直接稅 (Direct Tax):</strong> 納稅人與負稅人為同一人，稅負不能轉嫁。例如：薪俸稅、利得稅 (Profits Tax)、物業稅。<br>
+            <span class="en-text">The taxpayer and the tax bearer are the same person; the tax burden cannot be shifted. Examples: Salaries Tax, Profits Tax, Property Tax.</span></li>
+            
+            <li><strong>間接稅 (Indirect Tax):</strong> 納稅人可以將部分或全部稅負轉嫁給其他人（通常透過提高價格）。例如：印花稅 (Stamp Duty)、差餉 (Rates)、汽車首次登記稅 (Motor Vehicle First Registration Tax)、博彩稅。<br>
+            <span class="en-text">The taxpayer can shift part or all of the tax burden to others (usually through higher prices). Examples: Stamp Duty, Rates, Motor Vehicle First Registration Tax, Betting Duty.</span></li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p>正確答案 Correct Option: <span class="correct-ans">Option B</span></p>
+
+    <div class="analysis-item">
+        <p><strong>(1) 利得稅 Profits Tax ❌</strong></p>
+        <p>雖然張先生賺得巨額利潤需要繳交利得稅，但利得稅屬於<strong>直接稅</strong>。題目明確問的是「間接稅」，因此不符合要求。</p>
+        <p class="en-text">Although Mr. Cheung needs to pay profits tax on his huge profits, profits tax is a <strong>direct tax</strong>. The question specifically asks for "indirect tax", so this is incorrect.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>(2) 印花稅 Stamp Duty ✅</strong></p>
+        <p>張先生購買了二手住宅（物業交易），必須繳交印花稅。印花稅屬於<strong>間接稅</strong>，符合題目要求。</p>
+        <p class="en-text">Mr. Cheung purchased a second-hand apartment (property transaction), so he must pay stamp duty. Stamp duty is an <strong>indirect tax</strong>, which fits the question's requirement.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>(3) 差餉 Rates ✅</strong></p>
+        <p>張先生擁有並使用該住宅，作為物業的佔用人/擁有人，他需要繳交差餉。差餉屬於<strong>間接稅</strong>。</p>
+        <p class="en-text">As the owner/occupier of the apartment, Mr. Cheung needs to pay rates. Rates are classified as an <strong>indirect tax</strong>.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>(4) 汽車首次登記稅 Motor Vehicle First Registration Tax ❌</strong></p>
+        <p>這是一個間接稅，但只適用於<strong>全新汽車</strong>在香港「首次」登記時繳納。題目強調張先生購買的是「二手車」，這意味著該稅項已由第一任車主繳納，張先生無需再次繳納。</p>
+        <p class="en-text">This is an indirect tax, but it only applies to <strong>brand new cars</strong> upon their "first" registration in Hong Kong. The question emphasizes he bought a "second-hand car", meaning this tax was already paid by the first owner. Mr. Cheung does not need to pay it again.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <p>這類題目的核心在於「關鍵字篩選」(Keyword Filtering)。</p>
+    <p class="en-text">The core of this type of question lies in Keyword Filtering.</p>
+    <ul>
+        <li><strong>破題點 1 (Pivot Point 1):</strong> 題目問的是「間接稅」(Indirect tax)。這立刻排除了(1)利得稅，因為它是直接稅。<br>
+        <span class="en-text">The question asks for "indirect tax". This immediately eliminates (1) profits tax, as it is a direct tax.</span></li>
+        <li><strong>破題點 2 (Pivot Point 2):</strong> 題目特意標明「二手車」(Second-hand car)。這是為了測試你是否知道「首次登記稅」的定義。既然是二手，就不用交「首次」登記稅。<br>
+        <span class="en-text">The question specifically mentions "second-hand car". This tests if you know the definition of "first registration tax". Since it's second-hand, no "first" registration tax is required.</span></li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p><strong>陷阱一：忽略「間接」二字 (Ignoring the word "indirect")</strong></p>
+        <p>很多同學看到「賺得巨額利潤」，就反射性地認為他一定要交利得稅，從而選擇了包含(1)的選項(A或D)。考試時必須圈起「間接稅」這個關鍵詞！</p>
+        <p class="en-text">Many students see "earned huge profits" and reflexively think he must pay profits tax, thus choosing options containing (1) (A or D). You must circle the keyword "indirect tax" during the exam!</p>
+        
+        <p><strong>陷阱二：沒有看清「二手」 (Missing the "second-hand" detail)</strong></p>
+        <p>同學知道買車要交稅，且首次登記稅是間接稅，就選了(4)。但忽略了「首次」(First) 這個詞與「二手」(Second-hand) 是矛盾的。</p>
+        <p class="en-text">Students know buying a car involves tax and that first registration tax is indirect, so they choose (4). But they ignore that "First" contradicts "Second-hand".</p>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼印花稅 (Stamp Duty) 被當作間接稅？</strong><br>
+        <span class="en-text">Why is Stamp Duty considered an indirect tax?</span></p>
+        <p><strong>A:</strong> 雖然印花稅是針對文件（如樓宇買賣合約）徵收的，但在實際交易中，買賣雙方可以透過議價（例如賣方提高售價）將部分稅務負擔轉嫁給對方。因為稅負可以轉嫁，所以歸類為間接稅。<br>
+        <span class="en-text">Although stamp duty is levied on documents (like property contracts), in actual transactions, buyers and sellers can shift part of the tax burden to each other through price negotiation (e.g., seller raising the price). Since the tax burden can be shifted, it is classified as an indirect tax.</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p><strong>刪除法 (Elimination Method)</strong></p>
+        <p>在多項選擇題中，善用刪除法可以秒殺題目：</p>
+        <ol>
+            <li>看到「間接稅」，立刻知道 (1) 利得稅是錯的。</li>
+            <li>劃掉所有包含 (1) 的選項：刪除 A 和 D。</li>
+            <li>現在只剩下 B (2,3) 和 C (3,4)。</li>
+            <li>看到「二手車」，立刻知道 (4) 首次登記稅是錯的。</li>
+            <li>劃掉包含 (4) 的選項：刪除 C。</li>
+            <li><strong>答案必定是 B！</strong> 甚至不需要去仔細思考 (2) 和 (3) 的定義就能得出正確答案。</li>
+        </ol>
+        <p class="en-text">In MCQs, the elimination method is extremely fast:</p>
+        <ol class="en-text">
+            <li>See "indirect tax", immediately know (1) profits tax is wrong.</li>
+            <li>Cross out options with (1): Eliminate A and D.</li>
+            <li>Only B (2,3) and C (3,4) remain.</li>
+            <li>See "second-hand car", immediately know (4) first registration tax is wrong.</li>
+            <li>Cross out options with (4): Eliminate C.</li>
+            <li><strong>The answer must be B!</strong> You don't even need to deeply analyze (2) and (3) to get the right answer.</li>
+        </ol>
+    </div>
+
+</body>
+</html>
