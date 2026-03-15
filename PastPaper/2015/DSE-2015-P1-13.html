@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary-color: #1e293b;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --correct-color: #22c55e;
+            --wrong-color: #ef4444;
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+
+        h1 {
+            border-bottom: none;
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: var(--primary-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background: #f1f5f9;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .concept-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            margin-top: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-correct {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--correct-color);
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor Guide<br><span style="font-size: 0.8em; color: var(--text-main);">經濟學導師解析指南</span></h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <span class="badge">Topic: Market & Price Mechanism 市場與價格機制</span>
+        <span class="badge">Difficulty: ★★★☆☆</span>
+        <span class="badge">Keywords: Shortage, Non-price Competition, Black Market</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>[繁體中文]</strong><br>
+        很多人連日排隊買票觀看著名藝人子華的棟篤笑表演。有些人投訴即使他們願意支付主辦機構所訂的門票價格，他們仍買不到門票。上述情況意味著：</p>
+        <ul class="options-list">
+            <li>A. 價格是分配門票的唯一準則。</li>
+            <li>B. 生產商沒有爭取最高利潤。</li>
+            <li>C. 有可能出現黑市門票。</li>
+            <li>D. 門票市場存在有效的價格上限。</li>
+        </ul>
+
+        <div style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 15px;">
+            <p><strong>[English]</strong><br>
+            Many people queued up for days for the tickets to watch the show of Tsz-Wah, a famous artist performing stand-up comedy. Some people complained that they were unable to buy tickets even though they were willing to pay the ticket price set by the organizer. The above situation implies that:</p>
+            <ul class="options-list">
+                <li>A. price was the only criterion for allocating the tickets.</li>
+                <li>B. the producer was not maximizing its profit.</li>
+                <li>C. a black market for the tickets might emerge.</li>
+                <li>D. there was an effective price ceiling in the ticket market.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>Shortage (短缺)</h3>
+        <p>當物品的價格低於均衡價格（Equilibrium Price）時，需求量（Quantity Demanded）會大於供應量（Quantity Supplied），導致短缺。</p>
+        <p class="lang-en">When the price of a good is below the equilibrium price, the quantity demanded exceeds the quantity supplied, resulting in a shortage.</p>
+        
+        <div class="math-block">
+            $$ \text{Shortage} = Q_d - Q_s \quad \text{where} \quad Q_d > Q_s $$
+        </div>
+
+        <h3>Non-price Competition (非價格競爭)</h3>
+        <p>在短缺的情況下，單靠價格無法分配所有物品，消費者必須透過其他方式（如排隊耗費時間、武力、關係等）來競爭物品。</p>
+        <p class="lang-en">In the presence of a shortage, price alone cannot allocate all goods. Consumers must compete through other means (e.g., queuing/spending time, physical force, relationships).</p>
+
+        <h3>Black Market (黑市)</h3>
+        <p>當部分消費者願意支付的最高價格（Marginal Benefit）高於官方/定價時，便存在圖利空間，黃牛黨（炒家）會以高價轉售圖利。</p>
+        <p class="lang-en">When the maximum price some consumers are willing to pay (Marginal Benefit) is higher than the official/set price, there is room for profit. Scalpers will resell the goods at a higher price.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <h3 style="color: var(--correct-color);">Correct Answer: Option C (正確答案：C)</h3>
+        
+        <div class="option-analysis option-wrong">
+            <strong>Option A: Incorrect (錯誤)</strong>
+            <p>題目提到人們「連日排隊」，這意味著除了金錢（價格）之外，消費者還需要付出「時間」來獲取門票。因此，價格<strong>不是</strong>唯一的分配準則，排隊（時間）也是準則之一。</p>
+            <p class="lang-en">The question mentions people "queued up for days". This implies that besides money (price), consumers also had to spend "time" to acquire tickets. Therefore, price was <strong>not</strong> the only criterion; queuing (time) was also a criterion.</p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <strong>Option B: Incorrect (錯誤)</strong>
+            <p>雖然主辦方定價較低導致短缺，但我們不能單憑這一點斷定他們沒有爭取最高利潤。主辦方可能為了建立長遠的良好商譽（Goodwill）、避免公關災難，或者帶動周邊商品銷售而刻意定低價，這在長遠而言仍可能是利潤極大化的策略。</p>
+            <p class="lang-en">Although the organizer set a lower price causing a shortage, we cannot conclude they were not maximizing profit based solely on this. The organizer might intentionally set a lower price to build long-term goodwill, avoid PR disasters, or boost merchandise sales, which could still align with long-term profit maximization.</p>
+        </div>
+
+        <div class="option-analysis option-correct">
+            <strong>Option C: Correct (正確)</strong>
+            <p>由於出現短缺（有人願意付原價但買不到），這代表部分向隅的消費者對門票的邊際利益（Marginal Benefit）高於主辦方的定價。這種差價創造了獲利機會，誘使「黃牛黨」排隊買票並以更高價格轉售，從而衍生黑市。</p>
+            <p class="lang-en">Because there is a shortage (people willing to pay the set price cannot get tickets), it means the marginal benefit of some unsatisfied consumers is higher than the set price. This price difference creates a profit opportunity, inducing scalpers to queue up and resell tickets at a higher price, leading to the emergence of a black market.</p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <strong>Option D: Incorrect (錯誤)</strong>
+            <p>這是最常見的陷阱！「價格上限」（Price Ceiling）必須是由<strong>政府</strong>透過法例實施的市場干預。題目清楚指出價格是由「主辦機構」（私人企業）所訂，因此這只是企業的自願定價策略，而非價格上限。</p>
+            <p class="lang-en">This is the most common trap! A "Price Ceiling" MUST be a market intervention imposed by the <strong>government</strong> through legislation. The question clearly states the price was set by the "organizer" (a private firm). Thus, it is a voluntary pricing strategy, not a price ceiling.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f0fdf4; border-color: #22c55e;">
+        <p>解答這類題目的關鍵在於找出題目的<strong>「關鍵字（Pivot Points）」</strong>：</p>
+        <ul>
+            <li><strong>「連日排隊 (Queued up for days)」</strong> \(\rightarrow\) 證明出現了非價格競爭（Non-price competition），直接排除 Option A。</li>
+            <li><strong>「願意支付...仍買不到 (Willing to pay... unable to buy)」</strong> \(\rightarrow\) 證明市場存在短缺（Shortage），需求量 \(Q_d\) 大於供應量 \(Q_s\)。這為黑市（Option C）提供了誘因。</li>
+            <li><strong>「主辦機構所訂 (Set by the organizer)」</strong> \(\rightarrow\) 證明這是私人商業決定，沒有政府干預，直接排除 Option D。</li>
+        </ul>
+        <p class="lang-en">The key to solving this type of question is identifying the <strong>Pivot Points</strong>: "Queued up" shows non-price competition (eliminates A). "Willing to pay but unable to buy" shows a shortage, providing incentives for a black market (supports C). "Set by the organizer" means it's a private decision, not government intervention (eliminates D).</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box" style="background-color: #fff1f2; border-color: #be123c;">
+        <p><strong>陷阱：混淆「人為低價」與「價格上限」</strong></p>
+        <p>很多學生看到「價格低於均衡點導致短缺」，就立刻選擇「價格上限 (Price Ceiling)」。請記住，在經濟學定義中，價格上限/下限<strong>必須是由政府強制實施的</strong>。私人企業（如演唱會主辦方、蘋果公司賣iPhone）將價格定得低於均衡價格，純粹是商業決定。</p>
+        <p class="lang-en"><strong>Trap: Confusing "Artificially low price" with "Price Ceiling"</strong><br>
+        Many students see "price below equilibrium causing shortage" and immediately choose "Price Ceiling". Remember, in Economics, price ceilings/floors <strong>MUST be enforced by the government</strong>. A private firm setting a price below equilibrium is purely a business decision.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q1: 既然主辦方可以定高一點的價格來賺更多錢，為什麼他們不這樣做？這不就代表他們沒有爭取最高利潤（Option B）嗎？</strong></p>
+        <p>A1: 不一定。經濟學中的「利潤極大化」可以看長遠的。如果主辦方把票價定得極高（例如 $10,000 一張），雖然短期可能賺盡，但會被大眾批評為「吸血鬼」，損害藝人形象（Goodwill）。定價較低能製造「一票難求」的熱潮，有助於未來的宣傳和周邊產品銷售。因此，我們不能單憑「有短缺」就斷定他們放棄了利潤極大化。</p>
+        <p class="lang-en"><strong>Q1: If the organizer could set a higher price to make more money, why didn't they? Doesn't this mean they aren't maximizing profit (Option B)?</strong><br>
+        A1: Not necessarily. "Profit maximization" in economics can be long-term. Setting astronomically high prices might maximize short-term revenue but destroy the artist's goodwill and brand image. A lower price creates "hype" and can boost future sales and merchandise. Thus, a shortage alone doesn't prove they abandoned profit maximization.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p><strong>秒殺技巧 (Shortcut)：尋找「政府」字眼</strong></p>
+        <p>在 HKDSE 經濟科中，只要選項出現「價格上限 (Price Ceiling)」、「價格下限 (Price Floor)」、「配額 (Quota)」或「稅/津貼 (Tax/Subsidy)」，請立刻回頭看題目：<strong>有沒有提到政府 (Government)？</strong>如果沒有，這些選項 99% 是錯的（陷阱選項）。</p>
+        <p class="lang-en"><strong>Shortcut: Look for the word "Government"</strong><br>
+        In HKDSE Economics, whenever you see options like Price Ceiling, Price Floor, Quota, Tax, or Subsidy, immediately check the question: <strong>Is the government mentioned?</strong> If not, these options are 99% wrong (they are traps).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

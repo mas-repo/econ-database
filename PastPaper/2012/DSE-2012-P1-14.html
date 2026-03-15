@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Taxi Fare Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #475569;
+            --bg-light: #f8fafc;
+            --math-bg: #f3f4f6;
+            --text-main: #1e293b;
+            --border-color: #e2e8f0;
+            --correct: #10b981;
+            --wrong: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+        }
+        .option-correct {
+            border-left-color: var(--correct);
+            background-color: #ecfdf5;
+        }
+        .option-wrong {
+            border-left-color: var(--wrong);
+            background-color: #fef2f2;
+        }
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        .en-text {
+            color: var(--secondary);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutorial<br><span style="font-size: 0.8em; color: var(--secondary);">香港中學文憑經濟學輔導</span></h1>
+    
+    <div class="header-info">
+        <div>Topic: Microeconomics - Demand & Price <span class="en-text">(微觀經濟學 - 需求與價格)</span></div>
+        <div>Difficulty: <span style="color: #f59e0b;">★★★★☆</span></div>
+        <div>Key Concepts: <span class="badge">Demand vs Quantity Demanded</span> <span class="badge">Relative Price</span> <span class="badge">Consumer Surplus</span></div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>由2011年7月10日開始，市區的士服務首兩公里的車費由18元增至20元。下列哪些有關市區的士服務的陳述是正確的？</strong>
+            <ol>
+                <li>的士服務的需求下降。</li>
+                <li>相對短程的士服務，長程的士服務的價格下降。</li>
+                <li>的士服務的消費者盈餘下降。</li>
+            </ol>
+            <p>A. 只有(1)、(2)<br>
+            B. 只有(1)、(3)<br>
+            C. 只有(2)、(3)<br>
+            D. (1)、(2)及(3)</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+        <div class="en-text">
+            <strong>On 10th July 2011, the urban taxi fare for the first 2km was raised from $18 to $20. Which of the following statements about the urban taxi service are correct?</strong>
+            <ol>
+                <li>The demand for taxi service dropped.</li>
+                <li>The price of long-distance taxi trips relative to short-distance taxi trips dropped.</li>
+                <li>The consumer surplus for the taxi service dropped.</li>
+            </ol>
+            <p>A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>A. 需求量 vs 需求 (Quantity Demanded vs Demand)</h3>
+        <p class="bilingual-text"><strong>需求量 (Quantity Demanded):</strong> 物品本身價格改變所引起的變動，在圖表上顯示為沿著同一條需求曲線移動 (Movement along the curve)。</p>
+        <p class="en-text"><strong>Quantity Demanded:</strong> A change caused by the change in the good's own price, represented by a movement along the same demand curve.</p>
+        
+        <p class="bilingual-text"><strong>需求 (Demand):</strong> 非價格因素（如收入、替代品價格）改變所引起的變動，在圖表上顯示為整條需求曲線的移動 (Shift of the curve)。</p>
+        <p class="en-text"><strong>Demand:</strong> A change caused by non-price factors (e.g., income, price of substitutes), represented by a shift of the entire demand curve.</p>
+
+        <h3>B. 相對價格 (Relative Price / Alchian-Allen Theorem)</h3>
+        <p class="bilingual-text">當兩種質素或價格不同的物品（例如長程與短程的士）同時加上一個相同的固定費用（例如起錶價加 $2），較昂貴物品的「相對價格」會下降。這被稱為艾智仁一般性定理 (Alchian-Allen Theorem)。</p>
+        <p class="en-text">When a fixed absolute cost (e.g., $2 increase in flagfall) is added to two goods of different prices (e.g., long vs. short taxi trips), the relative price of the more expensive good decreases. This is known as the Alchian-Allen Theorem.</p>
+        
+        <div class="math-block">
+            $$ \text{Relative Price of Long Trip} = \frac{P_{long}}{P_{short}} $$
+            <br>
+            $$ \text{If } P_{long} > P_{short}, \text{ then } \frac{P_{long} + C}{P_{short} + C} < \frac{P_{long}}{P_{short}} \text{ (where } C > 0) $$
+        </div>
+
+        <h3>C. 消費者盈餘 (Consumer Surplus)</h3>
+        <p class="bilingual-text">消費者願意支付的最高價格與實際支付的市場價格之間的差額。在圖表上，它是需求曲線以下、價格線以上的面積。</p>
+        <p class="en-text">The difference between the maximum price consumers are willing to pay and the actual market price they pay. Graphically, it is the area below the demand curve and above the price line.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--correct); font-size: 1.2em;">C</span></strong></p>
+
+    <div class="option-analysis option-wrong">
+        <h4>陳述 (1) - 錯誤 (False)</h4>
+        <p class="bilingual-text">的士起錶價由18元增至20元，這是「物品本身價格」的改變。這會導致<strong>需求量 (Quantity Demanded)</strong> 下降，而不是<strong>需求 (Demand)</strong> 下降。需求曲線並沒有移動。</p>
+        <p class="en-text">The increase in flagfall fare from $18 to $20 is a change in the "own price" of the service. This leads to a decrease in <strong>quantity demanded</strong>, not a decrease in <strong>demand</strong>. The demand curve does not shift.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <h4>陳述 (2) - 正確 (True)</h4>
+        <p class="bilingual-text">這是一個經典的相對價格問題。假設短程車費原本是 \(P_s = \$20\)，長程車費原本是 \(P_l = \$100\)。原本長程相對短程的價格是 \(\frac{100}{20} = 5\)。現在兩者都加了起錶價 $2，新價格分別是 $22 和 $102。新的相對價格變成 \(\frac{102}{22} \approx 4.64\)。因為 \(4.64 < 5\)，所以長程的士服務的相對價格下降了。</p>
+        <p class="en-text">This is a classic relative price question. Suppose the original short trip fare is \(P_s = \$20\) and long trip is \(P_l = \$100\). The original relative price of a long trip is \(\frac{100}{20} = 5\). Now both increase by the $2 flagfall, becoming $22 and $102 respectively. The new relative price is \(\frac{102}{22} \approx 4.64\). Since \(4.64 < 5\), the relative price of long-distance trips dropped.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <h4>陳述 (3) - 正確 (True)</h4>
+        <p class="bilingual-text">由於的士服務的價格上升（由18元增至20元），在需求曲線不變的情況下，價格線向上移。這導致需求曲線以下、價格線以上的三角形面積縮小，因此消費者盈餘下降。</p>
+        <p class="en-text">Because the price of the taxi service increased (from $18 to $20), assuming the demand curve remains unchanged, the price line shifts upwards. This reduces the triangular area below the demand curve and above the price line, meaning consumer surplus drops.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="bilingual-text"><strong>拆題關鍵 (Pivot Point):</strong> 留意題目中的「價格上升」是屬於物品本身的價格改變，還是其他因素。同時，要敏銳地察覺到「首兩公里車費增加」等同於對所有車程加上一個「固定金額的附加費 (Fixed absolute charge)」。</p>
+    <p class="en-text"><strong>Pivot Point:</strong> Notice whether the "price increase" is a change in the good's own price or other factors. Also, be sharp to realize that an "increase in the first 2km fare" is equivalent to adding a "fixed absolute charge" to all trips.</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li class="bilingual-text"><strong>混淆「需求」與「需求量」：</strong> 這是DSE最常見的陷阱。看到價格上升，很多學生直覺認為「需求下降」，忘記了這只是「需求量下降」。<br>
+        <span class="en-text"><strong>Confusing "Demand" and "Quantity Demanded":</strong> This is the most common DSE trap. Seeing a price increase, many students intuitively think "demand drops", forgetting it is only a drop in "quantity demanded".</span></li>
+    </ul>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="bilingual-text"><strong>Q: 如果題目說「的士附加費按百分比增加（例如全面加價10%）」，陳述(2)還正確嗎？</strong></p>
+        <p class="en-text"><strong>Q: If the question said "taxi fares increased by a percentage (e.g., 10% overall increase)", would statement (2) still be correct?</strong></p>
+        
+        <p class="bilingual-text"><strong>A: 不正確。</strong> 如果是按固定百分比加價，相對價格將保持不變。例如，原本 \(\frac{100}{20} = 5\)。全面加10%後，變成 \(\frac{110}{22} = 5\)。相對價格只有在加上「固定金額 (Fixed Amount)」時才會改變。</p>
+        <p class="en-text"><strong>A: Incorrect.</strong> If the price increases by a fixed percentage, the relative price remains unchanged. For example, originally \(\frac{100}{20} = 5\). After a 10% increase, it becomes \(\frac{110}{22} = 5\). Relative prices only change when a "Fixed Amount" is added.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p class="bilingual-text"><strong>排除法 (Elimination Method):</strong> 在DSE MC卷中，一看到「價格上升導致需求下降」這種字眼，立刻將其判定為錯誤（因為是需求量下降）。確定 (1) 是錯的之後，你可以立刻刪去選項 A、B 和 D。答案瞬間就只剩下 <strong>C</strong>！完全不需要花時間去計算或深究 (2) 和 (3)。</p>
+        <p class="en-text"><strong>Elimination Method:</strong> In DSE MC papers, the moment you see "price increase leads to demand drop", immediately mark it as false (because it's quantity demanded). Once you know (1) is wrong, you can instantly eliminate options A, B, and D. The answer must be <strong>C</strong>! You don't even need to spend time calculating or overthinking (2) and (3).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --success: #10b981;
+            --success-light: #f0fdf4;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --gray-100: #f3f4f6;
+            --gray-800: #1f2937;
+            --text-main: #374151;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--gray-800);
+            margin-top: 1.5em;
+        }
+        h1 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border: 1px solid #bae6fd;
+        }
+        .box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .box-concept {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+        }
+        .box-question {
+            background-color: var(--gray-100);
+            border-left: 5px solid var(--gray-800);
+        }
+        .box-correct {
+            background-color: var(--success-light);
+            border-left: 5px solid var(--success);
+        }
+        .box-mistake {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+        }
+        .box-trick {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+        }
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor Guide</h1>
+    <div class="header-info">
+        <span class="badge">Topic: 總需求與總供應 (AD-AS Model)</span>
+        <span class="badge">Difficulty: ★★★☆☆</span>
+        <span class="badge">Key Concepts: Aggregate Demand, Exports of Services, Long-run Equilibrium</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="box box-question">
+        <p>深圳永久居民往香港的「一簽多行」被「一週一行」所取代。這會令香港的 _________ 和 __________下跌。</p>
+        <p class="bilingual-en">The ‘multiple entry period’（一簽多行）for the permanent Shenzhen residents to visit Hong Kong has been replaced by a ‘one trip per week cap’（一週一行）. This would reduce Hong Kong’s ____________ and ____________.</p>
+        
+        <div class="option">A. 總需求 …… 長期產出水平<br><span class="bilingual-en">aggregate demand …… output level in the long run</span></div>
+        <div class="option">B. 總需求 …… 長期物價水平<br><span class="bilingual-en">aggregate demand …… price level in the long run</span></div>
+        <div class="option">C. 短期總供應 …… 短期產出水平<br><span class="bilingual-en">short-run aggregate supply …… output level in the short run</span></div>
+        <div class="option">D. 長期總供應 …… 長期產出水平<br><span class="bilingual-en">long-run aggregate supply …… output level in the long run</span></div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="box box-concept">
+        <h3>總需求 (Aggregate Demand, AD)</h3>
+        <p>總需求是指在不同物價水平下，經濟體系內各部門對本地實質產出的計劃總開支。旅客在香港的消費屬於「服務輸出」(Exports of Services)。</p>
+        <p class="bilingual-en">Aggregate Demand is the total planned expenditure on domestic real output at different price levels. Tourists' spending in Hong Kong is classified as "Exports of Services".</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+        
+        <h3>長期均衡調整 (Long-run Equilibrium Adjustment)</h3>
+        <p>當總需求下跌，短期內物價水平 \(P\) 和產出水平 \(Y\) 皆會下降，出現通貨緊縮缺口 (Deflationary gap)。在長期，要素價格（如工資）會向下調整，令短期總供應 (SRAS) 增加（向右移），直到產出水平回復至充分就業水平 (Full-employment output, \(Y_f\))。因此，長期產出不變，但長期物價水平會進一步下跌。</p>
+        <p class="bilingual-en">When AD falls, both price level \(P\) and output level \(Y\) drop in the short run, creating a deflationary gap. In the long run, factor prices (like wages) adjust downwards, causing Short-Run Aggregate Supply (SRAS) to increase (shift right) until output returns to the full-employment level \(Y_f\). Thus, long-run output remains unchanged, but the long-run price level falls further.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="box box-correct">
+        <h3>Correct Option: B</h3>
+        
+        <p><strong>Option A: Incorrect.</strong> 雖然總需求 (AD) 會下跌，但在長期，經濟會自我調整，產出水平會回復至原來的充分就業水平，因此長期產出水平不會下跌。<br>
+        <span class="bilingual-en">Although AD falls, in the long run, the economy self-adjusts and the output level returns to the original full-employment level. Therefore, the long-run output level does not fall.</span></p>
+
+        <p><strong>Option B: Correct.</strong> 旅客減少導致服務輸出 \(X\) 減少，總需求 \(AD\) 下跌。在長期調整後，短期總供應向右移，導致長期物價水平較原來下跌。<br>
+        <span class="bilingual-en">Fewer tourists lead to a decrease in exports of services \(X\), causing AD to fall. After long-run adjustment, SRAS shifts to the right, leading to a lower long-run price level compared to the initial state.</span></p>
+
+        <p><strong>Option C: Incorrect.</strong> 旅客減少直接影響的是需求面（總需求），而不是生產成本或生產力，因此不會直接令短期總供應 (SRAS) 下跌。<br>
+        <span class="bilingual-en">A decrease in tourists directly affects the demand side (AD), not production costs or productivity, so it does not directly reduce SRAS.</span></p>
+
+        <p><strong>Option D: Incorrect.</strong> 旅客減少不會影響香港的生產力、資源數量或技術水平，因此長期總供應 (LRAS) 保持不變。<br>
+        <span class="bilingual-en">Fewer tourists do not affect Hong Kong's productivity, quantity of resources, or technology level, so LRAS remains unchanged.</span></p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="box">
+        <p><strong>Pivot Point (破題關鍵):</strong> 明白「旅客減少 = 出口減少 = 總需求下跌」。<br>
+        <span class="bilingual-en">Understand that "fewer tourists = decrease in exports = decrease in AD".</span></p>
+        <p><strong>Distractors (干擾資訊):</strong> 題目刻意在選項中混入「短期」與「長期」的結果。學生必須清楚區分 AD 下跌在短期和長期的不同影響。<br>
+        <span class="bilingual-en">The question deliberately mixes "short-run" and "long-run" outcomes in the options. Students must clearly distinguish the different impacts of an AD decrease in the short run vs. the long run.</span></p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="box box-mistake">
+        <p><strong>Trap 1:</strong> 誤以為旅客是「勞動力」而選擇影響 LRAS。<br>
+        <span class="bilingual-en">Mistakenly thinking tourists are "labor force" and choosing options affecting LRAS. Tourists are consumers, not workers.</span></p>
+        <p><strong>Trap 2:</strong> 忘記了長期的「古典學派」假設（產出必定回復至 \(Y_f\)）。<br>
+        <span class="bilingual-en">Forgetting the "Classical" assumption in the long run (output must return to \(Y_f\)).</span></p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="box">
+        <div class="qa-item">
+            <div class="qa-q">Q: 為什麼旅客減少不是影響本地消費 (C) 而是出口 (X)？<br>
+            <span class="bilingual-en">Why does a decrease in tourists affect exports (X) instead of domestic consumption (C)?</span></div>
+            <div class="qa-a">A: 在國民收入會計中，消費 (C) 僅指「本地居民」的開支。非本地居民（如深圳旅客）在香港的開支，屬於將服務賣給外地人，因此計入「服務輸出」(Exports of Services)。<br>
+            <span class="bilingual-en">In national income accounting, Consumption (C) only refers to expenditure by "local residents". Spending by non-residents (like Shenzhen tourists) in HK is considered selling services to foreigners, thus counted as "Exports of Services".</span></div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="box box-trick">
+        <p><strong>速解法 (Shortcut):</strong> 看到「長期產出水平 (long-run output level) 下跌」，立即回想：什麼會改變長期產出？只有資源、技術、制度。旅客減少不在此列，所以長期產出不變。直接剔除 A 和 D！剩下 B 和 C，旅客是需求面，不會令 SRAS 下跌，剔除 C。答案秒選 B。<br>
+        <span class="bilingual-en">When you see "long-run output level falls", immediately recall: what changes long-run output? Only resources, technology, and institutions. Fewer tourists don't fit here, so long-run output is unchanged. Eliminate A and D instantly! Between B and C, tourists represent the demand side and won't decrease SRAS, eliminate C. The answer is B.</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>

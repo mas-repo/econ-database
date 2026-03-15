@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Opportunity Cost</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --danger-bg: #fef2f2;
+            --danger-border: #ef4444;
+            --success-bg: #f0fdf4;
+            --success-border: #22c55e;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 { margin-top: 0; border-bottom: none; }
+        .header-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-box p { margin: 5px 0; }
+        .question-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--primary-color);
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .option-correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-border);
+        }
+        .option-wrong {
+            background-color: var(--bg-light);
+        }
+        .trap-box {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .badge-correct { background-color: var(--success-border); color: white; }
+        .badge-wrong { background-color: var(--text-muted); color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h1>HKDSE Economics Tutorial</h1>
+        <p><strong>Topic (課題):</strong> Opportunity Cost & Cost Concepts (機會成本與成本概念)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> Cost of Purchasing (購買成本), Cost of Using (使用成本), Exchange Rate (匯率)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>郭先生計劃從德國的汽車製造商購買一部新跑車，並在香港駕駛。下列哪種情況會令購買該部跑車的成本上升？</strong></p>
+        <p>A. 首次登記費上升。<br>
+           B. 汽油價格上升。<br>
+           C. 歐元兌港元貶值。<br>
+           D. 該跑車性能欠佳。</p>
+        <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+        <p class="en-text"><strong>Mr Kwok plans to purchase a new racing car from a German automobile manufacturer and drive the car in Hong Kong. In which of the following situations will the cost of purchasing the racing car increase?</strong></p>
+        <p class="en-text">A. The first registration fee increases.<br>
+           B. The price of gasoline increases.<br>
+           C. The Euro depreciates against the Hong Kong dollar.<br>
+           D. The racing car performs poorly.</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>1. Cost of Purchasing vs. Cost of Using (購買成本 vs 使用成本)</h3>
+        <p>在經濟學中，我們必須區分「購買資產的成本」與「使用資產的成本」。<br>
+        <strong>購買成本 (Cost of Purchasing):</strong> 獲取該物品擁有權所必須支付的一次性代價（例如：車價、首次登記稅、運費）。<br>
+        <strong>使用成本 (Cost of Using):</strong> 營運或使用該物品時所產生的持續性代價（例如：汽油費、維修費、泊車費）。</p>
+        <p class="en-text">In economics, we must distinguish between the cost of acquiring an asset and the cost of using it.<br>
+        <strong>Cost of Purchasing:</strong> The one-off cost required to acquire ownership of the good (e.g., car price, first registration tax, shipping).<br>
+        <strong>Cost of Using:</strong> The recurring cost incurred when operating or using the good (e.g., gasoline, maintenance, parking fees).</p>
+
+        <h3>2. Exchange Rate Effect (匯率效應)</h3>
+        <p>當外幣（歐元）貶值，意味著購買相同外幣定價的商品所需支付的本幣（港元）減少。</p>
+        <p class="en-text">When a foreign currency (Euro) depreciates, it means fewer units of domestic currency (HKD) are needed to buy goods priced in that foreign currency.</p>
+        <div class="math-block">
+            $$ \text{Cost in HKD} = \text{Price in EUR} \times \text{Exchange Rate (HKD/EUR)} $$
+        </div>
+        <p>若匯率 \( \text{HKD/EUR} \) 下降（歐元貶值），則 \( \text{Cost in HKD} \) 也會下降。</p>
+        <p class="en-text">If the exchange rate \( \text{HKD/EUR} \) decreases (Euro depreciates), the \( \text{Cost in HKD} \) will also decrease.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案): <span style="color: var(--success-border); font-size: 1.2em;">A</span></strong></p>
+
+    <div class="option-analysis option-correct">
+        <p><span class="badge badge-correct">Option A</span> <strong>首次登記費上升 / The first registration fee increases.</strong></p>
+        <p>首次登記費是合法擁有及在香港落地該跑車必須支付的<strong>一次性費用</strong>。因此，這直接增加了購買該跑車的成本。</p>
+        <p class="en-text">The first registration fee is a mandatory <strong>one-off payment</strong> required to legally own and register the car in Hong Kong. Therefore, it directly increases the cost of purchasing the racing car.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="badge badge-wrong">Option B</span> <strong>汽油價格上升 / The price of gasoline increases.</strong></p>
+        <p>汽油價格上升會增加<strong>使用/駕駛</strong>跑車的成本，但不會影響<strong>購買</strong>跑車的成本。你可以買了跑車但不駕駛它。</p>
+        <p class="en-text">An increase in gasoline price increases the cost of <strong>using/driving</strong> the car, but it does not affect the cost of <strong>purchasing</strong> it. You can purchase the car without driving it.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="badge badge-wrong">Option C</span> <strong>歐元兌港元貶值 / The Euro depreciates against the Hong Kong dollar.</strong></p>
+        <p>歐元貶值代表港元升值。郭先生可以用較少的港元買到同一部德國（以歐元定價）的跑車，因此購買成本會<strong>下降</strong>，而非上升。</p>
+        <p class="en-text">Euro depreciation means HKD appreciation. Mr Kwok will need fewer HKD to buy the same German car (priced in Euro), so the cost of purchasing will <strong>decrease</strong>, not increase.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="badge badge-wrong">Option D</span> <strong>該跑車性能欠佳 / The racing car performs poorly.</strong></p>
+        <p>跑車性能欠佳可能會降低其價值或效用，或者增加未來的維修成本（使用成本），但不會改變購買該車當下的成本。</p>
+        <p class="en-text">Poor performance might reduce the car's utility or value, or increase future maintenance costs (cost of using), but it does not change the initial cost of purchasing the car.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <p>解答這類題目的「關鍵字」在於<strong>「購買 (Purchasing)」</strong>。</p>
+    <ul>
+        <li><strong>Pivot Point (破題關鍵):</strong> 題目問的是「購買成本 (Cost of purchasing)」，而不是「使用成本 (Cost of using)」。</li>
+        <li><strong>Distractor (干擾資訊):</strong> 題目特意提到「在香港駕駛 (drive the car in Hong Kong)」，目的是引誘你選擇與駕駛相關的選項（如 B 汽油價格）。</li>
+    </ul>
+    <p class="en-text">The keyword to solving this type of question is <strong>"Purchasing"</strong>.</p>
+    <ul class="en-text">
+        <li><strong>Pivot Point:</strong> The question specifically asks for the "Cost of purchasing", not the "Cost of using".</li>
+        <li><strong>Distractor:</strong> The phrase "drive the car in Hong Kong" is deliberately included to trick you into choosing options related to driving (like Option B, gasoline).</li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱：混淆「購買」與「使用」</strong><br>
+        很多同學會認為：「買車就是為了駕駛，所以入油也是買車的代價。」這在經濟學上是錯誤的。購買行為（Acquisition）和使用行為（Operation）是獨立的決策。只有為了獲得擁有權而必須放棄的代價，才算作購買成本。</p>
+        <p class="en-text"><strong>Trap: Confusing "Purchasing" with "Using"</strong><br>
+        Many students think: "I buy a car to drive it, so buying gas is part of the cost of the car." This is economically incorrect. The act of acquiring and the act of operating are separate decisions. Only the options forgone to acquire ownership count as the cost of purchasing.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 點解「首次登記費」算購買成本？我唔登記唔得咩？</strong><br>
+        <span class="en-text">Why is the "first registration fee" a cost of purchasing? Can't I just not register it?</span></p>
+        <p><strong>A:</strong> 題目設定郭先生要在香港買新車並落地。在香港的法律下，新車必須繳付首次登記稅/費才能合法擁有及在路面行駛。這是獲取該資產（作為一部可在香港合法使用的車）不可或缺的一次性開支，因此屬於購買成本。<br>
+        <span class="en-text">The premise is that Mr Kwok is buying a new car for use in HK. Under HK law, a new car must pay the first registration tax/fee to be legally owned and driven on the road. It is an unavoidable one-off expense to acquire the asset (as a legally usable car in HK), hence it is a cost of purchasing.</span></p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p><strong>秒殺技巧 (One-Second Trick):</strong></p>
+    <ol>
+        <li>圈出題目中的動詞：是「購買 (Purchase)」還是「擁有/使用 (Own/Use)」？</li>
+        <li>如果是「購買」，立刻剔除所有持續性開支（如油費、牌費、保險費、維修費）。選項 B 直接出局。</li>
+        <li>看到「外幣貶值 (Foreign currency depreciates)」，立刻聯想「進口貨變平 (Imported goods become cheaper)」。選項 C 直接出局。</li>
+    </ol>
+    <ol class="en-text">
+        <li>Circle the action verb in the question: Is it "Purchase" or "Own/Use"?</li>
+        <li>If it's "Purchase", immediately eliminate all recurring expenses (e.g., fuel, annual license fee, insurance, maintenance). Option B is out.</li>
+        <li>When you see "Foreign currency depreciates", immediately link it to "Imported goods become cheaper". Option C is out.</li>
+    </ol>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Opportunity Cost</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #10b981;
+            --secondary-light: #ecfdf5;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: var(--bg-gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-gray);
+        }
+        .option-correct {
+            background-color: var(--secondary-light);
+            border-left: 5px solid var(--secondary);
+        }
+        .option-wrong {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .tips-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Tutorial</h1>
+
+    <div class="header-info">
+        <span class="badge">Topic: Opportunity Cost (機會成本)</span>
+        <span class="badge">Difficulty: ★★★☆☆</span>
+        <span class="badge">Key Concepts: Opportunity Cost, Time Cost, Utility vs Cost</span>
+    </div>
+
+    <div class="section-card">
+        <h2>1. The Question (題目)</h2>
+        <p><strong>大衛可選擇乘搭港鐵列車或巴士往元朗。假設上述兩種選擇所需的交通時間和車費在正常情況下均相同。下列哪項會引致乘搭港鐵列車往元朗的機會成本上升？</strong></p>
+        <p>A. 巴士的空調設備發生故障。<br>
+           B. 交通阻塞令巴士車程延長了15分鐘。<br>
+           C. 訊號問題令港鐵列車車程增加了15分鐘。<br>
+           D. 大衛對港鐵列車車廂內的新聞廣播感到煩擾。</p>
+        
+        <div class="bilingual-en">
+            <p><strong>David can choose to take the MTR or a bus to Yuen Long. Suppose the required travel time and the fares of both options are the same in a normal situation. Which of the following will result in an increase in the opportunity cost of travelling to Yuen Long by MTR?</strong></p>
+            <p>A. The air-conditioner on the bus is out of order.<br>
+               B. The traffic jam makes the bus trip 15 minutes longer.<br>
+               C. A signalling problem causes the travel time of the MTR to increase by 15 minutes.<br>
+               D. David feels annoyed about the news broadcast in the MTR train.</p>
+        </div>
+    </div>
+
+    <div class="section-card concept-box">
+        <h2>2. Concept Review (概念重溫)</h2>
+        <p><strong>機會成本 (Opportunity Cost)</strong> 是指在作出選擇時，所放棄的選項中價值最高的一個。機會成本不僅包括金錢成本，還包括時間成本等非金錢成本。</p>
+        <div class="bilingual-en">
+            <p><strong>Opportunity Cost</strong> is defined as the highest-valued option forgone when making a choice. It includes not only monetary costs but also non-monetary costs like time.</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Opportunity Cost of Option X} = \text{Explicit Cost} + \text{Implicit Cost} $$
+            $$ \text{機會成本} = \text{為該選擇額外付出的資源 (如金錢、時間)} + \text{被放棄選項的價值} $$
+        </div>
+
+        <p>當我們評估乘搭港鐵的機會成本時，我們需要考慮：<br>
+        1. 乘搭港鐵所付出的代價（車費、時間 \(t\)）。<br>
+        2. 放棄了的選擇（乘搭巴士）的價值。</p>
+        <div class="bilingual-en">
+            <p>When evaluating the opportunity cost of taking the MTR, we consider:<br>
+            1. The resources sacrificed to take the MTR (fares, time \(t\)).<br>
+            2. The value of the forgone option (taking the bus).</p>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>正確答案 (Correct Option): C</strong></p>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option A (錯誤 / Incorrect)</strong>: 巴士空調故障會降低乘搭巴士的價值。由於巴士是被放棄的選項，被放棄選項的價值下降，意味著乘搭港鐵的機會成本<strong>下降</strong>。</p>
+            <p class="bilingual-en">The broken AC reduces the value of taking the bus. Since the bus is the forgone option, a decrease in its value means the opportunity cost of taking the MTR <strong>decreases</strong>.</p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option B (錯誤 / Incorrect)</strong>: 巴士車程延長會降低乘搭巴士的吸引力（價值下降）。同樣地，這會導致乘搭港鐵的機會成本<strong>下降</strong>。</p>
+            <p class="bilingual-en">A longer bus trip reduces the attractiveness (value) of taking the bus. Similarly, this leads to a <strong>decrease</strong> in the opportunity cost of taking the MTR.</p>
+        </div>
+
+        <div class="option-analysis option-correct">
+            <p><strong>Option C (正確 / Correct)</strong>: 港鐵車程增加15分鐘，代表大衛需要犧牲額外15分鐘的時間。時間是稀少資源，這15分鐘本可用於其他有價值的事情上。因此，乘搭港鐵所付出的總代價增加，機會成本<strong>上升</strong>。</p>
+            <p class="bilingual-en">An extra 15 minutes on the MTR means David has to sacrifice 15 more minutes of his time. Time is a scarce resource that could have been used for other valuable activities. Therefore, the total sacrifice required to take the MTR increases, meaning the opportunity cost <strong>increases</strong>.</p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option D (錯誤 / Incorrect)</strong>: 感到煩擾會降低大衛乘搭港鐵所獲得的<strong>效用 (Utility) / 利益 (Benefit)</strong>，但這並沒有增加他需要付出的資源，也沒有改變被放棄選項的價值。因此，機會成本不變。</p>
+            <p class="bilingual-en">Feeling annoyed reduces the <strong>utility / benefit</strong> David gains from taking the MTR, but it does not increase the resources he has to give up, nor does it change the value of the forgone option. Thus, the opportunity cost remains unchanged.</p>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>4. Problem Decomposition (題目拆解)</h2>
+        <p>這類題目的<strong>關鍵點 (Pivot Point)</strong> 在於區分「成本 (Cost)」與「利益 (Benefit)」。</p>
+        <ul>
+            <li><strong>影響機會成本的因素：</strong> 付出的金錢、付出的時間、被放棄選項的價值。</li>
+            <li><strong>不影響機會成本的因素：</strong> 選擇本身帶來的心理感受（如開心、煩擾），這只影響淨利益 (Net Benefit)。</li>
+        </ul>
+        <div class="bilingual-en">
+            <p>The <strong>Pivot Point</strong> of this question type is distinguishing between "Cost" and "Benefit".</p>
+            <ul>
+                <li><strong>Factors affecting Opportunity Cost:</strong> Money paid, time spent, value of the forgone alternative.</li>
+                <li><strong>Factors NOT affecting Opportunity Cost:</strong> Psychological feelings (e.g., happiness, annoyance) derived from the choice itself. These only affect Net Benefit.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-card tips-box">
+        <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p>學生常犯的最大錯誤是將「效用下降 (Decrease in Utility)」等同於「成本上升 (Increase in Cost)」。在經濟學中，一件事情變得「難受」並不代表它的「機會成本」增加，除非這種難受導致你需要放棄更多其他有價值的東西。</p>
+        <div class="bilingual-en">
+            <p>The most common mistake is equating a "Decrease in Utility" with an "Increase in Cost". In economics, an experience becoming "unpleasant" does not mean its "opportunity cost" increases, unless that unpleasantness requires you to give up more of other valuable things.</p>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>6. Student Q&A (學生常見疑問)</h2>
+        <div class="qa-item">
+            <p class="qa-q">Q: 為什麼選項 D (感到煩擾) 不是一種心理成本 (Psychological Cost)？</p>
+            <p>A: 在 DSE 經濟學的嚴格定義下，機會成本強調的是「放棄了的最高價值選擇」。感到煩擾是降低了該行為的回報 (Return/Utility)，而不是你為了搭港鐵而「放棄」了的東西。計算淨利益 (Net Benefit = Benefit - Cost) 時，煩擾會令 Benefit 下降，但 Cost 本身並無改變。</p>
+            <div class="bilingual-en">
+                <p>A: Under the strict definition of DSE Economics, opportunity cost emphasizes the "highest-valued option forgone". Feeling annoyed reduces the return/utility of the action, rather than being something you "gave up" to take the MTR. When calculating Net Benefit (Benefit - Cost), annoyance decreases Benefit, but the Cost itself remains unchanged.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card tips-box">
+        <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>速解法：畫十字分析法</strong></p>
+        <p>遇到這類題目，立刻在腦海中分為兩邊：【主角 (港鐵)】 vs 【代替品 (巴士)】</p>
+        <ul>
+            <li>代替品 (巴士) 變差 ➔ 主角的機會成本 <strong>↓ 下降</strong> (秒殺 A 和 B)</li>
+            <li>主角 (港鐵) 索取更多資源 (如時間 \(t\)、金錢 \(\$ \)) ➔ 主角的機會成本 <strong>↑ 上升</strong> (選 C)</li>
+            <li>主角 (港鐵) 感受變差 ➔ 屬於效用問題，與成本無關 (排除 D)</li>
+        </ul>
+        <div class="bilingual-en">
+            <p><strong>Shortcut: The Cross Analysis</strong></p>
+            <p>Instantly divide the scenario into two sides: [Subject (MTR)] vs [Substitute (Bus)]</p>
+            <ul>
+                <li>Substitute (Bus) gets worse ➔ Opportunity cost of Subject <strong>↓ Decreases</strong> (Eliminate A & B instantly)</li>
+                <li>Subject (MTR) demands more resources (e.g., time \(t\), money \(\$ \)) ➔ Opportunity cost of Subject <strong>↑ Increases</strong> (Choose C)</li>
+                <li>Subject (MTR) feels worse ➔ Utility issue, irrelevant to cost (Eliminate D)</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

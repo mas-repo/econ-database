@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Price Elasticity of Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            text-align: center;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .header-info span {
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .option.correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option.wrong {
+            border-left: 5px solid var(--wrong-color);
+        }
+        .lang-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <span>Topic: Price Elasticity of Demand (需求價格彈性)</span>
+        <span>Difficulty: ★★★☆☆</span>
+        <span>Key Concepts: Elasticity, Substitutes, Demand Factors</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項會減低對機場快線列車服務的需求彈性？</strong></p>
+        <p>A. 有更多來往不同地區的機場巴土路線。<br>
+           B. 客貨車不准在機場接載乘客。<br>
+           C. 機場快線的車費增加。<br>
+           D. 機場快線列車的維修費用增加。</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <p class="lang-en"><strong>Which of the following would reduce the elasticity of demand for the transport service of the Airport Express?</strong></p>
+        <p class="lang-en">A. There are more airport bus routes to different districts.<br>
+           B. Vans are not allowed to pick up passengers at the airports.<br>
+           C. The fare of the Airport Express is raised.<br>
+           D. The maintenance cost of the Airport Express trains increases.</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>需求價格彈性 (Price Elasticity of Demand)</strong> 衡量需求量對價格變動的敏感度。當我們說彈性「減低」時，意味著消費者對價格變動變得較不敏感（即需求變得較缺乏彈性）。</p>
+        <p class="lang-en"><strong>Price Elasticity of Demand</strong> measures the responsiveness of quantity demanded to a change in price. When we say elasticity is "reduced", it means consumers become less sensitive to price changes (i.e., demand becomes more inelastic).</p>
+        
+        <div class="math-block">
+            $$E_d = \frac{\%\Delta Q_d}{\%\Delta P}$$
+        </div>
+
+        <p><strong>影響彈性的主要因素 (Main Determinant): 替代品的數量及相近程度 (Availability and closeness of substitutes)</strong><br>
+        - 替代品越多、越相近 \(\rightarrow\) 彈性越高 (Higher elasticity)。<br>
+        - 替代品越少 \(\rightarrow\) 彈性越低 (Lower elasticity)。</p>
+        <p class="lang-en">- More and closer substitutes \(\rightarrow\) Higher elasticity.<br>
+        - Fewer substitutes \(\rightarrow\) Lower elasticity.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): B</strong></p>
+
+    <div class="option wrong">
+        <p><strong>選項 A (Option A) - 錯誤 (Incorrect)</strong></p>
+        <p>更多機場巴士路線代表機場快線有<strong>更多替代品</strong>。這會增加消費者在面對機場快線加價時轉用其他交通工具的可能，因此會<strong>增加</strong>需求彈性。</p>
+        <p class="lang-en">More airport bus routes mean there are <strong>more substitutes</strong> for the Airport Express. This increases the likelihood of consumers switching to other transport if the Airport Express raises its fare, thus <strong>increasing</strong> the elasticity of demand.</p>
+    </div>
+
+    <div class="option correct">
+        <p><strong>選項 B (Option B) - 正確 (Correct)</strong></p>
+        <p>客貨車不准在機場接載乘客，意味著前往機場的交通工具選擇減少了。因為<strong>替代品減少</strong>，乘客對機場快線的依賴增加，對其價格變動的敏感度下降，從而<strong>減低</strong>了需求彈性。</p>
+        <p class="lang-en">Banning vans from picking up passengers reduces the transport choices available. Because there are <strong>fewer substitutes</strong>, passengers rely more on the Airport Express and become less sensitive to its price changes, thereby <strong>reducing</strong> the elasticity of demand.</p>
+    </div>
+
+    <div class="option wrong">
+        <p><strong>選項 C (Option C) - 錯誤 (Incorrect)</strong></p>
+        <p>車費增加只會導致沿著同一條需求曲線的移動 (Movement along the demand curve)。在直線需求曲線上，價格較高時，需求彈性反而會<strong>較高</strong>，而不是減低。</p>
+        <p class="lang-en">An increase in fare only causes a movement along the demand curve. On a linear downward-sloping demand curve, elasticity is actually <strong>higher</strong> at higher price levels, not reduced.</p>
+    </div>
+
+    <div class="option wrong">
+        <p><strong>選項 D (Option D) - 錯誤 (Incorrect)</strong></p>
+        <p>維修費用增加會影響機場快線的<strong>供應</strong>（供應減少，成本上升），這與消費者的<strong>需求彈性</strong>無關。</p>
+        <p class="lang-en">An increase in maintenance cost affects the <strong>supply</strong> of the Airport Express (supply decreases due to higher costs), which is entirely irrelevant to the consumers' <strong>elasticity of demand</strong>.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+    題目要求找出「減低需求彈性」的因素。在DSE經濟科中，改變需求彈性最常見的考點就是「替代品的數量」。你的大腦應該立刻將「減低彈性」翻譯為「減少替代品」。</p>
+    <p class="lang-en">The question asks for a factor that "reduces elasticity". In DSE Economics, the most common test point for changing demand elasticity is the "number of substitutes". Your brain should immediately translate "reduce elasticity" to "fewer substitutes".</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-color: #ef4444; background-color: #fef2f2;">
+        <p><strong>混淆供應與需求因素 (Confusing Supply and Demand Factors):</strong><br>
+        很多學生看到選項 D 的「費用增加」就以為會影響彈性。記住，生產成本（如維修費）只影響供應曲線的位置，不會改變消費者對價格的敏感度（需求彈性）。</p>
+        <p class="lang-en">Many students see "cost increases" in Option D and think it affects elasticity. Remember, production costs (like maintenance) only shift the supply curve; they do not change consumers' sensitivity to price (demand elasticity).</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼選項 C (車費增加) 不會減低彈性？我以為東西變貴了，人們就更不想買？</strong><br>
+        <span class="lang-en">Why doesn't Option C (fare raised) reduce elasticity? I thought if things get more expensive, people are less willing to buy?</span></p>
+        <p><strong>A:</strong> 價格上升確實會令需求量下降（這反映了需求定律），但「彈性」是指對價格變動的「敏感度」。在數學上，沿著一條直線需求曲線向左上方移動（價格 \(P\) 上升），公式中的基數變了，計算出來的彈性數值實際上是會<strong>增加</strong>的（\(E_d > 1\) 的彈性區域）。因此加價不會減低彈性。</p>
+        <p class="lang-en">An increase in price does reduce the quantity demanded (Law of Demand), but "elasticity" refers to the "sensitivity" to price changes. Mathematically, moving up a linear demand curve (higher price \(P\)), the elasticity value actually <strong>increases</strong> (moving into the elastic region where \(E_d > 1\)). Therefore, raising the fare does not reduce elasticity.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>秒殺技巧 (Shortcut):</strong><br>
+        在DSE MC題中，如果題目問「什麼會改變需求彈性」，直接在選項中尋找與<strong>「替代品 (Substitutes)」</strong>相關的字眼。選項 A 是增加替代品，選項 B 是減少替代品。既然題目問「減低彈性」，必然是選「減少替代品」的 B。</p>
+        <p class="lang-en">In DSE MC questions, if asked "what changes demand elasticity", look directly for keywords related to <strong>"Substitutes"</strong> in the options. Option A increases substitutes, Option B decreases substitutes. Since the question asks to "reduce elasticity", you must choose B, which represents "fewer substitutes".</p>
+    </div>
+
+</div>
+
+</body>
+</html>

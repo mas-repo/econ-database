@@ -1,0 +1,311 @@
+	<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Law of Demand</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --box-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --math-bg: #f3f4f6;
+            --wrong-color: #ef4444;
+            --correct-color: #22c55e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+        }
+
+        .correct-option {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+            font-weight: bold;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Tutor</h1>
+        <div>
+            <span class="tag">Topic: Microeconomics - Law of Demand (微觀經濟學 - 需求定律)</span>
+            <span class="tag">Difficulty: ★☆☆☆☆ (1/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts / 關鍵概念:</strong>
+            <span class="tag" style="background-color: #64748b;">Law of Demand (需求定律)</span>
+            <span class="tag" style="background-color: #64748b;">Price (價格)</span>
+            <span class="tag" style="background-color: #64748b;">Quantity Demanded (需求量)</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>2. The Question (題目)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <p><strong>為了減低膠袋的使用量，政府計劃向消費者開徵一項收費，而這收費是按消費者從店舖所取用的膠袋數量計算。下列哪個概念可用來解釋上述政策？</strong></p>
+                <p class="en-text">In order to reduce the number of plastic bags used, the government plans to impose a charge on consumers according to the number of plastic bags that consumers obtain from shops. Which of the following concepts can be used to explain the above policy?</p>
+            </div>
+            
+            <div class="option">A. 需求定律 (the law of demand)</div>
+            <div class="option">B. 比較優勢原理 (the principle of comparative advantage)</div>
+            <div class="option">C. 規模不經濟 (diseconomies of scale)</div>
+            <div class="option">D. 邊際回報遞減定律 (the law of diminishing marginal returns)</div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>3. Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="bilingual-text">
+                <strong>需求定律 (Law of Demand)</strong>
+                <p>需求定律指出，在其他因素不變的情況下，物品的價格與其需求量呈反方向變動。當價格上升，需求量會下降；當價格下降，需求量會上升。</p>
+                <p class="en-text">The Law of Demand states that, ceteris paribus (all other things being equal), there is a negative relationship between the price of a good and its quantity demanded. When price increases, quantity demanded decreases; when price decreases, quantity demanded increases.</p>
+            </div>
+            
+            <div class="math-block">
+                $$ P \uparrow \implies Q_d \downarrow $$
+                $$ P \downarrow \implies Q_d \uparrow $$
+                <p style="font-size: 0.9em; margin-top: 10px; color: #666;">Where \( P \) = Price (價格), \( Q_d \) = Quantity Demanded (需求量)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section>
+        <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option (正確答案): <span style="color: var(--correct-color); font-size: 1.2em;">A</span></strong></p>
+        
+        <div class="analysis-item">
+            <div class="bilingual-text">
+                <strong>選項 A (正確):</strong> 
+                <p>政府向膠袋「開徵收費」，意味著消費者獲取膠袋的代價（價格 \( P \)）上升了。根據需求定律，價格上升會導致需求量（\( Q_d \)）下降，這正好解釋了政策「減低膠袋使用量」的目的。</p>
+                <p class="en-text"><strong>Option A (Correct):</strong> The government "imposes a charge" on plastic bags, meaning the cost (price \( P \)) for consumers to obtain them increases. According to the law of demand, an increase in price leads to a decrease in quantity demanded (\( Q_d \)), which perfectly explains the policy's goal to "reduce the number of plastic bags used".</p>
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="bilingual-text">
+                <strong>選項 B (錯誤):</strong> 
+                <p>比較優勢原理是國際貿易的概念，解釋不同國家或個體應專門生產其機會成本較低的物品。這與本地消費者減少使用膠袋無關。</p>
+                <p class="en-text"><strong>Option B (Incorrect):</strong> The principle of comparative advantage is a concept in international trade, explaining that countries/individuals should specialize in producing goods for which they have a lower opportunity cost. This is irrelevant to local consumers reducing plastic bag usage.</p>
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="bilingual-text">
+                <strong>選項 C (錯誤):</strong> 
+                <p>規模不經濟是指廠商在長期擴大生產規模時，導致平均成本上升的現象。這屬於廠商生產理論，與消費者的需求行為無關。</p>
+                <p class="en-text"><strong>Option C (Incorrect):</strong> Diseconomies of scale refers to the situation where a firm's long-run average cost increases as its scale of production expands. This belongs to the theory of firm production and is unrelated to consumer demand behavior.</p>
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="bilingual-text">
+                <strong>選項 D (錯誤):</strong> 
+                <p>邊際回報遞減定律是指在短期生產中，當不斷增加可變生產要素（如勞工）到固定要素（如機器）時，邊際產量最終會下降。這同樣是生產者理論，不適用於消費者層面。</p>
+                <p class="en-text"><strong>Option D (Incorrect):</strong> The law of diminishing marginal returns states that in short-run production, as more variable factors (e.g., labor) are added to fixed factors (e.g., machinery), the marginal product will eventually decline. This is also a producer theory and does not apply to the consumer level.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>5. Problem Decomposition (題目拆解)</h2>
+        <div class="bilingual-text">
+            <p>解答這類題目的關鍵在於找出<strong>「樞紐字眼」(Pivot Points)</strong>：</p>
+            <ul>
+                <li><strong>「開徵收費」 (impose a charge)</strong> = 價格 \( P \) 上升。</li>
+                <li><strong>「減低使用量」 (reduce the number used)</strong> = 需求量 \( Q_d \) 下降。</li>
+                <li><strong>「消費者」 (consumers)</strong> = 提示這是一個關於「需求」(Demand) 而非「供應」(Supply) 或「生產」(Production) 的概念。</li>
+            </ul>
+            <p>將這三個線索結合，唯一符合的微觀經濟學概念就是需求定律。</p>
+            
+            <p class="en-text">The key to solving this type of question is identifying the <strong>Pivot Points</strong>:</p>
+            <ul class="en-text">
+                <li><strong>"impose a charge"</strong> = Price \( P \) increases.</li>
+                <li><strong>"reduce the number used"</strong> = Quantity demanded \( Q_d \) decreases.</li>
+                <li><strong>"consumers"</strong> = Hints that this is a concept about "Demand" rather than "Supply" or "Production".</li>
+            </ul>
+            <p class="en-text">Combining these three clues, the only matching microeconomic concept is the Law of Demand.</p>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <section>
+        <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="bilingual-text">
+            <p><strong>概念混淆：需求 (Demand) vs 需求量 (Quantity Demanded)</strong></p>
+            <p>同學常誤以為徵收膠袋費會「減少對膠袋的需求」(Decrease in Demand)。實際上，因為改變的是膠袋本身的「價格」(Price)，所以這只會導致<strong>「需求量下降」(Decrease in Quantity Demanded)</strong>，在圖表上表現為沿著同一條需求曲線向上移動，而不是整條需求曲線移動。</p>
+            
+            <p class="en-text"><strong>Conceptual Confusion: Demand vs Quantity Demanded</strong></p>
+            <p class="en-text">Students often mistakenly think that the plastic bag levy causes a "decrease in demand". In reality, because it is the "price" of the plastic bag itself that changes, it only leads to a <strong>"decrease in quantity demanded"</strong>. On a graph, this is represented by an upward movement along the same demand curve, not a shift of the entire curve.</p>
+        </div>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <h2>7. Student Q&A (學生常見疑問)</h2>
+        <div class="qa-box">
+            <div class="bilingual-text">
+                <p><strong>Q: 為什麼這不是「邊際效用遞減定律」(Law of Diminishing Marginal Utility)？</strong></p>
+                <p>A: 雖然邊際效用遞減定律是推導需求定律的基礎，但題目描述的直接因果關係是「收費增加導致數量減少」（價格與數量的關係），這正是需求定律的直接定義。題目並沒有提及消費者從每一個額外膠袋中獲得的滿足感下降。</p>
+                
+                <p class="en-text"><strong>Q: Why isn't this the "Law of Diminishing Marginal Utility"?</strong></p>
+                <p class="en-text">A: Although the law of diminishing marginal utility is the foundation for deriving the law of demand, the direct causal relationship described in the question is "an increase in charge leads to a decrease in quantity" (the relationship between price and quantity), which is the direct definition of the law of demand. The question does not mention a decrease in satisfaction derived from each additional plastic bag.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <section>
+        <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="tips-box">
+            <div class="bilingual-text">
+                <p><strong>速解法：主體排除法 (Subject Elimination Method)</strong></p>
+                <p>看到題目主體是「消費者」(Consumers) 的行為，你可以立刻排除選項 C (規模不經濟) 和選項 D (邊際回報遞減定律)，因為這兩個都是關於「生產者/廠商」(Producers/Firms) 的概念。剩下 A 和 B，B 是國際貿易概念，顯然無關，直接秒殺選 A。</p>
+                
+                <p class="en-text"><strong>Shortcut: Subject Elimination Method</strong></p>
+                <p class="en-text">When you see the subject of the question is "consumers" behavior, you can immediately eliminate Option C (diseconomies of scale) and Option D (law of diminishing marginal returns) because both are concepts related to "producers/firms". Leaving A and B, B is an international trade concept which is obviously irrelevant. You can instantly choose A.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

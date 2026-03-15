@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Aggregate Output & Equity</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.5em;
+            font-style: italic;
+        }
+        .header-box {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .header-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-box li {
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--border-color);
+        }
+        .correct { border-left-color: var(--success); }
+        .incorrect { border-left-color: var(--danger); }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .badge-correct { background-color: var(--success); }
+        .badge-incorrect { background-color: var(--danger); }
+        .qa-box {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor</h1>
+    <div class="header-box">
+        <ul>
+            <li><strong>Topic (課題):</strong> 總體經濟學：總產出與收入分配 (Macroeconomics: Aggregate Output and Income Distribution)</li>
+            <li><strong>Difficulty (難度):</strong> ★★★☆☆</li>
+            <li><strong>Key Concepts (核心概念):</strong> 總產出 (Aggregate Output), 公平 (Equity), 稅制 (Tax System), 轉移支付 (Transfer Payments)</li>
+        </ul>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <p>下列哪些可能導致香港的總產出上升而同時改善公平情況？</p>
+        <p>(1) 某慈善基金捐出一百億港元成立非政府組織以提供服務予低下階層。<br>
+        (2) 政府向每位18歲或以上的永久性居民派發現金10 000港元。<br>
+        (3) 薪俸稅的標準稅率下調1%。</p>
+        <p>A. 只有 (1)、(2)<br>
+        B. 只有 (1)、(3)<br>
+        C. 只有 (2)、(3)<br>
+        D. (1)、(2) 及 (3)</p>
+        <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+        <p class="en-text">Which of the following may lead to a rise in aggregate output and in improvement in equity in Hong Kong at the same time?</p>
+        <p class="en-text">(1) a charity fund donating HK$10 billion to set up non-governmental organisations in order to provide services for the underprivileged<br>
+        (2) a cash payout of HK$10 000 to each permanent resident aged 18 or above by the Government<br>
+        (3) a 1% reduction in the standard tax rate of salaries tax</p>
+        <p class="en-text">A. (1) and (2) only<br>
+        B. (1) and (3) only<br>
+        C. (2) and (3) only<br>
+        D. (1), (2) and (3)</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p><strong>1. 總產出 (Aggregate Output):</strong><br>
+        總產出通常以本地生產總值 (GDP) 衡量。任何增加總需求 \( AD \) 的因素（如消費 \( C \)、投資 \( I \)、政府開支 \( G \)）都可能導致總產出上升。</p>
+        <p class="en-text">Aggregate output is usually measured by Gross Domestic Product (GDP). Any factor that increases Aggregate Demand \( AD \) (such as Consumption \( C \), Investment \( I \), or Government Expenditure \( G \)) may lead to a rise in aggregate output.</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + NX $$
+        </div>
+
+        <p><strong>2. 公平 (Equity):</strong><br>
+        在經濟學中，改善公平通常指縮窄貧富懸殊（降低堅尼系數）。如果一項政策對低收入人士的幫助大於高收入人士，或者向富人徵收更多稅款，則會改善公平。</p>
+        <p class="en-text">In economics, improving equity usually means narrowing the wealth gap (lowering the Gini coefficient). If a policy benefits low-income individuals more than high-income ones, or taxes the rich more, it improves equity.</p>
+
+        <p><strong>3. 香港的標準稅率 (Standard Tax Rate in HK):</strong><br>
+        香港的薪俸稅採用累進稅率或標準稅率（兩者取較低者）。<strong>標準稅率只適用於全港最高收入的一批人士。</strong></p>
+        <p class="en-text">Hong Kong's salaries tax uses progressive rates or a standard rate (whichever is lower). <strong>The standard tax rate ONLY applies to the highest-income earners in the city.</strong></p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--primary); font-size: 1.2em;">A</span></strong></p>
+
+    <div class="option-analysis correct">
+        <span class="badge badge-correct">Correct</span>
+        <p><strong>(1) 成立非政府組織提供服務 (Setting up NGOs to provide services)</strong><br>
+        成立機構和提供服務涉及生產活動，會增加投資 \( I \) 或消費 \( C \)，從而提升總產出。由於服務對象是「低下階層」，資源向窮人傾斜，因此改善了公平。</p>
+        <p class="en-text">Setting up organizations and providing services involves production, increasing Investment \( I \) or Consumption \( C \), thus raising aggregate output. Since the target is the "underprivileged", resources are directed to the poor, improving equity.</p>
+    </div>
+
+    <div class="option-analysis correct">
+        <span class="badge badge-correct">Correct</span>
+        <p><strong>(2) 派發現金10,000港元 (Cash payout of HK$10,000)</strong><br>
+        市民收到現金後會增加消費 \( C \)，帶動總需求 \( AD \) 和總產出上升。雖然每人收到的金額相同，但10,000元佔窮人總財富/收入的比例遠高於富人，因此能改善收入分配（公平）。</p>
+        <p class="en-text">Citizens will increase consumption \( C \) after receiving the cash, driving up Aggregate Demand \( AD \) and output. Although the amount is identical for everyone, $10,000 represents a much larger percentage of a poor person's wealth/income than a rich person's, thus improving income distribution (equity).</p>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <span class="badge badge-incorrect">Incorrect</span>
+        <p><strong>(3) 標準稅率下調1% (1% reduction in standard tax rate)</strong><br>
+        減稅的確會增加可支配收入，刺激消費並可能增加總產出。<strong>但是</strong>，標準稅率僅適用於高收入人士。下調此稅率意味著只有富人受惠，這會擴大貧富懸殊，<strong>惡化</strong>公平情況。</p>
+        <p class="en-text">A tax cut does increase disposable income, stimulating consumption and potentially output. <strong>HOWEVER</strong>, the standard tax rate only applies to high-income earners. Lowering it means only the rich benefit, which widens the wealth gap and <strong>worsens</strong> equity.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🧩 Problem Decomposition (題目拆解)</h2>
+    <p>這類題目的核心在於<strong>「雙重條件檢驗」</strong>。你必須同時驗證「總產出上升」和「公平改善」兩個條件。</p>
+    <p class="en-text">The core of this question type is the <strong>"Double Condition Check"</strong>. You must verify both "rise in aggregate output" and "improvement in equity" simultaneously.</p>
+    <ul>
+        <li><strong>Pivot Point (關鍵點):</strong> 辨識「標準稅率」的受眾。很多學生誤以為減稅一定對所有人好，忽略了香港稅制的特殊性。</li>
+        <li class="en-text"><strong>Pivot Point:</strong> Identifying who pays the "standard tax rate". Many students mistakenly think tax cuts benefit everyone, ignoring the specifics of HK's tax system.</li>
+    </ul>
+
+    <!-- 6. Common Mistakes -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <p><strong>陷阱：轉移支付直接計入GDP？</strong><br>
+    選項(2)的派錢屬於「轉移支付」(Transfer Payment)，本身<strong>不計入</strong>GDP。但題目問的是「可能導致」(may lead to)。派錢會導致市民消費增加，而消費 \( C \) 是計入GDP的，所以最終會導致總產出上升。</p>
+    <p class="en-text"><strong>Trap: Are transfer payments directly included in GDP?</strong><br>
+    The cash payout in option (2) is a "Transfer Payment", which is <strong>NOT</strong> included in GDP. However, the question asks what "may lead to" a rise. Cash payouts lead to increased consumption by citizens, and consumption \( C \) IS included in GDP, so it ultimately leads to a rise in aggregate output.</p>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼劃一派發 $10,000 會改善公平？大家拿的錢不是一樣多嗎？</strong></p>
+        <p class="en-text"><strong>Q: Why does a uniform $10,000 payout improve equity? Doesn't everyone get the exact same amount?</strong></p>
+        <p><strong>A:</strong> 衡量公平時，我們看的是相對比例。假設窮人原本有 $10,000，富人有 $1,000,000。派錢後，窮人財富增加 100%，而富人只增加 1%。低收入階層的相對財富佔比提升了，因此堅尼系數會下降，公平得以改善。</p>
+        <p class="en-text"><strong>A:</strong> When measuring equity, we look at relative proportions. Imagine a poor person has $10,000 and a rich person has $1,000,000. After the payout, the poor person's wealth increases by 100%, while the rich person's increases by only 1%. The relative wealth share of the lower-income group increases, lowering the Gini coefficient and improving equity.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p><strong>消去法 (Elimination Method):</strong><br>
+        在多項選擇題中，尋找最明顯錯誤的選項。一旦你發現 (3) 只對富人有利（惡化公平），你就可以立刻剔除所有包含 (3) 的選項 (B, C, D)。答案瞬間鎖定為 A，甚至不需要仔細推敲 (1) 和 (2) 的細節！</p>
+        <p class="en-text"><strong>Elimination Method:</strong><br>
+        In MCQs, look for the most obviously wrong statement. Once you realize that (3) only benefits the rich (worsening equity), you can immediately eliminate all options containing (3) (which are B, C, and D). The answer is instantly locked as A, without even needing to deeply analyze (1) and (2)!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
