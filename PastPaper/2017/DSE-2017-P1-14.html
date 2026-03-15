@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>HKDSE Economics Tutor - Demand and Supply</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #059669;
+            --secondary-light: #d1fae5;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --bg-gray: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            margin-top: 1.5em;
+        }
+        h1 { font-size: 1.8rem; border-bottom: none; }
+        h2 { font-size: 1.4rem; }
+        p { margin-bottom: 1em; }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.5em;
+            padding-left: 10px;
+            border-left: 3px solid #e5e7eb;
+        }
+        
+        /* Section Specific Styles */
+        .header-box {
+            background-color: var(--bg-gray);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-box span { font-weight: bold; color: var(--primary); }
+        
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        .options { list-style-type: none; padding-left: 0; }
+        .options li { margin-bottom: 10px; padding: 10px; background: var(--bg-gray); border-radius: 6px; }
+        
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--primary);
+        }
+
+        .analysis-box {
+            background-color: #fff;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .correct-opt { border-color: var(--secondary); background-color: var(--secondary-light); }
+        .wrong-opt { border-color: var(--danger-light); }
+        
+        .mistakes-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #fce7f3;
+            border-left: 5px solid #db2777;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f3e8ff;
+            border-left: 5px solid #9333ea;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h1>📊 HKDSE Economics Tutor</h1>
+        <p><span>Topic (課題):</span> Demand and Supply - Changes in Demand vs. Quantity Demanded (需求與供應 - 需求與需求量的變動)</p>
+        <p><span>Difficulty (難度):</span> ★★★☆☆</p>
+        <p><span>Key Concepts (核心概念):</span> Substitutes (替代品), Change in Demand (需求變動), Change in Quantity Demanded (需求量變動)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>下列哪種情況最有可能導致蘋果公司生產的iPhone的需求上升？</strong></p>
+        <p class="en-text">Which of the following situations would most likely lead to an increase in the demand for iPhone produced by Apple Inc.?</p>
+        
+        <ul class="options">
+            <li>A. 電池業技術突破令其生產成本下降。<br><span class="en-text">A technological breakthrough in the battery industry reduces its production cost.</span></li>
+            <li>B. 人們預期下一款iPhone會有更多創新的特點。<br><span class="en-text">People expect the next model of iPhone will have more innovative features.</span></li>
+            <li>C. 三星公司的下一款智能手機被很多航空公司禁止攜帶登機。<br><span class="en-text">A model of Samsung smartphone is banned by many airlines.</span></li>
+            <li>D. 蘋果公司下調iPhone的售價。<br><span class="en-text">Apple Inc. reduces the selling price of iPhone.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p><strong>1. 需求 (Demand) vs. 需求量 (Quantity Demanded)</strong></p>
+        <p>「需求量」的改變是由物品<strong>自身價格 (Own Price)</strong> 改變引起的，在圖表上顯示為沿著同一條需求曲線移動 (Movement along the curve)。「需求」的改變則是由非價格因素（如收入、替代品價格、預期等）引起的，顯示為整條需求曲線的移動 (Shift of the curve)。</p>
+        <p class="en-text">A change in "Quantity Demanded" is caused by a change in the good's <strong>own price</strong>, represented by a movement along the demand curve. A change in "Demand" is caused by non-price factors (e.g., income, price of substitutes, expectations), represented by a shift of the entire demand curve.</p>
+
+        <p><strong>2. 替代品 (Substitutes)</strong></p>
+        <p>當兩種物品滿足相同的慾望時，它們就是替代品（例如 iPhone 和 Samsung）。如果物品 Y 的吸引力下降或價格上升，消費者會轉向購買物品 X，導致物品 X 的需求 \(D_x\) 上升。</p>
+        <p class="en-text">When two goods satisfy the same want, they are substitutes (e.g., iPhone and Samsung). If good Y becomes less attractive or more expensive, consumers will switch to good X, increasing the demand \(D_x\) for good X.</p>
+
+        <div class="math-block">
+            <p>需求函數 (Demand Function):</p>
+            $$ Q_d = f(P, P_s, P_c, Y, E) $$
+            <p style="font-size: 0.9em; color: var(--text-muted);">Where \(P\) = Own Price, \(P_s\) = Price of Substitutes, \(P_c\) = Price of Complements, \(Y\) = Income, \(E\) = Expectations</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <p><strong>正確答案 (Correct Option): <span style="color: var(--secondary); font-size: 1.2em;">C</span></strong></p>
+
+        <div class="option-analysis wrong-opt">
+            <p><strong>Option A: 錯誤 (Incorrect)</strong></p>
+            <p>生產成本下降會導致<strong>供應 (Supply)</strong> 增加，供應曲線向右移。這並不影響需求曲線。</p>
+            <p class="en-text">A decrease in production costs leads to an increase in <strong>Supply</strong> (supply curve shifts to the right). It does not affect the demand curve.</p>
+        </div>
+
+        <div class="option-analysis wrong-opt">
+            <p><strong>Option B: 錯誤 (Incorrect)</strong></p>
+            <p>如果消費者預期未來的型號更好，他們會延遲購買計劃。這會導致<strong>現在 (Current)</strong> 的 iPhone 需求下降，而不是上升。</p>
+            <p class="en-text">If consumers expect a better future model, they will delay their purchases. This decreases the <strong>current</strong> demand for iPhones, rather than increasing it.</p>
+        </div>
+
+        <div class="option-analysis correct-opt">
+            <p><strong>Option C: 正確 (Correct)</strong></p>
+            <p>Samsung 手機是 iPhone 的<strong>替代品 (Substitute)</strong>。當 Samsung 手機被禁上機，其效用/吸引力大幅下降，消費者會轉而購買 iPhone，導致 iPhone 的需求增加（需求曲線向右移）。</p>
+            <p class="en-text">Samsung smartphones are <strong>substitutes</strong> for iPhones. When Samsung phones are banned, their utility/attractiveness drops significantly. Consumers will switch to iPhones, increasing the demand for iPhones (demand curve shifts to the right).</p>
+        </div>
+
+        <div class="option-analysis wrong-opt">
+            <p><strong>Option D: 錯誤 (Incorrect)</strong></p>
+            <p>下調售價只會導致<strong>需求量 (Quantity Demanded)</strong> 上升，而不是需求 (Demand) 上升。這是沿著需求曲線的移動。</p>
+            <p class="en-text">Reducing the selling price only leads to an increase in <strong>Quantity Demanded</strong>, not Demand. This is a movement along the demand curve.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🧩 Problem Decomposition (題目拆解)</h2>
+    <p>這類題目的核心在於區分「需求 (Demand)」和「需求量 (Quantity Demanded)」，以及分辨影響需求和供應的因素。</p>
+    <p class="en-text">The core of this question type is to distinguish between "Demand" and "Quantity Demanded", and to separate factors affecting demand from those affecting supply.</p>
+    <ul>
+        <li><strong>Pivot Point (關鍵點):</strong> 題目問的是「需求上升 (Increase in demand)」，意味著整個需求曲線向右移。任何涉及物品自身價格改變的選項都必定錯誤。</li>
+        <li><strong>Distractor (干擾項):</strong> 選項 D 是最常見的陷阱。看到「減價」，很多學生會直覺認為「需求」上升，但經濟學上這叫「需求量」上升。</li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="mistakes-box">
+        <p><strong>陷阱：混淆「預期」的時間線 (Confusing the timeline of expectations)</strong></p>
+        <p>在選項 B 中，學生常以為「有創新特點 = 好消息 = 需求上升」。但請注意，創新特點屬於<strong>下一款 (Next model)</strong>。對未來產品的良好預期，會扼殺對<strong>現有產品 (Current model)</strong> 的需求。</p>
+        <p class="en-text">In Option B, students often think "innovative features = good news = higher demand". However, the innovation belongs to the <strong>next model</strong>. Positive expectations for a future product will kill the demand for the <strong>current product</strong>.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 點解減價 (Option D) 唔會令需求上升？</strong><br>
+        <span class="en-text">Why doesn't a price reduction (Option D) increase demand?</span></p>
+        <p><strong>A:</strong> 在經濟學中，我們假設其他因素不變 (Ceteris Paribus)。當一件物品減價，我們買多了，這純粹是因為價格平了，這反映在圖表上是「沿著同一條線向下滑動」，我們稱之為「需求量 (Quantity Demanded) 上升」。只有當價格以外的因素（如人工加了、對手出事了）發生改變，令你在<strong>同一個價格下</strong>願意買更多，這才是「需求 (Demand) 上升」。</p>
+        <p class="en-text">In Economics, we assume Ceteris Paribus. When a good gets cheaper and we buy more, it's purely due to the price drop, shown as a movement down along the same curve, called an increase in "Quantity Demanded". Only when non-price factors change (e.g., higher income, rival's failure) causing you to buy more at the <strong>same price</strong>, is it an increase in "Demand".</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p><strong>「秒殺」技巧 (Instant Kill Technique):</strong></p>
+        <p>當題目問「需求 (Demand)」或「供應 (Supply)」的變動時：</p>
+        <ol>
+            <li>第一步：掃描選項，立刻剔除所有改變<strong>該物品自身價格</strong>的選項（即秒殺 Option D）。</li>
+            <li>第二步：確認題目問的是需求還是供應。題目問需求，立刻剔除所有關於<strong>生產成本 / 技術</strong>的選項（即秒殺 Option A）。</li>
+            <li>剩下 B 和 C，只需判斷哪個會令消費者「現在立刻想買」，答案呼之欲出。</li>
+        </ol>
+        <p class="en-text">When the question asks for a change in "Demand" or "Supply":<br>
+        1. Scan options and immediately eliminate any option changing the <strong>own price</strong> of the good (Eliminate D).<br>
+        2. Check if it asks for Demand or Supply. It asks for Demand, so eliminate <strong>production cost/technology</strong> options (Eliminate A).<br>
+        3. Between B and C, just judge which makes consumers want to buy "right now".</p>
+    </div>
+
+</div>
+
+</body>
+</html>

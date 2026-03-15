@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Macroeconomic Policies</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #e0e7ff;
+            --secondary: #10b981;
+            --secondary-light: #ecfdf5;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: none;
+        }
+        .header-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 4px;
+        }
+        .stars {
+            color: var(--warning);
+            font-size: 1.2rem;
+        }
+        .question-box {
+            background: white;
+            border-left: 5px solid var(--text-dark);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .option-correct {
+            border-left: 5px solid var(--secondary);
+            background-color: var(--secondary-light);
+        }
+        .option-wrong {
+            border-left: 5px solid var(--danger);
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+        }
+        .tips-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .qa-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .highlight {
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="bilingual-text">
+            <div class="zh"><strong>課題：</strong> 宏觀經濟學：總需求與總供應、財政與貨幣政策</div>
+            <div class="en"><strong>Topic:</strong> Macroeconomics: AD-AS Model, Fiscal & Monetary Policy</div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>難度：</strong> <span class="stars">★★★☆☆</span> (中等)</div>
+            <div class="en"><strong>Difficulty:</strong> <span class="stars">★★★☆☆</span> (Moderate)</div>
+        </div>
+        <div>
+            <span class="badge">AD-AS Model (總需求-總供應模型)</span>
+            <span class="badge">Fiscal Policy (財政政策)</span>
+            <span class="badge">Monetary Policy (貨幣政策)</span>
+            <span class="badge">Purchasing Power (購買力)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <div class="zh">為了減低財政赤字，政府可以採用緊縮性財政政策(例如加稅及／或減少財政開支)或是擴張性貨幣政策(例如印發鈔票為赤字融資)。<br><br>參考短期總供應曲線向右上斜的情況。與緊縮性財政政策相比，下列哪些是利用擴張性貨幣政策以減低財政赤字的優勝之處？<br><br>
+            (1) 就業水平會較高。<br>
+            (2) 貨幣的購買力會較高。<br>
+            (3) 實質產出水平會較高。</div>
+            <div class="en">To reduce fiscal deficits, the government may adopt either contractionary fiscal policy (e.g. increase taxes and/or decrease fiscal spending) or expansionary monetary policy (e.g. finance the deficits by printing money).<br><br>Refer to a situation of an upward-sloping short run aggregate supply curve. Which of the following are the advantages of using expansionary monetary policy over contractionary fiscal policy to reduce fiscal deficits?<br><br>
+            (1) The employment level will be higher.<br>
+            (2) The purchasing power of money will be higher.<br>
+            (3) The real output level will be higher.</div>
+        </div>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-text">
+                <div class="zh">A. 只有 (1)、(2)</div>
+                <div class="en">A. (1) and (2) only</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">B. 只有 (1)、(3)</div>
+                <div class="en">B. (1) and (3) only</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">C. 只有 (2)、(3)</div>
+                <div class="en">C. (2) and (3) only</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">D. (1)、(2) 及 (3)</div>
+                <div class="en">D. (1), (2) and (3)</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-text">
+            <div class="zh">要解答這條問題，我們需要利用<strong>總需求－總供應模型 (AD-AS Model)</strong> 來分析兩種不同政策對宏觀經濟變量（物價水平 \(P\)、實質產出 \(Y\) 及就業）的影響。</div>
+            <div class="en">To answer this question, we need to use the <strong>Aggregate Demand - Aggregate Supply (AD-AS) Model</strong> to analyze the effects of the two different policies on macroeconomic variables (Price level \(P\), Real output \(Y\), and Employment).</div>
+        </div>
+        
+        <div class="bilingual-text">
+            <div class="zh"><strong>緊縮性財政政策 (Contractionary Fiscal Policy)：</strong> 政府減少開支 (\(G \downarrow\)) 或增加稅收 (\(T \uparrow\))。這會導致總需求 (AD) 減少，AD 曲線向左移。在短期總供應 (SRAS) 曲線向上傾斜的情況下，物價水平 (\(P\)) 下降，實質產出 (\(Y\)) 下降，就業水平亦會下降。</div>
+            <div class="en"><strong>Contractionary Fiscal Policy:</strong> The government decreases spending (\(G \downarrow\)) or increases taxes (\(T \uparrow\)). This decreases Aggregate Demand (AD), shifting the AD curve to the left. Given an upward-sloping SRAS curve, the price level (\(P\)) falls, real output (\(Y\)) falls, and employment level also falls.</div>
+        </div>
+
+        <div class="bilingual-text">
+            <div class="zh"><strong>擴張性貨幣政策 (Expansionary Monetary Policy)：</strong> 政府印發鈔票，增加貨幣供應。這會導致利率下降，刺激投資和消費，總需求 (AD) 增加，AD 曲線向右移。物價水平 (\(P\)) 上升，實質產出 (\(Y\)) 上升，就業水平亦會上升。</div>
+            <div class="en"><strong>Expansionary Monetary Policy:</strong> The government prints money, increasing the money supply. This lowers interest rates, stimulating investment and consumption, increasing Aggregate Demand (AD), and shifting the AD curve to the right. The price level (\(P\)) rises, real output (\(Y\)) rises, and employment level also rises.</div>
+        </div>
+
+        <div class="bilingual-text">
+            <div class="zh"><strong>貨幣購買力 (Purchasing Power of Money)：</strong> 指單位貨幣能購買到的物品和服務的數量。它與物價水平 (\(P\)) 呈反比關係。</div>
+            <div class="en"><strong>Purchasing Power of Money:</strong> Refers to the quantity of goods and services a unit of money can buy. It is inversely related to the price level (\(P\)).</div>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Purchasing Power of Money} = \frac{1}{\text{Price Level } (P)} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="option-analysis option-correct">
+        <div class="bilingual-text">
+            <div class="zh"><strong>正確答案：Option B (選項 B)</strong></div>
+            <div class="en"><strong>Correct Answer: Option B</strong></div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>分析：</strong> 題目要求找出擴張性貨幣政策（相比於緊縮性財政政策）的「優勝之處」（即較高的數值）。我們逐一分析三個陳述：</div>
+            <div class="en"><strong>Analysis:</strong> The question asks for the "advantages" (i.e., higher values) of using expansionary monetary policy compared to contractionary fiscal policy. Let's analyze the three statements one by one:</div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+        
+        <div class="bilingual-text">
+            <div class="zh"><strong>(1) 就業水平會較高 (The employment level will be higher)：<span style="color: var(--secondary);">正確</span></strong><br>
+            擴張性貨幣政策使 AD 向右移，實質產出增加，廠商需要聘請更多工人，就業水平上升。相反，緊縮性財政政策使 AD 向左移，產出減少，就業水平下降。因此，前者的就業水平確實較高。</div>
+            <div class="en"><strong>(1) Correct:</strong><br>
+            Expansionary monetary policy shifts AD to the right, increasing real output. Firms need to hire more workers, so employment rises. Conversely, contractionary fiscal policy shifts AD to the left, decreasing output and employment. Thus, the employment level is indeed higher under the former.</div>
+        </div>
+
+        <div class="bilingual-text">
+            <div class="zh"><strong>(2) 貨幣的購買力會較高 (The purchasing power of money will be higher)：<span style="color: var(--danger);">錯誤</span></strong><br>
+            擴張性貨幣政策使 AD 向右移，導致物價水平 (\(P\)) 上升（通貨膨脹）。物價上升意味著貨幣購買力下降。相反，緊縮性財政政策使 AD 向左移，物價水平下降，貨幣購買力反而上升。因此，擴張性貨幣政策下的貨幣購買力是較<strong>低</strong>的。</div>
+            <div class="en"><strong>(2) Incorrect:</strong><br>
+            Expansionary monetary policy shifts AD to the right, causing the price level (\(P\)) to rise (inflation). A higher price level means the purchasing power of money falls. Conversely, contractionary fiscal policy shifts AD to the left, lowering the price level and increasing purchasing power. Therefore, the purchasing power of money is <strong>lower</strong> under expansionary monetary policy.</div>
+        </div>
+
+        <div class="bilingual-text">
+            <div class="zh"><strong>(3) 實質產出水平會較高 (The real output level will be higher)：<span style="color: var(--secondary);">正確</span></strong><br>
+            如第 (1) 點所述，擴張性政策刺激經濟，使實質產出 (\(Y\)) 增加；緊縮性政策則壓抑經濟，使實質產出減少。因此，擴張性貨幣政策的實質產出水平較高。</div>
+            <div class="en"><strong>(3) Correct:</strong><br>
+            As explained in point (1), expansionary policy stimulates the economy, increasing real output (\(Y\)); contractionary policy suppresses the economy, decreasing real output. Thus, the real output level is higher under expansionary monetary policy.</div>
+        </div>
+        
+        <div class="bilingual-text">
+            <div class="zh">綜合以上，只有 (1) 和 (3) 是正確的。</div>
+            <div class="en">In conclusion, only (1) and (3) are correct.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-text">
+            <div class="zh"><strong>解題樞紐 (Pivot Point)：</strong></div>
+            <div class="en"><strong>Pivot Point:</strong></div>
+        </div>
+        <ul style="padding-left: 20px;">
+            <li class="bilingual-text">
+                <div class="zh"><strong>分辨「擴張性」(Expansionary) 與「緊縮性」(Contractionary) 的本質：</strong> 任何擴張性政策都會推高總需求 (AD \(\rightarrow\))，從而推高產出 (\(Y \uparrow\))、就業和物價 (\(P \uparrow\))。任何緊縮性政策則相反。</div>
+                <div class="en"><strong>Distinguish between "Expansionary" and "Contractionary" nature:</strong> Any expansionary policy boosts Aggregate Demand (AD \(\rightarrow\)), thereby increasing output (\(Y \uparrow\)), employment, and price level (\(P \uparrow\)). Any contractionary policy does the exact opposite.</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh"><strong>物價與購買力的反向關係：</strong> 這是本題最大的陷阱。物價上升 \(\neq\) 購買力上升。物價上升代表錢「貶值」了，購買力是下降的。</div>
+                <div class="en"><strong>Inverse relationship between Price Level and Purchasing Power:</strong> This is the biggest trap in this question. Higher price level \(\neq\) higher purchasing power. Higher prices mean money is "devalued", so purchasing power falls.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="background-color: var(--danger-light); border-left-color: var(--danger);">
+        <div class="bilingual-text">
+            <div class="zh"><strong>陷阱：誤解「印發鈔票」對購買力的影響</strong><br>
+            很多學生直覺以為「印發鈔票 = 社會上有更多錢 = 購買力更高」。這是微觀與宏觀概念的混淆！對個人而言，錢多了可以買更多東西；但在宏觀經濟中，政府大量印鈔只會導致<strong>通貨膨脹 (Inflation)</strong>。當所有東西都變貴了，每一元能買到的實質物品反而減少了，即購買力下降。</div>
+            <div class="en"><strong>Trap: Misunderstanding the effect of "printing money" on purchasing power</strong><br>
+            Many students intuitively think "printing money = more money in society = higher purchasing power". This is a confusion between micro and macro concepts! For an individual, having more money means buying more; but macroeconomically, mass money printing by the government leads to <strong>Inflation</strong>. When everything becomes more expensive, the real goods each dollar can buy actually decrease, meaning purchasing power falls.</div>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-text">
+            <div class="zh qa-q">問：題目提到「短期總供應曲線向右上斜 (upward-sloping SRAS)」，這個條件有什麼用？如果 SRAS 是垂直的呢？</div>
+            <div class="en qa-q">Q: The question mentions an "upward-sloping SRAS". What is the purpose of this condition? What if the SRAS was vertical?</div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh">答：這個條件非常關鍵！如果 SRAS 是向右上斜的，AD 的移動會同時改變物價 (\(P\)) 和實質產出 (\(Y\))。但如果經濟處於長期（古典學派假設），總供應曲線 (LRAS) 是<strong>垂直</strong>的處於充分就業水平。在那種情況下，擴張性貨幣政策只會推高物價 (\(P\))，而<strong>不會</strong>改變實質產出 (\(Y\)) 和就業水平。題目特意標明 SRAS 向右上斜，就是為了確保 (1) 和 (3) 的產出與就業效應會發生。</div>
+            <div class="en">A: This condition is crucial! If SRAS is upward-sloping, a shift in AD changes both price level (\(P\)) and real output (\(Y\)). However, if the economy is in the long run (Classical assumption), the Aggregate Supply curve (LRAS) is <strong>vertical</strong> at the full-employment level. In that case, expansionary monetary policy would only drive up prices (\(P\)) and would <strong>not</strong> change real output (\(Y\)) or employment. The question specifically states an upward-sloping SRAS to ensure the output and employment effects in statements (1) and (3) actually occur.</div>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box" style="background-color: #f0fdf4; border-left-color: #16a34a;">
+        <div class="bilingual-text">
+            <div class="zh"><strong>邏輯連鎖法 (Logical Chaining)：</strong><br>
+            在宏觀經濟學中，「實質產出 (Real Output)」與「就業水平 (Employment)」在短期內幾乎總是同向移動的（產出多，自然需要更多工人）。<br>
+            因此，陳述 (1) 和 (3) 必定是「共同進退」的（要麼全對，要麼全錯）。<br>
+            看看選項：<br>
+            A. (1), (2) - 缺了(3)<br>
+            B. (1), (3) - 兩者皆有<br>
+            C. (2), (3) - 缺了(1)<br>
+            D. (1), (2), (3) - 兩者皆有<br>
+            你馬上可以排除 A 和 C。接著只要判斷 (2) 是否正確（印鈔票會導致通脹，購買力下降，所以錯），就能秒殺選出 <strong>B</strong>。</div>
+            <div class="en"><strong>Logical Chaining:</strong><br>
+            In macroeconomics, "Real Output" and "Employment Level" almost always move in the same direction in the short run (more output naturally requires more workers).<br>
+            Therefore, statements (1) and (3) must "sink or swim together" (either both are right, or both are wrong).<br>
+            Look at the options:<br>
+            A. (1), (2) - Missing (3)<br>
+            B. (1), (3) - Has both<br>
+            C. (2), (3) - Missing (1)<br>
+            D. (1), (2), (3) - Has both<br>
+            You can immediately eliminate A and C. Then, you just need to judge if (2) is correct (printing money causes inflation, lowering purchasing power, so it's wrong), and you can instantly choose <strong>B</strong>.</div>
+        </div>
+    </div>
+
+</body>
+</html>

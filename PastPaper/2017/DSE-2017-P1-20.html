@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Income Distribution</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #10b981;
+            --secondary-light: #ecfdf5;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: none;
+        }
+        .header-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 4px;
+        }
+        .stars {
+            color: var(--warning);
+            font-size: 1.2rem;
+        }
+        .question-box {
+            background: white;
+            border-left: 5px solid var(--text-dark);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .option-correct {
+            border-left: 5px solid var(--secondary);
+            background-color: var(--secondary-light);
+        }
+        .option-wrong {
+            border-left: 5px solid var(--danger);
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+        }
+        .tips-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .qa-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="bilingual-text">
+            <div class="zh"><strong>課題：</strong> 收入分配與公平 (Income Distribution and Equity)</div>
+            <div class="en"><strong>Topic:</strong> Income Distribution and Equity</div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>難度：</strong> <span class="stars">★★★☆☆</span> (中等)</div>
+            <div class="en"><strong>Difficulty:</strong> <span class="stars">★★★☆☆</span> (Moderate)</div>
+        </div>
+        <div>
+            <span class="badge">收入不均 (Income Inequality)</span>
+            <span class="badge">無條件餽贈 (Unconditional Gift)</span>
+            <span class="badge">機會均等化 (Equalising Opportunities)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <div class="zh">李嘉誠基金向每位居住在那些平均住戶收入較低之偏遠地區的2017年香港中學文憑考試考生派發港幣5 000元。下列哪項有關該無條件餽贈的陳述是正確的？</div>
+            <div class="en">Li Ka Shing Foundation gave HK$5 000 to each 2017 HKDSE candidate living in those remote districts with lower average household income. Which of the following statements about this unconditional gift is correct?</div>
+        </div>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-text">
+                <div class="zh">A. 這減低了收入不均，因為收到該餽贈的人較大部分來自低收入組別。</div>
+                <div class="en">A. It reduces the income inequality as a larger portion of the receivers of the gift are from lower income group.</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">B. 這增加了收入不均，因為對居住在非偏遠地區的考生並不公平。</div>
+                <div class="en">B. It increases the income inequality as it is unfair to the candidates living in the non-remote districts.</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">C. 因為該款項是給予那些居住在偏遠地區的所有考生，所以收入分配維持不變。</div>
+                <div class="en">C. As the money is given to all candidates living in those remote districts, income distribution remains unchanged.</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh">D. 這有助機會均等化，因為那些考生會更用功讀書以提高其考試成績。</div>
+                <div class="en">D. It helps equalising opportunities as those candidates will study harder to improve their exam result.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-text">
+            <div class="zh">要解答這條問題，我們需要理解<strong>收入不均 (Income Inequality)</strong> 的概念。當財富或收入從高收入人士（如李嘉誠基金）轉移到低收入人士（如平均住戶收入較低地區的考生）時，社會整體的收入差距會縮小。</div>
+            <div class="en">To answer this question, we need to understand the concept of <strong>Income Inequality</strong>. When wealth or income is transferred from high-income individuals (like the Li Ka Shing Foundation) to low-income individuals (candidates in lower-income districts), the overall income gap in society narrows.</div>
+        </div>
+        
+        <div class="bilingual-text">
+            <div class="zh"><strong>堅尼系數 (Gini Coefficient)：</strong> 這是量度收入不均的常用指標。數值介乎 \(0\) 與 \(1\) 之間。數值越低，代表收入分配越平均。</div>
+            <div class="en"><strong>Gini Coefficient:</strong> This is a common indicator used to measure income inequality. The value ranges between \(0\) and \(1\). A lower value indicates a more even distribution of income.</div>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Gini Coefficient} = \frac{\text{Area between Line of Equality and Lorenz Curve}}{\text{Total Area under Line of Equality}} $$
+        </div>
+
+        <div class="bilingual-text">
+            <div class="zh"><strong>機會均等化 (Equalising Opportunities)：</strong> 指的是提供平等的起跑線（例如免費教育、公平的就業機會），而不是直接給予金錢結果（結果均等化）。</div>
+            <div class="en"><strong>Equalising Opportunities:</strong> This refers to providing an equal starting line (e.g., free education, fair employment opportunities), rather than directly giving monetary outcomes (equalising outcomes).</div>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="option-analysis option-correct">
+        <div class="bilingual-text">
+            <div class="zh"><strong>正確答案：Option A (選項 A)</strong></div>
+            <div class="en"><strong>Correct Answer: Option A</strong></div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>分析：</strong> 題目明確指出受惠者來自「平均住戶收入較低」的地區。這筆港幣5,000元的餽贈實質上增加了低收入組別的總收入。由於低收入組別的收入佔全社會總收入的比例上升，高低收入組別之間的差距縮小，因此成功減低了收入不均。</div>
+            <div class="en"><strong>Analysis:</strong> The question explicitly states that the beneficiaries are from districts with "lower average household income". This HK$5,000 gift effectively increases the total income of the lower-income group. Since the lower-income group's share of the total societal income increases, the gap between high and low-income groups narrows, thus successfully reducing income inequality.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-text">
+            <div class="zh"><strong>錯誤選項 B (Option B)</strong></div>
+            <div class="en"><strong>Incorrect Option B</strong></div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>分析：</strong> 「不公平」是一個規範性 (normative) 的主觀概念，而「收入不均」是一個實證性 (positive) 的客觀統計。即使對非偏遠地區的考生看似「不公平」，但客觀數據上，低收入人士的收入增加了，整體社會的收入不均實際上是減少了，而不是增加。</div>
+            <div class="en"><strong>Analysis:</strong> "Unfairness" is a normative (subjective) concept, whereas "income inequality" is a positive (objective) statistic. Even if it seems "unfair" to candidates in non-remote districts, objectively, the income of lower-income individuals has increased. Therefore, overall income inequality in society has actually decreased, not increased.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-text">
+            <div class="zh"><strong>錯誤選項 C (Option C)</strong></div>
+            <div class="en"><strong>Incorrect Option C</strong></div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>分析：</strong> 雖然款項是給予該地區的「所有」考生，但相對於全香港其他沒有收到款項的較高收入家庭，這群低收入家庭的相對收入改變了。因此，全社會的整體收入分配絕對發生了變化（變得更平均）。</div>
+            <div class="en"><strong>Analysis:</strong> Although the money is given to "all" candidates in those districts, their relative income compared to higher-income families in the rest of Hong Kong who did not receive the money has changed. Therefore, the overall income distribution of the entire society has definitely changed (became more even).</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-text">
+            <div class="zh"><strong>錯誤選項 D (Option D)</strong></div>
+            <div class="en"><strong>Incorrect Option D</strong></div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh"><strong>分析：</strong> 題目強調這是一項「無條件餽贈」(unconditional gift)。這意味著考生無論考試成績好壞，甚至是否用功讀書，都會獲得這筆錢。因此，說他們會「更用功讀書」缺乏邏輯支持，這筆錢更傾向於「結果均等化」(equalising outcomes) 而非單純的機會均等化。</div>
+            <div class="en"><strong>Analysis:</strong> The question emphasizes that this is an "unconditional gift". This means candidates will receive the money regardless of their exam performance or how hard they study. Therefore, claiming they will "study harder" lacks logical support. This money leans more towards "equalising outcomes" (giving cash) rather than purely equalising opportunities.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-text">
+            <div class="zh"><strong>解題樞紐 (Pivot Point)：</strong></div>
+            <div class="en"><strong>Pivot Point:</strong></div>
+        </div>
+        <ul style="padding-left: 20px;">
+            <li class="bilingual-text">
+                <div class="zh"><strong>「平均住戶收入較低」 (lower average household income)：</strong> 這是最關鍵的字眼。它告訴你這筆錢流向了經濟階梯的下層。任何將財富從頂層轉移到底層的行為，都會降低收入不均。</div>
+                <div class="en"><strong>"lower average household income":</strong> This is the most crucial phrase. It tells you the money is flowing to the lower end of the economic ladder. Any transfer of wealth from the top to the bottom reduces income inequality.</div>
+            </li>
+            <li class="bilingual-text">
+                <div class="zh"><strong>「無條件」 (unconditional)：</strong> 這排除了選項 D 的合理性，因為獲得金錢不需要付出額外努力。</div>
+                <div class="en"><strong>"unconditional":</strong> This eliminates the rationality of Option D, because receiving the money does not require extra effort.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>5. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-text">
+            <div class="zh qa-q">問：為什麼派錢不能算是「機會均等化」(Equalising Opportunities)？有了錢他們不是可以買更多補充練習嗎？</div>
+            <div class="en qa-q">Q: Why isn't giving out money considered "Equalising Opportunities"? With money, can't they buy more supplementary exercises?</div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh">答：在經濟學中，直接派發現金通常被視為改變「結果」(Outcomes) 的收入再分配。雖然金錢可以間接幫助學習，但選項 D 的解釋是「因為考生會更用功讀書」，這與「無條件餽贈」的性質矛盾。如果這筆錢是「書簿津貼」且必須用於教育，那才更符合機會均等化。</div>
+            <div class="en">A: In economics, directly handing out cash is usually seen as income redistribution that changes "Outcomes". While money can indirectly help learning, Option D's explanation is "because candidates will study harder", which contradicts the nature of an "unconditional gift". If the money was a "book allowance" strictly for education, it would better fit equalising opportunities.</div>
+        </div>
+    </div>
+
+</body>
+</html>
