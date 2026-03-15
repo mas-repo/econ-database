@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Deposit Creation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #475569;
+            --bg-gray: #f8fafc;
+            --border-gray: #e2e8f0;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: var(--secondary);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .header-box {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+        }
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+            overflow-x: auto;
+            border: 1px solid var(--border-gray);
+        }
+        .analysis-box {
+            margin: 20px 0;
+        }
+        .option-card {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .option-card.incorrect {
+            border-left: 5px solid var(--danger);
+        }
+        .option-card.ambiguous {
+            border-left: 5px solid #f59e0b; /* Amber */
+        }
+        .alert-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <div><strong>主題 (Topic):</strong> 貨幣與銀行 - 存款創造 (Money & Banking - Deposit Creation)</div>
+        <div><strong>難度 (Difficulty):</strong> ⭐⭐⭐⭐⭐ (取消題目 Deleted Question)</div>
+        <div>
+            <strong>關鍵字 (Key Concepts):</strong> 
+            <span class="tag">實際存款 (Actual Deposit)</span>
+            <span class="tag">最高存款 (Maximum Deposit)</span>
+            <span class="tag">現金流失 (Cash Leakage)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h1>📝 題目 (The Question)</h1>
+    <div class="question-box">
+        <div class="bilingual-text">
+            在部分儲備銀行制度下，實際創造的存款經常低於最高可能創造的存款。在下列哪種情況下，這兩個金額的差距會收窄？
+            <div class="en-text">In a fractional reserve banking system, the actual deposit created is often below the maximum possible deposit created. The gap between these two amounts will be narrowed when</div>
+        </div>
+        <ol type="A">
+            <li class="bilingual-text">電子付費日益普及。<div class="en-text">the popularity of electronic payment increases.</div></li>
+            <li class="bilingual-text">中央銀行收緊對銀行按揭貸款的限制。<div class="en-text">the central bank tightens the restrictions imposed on mortgage loans from banks.</div></li>
+            <li class="bilingual-text">中央銀行從公眾買入債券。<div class="en-text">the central bank buys bonds from the public.</div></li>
+            <li class="bilingual-text">中央銀行降低銀行的法定儲備比率。<div class="en-text">the central bank reduces the legal reserve ratio for banks.</div></li>
+        </ol>
+    </div>
+
+    <div class="alert-box">
+        <strong>⚠️ 考評局已取消此題 (Deleted by HKEAA)</strong><br>
+        此題目因存在邏輯漏洞及多重解讀，當年被考評局作廢。本指南將深入分析為何<strong>沒有一個選項是絕對正確的</strong>，這對理解深層經濟學概念極有幫助。
+        <div class="en-text">This question was deleted by the HKEAA due to logical flaws and ambiguity. This guide will analyze why <strong>no option is strictly correct</strong>, which is highly beneficial for understanding advanced economic concepts.</div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h1>🧠 概念重溫 (Concept Review)</h1>
+    <div class="concept-box">
+        <div class="bilingual-text">
+            <strong>1. 存款創造的上限 (Maximum Possible Deposit Creation)</strong><br>
+            假設銀行借出所有超額儲備（無超額儲備），且公眾不持有現金（無現金流失）。
+            <div class="en-text">Assumes banks lend out all excess reserves (no excess reserves) and the public holds no cash (no cash leakage).</div>
+        </div>
+        <div class="math-block">
+            $$ \text{Max Deposit} = \frac{\text{Reserves (儲備)}}{\text{Legal Reserve Ratio (法定儲備比率 } r \text{)}} $$
+        </div>
+
+        <div class="bilingual-text">
+            <strong>2. 實際存款創造 (Actual Deposit Creation)</strong><br>
+            現實中，存款創造會受兩個「漏出物」限制：<strong>現金流失</strong>（公眾提取現金）及<strong>超額儲備</strong>（銀行保留額外資金）。
+            <div class="en-text">In reality, deposit creation is limited by two "leakages": <strong>cash leakage</strong> (public withdraws cash) and <strong>excess reserves</strong> (banks hold extra funds).</div>
+        </div>
+        <div class="math-block">
+            $$ \text{Actual Deposit} = \frac{\text{Reserves (儲備)}}{r + \text{Excess Reserve Ratio (} e \text{)} + \text{Cash-to-Deposit Ratio (} c \text{)}} $$
+        </div>
+
+        <div class="bilingual-text">
+            <strong>3. 兩者差距 (The Gap)</strong><br>
+            差距的存在是因為 \(e > 0\) 或 \(c > 0\)。若要「收窄差距」，通常意味著現金流失減少，或銀行減少持有超額儲備。
+            <div class="en-text">The gap exists because \(e > 0\) or \(c > 0\). To "narrow the gap" usually implies a reduction in cash leakage or excess reserves.</div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h1>🔍 答案與詳細分析 (Detailed Analysis)</h1>
+    <div class="analysis-box">
+        <p><strong>官方原意答案：A (但存在嚴重破綻)</strong> / <em>Intended Answer: A (But fundamentally flawed)</em></p>
+
+        <div class="option-card ambiguous">
+            <strong>選項 A: 電子付費日益普及 (Popularity of electronic payment increases)</strong>
+            <div class="bilingual-text">
+                <strong>原意：</strong>電子支付普及，公眾減少持有現金（現金流失率 \(c\) 下降）。這會令實際存款乘數變大，更接近最高存款乘數，因此差距收窄。<br>
+                <strong>破綻（為何被取消）：</strong>當公眾減少持有現金，他們會將現金存入銀行。這導致銀行的<strong>總儲備 (Reserves) 增加</strong>。雖然「乘數」的差距縮小了，但用來乘的「基數」（儲備）變大了。在數學上，絕對金額的差距（Absolute Gap）可能會擴大或縮小，視乎數據而定。因此答案含糊不清。
+                <div class="en-text">
+                    <strong>Intended logic:</strong> More e-payments mean people hold less cash (cash leakage ratio \(c\) drops). The actual deposit multiplier increases and approaches the maximum multiplier, narrowing the gap.<br>
+                    <strong>The Flaw (Why it was deleted):</strong> When people hold less cash, they deposit it into banks. This <strong>increases the total Reserves</strong>. Although the gap between the "multipliers" shrinks, the base "Reserves" being multiplied gets larger. Mathematically, the absolute gap in dollar amount could either widen or narrow depending on the exact figures. Thus, the answer is ambiguous.
+                </div>
+            </div>
+        </div>
+
+        <div class="option-card incorrect">
+            <strong>選項 B: 中央銀行收緊對銀行按揭貸款的限制 (Central bank tightens mortgage restrictions)</strong>
+            <div class="bilingual-text">
+                銀行借出貸款變難，會導致銀行保留更多資金，即<strong>超額儲備率 (\(e\)) 上升</strong>。這會進一步壓低實際存款，令其遠離最高可能存款，<strong>差距擴大</strong>。
+                <div class="en-text">It becomes harder for banks to lend, leading them to hold more funds. The <strong>excess reserve ratio (\(e\)) increases</strong>. This depresses actual deposits further away from the maximum, <strong>widening the gap</strong>.</div>
+            </div>
+        </div>
+
+        <div class="option-card incorrect">
+            <strong>選項 C: 中央銀行從公眾買入債券 (Central bank buys bonds from the public)</strong>
+            <div class="bilingual-text">
+                這會增加基礎貨幣。公眾將賣債券的錢存入銀行，令銀行的<strong>儲備增加</strong>。由於乘數不變，但基數變大，最高存款與實際存款的絕對差距會<strong>按比例擴大</strong>。
+                <div class="en-text">This increases the monetary base. The public deposits the money from selling bonds, <strong>increasing bank reserves</strong>. With constant multipliers but a larger base, the absolute gap between maximum and actual deposits will <strong>widen proportionally</strong>.</div>
+            </div>
+        </div>
+
+        <div class="option-card incorrect">
+            <strong>選項 D: 中央銀行降低銀行的法定儲備比率 (Central bank reduces the legal reserve ratio)</strong>
+            <div class="bilingual-text">
+                當法定儲備比率 (\(r\)) 下降，最高存款乘數 \(\frac{1}{r}\) 的升幅，在數學上必定大於實際存款乘數 \(\frac{1}{r+e+c}\) 的升幅。因此，最高存款的增加幅度會大於實際存款，<strong>差距擴大</strong>。
+                <div class="en-text">When the legal reserve ratio (\(r\)) drops, the mathematical increase in the maximum multiplier \(\frac{1}{r}\) is greater than the increase in the actual multiplier \(\frac{1}{r+e+c}\). Thus, maximum deposits grow much faster than actual deposits, <strong>widening the gap</strong>.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h1>🧩 題目拆解 (Problem Decomposition)</h1>
+    <div class="bilingual-text">
+        <strong>解題樞紐 (Pivot Point):</strong><br>
+        處理這類題目，必須釐清「差距」是指<strong>乘數的差距 (Multiplier Gap)</strong> 還是 <strong>絕對金額的差距 (Absolute Amount Gap)</strong>。
+        <ul>
+            <li>如果只看乘數：減少現金流失或減少超額儲備，會令乘數差距收窄。</li>
+            <li>如果看總金額：必須同時考慮「儲備 (Reserves)」的變化。這正是選項 A 出錯的陷阱。</li>
+        </ul>
+        <div class="en-text">
+            <strong>Pivot Point:</strong><br>
+            For such questions, you must clarify whether "gap" refers to the <strong>Multiplier Gap</strong> or the <strong>Absolute Amount Gap</strong>.
+            <ul>
+                <li>If looking only at multipliers: reducing cash leakage or excess reserves narrows the multiplier gap.</li>
+                <li>If looking at total amounts: you must simultaneously consider changes in "Reserves". This is exactly the trap that made Option A flawed.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <h1>🙋 學生常見疑問 (Student Q&A)</h1>
+    <div class="qa-box">
+        <div class="bilingual-text">
+            <strong>Q: 如果考試再出類似題目，我應該選什麼？</strong><br>
+            <strong>A:</strong> 考評局自此題後，已經極少詢問「絕對金額差距」。現在的題目通常會精確地問：「什麼會導致實際存款乘數 (Actual Deposit Multiplier) 增加？」如果是這樣問，選項 A（減少現金流失）就是絕對正確的答案。
+            <div class="en-text">
+                <strong>Q: If a similar question appears in the exam again, what should I choose?</strong><br>
+                <strong>A:</strong> Since this question, the HKEAA rarely asks about the "absolute amount gap". Current questions usually ask precisely: "What causes the actual deposit multiplier to increase?" If asked this way, Option A (reduced cash leakage) would be the absolutely correct answer.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
