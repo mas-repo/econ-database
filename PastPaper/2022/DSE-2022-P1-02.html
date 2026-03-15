@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --danger-color: #ef4444;
+            --danger-bg: #fef2f2;
+            --warning-color: #f59e0b;
+            --warning-bg: #fffbeb;
+            --success-color: #10b981;
+            --bg-light: #f9fafb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .eng-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .chi-text {
+            margin-bottom: 4px;
+        }
+
+        /* Header Section */
+        .header-card {
+            background-color: var(--bg-light);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: var(--bg-light);
+            border-radius: 6px;
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .analysis-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .status-deleted {
+            background-color: var(--danger-bg);
+            color: var(--danger-color);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-left: 5px solid var(--danger-color);
+            margin-bottom: 20px;
+        }
+
+        .analysis-incorrect {
+            border-left: 4px solid var(--danger-color);
+            background-color: #fafafa;
+        }
+
+        .analysis-problematic {
+            border-left: 4px solid var(--warning-color);
+            background-color: var(--warning-bg);
+        }
+
+        /* Q&A Section */
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        .qa-a {
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <div class="chi-text"><strong>課題 Topic:</strong> 機會成本 Opportunity Cost</div>
+        <div class="chi-text"><strong>難度 Difficulty:</strong> ⭐⭐⭐⭐⭐ (爭議題目 / Problematic Question)</div>
+        <div class="chi-text" style="margin-top: 10px;">
+            <strong>關鍵字 Key Concepts:</strong>
+            <br>
+            <span class="tag">Opportunity Cost</span>
+            <span class="tag">Time Cost</span>
+            <span class="tag">Cost of Buying vs Keeping</span>
+        </div>
+    </div>
+
+    <h1>📖 題目 The Question</h1>
+    <div class="question-box">
+        <div class="chi-text">
+            索尼推出了「PlayStation 5」遊戲機。由於它很受遊戲玩家歡迎，正式推出後商店外出現排隊的人龍。<br><br>
+            下列哪項會增加<strong>購買</strong>一部「PlayStation 5」遊戲機的機會成本？
+        </div>
+        <div class="eng-text">
+            Sony launched the ‘PlayStation 5’ game console. As it was popular among game players, long queues were found outside the shops after the official release.<br><br>
+            Which of the following would increase the opportunity cost of <strong>buying</strong> a ‘PlayStation 5’ console?
+        </div>
+        
+        <ul class="options-list">
+            <li>
+                <div class="chi-text">A. 由於「PlayStation 5」出現短缺，它的轉售價值上升。</div>
+                <div class="eng-text">A. The resale value of ‘PlayStation 5’ increased due to its shortage.</div>
+            </li>
+            <li>
+                <div class="chi-text">B. 零售商提供網上訂購服務，令商店外排隊的人龍消失。</div>
+                <div class="eng-text">B. Retailers provided online purchase service to eliminate the queues outside the shops.</div>
+            </li>
+            <li>
+                <div class="chi-text">C. 「PlayStation 5」的競爭對手推出價格相同但表現更佳的新遊戲機。</div>
+                <div class="eng-text">C. With the same price, its competitor launched a new game console featuring better performance than ‘PlayStation 5’.</div>
+            </li>
+            <li>
+                <div class="chi-text">D. 政府發出電子消費券，可用作購買遊戲機。</div>
+                <div class="eng-text">D. The government issued electronic consumption coupons, which can be used to purchase game consoles.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h1>🧠 概念重溫 Concept Review</h1>
+    <div class="concept-box">
+        <h3>1. 機會成本的定義 Definition of Opportunity Cost</h3>
+        <p class="chi-text">機會成本是指在面臨選擇時，被放棄的選項中<strong>最高價值</strong>的一個。</p>
+        <p class="eng-text">Opportunity cost is the <strong>highest-valued</strong> option forgone when making a choice.</p>
+
+        <h3>2. 購買物品的成本 Cost of Buying a Good</h3>
+        <p class="chi-text">購買一件物品的機會成本不僅包括金錢成本（價格），還包括非金錢成本（如排隊的時間）。</p>
+        <p class="eng-text">The opportunity cost of buying a good includes not only the explicit cost (money/price) but also the implicit cost (e.g., time spent queuing).</p>
+        
+        <div class="math-block">
+            $$ \text{Cost of Buying} = \text{Money Paid (Price)} + \text{Time Cost} $$
+        </div>
+
+        <h3>3. 購買 (Buying) vs 持有/消費 (Keeping/Consuming)</h3>
+        <p class="chi-text">DSE 經濟科經常設下陷阱，要求學生區分「購買」和「持有」的成本。轉售價值（Resale value）是<strong>放棄持有</strong>該物品的代價，而不是購買它的代價。</p>
+        <p class="eng-text">HKDSE Economics often tests the distinction between the cost of "buying" and "keeping". Resale value is the cost of <strong>keeping</strong> the item, not the cost of buying it.</p>
+    </div>
+
+    <h1>⚖️ 答案與詳細分析 The Answer & Detailed Analysis</h1>
+    
+    <div class="status-deleted">
+        <div class="chi-text">⚠️ 官方無正確答案 (考評局已取消此題)</div>
+        <div class="eng-text">⚠️ No Correct Answer (Question deleted by HKEAA)</div>
+        <p class="chi-text" style="font-weight: normal; margin-top: 10px;">此題因存在邏輯漏洞而被考評局作廢。原本的擬定答案可能是 C，但由於題幹中「排隊人龍」的設定，導致選項 C 會產生互相矛盾的經濟效果。我們將逐一分析為何所有選項皆不正確或存在問題。</p>
+        <p class="eng-text" style="font-weight: normal;">This question was deleted by the HKEAA due to logical flaws. The intended answer was likely C, but the premise of "long queues" in the question stem creates contradictory economic effects for option C. Let's analyze why each option is incorrect or problematic.</p>
+    </div>
+
+    <div class="analysis-card analysis-incorrect">
+        <h3>選項 A (Option A) - ❌ 錯誤 Incorrect</h3>
+        <p class="chi-text"><strong>分析：</strong> 轉售價值上升會增加「持有」或「消費」PS5 的機會成本（因為你放棄了更高的轉售利潤）。然而，題目問的是「購買」的機會成本。當你購買 PS5 時，你並沒有放棄轉售價值，相反，你獲得了將來轉售它的權利。因此，購買的機會成本不變。</p>
+        <p class="eng-text"><strong>Analysis:</strong> An increase in resale value increases the opportunity cost of <em>keeping</em> or <em>consuming</em> the PS5 (since you forgo higher resale profit). However, the question asks for the cost of <em>buying</em>. When you buy the PS5, you do not forgo the resale value; rather, you acquire the ability to resell it. Thus, the opportunity cost of buying remains unchanged.</p>
+    </div>
+
+    <div class="analysis-card analysis-incorrect">
+        <h3>選項 B (Option B) - ❌ 錯誤 Incorrect</h3>
+        <p class="chi-text"><strong>分析：</strong> 網上訂購令排隊人龍消失，這大大減少了購買 PS5 所需的「時間成本」。時間成本下降，意味著購買的總機會成本<strong>減少</strong>，而不是題目所問的增加。</p>
+        <p class="eng-text"><strong>Analysis:</strong> Online purchasing eliminates queues, which significantly reduces the "time cost" required to buy the PS5. A decrease in time cost means the total opportunity cost of buying <strong>decreases</strong>, not increases as the question asks.</p>
+    </div>
+
+    <div class="analysis-card analysis-problematic">
+        <h3>選項 C (Option C) - ⚠️ 具爭議性 / 互相矛盾 Problematic</h3>
+        <p class="chi-text"><strong>分析：</strong> 這很可能是考評局原本的預設答案。一般邏輯是：競爭對手推出更好的遊戲機，代表你「放棄的最高價值選項」（即買其他遊戲機）的價值上升了，所以買 PS5 的機會成本上升。<br><br>
+        <strong>為何被取消？</strong> 題幹特別強調了「商店外出現排隊的人龍」。如果競爭對手推出了更好的遊戲機，部分消費者會轉買新機，導致對 PS5 的需求下降。需求下降會令 PS5 的排隊人龍縮短甚至消失，從而<strong>降低了時間成本</strong>。一方面放棄選項的價值上升，另一方面時間成本下降，兩股力量互相抵銷，我們無法確定購買 PS5 的總機會成本是上升還是下降。因此此選項存在致命漏洞。</p>
+        <p class="eng-text"><strong>Analysis:</strong> This was likely the intended answer. The standard logic is: if a competitor launches a better console, the value of your "highest-valued option forgone" (buying the alternative) increases, so the opportunity cost of buying PS5 increases.<br><br>
+        <strong>Why was it deleted?</strong> The question stem specifically mentions "long queues". If a better competitor console is launched, some consumers will switch to it, decreasing the demand for PS5. Lower demand leads to shorter or no queues, which <strong>decreases the time cost</strong>. With the value of the forgone option increasing but the time cost decreasing, the net effect on the opportunity cost of buying is uncertain. Thus, this option has a fatal flaw.</p>
+    </div>
+
+    <div class="analysis-card analysis-incorrect">
+        <h3>選項 D (Option D) - ❌ 錯誤 Incorrect</h3>
+        <p class="chi-text"><strong>分析：</strong> 使用電子消費券購買 PS5，雖然你支付的現金減少了，但消費券本身是有機會成本的（因為它可以用來購買其他物品）。你為了買 PS5 而放棄的整體購買力（現金 + 消費券能買到的其他最高價值物品）並沒有改變。因此，機會成本不變。</p>
+        <p class="eng-text"><strong>Analysis:</strong> Using consumption coupons to buy the PS5 reduces the cash you pay, but the coupons themselves have an opportunity cost (they could be used to buy other goods). The total purchasing power (what the cash + coupons could have bought alternatively) you give up remains the same. Therefore, the opportunity cost is unchanged.</p>
+    </div>
+
+    <h1>🧩 題目拆解 Problem Decomposition</h1>
+    <div class="concept-box" style="background-color: #f3f4f6; border-left-color: #6b7280;">
+        <p class="chi-text"><strong>解題樞紐 (Pivot Point)：</strong> 本題的關鍵在於準確區分「購買 (Buying)」與「持有 (Keeping)」，以及敏銳地捕捉到題幹中「排隊人龍 (Queues)」所代表的<strong>時間成本 (Time Cost)</strong>。</p>
+        <p class="eng-text"><strong>Pivot Point:</strong> The key is to accurately distinguish between "Buying" and "Keeping", and to acutely recognize that "queues" in the stem represent <strong>Time Cost</strong>.</p>
+
+        <p class="chi-text"><strong>干擾資訊 (Distractors)：</strong> 考評局在題幹中加入了「排隊人龍」本意可能是想豐富情境，卻意外成為了推翻選項 C 的關鍵變數。在做 DSE 題目時，任何關於「排隊」、「尋找時間」的字眼，都必須立刻聯想到時間成本的增減。</p>
+        <p class="eng-text"><strong>Distractors:</strong> The HKEAA likely added "queues" to enrich the context, but it accidentally became the key variable that invalidated Option C. In DSE exams, any mention of "queues" or "search time" must immediately trigger thoughts about changes in time cost.</p>
+    </div>
+
+    <h1>❓ 學生常見疑問 Student Q&A</h1>
+    
+    <div class="qa-box">
+        <div class="qa-q">Q1: 為什麼選項 A 的轉售價值上升，不算是購買成本的增加？ (Why doesn't an increase in resale value count as an increase in the cost of buying?)</div>
+        <div class="qa-a">
+            <p class="chi-text">A: 想像一下你買股票。如果股票預期會升值（轉售價值高），你會覺得買這隻股票的「成本」增加了嗎？不會，那是你的「潛在回報」。機會成本是你<strong>放棄</strong>的東西。買 PS5 時，你放棄的是買其他東西的錢和排隊的時間，你並沒有放棄轉售價值（反而你獲得了它）。只有當你決定<strong>自己玩而不賣掉</strong>時，你才真正放棄了那筆轉售的錢，所以它影響的是「持有/消費」的成本。</p>
+            <p class="eng-text">A: Imagine buying a stock. If its expected value goes up (high resale value), do you feel the "cost" of buying it has increased? No, that's your "potential return". Opportunity cost is what you <strong>give up</strong>. When buying a PS5, you give up money for other goods and time spent queuing; you don't give up the resale value (you actually gain it). Only when you decide to <strong>play it instead of selling it</strong> do you give up that resale money. Hence, it affects the cost of "keeping/consuming".</p>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="qa-q">Q2: 如果題目沒有提到「排隊人龍」，選項 C 會是正確答案嗎？ (If the question didn't mention "queues", would Option C be correct?)</div>
+        <div class="qa-a">
+            <p class="chi-text">A: 是的。如果沒有排隊時間的變數（假設時間成本為零或固定），當競爭對手推出更好的遊戲機時，你買 PS5 所放棄的「最高價值選項」（即買對手的新機）的價值就會上升。根據定義，這會直接導致購買 PS5 的機會成本增加。這正是考評局原本想考核的概念。</p>
+            <p class="eng-text">A: Yes. If there were no variable of queuing time (assuming time cost is zero or fixed), when a competitor launches a better console, the value of your "highest-valued option forgone" (buying the competitor's new console) increases. By definition, this directly increases the opportunity cost of buying the PS5. This was exactly the concept the HKEAA intended to test.</p>
+        </div>
+    </div>
+
+    <h1>⚡ 考試技巧與速解 Exam Tricks & Shortcuts</h1>
+    <div class="header-card" style="border-left: 5px solid var(--warning-color);">
+        <ul style="margin: 0; padding-left: 20px;">
+            <li class="chi-text"><strong>圈出關鍵動詞：</strong> 每次做機會成本題目，第一時間圈出是問「購買 (Buy)」、「生產 (Produce)」、「持有 (Keep)」還是「消費 (Consume)」。這能幫你秒殺 50% 的陷阱選項（如本題的選項 A）。</li>
+            <li class="eng-text" style="margin-bottom: 10px;"><strong>Circle the key verb:</strong> Always circle whether the question asks about "Buy", "Produce", "Keep", or "Consume". This helps you instantly eliminate 50% of trap options (like Option A here).</li>
+            
+            <li class="chi-text"><strong>人龍 = 時間成本：</strong> 看到「排隊 (queue)」、「短缺 (shortage)」、「尋找 (search)」，立刻在旁邊寫上 \( + \text{Time Cost} \)。</li>
+            <li class="eng-text"><strong>Queues = Time Cost:</strong> Whenever you see "queue", "shortage", or "search", immediately write down \( + \text{Time Cost} \) next to it.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
