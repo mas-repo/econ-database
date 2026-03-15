@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Subsidy Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --concept-bg: #e0f2fe;
+            --math-bg: #f1f5f9;
+            --correct-bg: #dcfce7;
+            --incorrect-bg: #fee2e2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option {
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        .option.correct {
+            background-color: var(--correct-bg);
+            border-color: #22c55e;
+        }
+        .option.incorrect {
+            background-color: var(--incorrect-bg);
+            border-color: #ef4444;
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .en {
+            color: #475569;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        .qa-box {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background: #f4f4f5;
+            border: 1px dashed #71717a;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor Guide</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 市場干預 - 補貼 (Market Intervention - Subsidy)</div>
+        <div><span class="badge">Difficulty</span> ★★★★☆</div>
+        <div><span class="badge">Key Concepts</span> Producer Surplus, Total Expenditure, Deadweight Loss, Total Revenue</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>2. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <p><strong>向某物品提供從量生產補貼會導致 _________ 。</strong></p>
+            <p class="en">The provision of a per-unit production subsidy on a good will lead to __________.</p>
+        </div>
+        
+        <div class="option">A. 該物品的生產者盈餘下降<br><span class="en">a fall in the producer surplus of the good</span></div>
+        <div class="option">B. 消費者對該物品的總支出上升<br><span class="en">a rise in consumers’ total expenditure on the good</span></div>
+        <div class="option">C. 該物品的總社會盈餘上升<br><span class="en">a rise in the total social surplus of the good</span></div>
+        <div class="option correct"><strong>D. 該物品包括補貼在內的總收入上升</strong><br><span class="en">a rise in the total revenue including the subsidy of the good</span></div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>3. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <p><strong>從量補貼 (Per-unit Subsidy)：</strong> 政府向生產者提供每單位固定金額的資助，這會降低生產成本，使供應曲線向右（向下）移動。</p>
+            <p class="en"><strong>Per-unit Subsidy:</strong> A fixed amount of money given by the government to producers for each unit produced. It lowers production costs and shifts the supply curve to the right (downwards).</p>
+        </div>
+        
+        <div class="math-block">
+            $$ P_s = P_d + \text{Subsidy} $$
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                \(P_s\) = 賣家實收價格 (Price received by sellers)<br>
+                \(P_d\) = 買家支付價格 (Price paid by buyers)
+            </p>
+        </div>
+
+        <div class="bilingual">
+            <p><strong>包括補貼在內的總收入 (Total Revenue including subsidy)：</strong> 這是生產者實際獲得的總金額。</p>
+            <p class="en"><strong>Total Revenue including subsidy:</strong> The total amount of money actually received by producers.</p>
+        </div>
+        <div class="math-block">
+            $$ \text{TR}_{new} = P_s \times Q_1 $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): D</strong></p>
+
+    <div class="option incorrect">
+        <div class="bilingual">
+            <p><strong>A. 錯誤 (Incorrect)</strong><br>補貼會降低生產成本，使交易量 \(Q\) 增加，同時賣家實收價格 \(P_s\) 上升。因此，生產者盈餘（Producer Surplus）必定會<strong>上升</strong>，而非下降。</p>
+            <p class="en">A subsidy lowers production costs, increasing the transacted quantity \(Q\) and the price received by sellers \(P_s\). Therefore, producer surplus must <strong>rise</strong>, not fall.</p>
+        </div>
+    </div>
+
+    <div class="option incorrect">
+        <div class="bilingual">
+            <p><strong>B. 錯誤 (Incorrect)</strong><br>消費者總支出 \(TE = P_d \times Q\)。補貼使買家支付價格 \(P_d\) 下降，交易量 \(Q\) 上升。總支出是升是跌，取決於該物品的<strong>需求價格彈性 (Price Elasticity of Demand)</strong>。由於題目沒有提供彈性資料，我們無法確定總支出會上升。</p>
+            <p class="en">Consumers' total expenditure \(TE = P_d \times Q\). A subsidy lowers the price paid by buyers \(P_d\) and increases quantity \(Q\). Whether TE rises or falls depends on the <strong>price elasticity of demand</strong>. Without this information, we cannot be certain that TE will rise.</p>
+        </div>
+    </div>
+
+    <div class="option incorrect">
+        <div class="bilingual">
+            <p><strong>C. 錯誤 (Incorrect)</strong><br>補貼會導致生產過剩 (Overproduction)，即邊際成本大於邊際利益 (\(MC > MB\))，從而產生無謂損失 (Deadweight Loss)。因此，總社會盈餘必定會<strong>下降</strong>。</p>
+            <p class="en">A subsidy leads to overproduction, where marginal cost exceeds marginal benefit (\(MC > MB\)), creating a deadweight loss. Therefore, total social surplus must <strong>fall</strong>.</p>
+        </div>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual">
+            <p><strong>D. 正確 (Correct)</strong><br>包括補貼在內的總收入等於賣家實收價格乘以數量 (\(P_s \times Q\))。由於補貼後賣家實收價格 \(P_s\) 高於原來的均衡價格，且交易量 \(Q\) 也增加了，兩者皆上升，因此包括補貼在內的總收入必定<strong>上升</strong>。</p>
+            <p class="en">Total revenue including the subsidy equals the price received by sellers multiplied by quantity (\(P_s \times Q\)). Since the post-subsidy price received by sellers \(P_s\) is higher than the original equilibrium price, and the quantity \(Q\) has also increased, their product must <strong>rise</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>5. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual">
+        <p><strong>解題關鍵 (Pivot Point)：</strong> 分清「消費者總支出」與「生產者總收入（連補貼）」。</p>
+        <ul>
+            <li>消費者面對的是 \(P_d\)，\(P_d\) 下降而 \(Q\) 上升，結果不確定（需看彈性）。</li>
+            <li>生產者面對的是 \(P_s\)，\(P_s\) 上升且 \(Q\) 上升，結果必定上升。</li>
+        </ul>
+        <p class="en"><strong>Pivot Point:</strong> Distinguish between "consumers' total expenditure" and "producers' total revenue (including subsidy)". Consumers face \(P_d\) (which falls) and \(Q\) (which rises), making the result uncertain (depends on elasticity). Producers face \(P_s\) (which rises) and \(Q\) (which rises), making the result definitively higher.</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual">
+        <p><strong>陷阱 1：</strong> 誤以為「補貼是好事」，所以總社會盈餘 (Total Social Surplus) 會上升。記住，任何偏離自由市場均衡的政府干預（無界外效應下）都會產生無謂損失 (Deadweight Loss)。</p>
+        <p class="en"><strong>Trap 1:</strong> Assuming "subsidy is good," so Total Social Surplus must rise. Remember, any government intervention that deviates from the free-market equilibrium (without externalities) creates a Deadweight Loss.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>7. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <p><strong>Q: 既然消費者和生產者都從補貼中獲益（盈餘增加），為什麼總社會盈餘還會下降？</strong></p>
+            <p>A: 因為政府支付的補貼總額（納稅人的錢）大於消費者盈餘和生產者盈餘的增加總和。這中間的差額就是無謂損失 (Deadweight Loss)。</p>
+            <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 10px 0;">
+            <p class="en"><strong>Q: Since both consumers and producers benefit from the subsidy (surplus increases), why does total social surplus fall?</strong></p>
+            <p class="en">A: Because the total amount of subsidy paid by the government (taxpayers' money) is greater than the combined increase in consumer and producer surplus. The difference is the deadweight loss.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual">
+            <p><strong>速解法：</strong> 在草稿紙上畫一個簡單的供需圖。補貼使 \(S\) 向右移。標出新的 \(Q\)、買家價格 \(P_d\) 和賣家價格 \(P_s\)。</p>
+            <p>你會立刻看到代表「包括補貼在內的總收入」的矩形面積 (\(P_s \times Q\)) 明顯比原來的矩形 (\(P \times Q\)) 大，因為它的長和寬都增加了。秒殺選項 D！</p>
+            <p class="en"><strong>Shortcut:</strong> Draw a quick supply-demand diagram. Subsidy shifts \(S\) right. Mark the new \(Q\), buyer price \(P_d\), and seller price \(P_s\). You will immediately see that the rectangle representing "total revenue including subsidy" (\(P_s \times Q\)) is strictly larger than the original rectangle (\(P \times Q\)) because both its height and width have increased. Instant choice D!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

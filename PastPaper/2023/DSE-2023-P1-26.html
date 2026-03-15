@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - National Income Accounting</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .zh-text {
+            margin-bottom: 4px;
+        }
+        .question-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .correct-answer {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--bg-light);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutorial</h1>
+    <div class="header-info">
+        <span class="badge">Topic: National Income Accounting 國民收入會計</span>
+        <span class="badge" style="background-color: #f59e0b;">Difficulty: ★★★☆☆</span>
+        <span class="badge" style="background-color: #8b5cf6;">Keywords: GDP, GNI, Factor Cost, GDP Deflator</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="zh-text">下表顯示某經濟於某年度的資料。</p>
+        <p class="en-text">The following table shows some data of an economy in a certain year.</p>
+        
+        <table>
+            <tr>
+                <td>海外要素收入流入 (Factor income from abroad)</td>
+                <td>140 億 (14 billion)</td>
+            </tr>
+            <tr>
+                <td>海外要素收入流出 (Factor income paid abroad)</td>
+                <td>980 億 (98 billion)</td>
+            </tr>
+            <tr>
+                <td>直接稅 (Direct taxes)</td>
+                <td>950 億 (95 billion)</td>
+            </tr>
+            <tr>
+                <td>間接稅 (Indirect taxes)</td>
+                <td>230 億 (23 billion)</td>
+            </tr>
+            <tr>
+                <td>生產補貼 (Production subsidies)</td>
+                <td>570 億 (57 billion)</td>
+            </tr>
+            <tr>
+                <td>本地生產總值平減物價指數 (GDP deflator)</td>
+                <td>117</td>
+            </tr>
+        </table>
+
+        <p class="zh-text">下列哪些有關該經濟的陳述是正確的？</p>
+        <p class="en-text">Which of the following statements about the economy are correct?</p>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>(1) 本地生產總值高於本地居民總收入。<br><span class="en-text">The GDP is higher than the gross national income (GNI).</span></li>
+            <li>(2) 以要素成本計算的本地生產總值高於以市價計算的本地生產總值。<br><span class="en-text">The GDP at factor cost is higher than the GDP at market price.</span></li>
+            <li>(3) 名義本地生產總值高於實質本地生產總值。<br><span class="en-text">The nominal GDP is higher than the real GDP.</span></li>
+        </ul>
+
+        <p>A. 只有 (1)、(2) / (1) and (2) only</p>
+        <p>B. 只有 (1)、(3) / (1) and (3) only</p>
+        <p>C. 只有 (2)、(3) / (2) and (3) only</p>
+        <p>D. (1)、(2) 及 (3) / (1), (2) and (3)</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top: 0;">A. 本地生產總值 (GDP) vs 本地居民總收入 (GNI)</h3>
+        <p class="zh-text">GNI 是指一個國家或地區的居民在一定時期內從事生產活動所獲得的總收入。它等於 GDP 加上對外要素收益淨值 (Net Factor Income from Abroad, NFIA)。</p>
+        <p class="en-text">GNI refers to the total income earned by residents of a country/territory from engaging in production activities over a period. It equals GDP plus Net Factor Income from Abroad (NFIA).</p>
+        <div class="math-block">
+            $$ \text{GNI} = \text{GDP} + \text{NFIA} $$
+            $$ \text{NFIA} = \text{FIFA} - \text{FIPA} $$
+        </div>
+        <p class="en-text" style="text-align: center;">*FIFA: Factor Income From Abroad | FIPA: Factor Income Paid Abroad</p>
+
+        <h3>B. 市價 (Market Price) vs 要素成本 (Factor Cost)</h3>
+        <p class="zh-text">市價包含了政府徵收的間接稅，並扣除了政府給予的補貼。要計算生產要素的實際回報（要素成本），我們需要從市價中扣除間接稅並加回補貼。</p>
+        <p class="en-text">Market price includes indirect taxes levied by the government and deducts subsidies provided. To calculate the actual return to factors of production (factor cost), we must subtract indirect taxes and add back subsidies from the market price.</p>
+        <div class="math-block">
+            $$ \text{GDP at Factor Cost} = \text{GDP at Market Price} - \text{Indirect Taxes} + \text{Subsidies} $$
+        </div>
+
+        <h3>C. 名義 (Nominal) vs 實質 (Real) GDP</h3>
+        <p class="zh-text">GDP 平減物價指數反映了整體物價水平的變化。如果指數大於 100，表示物價上升，名義 GDP 會大於實質 GDP。</p>
+        <p class="en-text">The GDP deflator reflects changes in the overall price level. If the index is greater than 100, it indicates inflation, meaning Nominal GDP will be greater than Real GDP.</p>
+        <div class="math-block">
+            $$ \text{GDP Deflator} = \left( \frac{\text{Nominal GDP}}{\text{Real GDP}} \right) \times 100 $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--success); font-size: 1.2em;">D</span></strong></p>
+
+    <div class="option-analysis">
+        <h4>分析陳述 (1) / Analysis of Statement (1): <span style="color: var(--success);">正確 (Correct)</span></h4>
+        <p class="zh-text">對外要素收益淨值 (NFIA) = 海外要素收入流入 (140) - 海外要素收入流出 (980) = -840 億。因為 \( \text{GNI} = \text{GDP} - 840 \)，所以 GDP 大於 GNI。</p>
+        <p class="en-text">Net Factor Income from Abroad (NFIA) = FIFA (14) - FIPA (98) = -84 billion. Since \( \text{GNI} = \text{GDP} - 84 \), GDP is higher than GNI.</p>
+    </div>
+
+    <div class="option-analysis">
+        <h4>分析陳述 (2) / Analysis of Statement (2): <span style="color: var(--success);">正確 (Correct)</span></h4>
+        <p class="zh-text">要素成本 = 市價 - 間接稅 (230) + 生產補貼 (570) = 市價 + 340 億。由於我們加上了一個正數，要素成本計算的 GDP 必然高於市價計算的 GDP。</p>
+        <p class="en-text">Factor Cost = Market Price - Indirect Taxes (23) + Subsidies (57) = Market Price + 34 billion. Since we are adding a positive net amount, GDP at factor cost is higher than GDP at market price.</p>
+    </div>
+
+    <div class="option-analysis">
+        <h4>分析陳述 (3) / Analysis of Statement (3): <span style="color: var(--success);">正確 (Correct)</span></h4>
+        <p class="zh-text">GDP 平減物價指數為 117，大於 100。根據公式 \( 117 = (\text{Nominal GDP} / \text{Real GDP}) \times 100 \)，得出 \( \text{Nominal GDP} = 1.17 \times \text{Real GDP} \)。因此，名義 GDP 高於實質 GDP。</p>
+        <p class="en-text">The GDP deflator is 117, which is > 100. Based on the formula \( 117 = (\text{Nominal GDP} / \text{Real GDP}) \times 100 \), we get \( \text{Nominal GDP} = 1.17 \times \text{Real GDP} \). Therefore, Nominal GDP is higher than Real GDP.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="zh-text">這類題目考查的是你對國民收入會計中三個核心轉換公式的理解。解題的「樞紐點」(Pivot Point) 在於觀察數據的相對大小，而不需要計算出 GDP 的實際數值。</p>
+    <p class="en-text">This type of question tests your understanding of the three core conversion formulas in national income accounting. The "Pivot Point" is observing the relative sizes of the data without needing to calculate the actual value of GDP.</p>
+    <ul>
+        <li><strong>干擾資訊 (Distractor):</strong> <span class="zh-text">直接稅 (950億) 是完全無關的數據。直接稅（如薪俸稅）不影響市價與要素成本之間的轉換。</span><br><span class="en-text">Direct taxes (95 billion) is completely irrelevant. Direct taxes (like income tax) do not affect the conversion between market price and factor cost.</span></li>
+    </ul>
+
+    <!-- 6. Student Q&A -->
+    <h2>5. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼計算要素成本時，不需要理會「直接稅」？</strong><br>
+        <span class="en-text">Why do we ignore "Direct taxes" when calculating factor cost?</span></p>
+        <p><strong>A:</strong> <span class="zh-text">因為市價 (Market Price) 是消費者在商店購買商品時支付的價格，這個價格已經包含了政府徵收的「間接稅」（如銷售稅），但並不包含個人的「直接稅」（如薪俸稅）。因此，在調整商品價格以反映生產要素的真實成本時，只需扣除間接稅。</span><br>
+        <span class="en-text">Because Market Price is what consumers pay at the store, which already includes "indirect taxes" (like sales tax) levied on goods, but it does not include personal "direct taxes" (like income tax). Therefore, when adjusting the price of goods to reflect the true cost of production factors, we only deduct indirect taxes.</span></p>
+    </div>
+
+    <!-- 7. Exam Tricks & Shortcuts -->
+    <h2>6. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>速解法：只需看符號和大小！</strong></p>
+        <p class="en-text"><strong>Shortcut: Just look at the signs and relative sizes!</strong></p>
+        <ol>
+            <li><span class="zh-text">流出 > 流入 \( \rightarrow \) NFIA 為負數 \( \rightarrow \) GDP > GNI。</span><br><span class="en-text">FIPA > FIFA \( \rightarrow \) NFIA is negative \( \rightarrow \) GDP > GNI.</span></li>
+            <li><span class="zh-text">補貼 > 間接稅 \( \rightarrow \) 淨間接稅為負數 \( \rightarrow \) 要素成本 > 市價。</span><br><span class="en-text">Subsidies > Indirect Taxes \( \rightarrow \) Net indirect taxes are negative \( \rightarrow \) Factor Cost > Market Price.</span></li>
+            <li><span class="zh-text">平減物價指數 > 100 \( \rightarrow \) 經歷通脹 \( \rightarrow \) 名義 > 實質。</span><br><span class="en-text">Deflator > 100 \( \rightarrow \) Inflation occurred \( \rightarrow \) Nominal > Real.</span></li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

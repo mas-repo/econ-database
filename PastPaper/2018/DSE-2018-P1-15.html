@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Public Housing Shortage</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --box-bg: #ffffff;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --math-bg: #f3f4f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .zh-text {
+            margin-bottom: 4px;
+        }
+
+        /* Header Section */
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .difficulty {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .options-list {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Options */
+        .analysis-option {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .analysis-option.correct {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+
+        .analysis-option.wrong {
+            background-color: var(--wrong-bg);
+            border-left-color: var(--wrong-border);
+        }
+
+        .option-label {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Q&A Section */
+        .qa-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-tags">
+        <span class="tag">Topic: 價格管制與市場干預 (Price Control & Market Intervention)</span>
+        <span class="tag">Topic: 供求理論 (Demand & Supply)</span>
+        <span class="tag difficulty">Difficulty: ★★★☆☆</span>
+    </div>
+    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+        <strong>Key Concepts:</strong> 價格上限 (Price Ceiling), 短缺 (Shortage), 替代品 (Substitutes), 非價格競爭 (Non-price Competition)
+    </div>
+
+    <!-- 2. The Question -->
+    <h1>📝 The Question (題目)</h1>
+    <div class="question-box">
+        <div class="zh-text">根據房委會的資料，公屋平均輪候時間為4.7年。下列哪項長遠來說會令公屋輪候時間增加？</div>
+        <div class="en-text">The average waiting time for public housing is 4.7 years according to the data from the Housing Authority. Which of the following would lead to an increase in the waiting time for public housing in the long term?</div>
+        
+        <ol class="options-list">
+            <li>
+                <div class="zh-text">向租住私人住宅的低收入家庭提供金錢補助</div>
+                <div class="en-text">a financial aid offered to low-income families renting private residential flats</div>
+            </li>
+            <li>
+                <div class="zh-text">提高申請公屋的入息限額</div>
+                <div class="en-text">a rise in the income limit of applying for public housing</div>
+            </li>
+            <li>
+                <div class="zh-text">放寬規管改變土地用途的規例</div>
+                <div class="en-text">a relaxation of rules regulating the change of land use</div>
+            </li>
+            <li>
+                <div class="zh-text">某億萬富翁為綜合社會保障援助計劃的申請者提供共享房屋</div>
+                <div class="en-text">a provision of shared-housing units by a billionaire for applicants of Comprehensive Social Security Assistance Scheme</div>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>1. 公屋與價格上限 (Public Housing and Price Ceiling):</strong><br>
+        政府提供的公營房屋租金通常遠低於市場均衡價格 \(P_e\)。這相當於實施了<strong>有效價格上限 (Effective Price Ceiling)</strong>。在低於均衡價格的情況下，需求量 \(Q_d\) 會大於供應量 \(Q_s\)，從而產生<strong>短缺 (Shortage)</strong>。</p>
+        <p class="en-text">The rent for public housing provided by the government is usually set well below the market equilibrium price \(P_e\). This acts as an <strong>Effective Price Ceiling</strong>. At a price below equilibrium, the quantity demanded \(Q_d\) exceeds the quantity supplied \(Q_s\), creating a <strong>Shortage</strong>.</p>
+
+        <div class="math-block">
+            $$ \text{Shortage (短缺)} = Q_d - Q_s $$
+        </div>
+
+        <p class="zh-text"><strong>2. 輪候時間與非價格競爭 (Waiting Time and Non-price Competition):</strong><br>
+        由於存在短缺，價格機制無法分配所有房屋，人們必須透過<strong>非價格競爭</strong>（例如排隊輪候）來獲取公屋。<strong>輪候時間的長短直接反映了短缺的嚴重程度。</strong> 短缺增加（需求增加或供應減少），輪候時間就會增加。</p>
+        <p class="en-text">Because of the shortage, the price mechanism cannot allocate all housing, so people must resort to <strong>non-price competition</strong> (such as queuing/waiting). <strong>The waiting time directly reflects the severity of the shortage.</strong> An increase in shortage (due to an increase in demand or a decrease in supply) will lead to an increase in waiting time.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p class="zh-text" style="font-size: 1.2em;">正確答案是：<strong>Option B</strong></p>
+    <p class="en-text" style="font-size: 1.2em;">The correct option is: <strong>Option B</strong></p>
+
+    <div class="analysis-option wrong">
+        <div class="option-label">Option A (Incorrect / 錯誤)</div>
+        <p class="zh-text">向租住私人住宅的低收入家庭提供金錢補助，會降低租住私人住宅的實際成本。私人住宅是公屋的<strong>替代品 (Substitute)</strong>。當替代品變得更便宜/更容易負擔時，對公屋的<strong>需求會減少</strong>。這會導致短缺減少，輪候時間<strong>縮短</strong>。</p>
+        <p class="en-text">Providing financial aid to low-income families renting private flats lowers the actual cost of renting private housing. Private housing is a <strong>substitute</strong> for public housing. When a substitute becomes cheaper/more affordable, the <strong>demand for public housing decreases</strong>. This reduces the shortage, thereby <strong>shortening</strong> the waiting time.</p>
+    </div>
+
+    <div class="analysis-option correct">
+        <div class="option-label">Option B (Correct / 正確)</div>
+        <p class="zh-text">提高申請公屋的入息限額意味著更多原本不合資格的市民現在符合申請資格。這會導致對公屋的<strong>需求增加 (Demand increases)</strong>。在供應不變的情況下，需求量 \(Q_d\) 增加會令<strong>短缺擴大</strong>，因此輪候時間會<strong>增加</strong>。</p>
+        <p class="en-text">Raising the income limit for applying for public housing means more citizens who were previously ineligible are now eligible to apply. This leads to an <strong>increase in demand</strong> for public housing. Assuming supply remains constant, an increase in quantity demanded \(Q_d\) will <strong>widen the shortage</strong>, thus <strong>increasing</strong> the waiting time.</p>
+    </div>
+
+    <div class="analysis-option wrong">
+        <div class="option-label">Option C (Incorrect / 錯誤)</div>
+        <p class="zh-text">放寬規管改變土地用途的規例會增加可用於建屋的土地供應。長遠來說，這會增加房屋（包括公屋）的<strong>供應 (Supply increases)</strong>。供應量 \(Q_s\) 增加會令短缺減少，輪候時間<strong>縮短</strong>。</p>
+        <p class="en-text">Relaxing the rules regulating the change of land use increases the supply of land available for housing. In the long term, this increases the <strong>supply</strong> of housing (including public housing). An increase in quantity supplied \(Q_s\) reduces the shortage, thereby <strong>shortening</strong> the waiting time.</p>
+    </div>
+
+    <div class="analysis-option wrong">
+        <div class="option-label">Option D (Incorrect / 錯誤)</div>
+        <p class="zh-text">富翁提供共享房屋為基層市民提供了另一個住屋選擇，這同樣是公屋的<strong>替代品 (Substitute)</strong>。替代品供應增加會令對公屋的<strong>需求減少</strong>，從而減少短缺，輪候時間<strong>縮短</strong>。</p>
+        <p class="en-text">The provision of shared-housing units by a billionaire offers another housing choice for grassroots citizens, which acts as a <strong>substitute</strong> for public housing. An increase in the availability of substitutes will <strong>decrease the demand</strong> for public housing, thereby reducing the shortage and <strong>shortening</strong> the waiting time.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <p class="zh-text"><strong>解題樞紐 (Pivot Point):</strong> 題目問的是「什麼會令輪候時間增加？」。在經濟學中，「輪候時間」=「短缺 (Shortage)」。因此，題目實際上是在問：<strong>「下列哪一項會增加對公屋的需求，或減少公屋的供應？」</strong></p>
+    <p class="en-text"><strong>Pivot Point:</strong> The question asks "what would lead to an increase in waiting time?". In economics, "Waiting Time" = "Shortage". Therefore, the question is actually asking: <strong>"Which of the following will increase the demand for, or decrease the supply of, public housing?"</strong></p>
+
+    <p class="zh-text"><strong>干擾資訊 (Distractors):</strong> 題目中的「4.7年」只是背景資料，對解題毫無影響。不要被這個具體數字分散注意力。</p>
+    <p class="en-text"><strong>Distractors:</strong> The "4.7 years" mentioned in the question is purely background context and has no impact on solving the problem. Do not be distracted by this specific number.</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <p class="zh-text">學生常犯的錯誤是誤解「入息限額 (Income Limit)」的概念。有些學生以為提高入息限額代表人們變得更富有，所以會去買私樓。這是錯誤的理解！提高限額是<strong>政府放寬了申請門檻</strong>，讓原本賺錢稍多而不合資格的人，現在也能加入排隊的行列，所以排隊的人數（需求）必然上升。</p>
+    <p class="en-text">A common mistake is misunderstanding the concept of "Income Limit". Some students think raising the income limit means people become richer and will buy private housing. This is wrong! Raising the limit means the <strong>government has relaxed the application threshold</strong>, allowing people who earn slightly more and were previously ineligible to join the queue. Therefore, the number of people queuing (demand) will inevitably rise.</p>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 對於選項 A，低收入家庭獲得金錢補助後，收入增加了，不是更有可能超過公屋入息限額而減少需求嗎？<br>
+        (For Option A, if low-income families receive financial aid, their income increases. Wouldn't they be more likely to exceed the public housing income limit, thus reducing demand?)</div>
+        <div style="margin-top: 10px;">
+            <p class="zh-text"><strong>A:</strong> 補助是針對「租住私人住宅」的特定補貼，這直接降低了私人住宅（替代品）的相對價格。即使不考慮入息限額的影響，替代品價格下降本身就會導致對公屋的需求減少（替代效應）。這同樣會得出短缺減少、輪候時間縮短的結論。</p>
+            <p class="en-text"><strong>A:</strong> The aid is a specific subsidy for "renting private residential flats", which directly lowers the relative price of private housing (a substitute). Even without considering the impact on income limits, the drop in the price of a substitute itself leads to a decrease in demand for public housing (substitution effect). This still leads to the conclusion that the shortage decreases and waiting time shortens.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p class="zh-text"><strong>分類淘汰法 (Categorization Elimination):</strong> 快速掃視四個選項。選項 A、C、D 都是在「幫助解決」房屋問題（提供資助、增加土地、提供共享房屋），這些顯然會紓緩排隊情況（減少短缺）。只有選項 B 是在「增加合資格人數」，這必然會令排隊隊伍變長。利用常理邏輯也能在一分鐘內秒殺此題！</p>
+    <p class="en-text"><strong>Categorization Elimination:</strong> Quickly scan the four options. Options A, C, and D are all "helping to solve" the housing problem (providing subsidies, increasing land, providing shared housing). These will obviously alleviate the queuing situation (reduce shortage). Only Option B "increases the number of eligible people", which will inevitably make the queue longer. You can solve this question in under a minute using basic common sense logic!</p>
+
+</div>
+
+</body>
+</html>

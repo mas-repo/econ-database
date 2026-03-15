@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Rent Control Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --box-border: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: none;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--box-border);
+            margin-bottom: 20px;
+        }
+        .header-info div {
+            flex: 1 1 200px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin: 2px;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--box-border);
+        }
+        .option.correct {
+            border-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option.wrong {
+            border-color: #fca5a5;
+            background-color: #fef2f2;
+        }
+        .status {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .status.correct { color: var(--correct-color); }
+        .status.wrong { color: var(--wrong-color); }
+        
+        .bilingual-en {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .section-icon {
+            margin-right: 8px;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div>
+            <strong>Topic (課題):</strong><br>
+            Market Intervention - Price Ceiling<br>
+            市場干預 - 價格上限
+        </div>
+        <div>
+            <strong>Difficulty (難度):</strong><br>
+            ★★☆☆☆ (Moderate / 中等)
+        </div>
+        <div>
+            <strong>Key Concepts (關鍵概念):</strong><br>
+            <span class="badge">Price Ceiling 價格上限</span>
+            <span class="badge">Shortage 短缺</span>
+            <span class="badge">Non-price Competition 非價格競爭</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2><span class="section-icon">📝</span>The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>假設政府對住宅單位實施有效的租金管制。下列哪項出現的可能性最低？</strong></p>
+        <p>A. 住宅單位會出現短缺。<br>
+        B. 黑市會出現。<br>
+        C. 窮人能夠較容易租得住宅單位。<br>
+        D. 業主會有較低意欲翻新其住宅單位作出租之用。</p>
+        
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+        
+        <div class="bilingual-en" style="font-style: normal;">
+            <p><strong>Suppose the government imposed an effective rent control on living units. Which of the following would LEAST likely occur?</strong></p>
+            <p>A. There would be a shortage of living units.<br>
+            B. Black market would emerge.<br>
+            C. Poor people would be able to rent a living unit more easily.<br>
+            D. Landlords would have a lower incentive to renovate their living units for rent.</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2><span class="section-icon">🧠</span>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p><strong>有效價格上限 (Effective Price Ceiling / Rent Control)</strong></p>
+        <p>政府為了保障消費者（租客），規定市場價格不能高於某一水平。要使政策「有效」，法定的最高價格 \( P_c \) 必須低於市場均衡價格 \( P_e \)。</p>
+        <div class="bilingual-en">To protect consumers (tenants), the government sets a maximum legal price. For the policy to be "effective", the price ceiling \( P_c \) must be set below the equilibrium price \( P_e \).</div>
+        
+        <div class="math-block">
+            $$ P_c < P_e $$
+        </div>
+
+        <p><strong>主要後果 (Main Consequences):</strong></p>
+        <ol>
+            <li><strong>短缺 (Shortage):</strong> 由於租金人為地壓低，需求量 \( Q_d \) 會大於供應量 \( Q_s \)。<br>
+                <span class="bilingual-en">Because rent is artificially suppressed, quantity demanded \( Q_d \) will exceed quantity supplied \( Q_s \), leading to a shortage.</span>
+                <div class="math-block">$$ Q_d > Q_s $$</div>
+            </li>
+            <li><strong>非價格競爭 (Non-price Competition):</strong> 由於不能以「價高者得」的方式分配，業主會採用其他準則（如租客背景、職業、甚至要求「黑市」枱底交易）來挑選租客。<br>
+                <span class="bilingual-en">Since allocation cannot be based on "highest bidder wins", landlords will use other criteria (e.g., tenant's background, occupation, or demanding "black market" under-the-table payments) to select tenants.</span>
+            </li>
+            <li><strong>質素下降 (Deterioration of Quality):</strong> 租金回報減少，業主缺乏誘因維修或翻新單位。<br>
+                <span class="bilingual-en">With reduced rental returns, landlords lack the incentive to maintain or renovate the units.</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2><span class="section-icon">✅</span>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案): Option C</strong></p>
+
+    <div class="option wrong">
+        <div class="status wrong">Option A: 錯誤 (因為這「極可能」發生 / Incorrect because this is HIGHLY likely)</div>
+        <p>有效的租金管制會壓低租金，導致需求量增加而供應量減少，必然產生短缺。</p>
+        <div class="bilingual-en">Effective rent control lowers the rent, increasing quantity demanded and decreasing quantity supplied, which inevitably creates a shortage.</div>
+    </div>
+
+    <div class="option wrong">
+        <div class="status wrong">Option B: 錯誤 (因為這「極可能」發生 / Incorrect because this is HIGHLY likely)</div>
+        <p>由於出現短缺，部分願意支付高於管制租金的租客會暗中與業主交易（例如支付「鞋金」或枱底費），從而衍生黑市。</p>
+        <div class="bilingual-en">Due to the shortage, some tenants willing to pay more than the controlled rent will secretly transact with landlords (e.g., paying "key money" or under-the-table fees), leading to the emergence of a black market.</div>
+    </div>
+
+    <div class="option correct">
+        <div class="status correct">Option C: 正確 (因為這「最不可能」發生 / Correct because this is LEAST likely to occur)</div>
+        <p>這正是本題的答案！雖然政府實施租管的<strong>原意</strong>是幫助窮人，但結果往往適得其反。在短缺情況下，業主有極大的選擇權。他們會偏好有穩定高收入、良好背景或願意支付黑市租金的租客。窮人在這些「非價格競爭」中處於劣勢，因此反而<strong>更難</strong>租到單位。</p>
+        <div class="bilingual-en">This is the answer! Although the government's <strong>intention</strong> is to help the poor, the result is often the opposite. Under a shortage, landlords have the power to choose. They will prefer tenants with stable high incomes, good backgrounds, or those willing to pay black market rates. Poor people are at a disadvantage in this "non-price competition" and will actually find it <strong>harder</strong> to rent a unit.</div>
+    </div>
+
+    <div class="option wrong">
+        <div class="status wrong">Option D: 錯誤 (因為這「極可能」發生 / Incorrect because this is HIGHLY likely)</div>
+        <p>由於租金被限制在低水平，業主無法透過翻新單位來收取更高的租金，因此他們會減少對單位的維修和投資。</p>
+        <div class="bilingual-en">Because rent is capped at a low level, landlords cannot charge higher rent by renovating the unit, so they will reduce maintenance and investment in the property.</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2><span class="section-icon">🔍</span>Problem Decomposition (題目拆解)</h2>
+    <p>解答這類題目的關鍵在於找出<strong>「樞紐字眼」(Pivot Point)</strong>：</p>
+    <ul>
+        <li><strong>「有效」(Effective):</strong> 意味著管制發揮作用，必定會引發短缺等連鎖反應。</li>
+        <li><strong>「可能性最低」(LEAST likely):</strong> 考試中極易看錯！你需要找出一項<strong>錯誤</strong>的陳述（即與經濟學理論相悖的結果）。</li>
+    </ul>
+    <div class="bilingual-en">
+        The key to solving this type of question is identifying the <strong>Pivot Points</strong>:
+        <ul>
+            <li><strong>"Effective":</strong> Means the control is binding, which will definitely trigger a chain reaction like shortages.</li>
+            <li><strong>"LEAST likely":</strong> Very easy to misread in exams! You need to find the <strong>false</strong> statement (i.e., the outcome that contradicts economic theory).</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2><span class="section-icon">⚠️</span>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <p><strong>陷阱：混淆「政策原意」與「實際經濟後果」</strong></p>
+        <p>很多學生會直覺認為：「政府實施租金管制是為了幫窮人，所以窮人一定受惠。」這在經濟學上是<strong>大錯特錯</strong>的！經濟學分析的是客觀結果。價格管制破壞了價格分配資源的功能，導致窮人在非價格競爭（如靠關係、靠背景）中輸給富人。</p>
+        <div class="bilingual-en">
+            <strong>Trap: Confusing "Policy Intention" with "Actual Economic Consequence"</strong><br>
+            Many students intuitively think: "The government imposes rent control to help the poor, so the poor must benefit." This is <strong>completely wrong</strong> in economics! Economics analyzes objective outcomes. Price controls destroy the price mechanism's ability to allocate resources, causing the poor to lose to the rich in non-price competition (e.g., relying on connections or background).
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2><span class="section-icon">🙋</span>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 既然租金管制會令窮人更難租屋，為什麼現實中政府還要實施？</strong></p>
+        <p>A: 好問題！因為租金管制能保障<strong>「現有」</strong>的租客（他們不用面對加租壓力），這群人往往有很大的政治選票力量。受害的是<strong>「未來/潛在」</strong>想租屋的人（包括很多窮人），因為他們面對短缺，根本租不到樓。經濟學告訴我們，政策往往有贏家和輸家。</p>
+        <div class="bilingual-en">
+            <strong>Q: If rent control makes it harder for the poor to rent, why do governments still implement it in reality?</strong><br>
+            A: Great question! Because rent control protects <strong>"existing"</strong> tenants (they don't face rent hikes), and this group often has significant political voting power. The victims are the <strong>"future/prospective"</strong> renters (including many poor people) who face shortages and can't find a place at all. Economics tells us that policies always have winners and losers.
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2><span class="section-icon">⚡</span>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p><strong>秒殺技巧 (One-second Kill Trick):</strong></p>
+        <p>在DSE經濟科中，只要見到「價格上限 (Price Ceiling) / 租金管制 (Rent Control) / 最高工時」等干預市場的政策，記住一個鐵律：<strong>「市場干預通常會帶來無效率 (Inefficiency)，並且往往會傷害它原本想幫助的弱勢群體。」</strong> 看到「窮人更容易...」這類過於美好的選項，99%是錯誤陳述，直接選它作為「最不可能」的答案！</p>
+        <div class="bilingual-en">
+            <strong>Shortcut:</strong><br>
+            In DSE Economics, whenever you see market intervention policies like "Price Ceiling / Rent Control", remember this golden rule: <strong>"Market interventions usually bring inefficiency and often hurt the vulnerable groups they originally intended to help."</strong> If you see an overly optimistic option like "Poor people will find it easier...", it is 99% a false statement. Pick it immediately for "LEAST likely" questions!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
