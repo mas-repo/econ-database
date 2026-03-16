@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Aggregate Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--primary-color);
+            overflow-x: auto;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 15px;
+            background: var(--bg-gray);
+            border-radius: 6px;
+            border-left: 4px solid transparent;
+        }
+        .option.correct {
+            border-left-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option.wrong {
+            border-left-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .qa-a {
+            margin-top: 8px;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics: 總供應與總需求 (AS-AD Model)</h1>
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 宏觀經濟學：短期總供應 (Macroeconomics: Short-Run Aggregate Supply)</div>
+        <div><span class="badge">Difficulty</span> ★★★☆☆</div>
+        <div><span class="badge">Key Concepts</span> SRAS, Cost of Production (生產成本), Macroeconomic Shocks (宏觀經濟衝擊)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">甲國是石油進口國。下列哪項會令其短期總供應曲線向右移？</div>
+            <div class="en">Country A is an oil-importing country. Which of the following will result in a rightward shift of its short-run aggregate supply curve?</div>
+        </div>
+        
+        <div class="option">
+            <div class="zh">A. 所有石油出口國決定增加每日產油量。</div>
+            <div class="en">A. All oil-exporting countries decide to increase the daily production of oil.</div>
+        </div>
+        <div class="option">
+            <div class="zh">B. 極端寒冷天氣令甲國大幅增加耗油作保暖用途。</div>
+            <div class="en">B. Extreme cold weather sharply raises the consumption of oil for heating in Country A.</div>
+        </div>
+        <div class="option">
+            <div class="zh">C. 甲國政府為減低對石油的依賴，而對新能源的研究提供稅務減免。</div>
+            <div class="en">C. The government of Country A provides tax relief for research in new energy aiming to lessen the reliance on oil.</div>
+        </div>
+        <div class="option">
+            <div class="zh">D. 一場地震破壞了甲國的一座煉油廠。</div>
+            <div class="en">D. An earthquake destroys an oil refinery factory in Country A.</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>短期總供應 (Short-Run Aggregate Supply, SRAS)</strong> 是指在物價水平變動時，要素價格（如工資、原料價格）尚未完全調整的時期內，經濟體系中所有廠商願意且能夠提供的總產出。</div>
+            <div class="en"><strong>Short-Run Aggregate Supply (SRAS)</strong> refers to the total output that all firms in an economy are willing and able to produce at different price levels, assuming factor prices (e.g., wages, raw material prices) are sticky or have not fully adjusted.</div>
+        </div>
+        
+        <div class="bilingual-block">
+            <div class="zh"><strong>影響 SRAS 曲線移動的主要因素：</strong> 生產成本 (Cost of Production)。當生產成本下降時，廠商在同一物價水平下願意生產更多，SRAS 曲線向右移（增加）。</div>
+            <div class="en"><strong>Main factor shifting the SRAS curve:</strong> Cost of Production. When production costs fall, firms are willing to produce more at the same price level, shifting the SRAS curve to the right (increase).</div>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Cost of Production} \downarrow \implies SRAS \rightarrow (\text{Rightward Shift}) $$
+            $$ \text{Cost of Production} \uparrow \implies SRAS \leftarrow (\text{Leftward Shift}) $$
+        </div>
+    </div>
+
+    <!-- 4. Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="bilingual-block">
+        <div class="zh"><strong>正確答案：選項 A (Option A)</strong></div>
+        <div class="en"><strong>Correct Answer: Option A</strong></div>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual-block">
+            <div class="zh"><strong>A. 所有石油出口國決定增加每日產油量。</strong><br>
+            分析：當石油出口國增加產量，全球石油供應增加，導致國際油價下跌。由於甲國是「石油進口國」，石油是許多行業的重要生產原料（如運輸、製造業）。油價下跌意味著甲國的<strong>生產成本下降</strong>，因此短期總供應 \(SRAS\) 增加，曲線向右移。</div>
+            <div class="en"><strong>Analysis:</strong> When oil-exporting countries increase production, global oil supply increases, leading to a fall in international oil prices. Since Country A is an "oil-importing country", and oil is a crucial raw material for many industries (e.g., transport, manufacturing), a drop in oil prices means a <strong>decrease in production costs</strong> for Country A. Therefore, \(SRAS\) increases and shifts to the right.</div>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>B. 極端寒冷天氣令甲國大幅增加耗油作保暖用途。</strong><br>
+            分析：這是影響消費者的需求。耗油作保暖用途屬於私人消費開支 \(C\)，這會令<strong>總需求 (Aggregate Demand, AD)</strong> 增加，AD 曲線向右移，而不是直接影響 SRAS。</div>
+            <div class="en"><strong>Analysis:</strong> This affects consumer demand. Consuming oil for heating falls under private consumption expenditure \(C\). This will increase <strong>Aggregate Demand (AD)</strong>, shifting the AD curve to the right, rather than directly affecting SRAS.</div>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>C. 甲國政府為減低對石油的依賴，而對新能源的研究提供稅務減免。</strong><br>
+            分析：研究與開發 (R&D) 的稅務減免會刺激投資 \(I\)，短期內令 AD 向右移。長遠而言，技術進步會令<strong>長期總供應 (LRAS)</strong> 向右移。這並非短期生產成本的直接下降。</div>
+            <div class="en"><strong>Analysis:</strong> Tax relief for Research and Development (R&D) stimulates investment \(I\), shifting AD to the right in the short run. In the long run, technological advancement will shift the <strong>Long-Run Aggregate Supply (LRAS)</strong> to the right. This is not a direct decrease in short-run production costs.</div>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>D. 一場地震破壞了甲國的一座煉油廠。</strong><br>
+            分析：天災破壞了資本和生產設施，導致生產能力下降。這會令 SRAS 和 LRAS 曲線同時<strong>向左移</strong>（減少），而非向右移。</div>
+            <div class="en"><strong>Analysis:</strong> Natural disasters destroy capital and production facilities, reducing productive capacity. This will shift both SRAS and LRAS curves to the <strong>left</strong> (decrease), not to the right.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <div class="zh">解答這類題目的關鍵在於找出<strong>「樞紐字眼」(Pivot Point)</strong>：</div>
+        <div class="en">The key to solving this type of question is identifying the <strong>"Pivot Point"</strong>:</div>
+        <ul>
+            <li><span class="zh"><strong>「短期總供應曲線向右移」</strong>：這意味著你需要尋找一個能<strong>降低生產成本</strong>或<strong>增加整體生產力</strong>的短期因素。</span><br>
+            <span class="en"><strong>"Rightward shift of SRAS"</strong>: This means you need to look for a short-run factor that <strong>lowers production costs</strong> or <strong>increases overall productivity</strong>.</span></li>
+            <li><span class="zh"><strong>「石油進口國」</strong>：這是一個重要提示。這代表國際油價的變動會直接影響該國的進口原料成本。</span><br>
+            <span class="en"><strong>"Oil-importing country"</strong>: This is a crucial hint. It implies that changes in international oil prices will directly affect the country's cost of imported raw materials.</span></li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><strong>混淆總需求 (AD) 與總供應 (AS) 的因素：</strong> 學生常誤以為「耗油量增加」(選項 B) 會帶動生產，從而增加 AS。實際上，消費增加只會直接推動 AD。要影響 AS，必須從「廠商的生產條件」（如成本、技術、資源數量）出發。</div>
+        <div class="en"><strong>Confusing AD and AS factors:</strong> Students often mistakenly think that "increased oil consumption" (Option B) will drive production and thus increase AS. In reality, an increase in consumption directly boosts AD. To affect AS, you must look at "firms' production conditions" (e.g., costs, technology, quantity of resources).</div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>💬 學生常見疑問 (Student Q&A)</h2>
+    
+    <div class="qa-box">
+        <div class="qa-q">
+            <div class="zh">Q1: 以下的解說正確嗎？<br>「選項A：油價下降，進口更多石油，進口增加，AD向左移」</div>
+            <div class="en">Q1: Is this explanation correct?<br>"Option A: Oil price drops, import more oil, imports increase, AD shifts left."</div>
+        </div>
+        <div class="qa-a">
+            <div class="zh"><strong>A: 邏輯上部分正確，但偏離了題目核心 (Partially correct in logic, but misses the core of the question)。</strong><br>
+            你指出了一個非常精準的概念：在 AS-AD 模型中，總需求方程式 \(AD = C + I + G + X - M\) 裡的 \(M\) 是指<strong>實質進口 (Real Imports)</strong>，也就是進口的「數量」。因此，如果油價下跌導致甲國進口更多數量的石油，實質進口 \(M\) 確實會增加，這在理論上會令淨出口 \(NX\) 減少，從而對 AD 產生向左移的壓力（這屬於次要效應）。<br><br>
+            <strong>然而，為什麼這不是本題的重點？</strong><br>
+            第一，題目明確問的是「哪項會令其<strong>短期總供應曲線 (SRAS)</strong> 向右移」。即使 AD 真的向左移，也無法回答題目的要求。<br>
+            第二，在宏觀經濟學中，石油被視為最重要的<strong>生產要素 (Factor of Production)</strong> 之一。國際油價下跌是一個經典的「正面供應衝擊 (Positive Supply Shock)」。它對經濟最直接、最龐大的影響是<strong>大幅降低各行各業的生產成本</strong>，這會直接且顯著地令 SRAS 曲線向右移。我們在做 DSE 題目時，必須抓緊事件的「最直接 / 主要宏觀影響」。</div>
+            <div class="en"><strong>A: Partially correct in logic, but misses the core of the question.</strong><br>
+            You pointed out a very accurate concept: in the AS-AD model, \(M\) in the aggregate demand equation \(AD = C + I + G + X - M\) refers to <strong>Real Imports</strong>, which is the "quantity" of imports. Therefore, if a drop in oil prices leads Country A to import a larger quantity of oil, real imports \(M\) do indeed increase. Theoretically, this would decrease net exports \(NX\) and exert a leftward pressure on AD (this is a secondary effect).<br><br>
+            <strong>However, why is this not the focus of the question?</strong><br>
+            First, the question specifically asks what will result in a rightward shift of the <strong>short-run aggregate supply (SRAS) curve</strong>. Even if AD shifts left, it doesn't answer the prompt.<br>
+            Second, in macroeconomics, oil is considered one of the most crucial <strong>factors of production</strong>. A fall in international oil prices is a classic "positive supply shock." Its most direct and massive impact on the economy is a <strong>significant reduction in production costs</strong> across various industries, which directly and notably shifts the SRAS curve to the right. In DSE exams, we must focus on the "most direct / primary macroeconomic impact" of an event.</div>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="qa-q">
+            <div class="zh">Q2: 以下的解說正確嗎？<br>「選項B：對石油的需求上升，油價上升，SRAS向左移」</div>
+            <div class="en">Q2: Is this explanation correct?<br>"Option B: Demand for oil increases, oil price increases, SRAS shifts left."</div>
+        </div>
+        <div class="qa-a">
+            <div class="zh"><strong>A: 不正確 (Incorrect)。</strong><br>
+            題目 B 選項指出是「甲國」因寒冷天氣而增加耗油。這是一個<strong>本地需求衝擊 (Domestic Demand Shock)</strong>。本地消費者增加購買石油作保暖，會直接增加私人消費開支 \(C\)，令<strong>總需求 (AD) 向右移</strong>。<br>
+            雖然 AD 增加最終可能會推高整體物價水平，但這只是沿著同一條 SRAS 曲線移動（物價上升導致產出量增加），而<strong>不是</strong> SRAS 曲線本身的移動。SRAS 曲線的移動通常源於外生的供應衝擊（例如選項 A 中全球油價的改變），而非本地需求改變所引發的結果。</div>
+            <div class="en"><strong>A: Incorrect.</strong><br>
+            Option B states that "Country A" increases oil consumption due to cold weather. This is a <strong>Domestic Demand Shock</strong>. Increased purchase of oil for heating by domestic consumers directly increases private consumption expenditure \(C\), shifting <strong>Aggregate Demand (AD) to the right</strong>.<br>
+            While an increase in AD might eventually push up the general price level, this represents a movement <em>along</em> the same SRAS curve (higher price level leading to higher quantity supplied), <strong>not</strong> a shift of the SRAS curve itself. Shifts in the SRAS curve are typically caused by exogenous supply shocks (like the global oil price change in Option A), not by the consequences of domestic demand changes.</div>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="qa-q">
+            <div class="zh">Q3: 為什麼選項 C 的「新能源研究」不會令 SRAS 即時向右移？</div>
+            <div class="en">Q3: Why doesn't "new energy research" in Option C shift SRAS to the right immediately?</div>
+        </div>
+        <div class="qa-a">
+            <div class="zh"><strong>A:</strong> 因為「研究」需要時間才能轉化為實際的生產技術並應用於全體經濟。在短期內，它只是一項投資開支（增加 AD）。只有當新技術研發成功並廣泛採用，提升了整體經濟的生產力時，才會令 LRAS（以及 SRAS）向右移。</div>
+            <div class="en"><strong>A:</strong> Because "research" takes time to translate into actual production technology and be applied across the economy. In the short run, it is merely an investment expenditure (increasing AD). Only when the new technology is successfully developed and widely adopted, improving the economy's overall productivity, will it shift LRAS (and SRAS) to the right.</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>💡 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>秒殺技巧：</strong> 在 DSE 經濟科中，當題目問及 <strong>SRAS 的移動</strong> 時，第一時間在腦海中閃過四個字：<strong>「生產成本」</strong>。</div>
+            <div class="en"><strong>Shortcut:</strong> In DSE Economics, whenever a question asks about the <strong>shift of SRAS</strong>, the first phrase that should pop into your mind is: <strong>"Cost of Production"</strong>.</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">掃描選項：<br>
+            A -> 油價跌 -> 成本跌 -> SRAS 增 (Bingo!)<br>
+            B -> 消費增 -> AD 增<br>
+            C -> 研發 -> 投資 (AD) / 長期技術 (LRAS)<br>
+            D -> 災難 -> 資源減 -> SRAS/LRAS 跌</div>
+            <div class="en">Scan the options:<br>
+            A -> Oil price drops -> Costs drop -> SRAS increases (Bingo!)<br>
+            B -> Consumption increases -> AD increases<br>
+            C -> R&D -> Investment (AD) / Long-run tech (LRAS)<br>
+            D -> Disaster -> Resources destroyed -> SRAS/LRAS decreases</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
