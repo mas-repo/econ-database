@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Demand and Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed var(--primary-color);
+            overflow-x: auto;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 15px;
+            background: var(--bg-gray);
+            border-radius: 6px;
+            border-left: 4px solid transparent;
+        }
+        .option.correct {
+            border-left-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option.wrong {
+            border-left-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .qa-a {
+            margin-top: 8px;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics: 需求與供應 (Demand and Supply)</h1>
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 微觀經濟學：需求與供應 (Microeconomics: Demand and Supply)</div>
+        <div><span class="badge">Difficulty</span> ★★☆☆☆</div>
+        <div><span class="badge">Key Concepts</span> Change in Demand, Change in Quantity Demanded, Expectations, Interest Rates</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">下列哪種情況會令私人房屋的需求增加？</div>
+            <div class="en">Which of the following situations would lead to an increase in the demand for private housing?</div>
+        </div>
+        
+        <div class="option">
+            <div class="zh">A. 私人房屋的價格下降。</div>
+            <div class="en">A. The price of private housing decreases.</div>
+        </div>
+        <div class="option">
+            <div class="zh">B. 公共房屋的供應上升。</div>
+            <div class="en">B. The supply of public housing increases.</div>
+        </div>
+        <div class="option">
+            <div class="zh">C. 人們預期按揭貸款的利率稍後會上升。</div>
+            <div class="en">C. People expect the interest rate for mortgage loans to increase later.</div>
+        </div>
+        <div class="option">
+            <div class="zh">D. 人們預期私人房屋的價格稍後會上升。</div>
+            <div class="en">D. People expect the price of private housing to increase later.</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>需求 (Demand) vs. 需求量 (Quantity Demanded)</strong></div>
+            <div class="en"><strong>Demand vs. Quantity Demanded</strong></div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">
+                <ul>
+                    <li><strong>需求量改變 (Change in Quantity Demanded)：</strong> 僅由物品<strong>本身的價格</strong>改變引起。在圖表上表現為沿著同一條需求曲線移動 (Movement along the curve)。</li>
+                    <li><strong>需求改變 (Change in Demand)：</strong> 由物品本身價格以外的<strong>其他因素</strong>（如收入、替代品價格、預期等）改變引起。在圖表上表現為整條需求曲線的移動 (Shift of the curve)。</li>
+                </ul>
+            </div>
+            <div class="en">
+                <ul>
+                    <li><strong>Change in Quantity Demanded:</strong> Caused ONLY by a change in the <strong>price of the good itself</strong>. Represented graphically as a movement along the same demand curve.</li>
+                    <li><strong>Change in Demand:</strong> Caused by factors <strong>other than the good's own price</strong> (e.g., income, price of substitutes, expectations). Represented graphically as a shift of the entire demand curve.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Price } P \downarrow \implies \text{Quantity Demanded } Q_d \uparrow \text{ (Movement)} $$
+            $$ \text{Expected Future Price } P_e \uparrow \implies \text{Current Demand } D \uparrow \text{ (Rightward Shift)} $$
+        </div>
+    </div>
+
+    <!-- 4. Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="bilingual-block">
+        <div class="zh"><strong>正確答案：選項 D (Option D)</strong></div>
+        <div class="en"><strong>Correct Answer: Option D</strong></div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>A. 私人房屋的價格下降。</strong><br>
+            分析：錯誤。私人房屋本身的價格下降，只會導致<strong>「需求量」(Quantity Demanded)</strong> 增加（沿著需求曲線向下移動），而不會令整條「需求」(Demand) 曲線移動。</div>
+            <div class="en"><strong>Analysis:</strong> Incorrect. A decrease in the price of private housing itself will only lead to an increase in <strong>"Quantity Demanded"</strong> (a downward movement along the demand curve), not a shift in the "Demand" curve.</div>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>B. 公共房屋的供應上升。</strong><br>
+            分析：錯誤。公共房屋是私人房屋的<strong>替代品 (Substitute)</strong>。當公共房屋供應上升，更多人能獲得公屋，他們對私人房屋的需求便會<strong>減少</strong>（需求曲線向左移）。</div>
+            <div class="en"><strong>Analysis:</strong> Incorrect. Public housing is a <strong>substitute</strong> for private housing. When the supply of public housing increases, more people can access it, which will <strong>decrease</strong> their demand for private housing (demand curve shifts to the left).</div>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-block">
+            <div class="zh"><strong>C. 人們預期按揭貸款的利率稍後會上升。</strong><br>
+            分析：錯誤。這取決於按揭是「浮動利率」還是「固定利率」。在香港（以及 DSE 的預設語境中），絕大多數按揭都是<strong>浮動利率 (Floating Rate)</strong>（例如 HIBOR 或 P 按）。這意味著即使你現在買樓，未來的供款也會隨著利率上升而增加。因此，預期未來利率上升代表<strong>未來的持有成本增加</strong>，這會降低人們現在買樓的意欲，導致現時需求<strong>減少</strong>。</div>
+            <div class="en"><strong>Analysis:</strong> Incorrect. This depends on whether mortgages are "floating rate" or "fixed rate". In Hong Kong (and the implicit context of the DSE), the vast majority of mortgages are <strong>floating rate</strong> (e.g., HIBOR or Prime-based). This means even if you buy now, your future repayments will increase when the interest rate rises. Therefore, expecting future interest rates to rise means the <strong>future cost of holding the property increases</strong>, which reduces the incentive to buy now, leading to a <strong>decrease</strong> in current demand.</div>
+        </div>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual-block">
+            <div class="zh"><strong>D. 人們預期私人房屋的價格稍後會上升。</strong><br>
+            分析：正確。如果買家預期未來樓價會上升，他們會傾向<strong>現在提早購買</strong>（以避免將來要付更高價格，或為了將來轉售圖利）。這會導致現時對私人房屋的<strong>需求增加</strong>（需求曲線向右移）。</div>
+            <div class="en"><strong>Analysis:</strong> Correct. If buyers expect housing prices to rise in the future, they will tend to <strong>buy now</strong> (to avoid paying higher prices later, or to sell for a profit later). This leads to an <strong>increase in the current demand</strong> for private housing (demand curve shifts to the right).</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <div class="zh">解答這類題目的關鍵在於區分<strong>「需求」(Demand)</strong> 和 <strong>「需求量」(Quantity Demanded)</strong>：</div>
+        <div class="en">The key to solving this type of question is distinguishing between <strong>"Demand"</strong> and <strong>"Quantity Demanded"</strong>:</div>
+        <ul>
+            <li><span class="zh"><strong>樞紐字眼 (Pivot Point)：</strong> 題目問的是「需求增加」(Increase in demand)，這意味著你需要尋找一個<strong>非價格因素 (Non-price factor)</strong>。</span><br>
+            <span class="en"><strong>Pivot Point:</strong> The question asks for an "increase in demand", which means you must look for a <strong>non-price factor</strong>.</span></li>
+            <li><span class="zh"><strong>排除法：</strong> 看到選項 A 提及「價格下降」，立刻可以排除，因為這只影響需求量。</span><br>
+            <span class="en"><strong>Process of Elimination:</strong> Seeing "price decreases" in Option A allows you to eliminate it immediately, as this only affects quantity demanded.</span></li>
+        </ul>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>💬 學生常見疑問 (Student Q&A)</h2>
+    
+    <div class="qa-box">
+        <div class="qa-q">
+            <div class="zh">Q1: 關於選項 C，如果按揭是「固定利率 (Fixed Rate)」，答案會不一樣嗎？</div>
+            <div class="en">Q1: Regarding Option C, if mortgages were "Fixed Rate", would the answer be different?</div>
+        </div>
+        <div class="qa-a">
+            <div class="zh"><strong>A:</strong> 非常好的問題！是的，如果市場上普遍採用<strong>固定利率按揭 (Fixed-rate Mortgages)</strong>（即合約期內利率永遠不變），那麼預期未來利率上升，確實會促使買家「趕搭尾班車」——他們會想在利率上升前，<strong>現在立刻買樓並鎖定目前的低息</strong>。在這種假設下，現時需求確實會增加。<br><br>
+            <strong>然而，在香港的現實與 DSE 考試語境中：</strong> 香港的按揭市場幾乎全是<strong>浮動利率 (Floating Rate)</strong>。這表示無論你何時買樓，只要未來銀行加息，你每月的供款負擔就會加重。因此，預期加息只會令買家覺得未來供樓更辛苦，從而卻步，導致現時需求減少。在做 DSE 題目時，必須以香港的實際市場運作（浮動利率）為基礎來推論。</div>
+            <div class="en"><strong>A:</strong> Excellent question! Yes, if the market predominantly used <strong>fixed-rate mortgages</strong> (where the rate never changes during the contract term), expecting future interest rates to rise would indeed prompt buyers to "rush to buy"—they would want to buy immediately to <strong>lock in the current low interest rate</strong> before it goes up. Under this assumption, current demand would increase.<br><br>
+            <strong>However, in the context of Hong Kong and the DSE exams:</strong> Hong Kong's mortgage market is almost entirely based on <strong>floating rates</strong>. This means no matter when you buy, if banks raise interest rates in the future, your monthly repayment burden will increase. Therefore, expecting a rate hike only makes buyers anticipate heavier future financial burdens, causing them to hold back, which decreases current demand. When doing DSE questions, you must base your reasoning on how the Hong Kong market actually operates (floating rates).</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>💡 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>秒殺技巧：</strong> 圈起題目中的<strong>「需求」(Demand)</strong> 兩字。只要題目問的是「需求」而不是「需求量」，任何選項只要寫著「該物品的價格改變 (Price of the good changes)」，連看都不用看，直接劃掉 (Cross out)！這樣你就能瞬間排除選項 A，大大提高命中率。</div>
+            <div class="en"><strong>Shortcut:</strong> Circle the word <strong>"Demand"</strong> in the question. As long as the question asks about "Demand" and not "Quantity Demanded", any option that states "the price of the good changes" can be immediately crossed out without a second thought! This allows you to instantly eliminate Option A and significantly increase your chances of getting it right.</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
