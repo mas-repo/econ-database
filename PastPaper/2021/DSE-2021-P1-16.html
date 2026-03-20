@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Subsidy and Elasticity</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #f0f9ff;
+            --accent-color: #0ea5e9;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-gray: #f8fafc;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 8px;
+        }
+        .header-box {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-gray);
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #16a34a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Masterclass</h2>
+        <div>
+            <span class="tag">Topic: Market Intervention & Elasticity 市場干預與彈性</span>
+            <span class="tag">Difficulty: ⭐⭐⭐</span>
+            <span class="tag">Key Concepts: Subsidy 補貼, Perfectly Inelastic 完全無彈性, Tax/Subsidy Burden 稅務/補貼負擔</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>The Question (題目)</h3>
+        <div class="bilingual">
+            <p>參閱以下物品X的供需表。</p>
+            <p class="en-text">Refer to the following demand-supply schedules of Good X.</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>價格 Price ($)</th>
+                <th>需求量 Quantity demanded</th>
+                <th>供應量 Quantity supplied</th>
+            </tr>
+            <tr><td>80</td><td>100</td><td>80</td></tr>
+            <tr><td>90</td><td>100</td><td>90</td></tr>
+            <tr><td>100</td><td>100</td><td>100</td></tr>
+            <tr><td>110</td><td>100</td><td>110</td></tr>
+            <tr><td>120</td><td>100</td><td>120</td></tr>
+            <tr><td>130</td><td>100</td><td>130</td></tr>
+        </table>
+
+        <div class="bilingual">
+            <p>若對物品X的生產商提供$10的從量補貼，</p>
+            <p class="en-text">If a $10 per-unit subsidy is provided to the producers of Good X,</p>
+            
+            <p>(1) 總收入（包括補貼）會維持不變。<br>
+               <span class="en-text">(1) the total revenue including the subsidy will remain unchanged.</span></p>
+            <p>(2) 生產者會獲得全部的補貼得益。<br>
+               <span class="en-text">(2) the subsidy benefit will be received entirely by the producers.</span></p>
+            <p>(3) 消費者對物品X的總支出會減少$1 000。<br>
+               <span class="en-text">(3) the total expenditure of consumers on Good X will reduce by $1 000.</span></p>
+            
+            <p>A. 只有 (1)、(2) / (1) and (2) only<br>
+               B. 只有 (1)、(3) / (1) and (3) only<br>
+               C. 只有 (2)、(3) / (2) and (3) only<br>
+               D. (1)、(2) 及 (3) / (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>💡 Concept Review (概念重溫)</h3>
+        <div class="bilingual">
+            <p><strong>完全無彈性需求 (Perfectly Inelastic Demand):</strong> 無論價格如何變動，需求量保持不變。在圖表上是一條垂直線。在此情況下，消費者會承擔所有稅項，或享受所有補貼。</p>
+            <p class="en-text"><strong>Perfectly Inelastic Demand:</strong> Quantity demanded remains constant regardless of price changes. It is a vertical line on a graph. In this case, consumers bear the entire tax burden or enjoy the entire subsidy benefit.</p>
+        </div>
+        <div class="math-block">
+            $$ \text{Total Revenue (TR)} = P \times Q $$
+            $$ \text{Total Expenditure (TE)} = P \times Q $$
+            $$ \text{Producer's per-unit receipt} = P_{\text{market}} + \text{Subsidy} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div>
+        <h3>✅ The Answer & Detailed Analysis (答案與詳細分析)</h3>
+        <p class="correct-answer">Correct Option: B</p>
+        
+        <div class="bilingual">
+            <p><strong>初始均衡狀態 (Initial Equilibrium):</strong> 當價格為 $100 時，需求量 = 供應量 = 100。初始總收入 (TR) = 初始總支出 (TE) = \( \$100 \times 100 = \$10 000 \)。</p>
+            <p class="en-text"><strong>Initial Equilibrium:</strong> At P = $100, Qd = Qs = 100. Initial TR = Initial TE = \( \$100 \times 100 = \$10 000 \).</p>
+        </div>
+
+        <div class="bilingual">
+            <p><strong>補貼後的新均衡 (New Equilibrium after Subsidy):</strong> 由於需求是完全無彈性（固定在100），新均衡數量必定是 100。生產者願意供應 100 件的原本價格是 $100。有了 $10 補貼後，他們願意以 $90 的市場價格供應 100 件。因此，新市場價格 \( P_1 = \$90 \)。</p>
+            <p class="en-text"><strong>New Equilibrium after Subsidy:</strong> Since demand is perfectly inelastic (fixed at 100), the new equilibrium quantity must be 100. Producers originally required $100 to supply 100 units. With a $10 subsidy, they are willing to supply 100 units at a market price of $90. Thus, new market price \( P_1 = \$90 \).</p>
+        </div>
+
+        <hr>
+
+        <div class="bilingual">
+            <p><strong>分析 (1): 正確。</strong> 新總收入（包括補貼）= (市場價格 + 補貼) \(\times\) 數量 = \( (\$90 + \$10) \times 100 = \$10 000 \)。與初始狀態相同。</p>
+            <p class="en-text"><strong>Analysis (1): Correct.</strong> New Total Revenue (including subsidy) = (Market Price + Subsidy) \(\times\) Q = \( (\$90 + \$10) \times 100 = \$10 000 \). It remains unchanged.</p>
+        </div>
+
+        <div class="bilingual">
+            <p><strong>分析 (2): 錯誤。</strong> 因為需求完全無彈性，市場價格由 $100 下降至 $90，消費者享受了全數 $10 的補貼得益。生產者實際收取的金額（連補貼）維持在 $100，沒有得益。</p>
+            <p class="en-text"><strong>Analysis (2): Incorrect.</strong> Because demand is perfectly inelastic, the market price drops from $100 to $90. Consumers enjoy the full $10 subsidy benefit. Producers effectively receive $100 (price + subsidy), gaining nothing extra.</p>
+        </div>
+
+        <div class="bilingual">
+            <p><strong>分析 (3): 正確。</strong> 新總支出 = 新市場價格 \(\times\) 數量 = \( \$90 \times 100 = \$9 000 \)。減少了 \( \$10 000 - \$9 000 = \$1 000 \)。</p>
+            <p class="en-text"><strong>Analysis (3): Correct.</strong> New Total Expenditure = New Market Price \(\times\) Q = \( \$90 \times 100 = \$9 000 \). It reduced by \( \$10 000 - \$9 000 = \$1 000 \).</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+        <h3>🔍 Problem Decomposition (題目拆解)</h3>
+        <div class="bilingual">
+            <p><strong>解題樞紐 (Pivot Point):</strong> 留意表格中的「需求量」整列都是 100。這暗示了需求是完全無彈性 (Perfectly Inelastic)。這是解開整條題目的關鍵！</p>
+            <p class="en-text"><strong>Pivot Point:</strong> Notice that the "Quantity demanded" column is constantly 100. This implies Demand is Perfectly Inelastic. This is the key to solving the entire question!</p>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div>
+        <h3>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <div class="bilingual">
+            <p>學生常誤以為「補貼給生產者，生產者就一定有得益」。實際上，稅務負擔或補貼得益的分配，完全取決於供求的相對彈性 (Relative Elasticity)。</p>
+            <p class="en-text">Students often mistakenly believe that "if the subsidy is given to producers, producers must benefit." In reality, the distribution of tax burden or subsidy benefit depends entirely on the relative elasticity of supply and demand.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="header-box">
+        <h3>🙋 Student Q&A (學生常見疑問)</h3>
+        <div class="bilingual">
+            <p><strong>Q: 點解供應量表入面其他數字唔洗理？</strong></p>
+            <p class="en-text"><strong>Q: Why do we ignore the other numbers in the quantity supplied table?</strong></p>
+            <p><strong>A:</strong> 因為需求量被「鎖死」在 100。無論供應曲線如何移動，最終的成交量必定是 100。我們只需要找出供應商在提供 100 件物品時，有補貼和無補貼的價格差異即可。</p>
+            <p class="en-text"><strong>A:</strong> Because the quantity demanded is "locked" at 100. No matter how the supply curve shifts, the final transacted quantity must be 100. We only need to find the price difference for suppliers to provide exactly 100 units with and without the subsidy.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="concept-box" style="background-color: #fefce8; border-color: #eab308;">
+        <h3>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h3>
+        <div class="bilingual">
+            <p><strong>秒殺法 (Shortcut):</strong> 一看到需求量固定 (完全無彈性)，立刻套用理論：「消費者享受全部補貼」。既然消費者享受全部補貼，生產者得益為 0，選項 (2) 必定錯。直接排除 A、C、D，答案秒選 B！完全不需要計算！</p>
+            <p class="en-text"><strong>Shortcut:</strong> Once you see fixed quantity demanded (perfectly inelastic), immediately apply the theory: "Consumers enjoy the entire subsidy." Since consumers get all the benefit, producer benefit is 0. Statement (2) MUST be wrong. Eliminate A, C, and D immediately. The answer is B! No calculation needed!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

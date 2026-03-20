@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Balance of Payments</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #f0f9ff;
+            --accent-color: #e0f2fe;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #cbd5e1;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
+        .badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+            margin-bottom: 20px;
+        }
+        .eng-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .option-analysis:last-child { border-bottom: none; }
+        .tag-correct { color: #16a34a; font-weight: bold; }
+        .tag-wrong { color: #dc2626; font-weight: bold; }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Tutor Guide</h1>
+        <div>
+            <span class="badge">Topic</span> 國際收支平衡 (Balance of Payments)
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge" style="background: #f59e0b;">Difficulty</span> ★★★☆☆
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge" style="background: #10b981;">Key Concepts</span> 
+            常住居民 (Residents), 非常住居民 (Non-residents), 經常賬 (Current Account)
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下列哪些交易會包括在香港國際收支平衡的計算內？</strong></p>
+        <p class="eng-text">Which of the following transactions will be included in the calculation of the balance of payments of Hong Kong?</p>
+        
+        <p>(1) 一位擁有香港住宅的內地居民向租客收取租金。<br>
+        <span class="eng-text">(1) A Mainland resident who owns an apartment in Hong Kong receives rental payments from his tenant.</span></p>
+        
+        <p>(2) 一位日本居民出售香港公司的股票予韓國居民。<br>
+        <span class="eng-text">(2) A Japanese resident sells the shares of a Hong Kong firm to a Korean resident.</span></p>
+        
+        <p>(3) 一位香港居民向一家以香港為基地的航空公司購買機票前往倫敦。<br>
+        <span class="eng-text">(3) A Hong Kong resident buys an air ticket to London from a Hong Kong based airline.</span></p>
+        
+        <p>(4) 一位在本港當家傭的印尼人匯款給住在印尼的丈夫。<br>
+        <span class="eng-text">(4) An Indonesian who works in Hong Kong as a domestic helper remits money to her husband who lives in Indonesia.</span></p>
+
+        <p>A. 只有 (1)、(3) <span class="eng-text">/ (1) and (3) only</span><br>
+        B. 只有 (1)、(4) <span class="eng-text">/ (1) and (4) only</span><br>
+        C. 只有 (2)、(3) <span class="eng-text">/ (2) and (3) only</span><br>
+        D. 只有 (2)、(4) <span class="eng-text">/ (2) and (4) only</span></p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>國際收支平衡 (Balance of Payments, BOP)</strong> 的核心原則是：它只記錄一個經濟體的<strong>常住居民 (Residents)</strong> 與<strong>非常住居民 (Non-residents)</strong> 之間的經濟交易。</p>
+        <p class="eng-text">The core principle of the Balance of Payments (BOP) is that it only records economic transactions between <strong>Residents</strong> of an economy and <strong>Non-residents</strong>.</p>
+        
+        <ul>
+            <li><strong>常住居民 (Resident)：</strong> 在該經濟體系內居住或打算居住最少 12 個月的個人或機構（例如：在港工作超過一年的外籍家庭傭工屬於香港常住居民）。
+            <div class="eng-text">Individuals or institutions staying or intending to stay in the economic territory for at least 12 months (e.g., foreign domestic helpers working in HK for >1 year are HK residents).</div></li>
+            <li><strong>非常住居民 (Non-resident)：</strong> 不符合上述條件的個人或機構（例如：來港數天的遊客、長居內地的人士）。
+            <div class="eng-text">Those who do not meet the above criteria (e.g., tourists, people living permanently in the Mainland).</div></li>
+        </ul>
+
+        <div class="math-block">
+            $$ BOP = CA + KA + FA + NEO = 0 $$
+            <p style="font-size: 0.9em; margin-top: 10px; color: var(--text-light);">
+                \(CA\) = Current Account (經常賬), \(KA\) = Capital Account (資本賬), <br>
+                \(FA\) = Financial Account (金融賬), \(NEO\) = Net Errors and Omissions (淨誤差及遺漏)
+            </p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (Correct Option): <strong>Option B</strong></p>
+
+    <div class="option-analysis">
+        <p><span class="tag-correct">✓ 交易 (1) 包括在內 (Included)</span></p>
+        <p>內地居民（非常住居民）向香港租客（常住居民）收取租金。這是常住居民與非常住居民之間的交易，記錄在經常賬的「初級收入」(Primary Income) 中。</p>
+        <p class="eng-text">A Mainland resident (Non-resident) receives rent from a HK tenant (Resident). This is a transaction between a resident and a non-resident, recorded under "Primary Income" in the Current Account.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="tag-wrong">✗ 交易 (2) 不包括在內 (Excluded)</span></p>
+        <p>日本居民（非常住居民）與韓國居民（非常住居民）之間的交易。由於雙方均不是香港的常住居民，因此不計入香港的國際收支平衡。</p>
+        <p class="eng-text">A transaction between a Japanese resident (Non-resident) and a Korean resident (Non-resident). Since neither party is a HK resident, it is NOT included in HK's BOP.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="tag-wrong">✗ 交易 (3) 不包括在內 (Excluded)</span></p>
+        <p>香港居民（常住居民）向以香港為基地的航空公司（常住居民）購買機票。這是兩名常住居民之間的交易，不計入 BOP。</p>
+        <p class="eng-text">A HK resident (Resident) buys a ticket from a HK-based airline (Resident). This is a transaction between two residents, so it is NOT included in the BOP.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="tag-correct">✓ 交易 (4) 包括在內 (Included)</span></p>
+        <p>在港印尼家傭（常住居民）匯款給在印尼的丈夫（非常住居民）。這是常住居民與非常住居民之間的交易，記錄在經常賬的「次級收入 / 經常轉移」(Secondary Income / Current Transfers) 中。</p>
+        <p class="eng-text">An Indonesian domestic helper in HK (Resident) remits money to her husband in Indonesia (Non-resident). This is a transaction between a resident and a non-resident, recorded under "Secondary Income / Current Transfers" in the Current Account.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>這類題目的<strong>「破題關鍵」(Pivot Point)</strong> 在於辨識交易雙方的「居民身分」(Residency status)。</p>
+    <p class="eng-text">The <strong>Pivot Point</strong> for this type of question is identifying the residency status of both parties involved in the transaction.</p>
+    <ul>
+        <li>常住居民 (Resident) + 非常住居民 (Non-resident) = <strong>計入 BOP (Included)</strong></li>
+        <li>常住居民 (Resident) + 常住居民 (Resident) = <strong>不計入 BOP (Excluded)</strong></li>
+        <li>非常住居民 (Non-resident) + 非常住居民 (Non-resident) = <strong>不計入 BOP (Excluded)</strong></li>
+    </ul>
+
+    <!-- 6. Common Mistakes -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <p><strong>陷阱 1：誤以為外籍家庭傭工是非常住居民</strong><br>
+        很多學生以為「外籍」就等於「非常住居民」。實際上，只要在香港居住或工作滿 12 個月，就會被視為香港常住居民。</p>
+        <p class="eng-text"><strong>Trap 1: Mistaking foreign domestic helpers for non-residents.</strong> Many students think "foreign" means "non-resident". In fact, anyone living or working in HK for 12 months or more is considered a HK resident.</p>
+        
+        <p><strong>陷阱 2：被資產的所在地誤導</strong><br>
+        在交易 (2) 中，雖然買賣的是「香港公司的股票」，但交易雙方都是非常住居民，因此與香港的 BOP 無關。</p>
+        <p class="eng-text"><strong>Trap 2: Misled by the location of the asset.</strong> In transaction (2), although the asset is "shares of a HK firm", both trading parties are non-residents, so it does not affect HK's BOP.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼交易 (2) 中，外國人買賣香港股票不計入香港的 BOP？香港公司的外債不是改變了嗎？</strong></p>
+        <p class="eng-text">Q: Why isn't transaction (2) included? Doesn't the foreign liability of the HK company change?</p>
+        <p><strong>A:</strong> 雖然股票的擁有權改變了，但對於香港整體而言，對外的負債總額並沒有改變（只是債權人由日本人變成了韓國人）。因為沒有資金在香港常住居民與非常住居民之間流動，所以不計入 BOP。</p>
+        <p class="eng-text">A: Although ownership changes, the total foreign liability of HK remains unchanged (the creditor simply changes from a Japanese to a Korean). Since no funds flow between a HK resident and a non-resident, it is not recorded in the BOP.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>標記法 (The R/NR Labeling Method):</strong></p>
+        <p>在考試時，直接在題目上為每一方寫上 <strong>R</strong> (Resident) 或 <strong>NR</strong> (Non-resident)。只有出現 <strong>(R + NR)</strong> 組合的選項才是正確答案！</p>
+        <p class="eng-text">During the exam, quickly label each party as <strong>R</strong> (Resident) or <strong>NR</strong> (Non-resident). Only transactions with an <strong>(R + NR)</strong> combination are correct!</p>
+        <ul>
+            <li>(1) 內地居民 (NR) + 租客 (R) ➔ <strong>R + NR (✓)</strong></li>
+            <li>(2) 日本居民 (NR) + 韓國居民 (NR) ➔ <strong>NR + NR (✗)</strong></li>
+            <li>(3) 香港居民 (R) + 香港航空公司 (R) ➔ <strong>R + R (✗)</strong></li>
+            <li>(4) 印尼家傭 (R) + 印尼丈夫 (NR) ➔ <strong>R + NR (✓)</strong></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

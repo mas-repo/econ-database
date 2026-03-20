@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Cost of Production</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --border-color: #e5e7eb;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .header-box p { margin: 5px 0; font-weight: bold; }
+        .question-box {
+            background-color: #fff;
+            border-left: 5px solid #3b82f6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+        }
+        th { background-color: #f1f5f9; }
+        .option { margin-bottom: 15px; }
+        .correct { color: #166534; font-weight: bold; }
+        .incorrect { color: #991b1b; }
+        .bilingual {
+            margin-bottom: 10px;
+        }
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        .trick-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <p>📚 Topic (課題): Short-run Costs of Production (短期生產成本)</p>
+        <p>⭐ Difficulty (難度): ★★☆☆☆</p>
+        <p>🔑 Key Concepts (核心概念): Total Fixed Cost (總固定成本), Average Variable Cost (平均可變成本), Short-run vs Long-run (短期與長期)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <p>下表顯示某廠商的成本與產出的關係。</p>
+            <p class="en">The following table shows the cost-output relationship of a firm.</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>產出 Outputs (units)</th>
+                    <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                </tr>
+                <tr>
+                    <th>總成本 Total cost ($)</th>
+                    <td>10</td><td>28</td><td>42</td><td>52</td><td>60</td><td>72</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="bilingual">
+            <p>根據上表，我們可得出結論如下：</p>
+            <p class="en">Based on the above table, we can conclude that</p>
+        </div>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 該廠商享有規模經濟的好處。 <br><span class="en">the firm enjoys the benefits of economies of scale.</span></li>
+            <li>B. 該廠商的最佳生產規模是5單位的產出。 <br><span class="en">the firm’s optimal scale of production is 5 units of outputs.</span></li>
+            <li>C. 平均可變成本正上升。 <br><span class="en">the average variable cost is increasing.</span></li>
+            <li>D. 總固定成本是$10。*(註：中文原題可能有誤植為$100，此處依據英文版修正為$10)* <br><span class="en">the total fixed cost is $10.</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <p>要解答這道題目，我們必須清楚了解短期成本的結構。在短期內，總成本 \(TC\) 由總固定成本 \(TFC\) 和總可變成本 \(TVC\) 組成。固定成本不會隨產量改變，即使產量為0，固定成本依然存在。</p>
+            <p class="en">To solve this question, we must understand the structure of short-run costs. In the short run, Total Cost \(TC\) consists of Total Fixed Cost \(TFC\) and Total Variable Cost \(TVC\). Fixed costs do not change with output; even when output is 0, fixed costs still exist.</p>
+        </div>
+        
+        <div class="math-block">
+            $$ TC = TFC + TVC $$
+            $$ \text{When } Q = 0, \quad TVC = 0 \implies TC = TFC $$
+            $$ AVC = \frac{TVC}{Q} = \frac{TC - TFC}{Q} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 Correct Option: <span class="correct">D</span></strong></p>
+
+    <div class="option">
+        <p><span class="incorrect">Option A Analysis:</span></p>
+        <div class="bilingual">
+            <p><strong>錯誤。</strong>「規模經濟」是一個<strong>長期 (Long-run)</strong> 概念。從數據可見，當產出為0時，總成本為$10，這代表存在固定成本。有固定成本即代表這是短期 (Short-run) 情況，因此無法判斷長期規模經濟。</p>
+            <p class="en"><strong>Incorrect.</strong> "Economies of scale" is a <strong>long-run</strong> concept. The data shows that at 0 output, total cost is $10, indicating the existence of fixed costs. The presence of fixed costs means this is a short-run situation, so we cannot determine long-run economies of scale.</p>
+        </div>
+    </div>
+
+    <div class="option">
+        <p><span class="incorrect">Option B Analysis:</span></p>
+        <div class="bilingual">
+            <p><strong>錯誤。</strong>要找出最佳生產規模（利潤極大化產量），我們需要邊際收益 (MR) 或價格 (Price) 的數據來與邊際成本 (MC) 比較 (\(MR = MC\))。題目沒有提供收益數據，因此無法得知最佳產量。</p>
+            <p class="en"><strong>Incorrect.</strong> To find the optimal scale of production (profit-maximizing output), we need data on Marginal Revenue (MR) or Price to compare with Marginal Cost (MC) (\(MR = MC\)). The question provides no revenue data, so we cannot determine the optimal output.</p>
+        </div>
+    </div>
+
+    <div class="option">
+        <p><span class="incorrect">Option C Analysis:</span></p>
+        <div class="bilingual">
+            <p><strong>錯誤。</strong>我們需要計算平均可變成本 \(AVC\)。已知 \(TFC = 10\)，所以 \(TVC = TC - 10\)。<br>
+            當 \(Q=1\), \(TVC = 28 - 10 = 18\), \(AVC = 18/1 = 18\)<br>
+            當 \(Q=2\), \(TVC = 42 - 10 = 32\), \(AVC = 32/2 = 16\)<br>
+            當 \(Q=3\), \(TVC = 52 - 10 = 42\), \(AVC = 42/3 = 14\)<br>
+            可見 \(AVC\) 正在<strong>下降</strong>，而非上升。</p>
+            <p class="en"><strong>Incorrect.</strong> We need to calculate Average Variable Cost \(AVC\). Since \(TFC = 10\), \(TVC = TC - 10\).<br>
+            At \(Q=1\), \(TVC = 28 - 10 = 18\), \(AVC = 18/1 = 18\)<br>
+            At \(Q=2\), \(TVC = 42 - 10 = 32\), \(AVC = 32/2 = 16\)<br>
+            At \(Q=3\), \(TVC = 52 - 10 = 42\), \(AVC = 42/3 = 14\)<br>
+            Clearly, \(AVC\) is <strong>decreasing</strong>, not increasing.</p>
+        </div>
+    </div>
+
+    <div class="option">
+        <p><span class="correct">Option D Analysis:</span></p>
+        <div class="bilingual">
+            <p><strong>正確。</strong>根據定義，當產出 \(Q = 0\) 時，總可變成本 \(TVC = 0\)。因此，此時的總成本 \(TC\) 就等於總固定成本 \(TFC\)。表格顯示 \(Q=0\) 時 \(TC=10\)，所以 \(TFC = \$10\)。</p>
+            <p class="en"><strong>Correct.</strong> By definition, when output \(Q = 0\), Total Variable Cost \(TVC = 0\). Therefore, the Total Cost \(TC\) at this point equals the Total Fixed Cost \(TFC\). The table shows that at \(Q=0\), \(TC=10\), so \(TFC = \$10\).</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual">
+        <p><strong>破題關鍵 (Pivot Point)：</strong> 表格的第一列「產出 = 0」。在任何成本計算題中，尋找 \(Q=0\) 的數據是第一步，因為它直接告訴你總固定成本 (TFC) 的數值。</p>
+        <p class="en"><strong>Pivot Point:</strong> The first column of the table "Outputs = 0". In any cost calculation question, finding the data for \(Q=0\) is the first step because it directly tells you the value of Total Fixed Cost (TFC).</p>
+    </div>
+
+    <!-- 6. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="bilingual">
+            <p><strong>秒殺法：</strong> 在選擇題中看到成本表格，<strong>第一眼先看 \(Q=0\)</strong>。如果 \(TC > 0\)，立刻知道這是短期 (Short-run)，並且該數值就是 \(TFC\)。掃視選項，發現選項 D 直接描述了這個事實，即可在 5 秒內選出答案，完全不需要計算選項 C 的 \(AVC\)。</p>
+            <p class="en"><strong>Shortcut:</strong> When you see a cost table in an MC question, <strong>look at \(Q=0\) first</strong>. If \(TC > 0\), you instantly know it's the short run, and that value is the \(TFC\). Scanning the options, you see Option D directly states this fact. You can choose the answer in 5 seconds without ever calculating \(AVC\) for Option C.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

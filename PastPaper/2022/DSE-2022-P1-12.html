@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Price Elasticity of Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --box-bg: #ffffff;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --math-bg: #f3f4f6;
+            --correct-bg: #dcfce3;
+            --wrong-bg: #fee2e2;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .bilingual {
+            margin-bottom: 1.5em;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 0.3em;
+        }
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 0;
+        }
+        .header-info {
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-info p {
+            margin: 5px 0;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .option {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        .option.correct {
+            background-color: var(--correct-bg);
+            border-color: #86efac;
+        }
+        .option.wrong {
+            background-color: var(--wrong-bg);
+            border-color: #fca5a5;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Multiple Choice Analysis</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <p><strong>Topic (課題):</strong> Price Elasticity of Demand & Total Expenditure (需求價格彈性與總開支)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Price Elasticity of Demand (需求價格彈性)</span>
+            <span class="tag">Total Expenditure (總開支)</span>
+            <span class="tag">Perfectly Inelastic (完全缺乏彈性)</span>
+            <span class="tag">Unitary Elastic (單一彈性)</span>
+        </p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="bilingual">
+        <p class="zh">下表顯示瑪莉和彼德用於汽水的總支出。</p>
+        <p class="en">The following table shows the total expenditure of Mary and Peter on soft drinks.</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>單位價格 ($)<br>Unit price ($)</th>
+                <th colspan="2">消費者的總支出 ($)<br>Consumer’s total expenditure ($)</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>瑪莉 Mary</th>
+                <th>彼德 Peter</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>20</td><td>60</td></tr>
+            <tr><td>2</td><td>40</td><td>60</td></tr>
+            <tr><td>3</td><td>60</td><td>60</td></tr>
+            <tr><td>4</td><td>80</td><td>60</td></tr>
+        </tbody>
+    </table>
+
+    <div class="bilingual">
+        <p class="zh">瑪莉對汽水的需求彈性是 ______ 而彼德對汽水的需求彈性是 ______ （不理會負號）。</p>
+        <p class="en">Mary’s elasticity of demand for soft drinks is ___________ while Peter’s elasticity of demand for soft drinks is __________ (without regard to the negative sign).</p>
+    </div>
+
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li>A. 在零和一之間 …… 等於零 (between zero and one …… equal to zero)</li>
+        <li>B. 在零和一之間 …… 等於一 (between zero and one …… equal to one)</li>
+        <li>C. 等於零 …… 等於零 (equal to zero …… equal to zero)</li>
+        <li><strong>D. 等於零 …… 等於一 (equal to zero …… equal to one)</strong></li>
+    </ul>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <p class="zh"><strong>1. 總開支 (Total Expenditure, TE) 與 需求量 (Quantity Demanded, Q) 的關係：</strong><br>
+            總開支等於價格乘以需求量。如果我們知道總開支和價格，我們可以找出需求量。</p>
+            <p class="en"><strong>1. Relationship between Total Expenditure (TE) and Quantity Demanded (Q):</strong><br>
+            Total Expenditure equals Price multiplied by Quantity Demanded. If we know TE and Price, we can find Q.</p>
+        </div>
+        
+        <div class="math-block">
+            $$ TE = P \times Q \implies Q = \frac{TE}{P} $$
+        </div>
+
+        <div class="bilingual">
+            <p class="zh"><strong>2. 需求價格彈性 (Price Elasticity of Demand, \(E_d\)) 與 總開支的關係：</strong><br>
+            - <strong>完全缺乏彈性 (\(E_d = 0\))：</strong> 需求量 \(Q\) 保持不變。價格 \(P\) 改變時，總開支 \(TE\) 會按相同比例改變。<br>
+            - <strong>單一彈性 (\(E_d = 1\))：</strong> 無論價格 \(P\) 如何改變，總開支 \(TE\) 都保持不變。</p>
+            <p class="en"><strong>2. Relationship between Price Elasticity of Demand (\(E_d\)) and Total Expenditure:</strong><br>
+            - <strong>Perfectly Inelastic (\(E_d = 0\)):</strong> Quantity demanded \(Q\) remains constant. When price \(P\) changes, TE changes in the exact same proportion.<br>
+            - <strong>Unitary Elastic (\(E_d = 1\)):</strong> Total Expenditure \(TE\) remains constant regardless of changes in price \(P\).</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="bilingual">
+        <p class="zh"><strong>正確答案是 D (Correct Option: D)</strong></p>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual">
+            <p class="zh"><strong>分析瑪莉 (Mary's Analysis):</strong><br>
+            我們利用公式 \(Q = \frac{TE}{P}\) 計算瑪莉的需求量：<br>
+            當 \(P = 1\)，\(Q = 20 / 1 = 20\)<br>
+            當 \(P = 2\)，\(Q = 40 / 2 = 20\)<br>
+            當 \(P = 3\)，\(Q = 60 / 3 = 20\)<br>
+            當 \(P = 4\)，\(Q = 80 / 4 = 20\)<br>
+            由於價格改變時，瑪莉的需求量始終保持在 20 不變，這代表她的需求是<strong>完全缺乏彈性 (Perfectly Inelastic)</strong>，即 \(E_d = 0\)。</p>
+            
+            <p class="en"><strong>Mary's Analysis:</strong><br>
+            We calculate Mary's quantity demanded using \(Q = \frac{TE}{P}\):<br>
+            When \(P = 1\), \(Q = 20 / 1 = 20\)<br>
+            When \(P = 2\), \(Q = 40 / 2 = 20\)<br>
+            When \(P = 3\), \(Q = 60 / 3 = 20\)<br>
+            When \(P = 4\), \(Q = 80 / 4 = 20\)<br>
+            Since Mary's quantity demanded remains constant at 20 regardless of the price change, her demand is <strong>perfectly inelastic</strong>, meaning \(E_d = 0\).</p>
+        </div>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual">
+            <p class="zh"><strong>分析彼德 (Peter's Analysis):</strong><br>
+            觀察表格，無論價格是 $1、$2、$3 還是 $4，彼德的總支出始終保持在 $60 不變。根據經濟學定律，當總支出不隨價格改變時，需求彈性為<strong>單一彈性 (Unitary Elastic)</strong>，即 \(E_d = 1\)。</p>
+            
+            <p class="en"><strong>Peter's Analysis:</strong><br>
+            Observing the table, whether the price is $1, $2, $3, or $4, Peter's total expenditure remains constant at $60. According to economic principles, when total expenditure does not change with price, the demand is <strong>unitary elastic</strong>, meaning \(E_d = 1\).</p>
+        </div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual">
+            <p class="zh"><strong>為什麼 A, B, C 是錯的？</strong><br>
+            選項 A 和 B 認為瑪莉的彈性在 0 和 1 之間（缺乏彈性），這是不對的，因為她的需求量是完全沒有改變的（\(E_d = 0\)）。<br>
+            選項 C 認為彼德的彈性是 0，這是混淆了「總開支不變」和「需求量不變」。彼德是總開支不變（\(E_d = 1\)），而不是需求量不變。</p>
+            
+            <p class="en"><strong>Why are A, B, C wrong?</strong><br>
+            Options A and B suggest Mary's elasticity is between 0 and 1 (inelastic), which is incorrect because her quantity demanded does not change at all (\(E_d = 0\)).<br>
+            Option C suggests Peter's elasticity is 0, which confuses "constant total expenditure" with "constant quantity demanded". Peter has constant total expenditure (\(E_d = 1\)), not constant quantity.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual">
+        <p class="zh"><strong>解題關鍵 (Pivot Point):</strong> 題目給出的數據是<strong>總支出 (Total Expenditure)</strong>，而不是<strong>需求量 (Quantity Demanded)</strong>。很多學生會直接把表格裡的數字當成需求量來計算，這是致命的錯誤。</p>
+        <p class="en"><strong>Pivot Point:</strong> The data provided in the question is <strong>Total Expenditure</strong>, NOT <strong>Quantity Demanded</strong>. A fatal error many students make is treating the numbers in the table directly as quantity demanded.</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="bilingual">
+        <p class="zh"><strong>陷阱：混淆「總開支不變」與「需求量不變」</strong><br>
+        看到彼德的數字全是 60，很多同學會直覺認為「沒有改變 = 彈性為零」，從而錯選 C。記住：<br>
+        - <strong>數量 (Q)</strong> 不變 \(\implies\) 彈性 = 0<br>
+        - <strong>總開支 (TE)</strong> 不變 \(\implies\) 彈性 = 1</p>
+        
+        <p class="en"><strong>Trap: Confusing "Constant TE" with "Constant Q"</strong><br>
+        Seeing Peter's numbers are all 60, many students intuitively think "no change = zero elasticity", leading them to wrongly choose C. Remember:<br>
+        - Constant <strong>Quantity (Q)</strong> \(\implies\) Elasticity = 0<br>
+        - Constant <strong>Total Expenditure (TE)</strong> \(\implies\) Elasticity = 1</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <p class="zh qa-q">問：如果我不用「總開支法則」，可以硬算彼德的彈性嗎？</p>
+            <p class="en qa-q">Q: Can I brute-force calculate Peter's elasticity if I don't use the "Total Expenditure Rule"?</p>
+            
+            <p class="zh">答：可以的！我們先算出彼德的需求量 \(Q\)。當 \(P=2\)，\(Q = 60/2 = 30\)。當 \(P=3\)，\(Q = 60/3 = 20\)。<br>
+            使用弧彈性公式 (Arc Elasticity Formula):<br>
+            \(E_d = -\frac{\Delta Q}{\Delta P} \times \frac{P_1 + P_2}{Q_1 + Q_2} = -\frac{20 - 30}{3 - 2} \times \frac{2 + 3}{30 + 20} = -\frac{-10}{1} \times \frac{5}{50} = 1\)。<br>
+            結果確實是 1！但考試時直接背熟法則會快很多。</p>
+            
+            <p class="en">A: Yes, you can! First, find Peter's Q. When \(P=2\), \(Q = 60/2 = 30\). When \(P=3\), \(Q = 60/3 = 20\).<br>
+            Using the Arc Elasticity Formula:<br>
+            \(E_d = -\frac{\Delta Q}{\Delta P} \times \frac{P_1 + P_2}{Q_1 + Q_2} = -\frac{20 - 30}{3 - 2} \times \frac{2 + 3}{30 + 20} = -\frac{-10}{1} \times \frac{5}{50} = 1\).<br>
+            The result is indeed 1! But memorizing the rule is much faster for exams.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="bilingual">
+            <p class="zh"><strong>秒殺技巧 (One-Second Kill Trick):</strong><br>
+            在 DSE 選擇題中，遇到「價格」與「總開支」的表格題，請直接背誦以下口訣：<br>
+            1. <strong>TE 數字全一樣</strong> \(\implies\) 彈性必定是 <strong>1</strong> (單一彈性)。立刻知道彼德是 1。<br>
+            2. <strong>TE 隨 P 按正比例上升</strong> (例如 P 變 2 倍，TE 也變 2 倍) \(\implies\) 彈性必定是 <strong>0</strong> (完全缺乏彈性)。立刻知道瑪莉是 0。<br>
+            無需動筆計算，3 秒內就能選出答案 D！</p>
+            
+            <p class="en"><strong>Shortcut:</strong><br>
+            For DSE MCQs involving "Price" and "Total Expenditure" tables, memorize this rule of thumb:<br>
+            1. <strong>TE numbers are all identical</strong> \(\implies\) Elasticity is exactly <strong>1</strong> (Unitary). You immediately know Peter is 1.<br>
+            2. <strong>TE increases strictly proportionally with P</strong> (e.g., P doubles, TE doubles) \(\implies\) Elasticity is exactly <strong>0</strong> (Perfectly Inelastic). You immediately know Mary is 0.<br>
+            No calculation needed, you can pick D in 3 seconds!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
