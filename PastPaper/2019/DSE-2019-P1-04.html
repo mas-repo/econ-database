@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Profit Maximization</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary-color: #10b981;
+            --secondary-light: #d1fae5;
+            --warning-color: #f59e0b;
+            --warning-light: #fef3c7;
+            --danger-color: #ef4444;
+            --danger-light: #fee2e2;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bilingual-group {
+            margin-bottom: 1.2em;
+        }
+
+        .zh-text {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background: var(--bg-gray);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-item {
+            margin: 5px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            background-color: var(--secondary-light);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .correct-answer {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .trap-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Question Analysis <br><span style="font-size: 0.8em; color: #4b5563;">經濟學試題分析</span></h1>
+
+    <!-- 1. Header -->
+    <div class="header-section">
+        <div class="header-item">
+            <strong>Topic (課題):</strong> Theory of the Firm - Profit Maximization (廠商理論 - 利潤極大化)
+        </div>
+        <div class="header-item">
+            <strong>Difficulty (難度):</strong> ★★★★☆ (4/5)
+        </div>
+        <div class="header-item">
+            <strong>Key Concepts (關鍵概念):</strong> 
+            <span class="tag">Price-taker (受價者)</span>
+            <span class="tag">Marginal Cost (邊際成本)</span>
+            <span class="tag">Fixed Cost (固定成本)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-group">
+            <div class="zh-text">如果某受價者廠商的固定成本下跌$200而每單位邊際成本上升$10，利潤極大化的產量會 __________，而利潤 _________。</div>
+            <div class="en-text">If the fixed cost of a price-taking firm decreases by $200 and the marginal cost of each unit of output increases by $10, the profit-maximising output will __________ and the profit _________.</div>
+        </div>
+        
+        <ul class="options-list">
+            <li>
+                <div class="zh-text">A. 上升 …… 會下降</div>
+                <div class="en-text">A. increase …… will decrease</div>
+            </li>
+            <li>
+                <div class="zh-text">B. 上升 …… 可能上升或下降</div>
+                <div class="en-text">B. increase …… may increase or decrease</div>
+            </li>
+            <li>
+                <div class="zh-text">C. 下降 …… 會上升</div>
+                <div class="en-text">C. decrease …… will increase</div>
+            </li>
+            <li>
+                <div class="zh-text"><strong>D. 下降 …… 可能上升或下降</strong></div>
+                <div class="en-text"><strong>D. decrease …… may increase or decrease</strong></div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <div class="zh-text">要解決這道題目，我們必須清楚理解「受價者」的特徵以及「利潤極大化」的條件。</div>
+            <div class="en-text">To solve this question, we must clearly understand the characteristics of a "price-taker" and the conditions for "profit maximization".</div>
+        </div>
+
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>1. 受價者 (Price-taker):</strong> 面對完全彈性的需求曲線，市場價格 \( P \) 等於邊際回報 \( MR \)。</div>
+            <div class="en-text"><strong>1. Price-taker:</strong> Faces a perfectly elastic demand curve, where market price \( P \) equals marginal revenue \( MR \).</div>
+        </div>
+        
+        <div class="math-block">
+            $$ P = MR $$
+        </div>
+
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>2. 利潤極大化條件 (Profit Maximization Condition):</strong> 廠商會生產直到邊際成本 \( MC \) 等於邊際回報 \( MR \)。</div>
+            <div class="en-text"><strong>2. Profit Maximization Condition:</strong> The firm will produce up to the point where marginal cost \( MC \) equals marginal revenue \( MR \).</div>
+        </div>
+
+        <div class="math-block">
+            $$ MC = MR $$
+        </div>
+
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>3. 利潤公式 (Profit Formula):</strong> 利潤 \( \pi \) 等於總收入 \( TR \) 減去總成本 \( TC \)。總成本包括固定成本 \( FC \) 和可變成本 \( VC \)。</div>
+            <div class="en-text"><strong>3. Profit Formula:</strong> Profit \( \pi \) equals total revenue \( TR \) minus total cost \( TC \). Total cost includes fixed cost \( FC \) and variable cost \( VC \).</div>
+        </div>
+
+        <div class="math-block">
+            $$ \pi = TR - TC = TR - (FC + VC) $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <div class="correct-answer">
+            Correct Option: D (正確答案：D)
+        </div>
+
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>第一部分：產量的變化 (Change in Output)</strong><br>
+            題目指出每單位邊際成本 \( MC \) 上升$10。在圖表上，這代表 \( MC \) 曲線向上（向左）移動。由於受價者的 \( MR \) 是一條水平線且保持不變，新的 \( MC = MR \) 相交點會出現在較低的產量水平。因此，利潤極大化的產量必定<strong>下降</strong>。這排除了選項 A 和 B。</div>
+            <div class="en-text"><strong>Part 1: Change in Output</strong><br>
+            The question states that the marginal cost \( MC \) of each unit increases by $10. Graphically, this means the \( MC \) curve shifts upwards (to the left). Since the \( MR \) for a price-taker is a horizontal line and remains unchanged, the new intersection of \( MC = MR \) will occur at a lower quantity. Therefore, the profit-maximizing output must <strong>decrease</strong>. This eliminates options A and B.</div>
+        </div>
+
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>第二部分：利潤的變化 (Change in Profit)</strong><br>
+            利潤的變化取決於三個因素：總收入的改變、固定成本的改變，以及可變成本的改變。固定成本下跌$200（這會令利潤增加$200）。然而，邊際成本上升導致總可變成本增加，同時產量下降導致總收入減少（這兩者都會令利潤減少）。由於我們不知道實際的產量 \( Q \) 是多少，我們無法確定節省下來的$200固定成本是否足以彌補可變成本上升和收入下降所帶來的損失。因此，利潤<strong>可能上升或下降</strong>。</div>
+            <div class="en-text"><strong>Part 2: Change in Profit</strong><br>
+            The change in profit depends on three factors: the change in total revenue, fixed cost, and variable cost. Fixed cost decreases by $200 (which increases profit by $200). However, the increase in marginal cost raises total variable cost, and the decrease in output lowers total revenue (both of which decrease profit). Since we do not know the actual quantity \( Q \), we cannot determine if the $200 saved in fixed costs is enough to offset the losses from higher variable costs and lower revenue. Therefore, profit <strong>may increase or decrease</strong>.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-group">
+        <div class="zh-text"><strong>解題樞紐 (Pivot Point):</strong><br>
+        這題的關鍵在於將「產量決定」與「利潤計算」分開處理。<br>
+        1. 產量只受邊際數值（\( MC \) 和 \( MR \)）影響。固定成本的改變對產量<strong>毫無影響</strong>。<br>
+        2. 利潤受整體數值（\( TR \) 和 \( TC \)）影響。當有兩個反向的成本變動（一個升、一個跌），且缺乏具體數量數據時，總體影響通常是「不確定的」。</div>
+        <div class="en-text"><strong>Pivot Point:</strong><br>
+        The key to this question is separating "output determination" from "profit calculation".<br>
+        1. Output is only affected by marginal values (\( MC \) and \( MR \)). Changes in fixed cost have <strong>zero effect</strong> on output.<br>
+        2. Profit is affected by total values (\( TR \) and \( TC \)). When there are two opposing cost changes (one increasing, one decreasing) and a lack of specific quantity data, the overall effect is usually "uncertain".</div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>陷阱 1：誤以為固定成本影響產量</strong><br>
+            很多學生看到固定成本下跌，就直覺認為廠商會生產更多。記住：固定成本 \( FC \) 不會改變邊際成本 \( MC \)，因此不會改變 \( MC = MR \) 的位置，對利潤極大化產量沒有直接影響。</div>
+            <div class="en-text"><strong>Trap 1: Thinking fixed cost affects output</strong><br>
+            Many students see a drop in fixed cost and intuitively think the firm will produce more. Remember: Fixed cost \( FC \) does not change marginal cost \( MC \), so it doesn't change the position of \( MC = MR \), having no direct effect on the profit-maximizing output.</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>陷阱 2：只看固定成本下跌就認為利潤必升</strong><br>
+            學生容易忽略邊際成本上升帶來的連鎖反應（可變成本增加及產量下跌導致收入減少）。</div>
+            <div class="en-text"><strong>Trap 2: Assuming profit must rise just because fixed cost falls</strong><br>
+            Students easily overlook the chain reaction caused by the increase in marginal cost (increased variable costs and decreased revenue due to lower output).</div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>問：如果題目給了具體的產量（例如原本產量是 10 件），我們能確定利潤的變化嗎？</strong></div>
+            <div class="en-text"><strong>Q: If the question provided a specific output quantity (e.g., original output was 10 units), could we determine the change in profit?</strong></div>
+        </div>
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>答：</strong> 仍然很難完全確定，因為產量會從 10 件下跌到一個未知的新數量。但我們可以估算：如果產量維持在 10 件，總可變成本會上升 \( 10 \times \$10 = \$100 \)。由於固定成本下跌了 $200，在產量不變的假設下，成本淨減少 $100，利潤會上升。但由於廠商實際上會減少產量，總收入會下跌，所以除非我們知道價格 \( P \) 和新的產量，否則依然無法得出絕對的結論。這正是為什麼答案是「可能上升或下降」。</div>
+            <div class="en-text"><strong>A:</strong> It would still be difficult to be absolutely certain because the output would drop from 10 units to an unknown new quantity. But we can estimate: if output stayed at 10 units, total variable cost would rise by \( 10 \times \$10 = \$100 \). Since fixed cost fell by $200, assuming unchanged output, net costs fall by $100, and profit would rise. However, since the firm actually reduces output, total revenue falls. So unless we know the price \( P \) and the new quantity, we still cannot reach an absolute conclusion. This is exactly why the answer is "may increase or decrease".</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>速解法 (Shortcut):</strong><br>
+            在DSE經濟科的選擇題中，當你看到<strong>兩個方向相反的變數</strong>同時發生（例如：一個成本升、另一個成本跌），而題目<strong>沒有提供足夠的數據</strong>（如具體數量或彈性），關於總量（如總利潤、總收入）的答案有 90% 的機率是「不確定」或「可能上升或下降」。<br>
+            第一步：確定 \( MC \) 上升導致產量下降（秒殺 A 和 B）。<br>
+            第二步：看到一升一跌的成本，直接選包含「可能上升或下降」的選項（秒殺 C，選 D）。</div>
+            <div class="en-text"><strong>Shortcut:</strong><br>
+            In HKDSE Economics MCQs, when you see <strong>two opposing variables</strong> changing at the same time (e.g., one cost rises, another falls), and the question <strong>does not provide sufficient data</strong> (like specific quantities or elasticities), the answer regarding a total value (like total profit, total revenue) has a 90% chance of being "uncertain" or "may increase or decrease".<br>
+            Step 1: Determine that rising \( MC \) decreases output (instantly eliminates A and B).<br>
+            Step 2: Seeing one rising and one falling cost, directly choose the option containing "may increase or decrease" (instantly eliminates C, choose D).</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
