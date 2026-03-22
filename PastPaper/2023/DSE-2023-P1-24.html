@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide - GDP Calculation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bilingual-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .header-item {
+            margin: 5px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .option {
+            padding: 10px;
+            margin: 8px 0;
+            background: var(--bg-light);
+            border-radius: 6px;
+            border-left: 4px solid transparent;
+        }
+
+        .option.correct {
+            border-left-color: var(--success-color);
+            background: #ecfdf5;
+        }
+
+        .option.wrong {
+            border-left-color: var(--danger-color);
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        .tips-box {
+            background: linear-gradient(to right, #fdf2f8, #fff1f2);
+            border: 1px solid #fecdd3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1 style="border:none; padding:0;">HKDSE Economics Tutor Guide</h1>
+        <div class="header-item">
+            <strong>Topic (課題):</strong> National Income Accounting / 國民收入會計
+        </div>
+        <div class="header-item">
+            <strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)
+        </div>
+        <div class="header-item">
+            <strong>Key Concepts (關鍵概念):</strong> 
+            <span class="tag">GDP Definition</span>
+            <span class="tag">Current Production</span>
+            <span class="tag">Transfer Payments</span>
+            <span class="tag">Productive Services</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">下列哪項會包括在香港本地生產總值的計算之內？</div>
+            <div class="en">Which of the following would be included in the calculation of Hong Kong's gross domestic product (GDP)?</div>
+        </div>
+        
+        <div class="option">
+            <div class="zh">A. 某學生所購買的一輛二手單車的價值</div>
+            <div class="en">A. the value of a second-hand bicycle purchased by a student</div>
+        </div>
+        <div class="option correct">
+            <div class="zh">B. 某經紀協助客戶交易股票所賺取的佣金</div>
+            <div class="en">B. the commission earned by a broker from transactions of shares for his clients</div>
+        </div>
+        <div class="option">
+            <div class="zh">C. 某住戶轉售一間住宅物業所賺取的資本增值</div>
+            <div class="en">C. the capital gain earned by a household from reselling a residential property</div>
+        </div>
+        <div class="option">
+            <div class="zh">D. 有需要人士在綜合社會保障援助計劃下所收取的援助金</div>
+            <div class="en">D. the allowance under the Comprehensive Social Security Assistance Scheme received by the needy</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>本地生產總值 (GDP) 的定義：</strong><br>指一個國家或地區在特定時間內（通常為一年），於其常住生產單位內所生產的所有<strong>最終物品及服務 (Final goods and services)</strong> 的市場總值。</div>
+            <div class="en"><strong>Definition of GDP:</strong><br>The total market value of all <strong>final goods and services</strong> currently produced by resident producing units within the economic territory of a country/region in a specified period (usually a year).</div>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{GDP} = C + I + G + NX $$
+        </div>
+        
+        <div class="bilingual-block">
+            <div class="zh"><strong>不計入 GDP 的項目 (Exclusions from GDP):</strong>
+                <ul>
+                    <li><strong>二手物品 (Second-hand goods):</strong> 因為它們在首次生產時已經計算過。</li>
+                    <li><strong>純金融交易與資本增值 (Financial transactions & Capital gains):</strong> 買賣股票或資產升值並不涉及新物品或服務的生產。</li>
+                    <li><strong>轉移支付 (Transfer payments):</strong> 例如政府援助金、長者津貼，因為收款人沒有提供任何當期生產服務作為回報。</li>
+                </ul>
+            </div>
+            <div class="en"><strong>Items excluded from GDP:</strong>
+                <ul>
+                    <li><strong>Second-hand goods:</strong> Because their value was already counted in the year they were originally produced.</li>
+                    <li><strong>Financial transactions & Capital gains:</strong> Trading stocks or asset appreciation does not involve the production of new goods or services.</li>
+                    <li><strong>Transfer payments:</strong> e.g., government allowances, because the recipients do not provide any current productive services in return.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><strong>正確答案：選項 B (Option B)</strong></div>
+        <div class="en"><strong>Correct Answer: Option B</strong></div>
+    </div>
+
+    <div class="analysis-grid">
+        <div class="option wrong">
+            <div class="bilingual-block">
+                <div class="zh"><strong>選項 A 分析 (錯誤)：</strong> 二手單車的價值不包括在內。因為這輛單車在最初被製造和出售的那一年，其價值已經被計入當年的 GDP。如果現在再計算一次，就會造成「重複計算」(Double counting)。</div>
+                <div class="en"><strong>Option A Analysis (Incorrect):</strong> The value of a second-hand bicycle is excluded. Its value was already counted in the GDP of the year it was newly produced and sold. Counting it again would result in "double counting".</div>
+            </div>
+        </div>
+
+        <div class="option correct">
+            <div class="bilingual-block">
+                <div class="zh"><strong>選項 B 分析 (正確)：</strong> 雖然買賣股票本身的價值不計入 GDP（純金融交易），但經紀協助客戶交易所賺取的「佣金」(Commission)，代表了經紀在<strong>當期提供的生產性服務 (Current productive service)</strong> 的價值。因此，這筆佣金必須計入當年的 GDP。</div>
+                <div class="en"><strong>Option B Analysis (Correct):</strong> While the value of the shares traded is excluded (pure financial transaction), the "commission" earned by the broker represents the value of a <strong>current productive service</strong> provided by the broker. Therefore, this commission must be included in the current year's GDP.</div>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="bilingual-block">
+                <div class="zh"><strong>選項 C 分析 (錯誤)：</strong> 資本增值 (Capital gain) 只是現有資產（物業）價格的上升，並不涉及任何新的建築或生產活動。既然沒有新的物品或服務被生產出來，就不應計入 GDP。</div>
+                <div class="en"><strong>Option C Analysis (Incorrect):</strong> A capital gain is merely an increase in the price of an existing asset (property). It does not involve any new construction or productive activity. Since no new goods or services are produced, it is excluded from GDP.</div>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="bilingual-block">
+                <div class="zh"><strong>選項 D 分析 (錯誤)：</strong> 綜援金屬於「轉移支付」(Transfer payment)。政府發放這筆款項時，收款人並沒有提供任何物品或服務作為交換，因此不涉及生產，不計入 GDP。</div>
+                <div class="en"><strong>Option D Analysis (Incorrect):</strong> The CSSA allowance is a "transfer payment". When the government distributes this money, the recipient does not provide any goods or services in exchange. Thus, no production is involved, and it is excluded from GDP.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <div class="zh">
+            解答這類題目的<strong>核心樞紐 (Pivot Point)</strong> 是問自己一個問題：「這項交易背後，<strong>有沒有新的物品或服務被生產出來？</strong>」<br>
+            考評局經常把「資產本身的價值」與「交易過程中產生的服務費」放在一起考驗學生。題目中的干擾項（Distractors）如「資本增值」和「二手物品」，都是利用大額金錢交易來迷惑你，讓你誤以為有經濟貢獻。
+        </div>
+        <div class="en">
+            The <strong>Pivot Point</strong> for solving this type of question is to ask yourself: "Does this transaction involve the <strong>production of a NEW good or service?</strong>"<br>
+            The HKEAA often tests students by mixing the "value of the asset itself" with the "service fee generated during the transaction". Distractors like "capital gain" and "second-hand goods" use large monetary transactions to confuse you into thinking there is an economic contribution.
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="bilingual-block">
+        <div class="zh">
+            <strong>陷阱：混淆金融資產價值與經紀服務費</strong><br>
+            很多學生看到「股票」(Shares) 就立刻認定不計入 GDP。請記住：<br>
+            1. 股票本身的交易額 \(\rightarrow\) <strong>不計入</strong> (無新生產)<br>
+            2. 股票經紀的佣金 \(\rightarrow\) <strong>計入</strong> (當期服務)
+        </div>
+        <div class="en">
+            <strong>Trap: Confusing financial asset value with broker service fees</strong><br>
+            Many students immediately assume exclusion from GDP when they see the word "shares". Remember:<br>
+            1. The transaction value of shares \(\rightarrow\) <strong>Excluded</strong> (No new production)<br>
+            2. The broker's commission \(\rightarrow\) <strong>Included</strong> (Current service)
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 如果二手單車在出售前，學生花錢請維修店修理了一下，維修費計入 GDP 嗎？</div>
+        <div class="bilingual-block" style="margin-top: 8px;">
+            <div class="zh"><strong>A:</strong> 會的！二手單車本身的價值不計入，但「維修服務」是維修店在<strong>今年新提供</strong>的生產性服務。因此，維修費會計入當年的 GDP。</div>
+            <div class="en"><strong>A:</strong> Yes! The value of the second-hand bike itself is excluded, but the "repair service" is a <strong>newly provided</strong> productive service by the shop this year. Therefore, the repair fee is included in the current year's GDP.</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <div class="zh">
+                <strong>秒殺技巧 (Elimination Method)：</strong><br>
+                在 DSE 選擇題中尋找關鍵字：<br>
+                ❌ 看到「二手 (Second-hand)」、「舊 (Old)」 \(\rightarrow\) 刪除。<br>
+                ❌ 看到「資本增值 (Capital gain)」、「股票價值 (Value of shares)」 \(\rightarrow\) 刪除。<br>
+                ❌ 看到「援助金 (Allowance)」、「津貼 (Subsidy)」、「捐款 (Donation)」 \(\rightarrow\) 刪除。<br>
+                ✅ 看到「佣金 (Commission)」、「手續費 (Handling fee)」、「服務費 (Service charge)」 \(\rightarrow\) 通常是正確答案！
+            </div>
+            <div class="en">
+                <strong>Shortcut (Elimination Method):</strong><br>
+                Look for keywords in DSE MCQs:<br>
+                ❌ See "Second-hand" or "Old" \(\rightarrow\) Eliminate.<br>
+                ❌ See "Capital gain" or "Value of shares" \(\rightarrow\) Eliminate.<br>
+                ❌ See "Allowance", "Subsidy", or "Donation" \(\rightarrow\) Eliminate.<br>
+                ✅ See "Commission", "Handling fee", or "Service charge" \(\rightarrow\) Usually the correct answer!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

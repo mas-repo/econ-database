@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #475569;
+            --bg-gray: #f8fafc;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --correct: #22c55e;
+            --wrong: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px 10px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .question-box {
+            background: var(--bg-gray);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .bilingual-text {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        @media (min-width: 768px) {
+            .bilingual-text {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .zh { font-weight: 500; }
+        .en { color: var(--secondary); font-size: 0.95em; }
+        
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed var(--primary);
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: var(--bg-gray);
+        }
+        .option-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .correct-ans { color: var(--correct); }
+        .wrong-ans { color: var(--wrong); }
+        
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Tutor Guide</h1>
+        <div class="badge-container">
+            <span class="badge">Topic: Income Inequality & Taxation</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Gini Coefficient, Tax Systems, Transfers</span>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>📝 題目 / The Question</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <div class="zh">
+                    <p>細閱以下有關某經濟的資料。</p>
+                    <table style="width:100%; text-align:center; margin-bottom:10px;">
+                        <tr><th></th><th>2016</th><th>2021</th></tr>
+                        <tr><td>按除稅及福利轉移後住戶收入計算的堅尼系數</td><td>0.398</td><td>0.407</td></tr>
+                    </table>
+                    <p>以下哪些有可能解釋以上從2016年到2021年的改變？</p>
+                    <p>(1) 稅制由累進稅變成累退稅。<br>
+                    (2) 累進薪俸稅的稅階擴闊。<br>
+                    (3) 向低收入住戶發放的轉移支付增加。</p>
+                    <p>A. 只有 (1)、(2)<br>
+                    B. 只有 (1)、(3)<br>
+                    C. 只有 (2)、(3)<br>
+                    D. (1)、(2) 及 (3)</p>
+                </div>
+                <div class="en">
+                    <p>Study the following data about an economy.</p>
+                    <table style="width:100%; text-align:center; margin-bottom:10px;">
+                        <tr><th></th><th>2016</th><th>2021</th></tr>
+                        <tr><td>Gini coefficient based on post-tax post-social transfer household income</td><td>0.398</td><td>0.407</td></tr>
+                    </table>
+                    <p>Which of the following are possible explanations for the above change from 2016 to 2021?</p>
+                    <p>(1) The progressive tax system changed to a regressive one.<br>
+                    (2) The tax bands of the progressive salaries tax are widened.<br>
+                    (3) The transfer payments provided to the low-income households increased.</p>
+                    <p>A. (1) and (2) only<br>
+                    B. (1) and (3) only<br>
+                    C. (2) and (3) only<br>
+                    D. (1), (2) and (3)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>🧠 概念重溫 / Concept Review</h2>
+        <div class="concept-box">
+            <p class="zh"><strong>堅尼系數 (Gini Coefficient):</strong> 量度收入不均的指標。數值介乎 0 與 1 之間。數值越大，代表收入分佈越不平均（貧富懸殊惡化）。</p>
+            <p class="en"><strong>Gini Coefficient:</strong> An indicator used to measure income inequality. Its value ranges from 0 to 1. A higher value means income distribution is more unequal (worsening wealth gap).</p>
+            
+            <div class="math-block">
+                $$ 0 \le \text{Gini Coefficient} \le 1 $$
+                $$ \text{Gini} \uparrow \implies \text{Inequality} \uparrow $$
+            </div>
+
+            <p class="zh"><strong>稅制與收入分配 (Tax Systems and Income Distribution):</strong><br>
+            - <strong>累進稅 (Progressive Tax):</strong> 收入越高，平均稅率越高。有助收窄貧富懸殊（堅尼系數下降）。<br>
+            - <strong>累退稅 (Regressive Tax):</strong> 收入越高，平均稅率越低。會擴大貧富懸殊（堅尼系數上升）。</p>
+            <p class="en"><strong>Tax Systems and Income Distribution:</strong><br>
+            - <strong>Progressive Tax:</strong> Average tax rate increases as income increases. Helps narrow the wealth gap (Gini decreases).<br>
+            - <strong>Regressive Tax:</strong> Average tax rate decreases as income increases. Widens the wealth gap (Gini increases).</p>
+        </div>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section>
+        <h2>✅ 答案與詳細分析 / Answer & Detailed Analysis</h2>
+        <p class="zh">正確答案是 <strong>A</strong>。</p>
+        <p class="en">The correct option is <strong>A</strong>.</p>
+
+        <div class="option-analysis">
+            <div class="option-header correct-ans">分析 (1) / Analysis of (1) - Correct</div>
+            <p class="zh">由累進稅改為累退稅，意味著低收入人士的稅務負擔比例相對增加，而高收入人士的負擔減少。這會令除稅後的收入差距擴大，導致堅尼系數上升。符合題目數據（0.398 升至 0.407）。</p>
+            <p class="en">Changing from a progressive to a regressive tax system means the relative tax burden on low-income earners increases, while it decreases for high-income earners. This widens the post-tax income gap, causing the Gini coefficient to rise. This matches the data (0.398 to 0.407).</p>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-header correct-ans">分析 (2) / Analysis of (2) - Correct</div>
+            <p class="zh">擴闊累進稅的稅階（Widening tax bands）代表納稅人需要賺取更多收入才會跌入下一個更高的稅率階梯。這實際上減輕了中高收入人士的稅務負擔，削弱了累進稅「劫富濟貧」的財富再分配效果。因此，收入不均會惡化，堅尼系數上升。</p>
+            <p class="en">Widening the tax bands means taxpayers need to earn more income before they fall into the next higher tax bracket. This effectively reduces the tax burden on middle-to-high income earners, weakening the wealth redistribution effect of the progressive tax. Therefore, income inequality worsens, and the Gini coefficient rises.</p>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-header wrong-ans">分析 (3) / Analysis of (3) - Incorrect</div>
+            <p class="zh">增加對低收入住戶的轉移支付（如社會福利、津貼），會直接增加他們的除稅及福利轉移後收入，從而收窄貧富差距。這會導致堅尼系數<strong>下降</strong>，與題目數據（堅尼系數上升）矛盾。</p>
+            <p class="en">Increasing transfer payments (like social welfare or subsidies) to low-income households directly increases their post-tax and post-transfer income, thereby narrowing the wealth gap. This would cause the Gini coefficient to <strong>decrease</strong>, which contradicts the data (Gini increased).</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>🔍 題目拆解 / Problem Decomposition</h2>
+        <p class="zh"><strong>破題關鍵 (Pivot Point):</strong> 留意數據的變化方向。堅尼系數由 \(0.398\) 上升至 \(0.407\)。這代表<strong>收入不均惡化了 (Inequality worsened)</strong>。因此，我們只需要找出哪個選項會導致貧富懸殊加劇。</p>
+        <p class="en"><strong>Pivot Point:</strong> Notice the direction of the data change. The Gini coefficient increased from \(0.398\) to \(0.407\). This means <strong>income inequality worsened</strong>. Therefore, we just need to identify which statements cause the wealth gap to widen.</p>
+    </section>
+
+    <!-- 6. Common Mistakes -->
+    <section>
+        <h2>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+        <p class="zh"><strong>誤解「稅階擴闊」的影響：</strong> 很多學生以為「稅階擴闊」是一件「好事」，所以會改善貧富懸殊。事實上，稅階擴闊令高收入人士有更大部份的收入停留在較低的稅率，交少了稅，這反而削弱了財富再分配的功能，令堅尼系數上升。</p>
+        <p class="en"><strong>Misunderstanding "Widening Tax Bands":</strong> Many students think "widening tax bands" is a "good thing" and therefore improves inequality. In reality, it allows a larger portion of a high-income earner's income to be taxed at lower rates. They pay less tax, which weakens wealth redistribution and causes the Gini coefficient to rise.</p>
+    </section>
+
+    <!-- 7. Exam Tricks -->
+    <section>
+        <h2>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+        <div class="trick-box">
+            <p class="zh"><strong>秒殺法 (Elimination Method):</strong><br>
+            在考場上，選項 (3) 是最明顯的。給窮人派錢（轉移支付）一定會改善貧富懸殊，令堅尼系數下降。但題目數據顯示堅尼系數上升了。所以 (3) 必定是錯的。<br>
+            既然 (3) 錯，我們可以立刻刪去 B、C、D。答案只可能是 <strong>A</strong>。連 (1) 和 (2) 都不用深究就能得分！</p>
+            
+            <p class="en"><strong>Elimination Method:</strong><br>
+            In the exam, statement (3) is the most obvious. Giving money to the poor (transfer payments) definitely improves inequality and lowers the Gini coefficient. But the data shows the Gini increased. So (3) MUST be wrong.<br>
+            Since (3) is wrong, we can immediately eliminate options B, C, and D. The answer can only be <strong>A</strong>. You get the mark without even deeply analyzing (1) and (2)!</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

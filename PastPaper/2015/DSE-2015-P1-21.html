@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Gini Coefficient & Taxation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary-color: #0f172a;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-info {
+            background: var(--primary-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .question-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .option.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option.wrong {
+            border-color: #fca5a5;
+            background-color: #fef2f2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge.correct { background-color: var(--success); }
+        .badge.wrong { background-color: var(--danger); }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        
+        .eng-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .qa-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q { font-weight: bold; color: var(--primary-color); }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <div class="header-info">
+            <p><strong>Topic (課題):</strong> Income Inequality & Taxation (收入不均與稅制)</p>
+            <p><strong>Difficulty (難度):</strong> ★★★☆☆ (3/5)</p>
+            <p><strong>Key Concepts (核心概念):</strong> Gini Coefficient (堅尼系數), Regressive Tax (累退稅), Income Distribution (收入分配)</p>
+        </div>
+    </header>
+
+    <!-- 2. The Question -->
+    <section>
+        <h2>📝 The Question (題目)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <p>假設某經濟除稅後的堅尼系數比稅前的堅尼系數高，這意味著</p>
+                <ol type="A">
+                    <li>政府增加了給窮人的轉移支付的金額。</li>
+                    <li>該經濟的稅制很可能是累退性的。</li>
+                    <li>收入不均的問題比去年差。</li>
+                    <li>政府應該改革稅制。</li>
+                </ol>
+            </div>
+            <div class="eng-text">
+                <p>Suppose the post-tax Gini coefficient of an economy is larger than its pre-tax Gini coefficient. This implies that</p>
+                <ol type="A">
+                    <li>the government has increased the amount of transfer payment to the poor.</li>
+                    <li>the tax system of the economy is likely to be regressive.</li>
+                    <li>the problem of income inequality is worse than that in the previous year.</li>
+                    <li>the government should reform the tax system.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Concept Review -->
+    <section>
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>1. Gini Coefficient (堅尼系數)</h3>
+            <p class="bilingual-text">堅尼系數是量度收入不均的指標，數值介乎 0 至 1 之間。數值越大，代表收入分配越不平均。</p>
+            <p class="eng-text">The Gini coefficient is a measure of income inequality, ranging from 0 to 1. A higher value indicates greater income inequality.</p>
+            
+            <div class="math-block">
+                $$ 0 \le \text{Gini Coefficient} \le 1 $$
+                <p>\( \text{Gini} \uparrow \implies \text{Inequality} \uparrow \)</p>
+            </div>
+
+            <h3>2. Types of Taxes & Income Distribution (稅制與收入分配)</h3>
+            <ul>
+                <li><strong>Progressive Tax (累進稅):</strong> 稅率隨收入增加而上升。有助拉近貧富懸殊，令堅尼系數下降。<br><span class="eng-text">Tax rate increases as income increases. Reduces inequality, lowers Gini.</span></li>
+                <li><strong>Regressive Tax (累退稅):</strong> 稅率隨收入增加而下降（或低收入人士的稅務負擔比例較重）。會加劇貧富懸殊，令堅尼系數上升。<br><span class="eng-text">Tax burden falls more heavily on low-income earners. Worsens inequality, raises Gini.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <section>
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Answer (正確答案): Option B</strong></p>
+
+        <div class="option wrong">
+            <span class="badge wrong">A</span>
+            <p class="bilingual-text"><strong>錯誤：</strong> 增加對窮人的轉移支付會令低收入人士的可用收入增加，從而改善收入不均，這會導致堅尼系數<strong>下降</strong>，而非上升。</p>
+            <p class="eng-text"><strong>Incorrect:</strong> Increasing transfer payments to the poor raises their disposable income, which improves income equality. This would cause the Gini coefficient to <strong>decrease</strong>, not increase.</p>
+        </div>
+
+        <div class="option correct">
+            <span class="badge correct">B</span>
+            <p class="bilingual-text"><strong>正確：</strong> 題目指出「除稅後的堅尼系數 > 稅前的堅尼系數」，代表徵稅後收入不均惡化了。累退稅（Regressive tax）正是會對低收入人士造成較重負擔，導致徵稅後貧富差距擴大的稅制。</p>
+            <p class="eng-text"><strong>Correct:</strong> The question states "post-tax Gini > pre-tax Gini", meaning taxation worsened income inequality. A regressive tax places a heavier proportional burden on lower-income earners, thereby widening the wealth gap after taxes.</p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge wrong">C</span>
+            <p class="bilingual-text"><strong>錯誤：</strong> 題目只比較了同一年內「稅前」與「稅後」的數據，並沒有提供任何關於「去年」的數據，因此無法作出跨時間的比較。</p>
+            <p class="eng-text"><strong>Incorrect:</strong> The question only compares "pre-tax" and "post-tax" data within the same period. It provides no data regarding the "previous year", so a time-series comparison cannot be made.</p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge wrong">D</span>
+            <p class="bilingual-text"><strong>錯誤：</strong> 「政府應該改革稅制」屬於規範性陳述（Normative statement），涉及價值判斷。堅尼系數上升只是一個客觀事實（實證性陳述 Positive statement），不能直接推導出政府「應該」做什麼。</p>
+            <p class="eng-text"><strong>Incorrect:</strong> "The government should reform the tax system" is a normative statement involving value judgments. An increase in the Gini coefficient is a positive (objective) fact, which cannot logically dictate what the government "should" do.</p>
+        </div>
+    </section>
+
+    <!-- 5. Problem Decomposition -->
+    <section>
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        <div class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+            <p class="bilingual-text"><strong>解題樞紐 (Pivot Point):</strong> 釐清「堅尼系數上升」的含義。</p>
+            <p class="eng-text"><strong>Pivot Point:</strong> Clarify the meaning of an "increase in the Gini coefficient".</p>
+            <ul>
+                <li>Step 1: Post-tax Gini > Pre-tax Gini \(\implies\) Inequality worsened after paying taxes.</li>
+                <li>Step 2: What causes inequality to worsen? \(\implies\) A tax system that hurts the poor more than the rich (Regressive Tax).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <section>
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <p class="bilingual-text"><strong>誤解堅尼系數的數值意義：</strong> 很多學生誤以為堅尼系數像考試分數一樣「越高越好」。緊記：堅尼系數越高，代表社會越<strong>不公平</strong>。</p>
+                <p class="eng-text"><strong>Misinterpreting the Gini scale:</strong> Students often think a higher Gini is "better". Remember: Higher Gini = Higher Inequality.</p>
+            </li>
+            <li>
+                <p class="bilingual-text"><strong>混淆實證與規範陳述 (Option D)：</strong> 經濟學選擇題中，除非題目特別問及價值觀，否則客觀數據（如堅尼系數）不能推導出「應該 (should)」的結論。</p>
+                <p class="eng-text"><strong>Confusing Positive and Normative statements:</strong> Objective data cannot lead to a "should" conclusion in standard economic logic.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Student Q&A -->
+    <section>
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        <div class="qa-box">
+            <p class="qa-q">Q: 如果題目改成「除稅後的堅尼系數比稅前低」，答案會是什麼？</p>
+            <p class="eng-text">Q: What if the question said "post-tax Gini is lower than pre-tax Gini"?</p>
+            <p><strong>A:</strong> 這代表稅制成功拉近了貧富懸殊，改善了收入不均。這意味著該經濟的稅制很可能是<strong>累進性的 (Progressive)</strong>。<br>
+            <span class="eng-text">This means the tax system successfully reduced the wealth gap. It would imply the tax system is likely <strong>progressive</strong>.</span></p>
+        </div>
+    </section>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <section>
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="concept-box" style="background-color: #f0fdf4; border-color: #16a34a;">
+            <p class="bilingual-text"><strong>秒殺技巧：</strong> 看到「堅尼系數上升」立刻聯想「惡化/不公平」。選項中只有 B (累退稅) 是導致不公平惡化的因素。A 是改善，C 是無關時間線，D 是規範性廢話。直接選 B！</p>
+            <p class="eng-text"><strong>Shortcut:</strong> "Higher Gini" = "Worse inequality". Look for the option that causes worse inequality. A improves it, C is wrong timeframe, D is normative. Choose B instantly!</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

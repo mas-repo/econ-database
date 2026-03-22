@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Alchian-Allen Theorem</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-gray: #f3f4f6;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+        .zh-text {
+            margin-bottom: 4px;
+        }
+        
+        /* Specific Section Styles */
+        .header-info {
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-info p {
+            margin: 5px 0;
+        }
+        
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        
+        .option-analysis {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .option-analysis.correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option-analysis.wrong {
+            border-left: 5px solid var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+        .badge.correct-badge { background-color: var(--correct-color); }
+        .badge.wrong-badge { background-color: var(--wrong-color); }
+        
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HKDSE Economics Tutor 經濟學導師解析</h1>
+
+        <!-- 1. Header -->
+        <div class="header-info">
+            <p><strong>📚 課題 (Topic):</strong> 價格理論：艾智仁與艾倫定理 (Price Theory: Alchian-Allen Theorem)</p>
+            <p><strong>⭐ 難度 (Difficulty):</strong> ★★★★☆ (4/5)</p>
+            <p><strong>🔑 關鍵字 (Key Concepts):</strong> 相對價格 (Relative Price), 艾智仁與艾倫定理 (Alchian-Allen Theorem), 替代效應 (Substitution Effect)</p>
+        </div>
+
+        <!-- 2. The Question -->
+        <h2>📝 題目 (The Question)</h2>
+        <div class="question-box">
+            <div class="zh-text">
+                <p>甲國每年以海運進口大量紅酒。</p>
+                <p>假設每個貨櫃的海運成本由$250上升至$1 000。海運成本上升對甲國售出的紅酒會有什麼影響？</p>
+                <p>A. 紅酒的進口量會增加。<br>
+                B. 用於高檔紅酒的總支出和用於低檔紅酒的總支出會以相同百分比下降。<br>
+                C. 市場上售出的低檔紅酒所佔的比例會下降。<br>
+                D. 市場上售出的紅酒的平均質素會下降。</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+            <div class="en-text">
+                <p>Country A imports a huge amount of red wine every year via shipping.</p>
+                <p>Suppose the shipping cost of each container rises from $250 to $1 000. What will be the effect of the increase in shipping cost on the red wine sold in Country A?</p>
+                <p>A. More red wine will be imported.<br>
+                B. The total expenditure on high-quality red wine will drop by the same percentage as that on low-quality red wine.<br>
+                C. The proportion of low-quality red wine sold in the market will decrease.<br>
+                D. The average quality of red wine sold in the market will decrease.</p>
+            </div>
+        </div>
+
+        <!-- 3. Concept Review -->
+        <h2>🧠 概念重溫 (Concept Review)</h2>
+        <div class="concept-box">
+            <div class="zh-text">
+                <p><strong>艾智仁與艾倫定理 (Alchian-Allen Theorem)</strong></p>
+                <p>這條定理指出，當兩種替代品（例如高檔紅酒與低檔紅酒）同時加上一個<strong>相同的固定從量成本</strong>（例如運輸費、固定稅款）時，較昂貴（高檔）物品的<strong>相對價格 (Relative Price)</strong> 會下降。</p>
+                <p>根據需求定律，當高檔物品的相對價格下降，消費者會傾向以高檔物品替代低檔物品（替代效應）。因此，市場上高檔物品的銷售比例會上升，而低檔物品的比例會下降，整體平均質素會提高。這就是著名的「好蘋果運出城」(Shipping the good apples out) 理論。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>Alchian-Allen Theorem</strong></p>
+                <p>This theorem states that when a <strong>fixed per-unit cost</strong> (e.g., transportation cost, fixed tax) is added to two substitute goods (e.g., high-quality and low-quality red wine), the <strong>relative price</strong> of the more expensive (high-quality) good will decrease.</p>
+                <p>According to the law of demand, as the relative price of the premium good falls, consumers will substitute the low-quality good with the high-quality one (substitution effect). Consequently, the proportion of high-quality goods sold in the market increases, the proportion of low-quality goods decreases, and the average quality rises. This is famously known as "Shipping the good apples out".</p>
+            </div>
+            
+            <div class="math-block">
+                <p class="zh-text"><strong>相對價格公式 (Relative Price Formula):</strong></p>
+                <p class="en-text">Let \( P_H \) = Price of High-quality wine, \( P_L \) = Price of Low-quality wine, \( T \) = Transport cost.</p>
+                $$ \text{Relative Price of High-quality wine} = \frac{P_H + T}{P_L + T} $$
+                <p class="zh-text">當 \( T \) 增加時，這個比率會變小（趨向於 1），代表高檔紅酒相對變便宜了。</p>
+                <p class="en-text">As \( T \) increases, this ratio decreases (approaches 1), meaning high-quality wine becomes relatively cheaper.</p>
+            </div>
+        </div>
+
+        <!-- 4. The Answer & Detailed Analysis -->
+        <h2>✅ 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        <p class="zh-text"><strong>正確答案：C</strong></p>
+        <p class="en-text"><strong>Correct Option: C</strong></p>
+
+        <div class="option-analysis wrong">
+            <div class="zh-text">
+                <p><span class="badge wrong-badge">A</span> <strong>紅酒的進口量會增加。 (錯誤)</strong></p>
+                <p>海運成本上升導致所有紅酒的絕對價格 (Absolute Price) 上升。根據需求定律，價格上升，整體紅酒的進口需求量會減少，而非增加。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>More red wine will be imported. (Incorrect)</strong></p>
+                <p>An increase in shipping costs raises the absolute price of all red wine. According to the law of demand, a higher price will lead to a decrease, not an increase, in the total quantity demanded for imported red wine.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis wrong">
+            <div class="zh-text">
+                <p><span class="badge wrong-badge">B</span> <strong>用於高檔紅酒的總支出和用於低檔紅酒的總支出會以相同百分比下降。 (錯誤)</strong></p>
+                <p>由於高檔紅酒的相對價格下降，消費者會增加購買高檔紅酒的比例（替代效應）。因此，兩者的需求量變化幅度不同，總支出的下降百分比絕對不會相同。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>The total expenditure on high-quality red wine will drop by the same percentage as that on low-quality red wine. (Incorrect)</strong></p>
+                <p>Because the relative price of high-quality wine falls, consumers will shift their consumption proportionally towards it (substitution effect). Therefore, the changes in quantity demanded are disproportionate, and the percentage drop in total expenditure will definitely not be the same.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis correct">
+            <div class="zh-text">
+                <p><span class="badge correct-badge">C</span> <strong>市場上售出的低檔紅酒所佔的比例會下降。 (正確)</strong></p>
+                <p>正如概念重溫所述，固定運輸成本增加會降低高檔紅酒的相對價格。消費者覺得買高檔紅酒「比較划算」，於是高檔紅酒的銷售比例上升，低檔紅酒所佔的比例自然下降。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>The proportion of low-quality red wine sold in the market will decrease. (Correct)</strong></p>
+                <p>As explained in the concept review, adding a fixed transport cost lowers the relative price of high-quality wine. Consumers find high-quality wine "relatively more worth it", so the proportion of high-quality wine sold increases, which naturally means the proportion of low-quality wine decreases.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis wrong">
+            <div class="zh-text">
+                <p><span class="badge wrong-badge">D</span> <strong>市場上售出的紅酒的平均質素會下降。 (錯誤)</strong></p>
+                <p>由於高檔（高質素）紅酒在市場上的銷售比例上升了，市場上紅酒的整體平均質素應該是<strong>上升</strong>，而不是下降。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>The average quality of red wine sold in the market will decrease. (Incorrect)</strong></p>
+                <p>Since the proportion of high-quality premium wine sold in the market increases, the overall average quality of red wine in the market should <strong>increase</strong>, not decrease.</p>
+            </div>
+        </div>
+
+        <!-- 5. Problem Decomposition -->
+        <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+        <div class="zh-text">
+            <ul>
+                <li><strong>破題關鍵 (Pivot Point)：</strong> 題目提到「每個貨櫃的海運成本由$250上升至$1000」。這是一個<strong>固定的從量成本 (Fixed per-unit cost)</strong>。只要看到高低檔物品加上固定成本，就必須立刻聯想到「艾智仁與艾倫定理」。</li>
+                <li><strong>干擾資訊 (Distractors)：</strong> 題目給出的具體數字（$250 和 $1000）其實並不重要。無論成本是增加 $10 還是 $10000，只要是固定金額加在兩者之上，相對價格的變化方向（高檔變平）都是一樣的，無需進行複雜計算。</li>
+            </ul>
+        </div>
+        <div class="en-text">
+            <ul>
+                <li><strong>Pivot Point:</strong> The question mentions the shipping cost per container "rises from $250 to $1000". This is a <strong>fixed per-unit cost</strong>. Whenever you see a fixed cost added to goods of different qualities, you must immediately think of the "Alchian-Allen Theorem".</li>
+                <li><strong>Distractors:</strong> The exact numbers ($250 and $1000) are irrelevant. Whether the cost increases by $10 or $10000, as long as a fixed amount is added to both, the direction of the relative price change (premium becomes relatively cheaper) remains the same. No complex calculation is needed.</li>
+            </ul>
+        </div>
+
+        <!-- 6. Common Mistakes & Traps -->
+        <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <div class="zh-text">
+            <p>很多學生會誤選 D。他們直覺認為：「運費貴了，東西變貴了，市民購買力下降（收入效應），所以會買多些便宜的低檔紅酒來省錢。」<br>
+            <strong>陷阱破解：</strong> 在 DSE 經濟科中，處理這類加上固定成本的題目時，我們假設<strong>替代效應 (Substitution Effect)</strong> 佔主導地位。我們關注的是兩者之間的「相對價格」變化，而不是整體的購買力下降。</p>
+        </div>
+        <div class="en-text">
+            <p>Many students mistakenly choose D. Their intuition tells them: "Shipping is more expensive, goods are pricier, purchasing power drops (income effect), so people will buy more cheap, low-quality wine to save money."<br>
+            <strong>Trap Revealed:</strong> In HKDSE Economics, when dealing with fixed-cost addition problems like this, we assume the <strong>Substitution Effect</strong> dominates. We focus on the change in "relative price" between the two goods, rather than the overall drop in purchasing power.</p>
+        </div>
+
+        <!-- 7. Student Q&A -->
+        <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+        <div class="qa-box">
+            <div class="zh-text">
+                <p><strong>Q: 如果運費不是按「每個貨櫃」收取，而是按「紅酒價值的百分比（從價稅/成本）」收取，答案會一樣嗎？</strong></p>
+                <p>A: 不一樣！如果是按百分比收取（例如徵收 10% 關稅），高檔和低檔紅酒的價格會以相同比例上升。在這種情況下，它們的<strong>相對價格將保持不變</strong>，因此不會出現高檔紅酒比例上升的現象。</p>
+            </div>
+            <div class="en-text">
+                <p><strong>Q: What if the shipping cost was charged as a "percentage of the wine's value (ad valorem cost/tax)" instead of "per container"? Would the answer be the same?</strong></p>
+                <p>A: No! If it were charged as a percentage (e.g., a 10% tariff), the prices of both high and low-quality wines would increase by the same proportion. In this case, their <strong>relative price would remain unchanged</strong>, so the phenomenon of the proportion of high-quality wine increasing would not occur.</p>
+            </div>
+        </div>
+
+        <!-- 8. Exam Tricks & Shortcuts -->
+        <h2>🚀 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <div class="tips-box">
+            <div class="zh-text">
+                <p><strong>秒殺口訣：</strong> 在 MC 卷看到「固定運費 / 固定稅款 / 固定附加費」 + 「優質與劣質物品」：</p>
+                <ol>
+                    <li>優質品相對價格 <strong>↓ (跌)</strong></li>
+                    <li>優質品銷售比例 <strong>↑ (升)</strong></li>
+                    <li>整體平均質素 <strong>↑ (升)</strong></li>
+                </ol>
+                <p>直接找符合這三點的選項，3秒內即可選出正確答案！</p>
+            </div>
+            <div class="en-text">
+                <p><strong>Shortcut Rule:</strong> When you see "Fixed transport cost / Fixed tax / Fixed surcharge" + "High-quality vs Low-quality goods" in Paper 1 (MC):</p>
+                <ol>
+                    <li>Relative price of premium good <strong>↓ (Drops)</strong></li>
+                    <li>Proportion of premium good sold <strong>↑ (Rises)</strong></li>
+                    <li>Overall average quality <strong>↑ (Rises)</strong></li>
+                </ol>
+                <p>Just look for the option that matches these three points. You can find the answer in 3 seconds!</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
