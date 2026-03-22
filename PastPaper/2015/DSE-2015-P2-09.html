@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Law of Diminishing Marginal Returns</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #059669;
+            --secondary-light: #d1fae5;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 3px solid #e5e7eb;
+        }
+        
+        /* Specific Section Styles */
+        .header-info {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .header-info div {
+            font-weight: bold;
+        }
+        .header-info span {
+            font-weight: normal;
+            color: var(--text-muted);
+        }
+        
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        .data-table th {
+            background-color: var(--gray-bg);
+        }
+        
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .analysis-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: var(--gray-bg);
+        }
+        .option.correct {
+            background-color: var(--secondary-light);
+            border: 1px solid var(--secondary);
+        }
+        .option.incorrect {
+            background-color: var(--danger-light);
+            border: 1px solid var(--danger);
+        }
+        
+        .trap-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-correct { background-color: var(--secondary); }
+        .badge-incorrect { background-color: var(--danger); }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            .data-table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div>課題 (Topic): <br><span>短期生產與邊際回報遞減定律 <br>(Short Run Production & Law of Diminishing Marginal Returns)</span></div>
+        <div>難度 (Difficulty): <br><span>⭐⭐⭐ (3/5)</span></div>
+        <div>關鍵字 (Key Concepts): <br><span>邊際產量 (Marginal Product), 固定要素 (Fixed Factor), 可變要素 (Variable Factor)</span></div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>下表顯示甲廠商的總產出，該廠商生產時只運用資本和勞工。</p>
+        <div class="bilingual-en">The table below shows the total product of Firm A, which employs only capital and labour in production.</div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>勞力 Labour (單位 units)</th>
+                    <th>資本 Capital (單位 units)</th>
+                    <th>總產出 Total Product (單位 units)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>12</td><td>2</td><td>110</td></tr>
+                <tr><td>12</td><td>3</td><td>130</td></tr>
+                <tr><td>12</td><td>4</td><td>160</td></tr>
+                <tr><td>12</td><td>5</td><td>X</td></tr>
+            </tbody>
+        </table>
+
+        <p>下列哪項有關甲廠商的陳述是正確的？</p>
+        <div class="bilingual-en">Which of the following statements about Firm A is correct?</div>
+
+        <p>A. 若上述資料說明邊際回報遞減定律，X的值可以等於180。<br>
+        B. 若上述資料說明邊際回報遞減定律，X的值可以等於190。<br>
+        C. 若上述資料說明邊際回報遞減定律，X的值可以大於200。<br>
+        D. 邊際回報遞減定律並不適用於該甲廠商，因為資本不是固定生產要素。</p>
+        
+        <div class="bilingual-en">
+        A. If the above data illustrate the law of diminishing marginal returns, the value of X can be equal to 180.<br>
+        B. If the above data illustrate the law of diminishing marginal returns, the value of X can be equal to 190.<br>
+        C. If the above data illustrate the law of diminishing marginal returns, the value of X can be larger than 200.<br>
+        D. The law of diminishing marginal returns does not apply to Firm A because capital is not a fixed factor.
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>邊際回報遞減定律 (Law of Diminishing Marginal Returns)</h3>
+        <p>在短期內，當最少有一種生產要素的數量是固定的（固定要素），若我們不斷增加可變要素（Variable Factor）的數量，<strong>邊際產量（Marginal Product, MP）最終必然會下降</strong>。</p>
+        <div class="bilingual-en">In the short run, when at least one factor of production is fixed (Fixed Factor), if we continuously add more units of a variable factor, the <strong>Marginal Product (MP) will eventually decrease</strong>.</div>
+        
+        <h3>邊際產量公式 (Marginal Product Formula)</h3>
+        <div class="math-block">
+            $$ MP = \frac{\Delta TP}{\Delta Q_v} $$
+        </div>
+        <p>其中 \( \Delta TP \) 是總產量的變動，而 \( \Delta Q_v \) 是可變生產要素數量的變動。</p>
+        <div class="bilingual-en">Where \( \Delta TP \) is the change in Total Product, and \( \Delta Q_v \) is the change in the quantity of the variable factor.</div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color:var(--secondary); font-size:1.2em;">A</span></strong></p>
+    
+    <div class="analysis-box">
+        <p>首先，我們需要計算資本（可變要素）的邊際產量（MP）。由於勞力固定在 12 單位，資本是這裡的可變要素。</p>
+        <div class="bilingual-en">First, we need to calculate the Marginal Product (MP) of capital (the variable factor). Since Labour is fixed at 12 units, Capital is the variable factor here.</div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>資本 Capital</th>
+                    <th>總產出 Total Product (TP)</th>
+                    <th>邊際產量 Marginal Product (MP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2</td><td>110</td><td>-</td></tr>
+                <tr><td>3</td><td>130</td><td>130 - 110 = <strong>20</strong></td></tr>
+                <tr><td>4</td><td>160</td><td>160 - 130 = <strong>30</strong></td></tr>
+                <tr><td>5</td><td>X</td><td><strong>X - 160</strong></td></tr>
+            </tbody>
+        </table>
+
+        <p>要符合邊際回報遞減定律，第5單位資本的邊際產量必須<strong>小於</strong>第4單位資本的邊際產量（即 30）。因此：</p>
+        <div class="bilingual-en">To satisfy the Law of Diminishing Marginal Returns, the MP of the 5th unit of capital must be <strong>less than</strong> the MP of the 4th unit (which is 30). Therefore:</div>
+        
+        <div class="math-block">
+            $$ MP_{5} < MP_{4} $$
+            $$ X - 160 < 30 $$
+            $$ X < 190 $$
+        </div>
+
+        <div class="option correct">
+            <span class="badge badge-correct">Option A (Correct)</span>
+            <p>如果 \( X = 180 \)，那麼 \( MP = 180 - 160 = 20 \)。因為 \( 20 < 30 \)，邊際產量正在下降，符合定律。所以 X <strong>可以</strong>等於 180。</p>
+            <div class="bilingual-en">If \( X = 180 \), then \( MP = 180 - 160 = 20 \). Since \( 20 < 30 \), the marginal product is decreasing, which satisfies the law. So X <strong>can be</strong> equal to 180.</div>
+        </div>
+
+        <div class="option incorrect">
+            <span class="badge badge-incorrect">Option B (Incorrect)</span>
+            <p>如果 \( X = 190 \)，那麼 \( MP = 190 - 160 = 30 \)。邊際產量維持不變（恆常回報），並未遞減，不符合定律。</p>
+            <div class="bilingual-en">If \( X = 190 \), then \( MP = 190 - 160 = 30 \). The marginal product remains constant (constant returns), it is not diminishing, so it does not satisfy the law.</div>
+        </div>
+
+        <div class="option incorrect">
+            <span class="badge badge-incorrect">Option C (Incorrect)</span>
+            <p>如果 \( X > 200 \)，那麼 \( MP > 40 \)。邊際產量正在上升（遞增回報），不符合定律。</p>
+            <div class="bilingual-en">If \( X > 200 \), then \( MP > 40 \). The marginal product is increasing (increasing returns), which does not satisfy the law.</div>
+        </div>
+
+        <div class="option incorrect">
+            <span class="badge badge-incorrect">Option D (Incorrect)</span>
+            <p>定律適用於短期生產。在此題中，勞力（12單位）是固定要素，資本是可變要素。只要有最少一種固定要素，該定律就適用。</p>
+            <div class="bilingual-en">The law applies to short-run production. In this question, Labour (12 units) is the fixed factor, and Capital is the variable factor. As long as there is at least one fixed factor, the law applies.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🧩 題目拆解 (Problem Decomposition)</h2>
+    <p><strong>解題關鍵 (Pivot Point)：</strong></p>
+    <ul>
+        <li><strong>辨認固定與可變要素：</strong> 很多學生習慣勞工是可變要素，資本是固定要素。但這題故意反轉，勞工數量維持在 12（固定要素），資本數量從 2 增加到 5（可變要素）。<br>
+        <span class="bilingual-en"><strong>Identify Fixed vs Variable Factors:</strong> Many students are used to Labour being variable and Capital being fixed. This question deliberately reverses it: Labour is constant at 12 (Fixed), while Capital increases from 2 to 5 (Variable).</span></li>
+        <li><strong>計算邊際產量 (MP)：</strong> 不要只看總產出 (TP) 的絕對值，必須計算每次增加一單位要素所帶來的額外產出 (MP)。<br>
+        <span class="bilingual-en"><strong>Calculate Marginal Product (MP):</strong> Don't just look at the absolute value of Total Product (TP); you must calculate the extra output generated by each additional unit of the factor (MP).</span></li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱一：誤以為邊際回報遞減等於總產量下降</strong></p>
+        <p>邊際回報遞減只代表「新增的產量」越來越少（即 MP 下降），並不代表總產量 (TP) 一定會下跌。只要 MP 仍然是正數（例如這題的 20），總產量依然會上升（從 160 升至 180）。</p>
+        <div class="bilingual-en"><strong>Trap 1: Confusing Diminishing Marginal Returns with Falling Total Product</strong><br>Diminishing marginal returns only means the "additional output" is getting smaller (i.e., MP is falling); it does not mean Total Product (TP) must fall. As long as MP is positive (like 20 in this question), TP will still increase (from 160 to 180).</div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼選項 D 是錯的？資本通常不是固定要素嗎？</p>
+        <div class="bilingual-en">Q: Why is Option D wrong? Isn't capital usually a fixed factor?</div>
+        <p>A: 在現實或常見的教科書例子中，機器的確較難在短期內改變數量，所以常被設為固定要素。但在經濟學定義中，<strong>短期</strong>的定義是「最少有一種生產要素的數量不能改變」。在這道題目給出的數據中，勞力維持在 12 不變，所以勞力是固定要素；資本數量在改變，所以是可變要素。只要有固定要素存在，這就是短期生產，邊際回報遞減定律就適用。</p>
+        <div class="bilingual-en">A: In reality or common textbook examples, machines are indeed harder to change in the short run, so they are often fixed factors. However, the economic definition of the <strong>short run</strong> is simply "a period where at least one factor of production cannot be changed." In the data provided, Labour remains constant at 12, so Labour is the fixed factor; Capital is changing, so it is the variable factor. As long as a fixed factor exists, it is short-run production, and the law applies.</div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p>在選擇題中，當你看到「邊際回報遞減定律」的題目，立刻在表格旁邊加開一欄寫下 <strong>MP (Marginal Product)</strong>。
+    <br>算出 MP 為：20, 30, (X-160)。
+    <br>因為定律要求 MP 開始下跌，所以 (X-160) 必須小於前一個數字 30。
+    <br>心算：\( X - 160 < 30 \implies X < 190 \)。
+    <br>掃視選項，只有 A (180) 小於 190。直接選 A，節省時間！</p>
+    <div class="bilingual-en">For MCQs on the "Law of Diminishing Marginal Returns", immediately add a column next to the table and write down <strong>MP (Marginal Product)</strong>.<br>Calculate MP: 20, 30, (X-160).<br>Since the law requires MP to start falling, (X-160) must be less than the previous number, 30.<br>Mental math: \( X - 160 < 30 \implies X < 190 \).<br>Scan the options, only A (180) is less than 190. Choose A directly and save time!</div>
+
+</div>
+
+</body>
+</html>

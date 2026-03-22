@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Quantity Theory of Money</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-light: #f0f9ff;
+            --text-main: #333;
+            --text-muted: #666;
+            --danger: #ef4444;
+            --success: #22c55e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+        .header-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border-top: 5px solid var(--primary-color);
+        }
+        .tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .question-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+        }
+        .option.correct {
+            border-left-color: var(--success);
+            background: #f0fdf4;
+        }
+        .option.wrong {
+            border-left-color: var(--danger);
+            background: #fef2f2;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .qa-box, .tips-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .tips-box {
+            border-left: 5px solid #f59e0b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-card">
+        <h2>HKDSE Economics Masterclass</h2>
+        <div>
+            <span class="tag">Topic: 貨幣數量論 (Quantity Theory of Money)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+        </div>
+        <div>
+            <strong>Key Concepts:</strong> 
+            Equation of Exchange (交易方程式), Nominal Output (名義產出), Real Output (實質產出)
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3 style="margin-top: 0;">題目 / The Question</h3>
+        <p>假設貨幣流通速率維持不變。若中央銀行減少貨幣供應10%，</p>
+        <p class="en-text">Suppose the velocity of circulation of money remains constant. If a central bank reduces money supply by 10%,</p>
+        
+        <ol type="A" style="font-weight: bold; margin-top: 15px;">
+            <li>物價水平會下跌10%。<div class="en-text" style="font-weight: normal;">the price level will decrease by 10%.</div></li>
+            <li>實質產出會下跌 10%。<div class="en-text" style="font-weight: normal;">real output will decrease by 10%.</div></li>
+            <li>名義產出可能下跌少於 10%。<div class="en-text" style="font-weight: normal;">nominal output may decrease by less than 10%.</div></li>
+            <li>實質產出可能下跌少於 10%。<div class="en-text" style="font-weight: normal;">real output may decrease by less than 10%.</div></li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3 style="margin-top: 0; color: var(--primary-color);">📚 概念重溫 / Concept Review</h3>
+        <p>解答此題的核心是<strong>交易方程式 (Equation of Exchange)</strong>。它展示了貨幣供應、流通速率、物價水平和實質產出之間的關係。</p>
+        <p class="en-text">The core to solving this question is the <strong>Equation of Exchange</strong>. It shows the relationship between money supply, velocity of circulation, price level, and real output.</p>
+        
+        <div class="math-block">
+            $$ M \times V = P \times Y $$
+        </div>
+        
+        <ul>
+            <li>\(M\) = 貨幣供應 (Money Supply)</li>
+            <li>\(V\) = 貨幣流通速率 (Velocity of Circulation)</li>
+            <li>\(P\) = 物價水平 (Price Level)</li>
+            <li>\(Y\) = 實質產出 / 實質 GDP (Real Output / Real GDP)</li>
+            <li>\(P \times Y\) = <strong>名義產出 / 名義 GDP (Nominal Output)</strong></li>
+        </ul>
+
+        <p>當我們將其轉換為百分比變動 (Percentage Change) 形式時，公式如下：</p>
+        <p class="en-text">When converted into percentage change form, the formula is:</p>
+        
+        <div class="math-block">
+            $$ \% \Delta M + \% \Delta V = \% \Delta P + \% \Delta Y $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="analysis-box">
+        <h3 style="margin-top: 0;">✅ 答案與詳細分析 / Answer & Detailed Analysis</h3>
+        <p><strong>正確答案 / Correct Option: <span style="color: var(--success); font-size: 1.2em;">D</span></strong></p>
+
+        <p>根據題目：\(\% \Delta M = -10\%\)，且 \(V\) 不變（即 \(\% \Delta V = 0\%\)）。代入公式：</p>
+        <p class="en-text">According to the question: \(\% \Delta M = -10\%\), and \(V\) is constant (\(\% \Delta V = 0\%\)). Substituting into the formula:</p>
+        <div class="math-block">
+            $$ -10\% + 0\% = \% \Delta P + \% \Delta Y $$
+            $$ \% \Delta (P \times Y) = -10\% $$
+        </div>
+
+        <div class="option wrong">
+            <strong>A. 錯誤 (Incorrect)</strong>
+            <p>物價水平 (\(P\))「會」(will) 下跌 10% 只有在實質產出 (\(Y\)) 完全不變 (\(\% \Delta Y = 0\)) 的情況下才成立。題目沒有說明經濟處於充分就業狀態，因此 \(Y\) 可能改變。</p>
+            <p class="en-text">The price level (\(P\)) "will" decrease by 10% ONLY IF real output (\(Y\)) is constant (\(\% \Delta Y = 0\)). The question does not state the economy is at full employment, so \(Y\) might change.</p>
+        </div>
+
+        <div class="option wrong">
+            <strong>B. 錯誤 (Incorrect)</strong>
+            <p>同樣道理，實質產出 (\(Y\))「會」(will) 下跌 10% 只有在物價水平 (\(P\)) 完全不變 (\(\% \Delta P = 0\)) 的情況下才成立。這並非必然發生。</p>
+            <p class="en-text">Similarly, real output (\(Y\)) "will" decrease by 10% ONLY IF the price level (\(P\)) is constant (\(\% \Delta P = 0\)). This is not guaranteed to happen.</p>
+        </div>
+
+        <div class="option wrong">
+            <strong>C. 錯誤 (Incorrect)</strong>
+            <p>名義產出是 \(P \times Y\)。由於 \(\% \Delta M + \% \Delta V = -10\%\)，名義產出<strong>必定</strong>準確地下跌 10%，而不是「可能少於 10%」。</p>
+            <p class="en-text">Nominal output is \(P \times Y\). Since \(\% \Delta M + \% \Delta V = -10\%\), nominal output <strong>MUST</strong> decrease by exactly 10%, not "may decrease by less than 10%".</p>
+        </div>
+
+        <div class="option correct">
+            <strong>D. 正確 (Correct)</strong>
+            <p>由於 \(\% \Delta P + \% \Delta Y = -10\%\)，這 10% 的跌幅會由 \(P\) 和 \(Y\) 共同分擔。例如，如果 \(P\) 下跌 4%，那麼 \(Y\) 就會下跌 6%。因此，實質產出 (\(Y\)) <strong>可能</strong>下跌少於 10%。</p>
+            <p class="en-text">Since \(\% \Delta P + \% \Delta Y = -10\%\), this 10% decrease is shared between \(P\) and \(Y\). For example, if \(P\) drops by 4%, \(Y\) will drop by 6%. Therefore, real output (\(Y\)) <strong>may</strong> decrease by less than 10%.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2 class="section-title">🔍 題目拆解 / Problem Decomposition</h2>
+    <div class="qa-box">
+        <p><strong>拆題關鍵 (Pivot Point):</strong> 留意題目中的「會」(will) 和「可能」(may)。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> Pay attention to the absolute word "will" versus the conditional word "may".</p>
+        <ul>
+            <li>已知 \(\% \Delta (PY) = -10\%\)。這是一個<strong>絕對事實</strong>。</li>
+            <li>因為總跌幅是 10%，除非其中一個變量不變，否則 \(P\) 和 \(Y\) 各自的跌幅一定<strong>小於 10%</strong>。</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2 class="section-title">⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="qa-box">
+        <p><strong>陷阱：混淆名義 (Nominal) 與實質 (Real) 變量</strong></p>
+        <p>很多學生忘記了 \(P \times Y\) 等於「名義產出」。當 \(M\) 下跌 10% 且 \(V\) 不變時，必然是「名義產出」下跌 10%，而不是單一的物價或實質產出。</p>
+        <p class="en-text"><strong>Trap: Confusing Nominal and Real variables.</strong> Many students forget that \(P \times Y\) equals "Nominal Output". When \(M\) drops by 10% and \(V\) is constant, it is the "Nominal Output" that strictly drops by 10%, not just the price level or real output alone.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2 class="section-title">🙋 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>Q: 甚麼情況下選項 A 才會是正確答案？</strong></p>
+        <p class="en-text">Q: Under what condition would Option A be the correct answer?</p>
+        <p><strong>A:</strong> 如果題目加上一句「假設經濟處於充分就業水平 (Assuming the economy is at full employment level)」，根據古典學派理論，實質產出 \(Y\) 將維持不變 (\(\% \Delta Y = 0\))。那樣的話，\(\% \Delta P\) 就會完全吸收那 -10% 的變動，選項 A 就會正確。</p>
+        <p class="en-text">A: If the question added "Assuming the economy is at full employment level", according to classical theory, real output \(Y\) remains constant (\(\% \Delta Y = 0\)). In that case, \(\% \Delta P\) would fully absorb the -10% change, making Option A correct.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2 class="section-title">⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p><strong>字眼排除法 (Word Elimination Method):</strong></p>
+        <p>在 DSE 經濟科中，當一個總量（如 \(PY\)）改變時，除非有額外假設，否則我們無法確定單一變量（\(P\) 或 \(Y\)）的確切改變幅度。因此，帶有「會 / 必定」(will / must) 字眼的選項 (A 和 B) 通常是錯誤的。直接將注意力集中在帶有「可能」(may) 的選項 (C 和 D) 上，然後利用公式 \(PY = \text{Nominal Output}\) 快速秒殺 C，選出 D。</p>
+        <p class="en-text">In DSE Economics, when a total value (like \(PY\)) changes, unless there are extra assumptions, we cannot determine the exact change of a single variable (\(P\) or \(Y\)). Therefore, options with absolute words like "will/must" (A and B) are usually wrong. Focus on options with "may" (C and D), use the fact that \(PY = \text{Nominal Output}\) to eliminate C, and choose D instantly.</p>
+    </div>
+
+</body>
+</html>

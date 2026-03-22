@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Price Ceiling Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-dark: #0284c7;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --box-bg-blue: #f0f9ff;
+            --box-bg-gray: #f3f4f6;
+            --box-bg-red: #fef2f2;
+            --box-bg-green: #f0fdf4;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-dark);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: 3px solid var(--primary-color); }
+        h2 { font-size: 1.4rem; }
+        
+        p { margin-bottom: 1em; }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.5em;
+            font-style: italic;
+        }
+
+        /* Custom Boxes */
+        .header-box {
+            background-color: var(--text-main);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        
+        .header-box p { margin: 5px 0; }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-blue);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-gray);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .trap-box {
+            background-color: var(--box-bg-red);
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tips-box {
+            background-color: var(--box-bg-green);
+            border-left: 5px solid #22c55e;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #16a34a;
+            text-align: center;
+            padding: 10px;
+            background: #dcfce7;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <p><strong>Topic (課題):</strong> Market Intervention - Price Ceiling (市場干預 - 價格上限)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆ (3/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Price Ceiling</span> 
+            <span class="tag">Producer Surplus</span> 
+            <span class="tag">Excess Demand</span>
+            <span class="tag">Total Revenue</span>
+        </p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <p>下列哪些是政府降低對某物品的有效價格上限的結果？</p>
+        <p>
+            (1) 生產者盈餘下降。<br>
+            (2) 超額需求上升。<br>
+            (3) 若需求屬高彈性，總銷售收益會上升。
+        </p>
+        <p>
+            A. 只有(1)、(2)<br>
+            B. 只有(1)、(3)<br>
+            C. 只有(2)、(3)<br>
+            D. (1)、(2)及(3)
+        </p>
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+        <p class="bilingual-en" style="margin: 0;">
+            Which of the following are results of the government lowering an effective price ceiling on a good?<br><br>
+            (1) a reduction in the producer surplus<br>
+            (2) an increase in excess demand<br>
+            (3) an increase in the total sales revenue if the demand is elastic<br><br>
+            A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)
+        </p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>有效價格上限 (Effective Price Ceiling)</strong><br>
+        政府規定的最高合法交易價格，且該價格設定在市場均衡價格之下 \( (P_c < P_e) \)。</p>
+        <p class="bilingual-en">The maximum legal price set by the government, which is below the market equilibrium price \( (P_c < P_e) \).</p>
+
+        <p><strong>交易量 (Transacted Quantity)</strong><br>
+        在價格上限下，市場交易量由市場的「短邊」決定。由於價格低於均衡，需求量大於供應量 \( (Q_d > Q_s) \)，消費者只能買到生產者願意提供的數量，因此交易量 \( Q_t = Q_s \)。</p>
+        <p class="bilingual-en">Under a price ceiling, the transacted quantity is determined by the "short side" of the market. Since the price is below equilibrium, quantity demanded exceeds quantity supplied \( (Q_d > Q_s) \). Consumers can only buy what producers are willing to supply, so \( Q_t = Q_s \).</p>
+
+        <div class="math-block">
+            $$ \text{Excess Demand (超額需求)} = Q_d - Q_s $$
+            $$ \text{Total Revenue (總收益)} = P \times Q_t = P_c \times Q_s $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-answer">
+        正確答案 (Correct Option): A
+    </div>
+
+    <div class="analysis-box">
+        <p><strong>分析 (1)：生產者盈餘下降 (True)</strong><br>
+        當政府進一步降低有效價格上限時，價格 \( P \) 下降。根據供應定律，生產者願意提供的數量 \( Q_s \) 也會減少。生產者盈餘是價格線以下、供應曲線以上的面積。由於價格和交易量雙雙下跌，生產者盈餘必定減少。</p>
+        <p class="bilingual-en"><strong>Analysis (1): A reduction in producer surplus (True)</strong><br>
+        When the government lowers the effective price ceiling, the price \( P \) falls. According to the law of supply, the quantity supplied \( Q_s \) also decreases. Producer surplus is the area below the price line and above the supply curve. Since both price and quantity fall, the producer surplus must decrease.</p>
+    </div>
+
+    <div class="analysis-box">
+        <p><strong>分析 (2)：超額需求上升 (True)</strong><br>
+        價格下降會導致需求量 \( Q_d \) 增加（根據需求定律），同時導致供應量 \( Q_s \) 減少。超額需求是 \( Q_d - Q_s \)。由於被減數變大而減數變小，兩者的差距（短缺）必然擴大。</p>
+        <p class="bilingual-en"><strong>Analysis (2): An increase in excess demand (True)</strong><br>
+        A lower price leads to an increase in quantity demanded \( Q_d \) (law of demand) and a decrease in quantity supplied \( Q_s \). Excess demand is \( Q_d - Q_s \). Since the first term increases and the second term decreases, the gap (shortage) must widen.</p>
+    </div>
+
+    <div class="analysis-box">
+        <p><strong>分析 (3)：若需求屬高彈性，總銷售收益會上升 (False)</strong><br>
+        這是題目最大的陷阱！總收益 \( TR = P \times Q_t \)。在有效價格上限下，實際交易量 \( Q_t \) 等於供應量 \( Q_s \)。當價格上限降低時，價格 \( P \) 下降，供應量 \( Q_s \) 也下降，因此總收益 \( P \times Q_s \) 必定下降。這與「需求彈性」完全無關，因為消費者根本無法買到他們想要的數量 \( Q_d \)。</p>
+        <p class="bilingual-en"><strong>Analysis (3): An increase in total sales revenue if demand is elastic (False)</strong><br>
+        This is the biggest trap! Total Revenue \( TR = P \times Q_t \). Under an effective price ceiling, the actual transacted quantity \( Q_t \) equals the quantity supplied \( Q_s \). When the ceiling is lowered, price \( P \) falls, and quantity supplied \( Q_s \) also falls. Therefore, total revenue \( P \times Q_s \) must decrease. This has absolutely nothing to do with "elasticity of demand" because consumers cannot buy their desired quantity \( Q_d \) anyway.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <p>解答這類題目的<strong>關鍵樞紐 (Pivot Point)</strong> 在於認清「誰決定了交易量」。</p>
+    <p class="bilingual-en">The <strong>Pivot Point</strong> to solving this type of question is recognizing "who determines the transacted quantity".</p>
+    <ul>
+        <li>在自由市場均衡中，\( Q_d = Q_s \)，所以需求彈性會影響價格變動時的總收益。</li>
+        <li>在有效價格上限中，市場處於非均衡狀態，\( Q_t = Q_s \)。所有關於「需求彈性」的資訊都是<strong>干擾資訊 (Distractors)</strong>。</li>
+    </ul>
+    <ul class="bilingual-en">
+        <li>In a free market equilibrium, \( Q_d = Q_s \), so demand elasticity affects how total revenue changes when price changes.</li>
+        <li>Under an effective price ceiling, the market is in disequilibrium, and \( Q_t = Q_s \). Any information about "demand elasticity" is a <strong>distractor</strong>.</li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱：盲目背誦彈性公式 (Trap: Blindly memorizing elasticity rules)</strong></p>
+        <p>很多學生一看到「需求屬高彈性 (Elastic Demand) + 價格下降 (Price drops)」，大腦就會自動反射出「總收益上升 (TR rises)」。請記住，這個法則<strong>只適用於沿著需求曲線移動的均衡狀態</strong>。在價格上限下，交易量被供應曲線限制了！</p>
+        <p class="bilingual-en">Many students see "Elastic Demand + Price drops" and automatically reflex to "TR rises". Remember, this rule <strong>only applies to equilibrium movements along the demand curve</strong>. Under a price ceiling, the transacted quantity is constrained by the supply curve!</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <p><strong>Q: 既然價格下降了，消費者買得更平，消費者盈餘 (Consumer Surplus) 會上升還是下降？</strong></p>
+    <p>A: 不一定 (Uncertain)。價格下降雖然令買到的消費者享受更大的盈餘（每單位省了錢），但同時供應量 \( Q_s \) 減少了，意味著有部分消費者現在根本買不到該物品。因此，消費者盈餘可能上升、下降或不變，取決於需求曲線的斜率。</p>
+    <p class="bilingual-en"><strong>Q: Since the price dropped and consumers buy it cheaper, will Consumer Surplus increase or decrease?</strong><br>
+    A: Uncertain. While the lower price gives a larger surplus to the consumers who can still buy the good (saving money per unit), the quantity supplied \( Q_s \) has decreased, meaning some consumers can no longer buy the good at all. Therefore, consumer surplus could increase, decrease, or remain unchanged depending on the slope of the demand curve.</p>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>速解法 (Shortcut):</strong></p>
+        <p>在考場上，畫一個簡單的供需圖 (S-D diagram)。畫一條低於均衡點的橫線 \( P_c \)，然後再畫一條更低的橫線 \( P_c' \)。<br>
+        你會立刻看到：<br>
+        1. 交易量（對應 S 曲線上的點）向左下方移動 \(\rightarrow\) \( P \) 跌, \( Q \) 跌 \(\rightarrow\) TR 必定跌，立刻排除 (3)。<br>
+        2. 既然排除了 (3)，選項 B、C、D 全部錯誤，直接選 A，連 (1) 和 (2) 都不用仔細想！</p>
+        <p class="bilingual-en">In the exam, draw a simple S-D diagram. Draw a horizontal line \( P_c \) below the equilibrium, then draw an even lower line \( P_c' \).<br>
+        You will instantly see:<br>
+        1. The transacted quantity (the point on the S curve) moves down and to the left \(\rightarrow\) \( P \) drops, \( Q \) drops \(\rightarrow\) TR must drop. Eliminate (3) immediately.<br>
+        2. Since (3) is eliminated, options B, C, and D are all wrong. Choose A directly without even overthinking (1) and (2)!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Linked Exchange Rate System</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #475569;
+        }
+        .badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #bae6fd;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+        }
+        .option.correct {
+            border-left-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option.wrong {
+            border-left-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+        .eng-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 HKDSE Economics Tutor</h1>
+    
+    <div class="header-info">
+        <span class="badge">Topic: Linked Exchange Rate System (聯繫匯率制度)</span>
+        <span class="badge">Difficulty: ★★★☆☆</span>
+        <span class="badge">Key Concepts: Monetary Base, Convertibility Zone, Currency Appreciation</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>在香港聯繫匯率制度之下，下列哪項陳述是正確的？</strong><br>
+            A. 香港的貨幣供應定義一(M1)必須全部由美元支持。<br>
+            B. 港元兌美元的市場匯率由香港金融管理局固定在1美元兌7.8港元。<br>
+            C. 當美元兌其他貨幣升值，香港的進口量會上升。<br>
+            D. 美國經常帳赤字會導致香港經常帳出現赤字。
+        </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <div class="eng-text">
+            <strong>Under the linked exchange rate system of Hong Kong, which of the following statements is correct?</strong><br>
+            A. The money supply (M1) of Hong Kong has to be fully backed up by the US dollar.<br>
+            B. The market exchange rate of the HK dollar to the US dollar is fixed at 1 USD to 7.8 HKD by the Hong Kong Monetary Authority.<br>
+            C. Hong Kong’s import volume will increase when the US dollar appreciates against other currencies.<br>
+            D. A current account deficit in the US will lead to a current account deficit in Hong Kong.
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-text">
+            <strong>聯繫匯率制度 (Linked Exchange Rate System, LERS)</strong><br>
+            香港的聯繫匯率制度將港元與美元掛鈎。發鈔銀行在發行港元紙幣時，必須以 \( 1 \text{ USD} = 7.8 \text{ HKD} \) 的固定匯率向金管局交出美元，以換取負債證明書。這表示只有<strong>貨幣基礎 (Monetary Base)</strong> 需要有十足的美元支持，而不是整體的貨幣供應 (如 \( M1, M2, M3 \))。
+        </div>
+        <div class="eng-text">
+            <strong>Linked Exchange Rate System (LERS)</strong><br>
+            Hong Kong's LERS pegs the HKD to the USD. Note-issuing banks must submit USD to the HKMA at a fixed rate of \( 1 \text{ USD} = 7.8 \text{ HKD} \) in exchange for Certificates of Indebtedness when issuing HKD banknotes. This means only the <strong>Monetary Base</strong> requires full USD backing, not the entire money supply (like \( M1, M2, M3 \)).
+        </div>
+        
+        <div class="bilingual-text" style="margin-top: 15px;">
+            <strong>市場匯率與兌換保證 (Market Rate vs Convertibility Zone)</strong><br>
+            雖然官方發鈔匯率是 7.8，但<strong>市場匯率 (Market Exchange Rate)</strong> 是由市場供求決定的。金管局透過強方及弱方兌換保證，將市場匯率維持在 \( 7.75 - 7.85 \) 的區間內。
+        </div>
+        <div class="eng-text">
+            <strong>Market Rate vs Convertibility Zone</strong><br>
+            While the official note-issuing rate is 7.8, the <strong>Market Exchange Rate</strong> is determined by market demand and supply. The HKMA maintains the market rate within the Convertibility Zone of \( 7.75 - 7.85 \) through strong-side and weak-side convertibility undertakings.
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option: C</strong></p>
+
+    <div class="option wrong">
+        <div class="bilingual-text"><strong>選項 A (錯誤):</strong> 只有「貨幣基礎」(Monetary Base) 需要美元十足支持。貨幣供應 \( M1 \) 包含公眾持有的法定貨幣及活期存款，活期存款是由商業銀行的信貸創造產生的，不需要美元十足支持。</div>
+        <div class="eng-text"><strong>Option A (Incorrect):</strong> Only the "Monetary Base" requires full USD backing. Money supply \( M1 \) includes legal tender held by the public and demand deposits. Demand deposits are created through commercial bank credit creation and do not require full USD backing.</div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-text"><strong>選項 B (錯誤):</strong> 金管局固定的 7.8 只是發鈔銀行與金管局之間的「官方匯率」。在市場上，市場匯率可在 \( 7.75 \) 至 \( 7.85 \) 之間自由浮動，並非固定在 7.8。</div>
+        <div class="eng-text"><strong>Option B (Incorrect):</strong> The 7.8 rate fixed by the HKMA is the "official rate" for note-issuing banks. The market exchange rate can float freely between \( 7.75 \) and \( 7.85 \) and is not fixed exactly at 7.8.</div>
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual-text"><strong>選項 C (正確):</strong> 由於港元與美元掛鈎，當美元兌其他貨幣升值時，港元也會跟隨升值。這意味著外國商品以港元計算的價格會下降。假設需求符合需求定律，進口商品的數量（進口量）將會上升。</div>
+        <div class="eng-text"><strong>Option C (Correct):</strong> Since the HKD is pegged to the USD, when the USD appreciates against other currencies, the HKD also appreciates. This means the prices of foreign goods in terms of HKD will fall. Assuming the law of demand holds, the quantity of imported goods (import volume) will increase.</div>
+    </div>
+
+    <div class="option wrong">
+        <div class="bilingual-text"><strong>選項 D (錯誤):</strong> 經常帳盈餘或赤字取決於該地區的進出口表現及收入流動。美國的經常帳赤字並不直接決定香港的經常帳狀況，兩者沒有必然的因果關係。</div>
+        <div class="eng-text"><strong>Option D (Incorrect):</strong> A current account surplus or deficit depends on a region's own import/export performance and income flows. A US current account deficit does not directly determine Hong Kong's current account status; there is no inevitable causal relationship.</div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="bilingual-text">這類題目的「關鍵點」(Pivot Point) 在於區分<strong>官方制度的定義</strong>與<strong>市場實際運作</strong>。考生必須清楚知道「貨幣基礎」(Monetary Base) 與「貨幣供應」(Money Supply) 的分別，以及「官方匯率」與「市場匯率」的分別。</p>
+    <p class="eng-text">The "Pivot Point" of this type of question lies in distinguishing between the <strong>definitions of the official system</strong> and <strong>actual market operations</strong>. Candidates must clearly know the difference between "Monetary Base" and "Money Supply", as well as "Official Exchange Rate" and "Market Exchange Rate".</p>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li>
+            <strong class="bilingual-text">混淆貨幣基礎與貨幣供應：</strong> 很多學生以為整個銀行體系的所有存款都有美元支持，這是錯誤的。只有基礎貨幣（如紙幣和硬幣）才有。
+            <br><span class="eng-text"><strong>Confusing Monetary Base with Money Supply:</strong> Many students mistakenly believe all deposits in the banking system are backed by USD. This is false. Only the monetary base (like notes and coins) is backed.</span>
+        </li>
+        <li>
+            <strong class="bilingual-text">誤以為市場匯率是絕對固定的：</strong> 學生常忘記「兌換保證區間」(Convertibility Zone) 的存在，誤以為去銀行換錢的匯率永遠是 7.8。
+            <br><span class="eng-text"><strong>Assuming the market rate is absolutely fixed:</strong> Students often forget the existence of the Convertibility Zone, mistakenly thinking the exchange rate at a bank is always exactly 7.8.</span>
+        </li>
+    </ul>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="bilingual-text"><strong>問：為什麼港元升值會導致進口量上升，而不是進口價值 (Import Value) 上升？</strong></p>
+        <p class="eng-text"><strong>Q: Why does HKD appreciation lead to an increase in import volume, rather than import value?</strong></p>
+        <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 10px 0;">
+        <p class="bilingual-text"><strong>答：</strong> 港元升值令外國貨品變平。根據需求定律，價格下降，需求量（進口量 Volume）必然上升。但是，進口價值 (Value = Price × Quantity) 會否上升，取決於對該進口貨品的需求價格彈性 (Price Elasticity of Demand)。如果需求屬缺乏彈性 (Inelastic)，進口價值反而會下降。因此，選項 C 說「進口量」上升是絕對正確的，如果說「進口價值」上升則未必正確。</p>
+        <p class="eng-text"><strong>A:</strong> HKD appreciation makes foreign goods cheaper. According to the law of demand, as price falls, quantity demanded (import volume) must increase. However, whether import value (Value = Price × Quantity) increases depends on the price elasticity of demand for those imports. If demand is inelastic, import value will actually fall. Therefore, Option C stating "import volume" increases is absolutely correct, while stating "import value" increases might not be.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p class="bilingual-text"><strong>排除法 (Elimination Method)：</strong><br>
+        看到 "M1" 和 "全部由美元支持"，立即刪除 A（只有 Monetary Base 才是）。<br>
+        看到 "市場匯率" 和 "固定在 7.8"，立即刪除 B（市場匯率是浮動的，7.75-7.85）。<br>
+        剩下 C 和 D，D 的宏觀經濟因果關係明顯荒謬（美國赤字不等於香港赤字），所以答案必然是 C。</p>
+        <p class="eng-text"><strong>Elimination Method:</strong><br>
+        See "M1" and "fully backed"? Eliminate A immediately (only Monetary Base is).<br>
+        See "market exchange rate" and "fixed at 7.8"? Eliminate B immediately (market rate floats between 7.75-7.85).<br>
+        Left with C and D. The macroeconomic causality in D is clearly absurd (US deficit doesn't equal HK deficit), so the answer must be C.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

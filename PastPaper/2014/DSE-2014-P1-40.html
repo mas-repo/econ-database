@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Inflation Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #10b981;
+            --secondary-light: #ecfdf5;
+            --warning: #f59e0b;
+            --warning-light: #fffbeb;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .zh-text {
+            margin-bottom: 4px;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background-color: var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            background-color: var(--secondary-light);
+            border-left: 5px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trap-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 15px;
+        }
+
+        .qa-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct-answer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--secondary);
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics 經濟學題解指南</h1>
+        <p><strong>Topic (課題):</strong> 宏觀經濟學：通脹 (Macroeconomics: Inflation)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts (核心概念):</strong></p>
+        <div>
+            <span class="tag">通脹定義 Definition of Inflation</span>
+            <span class="tag">預期通脹 Anticipated Inflation</span>
+            <span class="tag">財富再分配 Wealth Redistribution</span>
+            <span class="tag">實質資產 Real Assets</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            <p>下列哪(幾)項有關通脹的陳述是正確的？</p>
+            <p>(1) 當政府在某一年向每位市民派發一大筆現金，通脹便會出現。<br>
+               (2) 若通脹是預期的，通脹會令財富再分配，由貸款人轉至債務人。<br>
+               (3) 在預期通脹的情況下，人們偏好持有實質資產而非現金。</p>
+            <p>A. 只有(1)<br>
+               B. 只有(2)<br>
+               C. 只有(3)<br>
+               D. (1)、(2)及(3)</p>
+        </div>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #e5e7eb;">
+        <div class="en-text">
+            <p>Which of the following statements about inflation is/are correct?</p>
+            <p>(1) Inflation occurs when the government handouts a large sum of cash to every citizen in a certain year.<br>
+               (2) Inflation redistributes wealth from lenders to debtors if it is anticipated.<br>
+               (3) People prefer holding real assets to cash under expected inflation.</p>
+            <p>A. (1) only<br>
+               B. (2) only<br>
+               C. (3) only<br>
+               D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>1. 通脹的嚴格定義：</strong> 通脹是指一般物價水平的<strong>持續</strong>上升。單次性的物價上升（例如因為一次性派發消費券）並不構成通脹。</p>
+        <p class="en-text"><strong>1. Strict Definition of Inflation:</strong> Inflation is a <strong>sustained</strong> or continuous increase in the general price level. A one-off increase in prices (e.g., due to a one-time cash handout) does not constitute inflation.</p>
+
+        <p class="zh-text"><strong>2. 費沙方程式與財富再分配：</strong> 只有在<strong>非預期通脹 (Unanticipated Inflation)</strong> 的情況下，財富才會發生再分配。如果通脹是預期的，名義利率會相應調整以補償購買力的流失。</p>
+        <p class="en-text"><strong>2. Fisher Equation & Wealth Redistribution:</strong> Wealth redistribution only occurs under <strong>unanticipated inflation</strong>. If inflation is anticipated, nominal interest rates will adjust to compensate for the loss of purchasing power.</p>
+        
+        <div class="math-block">
+            $$ R = r + \pi^e $$
+            <p style="font-size: 0.9em; margin-top: 10px; color: var(--text-muted);">
+                \( R \) = 名義利率 (Nominal Interest Rate)<br>
+                \( r \) = 實質利率 (Real Interest Rate)<br>
+                \( \pi^e \) = 預期通脹率 (Expected Inflation Rate)
+            </p>
+        </div>
+
+        <p class="zh-text"><strong>3. 持有現金的成本：</strong> 通脹會侵蝕貨幣的購買力。因此，在預期通脹下，人們會減少持有現金，轉而持有實質資產（如黃金、物業），因為實質資產的價值通常會隨物價上升而保值。</p>
+        <p class="en-text"><strong>3. Cost of Holding Cash:</strong> Inflation erodes the purchasing power of money. Therefore, under expected inflation, people reduce cash holdings and prefer real assets (like gold or property) because their nominal values tend to rise with the price level, preserving real wealth.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">
+        Correct Option: C
+    </div>
+    
+    <div class="analysis-box">
+        <h3>陳述 (1) 分析 / Statement (1) Analysis: ❌ 錯誤 (False)</h3>
+        <p class="zh-text">題目強調政府在「某一年」派發現金。這只會導致總需求 (AD) 單次性增加，令物價水平出現<strong>一次性</strong>的上升。由於缺乏貨幣供應的持續增長，這不符合通脹「持續上升」的定義。</p>
+        <p class="en-text">The question emphasizes that the government hands out cash in a "certain year". This only causes a one-off increase in Aggregate Demand (AD), leading to a <strong>one-time</strong> jump in the price level. Without a continuous growth in money supply, it does not meet the definition of inflation, which requires a "sustained" increase.</p>
+
+        <h3>陳述 (2) 分析 / Statement (2) Analysis: ❌ 錯誤 (False)</h3>
+        <p class="zh-text">題目指出通脹是「預期的」。當通脹被完全預期時，貸款人會要求較高的名義利率 \( R \) 來抵銷通脹影響，實質利率 \( r \) 不變。因此，<strong>不會</strong>出現財富由貸款人轉移至債務人的情況。</p>
+        <p class="en-text">The statement specifies that inflation is "anticipated". When inflation is fully anticipated, lenders will demand a higher nominal interest rate \( R \) to offset the inflation effect, keeping the real interest rate \( r \) unchanged. Therefore, wealth redistribution from lenders to debtors will <strong>NOT</strong> occur.</p>
+
+        <h3>陳述 (3) 分析 / Statement (3) Analysis: ✅ 正確 (True)</h3>
+        <p class="zh-text">在預期通脹下，大眾知道現金的購買力將會下降。為了避免購買力被侵蝕（即避免繳交「通脹稅」），人們會傾向將現金轉換為能保值的實質資產。</p>
+        <p class="en-text">Under expected inflation, the public knows the purchasing power of cash will fall. To avoid this erosion of purchasing power (i.e., to avoid the "inflation tax"), people prefer converting cash into real assets that can retain their value.</p>
+        
+        <h3>結論 / Conclusion</h3>
+        <p class="zh-text">由於只有陳述(3)正確，答案是 <strong>C</strong>。</p>
+        <p class="en-text">Since only statement (3) is correct, the answer is <strong>C</strong>.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-color: #64748b;">
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point)：</strong></p>
+        <p class="zh-text">這題的關鍵在於捕捉題目中的<strong>形容詞</strong>。DSE 經濟科極度喜歡在字眼上設下陷阱：</p>
+        <ul class="zh-text">
+            <li>看到「某一年 (certain year)」 ➡️ 聯想到「單次性 (one-off)」，排除通脹。</li>
+            <li>看到「預期的 (anticipated)」 ➡️ 聯想到「沒有財富再分配 (no wealth redistribution)」。</li>
+        </ul>
+        <p class="en-text"><strong>Pivot Point:</strong> The key to solving this lies in catching the <strong>adjectives</strong>. HKDSE Economics loves setting traps with specific wording:</p>
+        <ul class="en-text">
+            <li>Seeing "certain year" ➡️ Think "one-off", which eliminates inflation.</li>
+            <li>Seeing "anticipated" ➡️ Think "no wealth redistribution".</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p class="zh-text"><strong>陷阱一：混淆「物價上升」與「通脹」</strong><br>
+        學生常誤以為任何物價上升都是通脹。記住：通脹 = 物價水平<strong>持續</strong>上升 (Sustained increase)。</p>
+        <p class="en-text"><strong>Trap 1: Confusing "Price Increase" with "Inflation"</strong><br>
+        Students often mistakenly think any price increase is inflation. Remember: Inflation = <strong>Sustained</strong> increase in the price level.</p>
+
+        <p class="zh-text" style="margin-top: 15px;"><strong>陷阱二：忽略「預期」二字</strong><br>
+        很多學生一看到「通脹」和「貸款人/債務人」，就直覺認為債務人必定得益。必須先檢查通脹是「預期 (Anticipated)」還是「非預期 (Unanticipated)」。</p>
+        <p class="en-text"><strong>Trap 2: Ignoring the word "Anticipated"</strong><br>
+        Many students instinctively assume debtors always gain when they see "inflation" and "lenders/debtors". You must first check if the inflation is "Anticipated" or "Unanticipated".</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋‍♂️ Student Q&A (學生常見疑問)</h2>
+    <div class="question-box" style="background-color: #fafafa; border-color: #d1d5db;">
+        <div class="qa-item">
+            <p class="zh-text"><strong>Q: 如果政府不是「某一年」派錢，而是「每年」都派錢，陳述(1)會變成正確嗎？</strong></p>
+            <p class="zh-text"><strong>A:</strong> 是的！如果政府持續不斷地增加貨幣供應（例如每年印鈔票派發），這會導致總需求持續上升，從而引發真正的通脹。</p>
+            <p class="en-text"><strong>Q: If the government hands out cash "every year" instead of a "certain year", would statement (1) become correct?</strong></p>
+            <p class="en-text"><strong>A:</strong> Yes! If the government continuously increases the money supply (e.g., printing and handing out money every year), this leads to a continuous increase in aggregate demand, triggering actual inflation.</p>
+        </div>
+        <div class="qa-item">
+            <p class="zh-text"><strong>Q: 甚麼情況下陳述(2)才會成立？</strong></p>
+            <p class="zh-text"><strong>A:</strong> 只有當通脹是「非預期 (Unanticipated)」且實際通脹率高於預期通脹率 (\( \pi > \pi^e \)) 時，實質利率 \( r \) 下降，財富才會由貸款人轉移至債務人。</p>
+            <p class="en-text"><strong>Q: Under what condition would statement (2) be true?</strong></p>
+            <p class="en-text"><strong>A:</strong> Only when inflation is "Unanticipated" and the actual inflation rate is higher than expected (\( \pi > \pi^e \)). The real interest rate \( r \) falls, transferring wealth from lenders to debtors.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>消去法 (Elimination Method)：</strong></p>
+        <p class="zh-text">在多項選擇題中，一旦你確定陳述(1)是錯的（因為「某一年」代表單次性），你就可以立即刪去選項 A 和 D。接著，只要判斷(2)或(3)其中一個的對錯，就能得出答案。這能大大節省考試時間！</p>
+        <p class="en-text"><strong>Elimination Method:</strong></p>
+        <p class="en-text">In MC questions, once you determine statement (1) is wrong (because "certain year" means one-off), you can immediately eliminate options A and D. Then, you only need to evaluate either (2) or (3) to find the final answer. This saves a lot of time during the exam!</p>
+    </div>
+
+</body>
+</html>

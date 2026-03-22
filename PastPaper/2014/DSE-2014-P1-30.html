@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Banking System</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .balance-sheet {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .balance-sheet th, .balance-sheet td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .balance-sheet th {
+            background-color: var(--bg-gray);
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+        }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .balance-sheet th, .balance-sheet td {
+                padding: 5px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-tags">
+        <span class="tag">Topic: 貨幣創造與銀行系統 (Money Creation & Banking System)</span>
+        <span class="tag">Difficulty: ★★★☆☆</span>
+        <span class="tag">Key Concepts: 超額儲備 (Excess Reserves), 存款創造 (Deposit Creation)</span>
+    </div>
+
+    <h1>HKDSE Economics MC Analysis 經濟學選擇題分析</h1>
+
+    <!-- 2. The Question -->
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <p>參閱以下某銀行系統的資產負債表。</p>
+        <table class="balance-sheet">
+            <tr>
+                <th colspan="2">資產 Assets (百萬元 $ million)</th>
+                <th colspan="2">負債 Liabilities (百萬元 $ million)</th>
+            </tr>
+            <tr>
+                <td>儲備 Reserves</td>
+                <td>400</td>
+                <td>存款 Deposits</td>
+                <td>1 200</td>
+            </tr>
+            <tr>
+                <td>貸款 Loans</td>
+                <td>800</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p>假設法定儲備比率是25%。若所有銀行借出其超額儲備，下列哪項有關上述銀行系統的陳述是正確的？</p>
+        <p class="bilingual-en">Suppose the required reserve ratio is 25%. If all banks loan out their excess reserves, which of the following statements about the above banking system is correct?</p>
+        
+        <ol type="A">
+            <li>銀行持有的儲備金額會下降。<br><span class="bilingual-en">The amount of reserves held by the banks will decrease.</span></li>
+            <li>最大銀行乘數會上升。<br><span class="bilingual-en">The maximum banking multiplier will increase.</span></li>
+            <li>貨幣供應會維持不變。<br><span class="bilingual-en">The money supply will remain unchanged.</span></li>
+            <li><strong>貸款額增加的可能最大值，與存款額增加的可能最大值相同。</strong><br><span class="bilingual-en"><strong>The maximum possible increase in loans will be the same as the maximum possible increase in deposits.</strong></span></li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要解決這類銀行系統題目，我們需要掌握以下核心公式與概念：</p>
+        <p class="bilingual-en">To solve this type of banking system question, we need to master the following core formulas and concepts:</p>
+        
+        <ul>
+            <li><strong>法定儲備 (Required Reserves, RR):</strong> 銀行必須保留的最低儲備金額。<br>
+                <span class="bilingual-en">The minimum amount of reserves banks must hold.</span><br>
+                \( RR = \text{Deposits} \times \text{Required Reserve Ratio (rrr)} \)
+            </li>
+            <li><strong>超額儲備 (Excess Reserves, ER):</strong> 銀行實際持有的儲備減去法定儲備，這部分可以用作借貸。<br>
+                <span class="bilingual-en">Actual reserves minus required reserves. This portion can be loaned out.</span><br>
+                \( ER = \text{Actual Reserves} - RR \)
+            </li>
+            <li><strong>最大存款創造 (Maximum Deposit Creation):</strong> 當所有超額儲備被借出且沒有現金流失時的存款變動。<br>
+                <span class="bilingual-en">The change in deposits when all excess reserves are loaned out with no cash leakage.</span><br>
+                \( \Delta \text{Deposits} = \Delta \text{Reserves} \times \frac{1}{rrr} \) (Note: Here \( \Delta \text{Reserves} \) means initial excess reserves injected into the lending process).
+            </li>
+            <li><strong>資產負債表恆等式 (Balance Sheet Identity):</strong> 資產的變動必定等於負債的變動。<br>
+                <span class="bilingual-en">The change in assets must equal the change in liabilities.</span><br>
+                \( \Delta \text{Reserves} + \Delta \text{Loans} = \Delta \text{Deposits} \)
+            </li>
+        </ul>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是 / Correct Option: <strong>D</strong></p>
+
+    <div class="option-analysis option-wrong">
+        <strong>Option A: 錯誤 (Incorrect)</strong>
+        <p>當銀行借出超額儲備時，借款人會將款項用於消費或投資，收款人最終會將這些款項存回銀行系統中（假設沒有現金流失）。因此，整個銀行系統的總儲備金額維持不變，依然是 400 百萬元。</p>
+        <p class="bilingual-en">When banks loan out excess reserves, borrowers spend the money, and recipients eventually deposit it back into the banking system (assuming no cash leakage). Therefore, the total amount of reserves in the entire banking system remains unchanged at $400 million.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <strong>Option B: 錯誤 (Incorrect)</strong>
+        <p>最大銀行乘數的公式是 \( \frac{1}{rrr} \)。因為法定儲備比率 (rrr) 維持在 25% 不變，所以最大銀行乘數維持在 \( \frac{1}{0.25} = 4 \)，不會上升。</p>
+        <p class="bilingual-en">The maximum banking multiplier formula is \( \frac{1}{rrr} \). Since the required reserve ratio (rrr) remains unchanged at 25%, the maximum banking multiplier remains at \( \frac{1}{0.25} = 4 \) and will not increase.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <strong>Option C: 錯誤 (Incorrect)</strong>
+        <p>貨幣供應 (Money Supply) 包括公眾持有的現金及銀行存款。由於銀行借出超額儲備會創造新的存款，而公眾持有的現金不變（假設無現金流失），因此總體貨幣供應將會增加。</p>
+        <p class="bilingual-en">Money Supply includes cash held by the public and bank deposits. Since loaning out excess reserves creates new deposits, and cash held by the public is unchanged (assuming no cash leakage), the total money supply will increase.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <strong>Option D: 正確 (Correct)</strong>
+        <p>根據資產負債表恆等式，資產的總變動必須等於負債的總變動：\( \Delta \text{儲備} + \Delta \text{貸款} = \Delta \text{存款} \)。在整個存款創造過程中，由於沒有資金流出銀行系統，系統的總儲備沒有改變，即 \( \Delta \text{儲備} = 0 \)。因此，\( \Delta \text{貸款} = \Delta \text{存款} \)。</p>
+        <p class="bilingual-en">According to the balance sheet identity, the total change in assets must equal the total change in liabilities: \( \Delta \text{Reserves} + \Delta \text{Loans} = \Delta \text{Deposits} \). Throughout the deposit creation process, since no funds leak out of the banking system, the system's total reserves do not change, meaning \( \Delta \text{Reserves} = 0 \). Therefore, \( \Delta \text{Loans} = \Delta \text{Deposits} \).</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <p>這題的「破局點」(Pivot Point) 在於理解<strong>整個銀行系統 (Banking System)</strong> 與<strong>單一銀行 (Single Bank)</strong> 的分別。</p>
+    <p class="bilingual-en">The "Pivot Point" of this question lies in understanding the difference between the <strong>entire Banking System</strong> and a <strong>Single Bank</strong>.</p>
+    
+    <div class="math-block">
+        <strong>Step 1: 尋找超額儲備 (Find Excess Reserves)</strong><br>
+        \( RR = 1200 \times 25\% = 300 \)<br>
+        \( ER = 400 - 300 = 100 \)
+    </div>
+    
+    <div class="math-block">
+        <strong>Step 2: 計算最大變動 (Calculate Maximum Changes)</strong><br>
+        最大存款增加 \( \Delta D = ER \times \frac{1}{rrr} = 100 \times 4 = 400 \)<br>
+        最大貸款增加 \( \Delta L = \Delta D - \Delta R = 400 - 0 = 400 \)
+    </div>
+    
+    <p>題目中的初始貸款額 (800) 其實是干擾資訊 (Distractor)，對於計算變動量並非必要。</p>
+    <p class="bilingual-en">The initial loan amount (800) in the question is actually a distractor and is not necessary for calculating the changes.</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>陷阱一：</strong> 誤以為借出款項會令系統的「儲備」減少。記住，借出的錢最終會存回另一間銀行，對<strong>整個系統</strong>而言，總儲備不變。<br>
+            <span class="bilingual-en">Trap 1: Mistakenly thinking that lending money reduces the system's "reserves". Remember, loaned money is eventually deposited back into another bank. For the <strong>entire system</strong>, total reserves remain unchanged.</span>
+        </li>
+        <li><strong>陷阱二：</strong> 混淆了「法定儲備比率」與「實際儲備比率」。題目問的是「最大」可能值，這意味著我們假設實際儲備比率最終會降至等於法定儲備比率 (25%)。<br>
+            <span class="bilingual-en">Trap 2: Confusing "required reserve ratio" with "actual reserve ratio". The question asks for the "maximum" possible value, which implies we assume the actual reserve ratio will eventually drop to equal the required reserve ratio (25%).</span>
+        </li>
+    </ul>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <strong>Q: 為什麼 \( \Delta \text{儲備} \) 是 0？銀行不是把超額儲備借出去了嗎？</strong><br>
+        <span class="bilingual-en">Q: Why is \( \Delta \text{Reserves} \) zero? Didn't the banks loan out their excess reserves?</span>
+        <p style="margin-top: 10px;"><strong>A:</strong> 對於「單一銀行」來說，借出款項確實會減少它的儲備。但這筆錢被借款人拿去買東西後，賣家會把錢存進「另一間銀行」。因為題目問的是「銀行系統」(所有銀行加起來)，這筆錢只是從 A 銀行轉移到了 B 銀行，沒有離開過銀行系統的金庫，所以總儲備不變。</p>
+        <p class="bilingual-en"><strong>A:</strong> For a "single bank", lending money does reduce its reserves. However, after the borrower spends this money, the seller deposits it into "another bank". Since the question asks about the "banking system" (all banks combined), the money merely transfers from Bank A to Bank B. It never leaves the vaults of the banking system, so total reserves remain unchanged.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p><strong>秒殺技巧 (One-Second Kill Trick):</strong></p>
+        <p>遇到這類問「最大可能增加值」的題目，只要題目假設<strong>沒有現金流失 (No cash leakage)</strong>，你根本不需要動筆計算任何數字！</p>
+        <p>根據會計原理：\( \Delta \text{資產} = \Delta \text{負債} \)<br>
+        即：\( \Delta \text{儲備} + \Delta \text{貸款} = \Delta \text{存款} \)</p>
+        <p>既然沒有現金流失，總儲備不變 (\( \Delta \text{儲備} = 0 \))，那麼必然得出結論：<strong>\( \Delta \text{貸款} = \Delta \text{存款} \)</strong>。直接選 D！</p>
+        
+        <p class="bilingual-en">When facing questions asking for "maximum possible increase", as long as the assumption is <strong>no cash leakage</strong>, you don't even need to calculate any numbers! Based on accounting principles: \( \Delta \text{Assets} = \Delta \text{Liabilities} \). Since total reserves don't change (\( \Delta \text{Reserves} = 0 \)), it mathematically guarantees that <strong>\( \Delta \text{Loans} = \Delta \text{Deposits} \)</strong>. Choose D immediately!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

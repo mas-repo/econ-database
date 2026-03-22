@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - AD/AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .question-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+
+        .trick-box {
+            background-color: #fdf2f8;
+            border: 1px solid #fbcfe8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 15px 20px; }
+            .header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header">
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="tags">
+            <span class="tag">Topic: 總需求與總供應 (AD-AS Model)</span>
+            <span class="tag">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Key Concepts: Aggregate Demand, Monetary Policy</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2 class="section-title">📝 題目 (The Question)</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <div class="zh">下列哪項會引致某國的總需求曲線向右移？</div>
+                <div class="en">Which of the following will result in a rightward shift of the aggregate demand curve of a country?</div>
+            </div>
+            <ol type="A" style="font-weight: 500; margin-bottom: 0;">
+                <li style="margin-bottom: 10px;">
+                    <div class="zh">中央銀行調低貼現率。</div>
+                    <div class="en">The central bank reduces the discount rate.</div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <div class="zh">最低工資率提高了。</div>
+                    <div class="en">The minimum wage rate is increased.</div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <div class="zh">一般物價水平下降。</div>
+                    <div class="en">The general price level decreases.</div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <div class="zh">其貿易夥伴遭逢經濟衰退。</div>
+                    <div class="en">Its trading partners suffer from an economic recession.</div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section">
+        <h2 class="section-title">🧠 概念重溫 (Concept Review)</h2>
+        <div class="concept-box">
+            <div class="zh"><strong>1. 總需求 (Aggregate Demand, AD) 的組成部分：</strong><br>總需求是指在不同一般物價水平下，經濟體系內各部門計劃購買的本地實質產出總量。</div>
+            <div class="en"><strong>1. Components of Aggregate Demand (AD):</strong><br>Aggregate demand is the total planned expenditure on domestically produced real output at different general price levels.</div>
+            
+            <div class="math-block">
+                $$ AD = C + I + G + NX $$
+            </div>
+            <div class="zh" style="font-size: 0.9rem;">當中 \(C\) = 私人消費開支，\(I\) = 投資開支，\(G\) = 政府消費開支，\(NX\) = 淨出口 (出口 \(X\) - 進口 \(M\))。</div>
+            <div class="en" style="font-size: 0.9rem; margin-bottom: 10px;">Where \(C\) = Private Consumption, \(I\) = Investment, \(G\) = Government Expenditure, \(NX\) = Net Exports (\(X - M\)).</div>
+
+            <div class="zh"><strong>2. 曲線移動 (Shift) vs 沿曲線移動 (Movement along):</strong><br>只有當「一般物價水平」(General Price Level) 改變時，才會導致沿著 AD 曲線移動。其他因素（如利率、政府政策、外國收入等）改變，會導致整條 AD 曲線移動 (Shift)。</div>
+            <div class="en"><strong>2. Shift vs Movement along the curve:</strong><br>A change in the "General Price Level" causes a movement along the AD curve. Changes in other factors (e.g., interest rates, government policies, foreign income) cause a shift of the entire AD curve.</div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="section">
+        <h2 class="section-title">✅ 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+        <p><strong>正確答案 (Correct Option): <span style="color: var(--correct-color); font-size: 1.2rem;">A</span></strong></p>
+
+        <div class="option-analysis option-correct">
+            <span class="badge badge-correct">Option A (Correct)</span>
+            <div class="zh"><strong>中央銀行調低貼現率：</strong> 貼現率是央行向商業銀行貸款的利率。調低貼現率屬於擴張性貨幣政策 (Expansionary Monetary Policy)。這會增加貨幣供應，導致市場利率下降。較低的利率會降低借貸成本，從而刺激私人消費 \(C\) 和投資 \(I\)。因此，總需求 \(AD\) 會增加，AD 曲線向右移。</div>
+            <div class="en"><strong>The central bank reduces the discount rate:</strong> The discount rate is the interest rate charged by the central bank on loans to commercial banks. Reducing it is an expansionary monetary policy. This increases money supply and lowers market interest rates. Lower interest rates reduce borrowing costs, stimulating private consumption \(C\) and investment \(I\). Therefore, aggregate demand \(AD\) increases, shifting the AD curve to the right.</div>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <span class="badge badge-wrong">Option B (Wrong)</span>
+            <div class="zh"><strong>最低工資率提高了：</strong> 這會增加企業的生產成本。生產成本上升會導致短期總供應 (Short-run Aggregate Supply, SRAS) 減少，令 SRAS 曲線向左（或向上）移，而不會直接令 AD 曲線移動。</div>
+            <div class="en"><strong>The minimum wage rate is increased:</strong> This increases the cost of production for firms. Higher production costs decrease Short-run Aggregate Supply (SRAS), shifting the SRAS curve to the left (or upward), but it does not directly shift the AD curve.</div>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <span class="badge badge-wrong">Option C (Wrong)</span>
+            <div class="zh"><strong>一般物價水平下降：</strong> 這是 AD 曲線圖表上的 Y 軸變數。物價水平的改變只會導致「沿著」總需求曲線向下移動 (Movement along the AD curve)，令需求量增加，而不會令整條曲線移動 (Shift)。</div>
+            <div class="en"><strong>The general price level decreases:</strong> This is the variable on the Y-axis of the AD-AS graph. A change in the price level only causes a "movement along" the AD curve downwards, increasing the quantity of aggregate demand, but it does not shift the curve itself.</div>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <span class="badge badge-wrong">Option D (Wrong)</span>
+            <div class="zh"><strong>其貿易夥伴遭逢經濟衰退：</strong> 貿易夥伴經濟衰退意味著他們的全國收入下降，從而減少對本國出口商品的需求。本國出口 \(X\) 下降會導致淨出口 \(NX\) 減少，令 AD 曲線向左移（而非向右移）。</div>
+            <div class="en"><strong>Its trading partners suffer from an economic recession:</strong> A recession in trading partners means their national income falls, reducing their demand for the domestic country's exports. A fall in domestic exports \(X\) reduces net exports \(NX\), shifting the AD curve to the left (not right).</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2 class="section-title">🔍 題目拆解 (Problem Decomposition)</h2>
+        <div class="zh">
+            <p><strong>解題關鍵 (Pivot Point)：</strong> 題目要求找出令 AD 曲線 <strong>「向右移」(Shift Right)</strong> 的因素。這意味著我們需要尋找：</p>
+            <ul>
+                <li>能增加 \(C, I, G, NX\) 的因素。</li>
+                <li>排除導致「沿曲線移動」的因素（即物價水平）。</li>
+                <li>排除影響「總供應」(AS) 的因素（即生產成本、科技等）。</li>
+            </ul>
+        </div>
+        <div class="en">
+            <p><strong>Pivot Point:</strong> The question asks for a factor that causes a <strong>"rightward shift"</strong> of the AD curve. This means we need to look for:</p>
+            <ul>
+                <li>Factors that increase \(C, I, G, NX\).</li>
+                <li>Exclude factors causing a "movement along" the curve (i.e., price level).</li>
+                <li>Exclude factors affecting "Aggregate Supply" (AS) (i.e., production costs, technology).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="section">
+        <h2 class="section-title">⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <div class="zh">
+            <p><strong>混淆「需求量改變」與「需求改變」：</strong> 很多學生看到選項 C（物價下降）就直覺認為需求會增加。在微觀或宏觀經濟學中，價格/物價水平的變動只會反映在圖表上的點的移動，絕對不會令曲線本身移動 (Shift)。</p>
+        </div>
+        <div class="en">
+            <p><strong>Confusing "Change in Quantity Demanded" with "Change in Demand":</strong> Many students see Option C (price decrease) and intuitively think demand increases. In both micro and macroeconomics, a change in price/price level is only reflected as a movement of a point along the curve, and will NEVER shift the curve itself.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section">
+        <h2 class="section-title">🙋 學生常見疑問 (Student Q&A)</h2>
+        <div class="qa-box">
+            <div class="zh"><strong>問：為什麼貼現率下降會影響私人消費 \(C\)？不是只影響投資 \(I\) 嗎？</strong></div>
+            <div class="en" style="margin-bottom: 10px;"><strong>Q: Why does a decrease in the discount rate affect private consumption \(C\)? Doesn't it only affect investment \(I\)?</strong></div>
+            
+            <div class="zh"><strong>答：</strong> 貼現率下降帶動整體市場利率下降。較低的利率不僅令企業借錢投資的成本降低（增加 \(I\)），也令市民借錢消費（如買車、用信用卡）的成本降低。同時，存錢在銀行的利息回報減少，市民會傾向減少儲蓄、增加消費（增加 \(C\)）。</div>
+            <div class="en"><strong>A:</strong> A lower discount rate drives down overall market interest rates. Lower interest rates not only reduce the cost of borrowing for firms to invest (increasing \(I\)), but also reduce the cost of borrowing for consumers (e.g., car loans, credit cards). Additionally, lower deposit interest rates reduce the return on saving, encouraging people to save less and consume more (increasing \(C\)).</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="section">
+        <h2 class="section-title">⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <div class="trick-box">
+            <div class="zh">
+                <strong>秒殺法 (Elimination Method)：</strong>
+                <ol>
+                    <li>看到「物價水平」(Price level) -> 這是 Y 軸，必定是沿曲線移動 -> <strong>秒刪 C</strong>。</li>
+                    <li>看到「工資」(Wage) 或「成本」(Cost) -> 這是影響 AS 的 -> <strong>秒刪 B</strong>。</li>
+                    <li>看到「衰退」(Recession) -> 負面字眼，通常導致減少（向左移） -> <strong>秒刪 D</strong>。</li>
+                    <li>只剩下 A，選 A！</li>
+                </ol>
+            </div>
+            <div class="en" style="margin-top: 15px;">
+                <strong>Elimination Method:</strong>
+                <ol>
+                    <li>See "Price level" -> It's the Y-axis, must be a movement along the curve -> <strong>Eliminate C immediately</strong>.</li>
+                    <li>See "Wage" or "Cost" -> This affects AS -> <strong>Eliminate B immediately</strong>.</li>
+                    <li>See "Recession" -> Negative word, usually causes a decrease (leftward shift) -> <strong>Eliminate D immediately</strong>.</li>
+                    <li>Only A is left, choose A!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
