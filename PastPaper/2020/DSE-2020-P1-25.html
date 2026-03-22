@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - National Income Accounting</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --text-color: #334155;
+            --heading-color: #0f172a;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --success-bg: #ecfdf5;
+            --success-border: #10b981;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .bilingual-en {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.2em;
+            font-style: italic;
+        }
+
+        /* Header Section */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Question Section */
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background: #fdfdfd;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .correct-box {
+            background-color: var(--success-bg);
+            border-left: 5px solid var(--success-border);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* Traps & Tricks */
+        .trap-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Q&A Section */
+        .qa-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 國民收入會計 / National Income Accounting</div>
+        <div><span class="badge">Difficulty</span> ★★★★☆</div>
+        <div><span class="badge">Key Concepts</span> GDP, GNI, Net Factor Income from Abroad</div>
+    </div>
+
+    <h1>HKDSE Economics: GDP vs GNI Adjustment</h1>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 / The Question</h2>
+    <div class="question-box">
+        <p><strong>在計算香港的本地居民總收入時，下列哪項應從香港的本地生產總值中扣除？</strong></p>
+        <p class="bilingual-en">Which of the following should be deducted from the gross domestic product of Hong Kong to calculate the gross national income of Hong Kong?</p>
+        
+        <ul class="options-list">
+            <li>
+                <strong>A.</strong> 一家香港足球會付給一支日本球隊來港進行一場表演賽的費用<br>
+                <span class="bilingual-en">the fee paid by a Hong Kong football club to a Japanese football team for an exhibition match in Hong Kong</span>
+            </li>
+            <li>
+                <strong>B.</strong> 一家香港地產發展商從其於日本的住宅物業賺得的租金<br>
+                <span class="bilingual-en">the rent earned by a Hong Kong property developer from its residential property in Japan</span>
+            </li>
+            <li>
+                <strong>C.</strong> 一家日本保險公司從香港的金融投資賺得的資本增益<br>
+                <span class="bilingual-en">the capital gain earned by a Japanese insurance corporation from its financial investment in Hong Kong</span>
+            </li>
+            <li>
+                <strong>D.</strong> 一家日本上市公司付給一名香港居民的股息<br>
+                <span class="bilingual-en">the dividend paid by a listed company in Japan to a Hong Kong resident</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p>要解答這條問題，我們必須清楚理解<strong>本地生產總值 (GDP)</strong>與<strong>本地居民總收入 (GNI)</strong>之間的關係。</p>
+        <p class="bilingual-en">To answer this question, we must clearly understand the relationship between <strong>Gross Domestic Product (GDP)</strong> and <strong>Gross National Income (GNI)</strong>.</p>
+        
+        <div class="math-block">
+            $$ \text{GNI} = \text{GDP} + \text{Net Factor Income from Abroad (NIA)} $$
+            $$ \text{本地居民總收入} = \text{本地生產總值} + \text{從外地賺取的淨要素收益} $$
+        </div>
+
+        <p>其中，淨要素收益 (NIA) 的計算方法為：</p>
+        <p class="bilingual-en">Where Net Factor Income from Abroad (NIA) is calculated as:</p>
+
+        <div class="math-block">
+            $$ \text{NIA} = \text{Factor income earned by residents from abroad} - \text{Factor income earned by non-residents in domestic territory} $$
+            $$ \text{NIA} = \text{本地居民從外地賺取的要素收益} - \text{非本地居民在本地賺取的要素收益} $$
+        </div>
+
+        <p>因此，要從 GDP 計算 GNI，我們需要<strong>加上</strong>本地居民在外地賺取的收入，並<strong>扣除</strong>非本地居民在本地賺取的收入。</p>
+        <p class="bilingual-en">Therefore, to calculate GNI from GDP, we need to <strong>add</strong> the income earned by residents from abroad, and <strong>deduct</strong> the income earned by non-residents in the domestic territory.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    
+    <div class="correct-box">
+        <h3>正確答案 / Correct Option: A</h3>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>選項 A (正確 Correct):</strong> 日本球隊（非本地居民）在香港進行表演賽，他們在香港境內提供了生產要素（勞力），創造了產值。這筆費用包含在香港的 GDP 中。但在計算 GNI 時，因為這筆收入屬於非本地居民，所以必須從 GDP 中<strong>扣除</strong>（作為支付予外地的要素收益）。</p>
+        <p class="bilingual-en">The Japanese football team (non-residents) played a match in HK, providing factors of production (labor) within HK's territory. This fee is included in HK's GDP. However, when calculating GNI, since this income belongs to non-residents, it must be <strong>deducted</strong> from GDP (as factor income paid abroad).</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>選項 B (錯誤 Incorrect):</strong> 香港地產商（本地居民）從日本（外地）賺取租金。這是本地居民從外地賺取的要素收益，在計算 GNI 時應該<strong>加上</strong>，而不是扣除。</p>
+        <p class="bilingual-en">A HK developer (resident) earns rent from Japan (abroad). This is factor income earned by a resident from abroad. It should be <strong>added</strong> to GDP when calculating GNI, not deducted.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>選項 C (錯誤 Incorrect):</strong> 資本增益（Capital gain）並不涉及當期的生產活動，因此它一開始就<strong>沒有被計入</strong> GDP 中。既然不在 GDP 內，自然不需要在計算 GNI 時作任何扣除。</p>
+        <p class="bilingual-en">Capital gains do not involve current production activities, so they are <strong>not included</strong> in GDP in the first place. Since it's not in GDP, there is no need to deduct it when calculating GNI.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p><strong>選項 D (錯誤 Incorrect):</strong> 香港居民從日本公司收取股息。這是本地居民從外地賺取的要素收益，在計算 GNI 時應該<strong>加上</strong>，而不是扣除。</p>
+        <p class="bilingual-en">A HK resident receives dividends from a Japanese company. This is factor income earned by a resident from abroad. It should be <strong>added</strong> to GDP when calculating GNI, not deducted.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 / Problem Decomposition</h2>
+    <p>這類題目的「破題關鍵」(Pivot Point) 在於留意題目要求的是<strong>「扣除」(deducted)</strong>。根據公式 \( \text{GNI} = \text{GDP} + \text{Resident income from abroad} - \text{Non-resident income in HK} \)，需要扣除的必然是<strong>「非本地居民在香港的收入」</strong>。</p>
+    <p class="bilingual-en">The "Pivot Point" of this question lies in the word <strong>"deducted"</strong>. According to the formula \( \text{GNI} = \text{GDP} + \text{Resident income from abroad} - \text{Non-resident income in HK} \), what needs to be deducted must be <strong>"income earned by non-residents in Hong Kong"</strong>.</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p><strong>陷阱：資本增益 (Capital Gains)</strong></p>
+        <p>很多學生看到「日本保險公司在香港賺錢」(選項C)，就直覺認為要扣除。但請記住，<strong>資本增益（如炒賣股票、樓宇賺取的差價）不屬於生產活動</strong>，根本不計入 GDP。如果一開始就不在 GDP 裡面，就沒有「扣除」的需要！</p>
+        <p class="bilingual-en"><strong>Trap: Capital Gains.</strong> Many students see "Japanese company earning in HK" (Option C) and instinctively think it should be deducted. Remember, <strong>capital gains (e.g., profit from trading stocks or property) do not result from current production</strong> and are excluded from GDP. If it's never in GDP, you don't deduct it!</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 股息 (Dividends) 和租金 (Rent) 算是要素收益 (Factor Income) 嗎？</p>
+        <p><strong>A:</strong> 是的！在國民收入會計中，要素收益包括僱員補償（工資）以及營業盈餘（包括租金、利息、股息和利潤）。因此選項 B 和 D 都是要素收益的流動。</p>
+        <p class="bilingual-en"><strong>A:</strong> Yes! In national income accounting, factor income includes compensation of employees (wages) and operating surplus (which includes rent, interest, dividends, and profits). Thus, Options B and D are flows of factor income.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <p>在考試中遇到「從 GDP 計算 GNI 需扣除什麼」的題目，你可以使用<strong>「三步秒殺法」</strong>：</p>
+    <p class="bilingual-en">When facing "what to deduct from GDP to get GNI" questions in exams, use the <strong>"3-Step Quick Kill"</strong> method:</p>
+    <ol>
+        <li>尋找關鍵字「扣除」(Deduct) \(\rightarrow\) 目標是尋找<strong>外國人 (Non-residents)</strong>。</li>
+        <li>尋找地點 \(\rightarrow\) 目標是尋找他們在<strong>本地 (in HK)</strong> 賺錢。</li>
+        <li>排除非生產性收入 \(\rightarrow\) 立即劃走所有「資本增益」(Capital gains) 或「轉移支付」(Transfer payments)。</li>
+    </ol>
+    <p>套用此法：選項 B 和 D 是香港人賺錢（錯）；選項 C 是資本增益（錯）；只剩下選項 A（外國人在香港賺錢），秒殺！</p>
+    <p class="bilingual-en">Applying this: Options B & D are HK residents earning (Wrong); Option C is capital gain (Wrong); Only Option A remains (Foreigners earning in HK). Solved instantly!</p>
+
+</div>
+
+</body>
+</html>

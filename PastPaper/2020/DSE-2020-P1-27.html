@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Aggregate Supply</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --success: #16a34a;
+            --success-light: #dcfce7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.2em;
+            font-style: italic;
+        }
+        .header-box {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-box li {
+            margin-bottom: 5px;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .options {
+            margin-top: 15px;
+        }
+        .option {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--gray-bg);
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+        .analysis-box {
+            margin-top: 20px;
+        }
+        .correct-ans {
+            background-color: var(--success-light);
+            border-left: 5px solid var(--success);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .mistakes-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <ul>
+            <li><strong>📚 課題 (Topic):</strong> 總體經濟學：總供應 (Macroeconomics: Aggregate Supply)</li>
+            <li><strong>⭐ 難度 (Difficulty):</strong> ★★★☆☆</li>
+            <li><strong>🔑 關鍵概念 (Key Concepts):</strong> 
+                <span class="tag">SRAS</span> 
+                <span class="tag">LRAS</span> 
+                <span class="tag">Aggregate Demand (AD)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>下列哪項是某國短期總供應曲線向左移的原因？</p>
+        <p class="en-text">Which of the following is a reason for a leftward shift of the short run aggregate supply curve in a country?</p>
+        
+        <div class="options">
+            <div class="option">A. 價格水平持續上升。<br><span class="en-text">There is a continuous increase in price level.</span></div>
+            <div class="option">B. 該國的最大出口市場遭逢經濟衰退。<br><span class="en-text">The largest market of the country's exports suffers from an economic recession.</span></div>
+            <div class="option">C. 更多公民移居外國。<br><span class="en-text">More citizens emigrate to foreign countries.</span></div>
+            <div class="option">D. 由於制度因素，勞工的工資緩慢下調。<br><span class="en-text">The wages of labour slowly adjust downward due to institutional factors.</span></div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>短期總供應 (Short-Run Aggregate Supply, SRAS)</strong> 反映在短期內（生產要素價格如工資尚未完全調整時），整體物價水平 \(P\) 與實質產出 \(Y\) 之間的關係。</p>
+        <p class="en-text"><strong>Short-Run Aggregate Supply (SRAS)</strong> shows the relationship between the general price level \(P\) and real output \(Y\) in the short run (when input prices like wages have not fully adjusted).</p>
+        
+        <p>導致 SRAS 曲線<strong>移動 (Shift)</strong> 的主要因素包括：</p>
+        <p class="en-text">Key factors that cause a <strong>shift</strong> in the SRAS curve include:</p>
+        <ul>
+            <li><strong>生產要素數量 (Quantity of Resources):</strong> 勞動力、資本、土地的增減。</li>
+            <li class="en-text">Changes in the quantity of labor, capital, or land.</li>
+            <li><strong>生產要素價格 (Input Prices):</strong> 工資、原材料價格的改變。</li>
+            <li class="en-text">Changes in wages or raw material prices.</li>
+            <li><strong>生產力/技術 (Productivity/Technology):</strong> 技術進步會使曲線向右移。</li>
+            <li class="en-text">Technological advancement shifts the curve to the right.</li>
+        </ul>
+
+        <div class="math-block">
+            $$Y = f(L, K, T)$$
+            <p style="font-size: 0.9em; margin: 5px 0 0 0;">(產出 \(Y\) 是勞動力 \(L\)、資本 \(K\) 和技術 \(T\) 的函數)</p>
+            <p class="en-text" style="margin: 0;">(Output \(Y\) is a function of Labor \(L\), Capital \(K\), and Technology \(T\))</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-ans">
+        正確答案 (Correct Option)：C
+    </div>
+
+    <div class="analysis-box">
+        <div class="option-analysis">
+            <p><strong>❌ 選項 A (Option A):</strong></p>
+            <p>價格水平 \(P\) 的改變只會導致沿著同一條 SRAS 曲線的<strong>移動 (Movement along the curve)</strong>，而不會導致整條曲線的平移 (Shift)。</p>
+            <p class="en-text">A change in the price level \(P\) only causes a <strong>movement along</strong> the same SRAS curve, not a shift of the curve.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ 選項 B (Option B):</strong></p>
+            <p>出口市場衰退會減少該國的出口數量 \(X\)。根據總需求公式，這會導致總需求 (AD) 曲線向左移，而不是總供應 (AS) 曲線。</p>
+            <p class="en-text">A recession in the export market reduces the country's exports \(X\). According to the Aggregate Demand formula, this shifts the Aggregate Demand (AD) curve to the left, not the Aggregate Supply (AS) curve.</p>
+            <div class="math-block">
+                $$AD = C + I + G + (X - M)$$
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>✅ 選項 C (Option C):</strong></p>
+            <p>更多公民移居外國（移民），意味著該國的勞動人口 \(L\) 減少。生產要素數量的下降會降低國家的生產能力，導致短期總供應 (SRAS) 及長期總供應 (LRAS) 曲線同時向左移。</p>
+            <p class="en-text">More citizens emigrating means a decrease in the country's labor force \(L\). A drop in the quantity of resources reduces the country's production capacity, shifting both the Short-Run (SRAS) and Long-Run Aggregate Supply (LRAS) curves to the left.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ 選項 D (Option D):</strong></p>
+            <p>工資緩慢下調（工資僵固性 / Sticky wages）是解釋<strong>為何 SRAS 曲線向上傾斜 (Upward-sloping)</strong> 的原因，而不是導致曲線移動的原因。</p>
+            <p class="en-text">Wages adjusting slowly downward (sticky wages) is the reason <strong>why the SRAS curve is upward-sloping</strong>, not a reason for the curve to shift.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <p>解答這類題目的「關鍵點」(Pivot Point) 在於區分三個核心概念：</p>
+    <p class="en-text">The "Pivot Point" to solving this type of question lies in distinguishing three core concepts:</p>
+    <ol>
+        <li><strong>AD vs. AS:</strong> 影響購買意欲的（如出口 \(X\)）屬於 AD；影響生產能力的屬於 AS。</li>
+        <li class="en-text">Factors affecting purchasing desire (like exports \(X\)) belong to AD; factors affecting production capacity belong to AS.</li>
+        <li><strong>Movement vs. Shift:</strong> 只有非物價因素 (Non-price factors) 才能使整條曲線移動。</li>
+        <li class="en-text">Only non-price factors can cause a shift of the entire curve.</li>
+        <li><strong>Shape vs. Shift:</strong> 工資僵固性解釋了曲線的形狀，而非其移動。</li>
+        <li class="en-text">Wage stickiness explains the shape of the curve, not its shift.</li>
+    </ol>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistakes-box">
+        <p><strong>陷阱：混淆「價格水平」與「生產成本」</strong></p>
+        <p class="en-text"><strong>Trap: Confusing "Price Level" with "Cost of Production"</strong></p>
+        <p>很多學生看到「價格上升」就以為會影響生產，從而選擇 A。請記住，宏觀經濟學中的「價格水平」\(P\) 是指整體物價（如 GDP 平減指數）。\(P\) 的改變是 Y 軸變數的改變，只會造成「線上移動」(Movement)。只有當「生產要素價格」（如原材料、工資）改變時，才會導致 SRAS 曲線「平移」(Shift)。</p>
+        <p class="en-text">Many students see "increase in price" and assume it affects production, choosing A. Remember, the "price level" \(P\) in macroeconomics refers to the general price level (e.g., GDP deflator). A change in \(P\) is a change in the Y-axis variable, causing only a "movement". Only when "input prices" (like raw materials, wages) change does the SRAS curve "shift".</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 移民不是會減少消費，從而令 AD 向左移嗎？為什麼答案是 SRAS 向左移？</strong></p>
+        <p class="en-text">Q: Doesn't emigration reduce consumption, thereby shifting AD to the left? Why is the answer a leftward shift in SRAS?</p>
+        <p><strong>A:</strong> 這是個很好的問題！實際上，大規模移民<strong>同時</strong>會令 AD（因為消費 \(C\) 減少）和 AS（因為勞動力 \(L\) 減少）向左移。題目問的是「下列哪項是 SRAS 向左移的原因」，選項 C 確實會導致 SRAS 向左移，因此它是正確答案。考試中，我們只需找出符合題目要求的充分條件。</p>
+        <p class="en-text">A: This is a great question! In reality, large-scale emigration shifts <strong>both</strong> AD (due to lower consumption \(C\)) and AS (due to a smaller labor force \(L\)) to the left. The question specifically asks for "a reason for a leftward shift of the SRAS", and Option C definitely causes this. In exams, we just need to identify the condition that satisfies the question's premise.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p><strong>秒殺法 (Elimination Method):</strong></p>
+    <p class="en-text"><strong>Instant Kill Method:</strong></p>
+    <ul>
+        <li>看到選項有「價格水平 (Price level)」？立刻劃掉！它永遠不會導致 AS 或 AD 曲線平移 (Shift)。</li>
+        <li class="en-text">See "Price level" in the options? Cross it out immediately! It NEVER causes a shift in AS or AD curves.</li>
+        <li>看到「出口/進口/消費/投資」？立刻歸類為 AD 因素。</li>
+        <li class="en-text">See "Exports/Imports/Consumption/Investment"? Categorize them immediately as AD factors.</li>
+        <li>剩下與「勞工、資源、成本、科技」有關的，就是 AS 的答案。</li>
+        <li class="en-text">Whatever is left relating to "labor, resources, costs, technology" is your AS answer.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
