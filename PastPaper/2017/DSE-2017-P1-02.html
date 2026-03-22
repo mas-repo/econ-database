@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Concept of Interest</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --trap-bg: #fff1f2;
+            --trap-border: #e11d48;
+            --trick-bg: #fefce8;
+            --trick-border: #eab308;
+            --math-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .question-box {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8fafc;
+            border-radius: 6px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .eng-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .correct-ans {
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+        }
+
+        .trap-box {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: var(--trick-bg);
+            border-left: 5px solid var(--trick-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor</h1>
+        <div>
+            <span class="badge">Topic: 資本與利息 (Capital & Interest)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> 
+            <span class="badge" style="background-color: #64748b;">利息 Interest</span>
+            <span class="badge" style="background-color: #64748b;">稀少性 Scarcity</span>
+            <span class="badge" style="background-color: #64748b;">時間偏好 Time Preference</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項關於利息的陳述是正確的？</strong></p>
+        <p class="eng-text">Which of the following statements about interest is correct?</p>
+        
+        <ul class="options-list">
+            <li>
+                A. 沒有貨幣，利息不會存在。<br>
+                <span class="eng-text">A. Without money, interest does not exist.</span>
+            </li>
+            <li>
+                B. 沒有通脹，利息不會存在。<br>
+                <span class="eng-text">B. Without inflation, interest does not exist.</span>
+            </li>
+            <li>
+                C. 沒有稀少性，利息不會存在。<br>
+                <span class="eng-text">C. Without scarcity, interest does not exist.</span>
+            </li>
+            <li>
+                D. 利息是借款人延遲消費的補償。<br>
+                <span class="eng-text">D. Interest is the compensation paid to the borrower for delayed consumption.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>1. 利息的本質 (The Nature of Interest)</h3>
+        <p>在經濟學中，利息是<strong>提早獲取物品/資源的代價</strong>（或延遲消費的補償）。因為人類有「時間偏好」（Time Preference），即在其他條件相同下，人們傾向「早享受」多於「遲享受」。</p>
+        <p class="eng-text">In economics, interest is the <strong>cost of earlier availability of goods/resources</strong> (or compensation for delaying consumption). This is due to "Time Preference"—all else being equal, people prefer present consumption over future consumption.</p>
+
+        <h3>2. 稀少性與利息的關係 (Scarcity and Interest)</h3>
+        <p>時間偏好之所以存在，根本原因是<strong>稀少性（Scarcity）</strong>。如果沒有稀少性，人類的所有慾望都能瞬間被滿足，我們不需要等待，也不需要向別人借取資源，因此「提早享受」的溢價（即利息）就不會存在。</p>
+        <p class="eng-text">The root cause of time preference is <strong>scarcity</strong>. If there were no scarcity, all human wants would be satisfied instantly. We wouldn't need to wait or borrow resources, hence the premium for "earlier availability" (interest) would not exist.</p>
+
+        <h3>3. 費沙方程式 (Fisher Equation)</h3>
+        <p>名義利率 \( R \)、實質利率 \( r \) 與預期通脹率 \( \pi^e \) 的關係：</p>
+        <p class="eng-text">The relationship between nominal interest rate \( R \), real interest rate \( r \), and expected inflation rate \( \pi^e \):</p>
+        <div class="math-block">
+            $$ r = R - \pi^e $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (Correct Option): <span class="correct-ans">Option C</span></p>
+
+    <div class="analysis-item">
+        <strong>選項 A 分析 (Option A Analysis): ❌ 錯誤 (False)</strong>
+        <p>利息是一個「實質概念」（Real concept），而非單純的貨幣概念。在沒有貨幣的以物易物經濟（Barter economy）中，只要人們想提早獲得蘋果，他們仍願意在未來償還更多的蘋果作為代價，利息依然存在。</p>
+        <p class="eng-text">Interest is a "real concept", not just a monetary one. In a barter economy without money, if people want to obtain apples earlier, they are still willing to repay more apples in the future as a premium. Interest still exists.</p>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 B 分析 (Option B Analysis): ❌ 錯誤 (False)</strong>
+        <p>根據費沙方程式，即使通脹率 \( \pi^e = 0 \)，只要人們有正數的時間偏好，實質利率 \( r \) 依然會大於零。通脹只會影響名義利率，不會決定利息是否存在。</p>
+        <p class="eng-text">According to the Fisher equation, even if the expected inflation rate \( \pi^e = 0 \), as long as people have a positive time preference, the real interest rate \( r \) will still be greater than zero. Inflation only affects the nominal rate; it does not determine the existence of interest.</p>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 C 分析 (Option C Analysis): ✅ 正確 (True)</strong>
+        <p>如概念重溫所述，沒有稀少性，就沒有選擇，也沒有時間偏好。所有物品都能無限量、即時獲得，沒有人會為了「提早獲得」而支付代價。因此，沒有稀少性，利息就不會存在。</p>
+        <p class="eng-text">As mentioned in the concept review, without scarcity, there is no choice and no time preference. All goods are available in unlimited quantities instantly. No one would pay a premium for "earlier availability". Thus, without scarcity, interest does not exist.</p>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 D 分析 (Option D Analysis): ❌ 錯誤 (False)</strong>
+        <p>這是一個常見的文字陷阱。利息是支付給<strong>貸款人（Lender）</strong>延遲消費的補償，而不是借款人（Borrower）。借款人是支付利息以換取提早消費的人。</p>
+        <p class="eng-text">This is a common word trap. Interest is the compensation paid to the <strong>lender</strong> for delayed consumption, not the borrower. The borrower is the one who pays interest to consume earlier.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🧩 題目拆解 (Problem Decomposition)</h2>
+    <p><strong>解題樞紐 (Pivot Point):</strong></p>
+    <p>這類題目的核心在於區分「利息的根本成因」與「利息的常見表現形式」。貨幣和通脹是我們日常生活中常與利息掛鈎的事物（干擾資訊），但它們不是利息存在的<strong>必要條件</strong>。利息的根本成因是「時間偏好」，而時間偏好的根本成因是「稀少性」。</p>
+    <p class="eng-text">The core of this question is distinguishing the "root cause of interest" from its "common manifestations". Money and inflation are commonly associated with interest in daily life (distractors), but they are not <strong>necessary conditions</strong> for interest to exist. The root cause of interest is "time preference", and the root cause of time preference is "scarcity".</p>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱 1：混淆借款人與貸款人 (Confusing Borrower and Lender)</strong></p>
+        <p>很多學生看到選項 D 的「延遲消費的補償」覺得定義很完美就直接選了，卻忽略了主語是「借款人」。考試時必須逐字看清楚：<br>
+        - 貸款人 (Lender) = 延遲消費 = 收取利息<br>
+        - 借款人 (Borrower) = 提早消費 = 支付利息</p>
+        <p class="eng-text">Many students see "compensation for delayed consumption" in Option D, think the definition is perfect, and choose it immediately, ignoring that the subject is "borrower". In exams, read word by word:<br>
+        - Lender = Delays consumption = Receives interest<br>
+        - Borrower = Advances consumption = Pays interest</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-item">
+        <p class="qa-q">Q: 為什麼在沒有貨幣的社會（以物易物）中，利息仍然存在？</p>
+        <p class="eng-text">Q: Why does interest still exist in a barter society without money?</p>
+        <p>A: 假設你今天很餓，需要一個蘋果。我借給你一個蘋果，但要求你明天還我 1.1 個蘋果。這多出來的 0.1 個蘋果就是利息。利息是物品的時間溢價，不需要依賴貨幣存在。</p>
+        <p class="eng-text">A: Suppose you are hungry today and need an apple. I lend you one apple but ask you to return 1.1 apples tomorrow. The extra 0.1 apple is the interest. Interest is the time premium of goods and does not rely on the existence of money.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>💡 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <p><strong>「稀少性」是萬物之源 (Scarcity is the root of all economic concepts)</strong></p>
+        <p>在經濟學中，價格、成本、利息、競爭、產權等概念，全部都是因為「稀少性」而衍生出來的。當題目問「沒有 X，Y 就不會存在」，如果選項中有「稀少性 (Scarcity)」，它有超過 90% 的機率是正確答案，因為沒有稀少性，整個經濟學都不需要存在了！</p>
+        <p class="eng-text">In economics, concepts like price, cost, interest, competition, and property rights all stem from "scarcity". When a question asks "Without X, Y would not exist", if "Scarcity" is an option, there is a >90% chance it is the correct answer. Without scarcity, the entire field of economics wouldn't need to exist!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
