@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Cost of Production</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+        }
+        h1 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .header-info {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .bilingual-text .zh {
+            font-weight: 600;
+            color: #111827;
+        }
+        .bilingual-text .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        .math-block {
+            background-color: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #fdfcfa;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #166534;
+            background-color: #dcfce7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        .trick-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-info">
+        <h1>HKDSE Economics Tutor</h1>
+        <p>📚 <strong>Topic (課題):</strong> 成本與生產理論 (Theory of Costs and Production)</p>
+        <p>⭐ <strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p>🔑 <strong>Key Concepts (核心概念):</strong> 固定成本 (Fixed Cost), 可變成本 (Variable Cost), 產量 (Output Level)</p>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <div class="zh">一間藝術中心延長其營業時間一小時以開辦更多油畫班。下列各項中，哪些屬於額外營運一小時所涉及的可變成本？</div>
+            <div class="en">An art centre extends its business hours for one hour in order to offer more painting classes. Which of the following are variable costs involved in the extra hour of operation?</div>
+        </div>
+        
+        <div class="bilingual-text">
+            <div class="zh">
+                (1) 會計員的薪金<br>
+                (2) 電費<br>
+                (3) 顏料費用<br>
+                (4) 租金支出
+            </div>
+            <div class="en">
+                (1) salary of the accountant<br>
+                (2) electricity fee<br>
+                (3) expense on paints<br>
+                (4) rental payment
+            </div>
+        </div>
+
+        <div class="bilingual-text" style="margin-top: 15px;">
+            <div class="zh">
+                A. 只有 (1)、(4)<br>
+                B. 只有 (2)、(3)<br>
+                C. 只有 (1)、(2) 及 (4)<br>
+                D. (1)、(2)、(3) 及 (4)
+            </div>
+            <div class="en">
+                A. (1) and (4) only<br>
+                B. (2) and (3) only<br>
+                C. (1), (2) and (4) only<br>
+                D. (1), (2), (3) and (4)
+            </div>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="bilingual-text">
+            <div class="zh">要解決這條題目，我們必須清楚區分**固定成本 (Fixed Cost)** 與 **可變成本 (Variable Cost)**。在經濟學的短期 (Short Run) 分析中，總成本可以分為這兩部分。</div>
+            <div class="en">To solve this question, we must clearly distinguish between **Fixed Cost** and **Variable Cost**. In short-run economic analysis, Total Cost can be divided into these two components.</div>
+        </p>
+        
+        <div class="math-block">
+            $$TC = TFC + TVC$$
+        </div>
+        
+        <ul>
+            <li>
+                <strong>固定成本 Total Fixed Cost ($TFC$):</strong> 
+                <br>不隨產量 ($Q$) 改變而變動的成本。即使產量為零，仍須支付。例如：租金、保險費、固定月薪。
+                <br><span style="color: #4b5563; font-size: 0.9em;">Costs that do not change with the level of output ($Q$). They must be paid even if output is zero. Examples: rent, insurance, fixed monthly salaries.</span>
+            </li>
+            <li style="margin-top: 15px;">
+                <strong>可變成本 Total Variable Cost ($TVC$):</strong> 
+                <br>會隨產量 ($Q$) 改變而變動的成本。產量越多，成本越高；產量為零，此成本為零。例如：原材料、電費、時薪工人的工資。
+                <br><span style="color: #4b5563; font-size: 0.9em;">Costs that change with the level of output ($Q$). The higher the output, the higher the cost; if output is zero, this cost is zero. Examples: raw materials, electricity, wages of hourly-paid workers.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 Detailed Analysis</h2>
+    <div class="analysis-box">
+        <div class="correct-answer">正確答案 Correct Option: B</div>
+        
+        <div class="option-analysis">
+            <div class="zh"><strong>(1) 會計員的薪金 (Salary of the accountant): 【錯誤 / 固定成本】</strong><br>
+            會計員通常按月收取固定薪金。無論藝術中心營業多少小時或開辦多少畫班，他的薪水不會因為這額外的「一小時」而增加。因此，這屬於固定成本。</div>
+            <div class="en"><strong>(1) Salary of the accountant: [Incorrect / Fixed Cost]</strong><br>
+            Accountants are typically paid a fixed monthly salary. Whether the art centre opens for an extra hour or holds more classes, this salary remains unchanged. Therefore, it is a fixed cost.</div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="zh"><strong>(2) 電費 (Electricity fee): 【正確 / 可變成本】</strong><br>
+            延長營業一小時意味着需要開多一小時的冷氣和照明。因此，電費會隨着營業時間（及畫班數量）增加而上升。這屬於可變成本。</div>
+            <div class="en"><strong>(2) Electricity fee: [Correct / Variable Cost]</strong><br>
+            Extending operating hours means running the air conditioning and lighting for an extra hour. The electricity fee will increase as operating hours (and the number of classes) increase. This is a variable cost.</div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="zh"><strong>(3) 顏料費用 (Expense on paints): 【正確 / 可變成本】</strong><br>
+            開辦更多油畫班代表學生會消耗更多顏料（原材料）。產量（畫班）增加，顏料費用亦隨之增加。這屬於可變成本。</div>
+            <div class="en"><strong>(3) Expense on paints: [Correct / Variable Cost]</strong><br>
+            Offering more painting classes means students will consume more paint (raw materials). As output (number of classes) increases, the expense on paints increases accordingly. This is a variable cost.</div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="zh"><strong>(4) 租金支出 (Rental payment): 【錯誤 / 固定成本】</strong><br>
+            租金通常是按月或按年支付的固定金額。無論你在舖頭裡營業10小時還是11小時，該月的租金都是一樣的，不會隨產量改變。這屬於典型的固定成本。</div>
+            <div class="en"><strong>(4) Rental payment: [Incorrect / Fixed Cost]</strong><br>
+            Rent is a fixed amount paid monthly or annually. Whether you operate for 10 hours or 11 hours, the rent for the month remains exactly the same. It does not change with output, making it a classic fixed cost.</div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="concept-box" style="border-left-color: #3b82f6;">
+        <div class="zh">
+            <strong>解題樞紐 (The Pivot Point)：</strong><br>
+            此題的核心在於判斷該成本是否「<strong>會隨產出水平改變而變動</strong>」。題目的「產出」是「開辦更多油畫班 (more painting classes)」。你只需要問自己一個問題：「如果我開多一班畫班，這項支出會不會立刻增加？」會增加的，就是可變成本。
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            <strong>The Pivot Point:</strong><br>
+            The core of this question lies in determining whether the cost "<strong>varies with the level of output</strong>". The "output" here is "offering more painting classes". Just ask yourself: "If I offer one more class, will this specific expense immediately go up?" If yes, it's a variable cost.
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="question-box" style="border-color: #ef4444; background-color: #fef2f2;">
+        <div class="zh">
+            🚨 <strong>陷阱：將「薪金」一概當作可變成本。</strong><br>
+            很多同學以為人手工作越多，薪金必定增加。但在經濟學的預設情況下，除非題目特別說明是「時薪工人 (hourly-paid workers)」，否則管理層或後勤人員（如會計員）的「薪金 (Salary)」被視為不隨短期產量變動的固定合約成本。
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            🚨 <strong>Trap: Treating all "salaries" as variable costs.</strong><br>
+            Many students assume that if a business works harder, wages must go up. However, in standard economics assumptions, unless specified as "hourly-paid wages", the "salary" of backend staff (like an accountant) is treated as a fixed contractual cost that doesn't change with short-run output variations.
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>🙋‍♂️ 學生問 (Student):</strong> 如果題目說「兼職繪畫導師的時薪 (hourly wages of a part-time painting tutor)」，那這會是甚麼成本？<br>
+        <span class="en">What if the question said "hourly wages of a part-time painting tutor"? What kind of cost would that be?</span></p>
+        
+        <p><strong>👨‍🏫 導師答 (Tutor):</strong> 那就會是<strong>可變成本 (Variable Cost)</strong>！因為開辦更多畫班，就需要聘請導師教更多小時，總工資開支會直接隨畫班數量而上升。這凸顯了「薪金 (月薪)」與「工資 (時薪)」在經濟學定義上的分別。<br>
+        <span class="en">That would be a <strong>Variable Cost</strong>! Offering more classes requires hiring the tutor for more hours, so the total wage expense directly rises with the number of classes. This highlights the economic distinction between a fixed "salary" and variable "hourly wages".</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="zh">
+            ⚡ <strong>極速排除法 (Elimination Method)：</strong><br>
+            在DSE經濟科中，<strong>「租金 (Rent)」是教科書中最典型的固定成本 (Fixed Cost) 例子。</strong><br>
+            當你一看到選項 (4) 是租金，你馬上就知道它絕對不可能是正確答案（因為題目找的是可變成本）。<br>
+            因此，包含 (4) 的選項 <strong>A、C、D 可以瞬間被刪除</strong>。<br>
+            剩下來的唯一可能，就是 <strong>B</strong>！這題甚至不需要分析 (1)、(2)、(3) 就能在 5 秒內得出答案！
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            ⚡ <strong>Elimination Method:</strong><br>
+            In HKDSE Economics, <strong>"Rent" is the most classic textbook example of a Fixed Cost.</strong><br>
+            The moment you see item (4) is rent, you instantly know it cannot be the answer (since we are looking for variable costs).<br>
+            Therefore, any option containing (4) — <strong>Options A, C, and D — can be instantly eliminated</strong>.<br>
+            The only remaining option is <strong>B</strong>! You can solve this question in 5 seconds without even analyzing items (1), (2), or (3)!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

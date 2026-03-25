@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial - Labour Market & Equity</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #0369a1;
+            --bg-gray: #f8fafc;
+            --math-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-top: 1.5em;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* 1. Header Styling */
+        .header-section {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            text-align: center;
+        }
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+        }
+        .tags span {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 0 5px;
+            font-size: 0.9em;
+        }
+
+        /* 2. Question Box */
+        .question-box {
+            background-color: white;
+            border: 2px solid #e2e8f0;
+        }
+        .options-grid {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        /* 3. Concept Review Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        /* Math Blocks */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        /* Bilingual Text Styling */
+        .lang-tc {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        .lang-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 1.2rem;
+            padding-left: 10px;
+            border-left: 2px solid #cbd5e1;
+        }
+
+        /* 4. Analysis Box */
+        .analysis-box {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #16a34a;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #f0fdf4;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        /* 5-8. Other Sections */
+        .strategy-box { background-color: #fffbeb; border-left: 5px solid #f59e0b; }
+        .mistakes-box { background-color: #fef2f2; border-left: 5px solid #ef4444; }
+        .qa-box { background-color: #f5f3ff; border-left: 5px solid #8b5cf6; }
+        .tricks-box { background-color: #ecfdf5; border-left: 5px solid #10b981; }
+
+        .statement-analysis {
+            background: #f8fafc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div class="tags">
+            <span>📚 Topic: Labour Market & Equity (勞工市場與公平)</span>
+            <span>⭐ Difficulty: 3/5</span>
+        </div>
+        <p style="margin-top: 15px;">
+            <strong>Key Concepts:</strong> Labour Supply, Labour Productivity, Geographical Mobility, Income Inequality
+        </p>
+    </div>
+
+    <div class="section question-box">
+        <h2>📝 The Question (題目)</h2>
+        
+        <div class="lang-tc">
+            「鼓勵就業交通津貼計劃」協助低收入在職人士減低往返工作地點的交通費負擔，並鼓勵他們就業。工人員要符合指定條件，例如每月收入限額及資產限額，便有資格獲得津貼。<br><br>
+            在上述計劃推行後，下列哪些會可能出現？<br>
+            (1) 勞力供應會增加。<br>
+            (2) 勞工生產力會增加。<br>
+            (3) 勞工的地域流動性會增加。<br>
+            (4) 收入不均會下降。
+        </div>
+        <div class="lang-en">
+            The Work Incentive Transport Subsidy Scheme helps low-income earners reduce their cost of travelling to and from work and encourages them to get a job. Workers meeting certain criteria, such as monthly income and asset limits, are eligible to get the subsidy.<br><br>
+            Which of the following would likely occur after the implementation of this scheme?<br>
+            (1) Labour supply would increase.<br>
+            (2) Labour productivity would increase.<br>
+            (3) Geographical mobility of labour would increase.<br>
+            (4) Income inequality would decrease.
+        </div>
+
+        <div class="options-grid">
+            <div class="lang-tc">A. 只有 (1)、(2)</div>
+            <div class="lang-en">A. (1) and (2) only</div>
+            
+            <div class="lang-tc">B. 只有 (3)、(4)</div>
+            <div class="lang-en">B. (3) and (4) only</div>
+            
+            <div class="lang-tc">C. 只有 (1)、(3) 及 (4)</div>
+            <div class="lang-en">C. (1), (3) and (4) only</div>
+            
+            <div class="lang-tc">D. 只有 (2)、(3) 及 (4)</div>
+            <div class="lang-en">D. (2), (3) and (4) only</div>
+        </div>
+    </div>
+
+    <div class="section concept-box">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        
+        <div class="lang-tc">
+            <strong>1. 勞工供應 (Labour Supply):</strong> 指在特定時間內，勞工願意並有能力提供的勞工數量（以工時或人數計算）。當工作的淨回報上升（如交通成本下降），勞工供應通常會增加。
+        </div>
+        <div class="lang-en">
+            <strong>1. Labour Supply:</strong> The amount of labour (in man-hours or number of workers) that workers are willing and able to provide at a given period. When the net return of working increases (e.g., lower commuting costs), labour supply typically increases.
+        </div>
+
+        <div class="lang-tc">
+            <strong>2. 勞工生產力 (Labour Productivity):</strong> 指每單位勞工的平均產量。取決於教育、技能、科技及資本等因素。
+        </div>
+        <div class="lang-en">
+            <strong>2. Labour Productivity:</strong> The average output produced per unit of labour. It depends on factors like education, skills, technology, and capital.
+        </div>
+        
+        <div class="math-block">
+            $$\text{Labour Productivity} = \frac{\text{Total Output}}{\text{Total Labour (Man-hours / Number of workers)}}$$
+        </div>
+
+        <div class="lang-tc">
+            <strong>3. 地域流動性 (Geographical Mobility):</strong> 勞工改變工作地點的容易程度或意願。交通網絡改善或交通成本下降會提高地域流動性。
+        </div>
+        <div class="lang-en">
+            <strong>3. Geographical Mobility:</strong> The ease or willingness with which workers can move from one location to another for employment. Improved transport networks or lower transport costs increase geographical mobility.
+        </div>
+
+        <div class="lang-tc">
+            <strong>4. 收入不均 (Income Inequality):</strong> 社會上高收入與低收入人士之間的收入差距。針對低收入人士的津貼（轉移支付）能縮窄此差距。
+        </div>
+        <div class="lang-en">
+            <strong>4. Income Inequality:</strong> The gap in income between high-income and low-income individuals in a society. Targeted subsidies (transfer payments) to low-income earners narrow this gap.
+        </div>
+    </div>
+
+    <div class="section analysis-box">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="correct-answer">
+            Correct Option: C. 只有 (1)、(3) 及 (4) / (1), (3) and (4) only
+        </div>
+
+        <div class="statement-analysis">
+            <div class="lang-tc"><strong>陳述 (1)：正確。</strong> 交通津貼減低了上班的成本，變相增加了工作所得的淨收入。題目亦明言計劃「鼓勵他們就業」，因此會吸引更多人（例如家庭主婦或退休人士）投入勞動市場，勞力供應增加。</div>
+            <div class="lang-en"><strong>Statement (1): Correct.</strong> The transport subsidy reduces the cost of commuting, effectively increasing the net income from working. The question also explicitly states it "encourages them to get a job". Thus, more people (e.g., housewives, retirees) will enter the labour market, increasing labour supply.</div>
+        </div>
+
+        <div class="statement-analysis">
+            <div class="lang-tc"><strong>陳述 (2)：錯誤。</strong> 勞工生產力是指每名工人的產出效率。給予交通津貼並不會提升工人的技能、教育水平或使用的科技，因此不會增加勞工生產力。</div>
+            <div class="lang-en"><strong>Statement (2): Incorrect.</strong> Labour productivity refers to the output efficiency per worker. Providing a transport subsidy does not improve workers' skills, education levels, or the technology they use, so it does not increase labour productivity.</div>
+        </div>
+
+        <div class="statement-analysis">
+            <div class="lang-tc"><strong>陳述 (3)：正確。</strong> 地域流動性受交通時間和成本限制。既然政府補貼了交通費，勞工便更願意跨區工作（例如由天水圍到中環上班），因此地域流動性上升。</div>
+            <div class="lang-en"><strong>Statement (3): Correct.</strong> Geographical mobility is constrained by commuting time and cost. Since the government subsidizes transport costs, workers are more willing to work across districts (e.g., commuting from Tin Shui Wai to Central). Therefore, geographical mobility increases.</div>
+        </div>
+
+        <div class="statement-analysis">
+            <div class="lang-tc"><strong>陳述 (4)：正確。</strong> 由於計劃只限符合「每月收入限額」的低收入人士受惠，這是一項財富轉移。低收入人士獲得額外津貼，而高收入人士沒有，這縮窄了兩者之間的差距，令收入不均下降。</div>
+            <div class="lang-en"><strong>Statement (4): Correct.</strong> Since the scheme only benefits low-income earners meeting the "monthly income limits", it is a transfer payment. Low-income earners receive an extra subsidy while high-income earners do not, narrowing the gap between them and decreasing income inequality.</div>
+        </div>
+    </div>
+
+    <div class="section strategy-box">
+        <h2>🕵️ Problem Decomposition (題目拆解)</h2>
+        
+        <div class="lang-tc">
+            <strong>拆題關鍵 (Pivot Point):</strong> 本題的關鍵在於分辨「影響勞工供應」與「影響勞工生產力」的因素。任何影響**工作意願**及**工作淨回報**的政策（如津貼、稅率）都會影響勞工供應。
+        </div>
+        <div class="lang-en">
+            <strong>Pivot Point:</strong> The key to this question is distinguishing between factors affecting "labour supply" and "labour productivity". Any policy affecting the **willingness to work** and **net return from working** (like subsidies, tax rates) affects labour supply.
+        </div>
+
+        <div class="lang-tc">
+            <strong>干擾資訊 (Distractors):</strong> 題目中提及的「資產限額」屬干擾資訊。它只是申請門檻，對於分析勞工市場的宏觀經濟影響（如生產力或流動性）並沒有直接幫助，重點應放在「交通費負擔下降」及「低收入人士受惠」這兩點上。
+        </div>
+        <div class="lang-en">
+            <strong>Distractors:</strong> The mention of "asset limits" is a distractor. It is merely an application threshold and doesn't directly help in analyzing the macroeconomic impacts on the labour market (like productivity or mobility). The focus should be on "reduced transport burden" and "benefits for low-income earners".
+        </div>
+    </div>
+
+    <div class="section mistakes-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="lang-tc">
+            <strong>陷阱一：混淆「勞工供應」與「勞工生產力」。</strong><br>
+            很多同學以為工人有了津貼，「開心了」或「有動力了」，生產力就會提高。在經濟學中，動機或態度不是生產力的核心因素，生產力 $P$ 嚴格掛鉤於技術、資本和人力資本（技能）。
+        </div>
+        <div class="lang-en">
+            <strong>Trap 1: Confusing "Labour Supply" with "Labour Productivity".</strong><br>
+            Many students think that because workers get a subsidy, they are "happier" or "motivated," so productivity increases. In economics, mood or motivation isn't a core determinant of productivity; productivity $P$ is strictly tied to technology, capital, and human capital (skills).
+        </div>
+    </div>
+
+    <div class="section qa-box">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        
+        <div class="lang-tc">
+            <strong>問：題目寫明「鼓勵他們就業」，這是否直接暗示了第(1)點一定正確？</strong><br>
+            答：沒錯！在DSE經濟科中，題目的引言往往包含了答案的提示。「鼓勵就業」意味著原本不打算工作的人（即非勞動人口）現在願意加入勞動市場尋找工作，這正是勞工供應增加的標準定義。
+        </div>
+        <div class="lang-en">
+            <strong>Q: The question literally says it "encourages them to get a job". Does this directly hint that Statement (1) is correct?</strong><br>
+            A: Spot on! In DSE Economics, the background text often contains direct hints. "Encouraging to get a job" implies that people who previously did not intend to work (i.e., outside the labour force) are now willing to enter the market. This is the exact definition of an increase in labour supply.
+        </div>
+    </div>
+
+    <div class="section tricks-box">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        
+        <div class="lang-tc">
+            <strong>消去法 (Elimination Method):</strong><br>
+            在考場上，只要你確定給錢/津貼**絕對不能**令人變聰明或提升技能（即勞工生產力不變），你就可以立刻判定 (2) 是錯的。
+            <ul>
+                <li>刪除 A (含2)</li>
+                <li>刪除 D (含2)</li>
+            </ul>
+            剩下 B (3,4) 和 C (1,3,4)。既然題目第一句已說「鼓勵就業」，(1) 肯定正確。因此答案秒選 <strong>C</strong>！
+        </div>
+        <div class="lang-en">
+            <strong>Elimination Method:</strong><br>
+            During the exam, as long as you are certain that giving out money/subsidies **cannot** magically make workers smarter or more skilled (i.e., productivity remains unchanged), you can immediately rule out Statement (2).
+            <ul>
+                <li>Cross out A (contains 2)</li>
+                <li>Cross out D (contains 2)</li>
+            </ul>
+            You are left with B (3,4) and C (1,3,4). Since the very first sentence says "encourages them to get a job", (1) MUST be true. Thus, you can instantly choose <strong>C</strong>!
+        </div>
+    </div>
+
+</body>
+</html>

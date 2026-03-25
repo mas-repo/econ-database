@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Monopolistic Competition</title>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
+        body {
+            font-family: 'Segoe UI', 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 1.2em;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+        }
+        .section-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        /* Bilingual styling */
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Math Block */
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        /* Tags */
+        .tag {
+            display: inline-block;
+            background: var(--bg-gray);
+            color: var(--text-dark);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .tag.topic { background: #dbeafe; color: #1e3a8a; }
+        .tag.difficulty { background: #fef3c7; color: #92400e; }
+        /* Question options */
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: var(--bg-gray);
+            border-radius: 5px;
+        }
+        .correct-answer {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .qna-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .qna-q { font-weight: bold; color: var(--primary-color); }
+        .qna-a { margin-top: 10px; }
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Tutorial Guide<br><span style="font-size: 0.6em; color: var(--text-gray);">經濟學文憑試補習指南</span></h1>
+
+    <div class="section-card">
+        <span class="tag topic">Topic: Market Structure (市場結構)</span>
+        <span class="tag difficulty">Difficulty: ★★☆☆☆ (2/5)</span>
+        <div style="margin-top: 10px;">
+            <span class="tag">Monopolistic Competition (壟斷性競爭)</span>
+            <span class="tag">Price Searcher (尋價者)</span>
+            <span class="tag">Product Differentiation (產品異質)</span>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>The Question (題目)</h2>
+        <div class="zh">下列哪項有關壟斷性競爭的陳述是正確的？</div>
+        <div class="en">Which of the following statements about monopolistic competition are correct?</div>
+        
+        <ol style="margin: 15px 0 20px 20px; padding-left: 0;">
+            <li class="zh">(1) 市場內可以有小量或大量的買家和賣家。</li>
+            <li class="en" style="margin-bottom: 10px;">(1) There can be a few or many buyers and sellers in the market.</li>
+            
+            <li class="zh">(2) 賣家屬尋價者。</li>
+            <li class="en" style="margin-bottom: 10px;">(2) The sellers are price searchers.</li>
+            
+            <li class="zh">(3) 賣家所提供的物品及服務屬同質的。</li>
+            <li class="en" style="margin-bottom: 10px;">(3) The goods and services provided by the sellers are homogeneous.</li>
+            
+            <li class="zh">(4) 該市場是自由進入和退出的。</li>
+            <li class="en" style="margin-bottom: 10px;">(4) There are free entry and exit in the market.</li>
+        </ol>
+
+        <ul class="options-list">
+            <li>
+                <div class="zh">A. 只有 (1)、(3)</div>
+                <div class="en">A. (1) and (3) only</div>
+            </li>
+            <li>
+                <div class="zh">B. 只有 (1)、(4)</div>
+                <div class="en">B. (1) and (4) only</div>
+            </li>
+            <li>
+                <div class="zh">C. 只有 (2)、(3)</div>
+                <div class="en">C. (2) and (3) only</div>
+            </li>
+            <li>
+                <div class="zh">D. 只有 (2)、(4)</div>
+                <div class="en">D. (2) and (4) only</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-card concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <p class="zh"><strong>壟斷性競爭 (Monopolistic Competition)</strong> 是一種介乎於完全競爭與壟斷之間的市場結構。要解答此題，必須熟記其四大特徵：</p>
+        <p class="en"><strong>Monopolistic Competition</strong> is a market structure that lies between perfect competition and monopoly. To solve this question, you must memorize its four key characteristics:</p>
+
+        <ol>
+            <li>
+                <div class="zh"><strong>大量買家和賣家 (Many buyers and sellers):</strong> 市場上有許多獨立的廠商，每間廠商的市場佔有率都很小。</div>
+                <div class="en"><strong>Many buyers and sellers:</strong> There are many independent firms in the market, each with a small market share.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>產品異質 (Heterogeneous / Differentiated products):</strong> 雖然產品用途相似，但每間廠商的產品在品牌、包裝、質素或服務上都有所不同。</div>
+                <div class="en"><strong>Heterogeneous / Differentiated products:</strong> Although the products serve similar purposes, each firm's product differs in brand, packaging, quality, or service.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>尋價者 (Price searchers):</strong> 由於產品存在差異，廠商對價格有一定的控制力，面對一條向下傾斜的需求曲線。</div>
+                <div class="en"><strong>Price searchers:</strong> Due to product differentiation, firms have some degree of price-setting power and face a downward-sloping demand curve.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>自由進入和退出 (Free entry and exit):</strong> 市場沒有進入或退出的障礙（或障礙極低）。</div>
+                <div class="en"><strong>Free entry and exit:</strong> There are no (or very low) barriers to entering or leaving the market.</div>
+            </li>
+        </ol>
+
+        <div class="math-block">
+            <div class="zh">尋價者面對的需求與邊際收入關係：</div>
+            <div class="en">The relationship between Demand and Marginal Revenue for a Price Searcher:</div>
+            $$ P = AR > MR $$
+            <div class="zh">（其中 \(P\) 為價格，\(AR\) 為平均收入，\(MR\) 為邊際收入）</div>
+            <div class="en">(Where \(P\) is Price, \(AR\) is Average Revenue, and \(MR\) is Marginal Revenue)</div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <p class="zh">正確答案是：<span class="correct-answer">D. 只有 (2)、(4)</span></p>
+        <p class="en">The correct answer is: <span class="correct-answer">D. (2) and (4) only</span></p>
+
+        <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0;">
+
+        <h3>逐項分析 (Step-by-Step Breakdown)</h3>
+
+        <p class="zh"><strong>陳述 (1)：市場內可以有小量或大量的買家和賣家。 ❌ (錯誤)</strong><br>
+        壟斷性競爭市場「必須」有大量的買家和賣家。如果只有「小量」賣家，那屬於寡頭壟斷 (Oligopoly) 的特徵。因此此陳述不準確。</p>
+        <p class="en"><strong>Statement (1): There can be a few or many buyers and sellers in the market. ❌ (Incorrect)</strong><br>
+        A monopolistically competitive market "must" have MANY buyers and sellers. If there are only "a few" sellers, that is a characteristic of an Oligopoly. Therefore, this statement is inaccurate.</p>
+
+        <p class="zh"><strong>陳述 (2)：賣家屬尋價者。 ✅ (正確)</strong><br>
+        因為產品是異質的（例如不同品牌的奶茶），即使某間店稍微加價，也不會流失所有顧客。他們可以根據市場需求尋找利潤極大化的價格 \(P\)，所以是尋價者。</p>
+        <p class="en"><strong>Statement (2): The sellers are price searchers. ✅ (Correct)</strong><br>
+        Because products are differentiated (e.g., different brands of milk tea), even if a shop slightly raises its price, it will not lose all its customers. They can search for the profit-maximizing price \(P\) based on market demand, making them price searchers.</p>
+
+        <p class="zh"><strong>陳述 (3)：賣家所提供的物品及服務屬同質的。 ❌ (錯誤)</strong><br>
+        「同質產品」(Homogeneous products) 是完全競爭市場 (Perfect Competition) 的特徵。壟斷性競爭的關鍵在於產品差異化 (Product Differentiation)，即產品是異質的。</p>
+        <p class="en"><strong>Statement (3): The goods and services provided by the sellers are homogeneous. ❌ (Incorrect)</strong><br>
+        "Homogeneous products" are a characteristic of Perfect Competition. The key to monopolistic competition is product differentiation, meaning the products are heterogeneous.</p>
+
+        <p class="zh"><strong>陳述 (4)：該市場是自由進入和退出的。 ✅ (正確)</strong><br>
+        與完全競爭一樣，壟斷性競爭市場沒有高昂的入場門檻（例如專利、龐大資本限制），新廠商可以自由進入市場。</p>
+        <p class="en"><strong>Statement (4): There are free entry and exit in the market. ✅ (Correct)</strong><br>
+        Like perfect competition, monopolistic competition lacks high barriers to entry (e.g., patents, massive capital constraints). New firms can freely enter the market.</p>
+    </div>
+
+    <div class="section-card">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這是一條標準的「特徵配對題」。解決此類題目的<strong>關鍵樞紐 (Pivot Point)</strong> 在於分辨不同市場結構之間微小而決定性的差異。</p>
+        <p class="en">This is a standard "characteristic matching" question. The <strong>Pivot Point</strong> to solving this type of question lies in distinguishing the subtle yet decisive differences between various market structures.</p>
+        
+        <ul style="padding-left: 20px;">
+            <li><span class="zh"><strong>誤導點 (Distractor)：</strong> 陳述 (1) 中的「小量或大量」是一個文字陷阱。學生常常記得「大量」，但看漏了題目加入了「小量」這個令整句陳述變成錯誤的詞語。</span><br>
+                <span class="en"><strong>Distractor:</strong> The phrase "a few or many" in statement (1) is a word trap. Students often remember "many" but overlook that the inclusion of "a few" makes the entire statement false.</span>
+            </li>
+            <li><span class="zh"><strong>核心考點：</strong> 分清「同質」(Homogeneous) 與「異質」(Heterogeneous)。只要看到「壟斷性競爭」，條件反射就應該是「異質產品 + 尋價者」。</span><br>
+                <span class="en"><strong>Core focus:</strong> Differentiating between "Homogeneous" and "Heterogeneous". Whenever you see "Monopolistic Competition," your reflex should be "Heterogeneous products + Price searchers."</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-card" style="border-left: 5px solid var(--danger);">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p class="zh"><strong>⚠️ 概念混淆：名字帶有「壟斷」，就以為是單一賣家？</strong><br>
+        很多同學會被「壟斷性競爭」中的「壟斷」(Monopolistic) 二字誤導，以為它具有高進入障礙或只有少數賣家。事實上，這裡的「壟斷」僅指廠商對自己「獨特的品牌」有微小的壟斷力（定價權），市場整體的競爭依然非常激烈（大量賣家、自由進出）。</p>
+        
+        <p class="en"><strong>⚠️ Conceptual Confusion: Does the word "Monopolistic" mean a single seller?</strong><br>
+        Many students are misled by the word "Monopolistic", thinking it involves high entry barriers or few sellers. In fact, "monopolistic" here only refers to the firm having a tiny degree of monopoly power (pricing power) over its own "unique brand". The overall market remains highly competitive (many sellers, free entry/exit).</p>
+    </div>
+
+    <div class="section-card">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="qna-box">
+            <div class="qna-q">
+                <span class="zh">學生問：既然市場有「大量賣家」且「自由進出」，為甚麼他們不是受價者 (Price takers) 而是尋價者 (Price searchers)？</span><br>
+                <span class="en">Student: Since the market has "many sellers" and "free entry/exit", why aren't they price takers instead of price searchers?</span>
+            </div>
+            <div class="qna-a">
+                <span class="zh"><strong>老師答：</strong> 關鍵在於<strong>產品異質 (Product Differentiation)</strong>。在完全競爭市場中，產品是完全一樣的（同質），所以只能做受價者。但在壟斷性競爭中，你的產品有獨特之處（例如獨家秘方、包裝漂亮、地點方便）。這種獨特性建立了品牌忠誠度，令你可以稍微調整價格而不流失所有客人。因此，面對一條下斜的需求曲線，你成為了尋價者。</span><br>
+                <span class="en"><strong>Tutor:</strong> The key is <strong>Product Differentiation</strong>. In perfect competition, products are identical (homogeneous), so firms must be price takers. But in monopolistic competition, your product has unique features (e.g., secret recipe, nice packaging, convenient location). This uniqueness builds brand loyalty, allowing you to slightly adjust prices without losing all customers. Thus, facing a downward-sloping demand curve, you become a price searcher.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card" style="border-left: 5px solid var(--warning);">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p class="zh"><strong>💡 排除法 (Process of Elimination) 速解：</strong></p>
+        <p class="en"><strong>💡 Quick solve using Process of Elimination:</strong></p>
+        
+        <ol>
+            <li>
+                <div class="zh">考試時，先找最明顯錯誤的陳述。陳述 (3) 說「同質」，我們知道這絕對是完全競爭的專利。</div>
+                <div class="en">In the exam, find the most obviously wrong statement first. Statement (3) says "homogeneous," which we know is exclusively a trait of perfect competition.</div>
+            </li>
+            <li>
+                <div class="zh">剔除 (3) 後，馬上刪去選項 A 和 C。只剩下 B (1,4) 和 D (2,4)。</div>
+                <div class="en">After eliminating (3), cross out options A and C immediately. Only B (1,4) and D (2,4) remain.</div>
+            </li>
+            <li>
+                <div class="zh">現在只需比較陳述 (1) 和 (2)。陳述 (1) 有「小量」這個字，明顯描述寡頭壟斷。剔除 (1)。</div>
+                <div class="en">Now just compare statements (1) and (2). Statement (1) includes the word "a few", which clearly describes an oligopoly. Eliminate (1).</div>
+            </li>
+            <li>
+                <div class="zh">答案必然是 D。甚至不用仔細看 (4) 就能找出答案，節省時間！</div>
+                <div class="en">The answer must be D. You find the answer without even analyzing (4) deeply, saving precious time!</div>
+            </li>
+        </ol>
+    </div>
+
+</body>
+</html>

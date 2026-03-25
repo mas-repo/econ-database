@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #1e3a8a;
+            --bg-gray: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --correct-green: #10b981;
+            --warning-orange: #f59e0b;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-top: 0;
+        }
+
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        /* 1. Header Box */
+        .header-box {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 20px 25px;
+        }
+        .header-box h1 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 2. Question Box */
+        .question-box {
+            font-size: 1.1rem;
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: var(--bg-gray);
+            border-radius: 5px;
+        }
+
+        /* 3. Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.2rem;
+        }
+
+        /* 4. Analysis Box */
+        .analysis-box .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .correct-answer-badge {
+            display: inline-block;
+            background-color: var(--correct-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 6. Mistakes Box */
+        .mistakes-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning-orange);
+        }
+
+        /* 8. Tricks Box */
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+        }
+
+        /* Bilingual Text Formatting */
+        .en-text {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .zh-text {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .section {
+                padding: 15px;
+            }
+            .header-box h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="header-box">
+        <h1>HKDSE Economics Analysis: Aggregate Demand</h1>
+        <div class="tags">
+            <span class="tag"><strong>Topic:</strong> 總需求與總供應 (AD-AS Model)</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★☆☆☆</span>
+            <span class="tag"><strong>Key Concepts:</strong> Aggregate Demand, Export of Services, GDP Deflator</span>
+        </div>
+    </div>
+
+    <div class="section question-box">
+        <h2>2. 題目 (The Question)</h2>
+        <p class="zh-text">若 ______________，香港的總需求曲線會向左移。</p>
+        <p class="en-text">The aggregate demand curve of Hong Kong will shift to the left if ________.</p>
+        
+        <ul class="options-list">
+            <li>
+                <div class="zh-text">A. 本地生產總值內含平減指數持續上升</div>
+                <div class="en-text">A. the implicit GDP deflator rises continuously.</div>
+            </li>
+            <li>
+                <div class="zh-text">B. 政府提高全體公務員的退休年齡</div>
+                <div class="en-text">B. the government raises the retirement age of all civil servants.</div>
+            </li>
+            <li>
+                <div class="zh-text"><strong>C. 內地到港旅客人數下降</strong></div>
+                <div class="en-text"><strong>C. the number of tourists from the Mainland decreases.</strong></div>
+            </li>
+            <li>
+                <div class="zh-text">D. 內地股市興旺</div>
+                <div class="en-text">D. the Mainland stock market booms.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section concept-box">
+        <h2>3. 概念重溫 (Concept Review)</h2>
+        
+        <p class="zh-text"><strong>總需求 (Aggregate Demand, AD)</strong> 是指在不同物價水平下，經濟體系內各部門對本地實質產出的總需求量。其公式為：</p>
+        <p class="en-text"><strong>Aggregate Demand (AD)</strong> is the total quantity of real domestic output demanded by all sectors in an economy at various price levels. The formula is:</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + NX $$
+        </div>
+        
+        <ul>
+            <li>$C$: 私人消費開支 (Private Consumption Expenditure)</li>
+            <li>$I$: 投資開支 (Investment Expenditure)</li>
+            <li>$G$: 政府消費開支 (Government Consumption Expenditure)</li>
+            <li>$NX$: 淨出口 (Net Exports) = 出口 ($X$) - 進口 ($M$)</li>
+        </ul>
+
+        <p class="zh-text"><strong>服務輸出 (Export of Services):</strong> 當非本地居民（例如遊客）在本地消費，這筆開支會被計算為本地的服務輸出，屬於出口 ($X$) 的一部分。</p>
+        <p class="en-text"><strong>Export of Services:</strong> When non-residents (e.g., tourists) spend money locally, this expenditure is counted as the local economy's export of services, which is part of exports ($X$).</p>
+
+        <p class="zh-text"><strong>曲線的移動 (Shift) vs. 沿著曲線移動 (Movement):</strong><br>
+        只有物價水平 ($P$) 的改變會導致<strong>沿著</strong>總需求曲線移動。其他因素（例如消費意欲、$C, I, G, NX$ 的外生改變）才會導致整條總需求曲線<strong>平移 (Shift)</strong>。</p>
+        <p class="en-text"><strong>Shift vs. Movement along the curve:</strong><br>
+        Only a change in the price level ($P$) causes a <strong>movement along</strong> the AD curve. Changes in other factors (like propensity to consume, exogenous changes in $C, I, G, NX$) will cause the entire AD curve to <strong>shift</strong>.</p>
+    </div>
+
+    <div class="section analysis-box">
+        <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <div class="correct-answer-badge">Correct Answer / 正確答案: Option C</div>
+
+        <div class="option-analysis">
+            <h3 class="zh-text">選項 A 分析 (Option A Analysis) - 錯誤 (Incorrect)</h3>
+            <p class="zh-text">「本地生產總值內含平減指數 (GDP Deflator)」是量度一般物價水平 ($P$) 的指標。指數持續上升代表物價水平上升。根據經濟學原理，物價水平的改變只會導致<strong>沿著</strong>總需求曲線向上移動，而不會令曲線左右平移。</p>
+            <p class="en-text">The "implicit GDP deflator" is an indicator of the general price level ($P$). A continuous rise means the price level is increasing. According to economic principles, a change in the price level only causes an upward <strong>movement along</strong> the AD curve, not a shift.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h3 class="zh-text">選項 B 分析 (Option B Analysis) - 錯誤 (Incorrect)</h3>
+            <p class="zh-text">提高退休年齡會增加經濟體系的勞動人口數量。這會使長期及短期總供應曲線 (LRAS & SRAS) 向右移。雖然這可能間接影響未來的消費，但它不是直接導致總需求 (AD) 曲線向左移的原因。</p>
+            <p class="en-text">Raising the retirement age increases the labor force in the economy. This primarily shifts the long-run and short-run aggregate supply curves (LRAS & SRAS) to the right. While it might have indirect future effects, it is not a direct factor that shifts the aggregate demand (AD) curve to the left.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h3 class="zh-text">選項 C 分析 (Option C Analysis) - 正確 (Correct)</h3>
+            <p class="zh-text">內地遊客來港消費屬於香港的「服務輸出」(Export of services)。旅客人數下降意味著他們在香港的消費減少，導致香港的出口 ($X$) 下降。因為淨出口 ($NX = X - M$) 下降，總需求 ($AD$) 會減少，總需求曲線向左平移。</p>
+            <p class="en-text">Spending by Mainland tourists in Hong Kong is classified as Hong Kong's "export of services". A decrease in tourist numbers means less spending in Hong Kong, leading to a drop in Hong Kong's exports ($X$). Since net exports ($NX = X - M$) decrease, aggregate demand ($AD$) falls, shifting the AD curve to the left.</p>
+        </div>
+
+        <div class="option-analysis" style="border-bottom: none;">
+            <h3 class="zh-text">選項 D 分析 (Option D Analysis) - 錯誤 (Incorrect)</h3>
+            <p class="zh-text">內地股市興旺會產生財富效應，增加內地居民的財富與消費意欲。這可能導致他們增加進口（即增加對香港貨品或服務的需求），使香港的出口 ($X$) 增加。這會使香港的總需求曲線向<strong>右</strong>移，而非向左移。</p>
+            <p class="en-text">A booming Mainland stock market creates a wealth effect, increasing the wealth and propensity to consume of Mainland residents. This could lead them to import more (increasing demand for HK goods or services), thus increasing Hong Kong's exports ($X$). This would shift Hong Kong's AD curve to the <strong>right</strong>, not left.</p>
+        </div>
+    </div>
+
+    <div class="section decomp-box">
+        <h2>5. 題目拆解 (Problem Decomposition)</h2>
+        <p class="zh-text"><strong>解題樞紐 (The Pivot Point):</strong> 看到「總需求曲線向左移」，大腦應立刻浮現兩個條件：<br>
+        1. 必須是物價水平 ($P$) 以外的因素。<br>
+        2. 必須導致 $C, I, G$ 或 $NX$ 其中一項下跌。</p>
+        <p class="en-text"><strong>The Pivot Point:</strong> When you see "AD curve shifts to the left", your brain should immediately recall two conditions:<br>
+        1. It must be a factor OTHER than the price level ($P$).<br>
+        2. It must cause a decrease in $C, I, G$, or $NX$.</p>
+        
+        <p class="zh-text"><strong>干擾資訊 (Distractors):</strong> 選項 A 試圖用艱澀的名詞「內含平減指數」來混淆學生，其實它只是「物價」的代名詞，秒殺排除。選項 B 考驗你是否能分清 AD（需求面）和 AS（供應面）的決定因素。</p>
+        <p class="en-text"><strong>Distractors:</strong> Option A uses the complex term "implicit GDP deflator" to confuse students, but it's just a synonym for "price level", so it can be eliminated instantly. Option B tests your ability to distinguish between AD (demand-side) and AS (supply-side) determinants.</p>
+    </div>
+
+    <div class="section mistakes-box">
+        <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p class="zh-text"><strong>陷阱一：混淆物價變動與非物價變動</strong><br>
+        學生常誤以為「物價上升 = 需求減少 = 曲線向左移」。錯！物價 ($P$) 的改變只會導致<strong>點在曲線上的移動 (Movement)</strong>，絕不會令整條 AD 曲線移動。</p>
+        <p class="en-text"><strong>Trap 1: Confusing Price Changes with Non-Price Changes</strong><br>
+        Students often mistakenly think "Price increases = Demand decreases = Curve shifts left". Wrong! A change in price ($P$) only causes a <strong>movement along the curve</strong>; it NEVER shifts the entire AD curve.</p>
+        
+        <p class="zh-text"><strong>陷阱二：忘記「旅遊業」是出口</strong><br>
+        很多同學直覺以為「出口」必須是運送到外國的實體貨物。在經濟學中，外國人在本地消費（如住酒店、購物）皆計算為「服務輸出」(Export of Services)。</p>
+        <p class="en-text"><strong>Trap 2: Forgetting that "Tourism" is an Export</strong><br>
+        Many students intuitively think "exports" must be physical goods shipped abroad. In economics, foreign consumption locally (e.g., hotel stays, shopping) is calculated as an "Export of Services".</p>
+    </div>
+
+    <div class="section qa-box">
+        <h2>7. 學生常見疑問 (Student Q&A)</h2>
+        <p class="zh-text"><strong>Q: 為什麼選項 D (內地股市興旺) 不是增加香港的投資 ($I$)，而是增加出口 ($X$)？</strong></p>
+        <p class="zh-text"><strong>A:</strong> 內地股市興旺，直接增加的是「內地居民」的財富。內地居民變得更富有，會增加他們的消費。當他們增加消費時，可能包括來港旅遊或購買香港貨品，這對香港而言是出口 ($X$)。本地投資 ($I$) 主要是指本地企業購買機器、廠房或存貨的開支。</p>
+        <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+        <p class="en-text"><strong>Q: Why doesn't Option D (Mainland stock market boom) increase Hong Kong's investment ($I$) instead of exports ($X$)?</strong></p>
+        <p class="en-text"><strong>A:</strong> A boom in the Mainland stock market directly increases the wealth of "Mainland residents". As they become wealthier, their consumption increases. This increased consumption may include traveling to Hong Kong or buying HK goods, which constitutes exports ($X$) for Hong Kong. Local investment ($I$) mainly refers to local firms' expenditure on machinery, plants, or inventory.</p>
+    </div>
+
+    <div class="section trick-box">
+        <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p class="zh-text"><strong>速解法 (The "CIGX-M" Checklist Method):</strong><br>
+        在選擇題見到「AD 曲線平移」，立即在試卷邊緣寫下 <code>C + I + G + X - M</code>。<br>
+        1. 掃描選項有無「物價 / 通脹 / 平減指數」，有就直接劃掉 (A出局)。<br>
+        2. 掃描選項是否關於「生產力 / 勞動人口 / 成本」，有就劃掉因為那是 AS 因素 (B出局)。<br>
+        3. 剩下 C 和 D。遊客減少 = $X$ 跌 = AD 左移。股市旺 = $X$ 升 = AD 右移。答案秒選 C。</p>
+        <br>
+        <p class="en-text"><strong>Shortcut (The "CIGX-M" Checklist Method):</strong><br>
+        When you see "AD curve shift" in an MC question, immediately write down <code>C + I + G + X - M</code> on the margin.<br>
+        1. Scan options for "Price level / Inflation / Deflator". Cross them out immediately (Option A is out).<br>
+        2. Scan for "Productivity / Labor Force / Input Costs". Cross them out because they are AS factors (Option B is out).<br>
+        3. Only C and D remain. Less tourists = $X$ drops = AD shifts left. Stock boom = $X$ rises = AD shifts right. Instantly choose C.</p>
+    </div>
+</div>
+
+</body>
+</html>

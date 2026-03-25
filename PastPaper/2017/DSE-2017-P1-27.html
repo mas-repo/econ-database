@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Multiple Choice Analysis</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #f0f9ff;
+            --blue-border: #0ea5e9;
+            --primary-orange: #f59e0b;
+            --light-purple: #fdf4ff;
+            --purple-border: #d946ef;
+            --light-green: #f0fdf4;
+            --green-border: #22c55e;
+            --light-red: #fff1f2;
+            --red-border: #f43f5e;
+            --light-yellow: #fffbeb;
+            --yellow-border: #fbbf24;
+            --light-indigo: #faf5ff;
+            --indigo-border: #a855f7;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, "Microsoft JhengHei", "PingFang HK", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        .section-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .header-box {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .header-box h1, .header-box h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* Specific Box Styles */
+        .question-box { border-left: 6px solid var(--primary-orange); }
+        .concept-box { background-color: var(--light-blue); border-left: 6px solid var(--blue-border); }
+        .analysis-box { background-color: var(--light-purple); border-left: 6px solid var(--purple-border); }
+        .decomp-box { background-color: var(--light-green); border-left: 6px solid var(--green-border); }
+        .mistake-box { background-color: var(--light-red); border-left: 6px solid var(--red-border); }
+        .qa-box { background-color: var(--light-yellow); border-left: 6px solid var(--yellow-border); }
+        .trick-box { background-color: var(--light-indigo); border-left: 6px solid var(--indigo-border); }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            border-left: 3px solid #d1d5db;
+            padding-left: 12px;
+            font-style: italic;
+        }
+
+        .option-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-radius: 5px;
+        }
+
+        .correct-option {
+            background-color: #dcfce7;
+            border: 1px solid #4ade80;
+            font-weight: bold;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-container header-box">
+        <h1>HKDSE Economics Tutor Analysis</h1>
+        <h3>1. Topic & Overview (課題與概覽)</h3>
+        <div>
+            <span class="tag"><strong>Topic:</strong> Macroeconomics - Unemployment & Labour Force</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆ (Moderate)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> 
+            <span class="tag">Labour Force (勞動人口)</span>
+            <span class="tag">Unemployment Rate (失業率)</span>
+            <span class="tag">Employed Population (就業人口)</span>
+        </div>
+    </div>
+
+    <div class="section-container question-box">
+        <h2>2. The Question (題目)</h2>
+        <div class="zh">
+            政府推出「輸入中國籍香港永久性居民第二代計劃」以應付人口老化及勞動人口下降的挑戰。<br><br>
+            若一些香港永久性居民的第二代回流香港填補了一些長期無人問津的職位，香港的勞動人口會 ___________ 而失業率會 ___________。
+        </div>
+        <div class="en">
+            The government launches ‘Admission Scheme for the Second Generation of Chinese Hong Kong Permanent Residents’ in order to meet the challenge of ageing population and declining workforce.<br><br>
+            If some second-generation of Hong Kong permanent residents returned to Hong Kong to fill up the posts which have been vacant for a long time, Hong Kong’s labour force would __________ and the unemployment rate would __________.
+        </div>
+        
+        <ul class="option-list">
+            <li class="option-item">A. 上升 …… 維持不變 (rise …… remain unchanged)</li>
+            <li class="option-item correct-option">B. 上升 …… 下跌 (rise …… fall)</li>
+            <li class="option-item">C. 下降 …… 維持不變 (fall …… remain unchanged)</li>
+            <li class="option-item">D. 下降 …… 下跌 (fall …… fall)</li>
+        </ul>
+    </div>
+
+    <div class="section-container concept-box">
+        <h2>3. Concept Review (概念重溫)</h2>
+        <div class="zh">要拆解這條題目，我們必須清楚了解勞動人口和失業率的定義及公式。</div>
+        <div class="en">To solve this question, we must clearly understand the definitions and formulas for the labour force and unemployment rate.</div>
+        
+        <hr>
+        
+        <h3>1. 勞動人口 (Labour Force)</h3>
+        <div class="zh"><strong>定義：</strong> 15歲或以上，願意且有能力工作的人口。它是由「就業人口」($E$) 和「失業人口」($U$) 組成的總和。</div>
+        <div class="en"><strong>Definition:</strong> The population aged 15 or above who are willing and able to work. It is the sum of the Employed population ($E$) and the Unemployed population ($U$).</div>
+        <div class="math-block">
+            $$LF = E + U$$
+        </div>
+
+        <h3>2. 失業率 (Unemployment Rate)</h3>
+        <div class="zh"><strong>定義：</strong> 失業人口佔總勞動人口的百分比。</div>
+        <div class="en"><strong>Definition:</strong> The percentage of the unemployed population out of the total labour force.</div>
+        <div class="math-block">
+            $$Unemployment Rate = \frac{U}{LF} \times 100\% = \frac{U}{E + U} \times 100\%$$
+        </div>
+    </div>
+
+    <div class="section-container analysis-box">
+        <h2>4. Detailed Analysis (答案與詳細分析)</h2>
+        <h3 style="color: var(--purple-border);">Correct Answer: Option B (正確答案：B)</h3>
+        
+        <div class="zh"><strong>步驟一：分析「就業人口」($E$) 的變化</strong><br>這些第二代回流香港並「填補了職位」。這意味著他們成為了香港的就業人士。因此，就業人口 ($E$) <strong>上升</strong>。</div>
+        <div class="en"><strong>Step 1: Analyze the change in Employed Population ($E$)</strong><br>The second-generation returnees came to Hong Kong and "filled up the posts." This means they became employed workers in HK. Therefore, the employed population ($E$) <strong>rises</strong>.</div>
+
+        <div class="zh"><strong>步驟二：分析「失業人口」($U$) 的變化</strong><br>這些長期空缺的職位原本是無人問津的，沒有本地勞工因為這些回流人士而被解僱。同時，這些回流人士之前並不在香港的勞動市場內（他們不在香港找工作），所以他們從未被計入香港的失業人口中。因此，失業人口 ($U$) <strong>維持不變</strong>。</div>
+        <div class="en"><strong>Step 2: Analyze the change in Unemployed Population ($U$)</strong><br>These long-vacant posts were unfilled, and no local workers were fired because of the returnees. Furthermore, these returnees were previously outside the HK labour market (not seeking jobs in HK), so they were never counted as unemployed in HK. Therefore, the unemployed population ($U$) <strong>remains unchanged</strong>.</div>
+
+        <div class="zh"><strong>步驟三：推導「勞動人口」($LF$) 的變化</strong><br>根據公式 $LF = E + U$，既然 $E$ 上升而 $U$ 不變，整體的勞動人口 ($LF$) 必然 <strong>上升</strong>。</div>
+        <div class="en"><strong>Step 3: Deduce the change in Labour Force ($LF$)</strong><br>According to the formula $LF = E + U$, since $E$ rises and $U$ remains unchanged, the total labour force ($LF$) must <strong>rise</strong>.</div>
+
+        <div class="zh"><strong>步驟四：推導「失業率」的變化</strong><br>失業率公式為 $\frac{U}{LF}$。在分子 ($U$) 維持不變，而分母 ($LF$) 增加的情況下，整個分數的值必然會 <strong>下跌</strong>。</div>
+        <div class="en"><strong>Step 4: Deduce the change in Unemployment Rate</strong><br>The unemployment rate formula is $\frac{U}{LF}$. With the numerator ($U$) remaining unchanged and the denominator ($LF$) increasing, the value of the entire fraction must <strong>fall</strong>.</div>
+        
+        <hr>
+        <h3>選項排除 (Option Elimination):</h3>
+        <ul>
+            <li><strong>A:</strong> 錯誤。失業率應該下跌，而不是維持不變。(Wrong. Unemployment rate falls, not remains unchanged.)</li>
+            <li><strong>B:</strong> 正確。勞動人口上升，失業率下跌。(Correct. LF rises, UR falls.)</li>
+            <li><strong>C & D:</strong> 錯誤。勞動人口是上升的，並非下降。(Wrong. The labour force rises, not falls.)</li>
+        </ul>
+    </div>
+
+    <div class="section-container decomp-box">
+        <h2>5. Problem Decomposition (題目拆解)</h2>
+        
+        <div class="zh"><strong>破題關鍵 (The Pivot Point):</strong><br>題目中最重要的一句是：「回流香港填補了一些長期無人問津的職位」。這句話同時告訴我們兩個隱藏資訊：第一，有新血加入並成功就業（$E$ 增加）；第二，因為是「長期無人問津」的空缺，所以並沒有改變現有的失業人數（$U$ 不變）。</div>
+        <div class="en"><strong>The Pivot Point:</strong><br>The most crucial phrase is: "returned to Hong Kong to fill up the posts which have been vacant for a long time." This implies two hidden facts: First, new blood joined and became employed ($E$ increases); Second, because the posts were "vacant for a long time", filling them did not change the existing number of unemployed people ($U$ remains unchanged).</div>
+
+        <br>
+
+        <div class="zh"><strong>干擾資訊 (Distractors):</strong><br>題目開頭提到的「人口老化」、「計劃名稱」等都只是背景資料。做題時不要被這些長篇幅的字眼嚇倒，請直接將目光鎖定在「人的流動」和「職位狀態」上。</div>
+        <div class="en"><strong>Distractors:</strong><br>The "ageing population" and the specific name of the scheme are merely background information. Do not be intimidated by lengthy contexts. Always focus directly on the "flow of people" and the "employment status."</div>
+    </div>
+
+    <div class="section-container mistake-box">
+        <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="zh"><strong>陷阱一：誤將「職位空缺」等同於「失業人口」</strong><br>許多同學認為「有人填補了空缺」就代表「失業人數減少」。這是一個嚴重的概念錯誤！「職位空缺」是指公司請不到人，而「失業人口」是指有人找不到工作。外地人來港填補空缺，減少的是「職位空缺」，本地的「失業人口」數字並未因此減少。</div>
+        <div class="en"><strong>Trap 1: Confusing "Job Vacancies" with "Unemployed Population"</strong><br>Many students think that "someone filling a vacancy" means "the number of unemployed decreases." This is a major conceptual error! A "vacancy" means a firm cannot find a worker, while "unemployed" means a worker cannot find a job. When outsiders come to fill vacancies, the number of vacancies decreases, but the local unemployed population does not.</div>
+    </div>
+
+    <div class="section-container qa-box">
+        <h2>7. Student Q&A (學生常見疑問)</h2>
+        
+        <div class="zh"><strong>學生問：</strong> 如果這些第二代回流香港，但找不到工作，結果會怎樣？</div>
+        <div class="en"><strong>Student Asks:</strong> What if these second-generation individuals returned to HK but could NOT find a job?</div>
+        
+        <div class="zh"><strong>導師答：</strong> 好問題！如果他們回流並開始尋找工作，但暫時未獲聘用，他們就會被計入「失業人口」($U$)。在這種情況下，$U$ 上升，導致 $LF$ 上升。而在分子和分母同時增加相同數量的情況下（數學上，由於原本的失業率必定小於 100%），失業率將會 <strong>上升</strong>。</div>
+        <div class="en"><strong>Tutor Answers:</strong> Great question! If they returned, actively sought work, but remained jobless, they would be counted as "Unemployed" ($U$). In that case, $U$ increases, causing $LF$ to increase. When both the numerator and denominator increase by the same amount (and since the original UR is < 100%), the overall unemployment rate would mathematically <strong>rise</strong>.</div>
+    </div>
+
+    <div class="section-container trick-box">
+        <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        
+        <div class="zh"><strong>速解法 (The Shortcut): 份數邏輯 (Fraction Logic)</strong><br>在選擇題中，我們可以使用極速的數學直覺來判斷。</div>
+        <div class="en"><strong>The Shortcut: Fraction Logic</strong><br>In multiple-choice questions, we can use quick mathematical intuition.</div>
+        
+        <ul>
+            <li class="zh">看到「有人從外地直接來港就業」 $\rightarrow$ 勞動人口一定變大 (排除 C 和 D)。</li>
+            <li class="en">See "people coming from outside directly into employment" $\rightarrow$ Labour force must grow (Eliminate C and D).</li>
+            <li class="zh">失業率是一個分數 (失業人數 $\div$ 勞動人口)。既然上面 (分子) 沒變，下面 (分母) 變大了，這塊餅被分成了更多份，那失業率這個數值必然變小 (下跌)。瞬間選出答案 B！</li>
+            <li class="en">Unemployment rate is a fraction (Unemployed $\div$ Labour Force). Since the top (numerator) is unchanged and the bottom (denominator) grows larger, the fraction's value must shrink (fall). Instantly choose Option B!</li>
+        </ul>
+    </div>
+
+</body>
+</html>
