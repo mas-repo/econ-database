@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Labour Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Base Styling & Typography */
+        body {
+            font-family: 'Segoe UI', "Microsoft JhengHei", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f3f4f6;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 { color: #1e3a8a; margin-top: 1.5em; }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #e5e7eb; padding-bottom: 15px; margin-top: 0; }
+        h2 { font-size: 1.4em; }
+        
+        /* Badges */
+        .badge { display: inline-block; padding: 5px 12px; border-radius: 15px; font-size: 0.85em; font-weight: 600; margin-right: 8px; margin-bottom: 10px; }
+        .badge-topic { background-color: #dbeafe; color: #1e40af; }
+        .badge-diff { background-color: #fef3c7; color: #92400e; }
+        .badge-key { background-color: #d1fae5; color: #065f46; }
+
+        /* Bilingual Styling */
+        .zh { color: #1f2937; margin-bottom: 4px; }
+        .en { color: #4b5563; font-style: italic; margin-top: 0; margin-bottom: 16px; font-size: 0.95em; }
+
+        /* Specific Boxes */
+        .question-box {
+            background-color: #fefce8;
+            border: 1px solid #fde047;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafaf9;
+        }
+        
+        /* Options Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            border: 1px solid #f3f4f6;
+        }
+        .correct-opt { border-left: 4px solid #10b981; }
+        .wrong-opt { border-left: 4px solid #ef4444; }
+        .status { font-weight: bold; }
+        .status-correct { color: #10b981; }
+        .status-wrong { color: #ef4444; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Multiple-Choice Analysis</h1>
+    <div>
+        <span class="badge badge-topic">Topic: Factors of Production (生產要素)</span>
+        <span class="badge badge-diff">Difficulty: ★★☆☆☆</span>
+    </div>
+    <div>
+        <span class="badge badge-key">Key Concept: Labour Supply (勞力供應)</span>
+        <span class="badge badge-key">Key Concept: Labour Productivity (勞工生產力)</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh"><strong>在下列哪種情況下，某國的勞力供應會增加？</strong></p>
+        <p class="en">The labour supply of a country will increase if</p>
+        
+        <p class="zh">A. 向現有的勞動人口提供更多訓練。</p>
+        <p class="en">A. more training is provided for the existing labour force.</p>
+        
+        <p class="zh">B. 法定最低的工作年齡由16歲降低至15歲。</p>
+        <p class="en">B. the legal minimum working age is lowered from 16 to 15.</p>
+        
+        <p class="zh">C. 外國直接投資增加。</p>
+        <p class="en">C. foreign direct investment increases.</p>
+        
+        <p class="zh">D. 政府提高薪俸稅率。</p>
+        <p class="en">D. the government increases the salaries tax rate.</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>什麼是勞力供應 (Labour Supply)？</strong><br>
+        在經濟學中，勞力供應是指在特定時間內，勞工願意並能夠提供的**總工作時數 (Man-hours)**。它代表了勞動力的「數量」。</p>
+        <p class="en"><strong>What is Labour Supply?</strong><br>
+        In economics, labour supply refers to the total number of **man-hours** that workers are willing and able to provide in a given period. It represents the "quantity" of labour.</p>
+        
+        <div class="math-block">
+            $$ \text{Labour Supply} = \text{Number of Workers} \times \text{Average Working Hours} $$
+            $$ \text{勞力供應} = \text{工作人數} \times \text{平均工作時數} $$
+        </div>
+
+        <p class="zh"><strong>勞力供應 (Labour Supply) vs 勞工生產力 (Labour Productivity)</strong><br>
+        這是一個常見的考試陷阱。勞力供應是指**數量**（工時），而勞工生產力是指勞工的**質素**（例如每工時的產量）。</p>
+        <p class="en"><strong>Labour Supply vs Labour Productivity</strong><br>
+        This is a classic exam trap. Labour supply is about **quantity** (man-hours), whereas labour productivity is about the **quality** of labour (e.g., output per man-hour).</p>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p class="zh"><strong>正確答案：選項 B</strong></p>
+    <p class="en"><strong>Correct Answer: Option B</strong></p>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><span class="status status-wrong">❌ 選項 A 分析：</span> 提供更多訓練會提升勞工的技能和知識（人力資本）。這會增加「勞工生產力」(Labour Productivity)，但**不會**增加工人數量或他們的工作時數。因此，它改變的是質素，而非供應量。</p>
+        <p class="en"><span class="status status-wrong">❌ Option A Analysis:</span> Providing more training improves workers' skills and knowledge (human capital). This increases "Labour Productivity", but it does **not** increase the number of workers or their working hours. Thus, it changes quality, not supply.</p>
+    </div>
+
+    <div class="option-analysis correct-opt">
+        <p class="zh"><span class="status status-correct">✅ 選項 B 分析：</span> 降低法定最低工作年齡（由16歲降至15歲）意味著15歲的青少年現在可以合法投入勞動市場。這擴大了潛在的工作人口庫，直接增加了公式中的 \(\text{Number of Workers}\)（工作人數），從而增加勞力供應。</p>
+        <p class="en"><span class="status status-correct">✅ Option B Analysis:</span> Lowering the legal minimum working age (from 16 to 15) means 15-year-olds can now legally enter the labour market. This expands the pool of potential workers, directly increasing the \(\text{Number of Workers}\) in our formula, thereby increasing the labour supply.</p>
+    </div>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><span class="status status-wrong">❌ 選項 C 分析：</span> 外國直接投資（FDI）增加通常會增加國內的資本數量（例如開設新工廠）。這會增加對勞工的「需求」(Labour Demand)，而不是「供應」(Labour Supply)。</p>
+        <p class="en"><span class="status status-wrong">❌ Option C Analysis:</span> An increase in Foreign Direct Investment (FDI) generally increases the amount of capital in the country (e.g., opening new factories). This increases the "Demand" for labour, not the "Supply" of labour.</p>
+    </div>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><span class="status status-wrong">❌ 選項 D 分析：</span> 提高薪俸稅率會降低勞工的稅後實際收入。這會減低人們工作的意欲（休閒的機會成本下降），導致部分人選擇減少工時或退出勞動市場，從而**減少**勞力供應。</p>
+        <p class="en"><span class="status status-wrong">❌ Option D Analysis:</span> Increasing the salaries tax rate reduces workers' actual after-tax income. This disincentivizes work (the opportunity cost of leisure decreases), causing some people to work fewer hours or leave the labour market, which **decreases** labour supply.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="zh">面對這類題目，你需要找出題目的**關鍵字**（Pivot Point）：<strong>「勞力供應」(Labour Supply)</strong>。這意味著你只需要尋找能改變「總工時」或「工作人數」的因素。</p>
+    <p class="en">When facing this type of question, identify the **Pivot Point**: <strong>"Labour Supply"</strong>. This means you are only looking for factors that change the "total man-hours" or "number of workers".</p>
+    
+    <ul>
+        <li class="zh"><strong>干擾項 A (Distractor A):</strong> 試圖將「供應量」(Quantity) 與「生產力」(Quality) 混淆。</li>
+        <li class="en"><strong>Distractor A:</strong> Attempts to confuse "Quantity" (Supply) with "Quality" (Productivity).</li>
+        <li class="zh"><strong>干擾項 C (Distractor C):</strong> 試圖將「供應」(Supply) 與「需求」(Demand) 混淆。</li>
+        <li class="en"><strong>Distractor C:</strong> Attempts to confuse "Supply" with "Demand".</li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="warning-box">
+        <p class="zh">⚠️ <strong>混淆「勞動力」的質與量</strong><br>
+        很多學生看到「勞動人口」或「訓練」等字眼，就會直覺認為這是好事情，從而選擇 A。謹記：<strong>訓練 = 生產力上升 (質)；人數/工時增加 = 供應上升 (量)。</strong>兩者在經濟學上是完全不同的概念。</p>
+        <p class="en">⚠️ <strong>Confusing the Quality and Quantity of Labour</strong><br>
+        Many students see positive words like "training" and instinctively choose A. Remember: <strong>Training = Increased Productivity (Quality); More people/hours = Increased Supply (Quantity).</strong> These are entirely different concepts in economics.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 如果題目把選項 D 改為「政府降低薪俸稅率」，那 D 會是正確答案嗎？</p>
+        <p class="qa-q" style="font-weight: normal; font-style: italic; color: #b45309;">Q: If Option D was changed to "the government decreases the salaries tax rate", would D be the correct answer?</p>
+        <p class="qa-a zh">A: 是的！如果政府降低薪俸稅率，市民稅後的實際工資會增加，這會吸引更多人投入勞動市場或願意加班（這被稱為替代效應），從而增加整體的勞力供應。</p>
+        <p class="qa-a en">A: Yes! If the government lowers the salaries tax rate, the after-tax real wage increases. This attracts more people to enter the labour market or work overtime (known as the substitution effect), thereby increasing the overall labour supply.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p class="zh"><strong>秒殺技巧 (The Elimination Method)：</strong><br>
+    當題目問及「勞力供應」(Labour Supply) 時，你的大腦應該立即浮現公式：\( \text{Workers} \times \text{Hours} \)。</p>
+    <p class="en"><strong>Speed Trick (The Elimination Method):</strong><br>
+    When a question asks about "Labour Supply", the formula \( \text{Workers} \times \text{Hours} \) should immediately pop into your head.</p>
+    <ol>
+        <li class="zh">看到「訓練」(Training) 或「教育」(Education) 👉 立即劃掉 (這是生產力 Productivity)。</li>
+        <li class="en">See "Training" or "Education" 👉 Cross it out immediately (This is Productivity).</li>
+        <li class="zh">看到「投資」(Investment) 或「資本」(Capital) 👉 立即劃掉 (這是需求 Demand)。</li>
+        <li class="en">See "Investment" or "Capital" 👉 Cross it out immediately (This is Demand).</li>
+        <li class="zh">只剩下 B 和 D，根據稅收的常理推斷即可選出 B。</li>
+        <li class="en">You are left with B and D, and logical deduction regarding taxes easily leads you to B.</li>
+    </ol>
+</div>
+
+</body>
+</html>

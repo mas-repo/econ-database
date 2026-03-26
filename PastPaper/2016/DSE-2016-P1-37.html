@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Unexpected Deflation</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #0c4a6e;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-green: #10b981;
+            --light-green: #ecfdf5;
+            --bg-gray: #f3f4f6;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        h2, h3 {
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        .section {
+            padding: 20px 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+        }
+        .header h2 { color: white; margin-bottom: 10px; }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: white;
+        }
+        .en-translation {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+        }
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-gray);
+        }
+        .correct-ans {
+            background-color: var(--light-green);
+            border: 1px solid var(--primary-green);
+        }
+
+        /* Special Sections */
+        .trap-box {
+            background-color: var(--light-red);
+            border-left: 5px solid var(--primary-red);
+        }
+        .trick-box {
+            background-color: var(--light-green);
+            border-left: 5px solid var(--primary-green);
+        }
+        .qa-box {
+            background-color: #fafafa;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-item:last-child {
+            margin-bottom: 0;
+        }
+        .q-text { font-weight: bold; color: var(--dark-blue); }
+
+        /* Bilingual paragraph spacing */
+        .bilingual-p {
+            margin-bottom: 15px;
+        }
+        .bilingual-en {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="section header">
+        <h2>HKDSE Economics Breakdown</h2>
+        <div>
+            <span class="badge">Topic: 宏觀經濟學 - 通縮的影響 (Macroeconomics - Effects of Deflation)</span>
+            <span class="badge">Difficulty: ⭐⭐⭐⭐</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge">Key Concepts: 實質利率 (Real Interest Rate), 購買力 (Purchasing Power), i-Bonds</span>
+        </div>
+    </div>
+
+    <div class="section question-box">
+        <h3>題目 (The Question)</h3>
+        <p>在非預期通縮期間，下列哪些人士會得益？<br>
+        (1) 香港政府發行的通脹掛鈎債券的持有人<br>
+        (2) 正償還浮息按揭貸款的樓宇業主<br>
+        (3) 正收取固定長俸的人士</p>
+        <p>A. 只有(1)、(2)<br>
+        B. 只有(1)、(3)<br>
+        C. 只有(2)、(3)<br>
+        D. (1)、(2)及(3)</p>
+        
+        <div class="en-translation">
+            <p>Which of the following people will gain in times of unexpected deflation?<br>
+            (1) holders of i-bonds issued by the Hong Kong Government<br>
+            (2) flat owners repaying floating rate mortgage loans<br>
+            (3) pensioners receiving fixed pensions</p>
+            <p>A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <div class="section concept-box">
+        <h3>📖 概念重溫 (Concept Review)</h3>
+        
+        <div class="bilingual-p">
+            <strong>1. 非預期通縮 (Unexpected Deflation):</strong> 
+            當一般物價水平的跌幅大於人們預期時，貨幣的購買力會上升。收取「固定名義金額」的人會得益，而支付「固定名義金額」的人會受損。
+            <div class="bilingual-en">When the general price level falls more than expected, the purchasing power of money increases. Those receiving "fixed nominal amounts" gain, while those paying "fixed nominal amounts" lose.</div>
+        </div>
+
+        <div class="bilingual-p">
+            <strong>2. 費沙方程式 (Fisher Equation):</strong> 
+            這條公式幫助我們理解通脹/通縮如何影響借貸雙方。
+            <div class="bilingual-en">This formula helps us understand how inflation/deflation affects borrowers and lenders.</div>
+        </div>
+        
+        <div class="math-block">
+            $$ r = R - \pi $$
+        </div>
+        
+        <div class="bilingual-p">
+            其中 (Where):<br>
+            $r$ = 實質利率 (Real Interest Rate) — 代表真正的購買力增長 (Represents the true growth in purchasing power).<br>
+            $R$ = 名義利率 (Nominal Interest Rate) — 銀行牌板上的利率 (The stated rate at banks).<br>
+            $\pi$ = 通脹率 (Inflation Rate) — 若為通縮，此數值為負數 (If deflation, this value is negative).
+        </div>
+
+        <div class="bilingual-p">
+            <strong>3. 通脹掛鈎債券 (i-Bonds in HK):</strong>
+            香港的 i-Bond 設計比較特別。它派發的利息是「通脹率」或「固定最低息率」(例如2%)，以<strong>較高者為準</strong>。
+            <div class="bilingual-en">The design of HK i-Bonds is special. It pays interest based on the "inflation rate" or a "fixed minimum rate" (e.g., 2%), <strong>whichever is higher</strong>.</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+        <p><strong>正確答案 (Correct Option): <span style="color: var(--primary-green); font-size: 1.2em;">Option B</span></strong></p>
+
+        <div class="option-analysis">
+            <strong>分析 (1): 香港政府發行的通脹掛鈎債券的持有人 (i-bond holders) — 得益 (Gain) ✅</strong>
+            <p>在通縮期間，通脹率為負數。由於 i-Bond 有「保底」機制（即保證最低固定派息率），投資者會收取固定的名義利息。因為物價下跌，這筆固定利息的實質購買力會上升，所以他們得益。<br>
+            <span class="bilingual-en">During deflation, the inflation rate is negative. Because i-Bonds have a "floor" mechanism (a guaranteed minimum fixed rate), investors will receive a fixed nominal interest. Since the price level drops, the real purchasing power of this fixed interest increases, hence they gain.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <strong>分析 (2): 正償還浮息按揭貸款的樓宇業主 (Floating rate mortgage borrowers) — 沒有得益 (No Gain) ❌</strong>
+            <p>浮息按揭的名義利率 ($R$) 會隨市場情況浮動。當出現通縮時，市場的名義利率通常會向下調整。因此，借款人的實質利息負擔 ($r$) 大致維持不變，他們不會因非預期通縮而獲得額外得益。（留意：如果是「定息」按揭，借款人則會受損）。<br>
+            <span class="bilingual-en">The nominal interest rate ($R$) of floating rate mortgages adjusts with market conditions. When deflation occurs, the market nominal rate usually adjusts downwards. Therefore, the borrower's real interest burden ($r$) remains roughly unchanged, and they do not gain extra benefits from unexpected deflation. (Note: If it were a "fixed-rate" mortgage, the borrower would lose).</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <strong>分析 (3): 正收取固定長俸的人士 (Pensioners receiving fixed pensions) — 得益 (Gain) ✅</strong>
+            <p>長俸的名義金額是固定的。在非預期通縮下，一般物價水平下跌，這筆固定退休金能買到更多的貨品和服務（即實質收入增加），因此他們絕對是得益者。<br>
+            <span class="bilingual-en">The nominal amount of the pension is fixed. Under unexpected deflation, the general price level falls, meaning this fixed pension can buy more goods and services (i.e., real income increases). Therefore, they are absolute winners.</span></p>
+        </div>
+        
+        <p>結論 (Conclusion): 只有 (1) 和 (3) 正確，故答案為 <strong>B</strong>。<br>
+        <span class="bilingual-en">Only (1) and (3) are correct, so the answer is B.</span></p>
+    </div>
+
+    <div class="section">
+        <h3>🔍 題目拆解 (Problem Decomposition)</h3>
+        <div class="bilingual-p">
+            <strong>解題樞紐 (The Pivot Point):</strong><br>
+            要破解這類題目，關鍵在於分辨該資產或負債是「固定 (Fixed)」還是「浮動 (Floating)」。<br>
+            👉 <strong>固定收入/資產</strong>遇上通縮 = 賺了購買力 (Gain)<br>
+            👉 <strong>固定支出/負債</strong>遇上通縮 = 虧了購買力 (Lose)<br>
+            👉 <strong>浮動項目</strong>遇上通縮 = 名義價值跟隨調整，實質價值不變 (No significant gain or loss)
+            <div class="bilingual-en">To crack this type of question, the key is to distinguish whether the asset or liability is "Fixed" or "Floating". Fixed income during deflation = Gain in purchasing power. Floating items adjust, meaning real value remains constant.</div>
+        </div>
+    </div>
+
+    <div class="section trap-box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <div class="bilingual-p">
+            <strong>陷阱 1: 誤解 i-Bond 的運作 (Misunderstanding i-Bonds)</strong><br>
+            很多同學看到「通脹掛鈎」(inflation-linked) 就以為它的購買力永遠維持不變（不得益也不受損）。但考評局經常考的陷阱是：香港的 i-Bond 有<strong>保底固定息率</strong>！所以在通縮時，它會變成一項「固定回報」的資產，從而獲取實質購買力的增長。
+            <div class="bilingual-en">Many students see "inflation-linked" and assume its purchasing power always remains unchanged. But the trap in HKDSE is that HK i-Bonds have a <strong>guaranteed minimum rate</strong>! During deflation, it acts as a "fixed-return" asset, thus gaining real purchasing power.</div>
+        </div>
+        <div class="bilingual-p">
+            <strong>陷阱 2: 混淆「沒有受損」與「得益」(Confusing "Not losing" with "Gaining")</strong><br>
+            對於浮息按揭業主，雖然他們免受了像定息按揭業主那樣的嚴重損失（因為利率會調低），但他們並沒有實質上的「得益」（購買力沒有無故增加）。題目問的是「誰會得益 (Who will gain)」。
+            <div class="bilingual-en">For floating rate mortgagors, although they avoid the severe losses suffered by fixed-rate mortgagors (since rates drop), they do not experience an actual "gain" in purchasing power. The question specifically asks "Who will gain".</div>
+        </div>
+    </div>
+
+    <div class="section qa-box">
+        <h3>🙋 學生常見疑問 (Student Q&A)</h3>
+        <div class="qa-item">
+            <div class="q-text">Q: 如果題目改成「非預期通脹 (Unexpected Inflation)」，答案會是什麼？</div>
+            <div class="bilingual-en" style="margin-bottom: 5px;">Q: What if the question was changed to "Unexpected Inflation"?</div>
+            <div>A: 如果是非預期通脹：<br>
+            (1) i-bond 持有人：派息率跟隨通脹上升，實質購買力維持不變（沒有得益/受損）。<br>
+            (2) 浮息按揭業主：利率跟隨上升，實質負擔維持不變（沒有得益/受損）。<br>
+            (3) 收取固定長俸人士：購買力被通脹蠶食（受損）。<br>
+            所以，沒有人會在此情況下得益。</div>
+        </div>
+    </div>
+
+    <div class="section trick-box">
+        <h3>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <div class="bilingual-p">
+            <strong>秒殺法 (Elimination Method):</strong><br>
+            1. 看到「固定長俸 (Fixed pension)」+「通縮 (Deflation)」，常識告訴我們固定收入在物價下跌時一定最好，所以 (3) 必定正確。直接淘汰 A。<br>
+            2. 看到「浮息 (Floating)」，其特點就是會隨市況調整來抵消通脹/通縮的影響，所以必定不會是「得益」或「受損」的答案。(2) 必定錯。淘汰 C 和 D。<br>
+            3. 瞬間得出答案是 B！完全不需要深度猶豫 i-Bond 的運作。
+            <div class="bilingual-en">
+            1. "Fixed pension" + "Deflation" = definite gain. So (3) must be correct. Eliminate A.<br>
+            2. "Floating" means it adjusts to offset inflation/deflation impacts, so it rarely results in unexpected gains or losses. So (2) is wrong. Eliminate C and D.<br>
+            3. The answer is instantly B! You don't even need to overthink the i-Bond mechanics.
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="text-align: center; color: var(--text-secondary); font-size: 0.9em;">
+        <p>Would you like me to explain more about the difference between fixed and floating interest rates, or provide another similar DSE past paper question for practice?</p>
+    </div>
+
+</div>
+
+</body>
+</html>

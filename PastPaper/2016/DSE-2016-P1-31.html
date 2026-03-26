@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Deposit Creation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --box-border: #cbd5e1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+        /* Boxes styling */
+        .header-box {
+            background-color: #f1f5f9;
+            border-left: 5px solid #475569;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid var(--box-border);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .analysis-box {
+            background-color: #fff;
+            padding: 0;
+        }
+        .option-analysis {
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .correct-answer-highlight {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            border-left: 5px solid #10b981;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8fafc;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .header-box, .question-box, .concept-box, .tips-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📊 Topic: 貨幣與銀行 - 存款創造 (Money & Banking - Deposit Creation)</h2>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> 法定儲備比率 (Required Reserve Ratio), 超額儲備 (Excess Reserves), 實際銀行乘數 (Actual Banking Multiplier), 最高貸款額 (Maximum Loans)</p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p>參閱以下某銀行系統的資產負債表。該系統的超額儲備是 125 百萬元。</p>
+        <table>
+            <tr>
+                <th colspan="2">資產 (百萬元)</th>
+                <th colspan="2">負債 (百萬元)</th>
+            </tr>
+            <tr>
+                <td>儲備</td>
+                <td>250</td>
+                <td>存款</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>貸款</td>
+                <td>250</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p>下列哪項陳述是不正確的？</p>
+        <p>A. 法定儲備比率是 25%。<br>
+        B. 最高的貸款金額是 750 百萬元。<br>
+        C. 該銀行系統能把存款總額擴大至 1 000 百萬元。<br>
+        D. 實際銀行乘數是 4。</p>
+        
+        <hr>
+
+        <p class="en-text">Refer to the following balance sheet of a banking system. Its excess reserve is $125 million.</p>
+        <table>
+            <tr>
+                <th colspan="2">Assets ($ million)</th>
+                <th colspan="2">Liabilities ($ million)</th>
+            </tr>
+            <tr>
+                <td>Reserves</td>
+                <td>250</td>
+                <td>Deposits</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>Loans</td>
+                <td>250</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p class="en-text">Which of the following statements is INCORRECT?</p>
+        <p class="en-text">
+        A. The required reserve ratio is 25%.<br>
+        B. The maximum amount of loans is $750 million.<br>
+        C. The banking system can expand its total deposit to $1 000 million.<br>
+        D. The actual banking multiplier is 4.</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>核心經濟學概念 (Core Economic Concepts)</h3>
+        <p>在解決這類題目時，我們必須清晰理解銀行的資產負債表以及相關的貨幣創造公式。存款創造的基礎在於銀行只保留部分存款作為儲備（法定儲備），其餘可以用作貸款。</p>
+        <p class="en-text">When solving this type of question, we must clearly understand the bank's balance sheet and the related money creation formulas. The foundation of deposit creation lies in banks keeping only a fraction of their deposits as reserves (required reserves) while lending out the rest.</p>
+        
+        <h4>Key Definitions & Formulas (關鍵定義與公式)</h4>
+        <ul>
+            <li><strong>實際儲備 (Actual / Total Reserves):</strong> 銀行目前持有的總儲備金。</li>
+            <div class="math-block">
+                $$ \text{Total Reserves} = \text{Required Reserves} + \text{Excess Reserves} $$
+            </div>
+            
+            <li><strong>法定儲備比率 (Required Reserve Ratio, \(rrr\)):</strong> 中央銀行規定銀行必須保留的存款比例。</li>
+            <div class="math-block">
+                $$ rrr = \frac{\text{Required Reserves}}{\text{Total Deposits}} \times 100\% $$
+            </div>
+
+            <li><strong>最高銀行乘數 (Maximum Banking Multiplier):</strong> 假設沒有超額儲備和現金流失時，存款能擴大的最大倍數。</li>
+            <div class="math-block">
+                $$ \text{Max Multiplier} = \frac{1}{rrr} $$
+            </div>
+
+            <li><strong>實際銀行乘數 (Actual Banking Multiplier):</strong> 銀行系統目前實際的乘數效應。</li>
+            <div class="math-block">
+                $$ \text{Actual Multiplier} = \frac{\text{Actual Deposits}}{\text{Actual Reserves}} $$
+            </div>
+        </ul>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <p><strong>正確答案 (Correct Option): <span style="color: #e11d48; font-size: 1.2em;">Option D</span></strong></p>
+        <p class="en-text">The question asks for the <strong>INCORRECT</strong> statement. Let's analyze each option.</p>
+
+        <div class="option-analysis">
+            <h4>分析選項 A (Analyzing Option A) - TRUE Statement</h4>
+            <p>首先，利用題目提供的數據計算出法定儲備。實際儲備是 250 百萬，超額儲備是 125 百萬。因此，法定儲備 = 250 - 125 = 125 百萬。接着，法定儲備比率 \(rrr = \frac{125}{500} = 25\%\)。選項 A 正確。</p>
+            <p class="en-text">First, calculate the required reserves using the given data. Actual reserves are 250m, and excess reserves are 125m. Therefore, Required Reserves = 250 - 125 = 125m. Then, \(rrr = \frac{125}{500} = 25\%\). Option A is a true statement.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h4>分析選項 C (Analyzing Option C) - TRUE Statement</h4>
+            <p>要計算銀行系統能把存款擴大至的最高金額（即最高存款額），我們假設所有超額儲備都被借出。最高存款 = \(\frac{\text{實際儲備}}{rrr} = \frac{250}{0.25} = 1000\) 百萬元。選項 C 正確。</p>
+            <p class="en-text">To calculate the maximum total deposits the banking system can expand to, we assume all excess reserves are lent out. Maximum Deposits = \(\frac{\text{Actual Reserves}}{rrr} = \frac{250}{0.25} = 1000\) million. Option C is a true statement.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h4>分析選項 B (Analyzing Option B) - TRUE Statement</h4>
+            <p>最高貸款金額等於最高存款總額減去必須保留的法定儲備。因為在最高存款狀態下，所有實際儲備都成為了法定儲備。最高貸款 = 最高存款 - 實際儲備 = 1000 - 250 = 750 百萬元。選項 B 正確。</p>
+            <p class="en-text">The maximum amount of loans equals maximum deposits minus the required reserves (which will equal actual reserves at the maximum state). Maximum Loans = Maximum Deposits - Actual Reserves = 1000 - 250 = 750 million. Option B is a true statement.</p>
+        </div>
+
+        <div class="option-analysis correct-answer-highlight">
+            <h4>分析選項 D (Analyzing Option D) - INCORRECT Statement (This is the answer!)</h4>
+            <p>選項 D 提到「實際銀行乘數是 4」。實際銀行乘數的公式是 \(\frac{\text{實際存款}}{\text{實際儲備}} = \frac{500}{250} = 2\)。數字 4 其實是「最高銀行乘數」\((\frac{1}{0.25} = 4)\)，而不是實際的乘數。選項 D 是錯誤的陳述，因此是本題答案。</p>
+            <p class="en-text">Option D states "The actual banking multiplier is 4". The formula for the actual banking multiplier is \(\frac{\text{Actual Deposits}}{\text{Actual Reserves}} = \frac{500}{250} = 2\). The number 4 is actually the "maximum banking multiplier" \((\frac{1}{0.25} = 4)\), not the actual one. Option D is an incorrect statement, hence it is the correct answer to the question.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <p><strong>解題切入點 (The Pivot Point):</strong> 看到資產負債表和「超額儲備」這兩個資訊，第一步永遠是算出「法定儲備」和「法定儲備比率 (rrr)」。沒有 rrr，你無法計算任何最高值或乘數。</p>
+        <p class="en-text"><strong>The Pivot Point:</strong> Whenever you see a balance sheet and "excess reserves", your very first step must always be calculating the "required reserves" and the "required reserve ratio (rrr)". Without rrr, you cannot calculate any maximum values or multipliers.</p>
+        
+        <p><strong>干擾資訊 (Distractors):</strong> 表中的「貸款 = 250」在初期的計算中其實是用不到的。我們只需要知道「存款」和「儲備」來找出比例。</p>
+        <p class="en-text"><strong>Distractors:</strong> The "Loans = 250" in the table is actually not needed for the initial calculations. We only need "Deposits" and "Reserves" to find the ratios.</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box" style="background-color: #fef2f2; border-left-color: #ef4444;">
+        <p>🚫 <strong>混淆「實際乘數」與「最高乘數」 (Confusing Actual vs. Maximum Multiplier):</strong><br>
+        很多學生看到 \(rrr = 25\%\)，就立刻聯想到乘數是 \(1 / 0.25 = 4\)，從而以為選項 D 是對的。記住：只要銀行持有「超額儲備」（如本題的 125 百萬），實際乘數必定<strong>小於</strong>最高乘數！</p>
+        <p class="en-text">Many students see \(rrr = 25\%\) and immediately think the multiplier is \(1 / 0.25 = 4\), assuming Option D is correct. Remember: As long as banks hold "excess reserves" (like the 125m here), the actual multiplier will ALWAYS be <strong>less than</strong> the maximum multiplier!</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="question-box" style="background-color: #f8fafc; border: none; border-left: 5px solid #14b8a6;">
+        <p><strong>Q: 點解最高貸款額唔係 1000 百萬？ (Why aren't the maximum loans 1000 million?)</strong></p>
+        <p>A: 因為銀行吸收存款後，必須按法定要求保留一定比例在金庫中（即法定儲備）。最高存款是 1000 百萬，在法定儲備比率是 25% 的情況下，銀行必須保留 \(1000 \times 25\% = 250\) 百萬作為儲備。因此，最多只能借出 \(1000 - 250 = 750\) 百萬。</p>
+        <p class="en-text">A: Because when banks receive deposits, they are legally required to keep a fraction of it in their vaults (required reserves). The max deposit is 1000m. With a 25% reserve ratio, banks MUST keep \(1000 \times 25\% = 250\)m as reserves. Therefore, they can only lend out a maximum of \(1000 - 250 = 750\)m.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p>⚡ <strong>秒殺技巧 (The Quick Kill Method):</strong></p>
+        <p>如果你在考試中時間不夠，其實你可以不用計算 A、B、C 就直接找出答案。<br>
+        題目明確說明「有超額儲備 (Excess Reserves = 125)」。在經濟學概念中，只要有超額儲備，<strong>實際銀行乘數一定等於 (實際存款 / 實際儲備)</strong>，這很容易看出來是 \(500 / 250 = 2\)。選項 D 說乘數是 4，明顯違背了直接的數據比例，一眼就能看出是不正確的。</p>
+        <p class="en-text">If you are running out of time during the exam, you can actually spot the answer without fully calculating A, B, and C.<br>
+        The question explicitly states there are "excess reserves". Conceptually, the actual banking multiplier is strictly \(\text{Actual Deposits} / \text{Actual Reserves}\), which is visibly \(500 / 250 = 2\). Option D claims it is 4, which blatantly contradicts the direct data ratio. You can spot this as the incorrect statement at a glance.</p>
+    </div>
+
+
+
+</body>
+</html>

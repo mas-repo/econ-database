@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Unemployment Rate Analysis</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-math: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+        h1 { border-bottom: none; text-align: center; color: var(--primary-color); }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: var(--border-radius);
+            font-weight: bold;
+        }
+        .header-info span {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #bae6fd;
+            font-size: 0.9em;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        .option-analysis:last-child { border-bottom: none; }
+        .correct-answer {
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .zh-text { margin-bottom: 10px; }
+        .en-text { color: var(--text-muted); font-size: 0.95em; font-style: italic; margin-bottom: 15px;}
+        .highlight { font-weight: bold; color: var(--primary-color); }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Question Analysis<br><span style="font-size: 0.6em; color: #6b7280;">經濟學題目解析</span></h1>
+
+    <div class="header-info">
+        <span>📚 Topic: Macroeconomics - Unemployment (總體經濟學 - 失業)</span>
+        <span>⭐ Difficulty: ★★★☆☆ (3/5)</span>
+        <span>🔑 Concepts: Unemployment Rate (失業率), Labor Force (勞動人口), Discouraged Workers (灰心工人)</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            <strong>下列哪項會減少某國的失業率？</strong><br><br>
+            A. 一些大學畢業生加入勞動人口。<br>
+            B. 一些工廠搬遷到勞工成本較低的鄰近國家。<br>
+            C. 一些失業工人放棄了尋找工作。<br>
+            D. 政府增加失業援助金。
+        </div>
+        <div class="en-text">
+            <strong>Which of the following will reduce the unemployment rate of a country?</strong><br><br>
+            A. Some university graduates join the labour force.<br>
+            B. Some factories move to a neighbouring country with lower labour cost.<br>
+            C. Some unemployed workers give up seeking jobs.<br>
+            D. The government increases unemployment benefits.
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="zh-text">
+            要解答這條問題，我們必須清楚了解<strong>失業率（Unemployment Rate）</strong>的官方定義及算式。只有符合特定條件的人才會被計算在內。<br>
+            <ul>
+                <li><strong>勞動人口 (Labor Force):</strong> 包含所有就業人士 (Employed) 及失業人士 (Unemployed)。</li>
+                <li><strong>失業人士 (Unemployed):</strong> 必須同時符合三個條件：沒有工作、隨時可工作、並且<strong>正在尋找工作</strong>。</li>
+                <li><strong>灰心工人 (Discouraged Workers):</strong> 那些放棄尋找工作的人，他們會自動退出勞動人口，不再被計入失業人數。</li>
+            </ul>
+        </div>
+        <div class="en-text">
+            To solve this question, we must clearly understand the official definition and formula for the <strong>Unemployment Rate</strong>. Only people meeting specific criteria are counted.<br>
+            <ul>
+                <li><strong>Labor Force:</strong> Consists of all employed and unemployed persons.</li>
+                <li><strong>Unemployed:</strong> Must meet three conditions simultaneously: without a job, available for work, and <strong>actively seeking work</strong>.</li>
+                <li><strong>Discouraged Workers:</strong> Those who have given up seeking jobs. They automatically leave the labor force and are no longer counted as unemployed.</li>
+            </ul>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Unemployment Rate (失業率)} = \frac{\text{Unemployed Population (失業人口)}}{\text{Labor Force (勞動人口)}} \times 100\% $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <span class="correct-answer">Correct Option: C (正確答案：C)</span>
+
+    <div class="option-analysis">
+        <div class="zh-text"><strong>分析選項 A (錯誤)：</strong>大學畢業生剛加入勞動人口時，他們正在尋找工作但尚未受僱，因此被歸類為「失業人口」。這導致算式中的分子（失業人口）和分母（勞動人口）增加相同的數值。由於原本的失業率必定小於 100%，分子分母同加一個正數，會令分數（失業率）<strong>上升</strong>。</div>
+        <div class="en-text"><strong>Analysis for Option A (Incorrect):</strong> When university graduates join the labor force, they are actively looking for jobs but are not yet employed, so they are classified as "unemployed". This increases both the numerator (unemployed) and denominator (labor force) by the same amount. Since the original unemployment rate is strictly less than 100%, adding the same positive number to both parts makes the fraction (unemployment rate) <strong>increase</strong>.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="zh-text"><strong>分析選項 B (錯誤)：</strong>工廠搬離會導致大量工人失去工作。這些工人從「就業」變為「失業」，勞動人口總數不變，但失業人口（分子）增加，導致失業率<strong>上升</strong>。</div>
+        <div class="en-text"><strong>Analysis for Option B (Incorrect):</strong> Factories moving away causes workers to lose their jobs. These workers transition from "employed" to "unemployed". The total labor force remains unchanged, but the unemployed population (numerator) increases, causing the unemployment rate to <strong>increase</strong>.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="zh-text"><strong>分析選項 C (正確)：</strong>當失業工人放棄尋找工作（成為灰心工人），他們便不再符合「失業」的定義，並退出勞動人口。這意味著分子（失業人口）和分母（勞動人口）會減去相同的數值。在數學上，若一個小於 1 的真分數，其分子和分母同時減去相同的數值，該分數的數值會<strong>下降</strong>。因此，失業率減少。</div>
+        <div class="en-text"><strong>Analysis for Option C (Correct):</strong> When unemployed workers give up seeking jobs (becoming discouraged workers), they no longer meet the definition of "unemployed" and exit the labor force. This means both the numerator (unemployed) and denominator (labor force) decrease by the same amount. Mathematically, if you subtract the same value from both the numerator and denominator of a proper fraction (less than 1), the fraction's value <strong>decreases</strong>. Thus, the unemployment rate falls.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="zh-text"><strong>分析選項 D (錯誤)：</strong>增加失業援助金會降低尋找工作的誘因（增加了工作的機會成本）。失業人士可能會延長尋找工作的時間，導致失業人口維持高企甚至增加，這會令失業率<strong>上升</strong>或保持不變，絕對不會減少。</div>
+        <div class="en-text"><strong>Analysis for Option D (Incorrect):</strong> Increasing unemployment benefits reduces the incentive to find work (increases the opportunity cost of working). Unemployed individuals might prolong their job search, keeping the unemployed population high or increasing it. This will cause the unemployment rate to <strong>increase</strong> or stay the same, but never reduce it.</div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="zh-text">
+        這類題目的<strong>拆解關鍵 (Pivot Point)</strong> 在於辨識各個選項如何同時影響算式中的「分子」與「分母」。<br>
+        不要只憑直覺覺得「情況變差了，失業率就一定上升」或「沒有創造新職位，失業率就不會跌」。選項 C 是一個經典例子：就業情況並沒有改善（沒有人找到工作），但因為部分人退出了統計基數，失業率這個「數字」在數學上卻變小了。
+    </div>
+    <div class="en-text">
+        The <strong>Pivot Point</strong> of this type of question lies in recognizing how each option affects both the "numerator" and the "denominator" of the formula simultaneously.<br>
+        Do not rely solely on the intuition that "if the situation worsens, the unemployment rate must rise" or "if no new jobs are created, the rate won't fall." Option C is a classic example: the employment situation hasn't improved (no one found a job), but because some people exited the statistical base, the "number" representing the unemployment rate mathematically decreases.
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="zh-text">
+        <span class="highlight">數學盲點陷阱：</span> 很多同學知道選項 C 會令失業人口下降，但忘記了勞動人口也會同步下降。讓我們用數字證明：<br>
+        假設原本勞動人口 $L = 100$ 人，失業人口 $U = 10$ 人。<br>
+        原失業率 = $10 / 100 = 10\%$。<br>
+        如果有 $2$ 人放棄找工作，新 $U = 8$，新 $L = 98$。<br>
+        新失業率 = $8 / 98 \approx 8.16\%$。數字明顯下降了！
+    </div>
+    <div class="en-text">
+        <span class="highlight">Mathematical Blind Spot Trap:</span> Many students know Option C decreases the unemployed population, but forget that the labor force decreases simultaneously. Let's prove it with numbers:<br>
+        Assume initial labor force $L = 100$, unemployed $U = 10$.<br>
+        Original Rate = $10 / 100 = 10\%$.<br>
+        If $2$ people give up searching, new $U = 8$, new $L = 98$.<br>
+        New Rate = $8 / 98 \approx 8.16\%$. The number clearly decreased!
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #ec4899;">
+        <div class="zh-text">
+            <strong>Q: 為什麼選項 A 的大學畢業生不當作「就業」？</strong><br>
+            A: 題目寫他們「加入勞動人口 (join the labour force)」，這通常意味著他們剛畢業並開始投遞履歷。在他們簽署合約並正式上班之前，他們符合「沒有工作」且「正在尋找工作」的條件，因此是失業大軍的生力軍。
+        </div>
+        <div class="en-text" style="color: #831843;">
+            <strong>Q: Why aren't the university graduates in Option A considered "employed"?</strong><br>
+            A: The question states they "join the labour force", which generally implies they have just graduated and started sending out resumes. Until they sign a contract and officially start working, they meet the criteria of being "without a job" and "actively seeking work," making them new additions to the unemployed population.
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="zh-text">
+        <strong>DSE 必殺技：</strong> 在 HKDSE 經濟科中，只要看到「放棄尋找工作 (give up seeking jobs)」、「灰心工人 (discouraged workers)」或「全職進修 / 提早退休」，請立刻聯想到：<strong>這群人退出了勞動人口，會導致失業率在沒有實際創造就業的情況下「虛假地」下跌</strong>。這是考評局極度喜歡考核的統計學盲點。
+    </div>
+    <div class="en-text">
+        <strong>DSE Shortcut:</strong> In HKDSE Economics, whenever you see phrases like "give up seeking jobs," "discouraged workers," or "return to full-time studies / early retirement," immediately recall: <strong>these people are exiting the labor force, causing the unemployment rate to "artificially" drop without actual jobs being created</strong>. This is a statistical blind spot the HKEAA absolutely loves to test.
+    </div>
+
+</div>
+
+</body>
+</html>

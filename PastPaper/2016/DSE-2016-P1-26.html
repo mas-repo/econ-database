@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Aggregate Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        .header-box {
+            background-color: #eef2ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4f46e5;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .option-analysis.correct {
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+        }
+        .option-analysis.incorrect {
+            border-left: 5px solid #ef4444;
+        }
+        .bilingual-zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #111827;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .tag {
+            display: inline-block;
+            background: #e5e7eb;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .trick-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <div class="bilingual-zh"><strong>主題 (Topic):</strong> 宏觀經濟學 - 總需求與宏觀經濟政策</div>
+        <div class="bilingual-en">Macroeconomics - Aggregate Demand & Macroeconomic Policies</div>
+        
+        <div class="bilingual-zh"><strong>難度 (Difficulty):</strong> ★★★☆☆ (3/5 Stars)</div>
+        
+        <div class="bilingual-zh"><strong>關鍵概念 (Key Concepts):</strong></div>
+        <div class="bilingual-en">
+            <span class="tag">Aggregate Demand (AD)</span> 
+            <span class="tag">Monetary Policy</span> 
+            <span class="tag">Shift vs Movement</span>
+        </div>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-zh">在下列哪種情況下，某國的總需求會下降？</div>
+        <div class="bilingual-en">The aggregate demand of a country will drop if</div>
+        <br>
+        <div class="bilingual-zh">A. 該國的物價水平上升。</div>
+        <div class="bilingual-en">A. the price level of the country rises.</div>
+        
+        <div class="bilingual-zh">B. 該國的主要貿易夥伴的貨幣升值。</div>
+        <div class="bilingual-en">B. the currency of its major trading partner appreciates.</div>
+        
+        <div class="bilingual-zh">C. 政府的社會福利開支上升。</div>
+        <div class="bilingual-en">C. the government spending on social welfare rises.</div>
+        
+        <div class="bilingual-zh">D. 法定儲備比率上升。</div>
+        <div class="bilingual-en">D. the required reserve ratio rises.</div>
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-zh">要解答這道題目，我們需要了解<strong>總需求 (Aggregate Demand, AD)</strong> 的組成部分以及導致其移動的因素。總需求是經濟體內所有本地生產物品及服務的需求總和。</div>
+        <div class="bilingual-en">To solve this question, we must understand the components of <strong>Aggregate Demand (AD)</strong> and the factors that cause it to shift. AD is the total demand for all domestically produced goods and services in an economy.</div>
+
+        <div class="math-block">
+            $$ \text{AD} = C + I + G + NX $$
+        </div>
+
+        <div class="bilingual-zh">
+            <ul>
+                <li><strong>\( C \) (Consumption / 私人消費開支):</strong> 受可支配收入、利率等影響。</li>
+                <li><strong>\( I \) (Investment / 投資開支):</strong> 受利率 (\( r \))、營商預期等影響。當利率上升，投資會下降。</li>
+                <li><strong>\( G \) (Government Spending / 政府消費開支):</strong> 政府購買物品和服務的支出（注意：轉移支付不直接計入 \( G \)，但會影響 \( C \)）。</li>
+                <li><strong>\( NX \) (Net Exports / 淨出口):</strong> 等於出口減進口 (\( X - M \))。受匯率、外國國民收入等影響。</li>
+            </ul>
+            <strong>重要區分：</strong> 物價水平 (\( P \)) 的改變只會導致<strong>沿著總需求曲線的移動 (Movement along the curve)</strong>，從而改變總需求量。只有當物價以外的因素（如政府政策、匯率等）改變時，整條總需求曲線才會<strong>移動 (Shift)</strong>。
+        </div>
+        <div class="bilingual-en">
+            <ul>
+                <li><strong>\( C \) (Consumption):</strong> Affected by disposable income, interest rates, etc.</li>
+                <li><strong>\( I \) (Investment):</strong> Affected by interest rates (\( r \)), business expectations, etc. When interest rates rise, investment falls.</li>
+                <li><strong>\( G \) (Government Spending):</strong> Government purchases of goods and services (Note: transfer payments are not directly counted in \( G \), but affect \( C \)).</li>
+                <li><strong>\( NX \) (Net Exports):</strong> Equals exports minus imports (\( X - M \)). Affected by exchange rates, foreign national income, etc.</li>
+            </ul>
+            <strong>Crucial Distinction:</strong> A change in the price level (\( P \)) only causes a <strong>movement along the AD curve</strong>, changing the quantity of AD. Only when factors other than the price level (e.g., government policies, exchange rates) change, will the entire AD curve <strong>shift</strong>.
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="bilingual-zh"><strong>正確答案是：選項 D (Option D)</strong></div>
+    <br>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-zh"><strong>選項 A 錯誤：</strong> 該國的物價水平 (\( P \)) 上升，會導致總需求量 (Quantity of AD) 下降（沿著曲線向左上方移動），而不是總需求 (AD) 曲線本身的左移/下降。這是典型的概念混淆陷阱。</div>
+        <div class="bilingual-en"><strong>Option A is Incorrect:</strong> A rise in the price level (\( P \)) leads to a decrease in the *quantity* of aggregate demand (a movement upwards along the curve), not a drop/leftward shift of the AD curve itself. This is a classic conceptual trap.</div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-zh"><strong>選項 B 錯誤：</strong> 主要貿易夥伴的貨幣升值，意味著本國貨幣相對<strong>貶值</strong>。本國出口的貨物在國外變得更便宜，而外國進口的貨物變得更昂貴。因此，出口 (\( X \)) 增加，進口 (\( M \)) 減少，淨出口 (\( NX \)) 上升，這會導致總需求<strong>上升</strong>，而非下降。</div>
+        <div class="bilingual-en"><strong>Option B is Incorrect:</strong> If the currency of a major trading partner appreciates, it means the domestic currency <strong>depreciates</strong>. Domestic exports become cheaper abroad, and imports become more expensive. Therefore, exports (\( X \)) rise, imports (\( M \)) fall, and Net Exports (\( NX \)) increase. This causes AD to <strong>rise</strong>, not drop.</div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-zh"><strong>選項 C 錯誤：</strong> 社會福利開支（如失業救濟金）屬於轉移支付。它會增加市民的可支配收入 (Disposable Income)。隨著收入增加，私人消費開支 (\( C \)) 會上升，從而帶動總需求<strong>上升</strong>。</div>
+        <div class="bilingual-en"><strong>Option C is Incorrect:</strong> Government spending on social welfare (like unemployment benefits) is a transfer payment. It increases citizens' disposable income. With higher income, private consumption (\( C \)) rises, which drives AD to <strong>rise</strong>.</div>
+    </div>
+
+    <div class="option-analysis correct">
+        <div class="bilingual-zh"><strong>選項 D 正確：</strong> 法定儲備比率 (Required Reserve Ratio) 上升屬於緊縮性貨幣政策。銀行需要保留更多儲備，導致貨幣創造乘數下降，貨幣供應 (\( M_s \)) 減少。貨幣供應減少會推高利率 (\( r \))。當利率上升，借貸成本增加，投資 (\( I \)) 和消費 (\( C \)) 都會減少，最終導致總需求<strong>下降</strong>。</div>
+        <div class="bilingual-en"><strong>Option D is Correct:</strong> A rise in the required reserve ratio is a contractionary monetary policy. Banks must hold more reserves, reducing the money multiplier and decreasing the money supply (\( M_s \)). A lower money supply pushes up interest rates (\( r \)). Higher interest rates increase borrowing costs, causing both Investment (\( I \)) and Consumption (\( C \)) to fall, ultimately leading to a <strong>drop</strong> in aggregate demand.</div>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-zh">
+        <p>遇到這類題目，請遵循以下思考步驟：</p>
+        <ol>
+            <li><strong>尋找樞紐點 (Pivot Point)：</strong> 題目問的是「總需求 (AD) <strong>下降</strong>」。在圖表上，這代表整條 AD 曲線<strong>向左移動</strong>。</li>
+            <li><strong>排除法 (Elimination)：</strong> 任何關於「物價水平 (Price Level)」的選項都會被立刻排除，因為那只是在 \( y \) 軸上的變動，不會令曲線移動（排除 A）。</li>
+            <li><strong>判斷方向 (Determine the Direction)：</strong> 接下來，檢視剩下選項是擴張性 (令 AD 升) 還是緊縮性 (令 AD 跌) 因素。
+                <ul>
+                    <li>B 是匯率有利出口（擴張性）。</li>
+                    <li>C 是派糖/福利（擴張性）。</li>
+                    <li>D 是收緊銀根（緊縮性）。因此秒選 D。</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="bilingual-en">
+        <p>When approaching this type of question, follow these cognitive steps:</p>
+        <ol>
+            <li><strong>Identify the Pivot Point:</strong> The question asks for a <strong>drop</strong> in Aggregate Demand (AD). Graphically, this means a <strong>leftward shift</strong> of the entire AD curve.</li>
+            <li><strong>Process of Elimination:</strong> Any option mentioning "Price Level" should be immediately eliminated because that is a change on the \( y \)-axis, causing a movement, not a shift (Eliminate A).</li>
+            <li><strong>Determine the Direction:</strong> Next, evaluate whether the remaining options are expansionary (AD rises) or contractionary (AD drops) factors.
+                <ul>
+                    <li>B means favorable exchange rates for exports (Expansionary).</li>
+                    <li>C means giving out welfare/money (Expansionary).</li>
+                    <li>D means tightening the money supply (Contractionary). Thus, D is the answer.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-zh">
+        <ul>
+            <li><strong>陷阱一：混淆「總需求」與「總需求量」。</strong> 這是 DSE 經濟科最愛考的文字陷阱。記住：\( P \) 變，量變 (Movement)；其他變，線變 (Shift)。</li>
+            <li><strong>陷阱二：相對匯率的視角。</strong> 學生常看到「升值 (Appreciates)」就直覺認為不利出口。但仔細看，選項 B 說是「<strong>貿易夥伴</strong>的貨幣升值」，這反過來代表「<strong>我國</strong>貨幣貶值」，對我國出口是有利的！考試時務必看清楚主語。</li>
+        </ul>
+    </div>
+    <div class="bilingual-en">
+        <ul>
+            <li><strong>Trap 1: Confusing "Aggregate Demand" with "Quantity of Aggregate Demand".</strong> This is a favorite DSE phrasing trap. Remember: If \( P \) changes, it's a movement (quantity changes); if anything else changes, it's a shift.</li>
+            <li><strong>Trap 2: Relative Exchange Rate Perspectives.</strong> Students often see "Appreciates" and instinctively think it hurts exports. But read carefully: Option B says the <strong>trading partner's</strong> currency appreciates. Inversely, this means <strong>our domestic</strong> currency depreciates, which is highly beneficial for our exports! Always identify the subject of the sentence.</li>
+        </ul>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-zh"><strong>Q: 政府社會福利開支 (選項 C) 不是屬於政府開支 \( G \) 嗎？為什麼分析裡說它影響的是 \( C \) (私人消費)？</strong></div>
+        <div class="bilingual-en"><strong>Q: Isn't government welfare spending (Option C) part of Government Spending \( G \)? Why does the analysis say it affects \( C \) (Consumption)?</strong></div>
+        <br>
+        <div class="bilingual-zh"><strong>A:</strong> 這是一個極佳的問題！在宏觀經濟學中，\( G \) 僅包含政府對「物品與服務的實際購買 (Government purchases of goods and services)」，例如建橋築路、支付公務員薪水。社會福利（如綜援、消費券）屬於「轉移支付 (Transfer Payments)」，政府並沒有換取任何實質產出。這筆錢到了市民手中，增加了他們的可支配收入，當市民把錢花出去時，才會以私人消費 (\( C \)) 的形式計入總需求。不過，無論是計入 \( G \) 還是 \( C \)，結果都是總需求上升。</div>
+        <div class="bilingual-en"><strong>A:</strong> Excellent question! In macroeconomics, \( G \) only includes "Government purchases of goods and services," such as building infrastructure or paying civil servants. Social welfare is a "Transfer Payment"; the government receives no actual output in return. This money goes into citizens' pockets, increasing their disposable income. When citizens spend this money, it gets counted into AD as Private Consumption (\( C \)). However, whether it acts through \( G \) or \( C \), the end result is an increase in AD.</div>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="bilingual-zh">
+            <strong>秒殺法：尋找「緊縮性政策」！</strong><br>
+            題目要總需求 (AD) 跌。你只需要在腦海中快速過濾：<br>
+            A -> 曲線不移動 (X)<br>
+            B -> 出口變強 = 賺外匯 (X)<br>
+            C -> 政府派錢 = 市民多錢花 (X)<br>
+            D -> 銀行收緊銀根 = 借錢難 = 企業不投資 (✓)<br>
+            只需 10 秒就能找出唯一會拖累經濟活動的選項！
+        </div>
+        <div class="bilingual-en">
+            <strong>The 10-Second Kill: Look for the Contractionary Factor!</strong><br>
+            The question wants AD to drop. Just do a rapid mental filter:<br>
+            A -> Curve doesn't shift (X)<br>
+            B -> Stronger exports = earning foreign income (X)<br>
+            C -> Gov gives money = people spend more (X)<br>
+            D -> Banks tighten money = hard to borrow = businesses stop investing (✓)<br>
+            It takes 10 seconds to spot the only option that slows down economic activity!
+        </div>
+    </div>
+    
+
+</div>
+
+</body>
+</html>
