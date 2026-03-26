@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Money Demand</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-box {
+            background-color: #ffffff;
+            border-top: 5px solid #1e3a8a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-left: 5px solid #f59e0b;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #cbd5e1;
+        }
+        .analysis-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .option.correct {
+            background-color: #f0fdf4;
+            border-color: #22c55e;
+            border-left: 5px solid #22c55e;
+        }
+        .option.wrong {
+            border-left: 5px solid #ef4444;
+        }
+        .bilingual-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .decomposition-box, .mistakes-box, .qa-box, .tricks-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .mistakes-box { border-left: 5px solid #ef4444; }
+        .qa-box { border-left: 5px solid #8b5cf6; }
+        .tricks-box { border-left: 5px solid #f59e0b; }
+        .svg-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        hr { border: 0; height: 1px; background: #e2e8f0; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>HKDSE Economics MC Guide</h1>
+        <p><strong>Topic (課題):</strong> Money and Banking - Money Demand (貨幣與銀行 - 貨幣需求)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆ (Moderate 中等)</p>
+        <div>
+            <strong>Key Concepts (關鍵概念):</strong>
+            <span class="tag">Money Demand (貨幣需求)</span>
+            <span class="tag">Asset Demand (資產性需求)</span>
+            <span class="tag">Substitute Assets (替代資產)</span>
+            <span class="tag">Opportunity Cost (機會成本)</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p><strong>下列哪項會導致貨幣需求如上圖般改變？</strong></p>
+        <div class="bilingual-en">Which of the following would result in the above change in money demand?</div>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>A.</strong> 中央銀行發行更大面額的鈔票流通市面。
+                <div class="bilingual-en">The central bank issues larger denomination banknotes for circulation.</div>
+            </li>
+            <br>
+            <li><strong>B.</strong> 預期通脹率下降。
+                <div class="bilingual-en">The expected inflation rate drops.</div>
+            </li>
+            <br>
+            <li><strong>C.</strong> 在股票市場投資的風險下降。
+                <div class="bilingual-en">The risk of investing in stock market decreases.</div>
+            </li>
+            <br>
+            <li><strong>D.</strong> 主要電子支付系統出現保安問題。
+                <div class="bilingual-en">Security problems have been found in the major electronic payment system.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        <p>在宏觀經濟學中，<strong>貨幣需求 ($Md$)</strong> 是指人們願意以貨幣形式（現金及活期存款）持有財富的數量。貨幣需求主要分為兩大類：</p>
+        <div class="bilingual-en">In macroeconomics, <strong>Money Demand ($Md$)</strong> refers to the amount of wealth that people choose to hold in the form of money (cash and demand deposits). It is generally divided into two main categories:</div>
+        
+        <ol>
+            <li><strong>交易性貨幣需求 (Transaction Demand for Money):</strong> 受國民收入 ($Y$) 影響。收入越高，日常交易量越多，需求越大。<br>
+                <span class="bilingual-en">Influenced by national income ($Y$). Higher income leads to more daily transactions, increasing the demand.</span>
+            </li>
+            <li><strong>資產性貨幣需求 (Asset Demand for Money):</strong> 貨幣作為一種儲存財富的資產，其需求受<strong>名義利率 (Nominal Interest Rate, $R$)</strong> 以及其他替代資產（如股票、債券）的風險和回報影響。<br>
+                <span class="bilingual-en">Money as a store of value. This demand is influenced by the <strong>Nominal Interest Rate ($R$)</strong> and the risks/returns of alternative assets (like stocks and bonds).</span>
+            </li>
+        </ol>
+
+        <p><strong>曲線的移動 (Shift of the Curve):</strong><br>
+        圖中顯示貨幣需求曲線由 $Md_0$ 向左移至 $Md_1$。這代表在<strong>任何特定的名義利率下</strong>，人們對貨幣的需求量減少了（即持錢意欲下降）。</p>
+        <div class="bilingual-en">The graph shows a leftward shift of the money demand curve from $Md_0$ to $Md_1$. This means that at <strong>any given nominal interest rate</strong>, the quantity of money demanded has decreased (i.e., less willingness to hold money).</div>
+
+        <div class="math-block">
+            <strong>持有貨幣的機會成本 (Opportunity Cost of Holding Money):</strong>
+            $$ \text{Cost} = \text{Nominal Interest Rate } (R) $$
+            <p style="font-size: 0.9em; color: #666; margin-top: 5px;">*Note: When $R$ changes, we move ALONG the curve. When other factors change, the entire curve SHIFTS.*</p>
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>正確答案 (Correct Option): <span style="color: #22c55e; font-size: 1.2em;">C</span></strong></p>
+
+        <div class="option wrong">
+            <strong>A. 中央銀行發行更大面額的鈔票流通市面。</strong><br>
+            <div class="bilingual-en">The central bank issues larger denomination banknotes for circulation.</div>
+            <p><strong>分析：</strong> 錯誤。發行更大面額的鈔票只會影響貨幣的物理形態和潛在的貨幣供應 ($Ms$)，並不會直接減少公眾持有貨幣的「意欲」或需求。這與資產性或交易性需求無關。</p>
+            <p class="bilingual-en"><strong>Analysis:</strong> Incorrect. Issuing larger denomination notes only affects the physical form of money and potentially the Money Supply ($Ms$). It does not directly reduce the public's "willingness" or demand to hold money. This is irrelevant to transaction or asset demand.</p>
+        </div>
+
+        <div class="option wrong">
+            <strong>B. 預期通脹率下降。</strong><br>
+            <div class="bilingual-en">The expected inflation rate drops.</div>
+            <p><strong>分析：</strong> 錯誤。持有貨幣的其中一個風險是通脹會蠶食其購買力。如果預期通脹率下降，持有貨幣的購買力流失風險降低，人們會更願意持有貨幣。這會導致貨幣需求曲線向<strong>右</strong>移，而非向左移。</p>
+            <p class="bilingual-en"><strong>Analysis:</strong> Incorrect. One risk of holding money is that inflation erodes its purchasing power. If the expected inflation rate drops, the risk of losing purchasing power decreases, making people MORE willing to hold money. This would shift the $Md$ curve to the <strong>right</strong>, not left.</p>
+        </div>
+
+        <div class="option correct">
+            <strong>C. 在股票市場投資的風險下降。</strong><br>
+            <div class="bilingual-en">The risk of investing in stock market decreases.</div>
+            <p><strong>分析：</strong> 正確。股票是貨幣作為資產的<strong>替代品 (Substitute)</strong>。當股票市場的風險下降時，投資股票變得更有吸引力。投資者會選擇將財富由現金轉移至股票，從而減少對貨幣的「資產性需求」。這會導致整條貨幣需求曲線向<strong>左</strong>移，完美吻合圖表。</p>
+            <p class="bilingual-en"><strong>Analysis:</strong> Correct. Stocks are a <strong>substitute</strong> for money as an asset. When the risk of the stock market decreases, investing in stocks becomes more attractive. Investors will shift their wealth from cash to stocks, thereby reducing the "asset demand for money". This shifts the entire $Md$ curve to the <strong>left</strong>, perfectly matching the graph.</p>
+        </div>
+
+        <div class="option wrong">
+            <strong>D. 主要電子支付系統出現保安問題。</strong><br>
+            <div class="bilingual-en">Security problems have been found in the major electronic payment system.</div>
+            <p><strong>分析：</strong> 錯誤。電子支付（如信用卡、八達通等）是實體現金的交易替代品。如果電子支付變得不安全，人們在進行日常交易時會轉而依賴實體貨幣。這會增加「交易性貨幣需求」，導致 $Md$ 曲線向<strong>右</strong>移。</p>
+            <p class="bilingual-en"><strong>Analysis:</strong> Incorrect. Electronic payments are transaction substitutes for physical cash. If e-payments become unsafe, people will revert to using physical money for daily transactions. This increases the "transaction demand for money", shifting the $Md$ curve to the <strong>right</strong>.</p>
+        </div>
+    </div>
+
+    <div class="svg-container">
+        <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="20" x2="40" y2="160" stroke="black" stroke-width="2" />
+            <line x1="40" y1="160" x2="280" y2="160" stroke="black" stroke-width="2" />
+            <polygon points="35,30 40,20 45,30" fill="black" />
+            <polygon points="270,155 280,160 270,165" fill="black" />
+            <text x="35" y="15" font-size="12" text-anchor="middle">Nominal Interest Rate</text>
+            <text x="240" y="180" font-size="12" text-anchor="middle">Quantity of Money</text>
+            <line x1="120" y1="40" x2="240" y2="140" stroke="#0ea5e9" stroke-width="2" />
+            <text x="250" y="145" font-size="12" fill="#0ea5e9">$Md_0$</text>
+            <line x1="80" y1="40" x2="200" y2="140" stroke="#ef4444" stroke-width="2" />
+            <text x="210" y="145" font-size="12" fill="#ef4444">$Md_1$</text>
+            <line x1="170" y1="90" x2="130" y2="90" stroke="black" stroke-width="2" stroke-dasharray="4" />
+            <polygon points="140,85 130,90 140,95" fill="black" />
+            <text x="150" y="85" font-size="10" text-anchor="middle" fill="red">Shift Left (C)</text>
+        </svg>
+    </div>
+
+    <div class="decomposition-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+        第一步是觀察圖表：箭嘴指向左方，這代表<strong>貨幣需求減少 (Decrease in Money Demand)</strong>。解題的核心是找出哪一個選項會令大眾「不想持有現金 / 活期存款」。</p>
+        <div class="bilingual-en"><strong>The Pivot Point:</strong> The first step is to observe the graph: the arrow points to the left, which signifies a <strong>decrease in money demand</strong>. The core of solving this is to find the option that makes the public "not want to hold cash / demand deposits".</div>
+        <hr>
+        <p><strong>排除干擾資訊 (Eliminating Distractors):</strong></p>
+        <ul>
+            <li>留意圖表的 Y 軸是「名義利率」(Nominal interest rate)。如果是名義利率改變，圖表只會出現「沿著曲線的移動」(Movement along the curve)，而不是整條曲線移動。因此，任何純粹改變利率的選項（如有）都應立即剔除。</li>
+            <li><span class="bilingual-en">Note that the Y-axis is "Nominal interest rate". If the nominal interest rate changes, the graph would only show a "movement along the curve", not a shift of the entire curve. Therefore, any option that merely changes the interest rate should be eliminated immediately.</span></li>
+        </ul>
+    </div>
+
+    <div class="mistakes-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li><strong>陷阱一：混淆貨幣需求與貨幣供應 (Confusing Demand and Supply)。</strong> 同學經常以為選項 A (發行大面額鈔票) 會影響圖表。記住，圖表標示的是 $Md$ (Demand)，由公眾及投資者決定；而發行鈔票影響的是 $Ms$ (Supply)，由中央銀行決定。<br>
+                <span class="bilingual-en"><strong>Trap 1:</strong> Students often think Option A affects the graph. Remember, the graph labels $Md$ (Demand), determined by the public; printing money affects $Ms$ (Supply), determined by the Central Bank.</span>
+            </li>
+            <li><strong>陷阱二：錯判通脹的影響 (Misjudging Inflation's Effect)。</strong> 很多人直覺以為「通脹下降是好事，所以圖表向好的方向（右）移」。在經濟學中必須理性分析：通脹下降 = 錢不再快速貶值 = 持有現金的成本下降 = 更多人願意持有現金 = $Md$ 向<strong>右</strong>移 (與題目相反)。<br>
+                <span class="bilingual-en"><strong>Trap 2:</strong> Many intuitively think "Lower inflation is good, so the graph shifts right". You must analyze logically: Lower inflation = Money depreciates slower = Cost of holding cash drops = More people willing to hold cash = $Md$ shifts <strong>RIGHT</strong> (opposite to the question).</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="qa-box">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 如果題目把「股票市場風險下降」改成「債券回報率上升」，答案還會是 C 嗎？</strong></p>
+        <p class="bilingual-en"><em>Q: If the question changed "Stock market risk decreases" to "Bond yield increases", would the answer still be correct for a leftward shift?</em></p>
+        
+        <p><strong>A:</strong> 是的！債券 (Bonds) 與股票 (Stocks) 一樣，都是貨幣的替代資產。如果債券回報率上升，投資債券變得更吸引，人們同樣會減少持有現金去買債券，導致 $Md$ 曲線向左移。</p>
+        <p class="bilingual-en"><em>A: Yes! Bonds, like stocks, are substitute assets for money. If bond yields increase, investing in bonds becomes more attractive. People will reduce their cash holdings to buy bonds, causing the $Md$ curve to shift to the left.</em></p>
+    </div>
+
+    <div class="tricks-box">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>「替代品法則」(The Substitute Rule):</strong><br>
+        在處理資產性貨幣需求 ($Ma$) 的題目時，將「貨幣」想像成一種投資產品。當其他投資產品（股票、債券、房地產）的「吸引力上升」（例如：風險下降、回報上升、交易費減少），對「貨幣」這項產品的需求就必定下降（向左移）。<br>
+        一看到題目圖表向左移，立刻掃描選項尋找「令其他資產變好」或「令日常交易變少」的字眼，即可秒殺題目 (選項 C)。</p>
+        <div class="bilingual-en"><strong>The Substitute Rule:</strong> When dealing with asset demand for money, treat "Money" as an investment product. When other products (stocks, bonds) become "more attractive" (e.g., lower risk, higher return), the demand for "Money" MUST drop (shift left). Once you see a leftward shift, scan the options for phrases that make other assets look better. Option C matches perfectly.</div>
+    </div>
+
+
+
+</body>
+</html>
