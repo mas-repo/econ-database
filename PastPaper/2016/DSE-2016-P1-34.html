@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Classical Quantity Theory of Money</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-green: #16a34a;
+            --light-green: #f0fdf4;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-yellow: #f59e0b;
+            --light-yellow: #fffbeb;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .header-section {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-section h1 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .correct-answer {
+            background-color: var(--light-green);
+            border: 2px solid var(--primary-green);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background-color: var(--light-red);
+            border-left: 5px solid var(--primary-red);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: var(--light-yellow);
+            border-left: 5px solid var(--primary-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .svg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .svg-container {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .qa-item {
+            margin-bottom: 15px;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📊 HKDSE Economics Masterclass</h1>
+        <p><strong>Topic / 課題:</strong> Macroeconomics - Monetarism & Quantity Theory of Money (宏觀經濟學 - 貨幣學派與貨幣數量論)</p>
+        <p><strong>Difficulty / 難度:</strong> ⭐⭐⭐⭐ (4/5)</p>
+        <div>
+            <span class="tag">Quantity Theory of Money</span>
+            <span class="tag">Equation of Exchange</span>
+            <span class="tag">Inflation Rate</span>
+            <span class="tag">Real Output</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <p><strong>根據古典貨幣量理論，當每年的貨幣供應以一固定百分率增長時，下列哪幅圖是正確的？</strong></p>
+    <p class="bilingual-en">According to the classical quantity theory of money, which of the following diagrams is correct when money supply is growing at a constant percentage each year?</p>
+
+    <div class="svg-grid">
+        <div class="svg-container">
+            <svg viewBox="0 0 250 200">
+                <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold">A.</text>
+                <text x="35" y="35" font-family="sans-serif" font-size="12">物價水平 (Price level)</text>
+                <line x1="30" y1="170" x2="30" y2="50" stroke="black" stroke-width="1.5" />
+                <polygon points="30,45 25,55 35,55" fill="black" />
+                <line x1="30" y1="170" x2="220" y2="170" stroke="black" stroke-width="1.5" />
+                <polygon points="225,170 215,165 215,175" fill="black" />
+                <text x="15" y="175" font-family="sans-serif" font-size="12">0</text>
+                <text x="210" y="190" font-family="sans-serif" font-size="12">年 (Year)</text>
+                <line x1="30" y1="110" x2="180" y2="110" stroke="#0ea5e9" stroke-width="2" />
+            </svg>
+        </div>
+        <div class="svg-container">
+            <svg viewBox="0 0 250 200">
+                <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold">B.</text>
+                <text x="35" y="35" font-family="sans-serif" font-size="12">實質產出 (Real output)</text>
+                <line x1="30" y1="170" x2="30" y2="50" stroke="black" stroke-width="1.5" />
+                <polygon points="30,45 25,55 35,55" fill="black" />
+                <line x1="30" y1="170" x2="220" y2="170" stroke="black" stroke-width="1.5" />
+                <polygon points="225,170 215,165 215,175" fill="black" />
+                <text x="15" y="175" font-family="sans-serif" font-size="12">0</text>
+                <text x="210" y="190" font-family="sans-serif" font-size="12">年 (Year)</text>
+                <line x1="30" y1="140" x2="200" y2="70" stroke="#0ea5e9" stroke-width="2" />
+            </svg>
+        </div>
+        <div class="svg-container">
+            <svg viewBox="0 0 250 200">
+                <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold">C.</text>
+                <text x="35" y="35" font-family="sans-serif" font-size="12">通脹率 (Inflation rate)</text>
+                <line x1="30" y1="170" x2="30" y2="50" stroke="black" stroke-width="1.5" />
+                <polygon points="30,45 25,55 35,55" fill="black" />
+                <line x1="30" y1="170" x2="220" y2="170" stroke="black" stroke-width="1.5" />
+                <polygon points="225,170 215,165 215,175" fill="black" />
+                <text x="15" y="175" font-family="sans-serif" font-size="12">0</text>
+                <text x="210" y="190" font-family="sans-serif" font-size="12">年 (Year)</text>
+                <line x1="30" y1="140" x2="190" y2="80" stroke="#0ea5e9" stroke-width="2" />
+            </svg>
+        </div>
+        <div class="svg-container">
+            <svg viewBox="0 0 250 200">
+                <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold">D.</text>
+                <text x="35" y="35" font-family="sans-serif" font-size="12">通脹率 (Inflation rate)</text>
+                <line x1="30" y1="170" x2="30" y2="50" stroke="black" stroke-width="1.5" />
+                <polygon points="30,45 25,55 35,55" fill="black" />
+                <line x1="30" y1="170" x2="220" y2="170" stroke="black" stroke-width="1.5" />
+                <polygon points="225,170 215,165 215,175" fill="black" />
+                <text x="15" y="175" font-family="sans-serif" font-size="12">0</text>
+                <text x="210" y="190" font-family="sans-serif" font-size="12">年 (Year)</text>
+                <line x1="30" y1="120" x2="190" y2="120" stroke="#0ea5e9" stroke-width="2" />
+            </svg>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>交易方程式 (Equation of Exchange)</h3>
+        <p>解答此題的核心在於古典學派的<strong>貨幣數量論 (Quantity Theory of Money)</strong>。其基礎是交易方程式：</p>
+        <p class="bilingual-en">The core to solving this question lies in the classical school's <strong>Quantity Theory of Money</strong>. Its foundation is the Equation of Exchange:</p>
+        
+        <div class="math-block">
+            $$ M \times V = P \times Y $$
+        </div>
+        <ul>
+            <li>\(M\) = 貨幣供應 (Money Supply)</li>
+            <li>\(V\) = 貨幣流通速度 (Velocity of Money)</li>
+            <li>\(P\) = 物價水平 (Price Level)</li>
+            <li>\(Y\) (或 \(Q\)) = 實質產出 (Real Output / Real GDP)</li>
+        </ul>
+
+        <h3>古典學派的關鍵假設 (Key Assumptions of the Classical School)</h3>
+        <p>1. <strong>\(V\) 是恆定的 (Constant Velocity)：</strong> 古典學派認為貨幣流通速度由制度因素決定，短期和長期內皆穩定不變。因此，\(\% \Delta V = 0\)。</p>
+        <p class="bilingual-en">1. <strong>Constant \(V\):</strong> The classical school believes the velocity of money is determined by institutional factors and remains stable in both the short and long run. Therefore, \(\% \Delta V = 0\).</p>
+        
+        <p>2. <strong>\(Y\) 是恆定的 (Constant Real Output)：</strong> 在古典理論中，經濟體系長期處於充分就業狀態 (Full Employment)，因此實質產出 \(Y\) 固定在潛在產出水平。因此，\(\% \Delta Y = 0\)。</p>
+        <p class="bilingual-en">2. <strong>Constant \(Y\):</strong> In classical theory, the economy is always at full employment in the long run, so real output \(Y\) is fixed at the potential output level. Therefore, \(\% \Delta Y = 0\).</p>
+
+        <h3>變化率公式 (Growth Rate Formula)</h3>
+        <p>將交易方程式轉換為百分比變動 (Percentage Change) 形式：</p>
+        <p class="bilingual-en">Converting the Equation of Exchange into percentage changes:</p>
+        <div class="math-block">
+            $$ \% \Delta M + \% \Delta V = \% \Delta P + \% \Delta Y $$
+        </div>
+        <p>代入古典學派的假設 (\(\% \Delta V = 0\) 且 \(\% \Delta Y = 0\))，我們得出一個極其重要的結論：</p>
+        <p class="bilingual-en">Substituting the classical assumptions (\(\% \Delta V = 0\) and \(\% \Delta Y = 0\)), we reach a crucial conclusion:</p>
+        <div class="math-block">
+            $$ \% \Delta M = \% \Delta P $$
+        </div>
+        <p>這意味著：<strong>貨幣供應的增長率 (\(\% \Delta M\)) 完全等於物價水平的增長率 (\(\% \Delta P\))，而 \(\% \Delta P\) 就是通脹率 (Inflation Rate)！</strong></p>
+        <p class="bilingual-en">This means: <strong>The growth rate of the money supply (\(\% \Delta M\)) is exactly equal to the growth rate of the price level (\(\% \Delta P\)), and \(\% \Delta P\) IS the Inflation Rate!</strong></p>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">
+        <h3>✅ 正確答案：Option D (選項 D)</h3>
+    </div>
+
+    <p>題目指出：貨幣供應 (\(M\)) 每年的增長率是一個<strong>固定百分率 (Constant Percentage)</strong>。假設這個固定增長率為 \(k\) (例如每年增長 5%)。</p>
+    <p class="bilingual-en">The question states that the money supply (\(M\)) grows at a <strong>constant percentage</strong> each year. Let's assume this constant growth rate is \(k\) (e.g., grows by 5% every year).</p>
+
+    <ul>
+        <li>
+            <strong>為什麼 A 錯？(Why is A wrong?)</strong><br>
+            圖 A 顯示「物價水平 (Price level)」是恆定不變的 (一條水平線)。然而，根據 \(\% \Delta M = \% \Delta P\)，既然貨幣供應在增長 (\(\% \Delta M > 0\))，物價水平也必定在持續上升 (\(\% \Delta P > 0\))。物價水平的圖表應該是一條向上傾斜的線，而不是水平線。
+            <p class="bilingual-en">Graph A shows a constant "Price level" (a horizontal line). However, according to \(\% \Delta M = \% \Delta P\), since the money supply is growing (\(\% \Delta M > 0\)), the price level must also be continuously rising (\(\% \Delta P > 0\)). The graph for the price level should be an upward-sloping curve/line, not horizontal.</p>
+        </li>
+        <li>
+            <strong>為什麼 B 錯？(Why is B wrong?)</strong><br>
+            圖 B 顯示「實質產出 (Real output)」隨時間持續增加。這是直接違背古典學派核心假設的。古典學派假設長期實質產出固定在充分就業水平，因此實質產出的圖表才應該是一條水平線。
+            <p class="bilingual-en">Graph B shows "Real output" continuously increasing over time. This directly contradicts the core classical assumption. The classical school assumes long-run real output is fixed at the full-employment level, so the graph for real output should be a horizontal line.</p>
+        </li>
+        <li>
+            <strong>為什麼 C 錯？(Why is C wrong?)</strong><br>
+            圖 C 顯示「通脹率 (Inflation rate)」在不斷上升。通脹率即是 \(\% \Delta P\)。由於 \(\% \Delta M = \% \Delta P\)，且題目明確指出貨幣供應是以「<strong>固定</strong>百分率」增長 (即 \(\% \Delta M\) 是一個常數 \(k\))，因此通脹率也必定是一個常數 \(k\)，而不會隨時間增加。
+            <p class="bilingual-en">Graph C shows the "Inflation rate" constantly rising. The inflation rate is \(\% \Delta P\). Since \(\% \Delta M = \% \Delta P\), and the question explicitly states money supply grows at a "<strong>constant</strong> percentage" (\(\% \Delta M\) is a constant \(k\)), the inflation rate must also be a constant \(k\). It does not increase over time.</p>
+        </li>
+        <li>
+            <strong>為什麼 D 對？(Why is D correct?)</strong><br>
+            圖 D 顯示「通脹率 (Inflation rate)」是一條維持在 0 以上的水平線。這完美契合了我們的推論：\(\% \Delta M = \text{常數}\) \(\rightarrow\) \(\% \Delta P = \text{常數}\)。通脹率維持在一個固定的正數水平。
+            <p class="bilingual-en">Graph D shows the "Inflation rate" as a horizontal line above 0. This perfectly matches our deduction: \(\% \Delta M = \text{constant}\) \(\rightarrow\) \(\% \Delta P = \text{constant}\). The inflation rate remains at a fixed positive level.</p>
+        </li>
+    </ul>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p>要秒殺這類題目，你需要抓住題目的<strong>「關鍵字 (Pivot Points)」</strong>：</p>
+    <p class="bilingual-en">To ace this type of question quickly, you need to identify the <strong>Pivot Points</strong> in the prompt:</p>
+
+    <ol>
+        <li><strong>關鍵字 1：「古典 (Classical)」</strong> <br>
+            一看到「古典」，大腦立刻反射條件：實質產出 (\(Y\)) 不變，貨幣流通速度 (\(V\)) 不變。<br>
+            <em>即時行動：立刻淘汰任何顯示實質產出 (\(Y\)) 會隨貨幣政策改變的選項 (例如選項 B)。</em>
+        </li>
+        <li><strong>關鍵字 2：「固定百分率 (Constant percentage)」</strong> <br>
+            這表示變化率 (Rate of change) 是一個常數，畫在以「率 (Rate)」為 Y 軸的圖表上，必定是一條水平線 (Horizontal line)。<br>
+            <em>即時行動：選項 C 的 Y 軸是「通脹率」，但它顯示向上傾斜，這代表「通脹率在加速」，不符合「固定增長率」的設定，直接淘汰。</em>
+        </li>
+    </ol>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="warning-box">
+        <h3>⚠️ 混淆「物價水平 (Price Level)」與「通脹率 (Inflation Rate)」</h3>
+        <p>這是考生最易跌入的陷阱！</p>
+        <ul>
+            <li><strong>物價水平 (\(P\))</strong>：是一個絕對數值 (例如 CPI 為 110)。如果貨幣供應每年增加 5%，物價水平會像複利一樣<strong>不斷向上攀升</strong>。</li>
+            <li><strong>通脹率 (\(\% \Delta P\))</strong>：是物價水平的<strong>變化速度</strong>。既然物價每年都剛好上升 5%，那麼「上升的速度」就是固定的 5%。</li>
+        </ul>
+        <p>很多學生看到選項 A 是水平線，就誤以為「物價不變」，忘記了有通脹時，物價是一定會升的。而看到選項 D 是水平線，又誤以為這代表「沒有通脹」，其實水平線只要高於 0，就代表有<strong>穩定的通脹 (Stable Inflation)</strong>。</p>
+        
+        <p class="bilingual-en">This is the deadliest trap for students! Many confuse "Price Level" (an absolute value, which is constantly rising here) with "Inflation Rate" (the speed of price changes, which is constant here). A horizontal line on an Inflation Rate graph does NOT mean zero inflation; if it's above the x-axis, it means a steady, constant positive inflation.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    
+    <div class="qa-item">
+        <p class="qa-q">Q: 如果題目沒有寫「古典貨幣量理論」，只是問一般情況，答案會不同嗎？</p>
+        <p class="bilingual-en">Q: If the question didn't specify "classical quantity theory", but asked about a general situation, would the answer be different?</p>
+        <p><strong>A:</strong> 是的，絕對會不同！如果沒有「古典」的強烈假設，實質產出 (\(Y\)) 隨著經濟發展通常是會增長的 (\(\% \Delta Y > 0\))。在這種情況下，\(\% \Delta P = \% \Delta M - \% \Delta Y\)。如果貨幣增長率 (\(\% \Delta M\)) 固定，但實質產出增長率 (\(\% \Delta Y\)) 每年有波動，那麼通脹率 (\(\% \Delta P\)) 就不會是一條完美的水平線了。</p>
+        <p class="bilingual-en"><strong>A:</strong> Yes, absolutely! Without the strict "classical" assumption, real output (\(Y\)) typically grows over time as the economy develops (\(\% \Delta Y > 0\)). In this case, \(\% \Delta P = \% \Delta M - \% \Delta Y\). If the money growth rate is constant, but real output growth fluctuates, the inflation rate would no longer be a perfect horizontal line.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <h3>💡 秒殺口訣 (10-Second Shortcut)</h3>
+        <p>應付 DSE 關於貨幣數量論的圖表題，記住這個對應關係：</p>
+        <ul>
+            <li>看到 <strong>Constant (固定 / 不變)</strong> 的變數：圖表必須是<strong>水平線 (Horizontal Line)</strong>。</li>
+            <li>看到 <strong>Growing (增長)</strong> 的變數：圖表必須是<strong>向上傾斜 (Upward Sloping)</strong>。</li>
+        </ul>
+        <p><strong>實戰應用：</strong><br>
+        題目說貨幣增長率 (\(\% \Delta M\)) = 固定 (Constant)。<br>
+        根據古典理論推導：通脹率 (\(\% \Delta P\)) = 固定 (Constant)。<br>
+        找 Y 軸是「通脹率」且形狀是「水平線」的圖表。一眼看出就是 <strong>D</strong>！</p>
+    </div>
+
+</body>
+</html>
