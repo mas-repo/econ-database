@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: AD-AS Model Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --success: #22c55e;
+            --success-light: #f0fdf4;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --bg-gray: #f8fafc;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .en-translation {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .header-card {
+            background: var(--bg-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .tag {
+            display: inline-block;
+            background: #cbd5e1;
+            color: #0f172a;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-box {
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #fff;
+        }
+        .option-box.correct {
+            border-color: var(--success);
+            background-color: var(--success-light);
+            border-left: 6px solid var(--success);
+        }
+        .svg-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+        .trick-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h2>HKDSE 經濟學題目解析 <br><span style="font-size: 0.8em; color: #475569;">HKDSE Economics Question Analysis</span></h2>
+        <p>
+            <span class="tag">Topic: 總需求與總供應 (AD-AS Model)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: AD, SRAS, Exports</span>
+        </p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>[中文]</strong> 由於新冠肺炎爆發，大部分航班取消，引致訪港旅客人數大減。同時，本港很多僱員被迫放無薪假期。下列哪圖最能描述上述事件的後果？</p>
+        <p class="en-translation"><strong>[English]</strong> Due to the COVID-19 outbreak, most of the flights were cancelled, leading to a significant drop in the number of tourists visiting Hong Kong. At the same time, many employees in Hong Kong were forced to take no pay leave. Which of the following diagrams can best describe the consequence of the above incidents?</p>
+        
+        <p><strong>選項 (Options):</strong><br>
+        A. AD shifts Right, SRAS shifts Left<br>
+        B. AD shifts Left, SRAS shifts Left<br>
+        C. AD shifts Left, LRAS shifts Right<br>
+        D. AD shifts Right, LRAS shifts Left</p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p>要解答這條題目，我們需要釐清兩個宏觀經濟變量的組成部分：<strong>總需求 (Aggregate Demand, AD)</strong> 和 <strong>短期總供應 (Short-Run Aggregate Supply, SRAS)</strong>。</p>
+        <p class="en-translation">To answer this question, we need to clarify the components of two macroeconomic variables: <strong>Aggregate Demand (AD)</strong> and <strong>Short-Run Aggregate Supply (SRAS)</strong>.</p>
+        
+        <h3>總需求 (Aggregate Demand)</h3>
+        <p>總需求是經濟體系內各部門對本地生產物品及服務的總計劃開支。公式為：</p>
+        <p class="en-translation">Aggregate Demand is the total planned expenditure on domestically produced goods and services in an economy. The formula is:</p>
+        <div class="math-block">
+            $$AD = C + I + G + NX$$
+        </div>
+        <p>當中 $NX$ 代表淨出口 (Net Exports)，即出口 ($X$) 減去進口 ($M$)。<strong>旅客在香港的消費被計算為「服務輸出」(Exports of Services)</strong>。</p>
+        <p class="en-translation">Where $NX$ represents Net Exports, i.e., Exports ($X$) minus Imports ($M$). <strong>Tourists' spending in Hong Kong is counted as "Exports of Services".</strong></p>
+
+        <h3>短期總供應 (Short-Run Aggregate Supply)</h3>
+        <p>短期總供應受生產成本及勞動力投入影響。如果勞動力投入減少（例如工人放無薪假），在任何物價水平下，廠商的總產量都會下降，導致 SRAS 向左移。</p>
+        <p class="en-translation">Short-Run Aggregate Supply is affected by production costs and labor input. If labor input decreases (e.g., workers taking unpaid leave), the total output of firms will fall at any given price level, causing SRAS to shift to the left.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="option-box correct">
+        <h3>正確答案：選項 B (Correct Option: B)</h3>
+        <p><strong>事件一分析：訪港旅客人數大減</strong><br>
+        旅客減少代表本地旅遊業的服務輸出（出口，$X$）下降。由於出口是總需求的組成部分，出口下降會導致<strong>總需求 ($AD$) 減少，向左平移 ($AD_1 \rightarrow AD_2$)</strong>。</p>
+        <p class="en-translation"><strong>Analysis of Event 1: Drop in tourists</strong><br>
+        A decrease in tourists means a drop in exports of services ($X$) for the local tourism industry. Since exports are a component of aggregate demand, a fall in exports causes <strong>Aggregate Demand ($AD$) to decrease and shift to the left ($AD_1 \rightarrow AD_2$)</strong>.</p>
+
+        <p><strong>事件二分析：僱員被迫放無薪假期</strong><br>
+        無薪假期意味著整體經濟中的實際勞動力投入（工作時數）暫時減少。由於生產要素投入減少，整體的生產量下降，這會導致<strong>短期總供應 ($SRAS$) 減少，向左平移 ($SRAS_1 \rightarrow SRAS_2$)</strong>。</p>
+        <p class="en-translation"><strong>Analysis of Event 2: Employees forced to take no pay leave</strong><br>
+        No pay leave implies a temporary reduction in the actual labor input (working hours) in the whole economy. As the input of factors of production decreases, overall production falls, causing <strong>Short-Run Aggregate Supply ($SRAS$) to decrease and shift to the left ($SRAS_1 \rightarrow SRAS_2$)</strong>.</p>
+
+        <div class="svg-container">
+            <svg width="300" height="250" viewBox="0 0 300 250" style="background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+                <line x1="40" y1="210" x2="280" y2="210" stroke="#000" stroke-width="2" />
+                <line x1="40" y1="210" x2="40" y2="20" stroke="#000" stroke-width="2" />
+                <polygon points="280,210 270,205 270,215" fill="#000" />
+                <polygon points="40,20 35,30 45,30" fill="#000" />
+                <text x="230" y="230" font-family="sans-serif" font-size="12">Output Level</text>
+                <text x="10" y="15" font-family="sans-serif" font-size="12">Price</text>
+                <text x="10" y="30" font-family="sans-serif" font-size="12">Level</text>
+                <text x="25" y="230" font-family="sans-serif" font-size="14">0</text>
+                
+                <line x1="100" y1="200" x2="200" y2="40" stroke="#3b82f6" stroke-width="2" /> <text x="205" y="50" font-family="sans-serif" font-size="12" fill="#3b82f6">SRAS₁</text>
+                <line x1="60" y1="200" x2="160" y2="40" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5" /> <text x="135" y="35" font-family="sans-serif" font-size="12" fill="#3b82f6">SRAS₂</text>
+                <polygon points="150,80 160,75 160,85" fill="#3b82f6" />
+                <line x1="180" y1="80" x2="150" y2="80" stroke="#3b82f6" stroke-width="1.5" />
+
+                <line x1="80" y1="40" x2="220" y2="180" stroke="#ef4444" stroke-width="2" /> <text x="225" y="185" font-family="sans-serif" font-size="12" fill="#ef4444">AD₁</text>
+                <line x1="50" y1="40" x2="190" y2="180" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" /> <text x="195" y="195" font-family="sans-serif" font-size="12" fill="#ef4444">AD₂</text>
+                <polygon points="160,150 170,145 170,155" fill="#ef4444" />
+                <line x1="190" y1="150" x2="160" y2="150" stroke="#ef4444" stroke-width="1.5" />
+            </svg>
+            <p style="font-size: 0.85em; color: #666;">圖表 B：AD 與 SRAS 同時向左移 (Diagram B: AD and SRAS both shift left)</p>
+        </div>
+    </div>
+
+    <div class="option-box">
+        <h3>選項 A 錯誤原因 (Why Option A is wrong)</h3>
+        <p>圖 A 顯示總需求 (AD) 向右移。如上所述，旅客減少會令出口下降，AD 應該向左移才對。</p>
+        <p class="en-translation">Diagram A shows Aggregate Demand (AD) shifting to the right. As explained above, a drop in tourists decreases exports, so AD should shift to the left.</p>
+    </div>
+
+    <div class="option-box">
+        <h3>選項 C & D 錯誤原因 (Why Options C & D are wrong)</h3>
+        <p>圖 C 和 D 涉及長期總供應 (LRAS) 的移動。<strong>無薪假期只是暫時性的人力閒置，並沒有改變經濟體的長期生產潛能或勞動人口總量。</strong> 因此，LRAS 不會移動。此外，圖 D 的 AD 移動方向也是錯誤的。</p>
+        <p class="en-translation">Diagrams C and D involve the shift of Long-Run Aggregate Supply (LRAS). <strong>No pay leave is only a temporary idleness of human resources and does not change the economy's long-term production capacity or the total size of the labor force.</strong> Therefore, LRAS remains unchanged. Furthermore, the direction of the AD shift in Diagram D is also incorrect.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>面對這類複合情境題，最有效的策略是<strong>「分而治之」(Divide and Conquer)</strong>：</p>
+    <p class="en-translation">When facing this type of compound scenario question, the most effective strategy is <strong>"Divide and Conquer"</strong>:</p>
+    <ul>
+        <li><strong>步驟 1 (Step 1):</strong> 找出第一句話的關鍵字：「旅客人數大減」。判斷它影響 $AD$ 還是 $AS$。旅客 = 出口 = $AD$。大減 = 向左移。由此可以直接淘汰選項 A 和 D。<br>
+        <span class="en-translation">Find the keyword in the first sentence: "drop in tourists". Determine if it affects $AD$ or $AS$. Tourists = Exports = $AD$. Drop = Shift Left. This eliminates options A and D immediately.</span></li>
+        <li><strong>步驟 2 (Step 2):</strong> 找出第二句話的關鍵字：「無薪假期」。判斷是短期 ($SRAS$) 還是長期 ($LRAS$) 影響。無薪假是暫時性的產能下降，不影響經濟潛能，所以是 $SRAS$ 向左移，不影響 $LRAS$。由此淘汰選項 C，得出答案 B。<br>
+        <span class="en-translation">Find the keyword in the second sentence: "no pay leave". Determine if it's a short-run ($SRAS$) or long-run ($LRAS$) effect. Unpaid leave is a temporary drop in production capacity, not affecting economic potential, so it shifts $SRAS$ left and does not affect $LRAS$. This eliminates option C, leaving Answer B.</span></li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trick-box">
+        <p>⚠️ <strong>混淆 SRAS 與 LRAS (Confusing SRAS and LRAS)</strong><br>
+        很多學生看到「勞動力」三個字就直接聯想到長期總供應 ($LRAS$)。請記住，只有當勞動人口總數（例如：移民政策改變）或技術水平發生根本性改變時，$LRAS$ 才會移動。放無薪假的人仍然是勞動人口的一部分，只是暫時沒有工作，所以只影響 $SRAS$。</p>
+        <p class="en-translation">Many students immediately associate "labor force" with Long-Run Aggregate Supply ($LRAS$). Remember, $LRAS$ only shifts when there is a fundamental change in the total size of the labor force (e.g., changes in immigration policy) or technology level. People on unpaid leave are still part of the labor force; they are just temporarily not working, so this only affects $SRAS$.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>問 (Q): </strong>放無薪假期會減少市民的收入，這不是也會令私人消費開支 ($C$) 下降，從而令 $AD$ 減少嗎？<br>
+        <span class="en-translation">Does taking no pay leave reduce citizens' income, which in turn decreases private consumption expenditure ($C$) and thus reduces $AD$?</span></p>
+        
+        <p><strong>答 (A): </strong>非常好的觀察！完全正確。無薪假期的確會令市民收入下降，導致消費 ($C$) 減少，這會<strong>進一步加劇 $AD$ 向左移的幅度</strong>。不過，題目中的「旅客人數大減」已經足以讓我們確認 $AD$ 會向左移。在 DSE 選擇題中，通常一個事件對應一條曲線的移動，所以將「旅客減少」對應 $AD$ 左移，將「無薪假」對應 $SRAS$ 左移，是最直接的解題思路。</p>
+        <p class="en-translation">Excellent observation! You are absolutely right. No pay leave does reduce citizens' income, leading to a decrease in consumption ($C$), which would <strong>further reinforce the leftward shift of $AD$</strong>. However, the "drop in tourists" mentioned in the question is already sufficient for us to confirm that $AD$ shifts left. In DSE MCQs, usually, one event corresponds to the shift of one curve. Therefore, matching "drop in tourists" to the leftward shift of $AD$, and "no pay leave" to the leftward shift of $SRAS$, is the most straightforward approach to solving the problem.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p>💡 <strong>秒殺法 (The 10-second approach):</strong><br>
+    在公開試中時間緊迫。看到這題，只需看第一句「旅客大減」，立刻知道 $AD$ 跌（圖案的 AD 線向左退）。掃視四個選項，只有 B 和 C 的 $AD$ 是向左移的。接著看第二句「無薪假」，這是短期事件，不影響長期潛力，不可能移 $LRAS$，馬上刪除 C。答案就是 B，連 $SRAS$ 移動的方向都不用仔細思考就能選出正確答案！</p>
+    <p class="en-translation">Time is tight in public exams. When you see this question, just read the first sentence "drop in tourists" and immediately know that $AD$ falls (the AD curve shifts left). Scan the four options; only B and C show an $AD$ shift to the left. Then read the second sentence "no pay leave". This is a short-term event and doesn't affect long-term potential, so it's impossible to shift $LRAS$. Cross out C immediately. The answer must be B. You can select the correct answer without even deeply pondering the direction of the $SRAS$ shift!</p>
+
+
+</body>
+</html>

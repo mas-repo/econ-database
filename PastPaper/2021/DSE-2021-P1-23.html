@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - GDP Calculation</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-left: 5px solid #6b7280;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .correct-option {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .wrong-option {
+            background-color: #fee2e2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fef9c3;
+            border-left: 5px solid #eab308;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .svg-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1 style="margin-top: 0; border-bottom: none;">HKDSE Economics Masterclass 經濟學大師班</h1>
+        <div>
+            <span class="tag">Topic: National Income Accounting 國民收入會計</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐ (4/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts / 核心概念:</strong>
+            <span class="tag">GDP / 本地生產總值</span>
+            <span class="tag">Factor Cost / 要素成本</span>
+            <span class="tag">Expenditure Approach / 開支計算法</span>
+            <span class="tag">Value-added / 增值</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>某經濟的物品X生產鏈顯示如下。</strong><br>
+        以上生產鏈對該經濟的本地生產總值（以要素成本計算）的貢獻是 _____________。</p>
+        <p class="bilingual-en"><strong>A production chain of Good X in an economy is shown below.</strong><br>
+        The contribution of the above production chain to the economy’s gross domestic product at factor cost is _____________.</p>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. $1 400</li>
+            <li>B. $1 450</li>
+            <li>C. $1 500</li>
+            <li>D. $1 550</li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>計算本地生產總值 (Calculating GDP)</h3>
+        <p>要計算本地生產總值，我們可以使用<strong>開支計算法 (Expenditure Approach)</strong> 或 <strong>增值計算法 (Value-added Approach)</strong>。在此題中，使用開支計算法會更快捷、更不易出錯。</p>
+        <p class="bilingual-en">To calculate GDP, we can use the <strong>Expenditure Approach</strong> or the <strong>Value-added Approach</strong>. In this specific question, using the Expenditure Approach is faster and less prone to errors.</p>
+        
+        <div class="math-block">
+            $$GDP_{mp} = C + I + G + X - M$$
+        </div>
+        
+        <ul>
+            <li><strong>C (Private Consumption / 私人消費開支):</strong> 售予本地消費者的價值 (Sales to local consumers).</li>
+            <li><strong>I (Gross Investment / 總投資):</strong> 存貨的增加 (Increase in inventory).</li>
+            <li><strong>X (Exports / 出口):</strong> 售予外國旅客的價值 (Sales to foreign tourists).</li>
+            <li><strong>M (Imports / 進口):</strong> 購買進口原材料的價值 (Value of imported raw materials).</li>
+        </ul>
+
+        <h3>市價 vs 要素成本 (Market Price vs Factor Cost)</h3>
+        <p>題目要求計算<strong>要素成本 (Factor Cost)</strong>，但我們初步計算得出的通常是<strong>市價 (Market Price)</strong>。由於市價包含了政府徵收的間接稅 (Indirect Taxes)，我們必須將其扣除。</p>
+        <p class="bilingual-en">The question asks for GDP at <strong>Factor Cost</strong>, but our initial calculation usually yields GDP at <strong>Market Price</strong>. Since market prices include indirect taxes levied by the government, we must subtract them.</p>
+
+        <div class="math-block">
+            $$GDP_{fc} = GDP_{mp} - \text{Indirect Taxes (間接稅)} + \text{Subsidies (津貼)}$$
+        </div>
+    </div>
+
+    <div class="svg-container">
+        <svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="20" width="500" height="200" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+            <text x="300" y="50" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Expenditure Approach Components</text>
+            
+            <circle cx="150" cy="120" r="40" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+            <text x="150" y="115" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">C + X</text>
+            <text x="150" y="135" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#166534">$1700</text>
+            
+            <circle cx="250" cy="120" r="40" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+            <text x="250" y="115" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">+ I</text>
+            <text x="250" y="135" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#166534">$50</text>
+
+            <circle cx="350" cy="120" r="40" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+            <text x="350" y="115" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#991b1b">- M</text>
+            <text x="350" y="135" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#991b1b">$200</text>
+            
+            <circle cx="450" cy="120" r="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+            <text x="450" y="115" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">- Tax</text>
+            <text x="450" y="135" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#b45309">$100</text>
+
+            <text x="300" y="200" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e3a8a">= GDP at Factor Cost: $1450</text>
+        </svg>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <h3 style="margin-top:0;">Correct Answer: Option B</h3>
+        
+        <div class="correct-option">
+            <strong>✓ Option B ($1 450) is CORRECT.</strong>
+            <p><strong>第一步：計算市價計算的 GDP ($GDP_{mp}$)</strong><br>
+            利用開支計算法：私人消費 $C = 1200$；存貨增加（投資）$I = 50$；出口（售予外國旅客）$X = 500$；進口原材料 $M = 200$。<br>
+            $GDP_{mp} = 1200 + 50 + 500 - 200 = 1550$</p>
+            <p><strong>第二步：轉換為要素成本 ($GDP_{fc}$)</strong><br>
+            $GDP_{fc} = GDP_{mp} - \text{Sales Tax (銷售稅)}$<br>
+            $GDP_{fc} = 1550 - 100 = 1450$</p>
+
+            <p class="bilingual-en"><strong>Step 1: Calculate GDP at Market Price ($GDP_{mp}$)</strong><br>
+            Using the expenditure approach: Private consumption $C = 1200$; Increase in inventory (Investment) $I = 50$; Exports (Sales to foreign tourists) $X = 500$; Imported raw materials $M = 200$.<br>
+            $GDP_{mp} = 1200 + 50 + 500 - 200 = 1550$<br>
+            <strong>Step 2: Convert to Factor Cost ($GDP_{fc}$)</strong><br>
+            $GDP_{fc} = GDP_{mp} - \text{Sales Tax}$<br>
+            $GDP_{fc} = 1550 - 100 = 1450$</p>
+        </div>
+
+        <div class="wrong-option">
+            <strong>✗ Option A ($1 400)</strong>
+            <p>這是一個陷阱。如果學生忘記將農民的「存貨增加 $50」計算在內（即遺漏了投資 $I$），他們會得出 $1200 + 500 - 200 - 100 = 1400$。記住，未售出的存貨也是當年新生產的價值，必須計入 GDP！</p>
+            <p class="bilingual-en">This is a trap. If a student forgets to include the farmers' "increase in inventory $50" (i.e., omitting Investment $I$), they would get $1200 + 500 - 200 - 100 = 1400$. Remember, unsold inventory represents value newly produced in that year and MUST be included in GDP!</p>
+        </div>
+
+        <div class="wrong-option">
+            <strong>✗ Option C ($1 500)</strong>
+            <p>如果學生使用了增值計算法，但錯誤地沒有減去 $200 的進口原材料，然後又減去了 $100 稅款，可能會得出這個錯誤數字。另一種可能是胡亂將數據加減。</p>
+            <p class="bilingual-en">If a student used the value-added approach but mistakenly failed to subtract the $200 imported raw materials, and then subtracted the $100 tax, they might arrive at this incorrect figure. Another possibility is just randomly adding/subtracting figures.</p>
+        </div>
+
+        <div class="wrong-option">
+            <strong>✗ Option D ($1 550)</strong>
+            <p>這是<strong>市價計算</strong>的本地生產總值 ($GDP_{mp}$)。學生成功計算出總開支 ($1200 + 50 + 500 - 200 = 1550$)，但粗心大意忘記了題目要求的是「要素成本」，沒有扣除 $100 的銷售稅。</p>
+            <p class="bilingual-en">This is the GDP at <strong>Market Price</strong> ($GDP_{mp}$). The student successfully calculated total expenditure ($1200 + 50 + 500 - 200 = 1550$), but carelessly forgot that the question asked for "Factor Cost" and failed to deduct the $100 sales tax.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="tips-box">
+        <p><strong>Pivot Point (解題關鍵):</strong></p>
+        <ol>
+            <li><strong>進口 (Imports):</strong> 「原材料 $200」是從外地輸入的，並非本地生產，必須從最終價值中扣除。</li>
+            <li><strong>銷售稅 (Sales Tax):</strong> 括號內的「包含 $100 銷售稅」是將市價轉換為要素成本的關鍵。</li>
+            <li><strong>存貨 (Inventory):</strong> 存貨增加屬於廠商的「投資開支 (Investment)」，是當年GDP的一部分。</li>
+        </ol>
+        <p class="bilingual-en"><strong>Pivot Point:</strong><br>
+        1. <strong>Imports:</strong> The "raw materials $200" are imported, not produced locally, and must be deducted from the final value.<br>
+        2. <strong>Sales Tax:</strong> The bracketed "($100 sales tax inclusive)" is the key to converting market price to factor cost.<br>
+        3. <strong>Inventory:</strong> The increase in inventory is treated as "Investment expenditure" by the firm and is part of the current year's GDP.</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="analysis-box">
+        <ul>
+            <li><strong>混淆增值法與開支法 (Confusing Value-added and Expenditure approaches):</strong> 很多學生嘗試用增值法逐個計算（進口商增值 + 農民增值 + 超市增值）。雖然可行，但容易算錯中間物品的價值。直接看圖表最右端（最終產品去向）及最左端（進口），使用開支法會簡單得多。</li>
+            <li><strong>忘記扣除進口 (Forgetting to deduct imports):</strong> 看到超市賣了 $1200 + 500$，就直接當成 GDP。必須減去非本地生產的 $200。</li>
+            <li><strong>粗心忽略括號 (Ignoring the brackets):</strong> 考評局經常將關鍵資訊（如稅款、折舊）放在括號內，不小心看漏就會選錯 D。</li>
+        </ul>
+        <p class="bilingual-en">
+            * <strong>Confusing methods:</strong> Many try to calculate value-added step-by-step (Importer VA + Farmer VA + Supermarket VA). While possible, it's easy to miscalculate intermediate goods. Looking at the far right (final destinations) and far left (imports) using the expenditure approach is much simpler.<br>
+            * <strong>Forgetting to deduct imports:</strong> Seeing the supermarket sold $1200 + 500, students might just take that as GDP. You MUST subtract the non-locally produced $200.<br>
+            * <strong>Ignoring brackets:</strong> The HKEAA often puts crucial info (like taxes or depreciation) in brackets. Missing it leads straight to Option D.
+        </p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼售予「外國旅客」算作出口 (Exports)？</strong></p>
+        <p>A: 在經濟學中，「出口」不一定是指將貨物用船運出國外。只要是<strong>非本地居民</strong>（如外國旅客）在本地消費，為本地帶來外匯收入，這在國民收入會計中就會被記錄為服務或物品的出口 ($X$)。</p>
+        <p class="bilingual-en"><strong>Q: Why are sales to "foreign tourists" considered Exports?</strong><br>
+        A: In economics, "exports" don't necessarily mean shipping goods overseas. Whenever <strong>non-residents</strong> (like foreign tourists) consume locally and bring foreign exchange into the economy, it is recorded as an export of goods or services ($X$) in national income accounting.</p>
+        
+        <br>
+
+        <p><strong>Q: 什麼情況下我應該使用「增值計算法 (Value-added Approach)」？</strong></p>
+        <p>A: 讓我們驗證一下！如果用增值法：<br>
+        進口商增值 = $400 - 200 = 200$<br>
+        農民增值 = $(600 + 50) - 0 = 650$<br>
+        超市增值 = $(1200 + 500) - 400 - 600 = 700$<br>
+        總增值 ($GDP_{mp}$) = $200 + 650 + 700 = 1550$。<br>
+        再減去間接稅 $100，得出要素成本 GDP = 1450。<br>
+        兩種方法答案相同！但在考試時，當你看到圖表給出了清晰的最終買家（消費者、旅客、存貨），直接用開支法通常更快。</p>
+        <p class="bilingual-en"><strong>Q: Under what circumstances should I use the Value-added Approach?</strong><br>
+        A: Let's verify it! Using Value-added:<br>
+        Importer VA = $400 - 200 = 200$<br>
+        Farmer VA = $(600 + 50) - 0 = 650$<br>
+        Supermarket VA = $(1200 + 500) - 400 - 600 = 700$<br>
+        Total VA ($GDP_{mp}$) = $200 + 650 + 700 = 1550$.<br>
+        Subtract the $100 indirect tax, and you get GDP at factor cost = 1450.<br>
+        Both methods yield the same answer! However, in an exam, when a flowchart clearly shows final buyers (consumers, tourists, inventory), the expenditure approach is usually much faster.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p><strong>「首尾呼應法」秒殺流程圖題目！</strong></p>
+        <p>當你在試卷上看到這種複雜的生產鏈流程圖時，<strong>不要</strong>逐個箭頭計算！</p>
+        <p>直接看<strong>最右邊</strong>（所有離開生產鏈的箭頭，代表最終用途）和<strong>最左邊</strong>（所有進入生產鏈的外來箭頭，代表進口）。</p>
+        <ol>
+            <li>找出右邊的總和：$1200 (\text{Local}) + 500 (\text{Tourists}) + 50 (\text{Inventory}) = 1750$</li>
+            <li>減去左邊的外來進口：$1750 - 200 (\text{Raw materials}) = 1550$ (這是 $GDP_{mp}$)</li>
+            <li>檢查題目要求（要素成本），減稅：$1550 - 100 = 1450$。完成！</li>
+        </ol>
+        
+        <p class="bilingual-en"><strong>The "Ends-Only" Shortcut for Flowchart Questions!</strong><br>
+        When you see a complex production chain flowchart like this in an exam, <strong>DO NOT</strong> calculate arrow by arrow!<br>
+        Look directly at the <strong>far right</strong> (all arrows leaving the chain, representing final uses) and the <strong>far left</strong> (all external arrows entering, representing imports).<br>
+        1. Sum the right side: $1200 (\text{Local}) + 500 (\text{Tourists}) + 50 (\text{Inventory}) = 1750$<br>
+        2. Subtract external imports from the left: $1750 - 200 (\text{Raw materials}) = 1550$ (This is $GDP_{mp}$)<br>
+        3. Check the question requirement (Factor Cost), subtract tax: $1550 - 100 = 1450$. Done!</p>
+    </div>
+
+</body>
+</html>

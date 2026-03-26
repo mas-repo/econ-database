@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Macroeconomics AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-green: #10b981;
+            --light-green: #ecfdf5;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --gray-bg: #f9fafb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Noto Sans TC';
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 10px;
+        }
+
+        .question-box {
+            background-color: var(--gray-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 15px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .option {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option.correct {
+            background-color: var(--light-green);
+            border-color: var(--primary-green);
+        }
+
+        .option.wrong {
+            background-color: var(--light-red);
+            border-color: #fca5a5;
+        }
+
+        .option-header {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .correct-icon {
+            color: var(--primary-green);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .wrong-icon {
+            color: var(--primary-red);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .en {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 0;
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .trick-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>總需求與總供應 (AD-AS Model)</h1>
+        <p>Macroeconomics | 長期均衡調整 (Long-Run Adjustment)</p>
+        <div class="tags">
+            <span class="tag">難度: ★★★★☆</span>
+            <span class="tag">Aggregate Demand</span>
+            <span class="tag">Long-Run Aggregate Supply</span>
+            <span class="tag">Equilibrium Shift</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>題目 The Question</h2>
+        <div class="question-box">
+            <div class="bilingual-text">
+                <div class="zh">細閱下圖。某原油進口國的原初均衡點是 E。若新的長期均衡點是 C，下列哪項是均衡點改變的可能原因？</div>
+                <div class="en">Study the following diagram. The initial equilibrium point of an oil importing country is at E. If the new long run equilibrium point is at C, which of the following is a possible reason for the change in the equilibrium point?</div>
+            </div>
+            
+            <ol type="A" style="font-weight: bold;">
+                <li>
+                    <div class="bilingual-text" style="font-weight: normal;">
+                        <div class="zh">油價上升。</div>
+                        <div class="en">There is an increase in oil prices.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bilingual-text" style="font-weight: normal;">
+                        <div class="zh">生產補貼下降。</div>
+                        <div class="en">There is a decrease in production subsidy.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bilingual-text" style="font-weight: normal;">
+                        <div class="zh">公眾傾向減少儲蓄。</div>
+                        <div class="en">The public tends to save less.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bilingual-text" style="font-weight: normal;">
+                        <div class="zh">政府提高薪俸稅稅率。</div>
+                        <div class="en">The government increases the salaries tax rate.</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>概念重溫 Concept Review</h2>
+        <div class="concept-box">
+            <div class="bilingual-text">
+                <div class="zh">要拆解這類題目，我們必須理解 <strong>總需求 (AD)</strong> 的移動以及經濟體系如何達致 <strong>長期均衡 (Long-Run Equilibrium)</strong>。</div>
+                <div class="en">To tackle this type of question, we must understand the shift in <strong>Aggregate Demand (AD)</strong> and how the economy achieves <strong>Long-Run Equilibrium</strong>.</div>
+            </div>
+
+            <div class="math-block">
+                $$ AD = C + I + G + NX $$
+            </div>
+
+            <div class="bilingual-text">
+                <div class="zh">
+                    <ul>
+                        <li><strong>長期總供應 (LRAS):</strong> 垂直的 LRAS 線代表經濟處於全民就業的產出水平 \( Y_f \)。它不受物價水平影響。</li>
+                        <li><strong>需求拉動通脹的長期調整:</strong> 當 AD 增加（向右移），短期內物價 \( P \) 和產出 \( Y \) 均會上升。但在長期而言，由於資源變得短缺，要素價格（例如工資）會上升，導致短期總供應 (SRAS) 向左移。最終，經濟會回到 LRAS 線上，產出回復原狀，但物價水平會永久上升。</li>
+                    </ul>
+                </div>
+                <div class="en">
+                    <ul>
+                        <li><strong>Long-Run Aggregate Supply (LRAS):</strong> The vertical LRAS curve represents the economy's full-employment output level \( Y_f \). It is independent of the price level.</li>
+                        <li><strong>Long-Run Adjustment of Demand-Pull Inflation:</strong> When AD increases (shifts right), both price level \( P \) and output \( Y \) increase in the short run. However, in the long run, factor prices (e.g., wages) rise due to resource shortages, causing the Short-Run Aggregate Supply (SRAS) to shift left. Ultimately, the economy returns to the LRAS curve with output returning to its original level, but at a permanently higher price level.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="svg-container">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2" />
+                    <line x1="50" y1="350" x2="50" y2="50" stroke="black" stroke-width="2" />
+                    <text x="440" y="370" font-family="sans-serif" font-size="14">Y</text>
+                    <text x="30" y="45" font-family="sans-serif" font-size="14">P</text>
+                    
+                    <line x1="250" y1="50" x2="250" y2="350" stroke="black" stroke-width="2" />
+                    <text x="240" y="40" font-family="sans-serif" font-size="14">LRAS</text>
+                    <text x="240" y="370" font-family="sans-serif" font-size="14">Y₁</text>
+
+                    <line x1="100" y1="100" x2="350" y2="350" stroke="black" stroke-width="2" />
+                    <text x="355" y="355" font-family="sans-serif" font-size="14">AD₁</text>
+                    
+                    <line x1="150" y1="350" x2="400" y2="100" stroke="black" stroke-width="2" />
+                    <text x="405" y="95" font-family="sans-serif" font-size="14">SRAS₁</text>
+
+                    <circle cx="250" cy="250" r="5" fill="black" />
+                    <text x="230" y="260" font-family="sans-serif" font-size="16" font-weight="bold">E</text>
+
+                    <line x1="150" y1="50" x2="400" y2="300" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5" />
+                    <text x="405" y="305" fill="#0ea5e9" font-family="sans-serif" font-size="14">AD₂</text>
+                    
+                    <line x1="50" y1="350" x2="300" y2="100" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" />
+                    <text x="305" y="95" fill="#ef4444" font-family="sans-serif" font-size="14">SRAS₂</text>
+
+                    <circle cx="250" cy="150" r="5" fill="black" />
+                    <text x="225" y="155" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+
+                    <circle cx="300" cy="200" r="4" fill="gray" />
+
+                    <path d="M 330 330 L 370 290" stroke="#0ea5e9" stroke-width="2" marker-end="url(#arrowBlue)" fill="none"/>
+                    <path d="M 190 310 L 150 270" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)" fill="none"/>
+
+                    <defs>
+                        <marker id="arrowBlue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9" />
+                        </marker>
+                        <marker id="arrowRed" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>答案與詳細分析 Detailed Analysis</h2>
+        
+        <div class="bilingual-text">
+            <div class="zh" style="font-size: 1.2rem; color: var(--primary-green);"><strong>正確答案：C (公眾傾向減少儲蓄)</strong></div>
+            <div class="en" style="font-size: 1.1rem;"><strong>Correct Option: C (The public tends to save less)</strong></div>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-header">
+                <span class="wrong-icon">✘</span> 選項 A: 油價上升 (Increase in oil prices)
+            </div>
+            <div class="bilingual-text">
+                <div class="zh">油價上升會增加生產成本，導致短期總供應 (SRAS) 減少並向左移。短期均衡會移至 E 點的左上方（滯脹）。若無政府干預，長期而言要素價格會向下調整，SRAS 最終會移回右方，長期均衡將回到 <strong>E 點</strong>，而非 C 點。</div>
+                <div class="en">An increase in oil prices raises production costs, causing Short-Run Aggregate Supply (SRAS) to decrease and shift left. The short-run equilibrium moves to the top-left of E (stagflation). Without government intervention, factor prices will adjust downwards in the long run, shifting SRAS back to the right. The long-run equilibrium will return to <strong>Point E</strong>, not C.</div>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-header">
+                <span class="wrong-icon">✘</span> 選項 B: 生產補貼下降 (Decrease in production subsidy)
+            </div>
+            <div class="bilingual-text">
+                <div class="zh">生產補貼下降同樣會增加企業的生產成本。與選項 A 的分析完全相同，這是一個不利的供應衝擊 (Adverse Supply Shock)，長期均衡最終仍會回到 <strong>E 點</strong>。</div>
+                <div class="en">A decrease in production subsidy also increases production costs for firms. Exactly like the analysis for Option A, this is an adverse supply shock, and the long-run equilibrium will ultimately return to <strong>Point E</strong>.</div>
+            </div>
+        </div>
+
+        <div class="option correct">
+            <div class="option-header">
+                <span class="correct-icon">✔</span> 選項 C: 公眾傾向減少儲蓄 (The public tends to save less)
+            </div>
+            <div class="bilingual-text">
+                <div class="zh">減少儲蓄意味著公眾增加了消費 (Consumption, \( C \))。由於 \( AD = C + I + G + NX \)，消費增加會帶動總需求 (AD) 增加並向右移。在短期，產出和物價水平齊升。在長期，過度需求會推高工資等要素價格，令 SRAS 向左移。最終的長期均衡點會落在同一條 LRAS 線上，但擁有更高的物價水平，這與圖表中的 <strong>C 點</strong> 完全吻合！</div>
+                <div class="en">Saving less means the public increases their Consumption (\( C \)). Since \( AD = C + I + G + NX \), an increase in consumption causes Aggregate Demand (AD) to increase and shift right. In the short run, both output and price levels rise. In the long run, excess demand pushes up factor prices like wages, causing SRAS to shift left. The final long-run equilibrium rests on the same LRAS curve but at a higher price level, perfectly matching <strong>Point C</strong> in the diagram!</div>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-header">
+                <span class="wrong-icon">✘</span> 選項 D: 政府提高薪俸稅稅率 (Government increases salaries tax rate)
+            </div>
+            <div class="bilingual-text">
+                <div class="zh">提高薪俸稅會減少市民的可支配收入，從而壓抑消費 (\( C \))。這會導致總需求 (AD) 減少並向左移。長期的調整機制會令物價水平下降，新的長期均衡點會落在 E 點的<strong>正下方</strong>，而非上方的 C 點。</div>
+                <div class="en">Increasing the salaries tax rate reduces citizens' disposable income, thereby suppressing consumption (\( C \)). This causes Aggregate Demand (AD) to decrease and shift left. The long-run adjustment mechanism will cause the price level to fall, meaning the new long-run equilibrium would be <strong>directly below</strong> Point E, not above at Point C.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <div class="bilingual-text">
+            <div class="zh"><strong>解題樞紐 (Pivot Point):</strong> 觀察圖表，C 點位於 E 點的「正上方」。</div>
+            <div class="en"><strong>Pivot Point:</strong> Observing the diagram, Point C is located "directly above" Point E.</div>
+        </div>
+        <div class="bilingual-text">
+            <div class="zh">這透露了兩個關鍵資訊：
+                <ol>
+                    <li><strong>產出不變:</strong> 兩點都在同一條 LRAS 上，意味著潛在產出 (Potential Output) 沒有改變。</li>
+                    <li><strong>物價上升:</strong> 只有一種力量能在長期只推高物價而不改變產出：那就是 <strong>總需求 (AD) 的增加</strong>。</li>
+                </ol>
+                因此，我們只需在四個選項中，找出哪一個會導致 AD 增加即可。
+            </div>
+            <div class="en">This reveals two key pieces of information:
+                <ol>
+                    <li><strong>Unchanged Output:</strong> Both points are on the same LRAS, meaning potential output hasn't changed.</li>
+                    <li><strong>Higher Price Level:</strong> Only one force can raise the price level in the long run without changing output: <strong>an increase in Aggregate Demand (AD)</strong>.</li>
+                </ol>
+                Therefore, we only need to identify which of the four options causes AD to increase.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <div class="bilingual-text">
+            <div class="zh">
+                <strong>陷阱：混淆短期與長期效果 (Confusing Short-run and Long-run Effects)</strong><br>
+                很多學生看到選項 A（油價上升），知道 SRAS 會向左移，然後錯誤地在圖上把 SRAS 直接平移，發現它與 LRAS 的交點變高了，就誤以為這就是 C 點。這是錯誤的！因為沒有政府干預下，短期的供應衝擊在長期是會自我修復的（透過工資下降），最終回到 E 點。
+            </div>
+            <div class="en">
+                <strong>Trap: Confusing Short-run and Long-run Effects</strong><br>
+                Many students see Option A (increase in oil prices), know that SRAS shifts left, and erroneously shift SRAS directly on the graph. They see it intersects LRAS at a higher point and mistakenly think this is Point C. This is wrong! Without government intervention, a short-run supply shock will self-correct in the long run (via falling wages), eventually returning to Point E.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>學生常見疑問 Student Q&A</h2>
+        <div class="qa-box">
+            <div class="bilingual-text">
+                <div class="zh"><strong>問：如果油價上升是永久性的 (Permanent)，選項 A 會是答案嗎？</strong></div>
+                <div class="en"><strong>Q: If the oil price increase was permanent, would Option A be the answer?</strong></div>
+            </div>
+            <div class="bilingual-text" style="margin-top: 10px;">
+                <div class="zh"><strong>答：</strong>不會。如果資源價格上升是永久性的，經濟的生產能力會受損，這會導致<strong>長期總供應 (LRAS) 向左移</strong>。在這種情況下，新的長期均衡點會在 C 點的左方，因為潛在產出 \( Y_1 \) 會減少。但題目中 LRAS 絲毫未動，證明這不是永久性供應衝擊。</div>
+                <div class="en"><strong>A:</strong> No. If the resource price increase were permanent, the economy's productive capacity would be impaired, causing <strong>Long-Run Aggregate Supply (LRAS) to shift left</strong>. In that case, the new long-run equilibrium would be to the left of Point C because potential output \( Y_1 \) would decrease. However, the LRAS in the diagram hasn't moved, proving it's not a permanent supply shock.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="border-bottom: none;">
+        <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+        <div class="trick-box">
+            <div class="bilingual-text">
+                <div class="zh">
+                    <strong>秒殺口訣 (The 5-Second Rule):</strong><br>
+                    在同一條 LRAS 上移動：
+                    <ul>
+                        <li>向上移 = <strong>AD 增加</strong> (尋找刺激消費、投資、政府開支或出口的選項)</li>
+                        <li>向下移 = <strong>AD 減少</strong> (尋找加稅、減少開支的選項)</li>
+                    </ul>
+                    一看到 C 點在正上方，立刻掃描選項找「AD 增加」。A 是 SRAS 減，B 是 SRAS 減，D 是 AD 減。只有 C (消費增加) 是 AD 增加。5秒內選出答案！
+                </div>
+                <div class="en">
+                    <strong>The 5-Second Rule:</strong><br>
+                    Movement along the SAME LRAS curve:
+                    <ul>
+                        <li>Move UP = <strong>AD increases</strong> (Look for options stimulating C, I, G, or NX)</li>
+                        <li>Move DOWN = <strong>AD decreases</strong> (Look for options like tax hikes or spending cuts)</li>
+                    </ul>
+                    Once you see Point C is directly above, instantly scan the options for "AD increase". A is SRAS decrease, B is SRAS decrease, D is AD decrease. Only C (consumption increase) is an AD increase. You can select the answer in 5 seconds!
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
