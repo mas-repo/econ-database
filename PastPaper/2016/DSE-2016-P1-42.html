@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Expert Guide: Import Quota</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #0369a1;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --success-green: #10b981;
+            --danger-red: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            overflow: hidden;
+        }
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .badge {
+            background: #e0f2fe;
+            color: var(--dark-blue);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .en {
+            font-size: 0.95em;
+            color: var(--text-gray);
+            font-style: italic;
+            border-left: 2px solid var(--border-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background: #fff;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            background: var(--bg-gray);
+        }
+        .correct-answer {
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .analysis-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .analysis-step.correct {
+            border-left: 4px solid var(--success-green);
+        }
+        .analysis-step.incorrect {
+            border-left: 4px solid var(--danger-red);
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            background: white;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Market Intervention (進口配額)</h1>
+    
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> International Trade - Market Intervention (國際貿易 - 市場干預)</div>
+        <div><strong>Difficulty (難度):</strong> ★★★☆☆</div>
+        <div>
+            <strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">Import Quota (進口配額)</span>
+            <span class="badge">Total Supply (總供應)</span>
+            <span class="badge">Market Equilibrium (市場均衡)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">參閱有關某小國物品X的供需圖。該國對物品X實施進口配額，而價格及交易量分別是 $P_0$ 和 $Q_0$。若物品X在該國的需求上升，_____________。</div>
+            <div class="en">Refer to the supply-demand diagram about Good X in a small country. The country has imposed an import quota on Good X and the price and quantity transacted are $P_0$ and $Q_0$ respectively. If the demand for Good X in the country increases, _____________ .</div>
+        </div>
+        
+        <ul class="options-list">
+            <li>
+                <div class="zh">(1) 進口量會上升</div>
+                <div class="en">(1) the import volume will increase.</div>
+            </li>
+            <li>
+                <div class="zh">(2) 物品X在該國的價格會上升</div>
+                <div class="en">(2) the price of Good X in the country will increase.</div>
+            </li>
+            <li>
+                <div class="zh">(3) 物品X在該國的銷量會上升</div>
+                <div class="en">(3) the quantity sold of Good X in the country will increase.</div>
+            </li>
+        </ul>
+
+        <div class="bilingual-block" style="margin-top: 15px;">
+            <div class="zh">A. 只有(1)、(2) <br> B. 只有(1)、(3) <br> C. 只有(2)、(3) <br> D. (1)、(2)及(3)</div>
+            <div class="en">A. (1) and (2) only <br> B. (1) and (3) only <br> C. (2) and (3) only <br> D. (1), (2) and (3)</div>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>進口配額 (Import Quota):</strong> 這是政府對某種物品在特定時間內可進口的最高數量所設定的法定限制。一旦實施了有效的配額，外國供應商最多只能提供該配額數量。</div>
+            <div class="en"><strong>Import Quota:</strong> A legal limit imposed by the government on the maximum quantity of a good that can be imported during a specific period. Once an effective quota is in place, foreign suppliers can only provide up to the quota limit.</div>
+        </div>
+        
+        <div class="bilingual-block">
+            <div class="zh"><strong>總供應 (Total Supply):</strong> 在實施進口配額後，市場的總供應由兩部分組成：本地供應加上進口配額。當價格高於世界價格時，由於進口量被配額鎖死，總供應曲線實際上是把本地供應曲線向右平移（平移的距離等於配額數量）。在 $P_0$ 價格下，本地需求量與本地供應量的橫向差距就是配額數量。</div>
+            <div class="en"><strong>Total Supply:</strong> After imposing an import quota, the total market supply consists of two parts: Domestic Supply plus the Import Quota. At prices above the world price, because imports are capped at the quota, the total supply curve is effectively the domestic supply curve shifted to the right by the quota amount. At price $P_0$, the horizontal gap between domestic demand and domestic supply is exactly the quota amount.</div>
+        </div>
+
+        <div class="math-block">
+            $$Q_{total\_supply} = Q_{domestic\_supply} + \bar{Q}_{quota}$$
+        </div>
+        
+        <div class="bilingual-block">
+            <div class="zh">因此，當需求上升時，新的均衡點只會沿著這條向右平移的總供應曲線向上移動。這意味著只有本地生產商能夠增加供應來滿足額外的需求，而進口量保持不變。</div>
+            <div class="en">Therefore, when demand increases, the new equilibrium simply moves upward along this shifted total supply curve. This means only domestic producers can increase supply to meet the extra demand, while the import volume remains completely unchanged.</div>
+        </div>
+    </div>
+
+    <h2>3. Enhanced Visual Explanation (圖像解析)</h2>
+    <p class="zh">請參考以下修正後的圖表。圖表準確展示了 $P_0$ 時的進口配額是如何填補本地供應 (S) 與需求 ($D_1$) 之間的差距。當需求增加至 $D_2$ 時，市場會尋找一個新的價格 $P_1$，在這個價格下，S 與 $D_2$ 之間的差距<strong>依然等於</strong>原來的進口配額數量。</p>
+    <p class="en">Please refer to the corrected diagram below. It accurately shows how the import quota at $P_0$ fills the horizontal gap between domestic supply (S) and demand ($D_1$). When demand increases to $D_2$, the market finds a new price $P_1$ where the gap between S and $D_2$ is <strong>still exactly equal</strong> to the original import quota amount.</p>
+    
+    <div class="svg-container">
+        <svg viewBox="-20 -20 500 350" width="100%" style="max-width: 500px;">
+            <line x1="40" y1="280" x2="480" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+            <line x1="40" y1="280" x2="40" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+            <text x="470" y="310" font-family="sans-serif" font-size="14">Quantity (數量)</text>
+            <text x="0" y="15" font-family="sans-serif" font-size="14">Price (價格)</text>
+            <text x="25" y="295" font-family="sans-serif" font-size="14">0</text>
+
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L0,6 L9,3 z" fill="black" />
+                </marker>
+            </defs>
+
+            <line x1="40" y1="260" x2="280" y2="20" stroke="#4b5563" stroke-width="2" />
+            <text x="285" y="25" font-family="sans-serif" font-size="14" fill="#4b5563" font-weight="bold">S</text>
+
+            <line x1="40" y1="20" x2="300" y2="280" stroke="#ef4444" stroke-width="2" />
+            <text x="305" y="285" font-family="sans-serif" font-size="14" fill="#ef4444" font-weight="bold">D1</text>
+
+            <line x1="160" y1="260" x2="400" y2="20" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="4,4" />
+            <text x="405" y="25" font-family="sans-serif" font-size="14" fill="#0ea5e9" font-weight="bold">St (Total Supply)</text>
+
+            <line x1="100" y1="20" x2="360" y2="280" stroke="#f59e0b" stroke-width="2" />
+            <text x="365" y="285" font-family="sans-serif" font-size="14" fill="#f59e0b" font-weight="bold">D2</text>
+
+            <line x1="40" y1="200" x2="220" y2="200" stroke="black" stroke-dasharray="5,5" />
+            <line x1="220" y1="280" x2="220" y2="200" stroke="black" stroke-dasharray="5,5" />
+            <circle cx="220" cy="200" r="4" fill="black" />
+            <circle cx="100" cy="200" r="4" fill="black" /> <text x="15" y="205" font-family="sans-serif" font-size="14">P₀</text>
+            <text x="210" y="300" font-family="sans-serif" font-size="14">Q₀</text>
+
+            <path d="M 100,205 Q 100,215 110,215 L 150,215 Q 160,215 160,225 Q 160,215 170,215 L 210,215 Q 220,215 220,205" fill="none" stroke="black" stroke-width="1.5"/>
+            <text x="160" y="240" font-family="sans-serif" font-size="12" text-anchor="middle">Import quota (進口配額)</text>
+
+            <line x1="40" y1="170" x2="250" y2="170" stroke="#f59e0b" stroke-dasharray="5,5" />
+            <line x1="250" y1="280" x2="250" y2="170" stroke="#f59e0b" stroke-dasharray="5,5" />
+            <circle cx="250" cy="170" r="4" fill="#f59e0b" />
+            <circle cx="130" cy="170" r="4" fill="#f59e0b" /> <text x="15" y="175" font-family="sans-serif" font-size="14" fill="#f59e0b" font-weight="bold">P₁</text>
+            <text x="240" y="315" font-family="sans-serif" font-size="14" fill="#f59e0b" font-weight="bold">Q₁</text>
+
+            <path d="M 130,165 Q 130,155 140,155 L 180,155 Q 190,155 190,145 Q 190,155 200,155 L 240,155 Q 250,155 250,165" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="190" y="138" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#f59e0b">Quota (不變/Unchanged)</text>
+        </svg>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="correct-answer">
+        Correct Option: C. (2) and (3) only / 只有(2)、(3)
+    </div>
+
+    <div class="analysis-step incorrect">
+        <div class="bilingual-block">
+            <div class="zh"><strong>分析 (1) 進口量會上升 - 錯誤 (False)</strong><br>
+            圖中顯示的向下括號「進口配額」代表該國允許進口的最高數量。當價格處於 $P_0$ 時，進口量已經達到了配額的上限（即本地需求與本地供應的橫向差距）。無論國內需求如何增加，由於配額是法定的物理限制，進口量都<strong>不可能</strong>超過這個數量（如上方圖表新的橙色括號所示，其寬度保持不變）。因此，進口量維持不變。</div>
+            <div class="en"><strong>Analysis of (1) - False</strong><br>
+            The downward bracket labeled "Import quota" in the diagram represents the maximum allowable import quantity. At price $P_0$, the import volume has already hit this upper limit (the horizontal gap between domestic demand and domestic supply). No matter how much domestic demand increases, because a quota is a statutory physical limit, the import volume <strong>cannot</strong> exceed this amount (as shown by the new orange bracket in the diagram above, its width remains identical). Therefore, the import volume remains unchanged.</div>
+        </div>
+    </div>
+
+    <div class="analysis-step correct">
+        <div class="bilingual-block">
+            <div class="zh"><strong>分析 (2) 物品X在該國的價格會上升 - 正確 (True)</strong><br>
+            當需求上升時，需求曲線從 $D_1$ 向右平移至 $D_2$。因為進口量被鎖死，總供應量只能依靠本地生產商來增加，而這需要更高的價格來提供誘因。因此，新的均衡價格必然會被推高至 $P_1$。</div>
+            <div class="en"><strong>Analysis of (2) - True</strong><br>
+            When demand increases, the demand curve shifts to the right from $D_1$ to $D_2$. Because import volume is capped, the total supply can only increase if domestic producers increase their output, which requires a higher price as an incentive. Thus, the new equilibrium price must be pushed up to $P_1$.</div>
+        </div>
+    </div>
+
+    <div class="analysis-step correct">
+        <div class="bilingual-block">
+            <div class="zh"><strong>分析 (3) 物品X在該國的銷量會上升 - 正確 (True)</strong><br>
+            這是一個極具迷惑性的選項！許多學生以為「進口量不變，所以總銷量不變」。這是不對的。由於市場價格上升至 $P_1$，根據供應定律 (Law of Supply)，較高的價格會誘使<strong>本地生產商 (Domestic Producers)</strong> 增加產量（沿著 S 曲線向上移動）。總交易量 = 增加的本地供應 + 固定的進口配額。因此，整體的交易量從 $Q_0$ 增加至 $Q_1$。</div>
+            <div class="en"><strong>Analysis of (3) - True</strong><br>
+            This is a highly deceptive option! Many students assume "imports can't increase, so total sales can't increase." This is wrong. Because the market price rises to $P_1$, according to the Law of Supply, the higher price incentivizes <strong>domestic producers</strong> to increase their output (moving up along the S curve). Total quantity sold = Increased domestic supply + Fixed import quota. Therefore, the overall quantity transacted increases from $Q_0$ to $Q_1$.</div>
+        </div>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <div class="zh">
+            <ul>
+                <li><strong>解題樞紐 (Pivot Point):</strong> 認清「進口配額是固定的水平距離常數」是破題關鍵。圖中的總供應反應之所以斜向上，完全是因為本地生產商對價格變化的反應，與外國進口無關。</li>
+                <li><strong>干擾資訊 (Distractors):</strong> 原圖只畫了 $S$ 和 $D$，卻把交點放在 $P_0$ 之下，很容易讓人混淆這到底是哪兩條線的交點。其實 $P_0$ 根本不是 $S$ 與 $D$ 的直接交點，而是加入隱藏的 $S_t$ 後的市場均衡點。自己在腦海中補上 $S_t$ 曲線能大大降低出錯率。</li>
+            </ul>
+        </div>
+        <div class="en">
+            <ul>
+                <li><strong>Pivot Point:</strong> Recognizing that the "import quota is a fixed constant horizontal distance" is the key to solving this. The upward-sloping nature of the market's response is driven entirely by domestic producers reacting to price changes, not foreign imports.</li>
+                <li><strong>Distractors:</strong> The original diagram only drew $S$ and $D$, and placed $P_0$ below their apparent intersection, which easily confuses students about what is actually intersecting. In reality, $P_0$ is not the direct intersection of $S$ and $D$, but the market equilibrium after accounting for the hidden $S_t$ curve. Mentally drawing the $S_t$ curve greatly reduces the chance of errors.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>🙋‍♂️ 學生問：</strong> 既然進口數量被限制了，那增加的需求是誰來滿足的？難道不會出現短缺 (Shortage) 嗎？</div>
+            <div class="en"><strong>🙋‍♂️ Student Q:</strong> Since the import quantity is restricted, who satisfies the increased demand? Won't there be a shortage?</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh"><strong>👨‍🏫 老師答：</strong> 不會出現持續的短缺。當需求突然增加時，在原價格 $P_0$ 下確實會有短暫的超額需求 (Excess Demand)。這會將價格推高。價格上升的過程中，本地供應商發現有利可圖，便會增加生產。最終，價格上升會同時壓抑部分需求，並刺激本地供應增加，直到市場在一個更高的價格和數量水平上重新達到均衡。</div>
+            <div class="en"><strong>👨‍🏫 Teacher A:</strong> There won't be a persistent shortage. When demand suddenly increases, there is indeed a temporary excess demand at the original price $P_0$. This pushes the price up. As the price rises, domestic suppliers find it profitable and increase their production. Ultimately, the rising price simultaneously dampens some demand and stimulates an increase in domestic supply until the market reaches a new equilibrium at a higher price and higher quantity level.</div>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>🚀 秒殺法 (Elimination Method):</strong><br>
+            在DSE MC中，看到「有效配額 (Effective Quota)」和「需求上升」，你第一時間就要反射性地想到：<strong>進口量已被鎖死 (Import volume is capped)</strong>。 <br>
+            因此，陳述 (1) 「進口量會上升」<strong>必然是錯的</strong>。<br>
+            看看選項：<br>
+            A. 包含 (1) ❌<br>
+            B. 包含 (1) ❌<br>
+            D. 包含 (1) ❌<br>
+            你甚至不需要去畫圖推導 (2) 和 (3)，單靠排除法就能在 5 秒內鎖定正確答案 <strong>C</strong>！</div>
+            <div class="en"><strong>🚀 The 5-Second Kill (Elimination Method):</strong><br>
+            In DSE MC questions, when you see "Effective Quota" combined with an "Increase in Demand," your immediate reflex should be: <strong>Import volume is capped</strong>. <br>
+            Therefore, Statement (1) "the import volume will increase" <strong>must be false</strong>.<br>
+            Look at the options:<br>
+            A. Contains (1) ❌<br>
+            B. Contains (1) ❌<br>
+            D. Contains (1) ❌<br>
+            You don't even need to draw graphs to figure out (2) and (3). By process of elimination alone, you can lock in the correct answer <strong>C</strong> in 5 seconds!</div>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>
