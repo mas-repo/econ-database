@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Demand</title>
+    
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --bg-concept: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --text-main: #333;
+            --text-muted: #4b5563;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--bg-math);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .header-box {
+            background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .header-box h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .diagram-container {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            transition: transform 0.2s;
+        }
+        
+        .diagram-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .zh {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .correct-ans {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .wrong-ans {
+            background-color: #fee2e2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0;
+        }
+
+        .trick-box {
+            background-color: #fef3c7;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .axis-label {
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <h1>📝 HKDSE Economics Analysis</h1>
+        <div>
+            <span class="tag">Topic: Money Demand (貨幣需求)</span>
+            <span class="tag">Difficulty: ⭐⭐ (2/5)</span>
+            <span class="tag">Key Concepts: Asset Demand, Liquidity Preference</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="zh">假設股票市場日趨波動。下列哪幅圖最能說明上述改變對貨幣市場的影響？</div>
+    <div class="en">Suppose the stock market becomes more volatile. Which of the following diagrams best illustrates the effect of the above change on the money market?</div>
+    
+    <div class="grid-2">
+        <div class="diagram-container">
+            <strong>A.</strong>
+            <svg viewBox="0 0 220 160">
+                <polyline points="30,10 30,130 200,130" fill="none" stroke="black" stroke-width="1.5"/>
+                <polygon points="30,10 27,15 33,15" fill="black"/>
+                <polygon points="200,130 195,127 195,133" fill="black"/>
+                <text x="5" y="140" font-size="10">0</text>
+                <text x="35" y="20" class="axis-label">名義利率</text>
+                <text x="140" y="145" class="axis-label">貨幣數量</text>
+                <line x1="50" y1="40" x2="120" y2="110" stroke="black" stroke-width="1.5"/>
+                <line x1="75" y1="40" x2="145" y2="110" stroke="black" stroke-width="1.5"/>
+                <line x1="80" y1="70" x2="105" y2="70" stroke="black" stroke-width="1.5"/>
+                <polygon points="105,70 100,67 100,73" fill="black"/>
+                <text x="125" y="120" font-size="10">M_a1</text>
+                <text x="150" y="110" font-size="10">M_a2</text>
+            </svg>
+        </div>
+        <div class="diagram-container">
+            <strong>B.</strong>
+            <svg viewBox="0 0 220 160">
+                <polyline points="30,10 30,130 200,130" fill="none" stroke="black" stroke-width="1.5"/>
+                <polygon points="30,10 27,15 33,15" fill="black"/>
+                <polygon points="200,130 195,127 195,133" fill="black"/>
+                <text x="5" y="140" font-size="10">0</text>
+                <text x="35" y="20" class="axis-label">名義利率</text>
+                <text x="140" y="145" class="axis-label">貨幣數量</text>
+                <line x1="50" y1="40" x2="140" y2="120" stroke="black" stroke-width="1.5"/>
+                <circle cx="85" cy="71" r="3" fill="black"/>
+                <circle cx="115" cy="98" r="3" fill="black"/>
+                <line x1="95" y1="80" x2="110" y2="93" stroke="red" stroke-width="1.5"/>
+                <polygon points="110,93 104,92 108,88" fill="red"/>
+                <text x="145" y="125" font-size="10">M_a</text>
+            </svg>
+        </div>
+        <div class="diagram-container">
+            <strong>C.</strong>
+            <svg viewBox="0 0 220 160">
+                <polyline points="30,10 30,130 200,130" fill="none" stroke="black" stroke-width="1.5"/>
+                <polygon points="30,10 27,15 33,15" fill="black"/>
+                <polygon points="200,130 195,127 195,133" fill="black"/>
+                <text x="5" y="140" font-size="10">0</text>
+                <text x="35" y="20" class="axis-label">名義利率</text>
+                <text x="140" y="145" class="axis-label">貨幣數量</text>
+                <line x1="75" y1="40" x2="75" y2="130" stroke="black" stroke-width="1.5"/>
+                <line x1="120" y1="40" x2="120" y2="130" stroke="black" stroke-width="1.5"/>
+                <line x1="85" y1="85" x2="110" y2="85" stroke="black" stroke-width="1.5"/>
+                <polygon points="110,85 105,82 105,88" fill="black"/>
+                <text x="70" y="35" font-size="10">M_t1</text>
+                <text x="115" y="35" font-size="10">M_t2</text>
+            </svg>
+        </div>
+        <div class="diagram-container">
+            <strong>D.</strong>
+            <svg viewBox="0 0 220 160">
+                <polyline points="30,10 30,130 200,130" fill="none" stroke="black" stroke-width="1.5"/>
+                <polygon points="30,10 27,15 33,15" fill="black"/>
+                <polygon points="200,130 195,127 195,133" fill="black"/>
+                <text x="5" y="140" font-size="10">0</text>
+                <text x="35" y="20" class="axis-label">名義利率</text>
+                <text x="140" y="145" class="axis-label">貨幣數量</text>
+                <line x1="100" y1="40" x2="100" y2="130" stroke="black" stroke-width="1.5"/>
+                <circle cx="100" cy="65" r="3" fill="black"/>
+                <circle cx="100" cy="100" r="3" fill="black"/>
+                <line x1="110" y1="75" x2="110" y2="90" stroke="black" stroke-width="1.5"/>
+                <polygon points="110,90 107,85 113,85" fill="black"/>
+                <text x="95" y="35" font-size="10">M_t</text>
+            </svg>
+        </div>
+    </div>
+    <div style="text-align: right; font-size: 0.8em; color: #666;">
+        (y-axis = Nominal interest rate / 名義利率, x-axis = Quantity of money / 貨幣數量)
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="zh">貨幣需求 (Money Demand) 主要分為兩大類：</div>
+        <div class="en">Money Demand is primarily divided into two main categories:</div>
+        
+        <ul>
+            <li>
+                <span class="zh"><strong>交易性貨幣需求 \( (M_t) \):</strong> 為了日常交易而持有貨幣的需求。它主要取決於<strong>名義國民收入 (Nominal Income)</strong>。在高中經濟學圖表中，它通常被繪製為垂直線，表示它不受名義利率影響（完全缺乏彈性）。</span>
+                <div class="en"><strong>Transaction demand for money \( (M_t) \):</strong> The demand to hold money for daily transactions. It primarily depends on <strong>Nominal Income</strong>. In high school economics, it is usually drawn as a vertical line, implying it is perfectly inelastic to the nominal interest rate.</div>
+            </li>
+            <li>
+                <span class="zh"><strong>資產性貨幣需求 \( (M_a) \):</strong> 作為保值資產而持有貨幣的需求。它與<strong>名義利率 (Nominal Interest Rate)</strong> 呈反比（因此曲線向下傾斜）。此外，它亦受其他資產的風險回報率影響。</span>
+                <div class="en"><strong>Asset demand for money \( (M_a) \):</strong> The demand to hold money as a store of value. It is inversely related to the <strong>Nominal Interest Rate</strong> (hence a downward-sloping curve). It is also affected by the risk and return of alternative assets.</div>
+            </li>
+        </ul>
+        
+        <div class="math-block">
+            $$ M_d = M_t(Y) + M_a(R, \text{Risk}) $$
+            <div style="font-size: 0.8em; margin-top: 10px; color: #666;">
+                Where \( M_d \) = Total Money Demand, \( Y \) = Nominal Income, \( R \) = Nominal Interest Rate
+            </div>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="correct-ans">
+        <h3>✅ 正確答案 Correct Option: A</h3>
+        <div class="zh">當股票市場日趨波動，代表持有股票的<strong>風險 (Risk)</strong> 增加。投資者為求避險，會減少持有股票，轉而持有風險最低的資產——貨幣。這會導致在任何給定的名義利率下，人們對持有貨幣作為資產的需求增加，因此<strong>資產性貨幣需求曲線 \( (M_a) \) 向右平移</strong>。圖 A 正確顯示了這個轉變。</div>
+        <div class="en">When the stock market becomes more volatile, the <strong>risk</strong> of holding stocks increases. To avoid risk, investors will reduce their stock holdings and switch to the safest asset: money. This causes an increase in the demand to hold money as an asset at any given nominal interest rate. Therefore, the <strong>asset demand for money curve \( (M_a) \) shifts to the right</strong>. Diagram A correctly illustrates this shift.</div>
+    </div>
+
+    <h3>❌ 錯誤選項分析 (Analysis of Incorrect Options)</h3>
+    <div class="wrong-ans">
+        <strong>Option B:</strong>
+        <div class="zh">圖 B 顯示的是沿著同一條 \( M_a \) 曲線向下滑動。這代表<strong>名義利率下降</strong>導致資產性貨幣需求量增加，而不是由外在因素（如股票風險增加）引起的整條曲線移動。</div>
+        <div class="en">Diagram B shows a downward movement along the same \( M_a \) curve. This represents an increase in the quantity of asset money demanded caused by a <strong>decrease in the nominal interest rate</strong>, not a shift of the entire curve caused by an exogenous factor like stock market risk.</div>
+    </div>
+    
+    <div class="wrong-ans">
+        <strong>Option C:</strong>
+        <div class="zh">圖 C 顯示交易性貨幣需求 \( (M_t) \) 向右平移。只有當<strong>物價水平上升</strong>或<strong>實質國民收入增加</strong>（即名義 GDP 上升）時，才會發生這種情況。股票市場波動不會直接影響日常交易所需的貨幣量。</div>
+        <div class="en">Diagram C shows a rightward shift of the transaction demand for money \( (M_t) \). This only happens when the <strong>price level rises</strong> or <strong>real national income increases</strong> (i.e., nominal GDP increases). Stock market volatility does not directly affect the amount of money needed for daily transactions.</div>
+    </div>
+
+    <div class="wrong-ans">
+        <strong>Option D:</strong>
+        <div class="zh">圖 D 顯示沿著垂直的 \( M_t \) 曲線向下滑動。這純粹反映名義利率的下跌，並且對交易性貨幣需求量沒有影響（因為它是完全缺乏彈性的）。</div>
+        <div class="en">Diagram D shows a downward movement along the vertical \( M_t \) curve. This purely reflects a drop in the nominal interest rate and has no effect on the quantity of transaction money demanded (since it is perfectly inelastic).</div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="zh">解答這類題目的關鍵在於辨清<strong>「移動的原因」</strong>與<strong>「受影響的對象」</strong>：</div>
+    <div class="en">The key to solving this type of question is identifying the <strong>"cause of the shift"</strong> and the <strong>"affected target"</strong>:</div>
+    
+    <ol>
+        <li>
+            <span class="zh"><strong>尋找 Pivot Point (關鍵詞)：</strong>「股票市場波動」= 替代資產的<strong>風險改變</strong>。</span>
+            <div class="en"><strong>Find the Pivot Point (Keyword):</strong> "Stock market volatile" = <strong>Change in risk</strong> of alternative assets.</div>
+        </li>
+        <li>
+            <span class="zh"><strong>配對變數：</strong>風險改變會影響人們保值的選擇，因此對應的是 <strong>資產性貨幣需求 \( (M_a) \)</strong>，排除 C 和 D。</span>
+            <div class="en"><strong>Match the Variable:</strong> Changes in risk affect people's choices for storing value, which corresponds to the <strong>asset demand for money \( (M_a) \)</strong>. Eliminate C and D.</div>
+        </li>
+        <li>
+            <span class="zh"><strong>區分 Shift (平移) vs Movement (沿線滑動)：</strong>因為改變的因素（風險）不是 Y 軸上的變數（名義利率），所以整條曲線會<strong>平移 (Shift)</strong>。風險上升，對安全資產（貨幣）的需求上升，曲線向右移。答案是 A。</span>
+            <div class="en"><strong>Distinguish Shift vs. Movement:</strong> Because the changing factor (risk) is NOT the variable on the Y-axis (nominal interest rate), the entire curve will <strong>shift</strong>. As risk rises, demand for safe assets (money) rises, shifting the curve right. The answer is A.</div>
+        </li>
+    </ol>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trick-box">
+        <div class="zh"><strong>⚠️ 陷阱一：混淆 \( M_a \) 與 \( M_t \)</strong><br>許多同學會誤以為「股票交易」也是一種「交易」，因而錯誤選擇了改變交易性貨幣需求 (\( M_t \)) 的選項。在 DSE 經濟學中，\( M_t \) 嚴格用來購買最終物品和服務 (GDP 相關)。購買金融資產（如股票、債券）屬於財富管理，與資產性貨幣需求 (\( M_a \)) 相關。</div>
+        <div class="en"><strong>⚠️ Trap 1: Confusing \( M_a \) and \( M_t \)</strong><br>Many students mistakenly think "stock trading" is also a "transaction," and thus wrongly select options changing the transaction demand (\( M_t \)). In DSE Economics, \( M_t \) is strictly for purchasing final goods and services (GDP-related). Buying financial assets (stocks, bonds) is wealth management, which relates to the asset demand for money (\( M_a \)).</div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <p>
+        <strong class="zh">🙋‍♂️ 學生問：如果題目變成「信用卡被廣泛使用」，圖表會怎樣變？</strong><br>
+        <span class="en">🙋‍♂️ Student: If the question changes to "Credit cards are widely used," how would the diagram change?</span>
+    </p>
+    <p>
+        <strong class="zh">👨‍🏫 老師答：</strong>廣泛使用信用卡會減少人們日常出街需要攜帶的現金。這影響的是<strong>交易性貨幣需求 \( (M_t) \)</strong>。因為在相同的收入水平下，需要的貨幣減少了，所以 \( M_t \) 曲線會<strong>向左平移</strong>（即圖 C 的反方向）。<br>
+        <span class="en">👨‍🏫 Teacher: Widespread use of credit cards reduces the cash people need to carry for daily outings. This affects the <strong>transaction demand for money \( (M_t) \)</strong>. Since less money is needed at the same income level, the \( M_t \) curve will <strong>shift to the left</strong> (the opposite of diagram C).</span>
+    </p>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <ul>
+        <li>
+            <span class="zh"><strong>秒殺口訣：</strong><br>見到「收入/物價/信用卡/發薪頻率」 👉 瞄準 <strong>垂直線 \( M_t \) 的左右平移</strong>。<br>見到「風險/回報/股票/債券/通脹預期」 👉 瞄準 <strong>斜線 \( M_a \) 的左右平移</strong>。<br>見到「利率本身改變」 👉 瞄準 <strong>沿線滑動 (Movement)</strong>。</span>
+            <div class="en"><strong>Shortcut Formula:</strong><br>See "Income/Prices/Credit cards/Pay frequency" 👉 Target <strong>left/right shift of the vertical \( M_t \) line</strong>.<br>See "Risk/Returns/Stocks/Bonds/Inflation expectations" 👉 Target <strong>left/right shift of the sloped \( M_a \) line</strong>.<br>See "Interest rate itself changes" 👉 Target <strong>Movement along the curve</strong>.</div>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
