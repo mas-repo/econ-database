@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Per-unit Tax & Elasticity</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 0;
+            border-left: 3px solid #e5e7eb;
+            padding-left: 10px;
+        }
+        .header-card {
+            background-color: var(--bg-gray);
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .options-list {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .svg-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .svg-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: calc(50% - 10px);
+            min-width: 250px;
+            box-sizing: border-box;
+        }
+        .svg-card svg {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+        }
+        .correct-answer {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .tip-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .svg-card { width: 100%; }
+            body { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h2>📚 HKDSE Economics Masterclass</h2>
+        <p><strong>Topic (課題):</strong> 市場干預與彈性 (Market Intervention and Elasticity)</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐⭐ (3/5 Stars)</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> 從量稅 (Per-unit Tax), 價格彈性 (Price Elasticity), 稅務負擔 (Tax Burden)</p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <p class="zh">政府對某物品徵收從量稅。若 _________，該物品的價格會維持不變。</p>
+            <p class="en">The government imposes a per unit tax on a good. The price of the good will remain unchanged if _________.</p>
+        </div>
+        
+        <div class="bilingual-block">
+            <p class="zh">
+                (1) 需求屬完全彈性<br>
+                (2) 需求屬完全無彈性<br>
+                (3) 供應屬完全彈性<br>
+                (4) 供應屬完全無彈性
+            </p>
+            <p class="en">
+                (1) the demand is perfectly elastic.<br>
+                (2) the demand is perfectly inelastic.<br>
+                (3) the supply is perfectly elastic.<br>
+                (4) the supply is perfectly inelastic.
+            </p>
+        </div>
+
+        <ul class="options-list">
+            <li><span class="zh">只有 (1)、(3)</span> <span class="en">(1) and (3) only</span></li>
+            <li><span class="zh">只有 (1)、(4)</span> <span class="en">(1) and (4) only</span></li>
+            <li><span class="zh">只有 (2)、(3)</span> <span class="en">(2) and (3) only</span></li>
+            <li><span class="zh">只有 (2)、(4)</span> <span class="en">(2) and (4) only</span></li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <p class="zh"><strong>1. 從量稅 (Per-unit Tax) 的影響：</strong> 當政府徵收從量稅 \(t\)，生產者的成本會增加，導致供應曲線垂直向上平移 \(t\) 的距離。市場價格（消費者支付的價格）通常會上升。</p>
+            <p class="en"><strong>1. Impact of Per-unit Tax:</strong> When the government imposes a per-unit tax \(t\), producers' costs increase, causing the supply curve to shift vertically upwards by the distance \(t\). The market price (paid by consumers) typically rises.</p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh"><strong>2. 稅務負擔 (Tax Burden) 與彈性的關係：</strong> 誰的彈性越低（越缺乏靈活性），誰就要承擔越多的稅務負擔。</p>
+            <p class="en"><strong>2. Tax Burden and Elasticity:</strong> The side of the market with lower elasticity (less flexibility) bears a larger share of the tax burden.</p>
+        </div>
+        <div class="math-block">
+            $$ \text{Consumer's Tax Burden} = (P_1 - P_0) \times Q_1 $$
+            $$ \text{Producer's Tax Burden} = (P_0 - (P_1 - t)) \times Q_1 $$
+        </div>
+        <div class="bilingual-block">
+            <p class="zh"><strong>3. 極端情況 (Extreme Cases)：</strong><br>
+                - <strong>完全彈性 (Perfectly Elastic, \(E = \infty\)):</strong> 曲線是水平的。該方不願意承擔任何價格變動（承擔 0% 稅款）。<br>
+                - <strong>完全無彈性 (Perfectly Inelastic, \(E = 0\)):</strong> 曲線是垂直的。該方必須接受任何價格變動（承擔 100% 稅款）。
+            </p>
+            <p class="en"><strong>3. Extreme Cases:</strong><br>
+                - <strong>Perfectly Elastic (\(E = \infty\)):</strong> The curve is horizontal. This side is unwilling to accept any price change (bears 0% of the tax).<br>
+                - <strong>Perfectly Inelastic (\(E = 0\)):</strong> The curve is vertical. This side must accept any price change (bears 100% of the tax).
+            </p>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 / The correct answer is: <span class="correct-answer">Option B</span></p>
+
+    <div class="svg-container">
+        <div class="svg-card">
+            <h4>(1) Demand Perfectly Elastic</h4>
+            <svg viewBox="-10 -10 220 220" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="20" x2="20" y2="180" stroke="black" stroke-width="2"/>
+                <line x1="20" y1="180" x2="180" y2="180" stroke="black" stroke-width="2"/>
+                <text x="10" y="20" font-size="12">P</text>
+                <text x="180" y="195" font-size="12">Q</text>
+                <line x1="20" y1="100" x2="180" y2="100" stroke="blue" stroke-width="2"/>
+                <text x="185" y="105" fill="blue" font-size="12">D</text>
+                <line x1="40" y1="180" x2="140" y2="40" stroke="red" stroke-width="2"/>
+                <text x="145" y="45" fill="red" font-size="12">S1</text>
+                <line x1="20" y1="150" x2="120" y2="10" stroke="red" stroke-width="2" stroke-dasharray="4"/>
+                <text x="125" y="15" fill="red" font-size="12">S2</text>
+                <line x1="100" y1="95" x2="80" y2="65" stroke="gray" stroke-width="1.5" marker-end="url(#arrow)"/>
+            </svg>
+            <div class="bilingual-block" style="text-align: left; font-size: 0.9em; margin-top: 10px;">
+                <p class="zh">需求曲線水平。供應向上平移，但交點依然在同一水平線上。<strong>價格不變。</strong></p>
+                <p class="en">Demand is horizontal. Supply shifts up, but the intersection remains on the same horizontal line. <strong>Price is unchanged. (True)</strong></p>
+            </div>
+        </div>
+
+        <div class="svg-card">
+            <h4>(2) Demand Perfectly Inelastic</h4>
+            <svg viewBox="-10 -10 220 220" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="20" x2="20" y2="180" stroke="black" stroke-width="2"/>
+                <line x1="20" y1="180" x2="180" y2="180" stroke="black" stroke-width="2"/>
+                <text x="10" y="20" font-size="12">P</text>
+                <text x="180" y="195" font-size="12">Q</text>
+                <line x1="100" y1="20" x2="100" y2="180" stroke="blue" stroke-width="2"/>
+                <text x="105" y="30" fill="blue" font-size="12">D</text>
+                <line x1="40" y1="180" x2="140" y2="40" stroke="red" stroke-width="2"/>
+                <text x="145" y="45" fill="red" font-size="12">S1</text>
+                <line x1="20" y1="150" x2="120" y2="10" stroke="red" stroke-width="2" stroke-dasharray="4"/>
+                <text x="125" y="15" fill="red" font-size="12">S2</text>
+                <circle cx="100" cy="96" r="3" fill="black"/>
+                <circle cx="100" cy="38" r="3" fill="black"/>
+            </svg>
+             <div class="bilingual-block" style="text-align: left; font-size: 0.9em; margin-top: 10px;">
+                <p class="zh">需求曲線垂直。消費者承擔所有稅款，<strong>價格上升</strong>（上升幅度等於稅款）。</p>
+                <p class="en">Demand is vertical. Consumers bear all the tax, <strong>Price increases</strong> (by the full tax amount). (False)</p>
+            </div>
+        </div>
+
+        <div class="svg-card">
+            <h4>(3) Supply Perfectly Elastic</h4>
+            <svg viewBox="-10 -10 220 220" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="20" x2="20" y2="180" stroke="black" stroke-width="2"/>
+                <line x1="20" y1="180" x2="180" y2="180" stroke="black" stroke-width="2"/>
+                <text x="10" y="20" font-size="12">P</text>
+                <text x="180" y="195" font-size="12">Q</text>
+                <line x1="40" y1="40" x2="160" y2="160" stroke="blue" stroke-width="2"/>
+                <text x="165" y="160" fill="blue" font-size="12">D</text>
+                <line x1="20" y1="120" x2="180" y2="120" stroke="red" stroke-width="2"/>
+                <text x="185" y="125" fill="red" font-size="12">S1</text>
+                <line x1="20" y1="80" x2="180" y2="80" stroke="red" stroke-width="2" stroke-dasharray="4"/>
+                <text x="185" y="85" fill="red" font-size="12">S2</text>
+            </svg>
+             <div class="bilingual-block" style="text-align: left; font-size: 0.9em; margin-top: 10px;">
+                <p class="zh">供應曲線水平。加稅使其整體向上平移，交點沿著需求曲線向上移，<strong>價格上升</strong>。</p>
+                <p class="en">Supply is horizontal. Tax shifts it upwards entirely, intersection moves up along D curve, <strong>Price increases</strong>. (False)</p>
+            </div>
+        </div>
+
+        <div class="svg-card">
+            <h4>(4) Supply Perfectly Inelastic</h4>
+            <svg viewBox="-10 -10 220 220" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="20" x2="20" y2="180" stroke="black" stroke-width="2"/>
+                <line x1="20" y1="180" x2="180" y2="180" stroke="black" stroke-width="2"/>
+                <text x="10" y="20" font-size="12">P</text>
+                <text x="180" y="195" font-size="12">Q</text>
+                <line x1="40" y1="40" x2="160" y2="160" stroke="blue" stroke-width="2"/>
+                <text x="165" y="160" fill="blue" font-size="12">D</text>
+                <line x1="100" y1="20" x2="100" y2="180" stroke="red" stroke-width="2"/>
+                <text x="105" y="30" fill="red" font-size="12">S1=S2</text>
+                <circle cx="100" cy="100" r="4" fill="purple"/>
+            </svg>
+             <div class="bilingual-block" style="text-align: left; font-size: 0.9em; margin-top: 10px;">
+                <p class="zh">供應曲線垂直。垂直線向上平移在數學上仍然是同一條垂直線！交點不變，<strong>價格不變</strong>。</p>
+                <p class="en">Supply is vertical. Shifting a vertical line vertically results in the exact same vertical line! Intersection is unchanged, <strong>Price is unchanged. (True)</strong></p>
+            </div>
+        </div>
+    </div>
+    
+    <h3>逐項拆解 (Option Breakdown):</h3>
+    <div class="bilingual-block">
+        <p class="zh">✅ <strong>(1) 需求屬完全彈性：</strong> 因為消費者對價格極度敏感（完全彈性），只要價格上升一毫子，需求量就會跌至零。因此，生產者無法將任何稅務負擔轉嫁給消費者，只能自己承擔 100% 稅款。市場價格不變。</p>
+        <p class="en">✅ <strong>(1) Demand is perfectly elastic:</strong> Because consumers are infinitely sensitive to price, any price increase drops quantity demanded to zero. Thus, producers cannot pass on any tax burden and must absorb 100% of it. Market price remains unchanged.</p>
+    </div>
+    <div class="bilingual-block">
+        <p class="zh">❌ <strong>(2) 需求屬完全無彈性：</strong> 消費者無論價格多高都會購買相同數量。生產者會將 100% 的稅務負擔轉嫁給消費者，導致價格上升（升幅完全等於稅款）。</p>
+        <p class="en">❌ <strong>(2) Demand is perfectly inelastic:</strong> Consumers buy the same quantity regardless of price. Producers will pass 100% of the tax burden to consumers, causing the price to increase by exactly the tax amount.</p>
+    </div>
+    <div class="bilingual-block">
+        <p class="zh">❌ <strong>(3) 供應屬完全彈性：</strong> 供應曲線是水平的，加稅後整條曲線向上移動。這代表生產者將所有稅款轉嫁給消費者，價格必定上升。</p>
+        <p class="en">❌ <strong>(3) Supply is perfectly elastic:</strong> The supply curve is horizontal. A tax shifts the entire curve up. This means producers pass all tax to consumers, and the price will definitely increase.</p>
+    </div>
+    <div class="bilingual-block">
+        <p class="zh">✅ <strong>(4) 供應屬完全無彈性：</strong> 生產者受產能限制，無論價格多少都必須出售固定的數量（垂直線）。加稅後，他們無法減少供應量來推高價格，因此只能硬啃 100% 的稅款。市場價格由原本的需求曲線和垂直的供應曲線決定，維持不變。</p>
+        <p class="en">✅ <strong>(4) Supply is perfectly inelastic:</strong> Producers must sell a fixed quantity regardless of price (vertical line). After a tax, they cannot reduce supply to push up the price, so they swallow 100% of the tax. The market price, determined by the original demand and vertical supply, remains unchanged.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <p class="zh"><strong>破題關鍵 (Pivot Point)：</strong> 題目問「價格維持不變」。你要立刻聯想到：<strong>「消費者支付的價格沒有增加 = 消費者承擔 0% 的稅務負擔 = 生產者承擔 100% 稅務負擔」。</strong></p>
+        <p class="en"><strong>Pivot Point:</strong> The question asks when the "price remains unchanged". You should immediately deduce: <strong>"Consumers pay no extra price = Consumers bear 0% tax burden = Producers bear 100% tax burden."</strong></p>
+    </div>
+    <div class="bilingual-block">
+        <p class="zh">根據彈性法則，誰要承擔 100% 稅款？就是彈性為 \(0\) 的一方（完全被動），或者是對方彈性為 \(\infty\) 的時候（對方完全不受軟）。因此，必定是 <strong>(1) 需求完全彈性</strong> 或 <strong>(4) 供應完全無彈性</strong>。</p>
+        <p class="en">According to elasticity rules, who bears 100% of the tax? The side with an elasticity of \(0\) (completely inflexible), or when the other side has an elasticity of \(\infty\) (completely inflexible in accepting price changes). Therefore, it must be <strong>(1) Perfectly elastic demand</strong> or <strong>(4) Perfectly inelastic supply</strong>.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tip-box">
+        <div class="bilingual-block">
+            <p class="zh"><strong>⚠️ 陷阱一：混淆圖形形狀</strong><br>很多同學會把「完全彈性」畫成垂直線，把「完全無彈性」畫成水平線。記住：完全無彈性 = 一條死死定住的直線（Quantity 被釘死了），所以是垂直的！</p>
+            <p class="en"><strong>⚠️ Trap 1: Confusing curve shapes</strong><br>Many students draw "perfectly elastic" as vertical and "perfectly inelastic" as horizontal. Remember: perfectly inelastic = a completely fixed straight line (Quantity is pinned), so it is vertical!</p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh"><strong>⚠️ 陷阱二：認為「加稅必然會推高價格」</strong><br>這是在大部分正常情況下（斜線）的認知，但在極端情況下（垂直或水平線），價格可以不變！不要憑直覺亂猜，畫圖最保險。</p>
+            <p class="en"><strong>⚠️ Trap 2: Believing "a tax MUST raise price"</strong><br>This is true in normal situations (sloped curves), but in extreme cases (vertical or horizontal lines), the price can remain unchanged! Don't guess by intuition, draw a graph.</p>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="bilingual-block">
+        <p class="zh"><strong>❓ 學生問：為什麼供應曲線垂直時（完全無彈性），加稅後供應曲線不移動？</strong></p>
+        <p class="en"><strong>❓ Student Q: Why doesn't the supply curve move after a tax when it is vertical (perfectly inelastic)?</strong></p>
+        
+        <p class="zh"><strong>💡 導師答：</strong> 其實它在概念上是「向上移動了 \(t\) 的距離」的。但數學上，把一條無限長的垂直線向上平移，它仍然是同一條垂直線！由於這條線的位置沒變，它和需求曲線的交點（也就是市場均衡點）也維持在原本的 \(P\) 和 \(Q\)。所以價格不變，只是生產者收到的「淨利潤」被扣走了稅款。</p>
+        <p class="en"><strong>💡 Tutor A:</strong> Conceptually, it does "shift up by distance \(t\)". But mathematically, shifting an infinitely long vertical line upwards results in the exact same vertical line! Since the line's position doesn't change, its intersection with the demand curve (the market equilibrium) stays at the original \(P\) and \(Q\). Thus, the price doesn't change, but the "net profit" received by producers is reduced by the tax amount.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="bilingual-block">
+        <p class="zh">⚡ <strong>速解口訣 (Shortcut Mantra):</strong><br>「誰的彈性大，誰就躲過稅。」<br>如果題目說「價格維持不變」，即是消費者完全躲過了稅。消費者什麼時候能完全躲過？<br>1. 消費者自己最靈活：<strong>需求完全彈性</strong> (1)<br>2. 生產者完全被困：<strong>供應完全無彈性</strong> (4)<br>一秒選出 <strong>(1) 和 (4)</strong>，答案 B！</p>
+        <p class="en">⚡ <strong>Shortcut Mantra:</strong><br>"High elasticity dodges the tax."<br>If the question says "price remains unchanged", it means consumers completely dodged the tax. When can consumers dodge entirely?<br>1. Consumers are most flexible: <strong>Perfectly elastic demand</strong> (1)<br>2. Producers are completely trapped: <strong>Perfectly inelastic supply</strong> (4)<br>Select <strong>(1) and (4)</strong> in a second. Answer B!</p>
+    </div>
+
+</body>
+</html>
