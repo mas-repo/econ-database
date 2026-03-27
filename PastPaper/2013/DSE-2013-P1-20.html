@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Expert Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #1e3a8a;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-dark: #1e293b;
+            --text-en: #4b5563;
+            --correct: #16a34a;
+            --wrong: #dc2626;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* 1. Header */
+        .header-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 6px solid var(--primary-color);
+        }
+        .header-item { margin: 5px 0; font-weight: bold; }
+
+        /* 2. The Question */
+        .question-box {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .option-list { list-style-type: upper-alpha; margin-left: 20px; }
+        .option-list li { margin-bottom: 10px; }
+
+        /* 3. Concept Review */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* 4. Analysis */
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .status-correct { color: var(--correct); font-weight: bold; }
+        .status-wrong { color: var(--wrong); font-weight: bold; }
+
+        /* General Typography */
+        .zh { margin-bottom: 5px; font-weight: 500; }
+        .en { color: var(--text-en); font-style: italic; margin-top: 0; font-size: 0.95em; }
+        .highlight { background-color: #fef08a; padding: 2px 4px; border-radius: 3px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <div class="header-item">📌 課題 (Topic): 界外效應與市場干預 / Externalities and Market Intervention</div>
+        <div class="header-item">⭐ 難度 (Difficulty): ★★★☆☆</div>
+        <div class="header-item">🔑 核心概念 (Key Concepts): 正界外效應 (Positive Externality), 內部化 (Internalization), 社會得益 (Social Benefit)</div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="zh">養蜂者養蜂是為了獲取蜂蜜。養蜂對附近果園的農民有利，因為蜜蜂幫助果園的果樹傳播花粉。下列哪項有關上述個案的陳述是正確的？</p>
+        <p class="en">A beekeeper keeps the bees for their honey. The bee-keeping benefits the farmers in the orchard nearby because the bees help pollinate. Which of the following statements regarding the above case is correct?</p>
+        
+        <ol class="option-list">
+            <li>
+                <div class="zh">私人和社會得益分歧會出現，而蜂蜜會過度生產。</div>
+                <div class="en">There will be a divergence between private and social benefits and the honey is overproduced.</div>
+            </li>
+            <li>
+                <div class="zh">養蜂者應獲政府補貼以改善經濟效率。</div>
+                <div class="en">The beekeeper should be subsidized by the government to improve economic efficiency.</div>
+            </li>
+            <li>
+                <div class="zh">若蜂蜜的價值高於水果的價值，政府毋須介入改正界外效應。</div>
+                <div class="en">If the value of honey is higher than the value of fruits, there is no need for the government to intervene to correct the externality.</div>
+            </li>
+            <li>
+                <div class="zh">若附近果園屬該養蜂者所擁有，私人和社會得益分歧不會出現。</div>
+                <div class="en">There will be no divergence between private and social benefits if the orchard nearby is owned by the beekeeper.</div>
+            </li>
+        </ol>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="zh">本題測試你對<strong>正界外效應（界外得益）</strong>及其解決方法的理解。當一個人的生產或消費行為，為未參與交易的第三方帶來未被補償的利益時，就會出現正界外效應。</p>
+        <p class="en">This question tests your understanding of <strong>Positive Externalities (External Benefits)</strong> and their solutions. A positive externality occurs when an individual's production or consumption provides an uncompensated benefit to a third party not involved in the transaction.</p>
+
+        <div class="math-block">
+            $$MSB = MPB + MEB$$
+        </div>
+        
+        <ul>
+            <li>
+                <span class="zh"><strong>邊際社會得益 ($MSB$):</strong> 社會每增加一單位產品所獲得的總額外好處。</span><br>
+                <span class="en"><strong>Marginal Social Benefit ($MSB$):</strong> The total additional benefit to society from producing one more unit.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>邊際私人得益 ($MPB$):</strong> 生產者/消費者自己獲得的額外好處。</span><br>
+                <span class="en"><strong>Marginal Private Benefit ($MPB$):</strong> The additional benefit received by the producer/consumer themselves.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>邊際界外得益 ($MEB$):</strong> 第三方獲得的額外好處。</span><br>
+                <span class="en"><strong>Marginal External Benefit ($MEB$):</strong> The additional benefit received by third parties.</span>
+            </li>
+        </ul>
+
+        <p class="zh"><strong>內部化 (Internalization):</strong> 如果製造界外效應的一方與受影響的第三方合併（例如同一人擁有），界外得益就會變成私人得益，界外效應便會消失。</p>
+        <p class="en"><strong>Internalization:</strong> If the party creating the externality and the affected third party merge (e.g., owned by the same person), the external benefit becomes a private benefit, and the externality disappears.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p class="zh">正確答案是：<span class="status-correct">選項 D</span></p>
+    <p class="en">The correct answer is: <span class="status-correct">Option D</span></p>
+
+    <div class="analysis-card">
+        <p class="zh"><span class="status-wrong">選項 A 錯誤：</span>出現正界外效應（$MEB > 0$）時，市場的均衡產量（$MPB = MPC$）會低於社會的最適產量（$MSB = MSC$）。因此，市場會出現<strong>生產不足 (Underproduced)</strong>，而非過度生產。</p>
+        <p class="en"><span class="status-wrong">Option A is Incorrect:</span> When a positive externality exists ($MEB > 0$), the market equilibrium quantity ($MPB = MPC$) is lower than the socially optimal quantity ($MSB = MSC$). Therefore, the good is <strong>underproduced</strong>, not overproduced.</p>
+    </div>
+
+    <div class="analysis-card">
+        <p class="zh"><span class="status-wrong">選項 B 錯誤：</span>雖然政府補貼「可以」是解決正界外效應的方法之一，但這不是「必須」或唯一的（"should be" 帶有必然性）。市場可以透過私人協商（高斯定理）或合併來解決。此外，政府干預往往涉及高昂的行政成本，如果不符合成本效益，反而會降低整體經濟效率。</p>
+        <p class="en"><span class="status-wrong">Option B is Incorrect:</span> While a government subsidy *can* be a solution, it is not an absolute "should". The market can solve it through private negotiation (Coase Theorem) or integration. Furthermore, government intervention involves administrative costs which, if too high, might actually decrease overall economic efficiency rather than improve it.</p>
+    </div>
+
+    <div class="analysis-card">
+        <p class="zh"><span class="status-wrong">選項 C 錯誤：</span>界外效應的存在與否，取決於「邊際界外得益 ($MEB$)」是否大於零，與蜂蜜和水果的「總價值 (Total Value)」絕對比較無關。</p>
+        <p class="en"><span class="status-wrong">Option C is Incorrect:</span> The existence of an externality depends on whether the Marginal External Benefit ($MEB$) is greater than zero, not on the absolute comparison of the total values of honey and fruits.</p>
+    </div>
+
+    <div class="analysis-card">
+        <p class="zh"><span class="status-correct">選項 D 正確：</span>這被稱為「界外效應內部化」。如果養蜂者同時擁有果園，蜜蜂傳播花粉所帶來的利益（果園豐收）就變成了他自己的<strong>私人得益</strong>。此時 $MEB = 0$，所有好處都被養蜂者吸收，因此 $MPB = MSB$，私人得益與社會得益之間不再有分歧。</p>
+        <p class="en"><span class="status-correct">Option D is Correct:</span> This is known as "internalizing the externality". If the beekeeper owns the orchard, the benefit of pollination (better fruit harvest) becomes their own <strong>private benefit</strong>. Now $MEB = 0$, all benefits are absorbed by the beekeeper, meaning $MPB = MSB$. The divergence between private and social benefits ceases to exist.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <ul>
+        <li>
+            <span class="zh"><strong>尋找關鍵點 (Pivot Point):</strong> 第一步是確認這是一個「正界外效應」的例子，即養蜂行為產生了免費的額外好處。第二步是識別 DSE 經濟科常見的考點：如何消除無效率？答案通常是「界外效應內部化（產權整合）」。</span><br>
+            <span class="en"><strong>Identify the Pivot Point:</strong> Step one is confirming this is a "positive externality" case (beekeeping creates a free extra benefit). Step two is recognizing a common DSE testing point: How to eliminate the inefficiency? The answer is often "Internalization of the externality (integration of property rights)".</span>
+        </li>
+        <li>
+            <span class="zh"><strong>排除干擾資訊 (Distractors):</strong> 選項 C 提到的「蜂蜜價值與水果價值」的比較純粹是為了混淆考生。總價值不影響邊際分析。</span><br>
+            <span class="en"><strong>Filter Distractors:</strong> The comparison of "value of honey vs. fruits" in Option C is pure noise designed to confuse students. Total values do not affect marginal analysis.</span>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-left-color: #f59e0b; background-color: #fffbeb;">
+        <p class="zh">⚠️ <strong>混淆「正界外效應」與「過度生產」：</strong> 很多學生一看到「界外效應」就自動聯想負面影響（如污染）和過度生產。緊記：<br>
+        - 正界外效應 (如養蜂、打疫苗) ➡️ 社會得到的比私人多 ➡️ 私人誘因不足 ➡️ <strong>生產不足 (Underproduction)</strong><br>
+        - 負界外效應 (如污染、噪音) ➡️ 社會成本比私人大 ➡️ 私人忽視社會成本 ➡️ <strong>過度生產 (Overproduction)</strong></p>
+        
+        <p class="en">⚠️ <strong>Confusing "Positive Externality" with "Overproduction":</strong> Many students automatically associate "externality" with negative impacts (like pollution) and overproduction. Remember:<br>
+        - Positive Externality (e.g., beekeeping, vaccines) ➡️ Society benefits more than private ➡️ Insufficient private incentive ➡️ <strong>Underproduction</strong><br>
+        - Negative Externality (e.g., pollution, noise) ➡️ Social cost > Private cost ➡️ Private ignores social cost ➡️ <strong>Overproduction</strong></p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="analysis-card">
+        <p class="zh"><strong>問：既然政府補貼可以解決生產不足，為什麼選項 B 是錯的？</strong></p>
+        <p class="zh">答：在 DSE 考試中，含有「必須 (must)」或「應該 (should)」字眼的政策建議選項通常是陷阱。政府干預本身需要行政成本（如調查成本、徵稅造成的淨損失）。如果這些交易成本高於原本界外效應帶來的淨損失 (Deadweight Loss)，政府介入反而會令整體經濟效率下降。此外，高斯定理指出，只要產權界定清晰，市場可以自行解決問題，毋須政府補貼。</p>
+        <hr>
+        <p class="en"><strong>Q: Since a government subsidy can solve underproduction, why is Option B wrong?</strong></p>
+        <p class="en">A: In DSE exams, policy recommendation options containing words like "must" or "should" are usually traps. Government intervention entails administrative costs (e.g., investigation costs, deadweight loss from taxation). If these transaction costs are higher than the deadweight loss of the externality itself, intervention will actually lower economic efficiency. Furthermore, the Coase Theorem states that if property rights are well-defined, the market can solve the issue itself without government subsidies.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <ul>
+        <li>
+            <span class="zh"><strong>秒殺法：</strong> 一看到「養蜂與果園」，大腦應立刻彈出兩個詞語：「正界外效應」及「合併內部化」。<br>
+            步驟1：正界外效應 = 生產不足。選項 A 說「過度生產」，秒殺刪除。<br>
+            步驟2：比較政策選項與事實選項。選項 D 是一個絕對的經濟學事實（合併 = 內部化 = 無分歧），而 B 和 C 是帶有條件或主觀判斷的陳述。在多項選擇題中，毫無破綻的事實陳述（D）永遠優於政策建議（B）。</span>
+        </li>
+        <li class="en" style="margin-top: 10px;">
+            <span class="en"><strong>Quick Solve Method:</strong> The moment you see "beekeeping and orchard", two terms should pop into your mind: "Positive Externality" and "Internalization by Merger".<br>
+            Step 1: Positive Externality = Underproduction. Option A says "overproduced", eliminate it instantly.<br>
+            Step 2: Compare policy options vs. factual options. Option D states an absolute economic fact (Merger = Internalization = No divergence), whereas B and C are conditional or subjective policy statements. In MCQs, an airtight factual statement (D) always beats a normative policy recommendation (B).</span>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

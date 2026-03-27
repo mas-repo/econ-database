@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0284c7;
+            --light-blue: #f0f9ff;
+            --border-blue: #0ea5e9;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-cream: #fffbeb;
+            --border-cream: #f59e0b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 1.8em; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; }
+        h2 { font-size: 1.4em; }
+        
+        .en-trans {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-info span {
+            background: #e2e8f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .question-option {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 4px;
+        }
+        
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--border-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            margin: 20px 0;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .correct-option {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            border-left: 5px solid #10b981;
+        }
+        
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: var(--bg-cream);
+            border-left: 5px solid var(--border-cream);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .shortcut-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Question Analysis</h1>
+    <div class="header-info">
+        <span>📚 Topic: 宏觀經濟學 - 非預期通脹的影響 (Macroeconomics - Effects of Unanticipated Inflation)</span>
+        <span>⭐ Difficulty: ★★☆☆☆</span>
+        <span>🔑 Key Concepts: 非預期通脹 (Unanticipated Inflation), 財富重分配 (Wealth Redistribution), 實質價值 (Real Value)</span>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下列哪位人士會受惠於非預期通脹？</strong></p>
+        <p class="en-trans">Which of the following people will benefit from unanticipated inflation?</p>
+        
+        <div class="question-option">A. 一位放高利貸者，以浮動利率借出一筆金錢 <br><span class="en-trans">A loan shark who lends out a sum of money at a floating interest rate</span></div>
+        <div class="question-option">B. 一位經理，在兩年合約內收取固定薪金 <br><span class="en-trans">A manager who receives a fixed salary with the period of a two-year contract</span></div>
+        <div class="question-option">C. 一位物業業主，償還固定息率按揭貸款 <br><span class="en-trans">A flat-owner who repays a fixed-rate mortgage loan</span></div>
+        <div class="question-option">D. 一位退休教師，收取多間上市公司的股息 <br><span class="en-trans">A retired teacher who receives dividends from various listed companies</span></div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>📌 核心理論 (Core Theories)</h3>
+        <p>當發生<strong>非預期通脹 (Unanticipated Inflation)</strong>，即實際通脹率高於預期通脹率時，金錢的購買力會比預期中下降得更快。這會導致財富在不同群體之間進行重分配。判斷誰受惠、誰受損的關鍵在於他們的收入或還款是否為<strong>固定名義價值 (Fixed Nominal Value)</strong>。</p>
+        <p class="en-trans">When <strong>unanticipated inflation</strong> occurs (actual inflation rate is higher than expected), the purchasing power of money falls faster than expected. This leads to a redistribution of wealth. The key to determining who benefits and who loses is whether their income or debt payments are set at a <strong>fixed nominal value</strong>.</p>
+
+        <h3>🧮 相關公式 (Relevant Formula)</h3>
+        <p>根據費沙方程式 (Fisher Equation)，實質利率 $r$、名義利率 $i$ 與通脹率 $\pi$ 的關係如下：</p>
+        <p class="en-trans">According to the Fisher Equation, the relationship between real interest rate $r$, nominal interest rate $i$, and inflation rate $\pi$ is:</p>
+        <div class="math-block">
+            $$r = i - \pi$$
+        </div>
+        <p>若實際 $\pi$ 大於預期 $\pi^e$，實際的 $r$ 會下降。因此，支付固定利息的借款人得益，而收取固定利息的貸款人受損。</p>
+        <p class="en-trans">If actual $\pi$ is greater than expected $\pi^e$, the actual $r$ drops. Therefore, borrowers paying fixed interest benefit, while lenders receiving fixed interest lose.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <h3>✅ 正確答案：選項 C (Correct Option: C)</h3>
+        
+        <div class="option-analysis">
+            <p><strong>❌ 分析選項 A (Analyzing Option A)</strong></p>
+            <p>放高利貸者是貸款人。如果他以<strong>浮動利率 (floating interest rate)</strong> 借出金錢，他可以根據通脹率調高名義利率來維持實質回報，因此他既不受惠也不受損（或受影響極小）。</p>
+            <p class="en-trans">The loan shark is a lender. If he lends at a <strong>floating interest rate</strong>, he can adjust the nominal interest rate upwards according to inflation to maintain his real return. Thus, he neither benefits nor loses significantly.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ 分析選項 B (Analyzing Option B)</strong></p>
+            <p>經理收取<strong>固定薪金 (fixed salary)</strong>。在通脹下，這筆固定名義收入的實質購買力會下降。他是受害者，並非受惠者。</p>
+            <p class="en-trans">The manager receives a <strong>fixed salary</strong>. Under inflation, the real purchasing power of this fixed nominal income decreases. He is a loser, not a beneficiary.</p>
+        </div>
+
+        <div class="option-analysis correct-option">
+            <p><strong>✅ 分析選項 C (Analyzing Option C)</strong></p>
+            <p>物業業主是借款人（負債人）。他償還的是<strong>固定息率 (fixed-rate)</strong> 的按揭貸款。當非預期通脹發生時，貨幣貶值，他所償還的固定金額的實質價值 (real value of debt) 隨之下降。因此，他受惠於非預期通脹。</p>
+            <p class="en-trans">The flat-owner is a borrower (debtor). He is repaying a <strong>fixed-rate</strong> mortgage loan. When unanticipated inflation occurs, money depreciates, and the real value of his fixed nominal debt payments decreases. Therefore, he benefits from unanticipated inflation.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ 分析選項 D (Analyzing Option D)</strong></p>
+            <p>退休教師收取的是<strong>股息 (dividends)</strong>。股息屬於可變收入 (variable income)，通常會隨著物價和企業利潤的上升而增加，這能夠抵銷通脹的影響。因此，他的實質購買力大致不變，不會像固定利率借款人那樣從中獲取額外好處。</p>
+            <p class="en-trans">The retired teacher receives <strong>dividends</strong>. Dividends are variable income, which generally increases as prices and corporate profits rise, offsetting the effects of inflation. His real purchasing power remains roughly unchanged, so he doesn't reap extra benefits like a fixed-rate borrower does.</p>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #475569;">
+        <p><strong>🎯 破題關鍵 (The Pivot Point)</strong></p>
+        <p>處理「誰受惠於非預期通脹」的題目時，你只需要尋找一個特徵：<strong>誰正在支付一筆「固定 (Fixed)」的金額？</strong></p>
+        <p class="en-trans">When tackling "who benefits from unanticipated inflation" questions, you only need to look for one specific trait: <strong>Who is paying a "Fixed" amount of money?</strong></p>
+        <ul>
+            <li><strong>支出固定 (Paying fixed):</strong> 實質負擔減少 ➡️ <strong>受惠 (Benefit)</strong></li>
+            <li><strong>收入固定 (Receiving fixed):</strong> 實質購買力減少 ➡️ <strong>受損 (Lose)</strong></li>
+            <li><strong>浮動/可變 (Floating/Variable):</strong> 隨通脹調整 ➡️ <strong>無影響/影響微 (Unaffected)</strong></li>
+        </ul>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>⚠️ 陷阱：刻板印象 (Trap: Stereotyping)</strong></p>
+        <p>很多學生死背「退休人士在通脹中必定受損」(Pensioners lose during inflation)。這是因為過去的題目通常設定退休人士收取「固定退休金」(fixed pension)。但這條題目中的退休教師收取的是<strong>「股息」(dividends)</strong>，這是一個會隨通脹調整的變數，所以他不會受損！考試時必須看清楚收入的性質，而不是人物的職業或身份。</p>
+        <p class="en-trans">Many students blindly memorize that "pensioners/retirees lose during inflation." This is because past paper questions often set retirees as receiving a "fixed pension". However, the retired teacher in this question receives <strong>"dividends"</strong>, which is a variable income that adjusts with inflation, so they do not lose! In exams, always check the nature of the income, not the person's occupation or identity.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼選項 D 的退休教師不是受惠者？股息不是會因為企業賺多了而增加嗎？</strong></p>
+        <p class="en-trans">Q: Why isn't the retired teacher in Option D a beneficiary? Won't dividends increase because companies earn more?</p>
+        <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 10px 0;">
+        <p><strong>A:</strong> 沒錯，股息（名義上）可能會增加，這幫助教師維持了原有的購買力 (purchasing power)。但是，在經濟學上，「受惠於非預期通脹」是指發生了<strong>財富轉移 (wealth transfer)</strong>。固定息率的借款人（選項C）因為還款的實質價值下降，變相少還了錢，財富從貸款人轉移到了借款人手中，這是真正的「受惠」。選項 D 只是「不受損」，而非從他人身上獲取好處。</p>
+        <p class="en-trans">A: Yes, nominal dividends might increase, which helps the teacher maintain their purchasing power. However, in economics, "benefiting from unanticipated inflation" refers to a <strong>wealth transfer</strong>. The fixed-rate borrower (Option C) pays back less in real terms, meaning wealth is transferred from the lender to the borrower. That is a true "benefit". Option D is merely "unharmed" or protected, not gaining at someone else's expense.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="shortcut-box">
+        <p><strong>⚡ 10秒速解法 (10-Second Shortcut)</strong></p>
+        <p>看到「受惠於非預期通脹 (benefit from unanticipated inflation)」，立即在選項中掃描兩個關鍵字組合：</p>
+        <p class="en-trans">When you see "benefit from unanticipated inflation", immediately scan the options for this combination of keywords:</p>
+        <p style="font-size: 1.2em; font-weight: bold; text-align: center;">
+            借款人 / 負債者 (Borrower / Debtor)<br>+<br>固定 (Fixed)
+        </p>
+        <p>只有選項 C 同時符合「業主償還按揭 = 借款人」以及「固定息率 = Fixed」。無需猶豫，直接選 C！</p>
+        <p class="en-trans">Only Option C fits both "repaying mortgage = borrower" and "fixed-rate = fixed". No hesitation needed, choose C!</p>
+    </div>
+</div>
+
+</body>
+</html>
