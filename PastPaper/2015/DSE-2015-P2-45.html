@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Tariffs vs. Quotas</title>
+    
+    
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0284c7;
+            --success-color: #16a34a;
+            --warning-color: #d97706;
+            --neutral-color: #4b5563;
+            --bg-light: #f8fafc;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background-color: var(--bg-light);
+        }
+        
+        h1, h2, h3 { color: var(--primary-color); }
+        
+        .eng-trans { 
+            color: var(--neutral-color); 
+            font-style: italic; 
+            margin-top: 4px; 
+            margin-bottom: 16px; 
+            font-size: 0.95em; 
+            display: block;
+        }
+
+        .chi-text {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        /* Section Boxes */
+        .header-box { 
+            background-color: #e0f2fe; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 25px; 
+            border-left: 6px solid var(--secondary-color); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .question-box { 
+            background-color: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        }
+        
+        .concept-box { 
+            background-color: #f0fdf4; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 6px solid var(--success-color); 
+            margin-bottom: 25px; 
+        }
+        
+        .analysis-box { 
+            background-color: #fffbeb; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 6px solid var(--warning-color); 
+            margin-bottom: 25px; 
+        }
+        
+        .decomp-box { 
+            background-color: #f3f4f6; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 6px solid var(--neutral-color); 
+            margin-bottom: 25px; 
+        }
+
+        .math-block { 
+            background-color: #ffffff; 
+            padding: 15px; 
+            border-radius: 6px; 
+            text-align: center; 
+            border: 1px dashed #cbd5e1; 
+            margin: 15px 0; 
+            overflow-x: auto;
+        }
+
+        .correct-opt { 
+            font-weight: bold; 
+            color: #dc2626; 
+            font-size: 1.2em; 
+            background-color: #fee2e2;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .svg-container { 
+            text-align: center; 
+            margin: 25px 0; 
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Option List */
+        .option-item {
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8fafc;
+        }
+        
+        hr { border: 0; height: 1px; background: #e2e8f0; margin: 20px 0; }
+        
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .question-box, .concept-box, .analysis-box, .decomp-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Topic Analysis</h2>
+        <ul>
+            <li><strong>Topic (課題):</strong> International Trade - Market Intervention (國際貿易 - 市場干預)</li>
+            <li><strong>Difficulty (難度):</strong> ★★★☆☆</li>
+            <li><strong>Key Concepts (核心概念):</strong> Small Open Economy (小型開放經濟), Import Quota (進口配額), Tariff (關稅), Government Revenue (政府收入)</li>
+        </ul>
+    </div>
+
+    <div class="question-box">
+        <h3>題目 (The Question)</h3>
+        <p class="chi-text">在一個小型開放經濟內某物品的供應曲線是向右上斜的。對該物品實施有效進口配額和徵收關稅的主要分別是什麼？</p>
+        <p class="eng-trans">The supply curve of a certain good is upward-sloping in a small open economy. What is the main difference between imposing an effective import quota and a tariff on the good?</p>
+        
+        <div class="option-item">
+            <div class="chi-text">A. 實施有效進口配額會降低進口量，而徵收關稅則不會。</div>
+            <div class="eng-trans">A. Imposing an effective import quota will lower the volume of import while imposing a tariff will not.</div>
+        </div>
+        <div class="option-item">
+            <div class="chi-text">B. 實施有效進口配額會令該物品的消費者盈餘上升，而徵收關稅可能不會。</div>
+            <div class="eng-trans">B. Imposing an effective import quota will result in a rise in consumer surplus of the good while imposing a tariff may not.</div>
+        </div>
+        <div class="option-item">
+            <div class="chi-text">C. 徵收關稅會提高該物品的國際價格，而實施有效進口配額則不會。</div>
+            <div class="eng-trans">C. Imposing a tariff will raise the world price of the good while imposing an effective import quota will not.</div>
+        </div>
+        <div class="option-item">
+            <div class="chi-text">D. 徵收關稅會令政府收入增加，而實施有效進口配額可能不會。</div>
+            <div class="eng-trans">D. Imposing a tariff will result in an increase in the government revenue while imposing an effective import quota may not.</div>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h3>💡 概念重溫 (Concept Review)</h3>
+        
+        <p class="chi-text"><strong>1. 小型開放經濟 (Small Open Economy):</strong> 該經濟體在國際市場中只是「價格接受者」(Price taker)，其進出口數量不足以影響世界價格 ($P_W$)。</p>
+        <p class="eng-trans">A small open economy is a "price taker" in the international market. Its trade volume is too small to affect the world price ($P_W$).</p>
+
+        <p class="chi-text"><strong>2. 關稅 (Tariff):</strong> 對進口物品徵收的稅項。這會提高本地價格 ($P_D$)，減少進口量，並<strong>必然</strong>為政府帶來稅收。</p>
+        <p class="eng-trans">A tax on imported goods. It raises the domestic price ($P_D$), reduces import volume, and <strong>certainly</strong> generates tax revenue for the government.</p>
+        
+        <div class="math-block">
+            $$ \text{Tariff Revenue} = t \times M $$
+            <p class="eng-trans" style="margin-top: 5px; margin-bottom: 0;">Where $t$ is the per-unit tariff and $M$ is the new import volume.</p>
+        </div>
+
+        <p class="chi-text"><strong>3. 進口配額 (Import Quota):</strong> 對進口數量的法定限制。同樣會提高本地價格，但產生的「配額租值」(Quota Rent) 不一定歸政府所有。若政府免費派發配額牌照，租值便歸進口商所有。</p>
+        <p class="eng-trans">A legal limit on the quantity of imports. It also raises domestic prices, but the resulting "Quota Rent" does not necessarily go to the government. If licenses are given away for free, importers capture this rent.</p>
+        
+        
+
+        <div class="svg-container">
+            <svg width="100%" max-width="500px" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2" />
+                <line x1="50" y1="50" x2="50" y2="350" stroke="black" stroke-width="2" />
+                <text x="460" y="355" font-family="sans-serif" font-size="16">Q</text>
+                <text x="30" y="40" font-family="sans-serif" font-size="16">P</text>
+                
+                <line x1="100" y1="350" x2="350" y2="100" stroke="#2563eb" stroke-width="2" />
+                <text x="360" y="100" fill="#2563eb" font-weight="bold">S (Domestic)</text>
+                
+                <line x1="50" y1="100" x2="300" y2="350" stroke="#dc2626" stroke-width="2" />
+                <text x="310" y="350" fill="#dc2626" font-weight="bold">D (Domestic)</text>
+                
+                <line x1="50" y1="280" x2="400" y2="280" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,5" />
+                <text x="10" y="285" fill="#16a34a" font-weight="bold">P_W</text>
+                
+                <line x1="50" y1="220" x2="400" y2="220" stroke="#d97706" stroke-width="2" />
+                <text x="10" y="225" fill="#d97706" font-weight="bold">P_D</text>
+                
+                <rect x="170" y="220" width="80" height="60" fill="#fef08a" stroke="#ca8a04" opacity="0.8" />
+                <text x="210" y="250" font-size="12" text-anchor="middle" font-weight="bold">Gov Revenue</text>
+                <text x="210" y="265" font-size="12" text-anchor="middle" font-weight="bold">or Quota Rent</text>
+
+                <line x1="170" y1="220" x2="170" y2="350" stroke="#94a3b8" stroke-dasharray="3,3" />
+                <line x1="250" y1="220" x2="250" y2="350" stroke="#94a3b8" stroke-dasharray="3,3" />
+                
+                <text x="160" y="370" font-size="12">Qs'</text>
+                <text x="245" y="370" font-size="12">Qd'</text>
+            </svg>
+            <p class="eng-trans" style="font-size: 0.85em; text-align: center;">Figure: The shaded area represents Tariff Revenue (always goes to Gov) or Quota Rent (might go to Gov or Importers).</p>
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h3>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+        <p>正確答案 (Correct Option): <span class="correct-opt">Option D</span></p>
+
+        <hr>
+
+        <p class="chi-text"><strong>Option A:</strong> 兩者皆會提高本地價格，從而減少進口量，因此A不正確。</p>
+        <p class="eng-trans"><strong>Analysis A:</strong> Both policies raise the domestic price and subsequently reduce the volume of imports, so A is incorrect.</p>
+
+        <p class="chi-text"><strong>Option B:</strong> 由於兩項政策都會推高本地價格 ($P_D > P_W$)，消費者的購買價格上升，消費者盈餘 (Consumer Surplus) 必定會<strong>下降</strong>，因此B不正確。</p>
+        <p class="eng-trans"><strong>Analysis B:</strong> Since both policies push up the domestic price ($P_D > P_W$), consumers pay more, which <strong>decreases</strong> consumer surplus. Thus, B is incorrect.</p>
+
+        <p class="chi-text"><strong>Option C:</strong> 題目已標明這是「小型開放經濟」(Small Open Economy)。無論實施什麼貿易壁壘，該國都無法影響世界價格，因此C不正確。</p>
+        <p class="eng-trans"><strong>Analysis C:</strong> The question specifies a "small open economy". Regardless of the trade barriers imposed, the country cannot influence the world price. Thus, C is incorrect.</p>
+
+        <p class="chi-text"><strong>Option D (正確):</strong> 關稅本質上是稅收，必定會增加政府收入。相反，配額只限制數量，配額帶來的差價利潤 (配額租值) 只有在政府拍賣配額牌照時才會成為政府收入；若政府免費發放牌照，這筆利潤便歸進口商。因此，配額「可能不會」增加政府收入。</p>
+        <p class="eng-trans"><strong>Analysis D (Correct):</strong> A tariff is a tax and explicitly increases government revenue. A quota simply restricts quantity. The resulting price difference creates "quota rent," which only becomes government revenue if licenses are auctioned. If given away freely, importers get the profit. Thus, a quota "may not" increase government revenue.</p>
+    </div>
+
+    <div class="decomp-box">
+        <h3>🔍 題目拆解 (Problem Decomposition)</h3>
+        <p class="chi-text"><strong>破題關鍵 (Pivot Point):</strong> 找出兩項政策的「唯一主要分別」。在經濟學模型中，關稅和配額在影響價格、本地產量、本地消費量及進口量方面，幾乎是<strong>等效的 (Equivalent)</strong>。它們最大的差異就在於<strong>財富分配 (Wealth Distribution)</strong>——也就是矩形面積 (租值/稅收) 歸誰所有。</p>
+        <p class="eng-trans"><strong>Pivot Point:</strong> Identify the "main difference". In standard economic models, a tariff and a quota have <strong>equivalent</strong> effects on price, domestic production, consumption, and import volume. Their primary theoretical difference lies in <strong>wealth distribution</strong>—specifically, who captures the rectangular area (rent/revenue).</p>
+    </div>
+
+    <div class="question-box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <ul style="padding-left: 20px;">
+            <li>
+                <div class="chi-text"><strong>忽視「小型開放經濟」的前提：</strong> 很多學生誤以為關稅會降低世界需求，從而拉低世界價格。這只適用於「大型經濟體」(Large Economy)，絕不適用於香港等小型經濟體。</div>
+                <div class="eng-trans"><strong>Ignoring the "Small Economy" assumption:</strong> Students often assume tariffs lower world demand and thus world price. This is only true for a "Large Economy" (like the US or China), not a small price-taker.</div>
+            </li>
+            <li>
+                <div class="chi-text"><strong>死記硬背配額等同政府收入：</strong> 學生常忘記配額牌照是可以「免費發放」的。</div>
+                <div class="eng-trans"><strong>Memorizing that quotas equal gov revenue:</strong> Students forget that quota licenses can be distributed for free, yielding zero government revenue.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #8b5cf6;">
+        <h3 style="color: #6d28d9;">🙋 學生常見疑問 (Student Q&A)</h3>
+        <p class="chi-text"><strong>Q: 既然關稅和配額的效果這麼相似，為什麼政府有時會選擇配額而不是關稅？</strong></p>
+        <p class="eng-trans"><strong>Q: If tariffs and quotas have such similar effects, why would a government choose a quota over a tariff?</strong></p>
+        
+        <p class="chi-text"><strong>A:</strong> 政策確定性。配額提供了絕對的數量上限 (例如保護本土農業時確保進口量不會超過某個數值)。而關稅雖然提高了價格，但如果外國生產商大幅減價或本地需求大增，進口量仍有可能急劇上升。配額在控制實體數量上更為精準。</p>
+        <p class="eng-trans"><strong>A:</strong> Policy certainty. A quota provides a strict, absolute limit on quantity (useful for protecting domestic industries). With a tariff, if foreign producers drastically cut costs or domestic demand surges, import volumes could still spike. Quotas offer precision in physical volume control.</p>
+    </div>
+
+    <div class="header-box" style="background-color: #fef2f2; border-left-color: #ef4444;">
+        <h3 style="color: #b91c1c;">⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <p class="chi-text"><strong>刪除法 (Elimination Method)：</strong> 當題目問「關稅與配額的分別」時，先快速刪除那些兩者「皆會發生」的選項。你應該立刻知道兩者都會「推高價格」、「減少進口」和「降低消費者盈餘」，因此 A 和 B 可於 3 秒內被剔除。剩下的 C 和 D 中，留意到「小型經濟」一詞，立刻剔除影響國際價格的 C，答案 D 便呼之欲出。</p>
+        <p class="eng-trans"><strong>Elimination Method:</strong> When asked for the "difference between tariff and quota", quickly eliminate options that describe shared effects. Both "raise prices", "reduce imports", and "reduce consumer surplus". A and B are eliminated in 3 seconds. Between C and D, the keyword "small economy" immediately eliminates C (cannot affect world price). D is the clear winner.</p>
+    </div>
+
+</body>
+</html>

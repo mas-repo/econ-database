@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Related Goods & Total Revenue</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary-color: #f0f9ff;
+            --bg-color: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --math-bg: #f3f4f6;
+            --trick-bg: #fffbeb;
+            --trick-border: #eab308;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Microsoft JhengHei";
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        h1 { color: var(--primary-dark); font-size: 1.8rem; border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 20px; }
+        h2 { font-size: 1.4rem; color: var(--primary-dark); margin-top: 30px; margin-bottom: 15px; display: flex; align-items: center; }
+        h2::before { content: "•"; color: var(--primary-color); font-size: 2rem; margin-right: 10px; }
+
+        .header-info { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .badge { background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+
+        .question-box { background: #f1f5f9; border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; margin-bottom: 30px; }
+        .lang-en { color: var(--text-light); font-style: italic; margin-top: 8px; border-top: 1px solid #cbd5e1; padding-top: 8px; }
+
+        .concept-box { background-color: var(--secondary-color); border-left: 5px solid var(--primary-color); padding: 20px; border-radius: 4px; margin-bottom: 25px; }
+        
+        .math-block { background-color: var(--math-bg); padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; font-size: 1.1rem; }
+
+        .option-analysis { padding: 15px; margin-bottom: 15px; border-radius: 6px; border: 1px solid var(--border-color); }
+        .correct { background-color: var(--correct-bg); border-left: 5px solid var(--correct-border); }
+        .wrong { background-color: var(--wrong-bg); border-left: 5px solid var(--wrong-border); }
+
+        .exam-trick { background-color: var(--trick-bg); border: 1px solid var(--trick-border); padding: 20px; border-radius: 8px; margin-top: 30px; }
+        
+        .qa-section { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .qa-q { font-weight: bold; color: var(--primary-dark); }
+
+        @media (max-width: 600px) { .container { padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Market Theory Analysis</h1>
+    <div class="header-info">
+        <span class="badge">Topic: Demand & Supply (關連物品)</span>
+        <span class="badge">Difficulty: ★★★☆☆</span>
+        <span class="badge">Key: Total Revenue (總收入)</span>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <p>其他因素維持不變，_____________，物品X的價格上升會令物品Y的總收入下跌。</p>
+        <p class="lang-en">Holding other factors constant, a rise in the price of Good X will lead to a fall in the total revenue of Good Y if</p>
+        <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>A. 若物品X及物品Y是輔助品</div><div class="lang-en">A. Good X and Good Y are complements.</div>
+            <div>B. 若物品X及物品Y是替代品</div><div class="lang-en">B. Good X and Good Y are substitutes.</div>
+            <div>C. 若物品X及物品Y屬聯合供應</div><div class="lang-en">C. Good X and Good Y are in joint supply.</div>
+            <div>D. 若物品X及物品Y屬競爭性供應</div><div class="lang-en">D. Good X and Good Y are in competitive supply.</div>
+        </div>
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>1. 總收入 (Total Revenue, TR):</strong></p>
+        <div class="math-block">\( TR = P \times Q \)</div>
+        <p>當<strong>需求 (Demand)</strong> 改變時，價格 \(P\) 和數量 \(Q\) 會同向變動，因此 \(TR\) 的變動方向是肯定的。</p>
+        <p class="lang-en">When <strong>Demand</strong> changes, \(P\) and \(Q\) move in the same direction, making the change in \(TR\) definite.</p>
+        
+        <p style="margin-top:15px;"><strong>2. 關連物品 (Related Goods):</strong></p>
+        <ul>
+            <li><strong>輔助品 (Complements):</strong> \(P_x \uparrow \rightarrow Q_{dx} \downarrow \rightarrow D_y \downarrow\)</li>
+            <li><strong>替代品 (Substitutes):</strong> \(P_x \uparrow \rightarrow Q_{dx} \downarrow \rightarrow D_y \uparrow\)</li>
+            <li><strong>聯合供應 (Joint Supply):</strong> \(P_x \uparrow \rightarrow Q_{sx} \uparrow \rightarrow S_y \uparrow\)</li>
+            <li><strong>競爭性供應 (Competitive Supply):</strong> \(P_x \uparrow \rightarrow Q_{sx} \uparrow \rightarrow S_y \downarrow\)</li>
+        </ul>
+    </div>
+
+    <h2>答案與詳細分析 (Answer & Analysis)</h2>
+    <p><strong>正確選項：A</strong></p>
+    
+    <div class="option-analysis correct">
+        <strong>選項 A (Option A):</strong><br>
+        若 X 與 Y 是輔助品：\(P_x \uparrow \rightarrow Q_{dx} \downarrow \rightarrow D_y \downarrow\)。<br>
+        當需求 \(D_y\) 下跌，物品 Y 的 \(P_y \downarrow\) 且 \(Q_y \downarrow\)。<br>
+        由於兩個變數都下跌，\(TR_y (P_y \times Q_y)\) <strong>必然下跌</strong>。<br>
+        <span class="lang-en">If X and Y are complements: \(P_x \uparrow \rightarrow Q_{dx} \downarrow \rightarrow D_y \downarrow\).<br>
+        When \(D_y\) falls, both \(P_y \downarrow\) and \(Q_y \downarrow\).<br>
+        Since both variables decrease, \(TR_y\) <strong>must fall</strong>.</span>
+    </div>
+
+    <div class="option-analysis wrong">
+        <strong>選項 B (Option B):</strong><br>
+        若 X 與 Y 是替代品：\(P_x \uparrow \rightarrow D_y \uparrow \rightarrow P_y \uparrow\) 且 \(Q_y \uparrow \rightarrow TR_y \uparrow\)。<br>
+        這與題目要求的「TR 下跌」相反。<br>
+        <span class="lang-en">If X and Y are substitutes: \(P_x \uparrow \rightarrow D_y \uparrow \rightarrow P_y \uparrow\) and \(Q_y \uparrow \rightarrow TR_y \uparrow\).<br>
+        This is the opposite of the question's requirement.</span>
+    </div>
+
+    <div class="option-analysis wrong">
+        <strong>選項 C & D (Options C & D):</strong><br>
+        這兩個選項涉及<strong>供應 (Supply)</strong> 的改變。當供應改變時，\(P\) 和 \(Q\) 會向相反方向變動。<br>
+        例如 C：\(S_y \uparrow \rightarrow P_y \downarrow\) 但 \(Q_y \uparrow\)。<br>
+        在沒有<strong>需求價格彈性 (Ed)</strong> 的資料下，我們無法確定 \(TR_y\) 的升跌。<br>
+        <span class="lang-en">These involve shifts in <strong>Supply</strong>. When supply shifts, \(P\) and \(Q\) move in opposite directions.<br>
+        E.g., for C: \(S_y \uparrow \rightarrow P_y \downarrow\) but \(Q_y \uparrow\).<br>
+        Without <strong>Price Elasticity of Demand (Ed)</strong>, the change in \(TR_y\) is uncertain.</span>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box">
+        <p><strong>解題關鍵 (The Pivot):</strong></p>
+        <p>要在沒有彈性數據的情況下斷定 \(TR\) 的變動，必須尋找能令 <strong>需求曲線 (Demand Curve)</strong> 移動的因素。只有需求移動，\(P\) 和 \(Q\) 才會「同升同跌」，令 \(TR\) 有絕對的答案。</p>
+        <p class="lang-en">To determine the change in \(TR\) without elasticity data, look for factors that shift the <strong>Demand Curve</strong>. Only then will \(P\) and \(Q\) move in the same direction, leading to a certain change in \(TR\).</p>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-section">
+        <p class="qa-q">Q: 為什麼供應增加時，總收入不一定下跌？</p>
+        <p>A: 因為供應增加雖然令價格 (\(P\)) 下跌，但同時會令交易量 (\(Q\)) 上升。如果需求的增加百分比大於價格下跌的百分比（即需求具彈性），總收入反而會上升。因此供應移動時，TR 是「不確定」的。</p>
+        <p class="lang-en" style="border:none; padding:0;">A: Because while an increase in supply lowers \(P\), it increases \(Q\). If the percentage increase in \(Q\) is larger than the percentage decrease in \(P\) (Elastic Demand), TR will actually rise. Thus, TR is "uncertain" when supply shifts.</p>
+    </div>
+
+    <div class="exam-trick">
+        <strong>⚡ 考試速解技巧 (Exam Shortcut):</strong><br>
+        看到題目問 <strong>"TR 必然下跌/上升"</strong> 卻 <strong>"沒有提到彈性 (Elasticity)"</strong> \( \rightarrow \) 直接排除所有影響 <strong>供應 (Supply)</strong> 的選項 (即排除聯合供應及競爭性供應)。在剩下的需求選項中，按 logic 找出答案。
+    </div>
+
+
+</div>
+
+</body>
+</html>
