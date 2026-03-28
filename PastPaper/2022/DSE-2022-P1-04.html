@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Types of Goods</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f9fafb;
+            --concept-bg: #fffbeb;
+            --concept-border: #fbbf24;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            background-color: var(--primary-light);
+            padding: 8px 12px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .zh-text {
+            margin-bottom: 4px;
+        }
+
+        /* Header Section */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: var(--warning-color);
+            letter-spacing: 2px;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--bg-light);
+            transition: background-color 0.2s;
+        }
+
+        .options-list li:hover {
+            background-color: #e5e7eb;
+        }
+
+        /* Concept Review Section */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #d1d5db;
+        }
+
+        /* Analysis Section */
+        .correct-answer {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            font-weight: bold;
+            padding: 10px;
+            background-color: #d1fae5;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .analysis-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .analysis-card.correct {
+            border-color: var(--secondary-color);
+            background-color: #ecfdf5;
+        }
+
+        .analysis-card.wrong {
+            border-color: var(--danger-color);
+            background-color: #fef2f2;
+        }
+
+        .option-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .correct .option-label { background-color: var(--secondary-color); }
+        .wrong .option-label { background-color: var(--danger-color); }
+
+        /* Other Sections */
+        .qa-box {
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .q-text { font-weight: bold; color: var(--primary-color); }
+        .a-text { margin-top: 10px; }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border-left: 5px solid var(--danger-color);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tips-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial</h1>
+    
+    <div class="header-info">
+        <div><span class="badge">課題 Topic</span> 物品的種類 Types of Goods</div>
+        <div><span class="badge" style="background:var(--warning-color)">難度 Difficulty</span> <span class="stars">★★★☆☆</span></div>
+        <div><span class="badge" style="background:var(--secondary-color)">關鍵詞 Keywords</span> 消費者物品, 共用品, 免費物品</div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh-text">政府購入了2020東京奧運的轉播權，令全港市民能免費觀賞各項賽事。該奧運廣播屬 ____________，因為 ____________。</p>
+        <p class="en-text">The Government purchased the broadcasting rights of the Tokyo 2020 Olympic Games. This enabled all Hong Kong people to watch the events for free. The Olympic Games broadcast is a _____________ because ____________.</p>
+        
+        <ul class="options-list">
+            <li>
+                <div class="zh-text">A. 共用品 …… 政府支付了轉播權費用</div>
+                <div class="en-text">A. public good …… the Government paid for the broadcasting rights</div>
+            </li>
+            <li>
+                <div class="zh-text">B. 私用品 …… 某一個人的消費會令其他人可享用的數量減少</div>
+                <div class="en-text">B. private good …… one individual’s consumption reduces its amount available to others</div>
+            </li>
+            <li>
+                <div class="zh-text">C. 免費物品 …… 人們並不偏好更多該物品</div>
+                <div class="en-text">C. free good …… more is not preferred</div>
+            </li>
+            <li>
+                <div class="zh-text">D. 消費者物品 …… 它能直接滿足人們的欲望</div>
+                <div class="en-text">D. consumer good …… it can directly satisfy human wants</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh-text">要破解這道題目，我們需要釐清三組核心的經濟學概念：</p>
+        <p class="en-text">To crack this question, we need to clarify three core pairs of economic concepts:</p>
+
+        <ol>
+            <li>
+                <strong>消費者物品 vs. 生產者物品 (Consumer Good vs. Capital Good)</strong>
+                <p class="zh-text">分類準則在於物品的<strong>用途</strong>。如果物品被用作<strong>直接滿足人類欲望</strong>，它就是消費者物品。如果物品被用作輔助生產其他物品，它就是資本/生產者物品。</p>
+                <p class="en-text">The classification depends on the <strong>use</strong> of the good. If it is used to <strong>directly satisfy human wants</strong>, it is a consumer good. If it is used to assist in producing other goods, it is a capital good.</p>
+            </li>
+            <li>
+                <strong>共用品 vs. 私用品 (Public Good vs. Private Good)</strong>
+                <p class="zh-text">分類準則在於消費時是否具有<strong>競爭性 (Rivalrous)</strong> 及 <strong>排他性 (Excludable)</strong>。共用品是指一個人的消費<strong>不會</strong>減少其他人可享用的數量（非競爭性）。這與「由誰支付或提供」（例如政府）完全無關！</p>
+                <p class="en-text">The classification depends on whether consumption is <strong>rivalrous</strong> and <strong>excludable</strong>. A public good means one person's consumption <strong>does not</strong> reduce the amount available to others (non-rivalrous). This has absolutely NOTHING to do with "who pays or provides it" (e.g., the government)!</p>
+            </li>
+            <li>
+                <strong>免費物品 vs. 經濟物品 (Free Good vs. Economic Good)</strong>
+                <p class="zh-text">經濟物品是指其數量不足以滿足所有人的欲望（即存在稀少性），因此生產或獲取它涉及<strong>機會成本 (Opportunity Cost)</strong>。相反，免費物品的機會成本為零。</p>
+                <p class="en-text">An economic good is one whose quantity is insufficient to satisfy all human wants (i.e., scarcity exists), so producing or obtaining it involves an <strong>opportunity cost</strong>. Conversely, the opportunity cost of a free good is zero.</p>
+            </li>
+        </ol>
+
+        <div class="math-block">
+            $$ \text{Economic Good} \iff \text{Opportunity Cost} > 0 $$
+            $$ \text{Free Good} \iff \text{Opportunity Cost} = 0 $$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 Detailed Analysis</h2>
+    <div class="correct-answer">
+        正確答案 Correct Answer: Option D
+    </div>
+
+    <div class="analysis-card wrong">
+        <div class="zh-text"><span class="option-label">A</span> <strong>錯誤 Wrong:</strong> 雖然電視廣播一般具有非競爭性，因此帶有共用品 (Public Good) 的特質，但選項後半部的<strong>原因錯誤</strong>。一件物品是否共用品，取決於其消費性質（非競爭性），而不是因為「政府支付了費用」。政府也會購買私用品（例如辦公室文具）。</div>
+        <div class="en-text">While a TV broadcast is generally non-rivalrous and thus has public good characteristics, the <strong>reasoning in the second half is wrong</strong>. Whether a good is a public good depends on the nature of its consumption (non-rivalrous), not because "the Government paid for it." The government also buys private goods (e.g., office stationery).</div>
+    </div>
+
+    <div class="analysis-card wrong">
+        <div class="zh-text"><span class="option-label">B</span> <strong>錯誤 Wrong:</strong> 電視廣播的性質是：多一個人收看，並不會減弱或減少其他觀眾欣賞該節目的質量或數量。因此，廣播是<strong>非競爭性 (Non-rivalrous)</strong> 的，不符合私用品的定義。</div>
+        <div class="en-text">The nature of a TV broadcast is that one additional viewer does not diminish or reduce the quality or quantity available to other viewers. Therefore, broadcasting is <strong>non-rivalrous</strong> and does not fit the definition of a private good.</div>
+    </div>
+
+    <div class="analysis-card wrong">
+        <div class="zh-text"><span class="option-label">C</span> <strong>錯誤 Wrong:</strong> 奧運廣播絕對是經濟物品 (Economic Good)，因為政府動用了公帑（涉及機會成本 \( \text{Cost} > 0 \)）去購買轉播權。此外，人們普遍「偏好更多」精彩的奧運賽事。</div>
+        <div class="en-text">The Olympic broadcast is definitely an economic good because the government used public funds (involving an opportunity cost \( \text{Cost} > 0 \)) to purchase the rights. Additionally, people generally "prefer more" exciting Olympic events.</div>
+    </div>
+
+    <div class="analysis-card correct">
+        <div class="zh-text"><span class="option-label">D</span> <strong>正確 Correct:</strong> 市民觀賞奧運廣播是為了娛樂和支持運動員，這項行為<strong>直接滿足了市民的欲望</strong>。因此，按照物品的用途分類，它正確地被歸類為消費者物品 (Consumer Good)。</div>
+        <div class="en-text">Citizens watch the Olympic broadcast for entertainment and to support athletes; this action <strong>directly satisfies their wants</strong>. Therefore, according to the classification by use, it is correctly categorized as a consumer good.</div>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="zh-text">
+        <p>這類題目的<strong>「樞紐點 (Pivot Point)」</strong>在於連接詞<strong>「因為 (because)」</strong>。在 DSE 經濟科中，很多選項的「結論」（前半截）可能是對的，但「解釋」（後半截）卻錯得離譜。</p>
+        <ul>
+            <li><strong>干擾資訊 (Distractors):</strong> 題目特意寫出「政府購入」和「免費觀賞」，這兩個詞語是為了誘導你選擇 (A) 共用品 或 (C) 免費物品。</li>
+            <li><strong>解題關鍵:</strong> 檢驗每一個選項時，必須同時問自己兩個問題：(1) 這個分類正確嗎？ (2) <strong>這個定義/原因正確嗎？</strong> 只有兩者皆對，才是最終答案。</li>
+        </ul>
+    </div>
+    <div class="en-text">
+        <p>The <strong>"Pivot Point"</strong> of this type of question lies in the conjunction <strong>"because"</strong>. In DSE Economics, the "conclusion" (first half) of an option might be correct, but the "explanation" (second half) is completely wrong.</p>
+        <ul>
+            <li><strong>Distractors:</strong> The question deliberately includes "Government purchased" and "watch for free" to trick you into choosing (A) public good or (C) free good.</li>
+            <li><strong>Key to Solving:</strong> When checking each option, you must ask yourself two questions simultaneously: (1) Is the classification correct? (2) <strong>Is the definition/reason correct?</strong> Only when BOTH are true is it the final answer.</li>
+        </ul>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Traps</h2>
+    <div class="trap-box">
+        <p class="zh-text"><strong>陷阱 1：混淆「免費提供 (Free of charge)」與「免費物品 (Free good)」</strong><br>
+        政府讓你「免費」看奧運，只是免去了你的金錢代價 (Zero money price)。但生產/獲取這廣播依然動用了社會資源（政府付了版權費），有機會成本，所以它是經濟物品 (Economic good)。</p>
+        <p class="en-text"><strong>Trap 1: Confusing "Free of charge" with "Free good"</strong><br>
+        The government letting you watch the Olympics for "free" simply means a zero money price for you. However, producing/obtaining this broadcast still used society's resources (the government paid royalties), so it has an opportunity cost, making it an economic good.</p>
+    </div>
+
+    <div class="trap-box">
+        <p class="zh-text"><strong>陷阱 2：以為「政府提供 = 共用品 (Public Good)」</strong><br>
+        DSE 考評局最喜歡考這個謬誤！共用品的唯一定義是「非競爭性」，與提供者是誰無關。政府提供的醫療、教育，很多都具有競爭性（床位有限），所以是私用品！</p>
+        <p class="en-text"><strong>Trap 2: Assuming "Government provision = Public Good"</strong><br>
+        The HKEAA loves testing this fallacy! The ONLY definition of a public good is "non-rivalrous consumption," regardless of who provides it. Government-provided healthcare and education are often rivalrous (limited beds/seats), making them private goods!</p>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    
+    <div class="qa-box">
+        <div class="q-text">Q: 如果選項 A 改成「共用品 …… 某一個人的消費不會減少其他人可享用的數量」，那 A 會是正確答案嗎？</div>
+        <div class="en-text">Q: If Option A was changed to "public good …… one individual’s consumption does not reduce the amount available to others", would A be correct?</div>
+        
+        <div class="a-text zh-text"><strong>A:</strong> 是的！如果選項 A 這樣寫，A 就會變成完全正確的描述。電視廣播的確具有非競爭性，屬於共用品的範疇。這更證明了原題選項 A 的錯處在於它的「原因 (because)」部分。</div>
+        <div class="a-text en-text"><strong>A:</strong> Yes! If Option A were written this way, it would be a completely correct description. TV broadcasting is indeed non-rivalrous and falls under the category of public goods. This further proves that the original Option A was wrong solely because of its "because" section.</div>
+    </div>
+
+    <div class="qa-box">
+        <div class="q-text">Q: 奧運廣播有沒有可能變成「生產者物品 (Capital good)」？</div>
+        <div class="en-text">Q: Is it possible for the Olympic broadcast to become a "capital good"?</div>
+        
+        <div class="a-text zh-text"><strong>A:</strong> 有可能！分類取決於<strong>用途</strong>。如果一間酒吧播放奧運是為了吸引顧客來買啤酒（輔助生產/提供服務），那麼對酒吧老闆而言，這廣播就是生產者物品。但在本題中，題目強調「市民觀賞」，所以是直接滿足欲望的消費者物品。</div>
+        <div class="a-text en-text"><strong>A:</strong> It is possible! Classification depends on <strong>use</strong>. If a bar broadcasts the Olympics to attract customers to buy beer (assisting in production/providing service), then to the bar owner, the broadcast is a capital good. But in this question, it emphasizes "Hong Kong people watch," so it directly satisfies human wants, making it a consumer good.</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>速解法：剔除法 (Elimination Method) 專攻「定義」</strong><br>
+        做這類 <code>[物品] ... 因為 ... [原因]</code> 的題目時，先不要管前半截的物品名稱！<strong>先掃視後半截的定義是否符合經濟學常理。</strong><br>
+        - 掃視 A：政府付款 = 共用品？ (錯，秒殺 A)<br>
+        - 掃視 C：人們不偏好更多 = 免費物品？ (錯，免費物品是指機會成本為零，人們仍然偏好更多，秒殺 C)<br>
+        只剩下 B 和 D 要認真看前半截，大大節省時間！</p>
+
+        <p class="en-text"><strong>Shortcut: Elimination Method targeting "Definitions"</strong><br>
+        When doing <code>[Good] ... because ... [Reason]</code> questions, ignore the first half (the good's name) initially! <strong>First, scan the second half to see if the definition makes economic sense.</strong><br>
+        - Scan A: Gov pays = Public good? (False, eliminate A instantly).<br>
+        - Scan C: More is not preferred = Free good? (False, a free good means zero opportunity cost, people still prefer more, eliminate C instantly).<br>
+        You are only left with B and D to read carefully, saving a lot of time!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

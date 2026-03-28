@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Production & Costs</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #0ea5e9;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            color: #666;
+        }
+        h1, h2, h3 { color: #0c4a6e; }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background-color: #f8fafc; }
+        .concept-review {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .analysis-section {
+            margin-top: 20px;
+        }
+        .option-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .correct { border: 2px solid #22c55e; background-color: #f0fdf4; }
+        .incorrect { border: 2px solid #ef4444; background-color: #fef2f2; }
+        .highlight { font-weight: bold; color: #0ea5e9; }
+        .pivot-point {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .qa-section {
+            background-color: #fafafa;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            table { font-size: 0.8em; }
+            .header-info { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>經濟科導師 (HKDSE Economics)</h1>
+        <div class="header-info">
+            <span><strong>Topic 主題:</strong> 廠商與生產 (Firms and Production)</span>
+            <span><strong>Difficulty 難度:</strong> ★★★☆☆</span>
+        </div>
+        <div class="header-info">
+            <span><strong>Key Concepts 關鍵概念:</strong> LDMR, Average Product, Short run vs Long run</span>
+        </div>
+    </header>
+
+    <section class="question-box">
+        <h2>The Question (題目)</h2>
+        <p>下表顯示某廠商的投入、產出與成本的關係。生產所需的投入只有勞工和資本。<br>
+        <em>The following table shows the input, output and cost relationships of a firm. The only inputs required for production are labour and capital.</em></p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>勞工 (L)<br>Labour</th>
+                    <th>資本 (K)<br>Capital</th>
+                    <th>總產出 (TP)<br>Total Product</th>
+                    <th>總成本 (TC)<br>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>1</td><td>20</td><td>$150</td></tr>
+                <tr><td>2</td><td>1</td><td>50</td><td>$200</td></tr>
+                <tr><td>3</td><td>1</td><td>70</td><td>$250</td></tr>
+                <tr><td>4</td><td>1</td><td>80</td><td>$300</td></tr>
+            </tbody>
+        </table>
+
+        <p>根據上表，我們可以得出結論：<br><em>Based on the above table, we can conclude that:</em></p>
+        <p>
+            A. 該廠商享有規模經濟。<br><em>the firm enjoys economies of scale.</em><br>
+            B. 生產的最優規模是70單位。<br><em>the optimal scale of production is 70 units.</em><br>
+            C. 當勞工的數量是2單位時，勞工的平均產出是最高的。<br><em>the average product of labour is at the highest when the quantity of labour is 2 units.</em><br>
+            D. 邊際回報遞減定律並不適用於該廠商。<br><em>the law of diminishing marginal returns does not apply to the firm.</em>
+        </p>
+    </section>
+
+    <section class="concept-review">
+        <h2>Concept Review (概念重溫)</h2>
+        <p><strong>1. 短期與長期 (Short Run vs. Long Run):</strong><br>
+        只要有一種投入（通常是資本 \(K\)）是固定的，該生產便處於<strong>短期</strong>。<br>
+        <em>As long as one input (usually Capital \(K\)) is fixed, the production is in the <strong>short run</strong>.</em></p>
+        
+        <p><strong>2. 平均產出 (Average Product, AP):</strong><br>
+        指平均每單位勞工所產生的產量。<br>
+        <em>Refers to the output produced per unit of labour on average.</em></p>
+        <div class="math-block">
+            $$AP_L = \frac{TP}{L}$$
+        </div>
+
+        <p><strong>3. 邊際產出 (Marginal Product, MP):</strong><br>
+        指增加一單位變動投入（勞工）所帶來的總產量變動。<br>
+        <em>The change in total product resulting from employing one more unit of variable input (labour).</em></p>
+        <div class="math-block">
+            $$MP_L = \frac{\Delta TP}{\Delta L}$$
+        </div>
+
+        <p><strong>4. 邊際回報遞減定律 (Law of Diminishing Marginal Returns, LDMR):</strong><br>
+        在短期生產中，當連續將變動投入（勞工）增加到固定投入（資本）時，邊際產出最終會下降。<br>
+        <em>In the short run, as more units of a variable input (labour) are added to a fixed input (capital), the marginal product will eventually decline.</em></p>
+    </section>
+
+    <section class="analysis-section">
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option: <span class="highlight">Option C</span></strong></p>
+
+        <div class="option-item incorrect">
+            <strong>Option A: 錯誤 (Incorrect)</strong><br>
+            <strong>分析：</strong>規模經濟（Economies of Scale）是一個「長期」概念，前提是所有投入（包括勞工和資本）按比例增加。但在本題中，資本 \(K\) 固定在 1 單位，這屬於「短期」分析，因此無法判斷規模經濟。<br>
+            <em><strong>Analysis:</strong> Economies of scale is a "long-run" concept where all inputs (labour and capital) increase. Since capital \(K\) is fixed at 1 unit here, this is a "short-run" analysis, making it impossible to conclude anything about economies of scale.</em>
+        </div>
+
+        <div class="option-item incorrect">
+            <strong>Option B: 錯誤 (Incorrect)</strong><br>
+            <strong>分析：</strong>「最優規模」通常指長期平均成本（LRAC）最低的產量點。本題資料不足以判斷何謂最優規模，且該表顯示的是短期數據。<br>
+            <em><strong>Analysis:</strong> "Optimal scale" usually refers to the output level where long-run average cost (LRAC) is minimized. There is insufficient information to determine the optimal scale, and the data provided is short-run.</em>
+        </div>
+
+        <div class="option-item correct">
+            <strong>Option C: 正確 (Correct)</strong><br>
+            <strong>分析：</strong>我們計算每個勞工水平下的平均產出 \(AP_L\)：<br>
+            - 當 \(L=1\), \(AP = 20/1 = 20\)<br>
+            - 當 \(L=2\), \(AP = 50/2 = 25\)<br>
+            - 當 \(L=3\), \(AP = 70/3 = 23.33\)<br>
+            - 當 \(L=4\), \(AP = 80/4 = 20\)<br>
+            顯然，在 \(L=2\) 時，\(AP\) 最高（25單位）。<br>
+            <em><strong>Analysis:</strong> Let's calculate the Average Product \(AP_L\) for each level of labour:<br>
+            - When \(L=1\), \(AP = 20/1 = 20\)<br>
+            - When \(L=2\), \(AP = 50/2 = 25\)<br>
+            - When \(L=3\), \(AP = 70/3 = 23.33\)<br>
+            - When \(L=4\), \(AP = 80/4 = 20\)<br>
+            Clearly, \(AP\) is highest at \(L=2\) (25 units).</em>
+        </div>
+
+        <div class="option-item incorrect">
+            <strong>Option D: 錯誤 (Incorrect)</strong><br>
+            <strong>分析：</strong>計算邊際產出 \(MP_L\)：<br>
+            - 第 1 到第 2 個勞工：\(MP = 50 - 20 = 30\)<br>
+            - 第 2 到第 3 個勞工：\(MP = 70 - 50 = 20\)<br>
+            - 第 3 到第 4 個勞工：\(MP = 80 - 70 = 10\)<br>
+            由於 \(MP\) 在增加第 3 個勞工時開始下降（由 30 跌至 20），邊際回報遞減定律<strong>適用</strong>。<br>
+            <em><strong>Analysis:</strong> Calculate Marginal Product \(MP_L\):<br>
+            - 1st to 2nd labour: \(MP = 50 - 20 = 30\)<br>
+            - 2nd to 3rd labour: \(MP = 70 - 50 = 20\)<br>
+            - 3rd to 4th labour: \(MP = 80 - 70 = 10\)<br>
+            Since \(MP\) starts decreasing from the 3rd unit of labour onwards (from 30 to 20), the LDMR <strong>does apply</strong>.</em>
+        </div>
+    </section>
+
+    <section class="pivot-point">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <ul>
+            <li><strong>Pivot Point (關鍵點):</strong> 觀察「資本 (Capital)」一欄。數字全部相同（都是 1），這立即告訴你這是<strong>短期 (Short Run)</strong> 生產問題。</li>
+            <li><strong>Distractor (干擾項):</strong> 總生產成本 (Total Cost) 在這題完全是沒用的數據。它被放進去是為了誘使學生去計算平均成本或嘗試找規模經濟。</li>
+            <li><strong>Approach:</strong> 看到這類表格，第一時間在旁邊加兩行：\(MP\) 和 \(AP\)。</li>
+        </ul>
+    </section>
+
+    <section class="qa-section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 為什麼選項 A 一定錯？如果我擴大生產規模成本真的下降了呢？</strong></p>
+        <p><strong>A:</strong> 在 DSE 經濟學中，概念的定義非常嚴謹。<strong>規模經濟 (Economies of Scale)</strong> 的定義是「長期平均成本隨產量增加而下降」。表格中資本固定不變，這就不是長期的情況。我們不能用短期的數據去推論長期的趨勢。即使平均成本下降，那也只是「短期平均成本 (SRAC)」的變動，不代表規模經濟。</p>
+    </section>
+
+    <div style="text-align: center; margin-top: 30px; color: #666; font-size: 0.8em;">
+        © 2026 HKDSE Economics Prep. For educational purposes only.
+    </div>
+</div>
+
+</body>
+</html>

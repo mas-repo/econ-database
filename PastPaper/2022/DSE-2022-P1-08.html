@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Labour Mobility</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* General Reset and Typography */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei', 'PingFang HK'; 
+            line-height: 1.6; 
+            color: #334155; 
+            background-color: #f8fafc; 
+            margin: 0; 
+            padding: 20px; 
+            font-size: 16px;
+        }
+        .container { 
+            max-width: 850px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+        }
+        
+        /* Headings */
+        h1, h2, h3 { color: #1e3a8a; margin-top: 0; }
+        h1 { font-size: 1.8rem; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 25px;}
+        h2 { font-size: 1.4rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px; margin-bottom: 20px; }
+        h3 { font-size: 1.1rem; color: #0f172a; margin-bottom: 5px;}
+
+        /* Bilingual Styling */
+        .zh { font-weight: 500; margin-bottom: 4px; color: #1e293b; }
+        .en { color: #64748b; font-size: 0.95em; margin-top: 0; margin-bottom: 15px; font-style: italic; }
+
+        /* Section Specific Styles */
+        .header-info { 
+            background-color: #f0f9ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #0ea5e9; 
+            margin-bottom: 30px;
+        }
+        
+        .question-box { 
+            background-color: #f8fafc; 
+            padding: 25px; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 8px; 
+        }
+        .question-box ul { list-style-type: none; padding-left: 0; }
+        .question-box li { margin-bottom: 12px; }
+
+        .concept-box { 
+            background-color: #fffbeb; 
+            padding: 25px; 
+            border-radius: 8px; 
+            border-left: 5px solid #f59e0b; 
+            margin-bottom: 30px; 
+        }
+
+        .math-block { 
+            background-color: #f1f5f9; 
+            padding: 15px; 
+            border-radius: 6px; 
+            text-align: center; 
+            overflow-x: auto; 
+            margin: 15px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .analysis-item { 
+            margin-bottom: 20px; 
+            padding: 20px; 
+            background-color: #ffffff; 
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .correct-ans-highlight { 
+            border-left: 5px solid #22c55e; 
+            background-color: #f0fdf4; 
+        }
+        .wrong-ans-highlight { 
+            border-left: 5px solid #ef4444; 
+        }
+
+        .qa-box { 
+            background-color: #f5f3ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #8b5cf6; 
+            margin-bottom: 20px;
+        }
+
+        .tips-box { 
+            background-color: #fdf2f8; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #ec4899; 
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .header-info, .question-box, .concept-box, .analysis-item, .qa-box, .tips-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial <br><span style="font-size: 0.7em; color: #64748b;">經濟學詳解指南</span></h1>
+
+    <div class="header-info">
+        <p class="zh"><strong>課題 Topic：</strong>勞工市場：勞工流動性 (Labour Market: Labour Mobility)</p>
+        <p class="zh"><strong>難度 Difficulty：</strong>★★☆☆☆ (2/5)</p>
+        <p class="zh"><strong>核心概念 Key Concepts：</strong>
+            <span class="tag">職業流動性 Occupational Mobility</span>
+            <span class="tag">地域流動性 Geographical Mobility</span>
+            <span class="tag">進入門檻 Barriers to Entry</span>
+        </p>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh">若 ____________________ ，香港勞工的 ________ 會上升。</p>
+        <p class="en">The _______________ of labour in Hong Kong will increase if ____________________.</p>
+        
+        <ul>
+            <li>
+                <div class="zh">A. 某專業的工會收緊投身該行業的要求 …… 職業流動性</div>
+                <div class="en">A. occupational mobility …… a professional labour union tightens the requirements for entering the industry</div>
+            </li>
+            <li>
+                <div class="zh">B. 政府豁免外國受訓醫生來港執業的考試 …… 職業流動性</div>
+                <div class="en">B. occupational mobility …… the Government waives the examination for foreign-trained doctors to work in Hong Kong</div>
+            </li>
+            <li>
+                <div class="zh">C. 連接屯門和馬鞍山的屯馬綫通車 …… 地域流動性</div>
+                <div class="en">C. geographical mobility …… Tuen Ma Line connecting Tuen Mun and Ma On Shan is open</div>
+            </li>
+            <li>
+                <div class="zh">D. 政府減少對低收入組別的交通津貼 …… 地域流動性</div>
+                <div class="en">D. geographical mobility …… the Government reduces the travel subsidy to the low-income group</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <h3 class="zh">勞工流動性 (Labour Mobility)</h3>
+        <p class="zh">勞工流動性是指勞工改變其工作性質或工作地點的難易程度及意願。它主要分為兩類：</p>
+        <p class="en">Labour mobility refers to the ease and willingness with which workers can change their occupation or geographical location of work. It is mainly classified into two types:</p>
+
+        <h3 class="zh">1. 職業流動性 (Occupational Mobility)</h3>
+        <p class="zh">指勞工由一個行業/職位轉移到另一個行業/職位的難易程度。影響因素包括：所需的技能與學歷、專業牌照制度、工會限制等。</p>
+        <p class="en">The ease of moving from one occupation/job to another. Factors affecting it include required skills and education, professional licensing systems, and trade union restrictions.</p>
+
+        <h3 class="zh">2. 地域流動性 (Geographical Mobility)</h3>
+        <p class="zh">指勞工由一個工作地點轉移到另一個工作地點的難易程度。影響因素包括：交通時間、交通費用、住屋成本、移民政策等。</p>
+        <p class="en">The ease of moving from one working location to another. Factors affecting it include commuting time, transportation costs, housing costs, and immigration policies.</p>
+
+        <div class="math-block">
+            <p class="zh" style="margin-bottom: 5px;">概念化公式 Conceptual Formulas:</p>
+            $$ \text{Occupational Mobility} \propto \frac{1}{\text{Barriers to Entry} + \text{Training Time}} $$
+            $$ \text{Geographical Mobility} \propto \frac{1}{\text{Transportation Cost} + \text{Commuting Time}} $$
+        </div>
+        <p class="zh">簡單來說，當轉行或跨區工作的<strong>成本或阻力</strong> \(C\) 增加時，相應的流動性 \(M\) 就會下降。</p>
+        <p class="en">Simply put, when the <strong>costs or barriers</strong> \(C\) of changing jobs or commuting across districts increase, the corresponding mobility \(M\) decreases.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <h3 style="color: #16a34a; font-size: 1.3em;">正確答案 Correct Option: C</h3>
+    
+    <div class="analysis-item wrong-ans-highlight">
+        <h3 class="zh">選項 A (錯誤 Incorrect)</h3>
+        <p class="zh">工會收緊入行要求，代表進入該行業的門檻（Barriers to entry）提高了。這會令其他人更難轉行進入該專業，因此<strong>職業流動性會下降</strong>，而非上升。</p>
+        <p class="en">Tightening the requirements to enter an industry increases the barriers to entry. This makes it harder for others to switch into this profession, so <strong>occupational mobility will decrease</strong>, not increase.</p>
+    </div>
+
+    <div class="analysis-item wrong-ans-highlight">
+        <h3 class="zh">選項 B (錯誤 Incorrect)</h3>
+        <p class="zh">豁免外國受訓醫生的考試，是讓原本已經是醫生的人更容易來到香港工作。他們的職業依然是醫生（沒有轉行），因此這屬於增加這些外國醫生的<strong>地域流動性</strong>。對於本地香港勞工而言，這並未提升他們轉行的容易程度，所以職業流動性不會上升。</p>
+        <p class="en">Waiving the examination for foreign-trained doctors makes it easier for people who are already doctors to come and work in Hong Kong. Their occupation remains as doctors (no change in profession), so this represents an increase in <strong>geographical mobility</strong> for these foreign doctors. For local Hong Kong labour, this does not make changing jobs any easier, hence occupational mobility does not increase.</p>
+    </div>
+
+    <div class="analysis-item correct-ans-highlight">
+        <h3 class="zh">選項 C (正確 Correct)</h3>
+        <p class="zh">屯馬綫通車大大改善了交通基建，減少了往返屯門與馬鞍山等地區的交通時間和成本。這使得勞工更願意跨區工作，因此<strong>地域流動性會上升</strong>。</p>
+        <p class="en">The opening of the Tuen Ma Line significantly improves transport infrastructure, reducing the commuting time and cost between districts like Tuen Mun and Ma On Shan. This makes workers more willing to work across districts, therefore <strong>geographical mobility will increase</strong>.</p>
+    </div>
+
+    <div class="analysis-item wrong-ans-highlight">
+        <h3 class="zh">選項 D (錯誤 Incorrect)</h3>
+        <p class="zh">政府減少交通津貼，意味著低收入勞工跨區上班的實際交通成本上升。當跨區工作成本增加時，勞工跨區工作的意願會降低，導致<strong>地域流動性下降</strong>。</p>
+        <p class="en">Reducing travel subsidies implies that the actual transportation costs for low-income workers to commute across districts will rise. When the cost of cross-district work increases, workers are less willing to do so, leading to a <strong>decrease in geographical mobility</strong>.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="zh">
+        <p>處理這類題目時，我們需要兩個步驟的思考（Pivot Points）：</p>
+        <ol>
+            <li><strong>辨別流動性類型：</strong>事件影響的是「轉行」（職業）還是「轉地區工作」（地域）？
+                <ul>
+                    <li>選項 A 和 B 涉及入行要求和考試，看似是「職業」，但要注意 B 的對象並無轉行。</li>
+                    <li>選項 C 和 D 涉及交通基建與車資，必定是「地域」。</li>
+                </ul>
+            </li>
+            <li><strong>判斷升跌方向：</strong>政策或事件是「降低」還是「增加」了流動的難度？
+                <ul>
+                    <li>收緊要求 / 減少津貼 ＝ 增加難度 ＝ 流動性下降。</li>
+                    <li>新鐵路通車 ＝ 降低時間成本 ＝ 流動性上升。</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="en">
+        <p>When tackling this type of question, we need a two-step thinking process (Pivot Points):</p>
+        <ol>
+            <li><strong>Identify the type of mobility:</strong> Does the event affect "changing jobs" (Occupational) or "changing work locations" (Geographical)?
+                <ul>
+                    <li>Options A and B involve entry requirements and exams, which seem "occupational", but note that the subjects in B are not changing jobs.</li>
+                    <li>Options C and D involve transport infrastructure and fares, which are strictly "geographical".</li>
+                </ul>
+            </li>
+            <li><strong>Determine the direction of change:</strong> Does the policy/event "decrease" or "increase" the difficulty of moving?
+                <ul>
+                    <li>Tightening requirements / reducing subsidies = increased difficulty = decreased mobility.</li>
+                    <li>Opening a new railway = reduced time cost = increased mobility.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <p class="zh"><strong>陷阱：混淆對象與流動性種類 (Confusing the subject and the type of mobility)</strong></p>
+    <p class="zh">很多同學會誤選 Option B。他們看到「豁免考試」(waives examination) 就直覺認為是降低門檻，於是判定為職業流動性上升。但必須看清楚對象是「外國受訓醫生」(foreign-trained doctors)。他們在海外已經是醫生，來港執業只是改變了<strong>工作地點</strong>，屬於地域流動性。此外，題目問的是「香港勞工」(labour in Hong Kong) 的流動性，引入外地專才反而可能因為競爭加劇，無助於本地勞工的職業流動。</p>
+    <p class="en">Many students mistakenly choose Option B. They see "waives examination" and intuitively think the barrier is lowered, thus concluding occupational mobility increases. However, you must notice the subject is "foreign-trained doctors". They are already doctors overseas; coming to practice in HK only changes their <strong>work location</strong>, which is geographical mobility. Furthermore, the question asks about the mobility of "labour in Hong Kong". Bringing in foreign talents might even increase competition, which does not help the occupational mobility of local workers.</p>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>Q: 交通津貼 (Option D) 不是影響收入嗎？為甚麼會關乎地域流動性？</strong></p>
+        <p class="zh" style="margin-bottom: 15px;">A: 雖然津貼影響整體收入，但在經濟學定義中，跨區工作的「交通成本」(Transportation Cost) 是地域流動性的核心決定因素。減少津貼等於增加了跨區通勤的「邊際成本」 (Marginal Cost)。當跨區的淨回報減少，勞工寧願選擇原區就業，地域流動性自然下降。</p>
+        
+        <p class="en"><strong>Q: Doesn't the travel subsidy (Option D) affect income? Why is it related to geographical mobility?</strong></p>
+        <p class="en">A: While subsidies affect overall income, in economic definitions, the "Transportation Cost" of working across districts is a core determinant of geographical mobility. Reducing the subsidy equates to increasing the "Marginal Cost" of cross-district commuting. When the net return of working across districts decreases, workers prefer to work in their home districts, naturally lowering geographical mobility.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p class="zh"><strong>⚡ 秒殺技巧 (One-second Kill Trick): Keyword Matching</strong></p>
+        <p class="zh">在 DSE 經濟科中：<br>
+        1. 只要看到 <strong>鐵路通車、交通津貼、車費減免</strong> (Railway, transport subsidy, fare reduction) ➜ 100% 只關乎 <strong>地域流動性 (Geographical Mobility)</strong>。<br>
+        2. 只要看到 <strong>牌照、入行學歷、工會限制、在職培訓</strong> (Licensing, entry qualifications, union restrictions, on-the-job training) ➜ 100% 只關乎 <strong>職業流動性 (Occupational Mobility)</strong>。</p>
+        
+        <p class="en">In HKDSE Economics:<br>
+        1. Whenever you see <strong>railways opening, transport subsidies, or fare reductions</strong> ➜ It is 100% exclusively about <strong>Geographical Mobility</strong>.<br>
+        2. Whenever you see <strong>licensing, entry qualifications, union restrictions, or on-the-job training</strong> ➜ It is 100% exclusively about <strong>Occupational Mobility</strong>.</p>
+        
+        <p class="zh">運用這技巧，看到 C 選項的「屯馬綫通車」配上「地域流動性」，且通車降低時間成本，即可秒速確定 C 是正確答案，完全不用糾結 B 的複雜情境！</p>
+        <p class="en">Using this trick, seeing "Tuen Ma Line" paired with "geographical mobility" in Option C, and knowing that a new railway reduces time cost, you can immediately confirm C as the correct answer without getting tangled in Option B's complex scenario!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
