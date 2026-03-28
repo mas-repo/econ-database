@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balance of Payments</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --bg-light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; }
+        .eng {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .chi {
+            margin-bottom: 5px;
+        }
+        .concept-box {
+            background-color: var(--bg-light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            text-align: left;
+        }
+        th { background-color: var(--gray-bg); }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .correct-ans {
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .wrong-ans {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--gray-bg);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-meta">
+        <div>📌 課題 Topic: 國際收支平衡 (Balance of Payments)</div>
+        <div>⭐ 難度 Difficulty: ★★★☆☆</div>
+        <div>🔑 關鍵字 Key Concepts: 經常賬 (Current Account), 資本及金融賬 (Capital & Financial Account), 外匯儲備 (Foreign Exchange Reserves)</div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="chi">
+            <p>下表顯示某國有關國際收支平衡的資料：</p>
+            <table>
+                <tr><th>項目</th><th>百萬元</th></tr>
+                <tr><td>有形貿易</td><td>20</td></tr>
+                <tr><td>無形貿易</td><td>X</td></tr>
+                <tr><td>資本流入</td><td>70</td></tr>
+                <tr><td>資本流出</td><td>50</td></tr>
+            </table>
+            <p>假設該國的外匯儲備上升了30百萬元，X的值是多少？</p>
+            <p>A. -70<br>B. -10<br>C. +10<br>D. +70</p>
+        </div>
+        <hr style="border:0; border-top:1px dashed #d1d5db; margin:20px 0;">
+        <div class="eng">
+            <p>The following table shows the information about the balance of payments of a country:</p>
+            <table>
+                <tr><th>Item</th><th>$ million</th></tr>
+                <tr><td>Visible trade</td><td>20</td></tr>
+                <tr><td>Invisible trade</td><td>X</td></tr>
+                <tr><td>Capital inflow</td><td>70</td></tr>
+                <tr><td>Capital outflow</td><td>50</td></tr>
+            </table>
+            <p>Suppose the foreign exchange reserves of the country increase by $30 million. What is the value of X?</p>
+            <p>A. -70<br>B. -10<br>C. +10<br>D. +70</p>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="chi">
+            <strong>國際收支平衡 (Balance of Payments, BOP)</strong> 紀錄了一個國家在特定時間內與世界其他地方的所有經濟交易。在HKDSE中，我們主要關注兩大賬戶：經常賬與資本及金融賬。
+        </div>
+        <div class="eng">
+            <strong>Balance of Payments (BOP)</strong> records all economic transactions between a country and the rest of the world over a specific period. In HKDSE, we focus on two main accounts: the Current Account and the Capital and Financial Account.
+        </div>
+        
+        <div class="math-block">
+            $$ \text{BOP} = \text{Current Account (CA)} + \text{Capital & Financial Account (CFA)} $$
+        </div>
+        <div class="math-block">
+            $$ \text{Overall Balance} = \Delta \text{Reserve Assets} $$
+        </div>
+
+        <div class="chi">
+            <ul>
+                <li><strong>經常賬 (CA)：</strong> 包含有形貿易（貨物）和無形貿易（服務）。<br>公式：\( \text{CA} = \text{有形貿易餘額} + \text{無形貿易餘額} \)</li>
+                <li><strong>資本及金融賬 (CFA)：</strong> 包含資本的流入和流出。<br>公式：\( \text{CFA} = \text{資本流入} - \text{資本流出} \)</li>
+                <li><strong>外匯儲備 (Reserve Assets)：</strong> 外匯儲備上升代表國際收支有盈餘（正數）。</li>
+            </ul>
+        </div>
+        <div class="eng">
+            <ul>
+                <li><strong>Current Account (CA):</strong> Includes visible trade (goods) and invisible trade (services).<br>Formula: \( \text{CA} = \text{Visible Trade Balance} + \text{Invisible Trade Balance} \)</li>
+                <li><strong>Capital and Financial Account (CFA):</strong> Includes inflows and outflows of capital.<br>Formula: \( \text{CFA} = \text{Capital Inflow} - \text{Capital Outflow} \)</li>
+                <li><strong>Reserve Assets:</strong> An increase in foreign exchange reserves indicates a BOP surplus (positive value).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p><span class="correct-ans">正確答案 Correct Option: B</span></p>
+
+    <div class="option-analysis">
+        <div class="chi">
+            <strong>綜合計算 (Overall Calculation):</strong><br>
+            經常賬餘額 \( \text{CA} = 20 + X \)<br>
+            資本及金融賬餘額 \( \text{CFA} = 70 - 50 = 20 \)<br>
+            綜合結餘 \( \text{BOP} = \text{外匯儲備變動} = +30 \)<br>
+            根據公式： \( \text{CA} + \text{CFA} = \text{BOP} \)<br>
+            \( (20 + X) + 20 = 30 \)<br>
+            \( 40 + X = 30 \)<br>
+            \( X = -10 \)
+        </div>
+        <div class="eng">
+            <strong>Overall Calculation:</strong><br>
+            Current Account Balance \( \text{CA} = 20 + X \)<br>
+            Capital & Financial Account Balance \( \text{CFA} = 70 - 50 = 20 \)<br>
+            Overall Balance \( \text{BOP} = \Delta \text{Reserve Assets} = +30 \)<br>
+            Using the formula: \( \text{CA} + \text{CFA} = \text{BOP} \)<br>
+            \( (20 + X) + 20 = 30 \)<br>
+            \( 40 + X = 30 \)<br>
+            \( X = -10 \)
+        </div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="chi"><span class="wrong-ans">選項 A (-70) 錯誤：</span> 這是計算時將所有數字錯誤相減或符號倒置所產生的結果，沒有邏輯基礎。</div>
+        <div class="eng"><span class="wrong-ans">Option A (-70) is incorrect:</span> This is a result of subtracting all numbers incorrectly or reversing signs. It lacks logical basis.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="correct-ans chi">選項 B (-10) 正確： 完全符合公式推導。</div>
+        <div class="correct-ans eng">Option B (-10) is correct: This matches our formula derivation perfectly.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="chi"><span class="wrong-ans">選項 C (+10) 錯誤：</span> 考生可能誤以為外匯儲備上升代表綜合結餘赤字（即 \( -30 \)），從而錯誤計算 \( 40 + X = -30 \)，或者在移項時出錯 (\( 40 - 30 = 10 \))。</div>
+        <div class="eng"><span class="wrong-ans">Option C (+10) is incorrect:</span> Students might mistakenly think an increase in reserves means a BOP deficit (\( -30 \)), leading to \( 40 + X = -30 \), or they made a careless algebraic error when shifting terms (\( 40 - 30 = 10 \)).</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="chi"><span class="wrong-ans">選項 D (+70) 錯誤：</span> 考生可能錯誤地把資本流出當作正數加上去 (\( 70 + 50 = 120 \))，導致計算完全崩潰。</div>
+        <div class="eng"><span class="wrong-ans">Option D (+70) is incorrect:</span> Students might have mistakenly added capital outflow as a positive number (\( 70 + 50 = 120 \)), causing the calculation to break down completely.</div>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="chi">
+        <p><strong>解題切入點 (Pivot Point):</strong> 題目的關鍵在於「外匯儲備上升了30百萬元」。在經濟學中，一個國家的外匯儲備增加，必然是因為資金流入大於資金流出，這意味著<strong>綜合結餘有盈餘 (Overall Balance = +30)</strong>。</p>
+        <p><strong>將題目拆為三個區塊：</strong><br>
+        1. 經常賬 = 貨物 + 服務 = \(20 + X\)<br>
+        2. 資本賬 = 流入 - 流出 = \(70 - 50 = +20\)<br>
+        3. 總和 = \(+30\)</p>
+    </div>
+    <div class="eng">
+        <p><strong>Pivot Point:</strong> The key to solving this lies in the phrase "foreign exchange reserves... increase by $30 million". In economics, an increase in a country's foreign reserves must be due to total inflows exceeding total outflows, meaning there is a <strong>BOP surplus (Overall Balance = +30)</strong>.</p>
+        <p><strong>Deconstruct the problem into three blocks:</strong><br>
+        1. Current Account = Goods + Services = \(20 + X\)<br>
+        2. Capital Account = Inflow - Outflow = \(70 - 50 = +20\)<br>
+        3. Total Sum = \(+30\)</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <div class="chi">
+            <strong>❌ 陷阱一：外匯儲備變動的符號 (Sign of Reserve Assets Change)</strong><br>
+            很多同學會把「外匯儲備上升」寫成 \(-30\)。記住：在HKDSE的處理中，綜合結餘盈餘（正數）會直接導致外匯儲備增加（正數）。
+        </div>
+        <div class="eng">
+            <strong>❌ Trap 1: The Sign of Reserve Assets Change</strong><br>
+            Many students write "increase in foreign exchange reserves" as \(-30\). Remember: In the HKDSE syllabus, a BOP surplus (positive value) directly leads to an increase in foreign exchange reserves (positive value).
+        </div>
+        <hr style="border:0; border-top:1px solid #fca5a5; margin:15px 0;">
+        <div class="chi">
+            <strong>❌ 陷阱二：資本流出是減項 (Capital Outflow is a Deduction)</strong><br>
+            不要只把表格裡的數字相加。資本「流出」代表資金離開該國，必須是負數。
+        </div>
+        <div class="eng">
+            <strong>❌ Trap 2: Capital Outflow is a Deduction</strong><br>
+            Don't just add up the numbers in the table. Capital "outflow" represents money leaving the country and must be treated as a negative value.
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="chi">
+        <p><strong>🙋‍♂️ 學生問：</strong> 經常賬不是還有「經常轉移」(Current Transfers) 和「初級收入」(Primary Income) 嗎？為什麼不計算在內？</p>
+        <p><strong>👨‍🏫 老師答：</strong> 在DSE多項選擇題中，如果題目沒有提供該項目的數據，我們一律假設其數值為零 (\(0\))。我們只需利用已知的數據建立方程式即可。</p>
+    </div>
+    <div class="eng">
+        <p><strong>🙋‍♂️ Student Q:</strong> Doesn't the Current Account also include "Current Transfers" and "Primary Income"? Why aren't they included?</p>
+        <p><strong>👨‍🏫 Tutor A:</strong> In DSE MCQs, if the question does not provide data for a specific item, we always assume its value is zero (\(0\)). We just need to build the equation using the given data.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="chi">
+        <p><strong>💡 左右天平法 (The Balance Scale Method):</strong><br>
+        你可以將資金「流入」放左邊，資金「流出」和「儲備增加」放右邊來平衡。<br>
+        流入總額 = 有形貿易(\(+20\)) + 無形貿易(\(X\)) + 資本流入(\(+70\)) = \(90 + X\)<br>
+        流出與儲備總額 = 資本流出(\(50\)) + 儲備增加(\(30\)) = \(80\)<br>
+        所以， \( 90 + X = 80 \implies X = -10 \)。這樣算連負號都不容易弄錯！</p>
+    </div>
+    <div class="eng">
+        <p><strong>💡 The Balance Scale Method:</strong><br>
+        You can place all "inflows" on the left, and all "outflows" plus "reserve increases" on the right to balance it out.<br>
+        Total Inflows = Visible (\(+20\)) + Invisible (\(X\)) + Capital Inflow (\(+70\)) = \(90 + X\)<br>
+        Total Outflows & Reserves = Capital Outflow (\(50\)) + Reserve Increase (\(30\)) = \(80\)<br>
+        Therefore, \( 90 + X = 80 \implies X = -10 \). This method prevents sign errors completely!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

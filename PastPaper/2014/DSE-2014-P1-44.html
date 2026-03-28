@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --box-bg: #f0f9ff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-info span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--bg-light);
+        }
+
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 10px;
+        }
+
+        .lang-tc {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .option {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #94a3b8;
+        }
+
+        .option.correct {
+            border-left-color: #16a34a;
+            background-color: #f0fdf4;
+        }
+
+        .option.incorrect {
+            border-left-color: #dc2626;
+            background-color: #fef2f2;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: #d97706;
+        }
+
+        @media (max-width: 600px) {
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics: Question Analysis</h1>
+
+    <div class="header-info">
+        <div><span>Topic (課題):</span> International Trade (國際貿易)</div>
+        <div><span>Difficulty (難度):</span> ★★★★☆</div>
+        <div><span>Key Concepts (關鍵概念):</span> Opportunity Cost, Terms of Trade, Comparative Advantage</div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="lang-tc">
+            下表顯示有關甲國的資料。<br>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>石油 (單位)</th>
+                    <th>橡膠 (單位)</th>
+                </tr>
+                <tr>
+                    <td>沒有國際貿易時的總產量</td>
+                    <td>60</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>專門化生產並進行國際貿易時的總產量</td>
+                    <td>0</td>
+                    <td>210</td>
+                </tr>
+                <tr>
+                    <td>進行國際貿易後的總消費</td>
+                    <td>90</td>
+                    <td>120</td>
+                </tr>
+            </table>
+            下列哪項有關甲國的陳述是正確的？<br>
+            A. 甲國生產橡膠有絕對優勢亦有比較優勢。<br>
+            B. 出口1單位橡膠的貿易得益是1單位石油。<br>
+            C. 生產1單位橡膠(R)的機會成本是2/3單位石油(P)，而貿易比率是1R = 3/4P。<br>
+            D. 若乙國生產1單位橡膠的機會成本是2單位石油，甲國可從與乙國貿易得益。
+        </div>
+        <div class="lang-en">
+            The following table shows the data about Country A.<br>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Petroleum (unit)</th>
+                    <th>Rubber (unit)</th>
+                </tr>
+                <tr>
+                    <td>Total output with no international trade</td>
+                    <td>60</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Total output with specialization and international trade</td>
+                    <td>0</td>
+                    <td>210</td>
+                </tr>
+                <tr>
+                    <td>Total consumption with international trade</td>
+                    <td>90</td>
+                    <td>120</td>
+                </tr>
+            </table>
+            Which of the following statements about Country A is correct?<br>
+            A. Country A has both absolute advantage and comparative advantage in producing rubber.<br>
+            B. The gain from trade of exporting 1 unit of rubber is 1 unit of petroleum.<br>
+            C. The opportunity cost of producing 1 unit of rubber(R) is 2/3 units of petroleum(P) and the terms of trade is 1R=3/4 P.<br>
+            D. Country A can benefit from trading with Country B, whose opportunity cost of producing 1 unit of rubber is 2 units of petroleum.
+        </div>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="lang-tc">
+            <strong>1. 機會成本 (Opportunity Cost):</strong> 在生產可能曲線 (PPF) 上，放棄生產一種物品以換取另一種物品的數量。公式為：
+        </div>
+        <div class="lang-en">
+            <strong>1. Opportunity Cost:</strong> The amount of one good given up to produce another good along the Production Possibility Frontier (PPF). The formula is:
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of 1X} = \frac{\Delta Y}{\Delta X} $$
+        </div>
+
+        <div class="lang-tc">
+            <strong>2. 貿易比率 (Terms of Trade, TOT):</strong> 兩國進行貿易時的交換比率。計算方法是將出口數量與進口數量作比較。
+        </div>
+        <div class="lang-en">
+            <strong>2. Terms of Trade (TOT):</strong> The rate at which one good is traded for another. It is calculated by comparing export quantities with import quantities.
+        </div>
+
+        <div class="math-block">
+            $$ \text{Terms of Trade (TOT)} = \frac{\text{Quantity of Imports}}{\text{Quantity of Exports}} $$
+        </div>
+
+        <div class="lang-tc">
+            <strong>3. 貿易得益 (Gains from Trade):</strong> 進行貿易後，國家所獲得的淨利益。對於出口物品，得益 = 貿易比率 - 本國機會成本。
+        </div>
+        <div class="lang-en">
+            <strong>3. Gains from Trade:</strong> The net benefit a country receives from trading. For exports, Gain = Terms of Trade - Domestic Opportunity Cost.
+        </div>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="lang-tc"><strong>正確答案是：選項 D</strong></div>
+    <div class="lang-en"><strong>The correct option is: Option D</strong></div>
+
+    <div class="option incorrect">
+        <div class="lang-tc">
+            <strong>分析選項 A (錯誤):</strong><br>
+            要判斷絕對優勢 (Absolute Advantage)，我們必須知道兩國的資源數量（例如勞工數目或工時）。題目中並無提供投入(Inputs)的資料或乙國的產量，因此無法判斷絕對優勢。
+        </div>
+        <div class="lang-en">
+            <strong>Analysis of Option A (Incorrect):</strong><br>
+            To determine Absolute Advantage, we must know the amount of resources (e.g., number of workers or man-hours) for both countries. The question provides no data on inputs or Country B's production, so absolute advantage cannot be determined.
+        </div>
+    </div>
+
+    <div class="option incorrect">
+        <div class="lang-tc">
+            <strong>分析選項 B (錯誤):</strong><br>
+            首先，我們需要找出甲國生產橡膠(R)的機會成本。甲國專門生產R（0P, 210R），而在沒有貿易時生產（60P, 90R）。這代表甲國放棄了 \(210 - 90 = 120R\) 來換取 \(60 - 0 = 60P\)。因此，生產 1R 的機會成本是 \(60/120 = 0.5P\)。<br>
+            接下來計算貿易比率 (TOT)：甲國生產 210R，消費 120R，因此出口了 90R。甲國生產 0P，消費 90P，因此進口了 90P。這意味著 90R 換取 90P，所以 TOT 是 \(1R = 1P\)。<br>
+            出口 1R 的貿易得益 = 收取的 TOT (\(1P\)) - 放棄的機會成本 (\(0.5P\)) = <strong>\(0.5P\)</strong>，而不是 1P。
+        </div>
+        <div class="lang-en">
+            <strong>Analysis of Option B (Incorrect):</strong><br>
+            First, find Country A's opportunity cost for rubber (R). It specializes in R (0P, 210R) and produced (60P, 90R) before trade. This means giving up \(210 - 90 = 120R\) to gain \(60 - 0 = 60P\). The opp. cost of 1R is \(60/120 = 0.5P\).<br>
+            Next, calculate Terms of Trade (TOT): Country A produces 210R and consumes 120R, so it exports 90R. It produces 0P and consumes 90P, so it imports 90P. It trades 90R for 90P, so TOT is \(1R = 1P\).<br>
+            Gain from exporting 1R = TOT received (\(1P\)) - Opp. cost given up (\(0.5P\)) = <strong>\(0.5P\)</strong>, not 1P.
+        </div>
+    </div>
+
+    <div class="option incorrect">
+        <div class="lang-tc">
+            <strong>分析選項 C (錯誤):</strong><br>
+            根據剛才的計算，生產 1R 的機會成本是 \(0.5P\) (即 \(1/2P\))，而貿易比率是 \(1R = 1P\)。選項C的數據全部錯誤。
+        </div>
+        <div class="lang-en">
+            <strong>Analysis of Option C (Incorrect):</strong><br>
+            Based on our previous calculation, the opportunity cost of 1R is \(0.5P\) (or \(1/2P\)), and the TOT is \(1R = 1P\). The figures in Option C are entirely incorrect.
+        </div>
+    </div>
+
+    <div class="option correct">
+        <div class="lang-tc">
+            <strong>分析選項 D (正確):</strong><br>
+            甲國生產 1R 的機會成本是 \(0.5P\)。若乙國生產 1R 的機會成本是 \(2P\)，兩國的機會成本存在差異 (\(0.5P \neq 2P\))。只要機會成本不同，兩國便可透過比較優勢進行專業化生產及貿易，從而獲得潛在的貿易得益。
+        </div>
+        <div class="lang-en">
+            <strong>Analysis of Option D (Correct):</strong><br>
+            Country A's opportunity cost of 1R is \(0.5P\). If Country B's opportunity cost of 1R is \(2P\), their opportunity costs are different (\(0.5P \neq 2P\)). As long as opportunity costs differ, the countries can specialize according to comparative advantage and both can benefit from trade.
+        </div>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="lang-tc">
+        <ul>
+            <li><strong>尋找樞紐點 (Pivot Point):</strong> 解題的關鍵在於如何利用表格中的前兩行數據來計算「機會成本」，以及利用第二和第三行數據來計算「貿易比率 (TOT)」。</li>
+            <li><strong>隱藏的 PPF:</strong> 題目雖然沒有畫出圖表，但「沒有國際貿易時的總產量」和「專門化生產」其實是 PPF 上的兩點。利用這兩點的斜率，就能找出機會成本。</li>
+            <li><strong>進出口計算:</strong> 出口量 = 專門化產量 - 貿易後消費量；進口量 = 貿易後消費量 - 專門化產量。</li>
+        </ul>
+    </div>
+    <div class="lang-en">
+        <ul>
+            <li><strong>Identifying the Pivot Point:</strong> The key to solving this is using the first two rows to calculate the "Opportunity Cost", and using the second and third rows to calculate the "Terms of Trade (TOT)".</li>
+            <li><strong>The Hidden PPF:</strong> Although no graph is provided, "Total output with no trade" and "Specialization" represent two points on the PPF. The slope between them gives the opportunity cost.</li>
+            <li><strong>Calculating Exports/Imports:</strong> Exports = Specialization Output - Consumption after Trade; Imports = Consumption after Trade - Specialization Output.</li>
+        </ul>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="lang-tc">
+        <ul>
+            <li><strong>混淆絕對優勢與比較優勢:</strong> 很多學生看到某國產量很高，就誤以為該國有絕對優勢。記住：沒有投入 (Input) 資源的數據（如工時），就絕對無法判斷絕對優勢！</li>
+            <li><strong>計算機會成本時分子分母顛倒:</strong> 要找 1 單位 R 的機會成本，分母必須是 \(\Delta R\)，分子是 \(\Delta P\)。小心不要算錯成 \(2P\)。</li>
+            <li><strong>誤解「貿易得益」的定義:</strong> 選項 B 是經典陷阱。貿易得益不是指你換回來的數量 (那是 TOT)，而是「換回來的數量」扣除「自己生產的成本」。</li>
+        </ul>
+    </div>
+    <div class="lang-en">
+        <ul>
+            <li><strong>Confusing Absolute and Comparative Advantage:</strong> Many students assume absolute advantage just because a country produces a lot. Remember: without input data (like man-hours), you absolutely cannot determine absolute advantage!</li>
+            <li><strong>Flipping the Numerator and Denominator:</strong> To find the opp. cost of 1 unit of R, the denominator must be \(\Delta R\) and the numerator \(\Delta P\). Don't accidentally calculate it as \(2P\).</li>
+            <li><strong>Misunderstanding "Gains from Trade":</strong> Option B is a classic trap. Gain from trade is not what you receive in exchange (that is the TOT), but what you receive <em>minus</em> your own cost of production.</li>
+        </ul>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="lang-tc">
+            <p class="qa-q">Q: 為什麼我們能假設機會成本是固定的（即 PPF 是一條直線）？</p>
+            <p>A: 在 HKDSE 經濟學中，除非題目特別標明「機會成本遞增 (Increasing opportunity cost)」，否則涉及這類簡單表格或數學計算的國際貿易題目，我們都會假設機會成本不變 (Constant opportunity cost)，這讓學生能利用兩點計算出恆定的斜率。</p>
+        </div>
+        <div class="lang-en">
+            <p class="qa-q">Q: Why can we assume the opportunity cost is constant (i.e., the PPF is a straight line)?</p>
+            <p>A: In HKDSE Economics, unless the question explicitly states "increasing opportunity cost," we generally assume constant opportunity cost for international trade questions involving simple tables or math. This allows students to calculate a constant slope using just two points.</p>
+        </div>
+    </div>
+    <div class="qa-box">
+        <div class="lang-tc">
+            <p class="qa-q">Q: 如果題目沒有給我「沒有國際貿易時的總產量」，我還能算出機會成本嗎？</p>
+            <p>A: 不能。你至少需要 PPF 上的兩個不同點來找出斜率（機會成本）。如果只給你專門化的一點，你無法知道該國放棄了多少另一種物品。</p>
+        </div>
+        <div class="lang-en">
+            <p class="qa-q">Q: If the question didn't give me the "Total output with no international trade," could I still find the opportunity cost?</p>
+            <p>A: No. You need at least two different points on the PPF to find the slope (opportunity cost). If you are only given the specialization point, you cannot know how much of the other good the country gave up.</p>
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="lang-tc">
+        <p><strong>1 秒殺選項 A：</strong> 只要題目是關於「產量表 (Output Table)」，且沒有提供任何關於「工人數量/工時/土地」的資料，任何提及「絕對優勢 (Absolute Advantage)」的選項<strong>必定錯誤</strong>。直接劃掉！</p>
+        <p><strong>邏輯驗證選項 D：</strong> 在 DSE 的 MC 題中，只要兩國的機會成本「不相等」，貿易就必定能帶來互利 (Mutually beneficial)。你甚至不需要精確計算出一個雙方同意的 TOT，只要看到 \(0.5P \neq 2P\)，就能大膽選擇 D。</p>
+        <hr>
+    <div class="lang-en">
+        <p><strong>1-Second Elimination of Option A:</strong> Whenever an "Output Table" is provided without any data on inputs (workers/hours/land), any option claiming "Absolute Advantage" is <strong>automatically wrong</strong>. Cross it out immediately!</p>
+        <p><strong>Logical Verification of Option D:</strong> In DSE MC questions, as long as the opportunity costs between two countries are "unequal," mutually beneficial trade is mathematically possible. You don't even need to calculate the exact agreed TOT; seeing that \(0.5P \neq 2P\) is enough to confidently pick D.</p>
+    </div>
+
+</body>
+</html>
