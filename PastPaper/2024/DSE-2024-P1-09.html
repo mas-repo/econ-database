@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #334155;
+            --danger: #e11d48;
+            --danger-bg: #fff1f2;
+            --warning: #eab308;
+            --warning-bg: #fefce8;
+            --math-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header Section */
+        .header-box {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .header-box li {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Question Section */
+        .question-box {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            margin-bottom: 25px;
+        }
+        .analysis-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+        }
+
+        /* Specialized Boxes */
+        .mistakes-box {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tricks-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Q&A Section */
+        .qa-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .question-text {
+            font-weight: bold;
+            color: #166534;
+        }
+
+        /* Utilities */
+        .bilingual-en {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Topic Analysis</h2>
+        <ul>
+            <li><strong>課題 (Topic):</strong> 勞工生產力 / Labour Productivity</li>
+            <li><strong>難度 (Difficulty):</strong> ★★★☆☆ (3/5 Stars)</li>
+            <li><strong>核心概念 (Key Concepts):</strong> 平均勞工生產力 (Average Labour Productivity), 人時 (Man-hours), 薪酬支付方式 (Wage Payment Methods)</li>
+        </ul>
+    </div>
+
+    <div class="question-box">
+        <h3>📝 題目 (The Question)</h3>
+        <p>參考下列有關一間玩具生產商的資料。<br>
+        <span class="bilingual-en">Refer to the following information about a toy-making firm.</span></p>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>第一年<br><span class="bilingual-en">Year 1</span></th>
+                        <th>第二年<br><span class="bilingual-en">Year 2</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>工人數量（人）<br><span class="bilingual-en">Number of workers (persons)</span></td>
+                        <td>250</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>每名工人每日的工作時數（小時）<br><span class="bilingual-en">Number of working hours per worker per day (hours)</span></td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>每日總產出（單位）<br><span class="bilingual-en">Total output per day (units)</span></td>
+                        <td>9 000</td>
+                        <td>10 800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>下列哪些是該玩具生產商出現上述平均勞工生產力改變的可能原因？<br>
+        <span class="bilingual-en">Which of the following are possible reasons for the above change in the average labour productivity of the toy-making firm?</span></p>
+
+        <ol>
+            <li>該廠商的付酬方式由以時計薪改為以件計薪。<br><span class="bilingual-en">The wage payment method of the firm is changed from time rate to piece rate.</span></li>
+            <li>該廠商在第二年沒有為新工人提供足夠的培訓。<br><span class="bilingual-en">The firm does not provide adequate training for new workers in Year 2.</span></li>
+            <li>該廠商的工作環境在第二年有改善。<br><span class="bilingual-en">The working environment of the firm is improved in Year 2.</span></li>
+            <li>該廠商的管理在第二年變差了。<br><span class="bilingual-en">The management of the firm becomes poorer in Year 2.</span></li>
+        </ol>
+
+        <p>A. 只有 (1)、(2) <span class="bilingual-en">(1) and (2) only</span><br>
+        B. 只有 (1)、(3) <span class="bilingual-en">(1) and (3) only</span><br>
+        C. 只有 (2)、(4) <span class="bilingual-en">(2) and (4) only</span><br>
+        D. 只有 (3)、(4) <span class="bilingual-en">(3) and (4) only</span></p>
+    </div>
+
+    <div class="concept-box">
+        <h3>🧠 概念重溫 (Concept Review)</h3>
+        <p><strong>平均勞工生產力 (Average Labour Productivity, ALP)</strong> 是指平均每單位勞力投入所能生產的產出量。它量度了勞工的工作效率。勞力投入通常以「人時 (Man-hours)」或「人日 (Man-days)」來計算。</p>
+        <p class="bilingual-en"><strong>Average Labour Productivity (ALP)</strong> refers to the output produced per unit of labour input on average. It measures the efficiency of workers. Labour input is usually calculated in terms of "man-hours" or "man-days".</p>
+        
+        <div class="math-block">
+            $$\text{ALP} = \frac{\text{總產出 (Total Output)}}{\text{總勞力投入 (Total Labour Input)}}$$
+        </div>
+        
+        <p>影響勞工生產力的因素包括：薪酬制度（例如以件計薪通常能提供更大誘因）、員工培訓、工作環境、以及管理質素等。</p>
+        <p class="bilingual-en">Factors affecting labour productivity include: wage payment systems (e.g., piece rate usually provides greater incentives), employee training, working environment, and quality of management.</p>
+    </div>
+
+    <div class="analysis-section">
+        <h3>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+        <p>正確答案是 (Correct Option): <span class="correct-answer">Option C</span></p>
+
+        <p>首先，我們必須計算第一年和第二年的平均勞工生產力（以每人時的產出計算）。<br>
+        <span class="bilingual-en">First, we must calculate the average labour productivity (output per man-hour) for Year 1 and Year 2.</span></p>
+
+        <div class="math-block">
+            $$\text{Year 1 ALP} = \frac{9000}{250 \times 8} = \frac{9000}{2000} = 4.5 \text{ 單位/小時 (units/hour)}$$
+            $$\text{Year 2 ALP} = \frac{10800}{300 \times 9} = \frac{10800}{2700} = 4.0 \text{ 單位/小時 (units/hour)}$$
+        </div>
+
+        <p>結果顯示，平均勞工生產力由 $4.5$ 下降至 $4.0$。因此，我們需要找出導致生產力<strong>下降</strong>的原因。<br>
+        <span class="bilingual-en">The calculation shows that the average labour productivity decreased from $4.5$ to $4.0$. Therefore, we need to find the reasons that led to a <strong>decrease</strong> in productivity.</span></p>
+
+        <div class="analysis-item">
+            <strong>(1) 錯誤 (Incorrect)</strong><br>
+            由以時計薪改為以件計薪會增加工人的工作誘因（多勞多得），通常會導致生產力<strong>上升</strong>，與數據不符。<br>
+            <span class="bilingual-en">Changing from time rate to piece rate provides a greater incentive for workers (more work, more pay), which usually leads to an <strong>increase</strong> in productivity. This contradicts the data.</span>
+        </div>
+
+        <div class="analysis-item">
+            <strong>(2) 正確 (Correct)</strong><br>
+            沒有提供足夠的培訓會導致新工人的技術不足，工作效率較低，從而拉低整體的平均勞工生產力。<br>
+            <span class="bilingual-en">Inadequate training leaves new workers with insufficient skills and lower efficiency, which pulls down the overall average labour productivity.</span>
+        </div>
+
+        <div class="analysis-item">
+            <strong>(3) 錯誤 (Incorrect)</strong><br>
+            改善工作環境通常能提升員工士氣和健康，從而<strong>提高</strong>生產力，與數據不符。<br>
+            <span class="bilingual-en">Improving the working environment generally boosts employee morale and health, thereby <strong>increasing</strong> productivity. This contradicts the data.</span>
+        </div>
+
+        <div class="analysis-item">
+            <strong>(4) 正確 (Correct)</strong><br>
+            管理變差可能導致資源分配不當、溝通不良或生產流程混亂，最終導致生產力<strong>下降</strong>。<br>
+            <span class="bilingual-en">Poorer management can lead to misallocation of resources, poor communication, or chaotic production processes, ultimately causing a <strong>decrease</strong> in productivity.</span>
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <h3>🔍 題目拆解 (Problem Decomposition)</h3>
+        <p><strong>解題樞紐 (The Pivot Point):</strong> 這題的關鍵在於你必須先「動手計算」才能作答。題目問的是「平均勞工生產力改變的可能原因」，所以你必須先確定生產力到底是「上升」還是「下降」。<br>
+        <span class="bilingual-en">The key to solving this question is that you must "do the math" first. The question asks for the reasons for the "change in average labour productivity", so you must first determine whether productivity "increased" or "decreased".</span></p>
+    </div>
+
+    <div class="mistakes-box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <p><strong>陷阱：只計算「每名工人的產出」而忽略了「工時」。</strong><br>
+        很多同學會錯誤地用「總產量 $\div$ 工人數目」來計算：<br>
+        第一年：$9000 \div 250 = 36$ 單位/人<br>
+        第二年：$10800 \div 300 = 36$ 單位/人<br>
+        結果他們會誤以為生產力「沒有改變」，從而選不出答案！記住，當題目提供了「工作時數」時，勞力投入必須以總「人時 (Man-hours)」來計算。<br>
+        <span class="bilingual-en"><strong>Trap: Calculating "output per worker" while ignoring "working hours".</strong><br>
+        Many students mistakenly calculate by "Total Output $\div$ Number of workers":<br>
+        Year 1: $9000 \div 250 = 36$ units/worker<br>
+        Year 2: $10800 \div 300 = 36$ units/worker<br>
+        They would falsely conclude that productivity "remained unchanged" and fail to pick an answer! Remember, when "working hours" are provided, labour input MUST be calculated using total "man-hours".</span></p>
+    </div>
+
+    <div class="qa-box">
+        <h3>🙋‍♂️ 學生常見疑問 (Student Q&A)</h3>
+        <p class="question-text">Q: 為什麼總產量 (Total Output) 明明從 9000 增加到 10800，但生產力卻是下降的？<br>
+        <span class="bilingual-en">Why did total output increase from 9000 to 10800, but productivity actually decreased?</span></p>
+        <p>A: 因為「產量」和「生產力」是兩個不同的概念。產量增加純粹是因為工廠聘請了更多工人，而且要他們每天工作更長時間。但如果你看「效率」（即每人每小時能做多少），他們其實做得更慢了（從 4.5 跌到 4.0）。<br>
+        <span class="bilingual-en">Because "output" and "productivity" are two different concepts. The output increased simply because the firm hired more workers and made them work longer hours. But if you look at "efficiency" (how much one person makes per hour), they actually worked slower (dropping from 4.5 to 4.0).</span></p>
+    </div>
+
+    <div class="tricks-box">
+        <h3>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <p><strong>邏輯配對法 (Logical Pairing):</strong><br>
+        即使你不小心算錯了數字，你也可以觀察選項的性質。<br>
+        選項 (1) 和 (3) 都是「正面因素」（會提升生產力）。<br>
+        選項 (2) 和 (4) 都是「負面因素」（會降低生產力）。<br>
+        答案選項只會是 (1,3) 或 (2,4) 的組合，因為生產力只有「升」或「跌」兩個方向。只要你算出它是跌的，就可以秒殺排除 A 和 B，直接鎖定全部負面因素的 C！<br>
+        <span class="bilingual-en"><strong>Logical Pairing:</strong><br>
+        Even if you mess up the math, look at the nature of the statements.<br>
+        Statements (1) and (3) are "positive factors" (increase productivity).<br>
+        Statements (2) and (4) are "negative factors" (decrease productivity).<br>
+        The answer must be a combination of either (1,3) or (2,4) because productivity either went up or down. Once you calculate that it dropped, you can instantly eliminate A and B, locking in C which contains all the negative factors!</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>

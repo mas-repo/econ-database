@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Cost of Holding Money & Fisher Equation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-green: #10b981;
+            --light-green: #ecfdf5;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-yellow: #f59e0b;
+            --light-yellow: #fffbeb;
+            --bg-gray: #f3f4f6;
+            --text-main: #333;
+            --text-muted: #555;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .header-section {
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+            background-color: var(--bg-gray);
+        }
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .analysis-box {
+            margin: 20px 0;
+        }
+        .option {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .option.correct {
+            background-color: var(--light-green);
+            border-color: var(--primary-green);
+        }
+        .option.wrong {
+            background-color: var(--light-red);
+            border-color: var(--primary-red);
+        }
+        .decomposition-box {
+            background-color: var(--light-yellow);
+            border-left: 5px solid var(--primary-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        .trick-box {
+            background-color: #f4f4f5;
+            border: 2px dashed #a1a1aa;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .math-block { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor Guide</h1>
+        <div>
+            <span class="badge">Topic: Money and Inflation 貨幣與通脹</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concepts: Fisher Equation, Cost of Holding Money</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-pair">
+            <div class="zh">債券的名義利率 6%<br>預期通脹率 4%</div>
+            <div class="en">Nominal interest rate on bonds 6%<br>Expected inflation rate 4%</div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh">根據上述資料，持有貨幣的 _________ 是6%，而持有 __________ 的預期實質回報率是 -4%。</div>
+            <div class="en">Based on the above information, the _________ of holding money is 6% and the expected real rate of return of holding __________ is –4%.</div>
+        </div>
+        <div class="options">
+            <div class="zh">A. 成本 …… 貨幣</div>
+            <div class="en">A. cost …… money</div><br>
+            <div class="zh">B. 成本 …… 債券</div>
+            <div class="en">B. cost …… bonds</div><br>
+            <div class="zh">C. 名義回報率 …… 貨幣</div>
+            <div class="en">C. nominal rate of return …… money</div><br>
+            <div class="zh">D. 名義回報率 …… 債券</div>
+            <div class="en">D. nominal rate of return …… bonds</div>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>A. 持有貨幣的成本 (Cost of Holding Money)</h3>
+        <div class="bilingual-pair">
+            <div class="zh">持有現金（貨幣）的機會成本，就是你放棄了的利息收入。因此，<strong>持有貨幣的成本 = 債券的名義利率</strong>。另外，由於現金不會產生利息，貨幣的「名義回報率」永遠是 0%。</div>
+            <div class="en">The opportunity cost of holding cash (money) is the interest income you forfeit. Therefore, the <strong>cost of holding money = nominal interest rate on bonds</strong>. Additionally, since cash does not generate interest, the "nominal rate of return" of money is always 0%.</div>
+        </div>
+
+        <h3>B. 費沙方程式 (Fisher Equation)</h3>
+        <div class="bilingual-pair">
+            <div class="zh">實質回報率是指扣除通脹影響後的購買力增長。我們可以使用費沙方程式來計算：</div>
+            <div class="en">The real rate of return is the growth in purchasing power after adjusting for inflation. We calculate this using the Fisher Equation:</div>
+        </div>
+        <div class="math-block">
+            $$\text{Expected Real Rate of Return} = \text{Nominal Rate of Return} - \text{Expected Inflation Rate}$$
+            $$\text{預期實質回報率} = \text{名義回報率} - \text{預期通脹率}$$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <h3>正確答案 (Correct Option): <span style="color: var(--primary-green);">A</span></h3>
+        
+        <div class="option correct">
+            <h4>Option A (正確 Correct)</h4>
+            <div class="zh"><strong>第一部分 (First Blank):</strong> 債券的名義利率是 6%。這代表如果你選擇持有貨幣而不買債券，你放棄了 6% 的利息。所以，持有貨幣的「成本」是 6%。<br>
+            <strong>第二部分 (Second Blank):</strong> 貨幣的名義回報率是 0%。根據費沙方程式，持有貨幣的預期實質回報率 = 0% - 4% = -4%。完全符合題目要求！</div>
+            <div class="en"><strong>First Blank:</strong> The nominal interest rate on bonds is 6%. This means if you hold money instead of buying bonds, you give up 6% interest. Thus, the "cost" of holding money is 6%.<br>
+            <strong>Second Blank:</strong> The nominal rate of return on money is 0%. By the Fisher Equation, the expected real rate of return of holding money = 0% - 4% = -4%. This perfectly matches the question!</div>
+        </div>
+
+        <div class="option wrong">
+            <h4>Option B (錯誤 Wrong)</h4>
+            <div class="zh">前半部分正確（成本是 6%），但後半部分錯誤。持有「債券」的預期實質回報率應為：6% (名義回報) - 4% (通脹) = +2%，而不是 -4%。</div>
+            <div class="en">The first half is correct (cost is 6%), but the second half is wrong. The expected real rate of return of holding "bonds" would be: 6% (nominal return) - 4% (inflation) = +2%, not -4%.</div>
+        </div>
+
+        <div class="option wrong">
+            <h4>Option C & D (錯誤 Wrong)</h4>
+            <div class="zh">第一個空格錯誤。持有貨幣的「名義回報率」是 0%，絕對不是 6%。6% 是債券的回報，也是持有貨幣的成本。</div>
+            <div class="en">The first blank is incorrect. The "nominal rate of return" of holding money is 0%, definitely not 6%. 6% is the return on bonds, which acts as the cost of holding money.</div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="decomposition-box">
+        <div class="bilingual-pair">
+            <div class="zh"><strong>破題關鍵 (The Pivot Point):</strong><br>
+            解答這類題目的關鍵在於牢記一個隱藏數據：<strong>「貨幣的名義回報率恆等於 0%」</strong>。題目不會直接告訴你這個數字，你必須自己帶入這個知識點。</div>
+            <div class="en"><strong>The Pivot Point:</strong><br>
+            The key to solving this type of question is remembering a hidden piece of data: <strong>"The nominal rate of return of money is always 0%"</strong>. The question will never state this explicitly; you must supply this knowledge yourself.</div>
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-pair">
+        <div class="zh">
+            <ul>
+                <li><strong>概念混淆：</strong> 學生經常把「持有貨幣的成本」(Opportunity Cost) 和「持有貨幣的名義回報率」(Nominal Return) 混為一談。記住，回報是你賺到的（現金是 0%），成本是你放棄的（債券的 6%）。</li>
+                <li><strong>正負號錯誤：</strong> 計算實質回報時，忘記考慮負號。現金不生息，但在通脹下購買力會縮水，所以實質回報必定是負數 (\(0\% - \pi^e\))。</li>
+            </ul>
+        </div>
+        <div class="en">
+            <ul>
+                <li><strong>Concept Confusion:</strong> Students often confuse the "Opportunity Cost" of holding money with the "Nominal Return" of holding money. Remember, return is what you earn (0% for cash), while cost is what you give up (6% from bonds).</li>
+                <li><strong>Sign Errors:</strong> Forgetting the negative sign when calculating real returns. Cash pays no interest, but its purchasing power shrinks during inflation, so its real return is necessarily negative (\(0\% - \pi^e\)).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-item">
+            <div class="qa-q">Q1: 點解持有貨幣的名義回報率係 0%？ (Why is the nominal return of holding money 0%?)</div>
+            <div class="zh">A: 因為放在你銀包裏的紙幣或硬幣不會自動衍生利息。100蚊放一年後，面值依然是100蚊。</div>
+            <div class="en">A: Because the physical banknotes or coins in your wallet do not automatically generate interest. A $100 bill left for a year still has a face value of $100.</div>
+        </div>
+        <div class="qa-item">
+            <div class="qa-q">Q2: 如果題目問持有「債券」的實質回報，應該點計？ (What if the question asked for the real rate of return of holding "bonds"?)</div>
+            <div class="zh">A: 如果是持有債券，名義回報就是債券利率 (6%)。預期實質回報 = 6% - 4% = 2%。這代表你的購買力實際上增加了 2%。</div>
+            <div class="en">A: For bonds, the nominal return is the bond interest rate (6%). Expected real return = 6% - 4% = 2%. This means your actual purchasing power increased by 2%.</div>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="bilingual-pair">
+            <div class="zh"><strong>秒殺技巧 (The 5-Second Shortcut):</strong><br>
+            一看題目第一個空格是「6%」。我們知道貨幣不可能有 6% 的名義回報率，所以選項 C 和 D 的「名義回報率」瞬間被淘汰（直接劃掉）。剩下 A 和 B，我們只需要看第二個空格：-4% 是個負數，只有不生息的「貨幣」在通脹下才會產生負實質回報，債券的實質回報是正的 (+2%)。答案秒選 A！</div>
+            <div class="en"><strong>The 5-Second Shortcut:</strong><br>
+            Look at the first blank which equals "6%". We know money cannot have a 6% nominal rate of return, so "nominal rate of return" in options C and D are instantly eliminated (cross them out). Left with A and B, just look at the second blank: -4% is negative. Only non-interest-bearing "money" yields a negative real return during inflation, whereas bonds yield a positive real return (+2%). The answer is immediately A!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
