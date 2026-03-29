@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Price Elasticity of Demand</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        h2 {
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        .header-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .header-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .header-section li {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .question-box {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .en {
+            color: #555;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+        /* Specific Styles from Prompt */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-step {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .wrong-option {
+            border-left: 4px solid #ef4444;
+        }
+        .qa-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .trick-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #1e3a8a;
+            color: white;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-section { padding: 15px; }
+            table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Guide 經濟學詳解指南</h1>
+        <ul>
+            <li><strong>Topic (課題):</strong> Price Elasticity of Demand 需求價格彈性</li>
+            <li><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</li>
+            <li><strong>Key Concepts (核心概念):</strong> Total Expenditure (總支出), Price Elasticity of Demand (需求價格彈性), Perfectly Inelastic Demand (完全無彈性需求)</li>
+        </ul>
+    </div>
+
+    <h2>1. The Question 題目</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <div class="zh">下表顯示雪糕的價格和顧客對雪糕的總支出的關係。</div>
+            <div class="en">The table below shows the relationship between the price of and the total expenditure on ice-cream.</div>
+        </div>
+        
+        <table>
+            <tr>
+                <th>單位價格 Unit price ($)</th>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <th>總支出 Total expenditure ($)</th>
+                <td>25</td>
+                <td>30</td>
+                <td>35</td>
+                <td>40</td>
+            </tr>
+        </table>
+
+        <div class="bilingual">
+            <div class="zh">我們可從上表得出結論：雪糕的需求彈性是___________（不理會其負號）。</div>
+            <div class="en">From the above table, we can conclude that the elasticity of demand for ice-cream is ________ (without regard to its negative sign).</div>
+        </div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>A.</strong> 在零和一之間 / between zero and one</li>
+            <li><strong>B.</strong> 等於零 / equal to zero</li>
+            <li><strong>C.</strong> 大於一 / larger than one</li>
+            <li><strong>D.</strong> 等於一 / equal to one</li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review 概念重溫</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <div class="zh"><strong>總支出 (Total Expenditure, TE)</strong>：消費者購買某數量的物品所付出的總金額。公式為價格 $P$ 乘以需求量 $Q_d$。</div>
+            <div class="en"><strong>Total Expenditure (TE)</strong>: The total amount of money consumers spend on a certain quantity of a good. It is calculated by multiplying the Price $P$ by the Quantity Demanded $Q_d$.</div>
+        </div>
+        
+        <div class="math-block">
+            $$TE = P \times Q_d$$
+        </div>
+        
+        <div class="bilingual">
+            <div class="zh">透過重組公式，我們可以從總支出和價格中找出需求量：</div>
+            <div class="en">By rearranging the formula, we can find the quantity demanded from total expenditure and price:</div>
+        </div>
+
+        <div class="math-block">
+            $$Q_d = \frac{TE}{P}$$
+        </div>
+
+        <div class="bilingual">
+            <div class="zh"><strong>需求價格彈性 (Price Elasticity of Demand, $E_d$)</strong>：量度需求量對價格變動的敏感度。</div>
+            <div class="en"><strong>Price Elasticity of Demand ($E_d$)</strong>: Measures the responsiveness of quantity demanded to a change in price.</div>
+        </div>
+
+        <div class="math-block">
+            $$E_d = \frac{\% \Delta Q_d}{\% \Delta P}$$
+        </div>
+        
+        <div class="bilingual">
+            <div class="zh"><strong>完全無彈性需求 (Perfectly Inelastic Demand)</strong>：當價格改變時，需求量完全沒有變動。在這種情況下，$E_d = 0$。</div>
+            <div class="en"><strong>Perfectly Inelastic Demand</strong>: When the price changes, the quantity demanded does not change at all. In this case, $E_d = 0$.</div>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis 答案與詳細分析</h2>
+    
+    <h3>正確答案 Correct Option: <span style="color: #10b981;">B</span></h3>
+    
+    <div class="analysis-step">
+        <span class="badge">Step-by-Step Analysis</span>
+        <div class="bilingual">
+            <div class="zh">我們需要利用題目提供的數據計算出每一個價格水平下的需求量 ($Q$)。</div>
+            <div class="en">We need to calculate the quantity demanded ($Q$) for each price level using the provided data.</div>
+        </div>
+        <ul>
+            <li>當 $P = 5$, $Q = \frac{25}{5} = 5$</li>
+            <li>當 $P = 6$, $Q = \frac{30}{6} = 5$</li>
+            <li>當 $P = 7$, $Q = \frac{35}{7} = 5$</li>
+            <li>當 $P = 8$, $Q = \frac{40}{8} = 5$</li>
+        </ul>
+        <div class="bilingual">
+            <div class="zh">我們發現無論價格如何變動，需求量 ($Q$) 始終保持在 5 不變（即 $\Delta Q = 0$）。根據彈性公式，既然需求量變動百分比為零，需求彈性必定<strong>等於零</strong>。因此正確答案是 B。</div>
+            <div class="en">We can see that no matter how the price changes, the quantity demanded ($Q$) remains strictly at 5 (i.e., $\Delta Q = 0$). According to the elasticity formula, since the percentage change in quantity demanded is zero, the elasticity of demand must be <strong>equal to zero</strong>. Thus, the correct option is B.</div>
+        </div>
+    </div>
+
+    <div class="analysis-step wrong-option">
+        <span class="badge" style="background-color: #ef4444;">Why A is wrong</span>
+        <div class="bilingual">
+            <div class="zh">雖然當價格上升時，總支出也隨之上升，這通常是「低彈性 / 缺乏彈性」 ($E_d < 1$) 的特徵。但此題的數據顯示需求量是<strong>絕對不變</strong>的，這是一個極端情況（完全無彈性）。選項 B（等於零）比選項 A（在零和一之間）更準確地描述了這組數據。</div>
+            <div class="en">Although total expenditure increases as price increases, which is generally a characteristic of "inelastic demand" ($E_d < 1$), the data here shows that quantity demanded is <strong>absolutely constant</strong>. This is an extreme case (perfectly inelastic). Option B (equal to zero) is a perfectly precise description of the data, making Option A incorrect.</div>
+        </div>
+    </div>
+
+    <div class="analysis-step wrong-option">
+        <span class="badge" style="background-color: #ef4444;">Why C & D are wrong</span>
+        <div class="bilingual">
+            <div class="zh">若需求彈性大於一 ($E_d > 1$)，價格上升會導致總支出下降。若需求彈性等於一 ($E_d = 1$)，價格變動時總支出會保持不變。題目數據與這兩種情況都不符。</div>
+            <div class="en">If elasticity is larger than one ($E_d > 1$), an increase in price would lead to a decrease in total expenditure. If elasticity is equal to one ($E_d = 1$), total expenditure would remain constant when price changes. The data contradicts both scenarios.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition 題目拆解</h2>
+    <div class="concept-box" style="background-color: #fdf4ff; border-left-color: #d946ef;">
+        <div class="bilingual">
+            <div class="zh"><strong>解題樞紐 (Pivot Point)：</strong><br>考評局出這類題目的用意，是測試學生會否只看表面趨勢（價格升、總支出升），而不去實際計算背後隱藏的<strong>需求量 ($Q$)</strong>。拆解此題的關鍵是：看到 $TE$ 和 $P$，立刻動筆找出 $Q$！</div>
+            <div class="en"><strong>Pivot Point:</strong><br>The HKEAA sets this type of question to test whether students merely look at surface trends (Price goes up, TE goes up) without calculating the hidden <strong>Quantity Demanded ($Q$)</strong>. The key to solving this is: Whenever you see $TE$ and $P$, immediately calculate $Q$!</div>
+        </div>
+    </div>
+
+    <h2>5. Common Mistakes & Traps 常犯錯誤與陷阱</h2>
+    <div class="concept-box" style="background-color: #fef2f2; border-left-color: #ef4444;">
+        <div class="bilingual">
+            <div class="zh"><strong>陷阱：死記硬背趨勢關係</strong><br>很多學生背誦了「價格與總支出同方向變動 = 缺乏彈性 (Inelastic)」，於是看到價格由 $5 升至 $8，總支出由 $25 升至 $40，就立刻選擇 A（在零和一之間）。這是一個陷阱！你必須確保它不是特例（即 $E_d = 0$）。</div>
+            <div class="en"><strong>Trap: Memorizing trend relationships blindly</strong><br>Many students memorize the rule "Price and Total Expenditure moving in the same direction = Inelastic", so when they see P rise from $5 to $8 and TE rise from $25 to $40, they immediately jump to Option A (between zero and one). This is a trap! You must always verify it's not the extreme case (i.e., $E_d = 0$).</div>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A 學生常見疑問</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <div class="zh"><strong>問：</strong>「完全無彈性」難道不屬於「缺乏彈性」的一種嗎？為甚麼不能選 A？</div>
+            <div class="en"><strong>Q:</strong> Isn't "perfectly inelastic" a specific type of "inelastic"? Why can't I choose A?</div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #fdba74; margin: 10px 0;">
+        <div class="bilingual">
+            <div class="zh"><strong>答：</strong>在數學邏輯上，「在零和一之間」(Between 0 and 1) 的定義是 $0 < E_d < 1$，<strong>並不包含零</strong>。既然我們計算出 $E_d$ 精確地等於 $0$，選項 A 在數學定義上就是錯誤的。</div>
+            <div class="en"><strong>A:</strong> In mathematical logic, "between zero and one" defines the range as $0 < E_d < 1$, which <strong>strictly excludes zero</strong>. Since our calculation shows $E_d$ is exactly $0$, Option A is mathematically incorrect.</div>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts 考試技巧與速解</h2>
+    <div class="trick-box">
+        <div class="bilingual">
+            <div class="zh"><strong>極速秒殺法 (The 5-Second Rule)：</strong><br>在選擇題中，時間就是分數。不需要把全部數字算完！只需抽查頭兩組數據：<br>1. $\frac{25}{5} = 5$<br>2. $\frac{30}{6} = 5$<br>既然 $Q$ 是一樣的，證明它是垂直的需求曲線，立刻選 B (等於零) 並跳到下一題！</div>
+            <div class="en"><strong>The 5-Second Rule:</strong><br>In MC papers, time is marks. You don't need to calculate everything! Just sample the first two pairs of data:<br>1. $\frac{25}{5} = 5$<br>2. $\frac{30}{6} = 5$<br>Since $Q$ is identical, it proves a vertical demand curve. Pick Option B (equal to zero) instantly and move to the next question!</div>
+        </div>
+    </div>
+
+</body>
+</html>

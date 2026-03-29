@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Policy Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-green: #22c55e;
+            --light-green: #f0fdf4;
+            --gray-bg: #f3f4f6;
+            --text-main: #333333;
+            --text-en: #4b5563;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+        .header-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .en-translation {
+            color: var(--text-en);
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .zh-text {
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .correct-answer {
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.2em;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .analysis-item {
+            margin-bottom: 20px;
+            background: #ffffff;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .trap-box {
+            background-color: var(--light-red);
+            border-left: 5px solid var(--primary-red);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: var(--light-green);
+            border-left: 5px solid var(--primary-green);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #334155;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2 style="margin-top: 0;">1. 學習主題資訊 / Topic Information</h2>
+        <p class="zh-text"><strong>主題：</strong> 宏觀經濟學 —— 財政政策與貨幣政策</p>
+        <p class="en-translation"><strong>Topic:</strong> Macroeconomics — Fiscal Policy vs. Monetary Policy</p>
+        
+        <p class="zh-text"><strong>難度：</strong> ★★☆☆☆ (2/5)</p>
+        <p class="en-translation"><strong>Difficulty:</strong> ★★☆☆☆ (2/5)</p>
+        
+        <p class="zh-text"><strong>核心概念：</strong> <span class="badge">擴張性財政政策</span> <span class="badge">貨幣政策</span> <span class="badge">總需求 (AD)</span></p>
+        <p class="en-translation"><strong>Key Concepts:</strong> <span class="badge">Expansionary Fiscal Policy</span> <span class="badge">Monetary Policy</span> <span class="badge">Aggregate Demand (AD)</span></p>
+    </div>
+
+    <h2>2. 題目 / The Question</h2>
+    <div class="question-box">
+        <p class="zh-text">下列哪些是擴張性財政政策的例子？</p>
+        <p class="en-translation">Which of the following are examples of an expansionary fiscal policy?</p>
+        
+        <p class="zh-text">(1) 提高薪俸稅的子女免稅額<br>(2) 推行一項消費券計劃<br>(3) 調低法定儲備比率</p>
+        <p class="en-translation">(1) increasing the child allowance of salaries tax<br>(2) launching a consumption voucher scheme<br>(3) lowering required reserve ratio</p>
+        
+        <ul class="options-list">
+            <li><span class="zh-text">A. 只有 (1)、(2)</span> <br> <span class="en-translation">A. (1) and (2) only</span></li>
+            <li><span class="zh-text">B. 只有 (1)、(3)</span> <br> <span class="en-translation">B. (1) and (3) only</span></li>
+            <li><span class="zh-text">C. 只有 (2)、(3)</span> <br> <span class="en-translation">C. (2) and (3) only</span></li>
+            <li><span class="zh-text">D. (1)、(2) 及 (3)</span> <br> <span class="en-translation">D. (1), (2) and (3)</span></li>
+        </ul>
+    </div>
+
+    <h2>3. 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <h3 style="margin-top: 0;">財政政策 (Fiscal Policy) vs 貨幣政策 (Monetary Policy)</h3>
+        
+        <p class="zh-text"><strong>財政政策</strong>是由<strong>政府</strong>執行的宏觀經濟政策，主要透過改變政府開支 \(G\) 或稅收 \(T\) 來影響經濟。當政府希望刺激經濟時，會採取<strong>擴張性財政政策 (Expansionary Fiscal Policy)</strong>，具體做法包括增加政府開支、增加轉移支付（如派發津貼）或減少稅收。</p>
+        <p class="en-translation"><strong>Fiscal Policy</strong> is a macroeconomic policy implemented by the <strong>government</strong>, primarily affecting the economy by changing government spending \(G\) or taxation \(T\). When the government wants to stimulate the economy, it adopts an <strong>Expansionary Fiscal Policy</strong>. Specific measures include increasing government spending, increasing transfer payments (e.g., distributing subsidies), or decreasing taxes.</p>
+        
+        <p class="zh-text"><strong>貨幣政策</strong>則是由<strong>中央銀行</strong>（例如香港金融管理局）執行的政策，主要透過控制貨幣供應量 \(M_s\) 或利率 \(r\) 來影響經濟。改變法定儲備比率、貼現率或進行公開市場操作都屬於貨幣政策。</p>
+        <p class="en-translation"><strong>Monetary Policy</strong>, on the other hand, is implemented by the <strong>Central Bank</strong> (e.g., the Hong Kong Monetary Authority). It affects the economy primarily by controlling the money supply \(M_s\) or interest rates \(r\). Changing the required reserve ratio, discount rate, or conducting open market operations all fall under monetary policy.</p>
+
+        <p class="zh-text">擴張性政策的最終目的，通常是為了增加總需求 \(AD\)。總需求的公式如下：</p>
+        <p class="en-translation">The ultimate goal of expansionary policies is usually to increase Aggregate Demand \(AD\). The formula for aggregate demand is:</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+        
+        <p class="zh-text">當中 \(C\) 是私人消費開支，\(I\) 是投資開支，\(G\) 是政府開支，\(X\) 是出口，\(M\) 是進口。</p>
+        <p class="en-translation">Where \(C\) is private consumption expenditure, \(I\) is investment expenditure, \(G\) is government expenditure, \(X\) is exports, and \(M\) is imports.</p>
+    </div>
+
+    <h2>4. 答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <p class="zh-text">正確答案是 / The correct option is: <span class="correct-answer">A. 只有 (1)、(2) / (1) and (2) only</span></p>
+
+    <div class="analysis-item">
+        <h3 style="margin-top: 0; color: var(--primary-blue);">分析 (1) / Analysis (1)</h3>
+        <p class="zh-text"><strong>提高薪俸稅的子女免稅額：</strong> 這是減少稅收 \(T\) 的措施。免稅額提高意味著市民需要繳交的直接稅減少，可支配收入 (Disposable Income) 因而增加，從而刺激消費 \(C\)。這屬於<strong>擴張性財政政策</strong>。因此，(1) 是正確的。</p>
+        <p class="en-translation"><strong>Increasing the child allowance of salaries tax:</strong> This is a measure to reduce taxation \(T\). A higher allowance means citizens pay less direct tax, which increases their disposable income and thereby stimulates consumption \(C\). This is an <strong>expansionary fiscal policy</strong>. Thus, (1) is correct.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3 style="margin-top: 0; color: var(--primary-blue);">分析 (2) / Analysis (2)</h3>
+        <p class="zh-text"><strong>推行一項消費券計劃：</strong> 這是政府的轉移支付 (Transfer Payments)，同樣會增加市民的可支配收入，直接帶動消費開支 \(C\) 上升，推動總需求 \(AD\)。資金由政府財政儲備支付，因此這屬於<strong>擴張性財政政策</strong>。因此，(2) 是正確的。</p>
+        <p class="en-translation"><strong>Launching a consumption voucher scheme:</strong> This acts as a government transfer payment, which also increases citizens' disposable income and directly drives up consumption expenditure \(C\), boosting aggregate demand \(AD\). It is funded by government fiscal reserves, so it falls under <strong>expansionary fiscal policy</strong>. Thus, (2) is correct.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3 style="margin-top: 0; color: var(--primary-red);">分析 (3) / Analysis (3)</h3>
+        <p class="zh-text"><strong>調低法定儲備比率：</strong> 這確實是一項「擴張性」政策，因為它能增加銀行體系創造存款的能力，從而增加貨幣供應 \(M_s\)。然而，這是由中央銀行操作的<strong>貨幣政策 (Monetary Policy)</strong>，並非財政政策。因此，(3) 是錯誤的。</p>
+        <p class="en-translation"><strong>Lowering required reserve ratio:</strong> This is indeed an "expansionary" policy because it increases the banking system's ability to create deposits, thereby increasing the money supply \(M_s\). However, this is a <strong>Monetary Policy</strong> operated by the central bank, NOT a fiscal policy. Thus, (3) is incorrect.</p>
+    </div>
+
+    <h2>5. 題目拆解 / Problem Decomposition</h2>
+    <p class="zh-text">這類題目的「關鍵點」(Pivot Point) 在於看清兩個形容詞：<strong>「擴張性」(Expansionary)</strong> 和 <strong>「財政」(Fiscal)</strong>。</p>
+    <p class="en-translation">The "Pivot Point" of this type of question lies in spotting the two specific adjectives: <strong>"Expansionary"</strong> and <strong>"Fiscal"</strong>.</p>
+    
+    <ul class="zh-text">
+        <li><strong>干擾資訊 (Distractor)：</strong> 題目中的選項 (3) 是一個極具迷惑性的選項。很多同學看到「調低比率刺激經濟」就立刻聯想到「擴張性」，從而盲目選擇。但它未能滿足「財政政策」這個核心要求。</li>
+    </ul>
+    <ul class="en-translation">
+        <li><strong>Distractor:</strong> Option (3) is a highly deceptive choice. Many students see "lowering ratio to stimulate the economy" and immediately associate it with "expansionary," choosing it blindly. But it fails to meet the core requirement of being a "fiscal policy."</li>
+    </ul>
+
+    <h2>6. 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <h3 style="margin-top: 0; color: var(--primary-red);">概念混淆：財政 vs 貨幣</h3>
+        <p class="zh-text">學生最常犯的錯誤是無法區分「財政政策」與「貨幣政策」的執行者與工具。記住：<br>
+        💰 <strong>財政 (Fiscal)：</strong> 關乎政府庫房 (Taxes, Government Spending, Subsidies)。<br>
+        🏦 <strong>貨幣 (Monetary)：</strong> 關乎銀行體系與印鈔 (Interest Rates, Reserve Ratio, Money Supply)。</p>
+        
+        <p class="en-translation"><strong>Concept Confusion: Fiscal vs. Monetary.</strong> The most common mistake students make is failing to distinguish the executors and tools of "Fiscal" and "Monetary" policies. Remember:<br>
+        💰 <strong>Fiscal:</strong> Relates to the government treasury (Taxes, Government Spending, Subsidies).<br>
+        🏦 <strong>Monetary:</strong> Relates to the banking system and printing money (Interest Rates, Reserve Ratio, Money Supply).</p>
+    </div>
+
+    <h2>7. 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>學生問：</strong> 為什麼「調低法定儲備比率」是擴張性的？它具體如何運作？</p>
+        <p class="en-translation"><strong>Student asks:</strong> Why is "lowering the required reserve ratio" considered expansionary? How does it work exactly?</p>
+        
+        <p class="zh-text"><strong>導師答：</strong> 當法定儲備比率 (Required Reserve Ratio) 降低時，商業銀行需要存放在中央銀行的儲備金減少了。這意味著銀行有更多「超額儲備」(Excess Reserves) 可以借貸給市民和企業。這會導致整個經濟體的貨幣供應量 \(M_s\) 增加，進而令利率 \(r\) 下降。較低的利率會鼓勵市民借錢消費 \(C\) 和企業借錢投資 \(I\)，從而刺激總需求 \(AD\)。雖然它是擴張性的，但這完全屬於「貨幣政策」的範疇！</p>
+        <p class="en-translation"><strong>Tutor answers:</strong> When the required reserve ratio is lowered, commercial banks are required to keep less money as reserves with the central bank. This means banks have more "Excess Reserves" available to lend out to citizens and businesses. This leads to an increase in the money supply \(M_s\) in the economy, which in turn causes interest rates \(r\) to fall. Lower interest rates encourage citizens to borrow for consumption \(C\) and businesses to borrow for investment \(I\), thereby stimulating aggregate demand \(AD\). While it is expansionary, it falls entirely under the realm of "Monetary Policy"!</p>
+    </div>
+
+    <h2>8. 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <h3 style="margin-top: 0; color: var(--primary-green);">消去法「秒殺」技巧 / "One-Second Kill" Elimination Tactic</h3>
+        <p class="zh-text">在 DSE 考試中，時間就是分數。當你掃視題目要求尋找「財政政策」時，可以直接跳看選項。一旦你看到 (3) 涉及「儲備比率」(銀行/貨幣術語)，你可以立即判定它不是財政政策。<br>
+        既然 (3) 是錯的，你可以瞬間剔除選項 B、C 和 D。唯一剩下的正確答案就是 <strong>A</strong>。你甚至不需要仔細分析 (1) 和 (2) 就能得分！</p>
+        <p class="en-translation">In the DSE exam, time is marks. When you scan the question and see it asks for "Fiscal Policy," you can jump straight to the options. The moment you see (3) involves "reserve ratio" (a banking/monetary term), you can immediately determine it is not a fiscal policy.<br>
+        Since (3) is wrong, you can instantly eliminate options B, C, and D. The only remaining correct answer is <strong>A</strong>. You score the point without even needing to deeply analyze (1) and (2)!</p>
+    </div>
+
+</body>
+</html>
