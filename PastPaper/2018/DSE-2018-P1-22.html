@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Taxation and Deadweight Loss</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Deep Blue */
+            --secondary: #0ea5e9; /* Light Blue */
+            --bg-concept: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --success: #22c55e;
+            --bg-success: #dcfce7;
+            --warning: #f59e0b;
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 { color: var(--primary); margin-top: 1.5em; }
+        h1 { border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
+        
+        .bilingual { margin-bottom: 1.2rem; }
+        .zh { font-weight: 500; font-size: 1.05em; margin-bottom: 4px; }
+        .en { color: var(--text-muted); font-size: 0.95em; font-style: italic; }
+        
+        .header-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+        .header-item { font-size: 0.9em; }
+        .header-item strong { color: var(--primary); }
+        
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        
+        .correct-answer-box {
+            background-color: var(--bg-success);
+            border-left: 5px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .option-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.2s;
+        }
+        .option-box:hover { transform: translateX(5px); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .option-title { font-weight: bold; color: var(--primary); margin-bottom: 8px; }
+        
+        .svg-container {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box { margin-bottom: 15px; }
+        .qa-q { font-weight: bold; color: var(--primary); }
+        .qa-a { padding-left: 20px; border-left: 2px solid #cbd5e1; margin-top: 5px; }
+        
+        hr { border: 0; height: 1px; background: #e2e8f0; margin: 30px 0; }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-box { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: Market Intervention (市場干預)</h1>
+    <div class="header-box">
+        <div class="header-item"><strong>Topic:</strong> Market Intervention - Taxation & Deadweight Loss <br> (市場干預 - 稅收與無謂損失)</div>
+        <div class="header-item"><strong>Difficulty:</strong> ★★★★☆ (4/5)</div>
+        <div class="header-item"><strong>Key Concepts:</strong> Per-unit Tax (從量稅), Deadweight Loss (無謂損失), Social Surplus (社會盈餘)</div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="bilingual">
+        <div class="zh">下圖顯示物品X的供需曲線。假設政府對物品X的稅項由 \(t_1\) 提高至 \(t_2\)。下列哪項陳述是正確的？</div>
+        <div class="en">The following diagram shows the demand and supply curves of Good X. Suppose the government increases the tax on Good X from \(t_1\) to \(t_2\). Which of the following statements is correct?</div>
+    </div>
+    
+    <div class="bilingual">
+        <div class="zh">A. 效率損失會增加面積 bcgh。</div>
+        <div class="en">A. The deadweight loss will increase by area bcgh.</div>
+    </div>
+    <div class="bilingual">
+        <div class="zh">B. 效率損失會減少面積 abh。</div>
+        <div class="en">B. The deadweight loss will decrease by area abh.</div>
+    </div>
+    <div class="bilingual">
+        <div class="zh">C. 新的效率損失是面積 bcf。</div>
+        <div class="en">C. The new deadweight loss is area bcf.</div>
+    </div>
+    <div class="bilingual">
+        <div class="zh">D. 新的效率損失是面積 aci。</div>
+        <div class="en">D. The new deadweight loss is area aci.</div>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <div class="zh"><strong>1. 從量稅 (Per-unit Tax):</strong> 當政府向生產者徵收從量稅，這會增加生產成本。在圖表中，這表現為供應曲線向上平移，平移的垂直距離等同於稅額 \(t\)。即 \(S_{\text{tax}} = S_0 + t\)。</div>
+            <div class="en"><strong>1. Per-unit Tax:</strong> When the government imposes a per-unit tax on producers, it increases the cost of production. Graphically, the supply curve shifts vertically upwards by the tax amount \(t\). That is, \(S_{\text{tax}} = S_0 + t\).</div>
+        </div>
+        <div class="bilingual">
+            <div class="zh"><strong>2. 社會極大化點 (Socially Efficient Point):</strong> 最有效率的產出量出現在邊際利益 (Marginal Benefit, 需求曲線 \(D\)) 等於邊際成本 (Marginal Cost, 未連稅的供應曲線 \(S_0\)) 的位置。在圖中，這是點 <strong>a</strong>。</div>
+            <div class="en"><strong>2. Socially Efficient Point:</strong> The most efficient output level occurs where Marginal Benefit (Demand curve \(D\)) equals Marginal Cost (the pre-tax Supply curve \(S_0\)). In the diagram, this is point <strong>a</strong>.</div>
+        </div>
+        <div class="bilingual">
+            <div class="zh"><strong>3. 無謂損失/效率損失 (Deadweight Loss / Efficiency Loss):</strong> 因為稅收導致交易量減少（偏離有效率的產量），社會總盈餘會減少。損失的面積是由新產量至有效率產量之間，夾在需求曲線 \(D\) 和<strong>原本的供應曲線 \(S_0\)</strong> 之間的三角形面積。</div>
+            <div class="en"><strong>3. Deadweight Loss:</strong> Because taxes reduce the quantity transacted (deviating from the efficient quantity), total social surplus decreases. The lost area is the triangle bounded by the Demand curve \(D\) and the <strong>original Supply curve \(S_0\)</strong>, from the new quantity to the efficient quantity.</div>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Deadweight Loss (DWL)} = \text{Max Potential Total Surplus} - \text{Actual Total Surplus} $$
+        </div>
+    </div>
+
+    <div class="svg-container">
+        <h4>Visual Breakdown of DWL (效率損失的圖像分析)</h4>
+        <svg viewBox="0 0 350 280" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;">
+            <line x1="30" y1="250" x2="330" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="30" y1="20" x2="30" y2="250" stroke="black" stroke-width="2"/>
+            <text x="310" y="270" font-size="12">Quantity</text>
+            <text x="5" y="15" font-size="12">Price</text>
+
+            <line x1="100" y1="150" x2="100" y2="250" stroke="gray" stroke-dasharray="4"/>
+            <line x1="125" y1="125" x2="125" y2="250" stroke="gray" stroke-dasharray="4"/>
+            <line x1="150" y1="100" x2="150" y2="250" stroke="gray" stroke-dasharray="4"/>
+            
+            <text x="95" y="265" font-size="12" fill="gray">Qc</text>
+            <text x="120" y="265" font-size="12" fill="gray">Qb</text>
+            <text x="145" y="265" font-size="12" fill="gray">Qa</text>
+
+            <polygon points="150,100 125,125 125,75" fill="rgba(34, 197, 94, 0.3)" stroke="none"/>
+            <text x="135" y="105" font-size="10" fill="darkgreen">Old DWL</text>
+            
+            <polygon points="125,125 100,150 100,50 125,75" fill="rgba(239, 68, 68, 0.3)" stroke="none"/>
+            <text x="105" y="105" font-size="10" fill="darkred">Added DWL</text>
+
+            <line x1="50" y1="200" x2="250" y2="0" stroke="black" stroke-width="1.5"/> <text x="255" y="10" font-size="12">D</text>
+
+            <line x1="50" y1="200" x2="250" y2="0" stroke="black" stroke-width="1.5"/> <line x1="40" y1="210" x2="240" y2="10" stroke="#1e3a8a" stroke-width="2"/> 
+            <text x="245" y="15" font-size="12" fill="#1e3a8a">D</text>
+
+            <line x1="70" y1="20" x2="240" y2="190" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="245" y="195" font-size="12" fill="#0ea5e9">S0</text>
+
+            <line x1="40" y1="40" x2="210" y2="210" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="215" y="215" font-size="12" fill="#0ea5e9">S1</text>
+
+            <line x1="20" y1="70" x2="180" y2="230" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="185" y="235" font-size="12" fill="#0ea5e9">S2</text>
+            
+            <circle cx="150" cy="100" r="3" fill="black"/> <text x="155" y="105" font-size="12">a</text>
+            <circle cx="125" cy="125" r="3" fill="black"/> <text x="130" y="125" font-size="12">b</text>
+            <circle cx="100" cy="150" r="3" fill="black"/> <text x="100" y="145" font-size="12">c</text>
+            
+            <circle cx="100" cy="100" r="3" fill="black"/> <text x="90" y="105" font-size="12">f</text>
+            <circle cx="100" cy="50" r="3" fill="black"/> <text x="90" y="55" font-size="12">g</text>
+            
+            <circle cx="125" cy="75" r="3" fill="black"/> <text x="135" y="75" font-size="12">h</text>
+        </svg>
+        <p style="font-size: 0.9em; color: var(--text-muted);"><em>Green: Original DWL (Area abh) | Red: Additional DWL (Area bcgh)</em></p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer-box">
+        <div class="bilingual">
+            <div class="zh">✅ 正確答案：<strong>Option A</strong></div>
+            <div class="en">✅ Correct Option: <strong>Option A</strong></div>
+        </div>
+    </div>
+
+    <div class="option-box">
+        <div class="option-title">分析 Option A (Correct)</div>
+        <div class="bilingual">
+            <div class="zh">
+                首先，我們要找出在稅款為 \(t_1\) 時的效率損失。交易量由點 <strong>b</strong> 決定（\(D\) 與 \(S_1\) 相交）。無謂損失是從這個交易量到有效率交易量 (點 <strong>a</strong>) 之間，夾在 \(D\) 與 <strong>\(S_0\)</strong> 之間的面積，即三角形 <strong>abh</strong>。<br><br>
+                當稅款增加至 \(t_2\)，交易量由點 <strong>c</strong> 決定（\(D\) 與 \(S_2\) 相交）。新的無謂損失是從點 c 的交易量到點 a 的交易量之間，夾在 \(D\) 與 <strong>\(S_0\)</strong> 之間的面積，即三角形 <strong>acg</strong>。<br><br>
+                因此，效率損失的<strong>增加量</strong> = 新的無謂損失 (acg) - 舊的無謂損失 (abh) = 面積 <strong>bcgh</strong>。陳述正確。
+            </div>
+            <div class="en">
+                First, let's identify the deadweight loss (DWL) when the tax is \(t_1\). The transacted quantity is determined by point <strong>b</strong> (intersection of \(D\) and \(S_1\)). The DWL is the area between \(D\) and the <em>original</em> supply curve <strong>\(S_0\)</strong>, from this quantity to the efficient quantity (point <strong>a</strong>). This is triangle <strong>abh</strong>.<br><br>
+                When tax increases to \(t_2\), the quantity is determined by point <strong>c</strong> (intersection of \(D\) and \(S_2\)). The new DWL is the area between \(D\) and <strong>\(S_0\)</strong> from this new quantity to the efficient quantity. This is triangle <strong>acg</strong>.<br><br>
+                Therefore, the <strong>increase</strong> in DWL = New DWL (acg) - Old DWL (abh) = Area <strong>bcgh</strong>. The statement is correct.
+            </div>
+        </div>
+    </div>
+
+    <div class="option-box">
+        <div class="option-title">分析 Option B (Incorrect)</div>
+        <div class="bilingual">
+            <div class="zh">效率損失是增加而非減少，因為稅收增加導致交易量進一步偏離有效率水平。</div>
+            <div class="en">The deadweight loss increases, not decreases. A higher tax causes the transacted quantity to deviate even further from the efficient level.</div>
+        </div>
+    </div>
+
+    <div class="option-box">
+        <div class="option-title">分析 Option C (Incorrect)</div>
+        <div class="bilingual">
+            <div class="zh">面積 bcf 只是效率損失增加量的一部分，它錯用了 \(S_1\) 而非 \(S_0\) 來作為計算無謂損失的底部邊界。</div>
+            <div class="en">Area bcf is only a portion of the increased DWL. It incorrectly uses \(S_1\) instead of the true marginal cost curve \(S_0\) as the bottom boundary to measure efficiency loss.</div>
+        </div>
+    </div>
+
+    <div class="option-box">
+        <div class="option-title">分析 Option D (Incorrect)</div>
+        <div class="bilingual">
+            <div class="zh">面積 aci 錯用了 \(S_2\) 作為邊界。計算無謂損失時，我們必須比較社會的真實邊際成本 (即未連稅的 \(S_0\)) 與邊際利益 (D)。</div>
+            <div class="en">Area aci incorrectly uses \(S_2\) as a boundary. When calculating deadweight loss, we must compare society's true Marginal Cost (the pre-tax \(S_0\)) with Marginal Benefit (D).</div>
+        </div>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual">
+        <div class="zh">
+            解答這類題目的 <strong>Pivot Point (關鍵點)</strong> 是：<strong>永遠找回未連稅的供應曲線 (S₀)！</strong><br>
+            很多學生會被圖中多條平行的供應曲線擾亂視線。請記住，稅收只是政府的轉移支付，並不是生產物品的「真實社會成本」。因此，計算社會盈餘或效率損失時，底部邊界<strong>必須</strong>是原來的供應曲線 \(S_0\)。找出新的交易數量，垂直畫線連接需求曲線與 \(S_0\)，指向 \(D=S_0\) 的交叉點，畫出來的三角形就是無謂損失。
+        </div>
+        <div class="en">
+            The <strong>Pivot Point</strong> for solving this type of question is: <strong>Always go back to the pre-tax supply curve (S₀)!</strong><br>
+            Many students get distracted by the multiple parallel supply curves. Remember that a tax is just a transfer payment to the government, not a "real social cost" of producing the good. Therefore, when calculating social surplus or efficiency loss, the bottom boundary <strong>must</strong> be the original supply curve \(S_0\). Find the new transacted quantity, draw a vertical line connecting the demand curve and \(S_0\), and point it toward the \(D=S_0\) intersection. The resulting triangle is the deadweight loss.
+        </div>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <div class="bilingual">
+            <div class="zh">
+                <strong>陷阱：</strong> 以為無謂損失是在兩條新的供應曲線之間（例如選了面積 bcf）。<br>
+                <strong>真相：</strong> 效率損失評估的是「社會整體」的損失，必須以「沒有干預」時的最佳狀態（點 a）作基準。不管稅率變了多少次，計算 DWL 的參照線永遠是 \(D\) 和 \(S_0\)。
+            </div>
+            <div class="en">
+                <strong>Trap:</strong> Thinking the deadweight loss is the area between the two new supply curves (e.g., choosing area bcf).<br>
+                <strong>Truth:</strong> Efficiency loss evaluates the loss to "society as a whole" and must be benchmarked against the optimal state "without intervention" (point a). No matter how many times the tax rate changes, the reference lines for DWL are always \(D\) and \(S_0\).
+            </div>
+        </div>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <div class="zh qa-q">Q: 點解計算無謂損失時，不計算政府的稅收收入 (Tax Revenue)？</div>
+            <div class="en qa-q">Q: Why don't we include the government's tax revenue as part of the deadweight loss?</div>
+        </div>
+        <div class="bilingual">
+            <div class="zh qa-a">A: 因為稅收收入並未「消失」！這筆錢從消費者和生產者手中轉移到了政府手中，政府可以用它來提供公共設施。在經濟學中，我們將這視為盈餘的「轉移」而非「損失」。只有那些因為交易量減少而未能達成的互惠交易（即圖中的三角形區域），才是真正蒸發掉的社會價值，也就是無謂損失。</div>
+            <div class="en qa-a">A: Because the tax revenue hasn't "disappeared"! The money is transferred from consumers and producers to the government, which can use it for public services. In economics, this is considered a "transfer" of surplus, not a "loss". Only the mutually beneficial trades that fail to happen due to the reduced quantity (the triangle areas in the graph) represent truly evaporated social value, which is the deadweight loss.</div>
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual">
+        <div class="zh">
+            <strong>速解法 (The "Sweep" Method)：</strong><br>
+            當你看到「稅項增加導致效率損失增加多少」時，可以直接看：<br>
+            1. 舊交易量（點 b）到新交易量（點 c）的區間。<br>
+            2. 在這個橫向區間內，由需求曲線 \(D\) 一直向下「掃描」到原供應曲線 \(S_0\)。<br>
+            掃過的面績就是答案。在圖中，從點 b 所對應的產量，移動到點 c 所對應的產量，需求曲線 \(D\) 和原供應曲線 \(S_0\) 之間所包含的四邊形就是面積 <strong>bcgh</strong>。一秒找出答案！
+        </div>
+        <div class="en">
+            <strong>The "Sweep" Shortcut:</strong><br>
+            When asked "how much did deadweight loss increase due to an added tax", just look at:<br>
+            1. The interval from the old quantity (point b) to the new quantity (point c).<br>
+            2. Within this horizontal interval, "sweep" from the Demand curve \(D\) all the way down to the original Supply curve \(S_0\).<br>
+            The swept area is your answer. In the graph, moving from the quantity at point b to the quantity at point c, the quadrilateral bounded by \(D\) and \(S_0\) is exactly area <strong>bcgh</strong>. You can find the answer in a second!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
