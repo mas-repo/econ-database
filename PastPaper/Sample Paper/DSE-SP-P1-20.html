@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Per-Unit Subsidy</title>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei', 'PingFang HK';
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header-info div {
+            flex: 1;
+            min-width: 200px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .bilingual-group {
+            margin-bottom: 20px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 0;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .option {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            background-color: var(--bg-gray);
+            border: 1px solid #e5e7eb;
+        }
+        .correct-answer {
+            background-color: #ecfdf5;
+            border-color: var(--correct-green);
+            border-left: 5px solid var(--correct-green);
+        }
+        .analysis-step {
+            margin-bottom: 25px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .tag-wrong { background-color: #fee2e2; color: var(--wrong-red); }
+        .tag-correct { background-color: #d1fae5; color: var(--correct-green); }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial</h1>
+    
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Market Intervention (Subsidies) <br> 市場干預（補貼）</div>
+        <div><strong>Difficulty (難度):</strong> ★★★★☆</div>
+        <div><strong>Key Concepts (核心概念):</strong><br>Per-unit Subsidy, Consumer/Producer Surplus, Deadweight Loss</div>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual-group">
+            <p class="zh">假設政府向某物品的生產商提供從量補貼，這會導致</p>
+            <p class="en">Suppose the government provides a per-unit subsidy to the producers of a good. This would lead to</p>
+        </div>
+        
+        <ul class="options">
+            <li class="option">
+                <div class="zh">A. 消費者盈餘上升及生產者盈餘下降，因此對效率的影響不明確。</div>
+                <div class="en">A. an increase in consumer surplus and a fall in producer surplus, so having an ambiguous effect on efficiency.</div>
+            </li>
+            <li class="option">
+                <div class="zh">B. 生產者盈餘上升及消費者盈餘下降，因此對效率的影響不明確。</div>
+                <div class="en">B. an increase in producer surplus and a fall in consumer surplus, so having an ambiguous effect on efficiency.</div>
+            </li>
+            <li class="option">
+                <div class="zh">C. 效率的改善，因賣家及買家均會從補貼得益。</div>
+                <div class="en">C. an improvement in efficiency because both sellers and buyers would benefit from the subsidy.</div>
+            </li>
+            <li class="option correct-answer">
+                <div class="zh">D. 淨損失，因政府提供的補貼額大於消費者盈餘及生產者盈餘上升的總和。</div>
+                <div class="en">D. a deadweight loss because the amount of subsidy provided by the government is greater than the sum of the increase in consumer and producer surpluses.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <p class="zh">當政府提供<strong>從量補貼 (Per-unit Subsidy)</strong> 時，這等同於降低了生產者的生產成本。供給曲線會垂直向下平移，平移的幅度等於每單位的補貼額。</p>
+            <p class="en">When the government provides a <strong>per-unit subsidy</strong>, it effectively lowers the cost of production for producers. The supply curve shifts vertically downwards by the exact amount of the per-unit subsidy.</p>
+        </div>
+        
+        <div align="center" style="margin: 20px 0;">
+            
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>1. 消費者盈餘 (Consumer Surplus, $CS$)：</strong> 消費者願意支付的最高價格與實際支付價格之間的差額。補貼後，市場價格下降，交易量增加，因此 $CS$ 上升。</p>
+            <p class="en"><strong>1. Consumer Surplus ($CS$):</strong> The difference between the maximum price consumers are willing to pay and the actual price they pay. After a subsidy, the market price falls and quantity traded increases, so $CS$ increases.</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>2. 生產者盈餘 (Producer Surplus, $PS$)：</strong> 生產者實際收取的價格與其願意接受的最低價格（邊際成本）之間的差額。補貼後，生產者實際收取的價格（市場價格 + 補貼）上升，交易量增加，因此 $總PS$ 上升。</p>
+            <p class="en"><strong>2. Producer Surplus ($PS$):</strong> The difference between the actual price producers receive and the minimum price they are willing to accept (marginal cost). After a subsidy, the effective price received by producers (market price + subsidy) rises and quantity increases, so total $PS$ increases.</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>3. 淨損失 (Deadweight Loss, $DWL$)：</strong> 由於市場干預導致的總社會盈餘減少。在補貼下，新的交易量大於市場均衡數量。對於這些額外的單位，邊際成本大於邊際利益 ($MC > MB$)，造成資源錯配及效率損失。</p>
+            <p class="en"><strong>3. Deadweight Loss ($DWL$):</strong> The reduction in total social surplus resulting from market intervention. Under a subsidy, the new quantity is greater than the free-market equilibrium quantity. For these extra units, Marginal Cost exceeds Marginal Benefit ($MC > MB$), causing misallocation of resources and a loss of efficiency.</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Total Social Surplus} = CS + PS - \text{Government Expenditure} $$
+            $$ \text{Deadweight Loss (DWL)} = \text{Government Expenditure} - (\Delta CS + \Delta PS) $$
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    
+    <div class="bilingual-group">
+        <p class="zh"><strong>正確答案：選項 D</strong></p>
+        <p class="en"><strong>Correct Option: Option D</strong></p>
+    </div>
+
+    <div class="analysis-step">
+        <span class="tag tag-wrong">Option A & B</span>
+        <div class="bilingual-group">
+            <p class="zh"><strong>錯誤。</strong> 補貼會令市場價格下降，消費者買得更平更多，故消費者盈餘 ($CS$) 必定<strong>上升</strong>。同時，生產者扣除補貼後的實際收入增加，賣得更多，故生產者盈餘 ($PS$) 亦會<strong>上升</strong>。A和B選項分別說其中一方的盈餘下降，這是違反經濟學基本原理的。</p>
+            <p class="en"><strong>Incorrect.</strong> A subsidy lowers the market price, allowing consumers to buy more at a lower price, so Consumer Surplus ($CS$) must <strong>increase</strong>. Simultaneously, the effective price received by producers increases, and they sell more, so Producer Surplus ($PS$) also <strong>increases</strong>. Options A and B state that one of the surpluses falls, which violates basic economic principles.</p>
+        </div>
+    </div>
+
+    <div class="analysis-step">
+        <span class="tag tag-wrong">Option C</span>
+        <div class="bilingual-group">
+            <p class="zh"><strong>錯誤。</strong> 雖然買家和賣家都從補貼中獲益（兩者的盈餘皆上升），但這<strong>不等於</strong>效率改善。效率 (Efficiency) 看的是「整個社會」，而政府（代表納稅人）為這項補貼支付了龐大開支。因為過度生產 ($MC > MB$)，總社會盈餘實際上是減少了的。</p>
+            <p class="en"><strong>Incorrect.</strong> Although both buyers and sellers benefit (both surpluses increase), this <strong>does not</strong> mean an improvement in efficiency. Efficiency considers the "whole society," and the government (representing taxpayers) pays a massive expense for this subsidy. Because of overproduction ($MC > MB$), total social surplus actually decreases.</p>
+        </div>
+    </div>
+
+    <div class="analysis-step">
+        <span class="tag tag-correct">Option D</span>
+        <div class="bilingual-group">
+            <p class="zh"><strong>正確。</strong> 政府的總補貼開支是一筆巨大的成本（圖表上的長方形面積）。這筆開支的數值，是<strong>大於</strong>消費者和生產者盈餘增加的總和的。兩者之間的差額，就是由過度生產帶來的淨損失 (Deadweight Loss)。因此，市場效率下降了。</p>
+            <p class="en"><strong>Correct.</strong> The government's total subsidy expenditure is a huge cost (a large rectangular area on the diagram). The value of this expenditure is <strong>strictly greater than</strong> the combined increase in consumer and producer surpluses. The difference between the government's cost and the gains to buyers/sellers is the Deadweight Loss caused by overproduction. Thus, market efficiency drops.</p>
+        </div>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #ec4899;">
+        <div class="bilingual-group">
+            <p class="zh"><strong>解題樞紐 (Pivot Point)：</strong> 這條題目的核心在於區分「個人利益」(Private Benefit) 與「社會效率」(Social Efficiency)。看到「補貼」，學生必須立刻聯想到三件事：1. 買家開心 ($CS\uparrow$)，2. 賣家開心 ($PS\uparrow$)，3. 社會傷心 ($DWL$ 出現，效率下降)。</p>
+            <p class="en"><strong>Pivot Point:</strong> The core of this question lies in distinguishing between "Private Benefit" and "Social Efficiency." When you see "Subsidy," you must immediately recall three things: 1. Buyers are happy ($CS\uparrow$), 2. Sellers are happy ($PS\uparrow$), 3. Society is sad ($DWL$ exists, efficiency drops).</p>
+        </div>
+        <div class="bilingual-group">
+            <p class="zh"><strong>干擾項 (Distractors)：</strong> 選項 A、B 和 C 利用了學生的直覺誤區——以為「如果兩邊都獲益，效率就一定不明確或改善」。這忽略了「政府支出」這個隱藏的第三者成本。</p>
+            <p class="en"><strong>Distractors:</strong> Options A, B, and C exploit a common intuitive trap—assuming that "if both parties benefit, efficiency must be ambiguous or improved." This completely ignores the hidden third-party cost: Government Expenditure.</p>
+        </div>
+    </div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li class="bilingual-group">
+            <div class="zh">❌ <strong>誤解：</strong> 將「公平/大眾受惠」等同於「經濟效率提升」。</div>
+            <div class="en">❌ <strong>Misconception:</strong> Equating "fairness / public benefit" with an "improvement in economic efficiency."</div>
+            <div class="zh" style="color: var(--text-gray); font-size: 0.9em; margin-top: 5px;">📍 <strong>真相：</strong> 在沒有外部性 (Externalities) 的自由市場中，均衡點已經是效率最高的點。任何政府干預（無論是稅收還是補貼）都會扭曲價格信號，導致淨損失。</div>
+            <div class="en" style="color: var(--text-gray); font-size: 0.9em;">📍 <strong>Truth:</strong> In a free market without externalities, the equilibrium is already at maximum efficiency. ANY government intervention (tax or subsidy) distorts price signals and causes a deadweight loss.</div>
+        </li>
+    </ul>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #f59e0b;">
+        <p class="zh"><strong>🤔 同學問：</strong>「既然消費者和生產者都賺了，政府也是拿稅收來補貼，這筆錢只是左手交右手，為什麼會產生『損失』？」</p>
+        <p class="en"><strong>🤔 Student Asks:</strong> "Since both consumers and producers gain, and the government just uses tax money, isn't this just transferring money from one pocket to another? Why is there a 'loss'?"</p>
+        <hr style="border: 0; border-top: 1px solid #fde68a; margin: 15px 0;">
+        <p class="zh"><strong>💡 導師答：</strong>因為補貼導致了<strong>過度生產 (Overproduction)</strong>。補貼讓市場生產了原本不該生產的數量（數量由 $Q_0$ 增加到 $Q_1$）。對於這些額外生產的物品，生產它們的成本（$MC$）實際上大於消費者從中獲得的價值（$MB$）。這意味著社會將珍貴的資源浪費在了效益較低的地方，這就是淨損失的來源。</p>
+        <p class="en"><strong>💡 Tutor Answers:</strong> Because the subsidy causes <strong>overproduction</strong>. It forces the market to produce units that shouldn't have been produced (quantity increases from $Q_0$ to $Q_1$). For these extra units, the cost of making them ($MC$) is actually higher than the value consumers get from them ($MB$). This means society is wasting scarce resources on low-value activities. That waste is the Deadweight Loss.</p>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="bilingual-group">
+        <p class="zh">⚡ <strong>一秒刪除法：</strong> 在 DSE 經濟科中，只要題目沒有提及「外部性 (Externalities)」，任何形式的政府干預（配額、價格上限、價格下限、稅收、補貼）<strong>必定</strong>會導致無效率 (Inefficiency) 或淨損失 (Deadweight Loss)。</p>
+        <p class="en">⚡ <strong>One-Second Elimination:</strong> In DSE Economics, as long as the question does not mention "Externalities", ANY form of government intervention (quotas, price ceilings, price floors, taxes, subsidies) <strong>MUST</strong> lead to inefficiency or a deadweight loss.</p>
+    </div>
+    <div class="bilingual-group">
+        <p class="zh">因此，當你看到選項中出現「效率改善 (improvement in efficiency)」或「對效率影響不明確 (ambiguous effect on efficiency)」時，你可以<strong>毫不猶豫地立刻將它們劃掉</strong>。這題可以直接秒殺 A、B、C，直接選 D！</p>
+        <p class="en">Therefore, when you see options containing "improvement in efficiency" or "ambiguous effect on efficiency," you can <strong>cross them out immediately without hesitation</strong>. For this question, you can instantly eliminate A, B, and C, and choose D in seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
