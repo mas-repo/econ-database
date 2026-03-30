@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Opportunity Cost Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        h1 { color: #1e3a8a; font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: #2563eb; font-size: 1.4em; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-top: 30px; }
+        h3 { color: #374151; font-size: 1.2em; margin-bottom: 10px; }
+        p { margin-bottom: 10px; }
+        
+        .header-section { margin-bottom: 25px; }
+        .tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* Specialized Boxes */
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .concept-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .qna-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .trick-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        
+        /* Math Block */
+        .math-block {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Options Analysis */
+        .option {
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .option.correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            box-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+        }
+        .option.wrong {
+            background-color: #fcfcfc;
+        }
+        .option-label { font-weight: bold; font-size: 1.1em; }
+        
+        /* Bilingual styling */
+        .lang-zh { font-weight: 500; color: #1f2937; }
+        .lang-en { color: #4b5563; font-size: 0.95em; margin-top: 8px; font-style: italic; padding-left: 15px; border-left: 2px solid #cbd5e1; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+            .tag { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div style="margin-top: 15px;">
+            <span class="tag">Topic: Opportunity Cost (機會成本)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Keywords: 機會成本, 放棄的選項, 淨利益</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="lang-zh">
+            <p><strong>瑪莉正從下列兩種方式中選擇一個來度過她的聖誕假期：替叔叔工作以賺取三千元；參加一個前往北京的文化之旅。</strong></p>
+            <p><strong>下列哪項會減低瑪莉替叔叔工作的機會成本？</strong></p>
+            <p>A. 瑪莉的叔叔將她的人工減至兩千元。<br>
+               B. 參加文化之旅費用下降。<br>
+               C. 文化之旅其中一個精彩項目被取消。<br>
+               D. 瑪莉的叔同意聘請她最要好的朋友與她一起工作。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Mary is choosing between two ways of spending her Christmas vacation: to work for her uncle and earn $3,000 or to join a cultural tour to Beijing.</strong></p>
+            <p><strong>Which of the following will lower Mary’s opportunity cost of working for her uncle?</strong></p>
+            <p>A. Mary’s uncle reduces her wage to $2,000.<br>
+               B. The fee for the cultural tour decreases.<br>
+               C. An attractive section of the cultural tour is canceled.<br>
+               D. Mary’s uncle agrees to employ her best friend to work with her.</p>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="lang-zh">
+            <p><strong>機會成本 (Opportunity Cost)：</strong>在作出選擇時，被放棄的選項中價值最高者。簡單來說，就是「為了得到某事物而必須放棄的最大代價」。</p>
+            <p>如果選擇「替叔叔工作」，瑪莉必須放棄的選項是「參加北京文化之旅」。因此，替叔叔工作的機會成本，等於參加文化之旅的<strong>淨利益 (Net Benefit)</strong>。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Opportunity Cost:</strong> The highest-valued option forgone when making a choice. Simply put, it is "the maximum price you must pay to obtain something."</p>
+            <p>If Mary chooses to "work for her uncle," the forgone option is "joining the cultural tour." Therefore, the opportunity cost of working equals the <strong>Net Benefit</strong> of the cultural tour.</p>
+        </div>
+        
+        <div class="math-block">
+            $$\text{Net Benefit of Tour} = \text{Total Benefit of Tour} - \text{Total Cost of Tour}$$
+        </div>
+        
+        <div class="lang-zh">
+            <p>要減低替叔叔工作的機會成本，我們必須尋找一個會<strong>降低</strong>「文化之旅淨利益」的選項。</p>
+        </div>
+        <div class="lang-en">
+            <p>To lower the opportunity cost of working, we must look for an option that <strong>decreases</strong> the "Net Benefit of the cultural tour."</p>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 Detailed Analysis</h2>
+    <p class="lang-zh" style="font-size: 1.2em;"><strong>正確選項：C</strong></p>
+    <p class="lang-en" style="font-size: 1.2em;"><strong>Correct Option: C</strong></p>
+
+    <div class="option wrong">
+        <p class="lang-zh"><span class="option-label">選項 A：</span>瑪莉的叔叔將她的人工減至兩千元。<strong>(錯誤)</strong><br>
+        分析：這項改變降低了「替叔叔工作」（被選選項）的利益，但並沒有改變「文化之旅」（被放棄選項）的價值。因此，機會成本不變。</p>
+        <p class="lang-en"><span class="option-label">Option A:</span> Mary’s uncle reduces her wage to $2,000. <strong>(Wrong)</strong><br>
+        Analysis: This change reduces the benefit of "working for her uncle" (the chosen option), but it does not change the value of the "cultural tour" (the forgone option). Therefore, the opportunity cost remains unchanged.</p>
+    </div>
+
+    <div class="option wrong">
+        <p class="lang-zh"><span class="option-label">選項 B：</span>參加文化之旅費用下降。<strong>(錯誤)</strong><br>
+        分析：文化之旅的成本下降，會導致文化之旅的淨利益\(\text{上升}\)。這意味著放棄文化之旅的代價變大了，因此替叔叔工作的機會成本會\(\text{增加}\)，而不是減少。</p>
+        <p class="lang-en"><span class="option-label">Option B:</span> The fee for the cultural tour decreases. <strong>(Wrong)</strong><br>
+        Analysis: A decrease in the cost of the tour causes the net benefit of the tour to \(\text{rise}\). This means the sacrifice of giving up the tour becomes larger. Therefore, the opportunity cost of working would \(\text{increase}\), not decrease.</p>
+    </div>
+
+    <div class="option correct">
+        <p class="lang-zh"><span class="option-label">選項 C：</span>文化之旅其中一個精彩項目被取消。<strong>(正確)</strong><br>
+        分析：精彩項目被取消，降低了文化之旅的整體價值（利益減少）。因為文化之旅的淨利益\(\text{下降}\)，瑪莉放棄這趟旅程的代價變小了，故替叔叔工作的機會成本\(\text{減低}\)。</p>
+        <p class="lang-en"><span class="option-label">Option C:</span> An attractive section of the cultural tour is canceled. <strong>(Correct)</strong><br>
+        Analysis: The cancellation of an attractive section reduces the overall value of the tour (decrease in benefit). Because the net benefit of the tour \(\text{falls}\), Mary's sacrifice in giving up this trip becomes smaller. Thus, the opportunity cost of working \(\text{decreases}\).</p>
+    </div>
+
+    <div class="option wrong">
+        <p class="lang-zh"><span class="option-label">選項 D：</span>瑪莉的叔同意聘請她最要好的朋友與她一起工作。<strong>(錯誤)</strong><br>
+        分析：與好朋友一起工作增加了「替叔叔工作」的非金錢回報（利益增加），這讓她對自己的選擇更滿意，但完全沒有改變被放棄的「文化之旅」的價值。機會成本不變。</p>
+        <p class="lang-en"><span class="option-label">Option D:</span> Mary’s uncle agrees to employ her best friend to work with her. <strong>(Wrong)</strong><br>
+        Analysis: Working with her best friend increases the non-pecuniary reward of "working for her uncle" (increase in benefit), making her happier with her choice, but it absolutely does not change the value of the forgone "cultural tour". The opportunity cost remains unchanged.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="qna-box">
+        <div class="lang-zh">
+            <p><strong>解題樞紐 (Pivot Point)：</strong><br>
+            這題的關鍵在於認清主體。題目問的是「替叔叔工作」的機會成本。這代表瑪莉<strong>已經選擇了工作</strong>。既然選了工作，她的機會成本就是「沒選的那個選項」——也就是北京文化之旅的價值。你只需要問自己一句話：「哪一個選項會讓北京之旅變得比較不吸引？」</p>
+            <p><strong>干擾資訊 (Distractors)：</strong><br>
+            題目中提到的「賺取三千元」是典型的干擾數字。這個數字決定了「工作」的價值，但與「工作」本身的機會成本無關（除非這個數字會影響她去旅行的成本，但在本題的假設下互不影響）。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Pivot Point:</strong><br>
+            The key to this question is identifying the subject. The question asks for the opportunity cost of "working for her uncle." This means Mary <strong>has already chosen to work</strong>. Since she chose to work, her opportunity cost is strictly about the "unchosen option" — the value of the Beijing cultural tour. You only need to ask yourself one question: "Which option makes the Beijing tour less attractive?"</p>
+            <p><strong>Distractors:</strong><br>
+            The "$3,000" mentioned is a classic distractor. This figure determines the value of "working," but it is irrelevant to calculating the opportunity cost of "working" itself (unless this amount affects her cost of traveling, which is not assumed here).</p>
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <div class="lang-zh">
+            <p><strong>陷阱：誤以為「所選選項」的價值改變，等於機會成本改變。</strong></p>
+            <p>許多學生會誤選 A。他們認為人工減少了，工作的價值下降，所以成本就改變了。在經濟學中，一個選項的「機會成本」與它本身的直接回報無關。工資增加或減少，影響的是她的<strong>經濟租 (Economic Rent)</strong> 或消費者剩餘，而非機會成本。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Trap: Believing that a change in the value of the "chosen option" changes its opportunity cost.</strong></p>
+            <p>Many students mistakenly choose Option A. They think that because the wage is reduced, the value of working decreases, so the cost changes. In Economics, the "opportunity cost" of an option is independent of its own direct return. An increase or decrease in wage affects her <strong>Economic Rent</strong> or consumer surplus, not her opportunity cost.</p>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qna-box">
+        <div class="lang-zh">
+            <p><strong>學生問：</strong>「如果叔叔減人工 (選項A)，瑪莉不就不想工作，轉而去旅行了嗎？那為甚麼機會成本不變？」</p>
+            <p><strong>老師答：</strong>這是一個很好的問題！如果工資減得太多，瑪莉的確可能會「改變選擇」去旅行。但是，題目問的是<strong>「假設她依然選擇替叔叔工作，這個動作的機會成本是多少」</strong>。只要她還是在工作，她放棄的依然是那趟一模一樣的北京之旅。既然北京之旅的內容和費用都沒變，她「放棄的價值」就沒有改變。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Student:</strong> "If her uncle reduces her wage (Option A), wouldn't Mary just not want to work and go on the trip instead? Why does the opportunity cost remain unchanged?"</p>
+            <p><strong>Tutor:</strong> That's a great question! If the wage drops too much, Mary might indeed "change her choice" and travel. However, the question is asking: <strong>"Assuming she still chooses to work for her uncle, what is the opportunity cost of this action?"</strong> As long as she is still working, what she is giving up is the exact same Beijing trip. Since the content and fee of the Beijing trip haven't changed, the "value of what she gave up" hasn't changed.</p>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="lang-zh">
+            <p><strong>「交叉刪除法」一秒解題法：</strong></p>
+            <p>在DSE考試中遇到「甚麼會改變選項 X 的機會成本？」這類題目時，請馬上把所有<strong>「只影響選項 X 本身」</strong>的答案刪除。在這題中，選項 A 和 D 都只與「工作（選項 X）」有關，直接畫大交叉淘汰！你只需在 B 和 C 中，找出哪一個會讓「旅行（選項 Y）」變差即可。秒殺！</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>The "Cross-Out Elimination" Shortcut:</strong></p>
+            <p>In the DSE exam, when you see a question asking "What changes the opportunity cost of Option X?", immediately eliminate any answers that <strong>"only affect Option X itself"</strong>. In this question, Options A and D are solely about "working (Option X)". Cross them out immediately! You only need to look at B and C, and find the one that makes the "trip (Option Y)" worse. Instant solve!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
