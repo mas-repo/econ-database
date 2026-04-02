@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics MC Analysis - Integration</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #0ea5e9;
+            --bg-light: #f8fafc;
+            --box-concept: #f0f9ff;
+            --box-math: #f3f4f6;
+            --box-wrong: #fef2f2;
+            --box-correct: #f0fdf4;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-heading);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "✦";
+            color: var(--secondary);
+        }
+
+        .bilingual-group {
+            margin-bottom: 1.5em;
+        }
+
+        .tc-text {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        /* Specialized Sections */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .concept-box {
+            background-color: var(--box-concept);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: var(--box-math);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-correct {
+            background-color: var(--box-correct);
+            border-color: #4ade80;
+        }
+
+        .option-wrong {
+            background-color: var(--box-wrong);
+            border-color: #f87171;
+        }
+
+        .correct-badge {
+            color: #166534;
+            font-weight: bold;
+            background: #bbf7d0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .wrong-badge {
+            color: #991b1b;
+            font-weight: bold;
+            background: #fecaca;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics MC Guide<br><span style="font-size: 1.2rem; color: #64748b;">文憑試經濟科多項選擇題詳解</span></h1>
+
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Types of Integration (廠商合併的種類) - Horizontal Integration (橫向合併)</div>
+        <div><strong>Difficulty (難度):</strong> ⭐⭐⭐ (3/5)</div>
+        <div><strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">Horizontal Integration</span> 
+            <span class="badge">Risk Diversification</span> 
+            <span class="badge">Economies of Scale</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-group">
+            <div class="tc-text">假設一家中國電腦生產商收購一家美國電腦生產商。下列哪項並不是該中國電腦在該收購中可獲得的好處？</div>
+            <div class="en-text">Suppose a Chinese computer manufacturer takes over a US computer manufacturer. Which of the following is NOT an advantage to the Chinese computer manufacturer in the above takeover?</div>
+        </div>
+        
+        <div class="bilingual-group">
+            <div class="tc-text">A. 將競爭對手變成夥伴</div>
+            <div class="en-text">A. turning a competitor into a partner</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="tc-text">B. 分散需求波動的風險</div>
+            <div class="en-text">B. diversifying risk of demand fluctuation</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="tc-text">C. 為公司建立良好聲譽</div>
+            <div class="en-text">C. building up the goodwill of the company</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="tc-text">D. 降低平均生產成本</div>
+            <div class="en-text">D. lowering the average cost of production</div>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <div class="tc-text"><strong>橫向合併 (Horizontal Integration):</strong> 指兩間生產同類產品或處於同一生產階段的企業合併。在此題目中，兩家公司都是「電腦生產商」，因此這是標準的橫向合併。</div>
+            <div class="en-text"><strong>Horizontal Integration:</strong> This occurs when two firms producing the same type of goods or operating at the same stage of production combine. In this question, both are "computer manufacturers," making it a classic horizontal integration.</div>
+        </div>
+
+        <div class="bilingual-group">
+            <div class="tc-text"><strong>橫向合併的常見好處:</strong> 包括擴大市場佔有率（減少競爭）、享有規模經濟（降低平均成本），以及透過資源共享建立更好的商譽或品牌效應。</div>
+            <div class="en-text"><strong>Common Benefits of Horizontal Integration:</strong> These include expanding market share (reducing competition), enjoying economies of scale (lowering average cost), and building better goodwill or brand effects through resource sharing.</div>
+        </div>
+
+        <div class="bilingual-group">
+            <div class="tc-text"><strong>規模經濟 (Economies of Scale):</strong> 當產量 \( Q \) 增加時，由於固定成本被分攤或購買原材料時享有折扣，長遠的平均成本 \( AC \) 會下降。</div>
+            <div class="en-text"><strong>Economies of Scale:</strong> As output \( Q \) increases, the long-run average cost \( AC \) decreases because fixed costs are spread out or bulk purchase discounts are obtained.</div>
+        </div>
+        
+        <div class="math-block">
+            $$ AC = \frac{Total\ Cost\ (TC)}{Quantity\ (Q)} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案):</strong> <span class="badge" style="font-size: 1rem; background-color: #ef4444;">Option B</span></p>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-group">
+            <div class="tc-text"><span class="wrong-badge">A</span> 將競爭對手變成夥伴</div>
+            <div class="tc-text"><strong>分析：</strong> 這是橫向合併的經典好處。收購了美國的競爭對手，原本的對手就成為了旗下公司，直接減少了市場競爭。因此，這<strong>是</strong>一個好處。</div>
+            <div class="en-text"><span class="wrong-badge">A</span> turning a competitor into a partner</div>
+            <div class="en-text"><strong>Analysis:</strong> This is a classic benefit of horizontal integration. By acquiring the US competitor, the rival becomes a subsidiary, directly reducing market competition. Therefore, this <strong>IS</strong> an advantage.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <div class="bilingual-group">
+            <div class="tc-text"><span class="correct-badge">B</span> 分散需求波動的風險</div>
+            <div class="tc-text"><strong>分析：</strong> 這是<strong>不正確</strong>的（因此是本題答案）。因為兩家公司都是生產「電腦」，產品種類單一。如果全球對電腦的需求整體下跌（例如經濟衰退），這家合併後的大型電腦公司依然會受到嚴重打擊。分散需求風險通常是<strong>複合合併 (Conglomerate Integration)</strong> 或<strong>側向合併 (Lateral Integration)</strong> 的特徵（即生產完全不同或相關但非同類的產品）。</div>
+            <div class="en-text"><span class="correct-badge">B</span> diversifying risk of demand fluctuation</div>
+            <div class="en-text"><strong>Analysis:</strong> This is <strong>INCORRECT</strong> (and thus the correct answer to the question). Because both companies produce "computers," their product line is highly uniform. If global demand for computers falls (e.g., during a recession), this merged giant will still suffer a heavy blow. Diversifying demand risk is typically a characteristic of <strong>Conglomerate Integration</strong> or <strong>Lateral Integration</strong> (producing completely unrelated or related-but-different products).</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-group">
+            <div class="tc-text"><span class="wrong-badge">C</span> 為公司建立良好聲譽</div>
+            <div class="tc-text"><strong>分析：</strong> 中國企業收購知名的美國企業（例如現實中的 Lenovo 收購 IBM 電腦業務），可以借助對方原有的國際知名度和客戶網絡，大幅提升自身的品牌商譽。因此，這<strong>是</strong>一個好處。</div>
+            <div class="en-text"><span class="wrong-badge">C</span> building up the goodwill of the company</div>
+            <div class="en-text"><strong>Analysis:</strong> A Chinese firm acquiring an established US firm (like the real-world example of Lenovo acquiring IBM's PC division) can leverage the acquired firm's international brand recognition and customer network to significantly boost its own goodwill. Therefore, this <strong>IS</strong> an advantage.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-group">
+            <div class="tc-text"><span class="wrong-badge">D</span> 降低平均生產成本</div>
+            <div class="tc-text"><strong>分析：</strong> 合併後，產量 \( Q \) 大幅增加，公司可以進行大量採購以獲得折扣，或整合研發部門（R&D），從而享有規模經濟 (Economies of Scale)。這導致平均成本下降。因此，這<strong>是</strong>一個好處。</div>
+            <div class="en-text"><span class="wrong-badge">D</span> lowering the average cost of production</div>
+            <div class="en-text"><strong>Analysis:</strong> After the merger, the output \( Q \) increases significantly. The firm can make bulk purchases to get discounts or consolidate Research & Development (R&D) departments, thereby enjoying economies of scale. This leads to a lower average cost. Therefore, this <strong>IS</strong> an advantage.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li>
+            <div class="tc-text"><strong>解題樞紐 (The Pivot Point):</strong> 留意兩家公司的業務性質。「電腦生產商」收購「電腦生產商」，代表這是<strong>同類產品</strong>的合併（橫向）。只要確認了這一點，就能立刻聯想到「無法分散產品單一的市場風險」。</div>
+            <div class="en-text"><strong>The Pivot Point:</strong> Pay attention to the business nature of the two companies. A "computer manufacturer" acquiring a "computer manufacturer" means this is a merger of the <strong>same product type</strong> (Horizontal). Once you identify this, you can immediately deduce that "it cannot diversify the market risk of a single product line."</div>
+        </li>
+        <li>
+            <div class="tc-text"><strong>擾亂資訊 (Distractors):</strong> 題目特意寫出「中國」與「美國」。這很容易讓同學誤以為「地理上的擴張 = 風險分散」。在經濟學的嚴格定義中，這裡的「需求波動風險」主要針對<strong>產品市場</strong>（如科技業衰退），單純跨國生產同一產品並不能完全免疫該行業的整體衰退。</div>
+            <div class="en-text"><strong>Distractors:</strong> The question deliberately specifies "Chinese" and "US". This easily misleads students into thinking "geographical expansion = risk diversification." In strict economic definitions here, "risk of demand fluctuation" primarily refers to the <strong>product market</strong> (e.g., tech industry slump). Merely producing the same product across different countries does not grant immunity to an industry-wide recession.</div>
+        </li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="background-color: #fff1f2; border-color: #f43f5e;">
+        <div class="bilingual-group">
+            <div class="tc-text"><strong>❌ 錯誤觀念：混淆橫向合併與複合合併的好處</strong><br>許多學生只要看到「收購 / 合併」，就會自動將所有「好處」都選進去。記住，<strong>「分散風險」是複合合併 (Conglomerate) 的專利商標！</strong> 賣電腦的去收購賣雪糕的，才能在電腦銷量差時，靠賣雪糕來穩定收入。</div>
+            <div class="en-text"><strong>❌ Misconception: Confusing the benefits of Horizontal and Conglomerate Integration</strong><br>Many students automatically select all listed "benefits" whenever they see the word "takeover/merger". Remember, <strong>"diversifying risk" is the trademark benefit of Conglomerate Integration!</strong> A computer seller acquiring an ice cream seller can stabilize its income by selling ice cream when computer sales drop.</div>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="bilingual-group">
+        <div class="tc-text"><strong>🙋‍♂️ 學生問：</strong> 中國和美國是兩個不同的市場。如果中國對電腦的需求下跌，但美國的需求上升，那不就能夠「分散需求波動的風險」了嗎？</div>
+        <div class="en-text"><strong>🙋‍♂️ Student:</strong> China and the US are two different markets. If demand for computers drops in China but rises in the US, doesn't that "diversify the risk of demand fluctuation"?</div>
+    </div>
+    <div class="bilingual-group">
+        <div class="tc-text"><strong>👨‍🏫 導師答：</strong> 這是個很好的思考！地理上的多樣化確實能稍微緩衝地區性經濟衝擊。然而，在 DSE 經濟科的標準框架中，「分散需求波動的風險」是特定用來區分「不同產品」（側向/複合合併）與「同一產品」（橫向合併）的考點。因為兩者同屬個人電腦行業，若面對全球性科技股災或智能手機取代電腦的大趨勢，兩國的需求會同時下跌。因此，考試時遇到同類產品合併，預設為「不能」分散需求風險。</div>
+        <div class="en-text"><strong>👨‍🏫 Tutor:</strong> That's a great thought! Geographical diversification can indeed slightly cushion regional economic shocks. However, within the standard framework of DSE Economics, "diversifying risk of demand fluctuation" is a specific testing point used to distinguish "different products" (Lateral/Conglomerate) from the "same product" (Horizontal). Because both belong to the PC industry, if there is a global tech crash or a megatrend of smartphones replacing PCs, demand in both countries will drop simultaneously. Therefore, in exams, always assume that merging same-product firms "cannot" diversify demand risk.</div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual-group">
+        <div class="tc-text"><strong>⚡ 秒殺技巧 (Keyword Matching)：</strong><br>做合併種類的 MC 題，養成圈出產品名稱的習慣。這題圈出「電腦」和「電腦」。<br>
+        <strong>公式：</strong> 同產品 (Same Product) ➜ 橫向合併 (Horizontal) ➜ 絕對<strong>不能</strong>分散需求風險。<br>看到「分散風險 (Diversifying risk)」，直接找有沒有出現兩種完全不同的產品。沒有？那它就是答案 (NOT an advantage)！</div>
+        <div class="en-text"><strong>⚡ Shortcut Trick (Keyword Matching):</strong><br>When doing MCs on integration types, make it a habit to circle the product names. Here, circle "computer" and "computer".<br>
+        <strong>Formula:</strong> Same Product ➜ Horizontal Integration ➜ Absolutely <strong>CANNOT</strong> diversify demand risk.<br>When you see "Diversifying risk," immediately check if there are two completely different products. No? Then that's your answer for "NOT an advantage"!</div>
+    </div>
+
+</div>
+
+</body>
+</html>
