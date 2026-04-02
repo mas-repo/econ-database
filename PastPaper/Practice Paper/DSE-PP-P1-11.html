@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Market Intervention - Quota</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --bg-blue: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .concept-box {
+            background-color: var(--bg-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .tc {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f9fafb;
+        }
+        .option-analysis {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .correct-answer {
+            color: #166534;
+            background-color: #f0fdf4;
+            border-color: #22c55e;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            th, td { padding: 6px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>經濟學題目解析 | Economics Question Analysis</h1>
+        <p><strong>主題 (Topic):</strong> 市場干預：配額 | Market Intervention: Quotas</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>關鍵字 (Key Concepts):</strong> 
+            <span class="tag">均衡價格 (Equilibrium Price)</span>
+            <span class="tag">有效配額 (Effective Quota)</span>
+            <span class="tag">無效配額 (Ineffective Quota)</span>
+        </p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <p class="tc">參閱以下物品X的需求表及供應表。</p>
+    <p class="en">Refer to the following demand and supply schedules of good X.</p>
+    
+    <table>
+        <tr>
+            <th>單位價格 Unit price ($)</th>
+            <td>20</td><td>18</td><td>16</td><td>14</td><td>12</td><td>10</td>
+        </tr>
+        <tr>
+            <th>需求量 Quantity demanded (units)</th>
+            <td>500</td><td>550</td><td>600</td><td>650</td><td>700</td><td>750</td>
+        </tr>
+        <tr>
+            <th>供應量 Quantity supplied (units)</th>
+            <td>800</td><td>750</td><td>700</td><td>650</td><td>600</td><td>550</td>
+        </tr>
+    </table>
+
+    <p class="tc">若政府把配額由700單位減低至550單位，</p>
+    <p class="en">If the government lowers the quota from 700 units to 550 units,</p>
+
+    <p class="tc">A. 市價會下跌$2。<br>B. 市價會上升$2。<br>C. 市價會上升$4。<br>D. 市價會上升$6。</p>
+    <p class="en">A. the market price will drop by $2.<br>B. the market price will rise by $2.<br>C. the market price will rise by $4.<br>D. the market price will rise by $6.</p>
+
+    <div class="concept-box">
+        <h2>2. 概念重溫 (Concept Review)</h2>
+        <p class="tc"><strong>市場均衡 (Market Equilibrium)：</strong>當需求量 \(Q_d\) 等於供應量 \(Q_s\) 時的狀態，此時的價格為均衡價格 \(P_e\)。</p>
+        <p class="en"><strong>Market Equilibrium:</strong> The state where quantity demanded \(Q_d\) equals quantity supplied \(Q_s\). The price at this state is the equilibrium price \(P_e\).</p>
+        
+        <div class="math-block">
+            $$ Q_d = Q_s \implies P_e \text{ and } Q_e $$
+        </div>
+
+        <p class="tc"><strong>配額 (Quota)：</strong>政府對某物品設定的最高生產或進口數量限制。</p>
+        <p class="en"><strong>Quota:</strong> A government-imposed maximum limit on the quantity produced or imported of a specific good.</p>
+
+        <p class="tc"><strong>有效與無效配額 (Effective vs. Ineffective Quota)：</strong></p>
+        <p class="en"><strong>Effective vs. Ineffective Quota:</strong></p>
+        <ul>
+            <li>
+                <span class="tc">若 配額量 \(\geq\) 均衡數量 \(Q_e\)，則配額<strong>無效</strong> (不會影響市場價格和交易量)。</span><br>
+                <span class="en">If Quota limit \(\geq\) Equilibrium quantity \(Q_e\), the quota is <strong>ineffective</strong> (does not affect market price or quantity transacted).</span>
+            </li>
+            <li>
+                <span class="tc">若 配額量 \(<\) 均衡數量 \(Q_e\)，則配額<strong>有效</strong>。消費者會根據新的稀缺數量在需求曲線上競爭，推高市場價格。</span><br>
+                <span class="en">If Quota limit \(<\) Equilibrium quantity \(Q_e\), the quota is <strong>effective</strong>. Consumers will compete for the restricted quantity along the demand curve, pushing up the market price.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="option-analysis correct-answer">
+        <h3>正確答案 (Correct Option): C</h3>
+        <p class="tc"><strong>步驟 1：找出自由市場均衡。</strong> 從圖表中可見，當價格為 $14 時，需求量 (650) 等於供應量 (650)。因此，原來的均衡價格 \(P_1 = \$14\)，均衡交易量 \(Q_e = 650\)。</p>
+        <p class="en"><strong>Step 1: Find the free market equilibrium.</strong> From the table, when the price is $14, the quantity demanded (650) equals the quantity supplied (650). Therefore, the original equilibrium price \(P_1 = \$14\) and equilibrium quantity \(Q_e = 650\).</p>
+
+        <p class="tc"><strong>步驟 2：分析原本的 700 單位配額。</strong> 由於 700 單位大於自由市場的均衡交易量 (650 單位)，這個配額是<strong>無效的</strong>。市場價格維持在均衡點的 $14。</p>
+        <p class="en"><strong>Step 2: Analyze the original quota of 700 units.</strong> Since 700 units is greater than the free market equilibrium quantity (650 units), this quota is <strong>ineffective</strong>. The market price remains at the equilibrium point of $14.</p>
+
+        <p class="tc"><strong>步驟 3：分析新的 550 單位配額。</strong> 新配額 (550) 小於均衡交易量 (650)，因此配額<strong>有效</strong>。市場實際交易量被限制在 550 單位。消費者願意為 550 單位支付的最高價格 (查看需求表) 是 $18。因此，新市價 \(P_2 = \$18\)。</p>
+        <p class="en"><strong>Step 3: Analyze the new quota of 550 units.</strong> The new quota (550) is less than the equilibrium quantity (650), making it <strong>effective</strong>. The transacted quantity is restricted to 550 units. The maximum price consumers are willing to pay for 550 units (look at the demand schedule) is $18. Thus, the new market price \(P_2 = \$18\).</p>
+
+        <p class="tc"><strong>步驟 4：計算價格變動。</strong> 新價格 ($18) 減去 舊價格 ($14) = 上升 $4。故選 C。</p>
+        <p class="en"><strong>Step 4: Calculate the price change.</strong> New price ($18) minus Old price ($14) = Rise by $4. Therefore, Option C is correct.</p>
+    </div>
+
+    <div class="option-analysis">
+        <h3>錯誤選項分析 (Analysis of Incorrect Options)</h3>
+        <p class="tc"><strong>選項 A & B：</strong>這兩個選項通常是學生計算錯誤或看錯供求表數值時得出的結果。</p>
+        <p class="en"><strong>Options A & B:</strong> These options are typically chosen if a student makes a calculation error or misreads the values in the supply and demand tables.</p>
+        
+        <p class="tc"><strong>選項 D (常犯錯誤陷阱)：</strong>若學生誤以為原本 700 單位的配額是有效的，並錯誤地查看「當需求量為700時的價格」(\(P = \$12\))，他們會以為原價是 $12。然後用新價 $18 減去 $12，得出錯誤的上升 $6 結論。實際上，原本的配額根本沒有推低市價至 $12，因為在 $12 時供應商只願提供 600 單位。</p>
+        <p class="en"><strong>Option D (Common Trap):</strong> If a student mistakenly thinks the original quota of 700 units was effective and incorrectly looks at the "price when quantity demanded is 700" (\(P = \$12\)), they will assume the old price was $12. Subtracting $12 from the new price of $18 gives an incorrect conclusion of a $6 rise. In reality, the original quota never pushed the price down to $12 because suppliers are only willing to supply 600 units at $12.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="tc"><strong>拆題關鍵 (Pivot Point)：</strong></p>
+    <p class="en"><strong>Pivot Point:</strong></p>
+    <ul>
+        <li>
+            <span class="tc">解決此題的最關鍵一步是<strong>判斷初始政策的狀態</strong>。不要假設每一個寫出來的政策都必定會改變市場。</span><br>
+            <span class="en">The most crucial step in solving this problem is <strong>evaluating the status of the initial policy</strong>. Do not assume every policy mentioned automatically changes the market.</span>
+        </li>
+    </ul>
+
+    <p class="tc"><strong>干擾資訊 (Distractors)：</strong></p>
+    <p class="en"><strong>Distractors:</strong></p>
+    <ul>
+        <li>
+            <span class="tc">供應表在低於均衡價格 (如 $12, $10) 時的數值完全是干擾。一旦配額生效，價格由<strong>需求者</strong>的最高支付意願 (最高願意支付的價格) 決定，我們只需查看需求表。</span><br>
+            <span class="en">The supply quantities at prices below the equilibrium (e.g., $12, $10) are purely distractors. Once a quota is effective, the price is determined by the <strong>demanders'</strong> maximum willingness to pay, so we only need to look at the demand schedule.</span>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <p class="tc"><strong>誤區：看錯決定新價格的曲線。</strong></p>
+    <p class="en"><strong>Misconception: Looking at the wrong curve to determine the new price.</strong></p>
+    <p class="tc">很多學生知道配額是 550 單位後，會在表中尋找 550 這個數字。他們看到價格 $10 時，供應量也是 550，於是誤以為新價格是 $10。這是完全錯誤的。因為在數量被限制為 550 的情況下，消費者願意以高達 $18 的價格購買這些稀有物品。在自由競爭下，價格會被推高至 $18，而不是停留在 $10。</p>
+    <p class="en">Many students, knowing the quota is 550 units, search for the number 550 in the table. They see that at a price of $10, quantity supplied is 550, and mistakenly conclude the new price is $10. This is fundamentally wrong. Given the restricted quantity of 550, consumers are willing to pay up to $18. Through free competition, the price will be bid up to $18, not stay at $10.</p>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <p class="tc"><strong>Q1：如果新的配額設定為 600 單位，價格又會變成多少呢？</strong></p>
+    <p class="en"><strong>Q1: What if the new quota was set at 600 units? What would the price be?</strong></p>
+    <p class="tc"><strong>A1：</strong>如果配額是 600 單位 (依然小於均衡的 650，所以有效)，我們只需查看需求表，找出當需求量為 600 時的對應價格。答案是 $16。</p>
+    <p class="en"><strong>A1:</strong> If the quota was 600 units (still less than the equilibrium of 650, so it's effective), we simply check the demand schedule to find the price corresponding to a quantity demanded of 600. The answer would be $16.</p>
+
+    <div class="concept-box">
+        <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p class="tc">做這類題目時，遵循以下「三步秒殺法」：</p>
+        <p class="en">When doing these types of questions, follow this "3-Step Quick Kill" method:</p>
+        <ol>
+            <li>
+                <span class="tc"><strong>找均衡：</strong> 肉眼掃描表格，找出 \(Q_d = Q_s\) 的那一行。(得出 \(P_e=14\), \(Q_e=650\))。</span><br>
+                <span class="en"><strong>Find Equilibrium:</strong> Visually scan the table to find the row where \(Q_d = Q_s\). (Yields \(P_e=14\), \(Q_e=650\)).</span>
+            </li>
+            <li>
+                <span class="tc"><strong>查舊政策：</strong> 原配額 700 > 650，直接劃掉它，當它不存在，舊價即為 \(P_e = 14\)。</span><br>
+                <span class="en"><strong>Check Old Policy:</strong> Old quota 700 > 650, cross it out immediately, pretend it doesn't exist. Old price is \(P_e = 14\).</span>
+            </li>
+            <li>
+                <span class="tc"><strong>對應新政策：</strong> 新配額 550 < 650，有效。直接在<strong>需求表</strong>找數量 550 對應的價格。(得出新價為 18)。計算差距：18 - 14 = 4。</span><br>
+                <span class="en"><strong>Match New Policy:</strong> New quota 550 < 650, effective. Look directly at the <strong>demand schedule</strong> for the price corresponding to quantity 550. (Yields new price of 18). Calculate gap: 18 - 14 = 4.</span>
+            </li>
+        </ol>
+    </div>
+
+</body>
+</html>

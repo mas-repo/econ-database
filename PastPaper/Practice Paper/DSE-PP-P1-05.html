@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Analysis: Law of Diminishing Marginal Returns</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #0ea5e9;
+            --bg-concept: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #334155;
+            --text-en: #475569;
+            --border-light: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 { color: var(--primary-color); }
+        h1 { border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; font-size: 1.8rem; }
+        h2 { margin-top: 30px; font-size: 1.4rem; border-left: 4px solid var(--primary-color); padding-left: 10px;}
+
+        /* Section Specific Styles */
+        .header-section { background-color: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border-light); }
+        .question-box { background-color: #fff; border: 1px solid #cbd5e1; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .tips-box { background-color: #fffbeb; border-left: 5px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .qa-box { background-color: #fdf4ff; border-left: 5px solid #d946ef; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+
+        /* Typography & Bilingual */
+        .zh { font-weight: 500; margin-bottom: 8px; display: block; }
+        .en { color: var(--text-en); font-size: 0.95em; margin-bottom: 16px; display: block; padding-left: 10px; border-left: 2px solid #cbd5e1; }
+        
+        .correct-tag { background-color: #dcfce7; color: #166534; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+        .wrong-tag { background-color: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; background-color: #fff; }
+        th, td { border: 1px solid var(--border-light); padding: 12px; text-align: center; }
+        th { background-color: #f1f5f9; font-weight: bold; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.9em; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Guide: Multiple-Choice Analysis</h1>
+
+    <div class="header-section">
+        <p><span class="zh"><strong>主題 (Topic):</strong> 短期生產與邊際回報遞減定律 (Short-run Production & Law of Diminishing Marginal Returns)</span></p>
+        <p><span class="zh"><strong>難度 (Difficulty):</strong> ★★★☆☆</span></p>
+        <p><span class="zh"><strong>核心概念 (Key Concepts):</strong> 總產量 (Total Product), 邊際產量 (Marginal Product), 固定要素 (Fixed Factor), 邏輯推論 (Logical Deduction)</span></p>
+    </div>
+
+    <h2>2. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="zh">下表顯示某廠商的月產量。該廠商只有兩種投入：機器及勞力。</p>
+        <p class="en">The following table shows the monthly production of a firm with two inputs, machines and labour.</p>
+        
+        <table>
+            <tr>
+                <th>機器(單位)<br>Machines (Units)</th>
+                <th>勞力(單位)<br>Labour (Units)</th>
+                <th>總產量(單位)<br>Total product (Units)</th>
+            </tr>
+            <tr><td>2</td><td>5</td><td>10</td></tr>
+            <tr><td>3</td><td>5</td><td>20</td></tr>
+            <tr><td>4</td><td>5</td><td>32</td></tr>
+            <tr><td>5</td><td>5</td><td>42</td></tr>
+            <tr><td>6</td><td>5</td><td>X</td></tr>
+        </table>
+
+        <p class="zh">若邊際回報遞減定律適用於該廠商，X：</p>
+        <p class="en">If the law of diminishing marginal returns applies to the firm, X:</p>
+        
+        <p class="zh">A. 必定小於42。<br>B. 必定大於42。<br>C. 可以等於42。<br>D. 等於52。</p>
+        <p class="en">A. must be smaller than 42.<br>B. must be greater than 42.<br>C. can be equal to 42.<br>D. is equal to 52.</p>
+    </div>
+
+    <h2>3. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>邊際回報遞減定律 (Law of Diminishing Marginal Returns):</strong> 
+        在短期內，當最少一種生產要素（例如勞力）的數量固定不變，而不斷增加可變生產要素（例如機器）的數量時，該可變要素的邊際產量（Marginal Product, MP）最終必定會下降。</p>
+        <p class="en"><strong>Law of Diminishing Marginal Returns:</strong> In the short run, when at least one factor of production is fixed (e.g., labour), and successive units of a variable factor (e.g., machines) are added, the marginal product (MP) of the variable factor will eventually decrease.</p>
+
+        <p class="zh"><strong>邊際產量 (Marginal Product) 的計算公式：</strong></p>
+        <p class="en"><strong>Formula for Marginal Product:</strong></p>
+        
+        <div class="math-block">
+            $$MP = \frac{\Delta TP}{\Delta Q_v}$$
+        </div>
+        
+        <p class="zh">當中 \(TP\) 代表總產量 (Total Product)，而 \(Q_v\) 代表可變要素數量 (Quantity of variable factor)。</p>
+        <p class="en">Where \(TP\) stands for Total Product, and \(Q_v\) stands for Quantity of variable factor.</p>
+    </div>
+
+    <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><span class="zh">正確答案是: <span class="correct-tag">選項 C (Option C)</span></span></p>
+
+    <div class="zh">為了找出答案，我們必須先計算機器的邊際產量 (MP)。請注意，在這個題目中，勞力是<strong>固定要素</strong>（維持在5個單位），機器才是<strong>可變要素</strong>。</div>
+    <div class="en">To find the answer, we must first calculate the Marginal Product (MP) of machines. Note that in this question, labour is the <strong>fixed factor</strong> (remains at 5 units), while machines are the <strong>variable factor</strong>.</div>
+
+    <table>
+        <tr>
+            <th>機器 (Machines)</th>
+            <th>總產量 (TP)</th>
+            <th>邊際產量 (MP)</th>
+        </tr>
+        <tr><td>2</td><td>10</td><td>-</td></tr>
+        <tr><td>3</td><td>20</td><td>\(20 - 10 = 10\)</td></tr>
+        <tr><td>4</td><td>32</td><td>\(32 - 20 = 12\)</td></tr>
+        <tr><td>5</td><td>42</td><td>\(42 - 32 = 10\)</td></tr>
+        <tr><td>6</td><td>X</td><td>\(X - 42\)</td></tr>
+    </table>
+
+    <div class="zh">從圖表可見，當機器數量由第4部增加至第5部時，邊際產量由 12 下降至 10。這意味著<strong>邊際回報遞減定律已經開始生效</strong>。因此，當加入第6部機器時，其邊際產量必須嚴格小於 10。即是：</div>
+    <div class="en">From the table, when machines increase from 4 to 5 units, MP drops from 12 to 10. This means the <strong>law of diminishing marginal returns has already set in</strong>. Therefore, when the 6th machine is added, its MP must be strictly less than 10. That is:</div>
+    
+    <div class="math-block">
+        $$MP_6 < 10 \implies X - 42 < 10 \implies X < 52$$
+    </div>
+
+    <div style="margin-top: 20px;">
+        <h4 class="zh">選項 A分析 <span class="wrong-tag">錯誤 (Wrong)</span></h4>
+        <p class="zh">「必定小於42」。如果 \(X < 42\)，即代表邊際產量是負數 (\(MP < 0\))。雖然遞減定律容許邊際產量出現負數，但並非「必定」(must be) 如此。只要 \(X = 45\) (此時 \(MP = 3 < 10\))，定律仍然成立。因此A錯誤。</p>
+        <p class="en">"must be smaller than 42". If \(X < 42\), it means MP is negative. Although the law allows MP to be negative, it doesn't "must be". As long as \(X = 45\) (where \(MP = 3 < 10\)), the law holds. Thus, A is incorrect.</p>
+
+        <h4 class="zh">選項 B分析 <span class="wrong-tag">錯誤 (Wrong)</span></h4>
+        <p class="zh">「必定大於42」。如果邊際產量大幅下降至負數 (例如 \(MP = -2\))，則 \(X = 40\)。這也是有可能發生的，所以 \(X\) 不「必定」大於42。因此B錯誤。</p>
+        <p class="en">"must be greater than 42". If MP drops significantly to a negative value (e.g., \(MP = -2\)), then \(X = 40\). This is possible, so \(X\) does not "must be" greater than 42. Thus, B is incorrect.</p>
+
+        <h4 class="zh">選項 C分析 <span class="correct-tag">正確 (Correct)</span></h4>
+        <p class="zh">「可以等於42」。如果 \(X = 42\)，代表第6部機器的邊際產量為 0 (\(42 - 42 = 0\))。因為 \(0 < 10\)，這完全符合邊際回報遞減的條件。因為選項使用了「可以」(can be) 這個字眼表達可能性，故C是唯一邏輯正確的答案。</p>
+        <p class="en">"can be equal to 42". If \(X = 42\), the MP of the 6th machine is 0 (\(42 - 42 = 0\)). Since \(0 < 10\), this perfectly satisfies the condition of diminishing marginal returns. Because the option uses the word "can be" to express a possibility, C is the only logically correct answer.</p>
+
+        <h4 class="zh">選項 D分析 <span class="wrong-tag">錯誤 (Wrong)</span></h4>
+        <p class="zh">「等於52」。如果 \(X = 52\)，邊際產量將會是 10 (\(52 - 42 = 10\))。由於上一階段的 MP 也是 10，這代表 MP 沒有下降（維持不變），違反了邊際回報遞減定律。因此D錯誤。</p>
+        <p class="en">"is equal to 52". If \(X = 52\), MP would be 10 (\(52 - 42 = 10\)). Since the previous MP was also 10, this means MP did not decrease (remains constant), which violates the law. Thus, D is incorrect.</p>
+    </div>
+
+    <h2>5. 題目拆解 (Problem Decomposition)</h2>
+    <div class="tips-box">
+        <p class="zh"><strong>1. 找出「轉捩點」 (The Pivot Point):</strong><br>
+        本題的關鍵在於找出邊際產量 (MP) 何時開始下降。很多學生看見 \(X\) 就會慌張，但只要默默在旁邊寫出每個階段的 MP (\(10 \rightarrow 12 \rightarrow 10\))，你就會發現遞減效應在第5部機器已經開始。因此下一步的 MP 必然受到 \(MP < 10\) 的限制。</p>
+        <p class="en"><strong>1. Finding the Pivot Point:</strong><br>
+        The key is to find out when the Marginal Product (MP) starts to decrease. Don't panic when you see \(X\). Just map out the MP for each stage (\(10 \rightarrow 12 \rightarrow 10\)), and you'll realize diminishing returns kicked in at the 5th machine. Thus, the next MP is bounded by \(MP < 10\).</p>
+
+        <p class="zh"><strong>2. 語意邏輯分析 (Semantic Logic):</strong><br>
+        留意選項中的「必定」(must be) 與「可以」(can be)。只要你能舉出一個反例（例如 \(X=45\) 或 \(X=40\) 都是合法的），包含「必定」的選項通常都是錯誤的陷阱。</p>
+        <p class="en"><strong>2. Semantic Logic:</strong><br>
+        Pay attention to "must be" vs "can be" in the options. As long as you can find a counter-example (e.g., both \(X=45\) and \(X=40\) are valid), options containing "must be" are usually wrong traps.</p>
+    </div>
+
+    <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li>
+            <span class="zh"><strong>慣性思維陷阱：</strong> 學生常以為「勞力」一定是可變要素，「機器/資本」一定是固定要素。這題剛好相反，勞力被設定為5（固定），機器數量在變動。考試時必須看清楚表格！</span>
+            <span class="en"><strong>Habitual Thinking Trap:</strong> Students often assume "Labour" is always the variable factor and "Machines/Capital" is the fixed factor. This question reverses it! Labour is fixed at 5, while machines vary. Always read the table carefully!</span>
+        </li>
+        <li>
+            <span class="zh"><strong>誤解遞減定律：</strong> 以為邊際回報遞減等於總產量 (TP) 一定要下跌。其實遞減的只是邊際產量 (MP)，只要 MP 仍在正數範圍，總產量依然會上升（只是上升速度減慢）。</span>
+            <span class="en"><strong>Misunderstanding the Law:</strong> Assuming diminishing returns means Total Product (TP) must fall. In fact, only Marginal Product (MP) diminishes. As long as MP is positive, TP will still rise (just at a decreasing rate).</span>
+        </li>
+    </ul>
+
+    <h2>7. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>Q: 為什麼答案不能是 D？如果總產量一直以等差數列增加（每次加10），不是也很合理嗎？</strong></p>
+        <p class="en"><strong>Q: Why can't the answer be D? Wouldn't it be reasonable if total product increases in an arithmetic progression (adding 10 each time)?</strong></p>
+        
+        <p class="zh"><strong>A:</strong> 數學上合理，但在經濟學上，題目已經明確設定「邊際回報遞減定律適用」(The law of diminishing marginal returns applies)。如果每次都加 10，代表 MP 固定不變，這就違反了「邊際產量必定會下跌」的定律前設。因此 D 在這題的情境下是絕對錯誤的。</p>
+        <p class="en"><strong>A:</strong> Mathematically it's a pattern, but economically, the question explicitly states that the "law of diminishing marginal returns applies". If you add 10 every time, MP is constant, which violates the premise that "MP must eventually diminish". Therefore, D is absolutely wrong in this context.</p>
+    </div>
+
+    <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p class="zh"><strong>秒殺法 (The 10-Second Shortcut):</strong></p>
+    <p class="en"><strong>The 10-Second Shortcut:</strong></p>
+    <ol>
+        <li><span class="zh">看見表格，立刻在右邊寫下 MP：\(10, 12, 10\)。</span> <span class="en">(See table, instantly write MP on the right: \(10, 12, 10\).)</span></li>
+        <li><span class="zh">發現最後一個 MP 是 10，根據定律，下一個必定 \(< 10\)。</span> <span class="en">(Notice the last MP is 10. By law, the next must be \(< 10\).)</span></li>
+        <li><span class="zh">因此新產量 \(X < 42 + 10 = 52\)。立刻刪除選項 D。</span> <span class="en">(So new TP \(X < 42 + 10 = 52\). Immediately cross out Option D.)</span></li>
+        <li><span class="zh">選項 A 和 B 是絕對語氣 ("必定" / "must be")，在 \(X < 52\) 這個廣闊範圍內極容易被推翻。唯一保留彈性 ("可以" / "can be") 的選項 C 是最安全的選擇，直接選 C。</span> <span class="en">(Options A and B use absolute tones "must be", which are easily disproven in the wide range of \(X < 52\). Option C is the only flexible option "can be", making it the safest choice. Pick C.)</span></li>
+    </ol>
+</div>
+
+</body>
+</html>

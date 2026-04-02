@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --correct-color: #16a34a;
+            --incorrect-color: #dc2626;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background-color: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: var(--bg-light);
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .analysis-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        .correct {
+            border-left: 5px solid var(--correct-color);
+        }
+        .incorrect {
+            border-left: 5px solid var(--incorrect-color);
+        }
+        .status-label {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .status-correct { color: var(--correct-color); }
+        .status-incorrect { color: var(--incorrect-color); }
+        
+        .qa-box {
+            background-color: #fdfbf7;
+            border: 1px solid #f3e8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .question-text { font-weight: bold; color: #7e22ce; }
+        
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>HKDSE Economics MCQ Analysis</h1>
+        <div class="tag-container">
+            <span class="tag">📚 課題 Topic: 企業所有權類型 Types of Business Ownership</span>
+            <span class="tag">⭐ 難度 Difficulty: ★★☆☆☆</span>
+            <span class="tag">🔑 關鍵字: 獨立法人實體 Separate Legal Entity, 延續性 Continuity</span>
+        </div>
+    </header>
+
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <p><strong>湯米和大衛將他們的公司由合夥轉成私人有限公司。下列哪項陳述是正確的？</strong></p>
+        <p class="bilingual-en">Tommy and David have turned their firm from a partnership into a private limited company. Which of the following statements is correct?</p>
+        
+        <div class="option">
+            A. 他們工作意慾較高，因為利得稅稅率減低了。<br>
+            <span class="bilingual-en">A. They have a higher incentive to work as the profits tax rate is lower.</span>
+        </div>
+        <div class="option">
+            B. 即使其中一個東主破產，公司仍可繼續存在。<br>
+            <span class="bilingual-en">B. The firm can still exist even if one of the owners goes bankrupt.</span>
+        </div>
+        <div class="option">
+            C. 公司的規模會增加。<br>
+            <span class="bilingual-en">C. The size of the firm will increase.</span>
+        </div>
+        <div class="option">
+            D. 公司的財政狀況須透露予公眾。<br>
+            <span class="bilingual-en">D. The financial conditions of the firm have to be disclosed to the public.</span>
+        </div>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p><strong>1. 合夥 (Partnership) vs. 有限公司 (Limited Company)</strong></p>
+        <p>合夥企業沒有獨立法人地位，東主與企業在法律上被視為同一體，因此缺乏延續性（任何一方破產或死亡都會導致合夥解散）。相反，有限公司是<strong>獨立法人實體 (Separate Legal Entity)</strong>，享有無限期的延續性 (Perpetual Succession)。</p>
+        <p class="bilingual-en">A partnership lacks a separate legal status; the owners and the business are legally identical, meaning it lacks continuity (bankruptcy or death of a partner dissolves the partnership). Conversely, a limited company is a <strong>Separate Legal Entity</strong>, enjoying perpetual succession.</p>
+        
+        <p><strong>2. 利潤與稅務 (Profit and Taxation)</strong></p>
+        <p>東主的工作意慾通常與稅後利潤有關。我們可以用以下算式表示稅後利潤：</p>
+        <p class="bilingual-en">The owners' incentive to work is often related to after-tax profit. We can represent after-tax profit with the following equation:</p>
+        
+        <div class="math-block">
+            $$ \text{After-tax Profit} (\pi) = TR - TC - T $$
+        </div>
+        <p>（其中 $TR$ = 總收入 Total Revenue, $TC$ = 總成本 Total Cost, $T$ = 稅項 Tax）。在香港，有限公司的利得稅率一般不會低於非法人業務（如合夥）。</p>
+        <p class="bilingual-en">(Where $TR$ = Total Revenue, $TC$ = Total Cost, $T$ = Tax). In Hong Kong, the profits tax rate for limited companies is generally not lower than that for unincorporated businesses (like partnerships).</p>
+
+        <p><strong>3. 資訊披露 (Information Disclosure)</strong></p>
+        <p>只有<strong>公眾</strong>有限公司 (Public Limited Company) 必須向公眾披露財務狀況。<strong>私人</strong>有限公司 (Private Limited Company) 無此法律要求。</p>
+        <p class="bilingual-en">Only <strong>public</strong> limited companies must disclose their financial conditions to the general public. <strong>Private</strong> limited companies have no such legal requirement.</p>
+    </div>
+
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p>正確答案 Correct Option: <strong>B</strong></p>
+
+    <div class="analysis-step incorrect">
+        <span class="status-label status-incorrect">❌ 選項 A (Option A) - 錯誤 Incorrect</span>
+        <p>香港的公司利得稅稅率（標準稅率為 16.5%）通常比非法人業務（如合夥，標準稅率為 15%）略高。因此，轉為有限公司不會因為「稅率減低」而提高工作意慾。</p>
+        <p class="bilingual-en">The standard corporate profits tax rate in Hong Kong (16.5%) is generally slightly higher than that for unincorporated businesses like partnerships (15%). Therefore, incorporating will not increase their incentive to work due to a "lower tax rate".</p>
+    </div>
+
+    <div class="analysis-step correct">
+        <span class="status-label status-correct">✅ 選項 B (Option B) - 正確 Correct</span>
+        <p>私人有限公司擁有獨立的法人地位，這意味著它在法律上獨立於其股東。因此，公司擁有延續性，即使個別股東（東主）破產或離世，公司作為一個實體仍可繼續合法存在。</p>
+        <p class="bilingual-en">A private limited company has a separate legal entity status, meaning it is legally independent of its shareholders. Thus, the company has perpetual continuity; even if individual shareholders (owners) go bankrupt or pass away, the company can still legally exist as an entity.</p>
+    </div>
+
+    <div class="analysis-step incorrect">
+        <span class="status-label status-incorrect">❌ 選項 C (Option C) - 錯誤 Incorrect</span>
+        <p>改變企業的法律擁有權結構並不等於擴充業務。公司的實際規模（如資本額、員工數量、市場佔有率）不會僅僅因為註冊為有限公司而自動增加。</p>
+        <p class="bilingual-en">Changing the legal ownership structure of a business is not the same as business expansion. The actual size of the firm (e.g., capital, number of employees, market share) will not automatically increase simply by incorporating as a limited company.</p>
+    </div>
+
+    <div class="analysis-step incorrect">
+        <span class="status-label status-incorrect">❌ 選項 D (Option D) - 錯誤 Incorrect</span>
+        <p>這是典型的陷阱。必須向公眾披露財務狀況的是「公眾有限公司」(Public Limited Company)。題目中清楚指出他們成立的是「私人有限公司」(Private Limited Company)，因此不需要向公眾披露財務資料。</p>
+        <p class="bilingual-en">This is a classic trap. It is "public limited companies" that must disclose their financial conditions to the public. The question clearly states they formed a "private limited company", which does not need to disclose financial data to the general public.</p>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <ul>
+        <li><strong>破題關鍵 (Pivot Point):</strong> 留意題目中的「私人」和「有限公司」兩個詞。這要求你立即聯想到其兩大特徵：(1) 獨立法人地位帶來延續性，(2) 毋須向公眾公開帳目。</li>
+        <li class="bilingual-en">Pay attention to the words "private" and "limited company" in the question. This requires you to immediately recall two main features: (1) separate legal entity bringing continuity, and (2) no requirement to publish accounts to the public.</li>
+        <li><strong>干擾資訊 (Distractors):</strong> 選項 D 故意測試你是否混淆了「私人」(Private) 和「公眾」(Public) 有限公司的特徵。選項 C 利用了學生認為「開公司 = 做大生意」的錯覺。</li>
+        <li class="bilingual-en">Option D deliberately tests if you confuse the features of "Private" and "Public" limited companies. Option C preys on the misconception that "incorporating = expanding business".</li>
+    </ul>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li><strong>概念混淆：</strong> 學生經常將「有限債務責任」(Limited Liability) 與「延續性」(Continuity) 混為一談。雖然兩者都是有限公司的優點，但延續性是由「獨立法人地位」所賦予的，而不是由有限責任賦予的。</li>
+        <li class="bilingual-en"><strong>Concept Confusion:</strong> Students often mix up "Limited Liability" with "Continuity". While both are advantages of a limited company, continuity is conferred by "separate legal entity" status, not by limited liability.</li>
+        <li><strong>閱讀不小心：</strong> 忽略了「私人」(Private) 這一關鍵詞，誤選 D。</li>
+        <li class="bilingual-en"><strong>Careless Reading:</strong> Missing the keyword "Private" and mistakenly choosing D.</li>
+    </ul>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="question-text">Q: 如果題目沒有提及稅率，我們怎麼知道 A 是錯的？</p>
+        <p>A: 即便我們不背誦香港的具體稅率，將合夥轉為有限公司的核心目的通常是為了「有限債務責任」和「方便集資/延續性」，而不是為了減稅。在大多數稅制下，公司稅不會自動低於個人/合夥稅。</p>
+        <p class="bilingual-en"><strong>Q: If the question doesn't mention tax rates, how do we know A is wrong?</strong><br>
+        A: Even without memorizing HK's specific tax rates, the core purpose of converting a partnership to a company is usually for "limited liability" and "ease of raising capital/continuity," not tax reduction. In most tax systems, corporate tax is not automatically lower than personal/partnership tax.</p>
+    </div>
+    
+    <div class="qa-box">
+        <p class="question-text">Q: 有限公司有延續性，那代表公司永遠不會結業嗎？</p>
+        <p>A: 不是。延續性只代表股東的個人變故（如破產、死亡）不會在法律上終止公司。公司仍然可以因為資不抵債而被清盤（清盤程序），或者由股東主動決議解散。</p>
+        <p class="bilingual-en"><strong>Q: A limited company has continuity, does that mean the firm will never close down?</strong><br>
+        A: No. Continuity only means that the personal misfortunes of shareholders (like bankruptcy or death) do not legally terminate the company. The company can still be wound up due to insolvency (liquidation) or voluntarily dissolved by a resolution of the shareholders.</p>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <ul>
+        <li><strong>消去法 (Elimination Method):</strong>
+            <br>1. 看到「私人」，立刻劃走有關「公開帳目」的選項 (刪除 D)。
+            <br>2. 法律地位改變不等於規模變大 (刪除 C)。
+            <br>3. 比較 A 和 B，B 是一個絕對準確的法理事實 (延續性)，而 A 是不確定的稅務假設。秒選 B。
+        </li>
+        <li class="bilingual-en"><strong>Elimination Method:</strong>
+            <br>1. See "Private", immediately cross out options about "public disclosure" (Eliminate D).
+            <br>2. Change in legal status doesn't mean size increases (Eliminate C).
+            <br>3. Compare A and B. B is an absolute legal fact (continuity), while A is an uncertain tax assumption. Choose B instantly.
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

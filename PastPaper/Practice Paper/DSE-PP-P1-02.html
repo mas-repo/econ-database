@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Opportunity Cost Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        h2 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .english-trans {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+        .header-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+        .header-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-section li {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #fbbf24;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        .analysis-option {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .analysis-option.correct {
+            border: 2px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+        .option-label {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .correct-label {
+            color: #16a34a;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .incorrect-label {
+            color: #dc2626;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .qa-box, .trick-box, .decomp-box {
+            background-color: #f8fafc;
+            border-left: 5px solid #64748b;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .trick-box {
+            border-color: #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <ul>
+            <li>📚 Topic (課題): Opportunity Cost & Sunk Cost (機會成本與沉沒成本)</li>
+            <li>⭐ Difficulty (難度): ★★☆☆☆ (2/5)</li>
+            <li>🔑 Key Concepts (核心概念): Opportunity Cost (機會成本), Sunk Cost (沉沒成本), Highest-valued option forgone (放棄了的最高價值選擇)</li>
+        </ul>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <p><strong>中文:</strong> 陳先生花了$5 000購買一部新手提電話，該電話可在二手市場以$7 000售出。陳先生保留該手提電話的成本是 _______。</p>
+            <p>A. $0<br>B. $2 000<br>C. $5 000<br>D. $7 000</p>
+        </div>
+        <hr style="border: 0; border-top: 1px dashed #fbbf24; margin: 15px 0;">
+        <div class="bilingual-block english-trans">
+            <p><strong>English:</strong> Mr. Chan spent $5 000 on buying a new mobile phone which can be sold for $7 000 in the second-hand market. Mr. Chan’s cost of keeping the mobile phone is _______.</p>
+            <p>A. $0<br>B. $2 000<br>C. $5 000<br>D. $7 000</p>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <p><strong>機會成本 (Opportunity Cost):</strong> 放棄了的最高價值選擇。當我們作出一個決定時，必然會放棄其他選擇，當中價值最高的那一個就是成本。</p>
+            <p class="english-trans">The highest-valued option forgone. When making a decision, we inevitably give up other alternatives; the one with the highest value among those forgone is the cost.</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Opportunity Cost} = \text{Value of the highest-valued option forgone} $$
+        </div>
+
+        <div class="bilingual-block">
+            <p><strong>沉沒成本 (Sunk Cost):</strong> 過去已經發生，並且無論現在作出甚麼決定都無法收回的成本。沉沒成本<strong>不應</strong>影響我們當前的決策。</p>
+            <p class="english-trans">A cost that has already been incurred in the past and cannot be recovered regardless of the current decision. Sunk costs <strong>should not</strong> affect current decision-making.</p>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-block">
+        <h3>Correct Answer: <span style="color: #22c55e;">Option D</span></h3>
+    </div>
+
+    <div class="analysis-option">
+        <div class="bilingual-block">
+            <span class="option-label">Option A ($0)</span> <span class="incorrect-label">✗ Incorrect (錯誤)</span>
+            <p>保留電話意味著陳先生放棄了將它出售換取金錢的機會。這是一個有代價的選擇，因此成本絕不會是零。</p>
+            <p class="english-trans">Keeping the phone means Mr. Chan gives up the opportunity to sell it for cash. This is a choice with a sacrifice, so the cost is definitely not zero.</p>
+        </div>
+    </div>
+
+    <div class="analysis-option">
+        <div class="bilingual-block">
+            <span class="option-label">Option B ($2 000)</span> <span class="incorrect-label">✗ Incorrect (錯誤)</span>
+            <p>這是資本增值（售價 $7 000 減去 買入價 $5 000），即是他如果出售電話所能賺取的利潤。但這並非他「保留」電話的成本。</p>
+            <p class="english-trans">This is the capital gain (Selling price $7 000 - Purchase price $5 000), which is the profit he would make if he sold it. However, this is not the cost of "keeping" the phone.</p>
+        </div>
+    </div>
+
+    <div class="analysis-option">
+        <div class="bilingual-block">
+            <span class="option-label">Option C ($5 000)</span> <span class="incorrect-label">✗ Incorrect (錯誤)</span>
+            <p>這是購買電話的歷史成本。無論他現在決定保留還是出售電話，這筆錢都已經花掉且無法直接以購買價收回，因此屬於<strong>沉沒成本 (Sunk Cost)</strong>，與目前的決策無關。</p>
+            <p class="english-trans">This is the historical cost of buying the phone. Whether he decides to keep or sell it now, this money is already spent and cannot be directly recovered at the purchase price. Therefore, it is a <strong>sunk cost</strong> and irrelevant to the current decision.</p>
+        </div>
+    </div>
+
+    <div class="analysis-option correct">
+        <div class="bilingual-block">
+            <span class="option-label">Option D ($7 000)</span> <span class="correct-label">✓ Correct (正確)</span>
+            <p>陳先生目前的決策是「保留」手提電話。如果他不保留，他能做的最高價值替代方案是在二手市場出售它，這會為他帶來 $7 000。因此，$7 000 就是他為了保留電話而放棄的最高價值選擇。</p>
+            <p class="english-trans">Mr. Chan's current decision is "keeping" the mobile phone. If he does not keep it, his highest-valued alternative is selling it in the second-hand market, which would bring him $7 000. Therefore, $7 000 is the highest-valued option forgone in order to keep the phone.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="decomp-box">
+        <div class="bilingual-block">
+            <p><strong>🎯 尋找「決策點」 (Pivot Point):</strong><br>
+            題目問的是<strong>「保留」 (Keeping)</strong> 的成本，而不是「購買」 (Buying) 的成本。弄清楚主角當下正在做甚麼動作是最關鍵的一步。</p>
+            <p class="english-trans"><strong>🎯 Finding the "Pivot Point":</strong><br>
+            The question asks for the cost of <strong>"Keeping"</strong>, not the cost of "Buying". Identifying the exact action the subject is currently taking is the most crucial step.</p>
+        </div>
+        <div class="bilingual-block">
+            <p><strong>🛑 識別「干擾資訊」 (Distractors):</strong><br>
+            「花了 $5 000 購買」是一個經典的干擾項。過去的買入價在評估「繼續持有/保留」的成本時，永遠是無關痛癢的。</p>
+            <p class="english-trans"><strong>🛑 Identifying "Distractors":</strong><br>
+            "Spent $5 000 on buying" is a classic distractor. The past purchase price is always irrelevant when evaluating the cost of "continuing to hold / keeping" an item.</p>
+        </div>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <div class="bilingual-block">
+            <p><strong>⚠️ 陷阱一：對「成本」的直覺誤解</strong><br>
+            學生常以為物品的成本就是它的標價或購買價。在經濟學中，成本永遠向前看（你因為這個選擇而放棄了甚麼未來的利益），而不是向後看（你過去付出了甚麼）。</p>
+            <p class="english-trans"><strong>⚠️ Trap 1: Intuitive misunderstanding of "Cost"</strong><br>
+            Students often think the cost of an item is its price tag or purchase price. In Economics, cost is always forward-looking (what future benefits you give up because of this choice), not backward-looking (what you paid in the past).</p>
+        </div>
+        <div class="bilingual-block">
+            <p><strong>⚠️ 陷阱二：計算淨利潤</strong><br>
+            很多同學會被 Option B ($2 000) 吸引，因為大腦本能地想做減法 ($7 000 - $5 000)。記住，機會成本不是計算「賺了多少」，而是計算「放棄了多少」。</p>
+            <p class="english-trans"><strong>⚠️ Trap 2: Calculating net profit</strong><br>
+            Many students are tempted by Option B ($2 000) because the brain instinctively wants to do subtraction ($7 000 - $5 000). Remember, opportunity cost is not about calculating "how much you earned," but "how much you gave up."</p>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <p><strong>🙋‍♂️ 學生問：</strong> 為什麼不用 $7 000 減去最初的 $5 000？他買電話也付出了錢啊！</p>
+            <p class="english-trans"><strong>Student Q:</strong> Why don't we subtract the initial $5 000 from the $7 000? He paid money to buy the phone too!</p>
+        </div>
+        <div class="bilingual-block">
+            <p><strong>👨‍🏫 導師答：</strong> 因為無論你現在選擇「保留」還是「出售」，那 $5 000 都已經離你而去（沉沒成本）。你現在面對的十字路口只有兩條路：<br>
+            選項一：保留電話（得不到現金）。<br>
+            選項二：賣掉電話（得到 $7 000 現金）。<br>
+            既然你選擇了選項一（保留），你唯一失去的就是選項二帶給你的 $7 000。那 $5 000 不在目前的選擇範圍內。</p>
+            <p class="english-trans"><strong>Tutor A:</strong> Because whether you choose to "keep" or "sell" now, that $5 000 is already gone (sunk cost). The crossroads you are facing right now only has two paths:<br>
+            Path 1: Keep the phone (get no cash).<br>
+            Path 2: Sell the phone (get $7 000 cash).<br>
+            Since you chose Path 1 (keep), the ONLY thing you lose is the $7 000 that Path 2 would have given you. The $5 000 is not part of the current choices.</p>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="bilingual-block">
+            <p><strong>💡 考試秒殺技巧：</strong><br>
+            在 HKDSE 經濟科中，只要題目問及<strong>「保留 (keeping)」、「繼續營運 (continuing to operate)」、「繼續學業 (continuing studies)」</strong>的成本，請立刻在試卷上將所有「歷史買入價」、「過去已繳交的學費」、「已支付的裝修費」等數字<strong>劃掉</strong>。直接尋找該物品或時間的<strong>「目前最高市場價值 (Current Market Value/Resale Value)」</strong>，這通常就是答案！</p>
+            <p class="english-trans"><strong>💡 One-Second Exam Trick:</strong><br>
+            In the HKDSE Economics exam, whenever a question asks for the cost of <strong>"keeping", "continuing to operate", or "continuing studies"</strong>, immediately <strong>cross out</strong> any "historical purchase price", "past tuition paid", or "sunk renovation fees" on your question paper. Look directly for the <strong>"Current Market Value / Resale Value"</strong> of that item or time—that is usually your answer!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

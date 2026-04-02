@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Piece Rate vs Time Rate</title>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --concept-bg: #f0f9ff;
+            --question-bg: #fffbeb;
+            --question-border: #fde68a;
+            --text-main: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang HK', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Tags and Badges */
+        .tags-container {
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e0f2fe;
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Specialized Boxes */
+        .question-box {
+            background-color: var(--question-bg);
+            border-left: 5px solid #fbbf24;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 1.05em;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        /* Options Breakdown */
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .option.correct {
+            border-left-color: #22c55e;
+            background-color: #f0fdf4;
+        }
+
+        .option.wrong {
+            border-left-color: #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .option-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* Q&A Section */
+        .qa-item {
+            margin-bottom: 20px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        .qa-a {
+            margin-left: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>經濟學題目詳解 | Economics Problem Analysis</h1>
+        <div class="tags-container">
+            <span class="badge">📖 主題 Topic: 勞工市場與工資計算方法 (Labour Market & Methods of Wage Payment)</span>
+            <span class="badge">⭐ 難度 Difficulty: 2/5 (Easy)</span>
+            <span class="badge">🔑 關鍵字: 件工 (Piece Rate), 交易成本 (Transaction Costs), 躲懶 (Shirking)</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>2. 題目 The Question</h2>
+        <div class="question-box">
+            <p><strong>若工人是以他所生產的產品數量計算工資而非領取月薪。下列哪項陳述是<span style="color: red; text-decoration: underline;">不正確</span>的？</strong></p>
+            <p>A. 該工人傾向提高其產量。<br>
+               B. 產出的質素傾向較低。<br>
+               C. 監察該工人躲懶的成本減低。<br>
+               D. 該工人的收入會增加。</p>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #fde68a;">
+            <p class="en-text"><strong>A worker is paid by the quantity he produced instead of receiving a monthly salary. Which of the following statements is <span style="color: red; text-decoration: underline;">INCORRECT</span>?</strong></p>
+            <p class="en-text">A. The worker tends to produce more output.<br>
+               B. The quality of the output tends to be lower.<br>
+               C. The cost of monitoring the worker regarding shirking will be lower.<br>
+               D. The income of the worker will increase.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 概念重溫 Concept Review</h2>
+        <div class="concept-box">
+            <h3>工資計算方法 (Methods of Wage Payment)</h3>
+            <p><strong>計時工資 (Time Rate):</strong> 工資按工作時間計算（如月薪、時薪）。<br>
+            工人收入與產量沒有直接關係。這會衍生出「躲懶」(Shirking) 的問題，因此僱主需要承擔較高的<strong>監察躲懶成本 (Cost of monitoring shirking)</strong>。</p>
+            <p class="en-text"><strong>Time Rate:</strong> Wages are calculated based on working time (e.g., monthly/hourly salary).<br>
+            Workers' income is not directly related to output. This creates a "shirking" problem, so employers bear a higher <strong>cost of monitoring shirking</strong>.</p>
+            
+            <div class="math-block">
+                $$ Income_{time} = Wage\ Rate \times Time\ Worked $$
+            </div>
+
+            <p><strong>件工 (Piece Rate):</strong> 工資按產出數量計算。<br>
+            工人的收入與產量直接掛鉤，因此有強大誘因提高產量。然而，工人可能會為了追求數量而犧牲品質，因此僱主需要承擔較高的<strong>監測品質成本 (Cost of monitoring quality)</strong>。</p>
+            <p class="en-text"><strong>Piece Rate:</strong> Wages are calculated based on the quantity of output.<br>
+            Workers' income is directly tied to output, providing a strong incentive to produce more. However, workers might sacrifice quality for quantity, leading to a higher <strong>cost of monitoring quality</strong> for the employer.</p>
+
+            <div class="math-block">
+                $$ Income_{piece} = Piece\ Rate \times Quantity\ Produced\ (Q) $$
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+        <p><strong>正確選項 Correct Option： <span style="color: #ef4444; font-size: 1.2em;">D</span></strong> (因為本題要求選出<strong>不正確</strong>的陳述 / Because the question asks for the <strong>INCORRECT</strong> statement).</p>
+
+        <div class="option wrong">
+            <div class="option-label">選項 A (Option A) - 正確陳述 True Statement</div>
+            <p>由於件工制度下，收入與產量 $Q$ 掛鉤，工人為了賺取更多工資，自然有誘因加快工作速度以提高產量。</p>
+            <p class="en-text">Under the piece-rate system, income is tied to output $Q$. To earn higher wages, workers naturally have the incentive to speed up and produce more.</p>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-label">選項 B (Option B) - 正確陳述 True Statement</div>
+            <p>由於工人的目標是最大化產量 $Q$，他們傾向忽略產品的細節和質素（所謂「求量不求質」）。</p>
+            <p class="en-text">Since the workers' goal is to maximize output $Q$, they tend to neglect details and quality (prioritizing quantity over quality).</p>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-label">選項 C (Option C) - 正確陳述 True Statement</div>
+            <p>在件工制度下，躲懶會導致產量減少，從而直接令工人的收入下降。因此工人會自動自覺工作，僱主監察工人躲懶的成本（交易成本的一種）會隨之減低。</p>
+            <p class="en-text">Under piece rate, shirking leads to lower output, which directly reduces the worker's own income. Therefore, workers will work voluntarily, and the employer's cost of monitoring shirking (a type of transaction cost) decreases.</p>
+        </div>
+
+        <div class="option correct">
+            <div class="option-label">選項 D (Option D) - 不正確陳述 INCORRECT Statement (✓ 答案 Answer)</div>
+            <p>轉用件工制度<strong>不一定</strong>會令工人收入增加。收入取決於僱主訂立的「每件計酬率」(Piece rate) 以及工人的實際生產力。如果計酬率定得很低，或者工人手腳較慢，其總收入甚至可能會減少。</p>
+            <p class="en-text">Switching to a piece-rate system does <strong>not guarantee</strong> an increase in income. Income depends on the actual "piece rate" set by the employer and the worker's productivity. If the rate per piece is low, or the worker is slow, their total income might actually decrease.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. 題目拆解 Problem Decomposition</h2>
+        <ul>
+            <li><strong>解題關鍵 (Pivot Point):</strong> 留意題目問的是<strong>「不正確 (INCORRECT)」</strong>的選項。這類題目通常有三個選項是該經濟現象的標準特徵。</li>
+            <li class="en-text"><strong>Pivot Point:</strong> Note that the question asks for the <strong>INCORRECT</strong> option. Three of the options will be standard theoretical characteristics of the economic phenomenon.</li>
+            <li><strong>混淆點 (Distractors):</strong> 許多學生認為「生產力提高」就等同於「收入增加」。在現實及經濟學模型中，總收入 $Income = Rate \times Quantity$。就算 $Quantity$ 增加，若 $Rate$ 比起原本的月薪低很多，總收入依然可能下降。</li>
+            <li class="en-text"><strong>Distractors:</strong> Many students equate "higher productivity" with "higher income". In economics, total income $Income = Rate \times Quantity$. Even if $Quantity$ increases, if the $Rate$ is set very low compared to the original monthly salary, total income can still fall.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <div class="concept-box" style="background-color: #fef2f2; border-left-color: #ef4444;">
+            <p><strong>❌ 混淆「監察成本」的種類 (Confusing types of monitoring costs)</strong></p>
+            <p>學生極常混淆「監察躲懶」(monitoring shirking) 與「監察質素」(monitoring quality) 的成本：</p>
+            <ul>
+                <li>計時工資：高監察<strong>躲懶</strong>成本 (High cost to monitor shirking)。</li>
+                <li>件工：高監察<strong>質素</strong>成本 (High cost to monitor quality)。</li>
+            </ul>
+            <p>本題選項 C 準確地指出了監察「躲懶」的成本會降低，若學生粗心大意只看到「監察成本」四字，可能會誤以為 C 錯而錯選 C。</p>
+            <p class="en-text">Students frequently confuse the cost of "monitoring shirking" with "monitoring quality". Time rate has high shirking monitoring costs, while piece rate has high quality monitoring costs. Careless reading of Option C could lead to a wrong choice.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>7. 學生常見疑問 Student Q&A</h2>
+        <div class="qa-item">
+            <p class="qa-q">Q: 既然僱主要花更多時間檢查次貨（質素下降），為甚麼選項 C 卻說監察成本降低了？</p>
+            <p class="en-text qa-q">Q: Since employers have to spend more time checking for defective goods (lower quality), why does Option C say the monitoring cost is lower?</p>
+            <div class="qa-a">
+                <p>A: 請小心閱讀字眼！選項 C 說的是「監察工人<strong>躲懶</strong>的成本」(monitoring <strong>shirking</strong>)，而不是「監察質素的成本」(monitoring quality)。檢查次貨屬於後者。在件工下，工人不會躲懶，所以監察躲懶的成本確實是減少了。</p>
+                <p class="en-text">A: Read the wording carefully! Option C specifies the cost of monitoring <strong>shirking</strong>, not monitoring quality. Checking for defective goods is a quality monitoring cost. Under piece rate, workers won't shirk, so the cost of monitoring shirking genuinely decreases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>8. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+        <p><strong>💡 絕對字眼法則 (The Rule of Absolute Wording)</strong></p>
+        <p>在經濟學多項選擇題中，帶有「傾向」(tends to) 的字眼通常是正確的理論描述（如選項 A 和 B），因為經濟學理論描述的是一般情況下的行為動機。相反，帶有「會」(will / guaranteed to) 這種絕對字眼的選項（如選項 D 的「收入會增加」），往往因為缺乏足夠的約束條件（例如沒有提供每件工資的定價）而成為<strong>錯誤</strong>的陳述。</p>
+        <p class="en-text">In Economics MCQs, options with words like "tends to" (傾向) are usually correct theoretical descriptions (like Options A and B) because economics describes general behavioural motivations. Conversely, options with absolute wording like "will" (會) or "must" (like Option D's "income will increase") are frequently the <strong>incorrect</strong> statements because they lack necessary constraints (e.g., the actual piece rate is unknown).</p>
+    </section>
+
+</div>
+
+</body>
+</html>
