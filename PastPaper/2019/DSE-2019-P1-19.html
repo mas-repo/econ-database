@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Lorenz Curve Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3, h4 { color: #2c3e50; }
+        .header-box {
+            background: #fff;
+            border-left: 6px solid #2c3e50;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .question-box {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 6px solid #0ea5e9;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .analysis-box {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .trap-box {
+            background-color: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #f8d7da;
+            border-left: 6px solid #dc3545;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .trick-box {
+            background-color: #d1e7dd;
+            border-left: 6px solid #198754;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px dashed #cbd5e1;
+        }
+        .lang-en {
+            color: #475569;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #cbd5e1;
+        }
+        .correct-option {
+            font-size: 1.3em;
+            color: #16a34a;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .badge-incorrect { background-color: #fee2e2; color: #ef4444; }
+        .badge-correct { background-color: #dcfce3; color: #16a34a; }
+        .section-title {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Tutorial</h2>
+        <p><strong>主題 (Topic):</strong> 收入分配與洛倫茨曲線 (Income Distribution and Lorenz Curve)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>關鍵字 (Key Concepts):</strong> 洛倫茨曲線 (Lorenz Curve), 收入不均 (Income Inequality), 累進稅 (Progressive Tax), 收入重分配 (Income Redistribution)</p>
+    </div>
+
+    <h3 class="section-title">📝 題目 (The Question)</h3>
+    <div class="question-box">
+        <p>下列哪項政策會使香港的洛倫茨曲線有以上的轉變？</p>
+        <p>A. 減低利得稅率<br>
+           B. 減少薪俸稅免稅額<br>
+           C. 提高薪俸稅的累進程度<br>
+           D. 增加機場離境稅</p>
+        
+        <div class="lang-en">
+            <p>Which of the following policies would result in the above change in the Lorenz curve in Hong Kong?</p>
+            <p>A. lowering the profits tax rates<br>
+               B. reducing the salaries tax allowance<br>
+               C. increasing the progressivity of the salaries tax<br>
+               D. raising the air passenger departure tax</p>
+        </div>
+    </div>
+
+    <h3 class="section-title">🧠 概念重溫 (Concept Review)</h3>
+    <div class="concept-box">
+        <h4>1. 洛倫茨曲線 (Lorenz Curve)</h4>
+        <p>洛倫茨曲線用作量度一個經濟體內的收入分佈狀況。圖中的對角線稱為<strong>絕對平均線 (Line of Perfect Equality)</strong>。當洛倫茨曲線越靠近絕對平均線，代表收入分佈越平均；相反，越遠離對角線，代表收入越不均。</p>
+        <div class="lang-en">
+            The Lorenz curve is used to measure the income distribution within an economy. The diagonal line in the graph is called the <strong>Line of Perfect Equality</strong>. When the Lorenz curve shifts closer to the diagonal line, it means income distribution has become more equal; conversely, shifting away means higher income inequality.
+        </div>
+        
+        <h4>2. 稅制與收入分配 (Taxation and Income Distribution)</h4>
+        <ul>
+            <li><strong>累進稅 (Progressive Tax):</strong> 高收入人士的平均稅率較高。這有助縮窄貧富懸殊，使洛倫茨曲線向內移（靠近對角線）。<br>
+            <span class="lang-en">Higher-income individuals face a higher average tax rate. This helps narrow the wealth gap, shifting the Lorenz curve inwards (closer to the diagonal).</span></li>
+            
+            <li><strong>累退稅 (Regressive Tax):</strong> 低收入人士的平均稅率較高（通常是定額的間接稅，如銷售稅或離境稅）。這會加劇貧富懸殊，使洛倫茨曲線向外移。<br>
+            <span class="lang-en">Lower-income individuals face a higher average tax rate (usually flat-rate indirect taxes, like sales tax or departure tax). This worsens the wealth gap, shifting the Lorenz curve outwards.</span></li>
+        </ul>
+
+        <h4>3. 數學表達 (Mathematical Expression)</h4>
+        <p>堅尼系數 (Gini Coefficient) 亦可從洛倫茨曲線推導出來。若 \( A \) 為對角線與洛倫茨曲線之間的面積，\( B \) 為洛倫茨曲線下方的面積：</p>
+        <div class="lang-en">The Gini Coefficient can also be derived from the Lorenz curve. If \( A \) is the area between the line of perfect equality and the Lorenz curve, and \( B \) is the area under the Lorenz curve:</div>
+        
+        <div class="math-block">
+            $$ \text{Gini Coefficient} = \frac{A}{A + B} $$
+        </div>
+        <p>圖中新洛倫茨曲線的面積 \( A \) 減少了，即堅尼系數下降，收入更平均。</p>
+        <div class="lang-en">In the graph, the area \( A \) for the new Lorenz curve has decreased, meaning the Gini coefficient has dropped, and income is more equal.</div>
+    </div>
+
+    <h3 class="section-title">✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+    <div class="analysis-box">
+        <p>正確答案 (Correct Option): <span class="correct-option">C</span></p>
+
+        <div class="option-analysis">
+            <p><span class="badge badge-incorrect">A. 錯誤 (Incorrect)</span> <strong>減低利得稅率 (lowering the profits tax rates)</strong></p>
+            <p>利得稅主要由企業擁有人（通常為較高收入群體）繳交。減低利得稅率會增加高收入人士的稅後收入，擴大貧富懸殊，令洛倫茨曲線向外移（遠離對角線）。</p>
+            <div class="lang-en">Profits tax is primarily paid by business owners (usually higher-income groups). Lowering profits tax rates increases the post-tax income of the rich, widening the wealth gap and shifting the Lorenz curve outwards (away from the diagonal).</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge badge-incorrect">B. 錯誤 (Incorrect)</span> <strong>減少薪俸稅免稅額 (reducing the salaries tax allowance)</strong></p>
+            <p>免稅額是指納稅人不用繳稅的部分。減少免稅額會令原本不用交稅的低收入人士跌入稅網，同時加重中低收入人士的稅務負擔（相對於其總收入的比例）。這具有累退效應，會令洛倫茨曲線向外移。</p>
+            <div class="lang-en">Tax allowance is the portion of income exempt from taxation. Reducing the tax allowance drags low-income earners into the tax net and increases the tax burden (as a proportion of total income) for lower-middle income earners. This has a regressive effect, shifting the Lorenz curve outwards.</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge badge-correct">C. 正確 (Correct)</span> <strong>提高薪俸稅的累進程度 (increasing the progressivity of the salaries tax)</strong></p>
+            <p>提高累進程度意味著高收入人士需要繳交佔其收入更高比例的稅款。這能有效地將財富從高收入階層重新分配，縮窄稅後收入差距，令洛倫茨曲線向內移（靠近對角線），與題目圖表吻合。</p>
+            <div class="lang-en">Increasing progressivity means high-income earners must pay a larger proportion of their income as tax. This effectively redistributes wealth from higher-income groups, narrowing the post-tax income gap and shifting the Lorenz curve inwards (closer to the diagonal), matching the graph.</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge badge-incorrect">D. 錯誤 (Incorrect)</span> <strong>增加機場離境稅 (raising the air passenger departure tax)</strong></p>
+            <p>機場離境稅是定額的間接稅。對於低收入人士來說，這筆定額稅款佔其收入的百分比，比高收入人士的更高。因此，這是一種累退稅 (Regressive tax)，會令收入分配更不均，洛倫茨曲線向外移。</p>
+            <div class="lang-en">Air passenger departure tax is a flat-rate indirect tax. For low-income earners, this fixed amount takes up a larger percentage of their income compared to high-income earners. Therefore, it is a regressive tax, making income distribution more unequal and shifting the Lorenz curve outwards.</div>
+        </div>
+    </div>
+
+    <h3 class="section-title">🔍 題目拆解 (Problem Decomposition)</h3>
+    <div class="analysis-box">
+        <p><strong>破題關鍵 (Pivot Point):</strong> 第一步必須觀察圖表的變化方向。圖中的「新洛倫茨曲線」比「舊洛倫茨曲線」更貼近 45 度角的對角線。這代表「稅後收入差距縮窄」或「收入變得更平均」。</p>
+        <div class="lang-en"><strong>Pivot Point:</strong> The first step is to observe the direction of the shift. The "New Lorenz curve" is closer to the 45-degree diagonal line than the "Old Lorenz curve". This indicates that the "post-tax income gap has narrowed" or "income has become more equal".</div>
+        <p>一旦確定了目標是尋找「令收入更平均」的政策，我們只需逐個檢驗選項的「劫富濟貧」效果：</p>
+        <ul>
+            <li>幫富人省錢的政策 ➔ 不均 (A錯)</li>
+            <li>向所有人收相同定額稅 ➔ 窮人負擔重 ➔ 不均 (D錯)</li>
+            <li>向富人收更高比例的稅 ➔ 平均 (C對)</li>
+        </ul>
+        <div class="lang-en">Once we established the goal is to find a policy that "equalizes income", we simply evaluate each option's redistributive effect:
+            <ul>
+                <li>Policy saving money for the rich ➔ Unequal (A is wrong)</li>
+                <li>Flat tax for everyone ➔ Heavier burden on the poor ➔ Unequal (D is wrong)</li>
+                <li>Taxing the rich at a higher proportion ➔ Equal (C is correct)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="section-title">⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+    <div class="trap-box">
+        <h4>陷阱：誤解「免稅額 (Tax Allowance)」的作用</h4>
+        <p>很多同學會誤以為「減少免稅額」是針對富人，因為富人交多了稅。但實際上，免稅額是保護基層市民免跌入稅網的重要防線！</p>
+        <p>假設免稅額由 \( \$130,000 \) 減至 \( \$100,000 \)：<br>
+        原本賺 \( \$120,000 \) 的基層市民本來交 \( \$0 \) 稅，現在卻要開始交稅，其稅後收入顯著減少（相對其總收入）。相反，對於百萬富翁來說，這幾萬元的免稅額減少對其龐大的稅後收入影響微乎其微。因此，<strong>減少免稅額具有強烈的累退效應，會加劇貧富懸殊！</strong></p>
+        
+        <div class="lang-en">
+            <h4>Trap: Misunderstanding the role of "Tax Allowance"</h4>
+            <p>Many students mistakenly think "reducing tax allowance" targets the rich because the rich pay more absolute tax. In reality, the tax allowance is a crucial defense line preventing grassroots citizens from falling into the tax net!</p>
+            <p>Suppose the allowance drops from \( \$130,000 \) to \( \$100,000 \):<br>
+            A low-income worker earning \( \$120,000 \), who originally paid \( \$0 \), now has to pay tax, significantly reducing their post-tax income (relative to their total income). Conversely, for a millionaire, this small reduction in allowance has a negligible impact on their massive post-tax income. Therefore, <strong>reducing the tax allowance has a strong regressive effect and worsens wealth inequality!</strong></p>
+        </div>
+    </div>
+
+    <h3 class="section-title">🙋‍♂️ 學生常見疑問 (Student Q&A)</h3>
+    <div class="qa-box">
+        <p><strong>學生問 (Student):</strong> 「為何『增加機場離境稅 (D)』不是正確答案？富人才會經常坐飛機去旅行，這不是應該向富人抽更多稅嗎？」</p>
+        <div class="lang-en"><strong>Question:</strong> "Why is 'raising the air passenger departure tax (D)' not correct? Only rich people travel frequently by air, shouldn't this tax the rich more?"</div>
+        
+        <p><strong>老師答 (Teacher):</strong> 這是一個非常經典的 DSE 謬誤！在經濟學中評估稅制的累進/累退性時，我們看的是<strong>「稅款佔總收入的百分比」</strong>，而不是絕對交稅的次數或金額。<br>
+        假設離境稅加至每次 \( \$200 \)。一個月入 \( \$10,000 \) 的基層市民如果因急事坐飛機，這 \( \$200 \) 佔他收入的 \( 2\% \)。但對於一個月入 \( \$100,000 \) 的富人，這 \( \$200 \) 只佔他收入的 \( 0.2\% \)。既然低收入人士要承受較高的平均稅率（佔收入比例），這種定額間接稅就被定義為<strong>累退稅 (Regressive tax)</strong>，它會令貧富懸殊惡化。</p>
+        
+        <div class="lang-en"><strong>Answer:</strong> This is a classic DSE fallacy! In economics, when assessing the progressivity/regressivity of a tax, we look at <strong>"the tax paid as a percentage of total income"</strong>, not the absolute amount or frequency.<br>
+        Assume the departure tax is raised to \( \$200 \). If a low-income citizen earning \( \$10,000 \)/month has to fly for an emergency, this \( \$200 \) is \( 2\% \) of their income. But for a rich person earning \( \$100,000 \)/month, it's only \( 0.2\% \) of their income. Since the low-income earner bears a higher average tax rate (as a proportion of income), this flat-rate indirect tax is defined as a <strong>Regressive tax</strong>, which worsens income inequality.</div>
+    </div>
+
+    <h3 class="section-title">⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+    <div class="trick-box">
+        <p><strong>速解法 (Shortcut):</strong> 當看到洛倫茨曲線向內移（靠近絕對平均線），你的大腦只需馬上浮現四個字：「<strong>劫富濟貧</strong>」。</p>
+        <ol>
+            <li>掃描選項尋找「對富人不利、對窮人有利」或「對富人徵收更高比例」的字眼。</li>
+            <li>所有「定額稅」(如牌照費、離境稅、銷售稅) 都是累退的，會令曲線外移 (即加劇不均) ➔ 秒殺 D。</li>
+            <li>「減少免稅額」等於把窮人拉入稅網 ➔ 秒殺 B。</li>
+            <li>利得稅減低代表老闆賺更多 ➔ 秒殺 A。</li>
+            <li>只剩下 C 是明顯向高收入開刀的政策，直接選出答案。</li>
+        </ol>
+
+        <div class="lang-en">
+            <p><strong>Shortcut:</strong> When you see the Lorenz curve shifting inwards (closer to the line of perfect equality), your brain should immediately think of one concept: "<strong>Robin Hood (Taxing the rich)</strong>".</p>
+            <ol>
+                <li>Scan options for policies that disproportionately target the rich or benefit the poor.</li>
+                <li>All "flat-rate taxes" (e.g., license fees, departure tax, sales tax) are regressive and shift the curve outwards ➔ Eliminate D instantly.</li>
+                <li>"Reducing tax allowance" drags the poor into the tax net ➔ Eliminate B instantly.</li>
+                <li>Lowering profits tax means business owners earn more ➔ Eliminate A instantly.</li>
+                <li>Only C remains as an explicit policy targeting high earners. Choose C directly.</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>

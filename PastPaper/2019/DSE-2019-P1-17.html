@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Demand & Supply Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --danger-red: #ef4444;
+            --warning-yellow: #fefce8;
+            --warning-border: #facc15;
+            --success-green: #22c55e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.3rem; }
+
+        .header-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-box li {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border-left: 5px solid var(--text-gray);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .options-analysis {
+            margin-top: 15px;
+        }
+
+        .option-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--success-green);
+            background-color: #f0fdf4;
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--danger-red);
+        }
+
+        .trap-box {
+            background-color: var(--warning-yellow);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .lang-en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .lang-zh {
+            margin-bottom: 5px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.3rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <ul>
+            <li><strong>Topic:</strong> 需求與供應 - 市場均衡的變動 (Demand & Supply - Changes in Market Equilibrium)</li>
+            <li><strong>Difficulty:</strong> ★★☆☆☆ (2/5 Stars)</li>
+            <li><strong>Key Concepts:</strong> 
+                沿著供應曲線的移動 (Movement along the supply curve), 
+                需求的變動 (Change in demand), 
+                替代品與輔助品 (Substitutes and Complements)
+            </li>
+        </ul>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="lang-zh">
+            <p><strong>電動車的供應曲線是SS。下列哪項原因最能解釋電動車市場均衡點由A變到B？</strong></p>
+            <ol type="A">
+                <li>所有電動車代理商提供更長的保養期。</li>
+                <li>政府取消購買電動車的補貼。</li>
+                <li>汽油供應商大幅增加汽油價格。</li>
+                <li>充電站的興建成本大幅下降。</li>
+            </ol>
+        </div>
+        <div class="lang-en">
+            <p><strong>SS is the supply curve of electric vehicles. Which of the following reasons can best explain the change of the equilibrium position in the electric vehicle market from A to B?</strong></p>
+            <ol type="A">
+                <li>All electric vehicle dealers provided a long warranty period.</li>
+                <li>The government removed the subsidies on buying electric vehicles.</li>
+                <li>The gasoline suppliers greatly raised the price of gasoline.</li>
+                <li>The cost of building charging stations drastically decreased.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="lang-zh">
+            <strong>1. 沿著曲線的移動 vs. 曲線的平移：</strong><br>
+            圖中顯示均衡點由A移動到B，且這兩點都在<strong>同一條</strong>供應曲線 (SS) 上。這意味著供應沒有改變 (No change in supply)。均衡價格 \(P\) 下降，均衡數量 \(Q\) 下降。要導致這種「沿著供應曲線向下移動」的情況，唯一的可能是<strong>需求減少 (Decrease in demand)</strong>，即需求曲線向左平移。<br><br>
+            
+            <strong>2. 影響需求的因素：</strong><br>
+            - <strong>替代品 (Substitutes) 的價格：</strong> 如果替代品價格上升，對本物品的需求會增加 (正向關係)。<br>
+            - <strong>政府政策：</strong> 補貼 (Subsidies) 會增加消費者的購買意欲，增加需求；取消補貼則會減少需求。<br>
+            - <strong>品質預期：</strong> 產品品質提升或售後服務改善（如保養期），會增加需求。
+        </div>
+        <div class="lang-en">
+            <strong>1. Movement along the curve vs. Shift of the curve:</strong><br>
+            The graph shows the equilibrium moving from A to B, and both points lie on the <strong>same</strong> supply curve (SS). This means there is no change in supply. The equilibrium price \(P\) decreases, and equilibrium quantity \(Q\) decreases. To cause this downward "movement along the supply curve", the only possibility is a <strong>decrease in demand</strong>, meaning the demand curve shifted to the left.<br><br>
+            
+            <strong>2. Factors affecting demand:</strong><br>
+            - <strong>Price of Substitutes:</strong> If the price of a substitute rises, demand for the good in question increases (positive relationship).<br>
+            - <strong>Government Policy:</strong> Subsidies increase consumers' willingness to buy, increasing demand; removing subsidies decreases demand.<br>
+            - <strong>Quality Expectations:</strong> Improved product quality or after-sales service (like warranties) increases demand.
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--success-green); font-size: 1.2em;">B</span></strong></p>
+    
+    <div class="options-analysis">
+        <div class="option-item option-wrong">
+            <div class="lang-zh"><strong>A. 所有電動車代理商提供更長的保養期。(錯誤)</strong><br>更長的保養期提升了電動車的吸引力，會導致對電動車的<strong>需求增加</strong>（需求曲線向右移）。這會令均衡點沿著供應曲線向上移動，價格和數量都會上升，與圖表不符。</div>
+            <div class="lang-en"><strong>A. All electric vehicle dealers provided a long warranty period. (Incorrect)</strong><br>A longer warranty increases the attractiveness of electric vehicles, leading to an <strong>increase in demand</strong> (demand curve shifts right). This would cause a movement upward along the supply curve, increasing both price and quantity, which contradicts the graph.</div>
+        </div>
+
+        <div class="option-item option-correct">
+            <div class="lang-zh"><strong>B. 政府取消購買電動車的補貼。(正確)</strong><br>取消買車補貼增加了消費者的實際購買成本，導致購買意欲下降，<strong>需求減少</strong>（需求曲線向左移）。這會令均衡點由 A 移動至 B，價格 \(P\) 下降，交易數量 \(Q\) 也下降，完美吻合圖表。</div>
+            <div class="lang-en"><strong>B. The government removed the subsidies on buying electric vehicles. (Correct)</strong><br>Removing car-buying subsidies increases the actual cost for consumers, lowering their willingness to buy and causing a <strong>decrease in demand</strong> (demand curve shifts left). This causes the equilibrium to move from A to B, with price \(P\) and quantity \(Q\) decreasing, perfectly matching the graph.</div>
+        </div>
+
+        <div class="option-item option-wrong">
+            <div class="lang-zh"><strong>C. 汽油供應商大幅增加汽油價格。(錯誤)</strong><br>汽油汽車與電動車是替代品 (Substitutes)。汽油價格上升會增加使用汽油車的成本，消費者會轉而購買電動車，導致電動車<strong>需求增加</strong>，與圖表不符。</div>
+            <div class="lang-en"><strong>C. The gasoline suppliers greatly raised the price of gasoline. (Incorrect)</strong><br>Gasoline cars and electric vehicles are substitutes. An increase in gas prices raises the cost of using gasoline cars, prompting consumers to switch to electric vehicles. This leads to an <strong>increase in demand</strong> for EVs, which contradicts the graph.</div>
+        </div>
+
+        <div class="option-item option-wrong">
+            <div class="lang-zh"><strong>D. 充電站的興建成本大幅下降。(錯誤)</strong><br>充電站是電動車的輔助品 (Complements)。建造成本下降會令充電站增加或充電費下降，這會令駕駛電動車更方便，從而導致電動車<strong>需求增加</strong>，與圖表不符。</div>
+            <div class="lang-en"><strong>D. The cost of building charging stations drastically decreased. (Incorrect)</strong><br>Charging stations are complements to electric vehicles. Lower building costs would lead to more stations or lower charging fees, making driving EVs more convenient. This would lead to an <strong>increase in demand</strong> for EVs, contradicting the graph.</div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="header-box">
+        <div class="lang-zh">
+            <strong>解題樞紐 (Pivot Point)：辨識「沒有改變」的曲線</strong><br>
+            在處理這類圖表題時，第一眼要看的不是點怎麼動，而是<strong>哪條線畫了出來，哪條線沒畫出來</strong>。題目畫了一條供應曲線 SS，而點 A 和點 B 都在這條線上。這告訴我們一個絕對的事實：<strong>供應沒有改變</strong>。既然價格和數量都下跌了，背後的推手必定是「需求下降 (Decrease in demand)」。因此，你在選項中只需尋找「哪個因素會令需求減少」。
+        </div>
+        <div class="lang-en">
+            <strong>Pivot Point: Identifying the unchanged curve</strong><br>
+            When tackling this type of graphical question, your first look shouldn't be how the point moves, but rather <strong>which curve is drawn and which is not</strong>. The question draws one supply curve SS, and both points A and B sit on it. This tells us an absolute fact: <strong>Supply did not change</strong>. Since both price and quantity fell, the driving force must be a "decrease in demand". Therefore, you only need to look for the option that represents a factor causing demand to fall.
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <div class="lang-zh">
+            <strong>陷阱：混淆「需求量變動」與「需求變動」</strong><br>
+            很多學生看到價格改變，就會誤以為是「需求量 (Quantity Demanded)」改變。請記住，是外在因素（如取消補貼）先導致了整個「需求 (Demand)」下降（曲線平移），市場為了重新達到均衡，價格才會跟隨下降，從而導致供應量 (Quantity Supplied) 沿著原有的供應曲線向下減少。
+        </div>
+        <div class="lang-en">
+            <strong>Trap: Confusing "Change in Quantity Demanded" with "Change in Demand"</strong><br>
+            Many students see a price change and mistakenly think it's just a change in "Quantity Demanded". Remember, it is the external factor (like removing a subsidy) that first causes the entire "Demand" to fall (curve shift). To reach a new equilibrium, the market price then falls, which subsequently causes the Quantity Supplied to decrease along the original supply curve.
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="lang-zh">
+            <strong>問：選項D提到「興建成本下降」，這不應該是影響「供應」的因素嗎？為什麼說它影響需求？</strong><br>
+            答：好問題！「興建成本下降」確實會增加<strong>充電站</strong>的供應。但是，題目的主角是<strong>電動車市場</strong>，而不是充電站市場。充電站數量的增加，對電動車而言是輔助品 (Complements) 變得更容易獲取，因此它會增加消費者買電動車的意欲，這屬於對電動車的「需求增加」。再者，即使你強行認為它影響電動車的供應，供應增加會令 SS 曲線向右移，這會產生一條新的供應曲線，而題目中 A 和 B 都在同一條線 SS 上，所以這個推論也不成立。
+        </div>
+        <div class="lang-en">
+            <strong>Q: Option D mentions "cost of building decreased". Shouldn't cost factors affect "Supply"? Why do you say it affects demand?</strong><br>
+            A: Great question! A decrease in building costs indeed increases the supply of <strong>charging stations</strong>. However, the subject of the question is the <strong>Electric Vehicle market</strong>, not the charging station market. An increase in charging stations means a complement is more easily accessible for EVs, which increases consumers' willingness to buy EVs. This translates to an "increase in demand" for EVs. Furthermore, even if you forced the logic that it affects EV supply, an increase in supply would shift the SS curve to the right, creating a new curve. But in our graph, points A and B are on the exact same SS curve, so that logic fails anyway.
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="lang-zh">
+            <strong>「畫公仔畫出腸」技巧 (The "Draw the Missing Lines" Trick)：</strong><br>
+            在考試時，不要只憑空想像。直接在試卷的圖上，穿過點 A 畫一條向下斜的需求曲線 \(D_1\)，再穿過點 B 畫另一條向下斜的需求曲線 \(D_2\)。你會立刻清楚地看到，這是一個標準的「需求向左移 (Shift leftwards)」圖表。然後直接掃描 A, B, C, D，尋找負面因素（減少需求的因素），一秒就能選出 B！
+        </div>
+        <div class="lang-en">
+            <strong>The "Draw the Missing Lines" Trick:</strong><br>
+            During the exam, don't just visualize it in your head. Directly on your question paper, draw a downward-sloping demand curve \(D_1\) passing through point A, and another downward-sloping demand curve \(D_2\) passing through point B. You will immediately and clearly see this is a standard "Demand shifts leftward" graph. Then, scan options A, B, C, and D looking for a negative factor (something that decreases demand), and you can pick B in a second!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
