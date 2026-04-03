@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Quantity Theory of Money</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f9fafb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        h2 { display: flex; align-items: center; gap: 10px; }
+        
+        .bilingual-group {
+            margin-bottom: 20px;
+        }
+        .text-zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .text-en {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        /* Specialized Boxes */
+        .header-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .trap-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* Options styling */
+        .option-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .option-correct {
+            border-color: var(--secondary);
+            background-color: #f0fdf4;
+        }
+        .badge-correct {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .badge-wrong {
+            background-color: var(--danger);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .concept-box, .trap-box, .qa-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>課題 (Topic)：</strong>總體經濟學 - 貨幣數量論</div>
+            <div class="text-en">Macroeconomics - Quantity Theory of Money</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>難度 (Difficulty)：</strong>★★★☆☆</div>
+            <div class="text-en">Level 3 out of 5</div>
+        </div>
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>核心概念 (Key Concepts)：</strong>貨幣數量論 (Quantity Theory of Money), 增長率 (Growth Rate), 實質產出 (Real Output), 名義收入 (Nominal Income)</div>
+        </div>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="bilingual-group">
+        <div class="text-zh">
+            <p>參考提供的圖表。根據貨幣量理論，下列哪項陳述是正確的？</p>
+            <ul>
+                <li>A. 通脹率是零。</li>
+                <li>B. 實質產出的增長率正在增加。</li>
+                <li>C. 貨幣供應的增長率是固定的。</li>
+                <li>D. 名義收入的增長率是固定的。</li>
+            </ul>
+        </div>
+        <div class="text-en">
+            <p>Refer to the provided diagram. According to the quantity theory of money, which of the following statements is correct?</p>
+            <ul>
+                <li>A. The inflation rate is zero.</li>
+                <li>B. The growth rate of real output is increasing.</li>
+                <li>C. The growth rate of money supply is constant.</li>
+                <li>D. The growth rate of nominal income is constant.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>1. 交易方程式 (Equation of Exchange)</strong><br>
+                貨幣數量論的核心是交易方程式。其基本形式為：
+            </div>
+            <div class="text-en">
+                <strong>1. Equation of Exchange</strong><br>
+                The core of the Quantity Theory of Money is the equation of exchange. The basic form is:
+            </div>
+        </div>
+        
+        <div class="math-block">
+            $$ M \times V = P \times Y $$
+        </div>
+
+        <div class="bilingual-group">
+            <div class="text-zh">
+                這裡 \( M \) 是貨幣供應，\( V \) 是貨幣流通速度，\( P \) 是物價水平，\( Y \) 是實質產出（實質 GDP）。而 \( P \times Y \) 則是<strong>名義收入 (Nominal Income)</strong>。
+            </div>
+            <div class="text-en">
+                Where \( M \) is money supply, \( V \) is velocity of money, \( P \) is price level, and \( Y \) is real output (Real GDP). The product \( P \times Y \) is the <strong>Nominal Income</strong>.
+            </div>
+        </div>
+
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>2. 增長率版本 (Growth Rate Version)</strong><br>
+                當我們將上述方程式轉換為百分比變動（增長率）時，乘法會變成加法：
+            </div>
+            <div class="text-en">
+                <strong>2. Growth Rate Version</strong><br>
+                When we convert the equation into percentage changes (growth rates), multiplication becomes addition:
+            </div>
+        </div>
+
+        <div class="math-block">
+            $$ \% \Delta M + \% \Delta V = \% \Delta P + \% \Delta Y $$
+        </div>
+
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <ul>
+                    <li>\( \% \Delta M \) = 貨幣供應增長率</li>
+                    <li>\( \% \Delta V \) = 貨幣流通速度增長率（通常假設為 0，因為 \( V \) 保持不變）</li>
+                    <li>\( \% \Delta P \) = 通脹率 (Inflation Rate)</li>
+                    <li>\( \% \Delta Y \) = 實質產出增長率</li>
+                </ul>
+            </div>
+            <div class="text-en">
+                <ul>
+                    <li>\( \% \Delta M \) = Growth rate of money supply</li>
+                    <li>\( \% \Delta V \) = Growth rate of velocity (Usually assumed to be 0 as \( V \) is constant)</li>
+                    <li>\( \% \Delta P \) = Inflation rate</li>
+                    <li>\( \% \Delta Y \) = Growth rate of real output</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p class="text-zh">正確答案是 <strong>Option B</strong>。<br>The correct option is <strong>Option B</strong>.</p>
+
+    <div class="option-item">
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>A. 通脹率是零。<span class="badge-wrong">錯誤</span></strong><br>
+            圖中的 Y 軸是「增長率 (%)」。代表「物價水平」的線是一條位於 0 以上的水平線。這意味著物價水平的增長率（即通脹率 \( \% \Delta P \)）是一個<strong>大於零的常數</strong>（正數），而不是零。如果通脹率是零，這條線應該剛好疊在 X 軸 (0%) 上。</div>
+            <div class="text-en"><strong>A. The inflation rate is zero. <span class="badge-wrong">Incorrect</span></strong><br>
+            The Y-axis in the diagram is "Growth rate (%)". The line representing "Price level" is a horizontal line above 0. This means the growth rate of the price level (i.e., the inflation rate \( \% \Delta P \)) is a <strong>positive constant</strong>, not zero. If the inflation rate were zero, the line would lie exactly on the X-axis (0%).</div>
+        </div>
+    </div>
+
+    <div class="option-item option-correct">
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>B. 實質產出的增長率正在增加。<span class="badge-correct">正確</span></strong><br>
+            根據增長率公式：\( \% \Delta Y = \% \Delta M - \% \Delta P \)（假設 \( \% \Delta V = 0 \)）。<br>
+            從圖表可見，「貨幣供應」的線向上傾斜，代表 \( \% \Delta M \) 正在<strong>增加</strong>。「物價水平」是一條水平線，代表 \( \% \Delta P \) 是<strong>固定常數</strong>。<br>
+            當一個正在增加的數值減去一個固定的數值，其差額必然也是<strong>正在增加</strong>。因此，實質產出增長率 \( \% \Delta Y \) 正在增加。</div>
+            
+            <div class="text-en"><strong>B. The growth rate of real output is increasing. <span class="badge-correct">Correct</span></strong><br>
+            According to the growth rate formula: \( \% \Delta Y = \% \Delta M - \% \Delta P \) (assuming \( \% \Delta V = 0 \)).<br>
+            From the graph, the "Money supply" line is upward sloping, meaning \( \% \Delta M \) is <strong>increasing</strong>. The "Price level" is a horizontal line, meaning \( \% \Delta P \) is a <strong>constant</strong>.<br>
+            When you subtract a constant from an increasing number, the difference must also be <strong>increasing</strong>. Therefore, the growth rate of real output \( \% \Delta Y \) is increasing.</div>
+        </div>
+    </div>
+
+    <div class="option-item">
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>C. 貨幣供應的增長率是固定的。<span class="badge-wrong">錯誤</span></strong><br>
+            Y 軸已經標明是「增長率」。既然代表貨幣供應的線是向上傾斜的，這代表貨幣供應的「增長率」本身正在隨時間上升，而非固定。</div>
+            <div class="text-en"><strong>C. The growth rate of money supply is constant. <span class="badge-wrong">Incorrect</span></strong><br>
+            The Y-axis is already defined as "Growth rate". Since the line representing money supply is upward sloping, it implies the "growth rate" of money supply itself is rising over time, not constant.</div>
+        </div>
+    </div>
+
+    <div class="option-item">
+        <div class="bilingual-group">
+            <div class="text-zh"><strong>D. 名義收入的增長率是固定的。<span class="badge-wrong">錯誤</span></strong><br>
+            名義收入的增長率 = \( \% \Delta P + \% \Delta Y \)，這等於貨幣供應增長率 \( \% \Delta M \)（因為 \( \% \Delta V = 0 \)）。由於從圖表中得知 \( \% \Delta M \) 正在增加，名義收入的增長率也是正在增加的，而非固定。</div>
+            <div class="text-en"><strong>D. The growth rate of nominal income is constant. <span class="badge-wrong">Incorrect</span></strong><br>
+            The growth rate of nominal income = \( \% \Delta P + \% \Delta Y \), which equals the growth rate of money supply \( \% \Delta M \) (since \( \% \Delta V = 0 \)). Since we know from the graph that \( \% \Delta M \) is increasing, the growth rate of nominal income is also increasing, not constant.</div>
+        </div>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <div class="bilingual-group">
+        <div class="text-zh">
+            <p><strong>破題關鍵 (The Pivot Point)：</strong>本題的致勝關鍵在於<strong>看清楚 Y 軸的標籤</strong>！Y 軸不是一般的「數值 (Level)」，而是「增長率 (Growth Rate)」。</p>
+            <ul>
+                <li>如果你把 Y 軸看成「數量」，你會誤以為貨幣供應在穩定增長（恆定增長率），物價水平沒變（通脹為零）。這就會錯選 A 或 C。</li>
+                <li>正確解讀：圖表直接給了你 \( \% \Delta M \)（斜線上揚 = 遞增）和 \( \% \Delta P \)（水平線 = 常數）。套入公式 \( \% \Delta M = \% \Delta P + \% \Delta Y \) 即可秒殺。</li>
+            </ul>
+        </div>
+        <div class="text-en">
+            <p><strong>The Pivot Point:</strong> The key to solving this question is to <strong>pay close attention to the Y-axis label</strong>! The Y-axis is not absolute "Level", but "Growth Rate".</p>
+            <ul>
+                <li>If you misread the Y-axis as "Level", you would wrongly assume money supply is growing at a constant rate, and price level is unchanged (zero inflation). This would lead you to choose A or C.</li>
+                <li>Correct interpretation: The graph directly provides \( \% \Delta M \) (upward sloping = increasing) and \( \% \Delta P \) (horizontal = constant). Plugging this into the formula \( \% \Delta M = \% \Delta P + \% \Delta Y \) solves the problem instantly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>陷阱一：混淆「數值」(Level) 與「增長率」(Growth Rate)</strong><br>
+                考生經常一看到水平線就以為是「零」。請記住，在「增長率」的圖表中，位於 0 以上的水平線代表該變數正在以<strong>固定速度增長</strong>（例如每年增長 2%），而不是沒有增長。
+            </div>
+            <div class="text-en">
+                <strong>Trap 1: Confusing "Level" with "Growth Rate"</strong><br>
+                Students often assume a horizontal line implies "zero". Remember, on a "Growth rate" chart, a horizontal line above 0 means the variable is growing at a <strong>constant positive rate</strong> (e.g., growing 2% every year), not that it's zero.
+            </div>
+        </div>
+        <hr style="border:0; border-top: 1px solid #fca5a5; margin: 15px 0;">
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>陷阱二：忘記「名義收入」的定義</strong><br>
+                許多學生記得 \( M \times V = P \times Y \)，但忘記了 \( P \times Y \) 就是名義收入。在增長率版本中，名義收入增長率直接等於 \( \% \Delta M + \% \Delta V \)。
+            </div>
+            <div class="text-en">
+                <strong>Trap 2: Forgetting the definition of "Nominal Income"</strong><br>
+                Many students remember \( M \times V = P \times Y \), but forget that \( P \times Y \) IS Nominal Income. In the growth rate version, the growth rate of nominal income equals exactly \( \% \Delta M + \% \Delta V \).
+            </div>
+        </div>
+    </div>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>Q1: 題目沒有提到貨幣流通速度 (Velocity, V)，為什麼我們可以假設它是常數（\( \% \Delta V = 0 \)）？</strong><br>
+                A: 在 HKDSE 及傳統貨幣數量論中，除非題目特別說明支付科技有重大改變或大眾持幣習慣改變，否則我們一律假設短期至中期的貨幣流通速度 \( V \) 是穩定的。因此，其增長率 \( \% \Delta V \) 為 0。
+            </div>
+            <div class="text-en">
+                <strong>Q1: The question didn't mention the Velocity of money (V). Why can we assume it's constant (\( \% \Delta V = 0 \))?</strong><br>
+                A: In the HKDSE and traditional Quantity Theory of Money, unless the question specifies a major change in payment technology or holding habits, we uniformly assume that short-to-medium-term velocity \( V \) is stable. Hence, its growth rate \( \% \Delta V \) is 0.
+            </div>
+        </div>
+        <hr style="border:0; border-top: 1px solid #6ee7b7; margin: 15px 0;">
+        <div class="bilingual-group">
+            <div class="text-zh">
+                <strong>Q2: 如果代表「物價水平」的線剛好疊在 X 軸（0 的位置）上，答案會是什麼？</strong><br>
+                A: 如果該線在 0 的位置，那麼 \( \% \Delta P = 0 \)，這時選項 A（通脹率是零）就會是正確的！同時，實質產出的增長率 \( \% \Delta Y \) 將會完全等於貨幣供應的增長率 \( \% \Delta M \)。
+            </div>
+            <div class="text-en">
+                <strong>Q2: What if the line representing "Price level" was exactly on the X-axis (at 0)?</strong><br>
+                A: If the line was at 0, then \( \% \Delta P = 0 \), and Option A (The inflation rate is zero) would be correct! Also, the growth rate of real output \( \% \Delta Y \) would be exactly equal to the growth rate of money supply \( \% \Delta M \).
+            </div>
+        </div>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="bilingual-group">
+        <div class="text-zh">
+            <p><strong>「箭頭標記法」(The Arrow Method)</strong></p>
+            <p>在考試時，不要光用腦想，直接在試卷空白處寫下公式，並根據圖表畫箭頭：</p>
+            <ol>
+                <li>寫出：\( \% \Delta M = \% \Delta P + \% \Delta Y \)</li>
+                <li>看圖，貨幣供應增長率往上走：在 \( \% \Delta M \) 上方畫向上的箭頭 <strong>(↑)</strong></li>
+                <li>看圖，物價增長率是平的：在 \( \% \Delta P \) 上方畫一條橫線 <strong>(—)</strong></li>
+                <li>推理：等號左邊 <strong>(↑)</strong> = 等號右邊 <strong>(—)</strong> + \( \% \Delta Y \)</li>
+                <li>結論：要讓等式成立，\( \% \Delta Y \) 必定也是向上的箭頭 <strong>(↑)</strong>，即「增加」。一秒找出答案 B！</li>
+            </ol>
+        </div>
+        <div class="text-en">
+            <p><strong>The Arrow Method</strong></p>
+            <p>During the exam, don't just calculate in your head. Write the formula on the paper and draw arrows based on the graph:</p>
+            <ol>
+                <li>Write down: \( \% \Delta M = \% \Delta P + \% \Delta Y \)</li>
+                <li>From the graph, money supply growth is rising: Draw an UP arrow above \( \% \Delta M \) <strong>(↑)</strong>.</li>
+                <li>From the graph, price level growth is flat: Draw a DASH above \( \% \Delta P \) <strong>(—)</strong>.</li>
+                <li>Logic: Left side <strong>(↑)</strong> = Right side <strong>(—)</strong> + \( \% \Delta Y \)</li>
+                <li>Conclusion: For the equation to balance, \( \% \Delta Y \) must also be an UP arrow <strong>(↑)</strong>, meaning "increasing". You find Answer B in one second!</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>

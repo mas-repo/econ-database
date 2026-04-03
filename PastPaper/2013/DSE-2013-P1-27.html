@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Money Demand</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0.5,0.2,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e3a8a;
+        }
+        .question-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .analysis-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+        }
+        .option.correct {
+            border-left-color: #22c55e;
+            background-color: #f0fdf4;
+        }
+        .option.wrong {
+            border-left-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 20px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #e0e7ff;
+            color: #4338ca;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <p><span class="badge">Topic / 課題</span> Macroeconomics: Money Demand (總體經濟學：貨幣需求)</p>
+        <p><span class="badge">Difficulty / 難度</span> ⭐⭐ (2/5 Stars)</p>
+        <p><span class="badge">Key Concepts / 關鍵概念</span> Money Demand (貨幣需求), Shifts of Curve (曲線的移動), Transaction Demand (交易需求)</p>
+    </div>
+
+    <div class="question-box">
+        <h2>2. 題目 / The Question</h2>
+        <p><strong>參閱圖表。下列哪項會令貨幣需求曲線由 $D_1$ 移至 $D_2$？</strong></p>
+        <ol type="A">
+            <li>名義利率下降</li>
+            <li>國民收入上升</li>
+            <li>人們更廣泛使用電子貨幣</li>
+            <li>中央銀行在公開市場購買債券</li>
+        </ol>
+        <hr>
+        <div class="bilingual-en">
+            <p><strong>Refer to the diagram. Which of the following will cause the money demand curve to shift from $D_1$ to $D_2$?</strong></p>
+            <ol type="A">
+                <li>a fall in the nominal interest rate</li>
+                <li>a rise in national income</li>
+                <li>more widespread use of electronic money</li>
+                <li>an open market purchase of bonds by the central bank</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>3. 概念重溫 / Concept Review</h2>
+        <p><strong>貨幣需求 (Money Demand, $M_d$)：</strong> 是指人們願意以流動性最高的形式（即現金或活期存款）來持有財富的數量。持有貨幣的機會成本是<strong>名義利率 (Nominal Interest Rate, $R$)</strong>。</p>
+        <p class="bilingual-en">Money Demand refers to the amount of wealth that people choose to hold in the most liquid form (i.e., cash or demand deposits). The opportunity cost of holding money is the Nominal Interest Rate.</p>
+
+        <p><strong>沿著曲線移動 (Movement along the curve) vs. 曲線移動 (Shift of the curve)：</strong></p>
+        <ul>
+            <li><strong>沿著曲線移動：</strong> 只有當 Y 軸的變量（名義利率）改變時發生。</li>
+            <li><strong>曲線的移動：</strong> 當名義利率以外的因素（如國民收入、物價水平、金融科技）改變時發生。圖中由 $D_1$ 向右移至 $D_2$，代表在任何利率下，<strong>貨幣需求增加 (Increase in Money Demand)</strong>。</li>
+        </ul>
+        <div class="bilingual-en">
+            <ul>
+                <li><strong>Movement along the curve:</strong> Occurs ONLY when the variable on the y-axis (nominal interest rate) changes.</li>
+                <li><strong>Shift of the curve:</strong> Occurs when factors OTHER THAN the nominal interest rate (e.g., national income, price level, financial technology) change. A rightward shift from $D_1$ to $D_2$ indicates an <strong>Increase in Money Demand</strong> at any given interest rate.</li>
+            </ul>
+        </div>
+
+        <div class="math-block">
+            <strong>貨幣需求函數 / Money Demand Function:</strong>
+            $$M_d = f(Y, P, R, \dots)$$
+            <p style="font-size: 0.9em; margin-top: 10px;">$Y$ = 實質國民收入 (Real Income), $P$ = 物價水平 (Price Level), $R$ = 名義利率 (Nominal Interest Rate)</p>
+        </div>
+    </div>
+
+    <div class="analysis-section">
+        <h2>4. 答案與詳細分析 / Answer & Detailed Analysis</h2>
+        <h3 style="color: #22c55e;">正確答案 / Correct Option: B</h3>
+        
+        <div class="option wrong">
+            <p><strong>A. 名義利率下降 (a fall in the nominal interest rate) - 錯誤 (Incorrect)</strong></p>
+            <p>名義利率是顯示在圖表 Y 軸上的變量。當名義利率下降時，這會導致<strong>沿著同一條貨幣需求曲線 ($D_1$) 向下移動</strong>，導致貨幣需求量增加，但不會令整條曲線移動。</p>
+            <p class="bilingual-en">The nominal interest rate is the variable on the Y-axis. A fall in the nominal interest rate causes a <strong>downward movement along the same money demand curve ($D_1$)</strong>, resulting in an increase in the quantity of money demanded, but it does NOT shift the entire curve.</p>
+        </div>
+
+        <div class="option correct">
+            <p><strong>B. 國民收入上升 (a rise in national income) - 正確 (Correct)</strong></p>
+            <p>當國民收入上升，人們的消費和交易量會增加。為了應付更多的日常交易，人們需要持有更多的貨幣。這增加了「交易性貨幣需求」，導致整條貨幣需求曲線<strong>向右移動</strong>（由 $D_1$ 移至 $D_2$）。</p>
+            <p class="bilingual-en">When national income rises, people's consumption and volume of transactions increase. To finance more daily transactions, people need to hold more money. This increases the "transaction demand for money," causing the entire money demand curve to <strong>shift to the right</strong> (from $D_1$ to $D_2$).</p>
+        </div>
+
+        <div class="option wrong">
+            <p><strong>C. 人們更廣泛使用電子貨幣 (more widespread use of electronic money) - 錯誤 (Incorrect)</strong></p>
+            <p>電子貨幣（如信用卡、八達通、PayMe）減少了人們持有實體現金的需求。因此，在任何給定的利率下，貨幣需求會減少，這會導致貨幣需求曲線<strong>向左移動</strong>，而不是向右。</p>
+            <p class="bilingual-en">Electronic money (e.g., credit cards, Octopus, PayMe) reduces the need for people to hold physical cash. Therefore, at any given interest rate, money demand decreases. This would cause the money demand curve to <strong>shift to the left</strong>, not right.</p>
+        </div>
+
+        <div class="option wrong">
+            <p><strong>D. 中央銀行在公開市場購買債券 (an open market purchase of bonds by the central bank) - 錯誤 (Incorrect)</strong></p>
+            <p>這項操作是擴張性貨幣政策。當中央銀行買入債券，會向市場注入資金，這會增加<strong>貨幣供應 (Money Supply, $M_s$)</strong>，導致垂直的貨幣供應曲線向右移。這絕對不會直接影響大眾的貨幣需求曲線 ($D$)。</p>
+            <p class="bilingual-en">This operation is an expansionary monetary policy. When the central bank buys bonds, it injects money into the market, which increases the <strong>Money Supply ($M_s$)</strong>, causing the vertical money supply curve to shift to the right. It does NOT directly affect the public's money demand curve ($D$).</p>
+        </div>
+    </div>
+
+    <div class="tips-box">
+        <h2>5. 題目拆解 / Problem Decomposition</h2>
+        <p><strong>拆題關鍵 (The Pivot Point)：</strong></p>
+        <ol>
+            <li><strong>看清座標軸 (Check the axes):</strong> Y 軸是利率，X 軸是貨幣量。</li>
+            <li><strong>辨識動作 (Identify the action):</strong> 曲線由 $D_1$ 移至 $D_2$，這是一個<strong>向右移動 (Rightward shift)</strong>，代表需求<strong>增加 (Increase)</strong>。</li>
+            <li><strong>排除法 (Elimination):</strong> 尋找一個會令大眾想持有更多貨幣（非因利率改變）的因素。</li>
+        </ol>
+        <div class="bilingual-en">
+            <p><strong>The Pivot Point:</strong></p>
+            <ol>
+                <li><strong>Check the axes:</strong> Y-axis is interest rate, X-axis is quantity of money.</li>
+                <li><strong>Identify the action:</strong> The curve shifts from $D_1$ to $D_2$, which is a <strong>rightward shift</strong>, representing an <strong>increase</strong> in demand.</li>
+                <li><strong>Elimination:</strong> Look for a factor that makes the public want to hold more money (for reasons other than a change in interest rate).</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="header-section" style="border-top-color: #ef4444;">
+        <h2 style="color: #ef4444;">6. 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+        <p>❌ <strong>陷阱一：混淆「需求量改變」與「需求改變」</strong><br>
+        很多學生看到「利率下降」就直覺想到圖表，但忘記了利率是 Y 軸變量。Y 軸變量的改變永遠只會導致<strong>沿著曲線移動 (Movement along the curve)</strong>。</p>
+        
+        <p>❌ <strong>陷阱二：混淆「貨幣需求」與「貨幣供應」</strong><br>
+        選項 D 是中央銀行的行為，影響的是「供應」而非「需求」。請牢記：大眾決定需求，央行/銀行體系決定供應。</p>
+
+        <div class="bilingual-en">
+            <p>❌ <strong>Trap 1: Confusing "Change in Quantity Demanded" with "Change in Demand"</strong><br>
+            Many students see "interest rate falls" and instinctively think of the graph, forgetting that the interest rate is the Y-axis variable. A change in the Y-axis variable ALWAYS results in a <strong>movement along the curve</strong> only.</p>
+            
+            <p>❌ <strong>Trap 2: Confusing "Money Demand" with "Money Supply"</strong><br>
+            Option D describes an action by the central bank, which affects "Supply," not "Demand." Remember: the public determines demand; the central bank/banking system determines supply.</p>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <h2>7. 學生常見疑問 / Student Q&A</h2>
+        <p><strong>Q1: 除了國民收入，還有什麼因素會令這條曲線向右移？</strong></p>
+        <p><strong>A:</strong> 另一個常見原因是<strong>物價水平 (Price Level) 上升</strong>。當物價變貴（通貨膨脹），你需要更多的鈔票去買同樣數量的商品，因此交易性貨幣需求也會增加，令曲線向右移。</p>
+        <div class="bilingual-en">
+            <p><strong>Q1: Besides national income, what else can shift this curve to the right?</strong></p>
+            <p><strong>A:</strong> Another common factor is an <strong>increase in the Price Level</strong>. When things become more expensive (inflation), you need more cash to buy the same amount of goods. Therefore, the transaction demand for money increases, shifting the curve to the right.</p>
+        </div>
+    </div>
+
+    <div class="tips-box" style="border-left-color: #10b981; background-color: #ecfdf5;">
+        <h2 style="color: #059669;">8. 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+        <p><strong>3秒解題法 (The 3-Second Rule):</strong></p>
+        <p>在 MC 卷中遇到這種圖表題：</p>
+        <ol>
+            <li>選項有「Y軸字眼」（名義利率） $\rightarrow$ <strong>即秒刪除</strong> (A 錯)。</li>
+            <li>看清曲線是 $D$ (Demand) $\rightarrow$ 凡是關於「中央銀行/買賣債券/法定儲備」的選項 $\rightarrow$ <strong>即秒刪除</strong> (D 錯，這些是 $S$ 曲線)。</li>
+            <li>剩餘 B 和 C。向右移 = 增加。C 會令人拿少點現金 (需求減)。所以答案必為 B。</li>
+        </ol>
+        <div class="bilingual-en">
+            <p><strong>The 3-Second Rule:</strong></p>
+            <ol>
+                <li>If an option mentions the "Y-axis label" (nominal interest rate) $\rightarrow$ <strong>Eliminate immediately</strong> (A is wrong).</li>
+                <li>Note that the curve is $D$ (Demand) $\rightarrow$ Any option about "Central Bank / buying bonds / required reserves" $\rightarrow$ <strong>Eliminate immediately</strong> (D is wrong, these affect the $S$ curve).</li>
+                <li>Left with B and C. Rightward shift = Increase. Option C makes people hold less cash (demand decreases). Thus, the answer MUST be B.</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics AS-AD Model Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .tc-text {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+        .en-text {
+            color: #4b5563;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .correct-answer {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1em;
+        }
+        .option-analysis {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .tips-box {
+            background-color: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📝 經濟學試題解析 (Economics Question Analysis)</h1>
+        <p><strong>Topic (課題):</strong> 宏觀經濟學 - 總供需模型與通脹裂口 (Macroeconomics - AS-AD Model & Inflationary Gap)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆ (3/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Inflationary Gap 通脹裂口</span> 
+            <span class="tag">Contractionary Policy 緊縮性政策</span> 
+            <span class="tag">LRAS 長期總供給</span>
+        </p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="tc-text">參考以下的總供需圖。原初該經濟在 E1 運作。下列哪些能幫助該經濟回復至長期均衡？</p>
+        <p class="en-text">Refer to the AS-AD diagram below. The economy operates at E1 initially. Which of the following can help the economy restore to the long run equilibrium?</p>
+        
+        <ul>
+            <li><span class="tc-text">(1) 減少對小型企業的補貼</span><br><span class="en-text">(1) to reduce the subsidies to small enterprises</span></li>
+            <li><span class="tc-text">(2) 提高法定儲備比率</span><br><span class="en-text">(2) to increase the required reserve ratio</span></li>
+            <li><span class="tc-text">(3) 減低貼現率</span><br><span class="en-text">(3) to reduce the discount rate</span></li>
+            <li><span class="tc-text">(4) 減低物業稅</span><br><span class="en-text">(4) to reduce property tax</span></li>
+        </ul>
+
+        <p class="tc-text">A. 只有 (1)、(2) &nbsp;&nbsp;&nbsp; B. 只有 (3)、(4) &nbsp;&nbsp;&nbsp; C. 只有 (1)、(2) 及 (3) &nbsp;&nbsp;&nbsp; D. 只有 (2)、(3) 及 (4)</p>
+        <p class="en-text">A. (1) and (2) only &nbsp;&nbsp;&nbsp; B. (3) and (4) only &nbsp;&nbsp;&nbsp; C. (1), (2) and (3) only &nbsp;&nbsp;&nbsp; D. (2), (3) and (4) only</p>
+    </div>
+
+    <div class="concept-box">
+        <h2>2. Concept Review (概念重溫)</h2>
+        <p class="tc-text">從題目提供的圖表可見，短期總供給 (SRAS) 與總需求 (AD) 的相交點 $E_1$ 位於長期總供給 (LRAS) 曲線的右方。這意味著目前的實際產出 ($Y_1$) 已經超出了充分就業產出水平 ($Y_f$)，經濟正處於<strong>通脹裂口 (Inflationary Gap)</strong>。</p>
+        <p class="en-text">From the provided diagram, the intersection of Short-Run Aggregate Supply (SRAS) and Aggregate Demand (AD), marked as $E_1$, lies to the right of the Long-Run Aggregate Supply (LRAS) curve. This means that the current actual output ($Y_1$) exceeds the full-employment output level ($Y_f$). The economy is experiencing an <strong>Inflationary Gap</strong>.</p>
+        
+        <div class="math-block">
+            $$ Y_1 > Y_f \implies \text{Inflationary Gap (通脹裂口)} $$
+        </div>
+
+        <p class="tc-text">要使經濟回復長期均衡 (即回到 LRAS 線上)，我們需要推行<strong>緊縮性政策 (Contractionary Policies)</strong> 來減少總需求 (使 AD 左移)，或者透過增加生產成本來減少短期總供給 (使 SRAS 左移)。</p>
+        <p class="en-text">To restore the economy to long-run equilibrium (moving back to the LRAS curve), we need to implement <strong>Contractionary Policies</strong> to decrease Aggregate Demand (shift AD left), or increase production costs to decrease Short-Run Aggregate Supply (shift SRAS left).</p>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">
+        <strong>Correct Option (正確答案): A. 只有 (1)、(2) / (1) and (2) only</strong>
+    </div>
+
+    <div class="option-analysis">
+        <p class="tc-text"><strong>分析 (1) 減少對小型企業的補貼：正確</strong></p>
+        <p class="tc-text">減少補貼會直接增加企業的生產成本。當生產成本上升，企業的利潤空間收窄，導致短期總供給 (SRAS) 減少並向左移。這會使均衡點向左移動，有助於消除通脹裂口，拉近與 LRAS 的距離。</p>
+        <p class="en-text"><strong>Analysis of (1) Reduce subsidies to small enterprises: CORRECT</strong><br>
+        Reducing subsidies directly increases the cost of production for firms. When production costs rise, profit margins shrink, leading to a decrease in Short-Run Aggregate Supply (SRAS shifts left). This shifts the equilibrium point to the left, helping to eliminate the inflationary gap and move back towards LRAS.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p class="tc-text"><strong>分析 (2) 提高法定儲備比率：正確</strong></p>
+        <p class="tc-text">這是緊縮性貨幣政策。提高法定儲備比率會降低銀行的放款能力，導致貨幣供應量減少、利率上升。較高的利率會壓抑私人投資 (I) 和消費 (C)。因此，總需求 (AD) 會向左移，有助於消除通脹裂口。</p>
+        <p class="en-text"><strong>Analysis of (2) Increase the required reserve ratio: CORRECT</strong><br>
+        This is a contractionary monetary policy. Increasing the required reserve ratio reduces banks' ability to lend, leading to a decrease in the money supply and an increase in interest rates. Higher interest rates suppress private investment (I) and consumption (C). Therefore, Aggregate Demand (AD) shifts left, helping to close the inflationary gap.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p class="tc-text"><strong>分析 (3) 減低貼現率：錯誤</strong></p>
+        <p class="tc-text">這是擴張性貨幣政策。減低貼現率會鼓勵商業銀行向中央銀行借款，從而增加貨幣供應，導致利率下跌、總需求 (AD) 增加並向右移。這只會使產出進一步偏離 LRAS，令通脹裂口惡化。</p>
+        <p class="en-text"><strong>Analysis of (3) Reduce the discount rate: INCORRECT</strong><br>
+        This is an expansionary monetary policy. Reducing the discount rate encourages commercial banks to borrow from the central bank, which increases the money supply, lowers interest rates, and increases Aggregate Demand (AD shifts right). This would push output further away from LRAS, worsening the inflationary gap.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p class="tc-text"><strong>分析 (4) 減低物業稅：錯誤</strong></p>
+        <p class="tc-text">減低物業稅會增加市民的財富或可支配收入，從而刺激消費 (C)。這屬於擴張性的政策效果，會導致總需求 (AD) 向右移，同樣會使通脹問題惡化，無法回復長期均衡。</p>
+        <p class="en-text"><strong>Analysis of (4) Reduce property tax: INCORRECT</strong><br>
+        Reducing property taxes increases citizens' wealth or disposable income, thereby stimulating consumption (C). This has an expansionary effect, causing Aggregate Demand (AD) to shift right. This also worsens the inflation problem and fails to restore long-run equilibrium.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li>
+            <p class="tc-text"><strong>破題關鍵 (The Pivot Point):</strong> 觀察 $E_1$ 與 LRAS 的相對位置。因為 $E_1$ 在 LRAS 的右方，經濟處於「過熱」狀態。解題目標是尋找能為經濟「降溫」的政策（即 SRAS 左移 或 AD 左移）。</p>
+            <p class="en-text"><strong>The Pivot Point:</strong> Observe the relative position of $E_1$ and LRAS. Since $E_1$ is to the right of LRAS, the economy is "overheating". The goal is to find policies that "cool down" the economy (i.e., shift SRAS left or AD left).</p>
+        </li>
+        <li>
+            <p class="tc-text"><strong>篩選邏輯 (Filtering Logic):</strong> (3) 和 (4) 都是「派糖」或「放水」的擴張性政策，會刺激經濟，方向完全相反，可以直接剔除。</p>
+            <p class="en-text"><strong>Filtering Logic:</strong> Options (3) and (4) are expansionary policies that stimulate the economy. Since their directional impact is exactly the opposite of what is needed, they can be immediately eliminated.</p>
+        </li>
+    </ul>
+
+    <div class="tips-box">
+        <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱) ⚠️</h2>
+        <p class="tc-text"><strong>左右不分：</strong> 很多同學死背政策名稱，卻忘記了圖表的實際意義。見到「均衡」兩字就誤以為要實行擴張性政策。必須先判斷是通脹裂口還是通縮裂口！</p>
+        <p class="en-text"><strong>Confusing Left and Right:</strong> Many students memorize policy names but forget the actual graphical implications. Seeing the word "equilibrium" might trick them into thinking expansionary policies are always needed. You MUST first determine if it's an inflationary or deflationary gap!</p>
+        
+        <p class="tc-text"><strong>混淆「貼現率」的影響：</strong> 學生常將「減低貼現率」(Discount Rate) 與緊縮政策混淆。記住，貼現率是央行借錢給商業銀行的成本。成本降低 = 鼓勵借貸 = 擴張性政策。</p>
+        <p class="en-text"><strong>Confusing the impact of the "Discount Rate":</strong> Students often confuse reducing the discount rate with contractionary policies. Remember, the discount rate is the cost of borrowing for commercial banks from the central bank. Lower cost = encourages lending = expansionary policy.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問) 🙋‍♂️</h2>
+    <p class="tc-text"><strong>Q: 如果政府甚麼都不做 (不推行任何政策)，經濟最終能自動回復長期均衡嗎？</strong></p>
+    <p class="en-text"><strong>Q: If the government does nothing (implements no policies), will the economy eventually restore to long-run equilibrium automatically?</strong></p>
+    
+    <p class="tc-text"><strong>A:</strong> 可以的。在通脹裂口下，資源（如勞工）會出現短缺。長遠而言，這會推高要素價格（例如工資上升）。生產成本上升最終會導致 SRAS 自動向左移，直到產出回落至 $Y_f$ 並且物價水平進一步上升。不過，這題問的是「哪些選項能幫助...」，即是探討人為的政策干預。</p>
+    <p class="en-text"><strong>A:</strong> Yes. Under an inflationary gap, there is a shortage of resources (like labor). In the long run, this will drive up factor prices (e.g., rising wages). Higher production costs will eventually cause the SRAS to automatically shift left until output falls back to $Y_f$, at a higher price level. However, this specific question asks "which of the following can help...", meaning it's exploring deliberate policy interventions.</p>
+
+    <div class="header-section" style="background-color: #f5f3ff; border: 1px dashed #8b5cf6;">
+        <h2>7. Exam Tricks & Shortcuts (考試技巧與速解) ⚡</h2>
+        <p class="tc-text">這類題目其實可以「秒殺」。只要你在圖中確認了這是<strong>通脹裂口 (Inflationary Gap)</strong>，你的大腦就應該立刻開啟「尋找緊縮性政策 / 增加成本」的雷達。<br>
+        掃視四個選項：<br>
+        (3) 減息？擴張性！❌<br>
+        (4) 減稅？擴張性！❌<br>
+        一旦確定 (3) 和 (4) 錯，看選項：B、C、D 全都有 (3) 或 (4)，直接全部劃掉。答案只可能是 A！這能為你節省大量考試時間。</p>
+        <p class="en-text">This type of question can be solved in seconds. Once you identify the <strong>Inflationary Gap</strong> from the graph, your brain should immediately switch to a "search for contractionary policies / cost-increasing factors" radar.<br>
+        Scan the four statements:<br>
+        (3) Reduce rates? Expansionary! ❌<br>
+        (4) Reduce taxes? Expansionary! ❌<br>
+        Once you know (3) and (4) are wrong, look at the options: B, C, and D all contain either (3) or (4). Cross them all out. The answer MUST be A! This saves you a massive amount of exam time.</p>
+    </div>
+
+</body>
+</html>

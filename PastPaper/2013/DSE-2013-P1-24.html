@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: AD-AS Model Analysis</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #0284c7;
+            --bg-light: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --text-main: #333333;
+            --text-muted: #555555;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #e0f2fe;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+        }
+
+        .correct-option {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+        }
+
+        .wrong-option {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .trap-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>HKDSE Economics Step-by-Step Guide</h1>
+
+    <div class="header-info">
+        <div>📍 Topic (課題): 宏觀經濟學 - AD-AS 模型 (Macroeconomics - AD-AS Model)</div>
+        <div>⭐ Difficulty (難度): ★★★☆☆ (3/5)</div>
+        <div style="width: 100%; margin-top: 10px;">
+            🔑 Key Concepts: 
+            <span class="tag">通脹差距 Inflationary Gap</span>
+            <span class="tag">長期均衡 Long-run Equilibrium</span>
+            <span class="tag">貨幣政策 Monetary Policy</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>[中文]</strong> 下圖顯示某經濟的總需求（AD）曲線、短期總供應（SRAS）曲線及長期總供應（LRAS）曲線。<br>
+        假設原初該經濟在 $E_0$ 運作，這出現了_______________而_______________可幫助這經濟回復至長期均衡。</p>
+        <p>A. 通脹（產出）差距 … 增加對貧窮人士的轉移支付<br>
+        B. 通脹（產出）差距 … 增加貼現率<br>
+        C. 通縮（產出）差距 … 增加對貧窮人士的轉移支付<br>
+        D. 通縮（產出）差距 … 增加貼現率</p>
+
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+
+        <p class="bilingual-en"><strong>[English]</strong> The diagram below shows the aggregate demand (AD) curve, the short run aggregate supply (SRAS) curve and the long run aggregate supply (LRAS) curve of an economy.<br>
+        Suppose initially the economy operates at $E_0$. There is a/an _______ and _______ can help restore the long run equilibrium.</p>
+        <p class="bilingual-en">A. inflationary (output) gap … a rise in transfer payments to the poor<br>
+        B. inflationary (output) gap ... a rise in the discount rate<br>
+        C. deflationary (output) gap …a rise in transfer payments to the poor<br>
+        D. deflationary (output) gap … a rise in the discount rate</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>產出差距 (Output Gaps)</h3>
+        <p>在 AD-AS 模型中，短期均衡產出 ($Y$) 由 AD 和 SRAS 的相交點決定。當短期均衡產出偏離長期總供應 (LRAS) 代表的充分就業產出 ($Y_f$) 時，就會出現產出差距。</p>
+        <p class="bilingual-en">In the AD-AS model, short-run equilibrium output ($Y$) is determined by the intersection of AD and SRAS. When this output deviates from the full-employment output ($Y_f$) represented by the LRAS curve, an output gap occurs.</p>
+        
+        <ul>
+            <li><strong>通脹差距 (Inflationary Gap):</strong> $Y > Y_f$ (短期均衡點在 LRAS 右側 / Intersection is to the right of LRAS)</li>
+            <li><strong>通縮差距 (Deflationary Gap):</strong> $Y < Y_f$ (短期均衡點在 LRAS 左側 / Intersection is to the left of LRAS)</li>
+        </ul>
+
+        <h3>宏觀經濟政策 (Macroeconomic Policies)</h3>
+        <p>要消除通脹差距，政府或央行需要採取<strong>緊縮性政策 (Contractionary Policies)</strong> 來壓抑總需求 (將 AD 曲線向左移)。</p>
+        <p class="bilingual-en">To close an inflationary gap, the government or central bank needs to adopt <strong>contractionary policies</strong> to suppress aggregate demand (shifting the AD curve to the left).</p>
+        
+        <div class="math-block">
+            $$AD = C + I + G + (X - M)$$
+        </div>
+
+        <ul>
+            <li><strong>貼現率 (Discount Rate):</strong> 中央銀行向商業銀行借款收取的利率。提高貼現率屬於<strong>緊縮性貨幣政策</strong>，會增加借貸成本，減少投資 ($I$) 和消費 ($C$)，從而降低 AD。
+            <p class="bilingual-en">The interest rate charged by the central bank for loans to commercial banks. Raising it is a <strong>contractionary monetary policy</strong>. It increases borrowing costs, reduces investment ($I$) and consumption ($C$), thereby lowering AD.</p></li>
+            
+            <li><strong>轉移支付 (Transfer Payments):</strong> 政府無償支付給市民的金錢（如綜援）。增加轉移支付屬於<strong>擴張性財政政策</strong>，會增加市民的可支配收入，刺激消費 ($C$)，從而增加 AD。
+            <p class="bilingual-en">Money paid by the government to citizens without requiring goods/services in return (e.g., welfare). Increasing it is an <strong>expansionary fiscal policy</strong>. It increases disposable income, stimulates consumption ($C$), and thus increases AD.</p></li>
+        </ul>
+            </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <h3 style="color: #16a34a;">正確答案 (Correct Option): B</h3>
+    
+    <div class="option-analysis wrong-option">
+        <strong>Option A (錯誤 Incorrect)</strong>
+        <p>圖中 $E_0$ 位於 LRAS 的右方，代表這是一個通脹差距。但是，「增加對貧窮人士的轉移支付」是一項擴張性政策，這會令總需求 (AD) 進一步增加（向右移），使通脹問題惡化，無法回復長期均衡。</p>
+        <p class="bilingual-en">The intersection $E_0$ is to the right of LRAS, indicating an inflationary gap. However, "a rise in transfer payments" is an expansionary policy. This would further increase AD (shift right), worsening the inflation rather than restoring long-run equilibrium.</p>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <strong>Option B (正確 Correct)</strong>
+        <p>圖中顯示經濟處於通脹差距 ($Y > Y_f$)。「增加貼現率」是緊縮性貨幣政策。這會導致市場利率上升，減低投資和消費意欲。總需求 (AD) 下降並向左移，最終使經濟產出回落至 $Y_f$，回復長期均衡。</p>
+        <p class="bilingual-en">The diagram shows an inflationary gap ($Y > Y_f$). "A rise in the discount rate" is a contractionary monetary policy. It leads to higher market interest rates, reducing investment and consumption. AD falls and shifts to the left, bringing output back to $Y_f$ and restoring long-run equilibrium.</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <strong>Option C & D (錯誤 Incorrect)</strong>
+        <p>這兩個選項都錯誤地指出這是一個「通縮差距」。由於 $E_0$ 在 LRAS 的右側（產出大於充分就業水平），這必定是通脹差距。因此可以即時排除 C 和 D。</p>
+        <p class="bilingual-en">Both options incorrectly identify the situation as a "deflationary gap." Since $E_0$ is to the right of LRAS (output is greater than full-employment level), it must be an inflationary gap. Thus, C and D can be eliminated immediately.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-color: #64748b;">
+        <ol>
+            <li><strong>尋找樞紐點 1 (Pivot Point 1): 判斷差距類型</strong><br>
+                觀察 $E_0$ (AD 與 SRAS 的交點) 與 LRAS 的相對位置。在右邊 = 產出過多 = 通脹差距 (Inflationary Gap)。即時淘汰 C 和 D。
+                <p class="bilingual-en">Observe the position of $E_0$ relative to LRAS. Right side = over-production = Inflationary Gap. Eliminate C and D instantly.</p>
+            </li>
+            <li><strong>尋找樞紐點 2 (Pivot Point 2): 決定政策方向</strong><br>
+                既然經濟過熱 (通脹)，我們需要「降溫」。因此必須尋找<strong>緊縮性政策 (Contractionary Policy)</strong>。
+                <p class="bilingual-en">Since the economy is overheating, we need to "cool it down". Therefore, look for a <strong>contractionary policy</strong>.</p>
+            </li>
+            <li><strong>篩選選項 (Filtering Options):</strong><br>
+                選項 A (派錢) 會令經濟更熱；選項 B (加息) 能壓抑消費和投資，達到降溫效果。
+                <p class="bilingual-en">Option A (giving money) heats up the economy further; Option B (raising interest rates) suppresses consumption and investment, achieving the cooling effect.</p>
+            </li>
+        </ol>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <strong>⚠️ 道德陷阱 (The "Moral" Trap)</strong>
+        <p>很多同學看到「增加對貧窮人士的轉移支付」(幫助窮人) 就覺得這是一件「好事」，從而誤選 A。在經濟學題目中，必須拋開主觀道德判斷，單純分析政策對總需求 (AD) 的數學/邏輯影響。在通脹時期派錢，反而會加劇通脹，最終可能令窮人受害更深。</p>
+        <p class="bilingual-en">Many students see "helping the poor" and assume it must be the "correct" answer morally, mistakenly choosing A. In Economics, you must ignore subjective moral feelings and strictly analyze the policy's logical impact on AD. Giving out money during high inflation will worsen the inflation, potentially hurting the poor even more.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <strong>Q: 為什麼經濟不會自己回復均衡？為什麼一定要靠政策？</strong>
+        <p class="bilingual-en">Why doesn't the economy restore equilibrium by itself? Why do we need a policy?</p>
+        
+        <strong>A:</strong> 
+        <p>其實在古典學派理論中，經濟是<strong>可以</strong>自我修正的 (Self-correction)。在通脹差距下，資源短缺會令要素價格（如工資）上升，導致 SRAS 向左移，最終也會回復長期均衡。但是，這條題目明確問到「甚麼(政策)<strong>可幫助</strong>這經濟回復」，這暗示我們需要尋找一個人為干預的政策選項，加速這個過程。</p>
+        <p class="bilingual-en">Actually, in classical theory, the economy <strong>can</strong> self-correct. In an inflationary gap, resource shortages push up input prices (like wages), shifting SRAS to the left and restoring long-run equilibrium. However, this specific question asks what (policy) <strong>can help</strong> restore it, implying we need to find an active intervention to speed up the process.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+        <p><strong>秒殺技巧 (The 10-Second Kill):</strong></p>
+        <p>畫面上 $E_0$ 偏右 $\rightarrow$ 產出「太多」 $\rightarrow$ 通脹差距 (剩 A 和 B)。<br>
+        既然「太多」，就要「減少」它 $\rightarrow$ 找一個令人不開心的政策 (加息/加稅/減開支)。<br>
+        增加貼現率 = 銀行加息 = 借錢買樓買車變貴 = 減少消費 = 成功！答案是 B。</p>
+        
+        <p class="bilingual-en">Visually, $E_0$ is on the right $\rightarrow$ "Too much" output $\rightarrow$ Inflationary gap (Leaves A & B).<br>
+        Since there's "too much", we must "reduce" it $\rightarrow$ Look for a "painful" policy (raise interest rates/raise taxes/cut spending).<br>
+        Raising discount rate = higher interest rates = expensive to borrow = less consumption = Success! Answer is B.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

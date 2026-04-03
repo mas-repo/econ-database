@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: AS-AD Model Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-english: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 8px;
+            margin-top: 1.5em;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .bilingual-block {
+            margin-bottom: 1.5em;
+        }
+
+        .en-text {
+            color: var(--text-english);
+            font-size: 0.95em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .option-analysis.correct {
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+        }
+
+        .option-analysis.incorrect {
+            border-left: 5px solid #ef4444;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: #d97706;
+        }
+
+        .tips-box {
+            background-color: #fdf2f8;
+            border: 1px solid #fbcfe8;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .image-description {
+            background-color: #f8fafc;
+            padding: 10px;
+            font-size: 0.9em;
+            text-align: center;
+            border: 1px dashed var(--border-color);
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .concept-box, .qa-box, .tips-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <div class="bilingual-block">
+            <strong>主題 (Topic):</strong> 總體經濟學：總需求與總供應 (Macroeconomics: AS-AD Model)
+            <div class="en-text">Topic: Macroeconomics: AS-AD Model</div>
+        </div>
+        <div class="bilingual-block">
+            <strong>難度 (Difficulty):</strong> ★★★☆☆
+        </div>
+        <div class="bilingual-block">
+            <strong>關鍵概念 (Key Concepts):</strong> 免稅額 (Tax Allowance), 總需求 (Aggregate Demand), 人力資本 (Human Capital), 長期總供應 (Long-Run Aggregate Supply)
+            <div class="en-text">Key Concepts: Tax Allowance, Aggregate Demand, Human Capital, Long-Run Aggregate Supply</div>
+        </div>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <div class="bilingual-block">
+        <p>假設政府大幅增加持續教育的免稅額。下列哪幅圖最能解釋上述改變對物價水平和產出水平的影響？</p>
+        <p class="en-text">Suppose the government greatly increases the tax allowance on continuing education. Which of the following can best explain the effect of the above change on the price and output levels?</p>
+    </div>
+    
+    <div class="image-description">
+        <em>[圖表特徵提示 / Chart Features Reference]</em><br>
+        <strong>A:</strong> AD 向右移 (AD shifts right) ; LRAS 向右移 (LRAS shifts right)<br>
+        <strong>B:</strong> AD 向右移 (AD shifts right) ; LRAS 向左移 (LRAS shifts left)<br>
+        <strong>C:</strong> AD 向左移 (AD shifts left) ; SRAS 向右移 (SRAS shifts right)<br>
+        <strong>D:</strong> AD 不變 (AD unchanged) ; LRAS 向右移 (LRAS shifts right) ; SRAS 向右移 (SRAS shifts right)
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <strong>1. 總需求 (Aggregate Demand, AD) 決定因素：</strong><br>
+            免稅額 (Tax allowance) 增加代表市民需要繳納的薪俸稅減少。這會導致市民的可支配收入 (Disposable Income, \(Y_d\)) 上升。當可支配收入上升，私人消費開支 (Consumption, \(C\)) 會增加，從而令總需求 (\(AD\)) 增加，AD 曲線向右移。
+            <div class="en-text"><strong>1. Determinants of Aggregate Demand (AD):</strong><br>
+            An increase in tax allowance means citizens pay less salaries tax. This leads to an increase in Disposable Income (\(Y_d\)). When disposable income rises, private consumption expenditure (\(C\)) increases, causing Aggregate Demand (\(AD\)) to increase. The AD curve shifts to the right.</div>
+        </div>
+
+        <div class="math-block">
+            $$Y_d = Y - T$$
+            $$C \uparrow \implies AD \uparrow$$
+        </div>
+
+        <div class="bilingual-block">
+            <strong>2. 長期總供應 (Long-Run Aggregate Supply, LRAS) 決定因素：</strong><br>
+            「持續教育」屬於對人力資本 (Human Capital) 的投資。這能提高勞工的生產力 (Labor productivity) 和質素。當生產要素的質素提升時，一個經濟體的潛在產出 (Potential Output) 會增加，導致長期總供應 (\(LRAS\)) 增加，LRAS 曲線向右移。
+            <div class="en-text"><strong>2. Determinants of Long-Run Aggregate Supply (LRAS):</strong><br>
+            "Continuing education" is an investment in Human Capital. It improves labor productivity and quality. When the quality of factors of production improves, the potential output of an economy increases, leading to an increase in Long-Run Aggregate Supply (\(LRAS\)). The LRAS curve shifts to the right.</div>
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: #22c55e; font-size: 1.2em;">A</span></strong></p>
+
+    <div class="option-analysis correct">
+        <div class="bilingual-block">
+            <strong>選項 A (正確):</strong> 此圖顯示 AD 向右移 (\(AD_1 \rightarrow AD_2\)) 以及 LRAS 向右移 (\(LRAS_1 \rightarrow LRAS_2\))。這完美吻合我們的分析：免稅額增加刺激了消費 (AD 右移)，而持續教育提升了人力資本和生產力 (LRAS 右移)。
+            <div class="en-text"><strong>Option A (Correct):</strong> This diagram shows AD shifting right (\(AD_1 \rightarrow AD_2\)) and LRAS shifting right (\(LRAS_1 \rightarrow LRAS_2\)). This perfectly matches our analysis: the increased tax allowance stimulates consumption (AD shifts right), and continuing education improves human capital and productivity (LRAS shifts right).</div>
+        </div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-block">
+            <strong>選項 B (錯誤):</strong> 此圖顯示 LRAS 向左移。持續教育會提升而非降低勞工質素，因此 LRAS 不可能向左移。
+            <div class="en-text"><strong>Option B (Incorrect):</strong> This diagram shows LRAS shifting left. Continuing education improves rather than reduces labor quality, so LRAS cannot shift left.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-block">
+            <strong>選項 C (錯誤):</strong> 此圖顯示 AD 向左移。增加免稅額會增加可支配收入，帶動消費上升，AD 應該向右移而非向左移。
+            <div class="en-text"><strong>Option C (Incorrect):</strong> This diagram shows AD shifting left. An increase in tax allowance increases disposable income and drives up consumption, so AD should shift right, not left.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <div class="bilingual-block">
+            <strong>選項 D (錯誤):</strong> 此圖的 AD 曲線沒有移動。如前所述，免稅額增加必然會影響可支配收入及消費，因此 AD 必須向右移。
+            <div class="en-text"><strong>Option D (Incorrect):</strong> The AD curve in this diagram does not move. As explained, an increase in tax allowance must affect disposable income and consumption; therefore, AD must shift to the right.</div>
+        </div>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <p>這類題目要求學生同時識別一個政策對「需求側 (Demand-side)」和「供應側 (Supply-side)」的影響。解題關鍵在於拆解題目的字眼：</p>
+        <ul>
+            <li><strong>破局點 1 (Pivot Point 1):</strong> 看到「免稅額 (Tax allowance)」$\rightarrow$ 聯想到稅款下降 $\rightarrow$ 可支配收入上升 $\rightarrow$ 消費增加 $\rightarrow$ <strong>AD 向右移</strong>。</li>
+            <li><strong>破局點 2 (Pivot Point 2):</strong> 看到「持續教育 (Continuing education)」$\rightarrow$ 聯想到勞工技術提升 $\rightarrow$ 人力資本 (Human capital) 增加 $\rightarrow$ 潛在產能擴大 $\rightarrow$ <strong>LRAS 向右移</strong>。</li>
+        </ul>
+        <div class="en-text">
+            <p>This type of question requires students to simultaneously identify the "Demand-side" and "Supply-side" effects of a policy. The key is to break down the wording:</p>
+            <ul>
+                <li><strong>Pivot Point 1:</strong> Seeing "Tax allowance" $\rightarrow$ implies lower tax $\rightarrow$ higher disposable income $\rightarrow$ increased consumption $\rightarrow$ <strong>AD shifts right</strong>.</li>
+                <li><strong>Pivot Point 2:</strong> Seeing "Continuing education" $\rightarrow$ implies improved labor skills $\rightarrow$ increased human capital $\rightarrow$ expanded potential capacity $\rightarrow$ <strong>LRAS shifts right</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-block">
+        <p><strong>單向思維 (Single-track thinking):</strong> 很多同學只看到「教育」就只移動 LRAS (選了 D)，或者只看到「稅」就只移動 AD。在 DSE 經濟科中，政府政策往往具備雙重效應 (Dual effects)。必須仔細閱讀政策的<strong>具體內容</strong>以作全面判斷。</p>
+        <div class="en-text"><strong>Single-track thinking:</strong> Many students only see "education" and shift LRAS alone (choosing Option D), or only see "tax" and shift AD alone. In DSE Economics, government policies often have dual effects. You must carefully read the <strong>specific details</strong> of the policy to make a comprehensive judgment.</div>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <p class="qa-question">Q: 政府增加免稅額，政府收入減少，這不代表政府支出 (G) 下降或 AD 下降嗎？</p>
+            <p><strong>A:</strong> 不會。在 AS-AD 模型中，我們不應該假設政府收入減少就必然導致政府開支 (\(G\)) 同步下降，除非題目有明確聲明 (例如政府實行平衡預算)。免稅額的直接影響是增加市民的可支配收入，從而刺激消費 (\(C\))，令 AD 增加。</p>
+            
+            <div class="en-text">
+                <p class="qa-question">Q: If the government increases tax allowances, government revenue decreases. Doesn't this mean government spending (G) drops or AD drops?</p>
+                <p><strong>A:</strong> No. In the AS-AD model, we should not assume that a decrease in government revenue automatically leads to a simultaneous decrease in government spending (\(G\)) unless explicitly stated in the question (e.g., the government runs a balanced budget). The direct impact of a tax allowance is an increase in citizens' disposable income, which stimulates consumption (\(C\)) and increases AD.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <strong>淘汰法速解 (Speed-solving via Elimination):</strong><br>
+            1. 看到「教育 (Education)」，這必然是好事，生產力會上升。所以 <strong>LRAS 必須向右移</strong>。立即淘汰選項 B 和 C。<br>
+            2. 剩下 A 和 D。看到「免稅 (Tax allowance)」代表市民手頭上有更多錢，消費力 (\(C\)) 必然上升。所以 <strong>AD 必須向右移</strong>。選項 D 的 AD 沒有移動，淘汰 D。<br>
+            3. 瞬間得出答案：<strong>A</strong>。
+            
+            <div class="en-text"><strong>Speed-solving via Elimination:</strong><br>
+            1. Seeing "Education" means a positive impact, so productivity rises. Therefore, <strong>LRAS MUST shift right</strong>. Instantly eliminate Options B and C.<br>
+            2. You are left with A and D. Seeing "Tax allowance" means citizens have more money on hand, so consumption power (\(C\)) must rise. Therefore, <strong>AD MUST shift right</strong>. Option D shows an unchanged AD, so eliminate D.<br>
+            3. Instantly arrive at the answer: <strong>A</strong>.</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
