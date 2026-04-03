@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Production and Costs</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border-top: 5px solid #1e3a8a;
+        }
+        .header-item {
+            margin-bottom: 8px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+            font-weight: bold;
+        }
+        .bilingual-text p.zh {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .bilingual-text p.en {
+            margin-top: 0;
+            color: #4b5563;
+            font-style: italic;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .math-block {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 15px 0;
+            border: 1px dashed #cbd5e1;
+        }
+        .analysis-section {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .option {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+        }
+        .option.correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            border-left: 5px solid #10b981;
+        }
+        .option.wrong {
+            border-left: 5px solid #ef4444;
+        }
+        .correct-badge {
+            color: #047857;
+            font-weight: bold;
+        }
+        .wrong-badge {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+        .strategy-box, .mistake-box, .qa-box, .shortcut-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .strategy-box { border-top: 4px solid #8b5cf6; }
+        .mistake-box { border-top: 4px solid #f59e0b; }
+        .qa-box { border-top: 4px solid #10b981; }
+        .shortcut-box { border-top: 4px solid #f43f5e; }
+        .qa-item { margin-bottom: 15px; }
+        .qa-q { font-weight: bold; color: #1f2937; }
+        .qa-a { color: #4b5563; padding-left: 15px; border-left: 3px solid #d1d5db; margin-top: 5px;}
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h2>📊 HKDSE Economics 經濟學解題指南</h2>
+        <div class="header-item"><strong>Topic / 課題:</strong> <span class="badge">Production and Costs 生產與成本</span> <span class="badge">Long Run 長期</span></div>
+        <div class="header-item"><strong>Difficulty / 難度:</strong> ⭐⭐⭐☆☆ (3/5)</div>
+        <div class="header-item"><strong>Key Concepts / 關鍵概念:</strong> 
+            <span class="badge">Long-run vs Short-run</span>
+            <span class="badge">Economies of Scale 規模經濟</span>
+            <span class="badge">Average Cost 平均成本</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h3>📝 The Question (題目)</h3>
+        
+        <div class="bilingual-text">
+            <p class="zh">下表顯示某廠商的生產資訊。它所需的投入只有資本和勞力。</p>
+            <p class="en">The following table shows the production data of a firm. The only inputs required are capital and labour.</p>
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>資本 (單位)<br><em>Capital (units)</em></th>
+                        <th>勞力 (單位)<br><em>Labour (units)</em></th>
+                        <th>總產量 (單位)<br><em>Total product (units)</em></th>
+                        <th>總生產成本 ($)<br><em>Total cost of production ($)</em></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2</td><td>2</td><td>10</td><td>100</td></tr>
+                    <tr><td>3</td><td>3</td><td>30</td><td>270</td></tr>
+                    <tr><td>4</td><td>4</td><td>45</td><td>360</td></tr>
+                    <tr><td>5</td><td>5</td><td>55</td><td>385</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bilingual-text">
+            <p class="zh">根據上表，我們可以得出結論如下：</p>
+            <p class="en">Based on the above table, we can conclude that:</p>
+            <br>
+            <p class="zh">A. 邊際回報遞減定律適用於該廠商。<br><em>A. the law of diminishing returns applies to the firm.</em></p>
+            <p class="zh">B. 總固定成本是$100。<br><em>B. the total fixed cost is $100.</em></p>
+            <p class="zh">C. 最優規模是45單位。<br><em>C. the optimal scale is 45 units.</em></p>
+            <p class="zh">D. 該廠商享有規模經濟。<br><em>D. the firm enjoys economies of scale.</em></p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h3>💡 Concept Review (概念重溫)</h3>
+        <div class="bilingual-text">
+            <p class="zh">要解決這條題目，我們需要釐清「短期」與「長期」的差別，以及相關的成本概念：</p>
+            <p class="en">To solve this problem, we need to clarify the difference between the "short-run" and "long-run", and related cost concepts:</p>
+        </div>
+        
+        <ul>
+            <li>
+                <strong>Short-run vs. Long-run (短期與長期):</strong> 
+                <br>短期內，最少有一種生產要素是固定的。長期內，<strong>所有</strong>生產要素都是可變的。
+                <br><em>In the short-run, at least one factor of production is fixed. In the long-run, <strong>all</strong> factors of production are variable.</em>
+            </li>
+            <li>
+                <strong>Law of Diminishing Marginal Returns (邊際回報遞減定律):</strong>
+                <br>此定律<strong>只適用於短期</strong>。當不斷增加可變要素於固定要素上，邊際產量最終會下降。
+                <br><em>This law <strong>only applies in the short-run</strong>. It states that adding more variable inputs to fixed inputs will eventually cause marginal product to decline.</em>
+            </li>
+            <li>
+                <strong>Economies of Scale (規模經濟):</strong>
+                <br>在長期內，當總產量 ($Q$) 增加時，長期平均成本 (LRAC) 下降。
+                <br><em>In the long-run, when total output ($Q$) increases, the Long-Run Average Cost (LRAC) decreases.</em>
+            </li>
+        </ul>
+
+        <div class="math-block">
+            <strong>Average Cost (平均成本) Formula:</strong><br>
+            $$ AC = \frac{TC}{Q} $$
+            <span style="font-size: 0.8em; color: #666;">Where $TC$ is Total Cost (總成本) and $Q$ is Total Product (總產量)</span>
+        </div>
+    </div>
+
+    <div class="analysis-section">
+        <h3>✅ The Answer & Detailed Analysis (答案與詳細分析)</h3>
+        <h4 style="color: #047857;">Correct Option: D</h4>
+
+        <div class="option wrong">
+            <div class="bilingual-text">
+                <p class="zh"><span class="wrong-badge">❌ Option A:</span> 錯誤。從表中可見，資本和勞力的數量都在同時增加（沒有固定要素）。這是一個<strong>長期</strong>的生產情況。邊際回報遞減定律只適用於短期。</p>
+                <p class="en">Incorrect. As seen in the table, the quantities of both capital and labour are increasing simultaneously (no fixed factors). This is a <strong>long-run</strong> production situation. The law of diminishing returns only applies in the short-run.</p>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="bilingual-text">
+                <p class="zh"><span class="wrong-badge">❌ Option B:</span> 錯誤。既然這是長期的生產，所有成本都是可變成本，這意味著<strong>總固定成本是 $0</strong>，而不是 $100。</p>
+                <p class="en">Incorrect. Since this is long-run production, all costs are variable costs, which means the <strong>total fixed cost is $0</strong>, not $100.</p>
+            </div>
+        </div>
+
+        <div class="option wrong">
+            <div class="bilingual-text">
+                <p class="zh"><span class="wrong-badge">❌ Option C:</span> 錯誤。最優規模 (Optimal scale) 出現在平均成本 (AC) 最低的一點。我們需要計算每個產量的平均成本 ($AC = TC / Q$)。在45單位時，AC = $360 / 45 = $8。但在55單位時，AC = $385 / 55 = $7。因為AC仍在下降，45單位並非最低點。</p>
+                <p class="en">Incorrect. Optimal scale occurs at the point where Average Cost (AC) is minimized. We need to calculate AC ($AC = TC / Q$) for each output level. At 45 units, AC = $360 / 45 = $8. However, at 55 units, AC = $385 / 55 = $7. Since AC is still decreasing, 45 units is not the minimum point.</p>
+            </div>
+        </div>
+
+        <div class="option correct">
+            <div class="bilingual-text">
+                <p class="zh"><span class="correct-badge">✅ Option D:</span> <strong>正確！</strong> 讓我們計算平均成本 (AC)：<br>
+                產量 10：AC = $100 / 10 = $10<br>
+                產量 30：AC = $270 / 30 = $9<br>
+                產量 45：AC = $360 / 45 = $8<br>
+                產量 55：AC = $385 / 55 = $7<br>
+                隨著產量增加，長期平均成本正在下降，這正是<strong>規模經濟 (Economies of scale)</strong> 的定義。</p>
+                
+                <p class="en"><strong>Correct!</strong> Let's calculate the Average Cost (AC):<br>
+                At Output 10: AC = $100 / 10 = $10<br>
+                At Output 30: AC = $270 / 30 = $9<br>
+                At Output 45: AC = $360 / 45 = $8<br>
+                At Output 55: AC = $385 / 55 = $7<br>
+                As output increases, the long-run average cost is decreasing. This is the exact definition of <strong>economies of scale</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="strategy-box">
+        <h3>🔍 Problem Decomposition (題目拆解)</h3>
+        <div class="bilingual-text">
+            <p class="zh"><strong>🔑 關鍵破局點 (The Pivot Point):</strong><br>
+            這題的靈魂在於表格的首兩欄。當你看到「資本」和「勞力」<strong>同時改變</strong>（2→3→4→5），你的大腦必須立刻亮起紅燈：「這是長期 (Long-run)！」一旦確立是長期，任何關於「遞減定律」或「固定成本」的選項就可以秒殺淘汰。</p>
+            
+            <p class="en"><strong>🔑 The Pivot Point:</strong><br>
+            The soul of this question lies in the first two columns of the table. When you see both "Capital" and "Labour" <strong>changing simultaneously</strong> (2→3→4→5), your brain must immediately register: "This is the Long-run!" Once established as the long-run, any option mentioning the "law of diminishing returns" or "fixed costs" can be instantly eliminated.</p>
+
+            <p class="zh"><strong>👻 干擾資訊 (Distractors):</strong><br>
+            選項C用「45單位」來混淆你。雖然45單位的數據看起來很完整，但「最優規模」需要尋找最低的平均成本，而不是隨便挑選一個中間的產量。</p>
+            <p class="en"><strong>👻 Distractors:</strong><br>
+            Option C uses "45 units" to confuse you. Although the data for 45 units looks complete, finding the "optimal scale" requires finding the lowest average cost, not just picking an arbitrary middle output level.</p>
+        </div>
+    </div>
+
+    <div class="mistake-box">
+        <h3>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <ul>
+            <li>
+                <div class="bilingual-text">
+                    <p class="zh"><strong>混淆總成本增加與規模不經濟 (Confusing increasing Total Cost with Diseconomies of Scale):</strong> 學生常看到表格最右欄的總成本 (100 → 270 → 360 → 385) 在上升，就誤以為廠商沒有規模經濟。記住！判斷規模經濟是看<strong>平均成本 (Average Cost)</strong>，不是總成本！總產量上升，總成本必然上升，這不代表規模不經濟。</p>
+                    <p class="en">Students often see the total cost in the rightmost column increasing (100 → 270 → 360 → 385) and mistakenly assume the firm suffers from diseconomies of scale. Remember! Economies of scale are determined by <strong>Average Cost</strong>, not Total Cost! When output increases, total cost naturally increases; this does not mean diseconomies of scale.</p>
+                </div>
+            </li>
+            <li>
+                <div class="bilingual-text">
+                    <p class="zh"><strong>盲目背誦定律 (Blindly memorizing laws):</strong> 看到表格題就條件反射選「邊際回報遞減」，忘記先檢查要素數量是否固定。</p>
+                    <p class="en">Reflexively choosing "diminishing marginal returns" whenever seeing a data table, forgetting to first check if any factor quantities are fixed.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="qa-box">
+        <h3>🙋 Student Q&A (學生常見疑問)</h3>
+        <div class="qa-item">
+            <p class="qa-q">Q: 第一行的總生產成本是 $100。為甚麼不能說固定成本是 $100？<br><em>Why can't we say the fixed cost is $100 since the total cost in the first row is $100?</em></p>
+            <p class="qa-a">A: 固定成本 (Fixed Cost) 是指在產量為 0 時仍需支付的成本。表中的 $100 是生產 10 單位時的「總可變成本」(Total Variable Cost)，因為在長期下，資本和勞力都可以隨時減少到 0，那時的總成本就會是 $0。只有在機器（資本）數量被鎖死不能變賣的情況下，才會有固定成本。<br><em>Fixed Cost is the cost incurred even when output is 0. The $100 in the table is the "Total Variable Cost" for producing 10 units. In the long-run, both capital and labour can be reduced to 0, making the total cost $0. Fixed costs only exist when the quantity of machines (capital) is locked and cannot be changed.</em></p>
+        </div>
+        <div class="qa-item">
+            <p class="qa-q">Q: 如果題目沒有給總成本，只給資本、勞力和總產量，我還能判斷規模經濟嗎？<br><em>If the question didn't provide total cost, but only capital, labour, and total product, could I still determine economies of scale?</em></p>
+            <p class="qa-a">A: 這種情況下，你可以觀察「規模回報」(Returns to Scale)。例如，當資本和勞力都增加 50%（從 2 增加到 3），總產量卻增加了 200%（從 10 增加到 30）。因為產出增加的比例大於投入增加的比例，這稱為「規模回報遞增」(Increasing returns to scale)，通常這會導致規模經濟。<br><em>In that case, you can observe "Returns to Scale". For example, when both capital and labour increase by 50% (from 2 to 3), total product increases by 200% (from 10 to 30). Because the proportionate increase in output is greater than the proportionate increase in inputs, this is called "Increasing returns to scale", which typically leads to economies of scale.</em></p>
+        </div>
+    </div>
+
+    <div class="shortcut-box">
+        <h3>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h3>
+        <div class="bilingual-text">
+            <p class="zh"><strong>十秒速解法 (The 10-Second Shortcut):</strong></p>
+            <ol>
+                <li>掃視第一、二欄：都在變 $\rightarrow$ 長期。</li>
+                <li>長期 $\rightarrow$ 沒有固定成本，沒有遞減定律。立刻刪去 A 和 B。</li>
+                <li>只剩下 C 和 D。隨便計算頭尾兩個數字的 AC：第一個 AC = 100/10 = 10，最後一個 AC = 385/55 = 7。</li>
+                <li>10 跌到 7，AC 下降 = 規模經濟。選 D！完全不需要計算中間的數字。</li>
+            </ol>
+            
+            <p class="en"><strong>The 10-Second Shortcut:</strong></p>
+            <ol>
+                <li>Scan columns 1 & 2: Both changing $\rightarrow$ Long-run.</li>
+                <li>Long-run $\rightarrow$ No fixed costs, no law of diminishing returns. Immediately eliminate A and B.</li>
+                <li>Only C and D remain. Quickly calculate the AC for the first and last rows: First AC = 100/10 = 10, Last AC = 385/55 = 7.</li>
+                <li>10 drops to 7, AC is decreasing = Economies of scale. Choose D! No need to calculate the numbers in between.</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>
