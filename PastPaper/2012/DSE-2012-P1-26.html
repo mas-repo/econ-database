@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - AS-AD Model Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft YaHei', 'PingFang SC';
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 5px;
+        }
+        .header-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-box {
+            background-color: #ffffff;
+            border-left: 5px solid #3b82f6;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #ffffff;
+            border-top: 5px solid #10b981;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #047857;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .decomposition-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .traps-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tricks-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>1. 題目摘要 (Header)</h2>
+        <p><strong>Topic:</strong> 總體經濟學：總需求與總供應 (Macroeconomics: Aggregate Demand and Aggregate Supply)</p>
+        <p><strong>Difficulty:</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts:</strong> 總需求 (Aggregate Demand), 長期與短期調整 (Short-run and Long-run Adjustment), 淨出口 (Net Exports)</p>
+    </div>
+
+    <div class="question-box">
+        <h2>2. 題目 (The Question)</h2>
+        <p class="zh">下圖顯示某國的總需求（AD）曲線，短期總供應（SRAS）曲線及長期總供應（LRAS）曲線。E點是起初的均衡點。<br><br>當該國的主要貿易伙伴經濟復蘇，短期而言__________，而長期而言__________。</p>
+        <p class="en">The diagram below shows the aggregate demand (AD) curves, the short run aggregate supply (SRAS) curves and the long run aggregate supply (LRAS) curve of a country. Point E is the initial equilibrium point.<br><br>When there is an economic recovery in the country's major trading partner, _______ in the short run and _______ in the long run.</p>
+        
+        <ul>
+            <li><span class="zh">A. AD1會移至AD2 ... SRAS1會移至SRAS2</span><br><span class="en">A. AD1 will shift to AD2 ... SRAS1 will shift to SRAS2</span></li>
+            <li><span class="zh">B. AD1會移至AD2 ... AD2會移回AD1</span><br><span class="en">B. AD1 will shift to AD2 ... AD2 will shift back to AD1</span></li>
+            <li><span class="zh">C. SRAS1會移至SRAS2 ... AD1會移至AD2</span><br><span class="en">C. SRAS1 will shift to SRAS2 ... AD1 will shift to AD2</span></li>
+            <li><span class="zh">D. SRAS1會移至SRAS2 ... SRAS2會移回SRAS1</span><br><span class="en">D. SRAS1 will shift to SRAS2 ... SRAS2 will shift back to SRAS1</span></li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>3. 概念重溫 (Concept Review)</h2>
+        
+        <p class="zh"><strong>總需求 (Aggregate Demand):</strong> 總需求是指在不同物價水平下，經濟體系內對本地生產實質產出的總需求量。其組成部分包括私人消費開支 \(C\)、投資開支 \(I\)、政府消費開支 \(G\) 和淨出口 \(NX\) (即出口 \(X\) 減進口 \(M\))。</p>
+        <p class="en"><strong>Aggregate Demand:</strong> Aggregate demand is the total quantity of domestically produced real output that economic agents are willing to buy at different price levels. Its components include private consumption expenditure \(C\), investment expenditure \(I\), government consumption expenditure \(G\), and net exports \(NX\) (i.e., exports \(X\) minus imports \(M\)).</p>
+        
+        <div class="math-block">
+            $$AD = C + I + G + (X - M)$$
+        </div>
+
+        <p class="zh"><strong>長期自我調節機制 (Long-run Self-correction Mechanism):</strong> 當經濟出現膨脹裂口 (通脹缺口) 時，實質產出高於充分就業水平。勞工短缺會導致名義工資 (生產成本) 上升。這會使短期總供應 (SRAS) 曲線向左移動，直到經濟回復至長期總供應 (LRAS) 曲線上的充分就業產出水平。</p>
+        <p class="en"><strong>Long-run Self-correction Mechanism:</strong> When the economy experiences an inflationary gap, real output is higher than the full-employment level. Labor shortages will drive up nominal wages (cost of production). This causes the short-run aggregate supply (SRAS) curve to shift to the left until the economy returns to the full-employment output level on the long-run aggregate supply (LRAS) curve.</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <div class="correct-answer">正確答案 / Correct Option: A</div>
+        
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 A (正確):</strong> 短期而言，主要貿易伙伴經濟復蘇意味著他們的國民收入增加，從而增加對本國產品的進口需求。這會導致本國的出口 \(X\) 增加。根據總需求公式，當 \(X\) 上升時，總需求會增加，因此 AD1 會向右移至 AD2。這會產生一個膨脹裂口 (物價與產出皆上升)。長期而言，較高的物價水平和勞工短缺會促使工人要求更高的工資，導致生產成本上升。這會使 SRAS1 向左移至 SRAS2，最終在較高的物價水平下回復長期均衡。</p>
+            <p class="en"><strong>Option A (Correct):</strong> In the short run, an economic recovery in a major trading partner means their national income increases, leading to higher import demand for our country's products. This increases our country's exports \(X\). According to the AD formula, when \(X\) rises, AD increases, shifting AD1 to the right to AD2. This creates an inflationary gap (both price level and output rise). In the long run, the higher price level and labor shortages prompt workers to demand higher wages, increasing the cost of production. This shifts SRAS1 to the left to SRAS2, eventually restoring long-run equilibrium at a higher price level.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 B (錯誤):</strong> 總需求 (AD) 曲線不會自動移回 AD1。除非有另一項外部衝擊或政府採取緊縮性政策，否則市場的長期自我調節是透過 SRAS 的移動來完成的，而非 AD。</p>
+            <p class="en"><strong>Option B (Incorrect):</strong> The Aggregate Demand (AD) curve will not automatically shift back to AD1. Unless there is another external shock or the government adopts contractionary policies, the market's long-run self-correction is achieved through the shift of SRAS, not AD.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 C (錯誤):</strong> 貿易伙伴的經濟復蘇直接影響的是「需求面」(出口)，而非「供應面」。因此，首先發生變動的應該是 AD 曲線，而不是 SRAS 曲線。</p>
+            <p class="en"><strong>Option C (Incorrect):</strong> The economic recovery of a trading partner directly affects the "demand side" (exports), not the "supply side". Therefore, the initial change should be a shift in the AD curve, not the SRAS curve.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 D (錯誤):</strong> 此選項描述的是供應衝擊 (Supply shock) 及其隨後的長期調節，這與題目所述的需求面衝擊 (出口增加) 不符。</p>
+            <p class="en"><strong>Option D (Incorrect):</strong> This option describes a supply shock and its subsequent long-run adjustment, which contradicts the demand-side shock (increase in exports) stated in the question.</p>
+        </div>
+    </div>
+
+    <div class="decomposition-box">
+        <h2>5. 題目拆解 (Problem Decomposition)</h2>
+        <p class="zh"><strong>拆題關鍵 (Pivot Point):</strong> 看到「主要貿易伙伴」這幾個字，必須立刻聯想到 <strong>「出口 (Exports)」</strong>。這是宏觀經濟學中最常見的題型轉換。貿易伙伴經濟好 ➔ 買更多我們的東西 ➔ 我們的出口 \(X\) 上升 ➔ 總需求 AD 上升。</p>
+        <p class="en"><strong>Pivot Point:</strong> When you see the phrase "major trading partner," you must immediately associate it with <strong>"Exports"</strong>. This is a common translation in macroeconomics. Trading partner economy booms ➔ they buy more of our goods ➔ our exports \(X\) increase ➔ Aggregate Demand (AD) increases.</p>
+        
+        <p class="zh"><strong>解題步驟:</strong><br>
+        1. 確定首個衝擊：需求增加 (AD右移)。<br>
+        2. 觀察圖表：AD1 移至 AD2。<br>
+        3. 判斷長期調節：產生膨脹裂口後，要素價格 (如工資) 必然上升，導致成本增加，SRAS向左移 (SRAS1 移至 SRAS2)。</p>
+        <p class="en"><strong>Steps to solve:</strong><br>
+        1. Identify the initial shock: Demand increases (AD shifts right).<br>
+        2. Observe the graph: AD1 shifts to AD2.<br>
+        3. Determine long-run adjustment: After an inflationary gap is created, factor prices (e.g., wages) will inevitably rise, increasing costs and shifting SRAS to the left (SRAS1 shifts to SRAS2).</p>
+    </div>
+
+    <div class="traps-box">
+        <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p class="zh"><strong>誤解長期調節機制：</strong> 許多學生誤以為「需求增加導致經濟過熱，所以長期需求會自己跌下來」，從而錯選了 B。記住，古典學派的長期調節機制<strong>永遠</strong>是透過生產要素價格 (工資、租金) 的改變來移動 SRAS，AD 是不會自己乖乖移回去的！</p>
+        <p class="en"><strong>Misunderstanding the long-run adjustment mechanism:</strong> Many students mistakenly believe that "increased demand causes the economy to overheat, so demand will naturally fall back in the long run," leading them to choose Option B. Remember, the classical long-run adjustment mechanism <strong>always</strong> operates through changes in factor prices (wages, rent) which shift the SRAS curve. AD does not just revert on its own!</p>
+    </div>
+
+    <div class="qa-box">
+        <h2>7. 學生常見疑問 (Student Q&A)</h2>
+        <p class="zh"><strong>Q: 為什麼長期總供應 (LRAS) 曲線在這個情況下不會向右移？</strong><br>
+        A: 因為 LRAS 的移動代表經濟體系的生產容量 (Productive capacity) 改變，例如科技進步、人口增長或發現新資源。外國需求增加只是讓人們更頻繁地使用現有資源（加班工作），並沒有增加國家的根本生產潛力。</p>
+        <p class="en"><strong>Q: Why doesn't the Long Run Aggregate Supply (LRAS) curve shift to the right in this case?</strong><br>
+        A: Because a shift in LRAS represents a change in the economy's productive capacity, such as technological advancement, population growth, or the discovery of new resources. An increase in foreign demand simply causes people to use existing resources more intensively (e.g., working overtime); it does not increase the country's fundamental production potential.</p>
+    </div>
+
+    <div class="tricks-box">
+        <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p class="zh"><strong>秒殺法：</strong> 
+        讀題看到「貿易伙伴復蘇」，直接在考卷上寫下「AD向右」。看選項：只有 A 和 B 的前半部分是「AD1會移至AD2」，瞬間排除 C 和 D。
+        接下來問自己：長期調節誰負責？答案是「SRAS」。因此直接秒選 A，根本不需要重新推導整個模型。</p>
+        <p class="en"><strong>Shortcut Method:</strong> 
+        Upon reading "trading partner recovery," immediately write down "AD shifts right" on your paper. Look at the options: only the first halves of A and B state "AD1 will shift to AD2", instantly eliminating C and D. 
+        Next, ask yourself: what is responsible for long-run adjustment? The answer is "SRAS". Therefore, you can instantly select A without needing to re-derive the entire model from scratch.</p>
+    </div>
+
+</body>
+</html>

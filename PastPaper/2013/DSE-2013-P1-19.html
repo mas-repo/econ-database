@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Quota Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-gray: #1f2937;
+            --light-gray: #f3f4f6;
+            --border-gray: #e5e7eb;
+            --text-main: #374151;
+            --text-english: #4b5563;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-gray);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+        }
+
+        .option-analysis.correct {
+            border-left: 5px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+
+        .option-analysis.incorrect {
+            border-left: 5px solid #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .english-text {
+            color: var(--text-english);
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+
+        .question-box {
+            border: 2px dashed var(--primary-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 15px;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial <br><span class="english-text">經濟學題目解析</span></h1>
+
+    <div class="header-info">
+        <div>📍 Topic (課題): 政府干預 - 配額 (Market Intervention - Quota)</div>
+        <div>⭐ Difficulty (難度): ★★★☆☆ (3/5)</div>
+        <div>🔑 Concepts: 配額 (Quota), 彈性 (Elasticity), 社會盈餘 (Social Surplus)</div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>參閱以下某物品的供需圖，政府為該物品設立配額 \(Q_1\)。<br>下列哪項是減少該物品配額的結果？</p>
+        <p>(1) 對該物品的總支出可能上升或下降。<br>
+           (2) 消費者盈餘會下降。<br>
+           (3) 總社會盈餘可能上升或下降。</p>
+        <p>A. 只有(1)<br>
+           B. 只有(1)、(2)<br>
+           C. 只有(2)、(3)<br>
+           D. (1)、(2)及(3)</p>
+        
+        <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-gray);">
+        
+        <div class="english-text">
+            <p>Refer to the following demand-supply diagram of a good with the government setting a quota at \(Q_1\).<br>Which of the following will be the result of a reduction in quota on the good?</p>
+            <p>(1) The total expenditure on the good may increase or decrease.<br>
+               (2) The consumer surplus will decrease.<br>
+               (3) The total social surplus may increase or decrease.</p>
+            <p>A. (1) only<br>
+               B. (1) and (2) only<br>
+               C. (2) and (3) only<br>
+               D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>配額與供應曲線 (Quota and Supply Curve)</h3>
+        <p>當政府實施有效配額時，供應量被限制。在配額數量之上，供應曲線會變成一條垂直線（因為即使價格上升，生產者也不能提供更多）。減少配額代表這條垂直線向左移動。</p>
+        <div class="english-text">When the government imposes an effective quota, the quantity supplied is restricted. The supply curve becomes a vertical line at the quota level (because producers cannot supply more even if the price rises). A reduction in quota means this vertical line shifts to the left.</div>
+
+        <h3>總支出與需求彈性 (Total Expenditure & Demand Elasticity)</h3>
+        <p>總支出 (TE) = 價格 \(\times\) 交易量。當供應減少導致價格上升時，TE的變化取決於需求的價格彈性 (\(E_d\))。</p>
+        <div class="english-text">Total Expenditure (TE) = Price \(\times\) Quantity. When a decrease in supply leads to a price increase, the change in TE depends on the price elasticity of demand (\(E_d\)).</div>
+        <div class="math-block">
+            $$TE = P \times Q$$
+        </div>
+
+        <h3>消費者盈餘與總社會盈餘 (Consumer Surplus & Total Social Surplus)</h3>
+        <p><strong>消費者盈餘 (CS):</strong> 需求曲線以下與市場價格以上的面積。<br>
+           <strong>總社會盈餘 (TSS):</strong> 需求曲線以下與原來供應曲線 (\(S_0\)) 以上，直至交易量的面積。配額會導致絕對損失 (Deadweight Loss, DWL)，減少配額會令 DWL 增加。</p>
+        <div class="english-text">
+            <strong>Consumer Surplus (CS):</strong> The area below the demand curve and above the market price.<br>
+            <strong>Total Social Surplus (TSS):</strong> The area below the demand curve and above the original supply curve (\(S_0\)) up to the transacted quantity. A quota creates Deadweight Loss (DWL). Reducing the quota increases the DWL.
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: #22c55e; font-size: 1.2em;">B</span></strong></p>
+
+    <div class="option-analysis correct">
+        <p><strong>(1) 分析：正確 (Correct)</strong></p>
+        <p>減少配額會令供應曲線（垂直部分）向左移。新的交易量 \(Q\) 減少，而市場價格 \(P\) 上升（沿著需求曲線向上移動）。因為直線需求曲線上不同位置的彈性不同（可能屬彈性、無彈性或單一彈性），價格上升對總支出 (\(P \times Q\)) 的影響是不確定的。因此，總支出「可能」上升或下降。</p>
+        <div class="english-text">Reducing the quota shifts the vertical part of the supply curve to the left. The new transacted quantity \(Q\) falls, and the market price \(P\) rises (moving up along the demand curve). Because elasticity varies along a straight-line demand curve (it can be elastic, inelastic, or unit elastic), the effect of a price increase on total expenditure (\(P \times Q\)) is uncertain. Therefore, TE "may" increase or decrease.</div>
+    </div>
+
+    <div class="option-analysis correct">
+        <p><strong>(2) 分析：正確 (Correct)</strong></p>
+        <p>消費者盈餘是需求曲線下方與價格線上方之間的三角形面積。由於價格 \(P\) 上升，而需求曲線不變，這個三角形的面積必定會縮小。因此，消費者盈餘一定會下降。</p>
+        <div class="english-text">Consumer surplus is the triangular area below the demand curve and above the price line. Since the price \(P\) strictly increases and the demand curve remains unchanged, this triangular area must shrink. Therefore, consumer surplus will definitively decrease.</div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <p><strong>(3) 分析：錯誤 (Incorrect)</strong></p>
+        <p>原本的配額 \(Q_1\) 已經低於自由市場的均衡數量，這意味著市場已經存在絕對損失 (DWL)。當配額進一步減少，交易數量會進一步遠離有效率的自由市場均衡點。這會導致絕對損失進一步擴大。因為 TSS = 最大社會盈餘 - DWL，既然 DWL 必定增加，總社會盈餘 (TSS) 就<strong>必定會下降</strong>，而不可能上升。</p>
+        <div class="english-text">The original quota \(Q_1\) is already below the free-market equilibrium quantity, meaning a deadweight loss (DWL) already exists. When the quota is reduced further, the transacted quantity moves even further away from the efficient free-market equilibrium point. This causes the DWL to expand. Since TSS = Maximum Social Surplus - DWL, and DWL strictly increases, the Total Social Surplus (TSS) <strong>must decrease</strong>. It cannot increase.</div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+    這題的關鍵在於判斷「方向的必然性」。遇到「可能 (may)」和「會/一定 (will/must)」這些字眼要特別小心。<br>
+    - 價格 \(P\) 必定升，數量 \(Q\) 必定跌。所以和 \(P\) 單獨負相關的變數（如消費者盈餘）必然跌。<br>
+    - 涉及 \(P \times Q\) 的變數（如總支出），在缺乏彈性數據下，必然是「不確定 / 可能升或跌」。<br>
+    - 涉及市場效率的變數（如總社會盈餘），只需看數量是否遠離自由市場均衡。越遠離，效率越低，盈餘必然跌。</p>
+    
+    <div class="english-text">
+        <strong>The Pivot Point:</strong><br>
+        The key to this question is identifying the "certainty of direction." Be highly careful with words like "may" versus "will/must".<br>
+        - Price \(P\) MUST rise, Quantity \(Q\) MUST fall. Variables inversely related only to \(P\) (like CS) MUST fall.<br>
+        - Variables involving \(P \times Q\) (like Total Expenditure), without elasticity data, MUST be "uncertain / may increase or decrease".<br>
+        - Variables involving market efficiency (like TSS), just check if the quantity is moving further from the free-market equilibrium. Further away = less efficient = TSS MUST fall.
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <ul>
+            <li><strong>陷阱一：</strong> 誤以為交易量減少，總支出就一定減少。忘記了價格正在上升，必須考慮需求彈性。<br>
+                <span class="english-text">Trap 1: Assuming that because quantity falls, total expenditure must fall. Students forget that price is rising, and demand elasticity must be considered.</span></li>
+            <li><strong>陷阱二：</strong> 計算總社會盈餘 (TSS) 時，錯誤使用了新的、有配額的垂直供應曲線 \(S_1\)。記住，計算社會成本時，必須看反映實際邊際成本的原有供應曲線 \(S_0\)。<br>
+                <span class="english-text">Trap 2: Using the new, vertical supply curve \(S_1\) to calculate Total Social Surplus. Remember, to calculate social cost, you must look at the original supply curve \(S_0\) which reflects the actual marginal cost.</span></li>
+        </ul>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="faq-question">Q1: 生產者盈餘 (Producer Surplus) 會下降嗎？</div>
+    <p>A: 不一定！生產者盈餘是價格線與原有供應曲線 \(S_0\) 之間的面積。雖然交易數量 \(Q\) 減少了，但價格 \(P\) 大幅上升。如果需求屬於極度無彈性 (highly inelastic)，價格上升帶來的收益可能會大於數量減少帶來的損失，令生產者盈餘反而上升。</p>
+    <div class="english-text"><strong>Q1: Will Producer Surplus decrease?</strong><br>
+    A: Not necessarily! Producer surplus is the area between the price line and the original supply curve \(S_0\). Although the transacted quantity \(Q\) falls, the price \(P\) rises. If demand is highly inelastic, the gain from the higher price might outweigh the loss from the lower quantity, potentially causing producer surplus to increase.</div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>秒殺法 (The Elimination Shortcut):</strong></p>
+        <p>在考場上，直接看最絕對的句子。第(3)句說總社會盈餘「可能」上升。但從圖表中一眼就能看出，配額本身已經創造了絕對損失 (DWL)。將配額收緊 (左移) 只會令市場更扭曲，偏離均衡點更遠。因此，DWL 必定變大，TSS <strong>必定變小</strong>。第(3)句一眼判定為錯！<br>
+        一旦知道 (3) 是錯的，立刻剔除選項 C 和 D。剩下 A 和 B，只需確認 (2) 即可選出答案 B，節省大量時間！</p>
+        <div class="english-text">
+            <strong>The Elimination Shortcut:</strong><br>
+            In the exam, look directly at the most definitive statements. Statement (3) says TSS "may" increase. But one glance at the graph shows the quota already creates Deadweight Loss (DWL). Tightening the quota (shifting left) only distorts the market further, pushing it further from equilibrium. Thus, DWL MUST increase, and TSS <strong>MUST decrease</strong>. Statement (3) is instantly wrong!<br>
+            Once you know (3) is false, eliminate options C and D immediately. You are left with A and B. Just verify statement (2) to pick B, saving a massive amount of time!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

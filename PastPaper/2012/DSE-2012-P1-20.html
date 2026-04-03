@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Study Guide - Lorenz Curve</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --success: #22c55e;
+            --success-light: #f0fdf4;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-gray: #f8fafc;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        
+        .en {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        /* Layout Boxes */
+        .header-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .question-box {
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* Options Styling */
+        .option-container {
+            margin-top: 20px;
+        }
+
+        .option-box {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--success);
+            background-color: var(--success-light);
+        }
+
+        .option-incorrect {
+            border-left: 5px solid var(--danger);
+            background-color: var(--danger-light);
+        }
+
+        .qa-box {
+            background-color: #fdfde6;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tricks-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-box">
+        <h1>HKDSE Economics Study Guide</h1>
+        <div>
+            <strong>Topic (課題):</strong> 收入分配與洛倫茨曲線 / Income Distribution and Lorenz Curve<br>
+            <strong>Difficulty (難度):</strong> ★★☆☆☆<br>
+            <strong>Key Concepts (關鍵概念):</strong> 洛倫茨曲線 (Lorenz Curve), 堅尼系數 (Gini Coefficient), 絕對與相對收入 (Absolute vs Relative Income)
+        </div>
+    </header>
+
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="zh">下圖顯示甲、乙兩圖的洛倫茨曲線。根據以上兩圖：</div>
+            <div class="en">The following diagrams show the Lorenz curves of Country A and Country B. According to the above two diagrams:</div>
+            
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>
+                    <div class="zh">A. 乙國的國民收入較甲國高。</div>
+                    <div class="en">A. Country B has a higher national income than Country A.</div>
+                </li>
+                <li>
+                    <div class="zh">B. 乙國低收入組別的收入高於甲國低收入組別的收入。</div>
+                    <div class="en">B. the low income group of Country B has a higher income than that of Country A.</div>
+                </li>
+                <li>
+                    <div class="zh">C. 甲國的收入分配較乙國平均。</div>
+                    <div class="en">C. Country A has a more even distribution of income than Country B.</div>
+                </li>
+                <li>
+                    <div class="zh">D. 甲國的堅尼系數較乙國高。</div>
+                    <div class="en">D. Country A has a higher Gini coefficient than Country B.</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="zh"><strong>1. 洛倫茨曲線 (Lorenz Curve):</strong> 顯示一個經濟體內收入分佈的幾何圖形。橫軸是累積的住戶百分率，縱軸是累積的收入百分率。對角線稱為「絕對平均線」(Line of perfect equality)。曲線距離絕對平均線越遠，代表收入分配越不平均。</div>
+            <div class="en"><strong>1. Lorenz Curve:</strong> A geometric representation of income distribution within an economy. The x-axis is the cumulative percentage of households, and the y-axis is the cumulative percentage of income. The diagonal line is the "Line of perfect equality". The further the curve is from this line, the more unequal the income distribution.</div>
+            
+            <div class="zh"><strong>2. 堅尼系數 (Gini Coefficient):</strong> 量度收入不均的數值指標，數值介乎 \(0\) 與 \(1\) 之間。</div>
+            <div class="en"><strong>2. Gini Coefficient:</strong> A numerical indicator of income inequality, with values ranging between \(0\) and \(1\).</div>
+            
+            <div class="math-block">
+                $$ G = \frac{\text{Area between diagonal and Lorenz curve}}{\text{Total area under the diagonal}} $$
+            </div>
+            
+            <div class="zh">當堅尼系數越高（接近 \(1\)），即洛倫茨曲線越向下彎，代表收入越不平均。</div>
+            <div class="en">A higher Gini coefficient (closer to \(1\)) means the Lorenz curve bows further down, indicating greater income inequality.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p class="zh"><strong>正確答案： Option D</strong></p>
+        <p class="en"><strong>Correct Option: Option D</strong></p>
+
+        <div class="option-container">
+            <div class="option-box option-incorrect">
+                <div class="zh"><strong>分析選項 A (錯誤):</strong> 洛倫茨曲線的橫軸和縱軸都是「百分率」(Percentages)，它只反映收入的<strong>相對分佈</strong>，而非<strong>絕對數值</strong>。因此，我們無法從圖中得知兩國的實際國民收入大小。</div>
+                <div class="en"><strong>Analysis for A (Incorrect):</strong> Both axes of the Lorenz curve are "Percentages". It only reflects the <strong>relative distribution</strong> of income, not <strong>absolute values</strong>. Therefore, we cannot determine the actual size of national income for either country from the graphs.</div>
+            </div>
+
+            <div class="option-box option-incorrect">
+                <div class="zh"><strong>分析選項 B (錯誤):</strong> 基於與選項 A 相同的理由，由於我們不知道兩國的總收入，即使乙國低收入組別佔該國總收入的百分比較高，其實際獲得的「絕對金錢金額」也不一定高於甲國的低收入組別。（例如：小薄餅的 20% 可能少於大薄餅的 5%）</div>
+                <div class="en"><strong>Analysis for B (Incorrect):</strong> For the same reason as Option A, since we don't know the total income of both countries, even if the low-income group in Country B takes up a higher percentage of its nation's income, their actual "absolute monetary amount" is not necessarily higher than that in Country A. (e.g., 20% of a small pizza might be less than 5% of a huge pizza).</div>
+            </div>
+
+            <div class="option-box option-incorrect">
+                <div class="zh"><strong>分析選項 C (錯誤):</strong> 觀察圖表，甲國的洛倫茨曲線明顯比乙國的曲線更遠離 45度對角線（絕對平均線）。距離越遠，代表收入分配越<strong>不平均</strong>。</div>
+                <div class="en"><strong>Analysis for C (Incorrect):</strong> Observing the diagrams, Country A's Lorenz curve is clearly much further from the 45-degree diagonal (line of perfect equality) than Country B's. The further away it is, the <strong>more uneven</strong> the income distribution.</div>
+            </div>
+
+            <div class="option-box option-correct">
+                <div class="zh"><strong>分析選項 D (正確):</strong> 因為甲國的洛倫茨曲線較乙國遠離絕對平均線，代表甲國的對角線與曲線之間的面積較大。根據公式，這意味著甲國的堅尼系數較乙國高。</div>
+                <div class="en"><strong>Analysis for D (Correct):</strong> Because Country A's Lorenz curve is further from the line of perfect equality than Country B's, the area between the diagonal and the curve is larger for Country A. According to the formula, this implies Country A has a higher Gini coefficient than Country B.</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="zh">
+            <ul>
+                <li><strong>解題關鍵 (Pivot Point):</strong> 認清圖表軸線的單位——「百分率」(\( \% \))。只要看到百分率，就立刻聯想到它不能用來推斷絕對的數量（如：國民收入金額、實際工資）。</li>
+                <li><strong>干擾資訊 (Distractors):</strong> 選項 A 和 B 就是經典的陷阱，利用考生對「分配多」等於「錢多」的錯覺來誤導。</li>
+            </ul>
+        </div>
+        <div class="en">
+            <ul>
+                <li><strong>Pivot Point:</strong> Recognize the units on the chart's axes—"Percentages" (\( \% \)). Whenever you see percentages, immediately recall that they cannot be used to deduce absolute quantities (e.g., total national income, actual wages).</li>
+                <li><strong>Distractors:</strong> Options A and B are classic traps, misleading students with the illusion that "a larger share" equals "more actual money".</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="zh"><strong>混淆「相對」與「絕對」概念：</strong> 很多學生看到甲國曲線末端急升，就誤以為甲國「很富有」。實際上，曲線只顯示該國最富有的極少數人佔據了極大部分的收入，這顯示的是極度的<strong>貧富懸殊</strong>，與該國整體是貧窮還是富裕無關。</div>
+        <div class="en"><strong>Confusing "Relative" and "Absolute" concepts:</strong> Many students see the sharp rise at the end of Country A's curve and mistakenly think Country A is "very rich". In reality, the curve only shows that a tiny fraction of the richest people possess the vast majority of the income. This indicates extreme <strong>wealth disparity</strong> and has nothing to do with whether the country as a whole is rich or poor.</div>
+    </section>
+
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="qa-box">
+            <div class="zh"><strong>Q: 什麼情況下，選項 B 才會是正確的？</strong><br>
+            A: 題目必須額外提供兩國的「實質國民收入」數據。例如，如果題目說明「甲國和乙國的國民總收入相同」，那麼我們就可以透過曲線的百分率，算出乙國低收入組別的實際收入確實較高。</div>
+            <br>
+            <div class="en"><strong>Q: Under what conditions would Option B be correct?</strong><br>
+            A: The question would need to provide additional data regarding the "Real National Income" of both countries. For instance, if the question stated "Country A and Country B have the same total national income," then we could use the percentages from the curves to calculate and conclude that the low-income group in B does indeed have a higher actual income.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="tricks-box">
+            <div class="zh"><strong>「一秒刪除法」：</strong> 在考評局 (HKEAA) 的多項選擇題中，凡是單憑洛倫茨曲線去推斷「金額」(Income value / amount) 的選項，<strong>必定是錯的</strong>。一看到「國民收入較高」(Option A) 或「收入高於」(Option B)，可以直接劃掉，集中比較 C 和 D。最後只要記得「越彎 ＝ 越不平均 ＝ 堅尼系數越高」，就能瞬間選出 D。</div>
+            <div class="en"><strong>"One-Second Elimination":</strong> In HKEAA multiple-choice questions, any option that tries to deduce "monetary amount/value" solely from a Lorenz curve is <strong>always wrong</strong>. Once you see "higher national income" (Option A) or "higher income than" (Option B), cross them out immediately and focus on comparing C and D. Finally, just remember "More bowed out = More uneven = Higher Gini coefficient", and you can instantly select D.</div>
+        </div>
+    </section>
+
+</body>
+</html>

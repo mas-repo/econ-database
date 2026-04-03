@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Market Equilibrium Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 5px;
+        }
+        .header-box {
+            background-color: #eff6ff;
+            border-left: 5px solid #3b82f6;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .correct-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .mistake-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .tricks-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Topic Breakdown</h2>
+        <p><strong>Topic (課題):</strong> Market Equilibrium & Shifts in Demand/Supply (市場均衡與供求變動)</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐⭐ (3/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> Cost of Production (生產成本), Consumer Preference/Confidence (消費者偏好/信心), Substitute Goods (替代品), Shifts vs. Movements (整條曲線移動與沿著曲線移動)</p>
+    </div>
+
+    <div class="question-box">
+        <h2>📝 The Question (題目)</h2>
+        <p><strong>[繁體中文]</strong> 一宗鐵路意外嚴重影響了乘客使用高速電動列車服務的信心。同時,航空公司正面對燃油價格上升的問題。下列哪幅圖可代表上述事件的結果？</p>
+        <p class="bilingual-en"><strong>[English]</strong> A train accident seriously affects the confidence of travelers using high-speed electric train services. At the same time, the airlines are facing the problem of rising fuel prices. Which of the following diagrams could represent a result of the above events?</p>
+        
+        <ul>
+            <li><strong>A.</strong> 航空運輸服務 (Air travel service): \(S\) shifts right, \(D\) shifts left</li>
+            <li><strong>B.</strong> 航空運輸服務 (Air travel service): \(S\) shifts left, \(D\) shifts left</li>
+            <li><strong>C.</strong> 高速電動列車服務 (High-speed electric train service): \(S\) shifts left, \(D\) shifts left</li>
+            <li><strong>D.</strong> 高速電動列車服務 (High-speed electric train service): \(S\) remains unchanged, \(D\) shifts left</li>
+        </ul>
+        <p><em>(Note: Please refer to the original uploaded images for the exact graphical curves and arrows.)</em></p>
+    </div>
+
+    <div class="concept-box">
+        <h2>💡 Concept Review (概念重溫)</h2>
+        <p>要解答這類題目，我們必須清楚區分影響<strong>需求 (Demand)</strong>和<strong>供應 (Supply)</strong>的因素：</p>
+        <p class="bilingual-en">To solve this type of question, we must clearly distinguish the factors affecting <strong>Demand</strong> and <strong>Supply</strong>:</p>
+
+        <ul>
+            <li><strong>Demand Factors (需求因素):</strong> Consumer preferences, confidence, income, price of related goods (substitutes/complements). <br>
+                <em>當乘客「信心受挫」時，在任何價格下，他們對該服務的需求都會減少，導致需求曲線向左移 \( (D_1 \to D_2) \)。</em>
+                <div class="bilingual-en">When passengers lose "confidence", their demand for the service decreases at any given price, causing the demand curve to shift left \( (D_1 \to D_2) \).</div>
+            </li>
+            <li><strong>Supply Factors (供應因素):</strong> Cost of production, technology, government policies. <br>
+                <em>「燃油價格上升」增加了航空公司的生產成本，導致供應減少，供應曲線向左移 \( (S_1 \to S_2) \)。</em>
+                <div class="bilingual-en">"Rising fuel prices" increase the cost of production for airlines, leading to a decrease in supply. The supply curve shifts left \( (S_1 \to S_2) \).</div>
+            </li>
+        </ul>
+        
+        <div class="math-block">
+            $$ Q_d = f(P, P_s, Y, \text{Preferences...}) $$
+            $$ Q_s = f(P, \text{Cost of Production, Technology...}) $$
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <h3>Correct Option: D <span class="correct-badge">正確答案</span></h3>
+        
+        <div class="option-analysis">
+            <h4>事件一分析 (Event 1 Analysis): 鐵路意外 (Train Accident)</h4>
+            <p>鐵路意外直接打擊了乘客對「高速電動列車服務」的信心。這改變了消費者的偏好，導致對列車的需求減少。因此，列車的需求曲線會向左移 \( (D_1 \to D_2) \)。題目中並沒有提及鐵路軌道受損或政府勒令停駛等會影響「供應」的因素，因此假設供應 \( (S) \) 不變是合理的。</p>
+            <p class="bilingual-en">The train accident directly hits passenger confidence in "high-speed electric train services". This alters consumer preferences, decreasing the demand for trains. Therefore, the demand curve for trains shifts left \( (D_1 \to D_2) \). The question does not mention damaged tracks or government-mandated suspensions that would affect "supply", so it is reasonable to assume supply \( (S) \) remains unchanged.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h4>事件二分析 (Event 2 Analysis): 燃油價格上升 (Rising Fuel Prices)</h4>
+            <p>燃油是航空公司的主要生產成本。成本上升會減少「航空運輸服務」的供應，導致其供應曲線向左移 \( (S_1 \to S_2) \)。同時，由於列車（替代品）發生意外，部分本來搭乘列車的乘客會轉乘飛機，這會導致航空服務的需求<strong>增加</strong>（向右移）。</p>
+            <p class="bilingual-en">Fuel is a major production cost for airlines. An increase in cost reduces the supply of "air travel services", causing its supply curve to shift left \( (S_1 \to S_2) \). Simultaneously, because a train (a substitute) had an accident, some passengers who would have taken the train will switch to flying. This would cause the demand for air travel to <strong>increase</strong> (shift right).</p>
+        </div>
+
+        <div class="option-analysis">
+            <h4>逐項拆解 (Evaluating the Options):</h4>
+            <ul>
+                <li><strong>A (航空):</strong> 顯示供應增加 (S 右移) 及需求減少 (D 左移)。這與燃油成本上升（應為 S 左移）及替代品效應（應為 D 右移）完全相反。<strong>(❌ 錯誤)</strong>
+                    <div class="bilingual-en">Shows supply increasing (S shifts right) and demand decreasing (D shifts left). This contradicts both the rising fuel costs (which should shift S left) and the substitution effect (which should shift D right). <strong>(❌ Incorrect)</strong></div>
+                </li>
+                <li><strong>B (航空):</strong> 顯示供應減少 (S 左移) 及需求減少 (D 左移)。雖然供應左移正確，但如前所述，航空服務的需求應該因為乘客逃避火車而增加，絕不是減少。<strong>(❌ 錯誤)</strong>
+                    <div class="bilingual-en">Shows supply decreasing (S shifts left) and demand decreasing (D shifts left). While the supply shift is correct, demand for air travel should increase, not decrease, as passengers avoid trains. <strong>(❌ Incorrect)</strong></div>
+                </li>
+                <li><strong>C (列車):</strong> 顯示供應減少 (S 左移) 及需求減少 (D 左移)。需求減少正確，但題目未有提供足夠資訊證明列車的供應會減少。<strong>(❌ 錯誤)</strong>
+                    <div class="bilingual-en">Shows supply decreasing (S shifts left) and demand decreasing (D shifts left). The demand decrease is correct, but there is no information in the prompt to justify a decrease in train supply. <strong>(❌ Incorrect)</strong></div>
+                </li>
+                <li><strong>D (列車):</strong> 顯示供應不變，而需求減少 (D 左移)。這完美契合「信心下降」導致需求減少的直接影響。<strong>(✅ 正確)</strong>
+                    <div class="bilingual-en">Shows supply unchanged and demand decreasing (D shifts left). This perfectly matches the direct impact of "loss of confidence" causing a decrease in demand. <strong>(✅ Correct)</strong></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #64748b;">
+        <h2>🧩 Problem Decomposition (題目拆解)</h2>
+        <p><strong>Pivot Point (破題關鍵):</strong> 釐清每個事件針對的是哪一個市場 (Market)，以及是影響需求還是供應。<br>
+        1. 信心 = 影響需求 (Demand)<br>
+        2. 生產成本 (燃油) = 影響供應 (Supply)</p>
+        <p class="bilingual-en"><strong>Pivot Point:</strong> Clarify which market each event targets, and whether it affects Demand or Supply.<br>
+        1. Confidence = Affects Demand<br>
+        2. Cost of Production (Fuel) = Affects Supply</p>
+    </div>
+
+    <div class="mistake-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p><strong>陷阱：混淆「需求量變動」(Movement) 與「需求變動」(Shift)</strong><br>
+        很多學生在看選項 B 時會想：「機票因為燃油變貴而加價，加價後人們搭飛機少了，所以需求減少 (D 左移)，選項 B 好像很合理？」<br>
+        <strong>糾正：</strong> 價格上升導致人們買少一點，這叫「需求量下降」(Decrease in Quantity Demanded)，是在<strong>同一條需求曲線上移動 (Movement along the curve)</strong>，並不是整條曲線左移！只有非價格因素（如偏好改變、收入改變）才會令整條曲線移動。</p>
+        
+        <p class="bilingual-en"><strong>Trap: Confusing "Movement along the curve" with a "Shift of the curve"</strong><br>
+        Many students look at Option B and think: "Airfares rise due to fuel costs, so people fly less, meaning demand decreases (D shifts left). Sounds reasonable?"<br>
+        <strong>Correction:</strong> A price increase causing people to buy less is a "Decrease in Quantity Demanded," which is a <strong>movement along the same demand curve</strong>, NOT a shift! Only non-price factors (like changes in preference or income) shift the entire curve.</p>
+    </div>
+
+    <div class="qa-box">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 航空機票變貴了，難道不會令一部分人重新選擇搭高鐵嗎？這樣高鐵的需求不是會回升（向右移）嗎？</strong></p>
+        <p><strong>A:</strong> 這是個很好的問題！這叫「替代效應」(Substitution Effect)。的確，機票變貴會對高鐵產生一股推動需求上升的力量。然而，題目強調高鐵意外「嚴重影響」(seriously affects) 信心，這個直接的負面震盪通常被假設為壓倒性的主導力量。因此，高鐵的淨需求 (Net Demand) 依然是下跌的。選項 D 問的是哪幅圖「可代表」(could represent) 結果，圖 D 描繪了這個主導效應，是最佳答案。</p>
+        
+        <p class="bilingual-en"><strong>Q: Since airfares get more expensive, wouldn't some people switch back to high-speed trains? Wouldn't that cause train demand to rebound (shift right)?</strong></p>
+        <p class="bilingual-en"><strong>A:</strong> Great question! This is the substitution effect. Indeed, higher airfares put upward pressure on train demand. However, the prompt emphasizes the accident "seriously affects" confidence. This direct, negative shock is typically assumed to be the overwhelming, dominant force. Thus, the net demand for trains still falls. Since the question asks what "could represent" the result, Diagram D captures this dominant effect perfectly and is the best answer.</p>
+    </div>
+
+    <div class="tricks-box">
+        <h2>⏱️ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>「消去法」(Process of Elimination) 是神兵利器：</strong><br>
+        1. 看到「燃油價格上升」，馬上知道航空公司的供應必定減少（S 左移）。看圖 A，S 是右移的，立刻劃掉 A！<br>
+        2. 既然火車不安全，人們理應多搭飛機（航空需求 D 應該右移）。看圖 B，航空的 D 居然左移，毫不合理，立刻劃掉 B！<br>
+        3. 剩下 C 和 D。題目完全沒提過火車班次被削減或軌道壞掉（即沒有改變火車供應的資訊），所以火車的 S 應該不變。圖 C 的 S 左移了，沒有根據，劃掉 C。<br>
+        <strong>結論：直接秒殺選 D！</strong></p>
+
+        <p class="bilingual-en"><strong>Process of Elimination is your best weapon:</strong><br>
+        1. "Rising fuel prices" immediately means airline supply decreases (S shifts left). Graph A shows S shifting right. Cross out A!<br>
+        2. Since trains are unsafe, people should fly more (Air demand D should shift right). Graph B shows Air D shifting left, which is illogical. Cross out B!<br>
+        3. Only C and D remain. The prompt gives zero info about train schedules being cut or tracks breaking (no info altering train supply), so Train S should remain unchanged. Graph C shows S shifting left without evidence. Cross out C.<br>
+        <strong>Conclusion: Instantly choose D!</strong></p>
+    </div>
+
+</body>
+</html>
