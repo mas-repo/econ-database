@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Gini Coefficient & Taxation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --correct-bg: #e6ffed;
+            --correct-border: #2ea44f;
+            --wrong-red: #d73a49;
+            --text-main: #333333;
+            --text-muted: #555555;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 10px;
+        }
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+        .en-translation {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .header-stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background: var(--gray-bg);
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .correct-ans {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+        .tag-correct {
+            color: var(--correct-border);
+            font-weight: bold;
+        }
+        .tag-wrong {
+            color: var(--wrong-red);
+            font-weight: bold;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .q-text { font-weight: bold; color: #02569b; }
+        .a-text { margin-top: 10px; }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-stats { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics 經濟學解題指南</h1>
+
+    <div class="header-stats">
+        <div>📝 Topic (課題): Income Inequality & Taxation (收入不均與稅制)</div>
+        <div>⭐ Difficulty (難度): ★★★★☆ (4/5)</div>
+        <div>🔑 Concepts: Gini Coefficient, Standard Rate, Marginal Rate</div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <strong>下列哪項政策能減低香港按除稅及福利轉移後住戶每月收入計算的堅尼系數？</strong>
+            <div class="en-translation">Which of the following policies can reduce the Gini coefficient based on post-tax post-social transfer monthly household income in Hong Kong?</div>
+        </div>
+        
+        <div class="option">
+            A. 增加薪俸稅的標準稅率
+            <div class="en-translation">A. to raise the standard tax rate on salaries tax</div>
+        </div>
+        <div class="option">
+            B. 減低薪俸稅的邊際稅率
+            <div class="en-translation">B. to reduce the marginal tax rate on salaries tax</div>
+        </div>
+        <div class="option">
+            C. 減低綜合社會保障援助計劃的金額
+            <div class="en-translation">C. to reduce the amount of Comprehensive Social Assistance Schemes (CSSA)</div>
+        </div>
+        <div class="option">
+            D. 向每位僱員的強積金戶口注入一筆等額的金錢
+            <div class="en-translation">D. to grant an equal sum of money to the Mandatory Provident Fund (MPF) accounts of every employee</div>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>堅尼系數 (Gini Coefficient)</h3>
+        <div class="bilingual-block">
+            堅尼系數是量度收入不均的指標，數值介乎 0 至 1 之間。數值愈小（接近 0），代表收入分佈愈平均。題目要求「減低」堅尼系數，即是找出能令社會「貧富懸殊收窄」的政策。
+            <div class="en-translation">The Gini coefficient measures income inequality, ranging from 0 to 1. A lower value (closer to 0) means a more equal income distribution. The question asks to "reduce" the Gini coefficient, which means finding a policy that narrows the wealth gap.</div>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Gini Coefficient} = \frac{\text{Area between Lorenz curve and Line of Equality}}{\text{Total area under Line of Equality}} $$
+        </div>
+
+        <h3>香港薪俸稅制 (HK Salaries Tax System)</h3>
+        <div class="bilingual-block">
+            香港的薪俸稅採用「累進稅率 (Progressive/Marginal rates)」與「標準稅率 (Standard rate)」雙軌制。納稅人只需繳交兩者計算結果中較低的一個。<br><br>
+            <ul>
+                <li><strong>邊際稅率 (Marginal Rate):</strong> 主要適用於中低收入的納稅人。</li>
+                <li><strong>標準稅率 (Standard Rate):</strong> 是一個劃一稅率（Flat rate），只適用於<strong>最高收入</strong>的群體。</li>
+            </ul>
+            <div class="en-translation">Hong Kong's salaries tax uses a dual system: Progressive (Marginal) rates and a Standard rate. Taxpayers pay the lesser of the two calculations.<br>
+            - <strong>Marginal Rate:</strong> Applies mainly to middle/lower-income taxpayers.<br>
+            - <strong>Standard Rate:</strong> A flat rate that applies ONLY to the <strong>highest-income</strong> earners.</div>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="analysis-item correct-ans">
+        <h3><span class="tag-correct">✓ Correct Answer: Option A</span></h3>
+        <div class="bilingual-block">
+            <strong>A. 增加薪俸稅的標準稅率 (to raise the standard tax rate on salaries tax)</strong><br><br>
+            在香港，只有收入最高的群體才需要按「標準稅率」繳稅。增加標準稅率，等同直接增加高收入人士的稅務負擔，令他們的除稅後可支配收入（post-tax income）大幅減少。這有效地拉近了富人與窮人的收入差距，從而減低堅尼系數。
+            <div class="en-translation">In Hong Kong, only the highest income group pays the "standard tax rate". Raising this rate increases the tax burden exclusively on the rich, significantly reducing their post-tax disposable income. This effectively narrows the income gap between the rich and the poor, thereby reducing the Gini coefficient.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <h3><span class="tag-wrong">✗ Incorrect: Option B</span></h3>
+        <div class="bilingual-block">
+            <strong>B. 減低薪俸稅的邊際稅率 (to reduce the marginal tax rate)</strong><br><br>
+            減低邊際稅率會令一般納稅人（中產階層）受惠，稅後收入增加。然而，社會上最貧窮的階層（因免稅額而無須交稅的人）並<strong>不會</strong>從中受惠（他們的稅款維持在 $0）。這反而會拉闊中產與最底層窮人的收入差距，甚至可能令堅尼系數上升。
+            <div class="en-translation">Reducing the marginal tax rate benefits general taxpayers (the middle class), increasing their post-tax income. However, the poorest in society (who pay no tax due to allowances) receive <strong>zero benefit</strong> from this cut. This widens the income gap between the middle class and the absolute poor, potentially increasing the Gini coefficient.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <h3><span class="tag-wrong">✗ Incorrect: Option C</span></h3>
+        <div class="bilingual-block">
+            <strong>C. 減低綜合社會保障援助計劃的金額 (to reduce CSSA amount)</strong><br><br>
+            綜援是給予極低收入人士的福利轉移（Social transfer）。減低綜援金額會直接減少最貧窮階層的收入，令貧富懸殊惡化，堅尼系數將會<strong>上升</strong>。
+            <div class="en-translation">CSSA is a social transfer to the lowest-income individuals. Reducing this amount directly decreases the income of the poorest class, worsening wealth inequality. This would <strong>increase</strong> the Gini coefficient.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <h3><span class="tag-wrong">✗ Incorrect: Option D</span></h3>
+        <div class="bilingual-block">
+            <strong>D. 向強積金戶口注入等額金錢 (Equal sum to MPF accounts)</strong><br><br>
+            這是一個典型的陷阱！雖然給予每人等額金錢（Equal sum）通常有利於窮人（因為對窮人來說，收入的百分比增幅較大，有助減低堅尼系數），但強積金（MPF）是一筆<strong>不可即時提取的退休金</strong>。它不被計算在目前的「住戶每月可支配收入（Monthly household income）」內，因此對當前的堅尼系數沒有影響。
+            <div class="en-translation">This is a classic trap! While granting an equal lump sum generally favors the poor (representing a larger % increase in their wealth, thus reducing inequality), the MPF is a <strong>locked retirement fund</strong>. It is NOT counted as current "monthly household disposable income", so it has no immediate effect on the current Gini coefficient.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <strong>解題樞紐 (Pivot Point):</strong><br>
+            處理此類題目時，必須問自己：「這項政策針對的是哪一個收入階層？」<br>
+            1. <strong>高收入人士：</strong> 對應「標準稅率 (Standard Rate)」。<br>
+            2. <strong>中等收入人士：</strong> 對應「邊際稅率 / 累進稅率 (Marginal / Progressive Rate)」。<br>
+            3. <strong>低收入人士：</strong> 對應「免稅額 (Allowances)」及「福利轉移 (Social Transfers, e.g., CSSA)」。<br><br>
+            要減低堅尼系數，必須「劫富濟貧」（向富人開刀或向窮人派錢）。選項 A 完美命中了「向富人開刀」的條件。
+            
+            <div class="en-translation"><strong>Pivot Point:</strong><br>
+            When tackling this type of question, you must ask: "Which income group does this policy target?"<br>
+            1. <strong>High-income earners:</strong> Relates to "Standard Rate".<br>
+            2. <strong>Middle-income earners:</strong> Relates to "Marginal / Progressive Rate".<br>
+            3. <strong>Low-income earners:</strong> Relates to "Allowances" and "Social Transfers".<br><br>
+            To reduce the Gini coefficient, the policy must redistribute wealth (tax the rich more or give more to the poor). Option A perfectly hits the condition of taxing the rich more.</div>
+        </div>
+    </div>
+
+    <h2>5. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="q-text">Q: 如果選項 D 不是注入「強積金 (MPF)」，而是直接派發「現金 (Cash)」，答案會改變嗎？</div>
+        <div class="a-text">
+            <strong>A:</strong> 會的！如果政府向每人派發等額現金（例如每人派 $10,000），這筆錢屬於可支配收入。對於月入 $10,000 的窮人來說，這是 100% 的收入增長；但對於月入 $1,000,000 的富人來說，這只是 1% 的增長。這會令整體收入比例拉近，從而<strong>減低堅尼系數</strong>。考評局經常利用「強積金缺乏流動性」這一點來設陷阱！
+            <div class="en-translation"><strong>A:</strong> Yes! If the government handed out an equal cash sum (e.g., $10,000 to everyone), it becomes disposable income. For a poor person earning $10,000, it's a 100% increase; for a rich person earning $1,000,000, it's only a 1% increase. This brings the income ratios closer, effectively <strong>reducing the Gini coefficient</strong>. The HKEAA loves using the "illiquidity of MPF" as a trap!</div>
+        </div>
+    </div>
+
+    <h2>6. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="border-left-color: #8b5cf6; background-color: #f5f3ff;">
+        <div class="bilingual-block">
+            <strong>秒殺技巧 (10-Second Shortcut):</strong><br>
+            在 HKDSE 經濟科中，看到「Standard tax rate (標準稅率)」，大腦應立刻聯繫到「最高收入人士 (The Richest)」。<br>
+            看到「增加標準稅率」，即是「向最有錢的人收更多稅」。這必定會令財富分佈更平均，毫不猶豫選擇 A！
+            <div class="en-translation"><strong>10-Second Shortcut:</strong><br>
+            In HKDSE Economics, whenever you see "Standard tax rate", instantly link it to "The Richest".<br>
+            "Increasing standard rate" = "Taxing the richest more". This will undoubtedly make wealth distribution more equal. Choose A without hesitation!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

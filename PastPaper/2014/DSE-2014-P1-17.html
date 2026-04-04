@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Market Structure Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --correct-green: #16a34a;
+            --wrong-red: #dc2626;
+            --border-color: #e5e7eb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+        }
+        /* Bilingual Formatting */
+        .bilingual-pair {
+            margin-bottom: 1.2rem;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            border-left: 3px solid #cbd5e1;
+            padding-left: 12px;
+            font-style: italic;
+        }
+        /* UI Elements */
+        .header-section {
+            background-color: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            border: 2px solid #374151;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .question-table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .question-table th, .question-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .question-table th {
+            background-color: var(--bg-gray);
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .highlight-text {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .tag-topic { background-color: #dbeafe; color: #1e40af; }
+        .tag-diff { background-color: #fef3c7; color: #b45309; }
+        .tag-concept { background-color: #e0e7ff; color: #3730a3; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .question-box, .header-section, .concept-box, .analysis-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="bilingual-pair">
+            <div class="zh"><h1>HKDSE 經濟學大師班：試題解析</h1></div>
+            <div class="en">HKDSE Economics Masterclass: Question Analysis</div>
+        </div>
+        
+        <div>
+            <span class="tag tag-topic">Topic: 市場結構 Market Structure</span>
+            <span class="tag tag-diff">Difficulty: ★★★☆☆ (Moderate)</span>
+            <span class="tag tag-concept">Key Concepts: Oligopoly, Market Concentration</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <p>下表顯示2012年香港超級市場的市場份額的分佈。</p>
+                <table class="question-table">
+                    <tr><th>名稱</th><th>市場份額 (%)</th></tr>
+                    <tr><td>惠康</td><td>39.8</td></tr>
+                    <tr><td>百佳</td><td>33.1</td></tr>
+                    <tr><td>華潤萬家</td><td>7.8</td></tr>
+                    <tr><td>其他</td><td>19.3</td></tr>
+                    <tr><td><strong>合共</strong></td><td><strong>100</strong></td></tr>
+                </table>
+                <p>我們可以由上表得出結論如下：香港超級市場是 __________ 市場的一個例子，因為 ___________。</p>
+                <p>A. 寡頭壟斷 …… 賣家的營銷策略互相影響<br>
+                B. 寡頭壟斷 …… 幾位主要賣家操控了市場的總銷售量<br>
+                C. 壟斷性競爭 …… 賣家能影響市價，從消費者角度看來，它們的貨品是異質的<br>
+                D. 壟斷性競爭 …… 市場上有許多賣家採用非價格競爭</p>
+            </div>
+            <div class="en">
+                <p>The table below shows the distribution of market share of supermarkets in Hong Kong in 2012.</p>
+                <table class="question-table">
+                    <tr><th>Name</th><th>Market share (%)</th></tr>
+                    <tr><td>Wellcome</td><td>39.8</td></tr>
+                    <tr><td>Parknshop</td><td>33.1</td></tr>
+                    <tr><td>Vanguard</td><td>7.8</td></tr>
+                    <tr><td>Others</td><td>19.3</td></tr>
+                    <tr><td><strong>Total</strong></td><td><strong>100</strong></td></tr>
+                </table>
+                <p>From the above table, we can conclude that the market of supermarkets in Hong Kong is an example of __________ because __________.</p>
+                <p>A. oligopoly ……. sellers are interdependent in their market strategies<br>
+                B. oligopoly …… a few major sellers are in control of the total sales of the market<br>
+                C. monopolistic competition …… sellers can affect the market price as their products are heterogeneous from the consumers' viewpoint<br>
+                D. monopolistic competition …… there are many sellers adopting non-price competition in the market</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <strong>寡頭壟斷 (Oligopoly) 的核心特徵：</strong><br>
+                寡頭壟斷是指市場由少數幾個大賣家主導的市場結構。雖然市場上可能還有其他小賣家，但主要銷售量集中在幾個巨頭手中。經濟學上，我們通常會用「市場集中度」(Market Concentration) 來量度。
+            </div>
+            <div class="en">
+                <strong>Core Features of Oligopoly:</strong><br>
+                An oligopoly is a market structure dominated by a few large sellers. Although there may be other small sellers in the market, the majority of the total sales are concentrated in the hands of a few giants. In economics, we often measure this using "Market Concentration".
+            </div>
+        </div>
+
+        <div class="bilingual-pair">
+            <div class="zh">
+                為了量度市場的集中程度，我們會計算前 \(n\) 大企業的市場份額總和，稱為 <strong>集中比率 (Concentration Ratio, \(CR_n\))</strong>：
+            </div>
+            <div class="en">
+                To measure the degree of market concentration, we calculate the sum of the market shares of the top \(n\) largest firms, known as the <strong>Concentration Ratio (\(CR_n\))</strong>:
+            </div>
+        </div>
+        
+        <div class="math-block">
+            $$ CR_n = S_1 + S_2 + \dots + S_n = \sum_{i=1}^{n} S_i $$
+        </div>
+
+        <div class="bilingual-pair">
+            <div class="zh">
+                這裡的 \(S_i\) 代表第 \(i\) 大企業的市場份額 (Market Share)。如果最大的兩至三間公司已經佔據了市場的絕大部份份額（例如 \(CR_3\) 超過 70% 或 80%），這就是一個典型的寡頭壟斷市場。
+            </div>
+            <div class="en">
+                Here, \(S_i\) represents the market share of the \(i\)-th largest firm. If the top two or three companies already occupy the vast majority of the market share (e.g., \(CR_3\) exceeds 70% or 80%), this is a typical oligopolistic market.
+            </div>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div class="bilingual-pair" style="margin-bottom: 20px;">
+        <div class="zh" style="font-size: 1.2em;">正確答案 Correct Option: <strong class="correct">Option B</strong></div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <span class="incorrect">選項 A 錯誤 (Incorrect):</span><br>
+                雖然「賣家的營銷策略互相影響」(Interdependence) 的確是寡頭壟斷的重要特徵，但<strong>這個結論無法從題目提供的表格中得出</strong>。表格只顯示了數字（市場份額），並沒有顯示它們之間如何進行價格戰或廣告戰。
+            </div>
+            <div class="en">
+                While "sellers are interdependent in their market strategies" is indeed a key feature of an oligopoly, <strong>this conclusion cannot be drawn from the table provided</strong>. The table only shows numbers (market shares) and does not display how they engage in price wars or advertising wars.
+            </div>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border: 2px solid var(--correct-green);">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <span class="correct">選項 B 正確 (Correct):</span><br>
+                從表格數據可見，首兩大賣家（惠康和百佳）的市場份額合共為 \(39.8\% + 33.1\% = 72.9\%\)。若加上第三大賣家（華潤萬家），則高達 \(80.7\%\)。這完美地展示了「幾位主要賣家操控了市場的總銷售量」，符合表格所能證明的數據現象。
+            </div>
+            <div class="en">
+                Looking at the data in the table, the combined market share of the top two sellers (Wellcome and Parknshop) is \(39.8\% + 33.1\% = 72.9\%\). If we add the third largest seller (Vanguard), it reaches an overwhelming \(80.7\%\). This perfectly demonstrates that "a few major sellers are in control of the total sales", which matches the data phenomenon proven by the table.
+            </div>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <span class="incorrect">選項 C & D 錯誤 (Incorrect):</span><br>
+                壟斷性競爭 (Monopolistic Competition) 的首要條件是市場上有<strong>許多賣家 (many sellers)</strong>，且沒有單一或少數賣家能夠主導市場。表格中少數幾間公司佔據超過 80% 的市場，直接推翻了壟斷性競爭的可能性。
+            </div>
+            <div class="en">
+                The primary condition for Monopolistic Competition is having <strong>many sellers</strong> in the market, with no single or few sellers dominating. The fact that a few companies in the table occupy over 80% of the market directly refutes the possibility of monopolistic competition.
+            </div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="bilingual-pair">
+        <div class="zh">
+            解答這題的 <strong>關鍵支點 (Pivot Point)</strong> 在於題目的這句話：<span class="highlight-text">「我們可以由上表得出結論如下」</span>。<br><br>
+            這是一條典型的「資料回應題」(Data-based Question)。你需要區分兩件事：
+            <ol>
+                <li>一個市場結構的<strong>客觀定義與特徵</strong>（例如：寡頭壟斷有互相牽制）。</li>
+                <li><strong>這份數據能夠證明的特徵</strong>（這份數據只有百分比，只能證明「集中度高」）。</li>
+            </ol>
+            很多學生看到 A 選項的描述完全正確就立刻選擇，忘記了 A 選項的描述並沒有出現在表格之中。
+        </div>
+        <div class="en">
+            The <strong>Pivot Point</strong> to solving this question lies in this phrase from the stem: <span class="highlight-text">"From the above table, we can conclude that..."</span>.<br><br>
+            This is a classic "Data-based Question". You must distinguish between two things:
+            <ol>
+                <li>The <strong>objective definition and features</strong> of a market structure (e.g., interdependence in oligopoly).</li>
+                <li>The <strong>features that this specific data can prove</strong> (this data only has percentages, so it can only prove "high concentration").</li>
+            </ol>
+            Many students immediately choose Option A because the description itself is factually correct, forgetting that the behavior described in Option A is not shown in the table.
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="bilingual-pair">
+        <div class="zh">
+            <strong>陷阱：張冠李戴 (Mismatching Evidence)</strong><br>
+            在DSE經濟科中，考評局非常喜歡設定這種陷阱。選項前半部分的市場結構分類是正確的（寡頭壟斷），後半部分的解釋也是該市場的真實特徵（營銷互相影響），但<strong>後半部分無法由題目的資料推導出來</strong>。學生必須確保「原因 (Because...)」與「提供的資料 (Provided Data)」有直接的邏輯關聯。
+        </div>
+        <div class="en">
+            <strong>Trap: Mismatching Evidence</strong><br>
+            In HKDSE Economics, the HKEAA loves to set this type of trap. The first half of the option correctly identifies the market structure (Oligopoly), and the second half states a true feature of that market (interdependent strategies), but <strong>the second half cannot be deduced from the provided material</strong>. Students must ensure the "Because..." part has a direct logical connection to the "Provided Data".
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-left: 5px solid #8b5cf6;">
+        <div class="bilingual-pair">
+            <div class="zh">
+                <strong>Q: 表格中明明有「其他 19.3%」，代表市場上有很多小賣家。有「許多賣家」不就是壟斷性競爭 (Monopolistic Competition) 嗎？為什麼不能選 D？</strong>
+            </div>
+            <div class="en">
+                <strong>Q: The table clearly shows "Others 19.3%", meaning there are many small sellers. Doesn't having "many sellers" mean it's Monopolistic Competition? Why can't we choose D?</strong>
+            </div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh">
+                <strong>A:</strong> 雖然市場上可能同時存在很多小賣家（「其他」），但判斷市場結構的關鍵在於<strong>市場主導權 (Market Dominance)</strong>。在壟斷性競爭中，每一間公司的市場份額都很小，沒有人能單獨操控大局。但這題中，單是惠康和百佳兩家公司就拿走了超過七成的銷售額。當少數幾家公司佔據了絕對多數的市場份額時，這個市場就是寡頭壟斷。
+            </div>
+            <div class="en">
+                <strong>A:</strong> While many small sellers might exist simultaneously (the "Others"), the key to determining market structure is <strong>Market Dominance</strong>. In monopolistic competition, every firm has a very small market share, and no one can dominate the market. But in this question, Wellcome and Parknshop alone take up over 70% of the sales. When a few firms hold an absolute majority of the market share, the market is an oligopoly.
+            </div>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="bilingual-pair">
+        <div class="zh">
+            <strong>速解法 (Elimination Shortcut)：</strong><br>
+            1. 看到表格全是「市場份額 (%)」數字 \(\rightarrow\) 立即聯想到「集中度 / 銷售控制權」。<br>
+            2. 掃視選項後半部分：<br>
+               - A 講策略影響 (文字上無證據，刪去)<br>
+               - B 講銷售量控制 (與 % 吻合，保留)<br>
+               - C 講異質物品 (文字上無證據，刪去)<br>
+               - D 講非價格競爭 (文字上無證據，刪去)<br>
+            3. 5秒內即可鎖定答案為 B！
+        </div>
+        <div class="en">
+            <strong>Elimination Shortcut:</strong><br>
+            1. See a table full of "Market share (%)" numbers \(\rightarrow\) Immediately associate it with "Concentration / Control of sales".<br>
+            2. Scan the second half of the options:<br>
+               - A talks about strategic interdependence (no textual evidence, eliminate).<br>
+               - B talks about control of sales (matches the %, keep).<br>
+               - C talks about heterogeneous products (no textual evidence, eliminate).<br>
+               - D talks about non-price competition (no textual evidence, eliminate).<br>
+            3. You can lock in answer B within 5 seconds!
+        </div>
+    </div>
+
+</body>
+</html>

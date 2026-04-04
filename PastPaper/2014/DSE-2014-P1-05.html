@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - MC Analysis</title>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Base Reset & Typography */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #1f2937; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f3f4f6; 
+        }
+        h1, h2, h3 { color: #1e3a8a; margin-top: 0; }
+        h2 { border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.4em; }
+        
+        /* Layout & Containers */
+        .container { 
+            background-color: #ffffff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+        }
+        .header-section { margin-bottom: 30px; text-align: center; }
+        
+        /* Badges */
+        .badge { 
+            display: inline-block; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.9em; 
+            font-weight: bold; 
+            margin: 5px; 
+        }
+        .badge-topic { background-color: #dbeafe; color: #1e40af; }
+        .badge-diff { background-color: #fce7f3; color: #9d174d; }
+        .badge-key { background-color: #e0e7ff; color: #3730a3; }
+
+        /* Bilingual Styling */
+        .zh { font-weight: 600; margin-bottom: 5px; color: #111827; }
+        .en { 
+            font-size: 0.95em; 
+            color: #4b5563; 
+            margin-bottom: 15px; 
+            border-left: 3px solid #cbd5e1; 
+            padding-left: 12px; 
+            font-style: italic; 
+        }
+
+        /* Section Boxes */
+        .section-box { padding: 25px; margin-bottom: 25px; border-radius: 10px; }
+        .question-box { background-color: #ffffff; border: 1px solid #d1d5db; }
+        .concept-box { background-color: #f0f9ff; border-left: 6px solid #0ea5e9; }
+        .analysis-box { background-color: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .mistakes-box { background-color: #fef2f2; border-left: 6px solid #ef4444; }
+        .tricks-box { background-color: #f0fdf4; border-left: 6px solid #22c55e; }
+        .qa-box { background-color: #fefce8; border-left: 6px solid #eab308; }
+
+        /* Math Block */
+        .math-block { 
+            background-color: #f8fafc; 
+            border: 1px solid #e2e8f0; 
+            padding: 15px; 
+            border-radius: 8px; 
+            text-align: center; 
+            margin: 15px 0; 
+            overflow-x: auto; 
+            font-size: 1.1em;
+        }
+
+        /* Tables */
+        .table-responsive { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        th, td { border: 1px solid #d1d5db; padding: 12px; text-align: center; }
+        th { background-color: #f3f4f6; color: #374151; font-weight: 600; }
+        .highlight-row { background-color: #fef08a; font-weight: bold; }
+        .diminishing-cell { color: #dc2626; font-weight: bold; }
+
+        /* Options Analysis */
+        .option { 
+            margin-bottom: 15px; 
+            padding: 15px; 
+            background-color: #f9fafb; 
+            border-radius: 8px; 
+            border-left: 4px solid #9ca3af; 
+        }
+        .option.correct { border-left-color: #10b981; background-color: #ecfdf5; }
+        .option.wrong { border-left-color: #ef4444; }
+        .option-title { font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .section-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics MC Guide</h1>
+        <div>
+            <span class="badge badge-topic">Topic: Law of Diminishing Marginal Returns</span>
+            <span class="badge badge-diff">Difficulty: ★★★☆☆</span>
+        </div>
+        <div>
+            <span class="badge badge-key">Key Concept: Marginal Product (MP)</span>
+            <span class="badge badge-key">Key Concept: Short Run</span>
+            <span class="badge badge-key">Key Concept: Total Product (TP)</span>
+        </div>
+    </div>
+
+    <div class="section-box question-box">
+        <h2>📝 The Question (題目)</h2>
+        
+        <div class="zh">
+            下表顯示某廠商的生產計劃。該廠商只採用兩種生產要素：勞工和機器。<br>
+            當第_______個單位的勞工加入工作行列，勞工的邊際產量開始下降。
+        </div>
+        <div class="en">
+            The following table shows a production plan of a firm which employs two factors only, namely labour and machinery.<br>
+            The marginal product of labour will start to diminish when the _______ unit of labour is put to work.
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Labour / 勞工 (unit)</th>
+                        <th>Machinery / 機器 (unit)</th>
+                        <th>Total product / 總產量 (unit)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>$1$</td><td>$4$</td><td>$100$</td></tr>
+                    <tr><td>$2$</td><td>$4$</td><td>$120$</td></tr>
+                    <tr><td>$3$</td><td>$4$</td><td>$150$</td></tr>
+                    <tr><td>$4$</td><td>$4$</td><td>$170$</td></tr>
+                    <tr><td>$5$</td><td>$4$</td><td>$165$</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="zh">A. 二 &nbsp;&nbsp; B. 三 &nbsp;&nbsp; C. 四 &nbsp;&nbsp; D. 五</div>
+        <div class="en">A. second &nbsp;&nbsp; B. third &nbsp;&nbsp; C. fourth &nbsp;&nbsp; D. fifth</div>
+    </div>
+
+    <div class="section-box concept-box">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        
+        <div class="zh">1. 短期生產 (Short Run Production)：</div>
+        <div class="en">A period where at least one factor of production is fixed in quantity. In this question, Machinery is the fixed factor ($4$ units).</div>
+
+        <div class="zh">2. 邊際產量 (Marginal Product, $MP$)：</div>
+        <div class="en">The extra output produced by employing one additional unit of a variable factor.</div>
+        
+        <div class="math-block">
+            $$MP_n=TP_n-TP_{n-1}$$
+        </div>
+
+        <div class="zh">3. 邊際回報遞減定律 (Law of Diminishing Marginal Returns)：</div>
+        <div class="en">In the short run, as successive units of a variable factor are added to a given quantity of fixed factors, the marginal product of the variable factor will <strong>eventually</strong> and <strong>continuously</strong> diminish.</div>
+    </div>
+
+    <div class="section-box analysis-box">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <div class="zh">正確答案是：<strong>C. 四 (fourth)</strong></div>
+        <div class="en">The correct option is: <strong>Option C</strong></div>
+
+        <p class="zh">為了解決這個問題，我們必須先計算出每一單位的邊際產量 ($MP$)：</p>
+        <p class="en">To solve this problem, we must first calculate the Marginal Product ($MP$) for each unit:</p>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Labour ($L$)</th>
+                        <th>Total Product ($TP$)</th>
+                        <th>Marginal Product ($MP$) Calculation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>$1$</td><td>$100$</td><td>$100-0=100$</td></tr>
+                    <tr><td>$2$</td><td>$120$</td><td>$120-100=20$</td></tr>
+                    <tr><td>$3$</td><td>$150$</td><td>$150-120=30$</td></tr>
+                    <tr class="highlight-row"><td>$4$</td><td>$170$</td><td class="diminishing-cell">$170-150=20$</td></tr>
+                    <tr><td>$5$</td><td>$165$</td><td class="diminishing-cell">$165-170=-5$</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-title">❌ Option A (second / 二)</div>
+            <div class="zh">雖然加入第二名勞工時，邊際產量由 $100$ 下降至 $20$，但在第三名勞工加入時，邊際產量回升至 $30$。定律強調的是「最終且持續」的下降，這只是短暫的波動，不是定律的起點。</div>
+            <div class="en">Although $MP$ drops from $100$ to $20$ at the second unit, it bounces back to $30$ at the third. The law dictates an "eventual and continuous" decline, so this temporary fluctuation does not mark the onset.</div>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-title">❌ Option B (third / 三)</div>
+            <div class="zh">當加入第三名勞工時，邊際產量由 $20$ 增加至 $30$。邊際產量正在上升，這顯然不符合「遞減」的定義。</div>
+            <div class="en">At the third unit, $MP$ increases from $20$ to $30$. Since $MP$ is rising, this clearly contradicts the definition of diminishing returns.</div>
+        </div>
+
+        <div class="option correct">
+            <div class="option-title">✅ Option C (fourth / 四)</div>
+            <div class="zh">當加入第四名勞工時，邊際產量由高峰的 $30$ 下降至 $20$，並在其後持續下跌（第五單位時為 $-5$）。這標誌著邊際回報開始出現真正的、持續的遞減，因此是正確答案。</div>
+            <div class="en">At the fourth unit, $MP$ falls from its peak of $30$ down to $20$, and continues to decline thereafter (to $-5$). This marks the true, continuous onset of diminishing marginal returns.</div>
+        </div>
+
+        <div class="option wrong">
+            <div class="option-title">❌ Option D (fifth / 五)</div>
+            <div class="zh">雖然加入第五名勞工時邊際產量為負數（$-5$），且總產量開始下降，但邊際產量的「持續下降」早於第四名勞工時已經發生。因此，第五單位不是「開始」的轉捩點。</div>
+            <div class="en">Although $MP$ becomes negative ($-5$) and Total Product starts to fall at the fifth unit, the "continuous decline" of $MP$ had already begun at the fourth unit. Therefore, the fifth is not the starting point.</div>
+        </div>
+    </div>
+
+    <div class="section-box analysis-box">
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        <div class="zh"><strong>樞紐點 (Pivot Point)：</strong></div>
+        <div class="en"><strong>Pivot Point:</strong></div>
+        <div class="zh">此題的關鍵在於分辨「短暫下降」與「持續下降」。同學必須完整計算出整個 $MP$ 數列，才能找出真正的轉捩點。</div>
+        <div class="en">The key is distinguishing between a "temporary drop" and a "continuous decline." You must calculate the entire $MP$ column to find the true turning point.</div>
+        
+        <br>
+        <div class="zh"><strong>干擾資訊 (Distractors)：</strong></div>
+        <div class="en"><strong>Distractors:</strong></div>
+        <div class="zh">表中的「機器 ($4$ 單位)」純粹是為了滿足「短期」生產必有固定生產要素這個定義。在實際計算邊際產量時，這個數字是完全不需要用到的。</div>
+        <div class="en">The "Machinery ($4$ units)" column exists solely to satisfy the definition of a "short-run" period, which requires at least one fixed factor. You do not need to use the number $4$ in any calculations.</div>
+    </div>
+
+    <div class="section-box mistakes-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="zh"><strong>陷阱 1：見跌即選 (Premature Conclusion)</strong></div>
+        <div class="en"><strong>Trap 1:</strong> Choosing the very first drop. Students often see $MP$ fall from $100$ to $20$ at unit $2$ and immediately select Option A, failing to notice it rises again at unit $3$.</div>
+        
+        <br>
+        <div class="zh"><strong>陷阱 2：混淆總產量與邊際產量 (Confusing $TP$ with $MP$)</strong></div>
+        <div class="en"><strong>Trap 2:</strong> Looking at Total Product instead of Marginal Product. Some students select Option D because Total Product drops at unit $5$ ($170 \rightarrow 165$). Remember, the law is about Diminishing <em>Marginal</em> Returns, not Diminishing Total Returns!</div>
+    </div>
+
+    <div class="section-box qa-box">
+        <h2>🙋‍♂️ Student Q&A (學生常見疑問)</h2>
+        <div class="zh"><strong>Q: 邊際產量 ($MP$) 可以是負數嗎？</strong></div>
+        <div class="en"><strong>Q: Can Marginal Product be a negative number?</strong></div>
+        <div class="zh">A: 絕對可以。在第 $5$ 單位勞工加入時，$MP$ 為 $-5$。這代表額外工人的加入反而阻礙了生產（例如廠房過度擁擠，工人互相妨礙），導致總產量不升反跌。</div>
+        <div class="en">A: Absolutely. At the $5$th unit, $MP$ is $-5$. This means adding another worker actually hinders production (e.g., overcrowding, getting in each other's way), causing the Total Product to fall.</div>
+    </div>
+
+    <div class="section-box tricks-box">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="zh"><strong>「最後高峰」速算法：</strong><br>考試時，在試卷的空白處快速寫下整個 $MP$ 數列 ($100, 20, 30, 20, -5$)。找出 $MP$ 在持續下跌前的「最後一個高峰」（此題中為 $30$，在第 $3$ 單位）。定律必然在該高峰出現後的<strong>下一個單位</strong>開始生效！因此，$3+1=4$，答案秒選 C！</div>
+        <div class="en"><strong>The "Final Peak" Shortcut:</strong><br>During the exam, quickly scribble the entire $MP$ sequence ($100, 20, 30, 20, -5$) next to the table. Locate the "final peak" before the continuous drop begins (which is $30$, at the $3$rd unit). The law <em>always</em> sets in at the unit <strong>immediately following</strong> this peak! Thus, $3+1=4$. Choose C instantly!</div>
+    </div>
+
+</div>
+
+</body>
+</html>

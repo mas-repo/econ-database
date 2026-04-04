@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Perfect Competition & Costs</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-en: #4b5563;
+            --warning-bg: #fef2f2;
+            --warning-border: #ef4444;
+            --tip-bg: #ecfdf5;
+            --tip-border: #10b981;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .en {
+            color: var(--text-en);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Specific Section Boxes */
+        .header-box {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .question-box {
+            background-color: #fffbe0; /* Light cream/yellow */
+            border-left: 5px solid #fbbf24;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            overflow-x: auto;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .mistake-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .trick-box {
+            background-color: var(--tip-bg);
+            border-left: 5px solid var(--tip-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--bg-gray);
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        /* Options breakdown */
+        .option-analysis {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .correct-opt {
+            border-left: 5px solid #10b981;
+        }
+        .wrong-opt {
+            border-left: 5px solid #ef4444;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .question-box, .concept-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <p class="zh"><strong>課題 Topic:</strong> 廠商理論與完全競爭市場 (Theory of the Firm & Perfect Competition)</p>
+        <p class="zh"><strong>難度 Difficulty:</strong> ★★★☆☆ (3/5)</p>
+        <p class="zh"><strong>關鍵概念 Key Concepts:</strong> 受價者 (Price Taker), 邊際成本 (Marginal Cost), 利潤極大化 (Profit Maximization), 固定成本 (Fixed Cost)</p>
+    </div>
+
+    <h2>2. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh">下表顯示某受價者的成本和產量的關係。</p>
+        <p class="en">The following table shows the cost-output relationship of a price taker.</p>
+
+        <table>
+            <tr><th>產量 Output (unit)</th><th>總成本 Total cost ($)</th></tr>
+            <tr><td>1</td><td>20</td></tr>
+            <tr><td>2</td><td>45</td></tr>
+            <tr><td>3</td><td>75</td></tr>
+            <tr><td>4</td><td>110</td></tr>
+            <tr><td>5</td><td>150</td></tr>
+        </table>
+
+        <p class="zh">已知該廠商的利潤極大化產量是 3 單位，若固定成本增加 $5，該物品的價格和產量分別是__________和__________。</p>
+        <p class="en">Given that the profit maximizing output of the firm is 3 units. If the fixed cost increases by $5, the price of the good and the output will be _______ and _______ respectively.</p>
+
+        <p class="zh">
+            A. $25 …… 2單位 (units)<br>
+            B. $30 …… 2單位 (units)<br>
+            C. $30 …… 3單位 (units)<br>
+            D. $75 …… 3單位 (units)
+        </p>
+    </div>
+
+    <h2>3. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>1. 邊際成本 (Marginal Cost, MC):</strong> 生產多一單位物品所增加的總成本。固定成本 (Fixed Cost) 的改變<strong>不會</strong>影響邊際成本。</p>
+        <p class="en"><strong>1. Marginal Cost (MC):</strong> The addition to total cost from producing one more unit of output. Changes in Fixed Cost do <strong>not</strong> affect Marginal Cost.</p>
+        
+        <div class="math-block">
+            $$MC = \frac{\Delta TC}{\Delta Q}$$
+        </div>
+
+        <p class="zh"><strong>2. 受價者的利潤極大化 (Profit Maximization for a Price Taker):</strong> 在完全競爭市場中，廠商是受價者，市場價格 \(P\) 等於邊際收益 \(MR\)。當廠商要實現利潤極大化，必須生產至價格等於邊際成本的產量水平。</p>
+        <p class="en"><strong>2. Profit Maximization for a Price Taker:</strong> In a perfectly competitive market, the firm is a price taker, so market price \(P\) equals Marginal Revenue \(MR\). To maximize profit, the firm must produce at the output level where Price equals Marginal Cost.</p>
+
+        <div class="math-block">
+            $$P = MR = MC$$
+        </div>
+    </div>
+
+    <h2>4. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    
+    <h3 style="color: #10b981;">正確答案 Correct Option: C</h3>
+    
+    <p class="zh"><strong>步驟一：找出最初的邊際成本與市場價格</strong><br>首先，我們需要計算每個產量水平的邊際成本 \(MC\)。當產量為 3 單位時，\(MC = \$75 - \$45 = \$30\)。由於利潤極大化條件是 \(P = MC\)，而已知該產量為 3 單位，這代表市場價格 \(P\) 必定是 $30。</p>
+    <p class="en"><strong>Step 1: Find the initial Marginal Cost and Market Price</strong><br>First, we calculate the Marginal Cost \(MC\) for each output level. At 3 units, \(MC = \$75 - \$45 = \$30\). Since the profit-maximizing condition is \(P = MC\) and the given output is 3 units, the market price \(P\) must be $30.</p>
+
+    <p class="zh"><strong>步驟二：分析固定成本改變的影響</strong><br>題目指出固定成本增加 $5。這會令總成本 \(TC\) 在每個產量水平都增加 $5（例如產量 2 的 \(TC\) 變成 $50，產量 3 的 \(TC\) 變成 $80）。然而，邊際成本 \(MC\) 保持不變（例如新的 \(MC\) 於產量 3 = $80 - $50 = $30）。由於市場價格 \(P\) 和邊際成本 \(MC\) 都沒有改變，利潤極大化產量仍然維持在 3 單位。</p>
+    <p class="en"><strong>Step 2: Analyze the effect of fixed cost changes</strong><br>The question states fixed cost increases by $5. This increases Total Cost \(TC\) by $5 at every output level (e.g., \(TC\) at 2 units becomes $50, \(TC\) at 3 units becomes $80). However, the Marginal Cost \(MC\) remains unchanged (e.g., new \(MC\) at 3 units = $80 - $50 = $30). Since both market price \(P\) and \(MC\) are unchanged, the profit-maximizing output remains at 3 units.</p>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><strong>❌ 選項 A 分析 ($25 …… 2單位):</strong> 錯誤。這是假設價格和產量會因為成本上升而下降。作為受價者，廠商無法改變價格；且邊際成本並沒有改變。</p>
+        <p class="en"><strong>❌ Option A Analysis ($25 …… 2 units):</strong> Incorrect. This assumes both price and output will drop due to higher costs. As a price taker, the firm cannot change the price; and its marginal cost hasn't changed.</p>
+    </div>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><strong>❌ 選項 B 分析 ($30 …… 2單位):</strong> 錯誤。雖然價格 $30 是正確的，但產量不會跌至 2 單位，因為產量 2 的 \(MC\) 是 $25 (\(P > MC\))，廠商應該繼續增產以賺取更多利潤。</p>
+        <p class="en"><strong>❌ Option B Analysis ($30 …… 2 units):</strong> Incorrect. While the price $30 is correct, output will not fall to 2 units because \(MC\) at 2 units is $25 (\(P > MC\)), meaning the firm should expand production to earn more profit.</p>
+    </div>
+
+    <div class="option-analysis correct-opt">
+        <p class="zh"><strong>✅ 選項 C 分析 ($30 …… 3單位):</strong> 正確。價格維持在 $30，因為固定成本增加不改變邊際成本，\(P = MC\) 的均衡點仍處於產量 3 單位。</p>
+        <p class="en"><strong>✅ Option C Analysis ($30 …… 3 units):</strong> Correct. Price remains at $30. Since an increase in fixed cost does not alter marginal cost, the \(P = MC\) equilibrium point remains at 3 units of output.</p>
+    </div>
+
+    <div class="option-analysis wrong-opt">
+        <p class="zh"><strong>❌ 選項 D 分析 ($75 …… 3單位):</strong> 錯誤。這個選項的陷阱在於考生誤將產量 3 單位的「總成本 ($75)」當成了「物品的價格」。</p>
+        <p class="en"><strong>❌ Option D Analysis ($75 …… 3 units):</strong> Incorrect. The trap here is mistakenly taking the "Total Cost ($75)" at 3 units of output as the "Price" of the good.</p>
+    </div>
+
+    <h2>5. 題目拆解 Problem Decomposition</h2>
+    <p class="zh">解答這類題目的「破局點 (Pivot Point)」在於明白<strong>固定成本與邊際成本的關係</strong>。固定成本就像租金，無論你生產多少（甚至停產），都要支付同樣金額。所以每額外生產一件產品所需的成本（即邊際成本）是不會受固定成本變動影響的。</p>
+    <p class="en">The "Pivot Point" to solving this type of question is understanding the <strong>relationship between Fixed Cost and Marginal Cost</strong>. Fixed cost is like rent; you pay the same amount no matter how much you produce (even if you halt production). Therefore, the cost of producing one additional unit (Marginal Cost) is completely unaffected by changes in fixed cost.</p>
+    
+    <ul>
+        <li class="zh"><strong>有用資訊 (Crucial Info):</strong> 初始利潤極大化產量為 3 單位（讓我們能夠利用 \(P=MC\) 逆向推斷出市場價格為 $30）。</li>
+        <li class="en"><strong>Crucial Info:</strong> The initial profit-maximizing output is 3 units (allows us to reverse-engineer the market price as $30 using \(P=MC\)).</li>
+        
+        <li class="zh"><strong>干擾資訊 (Distractor):</strong> 「固定成本增加 $5」。這是出題者設下的煙幕，誘使你以為生產決策會因而改變。</li>
+        <li class="en"><strong>Distractor:</strong> "Fixed cost increases by $5". This is a smokescreen set by the examiner to trick you into thinking the production decision will change.</li>
+    </ul>
+
+    <h2>6. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="mistake-box">
+        <p class="zh">⚠️ <strong>混淆總成本與市場價格：</strong> 很多同學看到「極大化產量是 3 單位」，就直接在表格找 3 單位的數字，看見 $75 就誤以為那是價格（誤選 D）。記住，對於受價者，價格 \(P\) 來自 \(MC\)，而不是 \(TC\)！</p>
+        <p class="en">⚠️ <strong>Confusing Total Cost with Market Price:</strong> Many students see "maximizing output is 3 units", look at the table for 3 units, see $75, and mistakenly assume that is the price (choosing D). Remember, for a price taker, Price \(P\) comes from \(MC\), not \(TC\)!</p>
+    </div>
+
+    <h2>7. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-item">
+        <p class="qa-q">Q1: 既然固定成本增加了，廠商的利潤減少了，為什麼它不提高價格來彌補損失？</p>
+        <p class="zh">A1: 題目第一句已說明該廠商是「受價者 (Price Taker)」。在完全競爭市場中，單一廠商的市場佔有率極小，只能被動接受市場決定的價格。如果它自行加價，顧客會流失至其他售賣同質物品的廠商，銷量將跌至零。</p>
+        <p class="en">A1: The first sentence states the firm is a "Price Taker". In a perfectly competitive market, a single firm has a negligible market share and must passively accept the market-determined price. If it raises the price independently, customers will flee to other firms selling identical goods, and its sales will drop to zero.</p>
+    </div>
+    
+    <div class="qa-item">
+        <p class="qa-q">Q2: 如果固定成本增加得非常多，廠商會不會選擇停產 (Shut down)？那產量不就變成 0 了嗎？</p>
+        <p class="zh">A2: 這是個非常好的問題！廠商的短期停產條件是「價格低於平均可變成本 (\(P < AVC\))」。因為固定成本 (FC) 的改變不影響總可變成本 (TVC)，所以 AVC 也是不變的。只要原本 \(P \ge AVC\) 讓它願意生產，增加 FC 也不會觸發短期停產。</p>
+        <p class="en">A2: Excellent question! The short-run shutdown condition is "Price is less than Average Variable Cost (\(P < AVC\))". Since a change in Fixed Cost (FC) does not affect Total Variable Cost (TVC), the AVC remains unchanged. As long as the initial \(P \ge AVC\) made production viable, increasing FC will not trigger a short-run shutdown.</p>
+    </div>
+
+    <h2>8. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p class="zh">💡 <strong>DSE 五秒速解法 (The 5-Second Rule):</strong><br>
+        在 DSE 卷一 (MC) 中看到：「受價者」＋「固定成本 (Fixed Cost) 改變」＋「求新產量」。<br>
+        <strong>秒殺邏輯：</strong> \(FC\) 不影響 \(MC\) \(\rightarrow\) \(MC\) 不變 \(\rightarrow\) 產量 (Output) 不變！直接刪除所有產量有變的選項（A 和 B），再用 \(\Delta TC\) 找出正確的 \(P\)，即可極速選出答案 C。</p>
+        <p class="en">💡 <strong>The 5-Second Rule:</strong><br>
+        If you see in Paper 1 (MC): "Price taker" + "Change in Fixed Cost" + "Find new output".<br>
+        <strong>Instant Logic:</strong> \(FC\) doesn't affect \(MC\) \(\rightarrow\) \(MC\) is unchanged \(\rightarrow\) Output remains unchanged! Immediately eliminate options where output changes (A and B). Then find the correct \(P\) using \(\Delta TC\), and you can instantly select C.</p>
+    </div>
+
+</body>
+</html>
