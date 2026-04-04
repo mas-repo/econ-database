@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Cost of Holding Money</title>
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #fbbf24;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .correct-option {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            border-left: 5px solid #10b981;
+        }
+        .wrong-option {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+        }
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .zh-text {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #1e3a8a;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        @media (max-width: 600px) {
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-info">
+        <div><span class="badge">Topic</span> 貨幣與銀行 Money & Banking</div>
+        <div><span class="badge">Difficulty</span> ★★★☆☆</div>
+        <div><span class="badge">Concepts</span> Nominal Return, Opportunity Cost</div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            若一年期債券的名義利率為10%，而預期通脹率為2%。持有現金的名義回報率和預期成本分別為__________及__________。
+            <br><br>
+            A. 0% …. 8%<br>
+            B. 0% …. 10%<br>
+            C. –2% …. 8%<br>
+            D. –10% …. 10%
+        </div>
+        <div class="en-text">
+            If the nominal interest rate on a one-year bond is 10% and the expected inflation rate is 2%, the nominal rate of return and the expected cost of holding cash are __________ and __________ respectively.
+            <br><br>
+            A. 0% … 8%<br>
+            B. 0% … 10%<br>
+            C. −2% … 8%<br>
+            D. −10% … 10%
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="zh-text"><strong>1. 現金的名義回報率 (Nominal Rate of Return on Cash):</strong><br>現金不會產生任何利息。因此，無論經濟環境如何，持有現金的名義回報率永遠是 0%。</div>
+        <div class="en-text"><strong>1. Nominal Rate of Return on Cash:</strong><br>Cash does not generate any interest. Therefore, regardless of the economic environment, the nominal rate of return on cash is always 0%.</div>
+        
+        <br>
+        
+        <div class="zh-text"><strong>2. 持有現金的成本 (Cost of Holding Cash):</strong><br>這是一個「機會成本」(Opportunity Cost) 的概念。如果你選擇持有現金，你就放棄了將這筆錢用來購買生息資產（例如債券）所能賺取的名義利息。因此，持有貨幣的成本就是名義利率 ($i$)。</div>
+        <div class="en-text"><strong>2. Cost of Holding Cash:</strong><br>This is an "Opportunity Cost" concept. By choosing to hold cash, you forgo the nominal interest you could have earned by investing in an interest-bearing asset (like a bond). Thus, the cost of holding money is exactly the nominal interest rate ($i$).</div>
+        
+        <div class="math-block">
+            $$\text{Cost of Holding Money} = \text{Nominal Interest Rate} \ (i)$$
+        </div>
+
+        <div class="zh-text"><strong>3. 實質回報率 (Real Rate of Return) [補充概念]:</strong><br>如果題目問的是現金的「實質」回報率，我們就需要扣除通脹的影響。</div>
+        <div class="en-text"><strong>3. Real Rate of Return [Supplementary]:</strong><br>If the question asked for the "real" rate of return on cash, we would need to deduct the effect of inflation.</div>
+        
+        <div class="math-block">
+            $$\text{Real Rate of Return} = \text{Nominal Rate} - \text{Expected Inflation Rate} \ (\pi^e)$$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: #10b981; font-size: 1.2em;">Option B</span></strong></p>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>選項 A 錯誤：</strong> 0% 是正確的現金名義回報率。然而，8% 是債券的「實質利率」(10% - 2%)，而不是持有現金的成本。持有現金的成本應為放棄的全部名義利息。</div>
+        <div class="en-text"><strong>Option A is Incorrect:</strong> 0% is the correct nominal return on cash. However, 8% is the "real interest rate" of the bond (10% - 2%), not the cost of holding cash. The cost of holding cash is the total nominal interest forgone.</div>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <div class="zh-text"><strong>選項 B 正確：</strong> 現金不會派息，所以名義回報率是 0%。持有現金的預期成本等於你放棄的債券名義利率，即 10%。</div>
+        <div class="en-text"><strong>Option B is Correct:</strong> Cash pays no interest, so its nominal rate of return is 0%. The expected cost of holding cash is equal to the nominal interest rate of the bond you gave up, which is 10%.</div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>選項 C 錯誤：</strong> -2% 是持有現金的「實質回報率」(0% - 2% = -2%)，但題目問的是「名義」回報率。第二部分的 8% 也是錯的（見選項 A 解釋）。</div>
+        <div class="en-text"><strong>Option C is Incorrect:</strong> -2% is the "real rate of return" on cash (0% - 2% = -2%), but the question specifically asks for the "nominal" rate. The 8% in the second part is also wrong (see Option A).</div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>選項 D 錯誤：</strong> -10% 在這裡沒有任何經濟意義。雖然第二部分的 10% 是正確的成本，但第一部分完全錯誤。</div>
+        <div class="en-text"><strong>Option D is Incorrect:</strong> -10% has no economic meaning in this context. While the second part (10%) is the correct cost, the first part is completely wrong.</div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <ul>
+        <li>
+            <div class="zh-text"><strong>關鍵突破點 (Pivot Point):</strong><br>留意「名義回報率」(Nominal rate of return) 這個字眼。只要看到問現金的名義回報，答案必然是 0%。這可以讓你瞬間淘汰選項 C 和 D。</div>
+            <div class="en-text"><strong>Pivot Point:</strong><br>Notice the keyword "Nominal rate of return". Whenever you are asked for the nominal return on cash, the answer is always 0%. This instantly eliminates options C and D.</div>
+        </li>
+        <li>
+            <div class="zh-text"><strong>干擾資訊 (Distractors):</strong><br>題目中的「預期通脹率為 2%」是一個經典的干擾項！它誘使你去做減法 (10% - 2% = 8%)，從而誤選 A。請記住，通脹同時削弱了現金和債券的購買力，兩者之間的「差距」（即機會成本）仍然是名義利率。</div>
+            <div class="en-text"><strong>Distractors:</strong><br>The "expected inflation rate of 2%" is a classic distractor! It tempts you to subtract (10% - 2% = 8%) and wrongly choose A. Remember, inflation erodes the purchasing power of BOTH cash and bonds equally. The "gap" between them (the opportunity cost) remains the nominal interest rate.</div>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li>
+            <div class="zh-text"><strong>混淆「名義」與「實質」：</strong> 學生經常將「名義利率」(Nominal) 和「實質利率」(Real) 混為一談。名義利率是你在銀行看到的牌價數字；實質利率才是扣除通脹後的實際購買力增長。</div>
+            <div class="en-text"><strong>Confusing "Nominal" and "Real":</strong> Students often mix up Nominal and Real rates. Nominal rate is the stated number you see at a bank; Real rate is the actual growth in purchasing power after deducting inflation.</div>
+        </li>
+        <li>
+            <div class="zh-text"><strong>錯誤應用 Fisher Equation：</strong> 雖然 Fisher Equation ($r = i - \pi^e$) 在經濟學中很重要，但在計算「持有現金的成本」時，**不需要**扣除通脹率。</div>
+            <div class="en-text"><strong>Misapplying the Fisher Equation:</strong> While the Fisher Equation ($r = i - \pi^e$) is important, you do **not** need to deduct inflation when calculating the "cost of holding cash".</div>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="zh-text"><strong>Q: 既然通脹率是 2%，為什麼持有現金的成本不是 12% 或者 8%？</strong><br>A: 想像一下你有兩種選擇：<br>1. 持有債券：一年後你獲得 10% 的名義利息。<br>2. 持有現金：一年後你獲得 0% 的名義利息。<br>無論通脹是多少，你選擇持有現金所「錯失」的那筆利息，實實在在就是那 10%。通脹率只會影響這 10% 利息能買到多少東西（實質購買力），但不會改變你放棄了 10% 名義利息這個事實。</div>
+        
+        <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+
+        <div class="en-text"><strong>Q: Since inflation is 2%, why isn't the cost of holding cash 12% or 8%?</strong><br>A: Imagine you have two choices:<br>1. Hold a bond: You receive 10% nominal interest after one year.<br>2. Hold cash: You receive 0% nominal interest after one year.<br>Regardless of inflation, the exact amount of interest you "missed out on" by holding cash is strictly 10%. Inflation only affects how many goods that 10% can buy (real purchasing power), but it doesn't change the fact that you sacrificed a 10% nominal gain.</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="zh-text"><strong>「三秒殺題法」:</strong><br>1. 看到「現金的**名義**回報率」➔ 立即寫下 0%。<br>2. 看到「持有現金的成本」➔ 立即找題目裡的「名義利率」(Nominal Interest Rate)。<br>不要理會通脹率！這樣你可以避開所有計算陷阱，5秒內選出答案。</div>
+        <div class="en-text"><strong>"3-Second Kill Strategy":</strong><br>1. See "**Nominal** return on cash" ➔ Write down 0% immediately.<br>2. See "Cost of holding cash" ➔ Look strictly for the "Nominal Interest Rate" in the question.<br>Ignore the inflation rate! This allows you to bypass all calculation traps and pick the answer in under 5 seconds.</div>
+    </div>
+
+</div>
+
+</body>
+</html>

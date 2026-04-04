@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Banking System Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PingFang HK", Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        h2 {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+        .en {
+            color: #475569;
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .zh {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        .correct-answer {
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <h3>HKDSE Economics Tutor Analysis</h3>
+        <p class="zh"><strong>課題 (Topic):</strong> 貨幣與銀行（貨幣創造與貨幣基礎）</p>
+        <p class="en"><strong>Topic:</strong> Money and Banking (Money Creation and Monetary Base)</p>
+        <p class="zh"><strong>難度 (Difficulty):</strong> ★★★☆☆ (3/5)</p>
+        <p class="en"><strong>Difficulty:</strong> ★★★☆☆ (3/5)</p>
+        <p class="zh"><strong>核心概念 (Key Concepts):</strong> 法定儲備比率 (Required Reserve Ratio)、銀行乘數 (Banking Multiplier)、貨幣基礎 (Monetary Base)</p>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <p class="zh">下表顯示某銀行系統的資產負債表，假設公眾持有$500現金而銀行系統的超額儲備是$600。</p>
+    <p class="en">The table below shows the balance sheet of a banking system. Suppose the public holds $500 cash and the amount of its excess reserves is $600.</p>
+    
+    <table>
+        <tr>
+            <th colspan="2">資產 Assets ($)</th>
+            <th colspan="2">負債 Liabilities ($)</th>
+        </tr>
+        <tr>
+            <td>儲備 Reserves</td>
+            <td>1 000</td>
+            <td>存款 Deposits</td>
+            <td>2 000</td>
+        </tr>
+        <tr>
+            <td>貸款 Loans</td>
+            <td>1 000</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p class="zh">下列哪項有關該銀行系統的陳述是正確的？<br>
+    A. 法定儲備比率是40%。<br>
+    B. 最高存款額$4 000。<br>
+    C. 最大銀行乘數是5。<br>
+    D. 貨幣基礎是$2 500。</p>
+    
+    <p class="en">Which of the following statements about the banking system is correct?<br>
+    A. The required reserve ratio is 40%.<br>
+    B. The maximum amount of deposits is $4 000.<br>
+    C. The maximum banking multiplier is 5.<br>
+    D. The monetary base is $2 500.</p>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="zh">要解決這類題目，我們必須清楚理解銀行系統的幾個核心公式和定義：</p>
+        <p class="en">To solve this type of question, we must clearly understand several core formulas and definitions of the banking system:</p>
+
+        <ol>
+            <li>
+                <p class="zh"><strong>實際儲備 (Actual Reserves, $R$):</strong> 銀行存放在金庫或中央銀行的資金總額。它等於法定儲備加超額儲備。</p>
+                <p class="en"><strong>Actual Reserves ($R$):</strong> The total amount of funds banks hold in their vaults or at the central bank. It equals required reserves plus excess reserves.</p>
+                <div class="math-block">
+                    $$ R = RR + ER $$
+                </div>
+            </li>
+            <li>
+                <p class="zh"><strong>法定儲備比率 (Required Reserve Ratio, $rrr$):</strong> 法例規定銀行必須保留作儲備的存款比例。</p>
+                <p class="en"><strong>Required Reserve Ratio ($rrr$):</strong> The percentage of deposits banks are legally required to keep as reserves.</p>
+                <div class="math-block">
+                    $$ rrr = \frac{RR}{D} $$
+                </div>
+            </li>
+            <li>
+                <p class="zh"><strong>銀行乘數 (Banking Multiplier, $m$):</strong> 衡量銀行系統能創造多少倍存款的指標。</p>
+                <p class="en"><strong>Banking Multiplier ($m$):</strong> An indicator of how many times the banking system can multiply deposits.</p>
+                <div class="math-block">
+                    $$ m = \frac{1}{rrr} $$
+                </div>
+            </li>
+            <li>
+                <p class="zh"><strong>最高存款額 (Maximum Deposits, $D_{max}$):</strong> 假設沒有現金流失且銀行借出所有超額儲備時，整個系統能創造的總存款。</p>
+                <p class="en"><strong>Maximum Deposits ($D_{max}$):</strong> The total deposits the system can create, assuming no cash leakage and banks lend out all excess reserves.</p>
+                <div class="math-block">
+                    $$ D_{max} = R \times m $$
+                </div>
+            </li>
+            <li>
+                <p class="zh"><strong>貨幣基礎 (Monetary Base, $MB$):</strong> 又稱高能貨幣，是經濟體系中由中央銀行發行的現金總量。</p>
+                <p class="en"><strong>Monetary Base ($MB$):</strong> Also known as high-powered money, it is the total amount of cash issued by the central bank in the economy.</p>
+                <div class="math-block">
+                    $$ MB = C_p + R $$
+                </div>
+                <p class="zh"><em>註：$C_p$ 為公眾持有的現金 (Cash in public)。</em></p>
+            </li>
+        </ol>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p class="zh correct-answer">正確答案：Option C</p>
+    <p class="en correct-answer">Correct Answer: Option C</p>
+
+    <h3>詳細拆解 (Step-by-Step Analysis):</h3>
+    
+    <p class="zh"><strong>選項 A 測試 (Option A test):</strong><br>
+    首先，從表中可知實際儲備 $R = \$1000$，而題目給予超額儲備 $ER = \$600$。<br>
+    法定儲備 $RR = R - ER = \$1000 - \$600 = \$400$。<br>
+    法定儲備比率 $rrr = \frac{RR}{D} = \frac{400}{2000} = 0.2$ 或 $20\%$。<br>
+    因此，A 是錯誤的（不是40%）。</p>
+    <p class="en"><strong>Option A test:</strong><br>
+    First, from the table, Actual Reserves $R = \$1000$, and the question states Excess Reserves $ER = \$600$.<br>
+    Required Reserves $RR = R - ER = \$1000 - \$600 = \$400$.<br>
+    Required Reserve Ratio $rrr = \frac{RR}{D} = \frac{400}{2000} = 0.2$ or $20\%$.<br>
+    Therefore, A is incorrect (it is not 40%).</p>
+
+    <p class="zh"><strong>選項 B 測試 (Option B test):</strong><br>
+    最高存款額等於實際儲備乘以最大銀行乘數。<br>
+    $D_{max} = R \times \frac{1}{rrr} = \$1000 \times \frac{1}{0.2} = \$5000$。<br>
+    因此，B 是錯誤的（最高存款額是$5000，不是$4000）。</p>
+    <p class="en"><strong>Option B test:</strong><br>
+    Maximum deposits equal actual reserves multiplied by the banking multiplier.<br>
+    $D_{max} = R \times \frac{1}{rrr} = \$1000 \times \frac{1}{0.2} = \$5000$.<br>
+    Therefore, B is incorrect (maximum deposits are $5000, not $4000).</p>
+
+    <p class="zh"><strong>選項 C 測試 (Option C test):</strong><br>
+    最大銀行乘數 $m = \frac{1}{rrr} = \frac{1}{0.2} = 5$。<br>
+    計算正確。因此，C 是正確答案。</p>
+    <p class="en"><strong>Option C test:</strong><br>
+    Maximum banking multiplier $m = \frac{1}{rrr} = \frac{1}{0.2} = 5$.<br>
+    The calculation is correct. Therefore, C is the correct answer.</p>
+
+    <p class="zh"><strong>選項 D 測試 (Option D test):</strong><br>
+    貨幣基礎 $MB = C_p + R = \$500 + \$1000 = \$1500$。<br>
+    因此，D 是錯誤的（$2500其實是貨幣供應 $M_s = C_p + D = 500 + 2000$）。</p>
+    <p class="en"><strong>Option D test:</strong><br>
+    Monetary Base $MB = C_p + R = \$500 + \$1000 = \$1500$.<br>
+    Therefore, D is incorrect ($2500 is actually the Money Supply $M_s = C_p + D = 500 + 2000$).</p>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <p class="zh"><strong>解題關鍵 (The Pivot Point):</strong><br>
+    這題的「破局點」在於找算法定儲備 (Required Reserves)。資產負債表只提供了「總儲備」，你需要利用題目文字給予的「超額儲備」相減，才能解鎖 $rrr$，隨後所有選項都能迎刃而解。</p>
+    <p class="en"><strong>The Pivot Point:</strong><br>
+    The breakthrough point of this question is finding the Required Reserves. The balance sheet only provides "total reserves". You must subtract the "excess reserves" given in the text to unlock the $rrr$, after which all options can be easily evaluated.</p>
+
+    <p class="zh"><strong>干擾資訊 (Distractors):</strong><br>
+    資產負債表上的「貸款 $1,000」完全是多餘資訊。計算儲備比率、貨幣基礎或乘數時，我們根本不需要看貸款數字。</p>
+    <p class="en"><strong>Distractors:</strong><br>
+    The "Loans $1,000" on the balance sheet is completely redundant information. We do not need to look at the loan figures when calculating reserve ratios, monetary base, or multipliers.</p>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <p class="zh"><strong>陷阱 1：混淆貨幣基礎與貨幣供應 (Confusing MB and Ms)</strong><br>
+        很多同學會選錯 D。他們記得 $500 + 2000 = 2500$，但這是<strong>貨幣供應 (Money Supply, $M1/M2$)</strong>，即公眾持有的現金加上銀行存款。<strong>貨幣基礎 (Monetary Base)</strong> 是現金加儲備 ($500 + 1000 = 1500$)。</p>
+        <p class="en"><strong>Trap 1: Confusing Monetary Base and Money Supply</strong><br>
+        Many students wrongly choose D. They remember $500 + 2000 = 2500$, but this is the <strong>Money Supply</strong> (cash in public plus deposits). The <strong>Monetary Base</strong> is cash plus reserves ($500 + 1000 = 1500$).</p>
+        
+        <br>
+
+        <p class="zh"><strong>陷阱 2：用錯儲備數字計算 $rrr$ (Wrong reserve figure for $rrr$)</strong><br>
+        粗心的同學會直接用總儲備 (1000) 甚至超額儲備 (600) 除以存款 (2000) 來計 $rrr$。記住，法例要求的是<strong>法定儲備</strong>！</p>
+        <p class="en"><strong>Trap 2: Using the wrong reserve figure for $rrr$</strong><br>
+        Careless students might directly divide total reserves (1000) or even excess reserves (600) by deposits (2000) to find the $rrr$. Remember, the law requires <strong>Required Reserves</strong>!</p>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>Q: 點解計算最高存款額 ($D_{max}$) 嘅時候，我哋係用「實際儲備 ($1000)」去乘，而唔係淨係用「超額儲備」去乘？</strong></p>
+        <p class="en"><strong>Q: Why do we use "Actual Reserves ($1000)" to multiply when calculating Maximum Deposits ($D_{max}$), instead of just using "Excess Reserves"?</strong></p>
+        
+        <p class="zh"><strong>A:</strong> 這是因為「最高存款額」是指銀行系統在極限狀態下，這筆資金<strong>總共</strong>能支撐多少存款。那 $1000 儲備本身就是用來支撐存款的基礎。如果我們只用「超額儲備 $\times$ 乘數」，我們計算出來的只是<strong>最高存款「增加額」</strong>($\Delta D = \$600 \times 5 = \$3000$)。原有的存款 $2000 加上增加的 $3000，最終總和依然是 $5000。</p>
+        <p class="en"><strong>A:</strong> This is because "Maximum Deposits" refers to the <strong>total</strong> deposits the entire base of funds can support under limit conditions. The $1000 reserves act as the foundation for all deposits. If we only calculate "Excess Reserves $\times$ Multiplier", we are finding the <strong>maximum "increase" in deposits</strong> ($\Delta D = \$600 \times 5 = \$3000$). The original $2000 deposits plus the new $3000 still equals a total of $5000.</p>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p class="zh">在 DSE 考試中時間就是分數。當你看到「儲備 = 1000」和「超額 = 600」時，腦海中應該立刻彈出：<br>
+    法定 = 400。<br>
+    $400 / 2000 = 1/5$ (即 20%)。<br>
+    乘數就是把分數倒轉，即是 5。<br>
+    掃視選項，C 直接命中！無需浪費時間去計 B 和 D 的具體數字（除非你想 double check）。</p>
+    
+    <p class="en">In the DSE exam, time is marks. When you see "Reserves = 1000" and "Excess = 600", your brain should immediately process:<br>
+    Required = 400.<br>
+    $400 / 2000 = 1/5$ (which is 20%).<br>
+    The multiplier is just the fraction inverted, which is 5.<br>
+    Scan the options, and C is a direct hit! There's no need to waste time calculating the exact numbers for B and D (unless you want to double-check).</p>
+
+</div>
+
+</body>
+</html>
