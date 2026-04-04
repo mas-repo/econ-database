@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Guide: National Income & Income Distribution</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1f2937;
+            --english-text: #4b5563;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4 {
+            color: #111827;
+            margin-top: 1.5em;
+        }
+
+        h1 { border-bottom: 3px solid var(--primary-blue); padding-bottom: 10px; }
+        h2 { border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+
+        .en {
+            color: var(--english-text);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .tc {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .header-section {
+            background-color: var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-section li { margin-bottom: 10px; }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th { background-color: var(--bg-gray); }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-card {
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-red);
+            background-color: #fef2f2;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .bg-green { background-color: var(--correct-green); }
+        .bg-red { background-color: var(--wrong-red); }
+
+        .svg-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            display: block;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .option-card { padding: 12px; }
+            th, td { padding: 8px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <ul>
+            <li><strong>📝 Topic (課題):</strong> Macroeconomics - National Income & Income Distribution (宏觀經濟學 - 本地生產總值與收入分配)</li>
+            <li><strong>⭐ Difficulty (難度):</strong> ★★☆☆☆ (2/5)</li>
+            <li><strong>🔑 Key Concepts (核心概念):</strong> Per capita GDP (人均本地生產總值), Total GDP (總本地生產總值), Gini Coefficient (堅尼系數)</li>
+        </ul>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="tc">細閱下列兩個經濟的資料。</p>
+        <p class="en">Study the following information of two economies.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>人均本地生產總值（美元）<br><span style="font-size: 0.85em; font-weight: normal;">Per capita GDP (US$)</span></th>
+                    <th>人口<br><span style="font-size: 0.85em; font-weight: normal;">Population</span></th>
+                    <th>堅尼系數<br><span style="font-size: 0.85em; font-weight: normal;">Gini Coefficient</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>甲國 Country A</strong></td>
+                    <td>10,000</td>
+                    <td>二千萬 (20 million)</td>
+                    <td>0.45</td>
+                </tr>
+                <tr>
+                    <td><strong>乙國 Country B</strong></td>
+                    <td>12,000</td>
+                    <td>一千萬 (10 million)</td>
+                    <td>0.30</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="tc">根據以上資料，我們可得結論如下：</p>
+        <p class="en">Based on the above information, we can conclude that</p>
+
+        <ol type="A" style="font-weight: 500;">
+            <li>
+                <div class="tc">甲國的本地生產總值較乙國高。</div>
+                <div class="en">the GDP of Country A is higher than that of Country B.</div>
+            </li>
+            <li>
+                <div class="tc">甲國的收入分配較乙國更平均。</div>
+                <div class="en">the income distribution of Country A is more even than that of Country B.</div>
+            </li>
+            <li>
+                <div class="tc">甲國低收入組別人士的一般生活水平較乙國高。</div>
+                <div class="en">the general living standard of the low-income group in Country A is higher than that in Country B.</div>
+            </li>
+            <li>
+                <div class="tc">以上均正確。</div>
+                <div class="en">all of the above are correct.</div>
+            </li>
+        </ol>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top: 0;">1. Total GDP vs. Per Capita GDP (總本地生產總值 vs. 人均本地生產總值)</h3>
+        <p class="tc">「人均本地生產總值」是指平均每人的產出。要計算一個國家的「總本地生產總值」，我們必須將人均數值乘以總人口。</p>
+        <p class="en">"Per capita GDP" refers to the average output per person. To calculate a country's "Total GDP", we must multiply the per capita value by the total population.</p>
+        
+        <div class="math-block">
+            $$ \text{Total GDP} = \text{Per Capita GDP} \times \text{Population} $$
+        </div>
+
+        <h3>2. Gini Coefficient (堅尼系數)</h3>
+        <p class="tc">堅尼系數是量度收入不均的指標，數值介乎 \(0\) 至 \(1\) 之間。數值<strong>越大</strong>，代表收入分佈<strong>越不平均</strong>（貧富懸殊越嚴重）。</p>
+        <p class="en">The Gini coefficient measures income inequality, ranging from \(0\) to \(1\). A <strong>higher</strong> value indicates a <strong>more uneven</strong> income distribution (greater wealth gap).</p>
+        
+        <div class="svg-container">
+            <svg viewBox="0 0 500 450" width="100%" height="100%" style="font-family: sans-serif;">
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937" />
+                    </marker>
+                </defs>
+                
+                <line x1="60" y1="380" x2="60" y2="40" stroke="#1f2937" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="60" y1="380" x2="460" y2="380" stroke="#1f2937" stroke-width="2" marker-end="url(#arrowhead)"/>
+                
+                <line x1="60" y1="380" x2="420" y2="40" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+                
+                <path d="M 60 380 Q 250 340 420 40" stroke="#10b981" stroke-width="3" fill="none"/>
+                <path d="M 60 380 Q 320 380 420 40" stroke="#ef4444" stroke-width="3" fill="none"/>
+                
+                <text x="260" y="420" text-anchor="middle" font-size="14" fill="#1f2937">Cumulative % of Population / 累積人口百分比</text>
+                <text x="20" y="210" text-anchor="middle" font-size="14" fill="#1f2937" transform="rotate(-90, 20, 210)">Cumulative % of Income / 累積收入百分比</text>
+                
+                <text x="210" y="110" font-size="13" fill="#6b7280" transform="rotate(-43, 210, 110)">Line of Perfect Equality (絕對平均線)</text>
+                
+                <text x="220" y="270" font-size="14" fill="#10b981" font-weight="bold">Country B (Gini: 0.3)</text>
+                <text x="320" y="320" font-size="14" fill="#ef4444" font-weight="bold">Country A (Gini: 0.45)</text>
+            </svg>
+        </div>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div style="font-size: 1.2em; margin-bottom: 20px;">
+        <span class="tc">正確答案：</span>
+        <span class="en">Correct Answer:</span> 
+        <strong>Option A</strong>
+    </div>
+
+    <div class="option-card option-correct">
+        <div class="status-badge bg-green">A (Correct 正確)</div>
+        <p class="tc"><strong>分析：</strong> 甲國的總本地生產總值為 \( \$10,000 \times 20,000,000 = \$2,000 \) 億。乙國的總本地生產總值為 \( \$12,000 \times 10,000,000 = \$1,200 \) 億。因為 \( \$2,000 \text{ 億} > \$1,200 \text{ 億} \)，所以甲國的本地生產總值較高。</p>
+        <p class="en"><strong>Analysis:</strong> The Total GDP of Country A is \( \$10,000 \times 20,000,000 = \$200 \) billion. The Total GDP of Country B is \( \$12,000 \times 10,000,000 = \$120 \) billion. Since \( \$200 \text{ billion} > \$120 \text{ billion} \), Country A's GDP is higher.</p>
+    </div>
+
+    <div class="option-card option-wrong">
+        <div class="status-badge bg-red">B (Incorrect 錯誤)</div>
+        <p class="tc"><strong>分析：</strong> 甲國的堅尼系數 (\(0.45\)) 大於乙國的堅尼系數 (\(0.3\))。堅尼系數越大，代表收入分配越<strong>不平均</strong>。因此，甲國的收入分配較乙國不平均。</p>
+        <p class="en"><strong>Analysis:</strong> Country A's Gini coefficient (\(0.45\)) is greater than Country B's (\(0.3\)). A larger Gini coefficient means the income distribution is <strong>more uneven</strong>. Therefore, Country A's income distribution is less even than Country B's.</p>
+    </div>
+
+    <div class="option-card option-wrong">
+        <div class="status-badge bg-red">C (Incorrect 錯誤)</div>
+        <p class="tc"><strong>分析：</strong> 雖然總GDP較高，但甲國的<strong>平均收入較低</strong>（人均 \( \$10,000 \) < \( \$12,000 \)），而且<strong>貧富懸殊較嚴重</strong>（堅尼系數較高）。這意味著甲國的低收入組別分得一個「較小經濟餅」中「較小的份額」，所以他們的生活水平理應較乙國差，而不是較高。</p>
+        <p class="en"><strong>Analysis:</strong> Although total GDP is higher, Country A has a <strong>lower average income</strong> (per capita \( \$10,000 \) < \( \$12,000 \)) AND <strong>worse wealth inequality</strong> (higher Gini). This means the low-income group in Country A receives a "smaller slice" of a "smaller average pie". Thus, their living standards should logically be lower than in Country B, not higher.</p>
+    </div>
+
+    <div class="option-card option-wrong">
+        <div class="status-badge bg-red">D (Incorrect 錯誤)</div>
+        <p class="tc"><strong>分析：</strong> 因為選項 B 和 C 是錯誤的，所以選項 D 不成立。</p>
+        <p class="en"><strong>Analysis:</strong> Since Options B and C are incorrect, Option D is invalid.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fdf4ff; border-left-color: #d946ef;">
+        <p class="tc"><strong>解題關鍵 (Pivot Point)：</strong> 本題的關鍵在於區分「人均 (Per Capita)」和「總量 (Total)」。學生必須主動將表格中的數據相乘來找出隱藏的總 GDP。</p>
+        <p class="en"><strong>Pivot Point:</strong> The key to this question is distinguishing between "Per Capita" and "Total". Students must proactively multiply the table data to find the hidden Total GDP.</p>
+
+        <p class="tc"><strong>干擾資訊 (Distractors vs Crucial Data)：</strong> 表格提供了三組數據。對於選項 A，堅尼系數是完全不相關的干擾資訊。你只需專注於首兩欄的乘積。當確定 A 必定正確後（且這是單選題），其實可以直接選 A 節省時間。</p>
+        <p class="en"><strong>Distractors vs Crucial Data:</strong> The table provides three sets of data. For Option A, the Gini coefficient is an irrelevant distractor. You only need to focus on the product of the first two columns. Once A is proven definitively correct (and this is a single-choice question), you can safely select A and save time.</p>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li>
+            <div class="tc"><strong>陷阱一：直接比較人均 GDP 代替總 GDP。</strong> 很多學生看到乙國的 \( \$12,000 \) 較高，就誤以為乙國的 GDP 較高，而忘記了甲國人口是乙國的兩倍。</div>
+            <div class="en"><strong>Trap 1: Comparing Per Capita GDP instead of Total GDP.</strong> Many students see Country B's higher \( \$12,000 \) and mistakenly assume its GDP is higher, forgetting that Country A has twice the population.</div>
+        </li>
+        <li>
+            <div class="tc"><strong>陷阱二：誤解堅尼系數的數值意義。</strong> 學生容易忘記堅尼系數是「越大越不平均」，錯誤地將高數值等同於「較高水平的平均度」。</div>
+            <div class="en"><strong>Trap 2: Misinterpreting the Gini coefficient value.</strong> Students easily forget that a higher Gini means "more uneven", wrongly equating a high number with a "higher level of equality".</div>
+        </li>
+    </ul>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div style="background-color: var(--bg-gray); padding: 15px; border-radius: 8px;">
+        <p class="tc"><strong>問：既然甲國總GDP較高，為甚麼低收入人士的生活水平卻可能較低？</strong></p>
+        <p class="en"><strong>Q: Since Country A has a higher total GDP, why might the living standard of its low-income group be lower?</strong></p>
+        <p class="tc"><strong>答：</strong> 總 GDP 只代表國家整體的經濟規模。生活水平更取決於「平均每人有幾多」(人均GDP) 以及「財富如何分配」(堅尼系數)。甲國人口龐大拉高了總產值，但平均下來每人較少，加上財富集中在富人手中（高堅尼系數），窮人分到的資源就更少了。</p>
+        <p class="en"><strong>A:</strong> Total GDP only represents the overall economic size of the nation. Living standards depend more on "how much each person gets on average" (per capita GDP) and "how wealth is distributed" (Gini coefficient). Country A's huge population inflates the total output, but the average per person is lower. Combined with wealth being concentrated among the rich (high Gini), the poor receive fewer resources.</p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p class="tc"><strong>速算技巧 (Estimation Shortcut)：</strong> 在 MC 卷中，不需寫出長串的零。直接用最簡化的數字進行估算：</p>
+    <p class="en"><strong>Estimation Shortcut:</strong> In MC papers, there is no need to write out long strings of zeros. Simply use simplified numbers for estimation:</p>
+    <div class="math-block">
+        \( \text{A} = 10 \times 20 = 200 \) <br>
+        \( \text{B} = 12 \times 10 = 120 \) <br>
+        \( 200 > 120 \implies \text{Option A is instantly verifiable.} \)
+    </div>
+
+</body>
+</html>

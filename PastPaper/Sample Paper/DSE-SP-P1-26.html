@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #f0f9ff;
+            --accent-color: #0ea5e9;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-math: #f8fafc;
+            --danger-color: #ef4444;
+            --success-color: #22c55e;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+        .option-correct {
+            border-left: 5px solid var(--success-color);
+            background-color: #f0fdf4;
+        }
+        .option-wrong {
+            border-left: 5px solid var(--danger-color);
+        }
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1 style="border: none; margin-top: 0;">HKDSE Economics Tutor Guide</h1>
+        <p><strong>Topic (課題):</strong> Aggregate Demand and Aggregate Supply Model (總需求與總供應模型)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> <span class="badge">Aggregate Demand (AD)</span> <span class="badge">Net Exports (NX)</span> <span class="badge">Short-Run Aggregate Supply (SRAS)</span></p>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>[中文版]</strong> 若短期總體供應曲線向右上斜，進口意欲增加會導致實質國民收入_____________物價水平和_____________。</p>
+        <ol type="A">
+            <li>增加 … 上升</li>
+            <li>增加 … 下降</li>
+            <li>減少 … 下降</li>
+            <li>減少 … 上升</li>
+        </ol>
+        <hr style="border-top: 1px dashed #d1d5db; border-bottom: none; margin: 15px 0;">
+        <p><strong>[English]</strong> With an upward sloping short-run aggregate supply curve, an increase in the desire to import will lead to __________ in real national income and __________ in the price level.</p>
+        <ol type="A">
+            <li>an increase … an increase</li>
+            <li>an increase … a decrease</li>
+            <li>a decrease … a decrease</li>
+            <li>a decrease … an increase</li>
+        </ol>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>Aggregate Demand (總需求)</h3>
+        <p>總需求是指在特定時期內，經濟體系中對本地生產物品及服務的總需求量。它由四個部分組成：私人消費開支 \(C\)、投資開支 \(I\)、政府消費開支 \(G\) 及淨出口 \(NX\)（出口 \(X\) 減去進口 \(M\)）。</p>
+        <p class="bilingual-en">Aggregate Demand is the total quantity of domestically produced goods and services demanded in an economy at a given period. It consists of four components: Private Consumption \(C\), Investment \(I\), Government Expenditure \(G\), and Net Exports \(NX\) (Exports \(X\) minus Imports \(M\)).</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+
+        <h3>Impact of Imports (進口的影響)</h3>
+        <p>進口意欲增加意味著在任何給定的收入水平下，人們會購買更多的外國貨品。這會導致進口 \(M\) 增加。由於淨出口 \(NX = X - M\)，進口增加會使淨出口下降，從而令總需求 \(AD\) 減少（總需求曲線向左移）。</p>
+        <p class="bilingual-en">An increase in the desire to import means people buy more foreign goods at any given income level. This causes imports \(M\) to rise. Since Net Exports \(NX = X - M\), an increase in imports decreases net exports, which in turn decreases Aggregate Demand \(AD\) (the AD curve shifts to the left).</p>
+
+        <h3>Upward Sloping SRAS (向右上斜的短期總供應曲線)</h3>
+        <p>當短期總供應曲線 \(SRAS\) 向右上斜時，總需求 \(AD\) 向左移會導致均衡物價水平 \(P\) 和實質國民收入 \(Y\) 同時下降。</p>
+        <p class="bilingual-en">With an upward-sloping Short-Run Aggregate Supply (\(SRAS\)) curve, a leftward shift in \(AD\) leads to a decrease in both the equilibrium price level \(P\) and real national income \(Y\).</p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案):</strong> <strong style="color: var(--success-color); font-size: 1.2em;">Option C</strong></p>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>Option A: 增加 … 上升 (an increase … an increase) - 錯誤 (Incorrect)</strong></p>
+        <p>這只有在總需求 \(AD\) 增加（例如出口增加）時才會發生。但進口意欲增加會減少總需求。<br>
+        <span class="bilingual-en">This would only happen if Aggregate Demand \(AD\) increased (e.g., an increase in exports). However, an increase in the desire to import decreases AD.</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>Option B: 增加 … 下降 (an increase … a decrease) - 錯誤 (Incorrect)</strong></p>
+        <p>這是短期總供應 \(SRAS\) 增加（曲線向右移）的結果，例如生產成本下降。這與進口意欲改變無關。<br>
+        <span class="bilingual-en">This is the result of an increase in Short-Run Aggregate Supply \(SRAS\) (rightward shift), such as a fall in production costs. It is unrelated to a change in the desire to import.</span></p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <p><strong>Option C: 減少 … 下降 (a decrease … a decrease) - 正確 (Correct)</strong></p>
+        <p>進口意欲增加 \(\rightarrow\) 進口 \(M\) 上升 \(\rightarrow\) 淨出口 \(NX\) 下降 \(\rightarrow\) 總需求 \(AD\) 下降（向左移）。沿著向右上斜的 \(SRAS\) 曲線，這會導致物價水平 \(P\) 和實質國民收入 \(Y\) 雙雙下降。<br>
+        <span class="bilingual-en">Increase in desire to import \(\rightarrow\) Imports \(M\) rise \(\rightarrow\) Net Exports \(NX\) fall \(\rightarrow\) Aggregate Demand \(AD\) decreases (shifts left). Along an upward-sloping \(SRAS\) curve, this leads to a decrease in both the price level \(P\) and real national income \(Y\).</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>Option D: 減少 … 上升 (a decrease … an increase) - 錯誤 (Incorrect)</strong></p>
+        <p>這是短期總供應 \(SRAS\) 減少（曲線向左移）的結果，代表成本推動型通脹。這與題意不符。<br>
+        <span class="bilingual-en">This is the result of a decrease in Short-Run Aggregate Supply \(SRAS\) (leftward shift), representing cost-push inflation. This does not match the question.</span></p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li><strong>Pivot Point (解題關鍵):</strong> 將日常用語「進口意欲」(desire to import) 轉換為宏觀經濟變量。必須立刻聯想到進口 \(M\) 是總需求 \(AD\) 公式中唯一的減項（漏出量）。</li>
+        <li><strong>Irrelevant Info (無關資訊):</strong> 題目沒有給出具體數字，因此只需關注方向性變化（增加或減少）。</li>
+        <li><span class="bilingual-en"><strong>Decomposition Guide:</strong> Translate "desire to import" into the macroeconomic variable \(M\). Recognize that \(M\) is a leakage in the \(AD\) equation. A larger leakage means a smaller \(AD\).</span></li>
+    </ul>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>Trap 1: Confusing SRAS shifts with AD shifts.</strong> 學生有時會誤以為進口增加會影響本地總供應。記住，進口外國貨品主要影響本地的總需求（透過淨出口）。<br>
+        <span class="bilingual-en">Students sometimes mistakenly think imports affect domestic aggregate supply. Remember, importing foreign goods primarily affects domestic aggregate demand via net exports.</span></li>
+        <li><strong>Trap 2: Ignoring the "upward sloping SRAS" condition.</strong> 題目特意寫出「短期總體供應曲線向右上斜」。如果漏看這句，可能會選錯（見下方 Q&A 詳解）。<br>
+        <span class="bilingual-en">The question specifically mentions the "upward sloping SRAS". If you miss this condition, you might analyze the outcome incorrectly.</span></li>
+    </ul>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼題目要特別強調「短期總體供應曲線向右上斜」(upward sloping SRAS)？</strong><br>
+        <span class="bilingual-en">Why does the question specifically emphasize "upward sloping SRAS"?</span></p>
+        <p><strong>A:</strong> 這是一個非常重要的設定！在凱恩斯極端情況下（Keynesian Extreme），總供應曲線是<strong>水平</strong>的。如果 \(SRAS\) 是水平的，\(AD\) 向左移只會導致實質國民收入 \(Y\) 減少，但物價水平 \(P\) 會維持不變！因為題目設定了向右上斜，所以 \(P\) 和 \(Y\) 才會同時下降。<br>
+        <span class="bilingual-en">This is a crucial condition! In the Keynesian extreme, the aggregate supply curve is <strong>horizontal</strong>. If \(SRAS\) were horizontal, a leftward shift in \(AD\) would only decrease real national income \(Y\), while the price level \(P\) would remain unchanged! Because the question specifies it's upward sloping, both \(P\) and \(Y\) will fall.</span></p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="border-left-color: #f59e0b; background-color: #fffbeb;">
+        <p><strong>速解技巧 (Shortcut Rule): "The AD Shift Rule"</strong></p>
+        <p>只要是 <strong>總需求 (AD)</strong> 的移動（而 SRAS 向右上斜），物價水平 \(P\) 和實質國民收入 \(Y\) 必定是 <strong>同向變動</strong> 的！</p>
+        <ul>
+            <li>\(AD\) 增加 \(\rightarrow\) \(P\) 上升，\(Y\) 上升</li>
+            <li>\(AD\) 減少 \(\rightarrow\) \(P\) 下降，\(Y\) 下降</li>
+        </ul>
+        <p>進口增加是經濟的「漏出」(Leakage)，必定導致 \(AD\) 下降。因此，不用畫圖也能立刻排除一升一降的選項（A、B、D），直接選出兩個都下降的 <strong>選項 C</strong>！</p>
+        <hr style="border: 0.5px solid #fcd34d; margin: 10px 0;">
+        <p class="bilingual-en"><strong>Shortcut:</strong> Whenever there is a shift in <strong>Aggregate Demand (\(AD\))</strong> along an upward-sloping SRAS, Price Level \(P\) and Real National Income \(Y\) <strong>always move in the SAME direction</strong>! Since an increase in imports is a leakage that decreases \(AD\), both must decrease. You can instantly eliminate options A, B, and D, making <strong>Option C</strong> the only logical choice without even drawing the diagram!</p>
+    </div>
+
+</body>
+</html>
