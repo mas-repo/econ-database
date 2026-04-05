@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Public vs Private Goods</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-gray: #374151;
+            --light-gray: #f3f4f6;
+            --success-green: #10b981;
+            --error-red: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        .bilingual-en {
+            font-style: italic;
+            color: #4b5563;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        /* Section styling */
+        .section-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        /* Question and Options */
+        .question-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .option {
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: var(--light-gray);
+            border-radius: 5px;
+        }
+        .correct-ans {
+            border-left: 5px solid var(--success-green);
+            background-color: #ecfdf5;
+        }
+        .wrong-ans {
+            border-left: 5px solid var(--error-red);
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .bg-blue { background-color: #dbeafe; color: #1e40af; }
+        .bg-yellow { background-color: #fef3c7; color: #92400e; }
+        .bg-green { background-color: #d1fae5; color: #065f46; }
+        
+        hr { border: 0; height: 1px; background-color: #e5e7eb; margin: 20px 0; }
+        
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-box, .concept-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HKDSE Economics: Question Analysis<br><span style="font-size:0.7em;">經濟學試題分析</span></h1>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span class="badge bg-blue">Topic: 微觀經濟學 - 物品的類別 (Microeconomics - Types of Goods)</span>
+            <span class="badge bg-yellow">Difficulty: ★★☆☆☆</span>
+            <br><br>
+            <span class="badge bg-green">Key Concepts: 共用品 (Public Good)</span>
+            <span class="badge bg-green">共享性 / 非競爭性 (Non-rivalry)</span>
+            <span class="badge bg-green">排他性 (Excludability)</span>
+        </div>
+    </header>
+
+    <div class="section-box">
+        <h2>2. 題目 (The Question)</h2>
+        <div class="question-text">
+            農曆新年時，旅客在海濱餐廳訂座，觀賞煙花匯演。該煙花匯演是 ____________ ，因為______________。
+        </div>
+        <div class="bilingual-en">
+            In Lunar New Year, tourists reserve tables in waterfront restaurants to enjoy firework display. The firework display is a ____________ because ______________.
+        </div>
+
+        <div class="option">A. 共用品 ...... 政府支付該煙花匯演的費用</div>
+        <div class="option correct-ans">B. 共用品 ...... 某人享用該物品不會減少其他人可享用的數量</div>
+        <div class="option">C. 私用品 ...... 私人廠商須使用資源來生產該煙花匯演</div>
+        <div class="option wrong-ans">D. 私用品 ...... 海濱餐廳的座位的使用具排他性</div>
+        <hr>
+        <div class="bilingual-en">
+            <div class="option">A. public good ...... the government pays for the firework display</div>
+            <div class="option correct-ans">B. public good ...... one individual's consumption will not reduce its availability to others</div>
+            <div class="option">C. private good ...... private firms have to use resources to produce the firework display</div>
+            <div class="option wrong-ans">D. private good ...... the seats in waterfront restaurants are excludable in consumption</div>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>3. 概念重溫 (Concept Review)</h2>
+        <p>在經濟學中，分辨「共用品」與「私用品」並非取決於由誰提供或付費，而是取決於物品在<strong>耗用上（Consumption）</strong>的兩個核心特性：</p>
+        <p class="bilingual-en">In Economics, distinguishing between a "Public Good" and a "Private Good" does not depend on who provides or pays for it, but rather on two core characteristics of its <strong>consumption</strong>:</p>
+
+        <ul>
+            <li><strong>耗用上的非競爭性 / 共享性 (Non-rivalry in consumption):</strong> 當一個人耗用該物品時，不會減少其他人能耗用的數量或質素。
+                <div class="bilingual-en">When one person consumes the good, it does not reduce the quantity or quality available for others to consume.</div>
+            </li>
+            <li><strong>耗用上的非排他性 (Non-excludability in consumption):</strong> 提供者無法（或成本極高）阻止沒有付費的人享用該物品。
+                <div class="bilingual-en">It is impossible (or extremely costly) to prevent non-payers from consuming the good.</div>
+            </li>
+        </ul>
+
+        <p><strong>共用品 (Public Good)</strong> 必須具備「耗用上的非競爭性」。對於純共用品而言，多服務一個消費者的邊際成本 \(MC\) 是零。</p>
+        <p class="bilingual-en">A <strong>Public Good</strong> must possess "non-rivalry in consumption". For a pure public good, the marginal cost \(MC\) of serving an additional consumer is zero.</p>
+        
+        <div class="math-block">
+            $$MC_{\text{additional user}} = 0$$
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <h3>正確答案 (Correct Option): <span style="color: var(--success-green);">B</span></h3>
+        
+        <h4>選項 A (Option A) - 錯誤 (Incorrect)</h4>
+        <p>政府支付費用並不決定物品的性質。政府也可以提供私用品（例如公立醫院的床位）。</p>
+        <p class="bilingual-en">The fact that the government pays for it does not determine the nature of the good. The government can also provide private goods (e.g., hospital beds in public hospitals).</p>
+
+        <h4>選項 B (Option B) - 正確 (Correct)</h4>
+        <p>這是共用品的標準定義。煙花在半空中爆發，一個遊客觀看煙花（耗用），完全不會遮擋或減少另一個遊客觀賞的機會。因此，它具有耗用上的非競爭性（共享性）。</p>
+        <p class="bilingual-en">This is the standard definition of a public good. Fireworks explode in the sky; one tourist watching them (consumption) does not block or reduce the opportunity for another tourist to watch them. Therefore, it is non-rivalrous in consumption.</p>
+
+        <h4>選項 C (Option C) - 錯誤 (Incorrect)</h4>
+        <p>不論是共用品還是私用品，生產時都必須消耗稀少資源（例如火藥、人工）。這不能用來區分私用品和共用品。</p>
+        <p class="bilingual-en">Whether it is a public good or a private good, scarce resources (e.g., gunpowder, labor) must be used in production. This cannot be used to distinguish between private and public goods.</p>
+
+        <h4>選項 D (Option D) - 錯誤 (Incorrect)</h4>
+        <p>這是一個典型的陷阱！雖然「海濱餐廳的座位」具排他性（不付錢就不能坐），但題目問的是「煙花匯演」的性質，而不是「座位」的性質。煙花本身是無法排他的（街上的人也能看到）。</p>
+        <p class="bilingual-en">This is a classic trap! Although the "seats in the waterfront restaurants" are excludable (you can't sit without paying), the question is asking about the nature of the "firework display", not the "seats". The fireworks themselves are non-excludable (people on the street can also see them).</p>
+    </div>
+
+    <div class="section-box">
+        <h2>5. 題目拆解 (Problem Decomposition)</h2>
+        <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+        做這類題目時，第一步必須用螢光筆畫出<strong>「評估對象」</strong>。題目問：「<strong>該煙花匯演</strong>是...」("The <strong>firework display</strong> is..."). 一旦確認了主角是「煙花匯演」，你就只需要思考煙花本身的特質。</p>
+        <p class="bilingual-en">When attempting this type of question, the first step is to highlight the <strong>"subject of evaluation"</strong>. The question asks: "The <strong>firework display</strong> is...". Once you confirm the main subject is the "firework display", you only need to consider the characteristics of the fireworks themselves.</p>
+
+        <p><strong>干擾資訊 (Distractors):</strong><br>
+        「旅客在海濱餐廳訂座」(Tourists reserve tables in waterfront restaurants)。這句廢話的目的是為了引導你思考「付錢」、「排他」或「私人場所」，從而誘使你選擇選項 D。必須學會無視這些與主角無關的包裝資訊。</p>
+        <p class="bilingual-en">"Tourists reserve tables in waterfront restaurants". The purpose of this irrelevant information is to lead you to think about "paying", "exclusion", or "private venues", thereby tempting you to choose Option D. You must learn to ignore this packaging info that is unrelated to the main subject.</p>
+    </div>
+
+    <div class="concept-box" style="background-color: #fff1f2; border-left-color: var(--error-red);">
+        <h2 style="color: var(--error-red);">6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <ul>
+            <li><strong>混淆提供者與物品性質 (Confusing the provider with the nature of the good):</strong> 很多學生以為「政府提供 = 共用品」、「私人提供 = 私用品」。這是大錯特錯的！電視台（私人企業）提供的免費電視節目是共用品；政府提供的公屋是私用品。
+            <div class="bilingual-en">Many students think "Government provided = Public Good" and "Privately provided = Private Good". This is completely wrong! Free TV programs provided by private broadcasters are public goods; public housing provided by the government are private goods.</div></li>
+            
+            <li><strong>主體錯置 (Misplacing the subject):</strong> 如本題選項 D，學生將「觀賞煙花的座位」（私用品）與「煙花本身」（共用品）混淆。
+            <div class="bilingual-en">As seen in Option D, students confuse the "seat to watch the fireworks" (private good) with the "fireworks themselves" (public good).</div></li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2>7. 學生常見疑問 (Student Q&A)</h2>
+        <p><strong>Q: 既然遊客要付錢訂座才能看煙花，這不就代表煙花具備「排他性」（Excludability），所以是私用品嗎？</strong></p>
+        <p class="bilingual-en"><strong>Q: Since tourists have to pay for reservations to watch the fireworks, doesn't this mean the fireworks possess "excludability" and are therefore a private good?</strong></p>
+        
+        <p><strong>A: </strong> 不是的。遊客付費買的是「舒適的座位」、「食物」和「更好的視角」，這些是私用品。但「煙花匯演」本身在維港上空綻放，沒有進餐廳的人在街上或家中依然能看到（無法排除他們觀看）。加上多一個人看不會減少其他人看的數量（非競爭性），因此煙花仍是共用品。</p>
+        <p class="bilingual-en"><strong>A: </strong> No. The tourists are paying for a "comfortable seat", "food", and a "better viewing angle"; these are private goods. However, the "firework display" itself explodes over Victoria Harbour, and people who didn't enter the restaurant can still see it from the street or their homes (it's impossible to exclude them). Furthermore, one extra person watching does not reduce the amount available for others (non-rivalry), so the fireworks remain a public good.</p>
+    </div>
+
+    <div class="section-box" style="background-color: #fefce8; border: 1px solid #fef08a;">
+        <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p>遇到「共用品 vs 私用品」的 MC 題，使用<strong>「關鍵字秒殺法」</strong>：</p>
+        <ol>
+            <li>選項中如果出現「政府支付」、「私人企業生產」、「免費提供」，這些<strong>絕對不能</strong>作為判斷物品性質的理由，直接剔除（如本題 A 和 C）。</li>
+            <li>永遠尋找這兩組關鍵字：<strong>「競爭性 / 共享性 (Rivalry/Non-rivalry)」</strong> 或 <strong>「排他性 (Excludability)」</strong>。只有這兩者才是決定因素。</li>
+        </ol>
+        <p class="bilingual-en">When facing "Public vs. Private Good" MC questions, use the <strong>"Keyword Elimination Method"</strong>:</p>
+        <ol class="bilingual-en">
+            <li>If options contain "paid by government", "produced by private firms", or "provided for free", these can <strong>never</strong> be the reasons to determine the nature of a good. Eliminate them immediately (like A and C in this question).</li>
+            <li>Always look for these two sets of keywords: <strong>"Rivalry / Non-rivalry"</strong> or <strong>"Excludability"</strong>. Only these are the determining factors.</li>
+        </ol>
+    </div>
+
+</body>
+</html>

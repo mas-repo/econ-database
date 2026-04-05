@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - MC Analysis</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 { color: #1e3a8a; }
+        h2 { border-bottom: 2px solid #1e3a8a; padding-bottom: 8px; margin-top: 35px; }
+        
+        /* Section Containers */
+        .header-box { background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .question-box { background-color: #ffffff; border-left: 5px solid #ef4444; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .concept-box { background-color: #f0fdf4; border-left: 5px solid #22c55e; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .analysis-box { background-color: #fffbeb; border-left: 5px solid #f59e0b; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .decomp-box { background-color: #f8fafc; border-left: 5px solid #64748b; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .trick-box { background-color: #eff6ff; border-left: 5px solid #3b82f6; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .qa-box { background-color: #fdf4ff; border-left: 5px solid #d946ef; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* Specific Elements */
+        .math-block { background-color: #f3f4f6; padding: 15px; border-radius: 6px; overflow-x: auto; margin: 15px 0; text-align: center; border: 1px solid #e5e7eb; font-size: 1.1em;}
+        .bilingual-en { color: #4b5563; font-size: 0.95em; margin-top: 6px; margin-bottom: 18px; font-style: italic; display: block; }
+        .correct-answer { font-weight: 700; color: #dc2626; font-size: 1.4em; margin-bottom: 15px; display: inline-block;}
+        .tag { display: inline-block; background-color: #e2e8f0; padding: 5px 12px; border-radius: 9999px; font-size: 0.85em; font-weight: 600; color: #475569; margin-right: 10px; margin-bottom: 10px;}
+        .option-letter { font-weight: bold; background-color: #1e3a8a; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+        
+        /* Typography adjustments */
+        ul, ol { margin-top: 10px; margin-bottom: 16px; padding-left: 25px; }
+        p { margin-bottom: 12px; }
+        .question-text { font-size: 1.1em; font-weight: 500; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .question-box, .concept-box, .analysis-box, .decomp-box, .trick-box, .qa-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>HKDSE Economics Tutorial Analysis</h1>
+        <div>
+            <span class="tag">📝 Topic: 基本經濟概念 (Basic Economic Concepts) - 經濟制度 (Economic Systems)</span>
+            <span class="tag">⭐ Difficulty: 2.5 / 5</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> 
+            Command Economy (計劃經濟), Market Economy (市場經濟), Price Mechanism (價格機制), Private Property Rights (私有產權)
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="question-text">若一計劃經濟轉變為市場主導經濟，</p>
+        <span class="bilingual-en">If a command economy turns into a market-oriented economy,</span>
+        
+        <p class="question-text">
+            (1) 該經濟的收入分佈會更不均。<br>
+            (2) 更多的資源會以價格機制分配。<br>
+            (3) 人們擁有全部資源的私有產權。
+        </p>
+        <span class="bilingual-en">
+            (1) the income distribution of the economy will be more uneven.<br>
+            (2) more resources will be allocated by price mechanism.<br>
+            (3) people will have private property rights over all resources.
+        </span>
+
+        <p class="question-text">
+            A. 只有 (1)<br>
+            B. 只有 (2)<br>
+            C. 只有 (3)<br>
+            D. (1)、(2) 及 (3)
+        </p>
+        <span class="bilingual-en">
+            A. (1) only<br>
+            B. (2) only<br>
+            C. (3) only<br>
+            D. (1), (2) and (3)
+        </span>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        
+        <h3>核心概念 (Core Concepts)</h3>
+        <ul>
+            <li>
+                <strong>Command Economy (計劃經濟):</strong> 
+                資源分配（生產甚麼、如何生產、為誰生產）主要由政府或中央計劃機關決定。
+                <span class="bilingual-en">Resource allocation (what, how, and for whom to produce) is primarily determined by the government or central planning authority.</span>
+            </li>
+            <li>
+                <strong>Market Economy (市場經濟):</strong> 
+                資源主要透過<strong>價格機制 (Price Mechanism)</strong>分配。買賣雙方在市場上的互動形成價格，這隻「無形之手 (Invisible Hand)」引導資源流向。
+                <span class="bilingual-en">Resources are primarily allocated through the <strong>Price Mechanism</strong>. The interaction of buyers and sellers forms prices, and this "invisible hand" guides the flow of resources.</span>
+            </li>
+            <li>
+                <strong>Private Property Rights (私有產權):</strong> 
+                市場經濟的基石。賦予擁有者專有使用權、獲取收入權及轉讓權。然而，現實中沒有任何經濟體擁有 \( 100\% \) 的絕對私有產權（政府總會保留部分公共資源）。
+                <span class="bilingual-en">The cornerstone of a market economy. It grants the owner exclusive rights to use, derive income from, and transfer the resource. However, in reality, no economy has \( 100\% \) absolute private property rights (governments always retain some public resources).</span>
+            </li>
+        </ul>
+
+        <h3>數學表達 (Mathematical Representation)</h3>
+        <p>我們可以用一個簡單的函數來表達經濟體系中的資源分配比例。假設 \( \alpha \) 代表由市場（價格機制）分配的資源比例，而 \( \beta \) 代表由政府分配的比例：</p>
+        <span class="bilingual-en">We can express the resource allocation ratio in an economic system using a simple function. Let \( \alpha \) represent the proportion of resources allocated by the market (price mechanism), and \( \beta \) represent the proportion allocated by the government:</span>
+        
+        <div class="math-block">
+            $$ \alpha + \beta = 1 \quad \text{(where } 0 \le \alpha, \beta \le 1 \text{)} $$
+        </div>
+        
+        <p>當一個計劃經濟轉型為市場主導經濟時，市場力量 \( \alpha \) 會顯著上升，而政府干預 \( \beta \) 會下降：</p>
+        <span class="bilingual-en">When a command economy transitions to a market-oriented economy, the market force \( \alpha \) increases significantly, while government intervention \( \beta \) decreases:</span>
+        
+        <div class="math-block">
+            $$ \Delta \alpha > 0 \quad \text{and} \quad \Delta \beta < 0 $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <div class="correct-answer">正確答案 (Correct Option): Option B —— 只有 (2) / (2) only</div>
+        
+        <p><span class="option-letter">Statement (1)</span> <strong>錯誤 (Incorrect)</strong></p>
+        <p>雖然市場經濟中收入通常取決於個人的資源擁有權及資源的市場價格（邊際利潤），這往往會導致較不平均的分配。但這並非轉型為市場經濟的「必然或絕對」結果。如果原有的計劃經濟存在嚴重的特權階級貪腐（少數官員壟斷大部分財富），轉向市場經濟反而可能改善某些不均情況。在DSE經濟學中，轉型的核心定義在於「資源分配方式」的改變，而非貧富懸殊的必然惡化。</p>
+        <span class="bilingual-en">While income in a market economy usually depends on individual resource ownership and market prices (which often leads to a more uneven distribution), this is not an "absolute or inevitable" result of transitioning to a market economy. If the original command economy suffered from severe corruption among the privileged class (a few officials monopolizing wealth), transitioning might actually improve certain inequalities. In DSE Economics, the core definition of the transition lies in the change of the "resource allocation method", not necessarily the worsening of the wealth gap.</span>
+
+        <p><span class="option-letter">Statement (2)</span> <strong>正確 (Correct)</strong></p>
+        <p>這是「轉向市場主導經濟」的<strong>核心定義</strong>。當 \( \alpha \) (市場分配比例) 增加時，代表價格機制將會取代政府指令，在解答三大經濟問題上扮演更重要的角色。</p>
+        <span class="bilingual-en">This is the <strong>core definition</strong> of "turning into a market-oriented economy". When \( \alpha \) (market allocation ratio) increases, it means the price mechanism will replace government directives and play a more significant role in answering the three basic economic questions.</span>
+
+        <p><span class="option-letter">Statement (3)</span> <strong>錯誤 (Incorrect)</strong></p>
+        <p>關鍵陷阱詞是「全部」(all)。即使是最自由的市場經濟（如香港），政府仍然會擁有部分資源（例如公共道路、郊野公園、法院等）並保留部分產權。現實世界中只有「混合經濟」(Mixed Economy)，不存在私人擁有「全部」資源的情況。</p>
+        <span class="bilingual-en">The key trap word is "all". Even in the freest market economies (like Hong Kong), the government still owns certain resources (such as public roads, country parks, courts, etc.) and retains some property rights. In the real world, only "Mixed Economies" exist; there is no absolute scenario where private individuals own "all" resources.</span>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="decomp-box">
+        <p><strong>💡 拆局關鍵 (Pivot Point):</strong></p>
+        <p>這類題目考驗學生區分「定義特徵」(Definitional features) 與「常見結果」(Empirical outcomes)。市場經濟的<strong>定義</strong>是依賴價格機制 (Statement 2)。而收入不均 (Statement 1) 只是常見現象，並非理論上的絕對必然。</p>
+        <span class="bilingual-en">This type of question tests a student's ability to distinguish between "definitional features" and "empirical outcomes". The <strong>definition</strong> of a market economy is its reliance on the price mechanism (Statement 2). Income inequality (Statement 1) is merely a common phenomenon, not an absolute theoretical necessity.</span>
+        
+        <p><strong>🚫 誤導干擾 (Distractors):</strong></p>
+        <p>Statement (3) 中的「全部 (all)」是經典的 DSE 干擾詞。經濟學選擇題中，帶有絕對字眼的選項通常是錯誤的。</p>
+        <span class="bilingual-en">The word "all" in Statement (3) is a classic DSE distractor. In economics multiple-choice questions, options containing absolute terms are usually incorrect.</span>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trick-box">
+        <ul>
+            <li>
+                <strong>誤將「現實」等同「絕對定義」:</strong> 學生容易因為現實中資本主義國家貧富懸殊嚴重，就認定轉型「必然」導致分配更不均。
+                <span class="bilingual-en"><strong>Confusing "reality" with "absolute definition":</strong> Students often assume that because capitalist countries have severe wealth gaps in reality, transitioning "must inevitably" lead to more uneven distribution.</span>
+            </li>
+            <li>
+                <strong>忘記現實只有混合經濟:</strong> 很多學生以為「市場經濟 = 100% 私有化」，忽略了政府在任何制度下都必須提供公共物品 (Public goods)。
+                <span class="bilingual-en"><strong>Forgetting that only mixed economies exist in reality:</strong> Many students think "market economy = 100% privatization", ignoring that governments must provide public goods under any system.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 點解 (1) 唔啱？資本主義唔係一定會導致貧富懸殊咩？</strong></p>
+        <span class="bilingual-en">Q: Why is (1) incorrect? Doesn't capitalism always lead to a wealth gap?</span>
+        <p><strong>A:</strong> 在大部分現實情況下是的。但 DSE 考的是嚴謹的經濟邏輯。試想像一個極度貪腐的計劃經濟，資源全被少數高官剝削（極度不均）。若開放市場，平民有了創業和打工賺錢的機會，貧富懸殊反而有機會「縮窄」。因此，我們不能說它「必定 (will be)」更不均。</p>
+        <span class="bilingual-en">A: In most real-world scenarios, yes. But DSE tests rigorous economic logic. Imagine a highly corrupt command economy where all resources are exploited by a few top officials (extreme inequality). If the market opens up and ordinary people get the chance to start businesses and earn money, the wealth gap might actually "narrow". Therefore, we cannot say it "will be" (absolutely) more uneven.</span>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p><strong>⚡ 絕對字眼剔除法 (Extreme Word Elimination Method):</strong></p>
+        <p>在考場上，當你看到 Statement (3) 出現「全部」(all) 這個字時，你的警覺性應該立刻提高。由於現實中沒有經濟體擁有 100% 私有產權，你可以立刻判定 (3) 錯誤。</p>
+        <p>一旦確定 (3) 錯：<br>
+        ❌ 刪除 C (只有 3)<br>
+        ❌ 刪除 D (1、2 及 3)<br>
+        剩下 A 和 B 之間做選擇，大大節省時間並提高命中率！</p>
+        <span class="bilingual-en">In the exam room, when you see the word "all" in Statement (3), your alert should immediately go up. Since no economy in reality has 100% private property rights, you can instantly determine (3) is wrong. Once you know (3) is wrong, eliminate options C and D. You only have to choose between A and B, saving time and increasing your accuracy!</span>
+    </div>
+
+</body>
+</html>
