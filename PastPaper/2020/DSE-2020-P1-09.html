@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Profit Maximization</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-box {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #fff;
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .bilingual-para {
+            margin-bottom: 15px;
+        }
+        .lang-zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .lang-en {
+            color: #4b5563;
+            font-size: 0.95em;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .option {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .option:last-child {
+            border-bottom: none;
+        }
+        .correct-tag {
+            color: #15803d;
+            font-weight: bold;
+        }
+        .incorrect-tag {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+        .tips-box {
+            background-color: #fdfbf7;
+            border: 1px solid #fde047;
+            border-left: 5px solid #eab308;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .q-text {
+            font-weight: bold;
+            color: #0f766e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📚 經濟學題目解析 / Economics Problem Analysis</h2>
+        <p><strong>Topic (課題):</strong> <span class="tag">Theory of the Firm (廠商理論)</span> <span class="tag">Profit Maximization (利潤極大化)</span></p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐⭐</p>
+        <p><strong>Key Concepts (核心概念):</strong> <span class="tag">Total Cost (TC)</span> <span class="tag">Marginal Cost (MC)</span> <span class="tag">Marginal Revenue (MR)</span></p>
+    </div>
+
+    <div class="question-box">
+        <h3>題目 / The Question</h3>
+        
+        <div class="bilingual-para">
+            <div class="lang-zh">參考以下某利潤極大化廠商的成本與產出關係表。若每單位產量的平均成本降低$1，而市場價格是$8：</div>
+            <div class="lang-en">Refer to the following table about the cost-output relationship of a profit-maximising firm. If the average cost of every unit of output decreases by $1 and the market price is $8:</div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>數量 (Quantity)</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <th>原平均成本 (Old Average Cost)</th>
+                    <td>$5</td>
+                    <td>$6</td>
+                    <td>$7</td>
+                    <td>$8</td>
+                    <td>$9</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="bilingual-para">
+            <div class="lang-zh">
+                A. 最低生產成本為$18。<br>
+                B. 利潤極大化產量是3單位。<br>
+                C. 最大利潤是$10。<br>
+                D. 每單位產量的邊際成本會維持不變。
+            </div>
+            <div class="lang-en">
+                A. the minimum cost of production is $18.<br>
+                B. the profit maximising output is 3 units.<br>
+                C. the maximum profit is $10.<br>
+                D. the marginal cost of every unit of output will remain unchanged.
+            </div>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h3>📖 概念重溫 / Concept Review</h3>
+        
+        <div class="bilingual-para">
+            <div class="lang-zh">要解決這類題目，我們必須先掌握不同成本之間的換算，以及利潤極大化的黃金法則。</div>
+            <div class="lang-en">To solve this type of question, we must first understand the conversion between different costs and the golden rule of profit maximization.</div>
+        </div>
+
+        <ul>
+            <li>
+                <div class="lang-zh"><strong>總成本 (Total Cost, TC):</strong> 生產某一數量的總開支。</div>
+                <div class="lang-en"><strong>Total Cost (TC):</strong> The total expense incurred in producing a certain quantity.</div>
+                <div class="math-block">
+                    $$ TC = AC \times Q $$
+                </div>
+            </li>
+            <li>
+                <div class="lang-zh"><strong>邊際成本 (Marginal Cost, MC):</strong> 額外生產一單位產品所增加的總成本。</div>
+                <div class="lang-en"><strong>Marginal Cost (MC):</strong> The increase in total cost resulting from producing one additional unit of output.</div>
+                <div class="math-block">
+                    $$ MC = \frac{\Delta TC}{\Delta Q} $$
+                </div>
+            </li>
+            <li>
+                <div class="lang-zh"><strong>利潤極大化條件 (Profit Maximizing Condition):</strong> 當市場為受價者（如本題給定固定市價 $P = \$8$），邊際收益等於價格。廠商會生產直到邊際收益等於邊際成本。</div>
+                <div class="lang-en"><strong>Profit Maximizing Condition:</strong> In a price-taking market (as given by the fixed market price $P = \$8$), Marginal Revenue equals Price. The firm will produce up to the point where Marginal Revenue equals Marginal Cost.</div>
+                <div class="math-block">
+                    $$ MR = MC $$
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3>🔍 題目拆解 / Problem Decomposition</h3>
+        <div class="bilingual-para">
+            <div class="lang-zh"><strong>Pivot Point (破題關鍵):</strong> 題目指出「每單位的平均成本降低$1」。這意味著我們需要重新計算新的平均成本 (New AC)，然後推算出新的總成本 (New TC) 和新的邊際成本 (New MC)。不要直接用舊的數據來找答案！</div>
+            <div class="lang-en"><strong>Pivot Point:</strong> The question states that "the average cost of every unit decreases by $1". This means we must recalculate the New AC, and derive the New TC and New MC. Do not use the old data to find the answer!</div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>$Q$</th>
+                    <th>New AC <br><small>$(AC - 1)$</small></th>
+                    <th>New TC <br><small>$(Q \times \text{New AC})$</small></th>
+                    <th>New MC <br><small>$(\Delta \text{New TC})$</small></th>
+                    <th>TR <br><small>$(P \times Q \text{, } P=8)$</small></th>
+                    <th>Profit <br><small>$(TR - TC)$</small></th>
+                </tr>
+                <tr><td>1</td><td>$4</td><td>$4</td><td>$4</td><td>$8</td><td>$4</td></tr>
+                <tr><td>2</td><td>$5</td><td>$10</td><td>$6</td><td>$16</td><td>$6</td></tr>
+                <tr><td>3</td><td>$6</td><td>$18</td><td>$8</td><td>$24</td><td>$6</td></tr>
+                <tr><td>4</td><td>$7</td><td>$28</td><td>$10</td><td>$32</td><td>$4</td></tr>
+                <tr><td>5</td><td>$8</td><td>$40</td><td>$12</td><td>$40</td><td>$0</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h3>✅ 答案與詳細分析 / The Answer & Detailed Analysis</h3>
+        <p><strong>Correct Option (正確答案):</strong> <span style="font-size: 1.2em; color: #1d4ed8; font-weight: bold;">Option B</span></p>
+
+        <div class="option">
+            <div class="lang-zh"><span class="incorrect-tag">❌ A 的錯誤原因：</span> 雖然在產量為3時，總成本確實是$18，但這並不是廠商的「最低生產成本」。從表中可見，生產1單位的成本最低，僅為$4（或不生產時成本為$0）。</div>
+            <div class="lang-en"><span class="incorrect-tag">❌ Why A is wrong:</span> Although the total cost at $Q=3$ is indeed $18$, this is not the "minimum cost of production". As seen in the table, the lowest production cost is $4$ at 1 unit (or $0$ if producing nothing).</div>
+        </div>
+
+        <div class="option">
+            <div class="lang-zh"><span class="correct-tag">✅ B 的正確原因：</span> 在完全競爭市場中，廠商面對的邊際收益 $MR = P = \$8$。根據利潤極大化條件 $MR = MC$，當產量 $Q = 3$ 時，新的 $MC = \$8$。因此，廠商會生產3單位來極大化利潤。</div>
+            <div class="lang-en"><span class="correct-tag">✅ Why B is correct:</span> In a perfectly competitive market, Marginal Revenue $MR = P = \$8$. According to the profit maximizing condition $MR = MC$, at output $Q = 3$, the new $MC = \$8$. Therefore, the firm maximizes profit by producing 3 units.</div>
+        </div>
+
+        <div class="option">
+            <div class="lang-zh"><span class="incorrect-tag">❌ C 的錯誤原因：</span> 在產量為3時，總收益 $TR = 8 \times 3 = 24$，總成本 $TC = 18$。最大利潤 = $TR - TC = \$24 - \$18 = \$6$，而不是$10。</div>
+            <div class="lang-en"><span class="incorrect-tag">❌ Why C is wrong:</span> At output 3, Total Revenue $TR = 8 \times 3 = 24$, and Total Cost $TC = 18$. Maximum profit = $TR - TC = \$24 - \$18 = \$6$, not $10.</div>
+        </div>
+
+        <div class="option">
+            <div class="lang-zh"><span class="incorrect-tag">❌ D 的錯誤原因：</span> 當平均成本(AC)每個產量都下降$1時，代表總成本(TC)下降了 $1 \times Q$。這意味著變動成本改變了，因此邊際成本(MC)也會改變（實際上每個產量的MC都下降了$1）。</div>
+            <div class="lang-en"><span class="incorrect-tag">❌ Why D is wrong:</span> When Average Cost (AC) falls by $1 at every output level, it means Total Cost (TC) falls by $1 \times Q$. This implies a change in variable costs, which in turn means Marginal Cost (MC) will also change (specifically, MC decreases by $1 at every unit).</div>
+        </div>
+    </div>
+
+    <div class="tips-box" style="border-color: #ef4444; border-left-color: #dc2626;">
+        <h3>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h3>
+        <div class="bilingual-para">
+            <div class="lang-zh"><strong>陷阱：誤以為「成本下降 = 邊際成本不變」</strong></div>
+            <div class="lang-en"><strong>Trap: Assuming "Cost decrease = Marginal Cost remains unchanged"</strong></div>
+        </div>
+        <div class="bilingual-para">
+            <div class="lang-zh">很多同學會將這題與「固定成本 (Fixed Cost) 改變」混淆。如果題目說「總固定成本下降」，那麼邊際成本 (MC) 確實會維持不變。但本題說的是「每單位的平均成本」都下降$1，這等同於每生產一件產品，就省下$1。因此，這屬於變動成本的改變，MC 必定會下降。</div>
+            <div class="lang-en">Many students confuse this scenario with a "change in Fixed Cost". If the question stated "Total Fixed Cost decreases", then Marginal Cost (MC) would indeed remain unchanged. However, this question states the "average cost of every unit" decreases by $1, meaning saving $1 for every unit produced. This is a change in variable cost, so MC must decrease.</div>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <h3>🙋 學生常見疑問 / Student Q&A</h3>
+        
+        <p class="q-text">Q: 從表格可見，產量為 2 和 3 時的利潤都是 $6。為什麼利潤極大化的產量是 3 單位而不是 2 單位？</p>
+        <p class="q-text" style="color: #64748b; font-weight: normal; margin-bottom: 10px;">Q: From the table, the profit is $6 at both output levels 2 and 3. Why is the profit-maximizing output 3 units instead of 2?</p>
+        
+        <div class="lang-zh">A: 根據邊際分析法 (Marginal Analysis)，只要生產下一單位的邊際收益大於或等於邊際成本 ($MR \ge MC$)，廠商就會繼續生產。在 $Q=3$ 時，$MR = MC = \$8$。由於生產第3單位的額外收益完全涵蓋了額外成本，它並不會減少總利潤。在經濟學常規中，我們假定廠商會擴張產量直到 $MR = MC$ 的那一點，因此答案是 3 單位。</div>
+        <div class="lang-en" style="margin-top: 5px;">A: According to Marginal Analysis, a firm will continue to produce as long as the marginal revenue of the next unit is greater than or equal to its marginal cost ($MR \ge MC$). At $Q=3$, $MR = MC = \$8$. Since the extra revenue from the 3rd unit fully covers its extra cost, it does not reduce the total profit. By economic convention, we assume firms expand output up to the exact point where $MR = MC$, hence the answer is 3 units.</div>
+    </div>
+
+    <div class="tips-box" style="border-color: #22c55e; border-left-color: #16a34a; background-color: #f0fdf4;">
+        <h3>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h3>
+        <div class="bilingual-para">
+            <div class="lang-zh">如果想在考試中省下畫完整個表格的時間，你可以運用代數邏輯速解：</div>
+            <div class="lang-en">If you want to save time plotting the entire table during an exam, you can use algebraic logic for a shortcut:</div>
+        </div>
+        <div class="bilingual-para">
+            <div class="lang-zh">既然 $AC$ 統一減少 $1，代表每個單位的變動成本直接減少 $1。所以，新 $MC = \text{舊 } MC - \$1$。已知 $MR = \$8$，我們只需尋找哪一個產量的舊 $MC$ 剛好等於 $9$ 即可 (因為 $9 - 1 = 8$)。計算舊 $MC$：產量3的舊 $TC = 21$，產量2的舊 $TC = 12$，舊 $MC = 21 - 12 = 9$。因此，產量3就是答案！</div>
+            <div class="lang-en">Since $AC$ decreases uniformly by $1, it means the variable cost per unit directly drops by $1. Therefore, New $MC = \text{Old } MC - \$1$. Given $MR = \$8$, we simply need to find which output level had an Old $MC$ exactly equal to $9$ (because $9 - 1 = 8$). Calculating Old $MC$: Old $TC$ at $Q=3$ is $21$, Old $TC$ at $Q=2$ is $12$, Old $MC = 21 - 12 = 9$. Thus, output 3 is the answer instantly!</div>
+        </div>
+    </div>
+
+</body>
+</html>
