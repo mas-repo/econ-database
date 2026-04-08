@@ -1,359 +1,215 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-<head><script src="/econ-database/PastPaper/protect.js"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKDSE Economics Tutor - Privatization Analysis</title>
+    <title>HKDSE Economics Tutor - Question Analysis</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
-            --primary-blue: #1e3a8a;
-            --accent-blue: #0ea5e9;
+            --primary-blue: #0ea5e9;
+            --dark-blue: #0284c7;
             --light-blue: #f0f9ff;
-            --bg-gray: #f8fafc;
+            --bg-gray: #f9fafb;
             --math-bg: #f3f4f6;
-            --text-dark: #1f2937;
-            --text-light: #4b5563;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
             line-height: 1.6;
-            color: var(--text-dark);
-            max-width: 900px;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 30px;
         }
-
         h1, h2, h3 {
-            color: var(--primary-blue);
+            color: var(--dark-blue);
             margin-top: 1.5em;
+            margin-bottom: 0.5em;
         }
-
-        .header-section {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .header-section h1 {
-            color: white;
-            margin-top: 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: rgba(255,255,255,0.2);
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-right: 10px;
-            font-size: 0.9em;
-        }
-
-        .question-box {
-            border: 2px solid var(--primary-blue);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            background-color: white;
-        }
-
-        .bilingual-block {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        h1 { margin-top: 0; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px;}
+        .en-text {
+            color: var(--text-muted);
             margin-bottom: 15px;
+            font-size: 0.95em;
         }
-
         .zh-text {
+            margin-bottom: 5px;
             font-weight: 500;
         }
-
-        .en-text {
-            color: var(--text-light);
-            font-style: italic;
-            font-size: 0.95em;
-            padding-left: 10px;
-            border-left: 3px solid #cbd5e1;
+        
+        /* Specific Section Styles */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
-
+        .tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
         .concept-box {
             background-color: var(--light-blue);
-            border-left: 5px solid var(--accent-blue);
+            border-left: 5px solid var(--primary-blue);
             padding: 20px;
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
         }
-
         .math-block {
             background-color: var(--math-bg);
             padding: 15px;
-            margin: 15px 0;
             border-radius: 8px;
-            text-align: center;
             overflow-x: auto;
-            border: 1px solid #e5e7eb;
+            text-align: center;
+            margin: 15px 0;
         }
-
-        .analysis-box {
-            background-color: var(--bg-gray);
-            padding: 20px;
-            margin-top: 15px;
-            border: 1px solid #e2e8f0;
+        .correct-answer {
+            font-size: 1.2em;
+            color: #16a34a;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        .distractor-box {
+            border-left: 3px solid #ef4444;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+        .correct-box {
+            border-left: 3px solid #16a34a;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+        .trick-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
             border-radius: 8px;
+            margin-top: 20px;
         }
-
-        .option-analysis {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #cbd5e1;
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin-top: 15px;
         }
         
-        .option-analysis:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .correct-answer {
-            color: #166534;
-            background-color: #dcfce7;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            border: 1px solid #bbf7d0;
-        }
-
-        .warning-box {
-            background-color: #fffbeb;
-            border-left: 5px solid #f59e0b;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .qa-box {
-            background-color: #fdf4ff;
-            border-left: 5px solid #c026d3;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .tips-box {
-            background-color: #ecfdf5;
-            border-left: 5px solid #10b981;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        @media (min-width: 768px) {
-            .bilingual-row {
-                display: flex;
-                gap: 20px;
-            }
-            .bilingual-row > div {
-                flex: 1;
-            }
-            .en-text {
-                border-left: none;
-                padding-left: 0;
-            }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-info { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header-section">
-        <h1>HKDSE Economics Tutorial (經濟學輔導)</h1>
-        <div>
-            <span class="tag"><strong>Topic:</strong> Types of Business Ownership (企業擁有權類型)</span>
-            <span class="tag"><strong>Difficulty:</strong> ★★☆☆☆</span>
-        </div>
-        <div style="margin-top: 10px;">
-            <strong>Key Concepts:</strong> Public Limited Company (公眾有限公司), Private Limited Company (私人有限公司), Privatization (私有化), Takeover (收購)
-        </div>
-    </header>
+<div class="container">
 
-    <section class="question-box">
-        <h2>1. The Question (題目)</h2>
+    <h1>HKDSE Economics: Question Analysis</h1>
+    <div class="header-info">
+        <div><span class="tag">Topic</span> 企業所有權與私有化 / Business Ownership & Privatization</div>
+        <div><span class="tag">Difficulty</span> ★★★☆☆</div>
+        <div><span class="tag">Key Concepts</span> 私有化 (Privatization), 上市公司 (Listed Company), 資訊披露 (Information Disclosure)</div>
+    </div>
+
+    <h2>題目 / The Question</h2>
+    <div class="question-box">
+        <p class="zh-text">新世界中國地產有限公司（股票編號：0917）宣布把公司私有化，並取消其在香港交易所的上市地位。<br>下列哪些是上述改變的可能好處？</p>
+        <p class="en-text">New World China Land Limited (Stock Code: 0917) announced privatisation of the company and cancelled its listing status at the Hong Kong Stock Exchange.<br>Which of the following are the possible advantages of the above change?</p>
         
-        <div class="bilingual-row">
-            <div>
-                <p class="zh-text"><strong>新世界中國地產有限公司（股票編號：0917）宣布把公司私有化，並取消其在香港交易所的上市地位。下列哪些是上述改變的可能好處？</strong></p>
-                <ol class="zh-text">
-                    <li>該公司可以選擇不向公眾披露其財政帳目。</li>
-                    <li>該公司可以減低被收購的風險。</li>
-                    <li>該公司可享有較低的利得稅率。</li>
-                </ol>
-                <p class="zh-text">
-                    A. 只有 (1)、(2)<br>
-                    B. 只有 (1)、(3)<br>
-                    C. 只有 (2)、(3)<br>
-                    D. (1)、(2) 及 (3)
-                </p>
-            </div>
-            <div>
-                <p class="en-text"><strong>New World China Land Limited (Stock Code: 0917) announced privatisation of the company and cancelled its listing status at the Hong Kong Stock Exchange. Which of the following are the possible advantages of the above change?</strong></p>
-                <ol class="en-text">
-                    <li>The company can choose not to disclose its financial accounts to the public.</li>
-                    <li>The company can reduce the risk of being taken over.</li>
-                    <li>The company can enjoy a lower profits tax rate.</li>
-                </ol>
-                <p class="en-text">
-                    A. (1) and (2) only<br>
-                    B. (1) and (3) only<br>
-                    C. (2) and (3) only<br>
-                    D. (1), (2) and (3)
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="concept-box">
-        <h2>2. Concept Review (概念重溫)</h2>
+        <p class="zh-text">(1) 該公司可以選擇不向公眾披露其財政帳目。</p>
+        <p class="en-text">(1) The company can choose not to disclose its financial accounts to the public.</p>
         
-        <div class="bilingual-block">
-            <p class="zh-text">在處理這道題目時，我們需要比較<strong>公眾有限公司 (Public Limited Company)</strong>與<strong>私人有限公司 (Private Limited Company)</strong>的特徵。「私有化」(Privatization) 在上市公司的語境中，指的是將一間公眾有限公司轉為私人有限公司，並從股票交易所退市。</p>
-            <p class="en-text">To tackle this question, we must compare the features of a <strong>Public Limited Company</strong> and a <strong>Private Limited Company</strong>. "Privatisation" in the context of listed companies refers to converting a public limited company into a private limited company and delisting it from the stock exchange.</p>
-        </div>
+        <p class="zh-text">(2) 該公司可以減低被收購的風險。</p>
+        <p class="en-text">(2) The company can reduce the risk of being taken over.</p>
+        
+        <p class="zh-text">(3) 該公司可享有較低的利得稅率。</p>
+        <p class="en-text">(3) The company can enjoy a lower profits tax rate.</p>
+        
+        <p class="zh-text">A. 只有 (1)、(2)<br>B. 只有 (1)、(3)<br>C. 只有 (2)、(3)<br>D. (1)、(2) 及 (3)</p>
+        <p class="en-text">A. (1) and (2) only<br>B. (1) and (3) only<br>C. (2) and (3) only<br>D. (1), (2) and (3)</p>
+    </div>
 
-        <h3>Key Features (主要特徵)</h3>
-        <ul>
-            <li>
-                <div class="bilingual-block">
-                    <span class="zh-text"><strong>財務披露 (Financial Disclosure):</strong> 公眾有限公司必須向公眾公開財務報告；私人有限公司只需向股東及政府披露。</span>
-                    <span class="en-text"><strong>Financial Disclosure:</strong> Public limited companies must publish their financial reports to the general public; private limited companies only need to disclose them to shareholders and the government.</span>
-                </div>
-            </li>
-            <li>
-                <div class="bilingual-block">
-                    <span class="zh-text"><strong>股份轉讓 (Share Transfer):</strong> 公眾有限公司的股份可以在自由市場（如港交所）自由買賣；私人有限公司的股份轉讓通常需要得到其他股東的同意。</span>
-                    <span class="en-text"><strong>Share Transfer:</strong> Shares of public limited companies can be freely traded on the open market (e.g., HKEX); transferring shares of a private limited company usually requires the consent of other shareholders.</span>
-                </div>
-            </li>
-        </ul>
+    <h2>概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>1. 上市地位與披露要求：</strong> 根據香港交易所的上市規則，上市公司必須定期向公眾公開其財務報表（如中期及年度報告）。取消上市地位後，公司可免除這些嚴格的公眾披露責任。</p>
+        <p class="en-text"><strong>1. Listing Status and Disclosure:</strong> Under HKEX rules, listed companies must regularly publish their financial statements to the public. Cancelling the listing status relieves the company of these strict public disclosure obligations.</p>
 
-        <h3>Relevant Formula (相關公式)</h3>
-        <div class="bilingual-block">
-            <p class="zh-text">雖然這是一條概念題，但我們可以重溫一下利得稅的計算方式：</p>
-            <p class="en-text">Although this is a conceptual question, let's review how Profits Tax is calculated:</p>
-        </div>
+        <p class="zh-text"><strong>2. 企業私有化的性質：</strong> 這裡的「私有化」是指將公司的股份從股票市場上撤回，不再讓公眾在交易所自由買賣。值得留意的是，私有化後，公司可能會變成<strong>非上市公眾有限公司 (unlisted public limited company)</strong>，而不一定是私人有限公司 (private limited company)。公眾有限公司不等於上市公司，它可能沒有上市，但仍然受到《公司條例》中對公眾公司的規範。</p>
+        <p class="en-text"><strong>2. Nature of Corporate Privatisation:</strong> Here, "privatisation" means withdrawing the company's shares from the stock market so they are no longer freely traded by the public on an exchange. It is crucial to note that after privatisation, the company might become an <strong>unlisted public limited company</strong> rather than a private limited company. A public limited company is not equivalent to a listed company; it can be unlisted but is still subject to public company regulations under the Companies Ordinance.</p>
+
+        <p class="zh-text"><strong>3. 敵意收購 (Hostile Takeover)：</strong> 上市公司的股份在公開市場自由轉讓，外人可以透過大量買入股票來奪取控制權。退市後，股份轉讓受到限制，大大降低了被收購的風險。</p>
+        <p class="en-text"><strong>3. Hostile Takeover:</strong> Shares of a listed company are freely transferable on the open market, allowing outsiders to seize control by buying massive amounts of shares. After delisting, share transfers are restricted, greatly reducing takeover risks.</p>
+
+        <p class="zh-text"><strong>4. 利得稅 (Profits Tax) 的計算：</strong> 在香港，所有法團（無論是上市、非上市公眾或私人有限公司）的標準利得稅率都是相同的。利得稅的計算公式如下：</p>
+        <p class="en-text"><strong>4. Profits Tax Calculation:</strong> In Hong Kong, the standard profits tax rate is the same for all corporations (whether listed, unlisted public, or private limited). The calculation for profits tax is:</p>
         
         <div class="math-block">
-            $$ \text{Tax Payable} = \text{Assessable Profits} \times \text{Profits Tax Rate} $$
+            $$ \text{Profits Tax} = \text{Assessable Profits} \times \text{Corporate Tax Rate} $$
         </div>
-        
-        <div class="bilingual-block">
-            <p class="zh-text">在香港，法團（無論是公眾還是私人有限公司）的利得稅率 \( r \) 是標準化的（目前實行兩級制），並不會因為公司從公眾轉為私人而自動降低。</p>
-            <p class="en-text">In Hong Kong, the profits tax rate \( r \) for corporations (whether public or private) is standardized (currently a two-tiered system), and it does NOT automatically decrease simply because a company changes from public to private.</p>
-        </div>
-    </section>
+    </div>
 
-    <section class="analysis-box">
-        <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
-        
-        <div class="correct-answer">
-            Correct Option (正確答案): A. 只有 (1)、(2) / (1) and (2) only
-        </div>
+    <h2>答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <div class="correct-answer">正確答案 / Correct Option: A</div>
+    
+    <div class="correct-box">
+        <p class="zh-text"><strong>分析 (1) - 正確：</strong> 上市公司受嚴格監管，必須向公眾披露財務狀況。取消上市地位（無論最終是成為私人有限公司還是非上市公眾有限公司）後，公司不再受港交所的上市規則約束，不需要向「公眾」發佈詳細的財務報表，這增加了商業機密性。</p>
+        <p class="en-text"><strong>Analysis (1) - Correct:</strong> Listed companies are strictly regulated and must disclose financials to the public. After delisting (whether becoming a private limited company or an unlisted public limited company), it is no longer bound by HKEX listing rules. It does not need to publish detailed financial reports to the "general public", increasing commercial confidentiality.</p>
+    </div>
 
-        <div class="option-analysis">
-            <h3>Statement (1): 披露帳目 / Disclosing Accounts ✓</h3>
-            <div class="bilingual-block">
-                <p class="zh-text"><strong>正確。</strong> 作為上市公司（公眾有限公司），法例規定必須定期對外公佈財務報表。退市並轉為私人有限公司後，公司可免除這項義務，從而保護商業機密並節省合規成本。</p>
-                <p class="en-text"><strong>Correct.</strong> As a listed company (public limited company), it is legally required to publish financial statements to the public regularly. After delisting and becoming a private limited company, the company is exempted from this obligation, thereby protecting commercial secrets and saving compliance costs.</p>
-            </div>
-        </div>
+    <div class="correct-box">
+        <p class="zh-text"><strong>分析 (2) - 正確：</strong> 上市公司的股票在交易所自由買賣，競爭對手可以透過在市場上吸納大量股票來進行敵意收購。私有化退市後，股份無法在公開市場買賣，股權變得集中，這有效地防止了公司被外來者收購的風險。</p>
+        <p class="en-text"><strong>Analysis (2) - Correct:</strong> Shares of listed companies are freely traded. Competitors can launch hostile takeovers by absorbing shares in the market. After privatisation and delisting, shares cannot be traded openly, effectively preventing the risk of being taken over by outsiders.</p>
+    </div>
 
-        <div class="option-analysis">
-            <h3>Statement (2): 收購風險 / Risk of being taken over ✓</h3>
-            <div class="bilingual-block">
-                <p class="zh-text"><strong>正確。</strong> 上市公司的股份在公開市場自由買賣，任何人只要購入足夠比例的股份（例如超過 50%），即可引發「惡意收購」(Hostile Takeover)。私有化後，股份不能自由轉讓，大大降低了被外人強行收購的風險。</p>
-                <p class="en-text"><strong>Correct.</strong> Shares of listed companies are traded freely on the open market. Anyone who acquires a sufficient percentage of shares (e.g., over 50%) can trigger a "Hostile Takeover". After privatisation, shares cannot be freely transferred, greatly reducing the risk of being forcibly taken over by outsiders.</p>
-            </div>
-        </div>
+    <div class="distractor-box">
+        <p class="zh-text"><strong>分析 (3) - 錯誤：</strong> 企業的法律地位（例如是否上市）並不影響其適用的利得稅率。在香港，只要是有限公司（法團），其適用的標準利得稅率都是劃一的。因此，退市並不會帶來較低利得稅率的好處。</p>
+        <p class="en-text"><strong>Analysis (3) - Incorrect:</strong> A company's listing status does not affect its applicable profits tax rate. In Hong Kong, the standard profits tax rate is uniform for all limited companies (corporations). Therefore, delisting does not bring the advantage of a lower tax rate.</p>
+    </div>
 
-        <div class="option-analysis">
-            <h3>Statement (3): 利得稅率 / Profits tax rate ✗</h3>
-            <div class="bilingual-block">
-                <p class="zh-text"><strong>錯誤。</strong> 公司的利得稅率是基於其作為「法團」(Corporation) 的法律實體地位，而非其上市狀態。無論是公眾還是私人有限公司，在香港均適用相同的法團利得稅率。</p>
-                <p class="en-text"><strong>Incorrect.</strong> The profits tax rate of a company is based on its legal entity status as a "Corporation", not its listing status. Both public and private limited companies are subject to the same corporate profits tax rate in Hong Kong.</p>
-            </div>
-        </div>
-    </section>
+    <h2>題目拆解 / Problem Decomposition</h2>
+    <p class="zh-text"><strong>解題關鍵 (Pivot Point)：</strong> 本題的關鍵在於區分「公司形式帶來的商業特徵」與「政府稅收政策」。學生必須清楚知道，香港的稅制對待所有法團（Corporations）都是一視同仁的。只要辨認出稅率與上市地位無關，就能迅速破解這道題。</p>
+    <p class="en-text"><strong>Pivot Point:</strong> The key is to distinguish between "commercial features of business forms" and "government tax policies". Students must know that Hong Kong's tax system treats all corporations equally. Recognizing that tax rates are independent of listing status breaks the question wide open.</p>
 
-    <section class="tips-box">
-        <h2>4. Problem Decomposition (題目拆解)</h2>
-        
-        <div class="bilingual-block">
-            <p class="zh-text"><strong>如何切入此題？ (How to approach this?)</strong></p>
-            <p class="zh-text">當你看到「私有化 (Privatisation)」和「取消上市 (Cancelled listing status)」時，你的大腦應該立即啟動「公眾有限公司 vs 私人有限公司」的對比表。</p>
-            <p class="en-text">When you see "Privatisation" and "Cancelled listing status", your brain should immediately activate the comparison table of "Public Limited Company vs. Private Limited Company".</p>
+    <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <p class="zh-text">⚠️ <strong>概念混淆陷阱：</strong> 許多學生誤以為「私有化 (Privatisation)」就等同於公司必然變成「私人有限公司 (Private Limited Company)」。實際上，即使取消了上市地位，公司仍可能是「非上市公眾有限公司 (Unlisted Public Limited Company)」。不過，無論是哪種情況，它們都不再受交易所的公眾披露規則約束，因此 (1) 依然是正確的。</p>
+    <p class="en-text">⚠️ <strong>Conceptual Trap:</strong> Many students mistakenly assume that "Privatisation" means the company must become a "Private Limited Company". In reality, even after cancelling its listing status, it might remain an "Unlisted Public Limited Company". Regardless of which one it becomes, they are no longer bound by the exchange's public disclosure rules, so statement (1) remains correct.</p>
 
-            <p class="zh-text"><strong>Pivot Point (關鍵點):</strong><br>
-            這題的關鍵在於理解改變企業擁有權結構對<strong>日常營運限制</strong>的影響，以及排除與擁有權無關的<strong>宏觀政策</strong>（如稅率）。題目中的公司名稱「新世界中國地產」和「股票編號：0917」純粹是<strong>干擾資訊 (Distractors)</strong>，提供真實背景但對解題毫無幫助。你只需將其視為「X公司」。</p>
-            <p class="en-text"><strong>Pivot Point:</strong><br>
-            The key is understanding how changing the ownership structure affects <strong>daily operational constraints</strong>, and excluding <strong>macro-policies</strong> (like tax rates) that are unrelated to ownership type. The company name "New World China Land" and "Stock Code: 0917" are purely <strong>distractors</strong>. They provide a real-world context but don't help solve the problem. Just treat it as "Company X".</p>
-        </div>
-    </section>
+    <h2>學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>問：既然退市有這麼多好處，為什麼當初公司要上市呢？</strong><br>答：上市最大的好處是籌集資金（集資）的能力。透過發行股票給公眾，公司可以籌集大量無須償還的資金 \(C\) 用於擴張。退市後，公司只能依賴銀行貸款、保留發行利潤或向現有股東集資，集資能力會大幅下降。</p>
+        <p class="en-text"><strong>Q: If delisting has so many advantages, why did the company list in the first place?</strong><br>A: The biggest advantage of listing is the ability to raise capital. By issuing shares to the public, the company can raise massive amounts of non-repayable capital \(C\) for expansion. After delisting, the company must rely on bank loans, retained profits, or raising funds from existing shareholders, which significantly weakens its capital-raising ability.</p>
+    </div>
 
-    <section class="warning-box">
-        <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
-        
-        <div class="bilingual-block">
-            <p class="zh-text"><strong>陷阱 1：混淆「私有化」的兩種含義。</strong><br>
-            在經濟學中，Privatisation 有兩個意思：<br>
-            1. 將政府公營機構賣給私人市場（例如：領展）。<br>
-            2. 將上市公司除牌，轉為少數股東持有的私人公司（本題情況）。<br>
-            同學若誤以為是第一種情況，可能會選錯答案。</p>
-            
-            <p class="en-text"><strong>Trap 1: Confusing the two meanings of "Privatisation".</strong><br>
-            In economics, Privatisation has two meanings:<br>
-            1. Selling a government-owned public enterprise to the private sector (e.g., Link REIT).<br>
-            2. Delisting a public company and turning it into a private company held by a few shareholders (the context of this question).<br>
-            Students might choose the wrong answer if they mistake it for the first scenario.</p>
+    <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p class="zh-text"><strong>💡 排除法 (Elimination Method)：</strong><br>在處理這類多項選擇題時，尋找最明顯錯誤的選項。在 DSE 經濟科中，我們知道法團利得稅率是不會因為「上市」或「非上市」而改變的。既然確定 (3) 是絕對錯誤的，我們就可以立刻排除選項 B、C 和 D。連 (1) 和 (2) 都不用深究，答案必然是 A！</p>
+        <p class="en-text"><strong>💡 Elimination Method:</strong><br>When tackling these MCQs, look for the most obviously incorrect statement. In DSE Economics, we know corporate profits tax rates do not change based on listing status. Once you are certain (3) is completely wrong, you can immediately eliminate options B, C, and D. You don't even need to analyze (1) and (2) deeply—the answer must be A!</p>
+    </div>
 
-            <p class="zh-text"><strong>陷阱 2：誤以為「私人 = 小型 = 稅率低」。</strong><br>
-            許多學生憑直覺認為私人公司規模較小，政府會給予稅務優惠。事實上，稅率只與「無限公司 (Unincorporated)」與「有限公司 (Incorporated)」的分類有關，公眾和私人有限公司均屬於 Incorporated，稅率相同。</p>
-
-            <p class="en-text"><strong>Trap 2: Assuming "Private = Small = Lower Tax Rate".</strong><br>
-            Many students intuitively think private companies are smaller and thus receive government tax breaks. In reality, tax rates only differ between "Unincorporated" and "Incorporated" businesses. Both public and private limited companies are Incorporated and face the same tax rates.</p>
-        </div>
-    </section>
-
-    <section class="qa-box">
-        <h2>6. Student Q&A (學生常見疑問)</h2>
-        
-        <div class="bilingual-block">
-            <p class="zh-text"><strong>Q: 既然私有化有這麼多好處（保密、防收購），為什麼當初公司要上市呢？</strong><br>
-            <strong>A:</strong> 上市（成為公眾有限公司）最大的好處是<strong>集資能力 (Ability to raise capital)</strong>。公司可以向大眾發行股票來籌集大量資金進行擴張。當公司已經發展成熟，現金流充足，不再需要透過股市集資，大股東就可能覺得上市的「維護成本」（如審計費、披露要求）超過了其帶來的好處，從而選擇私有化。</p>
-
-            <p class="en-text"><strong>Q: If privatisation has so many advantages (secrecy, anti-takeover), why did the company go public in the first place?</strong><br>
-            <strong>A:</strong> The biggest advantage of going public is the <strong>ability to raise capital</strong>. The company can issue shares to the general public to raise massive funds for expansion. When a company matures, has strong cash flows, and no longer needs to raise funds from the stock market, major shareholders might feel that the "maintenance costs" of being listed (e.g., audit fees, disclosure rules) outweigh the benefits, prompting them to privatise.</p>
-        </div>
-    </section>
-
-    <section class="tips-box">
-        <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
-        
-        <div class="bilingual-block">
-            <p class="zh-text"><strong>The Elimination Method (消去法):</strong></p>
-            <p class="zh-text">在 DSE 選擇題中，尋找「絕對錯誤」的選項通常比尋找正確選項更快。只要你清楚記得<strong>「企業所有權的轉換不會改變法定稅率」</strong>，你就可以立即判定 (3) 是錯的。
-            <br>包含 (3) 的選項有 B、C、D。將它們全部劃掉！
-            <br>剩下的唯一選項就是 A。你甚至不需要花時間去仔細驗證 (1) 和 (2)。這能為你節省寶貴的考試時間！</p>
-            
-            <p class="en-text"><strong>The Elimination Method:</strong></p>
-            <p class="en-text">In DSE MCQs, finding the "absolutely wrong" statement is often faster than proving the right ones. If you clearly remember that <strong>"changing business ownership type does not change the statutory tax rate"</strong>, you instantly know (3) is false. 
-            <br>Options containing (3) are B, C, and D. Cross them all out!
-            <br>The only remaining option is A. You don't even need to spend time carefully verifying (1) and (2). This saves you precious exam time!</p>
-        </div>
-    </section>
+</div>
 
 </body>
 </html>
