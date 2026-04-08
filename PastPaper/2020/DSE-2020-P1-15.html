@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Subsidy Analysis</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --secondary-light: #d1fae5;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+        .eng-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--light);
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .correct-answer {
+            background-color: var(--secondary-light);
+            border: 1px solid var(--secondary);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #047857;
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+        }
+        .option-title {
+            font-weight: bold;
+            display: inline-block;
+            width: 30px;
+        }
+        .trick-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .trap-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HKDSE Economics: Market Intervention (Subsidies)</h1>
+        <div class="tags">
+            <span class="tag">Topic: 政府干預與補貼 (Govt Intervention & Subsidy)</span>
+            <span class="tag">Difficulty: ★★★☆☆ (3.5/5)</span>
+            <span class="tag">Key Concepts: Total Subsidy, Subsidy Share</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>題目 / The Question</h2>
+        <p>下表顯示某物品的供需表。</p>
+        <p class="eng-text">The following table shows the demand and supply schedules of a good.</p>
+        
+        <table>
+            <tr>
+                <th>價格 Price ($)</th>
+                <th>需求量 Quantity demanded (units)</th>
+                <th>供應量 Quantity supplied (units)</th>
+            </tr>
+            <tr><td>20</td><td>70</td><td>40</td></tr>
+            <tr><td>22</td><td>60</td><td>45</td></tr>
+            <tr style="background-color: #fef08a; font-weight: bold;"><td>24</td><td>50</td><td>50</td></tr>
+            <tr><td>26</td><td>40</td><td>55</td></tr>
+            <tr><td>28</td><td>30</td><td>60</td></tr>
+        </table>
+
+        <p>若政府給該物品的生產商每單位$6補貼，政府提供的補貼總額會是 _________，而消費者補貼份額和生產者補貼份額的比率會是 ________。</p>
+        <p class="eng-text">If the government provides a $6 per-unit subsidy for the producers of the good, the total subsidy provided by the government will be _________ and the ratio of consumers' share to producers' share of the subsidy will be ________.</p>
+        
+        <p>
+            A. $300 …… 1:1<br>
+            B. $300 …… 1:2<br>
+            C. $360 …… 1:1<br>
+            D. $360 …… 1:2
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>概念重溫 / Concept Review</h2>
+        <div class="concept-box">
+            <p><strong>1. 尋找補貼後的新均衡 (Finding the New Equilibrium after Subsidy):</strong><br>
+            當政府提供從量補貼時，生產者實收的價格 \( P_p \) 會高於消費者支付的市場價格 \( P_c \)，兩者的差距正是每單位補貼額 (Unit Subsidy)。<br>
+            <span class="eng-text">When a per-unit subsidy is provided, the price received by producers \( P_p \) is higher than the market price paid by consumers \( P_c \). The difference is exactly the unit subsidy.</span></p>
+            
+            <div class="math-block">
+                $$ P_p - P_c = \text{Unit Subsidy} $$
+            </div>
+
+            <p><strong>2. 總補貼 (Total Subsidy):</strong><br>
+            總補貼等於每單位補貼乘以<strong>新的</strong>交易量 \( Q_1 \)。<br>
+            <span class="eng-text">Total subsidy equals the per-unit subsidy multiplied by the <strong>new</strong> transacted quantity \( Q_1 \).</span></p>
+            
+            <div class="math-block">
+                $$ \text{Total Subsidy} = \text{Unit Subsidy} \times Q_1 $$
+            </div>
+
+            <p><strong>3. 補貼份額 (Subsidy Shares):</strong><br>
+            消費者享受的補貼是原有價格 \( P_0 \) 減去新價格 \( P_c \)。生產者享受的補貼是新實收價格 \( P_p \) 減去原有價格 \( P_0 \)。<br>
+            <span class="eng-text">The consumer's share is the original price \( P_0 \) minus the new price \( P_c \). The producer's share is the newly received price \( P_p \) minus the original price \( P_0 \).</span></p>
+
+            <div class="math-block">
+                $$ \text{Consumer's Unit Benefit} = P_0 - P_c $$
+                $$ \text{Producer's Unit Benefit} = P_p - P_0 $$
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>答案與詳細分析 / Answer & Detailed Analysis</h2>
+        
+        <div class="correct-answer">
+            正確答案 Correct Option: D
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>第一步：找出原有均衡 (Step 1: Find Initial Equilibrium)</strong><br>
+            在政府干預前，當價格為 $24 時，需求量 (50) 等於供應量 (50)。因此，原均衡價格 \( P_0 = \$24 \)，原均衡數量 \( Q_0 = 50 \)。<br>
+            <span class="eng-text">Before intervention, at $24, Quantity Demanded (50) equals Quantity Supplied (50). Thus, initial equilibrium price \( P_0 = \$24 \), and quantity \( Q_0 = 50 \).</span></p>
+
+            <p><strong>第二步：找出新均衡 (Step 2: Find New Equilibrium)</strong><br>
+            政府提供 $6 補貼。我們需要從表中找到一個交易量，使得生產者要求的價格 (供應表) 與消費者願意支付的價格 (需求表) 相差恰好 $6。<br>
+            觀察圖表：當交易量為 60 時，消費者願意支付的價格為 $22 (\( P_c \))，而生產者願意供應的價格為 $28 (\( P_p \))。差距為 \( \$28 - \$22 = \$6 \)，完全吻合補貼額！因此新交易量 \( Q_1 = 60 \)。<br>
+            <span class="eng-text">With a $6 subsidy, we need to find a quantity where the supply price and demand price differ by exactly $6. Looking at the table: at quantity 60, consumers are willing to pay $22 (\( P_c \)), and producers require $28 to supply (\( P_p \)). The difference is \( \$28 - \$22 = \$6 \). This matches the unit subsidy! Thus, new quantity \( Q_1 = 60 \).</span></p>
+
+            <p><strong>第三步：計算總補貼與份額 (Step 3: Calculate Total Subsidy and Shares)</strong><br>
+            總補貼 = 每單位補貼 × 新數量 = \( \$6 \times 60 = \$360 \)。<br>
+            消費者份額 = 原價 - 新市價 = \( \$24 - \$22 = \$2 \)。<br>
+            生產者份額 = 實收新價 - 原價 = \( \$28 - \$24 = \$4 \)。<br>
+            比率 (消費者 : 生產者) = 2 : 4 = 1 : 2。<br>
+            <span class="eng-text">Total Subsidy = Unit Subsidy × New Quantity = \( \$6 \times 60 = \$360 \).<br>
+            Consumer's share = Old Price - New Market Price = \( \$24 - \$22 = \$2 \).<br>
+            Producer's share = New Received Price - Old Price = \( \$28 - \$24 = \$4 \).<br>
+            Ratio (Consumer : Producer) = 2 : 4 = 1 : 2.</span></p>
+        </div>
+
+        <h3>選項分析 / Option Breakdown:</h3>
+        <p><span class="option-title">A</span> <strong>錯誤 (Incorrect):</strong> 錯誤地使用了原有數量 (\( Q_0 = 50 \)) 來計算總補貼 (\( 50 \times \$6 = \$300 \))，並錯誤假設雙方平均分享補貼 (1:1)。<br>
+        <span class="eng-text">Incorrectly uses the old quantity (\( Q_0 = 50 \)) to calculate total subsidy and falsely assumes equal sharing of the subsidy (1:1).</span></p>
+        
+        <p><span class="option-title">B</span> <strong>錯誤 (Incorrect):</strong> 份額比率正確 (1:2)，但同樣錯誤地使用了原有數量來計算總補貼 ($300)。<br>
+        <span class="eng-text">The share ratio is correct (1:2), but it incorrectly uses the old quantity to calculate the total subsidy ($300).</span></p>
+        
+        <p><span class="option-title">C</span> <strong>錯誤 (Incorrect):</strong> 總補貼計算正確 ($360)，但錯誤計算了補貼份額比率 (1:1)。<br>
+        <span class="eng-text">Correct total subsidy ($360), but incorrectly calculates the subsidy share ratio (1:1).</span></p>
+        
+        <p><span class="option-title">D</span> <strong>正確 (Correct):</strong> 總補貼 ($360) 與份額比率 (1:2) 均計算無誤。<br>
+        <span class="eng-text">Both the total subsidy ($360) and the share ratio (1:2) are correct.</span></p>
+    </div>
+
+    <div class="section">
+        <h2>題目拆解 / Problem Decomposition</h2>
+        <p>解答這類題目的「關鍵支點 (Pivot Point)」是明白<strong>補貼會令生產價格與消費價格分離</strong>。不要盲目把表格裡的所有價格加減 $6。你應該尋找一個特定的數量 (\( Q \))，在這個數量下：<br>
+        <strong>\( \text{供應表上的價格 } (P_s) - \text{需求表上的價格 } (P_d) = \text{補貼額} \)</strong><br>
+        找對了這個新的 \( Q \)，所有問題都會迎刃而解。</p>
+        <p class="eng-text">The "Pivot Point" for this type of question is understanding that <strong>a subsidy separates the producer price from the consumer price</strong>. Do not just blindly add/subtract $6 from the table prices. You must look for a specific quantity (\( Q \)) where:<br>
+        <strong>\( \text{Price on Supply Schedule } (P_s) - \text{Price on Demand Schedule } (P_d) = \text{Subsidy Amount} \)</strong><br>
+        Once you find this new \( Q \), the rest is simple arithmetic.</p>
+    </div>
+
+    <div class="section">
+        <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+        <div class="trap-box">
+            <p><strong>陷阱 1：使用舊均衡量計算總額 (Using Old Q for Total Amount)</strong><br>
+            很多同學會直接把 $6 乘以原來的交易量 50 (得出 $300)。請緊記：補貼會使供應增加，均衡交易量必然會上升。計算總額必須使用<strong>新的交易量</strong>。<br>
+            <span class="eng-text">Many students multiply $6 by the old quantity 50 (getting $300). Remember: a subsidy increases supply, so the equilibrium quantity must rise. Always use the <strong>new quantity</strong> to calculate total amounts.</span></p>
+
+            <p><strong>陷阱 2：搞混稅收與補貼的公式 (Confusing Tax and Subsidy Conditions)</strong><br>
+            對於稅收 (Tax)：\( P_d - P_s = \text{Tax} \) (消費者付更多)<br>
+            對於補貼 (Subsidy)：\( P_s - P_d = \text{Subsidy} \) (生產者收更多)<br>
+            如果弄反了，你可能會跑到 \( Q = 40 \) 去尋找答案！<br>
+            <span class="eng-text">For a Tax: \( P_d - P_s = \text{Tax} \) (Consumers pay more)<br>
+            For a Subsidy: \( P_s - P_d = \text{Subsidy} \) (Producers receive more)<br>
+            If you mix them up, you might look at \( Q = 40 \) by mistake!</span></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>學生常見疑問 / Student Q&A</h2>
+        
+        <div class="qa-box">
+            <div class="qa-q">Q: 題目說補貼是「給生產商的」，這代表生產者會得到全部好處嗎？ / The question says the subsidy is for "producers". Does this mean producers get all the benefits?</div>
+            <div class="qa-a">
+                <p><strong>A: 絕對不是 (Absolutely not)。</strong> 在經濟學中，法定歸宿 (Statutory Incidence，即政府把錢交給誰) 並不影響經濟歸宿 (Economic Incidence，即最終誰受益)。最終雙方如何瓜分這 $6 的好處，完全取決於供需的相對彈性 (Elasticity)。因為供應曲線比需求曲線更缺乏彈性 (Inelastic)，所以生產者獲得了較大份額 (佔 $4)。就算政府把 $6 補貼直接發給消費者，最終市價也會變成 $28，生產者依然多賺 $4，消費者依然省下 $2！</p>
+                <p class="eng-text"><strong>A: Absolutely not.</strong> In economics, statutory incidence (who receives the cheque) does not affect economic incidence (who actually benefits). How the $6 benefit is shared depends entirely on the relative elasticity of demand and supply. Because supply is more inelastic than demand here, producers get a larger share ($4). Even if the government gave the $6 directly to consumers, the market price would rise to $28, meaning producers still gain $4 and consumers still save $2!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+        <div class="trick-box">
+            <p><strong>秒殺法 (The 5-Second Kill Method):</strong></p>
+            <p>在 MC 卷中，你可以不用計算就刪去一半選項！</p>
+            <p>1. <strong>觀察彈性 (Observe Elasticity):</strong> 從表中可見，價格每變動 $2，需求量只改變 10 單位，但供應量改變了 5 單位。這意味著供應 (Supply) 對價格的反應較小（較缺乏彈性 Inelastic）。<br>
+            2. <strong>彈性與負擔法則 (Rule of Incidence):</strong> 較缺乏彈性的一方，會獲得較大比例的補貼！因此，生產者享受的補貼必定大於消費者 (Producer Share > Consumer Share)。比率絕不可能是 1:1，立刻刪除 A 和 C！<br>
+            3. <strong>交易量方向 (Quantity Direction):</strong> 補貼必令交易量增加 (\( Q > 50 \))。總補貼 = \( Q_{new} \times \$6 \)。既然 \( Q_{new} > 50 \)，總補貼必定大於 \( 50 \times 6 = 300 \)。刪除 B。<br>
+            <strong>答案只剩下 D！完全不用硬算！</strong></p>
+            
+            <p class="eng-text"><strong>The 5-Second Kill Method:</strong><br>
+            In MCQs, you can eliminate options without full calculation!<br>
+            1. <strong>Observe Elasticity:</strong> For every $2 change in price, Qd changes by 10, but Qs changes by only 5. This means Supply is more inelastic (steeper).<br>
+            2. <strong>Rule of Incidence:</strong> The more inelastic side gets the larger share of the subsidy! Thus, Producer Share > Consumer Share. The ratio cannot be 1:1. Eliminate A and C instantly!<br>
+            3. <strong>Quantity Direction:</strong> Subsidy increases quantity (\( Q > 50 \)). Total Subsidy = \( Q_{new} \times \$6 \). Since \( Q_{new} > 50 \), the total subsidy MUST be greater than \( 50 \times 6 = 300 \). Eliminate B.<br>
+            <strong>Only D remains! No complex math required!</strong></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics: Linked Exchange Rate System</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.3em;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.2em;
+            margin-bottom: 1em;
+            display: block;
+        }
+
+        /* Header Section */
+        .header-section {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        
+        .header-section h1 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Question Box */
+        .question-box {
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: #fcfcfc;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Options */
+        .analysis-card {
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .analysis-card.correct {
+            border-left: 5px solid #10b981;
+            background-color: #ecfdf5;
+        }
+
+        .analysis-card.incorrect {
+            border-left: 5px solid #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .status-correct {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .status-incorrect {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        /* Common sections */
+        .info-panel {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .qna-box {
+            background-color: #faf5ff;
+            border: 1px solid #e9d5ff;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .qna-q {
+            font-weight: bold;
+            color: #6b21a8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div class="tag-container">
+            <span class="tag">Topic: 聯繫匯率制度 / Linked Exchange Rate System</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: Monetary Base, Market vs Linked Rate, Depreciation</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 / The Question</h2>
+    <div class="question-box">
+        <p>在香港的聯繫匯率制度下，下列哪項陳述是正確的？</p>
+        <span class="en-text">Under the linked exchange rate system of Hong Kong, which of the following statements is correct?</span>
+        
+        <ol class="options-list">
+            <li>
+                本港的貨幣供應定義一必須有美元的全數支持。<br>
+                <span class="en-text">The money supply M1 of Hong Kong has to be fully backed up by the US dollar.</span>
+            </li>
+            <li>
+                當美元兌其他貨幣貶值，香港的出口量會上升。<br>
+                <span class="en-text">Hong Kong's export volume will increase when the US dollar depreciates against other currencies.</span>
+            </li>
+            <li>
+                港元相對美元的市場匯率是固定的。<br>
+                <span class="en-text">The market exchange rate of the HK dollar relative to the US dollar is fixed.</span>
+            </li>
+            <li>
+                本港市民可以向三家發鈔銀行賣出1美元以換得7.8港元。<br>
+                <span class="en-text">Hong Kong citizens can sell USD to the three note-issuing banks for 7.8HKD.</span>
+            </li>
+        </ol>
+    </div>
+
+    <h2>2. 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <h3>A. 貨幣基礎 vs. 貨幣供應 (Monetary Base vs. Money Supply)</h3>
+        <p>在聯繫匯率制度下，只有**貨幣基礎 (Monetary Base)** 的變動必須有美元的十足支持。具體來說，發鈔銀行必須以 \( 7.8 \) 港元兌 \( 1 \) 美元的固定匯率向金管局提交美元，才能購買負債證明書 (Certificates of Indebtedness) 以發行港元紙幣。然而，貨幣供應 (如 M1, M2, M3) 包含了銀行的存款創造 (Deposit Creation)，這些由商業銀行創造的存款並不需要美元的十足支持。</p>
+        <span class="en-text">Under the LERS, only changes in the <strong>Monetary Base</strong> require 100% US dollar backing. Specifically, note-issuing banks must submit USD to the HKMA at a fixed rate of \( 7.8 \) HKD to \( 1 \) USD to purchase Certificates of Indebtedness before issuing HKD banknotes. However, the money supply (like M1, M2, M3) involves deposit creation by commercial banks, which is not fully backed by USD.</span>
+        
+        <div class="math-block">
+            $$ M1 = C_p + D $$
+        </div>
+        <p style="text-align: center; font-size: 0.9em; color: var(--text-muted);">
+            \( M1 \) = 貨幣供應定義一 (Money Supply M1)<br>
+            \( C_p \) = 公眾持有的法定貨幣 (Legal tender held by the public)<br>
+            \( D \) = 活期存款 (Demand deposits) — <strong>不獲全數支持 (Not fully backed)</strong>
+        </p>
+
+        <h3>B. 官方匯率 vs. 市場匯率 (Official Rate vs. Market Rate)</h3>
+        <p>\( 7.8 \) 港元兌 \( 1 \) 美元的**聯繫匯率 (Linked Rate)** 只適用於金管局與三家發鈔銀行之間的交易。對於一般市民和企業，他們面對的是**市場匯率 (Market Rate)**，該匯率會在強方兌換保證 (\( 7.75 \)) 和弱方兌換保證 (\( 7.85 \)) 之間浮動。</p>
+        <span class="en-text">The <strong>Linked Rate</strong> of \( 7.8 \) HKD to \( 1 \) USD applies ONLY to transactions between the HKMA and the three note-issuing banks. For the general public and businesses, they face the <strong>Market Rate</strong>, which fluctuates within the Convertibility Zone between \( 7.75 \) (Strong-side Convertibility Undertaking) and \( 7.85 \) (Weak-side Convertibility Undertaking).</span>
+    </div>
+
+    <h2>3. 答案與詳細分析 / Answer & Detailed Analysis</h2>
+    
+    <div class="analysis-card incorrect">
+        <span class="status-badge status-incorrect">Option A - Incorrect (錯誤)</span>
+        <p>如概念重溫所述，只有「貨幣基礎」才擁有美元的百分百支持。貨幣供應 M1 包括了活期存款 \( D \)，而活期存款是商業銀行透過貸款創造出來的，並沒有外匯儲備的全數支持。</p>
+        <span class="en-text">As reviewed, only the "Monetary Base" is 100% backed by USD. Money supply M1 includes demand deposits \( D \), which are created by commercial banks through lending and are NOT fully backed by foreign exchange reserves.</span>
+    </div>
+
+    <div class="analysis-card correct">
+        <span class="status-badge status-correct">Option B - Correct (正確)</span>
+        <p>由於港元與美元掛鈎，當美元相對於其他貨幣（例如歐元、日元）貶值時，港元亦會跟隨美元貶值。這意味著香港出口到外國的商品，以外幣計算的價格會下降，從而提升了香港出口產品的競爭力，導致香港的出口量上升。</p>
+        <span class="en-text">Because the HKD is pegged to the USD, when the USD depreciates against other currencies (e.g., Euro, Yen), the HKD depreciates alongside it. This means the prices of Hong Kong's exports, when calculated in foreign currencies, become cheaper. This enhances the competitiveness of HK exports, leading to an increase in export volume.</span>
+    </div>
+
+    <div class="analysis-card incorrect">
+        <span class="status-badge status-incorrect">Option C - Incorrect (錯誤)</span>
+        <p>港元相對美元的「市場匯率」並非完全固定。它可以在 \( 7.75 \) 至 \( 7.85 \) 的兌換保證區間（Convertibility Zone）內隨市場供求自由浮動。固定的只有發鈔銀行與金管局交收的「聯繫匯率」（即 \( 7.8 \)）。</p>
+        <span class="en-text">The "market exchange rate" of HKD relative to USD is not perfectly fixed. It is allowed to float freely based on market demand and supply within the Convertibility Zone of \( 7.75 \) to \( 7.85 \). Only the "linked rate" (\( 7.8 \)) between the note-issuing banks and the HKMA is fixed.</span>
+    </div>
+
+    <div class="analysis-card incorrect">
+        <span class="status-badge status-incorrect">Option D - Incorrect (錯誤)</span>
+        <p>\( 7.8 \) 的兌換率只適用於「金管局」與「三家發鈔銀行」之間買賣負債證明書時使用。本港市民兌換外幣時，只能前往零售銀行或找換店，並以當時的「市場匯率」（且包含買賣差價）進行交易。</p>
+        <span class="en-text">The exchange rate of \( 7.8 \) is strictly used between the "HKMA" and the "three note-issuing banks" when issuing or redeeming Certificates of Indebtedness. When ordinary citizens exchange foreign currencies, they must go to retail banks or money changers and trade at the prevailing "market rate" (which includes a bid-ask spread).</span>
+    </div>
+
+    <h2>4. 題目拆解 / Problem Decomposition</h2>
+    <p>這類題目的**核心考點 (Pivot Point)** 在於區分「制度設計的理論層面」與「實際市場運作」的差異。學生必須清楚三個不同的主體：金管局 (HKMA)、發鈔銀行 (Note-issuing banks) 以及 公眾/商業銀行 (Public/Commercial banks)。</p>
+    <span class="en-text">The <strong>Pivot Point</strong> of this type of question is distinguishing between the "theoretical design of the system" and "actual market operations". Students must clearly differentiate between three distinct entities: the HKMA, the note-issuing banks, and the public/commercial banks.</span>
+    <ul>
+        <li><strong>陷阱詞語 (Trap words):</strong> Option A 的「貨幣供應 M1」是陷阱，正確字眼應為「貨幣基礎」或「紙幣及硬幣」。</li>
+        <li><strong>陷阱詞語 (Trap words):</strong> Option C 的「市場匯率 (Market rate)」是陷阱，因為市場匯率是會浮動的。</li>
+    </ul>
+
+    <div class="info-panel">
+        <h3>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h3>
+        <p>學生經常將「香港採用固定匯率制度」這一句簡化理解為「任何情況下匯率都是 7.8」。請記住，**在公眾層面，匯率從來不是絕對固定的**。如果你去銀行換美金，你會發現買入價和賣出價每天都在變動，但都會處於 \( 7.75 \) 至 \( 7.85 \) 的安全網內。</p>
+        <span class="en-text">Students often oversimplify "Hong Kong adopts a fixed exchange rate system" to mean "the exchange rate is always exactly 7.8 under all circumstances". Remember, <strong>at the public level, the rate is never absolutely fixed</strong>. If you go to a bank to exchange USD, you will see the bid and ask rates change daily, although they will always remain within the safety net of \( 7.75 \) to \( 7.85 \).</span>
+    </div>
+
+    <div class="qna-box">
+        <h3>❓ 學生常見疑問 / Student Q&A</h3>
+        <p class="qna-q">Q: 為什麼選項 D 不正確？市民不是在銀行換錢嗎？銀行不就是發鈔銀行嗎？</p>
+        <span class="en-text" style="color: #6b21a8; margin-bottom: 5px;">Q: Why is Option D wrong? Don't citizens exchange money at banks? Aren't banks the note-issuing banks?</span>
+        <p><strong>A:</strong> 雖然香港有三家發鈔銀行（匯豐、渣打、中銀），但當它們處理一般市民的存提款和外幣兌換時，它們扮演的是「零售商業銀行」的角色。在這種商業操作下，它們會按市場匯率及賺取差價來與市民交易。它們只有在向金管局申請印製新鈔票時，才會使用到 \( 7.8 \) 的官方結算比率。</p>
+        <span class="en-text"><strong>A:</strong> Although there are three note-issuing banks in HK (HSBC, Standard Chartered, BOCHK), when they handle ordinary citizens' deposits, withdrawals, and foreign exchanges, they act as "retail commercial banks". In these commercial operations, they trade with citizens at market rates to earn the bid-ask spread. They only use the official settlement rate of \( 7.8 \) when applying to the HKMA to print new banknotes.</span>
+    </div>
+
+    <h2>5. 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <p>在應付這類多項選擇題 (MCQ) 時，可以使用**極端字眼排除法 (Elimination of Absolute Terms)**。在經濟學的機制中，帶有「必須 (has to be)」、「固定 (fixed)」、「所有 (all)」的選項通常藏有陷阱（例如 Option A 和 C）。當你看到這些字眼，先在腦海中尋找反例（例如：活期存款沒有美金支持、市場有波動區間），就能快速刪去錯誤選項。</p>
+    <span class="en-text">When tackling this type of Multiple Choice Question (MCQ), you can use the <strong>Elimination of Absolute Terms</strong> method. In economic mechanisms, options containing words like "must/has to be", "fixed", or "all" often contain traps (like Options A and C). When you see these words, quickly look for counter-examples in your head (e.g., demand deposits aren't USD backed, the market has a fluctuation band) to swiftly eliminate incorrect options.</span>
+
+</div>
+
+</body>
+</html>

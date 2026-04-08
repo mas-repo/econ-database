@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics Tutor - MC Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-eng: #4b5563;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --math-bg: #f3f4f6;
+            --warning-bg: #fff1f2;
+            --warning-border: #e11d48;
+            --tip-bg: #f0fdf4;
+            --tip-border: #22c55e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--primary-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h1 { margin-top: 0; font-size: 1.8rem; }
+        h2 { font-size: 1.4rem; }
+
+        /* Bilingual Styling */
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .en {
+            color: var(--text-eng);
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Header Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .badge-topic { background-color: #e0e7ff; color: #3730a3; }
+        .badge-diff { background-color: #fef08a; color: #854d0e; }
+        .badge-concept { background-color: #fce7f3; color: #9d174d; }
+
+        /* Question Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background-color: #f3f4f6; }
+
+        /* Concept Boxes */
+        .box {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+        }
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+        }
+        .tip-box {
+            background-color: var(--tip-bg);
+            border-left: 5px solid var(--tip-border);
+        }
+
+        /* Math Blocks */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .correct-ans {
+            font-size: 1.2rem;
+            color: #059669;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #ecfdf5;
+            border-radius: 8px;
+            border: 1px dashed #10b981;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>HKDSE Economics Expert Analysis</h1>
+        <div>
+            <span class="badge badge-topic">Topic: 國際貿易 International Trade</span>
+            <span class="badge badge-diff">Difficulty: ★★★★☆</span>
+        </div>
+        <div>
+            <span class="badge badge-concept">比較優勢 Comparative Advantage</span>
+            <span class="badge badge-concept">機會成本 Opportunity Cost</span>
+            <span class="badge badge-concept">完全專門化 Complete Specialisation</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>The Question (題目)</h2>
+        
+        <p class="zh">下表顯示甲國和乙國於進行國際貿易前對兩種物品的消費數量。假設兩國均使用一單位的資源來生產物品X和一單位的資源來生產物品Y。</p>
+        <p class="en">The following table shows the amounts of consumption on two goods in Country A and Country B before international trade. Assume both countries use one unit of resources on producing Good X and one unit of resources on producing Good Y.</p>
+
+        <table>
+            <tr>
+                <th colspan="3">貿易前的消費數量 / Consumption before trade (單位 / units)</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>物品X / Good X</th>
+                <th>物品Y / Good Y</th>
+            </tr>
+            <tr>
+                <td>甲國 / Country A</td>
+                <td>100</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>乙國 / Country B</td>
+                <td>80</td>
+                <td>40</td>
+            </tr>
+        </table>
+
+        <p class="zh">若甲國和乙國均作完全專門化生產並與對方進行貿易，兩國的總產量會有所增加。物品X增加 __________ 單位，而物品Y增加 __________ 單位。</p>
+        <p class="en">If Country A and Country B completely specialise their production and trade with each other, the total output of both countries will increase by ______ units of Good X and ______ units of Good Y.</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>A.</strong> 15 …… 15</li>
+            <li><strong>B.</strong> 15 …… 20</li>
+            <li><strong>C.</strong> 20 …… 15</li>
+            <li><strong>D.</strong> 20 …… 20</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="box concept-box">
+            <p class="zh"><strong>1. 比較優勢 (Comparative Advantage):</strong> 如果一個國家生產某物品的機會成本低於另一個國家，該國便享有生產該物品的比較優勢。</p>
+            <p class="en">If a country can produce a good at a lower opportunity cost than another country, it has a comparative advantage in producing that good.</p>
+
+            <p class="zh"><strong>2. 完全專門化 (Complete Specialisation):</strong> 兩國各自把<strong>所有</strong>資源集中生產其享有比較優勢的物品。</p>
+            <p class="en">Both countries devote <strong>all</strong> their resources to producing the good in which they have a comparative advantage.</p>
+
+            <p class="zh"><strong>3. 計算機會成本 (Calculating Opportunity Cost):</strong></p>
+            <p class="en">Formula for calculating opportunity cost based on output:</p>
+            <div class="math-block">
+                $$ \text{Opportunity Cost of 1 unit of X} = \frac{\text{Output of Y given up}}{\text{Output of X gained}} $$
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-ans">Correct Answer: Option C</div>
+
+        <h3>Step 1: Identify Initial Production (步驟一：找出初始產量)</h3>
+        <p class="zh">題目指出「貿易前的消費數量」，在沒有貿易的情況下，消費數量等於生產數量。初始總產量：<br>物品 \(X\) = 100 + 80 = 180 單位<br>物品 \(Y\) = 25 + 40 = 65 單位</p>
+        <p class="en">The question shows "consumption before trade". Without trade, consumption equals domestic production. Initial total output:<br>Good \(X\) = 100 + 80 = 180 units<br>Good \(Y\) = 25 + 40 = 65 units</p>
+
+        <h3>Step 2: Calculate Opportunity Costs (步驟二：計算機會成本)</h3>
+        <p class="zh">題目指出生產表內的物品 \(X\) 和物品 \(Y\) 各用了一單位資源。我們可藉此計算一單位物品的機會成本：</p>
+        <p class="en">The question states 1 unit of resources was used for Good \(X\) and 1 unit for Good \(Y\) to produce the amounts shown. We calculate the opportunity cost for 1 unit of the good:</p>
+        <ul>
+            <li>
+                <p class="zh"><strong>甲國 (Country A):</strong> 放棄 25單位 \(Y\) 才能獲得 100單位 \(X\)。<br>生產 1單位 \(X\) 的成本 = \( \frac{25}{100} \) = 0.25 \(Y\)。<br>生產 1單位 \(Y\) 的成本 = \( \frac{100}{25} \) = 4 \(X\)。</p>
+                <p class="en"><strong>Country A:</strong> Giving up 25 units of \(Y\) yields 100 units of \(X\).<br>Cost of 1 \(X\) = \( \frac{25}{100} \) = 0.25 \(Y\).<br>Cost of 1 \(Y\) = \( \frac{100}{25} \) = 4 \(X\).</p>
+            </li>
+            <li>
+                <p class="zh"><strong>乙國 (Country B):</strong> 放棄 40單位 \(Y\) 才能獲得 80單位 \(X\)。<br>生產 1單位 \(X\) 的成本 = \( \frac{40}{80} \) = 0.5 \(Y\)。<br>生產 1單位 \(Y\) 的成本 = \( \frac{80}{40} \) = 2 \(X\)。</p>
+                <p class="en"><strong>Country B:</strong> Giving up 40 units of \(Y\) yields 80 units of \(X\).<br>Cost of 1 \(X\) = \( \frac{40}{80} \) = 0.5 \(Y\).<br>Cost of 1 \(Y\) = \( \frac{80}{40} \) = 2 \(X\).</p>
+            </li>
+        </ul>
+
+        <h3>Step 3: Determine Specialisation (步驟三：決定專門化)</h3>
+        <p class="zh">比較兩國的機會成本。甲國生產 \(X\) 的成本 (0.25 \(Y\)) 低於乙國 (0.5 \(Y\))，所以<strong>甲國專門生產物品 X</strong>。相反，乙國生產 \(Y\) 的成本 (2 \(X\)) 低於甲國 (4 \(X\))，所以<strong>乙國專門生產物品 Y</strong>。</p>
+        <p class="en">Compare the opportunity costs. Country A's cost for \(X\) (0.25 \(Y\)) is lower than B's (0.5 \(Y\)), so <strong>Country A specialises in Good X</strong>. Conversely, Country B's cost for \(Y\) (2 \(X\)) is lower than A's (4 \(X\)), so <strong>Country B specialises in Good Y</strong>.</p>
+
+        <h3>Step 4: Calculate Total Gain (步驟四：計算總產量增幅)</h3>
+        <p class="zh">專門化後，兩國會將<strong>所有資源 (每國共2單位)</strong> 投入生產該物品：<br>甲國用 2 單位資源生產 \(X\) = 100 × 2 = 200 單位 \(X\)<br>乙國用 2 單位資源生產 \(Y\) = 40 × 2 = 80 單位 \(Y\)</p>
+        <p class="en">After complete specialisation, countries allocate <strong>ALL resources (2 units per country)</strong> to their respective good:<br>Country A uses 2 units on \(X\) = 100 × 2 = 200 units of \(X\)<br>Country B uses 2 units on \(Y\) = 40 × 2 = 80 units of \(Y\)</p>
+
+        <p class="zh">產量增加：<br>\(X\) 的增加 = 200 - 180 = <strong>20 單位</strong><br>\(Y\) 的增加 = 80 - 65 = <strong>15 單位</strong><br>因此正確答案為 C。</p>
+        <p class="en">Increase in output:<br>Increase in \(X\) = 200 - 180 = <strong>20 units</strong><br>Increase in \(Y\) = 80 - 65 = <strong>15 units</strong><br>Thus, Option C is correct.</p>
+    </section>
+
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p class="zh">這道題目的「破局點 (Pivot Point)」在於理解資源分配。許多同學會直接忽略了「各用一單位資源」這句話。</p>
+        <p class="en">The "Pivot Point" of this question lies in understanding resource allocation. Many students completely ignore the phrase "use one unit of resources on...".</p>
+        
+        <p class="zh"><strong>關鍵資訊：</strong>這句話告訴我們，每一個國家總共擁有 <strong>2單位</strong> 的資源 (1單位用於X + 1單位用於Y)。當進行「完全專門化」時，國家會把這全部的 2單位 資源都投放到同一種物品上。這就是為什麼專門化後的產量要乘以 2。</p>
+        <p class="en"><strong>Crucial Info:</strong> This phrase reveals that each country has a TOTAL of <strong>2 units</strong> of resources (1 for X + 1 for Y). When "completely specialising", a country shifts all 2 units to a single good. This is why the output during specialisation must be multiplied by 2.</p>
+    </section>
+
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="box warning-box">
+            <p class="zh">⚠️ <strong>致命陷阱：沒有將資源加倍</strong><br>很多考生在算出甲國生產X、乙國生產Y後，直接拿表格裡的數字 (甲國生產 100 \(X\)，乙國生產 40 \(Y\)) 減去原總量。這會得出負數或錯誤結果。記住，表格數字只是用「1單位資源」生產的結果，完全專門化代表投入了「2單位資源」！</p>
+            <p class="en">⚠️ <strong>Lethal Trap: Forgetting to double the resources</strong><br>Many candidates, after finding A produces \(X\) and B produces \(Y\), directly use the table numbers (A produces 100 \(X\), B produces 40 \(Y\)) to subtract the initial total. This yields negative or incorrect results. Remember, the table shows output for "1 unit of resource", but complete specialisation means utilizing ALL "2 units"!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p class="zh"><strong>Q: 題目裡的「消費數量」是不是多餘的資訊？</strong></p>
+        <p class="en"><strong>Q: Is the "consumption before trade" redundant information?</strong></p>
+        <p class="zh"><strong>A: </strong>不是！在沒有國際貿易前 (Autarky)，一個國家的「消費數量」必定等於它的「生產數量」。我們必須依賴這組數字來計算兩國最初的總產出 (180 \(X\) 和 65 \(Y\))，從而對比專門化後增加了多少。</p>
+        <p class="en"><strong>A: </strong>No! Before international trade (under autarky), a country's "consumption" must equal its domestic "production". We absolutely need these numbers to find the initial total output (180 \(X\) and 65 \(Y\)) so we can calculate the increase after specialisation.</p>
+    </section>
+
+    <section>
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="box tip-box">
+            <p class="zh">💡 <strong>速解法：只算其中一種物品</strong><br>在選擇題中，時間就是分數。一旦你確定了專門化後總產量為 200 \(X\) 和 80 \(Y\)，你其實只需要計算<strong>物品 Y 的增幅</strong>。80 - 65 = 15。看看選項，只有 A 和 C 的物品Y增幅是 15。接著心算 \(X\) 的增幅 (200 - 180 = 20)，一秒就能鎖定答案 C，無需將四個選項都驗證一次。</p>
+            <p class="en">💡 <strong>Shortcut: Calculate one good to eliminate options</strong><br>In MCQs, time is marks. Once you know the specialised output is 200 \(X\) and 80 \(Y\), just calculate the <strong>increase in Good Y</strong>. 80 - 65 = 15. Looking at the options, only A and C have 15 for Good Y. A quick mental check on \(X\) (200 - 180 = 20) immediately locks in Option C without needing to over-analyze.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

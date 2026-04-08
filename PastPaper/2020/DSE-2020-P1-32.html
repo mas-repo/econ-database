@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monetary Policy</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .header-box {
+            background-color: var(--bg-light);
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 5px solid #cbd5e1;
+            background-color: var(--bg-light);
+        }
+
+        .option.correct {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+
+        .option.wrong {
+            background-color: var(--wrong-bg);
+            border-left-color: var(--wrong-border);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .tips-box {
+            background-color: #ecfdf5;
+            border: 2px dashed #10b981;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <strong>📚 主題 (Topic):</strong> 宏觀經濟學：貨幣與財政政策 (Macroeconomics: Monetary and Fiscal Policy)<br>
+        <strong>⭐ 難度 (Difficulty):</strong> ★★☆☆☆ (2/5)<br>
+        <strong>🔑 關鍵字 (Key Concepts):</strong> 
+        <span class="tag">收縮性貨幣政策 (Contractionary Monetary Policy)</span>
+        <span class="tag">貼現率 (Discount Rate)</span>
+        <span class="tag">法定儲備比率 (Required Reserve Ratio)</span>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項屬收縮性貨幣政策？</strong></p>
+        <p>A. 增加貼現率<br>
+           B. 增加薪俸稅率<br>
+           C. 減低法定儲備比率<br>
+           D. 減低移民的配額</p>
+        
+        <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 15px 0;">
+        
+        <p class="en-text"><strong>Which of the following is a contractionary monetary policy?</strong></p>
+        <p class="en-text">
+           A. an increase in the discount rate<br>
+           B. an increase in the salaries tax rate<br>
+           C. a decrease in the required reserve ratio<br>
+           D. a decrease in the quota for migration
+        </p>
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p>要解答這類題目，我們必須清楚區分<strong>政策的執行者 (Actor)</strong> 以及<strong>政策的目標方向 (Direction)</strong>。</p>
+        <p class="en-text">To answer this type of question, we must clearly distinguish between the <strong>actor executing the policy</strong> and the <strong>directional goal of the policy</strong>.</p>
+        
+        <ul>
+            <li><strong>貨幣政策 (Monetary Policy):</strong> 由中央銀行 (Central Bank) 執行，透過改變貨幣供應量 \( M_s \) 或利率 \( r \) 來影響宏觀經濟。主要工具包括：法定儲備比率、貼現率、公開市場操作。</li>
+            <li class="en-text"><strong>Monetary Policy:</strong> Executed by the Central Bank, affecting the macroeconomy by changing the money supply \( M_s \) or interest rates \( r \). Main tools include: required reserve ratio, discount rate, and open market operations.</li>
+            
+            <li><strong>財政政策 (Fiscal Policy):</strong> 由政府 (Government) 執行，透過改變政府開支 \( G \) 或稅收 \( T \) 來影響總需求。</li>
+            <li class="en-text"><strong>Fiscal Policy:</strong> Executed by the Government, affecting aggregate demand by changing government expenditure \( G \) or taxation \( T \).</li>
+            
+            <li><strong>收縮性 (Contractionary):</strong> 目標是為過熱的經濟降溫，通常會<strong>減少</strong>貨幣供應或<strong>減少</strong>總需求。</li>
+            <li class="en-text"><strong>Contractionary:</strong> The goal is to cool down an overheating economy, typically by <strong>decreasing</strong> the money supply or <strong>decreasing</strong> aggregate demand.</li>
+        </ul>
+
+        <p>當我們談及貨幣乘數 (Money Multiplier) \( m \) 時：</p>
+        <p class="en-text">When we talk about the Money Multiplier \( m \):</p>
+        <div class="math-block">
+            $$ m = \frac{1}{R} $$
+        </div>
+        <p>（其中 \( R \) 為法定儲備比率 / where \( R \) is the required reserve ratio）</p>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="option correct">
+        <strong>✅ 正確答案：選項 A (Option A) - 增加貼現率 (an increase in the discount rate)</strong>
+        <p><strong>分析：</strong> 貼現率是中央銀行向商業銀行借款時收取的利率。當央行<strong>增加</strong>貼現率時，商業銀行向央行借取儲備的成本上升。因此，銀行會減少借款，導致銀行體系的儲備減少，貨幣供應 \( M_s \) 隨之下降。這是典型的<strong>收縮性貨幣政策</strong>。</p>
+        <p class="en-text"><strong>Analysis:</strong> The discount rate is the interest rate charged by the central bank on loans to commercial banks. When the central bank <strong>increases</strong> the discount rate, the cost for commercial banks to borrow reserves increases. Consequently, banks borrow less, leading to a decrease in reserves in the banking system, and the money supply \( M_s \) falls. This is a classic <strong>contractionary monetary policy</strong>.</p>
+    </div>
+
+    <div class="option wrong">
+        <strong>❌ 選項 B (Option B) - 增加薪俸稅率 (an increase in the salaries tax rate)</strong>
+        <p><strong>分析：</strong> 增加稅率的確是一種「收縮性」的政策（因為它會減少市民的可支配收入，從而壓抑消費），但它屬於<strong>財政政策 (Fiscal Policy)</strong>，而非貨幣政策。稅收由政府控制，與貨幣供應無直接關係。</p>
+        <p class="en-text"><strong>Analysis:</strong> Increasing the tax rate is indeed a "contractionary" policy (as it reduces citizens' disposable income, thereby suppressing consumption), but it is a <strong>Fiscal Policy</strong>, not a monetary policy. Taxation is controlled by the government and has no direct relationship with the money supply.</p>
+    </div>
+
+    <div class="option wrong">
+        <strong>❌ 選項 C (Option C) - 減低法定儲備比率 (a decrease in the required reserve ratio)</strong>
+        <p><strong>分析：</strong> 減低法定儲備比率會令貨幣乘數 \( m \) 上升（根據公式 \( m = 1/R \)），這會令銀行能借出更多貸款，增加貨幣供應。因此，這是一項貨幣政策，但它是<strong>擴張性 (Expansionary)</strong> 的，而非收縮性。</p>
+        <p class="en-text"><strong>Analysis:</strong> Decreasing the required reserve ratio increases the money multiplier \( m \) (according to the formula \( m = 1/R \)), allowing banks to lend out more money, thereby increasing the money supply. Therefore, this is a monetary policy, but it is <strong>Expansionary</strong>, not contractionary.</p>
+    </div>
+
+    <div class="option wrong">
+        <strong>❌ 選項 D (Option D) - 減低移民的配額 (a decrease in the quota for migration)</strong>
+        <p><strong>分析：</strong> 移民配額影響的是人口與勞動力供應 (Labor Supply)。這屬於人口或勞工政策，完全不屬於貨幣政策的範疇。</p>
+        <p class="en-text"><strong>Analysis:</strong> Migration quotas affect population and Labor Supply. This is a demographic or labor policy and falls completely outside the scope of monetary policy.</p>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <p>解答這題的「解題樞紐 (Pivot Point)」在於看懂題目要求的兩個條件：</p>
+    <p class="en-text">The "Pivot Point" to solving this question lies in understanding the two conditions requested in the prompt:</p>
+    <ol>
+        <li>必須是<strong>貨幣 (Monetary)</strong> 政策 -> 排除選項 B (稅收是財政) 及 D (移民是人口)。<br>
+        <span class="en-text">Must be <strong>Monetary</strong> -> Eliminate Option B (tax is fiscal) and D (migration is demographic).</span></li>
+        <li>必須是<strong>收縮性 (Contractionary)</strong> -> 比較剩下的 A 和 C。A 會減少貨幣供應 (收縮)，C 會增加貨幣供應 (擴張)。<br>
+        <span class="en-text">Must be <strong>Contractionary</strong> -> Compare remaining A and C. A decreases money supply (contractionary), C increases money supply (expansionary).</span></li>
+    </ol>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <p>⚠️ <strong>陷阱一：</strong> 混淆「財政政策」與「貨幣政策」。很多同學看到「增加稅率會令經濟收縮」，就馬上選擇 B，忽略了題目問的是「貨幣政策」。</p>
+    <p class="en-text">⚠️ <strong>Trap 1:</strong> Confusing Fiscal and Monetary policies. Many students see that "increasing taxes shrinks the economy" and immediately choose B, ignoring that the question specifically asked for "Monetary policy".</p>
+    
+    <p>⚠️ <strong>陷阱二：</strong> 錯誤記憶法定儲備比率與貨幣供應的關係。緊記公式 \( m = \frac{1}{R} \)，比率 \( R \) 與乘數 \( m \) 是反比關係。減低 \( R \) 等同於增加貨幣供應！</p>
+    <p class="en-text">⚠️ <strong>Trap 2:</strong> Misremembering the relationship between the required reserve ratio and the money supply. Remember the formula \( m = \frac{1}{R} \); the ratio \( R \) and multiplier \( m \) have an inverse relationship. Decreasing \( R \) is equivalent to increasing the money supply!</p>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>🙋‍♂️ 學生問 (Q):</strong> 為什麼銀行向中央銀行借錢的利率（貼現率）上升，會影響市面上的貨幣供應量？</p>
+        <p class="en-text"><strong>Student:</strong> Why does an increase in the interest rate at which banks borrow from the central bank (discount rate) affect the money supply in the market?</p>
+        
+        <p><strong>👨‍🏫 導師答 (A):</strong> 想像中央銀行是「銀行的銀行」。當銀行缺乏現金儲備時，會向央行借錢。如果貼現率上升（借錢成本變貴），商業銀行為了避免向央行借貴錢，就會選擇保留多一點現金在金庫，減少把錢借給市民和企業。市民借不到錢，市場上流動的貨幣量 \( M_s \) 自然就減少了。</p>
+        <p class="en-text"><strong>Tutor:</strong> Imagine the central bank as the "bank for banks." When banks lack cash reserves, they borrow from the central bank. If the discount rate rises (borrowing becomes more expensive), commercial banks, to avoid borrowing expensive money from the central bank, will choose to hold more cash in their vaults and lend less to citizens and businesses. When people can't borrow money, the amount of money circulating in the market \( M_s \) naturally decreases.</p>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p>💡 <strong>速解法 (The Actor Method):</strong></p>
+        <p>在 DSE 選擇題中，一看到「貨幣政策」，立刻在腦海中浮現<strong>「中央銀行、利率、準備金」</strong>。一看到「財政政策」，立刻浮現<strong>「政府、稅、政府開支」</strong>。</p>
+        <p>看到題目問「貨幣政策」，你可以 1 秒鐘內劃走所有關於「稅 (Tax)」、「基建 (Infrastructure)」、「社會福利 (Social Welfare)」的選項！</p>
+        <p class="en-text"><strong>Trick:</strong> In DSE MCQs, the moment you see "Monetary Policy", immediately think <strong>"Central Bank, Interest Rates, Reserves"</strong>. When you see "Fiscal Policy", think <strong>"Government, Taxes, Government Expenditure"</strong>. Because the question asks for "Monetary Policy", you can cross out any options containing "Tax", "Infrastructure", or "Social Welfare" in exactly 1 second!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
