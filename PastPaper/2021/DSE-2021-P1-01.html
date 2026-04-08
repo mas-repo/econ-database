@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Positive vs. Normative</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0284c7;
+            --light-blue: #f0f9ff;
+            --accent-blue: #0ea5e9;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+            --border-gray: #e5e7eb;
+            --correct-green: #16a34a;
+            --wrong-red: #dc2626;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei', 'PingFang HK';
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+            margin-top: 1.5em;
+        }
+
+        .header-box {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-box h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--accent-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: var(--bg-gray);
+            border-left: 4px solid var(--text-muted);
+        }
+
+        .option.correct {
+            background-color: #f0fdf4;
+            border-left-color: var(--correct-green);
+        }
+
+        .option.wrong {
+            background-color: #fef2f2;
+            border-left-color: var(--wrong-red);
+        }
+
+        .option-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+
+        .qa-box {
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .trick-box {
+            background: linear-gradient(to right, #fffbeb, #fef3c7);
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .header-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>HKDSE Economics Concept Guide</h1>
+        <div>
+            <span class="tag"><strong>課題 Topic:</strong> 實證與規範經濟學 Positive vs. Normative Economics</span>
+            <span class="tag"><strong>難度 Difficulty:</strong> ★★☆☆☆ (2/5)</span>
+            <span class="tag"><strong>關鍵詞 Key Concepts:</strong> 實證陳述 Positive, 規範陳述 Normative, 可推翻性 Refutability</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p><strong>參閱下列彼得和瑪莉所作的陳述。</strong><br>
+        <span class="en-text">Refer to the following statements made by Peter and Mary.</span></p>
+
+        <p><strong>彼得：香港作為一已發展經濟體，它的堅尼系數太高了。</strong><br>
+        <span class="en-text">Peter: As a developed economy, Hong Kong’s Gini coefficient is too high.</span></p>
+
+        <p><strong>瑪莉：香港的堅尼系數是全亞洲最高的。</strong><br>
+        <span class="en-text">Mary: Hong Kong’s Gini coefficient is the highest in Asia.</span></p>
+
+        <p><strong>_________________ 的陳述屬 ______________ 因為 ____________________。</strong><br>
+        <span class="en-text">_________________ statement is ______________ because ____________________.</span></p>
+
+        <p>A. 彼得 … 實證性 … 大部分人認同該陳述<br>
+        <span class="en-text">A. Peter’s … positive … most people agree with it</span></p>
+        
+        <p>B. 彼得 … 規範性 … 該陳述和現實世界的數據並不相符<br>
+        <span class="en-text">B. Peter’s … normative … it is inconsistent with the real world data</span></p>
+        
+        <p>C. 瑪莉 … 實證性 … 該陳述可以被事實推翻<br>
+        <span class="en-text">C. Mary’s … positive … it can be rejected by fact</span></p>
+        
+        <p>D. 瑪莉 … 規範性 … 該陳述涉及價值判斷<br>
+        <span class="en-text">D. Mary’s … normative … value judgement is involved in the statement</span></p>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p>要拆解這類題目，我們必須清楚分辨「實證」與「規範」經濟學的根本差異。<br>
+        <span class="en-text">To tackle this type of question, we must clearly distinguish the fundamental differences between "Positive" and "Normative" economics.</span></p>
+
+        <ul>
+            <li><strong>實證性陳述 (Positive Statement):</strong> 處理「是甚麼」(What is)。這類陳述基於客觀事實，<strong>可以被事實或數據推翻 (Testable / Refutable)</strong>。注意：即使一個陳述在現實中是錯的，只要它能被驗證，它依然是實證性陳述。<br>
+            <span class="en-text">Deals with "What is". These statements are based on objective facts and <strong>can be refuted by facts or data (Testable / Refutable)</strong>. Note: Even if a statement is factually wrong in reality, as long as it can be tested, it is still a positive statement.</span></li>
+            
+            <li><strong>規範性陳述 (Normative Statement):</strong> 處理「應該是甚麼」(What ought to be)。這類陳述涉及<strong>價值判斷 (Value Judgements)</strong>，表達個人意見或偏好，因此<strong>不能被事實推翻 (Not Testable)</strong>。<br>
+            <span class="en-text">Deals with "What ought to be". These statements involve <strong>value judgements</strong>, expressing personal opinions or preferences, and therefore <strong>cannot be refuted by facts (Not Testable)</strong>.</span></li>
+        </ul>
+
+        <p><strong>補充概念 (Supplementary Concept): 堅尼系數 Gini Coefficient</strong><br>
+        雖然此題不需計算堅尼系數，但我們重溫一下其定義公式：<br>
+        <span class="en-text">Although this question does not require calculating the Gini coefficient, let's review its defining formula:</span></p>
+        
+        <div class="math-block">
+            $$ \text{Gini Coefficient} = \frac{\text{Area A}}{\text{Area A} + \text{Area B}} $$
+        </div>
+        <p>數值介乎 \( 0 \)（絕對平均）與 \( 1 \)（絕對不平均）之間。<br>
+        <span class="en-text">The value ranges between \( 0 \) (absolute equality) and \( 1 \) (absolute inequality).</span></p>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p><strong>正確答案 Correct Option: C</strong></p>
+
+    <div class="option wrong">
+        <div class="option-label">Option A (錯誤 Incorrect)</div>
+        <p>彼得的陳述包含「太高」(too high)，這是一種主觀的價值判斷，因此是規範性 (Normative) 而非實證性 (Positive)。此外，「大部分人認同」並不能使一個陳述變成實證性。<br>
+        <span class="en-text">Peter's statement contains "too high", which is a subjective value judgement. Therefore, it is normative, not positive. Furthermore, "most people agree" does not turn a statement into a positive one.</span></p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-label">Option B (錯誤 Incorrect)</div>
+        <p>彼得的陳述確實是規範性 (Normative)，但選項給出的原因錯誤。規範性陳述的特徵是「涉及價值判斷」，而不是「與現實數據不符」。「與現實數據不符」描述的是一個錯誤的實證性陳述。<br>
+        <span class="en-text">Peter's statement is indeed normative, but the reason given in the option is wrong. The characteristic of a normative statement is that it "involves value judgement", not that it "is inconsistent with real world data". Being inconsistent with data actually describes a false positive statement.</span></p>
+    </div>
+
+    <div class="option correct">
+        <div class="option-label">Option C (正確 Correct)</div>
+        <p>瑪莉的陳述指出「香港的堅尼系數是全亞洲最高」。這是一個客觀的主張，我們可以透過收集亞洲各國的堅尼系數數據來驗證這句話的真偽。因為它「可以被事實推翻」，所以它是實證性陳述。<br>
+        <span class="en-text">Mary's statement claims "Hong Kong’s Gini coefficient is the highest in Asia". This is an objective claim. We can verify its truthfulness by collecting data on Gini coefficients of Asian countries. Because it "can be rejected by fact", it is a positive statement.</span></p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-label">Option D (錯誤 Incorrect)</div>
+        <p>正如上文解釋，瑪莉的陳述可以被客觀數據驗證，並不涉及主觀的價值觀（如「好/壞」、「應該/不應該」）。「最高」(highest) 只是一個數學上的排序，不是價值判斷。<br>
+        <span class="en-text">As explained above, Mary's statement can be verified by objective data and does not involve subjective values (like "good/bad", "should/should not"). "Highest" is merely a mathematical ranking, not a value judgement.</span></p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <p>做這類題目時，我們需要尋找<strong>「樞紐字眼」(Pivot Words)</strong> 來快速判斷：<br>
+    <span class="en-text">When doing this type of question, we need to look for <strong>"Pivot Words"</strong> to make quick judgements:</span></p>
+
+    <ul>
+        <li><strong>彼得的關鍵字：</strong> 「太高」(too high)。甚麼數值才算「太」高？這是沒有客觀標準的，純屬個人感受。因此：<strong>彼得 = 規範性 (Normative)</strong>。<br>
+        <span class="en-text"><strong>Peter's keyword:</strong> "too high". What value is considered "too" high? There is no objective standard; it's pure personal feeling. Thus: <strong>Peter = Normative</strong>.</span></li>
+        
+        <li><strong>瑪莉的關鍵字：</strong> 「最高」(highest)。這是一個統計事實的宣稱。只要把亞洲地區的數字排序列出，就能知道這句話對不對。因此：<strong>瑪莉 = 實證性 (Positive)</strong>。<br>
+        <span class="en-text"><strong>Mary's keyword:</strong> "highest". This is a declaration of a statistical fact. By listing and ranking the figures in Asian regions, we can know if this statement is true or false. Thus: <strong>Mary = Positive</strong>.</span></li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="qa-box" style="border-color: var(--wrong-red);">
+        <p>⚠️ <strong>陷阱 Trap: 混淆「事實錯誤」與「價值判斷」<br>
+        <span class="en-text">Confusing "Factual Errors" with "Value Judgements"</span></strong></p>
+        <p>很多學生以為「錯的句子就是規範性陳述」。這是嚴重的概念錯誤！如果我說「太陽從西方升起」，這句話絕對是錯的，但它依然是<strong>實證性陳述 (Positive Statement)</strong>，因為它正是被「事實」(太陽從東方升起) 給推翻了！<br>
+        <span class="en-text">Many students think "a wrong sentence is a normative statement". This is a severe conceptual error! If I say "The sun rises in the west", this statement is absolutely wrong, but it is still a <strong>Positive Statement</strong> because it is exactly refuted by the "fact" (the sun rises in the east)!</span></p>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 如果現實中，澳門的堅尼系數其實比香港還要高，那麼瑪莉的陳述還是實證性 (Positive) 嗎？<br>
+        <span class="en-text">Q: If in reality, Macau's Gini coefficient is actually higher than Hong Kong's, is Mary's statement still positive?</span></p>
+        <p>A: 絕對是！「實證性」的定義是<strong>「可被驗證」(testable)</strong>，而不是「絕對正確」(always true)。如果澳門的數據真的比香港高，這就完美示範了瑪莉的陳述「可以被事實推翻」(can be rejected by fact)，這正是選項 C 描述的實證經濟學特徵。<br>
+        <span class="en-text">A: Absolutely! The definition of "positive" is <strong>"testable"</strong>, not "always true". If Macau's data is indeed higher, this perfectly demonstrates that Mary's statement "can be rejected by fact", which is exactly the characteristic of positive economics described in Option C.</span></p>
+    </div>
+
+    <div class="qa-box">
+        <p class="qa-q">Q: 要怎樣改寫彼得的句子，才能讓它變成實證性 (Positive) 陳述？<br>
+        <span class="en-text">Q: How can we rewrite Peter's sentence to make it a positive statement?</span></p>
+        <p>A: 只要刪除主觀的「太」(too) 字，換成具體的數字即可。例如改為：「香港作為一已發展經濟體，它的堅尼系數超過了 \( 0.5 \)」。這句話就可以用數據去檢驗了。<br>
+        <span class="en-text">A: Simply remove the subjective word "too" and replace it with concrete numbers. For example, change it to: "As a developed economy, Hong Kong's Gini coefficient exceeds \( 0.5 \)". This sentence can then be tested with data.</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p><strong>一秒判定法 (The One-Second Rule):</strong></p>
+        <p>在考場上，快速掃描句子中的形容詞和助動詞：<br>
+        <span class="en-text">In the exam room, quickly scan for adjectives and auxiliary verbs in the sentence:</span></p>
+        <ul>
+            <li>見到 <strong>應該 (should/ought to)</strong>、<strong>公平/不公平 (fair/unfair)</strong>、<strong>好/壞 (good/bad)</strong>、<strong>太 (too)</strong> 👉 秒選 <strong>規範性 (Normative)</strong>。<br>
+            <span class="en-text">See <strong>should/ought to</strong>, <strong>fair/unfair</strong>, <strong>good/bad</strong>, <strong>too</strong> 👉 Instantly choose <strong>Normative</strong>.</span></li>
+            
+            <li>見到 <strong>是/不是 (is/is not)</strong>、<strong>上升/下降 (increase/decrease)</strong>、<strong>最高/最低 (highest/lowest)</strong> 👉 秒選 <strong>實證性 (Positive)</strong>。<br>
+            <span class="en-text">See <strong>is/is not</strong>, <strong>increase/decrease</strong>, <strong>highest/lowest</strong> 👉 Instantly choose <strong>Positive</strong>.</span></li>
+        </ul>
+        <p>應用在此題：看到彼得說「太高」(too high)，立刻排除選項 A 和 C。看到瑪莉說「最高」(highest)，確認她是實證性，直接鎖定選項 C，完成！<br>
+        <span class="en-text">Applied to this question: Seeing Peter say "too high", immediately eliminate Options A and C. Seeing Mary say "highest", confirm she is positive, directly lock in Option C. Done!</span></p>
+    </div>
+
+</body>
+</html>
