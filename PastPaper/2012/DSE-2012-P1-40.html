@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Balance of Payments</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        p { margin: 10px 0; }
+
+        .bilingual-zh {
+            font-weight: 500;
+        }
+
+        .bilingual-en {
+            color: var(--text-en);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .header-section {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: var(--bg-light);
+        }
+
+        .option-correct {
+            border-left: 5px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+
+        .option-incorrect {
+            border-left: 5px solid #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .concept-box, .tips-box, .qa-box { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <p><strong>主題 (Topic):</strong> 國際收支平衡：經常帳 (Balance of Payments: Current Account)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>核心概念 (Key Concepts):</strong> <span class="badge">無形進口 Invisible Import</span> <span class="badge">經常帳 Current Account</span> <span class="badge">服務貿易 Trade in Services</span></p>
+    </div>
+
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="bilingual-zh">下列哪項是香港經常帳中的無形進口？</p>
+        <p class="bilingual-en">Which of the following is an invisible import in the current account of Hong Kong?</p>
+
+        <p class="bilingual-zh">A. 一名香港旅客在北京購買門票遊覽當地的博物館。</p>
+        <p class="bilingual-en">A. In Beijing, a Hong Kong tourist purchases tickets to visit a local museum.</p>
+
+        <p class="bilingual-zh">B. 一名內地居民在香港向醫院求診。</p>
+        <p class="bilingual-en">B. A Mainland resident consults a doctor in a hospital in Hong Kong.</p>
+
+        <p class="bilingual-zh">C. 一名內地億萬富翁捐款予香港一間大學。</p>
+        <p class="bilingual-en">C. A Mainland billionaire donates money to a university in Hong Kong.</p>
+
+        <p class="bilingual-zh">D. 一家香港製造商向一家內地廠商購買原料。</p>
+        <p class="bilingual-en">D. A Hong Kong manufacturer purchases raw materials from a Mainland firm.</p>
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="bilingual-zh"><strong>國際收支平衡表 (Balance of Payments)</strong> 記錄了一個經濟體與世界各地之間的所有交易。當中的<strong>經常帳 (Current Account)</strong> 主要包含四個部分：</p>
+        <p class="bilingual-en">The <strong>Balance of Payments (BOP)</strong> records all economic transactions between an economy and the rest of the world. The <strong>Current Account</strong> mainly consists of four components:</p>
+
+        <div class="math-block">
+            $$ \text{Current Account} = \text{Net Goods} + \text{Net Services} + \text{Net Primary Income} + \text{Net Secondary Income} $$
+        </div>
+
+        <ul>
+            <li>
+                <p class="bilingual-zh"><strong>有形貿易 (Trade in Goods / Visible Trade):</strong> 涉及實體商品的進出口（例如：電子產品、原料）。</p>
+                <p class="bilingual-en"><strong>Trade in Goods (Visible Trade):</strong> Involves the import/export of physical products (e.g., electronics, raw materials).</p>
+            </li>
+            <li>
+                <p class="bilingual-zh"><strong>無形貿易 (Trade in Services / Invisible Trade):</strong> 涉及非實體的服務交易（例如：旅遊、金融、醫療、運輸）。<strong>無形進口 (Invisible Import)</strong> 是指本地居民消費外國提供的服務，導致資金流出本地。</p>
+                <p class="bilingual-en"><strong>Trade in Services (Invisible Trade):</strong> Involves non-physical service transactions (e.g., tourism, finance, medical, transportation). An <strong>Invisible Import</strong> occurs when local residents consume services provided by foreigners, causing money to flow out of the local economy.</p>
+            </li>
+            <li>
+                <p class="bilingual-zh"><strong>次要收入 / 經常轉移 (Secondary Income / Current Transfers):</strong> 單向的資金轉移，不涉及任何商品或服務的交換（例如：捐款、外傭匯款）。</p>
+                <p class="bilingual-en"><strong>Secondary Income (Current Transfers):</strong> One-way transfers of money without the exchange of goods or services (e.g., donations, remittances by foreign domestic helpers).</p>
+            </li>
+        </ul>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <p class="bilingual-zh"><strong>正確答案是：選項 A</strong></p>
+    <p class="bilingual-en"><strong>The correct answer is: Option A</strong></p>
+
+    <div class="option-analysis option-correct">
+        <h3>選項 A (Option A) - 正確 (Correct)</h3>
+        <p class="bilingual-zh"><strong>分析：</strong> 香港旅客在外地（北京）消費，購買的是「旅遊及娛樂服務」。因為這是一項服務而非實體商品過境，所以屬於「無形」；同時，香港居民付款給外地機構，資金從香港流出，因此屬於「進口」。這完全符合「無形進口」的定義。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> A Hong Kong tourist spending money abroad (in Beijing) is purchasing "tourism and entertainment services". Since this is a service and not physical goods crossing borders, it is "invisible". Since a Hong Kong resident is paying a foreign entity, money flows out of Hong Kong, making it an "import". This perfectly fits the definition of an invisible import.</p>
+    </div>
+
+    <div class="option-analysis option-incorrect">
+        <h3>選項 B (Option B) - 錯誤 (Incorrect)</h3>
+        <p class="bilingual-zh"><strong>分析：</strong> 醫療屬於「服務」（無形）。但是，這是一非本地居民（內地居民）向香港醫院付款，資金流入香港。因此，這是香港的<strong>無形出口 (Invisible Export)</strong>。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> Medical care is a "service" (invisible). However, a non-resident (Mainland resident) is paying a Hong Kong hospital, meaning money flows INTO Hong Kong. Therefore, this is an <strong>Invisible Export</strong> for Hong Kong.</p>
+    </div>
+
+    <div class="option-analysis option-incorrect">
+        <h3>選項 C (Option C) - 錯誤 (Incorrect)</h3>
+        <p class="bilingual-zh"><strong>分析：</strong> 捐款是一種單向的金錢轉移，大學並沒有提供相應的商品或服務作為交換。因此，這屬於經常帳中的<strong>次要收入 / 經常轉移收入 (Secondary Income / Current Transfer Receipt)</strong>，而不是貿易。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> A donation is a one-way transfer of money; the university does not provide goods or services in exchange. Therefore, this falls under <strong>Secondary Income / Current Transfer Receipts</strong> in the current account, not trade.</p>
+    </div>
+
+    <div class="option-analysis option-incorrect">
+        <h3>選項 D (Option D) - 錯誤 (Incorrect)</h3>
+        <p class="bilingual-zh"><strong>分析：</strong> 「原料」是看得見、摸得著的實體商品。資金雖然流出香港（進口），但因為是實體物品，所以這是<strong>有形進口 (Visible Import)</strong>。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> "Raw materials" are physical, tangible goods. While money is flowing out of Hong Kong (making it an import), the physical nature makes this a <strong>Visible Import</strong>.</p>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <p class="bilingual-zh">處理這類國際貿易分類題目，你需要尋找兩個「關鍵點 (Pivot Points)」：</p>
+    <p class="bilingual-en">To tackle this type of international trade classification question, you need to identify two "Pivot Points":</p>
+
+    <ol>
+        <li>
+            <p class="bilingual-zh"><strong>關鍵一：是「有形」還是「無形」？(Visible vs. Invisible?)</strong><br>
+            問自己：交易的是實體物品（原料、成衣）還是服務（旅遊、教育、醫療）？這能讓你立刻排除選項 D。</p>
+            <p class="bilingual-en"><strong>Pivot 1: Is it Visible or Invisible?</strong><br>
+            Ask yourself: Is the transaction for physical goods (raw materials, clothes) or services (tourism, education, medical)? This immediately eliminates Option D.</p>
+        </li>
+        <li>
+            <p class="bilingual-zh"><strong>關鍵二：是「進口」還是「出口」？(Import vs. Export?)</strong><br>
+            問自己：資金是流出還是流入？香港人付錢給外地 = 資金流出 = 進口。外地人付錢給香港 = 資金流入 = 出口。這能讓你區分選項 A（進口）和選項 B（出口）。</p>
+            <p class="bilingual-en"><strong>Pivot 2: Is it an Import or Export?</strong><br>
+            Ask yourself: Is money flowing out or in? HK residents paying foreigners = money flows out = Import. Foreigners paying HK = money flows in = Export. This helps you distinguish between Option A (Import) and Option B (Export).</p>
+        </li>
+    </ol>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <p class="bilingual-zh">❌ <strong>陷阱一：混淆交易發生的地點與進出口的關係。</strong><br>
+        很多學生誤以為「在香港發生」的交易就是本地消費。記住，旅遊業是一個特例：當外地遊客在香港消費（如選項 B 的醫院求診），對香港來說是<strong>服務的出口</strong>，因為賺取了外匯！</p>
+        <p class="bilingual-en">❌ <strong>Trap 1: Confusing the location of the transaction with import/export status.</strong><br>
+        Many students mistakenly believe that any transaction "happening in HK" is local consumption. Remember, tourism is a special case: when foreign tourists spend money in HK (like consulting a doctor in Option B), it is an <strong>export of services</strong> for HK because it earns foreign exchange!</p>
+
+        <p class="bilingual-zh">❌ <strong>陷阱二：忽略了「無償轉移」。</strong><br>
+        看到錢的流動就以為是貿易（進出口）。選項 C 的捐款、或者外傭寄錢回鄉，都沒有涉及實質生產的服務或貨品交換，必須歸類為「次要收入/經常轉移」。</p>
+        <p class="bilingual-en">❌ <strong>Trap 2: Ignoring "Unrequited Transfers".</strong><br>
+        Assuming any flow of money is trade (import/export). Donations in Option C, or domestic helpers sending money home, do not involve an exchange of productive services or goods, and MUST be classified as "Secondary Income / Current Transfers".</p>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="bilingual-zh"><strong>問 (Q)：選項 A 中，香港旅客明明是在北京買門票，為甚麼算是香港的進口？</strong></p>
+        <p class="bilingual-en"><strong>Q: In Option A, the HK tourist buys the ticket in Beijing. Why is it counted as an import for Hong Kong?</strong></p>
+        
+        <p class="bilingual-zh"><strong>答 (A)：</strong> 因為在國際收支的概念中，「進口」的本質是<strong>本地居民消耗了外地的資源/服務，導致本地資金流失</strong>。無論這位香港居民是在網上預訂北京博物館的門票，還是親身飛到北京購買，只要付款方是香港居民，收款方是外地機構，且交易涉及服務，這就是香港的服務進口。</p>
+        <p class="bilingual-en"><strong>A:</strong> Because in the context of Balance of Payments, the essence of an "import" is that <strong>a local resident consumes foreign resources/services, causing local funds to flow out</strong>. Whether the HK resident books the Beijing museum ticket online or flies there to buy it in person, as long as the payer is a HK resident, the payee is a foreign entity, and it involves a service, it is an import of services for Hong Kong.</p>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p class="bilingual-zh">當你在考場上看到「無形進口 (Invisible Import)」這個詞時，你的大腦應該立即啟動這個過濾機制：</p>
+    <p class="bilingual-en">When you see the term "Invisible Import" in the exam, your brain should immediately activate this filtering mechanism:</p>
+    
+    <ul>
+        <li><p class="bilingual-zh"><strong>找「服務」</strong> $\rightarrow$ 劃掉所有提到實體貨品（原料、汽車、成衣）的選項。</p>
+            <p class="bilingual-en"><strong>Look for "Services"</strong> $\rightarrow$ Cross out any option mentioning physical goods (raw materials, cars, clothing).</p></li>
+        <li><p class="bilingual-zh"><strong>找「香港人付錢給外國」</strong> $\rightarrow$ 劃掉所有外國人來香港花錢的選項（因為那是出口）。</p>
+            <p class="bilingual-en"><strong>Look for "HK people paying foreigners"</strong> $\rightarrow$ Cross out any option where foreigners spend money in HK (because that is an export).</p></li>
+        <li><p class="bilingual-zh"><strong>排除「免費/單向」</strong> $\rightarrow$ 劃掉捐款、匯款、禮物等字眼。</p>
+            <p class="bilingual-en"><strong>Eliminate "Free/One-way" transfers</strong> $\rightarrow$ Cross out words like donations, remittances, or gifts.</p></li>
+    </ul>
+
+</body>
+</html>

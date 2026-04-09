@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Effective Quota Analysis</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Tailwind sky-700 */
+            --secondary-color: #0ea5e9; /* Tailwind sky-500 */
+            --bg-color: #f8fafc;
+            --box-bg: #f0f9ff;
+            --text-main: #1e293b; /* Tailwind slate-800 */
+            --text-en: #475569; /* Tailwind slate-600 */
+            --correct-color: #15803d; /* Tailwind green-700 */
+            --correct-bg: #f0fdf4;
+            --math-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '📌';
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-size: 0.95em;
+        }
+
+        .header-info {
+            background-color: var(--text-main);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-info span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-card {
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .correct-ans {
+            border-color: var(--correct-color);
+            background-color: var(--correct-bg);
+        }
+
+        .correct-ans h3 {
+            color: var(--correct-color);
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-info">
+        <span><strong>Topic (課題):</strong> 微觀經濟學 - 市場干預：配額 (Microeconomics - Market Intervention: Quota)</span>
+        <span><strong>Difficulty (難度):</strong> ⭐⭐⭐ (3/5)</span>
+        <span><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">有效配額 Effective Quota</span> 
+            <span class="tag">淨損失 Deadweight Loss</span> 
+            <span class="tag">物品素質 Quality of Good</span>
+        </span>
+    </div>
+
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>增加對某物品的有效配額會導致</strong></p>
+        <p>
+            (1) 該物品的交易量上升。<br>
+            (2) 該物品的質素進一步提升。<br>
+            (3) 效率損失較小。
+        </p>
+        <p>
+            A. 只有 (1)、(2)<br>
+            B. 只有 (1)、(3)<br>
+            C. 只有 (2)、(3)<br>
+            D. (1)、(2) 及 (3)
+        </p>
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+        <p class="en-text"><strong>The increase of an effective quota on a good will result in</strong></p>
+        <p class="en-text">
+            (1) an increase in the quantity transacted of the good.<br>
+            (2) a further improvement in the quality of the good.<br>
+            (3) a smaller deadweight loss.
+        </p>
+        <p class="en-text">
+            A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)
+        </p>
+    </div>
+
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>1. 有效配額 (Effective Quota)</h3>
+        <p>政府規定的最高生產量或進口量。當配額設定在<strong>低於</strong>自由市場的均衡交易量 \(Q_e\) 時，該配額即為「有效」。</p>
+        <p class="en-text">A maximum limit set by the government on the quantity produced or imported. A quota is "effective" when it is set <strong>below</strong> the free-market equilibrium quantity \(Q_e\).</p>
+        
+        <h3>2. 淨損失 / 效率損失 (Deadweight Loss)</h3>
+        <p>由於配額限制了交易量，使得某些邊際利益大於邊際成本 (\(MB > MC\)) 的交易無法進行，導致社會總盈餘減少。</p>
+        <p class="en-text">Because the quota restricts the quantity transacted, mutually beneficial transactions where Marginal Benefit exceeds Marginal Cost (\(MB > MC\)) cannot take place, leading to a loss in total social surplus.</p>
+        <div class="math-block">
+            $$ \text{Deadweight Loss (DWL)} = \text{Total Social Surplus at } Q_e - \text{Total Social Surplus at } Q_{quota} $$
+        </div>
+
+        <h3>3. 配額與物品素質 (Quota and Quality Effect)</h3>
+        <p>根據相對價格的邏輯（類似艾智仁一般性概念 Alchian-Allen Theorem），實施配額會產生「配額租值」(Quota Rent / Premium)。這相當於對每件物品加上固定的額外成本，使得高質素物品相對低質素物品的價格下降。因此，實施配額會誘使生產商提高物品素質（"運走好蘋果"）。</p>
+        <p class="en-text">Based on relative price logic (similar to the Alchian-Allen Theorem), an effective quota creates a "quota rent/premium". This acts like a fixed additional cost per unit, which lowers the relative price of high-quality goods compared to low-quality goods. Therefore, imposing a quota induces producers to upgrade the quality of the good ("shipping the good apples out").</p>
+    </div>
+
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="analysis-card correct-ans">
+        <h3>✅ Correct Option: B (只有 1 和 3 / 1 and 3 only)</h3>
+        <p>正確答案是 B。以下是每個陳述的逐一拆解：</p>
+        <p class="en-text">The correct answer is B. Here is the step-by-step breakdown for each statement:</p>
+    </div>
+
+    <div class="analysis-card">
+        <h4>Statement (1): 交易量上升 / Increase in quantity transacted</h4>
+        <p><strong>正確 (Correct)。</strong>「有效配額」意味著目前的配額數量 \(Q_{quota}\) 小於市場原本的需求與供應均衡點 \(Q_e\)。如果政府<strong>增加</strong>配額（例如由 1000 件增加到 1500 件，而均衡點是 2000 件），法定容許的最高交易量放寬了。因此，實際交易量會跟隨配額的增加而上升。</p>
+        <p class="en-text">An "effective quota" means the current quota quantity \(Q_{quota}\) is strictly less than the free-market equilibrium \(Q_e\). If the government <strong>increases</strong> the quota (e.g., from 1000 units to 1500 units, assuming \(Q_e\) is 2000), the legally permitted maximum quantity is relaxed. Thus, the actual quantity transacted will increase alongside the quota.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h4>Statement (2): 質素進一步提升 / Further improvement in quality</h4>
+        <p><strong>錯誤 (Incorrect)。</strong> 實施有效配額的確會提升物品素質。但題目問的是「<strong>增加</strong>有效配額」（即放寬限制）。當配額增加，配額的稀缺性下降，每單位的配額租值（Quota Premium）隨之減少。這意味著高質素物品相對於低質素物品的相對價格會<strong>上升</strong>。因此，生產商提升素質的誘因會減弱，質素不僅不會進一步提升，反而可能下降。</p>
+        <p class="en-text">Imposing an effective quota does improve quality. However, the question asks about <strong>increasing</strong> (relaxing) an effective quota. When the quota increases, its scarcity diminishes, and the per-unit quota premium falls. This means the relative price of high-quality goods compared to low-quality goods will <strong>rise</strong>. Therefore, the incentive for producers to upgrade quality weakens. The quality will not "further improve"; it may actually drop.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h4>Statement (3): 效率損失較小 / Smaller deadweight loss</h4>
+        <p><strong>正確 (Correct)。</strong> 效率損失（淨損失）是由於產出偏離了最優水平 \(Q_e\) 所致。當政府增加有效配額時，交易數量會向右移動，更接近自由市場的均衡點 \(Q_e\)。因為促成了更多 \(MB > MC\) 的交易，圖表上的淨損失三角形面積會縮小。</p>
+        <p class="en-text">Deadweight loss occurs because output deviates from the socially optimal level \(Q_e\). When the government increases an effective quota, the quantity transacted shifts to the right, moving closer to the free-market equilibrium \(Q_e\). Because more mutually beneficial transactions (\(MB > MC\)) can now occur, the area of the deadweight loss triangle shrinks.</p>
+    </div>
+
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <p>這類題目的<strong>破題關鍵 (Pivot Point)</strong> 在於分辨「實施配額 (Imposing a quota)」與「增加/放寬配額 (Increasing a quota)」的分別。</p>
+    <p class="en-text">The <strong>pivot point</strong> of this type of question lies in distinguishing between "imposing a quota" and "increasing/relaxing a quota."</p>
+    <ul>
+        <li><strong>陷阱：</strong> 很多同學看到「配額」和「素質」，就條件反射地聯想到「提升」，從而誤選 (2)。</li>
+        <li class="en-text"><strong>Trap:</strong> Many students see "quota" and "quality" and reflexively associate it with "improvement," leading them to mistakenly choose (2).</li>
+        <li><strong>正解邏輯：</strong> 增加有效配額 = 政策放寬 = 市場更接近自由市場狀態 = 干預帶來的副作用（如素質提升、淨損失）都會<strong>減弱</strong>。</li>
+        <li class="en-text"><strong>Correct Logic:</strong> Increasing effective quota = Policy relaxation = Market moves closer to free market = Side effects of the intervention (like quality upgrading and deadweight loss) will <strong>weaken</strong>.</li>
+    </ul>
+
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <p>❌ <strong>誤區：以為「增加配額」代表管制加劇。</strong><br>
+        很多學生會將文字上的「增加」誤解為「干預力度增加」。在經濟學中，配額是一個上限 (Maximum limit)。上限數字增加，代表你可以賣得更多，也就是管制<strong>放鬆</strong>了。</p>
+        <p class="en-text">❌ <strong>Misconception: Thinking "increasing the quota" means stricter control.</strong><br>
+        Students often misinterpret the word "increase" as "increasing the strength of intervention." In economics, a quota is a maximum limit. An increase in the limit number means you can sell more, which means the regulation has actually <strong>relaxed</strong>.</p>
+    </div>
+
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <p><strong>🙋‍♂️ 學生問 (Q):</strong> 如果配額增加到超越了市場均衡數量 \(Q_e\)，會發生什麼事？</p>
+    <p class="en-text"><strong>Student:</strong> What happens if the quota is increased beyond the market equilibrium quantity \(Q_e\)?</p>
+    
+    <p><strong>👨‍🏫 導師答 (A):</strong> 如果配額數量大於 \(Q_e\)，它就會變成「無效配額 (Ineffective Quota)」。此時，市場的實際交易量會停留在 \(Q_e\)，不會因為配額再增加而上升。同時，效率損失 (DWL) 會變為零，因為市場已經達到了最優的資源配置。不過，這道題目清楚寫明是「增加對某物品的<strong>有效</strong>配額」，暗示即使增加後，配額依然發揮著限制作用。</p>
+    <p class="en-text"><strong>Tutor:</strong> If the quota quantity exceeds \(Q_e\), it becomes an "ineffective quota". At that point, the actual transacted quantity remains at \(Q_e\) and won't increase further even if the quota limit goes up. The deadweight loss (DWL) becomes zero because the market has reached optimal resource allocation. However, this specific question mentions increasing an <strong>effective</strong> quota, implying the restriction remains binding even after the increase.</p>
+
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p>💡 <strong>速解法 (The "Move Towards Free Market" Rule):</strong></p>
+        <p>在考場上遇到改變管制水平的題目，記住一個核心原則：<strong>任何令市場更接近自由均衡點 \(Q_e\) 的政策改變，都會抵銷原本干預帶來的效果。</strong></p>
+        <p class="en-text">In the exam, when facing questions about changing the level of regulation, remember one core rule: <strong>Any policy change that moves the market closer to the free-market equilibrium \(Q_e\) will reverse or weaken the effects of the original intervention.</strong></p>
+        <ul>
+            <li>原本配額令交易量跌 ➡️ 放寬配額令交易量升 (1)</li>
+            <li>原本配額令質素升 ➡️ 放寬配額令質素跌 (2 錯)</li>
+            <li>原本配額製造 DWL ➡️ 放寬配額令 DWL 縮小 (3)</li>
+        </ul>
+        <p>用這個邏輯，5秒鐘就能判斷出 (2) 必然錯誤，直接剔除包含 (2) 的選項 A、C、D，秒殺得出答案 B！</p>
+        <p class="en-text">Using this logic, you can determine within 5 seconds that (2) must be wrong. By eliminating options A, C, and D (which all contain 2), you instantly get the answer B!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
