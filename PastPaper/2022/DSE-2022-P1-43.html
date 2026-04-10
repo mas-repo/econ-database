@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Terms of Trade</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --secondary-light: #d1fae5;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-main: #f9fafb;
+            --bg-math: #f3f4f6;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-main);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .zh {
+            margin-bottom: 8px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        /* Distinct Sections Styling */
+        .header-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f5f9;
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .analysis-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .option.correct {
+            background-color: var(--secondary-light);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .option.wrong {
+            background-color: var(--danger-light);
+            border-left: 4px solid var(--danger);
+        }
+
+        .trap-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tips-box {
+            background-color: #ecfeff;
+            border-left: 5px solid #06b6d4;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <h1>HKDSE Economics Concept Guide</h1>
+        <p><strong>Topic (課題):</strong> International Trade - Terms of Trade (國際貿易 - 貿易比率)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆ (Medium / 中等)</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> Specialization (專門化), Terms of Trade (貿易比率), Exports & Imports (出口與進口)</p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh">下表顯示甲國的生產和消費數據。該國只生產和消費成衣(C)和食物(F)。</p>
+        <p class="en">The following table shows the production and consumption data in Country A, which only produces and consumes clothing (C) and food (F).</p>
+        
+        <div class="table-responsive">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>成衣 Clothing (units)</th>
+                    <th>食物 Food (units)</th>
+                </tr>
+                <tr>
+                    <td>沒有貿易時的總生產量<br>Total production WITHOUT trade</td>
+                    <td>10</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>專門化生產時的總生產量<br>Total production with specialisation</td>
+                    <td>60</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>有貿易時的總消費量<br>Total consumption with trade</td>
+                    <td>20</td>
+                    <td>120</td>
+                </tr>
+            </table>
+        </div>
+
+        <p class="zh">貿易比率是 ____________。</p>
+        <p class="en">The terms of trade is ____________.</p>
+        
+        <p>A. \( 1C = 2F \)<br>
+           B. \( 1C = 3F \)<br>
+           C. \( 1C = 5F \)<br>
+           D. \( 1C = 6F \)</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>貿易比率 (Terms of Trade, TOT)</strong> 是指在國際貿易中，兩國交換物品的實際比例。簡單來說，就是「出口多少單位換取進口多少單位」。</p>
+        <p class="en"><strong>Terms of Trade (TOT)</strong> is the actual ratio at which goods are exchanged in international trade. Simply put, it shows "how many units of exports are exchanged for how many units of imports."</p>
+
+        <p class="zh">要找出貿易比率，我們需要知道該國實際<strong>出口 (Export)</strong> 了多少，以及實際<strong>進口 (Import)</strong> 了多少。</p>
+        <p class="en">To find the terms of trade, we need to know exactly how much the country actually <strong>exported</strong> and <strong>imported</strong>.</p>
+
+        <div class="math-block">
+            $$ \text{Export (出口)} = \text{Production (生產量)} - \text{Consumption (消費量)} $$
+            <br>
+            $$ \text{Import (進口)} = \text{Consumption (消費量)} - \text{Production (生產量)} $$
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Terms of Trade (貿易比率)} = \frac{\text{Imported Units (進口數量)}}{\text{Exported Units (出口數量)}} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <h3><span class="badge">Correct Option</span> B</h3>
+        <p class="zh">正確答案是 <strong>B</strong>。我們一步步來計算：</p>
+        <p class="en">The correct answer is <strong>B</strong>. Let's calculate step by step:</p>
+
+        <div class="option correct">
+            <p class="zh"><strong>選項 B (正確):</strong></p>
+            <p class="zh">1. <strong>找出出口 (Exports):</strong> 甲國專門化生產成衣，總產量為 \( 60C \)。但它自己消費了 \( 20C \)。因此，它出口了：\( 60C - 20C = 40C \)。<br>
+            2. <strong>找出進口 (Imports):</strong> 甲國沒有生產食物（產量為 \( 0F \)），但它消費了 \( 120F \)。這代表所有消費的食物都是進口來的。進口量：\( 120F - 0F = 120F \)。<br>
+            3. <strong>計算貿易比率:</strong> 甲國拿 \( 40C \) 交換了 \( 120F \)。化簡比例：\( 40C = 120F \implies 1C = 3F \)。</p>
+            
+            <p class="en"><strong>Option B (Correct):</strong></p>
+            <p class="en">1. <strong>Find Exports:</strong> Country A specializes in clothing with a total production of \( 60C \). It consumes \( 20C \). Therefore, its exports are: \( 60C - 20C = 40C \).<br>
+            2. <strong>Find Imports:</strong> Country A produces zero food (\( 0F \)) but consumes \( 120F \). This means all consumed food is imported. Imports: \( 120F - 0F = 120F \).<br>
+            3. <strong>Calculate Terms of Trade:</strong> Country A exchanged \( 40C \) for \( 120F \). Simplifying the ratio: \( 40C = 120F \implies 1C = 3F \).</p>
+        </div>
+
+        <div class="option wrong">
+            <p class="zh"><strong>選項 A, C (錯誤):</strong></p>
+            <p class="zh">這些選項是隨機的干擾項，可能是將錯誤的數字相除（例如將 \( 120F \) 的消費量除以 \( 60C \) 的生產量得出 \( 2 \)，這是毫無經濟學意義的）。</p>
+            <p class="en"><strong>Options A, C (Incorrect):</strong></p>
+            <p class="en">These are arbitrary distractors, possibly derived from dividing wrong numbers (e.g., dividing consumption of \( 120F \) by production of \( 60C \) to get \( 2 \), which has no economic meaning).</p>
+        </div>
+
+        <div class="option wrong">
+            <p class="zh"><strong>選項 D (錯誤):</strong></p>
+            <p class="zh">這個選項是一個常見的陷阱。考生可能會直接將「消費量」相除：\( 120F \div 20C = 6 \)，或者用「沒有貿易時的生產量」相除：\( 60F \div 10C = 6 \)。前者只是兩者的消費比例，後者是沒有貿易下的其中一個生產組合（甚至是國內機會成本），兩者都<strong>不是</strong>國際市場上的交換比率。</p>
+            <p class="en"><strong>Option D (Incorrect):</strong></p>
+            <p class="en">This is a common trap. Students might directly divide the "consumption" amounts: \( 120F \div 20C = 6 \), or divide the "without trade" production figures: \( 60F \div 10C = 6 \). The former is just the consumption ratio, and the latter is a production combination without trade (or potentially domestic opportunity cost). Neither represents the exchange ratio in the international market.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #f59e0b;">
+        <p class="zh"><strong>破題關鍵 (Pivot Point)：</strong><br>解答這類題目的唯一法則是「尋找實際交易量」。你必須知道國家「給出（Give）」了多少，並「換取（Get）」了多少。</p>
+        <p class="en"><strong>Pivot Point:</strong><br>The golden rule for solving these questions is "Find the actual trade volume". You must figure out how much the country "Gave" and how much it "Got" in return.</p>
+        
+        <p class="zh"><strong>干擾資訊 (Distractors)：</strong><br>題目中的第一行「沒有貿易時的總生產量 \( 10C \), \( 60F \)」在此題完全沒有用處！這行數據是用來計算國內機會成本（Opportunity Cost）的，但題目問的是貿易比率（Terms of Trade）。</p>
+        <p class="en"><strong>Distractors:</strong><br>The first row "Total production WITHOUT trade (\( 10C \), \( 60F \))" is completely useless in this specific question! This data is typically used to calculate the domestic opportunity cost, but the question asks for the Terms of Trade.</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p class="zh"><strong>⚠️ 陷阱 1：混淆「消費比例」與「貿易比率」</strong><br>很多同學看到「貿易後消費量：\( 20C \), \( 120F \)」，就直接以為 \( 1C = 6F \)。記住，你消費了什麼，不代表你用什麼比例去交換！你必須減去你自己生產的部分，才知道你在國際市場上交易了多少。</p>
+        <p class="en"><strong>⚠️ Trap 1: Confusing "Consumption Ratio" with "Terms of Trade"</strong><br>Many students see "Consumption with trade: \( 20C \), \( 120F \)" and immediately assume \( 1C = 6F \). Remember, what you consume is not the ratio at which you trade! You must subtract what you produced yourself to find out what was actually traded in the international market.</p>
+
+        <p class="zh"><strong>⚠️ 陷阱 2：見數字就除</strong><br>粗心的學生會把表格裡看得見的數字隨便相除。請永遠寫下公式：貿易比率 = 出口量 vs 進口量。</p>
+        <p class="en"><strong>⚠️ Trap 2: Dividing numbers blindly</strong><br>Careless students tend to randomly divide any visible numbers in the table. Always write down the formula: Terms of Trade = Export Volume vs Import Volume.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>🙋‍♂️ 學生問：為什麼不用第一行的「沒有貿易時的生產量」來算？</strong></p>
+        <p class="en"><strong>🙋‍♂️ Student: Why didn't we use the first row "Total production WITHOUT trade" to calculate?</strong></p>
+        <p class="zh"><strong>👨‍🏫 導師答：</strong>因為「貿易比率」是由國際市場決定的，它發生在兩國開始貿易<strong>之後</strong>。第一行的數據只反映了該國在沒有貿易時，自己國內的生產能力（用來找比較優勢 Comparative Advantage）。一旦開始專門化生產並進行貿易，我們只關心「專門化生產量」和「貿易後消費量」之間的差額。</p>
+        <p class="en"><strong>👨‍🏫 Tutor:</strong> Because the "Terms of Trade" is determined by the international market and occurs <strong>after</strong> countries start trading. The first row of data only reflects the country's domestic production capacity without trade (used to find Comparative Advantage). Once specialization and trade begin, we only care about the difference between "Total production with specialisation" and "Total consumption with trade".</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p class="zh"><strong>⚡ 速解法 (T-Account Method):</strong><br>在考試時，不要寫長篇大論的算式。在題目旁邊畫一個小小的 "給與得 (Give & Get)" 表格：</p>
+        <p class="en"><strong>⚡ Shortcut (T-Account Method):</strong><br>During the exam, don't write long equations. Just draw a tiny "Give & Get" table next to the question:</p>
+        
+        <ul style="list-style-type: square; padding-left: 20px;">
+            <li><strong>Give (Export):</strong> \( 60 \) (Produce) - \( 20 \) (Consume) = <strong>\( 40C \)</strong></li>
+            <li><strong>Get (Import):</strong> \( 120 \) (Consume) - \( 0 \) (Produce) = <strong>\( 120F \)</strong></li>
+        </ul>
+        <p class="zh">直接對比：\( 40C \longleftrightarrow 120F \)。兩邊除以 40，立刻得出 \( 1C = 3F \)。5秒鐘內解完！</p>
+        <p class="en">Compare directly: \( 40C \longleftrightarrow 120F \). Divide both sides by 40, and you instantly get \( 1C = 3F \). Solved in 5 seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
