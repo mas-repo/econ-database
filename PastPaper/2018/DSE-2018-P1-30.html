@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monetary Base</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary-color: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --danger-bg: #fef2f2;
+            --danger-border: #ef4444;
+            --success-bg: #f0fdf4;
+            --success-border: #22c55e;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+            --math-bg: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .lang-tc {
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        /* 1. Header Section */
+        .header-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .header-section h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* 2. The Question */
+        .question-box {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .options-list {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .options-list li {
+            margin-bottom: 10px;
+        }
+
+        /* 3. Concept Review */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* 4. Analysis */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .analysis-item.correct {
+            background-color: var(--success-bg);
+            border: 1px solid var(--success-border);
+        }
+
+        .analysis-item.incorrect {
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-badge {
+            display: inline-block;
+            background-color: var(--success-border);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* 5-8. Other Sections */
+        .trap-box {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .shortcut-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE 經濟學：貨幣與銀行 (Economics: Money & Banking)</h1>
+        <div>
+            <span class="header-badge">📌 課題 (Topic): 貨幣政策與貨幣基礎 (Monetary Policy & Monetary Base)</span>
+            <span class="header-badge">⭐ 難度 (Difficulty): ★★★☆☆ (中等 Moderate)</span>
+            <span class="header-badge">🔑 關鍵字 (Concepts): 貨幣基礎 (Monetary Base), 貼現率 (Discount Rate)</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="lang-tc">下列哪項會令貨幣基礎下降？</p>
+        <p class="lang-en">Which of the following will lead to a reduction in monetary base?</p>
+        
+        <ol class="options-list">
+            <li>
+                <div class="lang-tc">中央銀行增加法定儲備比率。</div>
+                <div class="lang-en">The central bank increases the required reserve ratio.</div>
+            </li>
+            <li>
+                <div class="lang-tc">中央銀行從公眾購入政府債券。</div>
+                <div class="lang-en">The central bank purchases the government bonds from the public.</div>
+            </li>
+            <li>
+                <div class="lang-tc">中央銀行提高貼現率。</div>
+                <div class="lang-en">The central bank raises the discount rate.</div>
+            </li>
+            <li>
+                <div class="lang-tc">商業銀行持有更多超額儲備。</div>
+                <div class="lang-en">The commercial banks hold more excess reserves.</div>
+            </li>
+        </ol>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="lang-tc">在解答這題之前，我們必須清楚區分**貨幣基礎 (Monetary Base, MB)** 與 **貨幣供應 (Money Supply, Ms)** 的定義。</p>
+        <p class="lang-en">Before solving this, we must clearly distinguish between the definitions of **Monetary Base (MB)** and **Money Supply (Ms)**.</p>
+        
+        <div class="math-block">
+            $$ MB = C_p + R $$
+        </div>
+        
+        <p class="lang-tc"><strong>貨幣基礎 (Monetary Base):</strong> 指中央銀行發行的貨幣總量。它等於公眾持有的現金 \( (C_p) \) 加上商業銀行在中央銀行的儲備 \( (R) \)。</p>
+        <p class="lang-en"><strong>Monetary Base:</strong> The total amount of money created by the central bank. It equals cash held by the public \( (C_p) \) plus reserves of commercial banks \( (R) \).</p>
+
+        <div class="math-block">
+            $$ M_s = C_p + D $$
+        </div>
+
+        <p class="lang-tc"><strong>貨幣供應 (Money Supply):</strong> 指經濟體系內的貨幣總量。它等於公眾持有的現金 \( (C_p) \) 加上公眾在銀行的存款 \( (D) \)。</p>
+        <p class="lang-en"><strong>Money Supply:</strong> The total amount of money in the economy. It equals cash held by the public \( (C_p) \) plus public deposits in banks \( (D) \).</p>
+        
+        <p class="lang-tc"><strong>貼現率 (Discount Rate):</strong> 商業銀行向中央銀行借款時需要支付的利率。提高貼現率會增加借貸成本。</p>
+        <p class="lang-en"><strong>Discount Rate:</strong> The interest rate charged by the central bank when commercial banks borrow from it. Raising it increases borrowing costs.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p class="lang-tc">正確答案是：<strong>選項 C</strong></p>
+    <p class="lang-en">The correct option is: <strong>Option C</strong></p>
+
+    <div class="analysis-item incorrect">
+        <p class="lang-tc"><strong>A. 中央銀行增加法定儲備比率。 (不正確)</strong></p>
+        <p class="lang-en"><strong>A. The central bank increases the required reserve ratio. (Incorrect)</strong></p>
+        <p class="lang-tc">增加法定儲備比率只會迫使商業銀行將部分「超額儲備」轉移為「法定儲備」，總儲備 \( (R) \) 不變。這會降低貨幣乘數並減少貨幣供應 \( (M_s) \)，但<strong>不會</strong>改變貨幣基礎 \( (MB) \)。</p>
+        <p class="lang-en">Increasing the required reserve ratio only forces commercial banks to shift some "excess reserves" into "required reserves"; total reserves \( (R) \) remain unchanged. This lowers the money multiplier and reduces money supply \( (M_s) \), but does <strong>not</strong> change the monetary base \( (MB) \).</p>
+    </div>
+
+    <div class="analysis-item incorrect">
+        <p class="lang-tc"><strong>B. 中央銀行從公眾購入政府債券。 (不正確)</strong></p>
+        <p class="lang-en"><strong>B. The central bank purchases the government bonds from the public. (Incorrect)</strong></p>
+        <p class="lang-tc">當中央銀行購入債券時，會向公眾支付金錢。這筆錢會流入公眾手中（增加 \( C_p \)）或存入銀行（增加銀行儲備 \( R \)）。這是一項擴張性貨幣政策，會令貨幣基礎<strong>上升</strong>，而不是下降。</p>
+        <p class="lang-en">When the central bank buys bonds, it pays the public. This money goes into the public's hands (increasing \( C_p \)) or is deposited into banks (increasing bank reserves \( R \)). This is an expansionary monetary policy that will lead to an <strong>increase</strong> in the monetary base, not a reduction.</p>
+    </div>
+
+    <div class="analysis-item correct">
+        <p class="lang-tc"><strong>C. 中央銀行提高貼現率。 (正確) <span class="correct-badge">✓</span></strong></p>
+        <p class="lang-en"><strong>C. The central bank raises the discount rate. (Correct)</strong></p>
+        <p class="lang-tc">提高貼現率意味著商業銀行向中央銀行借取儲備的成本增加。這會打擊銀行借款的意欲，導致銀行減少借款或償還現有貸款。因此，銀行體系內的總儲備 \( (R) \) 會減少。由於 \( MB = C_p + R \)，儲備減少會直接導致貨幣基礎<strong>下降</strong>。</p>
+        <p class="lang-en">Raising the discount rate means the cost for commercial banks to borrow reserves from the central bank increases. This discourages borrowing, causing banks to borrow less or repay existing loans. Consequently, total reserves \( (R) \) in the banking system decrease. Since \( MB = C_p + R \), a decrease in reserves directly leads to a <strong>reduction</strong> in the monetary base.</p>
+    </div>
+
+    <div class="analysis-item incorrect">
+        <p class="lang-tc"><strong>D. 商業銀行持有更多超額儲備。 (不正確)</strong></p>
+        <p class="lang-en"><strong>D. The commercial banks hold more excess reserves. (Incorrect)</strong></p>
+        <p class="lang-tc">如果銀行決定持有更多超額儲備，這代表它們借出的貸款減少（信貸創造減少）。這同樣會降低貨幣乘數並減少貨幣供應 \( (M_s) \)，但資金仍然留在銀行的金庫或央行戶口中，總儲備 \( (R) \) 依然不變，貨幣基礎維持不變。</p>
+        <p class="lang-en">If banks decide to hold more excess reserves, it means they lend out less (credit creation decreases). This also lowers the money multiplier and reduces the money supply \( (M_s) \), but the funds remain in bank vaults or CB accounts. Total reserves \( (R) \) remain unchanged, and the monetary base stays the same.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="lang-tc"><strong>解題樞紐 (Pivot Point)：</strong>這條題目的核心在於區分「影響貨幣乘數的因素」和「影響貨幣基礎的因素」。</p>
+    <p class="lang-en"><strong>Pivot Point:</strong> The core of this question lies in distinguishing between "factors affecting the money multiplier" and "factors affecting the monetary base".</p>
+    <p class="lang-tc">任何只在銀行系統內部發生改變（如改變儲備要求、銀行改變貸款意欲）的選項，都只會影響貨幣供應 \( (M_s) \)。只有當中央銀行與外界（公眾或商業銀行）發生直接資金往來時（如公開市場操作、貼現窗借貸），才會改變貨幣基礎 \( (MB) \)。</p>
+    <p class="lang-en">Any options that only involve changes within the banking system itself (like changing reserve requirements or banks' willingness to lend) will only affect the money supply \( (M_s) \). The monetary base \( (MB) \) only changes when the central bank has direct financial transactions with the outside world (the public or commercial banks), such as open market operations or discount window lending.</p>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p class="lang-tc"><strong>❌ 陷阱一：混淆貨幣基礎與貨幣供應</strong><br>學生經常誤以為「銀行減少貸款（選項 A 和 D）會令貨幣減少，所以貨幣基礎下降」。記住：銀行減少貸款只會減少存款 \( (D) \) 創造，從而減少貨幣供應 \( (M_s) \)。儲備 \( (R) \) 本身的數值並沒有消失。</p>
+        <p class="lang-en"><strong>❌ Trap 1: Confusing Monetary Base with Money Supply</strong><br>Students often mistakenly think "banks lending less (Options A and D) reduces money, so the monetary base falls". Remember: banks lending less only reduces deposit \( (D) \) creation, thereby reducing money supply \( (M_s) \). The numerical value of the reserves \( (R) \) itself does not disappear.</p>
+        
+        <p class="lang-tc"><strong>❌ 陷阱二：看錯「購入」與「出售」</strong><br>選項 B 中，央行「購入」債券是「放水」（注入資金），會增加基礎。央行「出售」債券才是「抽水」（收回資金），才會減少基礎。考試時務必看清動詞！</p>
+        <p class="lang-en"><strong>❌ Trap 2: Misreading "Purchase" vs "Sell"</strong><br>In Option B, when the central bank "purchases" bonds, it injects funds, increasing the base. It is when the central bank "sells" bonds that it absorbs funds, reducing the base. Always read the verbs carefully in exams!</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q lang-tc">Q: 為什麼選項 A（增加法定儲備比率）不會改變總儲備？央行不是要求銀行保留更多錢嗎？</p>
+        <p class="qa-q lang-en">Q: Why doesn't Option A (increasing RRR) change total reserves? Isn't the CB demanding banks to hold more money?</p>
+        
+        <p class="lang-tc">A: 好問題！央行確實要求銀行保留較大比例的存款作為儲備，但這筆額外的「法定儲備」是從銀行原有的「超額儲備」中轉移過來的。總儲備（法定儲備 + 超額儲備）在央行宣佈政策的一刻並沒有增加或減少，只是儲備的<strong>性質</strong>改變了。因此 \( MB \) 不變。</p>
+        <p class="lang-en">A: Great question! The central bank does require banks to hold a larger fraction of deposits as reserves, but these additional "required reserves" are simply shifted from the banks' existing "excess reserves". The total reserves (Required + Excess) do not increase or decrease at the moment the policy is announced; only the <strong>composition</strong> of the reserves changes. Thus, \( MB \) remains unchanged.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="shortcut-box">
+        <p class="lang-tc"><strong>⚡ 速解法則 (Quick Elimination Rule):</strong></p>
+        <p class="lang-en"><strong>⚡ Quick Elimination Rule:</strong></p>
+        <ul>
+            <li>
+                <span class="lang-tc">看到「法定儲備比率 (RRR)」或「超額儲備 (Excess Reserves)」：直接聯想影響<strong>貨幣乘數 (Multiplier)</strong>。這類選項通常不會改變貨幣基礎，可優先剔除（排除 A 和 D）。</span><br>
+                <span class="lang-en">When you see "Required Reserve Ratio" or "Excess Reserves": immediately link them to the <strong>Money Multiplier</strong>. These options usually do not change the monetary base, so eliminate them first (Cross out A and D).</span>
+            </li>
+            <li>
+                <span class="lang-tc">剩下 B 和 C：B 是一個擴張性政策（放錢出市面），必定令貨幣基礎上升。題目要求「下降」，因此只剩下 C。</span><br>
+                <span class="lang-en">Left with B and C: B is an expansionary policy (putting money into the market), which definitely increases the monetary base. The question asks for a "reduction", so only C can be the answer.</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Production Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4 { color: var(--primary-color); margin-bottom: 10px; }
+        .section-title { border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin-top: 30px; }
+        
+        /* Container Styles */
+        .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); padding: 30px; margin-bottom: 20px; }
+        .header-box { text-align: center; margin-bottom: 30px; border-bottom: 2px dashed #cbd5e1; padding-bottom: 20px;}
+        .concept-box { background-color: #f0f9ff; border-left: 5px solid #0ea5e9; padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+        .analysis-box { background-color: #f0fdf4; border-left: 5px solid #22c55e; padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+        .trick-box { background-color: #fffbeb; border: 2px dashed #f59e0b; padding: 20px; border-radius: 8px; margin-bottom: 25px; }
+        .qa-box { background-color: #faf5ff; border-left: 5px solid #9333ea; padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+        .math-block { background-color: #f3f4f6; padding: 15px; border-radius: 8px; overflow-x: auto; text-align: center; margin: 15px 0; }
+        
+        /* Typography */
+        .badge { display: inline-block; padding: 4px 10px; background-color: #e0e7ff; color: #4338ca; border-radius: 999px; font-size: 0.85em; font-weight: 600; margin-right: 5px; }
+        .zh-text { font-weight: 500; margin-bottom: 8px; }
+        .en-text { color: var(--text-en); font-size: 0.95em; font-style: italic; margin-bottom: 15px; }
+        
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #cbd5e1; padding: 12px; text-align: center; }
+        th { background-color: #f8fafc; font-weight: 600; }
+        .highlight-row { background-color: #dcfce7; font-weight: bold; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            table { font-size: 0.85em; }
+            th, td { padding: 8px 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-box">
+            <h2>HKDSE Economics MCQ Analysis</h2>
+            <div>
+                <span class="badge">Topic: Production & Costs 生產與成本</span>
+                <span class="badge">Difficulty: ★★★☆☆</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <strong>Key Concepts:</strong> Marginal Product (MP), Average Product (AP), Law of Diminishing Marginal Returns
+            </div>
+        </div>
+
+        <h3 class="section-title">題目 The Question</h3>
+        
+        <div class="zh-text">
+            下表顯示某廠商投入與產出的關係。其生產所需的投入只有資本和勞力。<br><br>
+            在勞力的數量是 _____ 單位時，勞力的平均產出最高。<br>
+            A. 2<br>
+            B. 3<br>
+            C. 4<br>
+            D. 5
+        </div>
+        <div class="en-text">
+            The following table shows the input-output relationship of a firm. The only inputs required are capital and labour.<br><br>
+            The average product of labour is at the highest when the quantity of labour is _______ units.<br>
+            A. 2<br>
+            B. 3<br>
+            C. 4<br>
+            D. 5
+        </div>
+
+        <table>
+            <tr>
+                <th>資本 (單位)<br>Capital (units)</th>
+                <th>勞力 (單位)<br>Labour (units)</th>
+                <th>勞力的邊際產出 (單位)<br>Marginal product of labour (units)</th>
+            </tr>
+            <tr><td>2</td><td>1</td><td>5</td></tr>
+            <tr><td>2</td><td>2</td><td>7</td></tr>
+            <tr><td>2</td><td>3</td><td>9</td></tr>
+            <tr><td>2</td><td>4</td><td>8</td></tr>
+            <tr><td>2</td><td>5</td><td>6</td></tr>
+        </table>
+
+        <div class="concept-box">
+            <h3 style="margin-top:0;">📚 概念重溫 Concept Review</h3>
+            
+            <div class="zh-text">
+                要解決這條題目，我們必須明白**總產出 (Total Product, \(TP\))**、**邊際產出 (Marginal Product, \(MP\))** 和 **平均產出 (Average Product, \(AP\))** 之間的關係。
+            </div>
+            <div class="en-text">
+                To solve this question, we must understand the relationship between Total Product (\(TP\)), Marginal Product (\(MP\)), and Average Product (\(AP\)).
+            </div>
+
+            <div class="math-block">
+                $$TP = \sum MP$$
+                $$AP = \frac{TP}{L}$$
+            </div>
+
+            <div class="zh-text">
+                <strong>定義 (Definitions):</strong><br>
+                1. <strong>邊際產出 (\(MP\)):</strong> 增加一單位可變要素（如勞力）所帶來的額外總產出。<br>
+                2. <strong>平均產出 (\(AP\)):</strong> 平均每單位可變要素所生產的產出。
+            </div>
+            <div class="en-text">
+                1. <strong>Marginal Product (\(MP\)):</strong> The extra total output generated by adding one extra unit of variable input (e.g., labour).<br>
+                2. <strong>Average Product (\(AP\)):</strong> The output produced per unit of variable input.
+            </div>
+        </div>
+
+        <div class="analysis-box">
+            <h3 style="margin-top:0;">✅ 答案與詳細分析 The Answer & Detailed Analysis</h3>
+            
+            <h4 style="color: #16a34a; font-size: 1.2em;">正確答案 Correct Option: C</h4>
+
+            <div class="zh-text">
+                我們需要利用題目提供的邊際產出 (\(MP\))，逐一計算出總產出 (\(TP\))，然後再計算出平均產出 (\(AP\))。
+            </div>
+            <div class="en-text">
+                We need to use the given Marginal Product (\(MP\)) to calculate the Total Product (\(TP\)) step-by-step, and then calculate the Average Product (\(AP\)).
+            </div>
+
+            <table>
+                <tr>
+                    <th>勞力 \(L\)</th>
+                    <th>邊際產出 \(MP\)</th>
+                    <th>總產出 \(TP = \sum MP\)</th>
+                    <th>平均產出 \(AP = TP \div L\)</th>
+                </tr>
+                <tr><td>1</td><td>5</td><td>5</td><td>5 ÷ 1 = <strong>5</strong></td></tr>
+                <tr><td>2</td><td>7</td><td>5 + 7 = 12</td><td>12 ÷ 2 = <strong>6</strong></td></tr>
+                <tr><td>3</td><td>9</td><td>12 + 9 = 21</td><td>21 ÷ 3 = <strong>7</strong></td></tr>
+                <tr class="highlight-row"><td>4</td><td>8</td><td>21 + 8 = 29</td><td>29 ÷ 4 = <strong>7.25</strong> (最高 Highest)</td></tr>
+                <tr><td>5</td><td>6</td><td>29 + 6 = 35</td><td>35 ÷ 5 = <strong>7</strong></td></tr>
+            </table>
+
+            <div class="zh-text">
+                <strong>選項分析：</strong><br>
+                A 錯誤：當 \(L=2\) 時，\(AP = 6\)。<br>
+                B 錯誤：當 \(L=3\) 時，\(AP = 7\)。這時 \(MP\) 最高 (9)，但 \(AP\) 並非最高。<br>
+                C 正確：當 \(L=4\) 時，\(AP = 7.25\)，這是整條生產線的最高點。<br>
+                D 錯誤：當 \(L=5\) 時，\(AP = 7\)，平均產出已經開始下跌。
+            </div>
+            <div class="en-text">
+                <strong>Option Analysis:</strong><br>
+                A is incorrect: At \(L=2\), \(AP = 6\).<br>
+                B is incorrect: At \(L=3\), \(AP = 7\). Here \(MP\) is at its maximum (9), but not \(AP\).<br>
+                C is correct: At \(L=4\), \(AP = 7.25\), which is the peak of the average product curve.<br>
+                D is incorrect: At \(L=5\), \(AP = 7\), the average product has already started falling.
+            </div>
+        </div>
+
+        <h3 class="section-title">🔍 題目拆解 Problem Decomposition</h3>
+        
+        <div class="zh-text">
+            <strong>解題樞紐 (Pivot Point):</strong> 題目問的是「平均產出」(\(AP\)) 最高，而非「邊際產出」(\(MP\)) 或「總產出」(\(TP\)) 最高。你必須懂得將 \(MP\) 轉化為 \(TP\)，再除以勞力數量。
+        </div>
+        <div class="en-text">
+            <strong>Pivot Point:</strong> The question asks for the highest "Average Product" (\(AP\)), not the highest "Marginal Product" (\(MP\)) or "Total Product" (\(TP\)). You must know how to convert \(MP\) into \(TP\), and then divide by the quantity of labour.
+        </div>
+
+        <div class="zh-text">
+            <strong>干擾資訊 (Distractors):</strong> 表格中的「資本數量為 2」。這只是為了說明這是在**短期 (Short run)** 的生產情況（因為資本數量固定不變）。在計算過程中，這個數字「2」完全不需要使用。
+        </div>
+        <div class="en-text">
+            <strong>Distractors:</strong> The "Capital = 2" in the table. This is merely to establish that this is a <strong>Short-run</strong> production scenario (since capital is fixed). The number '2' is completely irrelevant to the actual calculation.
+        </div>
+
+        <div class="qa-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+            <h3 style="margin-top:0; color: #b91c1c;">⚠️ 常犯錯誤與陷阱 Common Mistakes & Traps</h3>
+            
+            <div class="zh-text">
+                <strong>混淆 \(MP\) 與 \(AP\) 的最高點：</strong><br>
+                很多同學一看到表格，見到勞力為 3 時數字「9」最大，就秒選 B。這是一個致命陷阱！題目問的是 \(AP\)，而 9 是 \(MP\)。\(MP\) 達到最高點後，只要它仍然大於 \(AP\)，\(AP\) 就會繼續上升。
+            </div>
+            <div class="en-text">
+                <strong>Confusing the maximum points of \(MP\) and \(AP\):</strong><br>
+                Many students scan the table, see the largest number "9" at labour=3, and immediately choose B. This is a fatal trap! The question asks for \(AP\), but 9 is \(MP\). Even after \(MP\) peaks, as long as it remains greater than \(AP\), the \(AP\) will continue to rise.
+            </div>
+        </div>
+
+        <div class="qa-box">
+            <h3 style="margin-top:0;">🙋 學生常見疑問 Student Q&A</h3>
+            
+            <p><strong>Q: 為什麼當 \(L=4\) 時，邊際產出 (\(MP\)) 已經從 9 跌到 8，但平均產出 (\(AP\)) 卻還在上升？</strong><br>
+            <em style="color: var(--text-en);">Why does Average Product (\(AP\)) keep rising at \(L=4\) even though Marginal Product (\(MP\)) has already fallen from 9 to 8?</em></p>
+            
+            <p><strong>A:</strong> 想像你的考試平均分。假設你之前的平均分是 7 分 (\(AP=7\))。下一次考試（邊際）你考了 8 分 (\(MP=8\))。雖然 8 分比你上一次考的 9 分退步了（邊際下跌），但因為 8 分仍然**高於你的平均分** (8 > 7)，所以你的總平均分還是會被拉高！在經濟學中：<strong>只要 \(MP > AP\)，\(AP\) 就會上升。</strong></p>
+            <p><em style="color: var(--text-en);">Think of your exam grades. Suppose your average score is 7 (\(AP=7\)). On your next (marginal) exam, you score an 8 (\(MP=8\)). Even though 8 is worse than your previous score of 9 (\(MP\) is falling), because 8 is <strong>higher than your current average</strong> (8 > 7), it still pulls your average up! In economics: <strong>As long as \(MP > AP\), \(AP\) will rise.</strong></em></p>
+        </div>
+
+        <div class="trick-box">
+            <h3 style="margin-top:0; color: #d97706;">⚡ 考試技巧與速解 Exam Tricks & Shortcuts</h3>
+            
+            <div class="zh-text">
+                <strong>無須計算全部數值的「數學邏輯法」：</strong><br>
+                你可以利用 \(MP\) 和 \(AP\) 的關係來秒殺題目。你只需要計算到 \(L=3\) 的 \(AP = 7\)。<br>
+                看下一步 (\(L=4\))：新增的 \(MP\) 是 8。因為 8 > 7，所以新的 \(AP\) 必定會上升 (大於 7)。<br>
+                再看下一步 (\(L=5\))：新增的 \(MP\) 是 6。我們知道 \(L=4\) 的 \(AP\) 必定大於 7，而新增的 6 卻小於 7。既然 \(MP < AP\)，這意味著 \(L=5\) 時 \(AP\) 必定會被拉低。<br>
+                結論：最高點必定在 \(L=4\)！不需要浪費時間做精確的小數點除法。
+            </div>
+            <div class="en-text">
+                <strong>The "Mathematical Logic Method" without full calculation:</strong><br>
+                You can use the relationship between \(MP\) and \(AP\) to quickly solve this. Calculate up to \(L=3\), where \(AP = 7\).<br>
+                Look at the next step (\(L=4\)): The new \(MP\) is 8. Since 8 > 7, the new \(AP\) MUST rise (it will be > 7).<br>
+                Look at the next step (\(L=5\)): The new \(MP\) is 6. We know \(AP\) at \(L=4\) is > 7, and the new \(MP\) (6) is < 7. Since \(MP < AP\), it means at \(L=5\), the \(AP\) will be pulled down.<br>
+                Conclusion: The peak must be at \(L=4\)! No need to waste time doing exact decimal division.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

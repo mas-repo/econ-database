@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Price Controls</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        body {
+            font-family: 'PingFang HK', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-gray);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 { margin-top: 0; border-bottom: 3px solid var(--primary-blue); display: inline-block; }
+        .en {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 15px;
+        }
+        .bilingual-group { margin-bottom: 15px; }
+        .header-box {
+            background-color: #fdfvw;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .header-box ul { list-style: none; padding-left: 0; margin: 0; }
+        .header-box li { margin-bottom: 5px; }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+        }
+        th { background-color: var(--bg-gray); font-weight: bold; }
+        .option { margin-bottom: 20px; padding: 15px; border-radius: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0; }
+        .option-title { font-weight: bold; font-size: 1.1em; display: flex; align-items: center; }
+        .status-correct { color: var(--correct-green); margin-left: 10px; font-weight: bold; }
+        .status-wrong { color: var(--wrong-red); margin-left: 10px; font-weight: bold; }
+        .highlight { font-weight: bold; color: var(--primary-blue); }
+        .tricks-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f4f4f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: #3f3f46; }
+        .qa-a { margin-top: 8px; color: #52525b; }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            th, td { padding: 6px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Expert Guide</h1>
+    
+    <div class="header-box">
+        <ul>
+            <li><strong>📌 主題 (Topic):</strong> 市場干預 —— 價格上限 (Market Intervention — Price Ceiling)</li>
+            <li><strong>🔥 難度 (Difficulty):</strong> ★★★☆☆ (3/5)</li>
+            <li><strong>🔑 關鍵字 (Key Concepts):</strong> 價格上限 (Price Ceiling), 有效與無效 (Effective vs Ineffective), 總開支 (Total Expenditure), 交易量 (Quantity Transacted)</li>
+        </ul>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="bilingual-group">
+        <p>參閱以下物品X的供需表。</p>
+        <p class="en">Refer to the following supply and demand schedules for Good X.</p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>單位價格 Unit price ($)</th>
+                <td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+            </tr>
+            <tr>
+                <th>需求量 Quantity demanded</th>
+                <td>70</td><td>80</td><td>90</td><td>100</td><td>110</td><td>120</td><td>130</td>
+            </tr>
+            <tr>
+                <th>供應量 Quantity supplied</th>
+                <td>130</td><td>120</td><td>110</td><td>100</td><td>90</td><td>80</td><td>70</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="bilingual-group">
+        <p>假設政府將價格上限由$8提高至$12。下列哪項陳述是正確的？</p>
+        <p class="en">Suppose the government increases the price ceiling from $8 to $12. Which of the following statements is correct?</p>
+    </div>
+    
+    <div class="bilingual-group">
+        <p>A. 物品X會出現40單位的短缺。<br>
+        <span class="en">There would be a shortage of 40 units of Good X.</span></p>
+        <p>B. 物品X會出現40單位的盈餘。<br>
+        <span class="en">There would be a surplus of 40 units of Good X.</span></p>
+        <p>C. 對物品X的總支出會上升$360。<br>
+        <span class="en">The total expenditure on Good X would increase by $360.</span></p>
+        <p>D. 對物品X的交易量會維持不變。<br>
+        <span class="en">The quantity transacted of Good X would remain unchanged.</span></p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>市場均衡 (Market Equilibrium)</h3>
+        <p>當需求量等於供應量時，市場達到均衡。圖表中 \(\text{Q}_d = \text{Q}_s = 100\) 時，對應的均衡價格為 \(\text{P}_e = \$10\)。</p>
+        <p class="en">Market equilibrium occurs when quantity demanded equals quantity supplied. In the table, when \(\text{Q}_d = \text{Q}_s = 100\), the equilibrium price is \(\text{P}_e = \$10\).</p>
+        
+        <h3>價格上限 (Price Ceiling)</h3>
+        <p>政府法定的最高交易價格。<strong>只有設定在均衡價格（$10）之下才有效 (Effective)</strong>。若設定在均衡價格之上，則無效 (Ineffective)，市場會以均衡價格交易。</p>
+        <p class="en">A legal maximum price. <strong>It is only effective if set BELOW the equilibrium price ($10)</strong>. If set above, it is ineffective, and the market operates at the equilibrium price.</p>
+        
+        <h3>核心公式 (Key Formulas)</h3>
+        <div class="math-block">
+            交易量 (Quantity Transacted): $$Q_t = \min(Q_d, Q_s)$$
+            總開支 (Total Expenditure): $$TE = P \times Q_t$$
+            短缺 (Shortage): $$\text{Shortage} = Q_d - Q_s \quad (\text{when } P < P_e)$$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案 (Correct Option)：<strong style="color:var(--primary-blue); font-size:1.2em;">Option C</strong></p>
+
+    <div class="option">
+        <div class="option-title">選項 A (Option A) <span class="status-wrong">✗ 錯誤 (Incorrect)</span></div>
+        <p>當價格上限為$8時，\(\text{Q}_d = 120\)，\(\text{Q}_s = 80\)，短缺確實是 \(120 - 80 = 40\) 單位。<strong>但是</strong>，當價格上限提高到$12時，由於$12高於均衡價格$10，上限變得無效。市場價格回復到$10，此時 \(\text{Q}_d = \text{Q}_s = 100\)，短缺為0單位。</p>
+        <p class="en">When the price ceiling was $8, \(\text{Q}_d = 120\) and \(\text{Q}_s = 80\), so the shortage was indeed \(120 - 80 = 40\) units. <strong>However</strong>, when raised to $12 (which is above the $10 equilibrium), the ceiling becomes ineffective. The market price settles at $10, where \(\text{Q}_d = \text{Q}_s = 100\). The shortage is 0 units.</p>
+    </div>
+
+    <div class="option">
+        <div class="option-title">選項 B (Option B) <span class="status-wrong">✗ 錯誤 (Incorrect)</span></div>
+        <p>價格上限只是限制「最高」收費，不會強迫市場一定要以$12交易。由於均衡價格$10沒有超過$12的限制，市場會以$10交易，因此不會出現盈餘。若這是價格下限 (Price Floor)，才會出現盈餘。</p>
+        <p class="en">A price ceiling only dictates the maximum price; it does not force the market to trade at $12. Since the equilibrium price of $10 does not violate the $12 limit, the market trades at $10. Thus, there is no surplus. A surplus would only occur if this were a price floor.</p>
+    </div>
+
+    <div class="option">
+        <div class="option-title">選項 C (Option C) <span class="status-correct">✓ 正確 (Correct)</span></div>
+        <p><strong>原本情況 ($8 上限)：</strong> 價格被壓在$8，此時 \(\text{Q}_d=120\)，\(\text{Q}_s=80\)。交易量 \(Q_{t1} = \min(120, 80) = 80\)。<br>
+        初始總支出 \(TE_1 = \$8 \times 80 = \$640\)。<br>
+        <strong>新情況 ($12 上限)：</strong> 上限無效，市場以均衡價$10交易，交易量 \(Q_{t2} = 100\)。<br>
+        新總支出 \(TE_2 = \$10 \times 100 = \$1000\)。<br>
+        總支出改變 = \(\$1000 - \$640 = +\$360\)。</p>
+        
+        <p class="en"><strong>Original state ($8 ceiling):</strong> Price is constrained at $8. \(\text{Q}_d=120\), \(\text{Q}_s=80\). Transacted quantity \(Q_{t1} = \min(120, 80) = 80\).<br>
+        Initial TE \(= \$8 \times 80 = \$640\).<br>
+        <strong>New state ($12 ceiling):</strong> Ceiling is ineffective. Market trades at equilibrium $10. Transacted quantity \(Q_{t2} = 100\).<br>
+        New TE \(= \$10 \times 100 = \$1000\).<br>
+        Change in TE \(= \$1000 - \$640 = +\$360\).</p>
+    </div>
+
+    <div class="option">
+        <div class="option-title">選項 D (Option D) <span class="status-wrong">✗ 錯誤 (Incorrect)</span></div>
+        <p>如上述計算，交易量由原本的80單位，上升至均衡狀態下的100單位，因此交易量改變了。</p>
+        <p class="en">As calculated above, the quantity transacted increases from 80 units to the equilibrium quantity of 100 units. It does not remain unchanged.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>這類題目的<strong>破題關鍵 (Pivot Point)</strong> 在於「找出市場均衡點」並判斷「管制是否有效」。</p>
+    <ul>
+        <li><strong>找出隱藏基準：</strong> 題目沒有直接給出均衡價格，你要從表格中找出 \(\text{Q}_d = \text{Q}_s\) 的行數（即 \(P=\$10\)）。這是所有推論的基礎。</li>
+        <li><strong>干擾資訊 (Distractors)：</strong> 選項A的40單位短缺是舊管制($8)下的數據，目的是騙那些不重新計算新管制狀態的考生。表格中$13、$12、$11、$9、$7的供需數據也只是用來讓你判斷短缺或盈餘的干擾項。</li>
+    </ul>
+    <p class="en">The <strong>Pivot Point</strong> of this question type is to "identify the market equilibrium" and "determine if the intervention is effective". You must first find where \(\text{Q}_d = \text{Q}_s\) (\(P=\$10\)). Option A's shortage of 40 is a trap based on the old ceiling.</p>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tricks-box">
+        <p><strong>❌ 陷阱 1：誤以為市場價格一定等於法定價格</strong><br>
+        許多同學看到「價格上限提高至$12」，就直接假設市場價格變成$12，從而計算出 $12 \(\times 80 = 960\) 的總開支，或得出40單位盈餘（誤選B）。記住：上限只是「天花板」，如果均衡價在天花板之下，天花板就毫無作用！</p>
+        
+        <p class="en"><strong>❌ Trap 1: Assuming Market Price = Legal Price.</strong> Many students see the ceiling raised to $12 and assume the transaction price becomes $12. Remember: a ceiling is just a maximum. If the equilibrium price is lower, the ceiling has no effect!</p>
+        
+        <hr style="border-top: 1px dashed #f59e0b; margin: 10px 0;">
+        
+        <p><strong>❌ 陷阱 2：用「需求量」計算總開支</strong><br>
+        在$8時，同學可能會用 \(\$8 \times 120 \text{ (需求量)}\)。緊記：買賣必須雙方同意，當供應只有80時，最多只能成交80件。公式必須是 \(P \times \min(Q_d, Q_s)\)。</p>
+        
+        <p class="en"><strong>❌ Trap 2: Using Quantity Demanded for TE.</strong> At $8, some calculate TE as \(\$8 \times 120\). Remember: trades require both a buyer and a seller. If supply is only 80, only 80 units are transacted. Always use \(\min(Q_d, Q_s)\).</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 如果政府設定的是「價格下限 (Price Floor)」$12，答案會變成什麼？</div>
+        <div class="qa-a">A: 價格下限規定「最低」收費。由於$12高於均衡價格$10，此下限會<strong>有效</strong>。價格將被迫停留在$12，此時 \(\text{Q}_d = 80\)，\(\text{Q}_s = 120\)。市場會出現 \(120 - 80 = 40\) 單位的盈餘 (Surplus)。那選項B就會是正確答案了！</div>
+        
+        <div class="qa-q" style="margin-top: 15px; border-top: 1px solid #d4d4d8; padding-top: 15px;">Q: What if the government set a "Price Floor" at $12 instead?</div>
+        <div class="qa-a">A: A price floor sets a "minimum" price. Since $12 is above the equilibrium $10, it would be <strong>effective</strong>. The price would be forced to $12, where \(\text{Q}_d = 80\) and \(\text{Q}_s = 120\). There would be a surplus of 40 units. In that case, Option B would be correct!</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p><strong>「先找均衡，再判斷」法則 (Find Equilibrium First Rule):</strong></p>
+    <ol>
+        <li>做任何市場干預題目，第一秒先在表格/圖上圈出均衡點 (\(P_e = 10, Q_e = 100\))。</li>
+        <li>比較干預價格與均衡價格。</li>
+        <li><strong>速記口訣：</strong><br>
+           「上限在下才有效」 (Ceiling must be below to bite).<br>
+           「下限在上才有效」 (Floor must be above to bite).</li>
+        <li>這題 $12 上限 > $10 均衡，秒速判斷「無效，直接用$10計算」。這樣就不會跌入選項A和B的陷阱。</li>
+    </ol>
+    <p class="en"><strong>Shortcut:</strong> Always circle the equilibrium first (\(P_e=10\)). Memorize: "Ceilings bite below, Floors bite above." Since the $12 ceiling is above $10, you instantly know it's ineffective and the market uses the $10 price. This immediately eliminates options A and B.</p>
+</div>
+
+</body>
+</html>

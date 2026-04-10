@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Relative Price Analysis</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-blue: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --box-concept: #f0f9ff;
+            --box-math: #f3f4f6;
+            --box-correct: #ecfdf5;
+            --box-wrong: #fef2f2;
+            --border-correct: #10b981;
+            --border-wrong: #ef4444;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .en-translation {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        /* Boxes */
+        .box {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .concept-box {
+            background-color: var(--box-concept);
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .math-box {
+            background-color: var(--box-math);
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .option-correct {
+            background-color: var(--box-correct);
+            border-left-color: var(--border-correct);
+        }
+
+        .option-wrong {
+            background-color: var(--box-wrong);
+            border-left-color: var(--border-wrong);
+        }
+
+        /* Question Layout */
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        
+        .question-table th, .question-table td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .question-table th {
+            background-color: #f1f5f9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .difficulty {
+            color: #f59e0b;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <div>
+            <span class="badge">Topic: 需求定律與相對價格 (Law of Demand & Relative Price)</span>
+            <span class="badge">Difficulty: <span class="difficulty">★★★★☆</span></span>
+        </div>
+        <div>
+            <strong>Key Concepts:</strong> 需求定律 (Law of Demand), 相對價格 (Relative Price), 艾智仁一般性定理 (Alchian-Allen Theorem)
+        </div>
+    </header>
+
+    <section>
+        <h2>The Question (題目)</h2>
+        <p>在的士收費作出以下調整後，下列哪項陳述是正確的？</p>
+        <p class="en-translation">Which of the following statements is correct after the adjustment of taxi fare shown below?</p>
+
+        <table class="question-table">
+            <thead>
+                <tr>
+                    <th>現時的士收費<br><span class="en-translation">Existing taxi fare</span></th>
+                    <th>調整後的士收費<br><span class="en-translation">Adjusted taxi fare</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>首2公里： HK$20<br><span class="en-translation">First 2 kilometres: HK$20</span></td>
+                    <td>首2公里： HK$25<br><span class="en-translation">First 2 kilometres: HK$25</span></td>
+                </tr>
+                <tr>
+                    <td>其後每200米： HK$1.5<br><span class="en-translation">Every subsequent 200 metres: HK$1.5</span></td>
+                    <td>其後每200米： HK$1.5<br><span class="en-translation">Every subsequent 200 metres: HK$1.5</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            A. 乘客會乘搭更多長途的士。<br>
+            B. 短途的士乘搭次數相對長途的士乘搭次數的比例會下降。<br>
+            C. 的士司機賺取的總收入會上升。<br>
+            D. 經營的士服務的固定成本會上升。
+        </p>
+        <p class="en-translation" style="margin-top:0;">
+            A. Passengers will take more long-distance taxi trips.<br>
+            B. The ratio of short-distance taxi trips taken to long-distance taxi trips taken will decrease.<br>
+            C. The total revenue received by taxi drivers will increase.<br>
+            D. The fixed cost of operating taxi service will increase.
+        </p>
+    </section>
+
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="box concept-box">
+            <p><strong>1. 絕對價格 vs 相對價格 (Absolute Price vs Relative Price)</strong></p>
+            <p>絕對價格是以貨幣計算的價格（例如 HK$20）。相對價格是以放棄另一種物品的數量來計算的價格。當兩種物品的絕對價格同時加上一個<strong>固定金額</strong>時，原本較昂貴的物品的「相對價格」會下降。<br>
+            <span class="en-translation">Absolute price is measured in money (e.g., HK$20). Relative price is measured in terms of the quantity of another good given up. When a <strong>fixed amount</strong> is added to the absolute prices of two goods, the originally more expensive good becomes relatively cheaper.</span></p>
+
+            <p><strong>2. 艾智仁一般性定理 (Alchian-Allen Theorem / "Shipping the good apples out")</strong></p>
+            <p>根據需求定律，當長途的士（原價較高）的相對價格下降時，消費者會傾向以長途的士替代短途的士。因此，長途的士的需求量相對於短途的士的需求量會上升（或短途相對於長途的比例會下降）。<br>
+            <span class="en-translation">According to the Law of Demand, when the relative price of a long-distance trip (the originally more expensive option) decreases, consumers will substitute short trips with long trips. Thus, the quantity demanded for long trips relative to short trips will increase (or the ratio of short to long trips will decrease).</span></p>
+        </div>
+        
+        <div class="box math-box">
+            <p><strong>相對價格公式 (Relative Price Formula):</strong></p>
+            $$Relative\ Price\ of\ X = \frac{Price\ of\ X}{Price\ of\ Y}$$
+        </div>
+    </section>
+
+    <section>
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>正確答案 / Correct Option: B</strong></p>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option A: 錯誤 (Incorrect)</strong></p>
+            <p>長途的士的「絕對價格」實際上上升了（原本的車資 + HK$5）。根據需求定律，絕對價格上升，需求量必然下降。因此乘客<strong>不會</strong>乘搭更多長途的士，長途的士的絕對乘搭次數會減少。<br>
+            <span class="en-translation">The "absolute price" of a long-distance trip has actually increased (original fare + HK$5). According to the Law of Demand, when absolute price increases, quantity demanded falls. Therefore, passengers will <strong>NOT</strong> take more long-distance trips; the absolute number of long trips will decrease.</span></p>
+        </div>
+
+        <div class="option-analysis option-correct">
+            <p><strong>Option B: 正確 (Correct)</strong></p>
+            <p>我們可以用具體數字來計算。假設短途的士為2公里，長途的士為10公里（包含40個200米）。<br>
+            調整前：短途價格 = HK$20，長途價格 = HK$20 + (40 × 1.5) = HK$80。<br>
+            調整後：短途價格 = HK$25，長途價格 = HK$25 + (40 × 1.5) = HK$85。<br>
+            <strong>短途的士的相對價格 (以長途的士計算)：</strong>由 $ \frac{20}{80} = 0.25 $ 上升至 $ \frac{25}{85} \approx 0.29 $。<br>
+            由於短途的士的相對價格上升，人們會減少乘搭短途的士（幅度大於長途的士）。因此，短途相對長途的乘搭次數比例會下降。<br>
+            <span class="en-translation">Let's use concrete numbers. Assume a short trip is 2km, and a long trip is 10km (forty 200m intervals).<br>
+            Before: Short trip = HK$20, Long trip = HK$20 + (40 × 1.5) = HK$80.<br>
+            After: Short trip = HK$25, Long trip = HK$25 + (40 × 1.5) = HK$85.<br>
+            <strong>Relative price of a short trip (in terms of long trips):</strong> Increased from $ \frac{20}{80} = 0.25 $ to $ \frac{25}{85} \approx 0.29 $.<br>
+            Since the relative price of short trips has increased, people will reduce their consumption of short trips more heavily than long trips. Thus, the ratio of short-distance to long-distance trips taken will decrease.</span></p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option C: 錯誤 (Incorrect)</strong></p>
+            <p>的士加價後，總收入（Total Revenue）的增減取決於的士服務的「價格需求彈性」(Price Elasticity of Demand)。題目沒有提供相關數據，因此無法確定總收入會否上升。<br>
+            <span class="en-translation">After the fare increase, whether Total Revenue increases or decreases depends on the "Price Elasticity of Demand" for taxi services. Since the question provides no information about elasticity, we cannot determine if total revenue will increase.</span></p>
+        </div>
+
+        <div class="option-analysis option-wrong">
+            <p><strong>Option D: 錯誤 (Incorrect)</strong></p>
+            <p>固定成本（Fixed Costs）是指不隨產量變動的成本（例如的士牌照費、汽車保險）。改變向乘客收取的車資，不會影響司機營運的固定成本。<br>
+            <span class="en-translation">Fixed Costs are costs that do not vary with output (e.g., taxi license fees, vehicle insurance). Changing the fare charged to passengers does not alter the fixed costs of operating a taxi.</span></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="box concept-box" style="background-color: #f8fafc; border-left-color: #8b5cf6;">
+            <p><strong>解題關鍵 (The Pivot Point):</strong><br>
+            這題的關鍵在於看穿這是一個「同時增加固定收費」的題目。雖然「每200米HK$1.5」的跳錶收費沒有改變，但「首2公里」的起錶價由HK$20增加至HK$25，這等於為所有車程（無論長短）加上一個 HK$5 的固定附加費（Lump-sum surcharge）。</p>
+            <p class="en-translation">The key is recognizing this as a "fixed surcharge" problem. Although the variable rate of HK$1.5 per 200m remains unchanged, the base fare for the first 2km increases from HK$20 to HK$25. This effectively adds a fixed lump-sum surcharge of HK$5 to all trips, regardless of distance.</p>
+            
+            <p><strong>干擾資訊 (Distractors):</strong><br>
+            「其後每200米 HK$1.5」這個資訊在這裡的作用只是告訴你「邊際收費沒有變」。如果連跳錶收費也改變了，計算相對價格的變化就會複雜得多。</p>
+            <p class="en-translation">The information "Every subsequent 200 metres: HK$1.5" only serves to tell you that the marginal cost per distance hasn't changed. If this variable cost also changed, calculating the relative price shift would be much more complex.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>混淆「絕對數量」與「相對比例」：</strong> 很多學生看到長途的士的「相對價格」下降，就誤選 A，認為乘客會搭「更多」(絕對數量上升) 長途的士。記住：長途的士變得更貴了 (加了HK$5)，所以搭長途的總人數一定會下降。只是搭短途的人數下降得<strong>更厲害</strong>！<br>
+                <span class="en-translation"><strong>Confusing Absolute Quantity with Relative Ratio:</strong> Many students see that the relative price of long trips has fallen and wrongly choose Option A, thinking passengers will take "more" long trips (an absolute increase). Remember: Long trips are now more expensive absolutely (+HK$5), so the absolute number of long trips MUST fall. It's just that short trips will fall by a <strong>larger proportion</strong>!</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 既然長途的士的相對價格下降了，為什麼我們不是說「長途的士乘搭次數相對短途的士乘搭次數的比例會上升」？</strong><br>
+        <span class="en-translation">Since the relative price of long trips decreased, why don't we say "The ratio of long trips to short trips will increase"?</span></p>
+        
+        <p><strong>A:</strong> 這兩句話其實是同一個意思的數學表達！如果 $ \frac{Long}{Short} $ 的比例上升，數學上就必然代表 $ \frac{Short}{Long} $ 的比例下降。考評局在選項 B 中故意將比例倒轉寫 (Short-distance to long-distance)，這是在測試你是否真正理解比例的倒數關係。<br>
+        <span class="en-translation">These two statements actually mean the exact same thing mathematically! If the ratio $ \frac{Long}{Short} $ increases, it mathematically guarantees that the ratio $ \frac{Short}{Long} $ decreases. The examination board deliberately inverted the ratio in Option B to test your mathematical logic alongside economic principles.</span></p>
+    </section>
+
+    <section>
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="box concept-box" style="background-color: #fffbeb; border-left-color: #f59e0b;">
+            <p><strong>「加定額、拉近距」口訣 (The "Fixed Add-on Shrinks the Gap" Rule)</strong></p>
+            <p>在考場上，如果你看到兩個不同價格的物品被加上了「同一個固定金額」：<br>
+            1. 貴的東西會變得<strong>相對便宜</strong>。<br>
+            2. 平的東西會變得<strong>相對昂貴</strong>。<br>
+            然後直接找答案中描述「貴的東西相對比例上升」或「平的東西相對比例下降」的選項，5秒內就能鎖定答案，完全不需要動筆計數！</p>
+            <p class="en-translation">In the exam room, if you see the "same fixed amount" added to two goods of different prices:<br>
+            1. The expensive good becomes <strong>relatively cheaper</strong>.<br>
+            2. The cheap good becomes <strong>relatively more expensive</strong>.<br>
+            Immediately look for the option that describes an increase in the relative ratio of the expensive good, or a decrease in the relative ratio of the cheaper good. You can lock in the answer in 5 seconds without writing down any math!</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
