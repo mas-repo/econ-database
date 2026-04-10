@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Monetary Base</title>
+    
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --border-blue: #0ea5e9;
+            --bg-gray: #f9fafb;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+            --trap-bg: #fff1f2;
+            --trap-border: #e11d48;
+            --tip-bg: #f0fdf4;
+            --tip-border: #16a34a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4 { color: var(--primary-blue); margin-bottom: 0.5em; }
+        
+        .header-section {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .question-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--border-blue);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .trap-box {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-box {
+            background-color: var(--tip-bg);
+            border-left: 5px solid var(--tip-border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .correct-ans {
+            border-color: var(--tip-border);
+            background-color: #f8fafc;
+            box-shadow: 0 2px 8px rgba(22, 163, 74, 0.1);
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 8px;
+            padding-left: 10px;
+            border-left: 2px solid #cbd5e1;
+            font-style: italic;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .concept-box, .trap-box, .tip-box, .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Concept Guide</h1>
+        <div>
+            <span class="badge">Topic: 貨幣政策與貨幣基礎 (Monetary Policy & Base)</span>
+            <span class="badge">Difficulty: ⭐⭐⭐ (3/5)</span>
+            <span class="badge">Keywords: Monetary Base, Open Market Operations</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>當_____________，貨幣基礎增加。</strong></p>
+        <p>A. 商業銀行持有較少超額儲備<br>
+        B. 商業銀行向公眾購買政府債券<br>
+        C. 中央銀行向公眾購買政府債券<br>
+        D. 中央銀行調高貼現率</p>
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+        <p class="en-text" style="border: none; padding: 0; font-style: normal; margin: 0;">
+        <strong>The monetary base increases when_____________ .</strong><br><br>
+        A. the commercial banks hold less excess reserves.<br>
+        B. the commercial banks buy government bonds from the public.<br>
+        C. the central bank buys government bonds from the public.<br>
+        D. the central bank increases the discount rate.
+        </p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>貨幣基礎 (Monetary Base)</h3>
+        <p>貨幣基礎（又稱高能貨幣）是指中央銀行發行並投入經濟體系中的負債總額。它由兩個主要部分組成：公眾持有的法定貨幣（$Cp$）和銀行體系在中央銀行的儲備（$R$）。</p>
+        <p class="en-text">The monetary base (also known as high-powered money) refers to the total amount of a central bank's liabilities issued and injected into the economy. It consists of two main components: currency held by the public ($Cp$) and reserves of the banking system at the central bank ($R$).</p>
+        
+        <div class="math-block">
+            $$MB = Cp + R$$
+        </div>
+        
+        <p><strong>關鍵概念 (Key Concept):</strong> 只有<strong>中央銀行 (Central Bank)</strong> 的行動（例如公開市場操作）可以直接改變貨幣基礎的大小。商業銀行 (Commercial Banks) 的行動只能影響貨幣供應 (Money Supply)，而不能改變貨幣基礎的總量。</p>
+        <p class="en-text"><strong>Key Concept:</strong> Only the actions of the <strong>Central Bank</strong> (such as open market operations) can directly change the size of the monetary base. Actions by commercial banks can only affect the money supply, not the total monetary base.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (The correct option is): <strong>Option C</strong></p>
+
+    <div class="analysis-item">
+        <h4>選項 A (Option A) - 錯誤 (Incorrect)</h4>
+        <p>商業銀行持有較少超額儲備，意味著它們將多餘的資金借出，創造更多存款，這會增加「貨幣供應」(Money Supply)。但這只是將儲備轉化為流通貨幣或新存款，並不會改變中央銀行發行的貨幣總量（貨幣基礎）。</p>
+        <p class="en-text">When commercial banks hold less excess reserves, it means they lend out surplus funds, creating more deposits and increasing the "Money Supply". However, this merely converts reserves into circulating currency or new deposits; it does not change the total amount of money issued by the central bank (the monetary base).</p>
+    </div>
+
+    <div class="analysis-item">
+        <h4>選項 B (Option B) - 錯誤 (Incorrect)</h4>
+        <p>商業銀行向公眾購買政府債券，會透過支付款項到公眾的銀行戶口來創造新的存款，從而增加貨幣供應。但同樣地，這屬於商業銀行的信貸創造過程，與貨幣基礎無關。</p>
+        <p class="en-text">When commercial banks buy government bonds from the public, they create new deposits by paying into the public's bank accounts, thereby increasing the money supply. However, this is part of the commercial banks' credit creation process and has nothing to do with changing the monetary base.</p>
+    </div>
+
+    <div class="analysis-item correct-ans">
+        <h4>選項 C (Option C) - 正確 (Correct)</h4>
+        <p>當中央銀行向公眾購買政府債券時（這稱為公開市場買入），央行會開出支票給公眾。公眾將支票存入商業銀行，銀行的儲備 ($R$) 會隨之增加。因為儲備是貨幣基礎的一部分，這導致貨幣基礎 ($MB$) 增加。</p>
+        <p class="en-text">When the central bank buys government bonds from the public (known as open market purchases), it pays the public with a cheque. The public deposits this cheque into commercial banks, which increases the banks' reserves ($R$). Since reserves are a component of the monetary base, the monetary base ($MB$) increases.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h4>選項 D (Option D) - 錯誤 (Incorrect)</h4>
+        <p>中央銀行調高貼現率，會增加商業銀行向央行借款的成本。這會打擊銀行借款的意欲，導致銀行體系的儲備減少，從而可能<strong>減少</strong>（而非增加）貨幣基礎。</p>
+        <p class="en-text">If the central bank increases the discount rate, it raises the cost for commercial banks to borrow from the central bank. This discourages borrowing, which leads to a decrease in the banking system's reserves, potentially <strong>decreasing</strong> (not increasing) the monetary base.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p><strong>解題切入點 (The Pivot Point):</strong><br>
+    做這類題目時，你必須立刻在腦海中區分兩個概念：「貨幣基礎」(Monetary Base) 與 「貨幣供應」(Money Supply)。題目問的是<strong>貨幣基礎</strong>的改變。</p>
+    <p class="en-text">When tackling this type of question, you must immediately distinguish between two concepts in your mind: "Monetary Base" and "Money Supply". The question specifically asks about changes to the <strong>Monetary Base</strong>.</p>
+    
+    <ul>
+        <li><strong>干擾資訊 (Distractors):</strong> 選項 A 和 B 的主語是「商業銀行」(Commercial banks)。商業銀行的日常操作（借貸、買賣資產）只能改變貨幣乘數效應下的貨幣供應，絕對無法無中生有地創造「貨幣基礎」。因此，看到「商業銀行」就可以立刻剔除這兩個選項。</li>
+        <li class="en-text"><strong>Distractors:</strong> The subjects of Options A and B are "Commercial banks". The daily operations of commercial banks (lending, buying/selling assets) can only change the money supply via the money multiplier effect; they can never create "monetary base" out of thin air. Therefore, you can immediately eliminate these two options when you see "commercial banks".</li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <h4>🚨 概念混淆：貨幣基礎 vs 貨幣供應 (Confusing MB and Ms)</h4>
+        <p>許多同學會將「貨幣基礎」和「貨幣供應」混為一談。記住：<br>
+        1. <strong>貨幣基礎 ($MB$)</strong> = 央行印出來的錢 (受<strong>中央銀行</strong>控制)。<br>
+        2. <strong>貨幣供應 ($Ms$)</strong> = 經濟體系中實際流通的購買力 (受央行、商業銀行及公眾共同影響)。<br>
+        選項 A 和 B 會令 $Ms$ 增加，但對 $MB$ 毫無影響！</p>
+        <p class="en-text">Many students confuse "Monetary Base" with "Money Supply". Remember:<br>
+        1. <strong>Monetary Base ($MB$)</strong> = Money printed by the central bank (controlled by the <strong>Central Bank</strong>).<br>
+        2. <strong>Money Supply ($Ms$)</strong> = Actual purchasing power circulating in the economy (influenced by the central bank, commercial banks, and the public).<br>
+        Options A and B increase $Ms$, but have zero impact on $MB$!</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-item">
+        <p class="qa-q">Q: 如果中央銀行是向「商業銀行」買債券，而不是向「公眾」買，結果會一樣嗎？</p>
+        <p class="en-text">Q: If the central bank buys bonds from "commercial banks" instead of the "public", would the result be the same?</p>
+        <p><strong>A:</strong> 會的！如果央行直接向商業銀行買債券，央行會將資金直接存入商業銀行在央行的結算戶口中，這會直接增加銀行的儲備 ($R$)。因為 $MB = Cp + R$，只要 $R$ 增加，$MB$ 同樣會增加。</p>
+        <p class="en-text"><strong>A:</strong> Yes! If the central bank buys bonds directly from commercial banks, the central bank deposits the funds directly into the commercial banks' clearing accounts at the central bank. This directly increases the banks' reserves ($R$). Since $MB = Cp + R$, an increase in $R$ means $MB$ also increases.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tip-box">
+        <h4>⚡ 秒殺技巧 (The Elimination Shortcut)</h4>
+        <p>在 DSE 選擇題中，當題目問及<strong>「貨幣基礎」(Monetary Base)</strong> 的改變時，第一時間掃視選項的主語：</p>
+        <ol>
+            <li>將所有由<strong>「商業銀行」或「公眾」</strong>發起的行動（如公眾提款、銀行借錢、銀行買債）直接刪除 (Eliminate A & B)。</li>
+            <li>只剩下由<strong>「中央銀行」</strong>發起的行動 (Left with C & D)。</li>
+            <li>央行「買入」資產 = 放水 = 貨幣基礎增加；央行「賣出」資產 = 收水 = 貨幣基礎減少。秒選 C！</li>
+        </ol>
+        <p class="en-text">In DSE MCQs, when asked about changes to the <strong>Monetary Base</strong>, immediately scan the subjects of the options:<br>
+        1. Cross out any actions initiated by <strong>"commercial banks" or "the public"</strong> (e.g., public withdrawing cash, banks lending, banks buying bonds). (Eliminate A & B)<br>
+        2. You are left with actions initiated by the <strong>"Central Bank"</strong>. (Left with C & D)<br>
+        3. Central Bank "buying" assets = injecting money = MB increases; Central Bank "selling" assets = withdrawing money = MB decreases. Instantly choose C!</p>
+    </div>
+
+</body>
+</html>

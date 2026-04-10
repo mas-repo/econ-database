@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Balance of Payments Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --error-bg: #fee2e2;
+            --error-border: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: var(--text-heading);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; }
+        .bilingual-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .header-section {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+        .question-box {
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .correct-option {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            border-left: 5px solid var(--correct-border);
+        }
+        .wrong-option {
+            background-color: #fafafa;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+        .pivot-point {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h2>📚 Topic: Balance of Payments - Current Account <br><span style="font-size: 0.8em; color: #64748b;">(國際收支平衡表 - 經常帳)</span></h2>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Resident Status (居民身分)</span>
+            <span class="tag">Current Account (經常帳)</span>
+            <span class="tag">Financial Account (金融帳)</span>
+        </p>
+    </div>
+
+    <h2>📝 The Question (題目)</h2>
+    <div class="question-box">
+        <p>一位來自美國的講師在香港工作了10年。下列哪些會包括在香港經常帳差額的計算之內？</p>
+        <p>
+            (1) 他給予在香港的太太的款項<br>
+            (2) 他用來購買在美國股市上市的股票的款項<br>
+            (3) 他捐給非洲慈善機構的款項<br>
+            (4) 他到美國探望父母所花的款項
+        </p>
+        <p>
+            A. 只有(1)、(2)<br>
+            B. 只有(1)、(4)<br>
+            C. 只有(2)、(3)<br>
+            D. 只有(3)、(4)
+        </p>
+        <hr style="margin: 15px 0;">
+        <div class="bilingual-en">
+            <p>A lecturer from the US has been working in Hong Kong for 10 years. Which of the following would be included in the calculation of Hong Kong’s current account balance?</p>
+            <p>
+                (1) the money he gives to his wife in Hong Kong<br>
+                (2) the money he uses to buy shares listed in the US stock market<br>
+                (3) the money he donates to a charity organization in Africa<br>
+                (4) the money he spends on visiting his parents in the US
+            </p>
+            <p>
+                A. (1) and (2) only<br>
+                B. (1) and (4) only<br>
+                C. (2) and (3) only<br>
+                D. (3) and (4) only
+            </p>
+        </div>
+    </div>
+
+    <h2>🧠 Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>1. Resident Status (居民身分)</h3>
+        <p>在國際收支平衡表中，個人若在一個經濟體內居住或工作超過一年，便會被視為該經濟體的<strong>居民 (Resident)</strong>，其國籍並不重要。因此，這位在香港工作了10年的美國講師，在經濟學上是<strong>香港居民</strong>。</p>
+        <p class="bilingual-en">In the Balance of Payments, if an individual resides or works in an economy for more than one year, they are considered a <strong>Resident</strong> of that economy, regardless of their nationality. Therefore, the US lecturer who has worked in HK for 10 years is an <strong>HK Resident</strong>.</p>
+        
+        <h3>2. Balance of Payments Accounts (國際收支平衡表帳戶)</h3>
+        <p>國際收支平衡表主要分為經常帳 (Current Account) 和資本及金融帳 (Capital and Financial Account)。</p>
+        <p class="bilingual-en">The Balance of Payments is mainly divided into the Current Account and the Capital and Financial Account.</p>
+        
+        <div class="math-block">
+            $$ CAB = NX + NY + NCT $$
+        </div>
+        <p>
+            經常帳餘額 ($CAB$) 的組成部分包括：<br>
+            - $NX$: 貨物及服務淨出口 (Net Exports of Goods and Services)<br>
+            - $NY$: 初級收益淨值 / 淨要素收益 (Net Primary Income)<br>
+            - $NCT$: 次要收益淨值 / 經常轉移淨值 (Net Secondary Income / Net Current Transfers)
+        </p>
+        <p class="bilingual-en">
+            Components of the Current Account Balance ($CAB$) include:<br>
+            - $NX$: Net Exports of Goods and Services<br>
+            - $NY$: Net Primary Income<br>
+            - $NCT$: Net Secondary Income (Net Current Transfers)
+        </p>
+    </div>
+
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是 (Correct Option): <strong style="color: var(--correct-border); font-size: 1.2rem;">Option D</strong></p>
+
+    <div class="option-analysis wrong-option">
+        <h4>分析 (1) - 錯誤 (Incorrect)</h4>
+        <p>講師（香港居民）將金錢給予在香港的太太（香港居民）。這屬於本地經濟體內兩名居民之間的轉移，並不涉及跨境交易，因此<strong>不會</strong>記錄在國際收支平衡表中。</p>
+        <p class="bilingual-en">The lecturer (HK resident) gives money to his wife in HK (HK resident). This is a domestic transfer between two residents within the local economy. It does not involve cross-border transactions and is therefore <strong>NOT</strong> recorded in the Balance of Payments.</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <h4>分析 (2) - 錯誤 (Incorrect)</h4>
+        <p>講師購買美國股票。這是香港居民購買海外金融資產，屬於證券投資 (Portfolio Investment)。這筆交易會記錄在<strong>金融帳 (Financial Account)</strong> 中，而不是經常帳。</p>
+        <p class="bilingual-en">The lecturer buys US shares. This is an HK resident purchasing foreign financial assets, which falls under Portfolio Investment. This transaction is recorded in the <strong>Financial Account</strong>, not the Current Account.</p>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <h4>分析 (3) - 正確 (Correct)</h4>
+        <p>講師捐款給非洲慈善機構。這屬於單向的資金流出，沒有換取任何實質物品或服務，因此歸類為<strong>次要收益 / 經常轉移 (Secondary Income / Current Transfers)</strong> 的流出，<strong>會</strong>包括在經常帳內。</p>
+        <p class="bilingual-en">The lecturer donates to an African charity. This is a one-way outward flow of funds without receiving any goods or services in return. It is classified as an outflow of <strong>Secondary Income / Current Transfers</strong> and <strong>WILL</strong> be included in the Current Account.</p>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <h4>分析 (4) - 正確 (Correct)</h4>
+        <p>講師到美國探望父母所花的款項。香港居民在海外的旅遊消費，會被視為香港對外國旅遊服務的購買，屬於<strong>服務輸入 (Import of Services)</strong>。因此，這<strong>會</strong>包括在經常帳的貨物及服務貿易中。</p>
+        <p class="bilingual-en">The money spent visiting his parents in the US. The travel expenditure of an HK resident abroad is treated as a purchase of foreign travel services, which is classified as an <strong>Import of Services</strong>. Therefore, this <strong>WILL</strong> be included in the goods and services trade of the Current Account.</p>
+    </div>
+
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="pivot-point">
+        <strong>💡 Pivot Point (破題關鍵):</strong><br>
+        題目第一句「在香港工作了10年」是解題的核心。這確認了該講師是<strong>香港居民</strong>。一旦確認他是香港居民，我們只需要判斷他的行為是否屬於「香港與外國之間的經常性交易」。
+        <p class="bilingual-en">The first sentence, "working in Hong Kong for 10 years," is the core to solving this problem. It establishes that the lecturer is an <strong>HK Resident</strong>. Once established, we only need to judge whether his actions constitute "current transactions between HK and the rest of the world."</p>
+    </div>
+    <p><strong>Distractor (干擾資訊):</strong> 題目強調他是一位「來自美國的講師」。這是為了誤導你以為他是美國居民，從而錯誤判斷資金流向。在經濟學上，判斷 BoP 交易看的是「居住地 (Residency)」，而非「國籍 (Nationality)」。</p>
+    <p class="bilingual-en"><strong>Distractor:</strong> The question highlights that he is a "lecturer from the US." This is a trap to make you think he is a US resident, which would lead to incorrect judgments about capital flows. In economics, BoP transactions are based on "Residency," not "Nationality."</p>
+
+    <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>混淆國籍與居民身分 (Confusing Nationality with Residency):</strong> 學生常以為美國人匯錢回美國不算「對外交易」，但只要他在港滿一年，他就是香港經濟體系的一部分。
+            <br><span class="bilingual-en">Students often think an American sending money to the US isn't an "external transaction." But as long as he has been in HK for >1 year, he is part of the HK economy.</span></li>
+        <li><strong>混淆金融帳與經常帳 (Confusing Financial Account with Current Account):</strong> 看到買賣股票、債券等投資行為（選項2），就直覺以為是經常帳。記住，只有「貨物、服務、收入、無償轉移」才屬於經常帳；「資產、負債」的買賣屬於金融帳。
+            <br><span class="bilingual-en">Seeing investments like stocks/bonds (Option 2) and assuming they belong to the current account. Remember: Goods, Services, Income, and Unrequited transfers = Current Account; Buying/selling Assets and Liabilities = Financial Account.</span></li>
+    </ul>
+
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <p><strong>Q: 如果這位講師只在香港工作了 2 個月，答案會改變嗎？</strong></p>
+    <p>A: 會的！如果只工作了2個月，他依然是「非香港居民」。那麼他把錢給香港的太太，就變成了外國人匯款給香港人，屬於經常轉移的流入（會計入經常帳）。而他去美國消費，則是美國居民在美國消費，與香港的 BoP 無關了。</p>
+    <div class="bilingual-en">
+        <strong>Q: If this lecturer had only worked in Hong Kong for 2 months, would the answer change?</strong><br>
+        A: Yes! If he only worked for 2 months, he would still be a "Non-HK Resident." Giving money to his wife in HK would then be an inward current transfer from a foreigner to an HK resident (included in the Current Account). His spending in the US would just be a US resident spending in the US, which has nothing to do with HK's BoP.
+    </div>
+
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p><strong>口訣 (Mnemonic): "Resident Test -> Asset Test"</strong></p>
+    <ol>
+        <li><strong>Resident Test:</strong> 看到題目有人物，先圈出他的居住時間。大於一年 = 本地居民。直接把「來自美國」這四個字劃掉，當他是香港人來做題。</li>
+        <li><strong>Asset Test:</strong> 掃視選項，看到「股票 / 債券 / 房地產 (Shares / Bonds / Real Estate)」等資產字眼，直接在旁邊寫上 "FA" (Financial Account)。題目問經常帳 (Current Account)，所以立刻可以剔除包含 (2) 的選項 A 和 C。然後再看 (1) 發現是內部轉移，剔除 B，秒選 D。</li>
+    </ol>
+    <div class="bilingual-en">
+        <ol>
+            <li><strong>Resident Test:</strong> Circle the time spent in the economy. >1 year = Local Resident. Cross out "from the US" and treat him purely as a Hong Konger.</li>
+            <li><strong>Asset Test:</strong> Scan the options. If you see assets like "shares/bonds/real estate", write "FA" (Financial Account) next to them. The question asks for the Current Account, so immediately eliminate options A and C which contain (2). Then, seeing (1) is an internal transfer, eliminate B. You can instantly select D.</li>
+        </ol>
+    </div>
+</div>
+
+</body>
+</html>
