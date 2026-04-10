@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Unemployment Rate Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+        
+        body {
+            font-family: "PingFang HK", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--gray-bg);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, var(--primary-blue), #2563eb);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-card h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .tags span {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--gray-bg);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .analysis-section {
+            margin-bottom: 20px;
+        }
+
+        .option-item {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .correct-option {
+            border-left: 5px solid #10b981;
+            background-color: #ecfdf5;
+        }
+
+        .wrong-option {
+            border-left: 5px solid #ef4444;
+        }
+
+        .mistakes-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .en-translation {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+        
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        .qa-a {
+            color: #475569;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-card, .concept-box, .mistakes-box { padding: 15px; }
+            th, td { padding: 6px 8px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h1>經濟學題解指南 | Economics Solution Guide</h1>
+        <div class="tags">
+            <span><strong>Topic:</strong> 總體經濟學：失業率 (Macroeconomics: Unemployment Rate)</span>
+            <span><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+            <span><strong>Keywords:</strong> 勞動人口 (Labour Force), 失業率 (Unemployment Rate), 就業不足 (Underemployment)</span>
+        </div>
+    </div>
+
+    <h2>2. 題目 | The Question</h2>
+    <div class="question-box">
+        <p><strong>[中文]</strong> 下表是某經濟的資料：</p>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>15歲或以上的人口</td>
+                    <td>6,500,000</td>
+                </tr>
+                <tr>
+                    <td>勞動人口參與率*</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>就業人口</td>
+                    <td>3,780,000</td>
+                </tr>
+                <tr>
+                    <td>就業不足的人口</td>
+                    <td>100,000</td>
+                </tr>
+            </table>
+        </div>
+        <p><small>*勞動人口參與率 = 15歲或以上的人口中勞動人口所佔比例</small></p>
+        <p>根據以上資料，該經濟的失業率是 ____________。</p>
+        <p>A. 1.85%<br>B. 3.08%<br>C. 3.38%<br>D. 5.64%</p>
+
+        <hr>
+
+        <p class="en-translation"><strong>[English]</strong> The following table shows the data of an economy.</p>
+        <div class="table-container en-translation">
+            <table>
+                <tr>
+                    <td>Population aged 15 or above</td>
+                    <td>6,500,000</td>
+                </tr>
+                <tr>
+                    <td>Labour force participation rate*</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>Employed population</td>
+                    <td>3,780,000</td>
+                </tr>
+                <tr>
+                    <td>Underemployed population</td>
+                    <td>100,000</td>
+                </tr>
+            </table>
+        </div>
+        <p class="en-translation"><small>*Labour force participation rate = proportion of labour force in population aged 15 or above</small></p>
+        <p class="en-translation">Based on the above data, the unemployment rate of the economy is ____________.</p>
+        <p class="en-translation">A. 1.85%<br>B. 3.08%<br>C. 3.38%<br>D. 5.64%</p>
+    </div>
+
+    <h2>3. 概念重溫 | Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual-pair">
+            <p><strong>勞動人口 (Labour Force):</strong> 指所有15歲或以上、符合工作條件並願意工作的人口。它由「就業人口」和「失業人口」組成。</p>
+            <p class="en-translation"><strong>Labour Force:</strong> Refers to all persons aged 15 or above who are available and willing to work. It consists of the "Employed population" and the "Unemployed population".</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Labour Force} = \text{Employed} + \text{Unemployed} $$
+            $$ \text{Labour Force} = \text{Population } (\ge 15) \times \text{Labour Force Participation Rate} $$
+        </div>
+
+        <div class="bilingual-pair">
+            <p><strong>失業率 (Unemployment Rate):</strong> 失業人口佔總勞動人口的百分比。</p>
+            <p class="en-translation"><strong>Unemployment Rate:</strong> The percentage of the unemployed population in the total labour force.</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Unemployment Rate} = \frac{\text{Unemployed}}{\text{Labour Force}} \times 100\% $$
+        </div>
+
+        <div class="bilingual-pair">
+            <p><strong>就業不足人口 (Underemployed Population):</strong> 指在統計期間非自願地工作少於指定時數（通常是35小時），並正在尋找更多工作的人。<strong>請注意：他們已被計算在「就業人口」之內。</strong></p>
+            <p class="en-translation"><strong>Underemployed Population:</strong> Refers to people who involuntarily worked less than a specified number of hours (usually 35 hours) during the statistical period and were seeking more work. <strong>Note: They are ALREADY counted within the "Employed population".</strong></p>
+        </div>
+    </div>
+
+    <h2>4. 答案與詳細分析 | Answer & Detailed Analysis</h2>
+    <p>正確答案 (Correct Option)： <strong>Option B</strong></p>
+
+    <div class="analysis-section">
+        <div class="option-item wrong-option">
+            <div class="bilingual-pair">
+                <p><strong>A. 1.85% (錯誤 Wrong)</strong></p>
+                <p>這是將「失業人口」(120,000) 錯誤地除以「15歲或以上總人口」(6,500,000) 所得出的結果。失業率的分母必須是勞動人口，而不是總人口。<br>
+                算式：120,000 / 6,500,000 = 1.846%</p>
+                <p class="en-translation">This result comes from mistakenly dividing the "Unemployed population" (120,000) by the "Total population aged 15 or above" (6,500,000). The denominator for the unemployment rate must be the labour force, not the total population.<br>
+                Calculation: 120,000 / 6,500,000 = 1.846%</p>
+            </div>
+        </div>
+
+        <div class="option-item correct-option">
+            <div class="bilingual-pair">
+                <p><strong>B. 3.08% (正確 Correct)</strong></p>
+                <p>步驟 1：計算勞動人口。6,500,000 × 60% = 3,900,000。<br>
+                步驟 2：計算失業人口。勞動人口 - 就業人口 = 3,900,000 - 3,780,000 = 120,000。<br>
+                步驟 3：計算失業率。 (120,000 / 3,900,000) × 100% = 3.0769...%，四捨五入為 3.08%。</p>
+                <p class="en-translation">Step 1: Calculate Labour Force. 6,500,000 × 60% = 3,900,000.<br>
+                Step 2: Calculate Unemployed. Labour Force - Employed = 3,900,000 - 3,780,000 = 120,000.<br>
+                Step 3: Calculate Unemployment Rate. (120,000 / 3,900,000) × 100% = 3.0769...%, rounded to 3.08%.</p>
+            </div>
+        </div>
+
+        <div class="option-item wrong-option">
+            <div class="bilingual-pair">
+                <p><strong>C. 3.38% (錯誤 Wrong)</strong></p>
+                <p>這個錯誤結合了兩個陷阱：(1) 將「就業不足人口」加入失業人口中 (120,000 + 100,000 = 220,000)，以及 (2) 錯誤地除以總人口 (6,500,000)。<br>
+                算式：220,000 / 6,500,000 = 3.384%</p>
+                <p class="en-translation">This mistake combines two traps: (1) Adding the "Underemployed" to the Unemployed population (120,000 + 100,000 = 220,000), and (2) incorrectly dividing by the Total population (6,500,000).<br>
+                Calculation: 220,000 / 6,500,000 = 3.384%</p>
+            </div>
+        </div>
+
+        <div class="option-item wrong-option">
+            <div class="bilingual-pair">
+                <p><strong>D. 5.64% (錯誤 Wrong)</strong></p>
+                <p>這是最常見的概念錯誤。學生錯誤地認為「就業不足」等於「失業」，並將兩者相加作為失業人口的總數。但實際上就業不足者是有工作的，已經包含在就業人口中。<br>
+                算式：(120,000 + 100,000) / 3,900,000 = 5.641%</p>
+                <p class="en-translation">This is the most common conceptual error. Students mistakenly think "Underemployed" means "Unemployed" and add them together as the total unemployed population. However, underemployed people have jobs and are already included in the employed population.<br>
+                Calculation: (120,000 + 100,000) / 3,900,000 = 5.641%</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>5. 題目拆解 | Problem Decomposition</h2>
+    <div class="bilingual-pair">
+        <p><strong>解題關鍵點 (Pivot Point)：</strong><br>
+        要計算失業率，你必須且只需要兩個數字：**失業人口**和**勞動人口**。題目並沒有直接提供這兩個數字，因此你需要透過公式間接找出來。</p>
+        <p class="en-translation"><strong>Pivot Point:</strong><br>
+        To calculate the unemployment rate, you need exactly two numbers: the **Unemployed population** and the **Labour force**. The question doesn't give them directly, so you must find them indirectly using formulas.</p>
+    </div>
+    
+    <div class="bilingual-pair">
+        <p><strong>干擾資訊 (Distractors)：</strong><br>
+        題干中的「就業不足的人口 100,000」完全是為了混淆你而設的干擾項！在計算失業率時，我們根本不需要用到這個數字。</p>
+        <p class="en-translation"><strong>Distractors:</strong><br>
+        The "Underemployed population 100,000" in the question is a distractor set up entirely to confuse you! We do not need this number at all when calculating the unemployment rate.</p>
+    </div>
+
+    <h2>6. 常犯錯誤與陷阱 | Common Mistakes & Traps</h2>
+    <div class="mistakes-box">
+        <div class="bilingual-pair">
+            <p><strong>陷阱 1：分母錯誤 (Wrong Denominator)</strong><br>
+            很多同學忘記失業率的基礎是「勞動人口」，而不是「15歲或以上總人口」。不在勞動人口中的人（如全職學生、退休人士、家庭主婦）是不計算在失業率的分母內的。</p>
+            <p class="en-translation"><strong>Trap 1: Wrong Denominator</strong><br>
+            Many students forget that the base for the unemployment rate is the "Labour Force", not the "Total population aged 15 or above". People not in the labour force (e.g., full-time students, retirees, housewives) are not included in the denominator.</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 15px 0;">
+        <div class="bilingual-pair">
+            <p><strong>陷阱 2：重複計算就業不足 (Double-counting Underemployment)</strong><br>
+            就業不足的人雖然工作時間短，但他們**已經擁有工作**。根據統計處定義，他們已經被計入「就業人口」當中。如果你再把他們當作「失業」加進去，就是重複計算了。</p>
+            <p class="en-translation"><strong>Trap 2: Double-counting Underemployment</strong><br>
+            Although underemployed people work fewer hours, they **already have a job**. According to statistical definitions, they are already counted within the "Employed population". If you add them to the "Unemployed" category, you are double-counting.</p>
+        </div>
+    </div>
+
+    <h2>7. 學生常見疑問 | Student Q&A</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 為什麼我們不能把「就業不足」從「就業人口」中扣除出來算進失業裡？<br>
+        <span class="en-translation">Why can't we subtract the "Underemployed" from the "Employed" and count them as unemployed?</span></div>
+        <div class="qa-a">A: 因為經濟學上對「失業」的定義非常嚴格。只要你在統計期間內工作了哪怕只有1小時並獲得報酬，你就算作「就業」。就業不足者可能想做全職但只能找到兼職，所以他們確實有就業，不能被定義為完全失業。<br>
+        <span class="en-translation">Because the economic definition of "Unemployment" is very strict. As long as you worked for at least 1 hour for pay during the statistical period, you are considered "Employed". Underemployed people might want to work full-time but can only find part-time jobs; therefore, they are employed and cannot be defined as completely unemployed.</span></div>
+    </div>
+
+    <h2>8. 考試技巧與速解 | Exam Tricks & Shortcuts</h2>
+    <div class="bilingual-pair">
+        <p><strong>即時刪除法 (Immediate Elimination)：</strong><br>
+        在做DSE多項選擇題時，一看到這類題目，立刻用鉛筆將「就業不足人口」這整行資料劃掉！這樣你的大腦就不會被多餘的數字干擾，直接專注於利用「總人口」和「參與率」找出「勞動人口」。</p>
+        <p class="en-translation"><strong>Immediate Elimination:</strong><br>
+        When doing DSE Multiple Choice questions, as soon as you see this type of problem, use a pencil to immediately cross out the entire row of "Underemployed population" data! This prevents your brain from being distracted by redundant numbers, allowing you to focus directly on finding the "Labour Force" using the total population and participation rate.</p>
+    </div>
+
+</body>
+</html>

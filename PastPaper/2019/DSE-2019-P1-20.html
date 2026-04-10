@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Deep Blue */
+            --secondary-color: #0ea5e9; /* Light Blue */
+            --bg-color: #ffffff;
+            --text-main: #1f2937; /* Dark Gray for Chinese */
+            --text-en: #4b5563; /* Medium Gray for English */
+            --concept-bg: #f0f9ff;
+            --math-bg: #f8fafc;
+            --correct-color: #15803d; /* Green */
+            --wrong-color: #b91c1c; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            background-color: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Bilingual paragraph wrapper */
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+
+        .bilingual-block p.zh {
+            margin-bottom: 4px;
+        }
+
+        .bilingual-block p.en {
+            margin-top: 0;
+            color: var(--text-en);
+        }
+
+        /* Specific Sections Styling */
+        .header-info {
+            background-color: #fffbeb; /* Light yellow */
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-info ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-info li {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .analysis-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct {
+            color: var(--correct-color);
+            font-weight: bold;
+        }
+
+        .wrong {
+            color: var(--wrong-color);
+            font-weight: bold;
+        }
+
+        .tips-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>HKDSE Economics: Question Analysis <br> 經濟學試題分析</h1>
+
+    <div class="header-info">
+        <ul>
+            <li><strong>Topic (課題):</strong> Macroeconomics - Labour Market & Aggregate Supply / Equity (宏觀經濟學 - 勞動市場與總供應 / 公平)</li>
+            <li><strong>Difficulty (難度):</strong> ★★★☆☆ (3/5)</li>
+            <li><strong>Key Concepts (核心概念):</strong> Labour Force (勞動人口), Equalisation of Opportunities (機會均等化), Full-employment Output (全民就業產出水平), Human Capital (人力資本).</li>
+        </ul>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <p class="zh">由2017-18學年起，香港政府向修讀本地私立教育機構所開辦的全日制自資學士學位課程的學生提供每年$30 000的資助。下列哪些是這資助計劃的可能影響？</p>
+            <p class="en">Starting from the academic year 2017-18, the Hong Kong Government provides a subsidy of $30 000 annually for students pursuing full-time, self-financed undergraduate programme offered by local private educational institutions. Which of the following are the possible effects of this subsidy scheme?</p>
+        </div>
+        
+        <div class="bilingual-block">
+            <p class="zh">(1) 失業率會下降，因為勞動人口會增加。</p>
+            <p class="en">(1) The unemployment rate will drop as labour force will increase.</p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh">(2) 該計劃有助於機會均等化，因為來自低收入住戶的學生有更大機會接受高等教育。</p>
+            <p class="en">(2) The scheme helps equalise opportunities because students from low-income households will have a better chance to receive higher education.</p>
+        </div>
+        <div class="bilingual-block">
+            <p class="zh">(3) 全民就業產出水平將來會上升，因為人們接受較佳的教育和培訓後平均生產力會上升。</p>
+            <p class="en">(3) The full employment output level will increase in the future because the average productivity increases after people receiving better education and training.</p>
+        </div>
+
+        <p class="zh">A. 只有 (1)、(2)<br>B. 只有 (1)、(3)<br>C. 只有 (2)、(3)<br>D. (1)、(2) 及 (3)</p>
+        <p class="en">A. (1) and (2) only<br>B. (1) and (3) only<br>C. (2) and (3) only<br>D. (1), (2) and (3)</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <p class="zh"><strong>1. 勞動人口 (Labour Force):</strong> 勞動人口由「就業人口」及「失業人口」組成。全日制學生（Full-time students）、退休人士及家庭主婦屬於「非從事經濟活動人口」（Economically Inactive Population），<strong>不計算</strong>在勞動人口之內。</p>
+            <p class="en"><strong>1. Labour Force:</strong> The labour force consists of the employed and the unemployed. Full-time students, retirees, and homemakers are classified as the "Economically Inactive Population" and are <strong>not included</strong> in the labour force.</p>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Unemployment Rate} = \frac{\text{Unemployed Population}}{\text{Labour Force}} \times 100\% $$
+        </div>
+
+        <div class="bilingual-block">
+            <p class="zh"><strong>2. 機會均等化 (Equalisation of Opportunities):</strong> 指政府透過政策（如免費教育、教育資助）為大眾（特別是基層人士）提供公平競爭的起跑線，促進社會流動性。</p>
+            <p class="en"><strong>2. Equalisation of Opportunities:</strong> Refers to government policies (e.g., free education, educational subsidies) that level the playing field for the public, especially low-income groups, promoting social mobility.</p>
+        </div>
+
+        <div class="bilingual-block">
+            <p class="zh"><strong>3. 全民就業產出水平 / 長期總供應 (Full-employment Output / LRAS):</strong> 這是經濟體系中長期可達到的最高實質產出。當勞動力質素（例如：人力資本 Human Capital）提升，勞工生產力增加，長期總供應曲線（LRAS）會向右移，帶動全民就業產出水平上升。</p>
+            <p class="en"><strong>3. Full-employment Output / LRAS:</strong> This is the maximum real output an economy can sustain in the long run. When the quality of the labour force (e.g., Human Capital) improves, labour productivity increases. This shifts the Long-Run Aggregate Supply (LRAS) curve to the right, increasing the full-employment output level.</p>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-block">
+        <p class="zh"><strong>正確答案是：<span class="correct">選項 C (只有 (2) 及 (3))</span></strong></p>
+        <p class="en"><strong>The correct option is: <span class="correct">Option C ((2) and (3) only)</span></strong></p>
+    </div>
+
+    <div class="analysis-item">
+        <div class="bilingual-block">
+            <p class="zh"><span class="wrong">❌ 分析敘述 (1)：錯誤。</span><br>
+            題目指明是「全日制」(full-time) 學生。當年輕人選擇繼續升學成為全日制學生時，他們會退出勞動市場，被歸類為非從事經濟活動人口。因此，勞動人口不僅不會增加，反而會<strong>減少</strong>。選項 (1) 的邏輯從根本上是錯的。</p>
+            <p class="en"><span class="wrong">❌ Analysis of Statement (1): Incorrect.</span><br>
+            The question specifically mentions "full-time" students. When youths choose to continue their studies full-time, they exit the labour market and are classified as economically inactive. Therefore, the labour force will actually <strong>decrease</strong>, not increase. The underlying logic of statement (1) is fundamentally flawed.</p>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <div class="bilingual-block">
+            <p class="zh"><span class="correct">✅ 分析敘述 (2)：正確。</span><br>
+            $30,000 的資助減輕了學費負擔，使得原本可能因為經濟困難而無法升學的低收入家庭學生，現在有能力報讀學士課程。這打破了財富對教育的限制，達致機會均等化。</p>
+            <p class="en"><span class="correct">✅ Analysis of Statement (2): Correct.</span><br>
+            The $30,000 subsidy reduces the financial burden of tuition fees. Students from low-income families who might not have been able to afford a degree can now do so. This breaks the financial barrier to education, helping to equalise opportunities.</p>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <div class="bilingual-block">
+            <p class="zh"><span class="correct">✅ 分析敘述 (3)：正確。</span><br>
+            高等教育能提升個人技能與知識（增加人力資本）。當這些學生畢業投入市場後，社會整體的平均勞工生產力會提高。這將令長期總供應（LRAS）增加，最終令未來的全民就業產出水平上升。</p>
+            <p class="en"><span class="correct">✅ Analysis of Statement (3): Correct.</span><br>
+            Higher education equips individuals with better skills and knowledge (increasing human capital). Once these students graduate and enter the workforce, the average labour productivity of society will improve. This increases the Long-Run Aggregate Supply (LRAS), ultimately raising the full-employment output level in the future.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <p class="zh"><strong>🎯 破題關鍵 (Pivot Point)：</strong><br>
+        本題的核心在於你是否留意到<strong>「全日制」(full-time)</strong>這個字眼。在經濟學中，全日制學生絕對不屬於勞動人口。只要抓緊這個定義，就能立刻判定選項 (1) 是錯的。</p>
+        <p class="en"><strong>🎯 Pivot Point:</strong><br>
+        The core of this question relies on whether you noticed the keyword <strong>"full-time"</strong>. In Economics, full-time students are strictly excluded from the labour force. Grasping this definition allows you to instantly determine that statement (1) is wrong.</p>
+    </div>
+    <div class="bilingual-block">
+        <p class="zh"><strong>💨 擾兵之計 (Distractors)：</strong><br>
+        題目中出現的「每年$30 000」。這個具體數字對於解題其實毫無意義，無論資助是 $10,000 還是 $50,000，背後的經濟學原理（減少不均、提升人力資本）都是一樣的。</p>
+        <p class="en"><strong>💨 Distractors:</strong><br>
+        The specific amount "$30,000 annually". This number is completely irrelevant to solving the problem. Whether the subsidy is $10,000 or $50,000, the underlying economic principles (reducing inequality, increasing human capital) remain exactly the same.</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="bilingual-block">
+        <p class="zh">⚠️ <strong>混淆「失業」與「非從事經濟活動」：</strong><br>
+        很多同學誤以為「沒有工作」就等於「失業」。實際上，要成為失業人士，必須符合三個條件：沒有工作、隨時可以工作、並正在積極尋找工作。全日制學生並沒有積極找全職工作，所以他們不是失業，而是直接從分母（勞動人口）中剔除。</p>
+        <p class="en">⚠️ <strong>Confusing "Unemployed" with "Economically Inactive":</strong><br>
+        Many students mistakenly believe that "not having a job" equals being "unemployed". In reality, to be classified as unemployed, one must meet three criteria: without a job, available for work, and actively seeking work. Full-time students are not actively seeking full-time employment, so they are not unemployed; they are entirely excluded from the denominator (the labour force).</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <p class="zh"><strong>Q: 如果學生去讀書導致勞動人口下跌，那失業率 \( U \) 到底會上升還是下降？</strong><br>
+            <strong>A:</strong> 這是不確定的 (uncertain)。因為失業率的公式是：失業人數 / 勞動人口。當學生去讀書，勞動人口（分母）下跌；但如果該學生原本是失業人士，那失業人數（分子）也會下跌。數學上，分子分母同時下跌，分數的最終變化取決於兩者的跌幅比例。不過本題的重點是選項 (1) 錯在聲稱「勞動人口會增加」。</p>
+            <p class="en"><strong>Q: If students studying causes the labour force to drop, will the unemployment rate \( U \) actually rise or fall?</strong><br>
+            <strong>A:</strong> It is uncertain. The formula is: Unemployed / Labour Force. When youths study, the labour force (denominator) decreases. However, if those youths were previously unemployed, the number of unemployed (numerator) also decreases. Mathematically, when both numerator and denominator drop, the final change depends on the ratio of their decreases. But the focus here is that statement (1) is wrong simply because it claims the "labour force will increase".</p>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <p class="zh"><strong>⚡ 排除法 (Elimination Method)：</strong><br>
+            這是一條典型的「秒殺題」。當你讀完 (1) 並確定「全日制學生必定使勞動人口下降/不變，絕不會增加」後，你就可以立即剔除包含 (1) 的所有選項：<br>
+            <strike>A. 只有 (1)、(2)</strike><br>
+            <strike>B. 只有 (1)、(3)</strike><br>
+            <strike>D. (1)、(2) 及 (3)</strike><br>
+            <strong>答案瞬間只剩下 C！</strong> 你甚至不需要仔細推敲 (2) 和 (3) 就能得分，節省大量考試時間。</p>
+            <p class="en"><strong>⚡ Elimination Method:</strong><br>
+            This is a classic "instant kill" question. Once you read (1) and confirm that "full-time students will cause the labour force to drop/remain unchanged, never increase", you can immediately eliminate all options containing (1):<br>
+            <strike>A. (1) and (2) only</strike><br>
+            <strike>B. (1) and (3) only</strike><br>
+            <strike>D. (1), (2) and (3)</strike><br>
+            <strong>The only remaining answer is C!</strong> You score the mark without even deeply analyzing (2) and (3), saving precious exam time.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Supply</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--gray-bg);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-box {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-box h1 {
+            color: white;
+            border: none;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .question-box {
+            border: 2px solid var(--gray-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .eng-text {
+            color: var(--text-muted);
+            font-style: normal;
+            margin-top: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .correct-answer {
+            color: #166534;
+            font-weight: bold;
+            font-size: 1.2em;
+            background-color: #dcfce7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-box strong {
+            color: #b45309;
+        }
+        .trick-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <div class="tags">
+            <span class="tag"><strong>Topic:</strong> 貨幣供應與銀行體系 (Money Supply & Banking System)</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆ (Moderate)</span>
+            <span class="tag"><strong>Key Concepts:</strong> M1, M2, M3, 持牌銀行 (Licensed Banks), 有限制牌照銀行 (RLBs)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>[中文]</strong> 當一名香港市民把HK&#36;500,000由他在某有限制牌照銀行的定期存款戶口轉至在某持牌銀行的儲蓄戶口，</p>
+        <p>(1) 貨幣供應定義一會上升。<br>
+        (2) 貨幣供應定義二會上升。<br>
+        (3) 貨幣供應定義三會上升。</p>
+        <p>A. 只有 (1)<br>
+        B. 只有 (2)<br>
+        C. 只有 (3)<br>
+        D. 只有 (2)、(3)</p>
+        <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+        <p><strong>[English]</strong> When a Hong Kong citizen transfers HK&#36;500,000 from her time deposit account with a restricted licence bank to her savings account with a licensed bank,</p>
+        <p>(1) money supply (M1) will increase.<br>
+        (2) money supply (M2) will increase.<br>
+        (3) money supply (M3) will increase.</p>
+        <p>A. (1) only<br>
+        B. (2) only<br>
+        C. (3) only<br>
+        D. (2) and (3) only</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>在香港的三級銀行體制下，貨幣供應（Money Supply）分為三個定義：M1、M2 及 M3。它們的涵蓋範圍呈現「層層遞進」的關係。解答此題的關鍵是清楚記住各類別存款屬於哪一個貨幣供應層級。</p>
+        <p class="eng-text">Under Hong Kong's three-tier banking system, money supply is classified into three definitions: M1, M2, and M3. They are nested, meaning M3 includes M2, and M2 includes M1. The key to solving this is memorizing which type of deposit belongs to which tier.</p>
+        
+        <div class="math-block">
+            <strong>貨幣供應定義 (Money Supply Definitions):</strong><br>
+            $$M_1 = C_p + D$$
+            $$M_2 = M_1 + S_{LB} + T_{LB} + NCD_{LB}$$
+            $$M_3 = M_2 + T_{RLB, DTC} + NCD_{RLB, DTC}$$
+        </div>
+        
+        <ul>
+            <li><strong>$C_p$:</strong> 公眾持有的法定貨幣 (Legal tender held by the public)</li>
+            <li><strong>$D$:</strong> 持牌銀行的活期存款 (Demand deposits with Licensed Banks)</li>
+            <li><strong>$S_{LB}$ & $T_{LB}$:</strong> 持牌銀行的儲蓄及定期存款 (Savings and Time deposits with LBs)</li>
+            <li><strong>$T_{RLB, DTC}$:</strong> 有限制牌照銀行及接受存款公司的定期存款 (Time deposits with RLBs and DTCs)</li>
+        </ul>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">Correct Option: B. 只有 (2) / (2) only</div>
+
+    <div class="option-analysis">
+        <h3>分析 (1) / Analysis of (1): ❌ 錯誤 (False)</h3>
+        <p>該市民將資金存入持牌銀行（LB）的「儲蓄戶口」（Savings Account）。根據定義，$M_1$ 只包括現金及「活期存款」（Demand Deposits）。因此，儲蓄存款的增加不會影響 $M_1$。由於此筆交易不涉及現金或活期存款的增減，所以 $M_1$ 保持不變。</p>
+        <p class="eng-text">The citizen deposits the funds into a "savings account" at a licensed bank (LB). By definition, $M_1$ only includes cash and "demand deposits". Therefore, an increase in savings deposits does not affect $M_1$. Since this transaction involves neither cash nor demand deposits, $M_1$ remains unchanged.</p>
+    </div>
+
+    <div class="option-analysis">
+        <h3>分析 (2) / Analysis of (2): ✅ 正確 (True)</h3>
+        <p>持牌銀行的儲蓄存款（$S_{LB}$）是 $M_2$ 的一部分。當市民將 HK&#36;500,000 轉入該戶口時，$M_2$ 內部增加。這筆資金的來源是「有限制牌照銀行的定期存款」（不屬於 $M_2$ 的範圍，而是只屬於 $M_3$）。因為資金從 $M_2$ 範圍之外流入 $M_2$ 範圍之內，整體的 $M_2$ 會上升 HK&#36;500,000。</p>
+        <p class="eng-text">Savings deposits at a licensed bank ($S_{LB}$) are part of $M_2$. When the citizen transfers HK&#36;500,000 into this account, the internal components of $M_2$ increase. The source of these funds is a "time deposit with a restricted licence bank" (which is NOT part of $M_2$, but only $M_3$). Because money flows from outside the $M_2$ boundary into the $M_2$ boundary, the total $M_2$ increases by HK&#36;500,000.</p>
+    </div>
+
+    <div class="option-analysis">
+        <h3>分析 (3) / Analysis of (3): ❌ 錯誤 (False)</h3>
+        <p>$M_3$ 包括了 $M_2$ 以及有限制牌照銀行的定期存款。在此交易中，$M_2$ 增加了 HK&#36;500,000，但同時有限制牌照銀行（RLB）的定期存款減少了 HK&#36;500,000。一增一減互相抵銷（$+500,000 - 500,000 = 0$），因此總 $M_3$ 維持不變。</p>
+        <p class="eng-text">$M_3$ includes $M_2$ AND time deposits with restricted licence banks. In this transaction, $M_2$ increases by HK&#36;500,000, but at the same time, the time deposit at the RLB decreases by HK&#36;500,000. The increase and decrease cancel each other out ($+500,000 - 500,000 = 0$), so the total $M_3$ remains unchanged.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p>這類題目的核心在於追蹤資金在不同貨幣定義的「邊界」之間如何移動。</p>
+    <p class="eng-text">The core of this type of question lies in tracking how funds move across the "boundaries" of different money supply definitions.</p>
+    
+    <ul>
+        <li><strong>Pivot Point (破題關鍵):</strong> 資金的「來源地」和「目的地」分別屬於哪個貨幣定義層級。<br>
+        <em>Source:</em> RLB Time Deposit $\rightarrow$ Only exists in $M_3$.<br>
+        <em>Destination:</em> LB Savings Account $\rightarrow$ Exists in $M_2$ (and consequently $M_3$).</li>
+        <li><strong>Distractors (干擾資訊):</strong> 具體金額 HK&#36;500,000。這數字其實不重要，只要是大於零的轉移，方向的判斷都是一樣的。<br>
+        <span class="eng-text">The specific amount HK&#36;500,000 is a distractor. The exact number doesn't matter; as long as it's a transfer greater than zero, the directional logic remains the same.</span></li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>陷阱一 (Trap 1)：將儲蓄戶口誤作活期戶口 (Confusing Savings with Demand Deposits)。</strong> 很多學生以為「可以隨時提款」的儲蓄戶口（Savings）就是活期存款（Demand deposit）。在經濟學定義上，只有可開出支票的往來戶口才是活期存款，才計入 $M_1$。</li>
+        <li><strong>陷阱二 (Trap 2)：忘記 $M_3$ 是一個總和 (Forgetting $M_3$ is a cumulative total)。</strong> 學生可能會想：「資金離開了 RLB，所以 $M_3$ 會下降。」但忘記了資金去了 LB（即進入了 $M_2$），而 $M_2$ 本身是 $M_3$ 的一部分！左手交右手，$M_3$ 總額不變。</li>
+    </ul>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    
+    <div class="qa-box">
+        <p><strong>Q: 既然儲蓄戶口的錢可以隨時在櫃員機提取，為什麼它不屬於 $M_1$？</strong></p>
+        <p>A: 這是基於香港金融管理局的嚴格定義。在貨幣統計上，$M_1$ 代表流動性最高的購買力。活期存款（Demand deposits）主要指往來戶口（Current accounts），可直接開出支票作為支付媒介。儲蓄存款雖然提款方便，但不能直接寫支票購物，流動性略低一級，因此被歸類在 $M_2$ 之中。</p>
+        <hr style="border-top: 1px solid #fcd34d; margin: 10px 0;">
+        <p><strong>Q: Why aren't savings accounts considered $M_1$ if I can withdraw the money anytime from an ATM?</strong></p>
+        <p class="eng-text">A: This is based on the strict definitions by the HKMA. Statistically, $M_1$ represents the most liquid form of purchasing power. "Demand deposits" primarily refer to current accounts (checking accounts), which can be directly used as a medium of exchange by writing a cheque. While savings deposits are easily accessible, they cannot be directly used to write cheques for purchases, making them slightly less liquid, hence their classification in $M_2$.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <h3>🚀 速解法：層級流動法則 (The "Tier-Flow" Rule)</h3>
+        <p>在考試中，你可以把 M1、M2、M3 想像成三個大小不同的同心圓（M1 最小在內，M3 最大在外）。</p>
+        <p class="eng-text">In an exam, imagine M1, M2, and M3 as three concentric circles (M1 is the smallest inner circle, M3 is the largest outer circle).</p>
+        <ul>
+            <li><strong>向內流動 (Flowing Inward - e.g., RLB to LB):</strong> 外部圈層減少，內部圈層增加。內部貨幣供應量（如 $M_2$）<strong>上升</strong>，整體最外層（$M_3$）<strong>不變</strong>。</li>
+            <li><strong>向外流動 (Flowing Outward - e.g., LB to RLB):</strong> 內部圈層減少，外部圈層增加。內部貨幣供應量（如 $M_2$）<strong>下降</strong>，整體最外層（$M_3$）<strong>不變</strong>。</li>
+            <li><strong>同層流動 (Flowing within the same tier - e.g., LB savings to LB time):</strong> 該層次及以外的所有貨幣供應量皆<strong>不變</strong>。</li>
+        </ul>
+        <p>套用此法則：題目是「RLB 去 LB」 $\rightarrow$ 向內流動 $\rightarrow$ 內層 $M_2$ 升，最外層 $M_3$ 不變。一秒即可選出答案 B！</p>
+    </div>
+
+</body>
+</html>

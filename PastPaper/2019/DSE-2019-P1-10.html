@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #0ea5e9;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --warning: #f59e0b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f3f4f6;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; }
+        
+        .header-section {
+            background: var(--bg-gray);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+        .header-section p { margin: 5px 0; font-weight: 500; }
+        .tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .data-table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+        .data-table th { background-color: var(--bg-gray); font-weight: bold; }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .analysis-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .analysis-item:last-child { border-bottom: none; }
+        .correct-ans { color: #16a34a; font-weight: bold; }
+        .wrong-ans { color: #dc2626; font-weight: bold; }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            font-style: normal;
+        }
+        .bilingual-zh {
+            margin-bottom: 4px;
+        }
+
+        .qa-box {
+            background: var(--bg-gray);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: var(--primary); }
+        .qa-a { margin-top: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <p><strong>Topic / 課題:</strong> Theory of the Firm (廠商理論) - Perfect Competition (完美競爭)</p>
+        <p><strong>Difficulty / 難度:</strong> ⭐⭐⭐ (3/5)</p>
+        <p><strong>Key Concepts / 核心概念:</strong> 
+            <span class="tag">Price-taker 受價者</span>
+            <span class="tag">Marginal Cost 邊際成本</span>
+            <span class="tag">Profit Maximization 利潤極大化</span>
+        </p>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-zh">下表顯示某受價者廠商成本與產出的關係。</div>
+        <div class="bilingual-en">The following table shows the cost-output relationship of a price-taking firm.</div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>總產出 Total output (units)</th>
+                    <th>平均成本 Average cost ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>3</td><td>10</td></tr>
+                <tr><td>4</td><td>15</td></tr>
+                <tr><td>5</td><td>20</td></tr>
+                <tr><td>6</td><td>25</td></tr>
+                <tr><td>7</td><td>30</td></tr>
+            </tbody>
+        </table>
+
+        <div class="bilingual-zh">若利潤極大化的產量是 6 單位，市場價格會是 ___________。</div>
+        <div class="bilingual-en">If the profit-maximising output is 6 units, the market price will be ___________.</div>
+        <br>
+        <div>A. $5</div>
+        <div>B. $25</div>
+        <div>C. $30</div>
+        <div>D. $50</div>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>Perfect Competition & Price-Takers (完美競爭與受價者)</h3>
+        <p class="bilingual-zh">在完美競爭市場中，廠商是受價者（Price-taker），意味著它們無法改變市場價格，只能接受市場供需決定的價格。因此，其邊際收入（Marginal Revenue, MR）等於市場價格（Price, P）。</p>
+        <p class="bilingual-en">In a perfectly competitive market, firms are price-takers. This means they cannot influence the market price and must accept the price determined by market supply and demand. Therefore, their Marginal Revenue (MR) equals the market Price (P).</p>
+        
+        <div class="math-block">
+            $$\text{P} = \text{MR} = \text{AR}$$
+        </div>
+
+        <h3>Profit Maximization Condition (利潤極大化條件)</h3>
+        <p class="bilingual-zh">所有追求利潤極大化的廠商，都會在邊際收入（MR）等於邊際成本（MC）時進行生產。結合上述概念，受價者廠商的利潤極大化條件為：價格等於邊際成本。</p>
+        <p class="bilingual-en">All profit-maximizing firms produce at the quantity where Marginal Revenue (MR) equals Marginal Cost (MC). Combining this with the concept above, the profit-maximizing condition for a price-taking firm is when Price equals Marginal Cost.</p>
+
+        <div class="math-block">
+            $$\text{MR} = \text{MC}$$
+            $$\text{P} = \text{MC}$$
+        </div>
+
+        <h3>Cost Formulas (成本公式)</h3>
+        <p class="bilingual-zh">要計算邊際成本，我們必須先從平均成本（AC）找出總成本（TC）。</p>
+        <p class="bilingual-en">To calculate Marginal Cost, we must first find Total Cost (TC) from Average Cost (AC).</p>
+
+        <div class="math-block">
+            $$\text{TC} = \text{AC} \times \text{Q}$$
+            $$\text{MC} = \frac{\Delta \text{TC}}{\Delta \text{Q}}$$
+        </div>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案): <span class="correct-ans">Option D</span></strong></p>
+
+    <div class="analysis-item">
+        <p class="bilingual-zh"><strong>第一步：計算總成本 (TC) 與邊際成本 (MC)</strong></p>
+        <p class="bilingual-en"><strong>Step 1: Calculate Total Cost (TC) and Marginal Cost (MC)</strong></p>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Q</th>
+                    <th>AC</th>
+                    <th>TC = AC &times; Q</th>
+                    <th>MC = &Delta;TC / &Delta;Q</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>4</td><td>15</td><td>60</td><td>(60 - 30) = 30</td></tr>
+                <tr><td>5</td><td>20</td><td>100</td><td>(100 - 60) = 40</td></tr>
+                <tr style="background-color: #dcfce7;"><td><strong>6</strong></td><td><strong>25</strong></td><td><strong>150</strong></td><td><strong>(150 - 100) = 50</strong></td></tr>
+                <tr><td>7</td><td>30</td><td>210</td><td>(210 - 150) = 60</td></tr>
+            </tbody>
+        </table>
+
+        <p class="bilingual-zh">根據利潤極大化條件，當產量為 6 單位時，廠商的邊際成本 \(\text{MC} = \$50\)。由於廠商是受價者，\(\text{P} = \text{MC}\)，因此市場價格必定是 $50。</p>
+        <p class="bilingual-en">According to the profit-maximization rule, when output is 6 units, the firm's Marginal Cost is \(\text{MC} = \$50\). Since the firm is a price-taker, \(\text{P} = \text{MC}\), therefore the market price must be $50.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-zh"><span class="wrong-ans">錯誤選項 A ($5):</span> 這是第 6 單位與第 5 單位之間，平均成本 (AC) 的差額 ($25 - $20)。這在經濟學上沒有意義。</p>
+        <p class="bilingual-en"><span class="wrong-ans">Wrong Option A ($5):</span> This is the difference in Average Cost (AC) between the 6th and 5th unit ($25 - $20). This holds no meaningful economic value.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-zh"><span class="wrong-ans">錯誤選項 B ($25):</span> 這是產量為 6 單位時的平均成本 (AC)。受價者不會在 \(\text{P} = \text{AC}\) 時達到利潤極大化，而是在 \(\text{P} = \text{MC}\) 時。</p>
+        <p class="bilingual-en"><span class="wrong-ans">Wrong Option B ($25):</span> This is the Average Cost (AC) when output is 6. A price-taker maximizes profit when \(\text{P} = \text{MC}\), not when \(\text{P} = \text{AC}\).</p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-zh"><span class="wrong-ans">錯誤選項 C ($30):</span> 這只是第 7 單位的平均成本，或是第 4 單位的邊際成本。這與利潤極大化產量為 6 的條件無關。</p>
+        <p class="bilingual-en"><span class="wrong-ans">Wrong Option C ($30):</span> This is merely the Average Cost of the 7th unit, or the Marginal Cost of the 4th unit. It is irrelevant to the condition where the profit-maximizing output is 6.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fff; border-left: 5px solid var(--primary);">
+        <p class="bilingual-zh"><strong>破題關鍵 (Pivot Point):</strong><br>
+        題目中出現「受價者」(Price-taking firm) 和「利潤極大化」(Profit-maximising) 兩個關鍵字。這就像是一個解碼指令，告訴你必須立刻寫下公式：\(\text{P} = \text{MC}\)。因此，你真正的任務只是「找出產量為 6 時的 MC」。</p>
+        <p class="bilingual-en"><strong>Pivot Point:</strong><br>
+        The keywords "Price-taking firm" and "Profit-maximising" appear in the question. This is a code instructing you to immediately write down the formula: \(\text{P} = \text{MC}\). Therefore, your actual task is simply to "find the MC when output is 6."</p>
+
+        <p class="bilingual-zh"><strong>干擾資訊 (Irrelevant Info):</strong><br>
+        整個表格提供的 AC (平均成本) 都是用來迷惑你的干擾項。同學常常直接從表格中找答案，而忘記必須將 AC 轉換為 TC，再轉換為 MC。</p>
+        <p class="bilingual-en"><strong>Irrelevant Info:</strong><br>
+        The AC (Average Cost) provided in the entire table acts as a distractor. Students often try to find the answer directly from the table, forgetting they must convert AC to TC, and then to MC.</p>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="warning-box">
+        <p class="bilingual-zh"><strong>陷阱 1：直接讀取平均成本 (AC)</strong><br>
+        很多同學一看到「產量是 6」，就直接對應表格中 6 單位的平均成本 $25 (選項 B)。請記住，決定利潤極大化的是「邊際」概念 (Marginal)，絕對不是「平均」概念 (Average)。</p>
+        <p class="bilingual-en"><strong>Trap 1: Reading Average Cost (AC) directly</strong><br>
+        Many students see "output is 6" and directly pick the corresponding average cost $25 (Option B). Remember, profit maximization is determined by "Marginal" concepts, never by "Average" concepts.</p>
+        
+        <p class="bilingual-zh"><strong>陷阱 2：錯誤計算邊際成本</strong><br>
+        部分同學會嘗試計算「邊際平均成本」(例如 $25 - $20 = $5，選項 A)。這在經濟學中是完全錯誤的計算方式。MC 必須由總成本 (TC) 計算得出。</p>
+        <p class="bilingual-en"><strong>Trap 2: Calculating Marginal Cost incorrectly</strong><br>
+        Some students try to calculate "Marginal Average Cost" (e.g., $25 - $20 = $5, Option A). This is a completely invalid mathematical approach in economics. MC must be derived from Total Cost (TC).</p>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q1: 為什麼這間廠商在 \(\text{P} = \text{MC} = \$50\) 時，它的平均成本 (AC) 只有 $25？這代表什麼？</div>
+        <div class="qa-a">
+            <p class="bilingual-zh"><strong>A:</strong> 這代表廠商正在賺取「超額利潤」(Supernormal Profit)。每賣出一件產品，廠商的平均成本是 $25，但市場價格是 $50。因此，每件產品賺 $25，總利潤為 \(\$25 \times 6 = \$150\)。</p>
+            <p class="bilingual-en"><strong>A:</strong> This means the firm is earning a "Supernormal Profit." For every unit sold, the firm's average cost is $25, but the market price is $50. Thus, it makes $25 per unit, making a total profit of \(\$25 \times 6 = \$150\).</p>
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #fdf4ff; border-left: 5px solid #c026d3;">
+        <p class="bilingual-zh"><strong>速解法 (Shortcut Calculation):</strong><br>
+        在選擇題中，時間就是分數。你<strong>不需要</strong>填滿整個 TC 和 MC 表格。既然題目只問產量為 6 的情況，你只需要計算第 5 單位和第 6 單位的總成本即可：</p>
+        <p class="bilingual-en"><strong>Shortcut Calculation:</strong><br>
+        In MCQs, time is marks. You do <strong>NOT</strong> need to fill out the entire TC and MC table. Since the question only asks about output 6, you only need to calculate the total cost for the 5th and 6th units:</p>
+        
+        <div class="math-block" style="text-align: left; padding-left: 30px;">
+            1. \(\text{TC}_5 = 5 \times \$20 = \$100\)<br>
+            2. \(\text{TC}_6 = 6 \times \$25 = \$150\)<br>
+            3. \(\text{MC}_6 = \$150 - \$100 = \$50\)
+        </div>
+        
+        <p class="bilingual-zh">三步計算，十秒內即可選出 D！</p>
+        <p class="bilingual-en">Three steps, and you can confidently choose D in under ten seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

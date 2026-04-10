@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --success: #22c55e;
+            --success-light: #dcfce7;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+        }
+        .header-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border-top: 5px solid var(--primary);
+        }
+        .question-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+        }
+        .correct-ans {
+            background-color: var(--success-light);
+            border-left: 5px solid var(--success);
+        }
+        .wrong-ans {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+        }
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+        .tag {
+            display: inline-block;
+            background: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h2>📊 HKDSE 經濟學題目分析 | Economics Problem Analysis</h2>
+        <div>
+            <span class="tag">Topic: 勞工市場與供求 (Labor Market & Supply/Demand)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+        </div>
+        <p style="margin-top: 15px;"><strong>Key Concepts:</strong> 供應 (Supply), 替代品 (Substitutes), 需求彈性 (Elasticity of Demand), 短缺與輪候時間 (Shortage & Waiting Time)</p>
+    </div>
+
+    <div class="question-box">
+        <h3>📝 題目 | The Question</h3>
+        <div class="bilingual-pair">
+            <p>港怡醫院是一所新的私家醫院，於2017年初在黃竹坑開幕。港怡醫院以加薪50%來吸引公立醫院有經驗的護士轉職。<br>根據以上資料，在港怡醫院開幕後，下列哪項陳述是正確的？</p>
+            <p class="lang-en">A new private hospital, Gleneagles Hong Kong Hospital (GHK), opened in Wong Chuk Hang in early 2017. GHK offered a 50% salary rise to attract experienced nurses from public hospitals.<br>Based on the above information, which of the following statements is correct after the opening of GHK?</p>
+        </div>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-pair">
+                <strong>A.</strong> 若護士的需求屬高彈性，公立醫院有經驗的護士的工資率會上升超過50%。<br>
+                <span class="lang-en">A. The wage rates of experienced nurses in public hospitals would increase by more than 50% if the demand for nurses is elastic.</span>
+            </li>
+            <li class="bilingual-pair">
+                <strong>B.</strong> 公立醫院有經驗的護士的供應會減少。<br>
+                <span class="lang-en">B. The supply of experienced nurses in public hospitals would decrease.</span>
+            </li>
+            <li class="bilingual-pair">
+                <strong>C.</strong> 公共醫療服務的需求彈性會下降。<br>
+                <span class="lang-en">C. The elasticity of demand of public medical services would decrease.</span>
+            </li>
+            <li class="bilingual-pair">
+                <strong>D.</strong> 公共醫療服務的輪候時間會維持不變。<br>
+                <span class="lang-en">D. The waiting time for public medical services would remain unchanged.</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h3>💡 概念重溫 | Concept Review</h3>
+        
+        <h4>1. 勞工供應 (Supply of Labor)</h4>
+        <p>勞工供應是指在不同工資水平下，工人願意並能夠提供的勞工數量。當其他行業或機構（替代選擇）的薪酬上升時，留在原機構的機會成本增加，導致原機構的勞工供應減少（供應曲線向左移）。</p>
+        <p class="lang-en">Labor supply refers to the amount of labor workers are willing and able to provide at different wage rates. When the compensation of an alternative occupation/institution increases, the opportunity cost of staying in the current job increases, leading to a decrease in labor supply for the original institution (the supply curve shifts to the left).</p>
+
+        <h4>2. 需求價格彈性 (Price Elasticity of Demand)</h4>
+        <p>衡量需求量對價格變動的敏感度。當市場上出現更多替代品（Substitutes）時，消費者有更多選擇，需求彈性會上升。</p>
+        <p class="lang-en">Measures the responsiveness of quantity demanded to a change in price. When there are more substitutes available in the market, consumers have more choices, and the elasticity of demand increases.</p>
+        <div class="math-block">
+            $$E_d = -\frac{\% \Delta Q_d}{\% \Delta P}$$
+        </div>
+
+        <h4>3. 非價格分配與輪候時間 (Non-price Allocation & Waiting Time)</h4>
+        <p>公共醫療服務通常收費極低，導致需求量遠大於供應量（存在短缺 $Q_d > Q_s$）。當供應進一步減少時，短缺惡化，輪候時間（非價格競爭指標）會增加。</p>
+        <p class="lang-en">Public medical services are usually priced very low, leading to quantity demanded heavily exceeding quantity supplied (a shortage exists, $Q_d > Q_s$). When supply further decreases, the shortage worsens, and the waiting time (an indicator of non-price competition) increases.</p>
+    </div>
+
+    <h2>✅ 答案與詳細分析 | The Answer & Detailed Analysis</h2>
+    <p><strong>正確答案 / Correct Option: B</strong></p>
+
+    <div class="analysis-item wrong-ans">
+        <strong>Option A: 錯誤 / Incorrect</strong>
+        <p>公立醫院護士工資的調整幅度主要取決於政府預算、公務員薪酬機制以及行政決策，與護士的「需求彈性」並無直接的數學關聯。彈性只反映數量對價格的敏感度，不能推導出加薪必定超過50%。</p>
+        <p class="lang-en">The magnitude of wage adjustment for public hospital nurses mainly depends on government budgets, civil service pay mechanisms, and administrative decisions. It has no direct mathematical relationship with the "elasticity of demand" for nurses. Elasticity only reflects quantity responsiveness to price, it does not dictate that wages must rise by over 50%.</p>
+    </div>
+
+    <div class="analysis-item correct-ans">
+        <strong>Option B: 正確 / Correct</strong>
+        <p>港怡醫院（私營）加薪50%搶人才，意味着對於公立醫院的護士來說，跳槽的吸引力大增。在任何一個既定的公營工資水平下，願意留在公立醫院的護士數量都會減少。這代表公立醫院護士的「供應」減少（整條供應曲線向左移動）。</p>
+        <p class="lang-en">GHK (private) offering a 50% salary rise heavily increases the attractiveness of changing jobs for public hospital nurses. At any given wage rate in the public sector, fewer nurses are willing to stay. This represents a decrease in the "supply" of public hospital nurses (the entire supply curve shifts to the left).</p>
+    </div>
+
+    <div class="analysis-item wrong-ans">
+        <strong>Option C: 錯誤 / Incorrect</strong>
+        <p>港怡醫院是一所新落成的醫院，為市民提供了公共醫療以外的新「替代品」（Substitute）。替代品數量的增加，會令市民對公共醫療服務的需求變得**更具彈性（彈性上升）**，而不是下降。</p>
+        <p class="lang-en">GHK is a newly established hospital, providing citizens with a new "substitute" to public medical services. An increase in the number of substitutes makes the demand for public medical services **more elastic (elasticity increases)**, not decrease.</p>
+    </div>
+
+    <div class="analysis-item wrong-ans">
+        <strong>Option D: 錯誤 / Incorrect</strong>
+        <p>由於公立醫院流失了有經驗的護士（護士供應減少），公共醫療服務的供應亦隨之下降。在原本已經供不應求（存在短缺）的公營醫療系統中，供應減少會令短缺情況惡化，因此輪候時間會**增加**。</p>
+        <p class="lang-en">Because public hospitals lose experienced nurses (decrease in nurse supply), the supply of public medical services drops accordingly. In a public healthcare system that is already facing a shortage, a decrease in supply worsens the shortage, thereby **increasing** the waiting time.</p>
+    </div>
+
+    <h2>🛠 題目拆解 | Problem Decomposition</h2>
+    <ul>
+        <li><strong>Pivot Point (解題關鍵):</strong> 辨識港怡醫院是公立醫院在勞動市場上的「競爭對手」。對手提高工資，等於增加了公院護士留職的機會成本。</li>
+        <li class="lang-en"><strong>Pivot Point:</strong> Recognize that GHK is a "competitor" in the labor market. A competitor raising wages increases the opportunity cost for public hospital nurses to stay in their current jobs.</li>
+        <li><strong>Distractors (干擾資訊):</strong> 題目中的「加薪50%」具體數字是干擾項。無論是加10%還是50%，只要是替代工作的薪酬上升，都會得出供應減少的結論。</li>
+        <li class="lang-en"><strong>Distractors:</strong> The specific figure "50% salary rise" is a distractor. Whether it's 10% or 50%, an increase in compensation for an alternative job always leads to a decrease in supply for the current job.</li>
+    </ul>
+
+    <h2>⚠️ 常犯錯誤與陷阱 | Common Mistakes & Traps</h2>
+    <ul>
+        <li><strong>混淆「供應量改變」與「供應改變」 (Confusing Change in Quantity Supplied vs. Change in Supply):</strong><br>有些同學誤以為「工資上升，所以供應會增加」。請注意，上升的是**港怡醫院**的工資，而不是公立醫院！別家公司加薪，你公司的員工就會流失（你的供應減少）。</li>
+        <li class="lang-en">Some students mistakenly think "wage increases, so supply increases". Note that it is **GHK's** wage that increased, not the public hospital's! If another company raises pay, your company loses staff (your supply shifts left).</li>
+    </ul>
+
+    <h2>🙋 學生常見疑問 | Student Q&A</h2>
+    <p><strong>Q: 為什麼選項 D 不對？醫療服務不是必需品嗎，需求量不會變啊？</strong></p>
+    <p>A: 即使醫療服務是必需品（需求缺乏彈性），這只代表價格改變時需求量改變不大。但輪候時間（Waiting time）取決於市場短缺（Shortage）的嚴重程度。護士少了 $\rightarrow$ 服務供應下降 $\rightarrow$ 供不應求更嚴重 $\rightarrow$ 必須排更久的隊才能看病。</p>
+    <p class="lang-en"><strong>Q: Why is Option D wrong? Aren't medical services necessities, so the quantity demanded won't change?</strong><br>
+    A: Even if medical services are necessities (inelastic demand), it only means quantity demanded doesn't change much with price. However, waiting time depends on the severity of the shortage. Fewer nurses $\rightarrow$ lower supply of services $\rightarrow$ worse shortage $\rightarrow$ longer waiting lines to get treated.</p>
+
+    <h2>⚡ 考試技巧與速解 | Exam Tricks & Shortcuts</h2>
+    <p><strong>The "Competitor Rule" (競爭者法則):</strong><br>在DSE MC中，只要看到「另一間公司/行業提高待遇」，立刻在腦海反射：**原公司的人力供應必定下降（Supply drops）**。直接尋找「供應減少」的選項，通常能秒殺此類題目。</p>
+    <p class="lang-en">In DSE MCs, whenever you see "another company/industry offers better pay", immediately reflect: **The labor supply for the original company MUST drop**. Scan the options for "supply decreases" to quickly secure the correct answer.</p>
+
+</body>
+</html>

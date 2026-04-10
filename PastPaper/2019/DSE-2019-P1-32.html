@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Inflation & Interest Rates</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-dark: #1e293b;
+            --text-en: #475569;
+            --border-color: #cbd5e1;
+            --danger: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .header-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-item {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .en-translation {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .analysis-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct-ans {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .badge.true { background-color: var(--success); }
+        .badge.false { background-color: var(--danger); }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .q-text { font-weight: bold; color: var(--text-dark); margin-bottom: 5px; }
+        .a-text { margin-bottom: 15px; }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-box, .question-box, .concept-box, .tips-box, .qa-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <div class="header-item">📚 <strong>Topic (課題):</strong> 通脹與利率 / Inflation & Interest Rates</div>
+        <div class="header-item">⭐ <strong>Difficulty (難度):</strong> ★★★★☆</div>
+        <div class="header-item">🔑 <strong>Key Concepts (核心概念):</strong> 費沙方程式 (Fisher Equation)、名義與實質利率 (Nominal & Real Interest Rate)、預期與實際通脹 (Expected vs. Actual Inflation)</div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p>在通脹的時期，假設某債券的名義利率高於預期通脹率。若實際通脹率高於預期通脹率，</p>
+        <p>(1) 實際通脹率會高於該債券的名義利率。<br>
+        (2) 該債券的預期實質回報率會高於實際實質回報率。<br>
+        (3) 該債券的實際實質回報率可能是負數。<br>
+        (4) 持有現金的實質回報率會大於零。</p>
+        <p>A. 只有 (1)、(2)<br>
+        B. 只有 (1)、(4)<br>
+        C. 只有 (2)、(3)<br>
+        D. 只有 (3)、(4)</p>
+
+        <div class="en-translation">
+            <p>In times of inflation, suppose the nominal interest rate of a bond is higher than the expected inflation rate. If the actual inflation rate turns out to be higher than the expected inflation rate,</p>
+            <p>(1) the actual inflation rate will be higher than the nominal interest rate of the bond.<br>
+            (2) the expected real rate of return of the bond will be greater than the actual real rate of return.<br>
+            (3) the actual real rate of return of the bond may be negative.<br>
+            (4) the real rate of return of holding cash will be higher than zero.</p>
+            <p>A. (1) and (2) only<br>
+            B. (1) and (4) only<br>
+            C. (2) and (3) only<br>
+            D. (3) and (4) only</p>
+        </div>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要拆解這類題目，我們必須熟記並靈活運用<strong>費沙方程式 (Fisher Equation)</strong>。這條方程式展示了名義利率、實質利率與通脹率之間的關係。</p>
+        <div class="en-translation">
+            To tackle this type of question, we must memorize and flexibly apply the <strong>Fisher Equation</strong>. This equation shows the relationship between the nominal interest rate, real interest rate, and inflation rate.
+        </div>
+
+        <div class="math-block">
+            $$ \text{Real Rate } (r) = \text{Nominal Rate } (R) - \text{Inflation Rate } (\pi) $$
+        </div>
+
+        <p>在考慮「預期 (Expected)」與「實際 (Actual)」情況時，方程式可以細分為：</p>
+        <div class="en-translation">When considering "Expected" versus "Actual" situations, the equation can be specified as:</div>
+        
+        <ul>
+            <li><strong>預期實質回報率 (Expected Real Rate, \( r^e \)):</strong><br> \( r^e = R - \pi^e \) (其中 \( \pi^e \) 為預期通脹率 Expected Inflation)</li>
+            <li><strong>實際實質回報率 (Actual Real Rate, \( r^a \)):</strong><br> \( r^a = R - \pi^a \) (其中 \( \pi^a \) 為實際通脹率 Actual Inflation)</li>
+        </ul>
+        
+        <p>注意：債券發行時，<strong>名義利率 (\( R \)) 是固定不變的</strong>。一切實質回報的改變，都源於實際通脹率與預期通脹率的落差。</p>
+        <div class="en-translation">Note: When a bond is issued, the <strong>nominal interest rate (\( R \)) is fixed</strong>. Any changes in the actual real return stem entirely from the discrepancy between the actual inflation rate and the expected inflation rate.</div>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是： <span class="correct-ans">Option C</span></p>
+    <div class="en-translation">The correct answer is: <strong>Option C</strong></div>
+
+    <div class="analysis-item">
+        <p><span class="badge false">錯誤 False</span> <strong>分析 (1)：</strong> 實際通脹率會高於該債券的名義利率。</p>
+        <p>題目只告訴我們實際通脹率 (\( \pi^a \)) 高於預期通脹率 (\( \pi^e \))，並且名義利率 (\( R \)) 高於預期通脹率 (\( \pi^e \))。這代表 \( \pi^a > \pi^e \) 及 \( R > \pi^e \)。但是，我們並不知道 \( \pi^a \) 和 \( R \) 之間誰較大。實際通脹率<strong>可能</strong>高於名義利率，但並非<strong>必定 (will be)</strong>高於名義利率。因此，這句陳述不一定正確。</p>
+        <div class="en-translation">
+            <strong>Analysis (1):</strong> The question only tells us that actual inflation (\( \pi^a \)) > expected inflation (\( \pi^e \)), and nominal rate (\( R \)) > expected inflation (\( \pi^e \)). However, we do not know the relationship between \( \pi^a \) and \( R \). The actual inflation rate <strong>may</strong> be higher than the nominal rate, but it is not a certainty (<strong>will be</strong>). Therefore, this statement is false.
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <p><span class="badge true">正確 True</span> <strong>分析 (2)：</strong> 該債券的預期實質回報率會高於實際實質回報率。</p>
+        <p>根據公式，預期實質回報 \( r^e = R - \pi^e \)，而實際實質回報 \( r^a = R - \pi^a \)。因為實際通脹率較高 (\( \pi^a > \pi^e \))，在固定的名義利率 \( R \) 減去一個較大的數值後，剩下的實際實質回報 \( r^a \) 必然會較小。因此，\( r^e > r^a \)，此陳述正確。</p>
+        <div class="en-translation">
+            <strong>Analysis (2):</strong> According to the formula, expected real return \( r^e = R - \pi^e \), and actual real return \( r^a = R - \pi^a \). Since the actual inflation rate is higher (\( \pi^a > \pi^e \)), subtracting a larger number from the fixed nominal rate \( R \) will inevitably result in a smaller actual real return \( r^a \). Thus, \( r^e > r^a \), making this statement correct.
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <p><span class="badge true">正確 True</span> <strong>分析 (3)：</strong> 該債券的實際實質回報率可能是負數。</p>
+        <p>因為實際通脹率 (\( \pi^a \)) 超出了預期，如果這個實際通脹率失控地急升，甚至超越了名義利率 (\( \pi^a > R \))，那麼實際實質回報 \( r^a = R - \pi^a \) 就會變成負數。題目使用了「可能 (may be)」字眼，這在邏輯上是完全成立的。</p>
+        <div class="en-translation">
+            <strong>Analysis (3):</strong> Because the actual inflation rate (\( \pi^a \)) exceeded expectations, if this actual inflation rate surges out of control and even surpasses the nominal interest rate (\( \pi^a > R \)), then the actual real return \( r^a = R - \pi^a \) would become negative. The statement uses the word "may be," which makes it logically sound and possible.
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <p><span class="badge false">錯誤 False</span> <strong>分析 (4)：</strong> 持有現金的實質回報率會大於零。</p>
+        <p>持有現金的名義回報率永遠是 \( 0\% \)。在通脹時期（實際通脹率 \( \pi^a > 0 \)），持有現金的實際實質回報率為 \( 0 - \pi^a \)，必定是負數。這代表現金的購買力正在被通脹蠶食，不可能大於零。</p>
+        <div class="en-translation">
+            <strong>Analysis (4):</strong> The nominal rate of return on holding cash is always \( 0\% \). In times of inflation (actual inflation \( \pi^a > 0 \)), the actual real rate of return on holding cash is \( 0 - \pi^a \), which must be negative. This means the purchasing power of cash is being eroded by inflation, so it cannot be greater than zero.
+        </div>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="tips-box">
+        <p><strong>Pivot Point (破題關鍵)：</strong> 將文字轉化為數學符號與不等式。</p>
+        <ul>
+            <li>已知條件 1： \( \pi > 0 \) (通脹時期)</li>
+            <li>已知條件 2： \( R > \pi^e \) (名義利率 > 預期通脹率)</li>
+            <li>已知條件 3 (突發狀況)： \( \pi^a > \pi^e \) (實際通脹 > 預期通脹)</li>
+        </ul>
+        <p>當你列出這些不等式後，不要用腦海空想，直接代入極端數字來測試。例如：<br>
+        設 \( R = 5\% \), \( \pi^e = 2\% \) (符合條件2)。<br>
+        如果 \( \pi^a = 3\% \) (符合條件3)，則實際通脹 \( 3\% \) 不高於名義利率 \( 5\% \) ➔ 陳述(1)錯。<br>
+        如果 \( \pi^a = 6\% \) (符合條件3)，則實質回報 = \( 5\% - 6\% = -1\% \) ➔ 陳述(3)「可能為負」正確。</p>
+        <div class="en-translation">
+            <strong>Pivot Point:</strong> Translate the text into mathematical symbols and inequalities.<br>
+            - Fact 1: \( \pi > 0 \) (Times of inflation)<br>
+            - Fact 2: \( R > \pi^e \) (Nominal rate > Expected inflation)<br>
+            - Fact 3 (Shock): \( \pi^a > \pi^e \) (Actual inflation > Expected inflation)<br>
+            Instead of just thinking abstractly, plug in extreme numbers to test the statements. For example, let \( R = 5\% \), \( \pi^e = 2\% \). If \( \pi^a = 3\% \), statement (1) is false. If \( \pi^a = 6\% \), actual real return is \( -1\% \), proving statement (3) that it "may be negative" is true.
+        </div>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>陷阱一：混淆「必定 (Will)」與「可能 (May)」。</strong> 考評局很喜歡在絕對字眼上設陷阱。遇到「會 (will/must)」時，你必須確保在任何數字組合下它都成立；遇到「可能 (may)」時，只要你能找到一個例子成立，該陳述就是對的。</li>
+        <li class="en-translation"><strong>Trap 1: Confusing "Will" and "May".</strong> The HKEAA loves to set traps using absolute terms. For "will", it must be true under ALL numerical scenarios. For "may", it only needs one valid scenario to be considered true.</li>
+        <li><strong>陷阱二：忘記現金的名義回報。</strong> 很多同學在計算實質回報時，會忘記「持有現金 (Holding cash)」本身就是一種資產，其名義利率 (\( R \)) 永遠是 0。在通脹下，持有現金必為輸家。</li>
+        <li class="en-translation"><strong>Trap 2: Forgetting the nominal return of cash.</strong> Many students forget that "holding cash" is an asset with a fixed nominal interest rate (\( R \)) of exactly 0. Under inflation, holding cash is a guaranteed loss in real terms.</li>
+    </ul>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="q-text">Q: 為甚麼我們假設名義利率 (\( R \)) 是固定不變的？如果通脹上升，銀行或發行商不會提高利率嗎？</div>
+        <div class="en-translation q-text">Q: Why do we assume the nominal interest rate (\( R \)) is fixed? Wouldn't banks or issuers raise the interest rate if inflation goes up?</div>
+        
+        <div class="a-text">
+            A: 在 DSE 經濟學的標準設定中，題目提及的「債券 (Bond)」或「合約」通常是在<strong>過去某個時間點</strong>已經簽訂的。一旦合約生效，其名義利率 \( R \) 就會被鎖定（Fixed rate）。即使後來發生了未預期的通脹（Unanticipated inflation），合約上的 \( R \) 也不會自動調整。這正是產生「財富轉移 (Wealth Redistribution)」的原因！
+        </div>
+        <div class="en-translation a-text">
+            A: In the standard DSE Economics setting, the "bond" or "contract" mentioned is usually assumed to have been signed at a <strong>past point in time</strong>. Once the contract takes effect, its nominal interest rate \( R \) is locked in (fixed rate). Even if unanticipated inflation occurs later, the \( R \) on the contract will not automatically adjust. This is exactly what causes "Wealth Redistribution"!
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #fce7f3; border-color: #ec4899;">
+        <p><strong>秒殺技巧 (Elimination Method)：</strong></p>
+        <p>看到選項 (4) 提及「持有現金的實質回報 > 0」，立刻反應：通脹期間物價上升，現金購買力一定下降，實質回報必為負數（\( 0 - \text{通脹率} < 0 \)）。所以 (4) 絕對錯誤！<br>
+        直接剔除包含 (4) 的選項：刪除 B 和 D。<br>
+        現在只剩下 A (1, 2) 和 C (2, 3)。<br>
+        你只需要集中判斷 (1) 還是 (3) 正確。發現 (1) 用了「會 (will)」過於武斷，而 (3) 的「可能 (may)」邏輯無懈可擊。瞬間選出 C！</p>
+        <div class="en-translation">
+            <strong>Shortcut (Elimination Method):</strong><br>
+            When you see statement (4) claiming "real return of holding cash > 0", your immediate reaction should be: in times of inflation, cash purchasing power always drops, so real return must be negative (\( 0 - \text{inflation rate} < 0 \)). So (4) is absolutely wrong!<br>
+            Eliminate any options with (4): Cross out B and D.<br>
+            You are left with A (1, 2) and C (2, 3).<br>
+            You only need to judge whether (1) or (3) is correct. You'll notice (1) uses "will" which is too absolute, while (3) uses "may" which is logically flawless. Instantly choose C!
+        </div>
+    </div>
+
+</body>
+</html>
