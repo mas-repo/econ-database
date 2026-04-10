@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Total Social Surplus</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+        }
+
+        .header-section {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .option-analysis {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid #9ca3af;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .option-analysis.correct {
+            border-left-color: #10b981;
+            background-color: #ecfdf5;
+        }
+
+        .bilingual-en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .qa-box, .trap-box, .trick-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .trap-box { border-top: 4px solid #ef4444; }
+        .trick-box { border-top: 4px solid #f59e0b; }
+        
+        .correct-badge {
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>Economics Topic Analysis | 經濟學題解</h1>
+        <div>
+            <span class="badge">Topic: Efficiency & Total Social Surplus (效率與總社會盈餘)</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key Concepts: Total Benefit, Perfectly Inelastic Supply, Economic Rent</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p><strong>細閱下圖。最大的總社會盈餘等於_____________。</strong></p>
+        <ul>
+            <li>A. 面積 Z</li>
+            <li>B. 面積 (Y + Z)</li>
+            <li>C. 面積 (W + X + Y)</li>
+            <li>D. 面積 (X + Y + Z)</li>
+        </ul>
+        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #e5e7eb;">
+        <p class="bilingual-en"><strong>Refer to the diagram. The maximum total social surplus is equal to ____________.</strong></p>
+        <ul class="bilingual-en">
+            <li>A. area Z</li>
+            <li>B. area (Y + Z)</li>
+            <li>C. area (W + X + Y)</li>
+            <li>D. area (X + Y + Z)</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>📚 Concept Review (概念重溫)</h2>
+        <p>計算「總社會盈餘」時，我們必須回到最根本的公式：總社會盈餘等於總利益減去總成本。</p>
+        <p class="bilingual-en">When calculating "Total Social Surplus", we must return to the most fundamental formula: Total Social Surplus equals Total Benefit minus Total Cost.</p>
+        
+        <div class="math-block">
+            $$ \text{Total Social Surplus (TSS)} = \text{Total Benefit (TB)} - \text{Total Cost (TC)} $$
+            $$ \text{總社會盈餘} = \text{總利益} - \text{總成本} $$
+        </div>
+
+        <ul>
+            <li><strong>Total Benefit (總利益):</strong> 需求曲線 (D) 下直到數量 Q 的總面積。這是消費者願意支付的最高總額。<br>
+            <span class="bilingual-en">The entire area under the demand curve (D) up to quantity Q. This is the maximum total amount consumers are willing to pay.</span></li>
+            <li><strong>Total Cost (總成本):</strong> 供應曲線 (S) 下的面積，代表生產該物品的總可變成本 (或機會成本)。當供應曲線是一條從 X 軸出發的<strong>垂直線</strong> (完全無彈性供應)，它與 X 軸之間並沒有面積，這意味著生產的總成本 (機會成本) 為零。<br>
+            <span class="bilingual-en">The area under the supply curve (S), representing the total variable cost (or opportunity cost) of producing the good. When the supply curve is a <strong>vertical line</strong> starting from the X-axis (perfectly inelastic supply), there is no area between it and the X-axis, meaning the total cost (opportunity cost) of production is zero.</span></li>
+        </ul>
+    </div>
+
+    <div class="analysis-section">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p>Correct Option (正確答案): <span class="correct-badge">Option D</span></p>
+
+        <div class="option-analysis">
+            <p><strong>❌ Option A: 面積 Z (Area Z)</strong></p>
+            <p>面積 Z 是價格 P 以上、需求曲線 D 以下的區域。這僅是<strong>消費者盈餘 (Consumer Surplus)</strong>，不是總社會盈餘。</p>
+            <p class="bilingual-en">Area Z is the region above price P and below the demand curve D. This is merely the <strong>Consumer Surplus</strong>, not the total social surplus.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ Option B: 面積 (Y + Z) (Area Y + Z)</strong></p>
+            <p>這是一個<strong>常見陷阱</strong>！如果我們假設圖中的虛線是邊際成本 (Marginal Cost) 曲線，我們才會把面積 X 當作成本扣除。然而，<strong>題目並沒有標明該虛線是邊際成本或供應曲線</strong>。在經濟學中不能自行假設未標明的線是成本線。因此，扣除 X 是錯誤的。</p>
+            <p class="bilingual-en">This is a <strong>common trap</strong>! We would only deduct Area X as a cost if we assumed the dotted line was the Marginal Cost curve. However, <strong>the question does not label the dotted line as Marginal Cost or Supply</strong>. In economics, we cannot arbitrarily assume an unlabeled line is a cost curve. Therefore, deducting X is incorrect.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>❌ Option C: 面積 (W + X + Y) (Area W + X + Y)</strong></p>
+            <p>這個面積組合在經濟學上沒有直接的意義。W 更超出了目前的生產數量 Q。</p>
+            <p class="bilingual-en">This combination of areas has no direct economic meaning in this context. Area W is even beyond the current production quantity Q.</p>
+        </div>
+
+        <div class="option-analysis correct">
+            <p><strong>✅ Option D: 面積 (X + Y + Z) (Area X + Y + Z)</strong></p>
+            <p>這是正確答案。總利益 (Total Benefit) 是需求曲線下的總面積，即 (X + Y + Z)。由於供應曲線 (S) 是一條固定在數量 Q 的垂直線，代表其生產的機會成本為零 (供應曲線下的面積為 0)。<br>
+            最大總社會盈餘 = 總利益 - 總成本 = (X + Y + Z) - 0 = <strong>X + Y + Z</strong>。</p>
+            <p class="bilingual-en">This is the correct answer. Total Benefit is the total area under the demand curve, which is (X + Y + Z). Since the supply curve (S) is a vertical line fixed at quantity Q, it implies the opportunity cost of production is zero (the area under the supply curve is 0).<br>
+            Maximum Total Social Surplus = Total Benefit - Total Cost = (X + Y + Z) - 0 = <strong>X + Y + Z</strong>.</p>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <h2>🧩 Problem Decomposition (題目拆解)</h2>
+        <p><strong>Pivot Point (破題關鍵):</strong><br>
+        題目的核心在於識別「陷阱」。圖中真正標示了字母 S 的是那條<strong>垂直線</strong>，這才是我們應該參考的供應曲線。那條從原點出發的虛線沒有任何標籤 (Label)，它純粹是一個視覺干擾 (Distractor)。解題時必須嚴格根據有標籤的曲線來判斷：垂直的 S 線代表總成本為零。</p>
+        <p class="bilingual-en"><strong>Pivot Point:</strong> The core of the question lies in identifying the "trap". The line actually labeled 'S' is the <strong>vertical line</strong>; this is the supply curve we must base our analysis on. The dotted line starting from the origin has no label and is purely a visual distractor. You must strictly follow the labeled curves: the vertical S line implies total cost is zero.</p>
+    </div>
+
+    <div class="trap-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p><strong>過度解讀圖表 (Over-interpreting the Diagram)</strong><br>
+        DSE 經濟科經常會加入一些無用的資訊或未標明的線條來測試學生的概念是否清晰。很多學生一看到斜線就自動當成邊際成本 (MC) 或供應 (S)，從而錯誤地選擇了 B。記住：<strong>沒有標籤的線，不要自己腦補它的意思！</strong></p>
+        <p class="bilingual-en">DSE Economics often includes useless information or unlabeled lines to test if a student's concepts are solid. Many students automatically assume any upward-sloping line is Marginal Cost (MC) or Supply (S), leading them to incorrectly choose B. Remember: <strong>Do not arbitrarily assign meaning to unlabeled lines!</strong></p>
+    </div>
+
+    <div class="qa-box">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 如果這條垂直的供應線代表土地供應，那 (X + Y) 是甚麼？<br>(If this vertical supply curve represents the supply of land, what is (X + Y)?)</strong></p>
+        <p><strong>A:</strong> 如果供應完全無彈性 (如土地)，總收入 (P × Q) 即面積 (X + Y) 會全部成為<strong>經濟租 (Economic Rent)</strong>，因為其轉移收入 (Transfer Earnings / Opportunity Cost) 為零。在這種情況下，生產者盈餘 (也就是經濟租) 是 X + Y，消費者盈餘是 Z。兩者相加，總社會盈餘依然是 X + Y + Z。</p>
+        <p class="bilingual-en"><strong>A:</strong> If supply is perfectly inelastic (like land), the total revenue (P × Q), which is Area (X + Y), entirely becomes <strong>Economic Rent</strong> because its Transfer Earnings (Opportunity Cost) are zero. In this case, the Producer Surplus (which is the Economic Rent) is X + Y, and the Consumer Surplus is Z. Adding them together, the Total Social Surplus is still X + Y + Z.</p>
+    </div>
+
+    <div class="trick-box">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>「看字做人」法則 (The "Read the Labels" Rule):</strong><br>
+        在做 DSE 選擇題時，第一時間圈出所有曲線的「標籤」(如 D, S, MR, MC)。任何沒有標示英文字母的線，99% 是用來裝飾或者騙人的陷阱。直接無視那條虛線，你會發現這只是一條簡單的垂直供應線題目！</p>
+        <p class="bilingual-en"><strong>The "Read the Labels" Rule:</strong><br>
+        When doing DSE MCQs, immediately circle the labels of all curves (e.g., D, S, MR, MC). Any line without a letter label is 99% of the time a trap or decoration. Ignore the dotted line completely, and you'll realize this is just a simple question about a vertical supply curve!</p>
+    </div>
+
+</body>
+</html>
