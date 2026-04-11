@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - National Income Accounting</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --box-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-main: #1e293b;
+            --text-en: #4b5563;
+            --border-color: #e2e8f0;
+            --danger-color: #ef4444;
+            --success-color: #22c55e;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .en-trans {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Header Badges */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background-color: var(--box-bg);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--math-bg);
+            font-weight: bold;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Options Analysis */
+        .option {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .option.correct {
+            border-color: var(--success-color);
+            background-color: #f0fdf4;
+        }
+
+        .option.wrong {
+            border-color: var(--danger-color);
+            background-color: #fef2f2;
+        }
+
+        .option-header {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📝 HKDSE Economics Masterclass: Multiple Choice Analysis</h1>
+    <div class="badge-container">
+        <span class="badge">Topic: 國民收入會計 / National Income Accounting</span>
+        <span class="badge">Difficulty: ★★★★☆</span>
+        <span class="badge">Key Concepts: Expenditure Approach, Gross vs Net, Factor Cost</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <p>下表顯示某經濟的統計數據。<br>
+    <span class="en-trans">The following table shows the statistical data of an economy.</span></p>
+
+    <table>
+        <tr>
+            <th>本地生產總值成分<br><span class="en-trans" style="margin:0;font-size:0.85em;">Gross Domestic Product (GDP) components</span></th>
+            <th>百萬（元）<br><span class="en-trans" style="margin:0;font-size:0.85em;">Million ($)</span></th>
+        </tr>
+        <tr><td>私人消費支出 / <span class="en-trans">Private consumption expenditure</span></td><td>400</td></tr>
+        <tr><td>政府消費支出 / <span class="en-trans">Government consumption expenditure</span></td><td>250</td></tr>
+        <tr><td>本地固定資本形成淨額 / <span class="en-trans">Net domestic fixed capital formation</span></td><td>300</td></tr>
+        <tr><td>存貨下跌 / <span class="en-trans">Decrease in stock</span></td><td>70</td></tr>
+        <tr><td>補貼 / <span class="en-trans">Subsidies</span></td><td>120</td></tr>
+        <tr><td>折舊 / <span class="en-trans">Capital consumption allowance</span></td><td>50</td></tr>
+        <tr><td>淨出口 / <span class="en-trans">Net exports</span></td><td>300</td></tr>
+        <tr><td>海外收入淨值 / <span class="en-trans">Net income from abroad</span></td><td>80</td></tr>
+        <tr><td>直接稅 / <span class="en-trans">Direct tax</span></td><td>100</td></tr>
+    </table>
+
+    <p>以生產要素成本計算的本地生產總值等於_______ 百萬元。<br>
+    <span class="en-trans">The GDP at factor cost is $_______ million.</span></p>
+    
+    <p>
+        A. 1 250<br>
+        B. 1 270<br>
+        C. 1 350<br>
+        D. 1 490
+    </p>
+
+    <hr>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>A. 開支計算法 (Expenditure Approach)</h3>
+        <p>以市價計算的本地生產總值 \(\text{GDP}_{\text{mp}}\) 的基本公式：</p>
+        <div class="en-trans">The basic formula for GDP at market price (\(\text{GDP}_{\text{mp}}\)):</div>
+        <div class="math-block">
+            $$\text{GDP}_{\text{mp}} = C + I + G + NX$$
+        </div>
+        <p>其中 \(C\) = 私人消費 (Private Consumption), \(I\) = 投資總額 (Gross Investment), \(G\) = 政府消費 (Government Consumption), \(NX\) = 淨出口 (Net Exports)。</p>
+
+        <h3>B. 投資的組成部分 (Components of Investment)</h3>
+        <p>投資總額（\(I\)）需要包含固定資本與存貨的變動，並且是「總額」(Gross) 而非「淨額」(Net)：</p>
+        <div class="en-trans">Gross Investment (\(I\)) must include both fixed capital and changes in inventory, and it must be "Gross" not "Net":</div>
+        <div class="math-block">
+            $$I = \text{本地固定資本形成淨額 (Net fixed capital)} + \text{折舊 (Depreciation)} + \text{存貨增減 (Change in stock)}$$
+        </div>
+        <p><em>注意 Note：</em>折舊 (Depreciation) 在英文中有時被稱為 Capital consumption allowance。存貨下跌 (Decrease in stock) 代表存貨增減為負數 (Negative change)。</p>
+
+        <h3>C. 市價與要素成本 (Market Price vs. Factor Cost)</h3>
+        <p>從市價 (Market Price) 轉換為要素成本 (Factor Cost)，必須扣除政府抽取的間接稅，並加回政府給予的補貼：</p>
+        <div class="en-trans">To convert from Market Price to Factor Cost, we must deduct indirect taxes and add back subsidies:</div>
+        <div class="math-block">
+            $$\text{GDP}_{\text{fc}} = \text{GDP}_{\text{mp}} - \text{間接稅 (Indirect Taxes)} + \text{補貼 (Subsidies)}$$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <span style="font-size: 1.5em; font-weight: bold; background-color: var(--success-color); color: white; padding: 10px 30px; border-radius: 8px;">
+            正確答案 / Correct Option: C
+        </span>
+    </div>
+
+    <h3>Step-by-Step Calculation (逐步計算):</h3>
+    <ol>
+        <li>
+            <strong>尋找投資總額 (Find Gross Investment):</strong><br>
+            \(I = 300 \text{ (淨額/Net)} + 50 \text{ (折舊/Depreciation)} - 70 \text{ (存貨下跌/Decrease in stock)} = 280\)<br>
+            <span class="en-trans">Net fixed capital formation + Capital consumption allowance + Change in stock = \(300 + 50 + (-70) = 280\).</span>
+        </li>
+        <li>
+            <strong>計算市價本地生產總值 (Calculate GDP at market price):</strong><br>
+            \(\text{GDP}_{\text{mp}} = C + I + G + NX = 400 + 280 + 250 + 300 = 1230\)<br>
+            <span class="en-trans">Sum up Consumption, Investment, Government Spending, and Net Exports.</span>
+        </li>
+        <li>
+            <strong>轉換為要素成本 (Convert to GDP at factor cost):</strong><br>
+            \(\text{GDP}_{\text{fc}} = 1230 - 0 \text{ (無間接稅/No indirect tax)} + 120 \text{ (補貼/Subsidies)} = 1350\)<br>
+            <span class="en-trans">Add subsidies to the market price GDP to get factor cost GDP.</span>
+        </li>
+    </ol>
+
+    <h3>Options Breakdown (選項拆解):</h3>
+    
+    <div class="option wrong">
+        <div class="option-header">
+            <span style="color: var(--danger-color);">❌ Option A (1 250)</span> - 錯誤 (Incorrect)
+        </div>
+        <p><strong>陷阱/Trap:</strong> 考生計算出正確的要素成本（1350）後，錯誤地扣減了「直接稅」(Direct tax: 100)。即 \(1350 - 100 = 1250\)。</p>
+        <p class="en-trans">The student correctly calculated factor cost GDP (1350) but erroneously subtracted "Direct tax" (100). Direct taxes affect personal disposable income, not the GDP.</p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-header">
+            <span style="color: var(--danger-color);">❌ Option B (1 270)</span> - 錯誤 (Incorrect)
+        </div>
+        <p><strong>陷阱/Trap:</strong> 考生計算出1350後，錯誤地扣除了「海外收入淨值」(Net income from abroad: 80)。即 \(1350 - 80 = 1270\)。</p>
+        <p class="en-trans">The student erroneously subtracted "Net income from abroad" (80) from the GDP. Net income from abroad is used to convert GDP to GNP (Gross National Product), and it should be added, not subtracted, if GNP was asked.</p>
+    </div>
+
+    <div class="option correct">
+        <div class="option-header">
+            <span style="color: var(--success-color);">✅ Option C (1 350)</span> - 正確 (Correct)
+        </div>
+        <p>完全遵循開支計算法，準確處理了折舊、存貨下跌以及補貼的計算。</p>
+        <p class="en-trans">Correctly applied the expenditure approach, accurately handling depreciation, the decrease in stock, and the addition of subsidies.</p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-header">
+            <span style="color: var(--danger-color);">❌ Option D (1 490)</span> - 錯誤 (Incorrect)
+        </div>
+        <p><strong>陷阱/Trap:</strong> 考生將「存貨下跌 (Decrease in stock)」錯誤當作正數加上去了。如果存貨增加70，投資 \(I = 300 + 50 + 70 = 420\)。此時 \(\text{GDP}_{\text{fc}} = 400 + 420 + 250 + 300 + 120 = 1490\)。</p>
+        <p class="en-trans">The student mistakenly added the "Decrease in stock" instead of subtracting it. A decrease in inventory means goods were sold from past production, so it must be subtracted from current year calculations.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p>這類題目測試你在龐雜數據中「挑選有用資訊」的能力。解題的關鍵樞紐（Pivot Point）在於處理「投資 (Investment)」的細項。<br>
+    <span class="en-trans">This type of question tests your ability to filter useful information from a data dump. The Pivot Point is how you construct the "Investment" figure.</span></p>
+    
+    <ul>
+        <li><strong>干擾資訊 (Distractors):</strong> 直接稅 (Direct tax) 與 海外收入淨值 (Net income from abroad) 是考評局故意放入的干擾項。計算本地生產總值 (GDP) 完全不需要它們。
+            <br><span class="en-trans">Direct tax and Net income from abroad are pure distractors. They are completely irrelevant for calculating GDP.</span></li>
+        <li><strong>關鍵轉換 (Crucial Conversions):</strong> 必須留意題目給的是「淨額 (Net)」還是「總額 (Gross)」。題目給定「固定資本形成<strong>淨額</strong>」，所以必須加上折舊來變回「總額」。
+            <br><span class="en-trans">Pay close attention to "Net" vs "Gross". Since "Net domestic fixed capital formation" is given, you MUST add depreciation to find Gross Investment.</span></li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div style="background-color: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 0 8px 8px 0;">
+        <p>⚠️ <strong>符號盲點 (Sign Confusion):</strong> 「存貨下跌 (Decrease in stock)」等同於「負投資 (Negative investment)」。很多同學看到數字就盲目相加，忘記了下跌意味著要<strong>減去</strong>該數值。</p>
+        <p class="en-trans">Many students blindly add all numbers together. "Decrease in stock" means inventory fell, so it is a negative investment and must be subtracted!</p>
+        
+        <p>⚠️ <strong>名詞混淆 (Terminology Trap):</strong> 不知道 "Capital consumption allowance" 就是「折舊 (Depreciation)」的同義詞，導致不知道該如何處理這 50 百萬元。</p>
+        <p class="en-trans">Not knowing that "Capital consumption allowance" is just another term for Depreciation, leading to ignoring this crucial $50 million.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <p><strong>Q: 為什麼我們不理會「直接稅 (Direct tax)」？</strong></p>
+    <p class="en-trans">Why do we ignore "Direct tax"?</p>
+    <p><strong>A:</strong> 直接稅（如薪俸稅、利得稅）只會影響市民的「可支配收入 (Disposable Income)」，它是一種轉移支付的形式。本地生產總值 (GDP) 量度的是「生產總值」，直接稅並不會影響貨品或服務的生產價值與市價。<br>
+    <span class="en-trans">Direct taxes affect disposable income, not the value of production. GDP measures the total value of production, so direct taxes (which are essentially transfer payments from citizens to the government) are excluded from the GDP calculation.</span></p>
+
+    <p><strong>Q: 如果題目問的是「本地國民總值 (GNP)」，答案會是什麼？</strong></p>
+    <p class="en-trans">What if the question asked for Gross National Product (GNP)?</p>
+    <p><strong>A:</strong> 如果要計算要素成本的 GNP，你需要將剛才算出的 GDP 加上「海外收入淨值 (Net income from abroad)」。公式為：\(\text{GNP}_{\text{fc}} = \text{GDP}_{\text{fc}} + \text{Net income from abroad} = 1350 + 80 = 1430\)。<br>
+    <span class="en-trans">If asking for GNP at factor cost, you would take your GDP at factor cost and add the "Net income from abroad". So, \(1350 + 80 = 1430\).</span></p>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p>💡 <strong>刪除法 (The Elimination Trick):</strong></p>
+    <p>在考試拿到這類報表題目時，第一步<strong>立刻用筆劃走</strong>不需要的項目！<br>
+    <span class="en-trans">When you see a table question like this in the exam, your very first step should be to physically cross out the irrelevant items with your pen!</span></p>
+    <ul>
+        <li>看到算 GDP -> 劃走「海外收入淨值」。(Cross out Net income from abroad)</li>
+        <li>看到算生產總值 -> 劃走「直接稅」。(Cross out Direct tax)</li>
+        <li>在「存貨下跌」旁畫一個大大的<strong>負號 (-)</strong>。(Draw a big minus sign next to Decrease in stock)</li>
+    </ul>
+    <p>只要清理了版面，你的計算就只剩下簡單的加減法，大大降低「大意失分 (Careless errors)」的機率！<br>
+    <span class="en-trans">Once the visual clutter is gone, it becomes a simple addition/subtraction problem, massively reducing the chance of careless mistakes.</span></p>
+
+</div>
+
+</body>
+</html>

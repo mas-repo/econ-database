@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --dark-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --correct-green: #15803d;
+            --danger-red: #b91c1c;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-top: 1.5em;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: none; text-align: center; }
+        h2 { font-size: 1.4rem; }
+        h3 { font-size: 1.1rem; border-bottom: none; margin-bottom: 0.5em; }
+
+        .en-text {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .zh-text {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .header-section {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-section span {
+            display: inline-block;
+            margin: 5px 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th { background-color: var(--gray-bg); color: var(--dark-blue); }
+        
+        .highlight-row { background-color: #dcfce7; font-weight: bold; }
+
+        .correct-opt {
+            color: var(--correct-green);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .wrong-opt { color: var(--danger-red); }
+
+        .qa-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            table { font-size: 0.85em; }
+            .header-section span { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>Economics Exam Analysis</h1>
+        <div>
+            <span><strong>Topic:</strong> 廠商與生產 / Firms and Production</span>
+            <span><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+            <span><strong>Key Concepts:</strong> Perfect Competition, Profit Maximization, Producer Surplus</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 / The Question</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            以下是一間受價公司的總成本表。該公司的固定成本等於$20。
+            <br><br>
+            假設市價是$35。在利潤極大化產出水平，該公司的利潤和總生產者盈餘分別是_______和_______。
+            <br><br>
+            A. $10 … $10<br>
+            B. $10 … $30<br>
+            C. $30 … $10<br>
+            D. $30 … $30
+        </div>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+        <div class="en-text">
+            The following table shows the total cost schedule of a price-taking firm which has a fixed cost equal to $20.
+            <br><br>
+            Suppose the market price is $35. At the profit-maximizing output level, the firm’s profit and total producer surplus are _______ and _______ respectively.
+            <br><br>
+            A. $10 … $10<br>
+            B. $10 … $30<br>
+            C. $30 … $10<br>
+            D. $30 … $30
+        </div>
+
+        <table>
+            <tr>
+                <th>數量 / Quantity (units)</th>
+                <th>總成本 / Total cost ($)</th>
+            </tr>
+            <tr><td>1</td><td>40</td></tr>
+            <tr><td>2</td><td>65</td></tr>
+            <tr><td>3</td><td>95</td></tr>
+            <tr><td>4</td><td>130</td></tr>
+            <tr><td>5</td><td>170</td></tr>
+        </table>
+    </div>
+
+    <h2>2. 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <div class="zh-text">
+            要解決這道題目，我們必須掌握以下三個核心微觀經濟學概念：
+        </div>
+        <div class="en-text">
+            To solve this problem, we must master the following three core microeconomic concepts:
+        </div>
+
+        <ul>
+            <li>
+                <div class="zh-text"><strong>1. 利潤極大化條件 (Profit Maximization Condition)：</strong> 受價公司（完全競爭市場）的利潤極大化條件是 邊際收益 (MR) 等於 邊際成本 (MC)。因為市場價格是不變的，所以 \( P = MR = MC \)。</div>
+                <div class="en-text"><strong>1. Profit Maximization Condition:</strong> For a price-taking firm (perfect competition), profit is maximized where Marginal Revenue (MR) equals Marginal Cost (MC). Since the market price is constant, \( P = MR = MC \).</div>
+            </li>
+            <li>
+                <div class="zh-text"><strong>2. 利潤公式 (Profit Formula)：</strong> 利潤等於總收益減去總成本。</div>
+                <div class="en-text"><strong>2. Profit Formula:</strong> Profit equals Total Revenue minus Total Cost.</div>
+                <div class="math-block">
+                    $$ \text{Profit } (\pi) = \text{Total Revenue } (TR) - \text{Total Cost } (TC) $$
+                </div>
+            </li>
+            <li>
+                <div class="zh-text"><strong>3. 生產者盈餘 (Producer Surplus, PS)：</strong> 生產者盈餘有兩種常見的計算方法：總收益減去總可變成本，或者利潤加上總固定成本。</div>
+                <div class="en-text"><strong>3. Producer Surplus (PS):</strong> There are two common ways to calculate producer surplus: Total Revenue minus Total Variable Cost, or Profit plus Total Fixed Cost.</div>
+                <div class="math-block">
+                    $$ PS = TR - \text{Total Variable Cost } (TVC) $$
+                    $$ \text{OR} $$
+                    $$ PS = \text{Profit} + \text{Total Fixed Cost } (TFC) $$
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 / Answer & Detailed Analysis</h2>
+    <p>正確答案 / Correct Option: <span class="correct-opt">Option B</span></p>
+
+    <div class="zh-text"><strong>第一步：計算邊際成本 (MC) 找出利潤極大化產出</strong></div>
+    <div class="en-text"><strong>Step 1: Calculate Marginal Cost (MC) to find profit-maximizing output</strong></div>
+    <p>
+        <span class="zh-text">我們需要計算每一個單位的邊際成本 \( MC \)，即 \( MC_n = TC_n - TC_{n-1} \)。要注意，當產量為0時，總成本等於固定成本，即 \( TC_0 = \$20 \)。</span><br>
+        <span class="en-text">We need to calculate the marginal cost \( MC \) for each unit, where \( MC_n = TC_n - TC_{n-1} \). Note that when output is 0, Total Cost equals Fixed Cost, so \( TC_0 = \$20 \).</span>
+    </p>
+
+    <table>
+        <tr>
+            <th>Q</th>
+            <th>TC</th>
+            <th>MC = ΔTC / ΔQ</th>
+            <th>Price (P)</th>
+            <th>Action</th>
+        </tr>
+        <tr><td>0</td><td>20 (TFC)</td><td>-</td><td>35</td><td>-</td></tr>
+        <tr><td>1</td><td>40</td><td>40 - 20 = 20</td><td>35</td><td>Produce (\( P > MC \))</td></tr>
+        <tr><td>2</td><td>65</td><td>65 - 40 = 25</td><td>35</td><td>Produce (\( P > MC \))</td></tr>
+        <tr><td>3</td><td>95</td><td>95 - 65 = 30</td><td>35</td><td>Produce (\( P > MC \))</td></tr>
+        <tr class="highlight-row"><td>4</td><td>130</td><td>130 - 95 = 35</td><td>35</td><td>Stop Here (\( P = MC \))</td></tr>
+        <tr><td>5</td><td>170</td><td>170 - 130 = 40</td><td>35</td><td>Do Not Produce (\( P < MC \))</td></tr>
+    </table>
+
+    <div class="zh-text"><strong>第二步：計算利潤與生產者盈餘 (在 \( Q = 4 \) 時)</strong></div>
+    <div class="en-text"><strong>Step 2: Calculate Profit and Producer Surplus (At \( Q = 4 \))</strong></div>
+    <ul>
+        <li>
+            <div class="zh-text"><strong>總收益 (TR)</strong> = \( P \times Q = 35 \times 4 = \$140 \)</div>
+            <div class="en-text"><strong>Total Revenue (TR)</strong> = \( P \times Q = 35 \times 4 = \$140 \)</div>
+        </li>
+        <li>
+            <div class="zh-text"><strong>利潤 (Profit)</strong> = \( TR - TC = 140 - 130 = \$10 \)</div>
+            <div class="en-text"><strong>Profit</strong> = \( TR - TC = 140 - 130 = \$10 \)</div>
+        </li>
+        <li>
+            <div class="zh-text"><strong>生產者盈餘 (PS)</strong> = 利潤 + 總固定成本 = \( 10 + 20 = \$30 \)</div>
+            <div class="en-text"><strong>Producer Surplus (PS)</strong> = Profit + Total Fixed Cost = \( 10 + 20 = \$30 \)</div>
+        </li>
+    </ul>
+
+    <h3>選項分析 / Option Breakdown:</h3>
+    <ul>
+        <li><span class="wrong-opt">A. $10 ... $10</span>: <span class="zh-text">錯誤。計算了正確的利潤 ($10)，但誤以為生產者盈餘等於利潤，沒有加上固定成本。</span> <span class="en-text">Incorrect. Calculated the correct profit ($10) but mistakenly assumed Producer Surplus equals Profit, forgetting to add Fixed Costs.</span></li>
+        <li><span class="correct-opt">B. $10 ... $30</span>: <span class="zh-text">正確答案。</span> <span class="en-text">Correct answer.</span></li>
+        <li><span class="wrong-opt">C. $30 ... $10</span>: <span class="zh-text">錯誤。將利潤與生產者盈餘的數字調轉了。</span> <span class="en-text">Incorrect. Swapped the values for Profit and Producer Surplus.</span></li>
+        <li><span class="wrong-opt">D. $30 ... $30</span>: <span class="zh-text">錯誤。計算了正確的生產者盈餘，但誤以為利潤也等於 $30 (即計算利潤時忘記扣除固定成本)。</span> <span class="en-text">Incorrect. Calculated PS correctly, but assumed profit was also $30 (forgot to deduct fixed costs when calculating profit).</span></li>
+    </ul>
+
+    <h2>4. 題目拆解 / Problem Decomposition</h2>
+    <div class="zh-text">
+        <strong>解題樞紐 (Pivot Point):</strong> 本題的關鍵在於找出 \( Q=1 \) 時的邊際成本。很多學生會直接用 \( 40 - 0 = 40 \)，這就錯了！題目清楚標明<strong>固定成本等於 $20</strong>。因此，當 \( Q=0 \) 時，\( TC=20 \)。第一件產品的 \( MC \) 是 \( 40 - 20 = 20 \)。
+    </div>
+    <div class="en-text">
+        <strong>Pivot Point:</strong> The key to this problem lies in finding the Marginal Cost at \( Q=1 \). Many students mistakenly do \( 40 - 0 = 40 \). This is wrong! The question explicitly states <strong>fixed cost is $20</strong>. Therefore, at \( Q=0 \), \( TC=20 \). The \( MC \) for the first unit is \( 40 - 20 = 20 \).
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="zh-text">
+        ⚠️ <strong>陷阱一：混淆利潤與生產者盈餘。</strong> <br>
+        很多學生以為利潤和生產者盈餘是同一樣東西。記住：在短期內，因為有固定成本的存在，生產者盈餘通常大於利潤。(\( PS = \text{Profit} + TFC \))
+    </div>
+    <div class="en-text">
+        ⚠️ <strong>Trap 1: Confusing Profit and Producer Surplus.</strong> <br>
+        Many students assume profit and producer surplus are the same. Remember: in the short run, due to the existence of fixed costs, producer surplus is usually greater than profit. (\( PS = \text{Profit} + TFC \))
+    </div>
+
+    <h2>6. 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼我們不在表格裡計算平均成本 (AC)？ / Why don't we calculate Average Cost (AC) in the table?</strong></p>
+        <div class="zh-text">
+            A: 雖然我們可以用 \( (P - AC) \times Q \) 來計算利潤，但計算每個數量的 AC 會浪費時間且容易出現小數點計算錯誤。直接用 \( TR - TC \) 是最直接且最不易出錯的。
+        </div>
+        <div class="en-text">
+            A: While we can calculate profit using \( (P - AC) \times Q \), calculating AC for every quantity is time-consuming and prone to decimal errors. Using \( TR - TC \) directly is the most straightforward and error-free method.
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="zh-text">
+            🚀 <strong>秒殺技巧：聯動公式</strong><br>
+            一旦你在考試中計出 <strong>利潤 (Profit) = $10</strong>，你<strong>完全不需要</strong>重新用 \( TR - TVC \) 或者畫圖去計算生產者盈餘。直接使用神級公式：<br>
+            \( PS = \text{Profit} + \text{Fixed Cost} = 10 + 20 = 30 \)。<br>
+            兩秒鐘，答案 B 已經浮現！
+        </div>
+        <div class="en-text">
+            🚀 <strong>Speed-run Trick: Linked Formula</strong><br>
+            Once you calculate that <strong>Profit = $10</strong> in the exam, you <strong>do not need</strong> to recalculate Producer Surplus using \( TR - TVC \) or by drawing a graph. Simply use the golden formula:<br>
+            \( PS = \text{Profit} + \text{Fixed Cost} = 10 + 20 = 30 \).<br>
+            In two seconds, Option B becomes the obvious answer!
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Interactive Tutor - Aggregate Supply</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-concept: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --bg-qna: #fdf2f8;
+            --bg-tips: #fefce8;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 { color: var(--primary); margin-top: 1.5em; }
+        h1 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.8rem; }
+        h2 { font-size: 1.4rem; }
+        h3 { font-size: 1.2rem; }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .options-list { list-style-type: none; padding-left: 0; }
+        .options-list li { margin-bottom: 8px; }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        
+        .correct-opt { border-left: 5px solid #166534; }
+        .wrong-opt { border-left: 5px solid #991b1b; }
+
+        .status-correct { color: #166534; font-weight: bold; }
+        .status-wrong { color: #991b1b; font-weight: bold; }
+
+        .qna-box {
+            background-color: var(--bg-qna);
+            border-left: 5px solid #db2777;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: var(--bg-tips);
+            border-left: 5px solid #eab308;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor Analysis</h1>
+    <div class="header-info">
+        <span class="badge">Topic: Aggregate Supply & Price Level (總供應與物價水平)</span>
+        <span class="badge" style="background-color: #f59e0b;">Difficulty: ★★☆☆☆</span>
+        <span class="badge" style="background-color: #10b981;">Key Concepts: SRAS, Production Cost, Supply Shock</span>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>大量油田因嚴重漏油意外需要關閉。短期而言，一石油輸入國的總供應會_______ ，而該國的物價水平會_______。</p>
+        <ul class="options-list">
+            <li>A. 增加…上升</li>
+            <li>B. 增加…下降</li>
+            <li>C. 減少…上升</li>
+            <li>D. 減少…下降</li>
+        </ul>
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+        <div class="bilingual-en">
+            <p>A large number of oil fields have to be closed because of serious oil spill accidents. In the short run, the aggregate supply of an oil-importing country will _______ and its price level will _______.</p>
+            <ul class="options-list">
+                <li>A. increase … rise</li>
+                <li>B. increase … fall</li>
+                <li>C. decrease … rise</li>
+                <li>D. decrease … fall</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>短期總供應 (Short-Run Aggregate Supply, SRAS)</strong> 顯示了在一段期間內，整體經濟的物價水平與實質產出（總生產）之間的正向關係。當生產成本發生改變時，SRAS 曲線會發生平移。</p>
+        <p class="bilingual-en"><strong>Short-Run Aggregate Supply (SRAS)</strong> shows the positive relationship between the general price level and the real output (total production) in the economy during a specific period. When the cost of production changes, the SRAS curve shifts.</p>
+        
+        <p><strong>供應衝擊 (Supply Shock):</strong> 外圍因素（如自然災害、意外）導致原材料供應突然改變。在這個情況下，石油供應減少會推高全球油價。對於「石油輸入國」而言，石油是重要的生產要素（如運輸、發電），因此<strong>生產成本 (Cost of Production)</strong> 會上升。</p>
+        <p class="bilingual-en"><strong>Supply Shock:</strong> An unexpected event (like a natural disaster or accident) that changes the supply of raw materials. Here, reduced oil supply pushes up global oil prices. For an "oil-importing country," oil is a crucial factor of production (e.g., transport, electricity), so the <strong>Cost of Production</strong> will increase.</p>
+
+        <div class="math-block">
+            $$\uparrow \text{Input Prices (Oil)} \implies \uparrow \text{Cost of Production} \implies \downarrow \text{SRAS (Shifts Left)}$$
+        </div>
+        <p>根據總供求模型 (AD-AS Model)，當 SRAS 減少（向左移），在給定的總需求 $AD$ 下，均衡物價水平 $P$ 會上升，而實質產出 $Y$ 會下降。</p>
+        <p class="bilingual-en">According to the AD-AS Model, when SRAS decreases (shifts to the left), given an unchanged Aggregate Demand $AD$, the equilibrium Price Level $P$ will rise, and Real Output $Y$ will fall.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案 (Correct Option)：<strong class="status-correct">Option C</strong></p>
+
+    <div class="option-analysis wrong-opt">
+        <p><span class="status-wrong">Option A & B (錯誤 Incorrect)</span>: 由於石油價格上升，廠商的生產成本增加。在相同物價水平下，廠商願意且能夠提供的產出減少，因此短期總供應 (SRAS) 應該是<strong>減少</strong>（向左移），而不是增加。</p>
+        <p class="bilingual-en">Because the price of oil increases, firms face higher production costs. At the same price level, firms are willing and able to produce less, so the Short-Run Aggregate Supply (SRAS) should <strong>decrease</strong> (shift left), not increase.</p>
+    </div>
+
+    <div class="option-analysis correct-opt">
+        <p><span class="status-correct">Option C (正確 Correct)</span>: 如上所述，生產成本上升導致短期總供應 (SRAS) 減少。在總供求圖中，SRAS 曲線向左移會導致沿著總需求曲線 (AD) 的移動，最終創造出一個更高的均衡物價水平 (Price Level 上升) 以及較低的實質產出。</p>
+        <p class="bilingual-en">As explained, higher production costs lead to a decrease in SRAS. In the AD-AS graph, a leftward shift of the SRAS curve causes a movement along the AD curve, resulting in a higher equilibrium price level (Price Level rises) and a lower real output.</p>
+    </div>
+
+    <div class="option-analysis wrong-opt">
+        <p><span class="status-wrong">Option D (錯誤 Incorrect)</span>: 雖然前半部分的「總供應減少」是正確的，但總供應減少（在需求不變的情況下）會引發物價<strong>上升</strong>（通貨膨脹壓力），而不是下降。</p>
+        <p class="bilingual-en">While the first part "decrease in aggregate supply" is correct, a decrease in aggregate supply (assuming demand is constant) triggers a <strong>rise</strong> in the price level (inflationary pressure), not a fall.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <ul>
+        <li><strong>Pivot Point (解題關鍵):</strong> 留意<strong>「石油輸入國」(Oil-importing country)</strong> 這個字眼。這意味著該國必須從國外購買石油。油田關閉 = 國際油價上升 = 該國進口原材料變貴 = <strong>生產成本上升</strong>。
+            <div class="bilingual-en">Notice the term <strong>"Oil-importing country"</strong>. This implies the country must buy oil from abroad. Closed oil fields = Higher global oil prices = More expensive imported raw materials = <strong>Higher cost of production</strong>.</div>
+        </li>
+        <li><strong>干擾資訊 (Distractors):</strong> 題目沒有提及該國的需求變化。有些學生可能會過度思考，認為油價上升會影響消費者支出 (C)，從而改變總需求 (AD)。但在這種標準題型中，我們應首先處理最直接的供應側衝擊 (Supply-side shock)。
+            <div class="bilingual-en">The question does not mention changes in demand. Some students overthink and assume higher oil prices affect consumer spending (C) directly, changing AD. However, in such standard questions, always tackle the direct supply-side shock first.</div>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li><strong>混淆石油「輸出國」與「輸入國」 (Confusing Exporting vs. Importing):</strong> 如果題目問的是「石油輸出國」(Oil-exporting country)，結果會截然不同。油價上升對他們來說是出口收入增加，可能會刺激總需求 (AD 增加)。務必看清題目設定！
+            <div class="bilingual-en">If the question asked about an "oil-exporting country," the result would be completely different. Higher oil prices mean higher export revenues for them, which could stimulate aggregate demand (AD increases). Always read the setting carefully!</div>
+        </li>
+        <li><strong>把成本上升當成需求減少 (Confusing higher costs with lower demand):</strong> 成本上升直接影響的是廠商（供應方 AS），而不是直接導致總需求曲線 (AD) 平移。
+            <div class="bilingual-en">Higher costs directly impact producers (Supply side AS), rather than directly causing a shift in the Aggregate Demand (AD) curve.</div>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qna-box">
+        <p><strong>Q: 為什麼我們不考慮長期總供應 (LRAS) 的變化？ (Why don't we consider the Long-Run Aggregate Supply (LRAS)?)</strong></p>
+        <p><strong>A:</strong> 題目明確註明了<strong>「短期而言」(In the short run)</strong>。油田關閉造成的油價波動通常被視為暫時性的成本衝擊 (cost shock)。除非這場意外永久性地摧毀了該國自身的生產力或資源基礎，否則 LRAS（取決於勞動力、資本、技術）不會發生改變。</p>
+        <p class="bilingual-en">The question explicitly states <strong>"In the short run"</strong>. Oil price fluctuations due to field closures are typically treated as temporary cost shocks. Unless the accident permanently destroyed the country's own productivity or resource base, the LRAS (which depends on labor, capital, and technology) remains unchanged.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>三步秒殺法 (3-Step Quick Kill):</strong></p>
+        <ol>
+            <li><strong>Identify Event:</strong> 油田關閉 $\rightarrow$ 油價 $\uparrow$ (Oil price up)</li>
+            <li><strong>Identify Target:</strong> 輸入國 (Importer) $\rightarrow$ 成本 $\uparrow$ (Cost up) $\rightarrow$ <strong>AS $\downarrow$ (減少/decrease)</strong> (即時淘汰選項 A, B)</li>
+            <li><strong>Deduce Price:</strong> AS 向左移 $\rightarrow$ 物品變得稀缺 $\rightarrow$ <strong>物價 $P \uparrow$ (上升/rise)</strong> (選擇 C)</li>
+        </ol>
+        <p class="bilingual-en">Once you link "Importer + High Oil Price" to "AS decreases", you eliminate half the options. Knowing that a leftward shift in supply pushes prices up gives you the final answer instantly without drawing a graph.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

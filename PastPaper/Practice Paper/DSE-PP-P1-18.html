@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Gini Coefficient</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .header-section {
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin: 0 0 10px 0;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            margin: 0 5px;
+        }
+        .question-box {
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            margin: 15px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #e2e8f0;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .analysis-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .correct-ans {
+            border-left: 5px solid #10b981;
+        }
+        .wrong-ans {
+            border-left: 5px solid #ef4444;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Masterclass</h1>
+        <div>
+            <span class="tag">Topic: Income Inequality (收入不均)</span>
+            <span class="tag">Difficulty: ⭐⭐ (2/5)</span>
+            <span class="tag">Keywords: Gini Coefficient, Income Distribution</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 / The Question</h2>
+    <div class="question-box">
+        <div class="zh">下表顯示甲經濟由年份1至年份4的堅尼系數。</div>
+        <div class="en">The following table shows the Gini coefficient of Economy A from Year 1 to Year 4.</div>
+        
+        <table>
+            <tr>
+                <th>年份 / Year</th>
+                <th>堅尼系數 / Gini coefficient</th>
+            </tr>
+            <tr><td>1</td><td>0.534</td></tr>
+            <tr><td>2</td><td>0.563</td></tr>
+            <tr><td>3</td><td>0.609</td></tr>
+            <tr><td>4</td><td>0.614</td></tr>
+        </table>
+
+        <div class="zh">根據以上資料，下列哪項／些陳述是正確的？</div>
+        <div class="en">Based on the above information, which of the following statements is/are correct?</div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><span class="zh">(1) 高收入住戶的收入增加，而低收入住戶的收入則減少。</span><br>
+                <span class="en">(1) The income of high-income households increases while the income of low-income households decreases.</span></li>
+            <li><span class="zh">(2) 收入分布愈變不均。</span><br>
+                <span class="en">(2) The income distribution becomes more uneven.</span></li>
+            <li><span class="zh">(3) 一般生活水準下降。</span><br>
+                <span class="en">(3) The general living standard declines.</span></li>
+        </ul>
+
+        <div class="zh">
+            A. 只有(1)<br>
+            B. 只有(2)<br>
+            C. 只有(3)<br>
+            D. (1)、(2)及(3)
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            A. (1) only<br>
+            B. (2) only<br>
+            C. (3) only<br>
+            D. (1), (2) and (3)
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <div class="zh"><strong>堅尼系數 (Gini Coefficient)：</strong> 是一個用來量度一個經濟體內收入不均程度的指標。它的數值介乎 0 與 1 之間。</div>
+        <div class="en"><strong>Gini Coefficient:</strong> An index used to measure the degree of income inequality within an economy. Its value ranges between 0 and 1.</div>
+        
+        <div class="math-block">
+            $$0 \le G \le 1$$
+        </div>
+
+        <ul>
+            <li>
+                <div class="zh">當 $G = 0$：代表<strong>絕對平均</strong>（所有人的收入都一樣）。</div>
+                <div class="en">When $G = 0$: Represents <strong>absolute equality</strong> (everyone has the exact same income).</div>
+            </li>
+            <li>
+                <div class="zh">當 $G = 1$：代表<strong>絕對不均</strong>（一個人擁有所有收入）。</div>
+                <div class="en">When $G = 1$: Represents <strong>absolute inequality</strong> (one person has all the income).</div>
+            </li>
+            <li>
+                <div class="zh"><strong>結論：</strong> 堅尼系數上升，代表收入分布愈來愈不平均；相反則代表愈來愈平均。</div>
+                <div class="en"><strong>Conclusion:</strong> An increase in the Gini coefficient implies that income distribution is becoming more uneven; a decrease implies it is becoming more even.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <h3 style="color: #10b981;">正確答案 / Correct Answer: Option B</h3>
+
+    <div class="analysis-item wrong-ans">
+        <div class="zh"><strong>陳述 (1) - 錯誤：</strong> 堅尼系數只是一個「相對」的比例指標，它無法告訴我們「絕對」的收入金額。即使堅尼系數上升，也有可能是高收入和低收入家庭的收入<strong>都在增加</strong>，只是高收入家庭增加的速度快很多。</div>
+        <div class="en"><strong>Statement (1) - Incorrect:</strong> The Gini coefficient is only a "relative" ratio indicator; it cannot tell us the "absolute" income amount. Even if the Gini coefficient increases, it is entirely possible that the incomes of BOTH high and low-income households are <strong>increasing</strong>, but the high-income households are simply growing their wealth at a much faster rate.</div>
+    </div>
+
+    <div class="analysis-item correct-ans">
+        <div class="zh"><strong>陳述 (2) - 正確：</strong> 根據表格，堅尼系數由年份1的 0.534 持續上升至年份4的 0.614。根據定義，數值愈大代表收入分布愈不平均。</div>
+        <div class="en"><strong>Statement (2) - Correct:</strong> According to the table, the Gini coefficient rises steadily from 0.534 in Year 1 to 0.614 in Year 4. By definition, a higher value means the income distribution has become more uneven.</div>
+    </div>
+
+    <div class="analysis-item wrong-ans">
+        <div class="zh"><strong>陳述 (3) - 錯誤：</strong> 一般生活水準（General living standard）通常是由「實質人均本地生產總值」（Real GDP per capita）來量度的。堅尼系數的改變與生活水準的升跌沒有必然關係（例如經濟起飛時，可能生活水準和貧富懸殊同時上升）。</div>
+        <div class="en"><strong>Statement (3) - Incorrect:</strong> The general living standard is typically measured by "Real GDP per capita". Changes in the Gini coefficient have no direct or necessary correlation with changes in living standards (e.g., during an economic boom, both living standards and wealth disparity might rise together).</div>
+    </div>
+
+    <h2>4. 題目拆解 / Problem Decomposition</h2>
+    <div class="concept-box" style="background-color: #f3e8ff; border-left-color: #a855f7;">
+        <div class="zh"><strong>解題樞紐 (The Pivot Point)：</strong><br>
+        這題的關鍵在於分辨「相對分佈 (Relative Distribution)」與「絕對數值 (Absolute Values)」。你必須清楚知道堅尼系數<strong>無法</strong>反映絕對收入或實質購買力。</div>
+        <div class="en"><strong>The Pivot Point:</strong><br>
+        The key to this question lies in distinguishing between "Relative Distribution" and "Absolute Values". You must clearly understand that the Gini coefficient <strong>cannot</strong> reflect absolute income or real purchasing power.</div>
+        <br>
+        <div class="zh"><strong>干擾資訊 (Distractors)：</strong><br>
+        表中的確實數字 (0.534, 0.563 等) 其實不重要。你只需要看出一個趨勢：<strong>數字在上升</strong>，這就足夠解題了。</div>
+        <div class="en"><strong>Distractors:</strong><br>
+        The exact numbers in the table (0.534, 0.563, etc.) are irrelevant. You only need to identify the trend: <strong>the numbers are increasing</strong>, which is enough to solve the problem.</div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <div class="zh"><strong>陷阱：將「貧富懸殊」與「貧窮惡化」畫上等號。</strong><br>
+        很多同學一看到收入不均（堅尼系數上升），就立刻假設窮人變得更窮（收入減少或生活水準下降）。這是在 DSE 經濟科中極常見的思考謬誤！記住，如果整個經濟體系的「餅」變大了，窮人分到的份額比例雖然少了，但絕對數量可能比以前多。</div>
+        <div class="en"><strong>Trap: Equating "Wealth Disparity" with "Worsening Poverty".</strong><br>
+        Many students assume that once income inequality rises (Gini coefficient goes up), the poor must be getting poorer (income dropping or living standard declining). This is a very common logical fallacy in DSE Economics! Remember, if the economic "pie" gets bigger, the poor might get a smaller <em>percentage</em> share, but their <em>absolute</em> amount of wealth could still be larger than before.</div>
+    </div>
+
+    <h2>6. 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <div class="zh"><strong>問：</strong> 題目沒有提供其他數據，如果我加上「假設經濟正在衰退」的條件，陳述 (1) 會不會變成正確？</div>
+        <div class="en"><strong>Q:</strong> The question didn't provide other data. If I add the condition "assuming the economy is in a recession", would Statement (1) become correct?</div>
+        <br>
+        <div class="zh"><strong>答：</strong> 不會。做 MC 題目時千萬<strong>不要自行加入未經證實的假設</strong>。即使經濟衰退，堅尼系數上升也只代表高收入人士的收入跌幅比低收入人士少，不一定是「高增低減」。一切只能依賴堅尼系數本身的數學定義來判斷。</div>
+        <div class="en"><strong>A:</strong> No. When doing MC questions, <strong>never add unverified assumptions</strong>. Even in a recession, a rising Gini coefficient might just mean the high-income group's income fell <em>less</em> than the low-income group's. It doesn't guarantee "high increases, low decreases". Always rely strictly on the mathematical definition of the indicator.</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="zh"><strong>秒殺法 (The Elimination Method)：</strong><br>
+        在 DSE 選擇題中，每當題目只給你「堅尼系數 / 勞倫斯曲線」的數據時，任何選項如果包含以下字眼：<br>
+        ❌ 絕對收入 (Absolute income) <br>
+        ❌ 實質工資 (Real wages) <br>
+        ❌ 生活水準 (Living standards) <br>
+        ❌ 購買力 (Purchasing power) <br>
+        <strong>請立刻將它們剔除！</strong> 這樣你馬上就能淘汰 (1) 和 (3)，秒選答案 B。</div>
+        <div class="en"><strong>The Instant Kill (Elimination Method):</strong><br>
+        In DSE MCQs, whenever a question ONLY gives you "Gini Coefficient / Lorenz Curve" data, immediately eliminate any options containing the following terms:<br>
+        ❌ Absolute income <br>
+        ❌ Real wages <br>
+        ❌ Living standards <br>
+        ❌ Purchasing power <br>
+        <strong>Cross them out instantly!</strong> By doing this, you eliminate (1) and (3) right away, leaving B as the obvious answer in seconds.</div>
+    </div>
+</div>
+
+</body>
+</html>

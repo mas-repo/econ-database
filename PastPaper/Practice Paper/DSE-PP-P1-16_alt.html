@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics MCQ Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .en {
+            margin-bottom: 16px;
+            color: var(--text-en);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Header Section Tags */
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .tag.difficulty { background-color: #f59e0b; }
+        .tag.keyword { background-color: var(--secondary-color); }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+            font-size: 1.1em;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Options Grid */
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        /* Answer Section */
+        .answer-highlight {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--correct-color);
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            background-color: #dcfce7;
+            border-radius: 8px;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Traps and Tricks Boxes */
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--wrong-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .qa-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--correct-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-tags { flex-direction: column; align-items: center; }
+            .tag { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics MCQ Analysis<br><span style="font-size: 0.7em;">經濟學多項選擇題分析</span></h1>
+
+    <div class="header-tags">
+        <div class="tag">Topic: Market Structures / 完全競爭市場</div>
+        <div class="tag difficulty">Difficulty: ★★★☆☆ (3/5)</div>
+        <div class="tag keyword">Price Taker 受價者</div>
+        <div class="tag keyword">Marginal Cost 邊際成本</div>
+        <div class="tag keyword">Supply Curve 供應曲線</div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh">下列哪些是完全競爭市場的特徵？<br>
+        (1) 每間公司的邊際收益等於市價。<br>
+        (2) 賣家和買家掌握完全市場資訊。<br>
+        (3) 一間公司的邊際成本表與它的供應表相同。</p>
+        
+        <p class="en">Which of the following are features of a perfectly competitive market?<br>
+        (1) The marginal revenue of each firm equals the market price.<br>
+        (2) The sellers and buyers have perfect market information.<br>
+        (3) The marginal cost schedule of a firm is the same as its supply schedule.</p>
+
+        <ul class="options-list">
+            <li>
+                <div class="zh">A. 只有(1)、(2)</div>
+                <div class="en">A. (1) and (2) only</div>
+            </li>
+            <li>
+                <div class="zh">B. 只有(1)、(3)</div>
+                <div class="en">B. (1) and (3) only</div>
+            </li>
+            <li>
+                <div class="zh">C. 只有(2)、(3)</div>
+                <div class="en">C. (2) and (3) only</div>
+            </li>
+            <li>
+                <div class="zh">D. (1)、(2)及(3)</div>
+                <div class="en">D. (1), (2) and (3)</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh">解決這道題需要了解<strong>完全競爭市場 (Perfect Competition)</strong>的四大基本特徵，以及廠商在短期的供應決策。</p>
+        <p class="en">To solve this question, we need to understand the four basic features of a <strong>Perfectly Competitive Market</strong> and the short-run supply decisions of a firm.</p>
+        
+        <ul>
+            <li>
+                <span class="zh"><strong>受價者 (Price Taker):</strong> 市場內有極多買家和賣家，個別廠商無法影響價格。市場價格 \(P\) 由市場供求決定。因此，廠商每多賣一件產品，其額外收入（邊際收益）剛好等於市價。</span><br>
+                <span class="en"><strong>Price Taker:</strong> There are many buyers and sellers, so individual firms cannot influence the price. Market price \(P\) is determined by market supply and demand. Therefore, the extra revenue from selling one more unit (Marginal Revenue) exactly equals the market price.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>同質產品 (Homogeneous Products):</strong> 所有廠商生產的產品完全相同。</span><br>
+                <span class="en"><strong>Homogeneous Products:</strong> All firms produce completely identical products.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>完全資訊 (Perfect Information):</strong> 買賣雙方充分了解市場價格和產品資訊。</span><br>
+                <span class="en"><strong>Perfect Information:</strong> Buyers and sellers are fully informed about market prices and product details.</span>
+            </li>
+            <li>
+                <span class="zh"><strong>自由出入市場 (Free Entry and Exit):</strong> 廠商可以自由進入或離開市場，沒有障礙。</span><br>
+                <span class="en"><strong>Free Entry and Exit:</strong> Firms can freely enter or leave the market without barriers.</span>
+            </li>
+        </ul>
+
+        <p class="zh"><strong>廠商的短期供應曲線 (Short-run Supply Curve):</strong></p>
+        <p class="en"><strong>Firm's Short-run Supply Curve:</strong></p>
+        
+        <div class="math-block">
+            $$ P = AR = MR $$
+            $$ \text{Profit Maximization Output Level: } MR = MC $$
+        </div>
+
+        <p class="zh">廠商為了利潤極大化，會生產至邊際收益等於邊際成本 (\(MR = MC\)) 的產量。但這有一個前提：市價必須高於平均可變成本 (\(AVC\))。否則，廠商會選擇<strong>停產 (Shut-down)</strong>。</p>
+        <p class="en">To maximize profit, a firm produces up to the point where Marginal Revenue equals Marginal Cost (\(MR = MC\)). However, there is a condition: the market price must be greater than or equal to the Average Variable Cost (\(AVC\)). Otherwise, the firm will <strong>shut down</strong>.</p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="answer-highlight">Correct Option: A. 只有(1)、(2) / (1) and (2) only</div>
+
+    <div class="analysis-item">
+        <p class="zh"><strong>分析聲明 (1): 正確</strong><br>
+        在完全競爭市場中，廠商是受價者。市價是固定的，因此每出售多一單位的產品，增加的總收益（即邊際收益 \(MR\)）就等於市場價格 (\(P\))。</p>
+        <p class="en"><strong>Analysis of Statement (1): CORRECT</strong><br>
+        In a perfectly competitive market, firms are price takers. The market price is constant, so the increase in total revenue from selling one additional unit (i.e., Marginal Revenue \(MR\)) equals the market price (\(P\)).</p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="zh"><strong>分析聲明 (2): 正確</strong><br>
+        這是完全競爭市場的定義假設之一。買賣雙方都擁有「完全市場資訊」，沒有資訊不對稱的問題。</p>
+        <p class="en"><strong>Analysis of Statement (2): CORRECT</strong><br>
+        This is one of the definitional assumptions of a perfectly competitive market. Both buyers and sellers possess "perfect market information," meaning there is no information asymmetry.</p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="zh"><strong>分析聲明 (3): 錯誤</strong><br>
+        這是一個常見的陷阱。一間公司的短期供應表（曲線）<strong>並不完全等於</strong>它的整條邊際成本表（曲線）。供應曲線只等同於高於最低平均可變成本（min \(AVC\)）以上的那一段邊際成本曲線。如果價格低於這個「停產點」，供應量為零，此時邊際成本表上的數字並不代表廠商會供應的數量。</p>
+        <p class="en"><strong>Analysis of Statement (3): INCORRECT</strong><br>
+        This is a classic trap. A firm's short-run supply schedule (curve) is <strong>not exactly the same</strong> as its entire marginal cost schedule (curve). The supply curve is only the portion of the marginal cost curve that lies above the minimum Average Variable Cost (min \(AVC\)). If the price falls below this "shut-down point," the quantity supplied is zero. Thus, below the shut-down point, the figures on the MC schedule do not represent what the firm will actually supply.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <p class="zh">這題目的<strong>解題樞紐 (Pivot Point)</strong> 在於聲明(3)。聲明(1)和(2)是課本上最直接的定義，多數學生都能輕易判斷為正確。考評局經常利用「相似但不完全相同」的概念來設計干擾項 (Distractor)，例如將「部分MC曲線」誇大為「整條MC曲線就是供應曲線」。</p>
+    <p class="en">The <strong>Pivot Point</strong> of this question lies in Statement (3). Statements (1) and (2) are direct textbook definitions that most students can easily identify as correct. The HKEAA often uses "similar but not exactly the same" concepts to create distractors, such as exaggerating "a portion of the MC curve" into "the entire MC curve is the supply curve."</p>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="warning-box">
+        <p class="zh"><strong>常犯錯誤：忽略停產點 (Shut-down Point)</strong><br>
+        學生常常死記公式 \(P = MC\) 就是供應量，卻忘記了前提條件：廠商必須在營運狀態下，該公式才成立。當 \(P < AVC\) 時，廠商選擇停產，損失為固定成本 (\(FC\))。此時即使 \(MC\) 有對應數值，廠商也不會按該數值生產。因此「相同」這個絕對字眼是錯誤的。</p>
+        <p class="en"><strong>Common Mistake: Ignoring the Shut-down Point</strong><br>
+        Students often memorize the formula \(P = MC\) as the rule for quantity supplied, but forget the prerequisite: this only holds true if the firm is operating. When \(P < AVC\), the firm shuts down, minimizing losses to fixed costs (\(FC\)). Even though the \(MC\) schedule has numerical values at these low levels, the firm will not produce them. Therefore, the absolute word "same" makes the statement incorrect.</p>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>Q: 為什麼只要考慮平均可變成本 (\(AVC\))，而不考慮平均總成本 (\(ATC\)) 呢？</strong></p>
+        <p class="zh" style="margin-bottom: 15px;"><strong>A:</strong> 在短期內，固定成本 (例如租金) 是必須支付的「沉沒成本」。即使你完全不生產，租金還是要交。所以只要市價 (\(P\)) 足夠支付工資、材料等可變成本 (即 \(P > AVC\))，廠商生產就能賺回一點點錢來幫補租金損失。只有當賣出的錢連材料費都付不起 (\(P < AVC\)) 時，才會選擇停產。</p>
+        
+        <p class="en"><strong>Q: Why do we only consider Average Variable Cost (\(AVC\)) for the shut-down decision, rather than Average Total Cost (\(ATC\))?</strong></p>
+        <p class="en"><strong>A:</strong> In the short run, fixed costs (like rent) are "sunk costs" that must be paid regardless of output. Even if you produce nothing, you pay the rent. So, as long as the market price (\(P\)) covers your variable costs like labor and raw materials (i.e., \(P > AVC\)), producing goods will generate some revenue to help offset the rent loss. A firm will only shut down if the revenue can't even cover the cost of the materials (\(P < AVC\)).</p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p class="zh"><strong>消去法 (Elimination Method):</strong><br>
+        在多項選擇題中，如果你非常確定 (1) 和 (2) 是正確的（因為它們是最基礎的定義），你可以立刻淘汰選項 B（沒有2）和 C（沒有1）。這時你只需要在 A 和 D 之間做決定。在經濟學MCQ中，如果一個陳述使用了非常絕對的字眼，如「相同」、「所有」、「永遠」(例如聲明3中的「相同」)，除非是定義上的恆等式，否則該陳述往往是一個陷阱（錯誤的）。這可以作為你猶豫時的猜題策略。</p>
+        <p class="en"><strong>Elimination Method:</strong><br>
+        In MCQs, if you are absolutely certain that (1) and (2) are correct (as they are fundamental definitions), you can immediately eliminate options B (missing 2) and C (missing 1). Now you only need to decide between A and D. In Economics MCQs, if a statement uses very absolute terms like "same," "all," or "always" (like "same" in Statement 3), unless it's a definitional identity, it is very often a trap (incorrect). This can be a useful guessing strategy if you are unsure.</p>
+    </div>
+
+</body>
+</html>

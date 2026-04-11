@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - MC Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #334155;
+            --correct: #10b981;
+            --wrong: #ef4444;
+            --bg-gray: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary);
+            margin-top: 1.5em;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* 1. Header Styles */
+        .header-box {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .header-box p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .tag {
+            background-color: var(--primary);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        /* 2. Question Styles */
+        .question-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .option-list {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        .option-list li {
+            margin-bottom: 10px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* 3. Concept Review Styles */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px dashed var(--primary);
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* 4. Analysis Styles */
+        .analysis-box {
+            margin-bottom: 30px;
+        }
+        .correct-answer {
+            background-color: #ecfdf5;
+            border: 1px solid var(--correct);
+            color: #065f46;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .option-analysis {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+        .badge.wrong { background-color: var(--wrong); }
+        .badge.correct { background-color: var(--correct); }
+
+        /* Generic Box Styles for Sections 5, 6, 7, 8 */
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box { padding: 15px; }
+            .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📊 HKDSE Economics Analysis</h2>
+        <p><strong>Topic / 課題:</strong> National Income Accounting / 國民收入會計</p>
+        <p><strong>Difficulty / 難度:</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts / 關鍵概念:</strong> 
+            <span class="tag">GDP vs GNP</span> 
+            <span class="tag">Net Income from Abroad</span> 
+            <span class="tag">Macroeconomic Identities</span>
+        </p>
+    </div>
+
+    <h2 class="section-title">The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>若某經濟的對外要素收益流動淨值（即海外收入淨值）為負數，這意味着該經濟的</strong></p>
+        <p class="en-text">If the value of the net external factor income flow (i.e. the net income from abroad) of an economy is negative, it implies that</p>
+        
+        <ol class="option-list">
+            <li>資本流入較資本流出為大。<br>
+                <span class="en-text">the capital inflow to the economy is greater than the capital outflow from it.</span>
+            </li>
+            <li>總投資較淨投資為小。<br>
+                <span class="en-text">the gross investment of the economy is smaller than the net investment.</span>
+            </li>
+            <li>國民生產總值較本地生產總值為小。<br>
+                <span class="en-text">the gross national product of the economy is less than the GDP.</span>
+            </li>
+            <li>進口值較出口值為大。<br>
+                <span class="en-text">the value of imports of the economy is greater than that of exports.</span>
+            </li>
+        </ol>
+    </div>
+
+    <h2 class="section-title">Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>GDP vs. GNP (本地生產總值 與 國民生產總值)</h3>
+        <p>
+            本地生產總值 (GDP) 是以<strong>地域 (Territory)</strong> 為界線的生產總值；而國民生產總值 (GNP) 是以<strong>常住居民 (Residents)</strong> 為界線的生產總值。兩者之間的橋樑就是「對外要素收益流動淨值」 (Net External Factor Income Flow, NFI)。<br>
+            <span class="en-text">Gross Domestic Product (GDP) is measured based on <strong>territorial boundaries</strong>, while Gross National Product (GNP) is measured based on <strong>residents</strong>. The bridge between the two is the Net External Factor Income Flow (NFI).</span>
+        </p>
+        
+        <div class="math-block">
+            $$ \text{GNP} = \text{GDP} + \text{NFI} $$
+            <p><i>(國民生產總值 = 本地生產總值 + 海外收入淨值)</i></p>
+        </div>
+
+        <p>
+            其中，NFI = 本地居民從外地賺取的要素收益 \(-\) 非本地居民從本地賺取的要素收益。<br>
+            <span class="en-text">Where NFI = Factor income earned by residents from abroad \(-\) Factor income earned by non-residents from the domestic economy.</span>
+        </p>
+    </div>
+
+    <h2 class="section-title">The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <div class="correct-answer">
+            Correct Option / 正確答案: Option C
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge wrong">A</span> <strong>資本流入較資本流出為大 / capital inflow is greater than capital outflow</strong></p>
+            <p>這描述的是國際收支平衡表中的「資本及金融帳」盈餘，涉及資產的買賣。而海外收入淨值 (NFI) 是「經常帳」中的初級收入。兩者是不同的宏觀經濟概念。<br>
+            <span class="en-text">This describes a surplus in the capital and financial account of the Balance of Payments, involving the trading of assets. NFI, however, is primary income in the current account. They are different macroeconomic concepts.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge wrong">B</span> <strong>總投資較淨投資為小 / gross investment is smaller than net investment</strong></p>
+            <p>總投資 = 淨投資 + 折舊。因為折舊通常是正數，所以總投資必然<strong>大於</strong>或等於淨投資。這選項在數學定義上已經錯誤，並且與海外收入完全無關。<br>
+            <span class="en-text">Gross Investment = Net Investment + Depreciation. Since depreciation is usually positive, Gross Investment must be <strong>greater</strong> than or equal to Net Investment. This option is mathematically incorrect by definition and is entirely unrelated to foreign income.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge correct">C</span> <strong>國民生產總值較本地生產總值為小 / gross national product is less than GDP</strong></p>
+            <p>根據公式：\(\text{GNP} = \text{GDP} + \text{NFI}\)。題目指明 NFI 為負數 (\(\text{NFI} < 0\))，因此計算出來的 GNP 必然小於 GDP。完全正確。<br>
+            <span class="en-text">According to the formula: \(\text{GNP} = \text{GDP} + \text{NFI}\). The question states that NFI is negative (\(\text{NFI} < 0\)). Therefore, the calculated GNP must be smaller than the GDP. This is perfectly correct.</span></p>
+        </div>
+
+        <div class="option-analysis">
+            <p><span class="badge wrong">D</span> <strong>進口值較出口值為大 / value of imports is greater than exports</strong></p>
+            <p>進口大於出口代表「淨出口」(Net Exports, \(NX\)) 為負數，即貿易赤字。這涉及貨物和服務的流動，而不是要素收益（如薪金、股息）的流動。<br>
+            <span class="en-text">Imports exceeding exports implies negative Net Exports (\(NX\)), i.e., a trade deficit. This involves the flow of goods and services, not the flow of factor incomes (like wages and dividends).</span></p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Problem Decomposition (題目拆解)</h2>
+    <div class="info-card">
+        <ul>
+            <li><strong>Pivot Point (解題關鍵):</strong> 看到「對外要素收益流動淨值」(Net external factor income flow)，腦海必須立刻彈出公式：\(\text{GNP} = \text{GDP} + \text{NFI}\)。<br>
+            <span class="en-text">When you see "Net external factor income flow", the formula \(\text{GNP} = \text{GDP} + \text{NFI}\) must immediately pop into your mind.</span></li>
+            <li><strong>Distractor Identification (辨別干擾項):</strong> 題目故意混入「資本」(Capital)、「投資」(Investment) 和「進出口」(Imports/Exports)。這些都是宏觀經濟學其他章節的概念，用來擾亂概念不清晰的學生。<br>
+            <span class="en-text">The question intentionally mixes in "Capital", "Investment", and "Imports/Exports". These are concepts from other chapters in macroeconomics used to confuse students with unclear foundational knowledge.</span></li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="info-card">
+        <p>⚠️ <strong>混淆 Net Exports (\(NX\)) 與 Net Factor Income (\(NFI\))</strong></p>
+        <p>學生經常將「錢流出/流入香港」一概而論。進口外國貨品會導致金錢流出（屬於 \(NX\)），而外資在香港賺取股息並匯出也會導致金錢流出（屬於 \(NFI\)）。必須分清<strong>產品/服務貿易</strong>和<strong>生產要素收益</strong>的分別。<br>
+        <span class="en-text">Students often generalize all "money flowing in/out of HK". Importing foreign goods causes money outflow (belongs to \(NX\)), while foreign investors earning and repatriating dividends from HK also causes money outflow (belongs to \(NFI\)). You must distinguish between <strong>trade in goods/services</strong> and <strong>factor income</strong>.</span></p>
+    </div>
+
+    <h2 class="section-title">Student Q&A (學生常見疑問)</h2>
+    <div class="info-card">
+        <div class="qa-item">
+            <div class="qa-q">Q: 負面的海外收入淨值代表該經濟體表現很差嗎？ <br><span class="en-text">(Does a negative NFI mean the economy is performing poorly?)</span></div>
+            <div class="qa-a">A: 不一定。很多發展中國家（或像愛爾蘭等吸引大量外資的國家）都有大量外國直接投資。外國企業在當地賺取巨額利潤並匯回母國，會導致該國的 NFI 為負數，但當地的 GDP 和就業可能十分強勁。<br>
+            <span class="en-text">Not necessarily. Many developing countries (or countries that attract massive foreign investment, like Ireland) have large amounts of Foreign Direct Investment (FDI). Foreign firms earning huge profits locally and repatriating them causes the host country's NFI to be negative, yet the local GDP and employment might be very strong.</span></div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="info-card">
+        <p>💡 <strong>Direct Elimination Method (直接排除法)</strong></p>
+        <p>這是一條「純定義題」(Definitional Question)。不用多想，只要看到 NFI，馬上找包含 GDP 和 GNP (或 GNI) 的選項。A、B、D 根本沒有提及 GDP/GNP，可以直接秒殺排除。<br>
+        <span class="en-text">This is a pure definitional question. Don't overthink it; the moment you see NFI, look for the option containing GDP and GNP (or GNI). Options A, B, and D don't even mention GDP/GNP, so they can be eliminated instantly in seconds.</span></p>
+    </div>
+
+</body>
+</html>

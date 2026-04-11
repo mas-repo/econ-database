@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-eng: #4b5563;
+            --border-color: #e5e7eb;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .header-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .header-item {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .question-box {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid var(--text-dark);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .option-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        .correct-card {
+            border-left: 5px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .wrong-card {
+            border-left: 5px solid var(--wrong-red);
+        }
+
+        .tag-correct {
+            display: inline-block;
+            background: var(--correct-green);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .tag-wrong {
+            display: inline-block;
+            background: var(--wrong-red);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .eng-text {
+            color: var(--text-eng);
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .zh-text {
+            margin-bottom: 5px;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-section, .question-box, .concept-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="header-item"><strong>📚 Topic (課題):</strong> Macroeconomics - Money Demand (總體經濟學 - 貨幣需求)</div>
+        <div class="header-item"><strong>⭐ Difficulty (難度):</strong> ★★☆☆☆ (2/5)</div>
+        <div class="header-item"><strong>🔑 Key Concepts (核心概念):</strong> Money Demand \(M_d\), Shift vs. Movement (平移與沿線移動), Transaction Demand (交易性貨幣需求)</div>
+    </div>
+
+    <div class="question-box">
+        <h2>📝 The Question (題目)</h2>
+        <div class="zh-text"><strong>下列哪項能解釋貨幣需求曲線向左移？</strong></div>
+        <div class="eng-text">Which of the following can explain a leftward shift of the money demand curve?</div>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><div class="zh-text">A. 利率上升</div><div class="eng-text">A. a rise in the interest rate</div></li>
+            <li><div class="zh-text">B. 住戶收入增加</div><div class="eng-text">B. an increase in income of households</div></li>
+            <li><div class="zh-text">C. 人們更廣泛使用八達通卡</div><div class="eng-text">C. a more widespread use of Octopus cards</div></li>
+            <li><div class="zh-text">D. 法定儲備比率增加</div><div class="eng-text">D. an increase in the required reserve ratio</div></li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        <div class="zh-text">
+            在貨幣市場中，<strong>貨幣需求 \(M_d\) (Money Demand)</strong> 代表人們願意以現金及活期存款形式持有的財富數量。我們通常將其畫在一個圖表上，Y軸為<strong>名義利率 \(R\) (Nominal Interest Rate)</strong>，X軸為<strong>貨幣數量 \(Q\)</strong>。
+        </div>
+        <div class="eng-text">
+            In the money market, <strong>Money Demand \(M_d\)</strong> represents the amount of wealth people wish to hold in the form of cash and demand deposits. We typically plot this on a graph where the Y-axis is the <strong>Nominal Interest Rate \(R\)</strong> and the X-axis is the <strong>Quantity of Money \(Q\)</strong>.
+        </div>
+
+        <div class="zh-text">
+            <strong>移動 (Movement) vs 平移 (Shift):</strong><br>
+            <ul>
+                <li><strong>沿著曲線移動 (Movement along the curve):</strong> 只有當 Y軸的變數（即利率 \(R\)）改變時才會發生。利率是持有貨幣的機會成本。</li>
+                <li><strong>整條曲線平移 (Shift of the curve):</strong> 當利率以外的因素改變時（例如：收入、物價水平、支付科技的進步），整條曲線會移動。</li>
+            </ul>
+        </div>
+        <div class="eng-text">
+            <strong>Movement vs. Shift:</strong><br>
+            <ul>
+                <li><strong>Movement along the curve:</strong> Occurs ONLY when the variable on the Y-axis (interest rate \(R\)) changes. The interest rate is the opportunity cost of holding money.</li>
+                <li><strong>Shift of the curve:</strong> Occurs when factors OTHER THAN the interest rate change (e.g., income, price level, advancement in payment technologies).</li>
+            </ul>
+        </div>
+
+        <div class="zh-text"><strong>交易性貨幣需求 (Transaction Demand for Money):</strong> 人們為了日常交易而持有現金。當電子支付（如八達通、信用卡）普及，人們對實體現金的需求就會減少。</div>
+        <div class="eng-text"><strong>Transaction Demand for Money:</strong> People hold cash for daily transactions. When electronic payments (like Octopus cards or credit cards) become widespread, the need to hold physical cash decreases.</div>
+    </div>
+
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>
+        <span class="tag-correct">Correct Answer: Option C</span>
+    </p>
+
+    <div class="option-card wrong-card">
+        <span class="tag-wrong">A. 錯誤 (Incorrect)</span>
+        <div class="zh-text"><strong>利率上升 (A rise in the interest rate):</strong> 利率是貨幣需求圖表中的 Y軸變數。因此，利率上升只會導致「沿著同一條貨幣需求曲線向左上方移動」(movement upwards along the curve)，而<strong>不會</strong>導致整條曲線平移 (shift)。</div>
+        <div class="eng-text">The interest rate is the variable on the Y-axis of the money demand graph. Therefore, a rise in the interest rate will only cause an "upward movement along the same money demand curve", and will <strong>NOT</strong> cause the entire curve to shift.</div>
+    </div>
+
+    <div class="option-card wrong-card">
+        <span class="tag-wrong">B. 錯誤 (Incorrect)</span>
+        <div class="zh-text"><strong>住戶收入增加 (An increase in income of households):</strong> 當收入增加，人們的日常消費和交易會增加，因此需要持有更多貨幣（交易性貨幣需求增加）。這會導致貨幣需求曲線向<strong>右</strong>移 (shift right)，而非向左移。</div>
+        <div class="eng-text">When income increases, people's daily consumption and transactions increase, requiring them to hold more money (increase in transaction demand). This will cause the money demand curve to shift to the <strong>RIGHT</strong>, not left.</div>
+    </div>
+
+    <div class="option-card correct-card">
+        <span class="tag-correct">C. 正確 (Correct)</span>
+        <div class="zh-text"><strong>人們更廣泛使用八達通卡 (A more widespread use of Octopus cards):</strong> 八達通卡是一種電子支付工具。當人們廣泛使用它時，日常生活中就不需要隨身攜帶那麼多現金。這減少了交易性的貨幣需求，導致在任何利率水平下，貨幣需求都減少了，因此整條貨幣需求曲線向<strong>左</strong>移 (shift left)。</div>
+        <div class="eng-text">The Octopus card is an electronic payment tool. When it is more widely used, people do not need to carry as much physical cash for daily life. This reduces the transaction demand for money, meaning at any given interest rate, the demand for money is lower. Thus, the entire money demand curve shifts to the <strong>LEFT</strong>.</div>
+    </div>
+
+    <div class="option-card wrong-card">
+        <span class="tag-wrong">D. 錯誤 (Incorrect)</span>
+        <div class="zh-text"><strong>法定儲備比率增加 (An increase in the required reserve ratio):</strong> 這個選項是個陷阱！法定儲備比率是影響貨幣<strong>供應</strong> \(M_s\) (Money Supply) 的因素，而非貨幣需求。增加比率會令銀行創造存款的能力下降，導致貨幣供應曲線向左移，對貨幣需求曲線沒有直接影響。</div>
+        <div class="eng-text">This option is a trap! The required reserve ratio is a factor that affects Money <strong>Supply</strong> \(M_s\), not money demand. An increase in the ratio reduces banks' ability to create deposits, shifting the money supply curve to the left. It has no direct effect on the money demand curve.</div>
+    </div>
+
+    <h2>🔍 Problem Decomposition (題目拆解)</h2>
+    <div class="zh-text">
+        面對這類題目，你的大腦應該立刻啟動這兩個過濾器 (Filters)：<br>
+        1. <strong>Pivot Point 1: 「移動」(Movement) 還是 「平移」(Shift)？</strong> 題目問的是「向左移」(Shift left)。只要選項提及 Y軸的變數（利率），直接刪除！<br>
+        2. <strong>Pivot Point 2: 「需求」(Demand) 還是 「供應」(Supply)？</strong> 題目問的是貨幣需求。如果選項是中央銀行的政策（如法定儲備比率、貼現率、公開市場操作），這些都是影響供應的，直接刪除！
+    </div>
+    <div class="eng-text">
+        When facing this type of question, your brain should immediately activate these two filters:<br>
+        1. <strong>Pivot Point 1: "Movement" vs. "Shift"?</strong> The question asks for a "leftward shift". Any option mentioning the Y-axis variable (interest rate) should be eliminated instantly!<br>
+        2. <strong>Pivot Point 2: "Demand" vs. "Supply"?</strong> The question asks about money demand. If an option involves Central Bank policies (e.g., required reserve ratio, discount rate, open market operations), these affect supply. Eliminate them instantly!
+    </div>
+
+    <div class="tips-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="zh-text">
+            <strong>致命傷：混淆 Y軸變數的影響</strong><br>
+            很多同學直覺認為「利率上升，人們會把錢存入銀行，少持現金，所以需求減少，曲線向左移。」這個邏輯在現實中說得通，但在<strong>圖表學</strong>上是錯的！因為利率已經在 Y軸上了，它的改變只會在線上滑動，絕不能平移整條線。
+        </div>
+        <div class="eng-text">
+            <strong>Fatal Error: Confusing the impact of the Y-axis variable</strong><br>
+            Many students intuitively think, "If interest rates rise, people will put money in banks and hold less cash, so demand falls, shifting the curve left." While this logic makes sense in reality, it is completely wrong in <strong>graphical analysis</strong>! Because the interest rate is already on the Y-axis, its change only causes a slide along the line, never a shift of the entire line.
+        </div>
+    </div>
+
+    <h2>🙋 Student Q&A (學生常見疑問)</h2>
+    <div class="zh-text"><strong>Q1: 通貨膨脹（物價上升）會令這條曲線怎樣改變？</strong></div>
+    <div class="eng-text">Q1: How would inflation (an increase in the price level) affect this curve?</div>
+    <div class="zh-text"><strong>A1:</strong> 曲線會向<strong>右</strong>移 (Shift right)。當物價上升，你需要更多的現金才能買到同樣數量的物品，所以名義貨幣需求 (Nominal Money Demand) 會增加。</div>
+    <div class="eng-text">A1: The curve would shift to the <strong>RIGHT</strong>. When prices rise, you need more cash to buy the exact same amount of goods, so the nominal transaction demand for money increases.</div>
+    <br>
+    <div class="zh-text"><strong>Q2: 廣泛使用八達通卡（選項 C）會影響銀行儲備和貨幣供應嗎？</strong></div>
+    <div class="eng-text">Q2: Will the widespread use of Octopus cards (Option C) affect bank reserves and the money supply?</div>
+    <div class="zh-text"><strong>A2:</strong> 會的！當人們減少持有現金，他們會將更多錢存入銀行系統。這會增加銀行的實際儲備 (Actual Reserves)。擁有更多儲備後，銀行可以借出更多款項，經過存款創造 (Credit Creation) 過程，最終會增加貨幣供應 \(M_s\)。所以，選項 C 不僅令貨幣需求向左移，同時也會令貨幣供應曲線向<strong>右</strong>移！</div>
+    <div class="eng-text">A2: Yes! When people hold less physical cash, they deposit more money into the banking system. This increases the actual reserves of banks. With more reserves, banks can lend out more money, which goes through the credit creation process and ultimately increases the money supply \(M_s\). So, Option C not only shifts money demand to the left, but it also shifts the money supply curve to the <strong>RIGHT</strong>!</div>
+
+    <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="zh-text">
+        <strong>「秒殺法」(The 3-Second Kill Method):</strong><br>
+        在 DSE 考試中，處理這類 Shift / Movement 題目，遵循以下次序：<br>
+        Step 1: 看到 "Shift" (移) -> 掃描選項有沒有 "Interest rate" (利率) -> 有的話，即刪！(Goodbye, Option A)<br>
+        Step 2: 看到 "Demand" (需求) -> 掃描選項有沒有 "Bank/Reserve" (銀行/儲備) -> 有的話，即刪！(Goodbye, Option D)<br>
+        Step 3: 剩下 B 和 C，判斷哪個令需求<strong>減少</strong> (Leftward)。收入增加 = 需求增加 (錯)。八達通 = 減少帶現金 = 需求減少 (對)。秒解完成！
+    </div>
+    <div class="eng-text">
+        <strong>The 3-Second Kill Method:</strong><br>
+        In the DSE exam, when dealing with Shift/Movement questions, follow this sequence:<br>
+        Step 1: See "Shift" -> Scan options for "Interest rate" -> If found, cross it out! (Goodbye, Option A)<br>
+        Step 2: See "Demand" -> Scan options for "Bank/Reserve" -> If found, cross it out! (Goodbye, Option D)<br>
+        Step 3: Only B and C remain. Determine which causes a <strong>decrease</strong> (Leftward). Higher income = more demand (Wrong). Octopus = need less cash = less demand (Correct). Solved in seconds!
+    </div>
+
+</body>
+</html>
