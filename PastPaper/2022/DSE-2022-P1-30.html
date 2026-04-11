@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Money Supply Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7; /* Ocean Blue */
+            --primary-light: #e0f2fe;
+            --secondary-color: #0f172a;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .section {
+            background: var(--box-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Bilingual Styling */
+        .tc {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .en {
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-style: italic;
+            border-left: 3px solid var(--border-color);
+            padding-left: 12px;
+        }
+
+        /* Specific Section Styles */
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 16px; }
+            .header-tags { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="section">
+        <h1>HKDSE Economics Masterclass 經濟學大師班</h1>
+        <div class="header-tags">
+            <span class="tag">Topic: Money and Banking 貨幣與銀行</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐ (4/5)</span>
+            <span class="tag">Keywords: Money Supply, Reserve Ratio, Credit Contraction</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>The Question 題目</h2>
+        
+        <p class="tc">某銀行系列的資產負債表如下：</p>
+        <p class="en">The balance sheet of a banking system is as follows:</p>
+
+        <table>
+            <tr>
+                <th colspan="2">資產 Assets ($ million / 百萬元)</th>
+                <th colspan="2">負債 Liabilities ($ million / 百萬元)</th>
+            </tr>
+            <tr>
+                <td>儲備 Reserves</td>
+                <td>500</td>
+                <td>存款 Deposits</td>
+                <td>2 000</td>
+            </tr>
+            <tr>
+                <td>貸款 Loans</td>
+                <td>1 500</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p class="tc">法定儲備比率為20%，公眾原初並不持有現金。</p>
+        <p class="en">The required reserve ratio is 20% and the public does not hold cash initially.</p>
+
+        <p class="tc">假設某顧客在其銀行戶口提款200百萬元，並以現金持有該筆款項。若所有銀行均沒持有超額儲備，在信貸創造／收縮的過程完結後，貨幣供應的金額是 __________。</p>
+        <p class="en">Suppose a customer withdraws $200 million from his bank account and holds it as cash. If all banks do not hold any excess reserves, the amount of money supply is _____________ after the process of credit creation/contraction has been completed.</p>
+
+        <p class="tc">
+            A. 1 200百萬元<br>
+            B. 1 400百萬元<br>
+            C. 1 500百萬元<br>
+            D. 1 700百萬元
+        </p>
+        <p class="en">
+            A. $1 200 million<br>
+            B. $1 400 million<br>
+            C. $1 500 million<br>
+            D. $1 700 million
+        </p>
+    </div>
+
+    <div class="section concept-box">
+        <h2>Concept Review 概念重溫</h2>
+        
+        <p class="tc">要解答這類題目，我們必須清楚理解貨幣供應的定義以及銀行體系的乘數效應：</p>
+        <p class="en">To solve this type of question, we must clearly understand the definition of money supply and the multiplier effect within the banking system:</p>
+
+        <ul>
+            <li>
+                <p class="tc"><strong>貨幣供應 (Money Supply, \(M_s\))：</strong> 在香港的課程中，狹義的貨幣供應（如 M1）等於公眾持有的現金加上銀行存款。</p>
+                <p class="en"><strong>Money Supply (\(M_s\)):</strong> In the HKDSE syllabus, money supply (like M1) equals cash held by the non-bank public plus bank deposits.</p>
+                <div class="math-block">
+                    $$ M_s = C_p + D $$
+                </div>
+            </li>
+            <li>
+                <p class="tc"><strong>最高存款額 (Maximum Deposits, \(D_{max}\))：</strong> 當銀行體系沒有超額儲備（Excess Reserves = 0）時，存款會達到最高水平。這取決於實際儲備及法定儲備比率。</p>
+                <p class="en"><strong>Maximum Deposits (\(D_{max}\)):</strong> When the banking system holds zero excess reserves, deposits reach their maximum level. This depends on actual reserves and the required reserve ratio (rrr).</p>
+                <div class="math-block">
+                    $$ D_{max} = \frac{\text{Reserves } (R)}{\text{Required Reserve Ratio } (rrr)} $$
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>The Answer & Detailed Analysis 答案與詳細分析</h2>
+        
+        <h3 style="color: var(--success);">Correct Answer / 正確答案: D</h3>
+
+        <div class="option-analysis correct">
+            <p class="tc"><strong>選項 D (1 700百萬元) - 正確：</strong></p>
+            <p class="tc">當顧客提款 200 百萬元時，銀行體系的實際儲備會減少 200 百萬元。新的實際儲備 \(R\) = \(500 - 200 = 300\) 百萬元。<br>
+            因為題目指明「所有銀行均沒持有超額儲備」，銀行會透過收縮信貸（追討貸款）來維持最低要求。最終的存款額 \(D\) = \(\frac{300}{20%}\) = 1 500 百萬元。<br>
+            最後，計算新的貨幣供應。顧客提取的 200 百萬元現金現由公眾持有（\(C_p = 200\)），加上新的存款額（\(D = 1 500\)）。<br>
+            \(M_s = C_p + D = 200 + 1 500 = 1 700\) 百萬元。</p>
+
+            <p class="en"><strong>Option D ($1 700 million) - Correct:</strong></p>
+            <p class="en">When the customer withdraws $200 million, the actual reserves of the banking system decrease by $200 million. The new actual reserves \(R\) = \(500 - 200 = 300\) million.<br>
+            Since the question states "all banks do not hold any excess reserves", banks will contract credit (call in loans) to maintain the minimum requirement. The final deposit amount \(D\) = \(\frac{300}{20%}\) = $1 500 million.<br>
+            Finally, calculate the new money supply. The $200 million cash withdrawn is now held by the public (\(C_p = 200\)), plus the new deposit amount (\(D = 1 500\)).<br>
+            \(M_s = C_p + D = 200 + 1 500 = 1 700\) million.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <p class="tc"><strong>選項 A & B - 錯誤：</strong></p>
+            <p class="tc">這些是隨機的錯誤計算，通常是因為混淆了儲備和貸款的變動，或是錯誤地將新的儲備總額直接減去某些數值。</p>
+            <p class="en"><strong>Options A & B - Incorrect:</strong></p>
+            <p class="en">These are random calculation errors, usually caused by confusing changes in reserves and loans, or mistakenly subtracting random values from the new reserve total.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <p class="tc"><strong>選項 C (1 500百萬元) - 錯誤 (最強烈的干擾項)：</strong></p>
+            <p class="tc">這個選項是學生最容易中計的地方！1 500 百萬元是<strong>最終存款總額</strong>（\(D\)），而非貨幣供應（\(M_s\)）。考生忘記了把公眾手上的現金（200百萬元）加回總數之中。</p>
+            <p class="en"><strong>Option C ($1 500 million) - Incorrect (The strongest distractor):</strong></p>
+            <p class="en">This is the most common trap! $1 500 million is the <strong>final deposit amount</strong> (\(D\)), not the money supply (\(M_s\)). Candidates forgot to add the cash held by the public ($200 million) back into the total.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Problem Decomposition 題目拆解</h2>
+        
+        <p class="tc">解答這類題目的「黃金三步曲」：</p>
+        <p class="en">The "Golden 3-Step Rule" for solving these problems:</p>
+
+        <ol>
+            <li>
+                <p class="tc"><strong>找出「現金流向」：</strong> 現金是存入銀行還是被提取？這會直接改變銀行的「實際儲備 (Actual Reserves)」。</p>
+                <p class="en"><strong>Identify the "Cash Flow":</strong> Is cash deposited or withdrawn? This directly changes the banks' "Actual Reserves".</p>
+            </li>
+            <li>
+                <p class="tc"><strong>尋找「關鍵字 (Pivot Point)」計算存款：</strong> 題目說「沒有超額儲備 (do not hold any excess reserves)」，這是一把鑰匙，代表你可以直接使用公式 \(D = \frac{R}{rrr}\) 來找出最終存款。</p>
+                <p class="en"><strong>Find the "Pivot Point" to calculate deposits:</strong> The phrase "do not hold any excess reserves" is the key. It means you can directly use the formula \(D = \frac{R}{rrr}\) to find the final deposits.</p>
+            </li>
+            <li>
+                <p class="tc"><strong>組合最終答案：</strong> 永遠記得檢查題目問的是「存款 (Deposits)」還是「貨幣供應 (Money Supply)」。如果是後者，必須加上公眾持有的現金！</p>
+                <p class="en"><strong>Assemble the final answer:</strong> Always check if the question asks for "Deposits" or "Money Supply". If it's the latter, you MUST add the cash in public hands!</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section" style="border-left: 5px solid var(--danger);">
+        <h2 style="color: var(--danger);">Common Mistakes & Traps 常犯錯誤與陷阱</h2>
+        
+        <p class="tc"><strong>陷阱 1：被原來的「實際儲備比率」誤導。</strong><br>
+        起初，儲備是 500，存款是 2 000，實際儲備比率是 25% (\(\frac{500}{2000}\))。很多學生會錯誤地用 25% 來計算乘數。但記住，一旦信貸收縮/創造過程完成，且「沒有超額儲備」，銀行會貼著 20% 的法定要求來運作。</p>
+        <p class="en"><strong>Trap 1: Misled by the initial "Actual Reserve Ratio".</strong><br>
+        Initially, reserves are 500 and deposits are 2 000, meaning the actual reserve ratio is 25% (\(\frac{500}{2000}\)). Many students mistakenly use 25% for the multiplier. Remember, once the process completes and there are "no excess reserves", banks operate exactly at the 20% legal requirement.</p>
+    </div>
+
+    <div class="section">
+        <h2>Student Q&A 學生常見疑問</h2>
+
+        <p class="tc"><strong>Q: 題目給出的「貸款 1 500」數字有用嗎？</strong></p>
+        <p class="en"><strong>Q: Is the "Loans 1 500" figure provided in the question useful?</strong></p>
+        
+        <p class="tc"><strong>A: 在這道題目中是多餘的資訊（Distractor）！</strong> 計算最高存款或貨幣供應時，我們只需要知道「儲備」和「法定儲備比率」。貸款的改變是信貸收縮的結果，我們不需要計算它也能得出答案。</p>
+        <p class="en"><strong>A: It is redundant information (a distractor) for this specific question!</strong> To calculate maximum deposits or money supply, we only need "Reserves" and the "Required Reserve Ratio". The change in loans is the *result* of credit contraction, we don't need to calculate it to find the answer.</p>
+    </div>
+
+    <div class="section" style="background-color: #fffbeb; border-left: 5px solid #f59e0b;">
+        <h2 style="color: #d97706;">Exam Tricks & Shortcuts 考試技巧與速解</h2>
+        
+        <p class="tc"><strong>貨幣基礎 (Monetary Base, MB) 恆定法：</strong></p>
+        <p class="en"><strong>The Monetary Base (MB) Constant Method:</strong></p>
+
+        <p class="tc">貨幣基礎 (MB) = 銀行儲備 (R) + 公眾持有現金 (\(C_p\))。<br>
+        只要中央銀行沒有干預，市民單純的提款或存款，<strong>不會改變貨幣基礎的總量</strong>！</p>
+        <p class="en">Monetary Base (MB) = Bank Reserves (R) + Cash in Public Hands (\(C_p\)).<br>
+        As long as the central bank doesn't intervene, simple public deposits or withdrawals <strong>DO NOT change the total Monetary Base</strong>!</p>
+
+        <p class="tc">
+            1. 初始 MB = 500 (R) + 0 (\(C_p\)) = 500。<br>
+            2. 提款後 MB 依然是 500。由於 \(C_p\) 變成了 200，所以新的 R 必然是 300。<br>
+            3. 新存款 \(D = \frac{300}{0.2} = 1 500\)。<br>
+            4. \(M_s = C_p + D = 200 + 1 500 = 1 700\)。
+        </p>
+        <p class="en">
+            1. Initial MB = 500 (R) + 0 (\(C_p\)) = 500.<br>
+            2. After withdrawal, MB is still 500. Since \(C_p\) is now 200, the new R must be 300.<br>
+            3. New Deposits \(D = \frac{300}{0.2} = 1 500\).<br>
+            4. \(M_s = C_p + D = 200 + 1 500 = 1 700\).
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Unexpected Inflation</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-gray: #f8fafc;
+            --math-bg: #f3f4f6;
+            --correct: #16a34a;
+            --wrong: #dc2626;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', 'PingFang HK', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 { color: #0f172a; margin-top: 1.5em; }
+        h1 { border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        
+        .zh { font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+        .en { color: var(--text-light); font-size: 0.95em; margin-top: 0; margin-bottom: 16px; font-style: italic; }
+
+        .header-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
+
+        .question-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            font-size: 1.1em;
+        }
+        
+        .options { margin-top: 15px; }
+        .option { margin-bottom: 10px; }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .analysis-card {
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .ans-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+        .is-correct { background-color: #dcfce7; color: var(--correct); }
+        .is-wrong { background-color: #fee2e2; color: var(--wrong); }
+
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: 財富重分配 / Wealth Redistribution</h1>
+    <div class="header-tags">
+        <span class="tag">Topic: 宏觀經濟學 - 通脹 (Macroeconomics - Inflation)</span>
+        <span class="tag">Difficulty: ★★★☆☆</span>
+        <span class="tag">Key Concept: 非預期通脹 (Unexpected Inflation)</span>
+        <span class="tag">Key Concept: 實質價值 (Real Value)</span>
+    </div>
+
+    <div class="question-box">
+        <p class="zh"><strong>題目：</strong> 若出現非預期通脹，下列哪位人士會有損失？</p>
+        <p class="en"><strong>Question:</strong> If there is unexpected inflation, which of the following persons will lose?</p>
+        
+        <div class="options">
+            <div class="option">
+                <div class="zh">A. 一位以信用卡購物的消費者</div>
+                <div class="en">A. a consumer who used credit cards to buy goods</div>
+            </div>
+            <div class="option">
+                <div class="zh">B. 一位與僱員簽訂固定名義薪酬合約的僱主</div>
+                <div class="en">B. an employer who signed fixed nominal wage contracts with his employees</div>
+            </div>
+            <div class="option">
+                <div class="zh">C. 一位存款證的持有人</div>
+                <div class="en">C. a holder of certificate of deposits</div>
+            </div>
+            <div class="option">
+                <div class="zh">D. 一位持有回報率按通脹率調整的債券的投資者</div>
+                <div class="en">D. an investor of bonds with the rate of return adjusted according to the inflation rate</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh">當發生<strong>非預期通脹 (Unexpected Inflation)</strong>時，即實際通脹率高於預期通脹率，貨幣的實質購買力會下降。這會導致財富在不同群體之間進行重分配。我們可以使用費沙方程式 (Fisher Equation) 來理解這個現象：</p>
+        <p class="en">When <strong>unexpected inflation</strong> occurs (actual inflation rate is higher than expected), the real purchasing power of money decreases. This leads to a redistribution of wealth among different groups. We can understand this using the Fisher Equation:</p>
+
+        <div class="math-block">
+            $$實質利率 (r) \approx 名義利率 (R) - 實際通脹率 (\pi)$$
+            $$Real\ Interest\ Rate\ (r) \approx Nominal\ Interest\ Rate\ (R) - Actual\ Inflation\ Rate\ (\pi)$$
+        </div>
+
+        <p class="zh"><strong>核心法則：</strong>如果合約以「固定名義價值」訂立，收取這筆款項的人（如貸款人、受薪階層）會因為貨幣貶值而<strong>損失</strong>；相反，支付這筆款項的人（如借款人、僱主）會因為還款/支付的實質負擔減輕而<strong>得益</strong>。</p>
+        <p class="en"><strong>Core Rule:</strong> If a contract is based on a "fixed nominal value", the receiver of the money (e.g., lenders, wage earners) will <strong>lose</strong> because the money depreciates. Conversely, the payer (e.g., borrowers, employers) will <strong>gain</strong> because their real burden of payment decreases.</p>
+    </div>
+
+    <h2>答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <p class="zh">正確答案是：<strong>選項 C</strong></p>
+    <p class="en">The correct answer is: <strong>Option C</strong></p>
+
+    <div class="analysis-card">
+        <span class="ans-badge is-wrong">✗ Option A</span>
+        <p class="zh">一位以信用卡購物的消費者本質上是<strong>借款人 (Borrower)</strong>。他們今天購買商品，但在未來才以貶值了的貨幣找清卡數。因為還款的實質價值下降了，所以消費者會<strong>得益</strong>。</p>
+        <p class="en">A consumer using a credit card is essentially a <strong>borrower</strong>. They buy goods today but pay the bill later with depreciated money. Since the real value of their repayment decreases, the consumer <strong>gains</strong>.</p>
+    </div>
+
+    <div class="analysis-card">
+        <span class="ans-badge is-wrong">✗ Option B</span>
+        <p class="zh">簽訂固定名義薪酬合約的僱主是<strong>固定名義款項的支付者</strong>。即使物價上升（其產品的售價可能增加），僱主只需支付合約上固定的名義薪金，這意味著實質工資成本下降了，因此僱主會<strong>得益</strong>（其僱員則會損失）。</p>
+        <p class="en">An employer signing a fixed nominal wage contract is a <strong>payer of a fixed nominal amount</strong>. Even though price levels rise (and likely their revenue), they only pay the fixed nominal wage, meaning the real wage cost drops. Thus, the employer <strong>gains</strong> (while the employees lose).</p>
+    </div>
+
+    <div class="analysis-card">
+        <span class="ans-badge is-correct">✓ Option C (Correct Answer)</span>
+        <p class="zh">存款證 (Certificate of Deposits) 的持有人本質上是將錢借給銀行的<strong>貸款人 (Lender)</strong>。他們收取固定的名義利息。在非預期通脹下，他們收回的本金和利息的實質購買力下降了 ($\pi$ 上升導致 $r$ 下降)，因此他們會<strong>損失</strong>。</p>
+        <p class="en">A holder of a Certificate of Deposit is essentially a <strong>lender</strong> who lent money to the bank. They receive fixed nominal interest. Under unexpected inflation, the real purchasing power of the principal and interest they receive decreases (higher $\pi$ leads to lower $r$). Therefore, they <strong>lose</strong>.</p>
+    </div>
+
+    <div class="analysis-card">
+        <span class="ans-badge is-wrong">✗ Option D</span>
+        <p class="zh">這位債券投資者的回報率是<strong>按通脹率調整的 (Inflation-indexed)</strong>。這意味著名義回報率會隨著通脹率同步上升，從而保障了實質購買力不變，因此他<strong>不會有損失</strong>。</p>
+        <p class="en">This bond investor's rate of return is <strong>inflation-indexed (adjusted)</strong>. This means the nominal return rate increases synchronously with inflation, protecting their real purchasing power. Therefore, they <strong>do not lose</strong>.</p>
+    </div>
+
+    <h2>題目拆解 / Problem Decomposition</h2>
+    <div class="concept-box" style="border-left-color: #f59e0b; background-color: #fffbeb;">
+        <p class="zh"><strong>尋找「支點」(Pivot Point)：</strong> 解答這類題目的關鍵在於判斷該人士是「資金的接收方」還是「資金的支付方」，以及該金額是否被「固定 (Fixed)」。</p>
+        <p class="en"><strong>Finding the Pivot Point:</strong> The key to solving this type of question is to determine whether the person is the "receiver" or the "payer" of funds, and whether the amount is "fixed nominal".</p>
+        
+        <ul style="margin-top: 10px;">
+            <li class="zh"><strong>選項 A 陷阱：</strong> 很多同學以為消費者面對物價上升必定受害，但題目強調了「信用卡 (Credit Card)」。使用信用卡即代表「先享受，後付款」，產生了借貸關係。</li>
+            <li class="en"><strong>Trap in Option A:</strong> Many students think consumers always suffer during inflation, but the prompt highlights "Credit Card". Using credit means "buy now, pay later", creating a debtor-creditor relationship.</li>
+            
+            <li class="zh"><strong>選項 D 關鍵字：</strong> 看到「調整 (Adjusted)」一詞，即可直接排除。因為合約有防通脹機制，不會受到非預期通脹的負面影響。</li>
+            <li class="en"><strong>Keyword in Option D:</strong> The word "Adjusted" immediately eliminates this option. The contract has an anti-inflation mechanism, protecting them from negative impacts.</li>
+        </ul>
+    </div>
+
+    <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <p class="zh">⚠️ <strong>錯誤觀念：通脹對所有人都有害。</strong><br>
+    很多初階學生憑直覺認為通脹只會帶來負面影響。然而，在經濟學中，通脹只會令「貨幣購買力」下降。如果你欠別人的錢（債務），你所欠的「實質價值」實際上是被通脹「吃掉」了，因此借款人反而是通脹的贏家！</p>
+    <p class="en">⚠️ <strong>Misconception: Inflation harms everyone.</strong><br>
+    Many beginner students intuitively think inflation only brings negative impacts. However, in economics, inflation simply lowers the "purchasing power of money". If you owe people money (debt), the "real value" of what you owe is effectively "eaten away" by inflation. Therefore, borrowers are actually winners during inflation!</p>
+
+    <h2>學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>🙋‍♂️ 學生問：</strong> 如果題目改成「出現預期通脹 (Expected Inflation)」，答案會有不同嗎？</p>
+        <p class="en"><strong>🙋‍♂️ Student Q:</strong> If the question changed to "Expected Inflation", would the answer be different?</p>
+        
+        <p class="zh" style="margin-top: 10px;"><strong>👨‍🏫 導師答：</strong> 會的！如果是「預期內的通脹」，市場人士一早已經將通脹因素計算在名義利率 ($R$) 或合約薪酬之中（即 $R$ 或名義工資已相應提高）。在完美預期的情況下，沒有人會因為實質價值的改變而有未預見的得益或損失。財富重分配<strong>只會</strong>在通脹「出乎意料 (Unexpected)」時發生。</p>
+        <p class="en"><strong>👨‍🏫 Tutor A:</strong> Yes! If it is "Expected Inflation", market participants would have already factored the inflation into the nominal interest rate ($R$) or wage contracts (i.e., $R$ or nominal wages would be raised accordingly). Under perfect anticipation, no one experiences unforeseen gains or losses in real value. Wealth redistribution <strong>only</strong> occurs when inflation is "Unexpected".</p>
+    </div>
+
+    <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="concept-box" style="border-left-color: #10b981; background-color: #ecfdf5;">
+        <p class="zh"><strong>⚡ 速解口訣：</strong><br>
+        「收錢者（Lenders / Fixed Income earners）＝ 輸家」<br>
+        「俾錢者（Borrowers / Fixed Payers）＝ 贏家」</p>
+        <p class="en"><strong>⚡ Shortcut Mantra:</strong><br>
+        "Money Receivers (Lenders / Fixed Income earners) = Losers"<br>
+        "Money Payers (Borrowers / Fixed Payers) = Winners"</p>
+        
+        <p class="zh">考試時，只需在每個選項旁邊標記 <strong>收錢</strong> 或 <strong>俾錢</strong>：<br>
+        A = 用信用卡找數 (俾錢) ➔ 贏<br>
+        B = 出糧 (俾錢) ➔ 贏<br>
+        C = 收息 (收錢) ➔ <strong>輸 (答案)</strong><br>
+        D = 收息 (但已調整) ➔ 打和</p>
+        <p class="en">During the exam, simply label each option as <strong>Payer</strong> or <strong>Receiver</strong>:<br>
+        A = Paying credit card bill (Payer) ➔ Wins<br>
+        B = Paying wages (Payer) ➔ Wins<br>
+        C = Receiving interest (Receiver) ➔ <strong>Loses (Answer)</strong><br>
+        D = Receiving interest (but adjusted) ➔ Breakeven</p>
+    </div>
+</div>
+
+</body>
+</html>

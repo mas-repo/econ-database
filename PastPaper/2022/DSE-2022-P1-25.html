@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Macroeconomic Indicators</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #0ea5e9;
+            --bg-main: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h1 { font-size: 1.8rem; text-align: center; border: none; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.2rem; border: none; margin-top: 1em; }
+
+        .header-box {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: var(--concept-bg);
+            border-radius: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .en {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--concept-bg);
+        }
+
+        .concept-review {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .option-analysis {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .correct-answer {
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #dcfce7;
+            border-radius: 8px;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .q-text { font-weight: bold; color: #b45309; }
+        
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            table { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <h1>HKDSE Economics Tutorial <br> 經濟學名師解析</h1>
+        <div>
+            <span class="tag">Topic: Macroeconomic Indicators (宏觀經濟指標)</span>
+            <span class="tag">Difficulty: ⭐⭐⭐ (3/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> Real GDP, Per Capita GDP, Inflation vs. Deflation
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="zh">
+            下表顯示某國的一些數據。
+            <table>
+                <tr>
+                    <th></th>
+                    <th colspan="2">增長率</th>
+                </tr>
+                <tr>
+                    <th>年份</th>
+                    <th>2019</th>
+                    <th>2020</th>
+                </tr>
+                <tr>
+                    <td>名義本地生產總值</td>
+                    <td>0.3%</td>
+                    <td>-5.5%</td>
+                </tr>
+                <tr>
+                    <td>物價水平</td>
+                    <td>2.0%</td>
+                    <td>0.6%</td>
+                </tr>
+                <tr>
+                    <td>人口</td>
+                    <td>0.5%</td>
+                    <td>-1.2%</td>
+                </tr>
+            </table>
+            下列哪項陳述是正確的？<br>
+            A. 2020年實質本地生產總值上升。<br>
+            B. 2020年人均名義本地生產總值上升。<br>
+            C. 2020年出現通縮。<br>
+            D. 2020年實質本地生產總值的增長率較2019年的低。
+        </div>
+        
+        <hr style="border: 1px solid #e2e8f0; margin: 20px 0;">
+
+        <div class="en">
+            The following table shows some data of a country.
+            <table>
+                <tr>
+                    <th></th>
+                    <th colspan="2">Growth rate</th>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <th>2019</th>
+                    <th>2020</th>
+                </tr>
+                <tr>
+                    <td>Nominal GDP</td>
+                    <td>0.3%</td>
+                    <td>-5.5%</td>
+                </tr>
+                <tr>
+                    <td>Price level</td>
+                    <td>2.0%</td>
+                    <td>0.6%</td>
+                </tr>
+                <tr>
+                    <td>Population</td>
+                    <td>0.5%</td>
+                    <td>-1.2%</td>
+                </tr>
+            </table>
+            Which of the following statements is correct?<br>
+            A. Real GDP in 2020 increased.<br>
+            B. Per capita nominal GDP in 2020 increased.<br>
+            C. There was deflation in 2020.<br>
+            D. The growth rate of real GDP in 2020 was smaller than that in 2019.
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-review">
+        <div class="bilingual-block">
+            <div class="zh">在處理涉及「名義」(Nominal)、「實質」(Real)、「人均」(Per Capita) 及「物價水平」(Price Level) 的增長率題目時，我們通常會使用以下估算公式：</div>
+            <div class="en">When dealing with growth rate questions involving Nominal, Real, Per Capita, and Price Level data, we generally use the following approximation formulas:</div>
+        </div>
+
+        <div class="math-block">
+            $$ g_{\text{Real}} \approx g_{\text{Nominal}} - g_{\text{Price Level}} $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh"><strong>公式 1：</strong> 實質變量的增長率 $\approx$ 名義變量的增長率 $-$ 物價水平的增長率（即通脹率）。</div>
+            <div class="en"><strong>Formula 1:</strong> Growth rate of a real variable $\approx$ Growth rate of the nominal variable $-$ Growth rate of the price level (Inflation rate).</div>
+        </div>
+
+        <div class="math-block">
+            $$ g_{\text{Per Capita}} \approx g_{\text{Total}} - g_{\text{Population}} $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh"><strong>公式 2：</strong> 人均變量的增長率 $\approx$ 總量變量的增長率 $-$ 人口增長率。</div>
+            <div class="en"><strong>Formula 2:</strong> Growth rate of a per capita variable $\approx$ Growth rate of the total variable $-$ Population growth rate.</div>
+        </div>
+        
+        <div class="bilingual-block">
+            <div class="zh"><strong>通縮 (Deflation) 的定義：</strong> 一般物價水平持續下降。這意味著物價水平的增長率必須為負數（小於 0）。</div>
+            <div class="en"><strong>Definition of Deflation:</strong> A persistent decrease in the general price level. This means the growth rate of the price level must be negative (less than 0).</div>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="correct-answer">
+        正確答案是 / The correct answer is: Option D
+    </div>
+
+    <div class="option-analysis">
+        <h3>Option A</h3>
+        <div class="zh"><strong>錯誤。</strong> 根據公式，2020年實質 GDP 增長率 $\approx -5.5\% - 0.6\% = -6.1\%$。因為增長率是負數，所以2020年的實質本地生產總值是下降的，而非上升。</div>
+        <div class="en"><strong>Incorrect.</strong> According to the formula, the Real GDP growth rate in 2020 $\approx -5.5\% - 0.6\% = -6.1\%$. Since the growth rate is negative, the Real GDP in 2020 decreased, not increased.</div>
+    </div>
+
+    <div class="option-analysis">
+        <h3>Option B</h3>
+        <div class="zh"><strong>錯誤。</strong> 2020年人均名義 GDP 增長率 $\approx -5.5\% - (-1.2\%) = -5.5\% + 1.2\% = -4.3\%$。增長率為負數，表示人均名義 GDP 下降。</div>
+        <div class="en"><strong>Incorrect.</strong> The Per capita nominal GDP growth rate in 2020 $\approx -5.5\% - (-1.2\%) = -5.5\% + 1.2\% = -4.3\%$. The negative growth rate indicates that the per capita nominal GDP decreased.</div>
+    </div>
+
+    <div class="option-analysis">
+        <h3>Option C</h3>
+        <div class="zh"><strong>錯誤。</strong> 2020年的物價水平增長率為 0.6%。只要這個數值是大於 0 的正數，就代表物價仍在上升（這稱為通脹，即便升幅收窄也只是「通脹放緩」）。通縮要求物價水平增長率為負數。</div>
+        <div class="en"><strong>Incorrect.</strong> The growth rate of the price level in 2020 was 0.6%. As long as this figure is positive (> 0), it means prices are still rising (this is inflation, specifically "disinflation" since the rate dropped from 2.0%). Deflation requires a negative growth rate in the price level.</div>
+    </div>
+
+    <div class="option-analysis">
+        <h3>Option D</h3>
+        <div class="zh"><strong>正確。</strong> <br>
+            2019年實質 GDP 增長率 $\approx 0.3\% - 2.0\% = -1.7\%$<br>
+            2020年實質 GDP 增長率 $\approx -5.5\% - 0.6\% = -6.1\%$<br>
+            因為 -6.1% 小於 -1.7%，所以2020年的實質本地生產總值增長率確實較2019年低。
+        </div>
+        <div class="en"><strong>Correct.</strong> <br>
+            2019 Real GDP growth rate $\approx 0.3\% - 2.0\% = -1.7\%$<br>
+            2020 Real GDP growth rate $\approx -5.5\% - 0.6\% = -6.1\%$<br>
+            Since -6.1% is mathematically smaller (more negative) than -1.7%, the growth rate of real GDP in 2020 was indeed smaller than that in 2019.
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <div class="zh">
+            <strong>解題樞紐 (Pivot Point)：</strong> 本題的核心在於測試你是否懂得將三個不同的變數（名義 GDP、物價水平、人口）透過兩條加減公式連結起來。表格提供了所有的原始素材，你需要自己組合出「實質 GDP」和「人均 GDP」的數據。<br><br>
+            <strong>干擾資訊 (Distractors)：</strong> 如果你只看選項 A 和 C，你甚至不需要看「人口」那一行的數據。人口數據專門用來測試選項 B。
+        </div>
+        <div class="en">
+            <strong>Pivot Point:</strong> The core of this question tests your ability to link three different variables (Nominal GDP, Price Level, Population) using the two basic addition/subtraction approximation formulas. The table provides the raw ingredients, and you must "cook" the Real GDP and Per Capita GDP data yourself.<br><br>
+            <strong>Distractors:</strong> If you were only evaluating options A and C, you wouldn't even need to look at the "Population" row. The population data is explicitly there to test your evaluation of Option B.
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-block">
+        <div class="zh">
+            <ul>
+                <li><strong>陷阱一：混淆「通脹放緩」(Disinflation) 與「通縮」(Deflation)。</strong> 很多同學看到物價水平增長率由 2019年的 2.0% 跌至 2020年的 0.6%，就誤以為這是通縮。記住：只要增長率是正數 ($>0$)，物價就是在上升！</li>
+                <li><strong>陷阱二：正負號運算粗心大意。</strong> 在計算選項 B 時，公式是名義 GDP 減去人口增長率。即 $-5.5\% - (-1.2\%)$。如果忘記了負負得正，就會計錯數。</li>
+                <li><strong>陷阱三：混淆「增長率下降」與「數值下降」。</strong> 實質 GDP 增長率為負數，代表實質 GDP 這個「數值」正在下降。</li>
+            </ul>
+        </div>
+        <div class="en">
+            <ul>
+                <li><strong>Trap 1: Confusing Disinflation with Deflation.</strong> Many students see the price level growth drop from 2.0% to 0.6% and mistakenly assume this is deflation. Remember: As long as the growth rate is positive ($>0$), prices are still rising!</li>
+                <li><strong>Trap 2: Careless algebraic errors with negative signs.</strong> When calculating Option B, the formula requires subtracting the population growth rate: $-5.5\% - (-1.2\%)$. If you forget that subtracting a negative equals adding a positive, you will get the wrong value.</li>
+                <li><strong>Trap 3: Confusing "a decrease in growth rate" with "a decrease in value".</strong> A negative Real GDP growth rate means the actual "value" of Real GDP is decreasing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="q-text">Q: 老師，用相減的方法 ($A \approx B - C$) 只是「估算」(approximation)，這樣在 DSE 考試中準確嗎？為什麼不用精確公式計算？</div>
+        <div class="zh"><strong>A:</strong> 好問題！精確公式是 $ (1 + g_{\text{Real}}) = \frac{1 + g_{\text{Nominal}}}{1 + g_{\text{Price}}} $。但在 DSE 經濟科中，當百分比變化很小（通常在 10% 以內）時，考評局是完全接受並期望學生使用相減估算公式的。這不僅計算更快，而且在判斷方向（升或跌、大或小）時結論是完全一致的。</div>
+        <br>
+        <div class="q-text">Q: Teacher, using the subtraction method ($A \approx B - C$) is just an approximation. Is this accurate enough for the DSE exam? Why don't we use the exact formula?</div>
+        <div class="en"><strong>A:</strong> Great question! The exact formula is $ (1 + g_{\text{Real}}) = \frac{1 + g_{\text{Nominal}}}{1 + g_{\text{Price}}} $. However, in DSE Economics, when the percentage changes are small (usually under 10%), the HKEAA fully accepts and expects students to use the approximation formula. It is much faster, and the conclusion regarding the direction (increase/decrease, larger/smaller) will be exactly the same.</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual-block">
+            <div class="zh">
+                <strong>速解法 (Elimination Method)：</strong>
+                做這類題目時，先從最容易判斷的選項入手，不需要一開始就狂計數！<br>
+                1. <strong>秒殺 C：</strong> 看一眼 2020 年物價水平，是正數 (0.6%)，沒有通縮，C 錯。瞬間排除！<br>
+                2. <strong>直覺判斷 A：</strong> 2020 年名義 GDP 大跌 (-5.5%)，而物價又在升 (0.6%)，實質 GDP 必定是跌得更慘，不可能是上升。A 錯。<br>
+                3. 然後你只需要集中精神計算 B 和 D 來分勝負，大大節省時間。
+            </div>
+            <div class="en">
+                <strong>Shortcut (Elimination Method):</strong>
+                When tackling these questions, start with the easiest options to judge. Don't just blindly calculate everything right away!<br>
+                1. <strong>Insta-kill C:</strong> Glance at the 2020 price level. It's positive (0.6%). No deflation. C is wrong. Eliminated instantly!<br>
+                2. <strong>Intuition for A:</strong> In 2020, Nominal GDP dropped heavily (-5.5%) while prices still went up slightly (0.6%). Real GDP must have fallen even harder; it couldn't possibly increase. A is wrong.<br>
+                3. Now you only need to focus your mental energy on calculating B and D to find the winner, saving you precious exam time.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

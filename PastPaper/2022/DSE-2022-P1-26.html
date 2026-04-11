@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Unemployment Rate</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+        .question-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .analysis-box {
+            background-color: #fdfbf7;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .correct-answer {
+            color: #059669;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .tip-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .option {
+            margin-bottom: 10px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <div class="bilingual-pair">
+            <h2>📝 課題：宏觀經濟學 - 失業與勞動人口</h2>
+            <div class="en-text">Topic: Macroeconomics - Unemployment & Labour Force</div>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="tag">難度 Difficulty: ⭐⭐⭐✩✩</span>
+            <span class="tag">關鍵字: 失業率 Unemployment Rate</span>
+            <span class="tag">關鍵字: 勞動人口 Labour Force</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h3>題目 The Question</h3>
+        <div class="bilingual-pair">
+            <p><strong>[中文]</strong> 甲國很多工人移民外國，而所造成的職位空缺全部由失業人士填補。結果，甲國的失業率 __________。</p>
+            <p>A. 會上升。<br>
+               B. 會下降。<br>
+               C. 會維持不變。<br>
+               D. 未能判斷。</p>
+        </div>
+        <div class="bilingual-pair">
+            <p class="en-text"><strong>[English]</strong> Many workers in Country A emigrated to other countries. All the job vacancies resulting from the emigration were filled by unemployed people. As a result, the unemployment rate of Country A __________.</p>
+            <p class="en-text">A. would increase<br>
+               B. would decrease<br>
+               C. would remain unchanged<br>
+               D. cannot be determined</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h3>📚 概念重溫 Concept Review</h3>
+        <div class="bilingual-pair">
+            <p>要拆解這條題目，我們必須清楚了解失業率的官方定義以及勞動人口的組成部分：</p>
+            <p class="en-text">To tackle this question, we must clearly understand the official definition of the unemployment rate and the components of the labour force:</p>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{勞動人口 (Labour Force, } LF \text{)} = \text{就業人口 (Employed, } E \text{)} + \text{失業人口 (Unemployed, } U \text{)} $$
+        </div>
+        <div class="math-block">
+            $$ \text{失業率 (Unemployment Rate, } UR \text{)} = \frac{U}{LF} \times 100\% = \frac{U}{E + U} \times 100\% $$
+        </div>
+
+        <div class="bilingual-pair">
+            <p><strong>數學特性 (Mathematical Property)：</strong> 當一個小於 1 的分數，其分子和分母同時減去同一個正數時，該分數的數值必定會下降。例如 $\frac{10}{100} = 10\%$，分子分母同減 5，變成 $\frac{5}{95} \approx 5.26\%$，數值變小了。</p>
+            <p class="en-text"><strong>Mathematical Property:</strong> When the same positive number is subtracted from both the numerator and the denominator of a fraction that is less than 1, the value of the fraction will decrease. For example, $\frac{10}{100} = 10\%$. Subtracting 5 from both gives $\frac{5}{95} \approx 5.26\%$, which is a smaller value.</p>
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h3>✅ 答案與詳細分析 The Answer & Detailed Analysis</h3>
+        <p class="correct-answer">正確答案 Correct Option: B</p>
+
+        <p><strong>第一步：分析事件對各變量的影響 / Step 1: Analyze the impact on variables</strong></p>
+        <ul>
+            <li>
+                <strong>事件 1：工人移民 (Workers emigrated)</strong><br>
+                就業人數 $E$ 減少了 $x$ 人。這批人離開了國家，所以勞動人口 $LF$ 也減少了 $x$ 人。<br>
+                <span class="en-text">Employed population $E$ decreases by $x$. Since they left the country, the labour force $LF$ also decreases by $x$.</span>
+            </li>
+            <li>
+                <strong>事件 2：失業人士填補空缺 (Unemployed fill vacancies)</strong><br>
+                $x$ 名失業人士找到了工作。因此，失業人數 $U$ 減少了 $x$ 人，而就業人數 $E$ 增加了 $x$ 人。<br>
+                <span class="en-text">$x$ unemployed people found jobs. Therefore, the unemployed population $U$ decreases by $x$, and the employed population $E$ increases by $x$.</span>
+            </li>
+        </ul>
+
+        <p><strong>第二步：計算淨變化 / Step 2: Calculate the net change</strong></p>
+        <div class="math-block">
+            $$ \Delta E = -x \text{ (移民)} + x \text{ (填補)} = 0 \text{ (無淨改變)} $$
+            $$ \Delta U = -x \text{ (找到工作)} $$
+            $$ \Delta LF = -x \text{ (移民離開)} $$
+        </div>
+        
+        <p><strong>第三步：代入公式 / Step 3: Substitute into formula</strong></p>
+        <div class="bilingual-pair">
+            <p>新的失業率公式變為 $\frac{U - x}{LF - x}$。由於失業人數必定少於勞動人口 ($U < LF$)，根據上述的數學特性，這個分數的整體數值會下降。因此，失業率會下降，選項 B 正確。</p>
+            <p class="en-text">The new unemployment rate formula becomes $\frac{U - x}{LF - x}$. Since the unemployed population must be smaller than the total labour force ($U < LF$), according to the mathematical property mentioned above, the overall value of this fraction will decrease. Thus, the unemployment rate would decrease, making Option B correct.</p>
+        </div>
+
+        <hr>
+        <h4>錯誤選項分析 Distractor Analysis:</h4>
+        <div class="option">
+            <strong>A. 會上升 (would increase):</strong> 
+            <p>錯誤。如果只有就業人口減少而失業人口不變，失業率才會上升，但題目說明了空缺被填補。<br>
+            <span class="en-text">Incorrect. The unemployment rate would only increase if the employed population decreased while the unemployed population remained unchanged. But the question states vacancies were filled.</span></p>
+        </div>
+        <div class="option">
+            <strong>C. 會維持不變 (would remain unchanged):</strong>
+            <p>錯誤。雖然就業人數的淨變化為零 ($E$ 不變)，但分子 ($U$) 和分母 ($LF$) 同時減少了，這會改變百分比。<br>
+            <span class="en-text">Incorrect. Although the net change in the employed population is zero ($E$ is unchanged), both the numerator ($U$) and the denominator ($LF$) decreased, which changes the percentage.</span></p>
+        </div>
+        <div class="option">
+            <strong>D. 未能判斷 (cannot be determined):</strong>
+            <p>錯誤。給定的資訊已足以證明失業率必定會呈現下降的數學趨勢。<br>
+            <span class="en-text">Incorrect. The given information is perfectly sufficient to prove a definitive mathematical decrease in the unemployment rate.</span></p>
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <h3>🧩 題目拆解 Problem Decomposition</h3>
+        <div class="bilingual-pair">
+            <p>這類題目的「關鍵點」(Pivot Point) 在於將<strong>文字描述轉化為代數變化</strong>。很多同學只看到「空缺被填補」，就誤以為一切回到原狀。關鍵是要分開處理分子和分母的獨立變化。</p>
+            <p class="en-text">The "Pivot Point" of this type of question is converting <strong>text descriptions into algebraic changes</strong>. Many students only see "vacancies were filled" and mistakenly assume everything goes back to normal. The key is to process the independent changes to the numerator and denominator separately.</p>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <h3>⚠️ 常犯錯誤與陷阱 Common Mistakes & Traps</h3>
+        <div class="bilingual-pair">
+            <p><strong>陷阱：</strong> 以為「就業人數不變 = 失業率不變」。<br>
+            <strong>拆解：</strong> 雖然移民帶走了一個職位，失業人士補上這個職位，令總「就業人數」($E$) 維持不變。但是，計算失業率的基數（勞動人口 $LF$）縮小了，而且計算對象（失業人數 $U$）也直接減少了。不要被 $E$ 的不變誤導！</p>
+            <p class="en-text"><strong>Trap:</strong> Thinking "Unchanged Employment = Unchanged Unemployment Rate".<br>
+            <strong>Solution:</strong> Although emigrants left a job and unemployed people took it (keeping the total "Employed" $E$ unchanged), the base for calculating the rate (Labour Force $LF$) has shrunk, and the target being calculated (Unemployed $U$) has directly decreased. Don't let the unchanged $E$ mislead you!</p>
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #fffbeb; border-left-color: #f59e0b;">
+        <h3>🙋‍♂️ 學生常見疑問 Student Q&A</h3>
+        <div class="bilingual-pair">
+            <p><strong>問：</strong> 題目說「很多」工人，如果只是「一個」工人移民，結果還是一樣嗎？</p>
+            <p><strong>答：</strong> 是的！無論是 1 個還是 100 萬個（只要少於總失業人口），數學原理不變。只要分子和分母同時減去一個相同的正數，百分比就會下降。</p>
+            <br>
+            <p class="en-text"><strong>Q:</strong> The question says "many" workers. Would the result be the same if only "one" worker emigrated?</p>
+            <p class="en-text"><strong>A:</strong> Yes! Whether it's 1 or 1 million (as long as it's less than the total unemployed population), the mathematical principle remains the same. As long as you subtract the same positive number from both the numerator and the denominator, the percentage drops.</p>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <h3>⚡ 考試技巧與速解 Exam Tricks & Shortcuts</h3>
+        <div class="bilingual-pair">
+            <p><strong>代入數字法 (The Plug-in Method)：</strong><br>
+            遇到這種變量關係題，最快且最不會出錯的方法就是「自己作數」。<br>
+            假設最初：就業 $E = 90$，失業 $U = 10$，勞動人口 $LF = 100$。<br>
+            舊失業率 = $\frac{10}{100} = 10\%$。<br>
+            假設 5 個工人移民並由 5 個失業人士填補。<br>
+            新失業人口 $U = 10 - 5 = 5$。<br>
+            新勞動人口 $LF = 100 - 5 = 95$。<br>
+            新失業率 = $\frac{5}{95} \approx 5.26\%$。<br>
+            $5.26\% < 10\%$，得出結論：必定下降！</p>
+            
+            <p class="en-text"><strong>The Plug-in Method:</strong><br>
+            For questions with changing variables, the fastest and most foolproof way is to "make up your own numbers".<br>
+            Assume initially: Employed $E = 90$, Unemployed $U = 10$, Labour Force $LF = 100$.<br>
+            Old UR = $\frac{10}{100} = 10\%$.<br>
+            Assume 5 workers emigrate and are replaced by 5 unemployed people.<br>
+            New Unemployed $U = 10 - 5 = 5$.<br>
+            New Labour Force $LF = 100 - 5 = 95$.<br>
+            New UR = $\frac{5}{95} \approx 5.26\%$.<br>
+            Since $5.26\% < 10\%$, the conclusion is: it must decrease!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

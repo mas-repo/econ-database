@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monopolistic Competition</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --bg-body: #f8fafc;
+            --bg-container: #ffffff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-container);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .header-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .header-item {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f8fafc;
+            border-radius: 4px;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .correct-ans {
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .wrong-ans {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .tips-box {
+            background-color: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .qna-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .q-text {
+            font-weight: bold;
+            color: #065f46;
+        }
+
+        .a-text {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <div class="header-item">📚 主題 / Topic: 市場結構：壟斷性競爭 (Market Structure: Monopolistic Competition)</div>
+        <div class="header-item">⭐ 難度 / Difficulty: ★★☆☆☆ (2/5)</div>
+        <div class="header-item">🔑 關鍵字 / Key Concepts: 壟斷性競爭 (Monopolistic Competition), 非價格競爭 (Non-price Competition), 市場資訊 (Market Information)</div>
+    </div>
+
+    <h1>The Question 題目</h1>
+    <div class="question-box">
+        <p><strong>成衣零售市場可以歸類為壟斷性競爭。下列哪些有關成衣零售市場的陳述是正確的？</strong></p>
+        <p>
+            (1) 零售商進行價格和非價格競爭。<br>
+            (2) 市場上有數個具支配力的賣家。<br>
+            (3) 市場上有關成衣質素的訊息並不完全。<br>
+            (4) 零售商進入和退出該行業都受到限制。
+        </p>
+        <p>
+            A. 只有 (1)、(3)<br>
+            B. 只有 (1)、(4)<br>
+            C. 只有 (2)、(3)<br>
+            D. 只有 (2)、(4)
+        </p>
+        
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+        
+        <p class="en-text"><strong>Clothing retail market can be classified as monopolistic competition. Which of the following statements about clothing retail market are correct?</strong></p>
+        <p class="en-text">
+            (1) The retailers engage in both price and non-price competition.<br>
+            (2) There are a few dominant sellers in the market.<br>
+            (3) There is imperfect information about the quality of clothing in the market.<br>
+            (4) The entry and exit of retailers are restricted.
+        </p>
+        <p class="en-text">
+            A. (1) and (3) only<br>
+            B. (1) and (4) only<br>
+            C. (2) and (3) only<br>
+            D. (2) and (4) only
+        </p>
+    </div>
+
+    <h1>Concept Review 概念重溫</h1>
+    <div class="concept-box">
+        <h3>壟斷性競爭 (Monopolistic Competition) 的主要特徵</h3>
+        <p class="en-text">Key characteristics of Monopolistic Competition</p>
+        
+        <ul>
+            <li><strong>眾多買家和賣家 (Many buyers and sellers):</strong> 每間廠商的市場佔有率較小。 <br>
+            <span class="en-text">Each firm has a small market share.</span></li>
+            
+            <li><strong>異質產品 (Heterogeneous/Differentiated products):</strong> 產品在設計、品牌或質素上有差異，因此廠商有能力進行 <strong>非價格競爭 (Non-price competition)</strong>，如賣廣告。他們面對一條向下傾斜的需求曲線，因此是尋價者 (Price searcher)。 <br>
+            <span class="en-text">Products are differentiated by design, brand, or quality, allowing firms to engage in non-price competition (e.g., advertising). They face a downward-sloping demand curve and are price searchers.</span></li>
+            
+            <li><strong>自由進入及退出市場 (Free entry and exit):</strong> 市場沒有進入壁壘 (No barriers to entry)。<br>
+            <span class="en-text">There are no significant barriers preventing new firms from entering or existing firms from leaving.</span></li>
+            
+            <li><strong>不完全資訊 (Imperfect information):</strong> 買賣雙方對價格和產品質素的資訊並不完全。 <br>
+            <span class="en-text">Buyers and sellers do not have perfect knowledge about prices and product quality.</span></li>
+        </ul>
+
+        <div class="math-block">
+            <strong>尋價者利潤極大化條件 (Profit Maximizing Condition for a Price Searcher):</strong>
+            $$MR = MC$$
+            <p style="font-size: 0.9em; margin-top: 10px;">邊際收入 (Marginal Revenue) = 邊際成本 (Marginal Cost)<br>由於廠商擁有定價權，價格 $P > MR$。</p>
+        </div>
+    </div>
+
+    <h1>The Answer & Detailed Analysis 答案與詳細分析</h1>
+    <div class="analysis-item">
+        <p><strong>正確答案 (Correct Option): <span class="correct-ans">Option A</span></strong></p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>分析陳述 (1)：正確 (Correct)</h3>
+        <p>由於成衣市場的產品是異質的（例如不同品牌、剪裁、質料），零售商除了透過減價（價格競爭）來吸引顧客外，亦會透過廣告、櫥窗設計、會員優惠等方式（非價格競爭）來增加市場佔有率。</p>
+        <p class="en-text">Because clothing products are differentiated (e.g., different brands, cuts, materials), retailers attract customers not only by lowering prices (price competition) but also through advertising, window displays, and loyalty programs (non-price competition).</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>分析陳述 (2)：錯誤 (Incorrect)</h3>
+        <p>「數個具支配力的賣家」是<strong>寡頭壟斷 (Oligopoly)</strong> 的特徵。在壟斷性競爭市場中，賣家的數量非常多（例如街上的眾多時裝店），沒有單一或少數幾個賣家可以支配整個市場。</p>
+        <p class="en-text">"A few dominant sellers" is a characteristic of <strong>Oligopoly</strong>. In a monopolistic competition market, there are many sellers (e.g., numerous fashion boutiques on the street), and no single or few sellers can dominate the market.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>分析陳述 (3)：正確 (Correct)</h3>
+        <p>現實世界中，消費者往往無法完全掌握所有成衣的質料耐用度、剪裁是否完美等資訊，這就是「不完全資訊」。只有在理論上的完全競爭 (Perfect Competition) 市場，才假設存在完全資訊。</p>
+        <p class="en-text">In the real world, consumers often do not have full knowledge about the durability of materials, exact cuts, etc. This represents "imperfect information". Only in the theoretical Perfect Competition market is perfect information assumed.</p>
+    </div>
+
+    <div class="analysis-item">
+        <h3>分析陳述 (4)：錯誤 (Incorrect)</h3>
+        <p>壟斷性競爭的一個重要假設是「自由進入及退出市場」（即沒有進入限制）。開設成衣店的門檻相對較低，任何人都可以輕易開店或結業。「進入和退出受到限制」是寡頭壟斷或壟斷 (Monopoly) 的特徵。</p>
+        <p class="en-text">A key assumption of monopolistic competition is "free entry and exit" (i.e., no barriers to entry). The threshold for opening a clothing store is relatively low. "Restricted entry and exit" is a characteristic of Oligopoly or Monopoly.</p>
+    </div>
+
+    <h1>Problem Decomposition 題目拆解</h1>
+    <div class="tips-box">
+        <h3>解題樞紐 (The Pivot Point)</h3>
+        <p>這道題目的「樞紐」在於第一句：<strong>「成衣零售市場可以歸類為壟斷性競爭」</strong>。你不需要去回想現實中所有的時裝品牌，你只需要將<strong>「壟斷性競爭 (Monopolistic Competition)」</strong>的課本定義與四個選項進行配對即可。</p>
+        <p class="en-text">The "pivot point" of this question lies in the very first sentence: <strong>"Clothing retail market can be classified as monopolistic competition."</strong> You don't need to recall all real-world fashion brands; you simply need to match the textbook definition of "Monopolistic Competition" with the four statements.</p>
+    </div>
+
+    <h1>Common Mistakes & Traps 常犯錯誤與陷阱</h1>
+    <div class="analysis-item">
+        <p>❌ <strong>陷阱 1：被現實世界中的「大品牌」誤導</strong><br>
+        學生可能會想：「Zara、H&M、Uniqlo 很大啊，他們應該是具支配力的賣家吧！」從而錯誤選擇 (2)。<br>
+        <strong>破解：</strong> 雖然有大品牌，但整個「成衣零售市場」還包含了千千萬萬間小商店、網店、IG Shop等。整體市場集中度低，仍然屬於壟斷性競爭，而非寡頭壟斷。</p>
+        <p class="en-text"><strong>Trap 1: Misled by "Big Brands" in reality.</strong> Students might think: "Zara, H&M, Uniqlo are huge! They must be dominant sellers!" and mistakenly choose (2). <br><strong>Solution:</strong> Despite the presence of big brands, the entire "clothing retail market" also includes thousands of small boutiques, online stores, etc. The overall market concentration is low, making it monopolistic competition, not an oligopoly.</p>
+        
+        <p>❌ <strong>陷阱 2：混淆市場結構特徵</strong><br>
+        經常把「寡頭壟斷 (Oligopoly)」和「壟斷性競爭 (Monopolistic Competition)」的特徵撈亂。記住：有「限制 (restricted entry)」和「少數賣家 (few sellers)」的一定是寡頭壟斷。</p>
+        <p class="en-text"><strong>Trap 2: Confusing market structure features.</strong> Frequently mixing up characteristics of Oligopoly and Monopolistic Competition. Remember: "restricted entry" and "few sellers" strictly belong to Oligopoly.</p>
+    </div>
+
+    <h1>Student Q&A 學生常見疑問</h1>
+    <div class="qna-box">
+        <p class="q-text">🙋‍♂️ 學生問 (Q): 為什麼選項 (3) 說「資訊並不完全」是正確的？難道我們買衣服時看不到衣服嗎？</p>
+        <p class="en-text">Student: Why is statement (3) about "imperfect information" correct? Can't we see the clothes when we buy them?</p>
+        
+        <p class="a-text">👨‍🏫 導師答 (A): 雖然你「看得到」衣服的外觀，但「完全資訊 (Perfect Information)」在經濟學上的要求極高。它代表你必須知道<strong>所有</strong>商店的價格、衣服洗水後會不會縮水、布料是否容易引發敏感等。現實中，消費者不可能擁有這些完美無瑕的資訊，因此資訊是不完全的 (Imperfect)。</p>
+        <p class="en-text">Tutor: Although you can "see" the clothes, the economic requirement for "Perfect Information" is extremely high. It means you must know the prices across <strong>all</strong> stores, whether the clothes will shrink after washing, if the fabric causes allergies, etc. In reality, consumers cannot possess this flawless information, hence it is imperfect.</p>
+    </div>
+
+    <h1>Exam Tricks & Shortcuts 考試技巧與速解</h1>
+    <div class="tips-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6; border-color: #ddd6fe;">
+        <h3>✂️ 消去法速解 (Elimination Method Shortcut)</h3>
+        <p>在應付 DSE MC 題時，最快的方法是找出一項<strong>絕對錯誤</strong>的陳述：</p>
+        <ol>
+            <li>當你看到 (2)「數個具支配力的賣家 (few dominant sellers)」，立刻判斷這是寡頭壟斷的特徵。</li>
+            <li>因此，陳述 (2) 必錯。</li>
+            <li>馬上刪除選項 C 和 D（因為它們包含 2）。</li>
+            <li>現在只剩下 A：(1)、(3) 和 B：(1)、(4)。</li>
+            <li>檢查陳述 (4)：「進入受到限制 (entry restricted)」。這是壟斷或寡頭壟斷的特徵。因此 (4) 也是錯的。</li>
+            <li>刪除 B。答案只可能是 <strong>A</strong>！你甚至不需要詳細分析 (1) 和 (3) 就能得分。</li>
+        </ol>
+        
+        <p class="en-text">When tackling DSE MC questions, the fastest way is to find one statement that is <strong>absolutely wrong</strong>:</p>
+        <ol class="en-text">
+            <li>When you see (2) "few dominant sellers", you instantly know this is a feature of Oligopoly.</li>
+            <li>Therefore, statement (2) must be wrong.</li>
+            <li>Immediately eliminate options C and D (as they contain 2).</li>
+            <li>You are left with A: (1), (3) and B: (1), (4).</li>
+            <li>Check statement (4): "entry restricted". This is a feature of Monopoly or Oligopoly. So (4) is also wrong.</li>
+            <li>Eliminate B. The answer must be <strong>A</strong>! You score the point without even needing to deeply analyze (1) and (3).</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

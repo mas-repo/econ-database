@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Market Intervention Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        .header {
+            text-align: center;
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--gray-bg);
+        }
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .option-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .correct { background-color: var(--accent-green); }
+        .incorrect { background-color: var(--accent-red); }
+        .highlight { font-weight: bold; color: var(--primary-blue); }
+        
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header { padding: 15px; }
+            .concept-box { padding: 10px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>📊 HKDSE Economics Masterclass</h2>
+        <div class="bilingual-block">
+            <strong>主題 (Topic):</strong> 市場干預 - 從量稅 (Market Intervention - Per-unit Tax)
+        </div>
+        <div class="bilingual-block">
+            <strong>難度 (Difficulty):</strong> ⭐⭐⭐☆☆ (3/5)
+        </div>
+        <div class="bilingual-block">
+            <strong>核心概念 (Key Concepts):</strong> 從量稅 (Per-unit Tax), 稅務負擔 (Tax Burden), 總稅收 (Total Tax Revenue), 除稅後總收入 (Total Revenue Net of Tax)
+        </div>
+    </div>
+
+    <h2>📝 題目 (The Question)</h2>
+    <div class="analysis-card">
+        <div class="bilingual-block">
+            <p>下表顯示某物品的市場供應表。</p>
+            <p class="en-text">The following table shows the market supply schedule of a good.</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>單位價格 Unit price ($)</th>
+                <th>供應量 Quantity supplied (units)</th>
+            </tr>
+            <tr><td>2</td><td>22</td></tr>
+            <tr><td>3</td><td>26</td></tr>
+            <tr><td>4</td><td>30</td></tr>
+            <tr><td>5</td><td>34</td></tr>
+            <tr><td>6</td><td>38</td></tr>
+            <tr><td>7</td><td>42</td></tr>
+        </table>
+
+        <div class="bilingual-block">
+            <p>假設原初的均衡價格是$5。若政府對該物品徵收$2的從量稅，市場價格會上升至$6。下列哪些陳述是正確的？</p>
+            <p class="en-text">Suppose the original equilibrium price is $5. If the government imposes a per-unit tax of $2 on the good, the market price will rise to $6. Which of the following statements are correct?</p>
+            <ol>
+                <li>買家稅項負擔與賣家稅項負擔的比例是1:1。<br><span class="en-text">The ratio of buyers’ tax burden to sellers’ tax burden will be 1:1.</span></li>
+                <li>總稅項收入是$76。<br><span class="en-text">The total tax revenue will be $76.</span></li>
+                <li>除稅後總收入會下降$50。<br><span class="en-text">The total revenue net of tax will decrease by $50.</span></li>
+            </ol>
+            <p>A. 只有 (1)、(2) / (1) and (2) only<br>
+               B. 只有 (1)、(3) / (1) and (3) only<br>
+               C. 只有 (2)、(3) / (2) and (3) only<br>
+               D. (1)、(2) 及 (3) / (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <h2>💡 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <strong>1. 從量稅對供應的影響 (Effect of Per-unit Tax on Supply):</strong><br>
+            當政府徵收從量稅 \(t\)，供應曲線會垂直向上移動 \(t\) 的幅度。這意味著在任何一個產出數量，賣家要求的新市場價格必須比原來高出 \(t\)。<br>
+            <span class="en-text">When the government imposes a per-unit tax \(t\), the supply curve shifts vertically upwards by \(t\). This means for any given quantity, sellers require a new market price that is exactly \(t\) higher than before.</span>
+        </div>
+        
+        <div class="bilingual-block">
+            <strong>2. 尋找新的交易量 (Finding the New Transacted Quantity):</strong><br>
+            要找徵稅後的新數量 \(Q_2\)，我們不能直接把新市場價格代入原有的供應表。我們必須先計算賣家除稅後實際收到的價格 (淨價格)，然後對應原來的供應表找出數量。<br>
+            <span class="en-text">To find the new quantity \(Q_2\) after tax, we cannot directly plug the new market price into the old supply schedule. We must first calculate the net price sellers receive after paying the tax, and look up this net price in the original schedule.</span>
+        </div>
+
+        <div class="math-block">
+            $$ P_{net} = P_{new} - t $$
+        </div>
+
+        <div class="bilingual-block">
+            <strong>3. 稅務負擔 (Tax Burden):</strong><br>
+            稅務負擔由買賣雙方共同承擔。買家負擔是價格上升的幅度，賣家負擔是剩餘的稅款。<br>
+            <span class="en-text">The tax burden is shared between buyers and sellers. The buyers' burden is the price increase, while the sellers' burden is the remaining portion of the tax.</span>
+        </div>
+
+        <div class="math-block">
+            $$ \text{買家負擔 (Buyer's Burden)} = P_{new} - P_{old} $$
+            $$ \text{賣家負擔 (Seller's Burden)} = t - \text{買家負擔} $$
+        </div>
+        
+        <div class="bilingual-block">
+            <strong>4. 收入計算 (Revenue Calculations):</strong><br>
+            <span class="en-text">Revenue Formulas:</span>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{總稅收 (Total Tax Revenue)} = t \times Q_{new} $$
+            $$ \text{除稅後總收入 (Total Revenue Net of Tax)} = P_{net} \times Q_{new} $$
+        </div>
+    </div>
+
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-card" style="border: 2px solid var(--accent-green);">
+        <h3>正確答案 (Correct Option): <span style="color: var(--accent-green);">Option B</span></h3>
+    </div>
+
+    <h3>逐步分析 (Step-by-Step Analysis):</h3>
+    
+    <div class="analysis-card">
+        <div class="bilingual-block">
+            <strong>第一步：提取已知資料 (Step 1: Extract Given Information)</strong>
+            <ul>
+                <li>原初價格 (Original Price) \(P_1 = \$5\)</li>
+                <li>原初數量 (Original Quantity) \(Q_1 = 34\) (從圖表得知 / from table)</li>
+                <li>從量稅 (Per-unit tax) \(t = \$2\)</li>
+                <li>新市場價格 (New Market Price) \(P_2 = \$6\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="option-tag correct">陳述 (1) - 正確 Correct</div>
+        <div class="bilingual-block">
+            <p><strong>買家稅項負擔與賣家稅項負擔的比例是1:1。</strong></p>
+            <p>買方每單位負擔 = 新價格 - 舊價格 = \(\$6 - \$5 = \$1\)。<br>
+            賣方每單位負擔 = 總稅額 - 買方負擔 = \(\$2 - \$1 = \$1\)。<br>
+            比例為 \(1 : 1\)，陳述正確。</p>
+            
+            <p class="en-text"><strong>The ratio of buyers’ tax burden to sellers’ tax burden will be 1:1.</strong></p>
+            <p class="en-text">Buyer's burden per unit = New Price - Old Price = \(\$6 - \$5 = \$1\).<br>
+            Seller's burden per unit = Total tax - Buyer's burden = \(\$2 - \$1 = \$1\).<br>
+            The ratio is \(1 : 1\). The statement is correct.</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="option-tag incorrect">陳述 (2) - 錯誤 Incorrect</div>
+        <div class="bilingual-block">
+            <p><strong>總稅項收入是$76。</strong></p>
+            <p>要計算總稅收，我們必須找出<strong>新交易量 (\(Q_2\))</strong>。賣家在市場收取 \(\$6\) (\(P_2\))，但要向政府繳交 \(\$2\) (\(t\))。因此，賣家實際落袋的淨價格為：<br>
+            \(P_{net} = \$6 - \$2 = \$4\)。<br>
+            查看原初的供應表，當價格是 \(\$4\) 時，賣家願意供應的數量是 <strong>30單位</strong>。所以 \(Q_2 = 30\)。<br>
+            總稅項收入 = \(t \times Q_2 = \$2 \times 30 = \$60\) （而非 \$76）。</p>
+
+            <p class="en-text"><strong>The total tax revenue will be $76.</strong></p>
+            <p class="en-text">To calculate total tax revenue, we need the <strong>new transacted quantity (\(Q_2\))</strong>. Sellers collect \(\$6\) (\(P_2\)) in the market but pay \(\$2\) (\(t\)) to the government. Thus, the net price sellers actually keep is:<br>
+            \(P_{net} = \$6 - \$2 = \$4\).<br>
+            Looking at the original supply schedule, at a price of \(\$4\), sellers are willing to supply <strong>30 units</strong>. So \(Q_2 = 30\).<br>
+            Total tax revenue = \(t \times Q_2 = \$2 \times 30 = \$60\) (Not $76).</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="option-tag correct">陳述 (3) - 正確 Correct</div>
+        <div class="bilingual-block">
+            <p><strong>除稅後總收入會下降$50。</strong></p>
+            <p>原初總收入 = \(P_1 \times Q_1 = \$5 \times 34 = \$170\)。<br>
+            新的除稅後總收入 = 賣家淨價格 \(\times\) 新數量 = \(P_{net} \times Q_2 = \$4 \times 30 = \$120\)。<br>
+            收入改變 = \(\$120 - \$170 = -\$50\)。收入確實下降了 \$50，陳述正確。</p>
+
+            <p class="en-text"><strong>The total revenue net of tax will decrease by $50.</strong></p>
+            <p class="en-text">Original total revenue = \(P_1 \times Q_1 = \$5 \times 34 = \$170\).<br>
+            New total revenue net of tax = Net price \(\times\) New quantity = \(P_{net} \times Q_2 = \$4 \times 30 = \$120\).<br>
+            Change in revenue = \(\$120 - \$170 = -\$50\). The revenue decreased by $50. The statement is correct.</p>
+        </div>
+    </div>
+
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <strong>破題關鍵 (The Pivot Point):</strong><br>
+            這題的核心在於找出<strong>「徵稅後的新交易量 (\(Q_2\))」</strong>。很多同學會被市場價格(\$6)誤導，直接看圖表得出數量38。但不要忘記：<strong>稅收會令供應曲線移動！</strong> 原來的表格不能直接對應新的市場價格。你必須利用「賣家淨價格 (\(P_{net}\))」回到原表尋找真實數量。<br>
+            <span class="en-text">The core of this question is finding the <strong>"new transacted quantity (\(Q_2\))"</strong>. Many students are misled by the new market price ($6) and directly read 38 from the table. Remember: <strong>Tax shifts the supply curve!</strong> The original table cannot be used directly with the new market price. You MUST use the "net price received by sellers (\(P_{net}\))" to look up the true quantity in the original table.</span>
+        </div>
+    </div>
+
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="analysis-card" style="border-left: 5px solid var(--accent-red);">
+        <div class="bilingual-block">
+            <strong>陷阱 1：直接使用新價格尋找數量 (Directly using the new price to find quantity)</strong><br>
+            如果你看到新價格是 \(\$6\)，就直接在表中找出 \(Q=38\)，並計算稅收為 \(\$2 \times 38 = \$76\)，你就完全掉進了考評局設下的陷阱！(這就是為什麼選項2寫著\$76)。<br>
+            <span class="en-text">If you see the new price is \(\$6\), look at the table, find \(Q=38\), and calculate tax as \(\$2 \times 38 = \$76\), you've fallen right into the HKEAA's trap! (This is exactly why statement 2 says $76).</span>
+        </div>
+    </div>
+
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="bilingual-block">
+        <strong>Q: 為什麼計算「除稅後總收入」時，不用 \(P=\$6\) 乘以 \(Q=30\) 再減稅？</strong><br>
+        <span class="en-text">Q: Why don't we calculate "Total revenue net of tax" by multiplying \(P=\$6\) by \(Q=30\) and then subtracting the tax?</span>
+    </div>
+    <div class="bilingual-block" style="padding-left: 20px; border-left: 3px solid #cbd5e1; margin-bottom: 20px;">
+        <strong>A:</strong> 其實是可以的！這只是數學上的展開。總收入是 \(\$6 \times 30 = \$180\)。政府抽走的總稅款是 \(\$2 \times 30 = \$60\)。所以除稅後總收入 = \(\$180 - \$60 = \$120\)。這與我們直接用「淨價格 \(\times\) 數量」 (\(\$4 \times 30 = \$120\)) 得出的結果完全一樣。用淨價格計算會更快。<br>
+        <span class="en-text">A: Actually, you can! It's just mathematical expansion. Total market revenue is \(\$6 \times 30 = \$180\). The total tax collected by the government is \(\$2 \times 30 = \$60\). So net revenue = \(\$180 - \$60 = \$120\). This is exactly the same as our direct calculation using "Net Price \(\times\) Quantity" (\(\$4 \times 30 = \$120\)). Using the net price is just faster.</span>
+    </div>
+
+    <h2>⏱️ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="concept-box" style="background-color: #fdf2f8; border-color: #db2777;">
+        <div class="bilingual-block">
+            <strong>消去法 (Elimination Method)</strong><br>
+            在DSE選擇題中，善用消去法能為你節省大量時間。在這題中：<br>
+            一旦你計算出 \(Q_2 = 30\)，你就能輕易證明陳述 (2) 的 \$76 是錯的 (正確是 \$60)。<br>
+            既然 (2) 是錯的，你可以立刻刪除所有包含 (2) 的選項！<br>
+            ❌ 刪除 A (包含2)<br>
+            ❌ 刪除 C (包含2)<br>
+            ❌ 刪除 D (包含2)<br>
+            答案只能是 <strong>B</strong>！你甚至不需要浪費時間去計算陳述(3)的 \$50！這就是在考試中搶分的關鍵。<br><br>
+            <span class="en-text"><strong>Elimination Method:</strong><br>
+            In DSE MCQs, utilizing the elimination method saves massive amounts of time. In this question:<br>
+            Once you figure out \(Q_2 = 30\), you can easily prove Statement (2)'s $76 is false (it should be $60).<br>
+            Since (2) is false, you can immediately eliminate ALL options containing (2)!<br>
+            ❌ Cross out A (contains 2)<br>
+            ❌ Cross out C (contains 2)<br>
+            ❌ Cross out D (contains 2)<br>
+            The answer MUST be <strong>B</strong>! You don't even need to waste time calculating the $50 for Statement (3)! This is how you gain a time advantage in exams.</span>
+        </div>
+    </div>
+
+</body>
+</html>

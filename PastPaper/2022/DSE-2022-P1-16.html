@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Price Controls & Total Expenditure</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; }
+        h2 { font-size: 1.4em; margin-top: 30px; }
+        
+        .header-section {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .header-tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: #fff;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: center;
+        }
+        th { background-color: #f3f4f6; }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box h3 { margin-top: 0; color: #0284c7; }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .analysis-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #16a34a;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .option-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9fafb;
+        }
+        .correct { border-left: 4px solid #16a34a; }
+        .incorrect { border-left: 4px solid #dc2626; }
+        .correct-text { color: #16a34a; font-weight: bold; }
+        .incorrect-text { color: #dc2626; font-weight: bold; }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border-left: 5px solid #e11d48;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .en-text {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            padding-left: 10px;
+            border-left: 2px solid #d1d5db;
+        }
+        
+        .qa-box {
+            background-color: #fdfced;
+            border: 1px solid #fef08a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            table { font-size: 0.8em; }
+            th, td { padding: 4px; }
+            .header-tag { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>Economics MCQ Analysis 經濟學選擇題分析</h1>
+        <div>
+            <span class="header-tag">Topic: Price Controls (價格管制)</span>
+            <span class="header-tag">Difficulty: ★★★★☆</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> Price Floor (價格下限), Market Equilibrium (市場均衡), Transacted Quantity (交易量), Total Expenditure (總支出)
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h2>2. The Question (題目)</h2>
+        <p>參閱以下物品X的供需表。</p>
+        <div class="en-text">Refer to the following supply and demand schedules of Good X.</div>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <tr>
+                    <th>單位價格 Unit price (\$)</th>
+                    <td>7</td><td>8</td><td><strong>10</strong></td><td>11</td><td>12</td><td>13</td>
+                </tr>
+                <tr>
+                    <th>需求量 Quantity demanded (units)</th>
+                    <td>700</td><td>600</td><td>500</td><td><strong>400</strong></td><td>300</td><td>200</td><td>100</td>
+                </tr>
+                <tr>
+                    <th>供應量 Quantity supplied (units)</th>
+                    <td>250</td><td>300</td><td>350</td><td><strong>400</strong></td><td>450</td><td>500</td><td>550</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>若政府將價格下限由\$9上調至\$11，物品X的總支出會 _______________。</p>
+        <p>A. 變成\$3 300<br>B. 變成\$4 950<br>C. 增加\$150<br>D. 增加\$950</p>
+
+        <div class="en-text">
+            If the government increases the price floor from \$9 to \$11, the total expenditure on Good X will ____________.<br>
+            A. become \$3 300<br>
+            B. become \$4 950<br>
+            C. increase by \$150<br>
+            D. increase by \$950
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>3. Concept Review (概念重溫)</h2>
+        
+        <p><strong>市場均衡 (Market Equilibrium):</strong><br>
+        均衡發生在需求量等於供應量的時候。在這個價格下，市場沒有短缺也沒有過剩。<br>
+        <div class="en-text">Equilibrium occurs when the quantity demanded equals the quantity supplied. At this price, there is no shortage or surplus in the market.</div></p>
+        
+        <div class="math-block">
+            $$Q_d = Q_s$$
+        </div>
+
+        <p><strong>價格下限 (Price Floor):</strong><br>
+        政府規定的最低合法價格。
+        <ul>
+            <li><strong>有效 (Effective/Binding):</strong> 設於均衡價格之上。會導致過剩（供應量 > 需求量），交易量由需求量決定。</li>
+            <li><strong>無效 (Ineffective/Non-binding):</strong> 設於均衡價格之下。市場力量會將價格推回均衡點，因此沒有任何影響。</li>
+        </ul></p>
+        <div class="en-text">
+            A legally established minimum price.
+            <ul>
+                <li><strong>Effective:</strong> Set above the equilibrium price. It causes a surplus ($Q_s > Q_d$), and transacted quantity is determined by the quantity demanded.</li>
+                <li><strong>Ineffective:</strong> Set below the equilibrium price. Market forces push the price back to equilibrium, so it has no effect.</li>
+            </ul>
+        </div>
+
+        <p><strong>總支出 (Total Expenditure):</strong><br>
+        消費者在物品上花費的總金額。計算公式為市場價格乘以實際交易量。<br>
+        <div class="en-text">The total amount spent by consumers on a good. It is calculated as the market price multiplied by the actual transacted quantity.</div></p>
+
+        <div class="math-block">
+            $$TE = P \times Q_t$$
+            $$Q_t = \min(Q_d, Q_s)$$
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>正確答案 Correct Option: <span class="correct-text">A</span></strong></p>
+
+        <div class="option-item correct">
+            <strong>第一步：尋找市場均衡 (Step 1: Find Market Equilibrium)</strong><br>
+            觀察表格，當價格 $P = \$10$ 時，$Q_d = 400$ 且 $Q_s = 400$。因此，均衡價格為\$10，均衡數量為 400 單位。<br>
+            <div class="en-text">Looking at the table, when price $P = \$10$, $Q_d = 400$ and $Q_s = 400$. Therefore, the equilibrium price is \$10, and the equilibrium quantity is 400 units.</div>
+        </div>
+
+        <div class="option-item correct">
+            <strong>第二步：分析原來的價格下限 (Step 2: Analyze the original price floor)</strong><br>
+            原來的價格下限是 \$9。由於 \$9 低於均衡價格 \$10，這個價格下限是<strong>無效的</strong>。市場價格會維持在 \$10，交易量 $Q_t = 400$。原來的總支出 $TE = 10 \times 400 = \$4000$。<br>
+            <div class="en-text">The original price floor is \$9. Since \$9 is lower than the equilibrium price of \$10, this price floor is <strong>ineffective</strong>. The market price remains at \$10, and transacted quantity $Q_t = 400$. Original Total Expenditure $TE = 10 \times 400 = \$4000$.</div>
+        </div>
+
+        <div class="option-item correct">
+            <strong>第三步：分析新的價格下限 (Step 3: Analyze the new price floor)</strong><br>
+            新的價格下限是 \$11。由於 \$11 高於均衡價格 \$10，這個價格下限是<strong>有效的</strong>。在 \$11 時，$Q_d = 300$，$Q_s = 450$。實際交易量取決於較小的一方（買家不會買超過他們想買的數量），所以 $Q_t = 300$。新的總支出 $TE = 11 \times 300 = \$3300$。<br>
+            <div class="en-text">The new price floor is \$11. Since \$11 is higher than the equilibrium price of \$10, this price floor is <strong>effective</strong>. At \$11, $Q_d = 300$ and $Q_s = 450$. The transacted quantity depends on the short side of the market (buyers won't buy more than they want to), so $Q_t = 300$. New Total Expenditure $TE = 11 \times 300 = \$3300$.</div>
+        </div>
+
+        <hr>
+
+        <h3>Distractor Analysis (錯誤選項分析)</h3>
+        <div class="option-item incorrect">
+            <span class="incorrect-text">Option B (變成\$4 950):</span> 錯誤使用了供應量 ($Q_s = 450$) 來計算總支出 ($11 \times 450 = \$4950$)。這忽略了在\$11時，市場上只有300單位的需求。<br>
+            <div class="en-text">Incorrectly used the quantity supplied ($Q_s = 450$) to calculate total expenditure ($11 \times 450 = \$4950$). This ignores that there is only demand for 300 units at \$11.</div>
+        </div>
+        
+        <div class="option-item incorrect">
+            <span class="incorrect-text">Option C (增加\$150):</span> 這是最常見的陷阱！學生誤以為 \$9 的價格下限是有效的，計算出錯誤的原有總支出 ($9 \times 350 = \$3150$)，然後得出相差為 $3300 - 3150 = \$150$。請記住，低於均衡的價格下限是無效的！<br>
+            <div class="en-text">This is the most common trap! Students mistakenly assume the \$9 price floor is effective, calculating an incorrect original total expenditure ($9 \times 350 = \$3150$), and then finding the difference as $3300 - 3150 = \$150$. Remember, a price floor below equilibrium is ineffective!</div>
+        </div>
+
+        <div class="option-item incorrect">
+            <span class="incorrect-text">Option D (增加\$950):</span> 混合了多個錯誤。假設原支出為\$4000，新支出錯誤計算為\$4950 (如Option B)，得出相差 \$950。<br>
+            <div class="en-text">Mixes multiple errors. Assumes original TE is \$4000, incorrectly calculates new TE as \$4950 (like Option B), resulting in a difference of \$950.</div>
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <h2>5. Problem Decomposition (題目拆解)</h2>
+        <p><strong>Pivot Point (破題關鍵):</strong><br>
+        本題的核心在於識別「無效的價格管制」。當你看到「由 X 上調至 Y」時，必須立刻檢查 X 和 Y 兩個數值與<strong>均衡點</strong>的關係。不要盲目相信題目給予的數字就是市場實際運行的價格。<br>
+        <div class="en-text">The core of this question lies in identifying an "ineffective price control". When you see "increases from X to Y", you must immediately check the relationship of both X and Y against the <strong>equilibrium point</strong>. Do not blindly assume the given numbers are the actual market prices.</div></p>
+    </div>
+
+    <div class="trap-box">
+        <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p><strong>⚠️ Trap 1: 忽略均衡價格 (Ignoring Equilibrium Price)</strong><br>
+        學生看到「價格下限是 \$9」，就直接把 \$9 當作市場價格代入計算。必須先找均衡點 ($Q_d = Q_s$)！<br>
+        <div class="en-text">Students see "price floor is \$9" and directly substitute \$9 as the market price for calculation. You must find the equilibrium ($Q_d = Q_s$) first!</div></p>
+
+        <p><strong>⚠️ Trap 2: 混淆交易量與供應量 (Confusing Transacted Q with Supplied Q)</strong><br>
+        在有效的價格下限下，必然會出現過剩 (Surplus)。供應商想賣很多，但消費者不想買。實際交易量永遠取決於圖表上「較短」的一邊，即 $Q_t = \min(Q_d, Q_s)$。<br>
+        <div class="en-text">Under an effective price floor, a surplus will inevitably occur. Suppliers want to sell a lot, but consumers don't want to buy. The actual transacted quantity always depends on the "short side" of the market, i.e., $Q_t = \min(Q_d, Q_s)$.</div></p>
+    </div>
+
+    <div class="qa-box">
+        <h2>7. Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 為什麼在\$11的時候，我們不用供應量 (450) 來計算總支出？供應商明明提供了450件物品啊？</strong><br>
+        A: 交易需要「買」和「賣」雙方同意才能成立。雖然供應商願意提供450件，但在\$11這個高價位，消費者只願意購買300件。剩下的150件會變成賣不出的存貨（過剩），並不會產生「支出」或「收入」。所以我們必須使用較小的數字（需求量300）作為實際交易量。</p>
+        <div class="en-text">
+            <strong>Q: Why don't we use the quantity supplied (450) to calculate total expenditure at \$11? Suppliers are clearly providing 450 units!</strong><br>
+            A: A transaction requires the agreement of both buyers and sellers. Although suppliers are willing to provide 450 units, at the high price of \$11, consumers are only willing to buy 300 units. The remaining 150 units become unsold inventory (surplus) and do not generate any "expenditure" or "revenue". Therefore, we must use the smaller number (quantity demanded 300) as the actual transacted quantity.
+        </div>
+    </div>
+
+    <div class="concept-box" style="background-color: #fffbeb; border-left-color: #f59e0b;">
+        <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>速解法 (Fast-Track Solution):</strong><br>
+        這題其實不需要計算改變的幅度 (increase by...)。只要你算出<strong>新狀態下的總支出</strong>，就可以直接秒殺題目！<br>
+        1. 看表：均衡在 \$10。<br>
+        2. 新價格下限是 \$11 (有效)。在 \$11 時，$Q_d$ 是 300。<br>
+        3. 新總支出 $= 11 \times 300 = \$3300$。<br>
+        4. 看選項：只有 Option A 的結果是 \$3300。根本不用浪費時間去計算原來\$9時的狀況！<br>
+        <div class="en-text">
+            You actually don't need to calculate the change. Once you find the <strong>total expenditure in the new state</strong>, you can solve it instantly!<br>
+            1. Look at the table: Equilibrium is at \$10.<br>
+            2. New price floor is \$11 (effective). At \$11, $Q_d$ is 300.<br>
+            3. New TE $= 11 \times 300 = \$3300$.<br>
+            4. Look at the options: Only Option A results in \$3300. You don't even need to waste time calculating the original situation at \$9!
+        </div></p>
+    </div>
+
+</body>
+</html>

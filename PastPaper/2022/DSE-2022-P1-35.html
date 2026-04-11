@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Interest Rates & Cost of Holding Cash</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+        }
+        .correct-option {
+            background-color: #ecfdf5;
+            border: 1px solid #10b981;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h2>HKDSE Economics Masterclass 經濟學大師班</h2>
+        <p><strong>Topic (課題):</strong> Money and Inflation (貨幣與通脹)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆ (Moderate 中等)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Cost of holding cash 持有現金的成本</span>
+            <span class="tag">Nominal Interest Rate 名義利率</span>
+            <span class="tag">Real Rate of Return 實質回報率</span>
+            <span class="tag">Fisher Equation 費雪方程式</span>
+        </p>
+    </div>
+
+    <h3>2. The Question (題目)</h3>
+    <div class="question-box">
+        <p>一年期存款的名義利率是 1%，而通脹率是 3%。持有現金的成本是 __________ 而持有現金的實質回報率是 __________。</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 1% …… -3%</li>
+            <li>B. 1% …… -2%</li>
+            <li>C. 3% …… -3%</li>
+            <li>D. 3% …… -2%</li>
+        </ul>
+        <hr style="margin: 15px 0;">
+        <p class="bilingual-en" style="font-style: normal; color: #333;">The nominal interest rate on a one-year deposit is 1% and the inflation rate is 3%. The cost of holding cash is ____________ and the real rate of return of holding cash is ___________.</p>
+        <ul class="bilingual-en" style="font-style: normal; list-style-type: none; padding-left: 0;">
+            <li>A. 1% …… -3%</li>
+            <li>B. 1% …… -2%</li>
+            <li>C. 3% …… -3%</li>
+            <li>D. 3% …… -2%</li>
+        </ul>
+    </div>
+
+    <h3>3. Concept Review (概念重溫)</h3>
+    <div class="concept-box">
+        <h4>A. Cost of Holding Cash (持有現金的成本)</h4>
+        <p>持有現金意味著你放棄了將這筆錢存入銀行所能賺取的利息。因此，持有現金的機會成本（Opportunity Cost）就是<strong>名義利率 (Nominal Interest Rate)</strong>。</p>
+        <p class="bilingual-en">Holding cash means you are giving up the interest you could have earned if you deposited the money in a bank. Therefore, the opportunity cost of holding cash is the <strong>Nominal Interest Rate</strong>.</p>
+        
+        <h4>B. Fisher Equation (費雪方程式)</h4>
+        <p>實質回報率是扣除通脹影響後的購買力增長。公式如下：</p>
+        <p class="bilingual-en">The real rate of return is the growth in purchasing power after adjusting for inflation. The formula is:</p>
+        
+        <div class="math-block">
+            $$r = R - \pi$$
+        </div>
+        <p style="text-align: center; font-size: 0.9em; margin-top: -10px;">
+            $r$ = 實質利率 (Real Interest Rate)<br>
+            $R$ = 名義利率 (Nominal Interest Rate)<br>
+            $\pi$ = 通脹率 (Inflation Rate)
+        </p>
+
+        <h4>C. Return on Cash (現金的回報率)</h4>
+        <p>這是一個非常重要的隱藏設定：<strong>現金的名義回報率永遠是 0%</strong>（放在錢包裡的 $100 紙幣，一年後依然是 $100）。</p>
+        <p class="bilingual-en">This is a crucial hidden assumption: <strong>The nominal rate of return on cash is always 0%</strong> (A $100 banknote in your wallet will still be $100 a year later nominally).</p>
+    </div>
+
+    <h3>4. The Answer & Detailed Analysis (答案與詳細分析)</h3>
+    <p><strong>Correct Option 正確答案: <span style="color: #10b981; font-size: 1.2em;">A</span></strong></p>
+
+    <div class="option-analysis correct-option">
+        <strong>Option A (1% …… -3%) - CORRECT (正確)</strong>
+        <p><strong>第一格（持有現金的成本）：</strong>等於存款的名義利率，即 1%。<br>
+        <strong>第二格（現金的實質回報率）：</strong>現金的名義利率是 0%。利用公式：現金實質回報 = 現金名義回報 (0%) - 通脹率 (3%) = -3%。</p>
+        <p class="bilingual-en"><strong>First blank (Cost of holding cash):</strong> Equals the nominal interest rate on deposits, which is 1%.<br>
+        <strong>Second blank (Real rate of return of cash):</strong> The nominal return on cash is 0%. Using the formula: Real return on cash = Nominal return on cash (0%) - Inflation rate (3%) = -3%.</p>
+    </div>
+
+    <div class="option-analysis">
+        <strong>Option B (1% …… -2%) - WRONG (錯誤)</strong>
+        <p>第一格正確。但第二格的 -2% 是<strong>存款</strong>的實質回報率（1% - 3% = -2%），而不是<strong>現金</strong>的實質回報率。題目問的是持有現金的回報，而非存款。</p>
+        <p class="bilingual-en">The first blank is correct. However, -2% in the second blank is the real rate of return of the <strong>deposit</strong> (1% - 3% = -2%), not of <strong>cash</strong>. The question specifically asks for the return on holding cash.</p>
+    </div>
+
+    <div class="option-analysis">
+        <strong>Option C (3% …… -3%) - WRONG (錯誤)</strong>
+        <p>第一格錯誤。3% 是通脹率，代表購買力下降的速度，但持有現金的「機會成本」是你放棄的銀行利息（1%）。第二格計算正確。</p>
+        <p class="bilingual-en">The first blank is wrong. 3% is the inflation rate, representing the loss of purchasing power, but the "opportunity cost" of holding cash is the bank interest you gave up (1%). The second blank is calculated correctly.</p>
+    </div>
+
+    <div class="option-analysis">
+        <strong>Option D (3% …… -2%) - WRONG (錯誤)</strong>
+        <p>第一格與第二格的觀念皆錯誤。混合了上述 C 選項與 B 選項的常犯錯誤。</p>
+        <p class="bilingual-en">Both concepts in the first and second blanks are wrong. This option combines the common mistakes found in options C and B.</p>
+    </div>
+
+    <h3>5. Problem Decomposition (題目拆解)</h3>
+    <ul>
+        <li><strong>Pivot Point (破題關鍵):</strong> 必須意識到「現金 (Cash)」與「存款 (Deposit)」在回報率上的分別。題目給予的 1% 是存款利率；而現金的名義利率永遠隱含為 0%。</li>
+        <li class="bilingual-en"><strong>Pivot Point:</strong> You must recognize the difference in returns between "Cash" and "Deposits". The 1% given is the deposit rate; the nominal interest rate of cash is always implicitly 0%.</li>
+        <li><strong>Distractor (陷阱資訊):</strong> 存款的實質回報率 (-2%)。這是一個誘餌，引誘那些死背公式但忽略了主語（現金 vs 存款）的學生。</li>
+        <li class="bilingual-en"><strong>Distractor:</strong> The real rate of return on deposits (-2%). This is bait designed to catch students who blindly apply the formula without paying attention to the subject (cash vs deposit).</li>
+    </ul>
+
+    <h3>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+    <div style="background-color: #fff1f2; border-left: 5px solid #e11d48; padding: 15px; margin: 20px 0;">
+        <p>❌ <strong>Careless Error:</strong> 很多同學一看到公式 $r = R - \pi$，就直接將題目提供的數字代入（$1\% - 3\% = -2\%$），然後選擇了包含 -2% 的選項 (B 或 D)。</p>
+        <p>💡 <strong>Correction:</strong> 公式沒錯，但代入的數字錯了！計算「現金」的實質回報，名義利率 $R$ 必須代入 0%，而不是存款的 1%。</p>
+        <hr style="margin: 10px 0; border-color: #fca5a5;">
+        <p class="bilingual-en" style="margin-bottom: 0;">❌ <strong>Careless Error:</strong> Many students see the formula and immediately plug in the provided numbers ($1\% - 3\% = -2\%$), choosing options with -2% (B or D).<br>
+        💡 <strong>Correction:</strong> The formula is correct, but the inputs are wrong! To calculate the real return of "cash", the nominal interest rate $R$ must be 0%, not the deposit's 1%.</p>
+    </div>
+
+    <h3>7. Student Q&A (學生常見疑問)</h3>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼持有現金的成本不是通脹率 (3%)，而是名義利率 (1%)？</strong><br>
+        <span class="bilingual-en">Why isn't the cost of holding cash the inflation rate (3%), but rather the nominal interest rate (1%)?</span></p>
+        
+        <p><strong>A:</strong> 在經濟學中，成本指的是「機會成本 (Opportunity Cost)」。如果你不持有現金，你會把錢放在哪裡？你會存入銀行賺取 1% 的利息。因此，你因為選擇持有現金而「放棄」的最高價值選擇，就是那 1% 的名義利息。通脹的影響已經被包含在銀行設定的利率考量中了。</p>
+        <p class="bilingual-en" style="margin-bottom:0;"><strong>A:</strong> In Economics, cost refers to "Opportunity Cost". If you didn't hold cash, where would you put the money? You would deposit it in a bank to earn 1% interest. Therefore, the highest-valued option you "give up" by choosing to hold cash is that 1% nominal interest. The impact of inflation is already factored into the interest rate decisions of banks.</p>
+    </div>
+
+    <h3>8. Exam Tricks & Shortcuts (考試技巧與速解)</h3>
+    <p>做這類 MC 題目時，可以使用<strong>「消去法 (Elimination Method)」</strong>：</p>
+    <p class="bilingual-en">When solving this type of MC question, use the <strong>Elimination Method</strong>:</p>
+    <ol>
+        <li>讀到「持有現金的成本 (Cost of holding cash)」，腦海應立即浮現法則：<strong>成本 = 名義利率</strong>。</li>
+        <li class="bilingual-en">Upon reading "Cost of holding cash", the rule should instantly pop into your mind: <strong>Cost = Nominal Interest Rate</strong>.</li>
+        <li>立刻將第一格不是 1% 的選項刪除，即瞬間排除 C 和 D。</li>
+        <li class="bilingual-en">Immediately eliminate options where the first blank is not 1%. You instantly cross out C and D.</li>
+        <li>剩下 A 和 B。再看第二格「持有現金的實質回報」，記得現金不會生息，所以是 $0\% - 3\% = -3\%$。秒選 A！</li>
+        <li class="bilingual-en">You are left with A and B. Look at the second blank "real rate of return of holding cash". Remember cash bears no interest, so it is $0\% - 3\% = -3\%$. Select A instantly!</li>
+    </ol>
+
+</div>
+
+</body>
+</html>
