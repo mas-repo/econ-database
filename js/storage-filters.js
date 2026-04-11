@@ -372,6 +372,8 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                             return q.AristochapterClassification && 
                                 Array.isArray(q.AristochapterClassification) && 
                                 q.AristochapterClassification.length > 1;
+                        } else if (value === '已刪除') {
+                            return q.answerMC && q.answerMC.trim() === '*';
                         }
                         return true;
                     });
@@ -406,6 +408,8 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                             return !q.AristochapterClassification || 
                                 !Array.isArray(q.AristochapterClassification) || 
                                 q.AristochapterClassification.length <= 1;
+                        } else if (value === '已刪除') {
+                            return !q.answerMC || q.answerMC.trim() !== '*';
                         }                     
                         return true;
                     });

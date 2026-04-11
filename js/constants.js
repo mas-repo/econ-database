@@ -64,7 +64,8 @@ const FEATURE_ITEMS = [
     '含計算',
     '複選',
     '跨課題',
-    '跨章節'
+    '跨章節',
+    '已刪除'
 ];
 
 // Chapter range (1-29)
