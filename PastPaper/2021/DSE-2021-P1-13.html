@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Derived Demand</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-gray: #f8fafc;
+            --border-color: #e2e8f0;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .en {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Section Containers */
+        .section-card {
+            background-color: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: #f3f4f6;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Option Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+        }
+
+        .correct {
+            border-left: 5px solid var(--correct-green);
+        }
+
+        .wrong {
+            border-left: 5px solid var(--wrong-red);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tag-correct { background-color: #d1fae5; color: #047857; }
+        .tag-wrong { background-color: #fee2e2; color: #b91c1c; }
+
+        /* Q&A Section */
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .q-text { font-weight: bold; color: #b45309; }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .section-card, .concept-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-card" style="background-color: #1e293b; color: white;">
+        <h1 style="color: white; margin-top: 0;">HKDSE Economics Concept Guide</h1>
+        <p><strong>Topic (課題):</strong> 市場與價格 - 需求的種類 (Markets & Prices - Types of Demand)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 衍生需求 (Derived Demand), 聯合需求 (Joint Demand), 生產要素 (Factors of Production)</p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="section-card">
+        <p class="zh">對 ___________ 的需求可視為對 __________的衍生需求。</p>
+        <p class="zh">
+            A. 手提電話 … 耳機<br>
+            B. 手提電腦 … 電池<br>
+            C. 音樂短片 … 歌手<br>
+            D. 遊戲程式員 … 網上遊戲
+        </p>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+        <p class="en">The demand for ___________ can be regarded as a derived demand for __________.</p>
+        <p class="en">
+            A. mobile phones … earphones<br>
+            B. laptops … batteries<br>
+            C. music videos … singers<br>
+            D. game programmers … online games
+        </p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top:0; color: var(--primary-blue);">衍生需求 (Derived Demand)</h3>
+        <p class="zh"><strong>定義：</strong> 當對某種物品或服務（通常是生產要素）的需求，是源於對另一種最終產品或服務的需求時，這種需求就稱為「衍生需求」。簡而言之，我們不是直接需要該物品，而是因為需要它製造出來的產品才去購買/聘請它。</p>
+        <p class="en"><strong>Definition:</strong> When the demand for a good or service (usually a factor of production) is a direct result of the demand for another final product or service. We don't demand the factor for its own sake, but because we want the product it helps to produce.</p>
+        
+        <div class="math-block">
+            <p class="zh">數學函數表達 (Mathematical Representation):</p>
+            $$ D_{\text{Factor}} = f(D_{\text{Product}}) $$
+            <p class="en" style="margin-top: 10px; font-size: 0.9em;">(The Demand for a Factor is a function of the Demand for the Product)</p>
+        </div>
+
+        <h3 style="color: var(--primary-blue);">聯合需求 / 輔助需求 (Joint Demand / Complementary Demand)</h3>
+        <p class="zh"><strong>定義：</strong> 當兩種或以上的物品必須一起消費或使用，以滿足同一個慾望。這些物品被稱為輔助品 (Complements)。</p>
+        <p class="en"><strong>Definition:</strong> When two or more goods are consumed together to satisfy a single want. These goods are known as complements.</p>
+    </div>
+
+    <h2>3. Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="section-card">
+        <h3 style="margin-top: 0;">正確答案 Correct Option: <span style="color: var(--correct-green);">Option D</span></h3>
+        
+        <div class="option-analysis wrong">
+            <span class="tag tag-wrong">Option A</span>
+            <p class="zh"><strong>手提電話 … 耳機：</strong> 錯誤。手提電話和耳機是一起使用的物品，以獲得更好的音響體驗。這是<strong>聯合需求 (Joint Demand)</strong> 的例子，它們是輔助品。</p>
+            <p class="en"><strong>mobile phones … earphones:</strong> Incorrect. Mobile phones and earphones are used together for a better audio experience. This is an example of <strong>Joint Demand</strong> (they are complements).</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="tag tag-wrong">Option B</span>
+            <p class="zh"><strong>手提電腦 … 電池：</strong> 錯誤。與選項A類似，電腦和電池通常需要一起運作，這同樣屬於<strong>聯合需求 (Joint Demand)</strong>。</p>
+            <p class="en"><strong>laptops … batteries:</strong> Incorrect. Similar to Option A, laptops and batteries generally work together, making this an example of <strong>Joint Demand</strong>.</p>
+        </div>
+
+        <div class="option-analysis wrong">
+            <span class="tag tag-wrong">Option C</span>
+            <p class="zh"><strong>音樂短片 … 歌手：</strong> 錯誤。這裡的方向倒轉了。我們是因為想看/聽音樂短片（最終產品），所以才需要歌手（生產要素）去演出。因此，對「歌手」的需求才是對「音樂短片」的衍生需求，而不是反過來。</p>
+            <p class="en"><strong>music videos … singers:</strong> Incorrect. The relationship is backward here. We demand singers (the factor) because we demand music videos (the final product). Therefore, the demand for "singers" is derived from the demand for "music videos", not the other way around.</p>
+        </div>
+
+        <div class="option-analysis correct">
+            <span class="tag tag-correct">Option D</span>
+            <p class="zh"><strong>遊戲程式員 … 網上遊戲：</strong> 正確。遊戲程式員是一種生產要素（勞力 \(L\)）。僱主聘請遊戲程式員，不是因為想「消費」程式員，而是因為市場對「網上遊戲」（最終產品）有需求。因此，對程式員的需求是從對遊戲的需求衍生出來的。</p>
+            <p class="en"><strong>game programmers … online games:</strong> Correct. A game programmer is a factor of production (Labour \(L\)). Employers hire game programmers not to "consume" them, but because there is a market demand for "online games" (the final product). Thus, the demand for programmers is derived from the demand for games.</p>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="section-card">
+        <p class="zh"><strong>解題思路：</strong> 處理這類題目時，我們需要找出兩個物品之間的<strong>關係性質</strong>。衍生需求的標準句式是：「對 <strong>[生產要素 / 投入]</strong> 的需求是對 <strong>[最終產品 / 產出]</strong> 的衍生需求。」</p>
+        <p class="en"><strong>Approach:</strong> When tackling this type of question, identify the <strong>nature of the relationship</strong> between the two items. The standard structure for derived demand is: "Demand for <strong>[Factor/Input]</strong> is a derived demand for <strong>[Final Product/Output]</strong>."</p>
+
+        <p class="zh"><strong>關鍵點 (Pivot Point)：</strong> 在四個選項中，尋找 <strong>「工人 (勞力) 與 產品」</strong> 或 <strong>「原材料 與 產品」</strong> 的組合。選項A和B只是單純的消費品配對（輔助品），可以直接排除。剩下C和D，再檢查方向性（必須是「要素」在前面，「產品」在後面）。</p>
+        <p class="en"><strong>Pivot Point:</strong> Look for combinations of <strong>"Worker (Labour) & Product"</strong> or <strong>"Raw Material & Product"</strong> among the options. Options A and B are merely pairs of consumer goods (complements) and can be eliminated immediately. Between C and D, check the direction (it MUST be "Factor" first, "Product" second).</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="section-card">
+        <ul>
+            <li>
+                <p class="zh"><strong>混淆聯合需求與衍生需求：</strong> 學生常以為「因為電腦需要電池才能運作，所以電腦衍生了對電池的需求」。在經濟學中，若兩者都是直接被消費者買來一起使用的最終物品，我們稱之為<strong>聯合需求</strong>。衍生需求嚴格來說多指廠商對「生產要素」的需求。</p>
+                <p class="en"><strong>Confusing Joint Demand with Derived Demand:</strong> Students often think "because a laptop needs a battery to work, the laptop derives the demand for the battery." In economics, if both are final goods bought by consumers to be used together, it's <strong>Joint Demand</strong>. Derived demand strictly refers mostly to a firm's demand for "factors of production".</p>
+            </li>
+            <li>
+                <p class="zh"><strong>忽略因果方向 (選項C陷阱)：</strong> 題目句式中的「對 X 的需求可視為對 Y 的衍生需求」，意味著 X 是要素，Y 是產品。學生若不仔細閱讀，很容易被選項 C 騙到，因為歌手和音樂短片確實有衍生關係，只是位置放反了。</p>
+                <p class="en"><strong>Ignoring Causal Direction (The Trap in Option C):</strong> The phrasing "demand for X is a derived demand for Y" implies X is the factor and Y is the product. If students don't read carefully, Option C is a great distractor because there is a derived relationship, but the positions are flipped.</p>
+            </li>
+        </ul>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="q-text">Q: 老師，既然電池也是製造手提電腦的零件（資本/原材料），為什麼選項B不能算是衍生需求？<br>
+        <span style="font-weight: normal; color: var(--text-muted); font-style: italic;">Teacher, since a battery is also a part (capital/raw material) used to manufacture a laptop, why can't Option B be considered derived demand?</span></p>
+        
+        <p class="zh"><strong>A:</strong> 這是一個很好的問題！如果題目是「生產商對鋰金屬的需求」是對「手提電腦」的衍生需求，那就完全正確。但在一般的選擇題語境中，「手提電腦」與「電池」被視為消費者在市場上購買的最終產品（特別是可替換電池或外置電源），它們是互補關係（一起使用）。相比之下，選項 D（程式員與遊戲）是教科書中最典型、無可爭議的「勞動力與產品」的衍生需求例子。在多項選擇題中，我們必須選擇<strong>最佳 (Best)</strong> 的答案。</p>
+        <p class="en" style="margin-top: 10px;"><strong>A:</strong> Excellent question! If the option said "a manufacturer's demand for lithium" and "laptops", that would perfectly be a derived demand. However, in the context of typical MCQs, "laptops" and "batteries" are treated as final consumer goods (especially replaceable or external batteries) that are complementary (used together). In contrast, Option D (programmers and games) is the most undisputed, textbook perfect example of "labour and product" derived demand. In MCQs, we always choose the <strong>Best</strong> option.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="section-card">
+        <p class="zh"><strong>秒殺技巧：</strong> 當你在 DSE 經濟科看到「衍生需求 (Derived Demand)」一詞，你的大腦應該立刻啟動雷達，尋找包含 <strong>「職業 (Occupations)」</strong>、<strong>「勞工 (Labour)」</strong> 或 <strong>「原材料 (Raw Materials)」</strong> 的選項。這能幫你在一秒鐘內過濾掉 50% 以上的錯誤選項。</p>
+        <p class="en"><strong>Shortcut Technique:</strong> The moment you see "Derived Demand" in an HKDSE Economics paper, your brain's radar should instantly look for options containing <strong>"Occupations"</strong>, <strong>"Labour"</strong>, or <strong>"Raw Materials"</strong>. This trick helps you filter out over 50% of the distractor options in a single second.</p>
+    </div>
+
+</body>
+</html>

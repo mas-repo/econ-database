@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Theory of the Firm</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-green: #10b981;
+            --light-green: #ecfdf5;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-gray: #f3f4f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-section h1 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .trap-box {
+            background-color: var(--light-red);
+            border-left: 5px solid var(--primary-red);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .correct-box {
+            background-color: var(--light-green);
+            border-left: 5px solid var(--primary-green);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .question-box {
+            border: 2px solid var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-gray);
+            font-weight: 600;
+        }
+        .zh {
+            margin-bottom: 8px;
+        }
+        .en {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--bg-gray);
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            table { font-size: 0.9em; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Detailed Analysis</h1>
+        <p><strong>Topic (主題):</strong> Theory of the Firm - Perfect Competition (廠商理論 - 完全競爭 / 受價者)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★★☆ (4/5 Stars)</p>
+        <div>
+            <strong>Key Concepts (關鍵概念):</strong>
+            <span class="tag">Price-taking Firm 受價廠商</span>
+            <span class="tag">Marginal Cost 邊際成本</span>
+            <span class="tag">Profit Maximization 利潤極大化</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh">下表顯示某受價廠商的成本與產出的關係。</p>
+        <p class="en">The following table shows the cost-output relationship of a price-taking firm.</p>
+
+        <table>
+            <tr>
+                <th>產出 (單位) <br> Quantity (units)</th>
+                <th>平均成本 ($) <br> Average cost ($)</th>
+            </tr>
+            <tr><td>1</td><td>5</td></tr>
+            <tr><td>2</td><td>4</td></tr>
+            <tr><td>3</td><td>4</td></tr>
+            <tr><td>4</td><td>4.5</td></tr>
+            <tr><td>5</td><td>6</td></tr>
+        </table>
+
+        <p class="zh">根據上表，我們可以得出結論：當市場價格由$6下降至$4，</p>
+        <p class="en">Based on the above table, when the market price falls from $6 to $4, we can conclude that</p>
+
+        <p class="zh">A. 該廠商開始享有規模經濟。<br>
+           B. 該廠商的總成本會由$30下降至$12。<br>
+           C. 該廠商的利潤會減少$6。<br>
+           D. 供應量會由5單位下降至3單位。</p>
+        
+        <p class="en">A. the firm starts to enjoy economies of scale.<br>
+           B. the total cost of the firm will decrease from $30 to $12.<br>
+           C. the profit of the firm will decrease by $6.<br>
+           D. the quantity supplied will decrease from 5 units to 3 units.</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>1. 受價廠商與利潤極大化 (Price-taking firm & Profit Maximization)</strong><br>
+        受價者無法改變市場價格，因此市場價格 \(P\) 等於邊際回報 \(MR\)。為了實現利潤極大化，廠商會生產直到邊際成本 \(MC\) 等於價格 \(P\) 的數量。</p>
+        <p class="en">A price taker cannot influence the market price, meaning Price \(P\) equals Marginal Revenue \(MR\). To maximize profit, the firm produces at the output level where Marginal Cost \(MC\) equals Price \(P\).</p>
+
+        <p class="zh"><strong>2. 成本的計算 (Calculating Costs)</strong><br>
+        題目只提供了平均成本 \(AC\)。我們必須先將其轉換為總成本 \(TC\)，然後再計算出每一單位的邊際成本 \(MC\)。</p>
+        <p class="en">The question only provides Average Cost \(AC\). We must first convert this to Total Cost \(TC\), and then calculate the Marginal Cost \(MC\) for each unit.</p>
+
+        <div class="math-block">
+            $$TC = AC \times Q$$
+            $$MC = \frac{\Delta TC}{\Delta Q}$$
+            $$\text{Profit } (\pi) = TR - TC = (P \times Q) - TC$$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-box">
+        <h3>Correct Answer: Option C (正確答案：C)</h3>
+    </div>
+
+    <p class="zh">為了解題，我們必須先擴充原本的表格，計算出總成本 (TC) 和邊際成本 (MC)。</p>
+    <p class="en">To solve this, we must first expand the original table by calculating Total Cost (TC) and Marginal Cost (MC).</p>
+
+    <table>
+        <tr>
+            <th>Q</th>
+            <th>AC ($)</th>
+            <th>TC = AC &times; Q ($)</th>
+            <th>MC = &Delta;TC / &Delta;Q ($)</th>
+        </tr>
+        <tr><td>1</td><td>5</td><td>5 &times; 1 = <strong>5</strong></td><td><strong>5</strong> (5-0)</td></tr>
+        <tr><td>2</td><td>4</td><td>4 &times; 2 = <strong>8</strong></td><td><strong>3</strong> (8-5)</td></tr>
+        <tr><td>3</td><td>4</td><td>4 &times; 3 = <strong>12</strong></td><td><strong>4</strong> (12-8)</td></tr>
+        <tr><td>4</td><td>4.5</td><td>4.5 &times; 4 = <strong>18</strong></td><td><strong>6</strong> (18-12)</td></tr>
+        <tr><td>5</td><td>6</td><td>6 &times; 5 = <strong>30</strong></td><td><strong>12</strong> (30-18)</td></tr>
+    </table>
+
+    <div class="option-analysis">
+        <p class="zh"><strong>初始狀態：當價格 \(P = \$6\)</strong><br>
+        利潤極大化的條件是 \(P = MC\)。從圖表可見，當產量 \(Q = 4\) 時，\(MC = \$6\)。<br>
+        總收入 \(TR = \$6 \times 4 = \$24\)。總成本 \(TC = \$18\)。<br>
+        初始利潤 = \(24 - 18 = \$6\)。</p>
+        
+        <p class="en"><strong>Initial State: When Price \(P = \$6\)</strong><br>
+        The profit-maximizing condition is \(P = MC\). From the table, when quantity \(Q = 4\), \(MC = \$6\).<br>
+        Total Revenue \(TR = \$6 \times 4 = \$24\). Total Cost \(TC = \$18\).<br>
+        Initial Profit = \(24 - 18 = \$6\).</p>
+    </div>
+
+    <div class="option-analysis">
+        <p class="zh"><strong>新狀態：當價格 \(P = \$4\)</strong><br>
+        根據 \(P = MC\)，當產量 \(Q = 3\) 時，\(MC = \$4\)。<br>
+        總收入 \(TR = \$4 \times 3 = \$12\)。總成本 \(TC = \$12\)。<br>
+        新利潤 = \(12 - 12 = \$0\)。</p>
+
+        <p class="en"><strong>New State: When Price \(P = \$4\)</strong><br>
+        According to \(P = MC\), when quantity \(Q = 3\), \(MC = \$4\).<br>
+        Total Revenue \(TR = \$4 \times 3 = \$12\). Total Cost \(TC = \$12\).<br>
+        New Profit = \(12 - 12 = \$0\).</p>
+    </div>
+
+    <h3>選項分析 (Option Breakdown):</h3>
+    <ul>
+        <li><p class="zh"><strong>A. 錯誤。</strong> 規模經濟是指「長期」平均成本隨產量增加而下降。本題的價格與產量決策屬於短期決定，與規模經濟無關。</p>
+            <p class="en"><strong>A is incorrect.</strong> Economies of scale refers to the fall in "long-run" average cost as output increases. This question deals with short-run output decisions, which is irrelevant to economies of scale.</p></li>
+            
+        <li><p class="zh"><strong>B. 錯誤。</strong> 總成本由 \$18 (當 Q=4) 下降至 \$12 (當 Q=3)，而不是由 \$30 下降至 \$12。</p>
+            <p class="en"><strong>B is incorrect.</strong> Total cost decreases from \$18 (at Q=4) to \$12 (at Q=3), not from \$30 to \$12.</p></li>
+            
+        <li><p class="zh"><strong>C. 正確。</strong> 利潤由 \$6 跌至 \$0，即減少了 \$6。</p>
+            <p class="en"><strong>C is correct.</strong> Profit drops from \$6 to \$0, representing a decrease of \$6.</p></li>
+            
+        <li><p class="zh"><strong>D. 錯誤。</strong> 供應量由 4 單位下降至 3 單位，而非由 5 下降至 3。</p>
+            <p class="en"><strong>D is incorrect.</strong> Quantity supplied decreases from 4 units to 3 units, not from 5 to 3.</p></li>
+    </ul>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="zh"><strong>破題關鍵 (The Pivot Point):</strong><br>這道題目的核心在於評估學生是否懂得<strong>「價格必須與邊際成本 (MC) 比較，而非平均成本 (AC)」</strong>。許多學生一看到題目，就急著在表格中尋找「AC 等於價格」的數字，這就完全掉入了出題者的陷阱！</p>
+    <p class="en"><strong>The Pivot Point:</strong><br>The core of this problem evaluates whether students know that <strong>"Price must be compared with Marginal Cost (MC), NOT Average Cost (AC)."</strong> Many students rush to find the number where "AC equals Price" in the table, falling right into the examiner's trap!</p>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p class="zh"><strong>致命陷阱：將 \(P\) 與 \(AC\) 混淆！</strong><br>
+        出題者故意在表格中設定了 \(AC = \$6\) (當 Q=5) 和 \(AC = \$4\) (當 Q=2 或 3)。<br>
+        如果學生錯誤地認為廠商會在 \(P = AC\) 時生產：<br>
+        - 當 \(P = \$6\)，他們會選擇 \(Q = 5\)，得出總成本為 \$30。<br>
+        - 當 \(P = \$4\)，他們會選擇 \(Q = 3\)，得出總成本為 \$12。<br>
+        這樣一來，他們就會覺得<strong>選項 B</strong> (總成本由 \$30 跌至 \$12) 和<strong>選項 D</strong> (供應量由 5 跌至 3) 聽起來非常合理！這正是 DSE 經濟科最經典的陷阱。</p>
+        
+        <p class="en"><strong>Fatal Trap: Confusing \(P\) with \(AC\)!</strong><br>
+        The examiner deliberately set \(AC = \$6\) (at Q=5) and \(AC = \$4\) (at Q=2 or 3) in the table.<br>
+        If a student mistakenly believes the firm produces where \(P = AC\):<br>
+        - At \(P = \$6\), they choose \(Q = 5\), getting a Total Cost of \$30.<br>
+        - At \(P = \$4\), they choose \(Q = 3\), getting a Total Cost of \$12.<br>
+        Consequently, <strong>Option B</strong> (TC drops from \$30 to \$12) and <strong>Option D</strong> (Quantity drops from 5 to 3) would look perfectly correct to them! This is a classic HKDSE Economics trap.</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>學生問：</strong>「為什麼廠商不選擇在 \(P = AC\) 時生產呢？這樣不是剛好收支平衡嗎？」</p>
+        <p class="en"><strong>Student Question:</strong> "Why doesn't the firm choose to produce where \(P = AC\)? Wouldn't that mean they break even?"</p>
+        
+        <p class="zh"><strong>導師答：</strong>「廠商的目標是<strong>利潤極大化 (Maximize Profit)</strong>，而不是收支平衡！每多生產一件產品，只要它帶來的收入 (即 \(P\)) 大於它額外增加的成本 (即 \(MC\))，廠商就能賺取更多利潤。如果只看 \(AC\)，它包含了固定成本，無法反映『多生產一件』的真實代價。因此，必須找到 \(P = MC\) 的點，才是利潤最高的產量。」</p>
+        <p class="en"><strong>Tutor Answer:</strong> "The firm's goal is to <strong>Maximize Profit</strong>, not just to break even! For every additional unit produced, as long as the revenue it brings in (\(P\)) is greater than the extra cost to make it (\(MC\)), the firm increases its total profit. \(AC\) includes fixed costs and doesn't reflect the true cost of producing 'one more unit'. Therefore, finding the point where \(P = MC\) is the only way to find the profit-maximizing output."</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p class="zh"><strong>秒殺技巧 (Speed Strategy): 三欄擴充法</strong><br>
+    在 DSE 考試中，只要看到題目提供「產量」加上「任何一種平均數字」(如 AC, AR, AP)，<strong>不要猶疑，立即在試卷旁邊畫出總數 (Total) 和邊際數 (Marginal) 兩欄</strong>。完成計算後再看選項。有了完整的數據表，所有選項的對錯都能在一秒鐘內看穿，完全免疫考評局的陷阱！</p>
+    <p class="en"><strong>Speed Strategy: The 3-Column Expansion</strong><br>
+    In the DSE exam, whenever a question provides "Quantity" alongside "any Average figure" (like AC, AR, AP), <strong>do not hesitate—immediately draw two new columns for Total and Marginal figures next to it on your question paper</strong>. Do this before even looking at the options. With a complete data table, you can instantly verify all options and become completely immune to the HKEAA's traps!</p>
+
+</body>
+</html>

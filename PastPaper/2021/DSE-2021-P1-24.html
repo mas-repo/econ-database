@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #dbeafe;
+            --accent: #0ea5e9;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 { color: var(--primary); font-size: 1.8em; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px;}
+        h2 { color: var(--primary); font-size: 1.4em; margin-top: 30px;}
+        h3 { color: var(--accent); font-size: 1.2em; margin-top: 20px;}
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .bilingual-block { margin-bottom: 15px; }
+        .zh { font-weight: 500; margin-bottom: 4px; }
+        .en { color: var(--text-en); font-size: 0.95em; font-style: italic; }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--text-main);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        .correct-answer {
+            font-size: 1.2em;
+            color: #166534;
+            background-color: #dcfce7;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+        .option-title { font-weight: bold; color: var(--primary); }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .trick-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Tutorial</h1>
+        <div class="header-info">
+            <span class="tag">Topic: 宏觀經濟學 - 國民收入會計 (Macroeconomics - National Income Accounting)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: GDP Deflator, Real GDP, Per-capita GDP</span>
+        </div>
+    </header>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">參閱某經濟的本地生產總值(GDP)數據。</div>
+            <div class="en">Refer to the gross domestic product (GDP) data of an economy.</div>
+        </div>
+        
+        <table style="width: 100%; max-width: 400px; margin: 15px 0; text-align: left; border-collapse: collapse;">
+            <tr style="border-bottom: 1px solid #ccc;">
+                <th style="padding: 8px 0;">
+                    <div class="zh">增長率（相對於去年）</div>
+                    <div class="en" style="font-weight: normal;">Growth rate (relative to previous year)</div>
+                </th>
+                <th style="padding: 8px 0;"></th>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0;">名義GDP (Nominal GDP)</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0;">實質GDP (Real GDP)</td>
+                <td>-1.2%</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0;">人均名義GDP (Per-capita nominal GDP)</td>
+                <td>-3.5%</td>
+            </tr>
+        </table>
+
+        <div class="bilingual-block">
+            <div class="zh">與去年相比，本年度該經濟的一般物價水平 _________ ，人口 ___________。</div>
+            <div class="en">Compared to the previous year, the general price level has _________ and population has ___________ in the economy in the current year.</div>
+        </div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-block"><span class="zh">A. 上升 … 上升</span> <span class="en">(increased … increased)</span></li>
+            <li class="bilingual-block"><span class="zh">B. 上升 … 下降</span> <span class="en">(increased … decreased)</span></li>
+            <li class="bilingual-block"><span class="zh">C. 下降 … 上升</span> <span class="en">(decreased … increased)</span></li>
+            <li class="bilingual-block"><span class="zh">D. 下降 … 下降</span> <span class="en">(decreased … decreased)</span></li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh">要解決這條題目，我們需要掌握兩個核心關係。在宏觀經濟學中，變量的增長率 (Growth Rate) 可以用簡單的加減法來近似計算。</div>
+            <div class="en">To solve this problem, we need to master two core relationships. In macroeconomics, the growth rates of variables can be approximated using simple addition and subtraction.</div>
+        </div>
+
+        <h3>核心公式 1 (Core Formula 1): 物價水平與GDP (Price Level and GDP)</h3>
+        <div class="math-block">
+            $$ \text{Nominal GDP} = \text{Real GDP} \times \text{Price Level} $$
+            $$ g_{\text{Nominal}} \approx g_{\text{Real}} + g_{\text{Price}} $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">名義GDP增長率 $\approx$ 實質GDP增長率 $+$ 一般物價水平增長率（通脹率）。</div>
+            <div class="en">Nominal GDP growth rate $\approx$ Real GDP growth rate $+$ General price level growth rate (Inflation rate).</div>
+        </div>
+
+        <h3>核心公式 2 (Core Formula 2): 人口與人均GDP (Population and Per-capita GDP)</h3>
+        <div class="math-block">
+            $$ \text{Per-capita Nominal GDP} = \frac{\text{Nominal GDP}}{\text{Population}} $$
+            $$ g_{\text{Per-capita Nominal}} \approx g_{\text{Nominal}} - g_{\text{Population}} $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">人均名義GDP增長率 $\approx$ 名義GDP增長率 $-$ 人口增長率。</div>
+            <div class="en">Per-capita nominal GDP growth rate $\approx$ Nominal GDP growth rate $-$ Population growth rate.</div>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-answer">
+        Correct Option: A
+    </div>
+
+    <div class="option-analysis">
+        <div class="option-title">第一部分：一般物價水平 (Part 1: General Price Level)</div>
+        <div class="bilingual-block">
+            <div class="zh">根據公式：$g_{\text{Price}} \approx g_{\text{Nominal}} - g_{\text{Real}}$。題目給出名義GDP增長為 $0\%$，實質GDP增長為 $-1.2\%$。</div>
+            <div class="en">According to the formula: $g_{\text{Price}} \approx g_{\text{Nominal}} - g_{\text{Real}}$. The data shows Nominal GDP growth is $0\%$, and Real GDP growth is $-1.2\%$.</div>
+        </div>
+        <div class="math-block">
+            $$ g_{\text{Price}} \approx 0\% - (-1.2\%) = +1.2\% $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">物價增長率為正數 ($+1.2\%$ $\gt$ $0$)，代表一般物價水平<b>上升</b>。因此，選項 C 和 D 是錯誤的。</div>
+            <div class="en">The price growth rate is positive ($+1.2\%$ $\gt$ $0$), which means the general price level has <b>increased</b>. Therefore, Options C and D are incorrect.</div>
+        </div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="option-title">第二部分：人口 (Part 2: Population)</div>
+        <div class="bilingual-block">
+            <div class="zh">根據公式：$g_{\text{Population}} \approx g_{\text{Nominal}} - g_{\text{Per-capita Nominal}}$。題目給出名義GDP增長為 $0\%$，人均名義GDP增長為 $-3.5\%$。</div>
+            <div class="en">According to the formula: $g_{\text{Population}} \approx g_{\text{Nominal}} - g_{\text{Per-capita Nominal}}$. The data shows Nominal GDP growth is $0\%$, and Per-capita nominal GDP growth is $-3.5\%$.</div>
+        </div>
+        <div class="math-block">
+            $$ g_{\text{Population}} \approx 0\% - (-3.5\%) = +3.5\% $$
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">人口增長率為正數 ($+3.5\%$ $\gt$ $0$)，代表人口<b>上升</b>。結合第一部分，正確答案是 A。</div>
+            <div class="en">The population growth rate is positive ($+3.5\%$ $\gt$ $0$), which means the population has <b>increased</b>. Combined with Part 1, the correct answer is A.</div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><b>解題樞紐 (The Pivot Point):</b> 這條題目的關鍵在於將三個已知的數據點 (名義GDP、實質GDP、人均名義GDP) 拆解成兩組獨立的計算。名義GDP $0\%$ 是連接兩組計算的橋樑。</div>
+        <div class="en"><b>The Pivot Point:</b> The key to this question is breaking down the three given data points (Nominal GDP, Real GDP, Per-capita nominal GDP) into two independent calculations. The $0\%$ Nominal GDP acts as the bridge connecting both parts.</div>
+    </div>
+    <ul>
+        <li class="bilingual-block">
+            <span class="zh">任務 1: 利用「名義」與「實質」的差異找出「物價」。</span>
+            <span class="en">Task 1: Use the difference between "Nominal" and "Real" to find "Price".</span>
+        </li>
+        <li class="bilingual-block">
+            <span class="zh">任務 2: 利用「總量」與「人均」的差異找出「人口」。</span>
+            <span class="en">Task 2: Use the difference between "Total" and "Per-capita" to find "Population".</span>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><b>直覺陷阱 (The Intuition Trap)：</b> 很多學生看到「人均名義GDP下降了 $-3.5\%$」，會直覺以為這代表「人少了」。</div>
+        <div class="en"><b>The Intuition Trap:</b> Many students see "Per-capita nominal GDP dropped by $-3.5\%$" and intuitively think this means "there are fewer people".</div>
+    </div>
+    <div class="bilingual-block">
+        <div class="zh"><b>真相 (The Truth)：</b> 剛好相反！想像名義GDP是一個大披薩。披薩的總大小沒有變 ($0\%$ 增長)，但每個人分到的披薩變小了 ($-3.5\%$ 增長)。這只可能有一個原因：吃披薩的人變多了！所以人口必定是<b>上升</b>的。</div>
+        <div class="en"><b>The Truth:</b> It's the exact opposite! Imagine Nominal GDP as a big pizza. The total size of the pizza didn't change ($0\%$ growth), but the slice each person gets is smaller ($-3.5\%$ growth). There is only one possible reason: there are more people eating the pizza! Thus, the population must have <b>increased</b>.</div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <div class="zh"><b>Q: 增長率的近似值公式 ($g_A \approx g_B + g_C$) 在考試中總是準確嗎？如果不用公式可以計嗎？</b></div>
+            <div class="en"><b>Q: Is the growth rate approximation formula ($g_A \approx g_B + g_C$) always accurate in exams? Can I solve it without the formula?</b></div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh"><b>A:</b> 在 DSE 選擇題中，這個近似值公式絕對足夠判斷「方向」(上升/下降)。如果你不想背公式，可以用<b>指數法 (Index Method)</b>。假設去年的所有數值都是 $100$：<br>
+            今年名義GDP = $100$<br>
+            今年實質GDP = $100 \times (1 - 0.012) = 98.8$<br>
+            今年物價指數 = $(100 / 98.8) \times 100 = 101.2$ (大於 $100$，即上升)。</div>
+            <div class="en"><b>A:</b> In DSE MC questions, this approximation formula is definitely sufficient to determine the "direction" (increase/decrease). If you don't want to memorize formulas, you can use the <b>Index Method</b>. Assume all values last year were $100$:<br>
+            This year's Nominal GDP = $100$<br>
+            This year's Real GDP = $100 \times (1 - 0.012) = 98.8$<br>
+            This year's Price Index = $(100 / 98.8) \times 100 = 101.2$ (Greater than $100$, so it increased).</div>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="bilingual-block">
+            <div class="zh"><b>不需動筆的邏輯速解 (No-pen Logic Shortcut):</b></div>
+            <div class="en"><b>No-pen Logic Shortcut:</b></div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">1. 名義不變 ($0$)，但實質數量跌了 ($-1.2\%$，代表買到的東西少了)。總花費一樣但買到的東西變少，代表<b>東西變貴了 (物價上升)</b>。</div>
+            <div class="en">1. Nominal is unchanged ($0$), but real quantity dropped ($-1.2\%$, meaning fewer goods are produced/bought). Spending the same total amount but getting fewer goods means <b>things got more expensive (Price increased)</b>.</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">2. 總收入不變 ($0$)，但每個人平均分到的錢少了 ($-3.5\%$，代表分薄了)。總金額不變但平均分薄，代表<b>分錢的人變多了 (人口上升)</b>。</div>
+            <div class="en">2. Total income is unchanged ($0$), but the average money per person dropped ($-3.5\%$, meaning it was diluted). Same total amount but diluted average means <b>there are more people sharing the money (Population increased)</b>.</div>
+        </div>
+        <div class="bilingual-block" style="margin-top: 10px; font-weight: bold; text-align: center;">
+            <div class="zh">秒殺得出答案：上升 ... 上升 (A)！</div>
+            <div class="en">Instantly yielding the answer: increased ... increased (A)!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

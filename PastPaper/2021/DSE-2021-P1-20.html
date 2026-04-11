@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Quota Analysis</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f0f9ff;
+            --bg-gray: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --danger-light: #fef2f2;
+            --danger-border: #ef4444;
+            --success-light: #f0fdf4;
+            --success-border: #22c55e;
+            --warning-light: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .lang-zh {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* Box Styles */
+        .header-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 24px;
+        }
+        
+        .header-box h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .analysis-item {
+            margin-bottom: 24px;
+        }
+
+        .correct-answer {
+            background-color: var(--success-light);
+            border-left: 5px solid var(--success-border);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .mistake-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-item {
+            margin-bottom: 16px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-box">
+        <h1>HKDSE Economics Study Guide</h1>
+        <div class="tags">
+            <span class="tag">Topic: Market Intervention (Quota) / 市場干預 (配額)</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐</span>
+            <span class="tag">Key Concepts: Quota, Deadweight Loss, Consumer Surplus</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>The Question (題目)</h2>
+        <div class="question-box">
+            <div class="lang-zh">
+                原初某國對咖啡豆生產實施有效配額。<br><br>
+                若現在更多人愛喝咖啡，下列哪些有關咖啡豆市場的陳述是正確的？<br><br>
+                (1) 總支出會上升。<br>
+                (2) 效率損失會上升。<br>
+                (3) 消費者盈餘會上升。<br><br>
+                A. 只有 (1)、(2)<br>
+                B. 只有 (1)、(3)<br>
+                C. 只有 (2)、(3)<br>
+                D. (1)、(2) 及 (3)
+            </div>
+            <div class="lang-en">
+                Initially a country imposes an effective quota on coffee bean production.<br><br>
+                If now more people like to drink coffee, which of the following statements about the coffee bean market are correct?<br><br>
+                (1) The total expenditure will increase.<br>
+                (2) The deadweight loss will increase.<br>
+                (3) The consumer surplus will increase.<br><br>
+                A. (1) and (2) only<br>
+                B. (1) and (3) only<br>
+                C. (2) and (3) only<br>
+                D. (1), (2) and (3)
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <div class="lang-zh">
+                <strong>1. 有效配額 (Effective Quota):</strong><br>
+                政府設定的生產或進口數量上限。要「有效」，配額數量 ($Q_q$) 必須低於自由市場的均衡數量 ($Q_e$)。在配額數量下，供給曲線會變成垂直線。
+            </div>
+            <div class="lang-en">
+                <strong>1. Effective Quota:</strong><br>
+                A government-imposed limit on the quantity produced or imported. To be "effective", the quota quantity ($Q_q$) must be below the free-market equilibrium quantity ($Q_e$). At the quota limit, the supply curve becomes perfectly inelastic (vertical).
+            </div>
+
+            <div class="math-block">
+                <strong>總支出 (Total Expenditure) 公式:</strong>
+                $$\text{TE} = P \times Q$$
+            </div>
+
+            <div class="lang-zh">
+                <strong>2. 無效率損失 / 淨損失 (Deadweight Loss):</strong><br>
+                因為市場產量低於均衡點而導致的社會總盈餘流失。在圖表上，它是配額數量線上，夾在需求曲線與供給曲線之間的三角形面積。
+            </div>
+            <div class="lang-en">
+                <strong>2. Deadweight Loss (DWL):</strong><br>
+                The loss of total social surplus caused by producing less than the efficient market equilibrium. Graphically, it is the triangular area between the demand and supply curves, starting from the quota quantity to the free-market equilibrium quantity.
+            </div>
+
+            <div class="lang-zh">
+                <strong>3. 消費者盈餘 (Consumer Surplus):</strong><br>
+                消費者願意支付的最高價格與實際支付的市場價格之間的差額。圖表上為需求曲線以下、市場價格以上的面積。
+            </div>
+            <div class="lang-en">
+                <strong>3. Consumer Surplus (CS):</strong><br>
+                The difference between the maximum price consumers are willing to pay and the actual market price they do pay. Graphically, the area below the demand curve and above the market price.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-answer">
+            <div class="lang-zh">正確答案是: Option A</div>
+            <div class="lang-en">Correct Option: Option A</div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="lang-zh">
+                <strong>分析 (1) 總支出會上升 - 【正確】</strong><br>
+                「更多人愛喝咖啡」代表需求增加（需求曲線向右移）。因為配額有效，交易量被鎖死在 $Q_q$。當需求增加，而在這受限的數量下，消費者願意支付的價格 ($P$) 會被推高。根據公式 $\text{TE} = P \times Q$，因為 $Q$ 不變，而 $P$ 上升，總支出必然上升。
+            </div>
+            <div class="lang-en">
+                <strong>Analysis of (1) Total expenditure will increase - [CORRECT]</strong><br>
+                "More people like to drink coffee" implies an increase in demand (demand curve shifts right). Due to the effective quota, the transacted quantity is locked at $Q_q$. With higher demand at this restricted quantity, the market price ($P$) gets pushed up. Since $\text{TE} = P \times Q$, with $Q$ constant and $P$ increasing, Total Expenditure must increase.
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="lang-zh">
+                <strong>分析 (2) 效率損失會上升 - 【正確】</strong><br>
+                當需求向右移，需求曲線（邊際利益）變得更高。在配額數量 $Q_q$ 下，邊際利益與邊際成本（供給曲線）之間的差距擴大了。原本未能達成的交易，現在隱含著更大的潛在利益。因此，損失的社會盈餘面積（無效率損失）會變得更大。
+            </div>
+            <div class="lang-en">
+                <strong>Analysis of (2) The deadweight loss will increase - [CORRECT]</strong><br>
+                When demand shifts right, the demand curve (Marginal Benefit) becomes higher. At the quota quantity $Q_q$, the gap between Marginal Benefit and Marginal Cost (supply curve) widens. The mutually beneficial transactions that are legally blocked now hold an even greater potential surplus. Thus, the area representing Deadweight Loss becomes larger.
+            </div>
+        </div>
+
+        <div class="analysis-item">
+            <div class="lang-zh">
+                <strong>分析 (3) 消費者盈餘會上升 - 【不一定正確】</strong><br>
+                雖然需求增加，但價格也同時大幅上升。生產者會奪走大部分新增的盈餘。如果需求曲線是平行右移的，在給定的 $Q_q$ 下，消費者願意支付的最高價格與實際市場價格的垂直距離會保持不變，這意味著消費者盈餘的面積將維持不變（見下方「考試技巧」）。既然不一定上升，在多項選擇題中此陳述不被視為正確。
+            </div>
+            <div class="lang-en">
+                <strong>Analysis of (3) The consumer surplus will increase - [NOT NECESSARILY CORRECT]</strong><br>
+                Although demand increases, the price also rises sharply. Producers capture most of the new surplus. If the demand curve shifts rightward parallelly, the vertical gap between the maximum willingness to pay and the actual market price at $Q_q$ remains exactly the same. This means the area of Consumer Surplus remains unchanged (see "Exam Tricks" below). Since it does not <em>necessarily</em> increase, this statement is considered incorrect in MCQs.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="lang-zh">
+            <strong>解題樞紐 (The Pivot Point):</strong><br>
+            這題的關鍵在於意識到：<strong>配額下的數量 ($Q$) 是被鎖死的</strong>。面對「需求改變」，你不需要考慮數量的變動，只需專注於價格 ($P$) 如何垂直攀升。
+        </div>
+        <div class="lang-en">
+            <strong>The Pivot Point:</strong><br>
+            The core of this question lies in realizing that <strong>the quantity ($Q$) under a quota is locked in</strong>. When faced with a "change in demand", you don't need to consider any change in quantity; you only need to focus on how the price ($P$) shoots up vertically.
+        </div>
+    </section>
+
+    <section>
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="mistake-box">
+            <div class="lang-zh">
+                <strong>陷阱 1：直覺認為「需求升 = 消費者盈餘升」</strong><br>
+                這是一個極常見的錯誤！在一般的彈性供給下，需求上升確實可能增加消費者盈餘。但在「完全缺乏彈性」（垂直）的供給線下（如配額），價格上升會吃掉消費者因需求增加而獲得的好處。
+            </div>
+            <div class="lang-en">
+                <strong>Trap 1: Intuition that "Higher Demand = Higher Consumer Surplus"</strong><br>
+                This is a very common mistake! Under normal elastic supply, an increase in demand often increases consumer surplus. However, under a perfectly inelastic (vertical) supply segment like a quota, the price spike "eats up" the benefits consumers would have gained from higher demand.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="qa-item">
+            <div class="lang-zh">
+                <div class="qa-q">Q: 既然更多人愛喝咖啡，為甚麼交易量不會跟著增加？</div>
+                A: 因為題目寫明這是一個「有效配額」(Effective Quota)。配額是政府的法定限制，除非政府放寬政策，否則無論需求多大，市場上的合法供應量都無法超過 $Q_q$。
+            </div>
+            <div class="lang-en">
+                <div class="qa-q">Q: If more people want coffee, why doesn't the transacted quantity increase?</div>
+                A: Because the question states it is an "Effective Quota". A quota is a legal government limit. Unless the government relaxes the policy, the legal supply in the market cannot exceed $Q_q$, no matter how high the demand goes.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="trick-box">
+            <div class="lang-zh">
+                <strong>速解法：極端代入法 (平行移動法則)</strong><br>
+                在 DSE 經濟科，當遇到判斷「盈餘變化」的題目，預設使用<strong>線性平行移動</strong>來測試。<br>
+                三角形面積 = $\frac{1}{2} \times \text{底} \times \text{高}$。<br>
+                在這裡，底是配額數量 $Q_q$ (固定不變)。當需求線平行上移時，價格 $P$ 會上升相同的幅度，導致三角形的「高」(最高願意支付價格減去市場價格) 完全沒有改變！<br>
+                既然底和高都不變，消費者盈餘的面積必定<strong>不變</strong>。因此 (3) 絕對不是必然正確，你可以瞬間淘汰包含 (3) 的選項 (B, C, D)，直接選 A！這能幫你省下畫圖的時間。
+            </div>
+            <div class="lang-en">
+                <strong>Shortcut: The Parallel Shift Test</strong><br>
+                In HKDSE Economics, when judging changes in "surplus", use a <strong>linear parallel shift</strong> as your default test case.<br>
+                Triangle Area = $\frac{1}{2} \times \text{Base} \times \text{Height}$.<br>
+                Here, the base is the quota quantity $Q_q$ (fixed). When a demand curve shifts upwards parallelly, the market price $P$ increases by the exact same vertical amount. This means the "height" of the triangle (maximum willingness to pay minus market price) does not change at all!<br>
+                Since neither the base nor the height changes, the Consumer Surplus area remains <strong>UNCHANGED</strong>. Therefore, (3) is definitely not correct. You can instantly eliminate options containing (3) (Options B, C, D) and pick A! This saves you the time of drawing complex graphs.
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

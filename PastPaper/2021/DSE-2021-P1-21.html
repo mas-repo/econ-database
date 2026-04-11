@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Gini Coefficient Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #333333;
+            --text-en: #555555;
+            --bg-body: #f9fafb;
+            --bg-box: #ffffff;
+            --border-radius: 8px;
+        }
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang HK', 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+        h1, h2, h3, h4 {
+            color: #1e293b;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        .tag {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .section-box {
+            background-color: var(--bg-box);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .en {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #cbd5e1;
+            font-style: italic;
+        }
+        .correct-answer {
+            background-color: #dcfce7;
+            border: 2px solid #22c55e;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .trick-box {
+            background-color: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .qa-box {
+            background-color: #fce7f3;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .question-text {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📊 經濟學試題解析 (Economics Question Analysis)</h1>
+        <div class="tag">📝 Topic: 收入不均與政策 (Income Inequality & Policies)</div>
+        <div class="tag">⭐ Difficulty: ★★★☆☆ (3/5)</div>
+        <div class="tag">🔑 Key Concepts: 堅尼系數 (Gini Coefficient), 轉移支付 (Transfer Payments), 稅制 (Taxation)</div>
+    </div>
+
+    <div class="section-box">
+        <h2>📜 題目 (The Question)</h2>
+        <div class="question-text">
+            <p>參閱以下香港的政策建議。</p>
+            <p>建議 (1)：向在公屋輪候冊上超過五年的人士提供現金補貼<br>
+               建議 (2)：將長者綜合社會保障援助計劃的合資格年齡由60歲提高至65歲<br>
+               建議 (3)：將薪俸稅的標準稅率提高</p>
+            <p>以上哪些建議會降低香港按稅及福利轉移後住戶每月收入計算的堅尼系數？</p>
+            <p>A. 只有 (1)、(2)<br>
+               B. 只有 (1)、(3)<br>
+               C. 只有 (2)、(3)<br>
+               D. (1)、(2) 及 (3)</p>
+        </div>
+        <div class="en">
+            <p>Refer to the following policy proposals in Hong Kong.</p>
+            <p>Proposal (1): providing a cash subsidy for those who have been on the waiting list for public housing over five years<br>
+               Proposal (2): raising the eligible age for the Elderly Comprehensive Social Security Assistance Scheme from 60 to 65<br>
+               Proposal (3): raising the standard tax rate of the salaries tax</p>
+            <p>Which of the above proposals will reduce the Gini coefficient based on post-tax post-social transfer monthly household income in Hong Kong?</p>
+            <p>A. (1) and (2) only<br>
+               B. (1) and (3) only<br>
+               C. (2) and (3) only<br>
+               D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>💡 概念重溫 (Concept Review)</h2>
+        
+        <p><strong>1. 堅尼系數 (Gini Coefficient):</strong> 衡量一個經濟體內收入不均程度的指標。數值介乎 0 到 1 之間。堅尼系數越低，代表收入分佈越平均；數值越高，代表貧富懸殊越嚴重。</p>
+        <div class="en">A measure of income inequality within an economy. Its value ranges from 0 to 1. A lower Gini coefficient indicates a more equal income distribution, while a higher value represents greater wealth disparity.</div>
+
+        <p>在勞倫斯曲線 (Lorenz Curve) 中，堅尼系數的計算公式為：</p>
+        <div class="en">In the context of the Lorenz Curve, the formula for the Gini coefficient is:</div>
+        <div class="math-block">
+            $$ G = \frac{\text{Area } A}{\text{Area } A + \text{Area } B} $$
+        </div>
+
+        <p><strong>2. 稅及福利轉移後收入 (Post-tax post-social transfer income):</strong> 指住戶的原始收入，減去繳交的稅款，再加上政府提供的福利津貼後的實際可支配收入。政策若能「劫富濟貧」（減少富人收入或增加窮人收入），便會降低堅尼系數。</p>
+        <div class="en">The actual disposable income of a household after deducting taxes paid and adding government welfare subsidies. If a policy effectively "takes from the rich and gives to the poor" (reduces the rich's income or increases the poor's income), the Gini coefficient will fall.</div>
+
+        <p><strong>3. 標準稅率 (Standard Tax Rate):</strong> 香港薪俸稅設有「累進稅率」和「標準稅率」兩種計算方法。納稅人只需繳交較低的一筆。通常只有極高收入人士才會按「標準稅率」繳稅。因此，提高標準稅率主要是向高收入人士開刀。</p>
+        <div class="en">Hong Kong's salaries tax is calculated using either "progressive rates" or a "standard rate." Taxpayers pay whichever is lower. Usually, only the highest income earners are taxed at the standard rate. Therefore, raising the standard rate primarily targets high-income individuals.</div>
+    </div>
+
+    <div class="section-box">
+        <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <div class="correct-answer">
+            正確答案 (Correct Option)：B
+        </div>
+
+        <div class="option-analysis">
+            <h3>🔹 分析建議 (1) / Analysis of Proposal (1)</h3>
+            <p><strong>向公屋輪候人士提供現金補貼：</strong> 公屋輪候者絕大部分屬於低收入階層。提供現金補貼會增加他們的「福利轉移後收入」，從而縮窄貧富差距。因此，堅尼系數會下降。<strong>（正確）</strong></p>
+            <div class="en"><strong>Cash subsidy for public housing waitlisters:</strong> The vast majority of people waiting for public housing belong to the low-income group. Providing a cash subsidy increases their "post-social transfer income," thereby narrowing the wealth gap. Hence, the Gini coefficient will decrease. <strong>(Correct)</strong></div>
+        </div>
+
+        <div class="option-analysis">
+            <h3>🔹 分析建議 (2) / Analysis of Proposal (2)</h3>
+            <p><strong>提高長者綜援的合資格年齡：</strong> 將年齡門檻由 60 歲提高至 65 歲，意味著 60 至 64 歲、原本依賴綜援的貧困長者將失去這筆福利。這會導致低收入人士的收入進一步減少，擴大貧富差距。因此，堅尼系數會上升。<strong>（錯誤）</strong></p>
+            <div class="en"><strong>Raising the eligible age for Elderly CSSA:</strong> Raising the age threshold from 60 to 65 means impoverished elderly people aged 60-64, who previously relied on CSSA, will lose this welfare. This further reduces the income of low-income individuals and widens the wealth gap. Hence, the Gini coefficient will increase. <strong>(Incorrect)</strong></div>
+        </div>
+
+        <div class="option-analysis">
+            <h3>🔹 分析建議 (3) / Analysis of Proposal (3)</h3>
+            <p><strong>提高薪俸稅的標準稅率：</strong> 如概念重溫所述，標準稅率的納稅人主要是全港收入最高的一群。提高該稅率會減少高收入人士的「稅後收入」，有效發揮財富再分配的作用，縮窄貧富差距。因此，堅尼系數會下降。<strong>（正確）</strong></p>
+            <div class="en"><strong>Raising the standard tax rate:</strong> As reviewed in the concepts, taxpayers subjected to the standard tax rate are primarily the highest income earners in HK. Raising this rate decreases their "post-tax income," effectively redistributing wealth and narrowing the wealth gap. Hence, the Gini coefficient will decrease. <strong>(Correct)</strong></div>
+        </div>
+        
+        <p><strong>總結 (Conclusion):</strong> 只有建議 (1) 和 (3) 能降低堅尼系數，所以答案是 <strong>B</strong>。</p>
+        <div class="en">Only proposals (1) and (3) can lower the Gini coefficient, so the answer is <strong>B</strong>.</div>
+    </div>
+
+    <div class="section-box">
+        <h2>🛠️ 題目拆解 (Problem Decomposition)</h2>
+        <p>解決這類題目的「關鍵支點」(Pivot Point) 在於判斷政策的<strong>目標群體</strong>（窮人還是富人）以及對他們<strong>收入的影響</strong>（增加還是減少）。</p>
+        <div class="en">The "Pivot Point" for solving this type of question lies in identifying the <strong>target group</strong> of the policy (the rich or the poor) and the <strong>impact on their income</strong> (increase or decrease).</div>
+        <ul>
+            <li><strong>窮人收入增加 / 富人收入減少</strong> \(\rightarrow\) 貧富差距收窄 \(\rightarrow\) 堅尼系數<strong>下降</strong>。</li>
+            <li><strong>窮人收入減少 / 富人收入增加</strong> \(\rightarrow\) 貧富差距擴大 \(\rightarrow\) 堅尼系數<strong>上升</strong>。</li>
+        </ul>
+        <div class="en">
+            <ul>
+                <li><strong>Poor's income rises / Rich's income falls</strong> \(\rightarrow\) Gap narrows \(\rightarrow\) Gini coefficient <strong>decreases</strong>.</li>
+                <li><strong>Poor's income falls / Rich's income rises</strong> \(\rightarrow\) Gap widens \(\rightarrow\) Gini coefficient <strong>increases</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p><strong>陷阱一：誤解「提高合資格年齡」的含義。</strong><br>
+        很多同學看到「長者綜合社會保障援助計劃」就以為是派糖（增加福利），卻忽略了「提高合資格年齡」實際上是在<strong>削減</strong>福利！這剝奪了 60-64 歲長者的援助，令他們變得更窮。</p>
+        <div class="en"><strong>Trap 1: Misinterpreting "raising the eligible age".</strong><br>Many students see "Social Security Assistance" and immediately think it's giving out benefits, ignoring that "raising the eligible age" is actually a welfare <strong>cut</strong>! It deprives elderly aged 60-64 of assistance, making them poorer.</div>
+
+        <p><strong>陷阱二：混淆香港的「標準稅率」與「累進稅率」。</strong><br>
+        學生常以為提高「標準稅率」會加重基層市民負擔。但在香港稅制下，基層及中產多數按「累進稅率」交稅，只有「打工皇帝」（極高薪人士）才會觸及並繳交「標準稅率」。</p>
+        <div class="en"><strong>Trap 2: Confusing HK's "Standard Rate" with "Progressive Rate".</strong><br>Students often think raising the "standard rate" burdens the working class. Under HK's tax system, the grassroots and middle class mostly pay based on the "progressive rate," while only top executives (extremely high earners) hit the threshold to pay the "standard rate."</div>
+    </div>
+
+    <div class="qa-box">
+        <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+        <p><strong>學生問 (Q):</strong> 點解建議 (3) 淨係影響有錢人？如果政府加稅，唔係個個都要交多啲咩？<br>
+        <strong>Why does Proposal (3) only affect the rich? If the government raises taxes, doesn't everyone pay more?</strong></p>
+        
+        <p><strong>導師答 (A):</strong> 這是香港薪俸稅的特點！香港計算薪俸稅會計兩次：一次用「累進稅率」（有免稅額），另一次用「標準稅率」（無免稅額，直接按總收入乘一個固定百分比，例如 15%）。納稅人交<strong>較低</strong>的一筆。一般打工仔用累進稅率計出來的稅款遠低於標準稅率，所以他們根本不會受標準稅率調整的影響。只有年薪數百萬的高層，他們按累進稅計出來的稅太高了，才會封頂轉用「標準稅率」。所以提高標準稅率，絕對是精準打擊高收入人士！</p>
+        <div class="en"><strong>Tutor's Answer (A):</strong> This is a unique feature of HK's salaries tax! The tax is calculated twice: once using "progressive rates" (with allowances) and once using the "standard rate" (no allowances, a flat percentage like 15% on net total income). Taxpayers pay the <strong>lower</strong> amount. For ordinary workers, the progressive calculation is much lower, so they aren't affected by the standard rate. Only top earners with millions in annual salary hit the cap where the standard rate becomes cheaper for them. Thus, raising the standard rate acts as a precision strike on high-income earners!</div>
+    </div>
+
+    <div class="trick-box">
+        <h2>🚀 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p><strong>「消去法」(Elimination Method)：</strong><br>
+        在多項選擇題中，一旦你識破了建議 (2) 是一個「伏」（削減窮人福利會令貧富懸殊惡化，推高堅尼系數），你就可以立刻行動：<br>
+        任何包含 (2) 的選項都是錯的！</p>
+        <div class="en"><strong>Elimination Method:</strong><br>In MCQs, once you see through the trap of Proposal (2) (cutting welfare makes inequality worse, pushing the Gini coefficient up), you can act immediately:<br>Any option containing (2) is wrong!</div>
+        <ul>
+            <li><del>A. 只有 (1)、(2)</del> ❌</li>
+            <li><strong>B. 只有 (1)、(3) ✅ (The only logical survivor!)</strong></li>
+            <li><del>C. 只有 (2)、(3)</del> ❌</li>
+            <li><del>D. (1)、(2) 及 (3)</del> ❌</li>
+        </ul>
+        <p>就算你對建議 (3) 的稅制不太確定，單憑確定 (2) 是錯的，你已經秒殺了這條題目，節省大量考試時間！</p>
+        <div class="en">Even if you were slightly unsure about the tax system in proposal (3), just by confirming (2) is wrong, you instantly solve the question and save valuable exam time!</div>
+    </div>
+
+</body>
+</html>

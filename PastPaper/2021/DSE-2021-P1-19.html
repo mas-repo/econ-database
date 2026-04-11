@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Market Equilibrium & Producer Surplus</title>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0.5,0,0.1);
+            margin-bottom: 30px;
+            border-top: 5px solid #1e3a8a;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+        }
+        .bilingual-group {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 0;
+        }
+        .question-box {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9fafb;
+            border-radius: 5px;
+            border: 1px solid #e5e7eb;
+        }
+        .correct-ans {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            color: #166534;
+        }
+        .wrong-ans {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        .tips-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .concept-box, .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-section">
+        <h2>HKDSE Economics Tutorial</h2>
+        <div class="bilingual-group">
+            <p class="zh"><strong>主題 Topic：</strong>市場均衡、邊際成本與生產者盈餘 (Market Equilibrium, Marginal Cost & Producer Surplus)</p>
+        </div>
+        <div class="bilingual-group">
+            <p class="zh"><strong>難度 Difficulty：</strong>⭐⭐⭐ (3/5)</p>
+        </div>
+        <div class="bilingual-group">
+            <p class="zh"><strong>關鍵概念 Key Concepts：</strong></p>
+            <span class="tag">Demand Shift 需求改變</span>
+            <span class="tag">Marginal Cost 邊際成本</span>
+            <span class="tag">Producer Surplus 生產者盈餘</span>
+        </div>
+    </header>
+
+    <section>
+        <h3>📝 題目 The Question</h3>
+        <div class="question-box">
+            <div class="bilingual-group">
+                <p class="zh">由於大部分學校進行網上授課，更多學生需要購買平板電腦。最後一單位的平板電腦的邊際成本會 ___________ ，而生產者盈餘會 ____________。</p>
+                <p class="en">Since most schools deliver their lessons online, more students need to buy tablet computers. The marginal cost of the last unit of tablet computers will ________ and the producer surplus will _________.</p>
+            </div>
+            
+            <div class="option">
+                <div class="zh">A. 下降 … 上升</div>
+                <div class="en">A. decrease … increase</div>
+            </div>
+            <div class="option">
+                <div class="zh">B. 下降 … 下降</div>
+                <div class="en">B. decrease … decrease</div>
+            </div>
+            <div class="option correct-ans">
+                <div class="zh">C. 上升 … 上升</div>
+                <div class="en">C. increase … increase</div>
+            </div>
+            <div class="option">
+                <div class="zh">D. 上升 … 下降</div>
+                <div class="en">D. increase … decrease</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="concept-box">
+        <h3>💡 概念重溫 Concept Review</h3>
+        
+        <div class="bilingual-group">
+            <p class="zh"><strong>1. 邊際成本 (Marginal Cost, $MC$) 與 供應曲線 (Supply Curve)：</strong><br>在完全競爭市場中，供應曲線就是邊際成本曲線（高於平均可變成本最低點的部分）。由於邊際回報遞減定律 (Law of Diminishing Marginal Returns)，短期供應曲線是<strong>向上傾斜</strong>的。因此，當生產數量 ($Q$) 增加時，最後一單位的邊際成本 ($MC$) 必然上升。</p>
+            <p class="en"><strong>1. Marginal Cost ($MC$) and Supply Curve:</strong><br>In a perfectly competitive market, the supply curve is the marginal cost curve (above the minimum point of average variable cost). Due to the Law of Diminishing Marginal Returns, the short-run supply curve is <strong>upward sloping</strong>. Therefore, when quantity produced ($Q$) increases, the marginal cost ($MC$) of the last unit must increase.</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>2. 生產者盈餘 (Producer Surplus, $PS$)：</strong><br>生產者盈餘是指生產者實際收取的價格與他們願意接受的最低價格（即邊際成本）之間的差額。在圖表上，它代表<strong>市場價格以下、供應曲線以上的面積</strong>。</p>
+            <p class="en"><strong>2. Producer Surplus ($PS$):</strong><br>Producer surplus is the difference between the actual price producers receive and the minimum price they are willing to accept (which is the marginal cost). Graphically, it is the area <strong>below the market price and above the supply curve</strong>.</p>
+        </div>
+
+        <div class="math-block">
+            <p class="zh">生產者盈餘公式：</p>
+            <p class="en">Producer Surplus Formula:</p>
+            $$PS = Total\ Revenue\ (TR) - Total\ Variable\ Cost\ (TVC)$$
+        </div>
+    </section>
+
+    <section>
+        <h3>✅ 答案與詳細分析 Answer & Detailed Analysis</h3>
+        <p><strong>正確答案 Correct Option： <span style="color: #16a34a; font-size: 1.2em;">C</span></strong></p>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>為什麼選 C？</strong><br>「更多學生需要購買」代表對平板電腦的<strong>需求增加 (Demand increases)</strong>。在供應不變的情況下，需求曲線向右移會導致市場均衡價格 ($P$) 和均衡交易量 ($Q$) 同時上升。<br>
+            1. 因為交易量 ($Q$) 增加，沿著向上傾斜的供應曲線向右上方移動，最後一單位的<strong>邊際成本 ($MC$) 會上升</strong>。<br>
+            2. 因為價格 ($P$) 和交易量 ($Q$) 都上升了，價格水平線和供應曲線之間的三角形面積擴大了，所以<strong>生產者盈餘 ($PS$) 會上升</strong>。</p>
+            
+            <p class="en"><strong>Why Option C?</strong><br>"More students need to buy" signifies an <strong>increase in demand</strong> for tablet computers. Assuming supply remains unchanged, a rightward shift of the demand curve leads to an increase in both the equilibrium price ($P$) and quantity ($Q$).<br>
+            1. As quantity ($Q$) increases, we move up along the upward-sloping supply curve, meaning the <strong>marginal cost ($MC$) of the last unit increases</strong>.<br>
+            2. Because both price ($P$) and quantity ($Q$) have increased, the triangular area between the price level and the supply curve expands, so the <strong>producer surplus ($PS$) increases</strong>.</p>
+        </div>
+
+        <div class="bilingual-group wrong-ans" style="padding: 10px; border-radius: 5px;">
+            <p class="zh"><strong>為什麼 A, B, D 是錯誤的？</strong><br>
+            選項 A 及 B 錯誤，因為它們假設邊際成本會下降，這違背了供應曲線向上傾斜的原則。選項 D 錯誤，因為當價格上升且交易量增加時，生產者盈餘的面積絕對不可能減少。</p>
+            <p class="en"><strong>Why are A, B, and D wrong?</strong><br>
+            Options A and B are incorrect because they assume marginal cost decreases, which contradicts the upward-sloping nature of the supply curve. Option D is incorrect because when both price and quantity increase, the area of producer surplus cannot possibly decrease.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>🔍 題目拆解 Problem Decomposition</h3>
+        <div class="bilingual-group">
+            <p class="zh"><strong>解題樞紐 (Pivot Point)：</strong><br>這道題目的關鍵在於分清「需求改變」還是「供應改變」。學校改為網上授課是影響<strong>消費者（學生）</strong>的因素，因此只會移動需求曲線 ($D$)。供應曲線 ($S$) 保持不變，這意味著我們只能<strong>沿著原有的供應曲線移動 (Movement along the supply curve)</strong>。</p>
+            <p class="en"><strong>Pivot Point:</strong><br>The key to solving this question is distinguishing between a "change in demand" and a "change in supply". Schools switching to online lessons is a factor affecting <strong>consumers (students)</strong>, therefore it only shifts the demand curve ($D$). The supply curve ($S$) remains unchanged, meaning we only experience a <strong>movement along the original supply curve</strong>.</p>
+        </div>
+    </section>
+
+    <section class="tips-box" style="border-left-color: #ef4444;">
+        <h3 style="color: #ef4444; margin-top: 0;">⚠️ 常犯錯誤與陷阱 Common Mistakes & Traps</h3>
+        <div class="bilingual-group">
+            <p class="zh"><strong>陷阱 1：誤把「規模經濟」套用到短期分析</strong><br>有些同學會覺得「大量生產，成本不是會降低嗎？」，從而誤選邊際成本下降。記住，HKDSE 的基本供求模型預設是短期分析，受「邊際回報遞減定律」限制，邊際成本必定是上升的，除非題目明確提到「規模經濟 (Economies of scale)」或技術進步。</p>
+            <p class="en"><strong>Trap 1: Misapplying "Economies of Scale" to short-run analysis</strong><br>Some students might think, "Doesn't mass production lower costs?", leading them to incorrectly choose a decrease in marginal cost. Remember, the basic supply-demand model in HKDSE assumes short-run analysis. Bound by the "Law of Diminishing Marginal Returns," marginal cost must be strictly increasing unless the question explicitly mentions "economies of scale" or technological advancement.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>🙋 學生常見疑問 Student Q&A</h3>
+        <div class="bilingual-group">
+            <p class="zh"><strong>問：為什麼我們不移動供應曲線 ($S$)？電腦製造商不能生產更多嗎？</strong></p>
+            <p class="en"><strong>Q: Why don't we shift the supply curve ($S$)? Can't computer manufacturers just produce more?</strong></p>
+            <p class="zh">答：製造商確實生產了更多（交易量 $Q$ 增加了），但這是在原有的供應曲線上滑動（因為市價 $P$ 升了，吸引他們生產更多），而不是整個供應曲線向右平移。只有當生產成本（如零件變平）或科技進步時，供應曲線才會向右移。</p>
+            <p class="en">A: Manufacturers *do* produce more (quantity $Q$ increases), but this is a movement along the existing supply curve (the higher market price $P$ incentivizes them to produce more), not a rightward shift of the entire supply curve. The supply curve itself only shifts right if production costs fall (e.g., cheaper components) or if there is technological progress.</p>
+        </div>
+    </section>
+
+    <section class="tips-box">
+        <h3 style="margin-top: 0; color: #b45309;">🚀 考試技巧與速解 Exam Tricks & Shortcuts</h3>
+        <div class="bilingual-group">
+            <p class="zh"><strong>「五秒畫圖法」</strong><br>遇到這類文字題，千萬不要只在腦海中空想！立即在試卷空白處畫一個標準的交叉供求圖（向下的 $D$ 加上向上的 $S$）。<br>1. 畫一條新的 $D$ 線在右邊 ($D_2$)。<br>2. 點出新的均衡點。<br>3. 眼睛一看：新點比舊點更高（$MC$ 上升），左邊的三角形面積也明顯變大了（$PS$ 上升）。答案秒出！</p>
+            <p class="en"><strong>"The 5-Second Graphing Trick"</strong><br>Never rely solely on mental imagination for text-based questions! Immediately sketch a standard supply-demand cross (downward $D$ and upward $S$) on the margin of your paper.<br>1. Draw a new $D$ curve to the right ($D_2$).<br>2. Plot the new equilibrium point.<br>3. Visually confirm: The new point is higher on the $S$ curve (higher $MC$), and the triangle area on the left is visibly larger (higher $PS$). Answer solved in seconds!</p>
+        </div>
+    </section>
+
+</body>
+</html>

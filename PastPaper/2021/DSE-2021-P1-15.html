@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Tax Burden & Elasticity</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+        }
+
+        body {
+            font-family: 'PingFang HK', 'Microsoft JhengHei', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
+
+        .en {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .zh {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .header-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-box ul { list-style: none; padding: 0; margin: 0; }
+        .header-box li { margin-bottom: 8px; }
+
+        .question-box {
+            background-color: #fff;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .analysis-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .correct-opt { border-left: 5px solid var(--accent-green); }
+        .wrong-opt { border-left: 5px solid var(--accent-red); }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--accent-yellow);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .question-box, .concept-box, .trick-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Tutorial 經濟學補習解析</h1>
+
+    <div class="header-box">
+        <ul>
+            <li><strong>Topic (課題):</strong> 市場干預與彈性 (Market Intervention and Elasticity) - 稅務負擔 (Tax Burden)</li>
+            <li><strong>Difficulty (難度):</strong> ★★★★☆ (4/5 Stars)</li>
+            <li><strong>Key Concepts (核心概念):</strong> 
+                <span class="tag">Price Elasticity of Demand (需求價格彈性)</span>
+                <span class="tag">Price Elasticity of Supply (供應價格彈性)</span>
+                <span class="tag">Tax Incidence (稅項負擔)</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh">當對某物品徵收從量銷售稅，下列哪項／些組合<strong>可能</strong>令消費者稅項負擔大於生產者稅項負擔？</p>
+        <p class="en">When a per-unit sales tax is imposed on a good, which of the following combinations <strong>may</strong> result in the consumers’ tax burden exceeding the producers’ tax burden?</p>
+        
+        <p class="zh">
+            (1) 高彈性需求；高彈性供應 <br>
+            (2) 高彈性需求；低彈性供應 <br>
+            (3) 低彈性需求；高彈性供應 <br>
+            (4) 低彈性需求；低彈性供應
+        </p>
+        <p class="en">
+            (1) elastic demand; elastic supply <br>
+            (2) elastic demand; inelastic supply <br>
+            (3) inelastic demand; elastic supply <br>
+            (4) inelastic demand; inelastic supply
+        </p>
+
+        <p class="zh">
+            A. 只有 (2)<br>
+            B. 只有 (1)、(3)<br>
+            C. 只有 (2)、(4)<br>
+            D. 只有 (1)、(3) 及 (4)
+        </p>
+        <p class="en">
+            A. (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (4) only<br>
+            D. (1), (3) and (4) only
+        </p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top:0;">稅項負擔的黃金法則 (The Golden Rule of Tax Burden)</h3>
+        <p class="zh">在自由市場中，當政府徵收銷售稅時，稅項負擔會由消費者和生產者共同分擔。分擔的比例完全取決於<strong>需求價格彈性 \(E_d\)</strong> 與 <strong>供應價格彈性 \(E_s\)</strong> 的<strong>相對大小</strong>。</p>
+        <p class="en">In a free market, when the government imposes a sales tax, the tax burden is shared between consumers and producers. The proportion of the burden depends entirely on the <strong>relative magnitude</strong> of the <strong>Price Elasticity of Demand \(E_d\)</strong> and the <strong>Price Elasticity of Supply \(E_s\)</strong>.</p>
+        
+        <p class="zh"><strong>口訣：</strong>「誰越缺乏彈性（越難走），誰就要承擔越多稅款！」</p>
+        <p class="en"><strong>Rule of thumb:</strong> "The side that is more inelastic (less able to escape the market) bears a larger share of the tax burden!"</p>
+
+        <div class="math-block">
+            $$ \frac{\text{消費者稅項負擔 (Consumer Burden)}}{\text{生產者稅項負擔 (Producer Burden)}} = \frac{E_s}{E_d} $$
+        </div>
+
+        <ul class="zh">
+            <li>若 \( E_d < E_s \) ：消費者負擔 <strong>&gt;</strong> 生產者負擔</li>
+            <li>若 \( E_d > E_s \) ：消費者負擔 <strong>&lt;</strong> 生產者負擔</li>
+            <li>若 \( E_d = E_s \) ：消費者負擔 <strong>=</strong> 生產者負擔</li>
+        </ul>
+        <ul class="en" style="margin-top:-10px;">
+            <li>If \( E_d < E_s \): Consumer Burden <strong>&gt;</strong> Producer Burden</li>
+            <li>If \( E_d > E_s \): Consumer Burden <strong>&lt;</strong> Producer Burden</li>
+            <li>If \( E_d = E_s \): Consumer Burden <strong>=</strong> Producer Burden</li>
+        </ul>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <p class="zh"><strong>正確答案是：D</strong></p>
+    <p class="en"><strong>The correct option is: D</strong></p>
+
+    <p class="zh">題目要求找出<strong>「可能令消費者稅項負擔大於生產者稅項負擔」</strong>的組合。根據剛才的概念，我們必須找出有可能出現 <strong>\( E_d < E_s \)</strong> 的情況。</p>
+    <p class="en">The question asks for combinations that <strong>"may result in the consumers' tax burden exceeding the producers' tax burden"</strong>. Based on our concept, we must find situations where it is possible that <strong>\( E_d < E_s \)</strong>.</p>
+
+    <div class="analysis-card correct-opt">
+        <h4 style="margin:0 0 10px 0;">(1) 高彈性需求；高彈性供應 (elastic demand; elastic supply) - <span style="color:var(--accent-green)">可能 (Possible)</span></h4>
+        <p class="zh">「高彈性」代表彈性值大於 1。假設需求彈性 \( E_d = 1.5 \)，而供應彈性 \( E_s = 4.0 \)。在這種情況下，兩者都是高彈性，但 \( E_d < E_s \)。因此，這是有可能的。</p>
+        <p class="en">"Elastic" means the elasticity value is greater than 1. Suppose \( E_d = 1.5 \) and \( E_s = 4.0 \). Both are elastic, but \( E_d < E_s \). Therefore, this is possible.</p>
+    </div>
+
+    <div class="analysis-card wrong-opt">
+        <h4 style="margin:0 0 10px 0;">(2) 高彈性需求；低彈性供應 (elastic demand; inelastic supply) - <span style="color:var(--accent-red)">絕對不可能 (Impossible)</span></h4>
+        <p class="zh">「高彈性需求」即 \( E_d > 1 \)；「低彈性供應」即 \( E_s < 1 \)。這意味著數學上必然出現 \( E_d > E_s \)。因此，消費者負擔必定<strong>小於</strong>生產者負擔。此情況絕對不可能符合題目要求。</p>
+        <p class="en">"Elastic demand" means \( E_d > 1 \); "inelastic supply" means \( E_s < 1 \). This mathematically guarantees that \( E_d > E_s \). Thus, the consumer burden will strictly be <strong>less than</strong> the producer burden. This is impossible.</p>
+    </div>
+
+    <div class="analysis-card correct-opt">
+        <h4 style="margin:0 0 10px 0;">(3) 低彈性需求；高彈性供應 (inelastic demand; elastic supply) - <span style="color:var(--accent-green)">必定發生 (Definite)</span></h4>
+        <p class="zh">「低彈性需求」即 \( E_d < 1 \)；「高彈性供應」即 \( E_s > 1 \)。這意味著數學上必然出現 \( E_d < E_s \)。因此，消費者負擔必定<strong>大於</strong>生產者負擔。這絕對符合題目要求（既然「必定」，自然也包含在「可能」之內）。</p>
+        <p class="en">"Inelastic demand" means \( E_d < 1 \); "elastic supply" means \( E_s > 1 \). This mathematically guarantees that \( E_d < E_s \). Thus, the consumer burden will strictly be <strong>greater than</strong> the producer burden. This definitely fits the requirement.</p>
+    </div>
+
+    <div class="analysis-card correct-opt">
+        <h4 style="margin:0 0 10px 0;">(4) 低彈性需求；低彈性供應 (inelastic demand; inelastic supply) - <span style="color:var(--accent-green)">可能 (Possible)</span></h4>
+        <p class="zh">「低彈性」代表彈性值小於 1。假設需求彈性 \( E_d = 0.2 \)，而供應彈性 \( E_s = 0.8 \)。在這種情況下，兩者都是低彈性，但 \( E_d < E_s \)。因此，這也是有可能的。</p>
+        <p class="en">"Inelastic" means the elasticity value is less than 1. Suppose \( E_d = 0.2 \) and \( E_s = 0.8 \). Both are inelastic, but \( E_d < E_s \). Therefore, this is also possible.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="zh"><strong>解題樞紐 (The Pivot Point):</strong> 題目的關鍵字是<strong>「可能」(may)</strong>。很多同學以為「高彈性」就代表一個固定的數值，忘記了即使兩者同屬「高彈性」（即大於1），它們的實際數值仍然可以有大小之分。</p>
+    <p class="en"><strong>The Pivot Point:</strong> The keyword here is <strong>"may" (可能)</strong>. Many students mistakenly treat "elastic" as a fixed value, forgetting that even if both are "elastic" (i.e., > 1), their actual numerical values can still differ in magnitude.</p>
+
+    <h2>5. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <h3 style="margin-top:0;">DSE 選擇題「剔除法」 (Elimination Method)</h3>
+        <p class="zh">在考場上，你可以用 10 秒鐘解出這題：</p>
+        <p class="en">In the exam room, you can solve this in 10 seconds:</p>
+        <ol>
+            <li class="zh">先找「絕對錯誤」的選項。我們知道要消費者負擔較大，需求必須比供應<strong>更缺乏彈性</strong>。</li>
+            <li class="en">First, find the "absolutely wrong" option. We know that for the consumer to bear a larger burden, demand must be <strong>more inelastic</strong> than supply.</li>
+            
+            <li class="zh">看 (2)：需求高彈性 (\(>1\))，供應低彈性 (\(<1\))。這裡需求彈性絕對大於供應彈性，消費者負擔一定較小。所以 (2) <strong>必定錯</strong>！</li>
+            <li class="en">Look at (2): Elastic demand (\(>1\)) and inelastic supply (\(<1\)). Demand elasticity is definitely greater here, so consumer burden is strictly smaller. Option (2) is <strong>definitely wrong</strong>!</li>
+
+            <li class="zh">看看選項：A 和 C 都包含 (2)，直接刪去！剩下 B 和 D。</li>
+            <li class="en">Look at the choices: Options A and C contain (2). Cross them out! We are left with B and D.</li>
+
+            <li class="zh">比較 B 和 D，差異在於 (4)。問自己：兩個都是「低彈性」時，有可能 \( E_d < E_s \) 嗎？當然可以（例如 0.1 和 0.9）。既然 (4) 有可能，答案就是 D。秒殺！</li>
+            <li class="en">Compare B and D. The difference is (4). Ask yourself: When both are "inelastic", is it possible that \( E_d < E_s \)? Of course (e.g., 0.1 and 0.9). Since (4) is possible, the answer must be D. Done!</li>
+        </ol>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <p class="zh"><strong>陷阱：將「分類」等同於「數值」 (Equating "Categories" with "Values")</strong><br>
+    學生常犯的錯誤是以為「高彈性 = 高彈性」。在經濟學中，(1) 和 (4) 的情況雖然兩者屬於同一分類（同屬高彈性或同屬低彈性），但它們的<strong>相對數值 (Relative value)</strong> 可以不同。切記：彈性是一個連續的光譜 (Spectrum)，不是單一的點。</p>
+    <p class="en"><strong>Trap: Equating "Categories" with "Values"</strong><br>
+    A common careless error is assuming "Elastic = Elastic". In economics, although both demand and supply in cases (1) and (4) fall into the same category, their <strong>relative values</strong> can differ. Remember: Elasticity is a continuous spectrum, not a single point.</p>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>🙋‍♂️ 學生問：</strong> 老師，如果題目將「可能 (may)」改成「必定 (must)」，答案會是甚麼？</p>
+        <p class="en"><strong>🙋‍♂️ Student:</strong> Teacher, what if the question changed the word "may" to "must"? What would the answer be?</p>
+        <hr style="border-top:1px dashed #cbd5e1;">
+        <p class="zh"><strong>👨‍🏫 導師答：</strong> 非常好的問題！如果題目問的是「必定」，那麼 (1) 和 (4) 就不成立了。因為兩個都是高彈性時，也有可能 \( E_d > E_s \)（例如 \( E_d=5, E_s=2 \)），這樣消費者負擔就會較小。唯一能「數學上保證」消費者負擔較大（即必定 \( E_d < E_s \)）的情況只有 (3)。所以如果改為「必定」，答案就只會包含 (3)。</p>
+        <p class="en"><strong>👨‍🏫 Tutor:</strong> Excellent question! If the question asked for "must", then (1) and (4) would be incorrect. When both are elastic, it is also possible that \( E_d > E_s \) (e.g., \( E_d=5, E_s=2 \)), in which case the consumer burden is smaller. The only situation that "mathematically guarantees" a larger consumer burden (i.e., strictly \( E_d < E_s \)) is (3). So, if the word was "must", the answer would only include (3).</p>
+    </div>
+
+</body>
+</html>
