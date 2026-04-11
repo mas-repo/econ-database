@@ -188,6 +188,16 @@ async function renderQuestions() {
             <div class="question-header">
                 <div class="question-title">
                     ${q.id}
+                    ${q.imageChi ? `
+                        <a href="${q.imageChi}" target="_blank" class="ai-btn" title="原題圖片 (中文)" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #fff3e0; border: 1px solid #ffb74d; margin-left: 8px; font-size: 0.9em; transition: all 0.2s; cursor: pointer; color: #e65100; font-weight: bold;">
+                            中
+                        </a>
+                    ` : ''}
+                    ${q.imageEng ? `
+                        <a href="${q.imageEng}" target="_blank" class="ai-btn" title="原題圖片 (英文)" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #fff3e0; border: 1px solid #ffb74d; margin-left: 8px; font-size: 0.9em; transition: all 0.2s; cursor: pointer; color: #e65100; font-weight: bold;">
+                            EN
+                        </a>
+                    ` : ''}                    
                     ${q.AIExplanation ? `
                         <a href="${q.AIExplanation}" target="_blank" class="ai-btn" title="AI 詳解" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #e3f2fd; border: 1px solid #90caf9; margin-left: 8px; font-size: 1.2em; transition: all 0.2s; cursor: pointer;">
                             🤖
