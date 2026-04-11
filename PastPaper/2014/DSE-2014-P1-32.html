@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Detailed Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --accent-blue: #0ea5e9;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --trick-bg: #fefce8;
+            --trick-border: #eab308;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        .en-text {
+            color: var(--text-gray);
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Content Padding */
+        .content {
+            padding: 0 30px 30px 30px;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--accent-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Analysis Box */
+        .analysis-box {
+            margin-bottom: 25px;
+        }
+        
+        .correct-answer {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        /* Special Sections */
+        .mistakes {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .qa-item {
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #5b21b6;
+        }
+
+        .tricks {
+            background-color: var(--trick-bg);
+            border-left: 5px solid var(--trick-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .content {
+                padding: 0 15px 15px 15px;
+            }
+            .header {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div class="header-tags">
+            <span class="tag">Topic: Money and Inflation (貨幣與通脹)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: Fisher Equation, Real Interest Rate, Return on Cash</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>1. The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>一年期債券的名義利率和預期通脹率分別是 8%和 3%。若實際通脹率是 6%，則實際實質利率是 __________ 而持有現金的實際回報率是 __________。</strong></p>
+            <ul class="options-list">
+                <li>A. 2% …… -6%</li>
+                <li>B. 2% …… -8%</li>
+                <li>C. 5% …… -6%</li>
+                <li>D. 5% …… -8%</li>
+            </ul>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+            <p class="en-text" style="color: var(--text-dark); font-style: normal; margin-top: 0;"><strong>The nominal interest rate of a one-year bond and the expected inflation rate are 8% and 3% respectively. If the actual inflation rate is 6%, then the actual real interest rate is _______ and the actual rate of return of holding cash is _______.</strong></p>
+            <ul class="options-list en-text" style="color: var(--text-dark); font-style: normal;">
+                <li>A. 2% …… -6%</li>
+                <li>B. 2% …… -8%</li>
+                <li>C. 5% …… -6%</li>
+                <li>D. 5% …… -8%</li>
+            </ul>
+        </div>
+
+        <h2>2. Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>費雪方程式 (Fisher Equation)</h3>
+            <p>在經濟學中，我們必須區分「名義 (Nominal)」與「實質 (Real)」數值，以及「預期 (Expected)」與「實際 (Actual)」數值。實質利率反映了借貸的真實購買力變化。<br>
+            <span class="en-text">In economics, we must distinguish between "Nominal" and "Real" values, as well as "Expected" and "Actual" values. The real interest rate reflects the true change in purchasing power of borrowing and lending.</span></p>
+
+            <div class="math-block">
+                $$ r = R - \pi $$
+                $$ \text{Real Interest Rate} = \text{Nominal Interest Rate} - \text{Inflation Rate} $$
+            </div>
+            
+            <ul>
+                <li>若計算<strong>實際實質利率 (Actual Real Interest Rate)</strong>：必須使用<strong>實際通脹率 (Actual Inflation Rate)</strong>。<br>
+                <span class="en-text">If calculating the Actual Real Interest Rate: You must use the Actual Inflation Rate.</span></li>
+                <li>若計算<strong>預期實質利率 (Expected Real Interest Rate)</strong>：必須使用<strong>預期通脹率 (Expected Inflation Rate)</strong>。<br>
+                <span class="en-text">If calculating the Expected Real Interest Rate: You must use the Expected Inflation Rate.</span></li>
+            </ul>
+
+            <h3>持有現金的回報 (Rate of Return of Holding Cash)</h3>
+            <p>現金的「名義利率」永遠是 \(0\%\)（把錢放在錢包裡不會產生利息）。因此，持有現金的實際回報純粹取決於通脹導致的購買力流失。<br>
+            <span class="en-text">The "nominal interest rate" of cash is always \(0\%\) (keeping money in your wallet generates no interest). Therefore, the actual rate of return of holding cash depends purely on the loss of purchasing power due to inflation.</span></p>
+
+            <div class="math-block">
+                $$ \text{Return on Cash} = 0\% - \text{Actual Inflation Rate} = -\pi $$
+            </div>
+        </div>
+
+        <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="analysis-box">
+            <div class="correct-answer">正確答案 Correct Option: A</div>
+            
+            <div class="option-analysis">
+                <h3>分析 Option A (正確 Correct)</h3>
+                <p><strong>第一部分 (實際實質利率)：</strong> 根據公式，實際實質利率 \(= \text{名義利率} (8\%) - \text{實際通脹率} (6\%) = 2\%\)。<br>
+                <span class="en-text"><strong>Part 1 (Actual Real Interest Rate):</strong> According to the formula, Actual Real Interest Rate \(= \text{Nominal Interest Rate} (8\%) - \text{Actual Inflation Rate} (6\%) = 2\%\).</span></p>
+                
+                <p><strong>第二部分 (持有現金的實際回報率)：</strong> 持有現金的名義回報是 \(0\%\)。實際回報率 \(= 0\% - \text{實際通脹率} (6\%) = -6\%\)。<br>
+                <span class="en-text"><strong>Part 2 (Actual rate of return of holding cash):</strong> The nominal return of holding cash is \(0\%\). Actual rate of return \(= 0\% - \text{Actual Inflation Rate} (6\%) = -6\%\).</span></p>
+            </div>
+
+            <div class="option-analysis">
+                <h3>分析 Option B (錯誤 Incorrect)</h3>
+                <p>錯在第二部分。持有現金的回報率不是負的名義利率 (\(-8\%\))。\(8\%\) 是持有現金的「機會成本 (Opportunity Cost)」，而非「回報率 (Rate of Return)」。<br>
+                <span class="en-text">Incorrect in the second part. The rate of return of holding cash is not the negative nominal interest rate (\(-8\%\)). \(8\%\) is the "Opportunity Cost" of holding cash, not its "Rate of Return".</span></p>
+            </div>
+
+            <div class="option-analysis">
+                <h3>分析 Option C (錯誤 Incorrect)</h3>
+                <p>錯在第一部分。\(5\%\) 是<strong>預期</strong>實質利率（\(8\% - 3\% = 5\%\)），但題目要求的是<strong>實際</strong>實質利率。這是一個引誘你使用錯誤通脹率的陷阱。<br>
+                <span class="en-text">Incorrect in the first part. \(5\%\) is the <strong>expected</strong> real interest rate (\(8\% - 3\% = 5\%\)), but the question asks for the <strong>actual</strong> real interest rate. This is a trap enticing you to use the wrong inflation rate.</span></p>
+            </div>
+
+            <div class="option-analysis" style="border-bottom: none;">
+                <h3>分析 Option D (錯誤 Incorrect)</h3>
+                <p>兩個部分皆錯誤。既錯誤地計算了預期實質利率 (\(5\%\))，又把名義利率當作了現金的購買力跌幅 (\(-8\%\))。<br>
+                <span class="en-text">Both parts are incorrect. It wrongly calculates the expected real interest rate (\(5\%\)) and incorrectly uses the nominal interest rate as the drop in cash purchasing power (\(-8\%\)).</span></p>
+            </div>
+        </div>
+
+        <h2>4. Problem Decomposition (題目拆解)</h2>
+        <div class="decomposition">
+            <p><strong>Pivot Point (破題關鍵):</strong> <br>
+            認清題目要求的字眼：<strong>「實際 (Actual)」</strong>。這意味著所有與「預期 (Expected)」相關的數據都是無用的干擾訊息 (Distractors)。<br>
+            <span class="en-text">Identify the key word in the question: <strong>"Actual"</strong>. This means any data related to "Expected" is useless distracting information.</span></p>
+            
+            <p><strong>Distractor (干擾數據):</strong><br>
+            預期通脹率 \(3\%\) 完全不需要用到。出題者故意提供此數據，就是為了測試考生能否分辨「預期」與「實際」的概念。<br>
+            <span class="en-text">The Expected Inflation Rate of \(3\%\) is completely unneeded. The examiner intentionally provides this data to test if students can differentiate between "expected" and "actual" concepts.</span></p>
+        </div>
+
+        <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="mistakes">
+            <p><strong>陷阱 1：混淆「機會成本」與「回報率」</strong><br>
+            <span class="en-text">Trap 1: Confusing "Opportunity Cost" with "Rate of Return"</span><br>
+            很多同學會選錯現金回報率為 \(-8\%\)。請記住：<br>
+            - 持有現金的<strong>機會成本 (Opportunity Cost)</strong> = 放棄的最高名義利率 (\(8\%\))。<br>
+            - 持有現金的<strong>實際回報率 (Actual Rate of Return)</strong> = 購買力的改變 (\(-\text{實際通脹率} = -6\%\))。</p>
+
+            <p><strong>陷阱 2：見數字就減</strong><br>
+            <span class="en-text">Trap 2: Subtracting numbers blindly</span><br>
+            有些同學看到 \(8\%\) 和 \(3\%\) 就立刻相減得出 \(5\%\)。在答題前，務必圈出題目中的時間性字眼（實際 vs 預期）。</p>
+        </div>
+
+        <h2>6. Student Q&A (學生常見疑問)</h2>
+        <div class="qa">
+            <div class="qa-item">
+                <div class="qa-q">Q1: 為什麼現金的名義利率是 0%？如果是存在銀行的活期存款呢？</div>
+                <div class="en-text">Q1: Why is the nominal interest rate of cash 0%? What if it's demand deposits in a bank?</div>
+                <div class="qa-a">
+                    A: 經濟學中定義的「持有現金 (Holding cash)」是指實體貨幣（紙幣和硬幣），它本身不會生息，所以名義利率永遠是 \(0\%\)。如果題目說「持有活期存款 (Demand deposits)」，則要看銀行提供的活期名義利率是多少（通常極低，但未必是 \(0\%\)）。本題明確說明是「現金」。<br>
+                    <span class="en-text">A: In economics, "holding cash" refers to physical currency (banknotes and coins), which does not bear interest, so its nominal interest rate is always \(0\%\). If the question specified "demand deposits", you would need to use the nominal interest rate provided by the bank. This question explicitly says "cash".</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="tricks">
+            <p><strong>「反向解題法」秒殺 MC (The "Reverse Elimination" Method)</strong></p>
+            <p>在應付這類雙重填空的 MC 題時，通常<strong>後半部分</strong>會比較容易計算，或者是多數考生的盲點。我們可以直接先看後半部：<br>
+            <span class="en-text">When tackling double-blank MC questions, the <strong>second half</strong> is often easier to calculate or acts as a blind spot. We can look at the second half first:</span></p>
+            <ol>
+                <li>題目問「持有現金的實際回報率」。<br>
+                <span class="en-text">Question asks for "actual rate of return of holding cash".</span></li>
+                <li>腦海中立刻浮現公式：\(0\% - \text{實際通脹率} (6\%) = -6\%\)。<br>
+                <span class="en-text">Formula instantly pops into mind: \(0\% - \text{Actual Inflation Rate} (6\%) = -6\%\).</span></li>
+                <li>看看選項，B 和 D 的後半部是 \(-8\%\)，立刻刪去 (Eliminate B and D)。<br>
+                <span class="en-text">Look at options, the second half for B and D is \(-8\%\), eliminate them immediately.</span></li>
+                <li>現在只剩 A 和 C。題目問「實際 (Actual)」，所以我們用實際通脹率 (\(6\%\))。名義 (\(8\%\)) - 實際通脹 (\(6\%\)) = \(2\%\)。選 A！<br>
+                <span class="en-text">Now only A and C remain. The question asks for "Actual", so we use actual inflation (\(6\%\)). Nominal (\(8\%\)) - Actual inflation (\(6\%\)) = \(2\%\). Choose A!</span></li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

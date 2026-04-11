@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Deposit Creation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0369a1;
+            --primary-light: #f0f9ff;
+            --secondary: #0ea5e9;
+            --bg-color: #f9fafb;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --success: #10b981;
+            --error: #ef4444;
+            --math-bg: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Section 1: Header */
+        .header-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Section 2: Question */
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .question-options {
+            list-style-type: upper-alpha;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Section 3: Concept Review */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Section 4: Analysis */
+        .analysis-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .correct-opt {
+            border-left: 5px solid var(--success);
+        }
+
+        .wrong-opt {
+            border-left: 5px solid var(--error);
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            margin-bottom: 8px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* Sections 5-8 Boxes */
+        .info-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #9333ea;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .trick-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>HKDSE Economics - Guided Solution<br>經濟學詳細題解</h1>
+    <div class="header-section">
+        <span class="tag">Topic: 貨幣與銀行 Money & Banking</span>
+        <span class="tag" style="background:#f59e0b;">Difficulty: ★★★☆☆</span>
+        <span class="tag" style="background:#10b981;">Key Concepts: Monetary Base, Reserves, Deposit Creation</span>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="zh">
+            細閱下列有關某經濟的資料。<br><br>
+            貨幣基礎： 500十億元<br>
+            公眾流通的硬幣和紙幣： 300十億元<br>
+            法定儲備比率： 20%<br><br>
+            若所有銀行將可貸款項全數借出，存款的金額會是 __________。
+        </div>
+        <div class="en">
+            Study the following information about an economy.<br><br>
+            Monetary base: $500 billion<br>
+            The coins and notes circulated in the public: $300 billion<br>
+            Required reserve ratio: 20%<br><br>
+            If all the banks are fully loaned up, the amount of deposits will be _______.
+        </div>
+        <ul class="question-options">
+            <li>A. 1 000十億元 ($1 000 billion)</li>
+            <li>B. 1 500十億元 ($1 500 billion)</li>
+            <li>C. 2 500十億元 ($2 500 billion)</li>
+            <li>D. 4 000十億元 ($4 000 billion)</li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="zh">
+            <strong>核心理論：</strong><br>
+            要解決這類題目，我們必須清楚了解貨幣基礎（Monetary Base）、儲備（Reserves）與存款（Deposits）之間的關係。
+        </div>
+        <div class="en">
+            <strong>Core Theory:</strong><br>
+            To solve this type of question, we must clearly understand the relationship between the Monetary Base, Reserves, and Deposits.
+        </div>
+
+        <div class="math-block">
+            $$ MB = C_p + R $$
+        </div>
+        <div class="zh">
+            這裡，\( MB \) 是貨幣基礎，\( C_p \) 是公眾持有的現金（公眾流通的硬幣和紙幣），\( R \) 是銀行系統的實際儲備。
+        </div>
+        <div class="en">
+            Here, \( MB \) is the Monetary Base, \( C_p \) is the cash held by the public (coins and notes circulated), and \( R \) is the actual reserves in the banking system.
+        </div>
+
+        <div class="math-block">
+            $$ R \ge RR = D \times r $$
+        </div>
+        <div class="zh">
+            這裡，\( RR \) 是法定儲備，\( D \) 是總存款金額，\( r \) 是法定儲備比率（Required Reserve Ratio）。當銀行<strong>將可貸款項全數借出（fully loaned up）</strong>時，代表銀行沒有持有任何超額儲備，即實際儲備等於法定儲備 \( (R = RR) \)。
+        </div>
+        <div class="en">
+            Here, \( RR \) is the Required Reserves, \( D \) is the total amount of Deposits, and \( r \) is the Required Reserve Ratio. When banks are <strong>fully loaned up</strong>, it means they hold no excess reserves, so actual reserves equal required reserves \( (R = RR) \).
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div class="analysis-card correct-opt">
+        <h3 style="margin-top: 0; color: var(--success);">正確答案 Correct Option: A</h3>
+        <div class="zh">
+            <strong>解題步驟：</strong><br>
+            第一步：首先，我們要找出銀行系統內的儲備 \( (R) \)。因為貨幣基礎包含了公眾持有的現金和銀行儲備，我們可以推導出：
+        </div>
+        <div class="en">
+            <strong>Step-by-step:</strong><br>
+            Step 1: First, we need to find the reserves \( (R) \) in the banking system. Since the monetary base consists of cash in the public and bank reserves, we deduce:
+        </div>
+        <div class="math-block">
+            $$ R = MB - C_p $$
+            $$ R = 500 - 300 = 200 \text{ 十億元 (billion)} $$
+        </div>
+        
+        <div class="zh">
+            第二步：題目指出銀行「將可貸款項全數借出」，這意味著實際儲備等於法定儲備 \( (R = RR) \)。利用法定儲備的公式推導出存款金額 \( (D) \)：
+        </div>
+        <div class="en">
+            Step 2: The question states banks are "fully loaned up", meaning actual reserves equal required reserves \( (R = RR) \). Using the required reserves formula, we find the deposits \( (D) \):
+        </div>
+        <div class="math-block">
+            $$ R = D \times r $$
+            $$ 200 = D \times 0.2 $$
+            $$ D = \frac{200}{0.2} = 1000 \text{ 十億元 (billion)} $$
+        </div>
+        <div class="zh">因此，正確答案是 A。</div>
+        <div class="en">Therefore, the correct answer is A.</div>
+    </div>
+
+    <div class="analysis-card wrong-opt">
+        <h4 style="margin-top: 0; color: var(--error);">選項 B 分析 (Option B Analysis) - 1 500十億元</h4>
+        <div class="zh">錯誤原因：學生可能誤將「公眾持有的現金」\( (C_p) \) 當作了銀行的儲備去計算。如果是 \( 300 \div 0.2 = 1500 \)，這完全違背了現金不在銀行體系內就無法創造存款的原則。</div>
+        <div class="en">Reason for error: Students might have mistakenly used the "cash in public" \( (C_p) \) as the bank reserves for the calculation. Calculating \( 300 \div 0.2 = 1500 \) completely violates the principle that cash outside the banking system cannot create deposits.</div>
+    </div>
+
+    <div class="analysis-card wrong-opt">
+        <h4 style="margin-top: 0; color: var(--error);">選項 C 分析 (Option C Analysis) - 2 500十億元</h4>
+        <div class="zh">錯誤原因：這是一個非常常見的陷阱！學生直接將「貨幣基礎」\( (MB) \) 除以法定儲備比率 \( (500 \div 0.2 = 2500) \)。他們忘記了貨幣基礎中有一部分現金（300十億元）在市民口袋裡，根本沒有存入銀行！</div>
+        <div class="en">Reason for error: This is a very common trap! Students directly divide the "Monetary Base" \( (MB) \) by the reserve ratio \( (500 \div 0.2 = 2500) \). They forgot that a portion of the monetary base ($300 billion) is in the pockets of the public and was never deposited into the banks!</div>
+    </div>
+
+    <div class="analysis-card wrong-opt">
+        <h4 style="margin-top: 0; color: var(--error);">選項 D 分析 (Option D Analysis) - 4 000十億元</h4>
+        <div class="zh">錯誤原因：隨機拼湊數字。學生可能錯誤地將貨幣基礎與現金相加，然後再除以比率 \( ((500 + 300) \div 0.2 = 4000) \)，這在經濟學上沒有任何邏輯基礎。</div>
+        <div class="en">Reason for error: Random combination of numbers. Students might have wrongly added the monetary base and cash together before dividing by the ratio \( ((500 + 300) \div 0.2 = 4000) \), which has no logical foundation in economics.</div>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="info-box">
+        <div class="zh">
+            <strong>解題關鍵 (Pivot Point)：</strong><br>
+            這題的靈魂在於「貨幣基礎 500」與「公眾現金 300」這兩組數字的結合。考評局的目的是測試你是否知道 <strong>銀行儲備是需要計算出來的，而不是直接給出的</strong>。只有在銀行金庫裡的錢（儲備），才能透過借貸產生乘數效應（Multiplier effect）。
+        </div>
+        <div class="en">
+            <strong>Pivot Point:</strong><br>
+            The core of this question lies in combining "Monetary Base 500" and "Public Cash 300". The HKEAA wants to test if you know that <strong>bank reserves must be calculated; they aren't given directly</strong>. Only the money inside bank vaults (reserves) can go through the multiplier effect via lending.
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="info-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <div class="zh">
+            <strong>⚠️ 死亡陷阱：混淆貨幣基礎與儲備</strong><br>
+            最大的錯誤就是套用公式時不看清楚變數。很多同學背了公式： \( \text{Maximum Deposits} = \text{Reserves} \div RRR \)，但在考試緊張時，會順手拿了題目第一個出現的巨大數字「貨幣基礎」去當作「儲備」計算（即選項 C 的死穴）。
+        </div>
+        <div class="en">
+            <strong>⚠️ Death Trap: Confusing Monetary Base with Reserves</strong><br>
+            The biggest mistake is applying formulas without verifying the variables. Many students memorize: \( \text{Maximum Deposits} = \text{Reserves} \div RRR \). But under exam pressure, they grab the first large number they see—the "Monetary Base"—and use it as "Reserves" (which leads straight to Option C).
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #64748b;">
+        <div class="zh">
+            <strong>Q1: 題目問「存款」金額，那麼這個經濟體的「貨幣供應 (Money Supply M1)」又是多少呢？</strong><br>
+            A1: 貨幣供應 \( (M_s) \) = 公眾持有的現金 \( (C_p) \) + 存款 \( (D) \)。所以 \( M_s = 300 + 1000 = 1300 \) 十億元。考試時要看清楚題目是問「存款 Deposits」還是「貨幣供應 Money Supply」！
+        </div>
+        <div class="en">
+            <strong>Q1: The question asks for "Deposits", but what would be the "Money Supply (M1)" of this economy?</strong><br>
+            A1: Money Supply \( (M_s) \) = Cash in Public \( (C_p) \) + Deposits \( (D) \). So \( M_s = 300 + 1000 = 1300 \) billion. Always read carefully during the exam whether they are asking for "Deposits" or "Money Supply"!
+        </div>
+        <hr style="margin: 15px 0;">
+        <div class="zh">
+            <strong>Q2: 為什麼我們可以直接用 \( D = R / r \) 這個公式？</strong><br>
+            A2: 因為題目設定「將可貸款項全數借出 (fully loaned up)」，這代表銀行沒有超額儲備 (Excess Reserves = 0)。銀行的實際儲備等於法定儲備要求，此時存款已經擴張到理論上的最大值。
+        </div>
+        <div class="en">
+            <strong>Q2: Why can we directly use the formula \( D = R / r \)?</strong><br>
+            A2: Because the question states banks are "fully loaned up," meaning they hold zero Excess Reserves. The banks' actual reserves exactly meet the required reserves, at which point deposits have expanded to their theoretical maximum.
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="zh">
+            <strong>💡 視覺化記憶法：</strong><br>
+            考試時，在題目旁邊畫一個簡單的樹狀圖：<br>
+            1. 寫下 <strong>MB (500)</strong> 在頂部。<br>
+            2. 分出兩條分支：左邊是 <strong>現金 (300)</strong>，右邊是 <strong>儲備 (?)</strong>。<br>
+            3. 一眼就能看出儲備必定是 <strong>200</strong>。<br>
+            4. 只有「儲備分支」可以乘上乘數 \( (1 \div 0.2 = 5) \)。所以 \( 200 \times 5 = 1000 \)。<br>
+            這能有效防止你誤用貨幣基礎去乘乘數！
+        </div>
+        <div class="en">
+            <strong>💡 Visual Memory Trick:</strong><br>
+            During the exam, draw a simple tree diagram next to the question:<br>
+            1. Write <strong>MB (500)</strong> at the top.<br>
+            2. Draw two branches: left is <strong>Cash (300)</strong>, right is <strong>Reserves (?)</strong>.<br>
+            3. You can instantly see Reserves must be <strong>200</strong>.<br>
+            4. Only the "Reserves branch" can be multiplied by the banking multiplier \( (1 \div 0.2 = 5) \). So \( 200 \times 5 = 1000 \).<br>
+            This effectively prevents you from accidentally multiplying the entire monetary base!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

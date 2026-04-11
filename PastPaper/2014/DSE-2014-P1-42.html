@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Exchange Rates</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --primary-orange: #f59e0b;
+            --light-orange: #fffbeb;
+            --primary-red: #ef4444;
+            --light-red: #fef2f2;
+            --primary-green: #10b981;
+            --light-green: #ecfdf5;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+            color: var(--primary-blue);
+        }
+
+        .bilingual-p {
+            margin-bottom: 15px;
+        }
+        
+        .en-translation {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--bg-gray);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .question-box {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-top: 5px solid var(--text-dark);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .analysis-box {
+            background-color: var(--light-green);
+            border-left: 5px solid var(--primary-green);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .trap-box {
+            background-color: var(--light-red);
+            border-left: 5px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .qa-box {
+            background-color: var(--light-orange);
+            border-left: 5px solid var(--primary-orange);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .option-breakdown {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .correct-tag {
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .wrong-tag {
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .question-box, .concept-box, .analysis-box, .trap-box, .qa-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="badge">📖 課題 Topic: 匯率與聯繫匯率制度 (Exchange Rate & Linked Exchange Rate)</span>
+            <span class="badge">⭐ 難度 Difficulty: ★★★☆☆</span>
+            <span class="badge">🔑 關鍵字: 貶值 Depreciation, 升值 Appreciation, 出口與進口 Exports & Imports</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h2>📝 題目 The Question</h2>
+        
+        <div class="bilingual-p">
+            <strong>假設南韓圜兌美元貶值。在香港聯繫匯率制度下，下列哪些會是上述匯率改變的結果？</strong><br>
+            (1) 從南韓進口至香港的物品數量會增加。<br>
+            (2) 從香港出口至南韓的物品價格(以港元計算)會上升。<br>
+            (3) 到訪香港的南韓遊客人數會下跌。
+        </div>
+        <div class="en-translation">
+            <strong>Suppose South Korean Won depreciates against the US Dollar. Under the linked exchange rate system of Hong Kong, which of the following would be results of the above change in the exchange rate?</strong><br>
+            (1) The volume of imported goods from South Korea to Hong Kong would increase.<br>
+            (2) The price of exported goods from Hong Kong to South Korea in terms of HK dollar would increase.<br>
+            (3) The number of tourists from South Korea to Hong Kong would decrease.
+        </div>
+
+        <div class="bilingual-p" style="margin-top: 15px;">
+            A. 只有(1)、(2) / (1) and (2) only<br>
+            B. 只有(1)、(3) / (1) and (3) only<br>
+            C. 只有(2)、(3) / (2) and (3) only<br>
+            D. (1)、(2)及(3) / (1), (2) and (3)
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>🧠 概念重溫 Concept Review</h2>
+        
+        <p class="bilingual-p"><strong>1. 聯繫匯率制度 (Linked Exchange Rate System)</strong><br>
+        在香港，港元（HKD）與美元（USD）掛鈎，匯率固定在約 \( 7.8 \text{ HKD} = 1 \text{ USD} \)。因此，當其他貨幣相對於美元貶值時，它們也會相對於港元貶值；反之，港元則相對升值。</p>
+        <p class="en-translation">In Hong Kong, the Hong Kong Dollar (HKD) is pegged to the US Dollar (USD) at a fixed rate of roughly \( 7.8 \text{ HKD} = 1 \text{ USD} \). Therefore, when another currency depreciates against the USD, it also depreciates against the HKD; conversely, the HKD appreciates against that currency.</p>
+
+        <p class="bilingual-p"><strong>2. 匯率變動對進出口的影響 (Impact of Exchange Rates on Trade)</strong><br>
+        當本國貨幣升值（Appreciation）時，外國貨品以本幣計算的價格會下降，從而刺激進口量（Imports, \( M \)）。相反，本國貨品以外幣計算的價格會上升，導致外國人減少購買，從而減少出口量（Exports, \( X \)）。</p>
+        <p class="en-translation">When the domestic currency appreciates, foreign goods become cheaper in terms of the domestic currency, which stimulates the volume of imports (\( M \)). Conversely, domestic goods become more expensive in terms of the foreign currency, leading foreigners to buy less, thereby decreasing the volume of exports (\( X \)).</p>
+
+        <div class="math-block">
+            $$ \text{If HKD appreciates against KRW:} $$
+            $$ P_{\text{Import in HKD}} \downarrow \implies Q_{\text{Import}} \uparrow $$
+            $$ P_{\text{Export in KRW}} \uparrow \implies Q_{\text{Export}} \downarrow $$
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h2>✅ 答案與詳細分析 The Answer & Detailed Analysis</h2>
+        
+        <h3 style="text-align: center; color: var(--primary-green);">正確答案 Correct Option: B</h3>
+
+        <div class="option-breakdown">
+            <p class="bilingual-p"><strong>分析 (1): <span class="correct-tag">正確 True</span></strong><br>
+            因為港元相對南韓圜升值，南韓貨品以港元計算的價格變得更便宜。因此，香港人會增加購買南韓貨品，從南韓進口至香港的物品數量會增加。</p>
+            <p class="en-translation">Since the HKD appreciates against the KRW, South Korean goods become cheaper in terms of HKD. Therefore, Hong Kong people will buy more South Korean goods, and the volume of imported goods from South Korea to Hong Kong will increase.</p>
+        </div>
+
+        <div class="option-breakdown">
+            <p class="bilingual-p"><strong>分析 (2): <span class="wrong-tag">錯誤 False</span></strong><br>
+            這是經典的考點！香港出口至南韓的物品，其「以外幣（南韓圜）計算」的價格確實上升了。但是，題目問的是「以港元計算」的價格。由於香港生產商的成本（如租金、工資）是以港元結算，其標價的港元價格不會因為匯率變動而直接改變。</p>
+            <p class="en-translation">This is a classic trap! The price of Hong Kong's exports to South Korea "in terms of foreign currency (KRW)" does indeed increase. However, the question asks for the price "in terms of HK dollar". Since HK producers' costs (rent, wages) are in HKD, the original price tag in HKD does not change directly due to exchange rate fluctuations.</p>
+        </div>
+
+        <div class="option-breakdown">
+            <p class="bilingual-p"><strong>分析 (3): <span class="correct-tag">正確 True</span></strong><br>
+            旅遊業屬於一種「服務出口」。港元相對南韓圜升值，意味著南韓人需要用更多的南韓圜才能兌換相同的港元。到香港旅遊的成本（以南韓圜計算）上升，因此到訪香港的南韓遊客人數會下跌。</p>
+            <p class="en-translation">Tourism is a form of "service export". The appreciation of HKD against KRW means South Koreans need more KRW to exchange for the same amount of HKD. The cost of traveling to Hong Kong (in terms of KRW) increases, so the number of South Korean tourists visiting Hong Kong will decrease.</p>
+        </div>
+    </div>
+
+    <div class="concept-box" style="border-color: #8b5cf6; background-color: #f5f3ff;">
+        <h2 style="color: #6d28d9;">🧩 題目拆解 Problem Decomposition</h2>
+        <p class="bilingual-p"><strong>拆題樞紐 (The Pivot Point):</strong><br>
+        解答這題的關鍵在於首兩句的結合：「南韓圜兌美元貶值」+「聯繫匯率制度」。你必須立即在腦海中（或在試卷上寫下）得出結論：<strong>港元相對南韓圜升值 (HKD appreciates against KRW)</strong>。這是解開所有選項的鑰匙。</p>
+        <p class="en-translation">The key to solving this question lies in combining the first two sentences: "KRW depreciates against USD" + "Linked exchange rate". You must immediately conclude (or write down on the paper): <strong>HKD appreciates against KRW</strong>. This is the master key to unlocking all options.</p>
+    </div>
+
+    <div class="trap-box">
+        <h2 style="color: var(--primary-red);">⚠️ 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <p class="bilingual-p"><strong>陷阱：混淆定價貨幣 (Confusing the Denomination Currency)</strong><br>
+        學生經常死記「本幣升值會令出口價格上升」，但忽略了這裏所指的「價格」是<strong>外幣價格</strong>。本國出口商收取的本幣金額（港元價格）在短期內是不變的。考評局極喜歡在括號中加入「(以港元計算)」來測試學生是否真正理解匯率的運作。</p>
+        <p class="en-translation">Students often memorize "domestic currency appreciation increases export prices," but forget that this refers to the <strong>foreign currency price</strong>. The domestic currency amount received by the domestic exporter (HKD price) remains unchanged in the short run. The HKEAA loves adding "(in terms of HK dollar)" in brackets to test if students truly understand how exchange rates work.</p>
+    </div>
+
+    <div class="qa-box">
+        <h2 style="color: var(--primary-orange);">🙋‍♂️ 學生常見疑問 Student Q&A</h2>
+        <p class="bilingual-p"><strong>Q: 既然出口貨品以港幣計算的價格不變，為什麼外國人買得少了？</strong><br>
+        <strong>A:</strong> 想像一件香港製造的玩具賣 \( \$100 \text{ HKD} \)。以前匯率是 \( 1 \text{ HKD} = 150 \text{ KRW} \)，韓國人要付 \( 15,000 \text{ KRW} \)。現在港元升值，匯率變成 \( 1 \text{ HKD} = 170 \text{ KRW} \)，玩具依舊標價 \( \$100 \text{ HKD} \)（港元價格不變），但韓國人現在要付 \( 17,000 \text{ KRW} \) 才能買到。因為韓國人覺得貴了，所以買的數量（出口量）減少了。</p>
+        
+        <p class="en-translation"><strong>Q: If the export price in terms of HKD doesn't change, why do foreigners buy less?</strong><br>
+        <strong>A:</strong> Imagine a HK-made toy costs \( \$100 \text{ HKD} \). Previously, the exchange rate was \( 1 \text{ HKD} = 150 \text{ KRW} \), so a Korean paid \( 15,000 \text{ KRW} \). Now, HKD appreciates to \( 1 \text{ HKD} = 170 \text{ KRW} \). The toy still has a price tag of \( \$100 \text{ HKD} \) (HKD price is unchanged), but the Korean now has to pay \( 17,000 \text{ KRW} \) to buy it. Because it feels more expensive to the Korean buyer, the quantity purchased (export volume) drops.</p>
+    </div>
+
+    <div class="header-section" style="background-color: #f8fafc; border: 2px dashed #cbd5e1;">
+        <h2 style="color: #334155; border: none;">⚡ 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+        <p class="bilingual-p"><strong>剔除法 (Method of Elimination)：秒殺題目！</strong><br>
+        在 DSE 考試中，時間就是分數。當你一看到選項 (2) 寫著「價格(以港元計算)會上升」，而你清楚知道這是考評局的經典陷阱（價格不變），你就可以判定 (2) 是錯的。<br>
+        馬上看選擇題：<br>
+        A. 只有(1)、(2) ❌<br>
+        C. 只有(2)、(3) ❌<br>
+        D. (1)、(2)及(3) ❌<br>
+        你甚至不需要仔細推敲 (1) 和 (3) 是否完全正確，答案就只能是 <strong>B</strong> 了！這能為你節省至少一分鐘的時間。</p>
+        
+        <p class="en-translation"><strong>Method of Elimination: Instant Kill!</strong><br>
+        In the DSE exam, time is marks. The moment you see statement (2) says "price... in terms of HK dollar would increase", and you know this is a classic HKEAA trap (the price is unchanged), you can definitively say (2) is false.<br>
+        Look at the options immediately:<br>
+        A. (1) and (2) only ❌<br>
+        C. (2) and (3) only ❌<br>
+        D. (1), (2) and (3) ❌<br>
+        You don't even need to deeply analyze if (1) and (3) are perfectly correct; the answer HAS to be <strong>B</strong>! This trick saves you at least a minute.</p>
+    </div>
+
+</body>
+</html>

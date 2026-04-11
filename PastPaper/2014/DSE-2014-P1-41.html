@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Comparative Advantage</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --trap-red: #fee2e2;
+            --trap-border: #ef4444;
+            --trick-green: #dcfce7;
+            --trick-border: #22c55e;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .header-section {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--bg-gray);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .analysis-box {
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .correct-answer {
+            background-color: #f0fdf4;
+            border-left: 5px solid #16a34a;
+        }
+
+        .wrong-answer {
+            background-color: #fff1f2;
+            border-left: 5px solid #e11d48;
+        }
+
+        .trap-box {
+            background-color: var(--trap-red);
+            border-left: 5px solid var(--trap-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: var(--trick-green);
+            border-left: 5px solid var(--trick-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fdfce8;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .tag {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📝 HKDSE Economics MCQ Analysis</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> 國際貿易 International Trade</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆ (3/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="tag"><strong>Key Concepts:</strong> Opportunity Cost, Comparative Advantage, Terms of Trade</span>
+        </div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p>下表顯示甲、乙兩國生產物品X、Y時所需的工作時數。</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>一單位物品 X</th>
+                <th>一單位物品 Y</th>
+            </tr>
+            <tr>
+                <td><strong>甲國</strong></td>
+                <td>10 單位</td>
+                <td>25 單位</td>
+            </tr>
+            <tr>
+                <td><strong>乙國</strong></td>
+                <td>5 單位</td>
+                <td>15 單位</td>
+            </tr>
+        </table>
+        <p>當貿易比率是 ___________ ，甲、乙兩國之間的貿易是互惠互利的。</p>
+        <p>A. \(1X = 0.35Y\)<br>
+           B. \(1X = 0.4Y\)<br>
+           C. \(1X = 1.25Y\)<br>
+           D. \(1X = 2.75Y\)</p>
+        
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 20px 0;">
+        
+        <p class="bilingual-en" style="font-style: normal; color: var(--text-dark);">The following table shows the number of man-hours required by Country A and Country B in the production of Good X and Good Y.</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>1 unit of Good X</th>
+                <th>1 unit of Good Y</th>
+            </tr>
+            <tr>
+                <td><strong>Country A</strong></td>
+                <td>10 units</td>
+                <td>25 units</td>
+            </tr>
+            <tr>
+                <td><strong>Country B</strong></td>
+                <td>5 units</td>
+                <td>15 units</td>
+            </tr>
+        </table>
+        <p class="bilingual-en" style="font-style: normal; color: var(--text-dark);">Trade is mutually beneficial between Country A and Country B when the terms of trade is ___________.</p>
+        <p class="bilingual-en" style="font-style: normal; color: var(--text-dark);">
+           A. \(1X = 0.35Y\)<br>
+           B. \(1X = 0.4Y\)<br>
+           C. \(1X = 1.25Y\)<br>
+           D. \(1X = 2.75Y\)
+        </p>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>💡 Input vs. Output Problems (投入與產出問題)</h3>
+        <p>在計算機會成本時，我們首先要辨別題目是「投入問題」（例如：工時、資源）還是「產出問題」（例如：產量）。這題顯示的是「所需工作時數」，所以這是一個<strong>投入問題 (Input Problem)</strong>。</p>
+        <p class="bilingual-en">When calculating opportunity cost, we must first identify if the question is an "Input problem" (e.g., man-hours, resources) or an "Output problem" (e.g., production volume). This question shows "man-hours required", so it is an <strong>Input Problem</strong>.</p>
+        
+        <div class="math-block">
+            <strong>Input Problem Formula (投入問題公式):</strong><br>
+            $$ \text{Opportunity Cost of X (以 Y 表示)} = \frac{\text{資源 (Resource for X)}}{\text{資源 (Resource for Y)}} $$
+        </div>
+
+        <h3>💡 Mutually Beneficial Terms of Trade (互惠互利的貿易比率)</h3>
+        <p>為了讓兩國都能從貿易中獲益，貿易比率 (Terms of Trade, TOT) 必須處於兩國的本地機會成本之間（不包括等於機會成本的端點，因為等於時該國利潤為零）。</p>
+        <p class="bilingual-en">For both countries to gain from trade, the Terms of Trade (TOT) must lie strictly between the domestic opportunity costs of the two countries (excluding the endpoints, because if the TOT equals a country's domestic cost, that country makes zero gain).</p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box correct-answer">
+        <h3>✅ Correct Option: A (正確答案：A)</h3>
+        <p>首先，我們需要計算兩國生產 1 單位物品 X 的機會成本：</p>
+        <p class="bilingual-en">First, we need to calculate the opportunity cost of producing 1 unit of Good X for both countries:</p>
+        
+        <div class="math-block">
+            <strong>甲國 (Country A):</strong> \( 1X = \frac{10}{25}Y = 0.4Y \)<br>
+            <strong>乙國 (Country B):</strong> \( 1X = \frac{5}{15}Y = \frac{1}{3}Y \approx 0.333Y \)
+        </div>
+        
+        <p>乙國生產 X 的機會成本較低（\(0.333Y < 0.4Y\)），享有比較優勢，因此乙國會出口 X。互惠貿易比率必須介乎兩者之間：</p>
+        <p class="bilingual-en">Country B has a lower opportunity cost for producing X (\(0.333Y < 0.4Y\)), thus has a comparative advantage and will export X. The mutually beneficial terms of trade must fall between:</p>
+        
+        <div class="math-block">
+            $$ 0.333Y < \text{TOT of } 1X < 0.4Y $$
+        </div>
+        
+        <p>選項 A 的 \(1X = 0.35Y\) 剛好落在此區間內，因此雙方都能獲益。</p>
+        <p class="bilingual-en">Option A (\(1X = 0.35Y\)) falls exactly within this range, ensuring both countries gain from trade.</p>
+    </div>
+
+    <div class="analysis-box wrong-answer">
+        <h3>❌ Option B Breakdown</h3>
+        <p>\(1X = 0.4Y\)。這個比率剛好等於甲國生產 X 的本地機會成本。在這種情況下，甲國參與貿易所獲得的利益為零，因此這不符合題目「互惠互利」(Mutually beneficial) 的嚴格要求。</p>
+        <p class="bilingual-en">\(1X = 0.4Y\). This ratio is exactly equal to Country A's domestic opportunity cost of producing X. Under this TOT, Country A gains zero from trade, so it does not meet the strict requirement of being "mutually beneficial" (both parties must gain).</p>
+    </div>
+
+    <div class="analysis-box wrong-answer">
+        <h3>❌ Options C & D Breakdown</h3>
+        <p>\(1X = 1.25Y\) 及 \(1X = 2.75Y\)。這兩個數值都遠遠超出了 \(0.333Y\) 到 \(0.4Y\) 的範圍。在此比率下，貿易不可能發生，因為進口國會寧願自己生產。</p>
+        <p class="bilingual-en">\(1X = 1.25Y\) and \(1X = 2.75Y\). Both values are far outside the \(0.333Y\) to \(0.4Y\) range. Trade would not occur at these ratios because the importing country would be better off producing the goods domestically.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box">
+        <p><strong>第一步 (Step 1)：</strong> 確定數據類型（Pivot Point）。表格標題寫著「工作時數」，所以這是投入表 (Input table)。這決定了你要用的除法方向。</p>
+        <p class="bilingual-en">Identify the data type. The table header says "man-hours", making this an Input table. This determines the direction of your division.</p>
+        
+        <p><strong>第二步 (Step 2)：</strong> 看選項找出目標物品。所有選項都是以「\(1X = ? Y\)」來表達，這意味著我們只需要計算生產 1 單位 X 的機會成本，不需要浪費時間計算 Y 的機會成本。</p>
+        <p class="bilingual-en">Look at the options to find the target good. All options are formatted as "\(1X = ? Y\)". This means we only need to calculate the opportunity cost of 1 unit of X. Don't waste time calculating for Y.</p>
+
+        <p><strong>第三步 (Step 3)：</strong> 找出界線。得出 \(0.333Y\) 和 \(0.4Y\) 後，尋找嚴格介於兩者之間的數字。</p>
+        <p class="bilingual-en">Find the boundaries. After getting \(0.333Y\) and \(0.4Y\), look for the number strictly between them.</p>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <h3>🚨 The "Output Formula" Trap (誤用產出公式陷阱)</h3>
+        <p>很多學生死記硬背了產出問題的公式（放棄數量 / 獲得數量）。如果在這題誤用了該公式，你會算出：<br>
+        甲國 \(1X = 25/10 Y = 2.5Y\)<br>
+        乙國 \(1X = 15/5 Y = 3Y\)<br>
+        然後你會尋找介於 \(2.5\) 到 \(3\) 之間的答案，並錯誤地選擇了 <strong>選項 D (2.75Y)</strong>！這是考評局最常設計的致命陷阱。</p>
+        <p class="bilingual-en">Many students memorize the Output problem formula (Given up / Gained). If you misuse it here, you would calculate Country A as \(1X = 25/10 Y = 2.5Y\) and Country B as \(1X = 15/5 Y = 3Y\). You would then look for an answer between \(2.5\) and \(3\), and wrongly choose <strong>Option D (2.75Y)</strong>! This is the HKEAA's favorite deadly trap.</p>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>🙋‍♂️ 學生問：</strong> 選項 B 中，甲國雖然沒有賺，但也沒有虧損（等於本地生產成本），為什麼不能算是互惠互利呢？</p>
+        <p class="bilingual-en"><strong>Student:</strong> In Option B, Country A doesn't lose (it equals domestic cost), even though it doesn't gain. Why isn't it considered mutually beneficial?</p>
+        
+        <p><strong>👨‍🏫 導師答：</strong> 在經濟學中，「互惠互利」(Mutually beneficial) 要求<strong>雙方</strong>都能得到比自己生產更好的結果（Trade gain > 0）。如果貿易比率剛好等於某一國的機會成本，那一國參與貿易的誘因是零，只有另一國單方面獲益。所以必須是嚴格不等式 (Strict inequality)。</p>
+        <p class="bilingual-en"><strong>Tutor:</strong> In economics, "Mutually beneficial" requires <strong>both</strong> parties to be strictly better off than producing domestically (Trade gain > 0). If the TOT equals one country's OC, their incentive to trade is zero, and only the other country benefits. Thus, strict inequalities apply.</p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <h3>⚡ The "Mental Math" Shortcut (心算速解法)</h3>
+        <p>做 DSE MC 題時，時間就是分數。當你知道這是 Input 表，且要找 \(1X = ? Y\)，直接把 X 的數字除以 Y 的數字：</p>
+        <p class="bilingual-en">In DSE MC, time is marks. When you know it's an Input table and need to find \(1X = ? Y\), just divide the X number by the Y number directly:</p>
+        <ul>
+            <li>甲 (A): \(10 \div 25 = 0.4\)</li>
+            <li>乙 (B): \(5 \div 15 \approx 0.33\)</li>
+        </ul>
+        <p>答案必須在 \(0.33\) 和 \(0.4\) 之間。掃視選項：A 是 0.35，B 是 0.4（邊界不可選），C 和 D 都大於 1。<strong>5秒內鎖定答案 A！</strong></p>
+        <p class="bilingual-en">The answer must be between \(0.33\) and \(0.4\). Scanning the options: A is 0.35, B is 0.4 (boundary not allowed), C and D are > 1. <strong>Lock in Option A in 5 seconds!</strong></p>
+    </div>
+
+</body>
+</html>
