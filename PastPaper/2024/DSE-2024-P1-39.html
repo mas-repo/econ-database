@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --correct-bg: #f0fdf4;
+            --correct-border: #22c55e;
+            --wrong-bg: #fef2f2;
+            --wrong-border: #ef4444;
+            --concept-bg: #e0f2fe;
+            --tip-bg: #fefce8;
+            --tip-border: #eab308;
+        }
+
+        body {
+            font-family: 'PingFang HK', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h2 {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+            border: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .zh {
+            font-size: 1.05em;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .en {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .question-box {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .analysis-card {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+
+        .correct-ans {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .wrong-ans {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+        }
+
+        .tip-box {
+            background-color: var(--tip-bg);
+            border-left: 5px solid var(--tip-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #b91c1c;
+        }
+
+        .qa-a {
+            color: #15803d;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div><strong>Topic 課題:</strong> 宏觀經濟學：貨幣政策與財政政策 <br><span style="font-size: 0.85em;">Macroeconomics: Monetary and Fiscal Policy</span></div>
+        <div style="margin-top: 8px;"><strong>Difficulty 難度:</strong> ★★☆☆☆ (2/5)</div>
+        <div style="margin-top: 12px;">
+            <strong>Key Concepts 關鍵概念:</strong><br>
+            <span class="tag">緊縮性貨幣政策 (Contractionary Monetary Policy)</span>
+            <span class="tag">法定儲備比率 (Required Reserve Ratio)</span>
+            <span class="tag">財政政策 (Fiscal Policy)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question 題目</h2>
+    <div class="question-box">
+        <div class="zh">下列哪項／些情況下，中國正採取緊縮性貨幣政策？</div>
+        <div class="en">A contractionary monetary policy is adopted in China when</div>
+
+        <ol>
+            <li>
+                <div class="zh">中國人民銀行提高商業銀行的法定儲備比率。</div>
+                <div class="en">the People’s Bank of China (中國人民銀行) increases the required reserve ratio of commercial banks.</div>
+            </li>
+            <li>
+                <div class="zh">中國人民銀行調低向商業銀行貸款的利率。</div>
+                <div class="en">the People’s Bank of China cuts the interest rate on its loans to commercial banks.</div>
+            </li>
+            <li>
+                <div class="zh">中國政府提高個人所得稅稅率。</div>
+                <div class="en">the Chinese Government raised the tax rates of the individual income tax.</div>
+            </li>
+        </ol>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: bold;">
+            <div>A. 只有 (1) / (1) only</div>
+            <div>B. 只有 (3) / (3) only</div>
+            <div>C. 只有 (1)、(2) / (1) and (2) only</div>
+            <div>D. 只有 (2)、(3) / (2) and (3) only</div>
+        </div>
+    </div>
+
+    <h2>2. Concept Review 概念重溫</h2>
+    <div class="concept-box">
+        <div class="zh"><strong>貨幣政策 (Monetary Policy)：</strong>由中央銀行（如中國人民銀行）執行，透過改變貨幣供應量 \(M^s\) 和利率 \(r\) 來影響宏觀經濟。</div>
+        <div class="en"><strong>Monetary Policy:</strong> Conducted by the central bank (e.g., PBOC), it influences the macroeconomy by altering the money supply \(M^s\) and interest rates \(r\).</div>
+        
+        <div class="zh"><strong>緊縮性貨幣政策 (Contractionary Monetary Policy)：</strong>目的是為了「冷卻」過熱的經濟。中央銀行會減少貨幣供應，導致利率上升，從而減少消費和投資。主要工具包括：提高法定儲備比率、提高貼現率、在公開市場出售政府債券。</div>
+        <div class="en"><strong>Contractionary Monetary Policy:</strong> The goal is to "cool down" an overheating economy. The central bank reduces the money supply, leading to higher interest rates, which reduces consumption and investment. Tools include: increasing the required reserve ratio, increasing the discount rate, and selling government bonds in the open market.</div>
+
+        <div class="zh"><strong>法定儲備比率與貨幣乘數 (Required Reserve Ratio and Money Multiplier)：</strong></div>
+        <div class="en"><strong>Required Reserve Ratio and Money Multiplier:</strong></div>
+        
+        <div class="math-block">
+            $$ M = \frac{1}{R} $$
+        </div>
+        <div class="zh">（其中 \(M\) 為最大貨幣乘數，\(R\) 為法定儲備比率。當 \(R\) 增加時，\(M\) 下降，導致貨幣供應量收縮。）</div>
+        <div class="en">(Where \(M\) is the maximum money multiplier and \(R\) is the required reserve ratio. When \(R\) increases, \(M\) decreases, leading to a contraction in the money supply.)</div>
+
+        <br>
+        <div class="zh"><strong>財政政策 (Fiscal Policy)：</strong>由政府（而非中央銀行）執行。主要工具是政府開支 \(G\) 和稅收 \(T\)。</div>
+        <div class="en"><strong>Fiscal Policy:</strong> Conducted by the government (not the central bank). The main tools are government spending \(G\) and taxation \(T\).</div>
+    </div>
+
+    <h2>3. Answer & Detailed Analysis 答案與詳細分析</h2>
+    
+    <div style="font-size: 1.2em; font-weight: bold; color: var(--primary-color);">
+        Correct Answer 正確答案: <span style="color: var(--correct-border);">Option A</span>
+    </div>
+
+    <div class="analysis-card correct-ans">
+        <div class="zh"><strong>選項 (1) - 正確：</strong>中國人民銀行（中央銀行）提高法定儲備比率。這意味著商業銀行必須保留更多的存款作為儲備，可作借貸的超額儲備減少。這會降低貨幣乘數，收縮貨幣供應。這是標準的<strong>緊縮性貨幣政策</strong>。</div>
+        <div class="en"><strong>Statement (1) - Correct:</strong> The PBOC (central bank) increases the required reserve ratio. This means commercial banks must keep more deposits as reserves, reducing the excess reserves available for lending. This lowers the money multiplier and contracts the money supply. This is a standard <strong>contractionary monetary policy</strong>.</div>
+    </div>
+
+    <div class="analysis-card wrong-ans">
+        <div class="zh"><strong>選項 (2) - 錯誤：</strong>中國人民銀行調低向商業銀行貸款的利率（即降低貼現率）。這會降低商業銀行借款的成本，鼓勵它們借入更多資金並增加貸款。這會增加貨幣供應，屬於<strong>擴張性貨幣政策</strong>（Expansionary Monetary Policy），與題目要求的「緊縮性」相反。</div>
+        <div class="en"><strong>Statement (2) - Incorrect:</strong> The PBOC cuts the interest rate on its loans to commercial banks (cutting the discount rate). This lowers borrowing costs for commercial banks, encouraging them to borrow more and increase lending. This increases the money supply and is an <strong>expansionary monetary policy</strong>, which is the opposite of the "contractionary" policy asked in the question.</div>
+    </div>
+
+    <div class="analysis-card wrong-ans">
+        <div class="zh"><strong>選項 (3) - 錯誤：</strong>中國政府提高個人所得稅。雖然這會減少市民的可支配收入，從而產生「緊縮」的經濟效果，但這屬於<strong>財政政策</strong>（Fiscal Policy），因為它是透過稅收來調節經濟，且由政府執行，而非貨幣政策。</div>
+        <div class="en"><strong>Statement (3) - Incorrect:</strong> The Chinese Government raises individual income tax. Although this reduces citizens' disposable income and creates a "contractionary" economic effect, this is a <strong>fiscal policy</strong> because it regulates the economy through taxation and is executed by the government, not a monetary policy.</div>
+    </div>
+
+    <h2>4. Problem Decomposition 題目拆解</h2>
+    <div class="zh">這道題目的核心在於區分政策的<strong>性質（貨幣 vs 財政）</strong>以及政策的<strong>方向（緊縮 vs 擴張）</strong>。</div>
+    <div class="en">The core of this question lies in distinguishing the <strong>nature of the policy (Monetary vs. Fiscal)</strong> and the <strong>direction of the policy (Contractionary vs. Expansionary)</strong>.</div>
+    <ul>
+        <li>
+            <div class="zh"><strong>解題樞紐 (Pivot Point)：</strong>「貨幣政策」必須由<strong>中央銀行</strong>（人民銀行）執行，並牽涉貨幣供應與利率；「緊縮性」意味著要<strong>減少</strong>貨幣供應。</div>
+            <div class="en"><strong>Pivot Point:</strong> "Monetary policy" must be executed by the <strong>central bank</strong> (PBOC) and involve money supply and interest rates; "Contractionary" means <strong>reducing</strong> the money supply.</div>
+        </li>
+        <li>
+            <div class="zh"><strong>干擾項 (Distractor)：</strong>選項 (3) 是最常見的陷阱。加稅確實能冷卻經濟，但它是「緊縮性<strong>財政</strong>政策」，不符合題目對「貨幣政策」的要求。</div>
+            <div class="en"><strong>Distractor:</strong> Statement (3) is the most common trap. Raising taxes indeed cools the economy, but it is a "contractionary <strong>fiscal</strong> policy," which does not meet the question's requirement for "monetary policy."</div>
+        </li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps 常犯錯誤與陷阱</h2>
+    <div class="zh"><strong>概念混淆：將財政政策與貨幣政策混為一談。</strong><br>學生經常只要看到「緊縮」或「減少消費」的政策，就認定是答案。在考試中，必須嚴格界定執行機構：<br>
+    ✅ 改變貨幣供應、利率、儲備比率 $\rightarrow$ 中央銀行 $\rightarrow$ 貨幣政策<br>
+    ✅ 改變政府開支、稅收、基建投資 $\rightarrow$ 政府 $\rightarrow$ 財政政策</div>
+    <div class="en"><strong>Concept Confusion: Mixing up Fiscal and Monetary Policy.</strong><br>Students often assume any policy that "contracts" or "reduces consumption" is the answer. In exams, you must strictly identify the executing body:<br>
+    ✅ Changing money supply, interest rates, reserve ratio $\rightarrow$ Central Bank $\rightarrow$ Monetary Policy<br>
+    ✅ Changing gov spending, taxation, infrastructure investment $\rightarrow$ Government $\rightarrow$ Fiscal Policy</div>
+
+    <h2>6. Student Q&A 學生常見疑問</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 為什麼選項 (3) 提高所得稅不能算是貨幣政策的一部分？畢竟它也減少了市場上的錢？</div>
+        <div class="en" style="color:#b91c1c; font-weight:bold; font-style:normal;">Q: Why can't Statement (3) raising income tax be considered part of monetary policy? After all, it also reduces money in the market?</div>
+        
+        <div class="qa-a">
+            <div class="zh">A: 經濟學上有嚴格的定義區分。「市場上的錢（貨幣供應量）」和「市民口袋裡的錢（可支配收入）」是不同的概念。提高稅率是把市民的錢轉移到政府手中，這影響的是資源分配和總需求（財政政策），而沒有直接改變銀行體系創造貨幣的能力（貨幣政策）。</div>
+            <div class="en">A: Economics has strict definitional boundaries. "Money in the market (money supply)" and "money in citizens' pockets (disposable income)" are different concepts. Raising tax rates transfers money from citizens to the government, affecting resource allocation and aggregate demand (Fiscal Policy), but it does not directly alter the banking system's ability to create money (Monetary Policy).</div>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts 考試技巧與速解</h2>
+    <div class="tip-box">
+        <div class="zh"><strong>1秒排除法 (Keyword Elimination Method)：</strong></div>
+        <div class="en"><strong>1-Second Keyword Elimination Method:</strong></div>
+        
+        <div class="zh">1. 掃描題目關鍵字：「<strong>貨幣政策</strong>」。尋找選項中的主體。選項 (3) 是「中國政府」和「稅率」，這 100% 是財政政策。立刻剔除包含 (3) 的選項 (B 和 D)。</div>
+        <div class="en">1. Scan the question keyword: "<strong>Monetary Policy</strong>". Look for the subject in the options. Statement (3) is "Chinese Government" and "tax rates", which is 100% Fiscal Policy. Immediately eliminate any option containing (3) (Options B and D).</div>
+        
+        <div class="zh">2. 剩下 A (只有1) 和 C (1和2)。掃描題目另一關鍵字：「<strong>緊縮性</strong>」。選項 (2) 說「調低」利率，這會鼓勵借錢，明顯是擴張性。剔除包含 (2) 的選項 C。</div>
+        <div class="en">2. You are left with A (1 only) and C (1 and 2). Scan the other keyword: "<strong>Contractionary</strong>". Statement (2) says "cuts" interest rate, which encourages borrowing and is clearly expansionary. Eliminate option C which contains (2).</div>
+        
+        <div class="zh">3. 答案必定是 <strong>A</strong>。完全不需要複雜的推論！</div>
+        <div class="en">3. The answer must be <strong>A</strong>. No complex reasoning needed!</div>
+    </div>
+
+</div>
+
+</body>
+</html>

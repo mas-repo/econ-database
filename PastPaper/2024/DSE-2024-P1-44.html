@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Balance of Payments Analysis</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-main: #1e293b;
+            --text-en: #475569;
+            --border-color: #e2e8f0;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .zh-text {
+            margin-bottom: 5px;
+        }
+
+        /* Section Styles */
+        .header-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--correct-color);
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--bg-light);
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1 style="margin-top: 0;">HKDSE Economics Question Analysis</h1>
+        <p><strong>📝 課題 (Topic):</strong> 國際收支平衡 (Balance of Payments)</p>
+        <p><strong>⭐ 難度 (Difficulty):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>🔑 關鍵概念 (Key Concepts):</strong> 物品差額 (Balance on goods), 服務差額 (Balance on services), 經常帳 (Current Account)</p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <p class="zh-text">參考下列有關某經濟的國際收支平衡數據。</p>
+    <p class="en-text">Refer to the following balance of payments data of an economy.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>年份<br><span style="font-weight:normal; font-size:0.9em; color:#475569;">(Year)</span></th>
+                <th>物品差額 (百萬元)<br><span style="font-weight:normal; font-size:0.9em; color:#475569;">Balance on goods ($ million)</span></th>
+                <th>服務差額 (百萬元)<br><span style="font-weight:normal; font-size:0.9em; color:#475569;">Balance on services ($ million)</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2020</td>
+                <td>–41 135</td>
+                <td>92 948</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>24 671</td>
+                <td>135 042</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="zh-text">根據上述數據，可得出的結論是：</p>
+    <p class="en-text">Based on the above data, we can conclude that ________________.</p>
+
+    <ul>
+        <li><strong>A.</strong> 2021年的物品出口總值比2020年的高。<br><span class="en-text">the total value of exports of goods in 2021 was larger than that in 2020</span></li>
+        <li><strong>B.</strong> 2020年有經常帳順差。<br><span class="en-text">there was a current account surplus in 2020</span></li>
+        <li><strong>C.</strong> 2021年有國際收支平衡順差。<br><span class="en-text">there was a balance of payments surplus in 2021</span></li>
+        <li><strong>D.</strong> 2020年和2021年的服務出口價值皆高於服務進口價值。<br><span class="en-text">the value of exports of services was larger than the value of imports of services in both 2020 and 2021</span></li>
+    </ul>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="zh-text">在處理這類題目時，我們必須清楚了解國際收支平衡表（Balance of Payments Account）的結構：</p>
+        <p class="en-text">When tackling this type of question, we must clearly understand the structure of the Balance of Payments Account:</p>
+        
+        <ul>
+            <li class="zh-text"><strong>經常帳 (Current Account)</strong> = 物品差額 + 服務差額 + 初級收入淨值 + 次級收入淨值</li>
+            <li class="en-text"><strong>Current Account</strong> = Balance on Goods + Balance on Services + Net Primary Income + Net Secondary Income</li>
+        </ul>
+
+        <p class="zh-text"><strong>定義與公式 (Definitions and Formulas):</strong></p>
+        <p class="en-text"><strong>Definitions and Formulas:</strong></p>
+
+        <div class="math-block">
+            $$ \text{物品差額 (Balance on Goods)} = \text{物品出口 (Exports of Goods)} - \text{物品進口 (Imports of Goods)} $$
+            $$ \text{服務差額 (Balance on Services)} = \text{服務出口 (Exports of Services)} - \text{服務進口 (Imports of Services)} $$
+        </div>
+
+        <p class="zh-text">當差額為<strong>正數</strong>（\( > 0 \)），代表有<strong>順差 (Surplus)</strong>，即出口大於進口。<br>當差額為<strong>負數</strong>（\( < 0 \)），代表有<strong>逆差 (Deficit)</strong>，即進口大於出口。</p>
+        <p class="en-text">When the balance is <strong>positive</strong> (\( > 0 \)), it indicates a <strong>surplus</strong>, meaning exports exceed imports.<br>When the balance is <strong>negative</strong> (\( < 0 \)), it indicates a <strong>deficit</strong>, meaning imports exceed exports.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--correct-color); font-size: 1.2em;">D</span></strong></p>
+
+    <div class="option-analysis option-wrong">
+        <p class="zh-text"><span class="badge badge-wrong">錯誤 Wrong</span> <strong>選項 A (Option A)</strong></p>
+        <p class="zh-text">雖然2021年的物品差額（$24,671百萬）高於2020年（-$41,135百萬），這只代表<strong>（出口 - 進口）的淨值</strong>增加了。這可能是因為出口增加，但也可能是因為進口大幅減少而出口保持不變（甚至輕微下降）。因此，我們無法確定「總出口值」絕對上升了。</p>
+        <p class="en-text">Although the balance on goods in 2021 ($24,671M) is higher than in 2020 (-$41,135M), this only implies that the <strong>net value (Exports - Imports)</strong> has increased. This could be due to an increase in exports, but it could also be due to a significant decrease in imports while exports remained unchanged (or even slightly dropped). Thus, we cannot definitively conclude that the "total value of exports" increased.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p class="zh-text"><span class="badge badge-wrong">錯誤 Wrong</span> <strong>選項 B (Option B)</strong></p>
+        <p class="zh-text">經常帳包括四個部分：物品、服務、初級收入和次級收入。題目只提供了物品和服務的數據。由於缺乏初級收入和次級收入的數據，我們無法計算出經常帳的總餘額。</p>
+        <p class="en-text">The current account consists of four components: goods, services, primary income, and secondary income. The question only provides data for goods and services. Without data on primary and secondary income, we cannot calculate the total balance of the current account.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p class="zh-text"><span class="badge badge-wrong">錯誤 Wrong</span> <strong>選項 C (Option C)</strong></p>
+        <p class="zh-text">國際收支平衡包括經常帳、資本及金融帳，以及儲備資產的變動。我們連經常帳的完整數據也沒有，更遑論其他帳戶。因此無法得出此結論。</p>
+        <p class="en-text">The balance of payments includes the current account, capital and financial account, and changes in reserve assets. We don't even have complete data for the current account, let alone the other accounts. Therefore, this conclusion cannot be drawn.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <p class="zh-text"><span class="badge badge-correct">正確 Correct</span> <strong>選項 D (Option D)</strong></p>
+        <p class="zh-text">在2020年和2021年，服務差額皆為正數（分別為 $92,948百萬 及 $135,042百萬）。既然 服務差額 = 服務出口 \(-\) 服務進口，正數必然意味著 服務出口 \(>\) 服務進口。因此結論完全正確。</p>
+        <p class="en-text">In both 2020 and 2021, the balance on services is a positive number ($92,948M and $135,042M respectively). Since Balance on services = Exports of services \(-\) Imports of services, a positive figure inevitably means Exports of services \(>\) Imports of services. Therefore, this conclusion is absolutely correct.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="zh-text"><strong>💡 拆題關鍵 (Pivot Point):</strong></p>
+    <p class="zh-text">這道題目的核心在於考驗學生是否懂得區分<strong>「總值」(Gross Value)</strong>與<strong>「淨值/差額」(Net Value / Balance)</strong>，以及是否記得國際收支平衡表的<strong>組成部分 (Components)</strong>。</p>
+    <p class="en-text">The core of this question tests whether students can distinguish between <strong>"Gross Value"</strong> and <strong>"Net Value / Balance"</strong>, and whether they remember the <strong>components</strong> of the Balance of Payments account.</p>
+
+    <ul>
+        <li class="zh-text"><strong>陷阱資訊 (Distractors):</strong> 年份之間的數字變化（例如物品差額由負轉正）很容易引誘學生選擇A，誤以為差額上升等於出口總值上升。</li>
+        <li class="en-text"><strong>Distractors:</strong> The numerical changes between years (e.g., balance on goods turning from negative to positive) easily tempt students to choose A, mistakenly believing an increased balance equals an increased total export value.</li>
+        <li class="zh-text"><strong>關鍵資訊 (Crucial Info):</strong> 數字的正負號。只要差額是正數，出口就必然大於進口。</li>
+        <li class="en-text"><strong>Crucial Info:</strong> The positive/negative signs of the numbers. As long as a balance is positive, exports strictly exceed imports.</li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <p class="zh-text"><strong>⚠️ 概念混淆 (Conceptual Confusion):</strong></p>
+        <ol>
+            <li class="zh-text"><strong>以偏概全：</strong> 看到「物品 + 服務」是正數，就以為「經常帳」也是正數。緊記：經常帳還有「初級收入」和「次級收入」！</li>
+            <li class="zh-text"><strong>差額 vs 總值：</strong> 差額 \( \Delta = X - M \)。如果 \(\Delta\) 上升，不代表 \(X\) 一定上升，可能是 \(M\) 下降所致。</li>
+        </ol>
+        <p class="en-text"><strong>⚠️ Conceptual Confusion:</strong></p>
+        <ol>
+            <li class="en-text"><strong>Generalizing from parts:</strong> Seeing a positive "Goods + Services" balance and assuming the "Current Account" is positive. Remember: The Current Account also includes "Primary" and "Secondary" income!</li>
+            <li class="en-text"><strong>Balance vs. Gross Value:</strong> Balance \( \Delta = X - M \). If \(\Delta\) increases, it does not strictly mean \(X\) increased; it could be due to a drop in \(M\).</li>
+        </ol>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>🧑‍🎓 學生問 (Q):</strong> 題目沒有給出「初級收入」和「次級收入」，我們不能假設它們是零 (0) 嗎？如果假設為零，B不就正確了嗎？</p>
+        <p class="en-text"><strong>Student:</strong> The question didn't provide "Primary Income" and "Secondary Income". Can't we just assume they are zero (0)? If we assume they are zero, wouldn't B be correct?</p>
+        <br>
+        <p class="zh-text"><strong>👨‍🏫 老師答 (A):</strong> 在HKDSE經濟科中，<strong>絕對不能</strong>自行假設未提供的數據為零。除非題目明確指出「假設該經濟沒有其他帳目/收入」，否則未知數就是未知數。因為我們不知道初級和次級收入會不會是一個極大的負數（足以抵銷物品和服務的順差），所以不能判定B。</p>
+        <p class="en-text"><strong>Tutor:</strong> In HKDSE Economics, you must <strong>never</strong> assume missing data to be zero. Unless the question explicitly states "assuming the economy has no other accounts/incomes", unknowns remain unknowns. Because we don't know if the primary and secondary incomes might be massive negative numbers (large enough to offset the goods and services surplus), we cannot conclude B.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>⚡ 速解技巧 (Speed Trick):</strong></p>
+        <p class="zh-text">當你看到這類「表格數據推論題」時，請啟動<strong>「資料不足剔除法」</strong>：</p>
+        <p class="zh-text">一看到選項中出現 <strong>經常帳 (Current Account)</strong> (B選項) 或 <strong>國際收支平衡 (Balance of Payments)</strong> (C選項)，立刻檢查表格表頭。表格只有「物品」和「服務」？那麼B和C立刻被秒殺（因為資料不足）。<br>剩下A和D。A講「總值」，但表格只有「差額」，資料再次不足，殺掉A。<br>答案必定是D！這種方法可以在15秒內解題，無需動筆計算！</p>
+        
+        <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+        
+        <p class="en-text"><strong>⚡ Speed Trick:</strong></p>
+        <p class="en-text">When you encounter these "data inference" tabular questions, activate the <strong>"Insufficient Data Elimination Method"</strong>:</p>
+        <p class="en-text">The moment you see options mentioning <strong>Current Account</strong> (Option B) or <strong>Balance of Payments</strong> (Option C), immediately check the table headers. Only "Goods" and "Services"? Then B and C are instantly eliminated (due to insufficient data).<br>You are left with A and D. A talks about "Gross Value", but the table only gives "Balance"—insufficient data again, eliminate A.<br>The answer must be D! This method lets you solve the question in under 15 seconds without writing any calculations!</p>
+    </div>
+
+</body>
+</html>
