@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Market Intervention</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Deep blue */
+            --secondary-color: #0ea5e9; /* Light blue */
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-en: #475569;
+            --box-bg: #f0f9ff;
+            --math-bg: #f1f5f9;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        .header-panel {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-panel h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .en-translation {
+            color: var(--text-en);
+            font-size: 0.95em;
+            border-left: 4px solid #cbd5e1;
+            padding-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: bold;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--success);
+            background-color: #ecfdf5;
+        }
+
+        .option-analysis.wrong {
+            border-color: #fca5a5;
+            background-color: #fef2f2;
+        }
+
+        .badge {
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .badge-correct { background-color: var(--success); }
+        .badge-wrong { background-color: var(--danger); }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .qa-q { font-weight: bold; color: #b45309; }
+        .qa-a { margin-top: 10px; }
+
+        .tips-box {
+            background-color: #f4f4f5;
+            border-left: 5px solid #a1a1aa;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            th, td { padding: 8px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-panel">
+        <h1>HKDSE Economics MC Analysis</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> 市場干預 Market Intervention</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆ (3.5/5)</span>
+            <span class="tag"><strong>Key Concepts:</strong> 從量稅 Per Unit Tax | 總收益 Total Revenue | 價格彈性 Price Elasticity</span>
+        </div>
+    </div>
+
+    <h2>2. 題目 (The Question)</h2>
+    <p>參閱以下物品X的供需表，然後回答以下問題：</p>
+    <div class="en-translation">
+        Refer to the following demand-supply schedule of good X and answer the question below:
+    </div>
+
+    <table>
+        <tr>
+            <th>價格 / Price ($)</th>
+            <th>需求量 / Quantity demanded (單位 / units)</th>
+            <th>供應量 / Quantity supplied (單位 / units)</th>
+        </tr>
+        <tr><td>10</td><td>700</td><td>300</td></tr>
+        <tr><td>11</td><td>600</td><td>400</td></tr>
+        <tr><td>12</td><td>500</td><td>500</td></tr>
+        <tr><td>13</td><td>400</td><td>600</td></tr>
+        <tr><td>14</td><td>300</td><td>700</td></tr>
+        <tr><td>15</td><td>200</td><td>800</td></tr>
+    </table>
+
+    <p>若政府對物品X徵收$4從量稅：</p>
+    <ul>
+        <li>A. 總稅收會是$2 000。</li>
+        <li>B. 總銷售收益會減少$1 800。</li>
+        <li>C. 物品X的需求屬低彈性。</li>
+        <li>D. 物品X的替代品的總銷售收益會下降。</li>
+    </ul>
+
+    <div class="en-translation">
+        If the government imposes a per unit tax of $4 on good X:
+        <ul>
+            <li>A. the total tax revenue will be $2 000.</li>
+            <li>B. the total sales revenue will drop by $1 800.</li>
+            <li>C. the demand for good X is inelastic.</li>
+            <li>D. the total sales revenue of the substitutes of good X will drop.</li>
+        </ul>
+    </div>
+
+    <h2>3. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>1. 從量稅 (Per Unit Tax)</h3>
+        <p>當政府徵收從量稅 \( t \)，供應曲線會向上平移。在新的均衡點，消費者支付的價格 \( P_d \) 與生產者實際收取的價格 \( P_s \) 之間會相差稅款的金額。同時，新的需求量必須等於新的供應量。</p>
+        <div class="en-translation">
+            When the government imposes a per unit tax \( t \), the supply curve shifts vertically upwards. At the new equilibrium, the difference between the price consumers pay \( P_d \) and the price producers receive \( P_s \) equals the tax amount. Simultaneously, the new quantity demanded must equal the new quantity supplied.
+        </div>
+        <div class="math-block">
+            $$ P_d - P_s = t $$
+            $$ Q_d \text{ at } P_d = Q_s \text{ at } P_s $$
+        </div>
+
+        <h3>2. 總銷售收益與總稅收 (Total Revenue & Tax Revenue)</h3>
+        <p><strong>總銷售收益 (Total Sales Revenue, TR)：</strong> 消費者購買物品的總支出，等於市場價格乘以交易量。</p>
+        <p><strong>總稅收 (Total Tax Revenue)：</strong> 政府收取的稅款總額，等於從量稅乘以新的交易量。</p>
+        <div class="en-translation">
+            <strong>Total Sales Revenue (TR):</strong> The total expenditure by consumers, equal to the market price multiplied by the transacted quantity.<br>
+            <strong>Total Tax Revenue:</strong> The total amount of tax collected by the government, equal to the per unit tax multiplied by the new transacted quantity.
+        </div>
+        <div class="math-block">
+            $$ TR = P_d \times Q $$
+            $$ \text{Tax Revenue} = t \times Q $$
+        </div>
+    </div>
+
+    <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--success); font-size: 1.2em;">B</span></strong></p>
+
+    <h3>找出原來的均衡 (Finding the Initial Equilibrium)</h3>
+    <p>從表格可見，未徵稅前，當價格為$12時，需求量(500)等於供應量(500)。</p>
+    <ul>
+        <li>原來的價格 \( P_0 = 12 \)</li>
+        <li>原來的數量 \( Q_0 = 500 \)</li>
+        <li>原來的總銷售收益 \( TR_0 = 12 \times 500 = 6000 \)</li>
+    </ul>
+    <div class="en-translation">
+        From the table, before tax, quantity demanded (500) equals quantity supplied (500) at the price of $12. 
+        <br>Initial price \( P_0 = 12 \). Initial quantity \( Q_0 = 500 \). Initial total sales revenue \( TR_0 = 12 \times 500 = 6000 \).
+    </div>
+
+    <h3>找出徵稅後的均衡 (Finding the New Equilibrium after Tax)</h3>
+    <p>徵收$4從量稅後，我們要找出一組價格，使得消費者支付的價格 \( P_d \) 比生產者收取的價格 \( P_s \) 高出$4，而且兩者的數量相同。<br>
+    觀察表格：當 \( P_d = 14 \) 時需求量是 300；當 \( P_s = 10 \) 時供應量也是 300。兩者價格相差 $14 - $10 = $4，符合條件！</p>
+    <ul>
+        <li>新市場價格 (消費者支付) \( P_1 = 14 \)</li>
+        <li>新交易數量 \( Q_1 = 300 \)</li>
+    </ul>
+    <div class="en-translation">
+        After a $4 per unit tax, we need to find a pair of prices where the consumer price \( P_d \) is $4 higher than the producer price \( P_s \), and the quantities are equal.<br>
+        Looking at the table: When \( P_d = 14 \), Qd is 300; when \( P_s = 10 \), Qs is 300. The price difference is $14 - $10 = $4. This matches perfectly!
+        <br>New market price \( P_1 = 14 \). New quantity \( Q_1 = 300 \).
+    </div>
+
+    <h3>選項分析 (Option Breakdown)</h3>
+    
+    <div class="option-analysis wrong">
+        <p><span class="badge badge-wrong">A</span> <strong>總稅收會是$2 000。 (Total tax revenue will be $2 000.)</strong></p>
+        <p>總稅收 = 從量稅 \( t \) × 新交易量 \( Q_1 \)。因此，總稅收 = $4 × 300 = $1 200，而非 $2 000。</p>
+        <div class="en-translation">
+            Total tax revenue = per unit tax \( t \) × new quantity \( Q_1 \). Therefore, Tax Revenue = $4 × 300 = $1 200, not $2 000.
+        </div>
+    </div>
+
+    <div class="option-analysis correct">
+        <p><span class="badge badge-correct">B</span> <strong>總銷售收益會減少$1 800。 (Total sales revenue will drop by $1 800.)</strong></p>
+        <p>新的總銷售收益 \( TR_1 = P_1 \times Q_1 = 14 \times 300 = 4200 \)。<br>
+        收益變化 = $4 200 - $6 000 = -$1 800 (即減少了$1 800)。選項正確。</p>
+        <div class="en-translation">
+            New total sales revenue \( TR_1 = P_1 \times Q_1 = 14 \times 300 = 4200 \).<br>
+            Change in revenue = $4 200 - $6 000 = -$1 800 (a drop of $1 800). This option is correct.
+        </div>
+    </div>
+
+    <div class="option-analysis wrong">
+        <p><span class="badge badge-wrong">C</span> <strong>物品X的需求屬低彈性。 (The demand for good X is inelastic.)</strong></p>
+        <p>價格由 $12 上升至 $14，而總收益由 $6 000 下降至 $4 200。根據總收益測試 (Total Revenue Test)，當價格與總收益呈反方向變動時，需求屬於<strong>高彈性 (Elastic)</strong>。</p>
+        <div class="en-translation">
+            Price increased from $12 to $14, while total revenue decreased from $6 000 to $4 200. According to the Total Revenue Test, when price and total revenue move in opposite directions, the demand is <strong>elastic</strong>.
+        </div>
+    </div>
+
+    <div class="option-analysis wrong">
+        <p><span class="badge badge-wrong">D</span> <strong>物品X的替代品的總銷售收益會下降。 (The total sales revenue of the substitutes of good X will drop.)</strong></p>
+        <p>由於物品X的價格上升（由 $12 升至 $14），消費者會減少購買X，轉而購買其替代品 (Substitutes)。因此，替代品的需求會增加，導致其價格和交易量上升，替代品的總銷售收益必然<strong>上升</strong>。</p>
+        <div class="en-translation">
+            Because the price of good X increases (from $12 to $14), consumers will buy less X and switch to its substitutes. Therefore, the demand for substitutes increases, leading to higher prices and quantities for the substitutes. Their total sales revenue will <strong>increase</strong>, not drop.
+        </div>
+    </div>
+
+    <h2>5. 題目拆解 (Problem Decomposition)</h2>
+    <p>這類題目的「破局點」(Pivot Point) 在於<strong>如何不畫圖而從圖表找出稅後的均衡點</strong>。很多同學會被複雜的數字迷惑，但其實秘訣只有一個：<strong>找出相差等於稅款 ($4) 的買賣家價格，並確保兩者的數量一致</strong>。</p>
+    <div class="en-translation">
+        The "Pivot Point" of this type of question is <strong>how to find the post-tax equilibrium from the table without drawing a graph</strong>. Many students get confused by the numbers, but the secret is simple: <strong>Find a buyer's price and a seller's price that differ by the tax amount ($4), while ensuring their respective quantities match</strong>.
+    </div>
+
+    <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li><strong>陷阱一：誤解總稅收。</strong> 學生常以為總稅收是稅款乘上<em>原來的</em>數量 ($4 × 500 = $2 000)，因而誤選A。記住，稅收必須用稅後的<strong>新交易量</strong>計算。</li>
+        <li><strong>陷阱二：總收益的定義。</strong> DSE 考試中，「總銷售收益」一般指消費者的總支出 ( \( P \times Q \) )。有些同學會扣除稅款去計算賣家的淨收益 ($10 × 300 = $3 000)，導致算不出答案。</li>
+    </ul>
+    <div class="en-translation">
+        <ul>
+            <li><strong>Trap 1: Miscalculating tax revenue.</strong> Students often multiply the tax by the <em>original</em> quantity ($4 × 500 = $2 000) and incorrectly choose A. Remember, tax revenue must be calculated using the <strong>new transacted quantity</strong>.</li>
+            <li><strong>Trap 2: Definition of Total Revenue.</strong> In the HKDSE, "Total Sales Revenue" generally refers to the consumers' total expenditure ( \( P \times Q \) ). Some students deduct the tax to find the sellers' net revenue ($10 × 300 = $3 000), which leads to incorrect conclusions.</li>
+        </ul>
+    </div>
+
+    <h2>7. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼賣家實際收到的錢少了（從 $12 變成 $10），但我們計算「總銷售收益」時依然用 $14 來乘？</p>
+        <p class="qa-a">A: 這是因為在經濟學的標準定義中，市場的「總銷售收益 (Total Sales Revenue)」通常等同於消費者的「總支出 (Total Expenditure)」，即市場的總交易額。賣家確實要把部分收益交給政府（即稅收），如果題目問的是「賣家除稅後的淨收益 (Net revenue to sellers)」，我們才會用 $10 × 300 = $3 000。但若只寫「總收益」，一律以 \( P \times Q \) 計算。</p>
+        
+        <hr style="border: 0; border-top: 1px solid #fde68a; margin: 15px 0;">
+        
+        <p class="qa-q en-translation" style="border-left: none; margin: 0; padding: 0;">Q: Why did sellers receive less (from $12 to $10), but we still use $14 to calculate the "Total Sales Revenue"?</p>
+        <p class="qa-a en-translation" style="border-left: none; margin: 5px 0 0 0; padding: 0;">A: In standard economic definitions, market "Total Sales Revenue" is generally equivalent to consumers' "Total Expenditure," representing the gross market transaction value. Sellers do hand over part of it to the government as tax. If the question specifically asked for "Net revenue to sellers after tax," we would use $10 × 300 = $3 000. But for general "Total Sales Revenue," always use \( P \times Q \).</p>
+    </div>
+
+    <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>秒殺選項 C (Instant Elimination of Option C):</strong><br>
+        不需要死記彈性公式！只要記住「總收益測試」：物品加價了 ($12 → $14)，但總收益跌了 ($6000 → $4200)。「加價反而賺少了」，這就是<strong>高彈性 (Elastic)</strong> 的完美定義。選項C一眼就能排除！</p>
+        <div class="en-translation">
+            No need to memorize the elasticity formula! Just use the Total Revenue Test: The price went up ($12 → $14), but total revenue went down ($6000 → $4200). "Raising prices led to earning less" is the exact definition of <strong>elastic</strong> demand. Option C can be eliminated instantly!
+        </div>
+
+        <p><strong>邏輯秒殺選項 D (Logical Elimination of Option D):</strong><br>
+        物品X被徵稅變貴了，人們自然會去買它的代替品（例如百事可樂變貴，人們轉買可口可樂）。代替品多賣了，收益自然<strong>上升</strong>。選項D錯得很離譜！</p>
+        <div class="en-translation">
+            Good X becomes more expensive due to the tax, so people naturally buy its substitutes (e.g., if Pepsi gets expensive, people buy Coke). More substitutes are sold, so their revenue naturally <strong>increases</strong>. Option D is obviously wrong!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

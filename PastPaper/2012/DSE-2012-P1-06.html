@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Labour Force</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0369a1;
+            --bg-color: #f8fafc;
+            --box-bg-blue: #f0f9ff;
+            --box-border-blue: #0ea5e9;
+            --box-bg-gray: #f3f4f6;
+            --box-bg-green: #f0fdf4;
+            --box-border-green: #22c55e;
+            --box-bg-red: #fef2f2;
+            --box-border-red: #ef4444;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background-color: var(--text-main);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .header-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-blue);
+            border-left: 5px solid var(--box-border-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-gray);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            margin: 20px 0;
+        }
+
+        .option-analysis {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 5px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+
+        .option-correct {
+            border-left-color: var(--box-border-green);
+            background-color: var(--box-bg-green);
+        }
+
+        .trap-box {
+            background-color: var(--box-bg-red);
+            border-left: 5px solid var(--box-border-red);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box, .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            background: #e2e8f0;
+            margin-right: 5px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+            .question-box {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h2>📊 HKDSE Economics MCQ Analysis</h2>
+        <p><strong>Topic (課題):</strong> 勞動市場與宏觀經濟 (Labour Market & Macroeconomics)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">勞動人口 (Labour Force)</span>
+            <span class="badge">非從事經濟活動人口 (Economically Inactive)</span>
+            <span class="badge">勞工供應 (Labour Supply)</span>
+        </p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <p><strong>下列哪項政策會令香港的勞動人口增加？</strong></p>
+            <p class="en-text">Which of the following policies will result in an increase in the labour force of Hong Kong?</p>
+        </div>
+        
+        <div class="bilingual-block">
+            <p>A. 免費教育由九年延長至十二年</p>
+            <p class="en-text">A. extension of free education from 9 years to 12 years</p>
+        </div>
+        <div class="bilingual-block">
+            <p>B. 提高資本投資者入境計劃的最低資本要求</p>
+            <p class="en-text">B. an increase in the minimum capital requirement of the Capital Investment Entrant Scheme</p>
+        </div>
+        <div class="bilingual-block">
+            <p>C. 增加內地優才入境計劃的限額</p>
+            <p class="en-text">C. an increase in the immigration scheme quota for talented persons from the mainland</p>
+        </div>
+        <div class="bilingual-block">
+            <p>D. 訂立最高工時</p>
+            <p class="en-text">D. introduction of maximum working hours</p>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <p>要解答這條問題，我們必須清楚界定「勞動人口」的定義。在經濟學中，勞動人口是指15歲或以上，正在工作或積極尋找工作的人。</p>
+            <p class="en-text">To solve this problem, we must clearly define the "Labour Force". In economics, the labour force refers to individuals aged 15 or above who are either working or actively seeking work.</p>
+        </div>
+        
+        <div class="math-block">
+            $$ Labour\ Force = Employed\ Population + Unemployed\ Population $$
+            $$ 勞動人口 = 就業人口 + 失業人口 $$
+        </div>
+
+        <div class="bilingual-block">
+            <p>相對地，<strong>非從事經濟活動人口 (Economically Inactive Population)</strong> 是指15歲或以上，但沒有工作且沒有積極尋找工作的人。這包括全職學生、退休人士和家庭主婦。</p>
+            <p class="en-text">Conversely, the <strong>Economically Inactive Population</strong> refers to those aged 15 or above who are neither working nor actively seeking work. This includes full-time students, retirees, and homemakers.</p>
+        </div>
+
+        <div class="math-block">
+            $$ Working\ Age\ Population = Labour\ Force + Economically\ Inactive\ Population $$
+            $$ 適齡工作人口 = 勞動人口 + 非從事經濟活動人口 $$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <h3>正確答案 (Correct Option): <strong>C</strong></h3>
+        
+        <div class="option-analysis">
+            <div class="bilingual-block">
+                <p><strong>A. 錯誤 (Incorrect):</strong> 將免費教育延長，意味著更多適齡工作的青年（15歲以上）會選擇繼續全職學業。全職學生屬於「非從事經濟活動人口」。這會導致勞動人口減少或不變，而不會增加。</p>
+                <p class="en-text">Extending free education implies that more youth of working age (15+) will choose to continue full-time studies. Full-time students belong to the "economically inactive population". This would cause the labour force to decrease or remain unchanged, but definitely not increase.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="bilingual-block">
+                <p><strong>B. 錯誤 (Incorrect):</strong> 提高投資移民的資本要求會增加移民香港的難度，從而減少透過此計劃來港的人數。人口減少通常會導致勞動人口減少。</p>
+                <p class="en-text">Increasing the capital requirement makes it harder to immigrate to Hong Kong, thereby reducing the number of people arriving through this scheme. A decrease in population generally leads to a decrease in the labour force.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis option-correct">
+            <div class="bilingual-block">
+                <p><strong>C. 正確 (Correct):</strong> 增加優才計劃限額會直接吸引更多內地專才（適齡且準備好投入就業市場的人）移居香港。這些專才來港後會加入就業或待業行列，直接使香港的勞動人口 $Labour\ Force$ 增加。</p>
+                <p class="en-text">Increasing the quota directly attracts more mainland talents (working-age individuals ready to enter the job market) to immigrate to Hong Kong. Once they arrive, they join the employed or unemployed pool, directly increasing the $Labour\ Force$ of Hong Kong.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="bilingual-block">
+                <p><strong>D. 錯誤 (Incorrect):</strong> 訂立最高工時會限制每名工人可工作的時數（影響總工時），但這項法例本身並不會直接創造新的工人或驅使非從事經濟活動人口投入勞動市場。它影響的是「勞力供應（按工時計算）」，而不是「勞動人口（按人數計算）」。</p>
+                <p class="en-text">Introducing maximum working hours restricts the number of hours each worker can work (affecting total man-hours), but the legislation itself does not directly create new workers or push the economically inactive into the labour market. It affects "Labour Supply (in terms of hours)", not the "Labour Force (in terms of number of persons)".</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-block">
+        <p><strong>解題切入點 (Pivot Point):</strong> 本題的關鍵在於分辨各項政策如何影響<strong>人口結構</strong>。勞動人口是以「人數 (Number of persons)」來計算的。任何能直接將「適齡且有意願工作的人」引入香港的政策，都會增加勞動人口。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> The key to this question is distinguishing how each policy affects <strong>demographics</strong>. The labour force is measured by the "Number of persons". Any policy that directly brings "working-age people willing to work" into Hong Kong will increase the labour force.</p>
+    </div>
+    <div class="bilingual-block">
+        <p><strong>干擾資訊 (Distractors):</strong> 選項D是一個經典的干擾項。學生容易將「工時限制」與「勞工市場人數」混淆。記住，勞動人口看的是「人頭」，不是「時間」。</p>
+        <p class="en-text"><strong>Distractors:</strong> Option D is a classic distractor. Students easily confuse "working hour restrictions" with "the number of people in the labour market". Remember, the labour force looks at "headcount", not "time".</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <div class="bilingual-block">
+            <p>⚠️ <strong>陷阱一：概念混淆 (Concept Confusion)</strong><br>
+            很多學生分不清 <strong>勞工供應 (Labour Supply)</strong> 和 <strong>勞動人口 (Labour Force)</strong>。勞工供應可以按總工時 (Total man-hours) 計算，但勞動人口只計算人數。</p>
+            <p class="en-text">⚠️ <strong>Trap 1: Concept Confusion</strong><br>
+            Many students cannot distinguish between <strong>Labour Supply</strong> and <strong>Labour Force</strong>. Labour supply can be measured in total man-hours, but the labour force only counts the number of individuals.</p>
+        </div>
+        <div class="bilingual-block">
+            <p>⚠️ <strong>陷阱二：忽略學生的經濟地位 (Ignoring Students' Economic Status)</strong><br>
+            誤以為延長教育會「提升勞工質素」從而增加勞動人口。雖然長遠可能提升生產力，但在當下，全職學生是不計入勞動人口的。</p>
+            <p class="en-text">⚠️ <strong>Trap 2: Ignoring Students' Economic Status</strong><br>
+            Mistakenly believing that extending education "improves labour quality" and thus increases the labour force. While it may increase productivity in the long run, full-time students are currently excluded from the labour force.</p>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-block">
+            <p><strong>問 (Q):</strong> 訂立最高工時（選項D）難道不會迫使老闆聘請更多兼職員工，從而增加勞動人口嗎？</p>
+            <p class="en-text"><strong>Q:</strong> Wouldn't introducing maximum working hours (Option D) force employers to hire more part-time staff, thereby increasing the labour force?</p>
+        </div>
+        <div class="bilingual-block">
+            <p><strong>答 (A):</strong> 這是一個很好的問題！最高工時確實可能增加企業對勞工的「需求 (Demand)」。但是，勞動人口的規模是由「供應面 (Supply side)」決定的——即有多少人願意工作。單純增加市場職位空缺，並不代表原本的家庭主婦或學生（非從事經濟活動人口）會突然決定出來工作。因此，它不會「直接」導致勞動人口增加。</p>
+            <p class="en-text"><strong>A:</strong> That's a great question! Maximum working hours might indeed increase the "Demand" for labour by firms. However, the size of the labour force is determined by the "Supply side" — how many people are willing to work. Simply increasing job vacancies doesn't mean homemakers or students (economically inactive) will suddenly decide to work. Therefore, it does not "directly" increase the labour force.</p>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="bilingual-block">
+            <p>💡 <strong>速解法 (Shortcut):</strong> 當題目問及「如何增加勞動人口」時，請直接尋找<strong>「引入外來人口 (Immigration)」</strong>或<strong>「延遲退休/減少就學 (Shifting demographics)」</strong>的選項。選項C直接描述了「人才（打工仔）」的輸入，這是最直接的加人頭方式，1秒即可鎖定答案！</p>
+            <p class="en-text">💡 <strong>Shortcut:</strong> When asked "how to increase the labour force", look directly for options involving <strong>"Immigration"</strong> or <strong>"Shifting demographics (e.g., delaying retirement, reducing schooling)"</strong>. Option C directly describes the inflow of "talents (workers)", which is the most direct way to add headcount. You can lock in this answer in 1 second!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

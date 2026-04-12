@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Demand, Supply and Elasticity</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'PingFang HK', 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 { font-size: 1.8em; }
+        h2 { font-size: 1.5em; }
+        .bilingual-zh {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .bilingual-en {
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        .header-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .badge-topic { background-color: #3b82f6; }
+        .badge-diff { background-color: #f59e0b; }
+        .badge-key { background-color: #8b5cf6; }
+        
+        .question-box {
+            background-color: #fdfdfd;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .option-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .correct-option {
+            border-left: 5px solid #10b981;
+            background-color: #ecfdf5;
+        }
+        .wrong-option {
+            border-left: 5px solid #ef4444;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .correct-badge { color: #10b981; font-weight: bold; }
+        .wrong-badge { color: #ef4444; font-weight: bold; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <p>
+            <span class="badge badge-topic">Topic: 供需理論與彈性 / Demand, Supply & Elasticity</span>
+            <span class="badge badge-diff">Difficulty: ★★★☆☆</span>
+        </p>
+        <p>
+            <span class="badge badge-key">Keywords: 需求量 vs 需求 (Qd vs Demand)</span>
+            <span class="badge badge-key">總支出 (Total Expenditure)</span>
+            <span class="badge badge-key">替代品 (Substitutes)</span>
+        </p>
+    </div>
+
+    <h2>題目 / The Question</h2>
+    <div class="question-box">
+        <p class="bilingual-zh">由於天氣持續惡劣，本地蔬菜的交易量下降了40%，而價格上升了13%。下列哪些陳述是正確？</p>
+        <p class="bilingual-en">Owing to continuous bad weather, the quantity transacted of local vegetables falls by 40% while the price rises by 13%. Which of the following statements are correct?</p>
+        
+        <p class="bilingual-zh">
+            (1) 本地蔬菜的需求量下降。<br>
+            (2) 本地蔬菜的總支出上升。<br>
+            (3) 進口蔬菜的需求上升。<br>
+            (4) 進口蔬菜的總支出可能上升或下降，按其需求彈性而定。
+        </p>
+        <p class="bilingual-en">
+            (1) The quantity demanded of local vegetables falls.<br>
+            (2) The total expenditure on local vegetables rises.<br>
+            (3) The demand for imported vegetables rises.<br>
+            (4) The total expenditure on imported vegetables may rise or fall depending on the elasticity of demand.
+        </p>
+
+        <p class="bilingual-zh">
+            A. 只有(1)、(2)<br>
+            B. 只有(1)、(3)<br>
+            C. 只有(2)、(4)<br>
+            D. 只有(3)、(4)
+        </p>
+        <p class="bilingual-en">
+            A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (4) only<br>
+            D. (3) and (4) only
+        </p>
+    </div>
+
+    <h2>概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p class="bilingual-zh"><strong>1. 需求量改變 vs 需求改變 (Change in Quantity Demanded vs Change in Demand)</strong></p>
+        <p class="bilingual-en"><strong>Change in Quantity Demanded vs Change in Demand</strong></p>
+        <p class="bilingual-zh">「需求量改變」是由於該物品本身價格改變引起的，在圖表上表現為沿著同一條需求曲線移動。「需求改變」則是由於價格以外的因素（如天氣、替代品價格等）引起，表現為整條需求曲線的移動。</p>
+        <p class="bilingual-en">A "change in quantity demanded" is caused by a change in the good's own price, shown as a movement along the same demand curve. A "change in demand" is caused by non-price factors (e.g., weather, price of substitutes), shown as a shift of the entire demand curve.</p>
+
+        <p class="bilingual-zh"><strong>2. 總支出 (Total Expenditure, TE)</strong></p>
+        <p class="bilingual-en"><strong>Total Expenditure (TE)</strong></p>
+        <p class="bilingual-zh">總支出等於價格乘以交易數量。其公式為：</p>
+        <p class="bilingual-en">Total expenditure equals price multiplied by the quantity transacted. The formula is:</p>
+        
+        <div class="math-block">
+            $$ TE = P \times Q $$
+        </div>
+
+        <p class="bilingual-zh"><strong>3. 替代品關係 (Substitutes)</strong></p>
+        <p class="bilingual-en"><strong>Substitutes</strong></p>
+        <p class="bilingual-zh">當物品甲的價格上升，消費者會轉向購買其替代品乙，導致物品乙的需求（Demand）增加，需求曲線向右移。</p>
+        <p class="bilingual-en">When the price of Good A increases, consumers switch to its substitute Good B, leading to an increase in the Demand for Good B (the demand curve shifts to the right).</p>
+    </div>
+
+    <h2>答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <p class="bilingual-zh" style="font-size: 1.2em;">正確答案 / Correct Option: <strong>B</strong></p>
+
+    <div class="option-box correct-option">
+        <p class="bilingual-zh"><span class="correct-badge">正確 (Correct)</span> <strong>陳述 (1)：本地蔬菜的需求量下降。</strong></p>
+        <p class="bilingual-en"><strong>Statement (1): The quantity demanded of local vegetables falls.</strong></p>
+        <p class="bilingual-zh">惡劣天氣導致本地蔬菜的<strong>供應減少</strong>（供應曲線左移）。這推高了均衡價格 \(P\)。因為價格上升，消費者減少購買量，這屬於沿著原有需求曲線向上的移動，因此是「需求量下降」。</p>
+        <p class="bilingual-en">Bad weather leads to a <strong>decrease in supply</strong> of local vegetables (supply curve shifts left). This pushes up the equilibrium price \(P\). Due to the higher price, consumers reduce their purchase quantity. This is an upward movement along the original demand curve, hence a "fall in quantity demanded".</p>
+    </div>
+
+    <div class="option-box wrong-option">
+        <p class="bilingual-zh"><span class="wrong-badge">錯誤 (Incorrect)</span> <strong>陳述 (2)：本地蔬菜的總支出上升。</strong></p>
+        <p class="bilingual-en"><strong>Statement (2): The total expenditure on local vegetables rises.</strong></p>
+        <p class="bilingual-zh">總支出 \(TE = P \times Q\)。題目指出價格上升了 13%，但數量下降了高達 40%。由於數量的跌幅遠大於價格的升幅（即需求屬彈性，\(\% \Delta Q > \% \Delta P\)），兩者相乘的結果必然是下降的。您可以簡單計算：新的 \(TE = P(1.13) \times Q(0.6) = 0.678 PQ\)，總支出其實下降了約 32.2%。</p>
+        <p class="bilingual-en">Total expenditure \(TE = P \times Q\). The question states that price rises by 13%, but quantity falls by a massive 40%. Since the percentage fall in quantity is much larger than the percentage rise in price (meaning demand is elastic, \(\% \Delta Q > \% \Delta P\)), their product must fall. You can simply calculate: New \(TE = P(1.13) \times Q(0.6) = 0.678 PQ\). Total expenditure actually dropped by about 32.2%.</p>
+    </div>
+
+    <div class="option-box correct-option">
+        <p class="bilingual-zh"><span class="correct-badge">正確 (Correct)</span> <strong>陳述 (3)：進口蔬菜的需求上升。</strong></p>
+        <p class="bilingual-en"><strong>Statement (3): The demand for imported vegetables rises.</strong></p>
+        <p class="bilingual-zh">本地蔬菜與進口蔬菜是替代品 (Substitutes)。本地蔬菜價格上升，消費者會轉向購買進口蔬菜，導致進口蔬菜的「需求」(Demand) 增加（整條需求曲線右移）。</p>
+        <p class="bilingual-en">Local vegetables and imported vegetables are substitutes. As the price of local vegetables rises, consumers switch to buying imported vegetables, causing an increase in the "Demand" for imported vegetables (the entire demand curve shifts right).</p>
+    </div>
+
+    <div class="option-box wrong-option">
+        <p class="bilingual-zh"><span class="wrong-badge">錯誤 (Incorrect)</span> <strong>陳述 (4)：進口蔬菜的總支出可能上升或下降，按其需求彈性而定。</strong></p>
+        <p class="bilingual-en"><strong>Statement (4): The total expenditure on imported vegetables may rise or fall depending on the elasticity of demand.</strong></p>
+        <p class="bilingual-zh">這是考試常設的陷阱！進口蔬菜的需求曲線向右移，在供應不變（或向上傾斜）的情況下，進口蔬菜的均衡價格 \(P\) 和數量 \(Q\) **都會同時上升**。因為 \(P\) 和 \(Q\) 都增加，總支出 (\(P \times Q\)) **必然會上升**，這結果是確定的，根本不需要考慮需求彈性。</p>
+        <p class="bilingual-en">This is a classic exam trap! The demand curve for imported vegetables shifts to the right. Assuming supply remains unchanged (and is upward-sloping or horizontal), both the equilibrium price \(P\) and quantity \(Q\) for imported vegetables **will increase simultaneously**. Since both \(P\) and \(Q\) increase, total expenditure (\(P \times Q\)) **must definitely rise**. This outcome is certain and does not depend on the elasticity of demand at all.</p>
+    </div>
+
+    <h2>題目拆解 / Problem Decomposition</h2>
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <p class="bilingual-zh"><strong>破題關鍵 (The Pivot Point):</strong> 釐清「天氣惡劣」影響的是誰。天氣惡劣直接衝擊的是本地蔬菜的**供應**（減少），而不是需求。由此推導出價格上升。</p>
+        <p class="bilingual-en"><strong>The Pivot Point:</strong> Clarify who is affected by "bad weather". Bad weather directly shocks the <strong>supply</strong> of local vegetables (decreasing it), not the demand. This deduces the price increase.</p>
+
+        <p class="bilingual-zh"><strong>干擾資訊 (Distractors):</strong> 題目給出具體數字「40%」和「13%」。很多學生會想用複雜的公式計算彈性。其實，你只需要比較這兩個數字的大小，利用基本的數學邏輯 \(P \uparrow \times Q \downarrow\downarrow = TE \downarrow\) 就能破解陳述(2)。</p>
+        <p class="bilingual-en"><strong>Distractors:</strong> The question provides specific numbers "40%" and "13%". Many students try to use complex formulas to calculate elasticity. In reality, you only need to compare the magnitude of these two numbers. Using basic mathematical logic \(P \uparrow \times Q \downarrow\downarrow = TE \downarrow\), you can easily solve statement (2).</p>
+    </div>
+
+    <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p class="bilingual-zh"><strong>陷阱 1：混淆「需求量」與「需求」</strong><br>
+        學生常誤以為天氣差沒人買蔬菜，所以是「需求下降」。錯誤！天氣差影響農作物收成（供應），供應減少導致價格上升，市民因為價格貴而買少一點，這叫「需求量下降」(Quantity Demanded falls)。</p>
+        <p class="bilingual-en"><strong>Trap 1: Confusing "Quantity Demanded" with "Demand"</strong><br>
+        Students often mistakenly think that bad weather means people won't buy vegetables, hence "demand falls". Wrong! Bad weather affects crop harvest (supply). The decrease in supply leads to a price increase, and citizens buy less because it's expensive. This is a "fall in quantity demanded".</p>
+
+        <p class="bilingual-zh"><strong>陷阱 2：看到「取決於彈性」就覺得是萬能答案</strong><br>
+        考評局很喜歡在選項中加入「視乎彈性而定 (depends on elasticity)」來迷惑考生。記住：只有當價格 \(P\) 和數量 \(Q\) 的變動方向相反（一升一跌）時，總支出才需要看彈性。如果 \(P\) 和 \(Q\) 一齊升，總支出必定升！</p>
+        <p class="bilingual-en"><strong>Trap 2: Thinking "depends on elasticity" is always a safe answer</strong><br>
+        The HKEAA loves adding "depends on elasticity" to distract candidates. Remember: You only need to consider elasticity when price \(P\) and quantity \(Q\) move in opposite directions (one rises, one falls). If both \(P\) and \(Q\) rise together, Total Expenditure MUST rise!</p>
+    </div>
+
+    <h2>學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p class="bilingual-zh"><strong>學生問：</strong> 為什麼陳述 (1) 是「需求量」改變，但陳述 (3) 卻是「需求」改變？</p>
+        <p class="bilingual-en"><strong>Student Asks:</strong> Why does Statement (1) involve a change in "quantity demanded", while Statement (3) involves a change in "demand"?</p>
+        
+        <p class="bilingual-zh"><strong>導師答：</strong> 這是因為我們分析的「市場」不同。在【本地蔬菜市場】，縱軸是本地蔬菜價格。天氣令供應減少，導致本地蔬菜價格上升，這是在同一條需求曲線上移動，所以是「需求量」改變。<br>
+        但在【進口蔬菜市場】，縱軸是進口蔬菜價格。本地蔬菜變貴，對進口蔬菜來說是一個「非價格因素 (Non-price factor)」。這個外在因素令消費者在任何進口蔬菜的價格下，都想買更多進口菜，這導致整條曲線移動，所以是「需求」改變。</p>
+        <p class="bilingual-en"><strong>Tutor Answers:</strong> Because we are analyzing different "markets". In the [Local Vegetable Market], the y-axis is the price of local vegetables. Weather reduces supply, raising the price. This is a movement along its own demand curve, so it's a change in "quantity demanded".<br>
+        However, in the [Imported Vegetable Market], the y-axis is the price of imported vegetables. The price increase of local veggies acts as a "Non-price factor" for imported ones. This external factor makes consumers want to buy more imported vegetables at any given price. This shifts the entire curve, hence a change in "demand".</p>
+    </div>
+
+    <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p class="bilingual-zh"><strong>消去法 (Elimination Method):</strong></p>
+        <p class="bilingual-en"><strong>Elimination Method:</strong></p>
+        <ol>
+            <li class="bilingual-zh">快速看一眼題目數字：跌40%，升13%。跌幅遠大於升幅，總額一定跌。所以 (2) 必錯。</li>
+            <li class="bilingual-en">Quickly glance at the numbers: falls by 40%, rises by 13%. The fall dominates the rise, so the total amount must fall. Therefore, (2) is definitely wrong.</li>
+            <li class="bilingual-zh">刪去包含 (2) 的選項：A 和 C 被淘汰。剩下 B 和 D。</li>
+            <li class="bilingual-en">Cross out options containing (2): Options A and C are eliminated. You are left with B and D.</li>
+            <li class="bilingual-zh">比較 B 和 D，它們都包含 (3)。所以不用猶豫，(3) 必定正確！我們只需判斷 (1) 是否正確。</li>
+            <li class="bilingual-en">Compare B and D, both contain (3). So no hesitation, (3) MUST be correct! We only need to judge if (1) is correct.</li>
+            <li class="bilingual-zh">天氣影響供應，價格上升導致「需求量」下跌。所以 (1) 正確。答案鎖定為 B。我們甚至不需要花時間去思考 (4) 的陷阱！</li>
+            <li class="bilingual-en">Weather affects supply, price rises leading to a fall in "quantity demanded". So (1) is correct. Lock in answer B. We don't even need to waste time deciphering the trap in statement (4)!</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>
