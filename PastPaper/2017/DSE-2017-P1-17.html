@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Market Equilibrium</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+        }
+        body {
+            font-family: 'Segoe UI', 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-light);
+        }
+        h1, h2, h3 { color: var(--primary); margin-top: 1.5em; }
+        h1 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        p { margin-bottom: 10px; }
+        
+        .zh { font-weight: 500; font-size: 1.05em; color: #111827; }
+        .en { color: var(--text-en); font-size: 0.95em; margin-bottom: 15px; font-style: italic; }
+        
+        .header-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); margin-bottom: 30px; }
+        .tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; margin-right: 5px; font-weight: bold; }
+        
+        .question-box { background-color: #fffbeb; border: 1px solid #fcd34d; padding: 25px; border-radius: 8px; margin: 20px 0; }
+        .options-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
+        .option-item { background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #fde68a; }
+        
+        .concept-box { background-color: #f0f9ff; border-left: 5px solid var(--secondary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        
+        .math-block { background-color: #f3f4f6; padding: 15px; text-align: center; border-radius: 8px; overflow-x: auto; margin: 15px 0; border: 1px solid #e5e7eb; }
+        
+        .analysis-box { background-color: white; border: 1px solid #e5e7eb; padding: 25px; border-radius: 8px; margin: 25px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .correct-ans { font-size: 1.2em; color: #059669; font-weight: bold; margin-bottom: 20px; display: inline-block; padding: 5px 15px; background: #d1fae5; border-radius: 5px; }
+        
+        .trap-box { background-color: #fef2f2; border-left: 5px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .tip-box { background-color: #fefce8; border-left: 5px solid #eab308; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .qa-box { background-color: #f5f3ff; border-left: 5px solid #8b5cf6; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        
+        .table-container { overflow-x: auto; margin: 15px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; text-align: center; }
+        th, td { border: 1px solid #d1d5db; padding: 12px; }
+        th { background-color: #f9fafb; font-weight: bold; }
+        
+        @media (min-width: 768px) {
+            .options-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <p class="zh" style="margin-bottom: 5px;"><strong>課題 (Topic):</strong> 市場均衡與供求分析 (Market Equilibrium and Supply & Demand Analysis)</p>
+        <p class="zh" style="margin-bottom: 5px;"><strong>難度 (Difficulty):</strong> ⭐⭐⭐ (3/5)</p>
+        <p class="zh" style="margin-bottom: 10px;"><strong>關鍵概念 (Key Concepts):</strong></p>
+        <div>
+            <span class="tag">劣等物品 Inferior Good</span>
+            <span class="tag">需求變動 Change in Demand</span>
+            <span class="tag">供應變動 Change in Supply</span>
+            <span class="tag">均衡價格 Equilibrium Price</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="zh">假設物品Y是劣等物品。當人們的收入增加而物品Y的生產成本上升，物品Y的均衡價格 __________。</p>
+        <p class="en">Suppose Good Y is an inferior good. When people’s income rises and the production cost of Good Y increases, the equilibrium price of Good Y __________.</p>
+        
+        <div class="options-grid">
+            <div class="option-item">
+                <p class="zh">A. 會上升</p>
+                <p class="en">A. will increase</p>
+            </div>
+            <div class="option-item">
+                <p class="zh">B. 會下降</p>
+                <p class="en">B. will decrease</p>
+            </div>
+            <div class="option-item">
+                <p class="zh">C. 會維持不變</p>
+                <p class="en">C. will remain unchanged</p>
+            </div>
+            <div class="option-item" style="border-color: #10b981; border-width: 2px;">
+                <p class="zh">D. 可能上升或下降</p>
+                <p class="en">D. may increase or decrease</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top: 0;">劣等物品 (Inferior Goods)</h3>
+        <p class="zh">當消費者的收入 ($Y$) 增加時，對劣等物品的需求 ($D$) 會減少（需求曲線向左移）。因為人們變富有了，會轉而購買質素更好的代替品。</p>
+        <p class="en">When consumer income ($Y$) increases, the demand ($D$) for inferior goods decreases (demand curve shifts to the left). This is because as people become wealthier, they switch to better-quality substitutes.</p>
+        
+        <h3>生產成本 (Production Cost)</h3>
+        <p class="zh">生產成本上升會導致利潤空間收窄，生產者會減少供應 ($S$)（供應曲線向左移）。</p>
+        <p class="en">An increase in production cost reduces profit margins, leading producers to decrease supply ($S$) (supply curve shifts to the left).</p>
+        
+        <h3>市場均衡模型 (Market Equilibrium Model)</h3>
+        <p class="zh">結合以上兩個因素，我們可以用以下邏輯推導價格 ($P$) 和交易量 ($Q$) 的變動：</p>
+        <p class="en">Combining these two factors, we can deduce the changes in price ($P$) and quantity ($Q$) using the following logic:</p>
+        
+        <div class="math-block">
+            $$\text{Income } \uparrow \Rightarrow \text{Demand } \downarrow \Rightarrow P \downarrow, Q \downarrow$$
+            $$\text{Cost } \uparrow \Rightarrow \text{Supply } \downarrow \Rightarrow P \uparrow, Q \downarrow$$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <div class="correct-ans">正確答案 (Correct Option): D</div>
+        
+        <h3 style="margin-top: 0;">逐步分析 (Step-by-Step Analysis):</h3>
+        
+        <p class="zh"><strong>事件一：收入增加 (Income rises)</strong><br>因為物品Y是劣等物品，收入增加會令需求減少（曲線左移）。在沒有其他變化的情況下，這會拉低均衡價格 ($P \downarrow$) 並減少均衡交易量 ($Q \downarrow$)。</p>
+        <p class="en"><strong>Event 1: Income rises</strong><br>Since Good Y is an inferior good, an increase in income leads to a decrease in demand (leftward shift). Ceteris paribus, this pushes the equilibrium price down ($P \downarrow$) and reduces the equilibrium quantity ($Q \downarrow$).</p>
+        
+        <p class="zh"><strong>事件二：生產成本上升 (Production cost increases)</strong><br>這會導致供應減少（曲線左移）。在沒有其他變化的情況下，這會推高均衡價格 ($P \uparrow$) 並減少均衡交易量 ($Q \downarrow$)。</p>
+        <p class="en"><strong>Event 2: Production cost increases</strong><br>This leads to a decrease in supply (leftward shift). Ceteris paribus, this pushes the equilibrium price up ($P \uparrow$) and reduces the equilibrium quantity ($Q \downarrow$).</p>
+        
+        <p class="zh"><strong>綜合結果 (Combined Effect):</strong><br>需求減少令價格下跌，但供應減少令價格上升。由於題目沒有說明哪一個變動的幅度較大，價格的最終變動方向是<strong>不確定</strong>的。相反，兩個事件都令交易量減少，所以交易量必定下降。</p>
+        <p class="en"><strong>Combined Effect:</strong><br>The decrease in demand pulls the price down, but the decrease in supply pushes the price up. Since the question does not specify the magnitude of these shifts, the final direction of the price change is <strong>uncertain</strong>. Conversely, both events reduce quantity, so the equilibrium quantity will definitely decrease.</p>
+        
+        <hr>
+        
+        <h4>選項分析 (Option Breakdown):</h4>
+        <ul>
+            <li>
+                <p class="zh"><strong>選項 A 錯誤：</strong>只有當供應減少的幅度遠大於需求減少的幅度時，價格才會上升。</p>
+                <p class="en"><strong>Option A is incorrect:</strong> The price will only increase if the magnitude of the decrease in supply is much larger than the decrease in demand.</p>
+            </li>
+            <li>
+                <p class="zh"><strong>選項 B 錯誤：</strong>只有當需求減少的幅度遠大於供應減少的幅度時，價格才會下降。</p>
+                <p class="en"><strong>Option B is incorrect:</strong> The price will only decrease if the magnitude of the decrease in demand is much larger than the decrease in supply.</p>
+            </li>
+            <li>
+                <p class="zh"><strong>選項 C 錯誤：</strong>只有當兩者的變動幅度剛好完全抵消時，價格才會維持不變。這只是一個特例。</p>
+                <p class="en"><strong>Option C is incorrect:</strong> The price will only remain unchanged if the price effects of both shifts perfectly offset each other. This is merely a special case.</p>
+            </li>
+            <li>
+                <p class="zh"><strong>選項 D 正確：</strong>因為上述三種情況都有可能發生，所以價格可能上升或下降（或不變）。</p>
+                <p class="en"><strong>Option D is correct:</strong> Because all three scenarios mentioned above are possible, the price may increase or decrease (or remain unchanged).</p>
+            </li>
+        </ul>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="zh">解答這類題目的「拆題關鍵」(Pivot Point) 是識別這是一個<strong>「雙向變動」(Simultaneous Shifts)</strong> 的題型。你需要分別獨立處理需求和供應的變動，然後將結果相加。</p>
+    <p class="en">The "Pivot Point" to solving this type of question is recognizing it as a <strong>"Simultaneous Shifts"</strong> problem. You need to process the changes in demand and supply independently, and then combine the results.</p>
+    
+    <ul>
+        <li><p class="zh"><strong>關鍵字眼 1：</strong>「劣等物品」+「收入增加」 $\rightarrow$ 這告訴你需求 ($D$) 下降。<br><span class="en"><strong>Keyword 1:</strong> "Inferior good" + "Income rises" $\rightarrow$ This tells you Demand ($D$) decreases.</span></p></li>
+        <li><p class="zh"><strong>關鍵字眼 2：</strong>「生產成本上升」 $\rightarrow$ 這告訴你供應 ($S$) 下降。<br><span class="en"><strong>Keyword 2:</strong> "Production cost increases" $\rightarrow$ This tells you Supply ($S$) decreases.</span></p></li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <h3 style="margin-top: 0; color: #b91c1c;">🚫 粗心大意 (Careless Error)</h3>
+        <p class="zh">很多學生看見「收入增加」，就直覺認為需求會增加。這是忘記了題目設定物品Y為<strong>劣等物品 (Inferior Good)</strong> 的陷阱。只有正常物品 (Normal Good) 才會在收入增加時需求上升。</p>
+        <p class="en">Many students intuitively assume demand increases when they see "income rises". This is falling into the trap of forgetting that Good Y is defined as an <strong>Inferior Good</strong>. Only a Normal Good experiences an increase in demand when income rises.</p>
+        
+        <h3 style="margin-top: 0; color: #b91c1c;">🚫 擅自假設幅度 (Assuming Magnitudes)</h3>
+        <p class="zh">不要在圖表上隨便畫兩條變動幅度一樣的線，然後得出「價格不變」的錯誤結論。除非題目明確指出（例如「供應減少的幅度大於需求減少的幅度」），否則一律視為「不確定 / 可能上升或下降」。</p>
+        <p class="en">Do not arbitrarily draw two lines with equal shift magnitudes on a graph and reach the false conclusion that "price remains unchanged". Unless the question explicitly states it (e.g., "the decrease in supply is greater than the decrease in demand"), the net effect of opposing forces should always be considered "uncertain / may increase or decrease".</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>Q1: 那麼這件物品的「均衡交易量 (Equilibrium Quantity)」會有什麼變化呢？</strong></p>
+        <p class="en"><strong>Q1: What would happen to the "Equilibrium Quantity" of this good?</strong></p>
+        
+        <p class="zh"><strong>A1:</strong> 必定下降。需求減少會令交易量下跌，供應減少同樣會令交易量下跌。由於兩股力量都將交易量推向同一個方向（向下），所以最終的交易量必定減少 ($Q \downarrow$)。</p>
+        <p class="en"><strong>A1:</strong> It will definitely decrease. A decrease in demand causes quantity to fall, and a decrease in supply also causes quantity to fall. Since both forces push the quantity in the same direction (downwards), the final equilibrium quantity must decrease ($Q \downarrow$).</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tip-box">
+        <h3 style="margin-top: 0; color: #a16207;">⚡ 「箭頭表」速算法 (The "Arrow Table" Shortcut)</h3>
+        <p class="zh">在 MC 考試中，為了節省畫圖的時間，你可以快速畫一個 $2 \times 2$ 的箭頭表：</p>
+        <p class="en">In an MC exam, to save the time needed for drawing graphs, you can quickly jot down a $2 \times 2$ arrow table:</p>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>變動 (Shift)</th>
+                    <th>價格 ($P$)</th>
+                    <th>交易量 ($Q$)</th>
+                </tr>
+                <tr>
+                    <td>需求減少 ($D \downarrow$)</td>
+                    <td>$\downarrow$</td>
+                    <td>$\downarrow$</td>
+                </tr>
+                <tr>
+                    <td>供應減少 ($S \downarrow$)</td>
+                    <td>$\uparrow$</td>
+                    <td>$\downarrow$</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #fefce8; font-weight: bold;">結論 (Conclusion)</td>
+                    <td style="background-color: #fefce8; font-weight: bold;">一上一下 $\rightarrow$ 不確定 (?)</td>
+                    <td style="background-color: #fefce8; font-weight: bold;">皆向下 $\rightarrow$ 必定下降 ($\downarrow$)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <p class="zh"><strong>法則：</strong>如果在同一列中，箭頭方向相反，結果就是「不確定」；如果箭頭方向相同，結果就是該方向。</p>
+        <p class="en"><strong>Rule:</strong> If the arrows in the same column point in opposite directions, the result is "uncertain". If the arrows point in the same direction, the result strictly follows that direction.</p>
+    </div>
+
+</body>
+</html>

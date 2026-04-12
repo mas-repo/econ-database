@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Gini Coefficient Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --bg-light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            color: #1e293b;
+            margin-top: 30px;
+            font-size: 1.4rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        h3 {
+            color: #334155;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .header-info {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-info ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-info li {
+            margin-bottom: 5px;
+        }
+
+        .bilingual-block {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .correct {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+
+        .wrong {
+            background-color: var(--wrong-bg);
+            border-left-color: var(--wrong-border);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .badge.true { background-color: var(--correct-border); color: white; }
+        .badge.false { background-color: var(--wrong-border); color: white; }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q { font-weight: bold; color: #b45309; margin-bottom: 5px; }
+        .qa-a { color: #78350f; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor Analysis</h1>
+
+    <div class="header-info">
+        <ul>
+            <li><strong>Topic / 課題:</strong> Income Inequality & Gini Coefficient / 收入不均與堅尼系數</li>
+            <li><strong>Difficulty / 難度:</strong> ⭐⭐ (2/5 - Basic Concept / 基礎概念)</li>
+            <li><strong>Key Concepts / 核心概念:</strong> Gini Coefficient (堅尼系數), Original Household Income (原初住戶收入), Income Gap (收入差距)</li>
+        </ul>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-block">
+            <div class="zh">下圖顯示香港的堅尼系數(按原初住戶收入計算)。根據上圖，我們可以得出的結論是：</div>
+            <div class="en">The following diagram shows the Gini coefficient of Hong Kong based on original household income. Based on the above diagram, we can conclude that:</div>
+        </div>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-block">
+                <div class="zh">A. 香港人的收入水平上升。</div>
+                <div class="en">A. the income level of Hong Kong people increased.</div>
+            </li>
+            <li class="bilingual-block">
+                <div class="zh">B. 高收入住戶的收入增加而低收入住戶的收入減少。</div>
+                <div class="en">B. income for high income household increased while income for low income household decreased.</div>
+            </li>
+            <li class="bilingual-block">
+                <div class="zh">C. 福利政策未能減低收入不均。</div>
+                <div class="en">C. the welfare policy failed to reduce the income inequality.</div>
+            </li>
+            <li class="bilingual-block">
+                <div class="zh">D. 收入差距日漸擴大。</div>
+                <div class="en">D. income gap had been widening.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-block">
+            <div class="zh"><strong>堅尼系數 (Gini Coefficient)：</strong><br>堅尼系數是一個用來量度一個國家或地區收入不均（Income Inequality）程度的指標。數值介乎 0 到 1 之間。</div>
+            <div class="en"><strong>Gini Coefficient:</strong><br>The Gini coefficient is an indicator used to measure the degree of income inequality within a country or region. Its value ranges between 0 and 1.</div>
+        </div>
+
+        <div class="math-block">
+            $$ 0 \le G \le 1 $$
+        </div>
+
+        <ul class="bilingual-block">
+            <li><span class="zh">當 \( G = 0 \)：絕對平均 (Perfect Equality)</span> / <span class="en">Perfect Equality</span></li>
+            <li><span class="zh">當 \( G = 1 \)：絕對不均 (Perfect Inequality)</span> / <span class="en">Perfect Inequality</span></li>
+            <li><span class="zh"><strong>數值越大：代表收入差距越大 (收入越不平均)。</strong></span> / <span class="en"><strong>The larger the value: the wider the income gap (more unequal distribution).</strong></span></li>
+        </ul>
+
+        <div class="bilingual-block">
+            <div class="zh"><strong>原初住戶收入 (Original Household Income)：</strong><br>指政府介入<strong>之前</strong>的收入。即未扣除直接稅（如薪俸稅）及未計算任何社會福利轉移（如綜援、生果金）的收入。</div>
+            <div class="en"><strong>Original Household Income:</strong><br>This refers to income <strong>before</strong> government intervention. It is the income before the deduction of direct taxes (e.g., salaries tax) and before adding any social welfare transfers (e.g., CSSA, old age allowance).</div>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <h3 style="color: var(--correct-border);">Correct Option: D (正確答案：D)</h3>
+
+    <div class="option-analysis wrong">
+        <span class="badge false">Option A</span>
+        <div class="zh"><strong>錯誤。</strong>堅尼系數反映的是收入的「分佈」(Distribution)，而不是整體的「絕對收入水平」(Absolute income level)。即使全社會所有人的收入都同時大幅下降，只要高收入人士的跌幅小於低收入人士，堅尼系數依然會上升。</div>
+        <div class="en"><strong>Incorrect.</strong> The Gini coefficient reflects the "distribution" of income, not the overall "absolute income level". Even if everyone's income in society drops significantly, as long as the high-income group's income drops less than the low-income group's, the Gini coefficient will still rise.</div>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge false">Option B</span>
+        <div class="zh"><strong>錯誤。</strong>雖然這個情況的確會導致堅尼系數上升，但我們無法單憑堅尼系數的上升就「斷定」必定是這個情況。另一種可能性是：高低收入住戶的收入「同時增加」，但高收入住戶增加的速度遠快於低收入住戶（Rich getting richer faster）。</div>
+        <div class="en"><strong>Incorrect.</strong> While this scenario would indeed cause the Gini coefficient to rise, we cannot "conclude" that this is definitively what happened just from the index. Another possibility is that both groups' incomes increased, but the high-income households' income increased much faster than that of low-income households.</div>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge false">Option C</span>
+        <div class="zh"><strong>錯誤 (這是一個常見陷阱！)。</strong>題目圖表的Y軸清楚註明是「按<strong>原初</strong>住戶收入計算」。這意味著這些數據是政府進行稅收及福利轉移<strong>之前</strong>的情況，因此我們無法從此圖得知福利政策(政府介入)的成效。</div>
+        <div class="en"><strong>Incorrect (This is a common trap!).</strong> The Y-axis of the diagram clearly states it is based on "<strong>original</strong> household income". This means the data reflects the situation <strong>before</strong> government taxation and welfare transfers. Therefore, we cannot deduce the effectiveness of welfare policies from this graph.</div>
+    </div>
+
+    <div class="option-analysis correct">
+        <span class="badge true">Option D</span>
+        <div class="zh"><strong>正確。</strong>圖表顯示堅尼系數從 1971 年的 0.430 持續上升至 2011 年的 0.537。根據定義，堅尼系數上升直接代表「收入差距擴大」(Income gap widening) 或「收入不均惡化」。</div>
+        <div class="en"><strong>Correct.</strong> The diagram shows the Gini coefficient rising steadily from 0.430 in 1971 to 0.537 in 2011. By definition, an increase in the Gini coefficient directly means that the "income gap is widening" or income inequality is worsening.</div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <div class="zh">解答這類題目的「關鍵點」(Pivot Point) 有兩個：</div>
+        <div class="en">There are two "Pivot Points" to solving this type of question:</div>
+        <ul>
+            <li>
+                <div class="zh"><strong>看清變數性質：</strong>堅尼系數是「相對」(Relative) 概念，量度的是差距。所有關於「絕對」(Absolute) 數值上升或下降的選項 (如選項A和B的特定情況) 通常都是干擾項。</div>
+                <div class="en"><strong>Identify the nature of the variable:</strong> The Gini coefficient is a "relative" concept measuring a gap. Any options making claims about "absolute" increases or decreases (like Option A, and the specific scenario in B) are usually distractors.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>留意括號內的定義：</strong>題目中的「原初」(Original) 二字是秒殺選項C的關鍵。考評局非常喜歡用「除稅及福利轉移後」(Post-tax and post-social transfer) 與「原初」(Original) 的對比來設下陷阱。</div>
+                <div class="en"><strong>Pay attention to definitions in brackets:</strong> The word "original" in the question is the key to immediately eliminating Option C. The HKEAA loves setting traps by contrasting "Original" with "Post-tax and post-social transfer" income.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><strong>陷阱：將「差距變大」等同於「窮人變窮」</strong></div>
+        <div class="en"><strong>Trap: Equating a "widening gap" with "the poor getting poorer"</strong></div>
+        <div class="zh">很多同學誤以為堅尼系數上升，就代表低收入階層的實際生活水平下降或收入減少（即誤選B）。記住：如果一個社會的經濟起飛，基層市民收入增加了 \(10\%\)，但富人收入增加了 \(50\%\)，整體社會都富裕了，但堅尼系數依然會大幅上升。</div>
+        <div class="en">Many students mistakenly believe that a rising Gini coefficient means the actual living standards or incomes of the lower-income class are falling (thus incorrectly choosing B). Remember: If an economy takes off and grassroots income increases by \(10\%\), but the rich's income increases by \(50\%\), the whole society has become wealthier, yet the Gini coefficient will still rise significantly.</div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 怎樣才能知道政府的「福利政策」是否有效改善收入不均？</div>
+        <div class="qa-a">
+            <strong>A (Zh):</strong> 我們需要比較「原初住戶收入的堅尼系數」與「除稅及福利轉移後的堅尼系數」。如果後者的數值低於前者（例如原初是 0.537，除稅及福利後變成 0.475），就證明政府的政策成功拉近了貧富懸殊。單看一條線是看不出來的！<br>
+            <strong>A (En):</strong> We need to compare the "Gini coefficient based on original income" with the "Gini coefficient based on post-tax and post-social transfer income". If the latter is lower than the former (e.g., original is 0.537, post-intervention is 0.475), it proves that government policies successfully narrowed the wealth gap. You cannot tell from just one single line!
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual-block">
+        <div class="zh"><strong>速解法 (Elimination Method)：</strong></div>
+        <div class="en"><strong>Shortcut (Elimination Method):</strong></div>
+        <ol>
+            <li>
+                <div class="zh">看到圖表向上升 ➔ 代表「不平均惡化/差距拉大」。直接尋找意思相同的選項，D 完美吻合。</div>
+                <div class="en">See the graph trending upwards ➔ Means "inequality worsening / gap widening". Look directly for the option with this meaning, D is a perfect match.</div>
+            </li>
+            <li>
+                <div class="zh">看到「原初」(Original) ➔ 立即劃掉任何關於「稅收」(Taxes) 或「福利」(Welfare) 的選項，秒殺 C。</div>
+                <div class="en">See the word "Original" ➔ Immediately cross out any option mentioning "Taxes" or "Welfare", instantly killing C.</div>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

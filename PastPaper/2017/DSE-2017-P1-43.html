@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Comparative Advantage</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: 5px solid #1e3a8a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .bilingual-zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            max-width: 500px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+        .option-analysis {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .correct-option {
+            border-left: 5px solid #10b981;
+            background-color: #ecfdf5;
+        }
+        .wrong-option {
+            border-left: 5px solid #ef4444;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1 style="margin-top: 0;">HKDSE Economics Analysis 指南</h1>
+        <p><span class="tag">Topic</span> 國際貿易：比較優勢與貿易比率 (International Trade: Comparative Advantage & Terms of Trade)</p>
+        <p><span class="tag">Difficulty</span> ★★★★☆ (4/5 Stars)</p>
+        <p><span class="tag">Key Concepts</span> 機會成本 (Opportunity Cost), 比較優勢 (Comparative Advantage), 運輸成本 (Transportation Cost)</p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="bilingual-zh">下表顯示甲國和乙國生產玩具和手錶所需的工時：</p>
+        <p class="bilingual-en">The following table shows the number of man-hours required by Country A and Country B in the production of toys and watches.</p>
+        
+        <table>
+            <tr>
+                <th></th>
+                <th>每單位玩具<br>1 unit of toy</th>
+                <th>每單位手錶<br>1 unit of watches</th>
+            </tr>
+            <tr>
+                <td>甲國 (Country A)</td>
+                <td>4</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>乙國 (Country B)</td>
+                <td>5</td>
+                <td>20</td>
+            </tr>
+        </table>
+
+        <p class="bilingual-zh">假設每單位玩具的運輸成本是0.1單位手錶，並且由出口國家負擔。下列哪項是能令甲乙兩國互利的貿易比率？</p>
+        <p class="bilingual-en">Suppose the transaction cost for 1 unit of toys is 0.1 units of watches and it is borne by the exporting country. Which of the following would be a mutually beneficial terms of trade between Country A and Country B?</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 1單位玩具 = 0.3 單位手錶 (1 unit of toys = 0.3 units of watches)</li>
+            <li>B. 1單位玩具 = 0.4 單位手錶 (1 unit of toys = 0.4 units of watches)</li>
+            <li>C. 1單位玩具 = 2.5 單位手錶 (1 unit of toys = 2.5 units of watches)</li>
+            <li>D. 1單位玩具 = 6 單位手錶 (1 unit of toys = 6 units of watches)</li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3 style="margin-top: 0;">成本計算與比較優勢 (Cost Calculation & Comparative Advantage)</h3>
+        <p class="bilingual-zh">這題的關鍵在於分辨數據是「投入」還是「產出」。題目給的是「工時 (man-hours)」，屬於<strong>投入數據 (Input data)</strong>。計算機會成本時，投入數據的公式與產出數據是相反的。</p>
+        <p class="bilingual-en">The key to this question is distinguishing whether the data is "input" or "output". The question provides "man-hours", which is <strong>Input data</strong>. The formula for opportunity cost using input data is the inverse of the output formula.</p>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of 1X (Input)} = \frac{\text{Input of X}}{\text{Input of Y}} \text{ units of Y} $$
+        </div>
+
+        <p class="bilingual-zh"><strong>比較優勢：</strong>一個國家生產某物品的機會成本較低，該國就擁有比較優勢，並應該出口該物品。</p>
+        <p class="bilingual-en"><strong>Comparative Advantage:</strong> If a country has a lower opportunity cost in producing a good, it has a comparative advantage and should export that good.</p>
+
+        <p class="bilingual-zh"><strong>貿易比率與運輸成本 (Terms of Trade & Transportation Cost)：</strong><br>
+        要令雙方互惠互利，貿易比率必須介乎兩國的機會成本之間。如果存在運輸成本，必須將其加到承擔該成本的一方的帳上。如果出口國負擔，出口商的最低要求（下限）會提高。</p>
+        <p class="bilingual-en"><strong>Terms of Trade & Transportation Cost:</strong><br>
+        For trade to be mutually beneficial, the terms of trade (TOT) must fall between the opportunity costs of the two countries. If there are transport costs, they must be added to the burden of the party paying them. If the exporter pays, the minimum price they are willing to accept (the lower bound) increases.</p>
+        
+        <div class="math-block">
+            $$ \text{Cost of Exporter} + \text{Transport Cost} < \text{Terms of Trade} < \text{Cost of Importer} $$
+        </div>
+    </div>
+
+    <h2>3. 題目拆解 (Problem Decomposition)</h2>
+    <p class="bilingual-zh">讓我們先計算兩國生產1單位玩具的機會成本（以手錶為單位）：</p>
+    <p class="bilingual-en">Let's first calculate the opportunity cost of producing 1 unit of toys for both countries (in terms of watches):</p>
+
+    <ul>
+        <li>
+            <span class="bilingual-zh"><strong>甲國 (A):</strong> 1單位玩具 = \(\frac{4}{8}\) 單位手錶 = 0.5 單位手錶</span><br>
+            <span class="bilingual-en"><strong>Country A:</strong> 1 unit of toy = \(\frac{4}{8}\) units of watches = 0.5 units of watches</span>
+        </li>
+        <li>
+            <span class="bilingual-zh"><strong>乙國 (B):</strong> 1單位玩具 = \(\frac{5}{20}\) 單位手錶 = 0.25 單位手錶</span><br>
+            <span class="bilingual-en"><strong>Country B:</strong> 1 unit of toy = \(\frac{5}{20}\) units of watches = 0.25 units of watches</span>
+        </li>
+    </ul>
+
+    <p class="bilingual-zh"><strong>分析樞紐 (Pivot Point)：</strong><br>
+    因為 \(0.25 < 0.5\)，乙國生產玩具的機會成本較低。因此，<strong>乙國出口玩具</strong>，甲國進口玩具。<br>
+    題目指出「每單位玩具的運輸成本是0.1單位手錶，並且由出口國家負擔」。所以乙國（出口國）每出口1單位玩具，除了放棄生產0.25單位手錶的成本外，還要額外付出0.1單位手錶的運輸費。乙國的總成本變為 \(0.25 + 0.1 = 0.35\) 單位手錶。</p>
+    
+    <p class="bilingual-en"><strong>Pivot Point Analysis:</strong><br>
+    Since \(0.25 < 0.5\), Country B has a lower opportunity cost in producing toys. Therefore, <strong>Country B exports toys</strong>, and Country A imports them.<br>
+    The question states the transport cost for 1 unit of toys is 0.1 units of watches, borne by the exporter. So, for every toy Country B exports, its total cost is its opportunity cost (0.25 watches) plus the transport cost (0.1 watches). Country B's total cost becomes \(0.25 + 0.1 = 0.35\) units of watches.</p>
+
+    <div class="math-block" style="background-color: #dbeafe; border: 1px solid #bfdbfe;">
+        $$ \text{Mutually Beneficial TOT: } 0.35 \text{ watches (B's total cost)} < 1 \text{ toy} < 0.5 \text{ watches (A's cost)} $$
+    </div>
+
+    <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p class="bilingual-zh" style="font-size: 1.2em;">正確答案是：<strong>Option B</strong></p>
+    <p class="bilingual-en" style="font-size: 1.2em;">The correct answer is: <strong>Option B</strong></p>
+
+    <div class="option-analysis wrong-option">
+        <p class="bilingual-zh"><strong>A. 1單位玩具 = 0.3 單位手錶 ❌</strong><br>
+        這個比率低於乙國的總成本（0.35單位手錶）。如果貿易比率是0.3，乙國出口玩具會虧本，所以不會同意。</p>
+        <p class="bilingual-en"><strong>A. 1 unit of toys = 0.3 units of watches ❌</strong><br>
+        This ratio is lower than Country B's total cost (0.35 watches). At this rate, Country B would suffer a loss from exporting toys and would not agree to trade.</p>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <p class="bilingual-zh"><strong>B. 1單位玩具 = 0.4 單位手錶 ✅</strong><br>
+        0.4單位手錶正好落在互利區間內 (\(0.35 < 0.4 < 0.5\))。乙國收回成本後有賺（0.4 - 0.35 = 0.05的利潤），甲國買玩具也比自己生產便宜（0.4 < 0.5）。雙方互利！</p>
+        <p class="bilingual-en"><strong>B. 1 unit of toys = 0.4 units of watches ✅</strong><br>
+        0.4 watches falls perfectly within the mutually beneficial range (\(0.35 < 0.4 < 0.5\)). Country B makes a gain (0.4 - 0.35 = 0.05), and Country A pays less than its own production cost (0.4 < 0.5). Mutually beneficial!</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <p class="bilingual-zh"><strong>C. 1單位玩具 = 2.5 單位手錶 ❌</strong><br>
+        這個比率遠高於甲國自己生產玩具的成本（0.5單位手錶）。甲國寧願自己生產，也不會用2.5單位手錶去換1單位玩具。</p>
+        <p class="bilingual-en"><strong>C. 1 unit of toys = 2.5 units of watches ❌</strong><br>
+        This ratio is much higher than Country A's own production cost (0.5 watches). Country A would rather produce the toys domestically than trade 2.5 watches for 1 toy.</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <p class="bilingual-zh"><strong>D. 1單位玩具 = 6 單位手錶 ❌</strong><br>
+        與C選項同理，這對進口國甲國來說太昂貴了。</p>
+        <p class="bilingual-en"><strong>D. 1 unit of toys = 6 units of watches ❌</strong><br>
+        Same logic as Option C; this is far too expensive for the importing Country A.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li>
+            <p class="bilingual-zh"><strong>陷阱一：看錯數據類型 (Input vs Output Trap)</strong><br>很多學生看到「4和8」，就直接用 \(8 \div 4 = 2\)，以為甲國生產玩具的成本是2隻手錶。請記住，這是「工時 (man-hours)」，必須用 <strong>自己除以對方</strong> (即 \(\frac{4}{8} = 0.5\))。</p>
+            <p class="bilingual-en"><strong>Trap 1: Misidentifying Data Type.</strong> Many students see "4 and 8" and compute \(8 \div 4 = 2\), thinking Country A's cost is 2 watches. Remember, this is "man-hours" (input), so you must <strong>divide its own input by the other's input</strong> (i.e., \(\frac{4}{8} = 0.5\)).</p>
+        </li>
+        <li>
+            <p class="bilingual-zh"><strong>陷阱二：忘記運輸成本由誰負責 (Ignoring who bears the transport cost)</strong><br>題目明確寫出由「出口國家」負責。如果沒有找出誰是出口國，就不知道要把 0.1 加在 0.25 還是 0.5 身上。</p>
+            <p class="bilingual-en"><strong>Trap 2: Forgetting who pays for transport.</strong> The question specifies the "exporting country" bears the cost. If you don't identify the exporter first, you won't know whether to add the 0.1 to 0.25 or to 0.5.</p>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="bilingual-zh"><strong>Q: 如果題目改為「由進口國家負擔運輸成本」，答案會有什麼不同？</strong></p>
+        <p class="bilingual-en"><strong>Q: What if the question stated the transport cost was borne by the "importing country"? How would the answer change?</strong></p>
+        
+        <p class="bilingual-zh"><strong>A:</strong> 如果進口國（甲國）負責運輸費，出口國（乙國）的最低要求維持在原來的機會成本 0.25。但對甲國來說，買一件玩具除了支付「貿易比率」的價格，還要自己出 0.1 的運費。所以甲國願意支付的最高貿易比率會下降：\(0.5 - 0.1 = 0.4\)。<br>
+        此時的互利區間會變成：\(0.25 < \text{貿易比率} < 0.4\)。<br>
+        在這個新區間下，選項 A (0.3) 就會變成正確答案！</p>
+        
+        <p class="bilingual-en"><strong>A:</strong> If the importing country (A) pays the transport cost, the exporter's (B's) minimum requirement stays at its opportunity cost of 0.25. However, Country A must pay the terms of trade price PLUS the 0.1 transport cost out of pocket. Thus, the maximum terms of trade Country A is willing to pay drops to: \(0.5 - 0.1 = 0.4\).<br>
+        The new mutually beneficial range would be: \(0.25 < \text{Terms of Trade} < 0.4\).<br>
+        In this scenario, Option A (0.3) would become the correct answer!</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p class="bilingual-zh"><strong>速解法 (Shortcut):</strong></p>
+    <ol>
+        <li class="bilingual-zh">一秒判斷：看到「工時/資源」，直覺反應公式：\(\frac{\text{自身數字}}{\text{對方數字}}\)。甲國玩具 = 4/8 = 0.5。乙國玩具 = 5/20 = 0.25。</li>
+        <li class="bilingual-zh">找出邊界：寫下區間 \(0.25 < \text{TOT} < 0.5\)。</li>
+        <li class="bilingual-zh">處理運費：運費 (0.1) 永遠會<strong>縮小</strong>互利區間。出口國付，就把下限推高 (\(0.25 + 0.1 = 0.35\))；進口國付，就把上限拉低。</li>
+        <li class="bilingual-zh">秒殺選項：尋找介乎 0.35 和 0.5 之間的數字。只有 0.4 符合。選 B，下一題！</li>
+    </ol>
+
+    <p class="bilingual-en"><strong>Shortcut Method:</strong></p>
+    <ol>
+        <li class="bilingual-en">1-Second Recognition: Seeing "man-hours/resources" triggers the input formula: \(\frac{\text{own figure}}{\text{other figure}}\). A's Toy = 4/8 = 0.5. B's Toy = 5/20 = 0.25.</li>
+        <li class="bilingual-en">Set the Boundaries: Jot down the basic range \(0.25 < \text{TOT} < 0.5\).</li>
+        <li class="bilingual-en">Handle Transport Cost: Transport cost (0.1) always <strong>shrinks</strong> the mutually beneficial range. If the exporter pays, push the lower bound up (\(0.25 + 0.1 = 0.35\)). If the importer pays, pull the upper bound down.</li>
+        <li class="bilingual-en">Kill the Options: Look for the number strictly between 0.35 and 0.5. Only 0.4 fits. Pick B and move on!</li>
+    </ol>
+
+</body>
+</html>
