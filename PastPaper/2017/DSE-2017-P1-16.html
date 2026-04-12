@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Market Intervention</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --bg-gray: #f3f4f6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        body {
+            font-family: 'Noto Sans HK', 'Roboto', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .bilingual-group {
+            margin-bottom: 1.5em;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-top: 0;
+            font-style: italic;
+        }
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: var(--bg-gray);
+            font-weight: bold;
+        }
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Math Block */
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+        /* Option Analysis */
+        .option {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--text-gray);
+        }
+        .option.correct {
+            border-left-color: var(--accent-green);
+            background-color: #ecfdf5;
+        }
+        .option.incorrect {
+            border-left-color: var(--accent-red);
+        }
+        .option-header {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .correct-label { color: var(--accent-green); }
+        .incorrect-label { color: var(--accent-red); }
+        
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: #d97706; }
+        
+        .exam-trick {
+            background: linear-gradient(to right, #fdf4ff, #fae8ff);
+            border-left: 5px solid #d946ef;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.85em; }
+            th, td { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics MC Analysis</h1>
+        <div>
+            <span class="badge">Topic: 市場干預：從量稅 (Market Intervention: Per-unit Tax)</span>
+            <span class="badge">Difficulty: ⭐⭐⭐✨ (3.5/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge" style="background-color: #4b5563;"># Per-unit Tax (從量稅)</span>
+            <span class="badge" style="background-color: #4b5563;"># Tax Burden (稅務負擔)</span>
+            <span class="badge" style="background-color: #4b5563;"># Total Revenue (總收入)</span>
+        </div>
+    </div>
+
+    <h2>2. 題目 (The Question)</h2>
+    <div class="bilingual-group">
+        <p class="zh">參看下列物品X的供需表。若政府對物品X開徵$2從量稅：</p>
+        <p class="en">Refer to the following supply and demand schedules for Good X. If the government imposed a $2 per unit tax on Good X:</p>
+    </div>
+
+    <div class="table-responsive">
+        <table>
+            <tr>
+                <th>單位價格 / Unit price ($)</th>
+                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+            </tr>
+            <tr>
+                <th>需求量 / Quantity demanded</th>
+                <td>140</td><td>130</td><td>120</td><td>110</td><td>100</td><td>90</td><td>80</td><td>70</td>
+            </tr>
+            <tr>
+                <th>供應量 / Quantity supplied</th>
+                <td>60</td><td>70</td><td>80</td><td>90</td><td>100</td><td>110</td><td>120</td><td>130</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="bilingual-group">
+        <p class="zh">A. 賣家的除稅後收入會是$990。<br>
+        B. 賣家承擔的稅項負擔會是$90。<br>
+        C. 總稅項收入會是$200。<br>
+        D. 買家對物品X的總支出會下降$40。</p>
+        <p class="en">A. sellers’ revenue net of tax would become $990.<br>
+        B. tax burden borne by the sellers would be $90.<br>
+        C. the total tax revenue would be $200.<br>
+        D. buyers’ total expenditure on Good X would decrease by $40.</p>
+    </div>
+
+    <h2>3. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <p class="zh">當政府徵收<strong>從量稅 (Per-unit tax)</strong>時，供應曲線會向上平移，平移的垂直距離等同於稅額（此題為$2）。這意味著買家支付的價格 \(P_d\) 和賣家實際收取的價格 \(P_s\) 之間會產生一個差距。</p>
+            <p class="en">When the government imposes a <strong>per-unit tax</strong>, the supply curve shifts upwards by a vertical distance equal to the tax amount (here, $2). This creates a wedge between the price buyers pay \(P_d\) and the net price sellers receive \(P_s\).</p>
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh">尋找新均衡點的核心條件如下：</p>
+            <p class="en">The core conditions for finding the new equilibrium are:</p>
+        </div>
+
+        <div class="math-block">
+            $$ P_d - P_s = t $$
+            $$ Q_d(P_d) = Q_s(P_s) = Q_1 $$
+        </div>
+
+        <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 20px;">
+            <li><span class="zh"><strong>\(t\)</strong>: 從量稅 (Per-unit tax) = $2</span></li>
+            <li><span class="zh"><strong>\(P_d\)</strong>: 買家支付的新價格 (New price paid by buyers)</span></li>
+            <li><span class="zh"><strong>\(P_s\)</strong>: 賣家除稅後淨收價格 (Sellers' net price after tax)</span></li>
+            <li><span class="zh"><strong>\(Q_1\)</strong>: 徵稅後的新交易量 (New equilibrium quantity after tax)</span></li>
+            <li><span class="zh"><strong>\(P_0\)</strong>: 徵稅前的原有均衡價格 (Original equilibrium price)</span></li>
+        </ul>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>關鍵公式 (Key Formulas):</strong></p>
+        </div>
+        <div class="math-block">
+            $$ \text{Total Tax Revenue (總稅收)} = t \times Q_1 $$
+            $$ \text{Sellers' Tax Burden (賣家稅務負擔)} = (P_0 - P_s) \times Q_1 $$
+            $$ \text{Buyers' Tax Burden (買家稅務負擔)} = (P_d - P_0) \times Q_1 $$
+            $$ \text{Sellers' Net Revenue (賣家除稅後收入)} = P_s \times Q_1 $$
+        </div>
+    </div>
+
+    <h2>4. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="bilingual-group">
+        <h3 style="border:none; margin-top:0;">正確答案 (Correct Option): <span style="color:var(--accent-green); font-size:1.5em;">B</span></h3>
+    </div>
+
+    <div class="bilingual-group">
+        <p class="zh"><strong>步驟 1：找出原本的均衡點 (Step 1: Find the original equilibrium)</strong><br>
+        在徵稅前，均衡點位於需求量等於供應量（\(Q_d = Q_s\)）的位置。從表中可見，當價格為$10時，\(Q_d = 100\)，\(Q_s = 100\)。<br>
+        因此，原均衡價格 \(P_0 = \$10\)，原均衡數量 \(Q_0 = 100\)。</p>
+        <p class="en">Before the tax, equilibrium is where quantity demanded equals quantity supplied (\(Q_d = Q_s\)). From the table, at a price of $10, \(Q_d = 100\) and \(Q_s = 100\).<br>
+        Thus, Original Price \(P_0 = \$10\), Original Quantity \(Q_0 = 100\).</p>
+    </div>
+
+    <div class="bilingual-group">
+        <p class="zh"><strong>步驟 2：找出徵稅後的新均衡點 (Step 2: Find the new equilibrium after tax)</strong><br>
+        徵收$2從量稅後，買家價格 \(P_d\) 減去賣家價格 \(P_s\) 必須等於$2。同時，在該兩個不同價格下，需求量必須等於供應量。我們在表中尋找差距為$2的價格組合，使其對應的數量相等：<br>
+        當 \(P_d = \$11\) 時，\(Q_d = 90\)。<br>
+        當 \(P_s = \$9\) 時，\(Q_s = 90\)。<br>
+        因為 \(\$11 - \$9 = \$2\) (等於稅額)，且兩者的數量皆為 90。所以，新均衡數量 \(Q_1 = 90\)。</p>
+        
+        <p class="en">After a $2 tax, the buyers' price \(P_d\) minus sellers' net price \(P_s\) must equal $2. Simultaneously, \(Q_d\) at \(P_d\) must equal \(Q_s\) at \(P_s\). We look for a price gap of $2 in the table where quantities match:<br>
+        At \(P_d = \$11\), \(Q_d = 90\).<br>
+        At \(P_s = \$9\), \(Q_s = 90\).<br>
+        Since \(\$11 - \$9 = \$2\) (the tax), and both quantities are 90. So, New Quantity \(Q_1 = 90\).</p>
+    </div>
+
+    <div class="option incorrect">
+        <div class="option-header"><span class="incorrect-label">A. 錯誤 (Incorrect)</span></div>
+        <p class="zh">賣家的除稅後收入 = \(P_s \times Q_1 = \$9 \times 90 = \$810\)。選項說是$990，這是買家總支出（\(\$11 \times 90\)），而非賣家淨收入。</p>
+        <p class="en">Sellers' revenue net of tax = \(P_s \times Q_1 = \$9 \times 90 = \$810\). The option says $990, which is actually the buyers' total expenditure (\(\$11 \times 90\)), not sellers' net revenue.</p>
+    </div>
+
+    <div class="option correct">
+        <div class="option-header"><span class="correct-label">B. 正確 (Correct)</span></div>
+        <p class="zh">賣家承擔的稅務負擔 = \((P_0 - P_s) \times Q_1 = (\$10 - \$9) \times 90 = \$1 \times 90 = \$90\)。計算完全正確。</p>
+        <p class="en">Tax burden borne by sellers = \((P_0 - P_s) \times Q_1 = (\$10 - \$9) \times 90 = \$1 \times 90 = \$90\). This calculation is perfectly correct.</p>
+    </div>
+
+    <div class="option incorrect">
+        <div class="option-header"><span class="incorrect-label">C. 錯誤 (Incorrect)</span></div>
+        <p class="zh">總稅項收入 = 稅額 \(\times\) 新數量 = \(\$2 \times 90 = \$180\)。選項說是$200，這是錯誤地用原數量（100）來計算。</p>
+        <p class="en">Total tax revenue = Tax \(\times\) New Quantity = \(\$2 \times 90 = \$180\). The option says $200, which mistakenly uses the old quantity (100) for calculation.</p>
+    </div>
+
+    <div class="option incorrect">
+        <div class="option-header"><span class="incorrect-label">D. 錯誤 (Incorrect)</span></div>
+        <p class="zh">原本買家總支出 = \(\$10 \times 100 = \$1000\)。新買家總支出 = \(\$11 \times 90 = \$990\)。支出下降了 \(\$1000 - \$990 = \$10\)，而不是$40。</p>
+        <p class="en">Original buyers' expenditure = \(\$10 \times 100 = \$1000\). New buyers' expenditure = \(\$11 \times 90 = \$990\). The expenditure decreased by \(\$1000 - \$990 = \$10\), not $40.</p>
+    </div>
+
+    <h2>5. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-group">
+        <p class="zh"><strong>解題樞紐 (The Pivot Point):</strong><br>
+        解答這類題目的關鍵在於「<strong>不可假設交易量不變</strong>」。徵稅後，交易成本增加，必定導致市場交易量下降（無謂損失的產生）。你必須在表格中找到新的數量 \(Q_1\)，且滿足 \(P_d - P_s = \text{Tax}\)。</p>
+        <p class="en"><strong>The Pivot Point:</strong><br>
+        The absolute key to these questions is understanding that "<strong>quantity does not remain constant</strong>". A tax increases transaction costs, inevitably reducing market quantity (creating a deadweight loss). You must find the new quantity \(Q_1\) in the table that satisfies \(P_d - P_s = \text{Tax}\).</p>
+    </div>
+
+    <h2>6. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="bilingual-group">
+        <p class="zh">⚠️ <strong>陷阱一：用舊數量計算稅收 (Using old quantity for tax revenue)</strong><br>
+        很多同學一看到$2稅，就直接用原本的數量100去乘（\(2 \times 100 = 200\)），誤選C。記住，稅收是建基於<strong>新</strong>的交易量上！</p>
+        <p class="en">⚠️ <strong>Trap 1: Using old quantity for tax revenue</strong><br>
+        Many students see the $2 tax and multiply it by the original quantity 100 (\(2 \times 100 = 200\)), mistakenly choosing C. Remember, tax revenue is based on the <strong>new</strong>, lower quantity!</p>
+        
+        <p class="zh">⚠️ <strong>陷阱二：混淆總支出與淨收入 (Confusing total expenditure with net revenue)</strong><br>
+        買家支付 \(\$11 \times 90 = \$990\)，這叫「買家總支出 (Total Expenditure)」。但這$990中，有$180交給了政府，賣家真正落袋的只有$810。選項A正是利用了這個盲點。</p>
+        <p class="en">⚠️ <strong>Trap 2: Confusing total expenditure with net revenue</strong><br>
+        Buyers pay \(\$11 \times 90 = \$990\), which is the "Total Expenditure". However, out of this $990, $180 goes to the government, leaving sellers with only $810. Option A preys on this blind spot.</p>
+    </div>
+
+    <h2>7. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-group">
+            <p class="qa-q">Q: 點解稅項負擔剛好是一人一半（買家加$1，賣家減$1）？是不是每次都會平分？</p>
+            <p class="qa-q">Q: Why is the tax burden shared exactly equally here (buyers pay $1 more, sellers get $1 less)? Is it always split 50/50?</p>
+            
+            <p class="zh"><strong>A:</strong> 不是每次都平分！稅務負擔的比例取決於需求和供應的<strong>價格彈性 (Price Elasticity)</strong>。但在這條題目中，你觀察一下表格：價格每改變$1，需求量減少10，供應量也增加10。因為這兩條直線的斜率（反應程度）完全對稱，所以稅務負擔剛好是 50/50平分。如果需求較缺乏彈性 (inelastic)，買家就會承擔更多稅款。</p>
+            <p class="en"><strong>A:</strong> No, it's not always equal! The tax burden ratio depends on the <strong>price elasticity</strong> of demand and supply. But look at the table for this specific question: for every $1 change in price, \(Q_d\) drops by 10, and \(Q_s\) rises by 10. Because the slopes (responsiveness) are perfectly symmetrical, the tax burden is split exactly 50/50. If demand were more inelastic, buyers would bear a larger share of the tax.</p>
+        </div>
+    </div>
+
+    <h2>8. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="exam-trick">
+        <div class="bilingual-group">
+            <p class="zh">⚡ <strong>10秒神速解法 (10-Second Shortcut):</strong><br>
+            剛才提到，表格的數據展現了<strong>完美的對稱性</strong>（每$1差額對應10個單位的變化）。<br>
+            既然彈性對稱，稅務負擔必定平分！<br>
+            總稅是$2 \(\rightarrow\) 買賣雙方各承擔$1。<br>
+            原本均衡價是$10，所以新買家價 \(P_d = 10 + 1 = 11\)，新賣家價 \(P_s = 10 - 1 = 9\)。<br>
+            對應數量直接看表格 \(P_d = 11\) 時 \(Q = 90\)。<br>
+            連「試誤法 (Trial and Error)」都不需要，一眼看穿新均衡點！</p>
+            
+            <p class="en">⚡ <strong>10-Second Shortcut:</strong><br>
+            As mentioned, the table data shows <strong>perfect symmetry</strong> (a $1 difference always corresponds to a 10-unit change).<br>
+            Since elasticities are symmetrical, the tax burden MUST be split equally!<br>
+            Total tax is $2 \(\rightarrow\) Buyers and sellers each bear $1.<br>
+            Original price is $10, so new buyer price \(P_d = 10 + 1 = 11\), new seller price \(P_s = 10 - 1 = 9\).<br>
+            Look at the table: at \(P_d = 11\), \(Q = 90\).<br>
+            You don't even need Trial and Error to find the new equilibrium; you can see it instantly!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

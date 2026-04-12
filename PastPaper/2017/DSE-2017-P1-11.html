@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --box-bg-concept: #f0f9ff;
+            --box-bg-math: #f3f4f6;
+            --box-bg-trap: #fff1f2;
+            --box-bg-tip: #fffbeb;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h1 { font-size: 1.8rem; border-bottom: none; }
+        .en {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .concept-box, .trap-box, .tip-box, .math-block {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .math-block {
+            background-color: var(--box-bg-math);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .trap-box {
+            background-color: var(--box-bg-trap);
+            border-left: 5px solid #e11d48;
+        }
+        .tip-box {
+            background-color: var(--box-bg-tip);
+            border-left: 5px solid #d97706;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+        .correct-option {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            font-weight: bold;
+        }
+        .qa-item {
+            margin-bottom: 20px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+        .qa-a {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial <br><span style="font-size: 1.2rem; color: #64748b;">經濟學詳解指南</span></h1>
+    <div>
+        <span class="badge">Topic: Production & Labour (生產與勞工)</span>
+        <span class="badge">Difficulty: ⭐⭐⭐ (3/5)</span>
+    </div>
+    <div style="margin-top: 10px;">
+        <strong>Key Concepts:</strong> Labour Supply (勞力供應), Average Labour Productivity (平均勞工生產力), Man-hours (工時)
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="zh">某廠商的投入與產出的關係如下：</div>
+    <div class="en">The input-output relationship of a firm is as follows:</div>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>第一年 / Year 1</th>
+            <th>第二年 / Year 2</th>
+        </tr>
+        <tr>
+            <td>工人數量<br><span class="en" style="font-size: 0.9em;">Number of workers</span></td>
+            <td>30</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>每日每名工人的工作時數<br><span class="en" style="font-size: 0.9em;">Number of working hours per worker per day</span></td>
+            <td>10</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>產出數量 (單位)<br><span class="en" style="font-size: 0.9em;">Quantity of output (units)</span></td>
+            <td>3 000</td>
+            <td>2 900</td>
+        </tr>
+    </table>
+
+    <div class="zh">根據上述資料，勞力供應會 _____________ 而平均勞工生產力會 ____________。</div>
+    <div class="en">Based on the above information, labour supply _____________ and average labour productivity ____________.</div>
+
+    <div class="option">A. 增加 …… 增加 / rises …… rises</div>
+    <div class="option">B. 增加 …… 減少 / rises …… falls</div>
+    <div class="option correct-option">C. 減少 …… 增加 / falls …… rises</div>
+    <div class="option">D. 減少 …… 減少 / falls …… falls</div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh">要解答這類題目，我們必須清楚區分「勞動人口 (Labour Force)」與「勞力供應 (Labour Supply)」。勞力供應不僅考慮人數，還要考慮他們投入的總時間（工時）。</p>
+        <p class="en">To solve this type of question, we must clearly distinguish between "Labour Force" and "Labour Supply". Labour supply accounts not only for the number of people but also the total time they put in (man-hours).</p>
+        
+        <div class="math-block">
+            $$ \text{Labour Supply} = \text{Number of Workers} \times \text{Working Hours} $$
+            $$ \text{勞力供應} = \text{工人數量} \times \text{工作時數} $$
+        </div>
+
+        <p class="zh">此外，<strong>平均勞工生產力</strong>是指每單位勞力供應所能產出的數量，通常以「每工時產量」計算。</p>
+        <p class="en">Furthermore, <strong>Average Labour Productivity</strong> refers to the quantity of output produced per unit of labour supply, usually calculated as "output per man-hour".</p>
+
+        <div class="math-block">
+            $$ \text{Average Labour Productivity} = \frac{\text{Total Output}}{\text{Labour Supply (Total Man-hours)}} $$
+            $$ \text{平均勞工生產力} = \frac{\text{總產量}}{\text{勞力供應（總工時）}} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option: C</strong></p>
+    
+    <div class="zh"><strong>第一步：計算勞力供應 (Total Man-hours)</strong></div>
+    <div class="en"><strong>Step 1: Calculate Labour Supply (Total Man-hours)</strong></div>
+    <ul>
+        <li><span class="zh">第一年：</span><span class="en">Year 1: </span> $30 \times 10 = 300$ man-hours (工時)</li>
+        <li><span class="zh">第二年：</span><span class="en">Year 2: </span> $35 \times 8 = 280$ man-hours (工時)</li>
+        <li><strong>結論 (Conclusion):</strong> <span class="zh">勞力供應由 300 跌至 280，因此<strong>減少 (falls)</strong>。</span><span class="en">Labour supply dropped from 300 to 280, therefore it <strong>falls</strong>.</span></li>
+    </ul>
+
+    <div class="zh"><strong>第二步：計算平均勞工生產力 (Average Labour Productivity)</strong></div>
+    <div class="en"><strong>Step 2: Calculate Average Labour Productivity</strong></div>
+    <ul>
+        <li><span class="zh">第一年：</span><span class="en">Year 1: </span> $3000 / 300 = 10$ units/man-hour (單位/工時)</li>
+        <li><span class="zh">第二年：</span><span class="en">Year 2: </span> $2900 / 280 \approx 10.36$ units/man-hour (單位/工時)</li>
+        <li><strong>結論 (Conclusion):</strong> <span class="zh">平均勞工生產力由 10 升至 10.36，因此<strong>增加 (rises)</strong>。</span><span class="en">Average labour productivity increased from 10 to 10.36, therefore it <strong>rises</strong>.</span></li>
+    </ul>
+
+    <p class="zh">綜合以上分析，勞力供應減少，而平均勞工生產力增加，故正確答案為 <strong>C</strong>。選項 A 及 B 錯誤是因為它們假設勞力供應增加；選項 D 錯誤是因為它誤判生產力下降。</p>
+    <p class="en">Combining the analysis above, labour supply falls and average labour productivity rises, making <strong>C</strong> the correct answer. Options A and B are incorrect because they assume an increase in labour supply; Option D is incorrect because it miscalculates a fall in productivity.</p>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="zh">這題的<strong>破題關鍵 (Pivot Point)</strong> 在於表格中的「每日每名工人的工作時數」。</p>
+    <p class="en">The <strong>Pivot Point</strong> of this question is the "Number of working hours per worker per day" row in the table.</p>
+    
+    <p class="zh">考評局經常利用「工人數量」上升這點來製造錯覺。如果你只看第一行數據（30人變35人），你很容易會以為勞力供應增加了。但經濟學上的「勞力供應」必須結合工作時間來計算總工時（Man-hours）。</p>
+    <p class="en">The HKEAA often uses the increase in the "Number of workers" to create an illusion. If you only look at the first row (from 30 to 35 workers), you might easily assume labour supply has increased. However, in Economics, "Labour Supply" must be calculated by multiplying the number of workers by their working hours to find the total man-hours.</p>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p class="zh"><strong>❌ 致命陷阱：用錯公式計算生產力</strong></p>
+        <p class="en"><strong>❌ Fatal Trap: Using the wrong formula for productivity</strong></p>
+        <p class="zh">很多同學會將「產量」直接除以「工人數量」，得出：<br>
+        第一年：$3000 / 30 = 100$<br>
+        第二年：$2900 / 35 \approx 82.8$<br>
+        從而誤以為平均勞工生產力<strong>減少</strong>了！這就掉進了出題者的陷阱。必須記住，當題目提供了工作時數，平均勞工生產力就必須以<strong>「每工時產量 (Output per man-hour)」</strong>來計算，而非「每名工人產量」。</p>
+        
+        <p class="en">Many students directly divide "Output" by the "Number of workers", yielding:<br>
+        Year 1: $3000 / 30 = 100$<br>
+        Year 2: $2900 / 35 \approx 82.8$<br>
+        They mistakenly conclude that average labour productivity has <strong>fallen</strong>! This falls right into the examiner's trap. Remember, when working hours are provided, average labour productivity must be calculated as <strong>"Output per man-hour"</strong>, not "Output per worker".</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-item">
+        <div class="qa-q">Q1: 為什麼不能只用「工人數量」來代表勞工供應？ / Why can't we just use the "number of workers" to represent labour supply?</div>
+        <div class="qa-a">
+            <p class="zh">A1: 想像一下，一間公司有 10 個全職工人（每天工作 8 小時），另一間公司有 10 個兼職工人（每天工作 2 小時）。雖然兩間公司的人數相同，但前者投入的勞力（總工時）明顯多於後者。因此，計算工時能更準確反映真實的勞力投入。</p>
+            <p class="en">A1: Imagine one company has 10 full-time workers (working 8 hours/day) and another has 10 part-time workers (working 2 hours/day). Although they have the same number of workers, the first company clearly inputs much more labour effort (total man-hours). Thus, calculating man-hours reflects the true labour input much more accurately.</p>
+        </div>
+    </div>
+    <div class="qa-item">
+        <div class="qa-q">Q2: 如果題目沒有給出「工作時數」，我還能計算嗎？ / What if the question didn't provide "working hours"?</div>
+        <div class="qa-a">
+            <p class="zh">A2: 如果題目完全沒有提及工作時數，我們就會假設工時不變 (ceteris paribus)。在這種特殊情況下，我們才能夠直接用「工人數量」來代表勞力供應，並用「產量 / 工人數量」來計算平均勞工生產力。</p>
+            <p class="en">A2: If the question makes no mention of working hours at all, we assume working hours remain constant (ceteris paribus). Only in this specific scenario can we use the "number of workers" as a proxy for labour supply, and calculate average productivity as "Output / Number of workers".</p>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tip-box">
+        <p class="zh"><strong>💡 速解法：百分比變化比較 (Percentage Change Comparison)</strong></p>
+        <p class="en"><strong>💡 Shortcut: Percentage Change Comparison</strong></p>
+        <p class="zh">在選擇題中，如果你不想做精確的除法，可以用百分比大約估算：</p>
+        <p class="en">In multiple-choice questions, if you want to avoid tedious division, you can estimate using percentage changes:</p>
+        
+        <ul>
+            <li><span class="zh"><strong>勞力供應：</strong> 工人數量增加了約 16.7% ($+5/30$)，但工時大幅減少了 20% ($-2/10$)。既然減少的百分比大於增加的百分比，總體勞力供應（兩者相乘）必然<strong>減少</strong>。</span>
+            <br>
+            <span class="en"><strong>Labour Supply:</strong> Workers increased by ~16.7% ($+5/30$), but hours decreased significantly by 20% ($-2/10$). Since the percentage decrease outweighs the percentage increase, the total labour supply (their product) must <strong>fall</strong>.</span></li>
+            
+            <li><span class="zh"><strong>生產力：</strong> 產量只微跌了約 3.3% ($-100/3000$)，而勞力供應（分母）下跌了約 6.7% ($-20/300$)。因為「分母」跌幅大過「分子」跌幅，所以整個分數（生產力）的數值必然會<strong>上升</strong>。無需動筆除數也能選出答案！</span>
+            <br>
+            <span class="en"><strong>Productivity:</strong> Output only fell slightly by ~3.3% ($-100/3000$), while labour supply (the denominator) fell by ~6.7% ($-20/300$). Because the denominator fell by a larger percentage than the numerator, the value of the fraction (productivity) must <strong>rise</strong>. You can find the answer without actually dividing!</span></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

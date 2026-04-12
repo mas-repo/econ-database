@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Profit Maximization</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e40af;
+        }
+        .question-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+            text-align: center;
+        }
+        .analysis-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #fdfce8;
+            border-left: 5px solid #facc15;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .trick-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .eng-text {
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .zh-text {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            margin: 15px auto;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+        .correct-answer {
+            color: #15803d;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #2563eb;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <p><strong>Topic (課題):</strong> Theory of the Firm - Profit Maximization (廠商理論：利潤極大化)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★★☆</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> Price-taker (受價者), Marginal Cost (邊際成本), Profit Maximization (利潤極大化), Total Cost (總成本)</p>
+    </div>
+
+    <div class="question-box">
+        <h2>2. The Question (題目)</h2>
+        <p class="zh-text">下表顯示某受價者的成本與產出的關係。</p>
+        <p class="eng-text">The following table shows the cost-output relationship of a price-taker.</p>
+        
+        <table>
+            <tr>
+                <th>產出 / Output (units)</th>
+                <th>平均成本 / Average cost ($)</th>
+            </tr>
+            <tr><td>5</td><td>10</td></tr>
+            <tr><td>6</td><td>11</td></tr>
+            <tr><td>7</td><td>12</td></tr>
+            <tr><td>8</td><td>13</td></tr>
+            <tr><td>9</td><td>14</td></tr>
+        </table>
+
+        <p class="zh-text">市場價格是$20。假設每單位產出的平均成本上升$2。該廠商的利潤會___________。</p>
+        <p class="eng-text">The market price is $20. Suppose the average cost has increased by $2 for every unit of output. The profit of the firm will ___________.</p>
+
+        <ul>
+            <li><strong>A.</strong> 增加$16 / increase by $16</li>
+            <li><strong>B.</strong> 增加$14 / increase by $14</li>
+            <li><strong>C.</strong> 減少$16 / decrease by $16</li>
+            <li><strong>D.</strong> 減少$14 / decrease by $14</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>3. Concept Review (概念重溫)</h2>
+        <p class="zh-text">在處理這類題目時，我們需要重溫完全競爭市場（受價者）的利潤極大化原則。受價者無法改變市場價格，因此其邊際收益 (MR) 等於價格 (P)。</p>
+        <p class="eng-text">When handling this type of question, we need to review the profit maximization principle for a perfectly competitive market (price-taker). A price-taker cannot change the market price, so its Marginal Revenue (MR) equals the Price (P).</p>
+
+        <p class="zh-text"><strong>核心公式 (Core Formulas):</strong></p>
+        <div class="math-block">
+            $$ Total\ Cost\ (TC) = Average\ Cost\ (AC) \times Quantity\ (Q) $$
+        </div>
+        <div class="math-block">
+            $$ Marginal\ Cost\ (MC) = \frac{\Delta TC}{\Delta Q} $$
+        </div>
+        <div class="math-block">
+            $$ Profit\ (\pi) = Total\ Revenue\ (TR) - Total\ Cost\ (TC) = (P \times Q) - TC $$
+        </div>
+
+        <p class="zh-text"><strong>利潤極大化條件 (Profit Maximization Condition):</strong></p>
+        <p class="zh-text">廠商會生產直到邊際成本等於價格（或邊際收益），即 \( P = MC \)。只要 \( P > MC \)，多生產一件就能帶來額外利潤；當 \( MC > P \)，多生產就會虧損。</p>
+        <p class="eng-text">The firm will produce up to the point where Marginal Cost equals Price (or Marginal Revenue), i.e., \( P = MC \). As long as \( P > MC \), producing one more unit brings extra profit; when \( MC > P \), producing more incurs a loss.</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p>Correct Option: <span class="correct-answer">Option D (選項 D)</span></p>
+
+        <h3 class="step-title">Step 1: 分析初始狀態 (Analyze the Initial State)</h3>
+        <p class="zh-text">首先，我們需要計算成本改變前的總成本 (TC) 和邊際成本 (MC)，找出原來的極大化利潤。</p>
+        <p class="eng-text">First, we need to calculate the Total Cost (TC) and Marginal Cost (MC) before the cost change to find the original maximized profit.</p>
+        
+        <table>
+            <tr>
+                <th>Q</th>
+                <th>AC</th>
+                <th>TC = AC × Q</th>
+                <th>MC = ΔTC / ΔQ</th>
+            </tr>
+            <tr><td>5</td><td>10</td><td>50</td><td>-</td></tr>
+            <tr><td>6</td><td>11</td><td>66</td><td>16 (66-50)</td></tr>
+            <tr><td>7</td><td>12</td><td>84</td><td>18 (84-66)</td></tr>
+            <tr style="background-color: #dbeafe;"><td>8</td><td>13</td><td>104</td><td><strong>20</strong> (104-84)</td></tr>
+            <tr><td>9</td><td>14</td><td>126</td><td>22 (126-104)</td></tr>
+        </table>
+        
+        <p class="zh-text">由於市場價格 \( P = \$20 \)，根據 \( P = MC \) 原則，利潤極大化的產出量 \( Q_1 = 8 \)。<br>
+        初始利潤 \( \pi_1 = (P \times Q_1) - TC_1 = (20 \times 8) - 104 = 160 - 104 = \$56 \)。</p>
+        <p class="eng-text">Since the market price \( P = \$20 \), according to the \( P = MC \) principle, the profit-maximizing output is \( Q_1 = 8 \).<br>
+        Initial profit \( \pi_1 = (P \times Q_1) - TC_1 = (20 \times 8) - 104 = 160 - 104 = \$56 \).</p>
+
+        <h3 class="step-title">Step 2: 分析成本上升後的新狀態 (Analyze the New State After Cost Increase)</h3>
+        <p class="zh-text">現在平均成本每單位上升 $2。我們重新計算新的 AC、TC 和 MC。</p>
+        <p class="eng-text">Now the average cost increases by $2 per unit. We recalculate the new AC, TC, and MC.</p>
+
+        <table>
+            <tr>
+                <th>Q</th>
+                <th>New AC</th>
+                <th>New TC</th>
+                <th>New MC</th>
+            </tr>
+            <tr><td>5</td><td>12</td><td>60</td><td>-</td></tr>
+            <tr><td>6</td><td>13</td><td>78</td><td>18 (78-60)</td></tr>
+            <tr style="background-color: #dcfce7;"><td>7</td><td>14</td><td>98</td><td><strong>20</strong> (98-78)</td></tr>
+            <tr><td>8</td><td>15</td><td>120</td><td>22 (120-98)</td></tr>
+            <tr><td>9</td><td>16</td><td>144</td><td>24 (144-120)</td></tr>
+        </table>
+
+        <p class="zh-text">價格維持在 \( P = \$20 \)。根據新的邊際成本，利潤極大化的產出量改變為 \( Q_2 = 7 \)。<br>
+        新利潤 \( \pi_2 = (P \times Q_2) - TC_2 = (20 \times 7) - 98 = 140 - 98 = \$42 \)。</p>
+        <p class="eng-text">The price remains at \( P = \$20 \). Based on the new marginal cost, the profit-maximizing output changes to \( Q_2 = 7 \).<br>
+        New profit \( \pi_2 = (P \times Q_2) - TC_2 = (20 \times 7) - 98 = 140 - 98 = \$42 \).</p>
+
+        <h3 class="step-title">Step 3: 計算利潤變化 (Calculate the Change in Profit)</h3>
+        <p class="zh-text">利潤變化 = 新利潤 - 舊利潤 = \( 42 - 56 = -14 \)。利潤減少了 $14。因此答案是 D。</p>
+        <p class="eng-text">Change in profit = New Profit - Old Profit = \( 42 - 56 = -14 \). The profit decreases by $14. Therefore, the answer is D.</p>
+
+        <h3 class="step-title">錯誤選項分析 (Analysis of Distractors):</h3>
+        <ul>
+            <li><strong>A & B:</strong> 成本上升必然導致利潤下降，不可能增加。(Costs increased, so profit must decrease, not increase.)</li>
+            <li><strong>C (減少$16):</strong> 這是最大的陷阱！如果學生忘記將產量從 \( Q=8 \) 調整到 \( Q=7 \)，他們會計算出錯誤的新利潤：\( (20 \times 8) - 120 = 40 \)。然後 \( 40 - 56 = -16 \)。這表示學生沒有應用利潤極大化原則重新尋找最優產量。<br>
+            <span class="eng-text">This is the biggest trap! If a student forgets to adjust the output from \( Q=8 \) to \( Q=7 \), they would calculate an incorrect new profit: \( (20 \times 8) - 120 = 40 \). Then \( 40 - 56 = -16 \). This shows the student failed to re-apply the profit-maximization rule to find the new optimal output.</span></li>
+        </ul>
+    </div>
+
+    <div class="header-section">
+        <h2>5. Problem Decomposition (題目拆解)</h2>
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point):</strong> 知道必須計算<strong>兩次</strong>利潤極大化產量。許多學生只計算一次，並假設產量維持不變。這是錯誤的，因為成本結構的改變會改變 \( MC \)，從而改變 \( P=MC \) 的交點。</p>
+        <p class="eng-text"><strong>Pivot Point:</strong> Knowing that you must calculate the profit-maximizing output <strong>twice</strong>. Many students only calculate it once and assume the output level remains unchanged. This is incorrect because a change in the cost structure shifts the \( MC \) curve, thus changing the \( P=MC \) intersection point.</p>
+    </div>
+
+    <div class="trap-box">
+        <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <p class="zh-text">❌ <strong>陷阱一：直接用 AC 找產量 (Using AC to find output directly)</strong><br>
+        有些學生會誤以為 \( P = AC \) 是決定產量的地方。緊記，決定產量的是<strong>邊際成本 (MC)</strong>，不是平均成本 (AC)。</p>
+        <p class="eng-text">❌ <strong>Trap 1: Using AC to find output directly.</strong> Some students mistakenly think \( P = AC \) determines output. Remember, it is <strong>Marginal Cost (MC)</strong> that determines the profit-maximizing output, not Average Cost (AC).</p>
+
+        <p class="zh-text">❌ <strong>陷阱二：忽略產量調整 (Ignoring Output Adjustment)</strong><br>
+        如選項 C 的分析所述，忽略了成本上升後，生產第 8 件產品的 \( MC = \$22 \)，高於售價 \( \$20 \)，生產這件產品會虧損 \( \$2 \)，所以理性的廠商會減產至 7 件。</p>
+        <p class="eng-text">❌ <strong>Trap 2: Ignoring Output Adjustment.</strong> As explained in Option C, ignoring the fact that after the cost increase, the \( MC \) of the 8th unit is $22, which is higher than the price of $20. Producing this unit incurs a $2 loss, so a rational firm will reduce output to 7 units.</p>
+    </div>
+
+    <div class="qa-box">
+        <h2>7. Student Q&A (學生常見疑問)</h2>
+        <p class="zh-text"><strong>Q: 為什麼利潤極大化的產量會從 8 跌到 7？</strong></p>
+        <p class="eng-text"><strong>Q: Why did the profit-maximizing output drop from 8 to 7?</strong></p>
+        <p class="zh-text"><strong>A:</strong> 因為成本增加了！在成本增加前，生產第 8 件產品的邊際成本是 $20，剛好等於市場價格 $20，廠商不會虧本。但成本增加後，生產第 8 件的邊際成本變成了 $22。如果你賣出去只收回 $20，但製造它需要 $22，你每造一件就虧損 $2。所以理性的做法是停止生產第 8 件，停留在第 7 件（其新 MC = $20）。</p>
+        <p class="eng-text"><strong>A:</strong> Because costs increased! Before the increase, the MC of the 8th unit was $20, exactly equal to the market price, so the firm broke even on that margin. But after the increase, the MC of the 8th unit became $22. If you sell it for $20 but it costs $22 to make, you lose $2 on that specific unit. A rational firm will stop producing the 8th unit and stay at the 7th unit (where new MC = $20).</p>
+    </div>
+
+    <div class="trick-box">
+        <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p class="zh-text"><strong>速解法 (Shortcut): MC 平移法則 (MC Shift Rule)</strong></p>
+        <p class="eng-text"><strong>Shortcut: MC Shift Rule</strong></p>
+        <p class="zh-text">當<strong>每一件</strong>產出的平均成本 (AC) 都上升固定的 $2，這意味著總成本 (TC) 增加了 \( 2 \times Q \)。由於邊際成本 \( MC = \Delta TC / \Delta Q \)，這代表每一件的邊際成本 (MC) 剛好也上升了 $2！</p>
+        <p class="eng-text">When the Average Cost (AC) for <strong>every</strong> unit increases by a constant $2, it means Total Cost (TC) increases by \( 2 \times Q \). Since Marginal Cost \( MC = \Delta TC / \Delta Q \), this mathematical relationship means the Marginal Cost (MC) for every unit also increases exactly by $2!</p>
+        
+        <p class="zh-text"><strong>秒殺步驟 (Speed-run steps):</strong><br>
+        1. 快速算出舊的 MC: 16, 18, <strong>20</strong>, 22. (發現在 Q=8 時 P=MC=20)。舊利潤 = \( 20 \times 8 - 13 \times 8 = 160 - 104 = 56 \)。<br>
+        2. 新的 MC 直接把舊 MC 加 2: 18, <strong>20</strong>, 22, 24。 (發現在 Q=7 時 P=MC=20)。新利潤 = \( 20 \times 7 - (12+2) \times 7 = 140 - 98 = 42 \)。<br>
+        3. \( 42 - 56 = -14 \)。</p>
+        <p class="eng-text"><strong>Speed-run steps:</strong><br>
+        1. Quickly calculate old MC: 16, 18, <strong>20</strong>, 22. (At Q=8, P=MC=20). Old profit = \( 20 \times 8 - 13 \times 8 = 160 - 104 = 56 \).<br>
+        2. New MC is simply old MC + 2: 18, <strong>20</strong>, 22, 24. (At Q=7, P=MC=20). New profit = \( 20 \times 7 - 14 \times 7 = 140 - 98 = 42 \).<br>
+        3. \( 42 - 56 = -14 \).</p>
+    </div>
+
+</body>
+</html>
