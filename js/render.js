@@ -39,7 +39,30 @@ async function renderQuestions() {
     
     updatePaginationInfo(currentPage, questions.length, itemsPerPage);
     generatePagination(currentPage, totalPages);
-    
+
+    const renderImageButtons = (urls, lang) => {
+        if (!urls || urls === '-') return '';
+        
+        // Split by comma, trim whitespace, and remove empty strings
+        const urlArray = urls.split(',').map(u => u.trim()).filter(u => u);
+        if (urlArray.length === 0) return '';
+        
+        const label = lang === 'chi' ? 'ZH' : 'EN';
+        const titlePrefix = lang === 'chi' ? '原題圖片 (中文)' : '原題圖片 (英文)';
+        
+        return urlArray.map((url, index) => {
+            // If there's more than 1 image, append the number (e.g., ZH1, ZH2)
+            const displayLabel = urlArray.length > 1 ? `${label}${index + 1}` : label;
+            const displayTitle = urlArray.length > 1 ? `${titlePrefix} - P.${index + 1}` : titlePrefix;
+            
+            return `
+                <a href="${url}" target="_blank" class="ai-btn" title="${displayTitle}" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 6px; border-radius: 15px; background-color: #eff6ff; border: 1px solid #93c5fd; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); margin-left: 8px; font-size: 0.85em; transition: all 0.2s; cursor: pointer; color: #2563eb; font-weight: bold;">
+                    ${displayLabel}
+                </a>
+            `;
+        }).join('');
+    };    
+
     document.getElementById('question-count').textContent = `總題目數: ${questions.length}`;
     
     const grid = document.getElementById('question-grid');
@@ -188,16 +211,8 @@ async function renderQuestions() {
             <div class="question-header">
                 <div class="question-title">
                     ${q.id}
-                    ${q.imageChi ? `
-                        <a href="${q.imageChi}" target="_blank" class="ai-btn" title="原題圖片 (中文)" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #eff6ff; border: 1px solid #93c5fd; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); margin-left: 8px; font-size: 0.85em; transition: all 0.2s; cursor: pointer; color: #2563eb; font-weight: bold;">
-                            ZH
-                        </a>
-                    ` : ''}
-                    ${q.imageEng ? `
-                        <a href="${q.imageEng}" target="_blank" class="ai-btn" title="原題圖片 (英文)" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #eff6ff; border: 1px solid #93c5fd; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); margin-left: 8px; font-size: 0.85em; transition: all 0.2s; cursor: pointer; color: #2563eb; font-weight: bold;">
-                            EN
-                        </a>
-                    ` : ''}                
+                    ${renderImageButtons(q.imageChi, 'chi')}
+                    ${renderImageButtons(q.imageEng, 'eng')}              
                     ${q.AIExplanation ? `
                         <a href="${q.AIExplanation}" target="_blank" class="ai-btn" title="AI 詳解" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #e3f2fd; border: 1px solid #90caf9; margin-left: 8px; font-size: 1.2em; transition: all 0.2s; cursor: pointer;">
                             🤖

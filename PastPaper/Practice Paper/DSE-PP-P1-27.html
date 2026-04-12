@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Credit Creation</title>
+    
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--gray-bg);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .header-box {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-box h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 2px solid var(--gray-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--gray-bg);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .bilingual-p {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .option {
+            background-color: var(--gray-bg);
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .option.correct {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            color: #166534;
+        }
+
+        .option.wrong {
+            border-left: 5px solid #ef4444;
+        }
+
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #e5e7eb;
+        }
+
+        .qa-box {
+            background-color: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #ca8a04;
+        }
+        
+        .alert-box {
+            background-color: #fee2e2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .concept-box, .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="tag">Topic: Money & Banking 貨幣與銀行</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐</span>
+            <span class="tag">Key Concept: Credit Creation 信用創造</span>
+            <span class="tag">Key Concept: Reserve Ratio 法定儲備比率</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-p">
+            假設某銀行體系的資產負債表如下：
+            <span class="en-text">Suppose the balance sheet of a banking system is as follows:</span>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr><th colspan="2">資產 Assets ($)</th><th colspan="2">負債 Liabilities ($)</th></tr>
+                <tr><td>儲備 Reserves</td><td>150</td><td>存款 Deposits</td><td>500</td></tr>
+                <tr><td>貸款 Loans</td><td>350</td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <div class="bilingual-p">
+            該銀行體系的超額儲備是 $50。現在一名客戶從他的銀行戶口提取 $50。若該銀行體系將可貸出款項全數借出，該銀行體系的貸款額最大為_______。
+            <span class="en-text">The amount of excess reserves in the banking system is $50. Now, a customer withdraws $50 from his bank account. If the banking system is fully loaned up, the maximum amount of loans in the banking system is _______.</span>
+        </div>
+
+        <div class="option">A. $350</div>
+        <div class="option">B. $400</div>
+        <div class="option">C. $450</div>
+        <div class="option">D. $500</div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>法定儲備比率 (Required Reserve Ratio, RRR):</strong><br>
+        銀行必須保留在保險箱或中央銀行的存款比例，不能全數借出。
+        <span class="en-text">The fraction of deposits that banks are required to keep in their vaults or at the central bank, which cannot be loaned out.</span></p>
+
+        <p><strong>超額儲備 (Excess Reserves, ER):</strong><br>
+        銀行持有的實際儲備減去法定儲備。只要 $ER > 0$，銀行就可以創造更多貸款。
+        <span class="en-text">Actual reserves minus required reserves. As long as $ER > 0$, banks can create more loans.</span></p>
+
+        <p><strong>全數借出 (Fully Loaned Up):</strong><br>
+        當銀行將所有超額儲備借出，直到超額儲備為 $0$ ($ER = 0$)，此時存款和貸款達到最大值。
+        <span class="en-text">When banks lend out all excess reserves until $ER = 0$, reaching maximum deposits and loans.</span></p>
+    </div>
+
+    <div class="math-block">
+        $$ Actual\ Reserves = Required\ Reserves\ (RR) + Excess\ Reserves\ (ER) $$
+    </div>
+    <div class="math-block">
+        $$ Required\ Reserve\ Ratio\ (RRR) = \frac{Required\ Reserves}{Deposits} $$
+    </div>
+    <div class="math-block">
+        $$ Maximum\ Deposits = \frac{Actual\ Reserves}{Required\ Reserve\ Ratio} $$
+    </div>
+    <div class="math-block">
+        $$ Maximum\ Loans = Maximum\ Deposits - Actual\ Reserves $$
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (The correct option is): <strong style="font-size: 1.2em; color: #166534;">Option B</strong></p>
+
+    <div class="analysis-step">
+        <strong>第一步：找出法定儲備比率 (Step 1: Find the RRR)</strong>
+        <p>根據題目，實際儲備是 150，超額儲備是 50。由此可知，法定儲備 (RR) 是 $150 - 50 = 100$。因此，法定儲備比率是 $\frac{100}{500} = 20\%$。
+        <span class="en-text">Given actual reserves are 150 and excess reserves are 50, the Required Reserves (RR) = $150 - 50 = 100$. Therefore, RRR = $\frac{100}{500} = 20\%$.</span></p>
+    </div>
+
+    <div class="analysis-step">
+        <strong>第二步：處理提款 (Step 2: Process the withdrawal)</strong>
+        <p>客戶提取 50。這會同時減少銀行的實際儲備和存款。新的實際儲備變成 $150 - 50 = 100$，新的存款變成 $500 - 50 = 450$。
+        <span class="en-text">A customer withdraws 50. This reduces both actual reserves and deposits. New Actual Reserves = $150 - 50 = 100$, New Deposits = $500 - 50 = 450$.</span></p>
+    </div>
+
+    <div class="analysis-step">
+        <strong>第三步：計算「全數借出」後的最大值 (Step 3: Calculate maximums when "fully loaned up")</strong>
+        <p>「全數借出」意味著系統達到極限，超額儲備為 0。此時，最大存款取決於剩下的實際儲備 (100) 和 RRR (20%)。最大存款 = $\frac{100}{0.2} = 500$。最大貸款 = 最大存款 - 實際儲備 = $500 - 100 = 400$。
+        <span class="en-text">"Fully loaned up" means the system reaches its limit with 0 excess reserves. Max Deposits depends on the remaining actual reserves (100) and RRR (20%). Max Deposits = $\frac{100}{0.2} = 500$. Max Loans = Max Deposits - Actual Reserves = $500 - 100 = 400$.</span></p>
+    </div>
+
+    <h3>選項分析 (Options Breakdown):</h3>
+    <div class="option wrong">A. $350</div>
+    <p>這是提款前的初始貸款額。這沒有計算提款後重新創造信用帶來的影響。
+    <span class="en-text">This is the initial loan amount before the withdrawal. It ignores the credit creation process after the withdrawal.</span></p>
+
+    <div class="option correct">B. $400</div>
+    <p>正確計算。最大貸款為 $400。
+    <span class="en-text">Correct calculation. Maximum loans are $400.</span></p>
+
+    <div class="option wrong">C. $450</div>
+    <p>這是提款後的存款餘額 ($500 - 50 = 450$)，並非最大貸款額。
+    <span class="en-text">This is the deposit level immediately after withdrawal ($500 - 50 = 450$), not the maximum loans.</span></p>
+
+    <div class="option wrong">D. $500</div>
+    <p>這是系統全數借出後的「最大存款」(Maximum Deposits)，考生容易將其與「最大貸款」(Maximum Loans) 混淆。
+    <span class="en-text">This is the "Maximum Deposits" when fully loaned up. Students often confuse this with Maximum Loans.</span></p>
+
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="border-left-color: #8b5cf6; background-color: #f3f0ff;">
+        <p><strong>解題切入點 (The Pivot Point):</strong><br>
+        做任何銀行乘數題目前，<strong>第一件事永遠是尋找法定儲備比率 (RRR)</strong>！題目故意不直接給你 RRR，而是給你「實際儲備」和「超額儲備」，這是破題的關鍵鑰匙。
+        <span class="en-text">Before doing any banking multiplier question, <strong>always find the RRR first</strong>! The question doesn't give you RRR directly, but gives you "actual reserves" and "excess reserves", which is the key to unlocking the problem.</span></p>
+
+        <p><strong>干擾資訊 (Distractors):</strong><br>
+        初始的「貸款 $350」其實是多餘的資訊。只要你有儲備、存款和超額儲備的數據，你就能算出所有未來的最大值。
+        <span class="en-text">The initial "Loans $350" is actually redundant information. As long as you have the data for reserves, deposits, and excess reserves, you can calculate all future maximums.</span></p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="alert-box">
+        <p><strong>陷阱一：忘記提款是雙重扣減 (Trap 1: Forgetting withdrawal is a double deduction)</strong><br>
+        當現金流出銀行系統時，必須同時從「實際儲備」和「存款」中扣除。很多學生只扣減存款，忘記扣減儲備。
+        <span class="en-text">When cash flows out of the banking system, it must be deducted from BOTH "actual reserves" and "deposits". Many students only deduct from deposits and forget to deduct reserves.</span></p>
+
+        <p><strong>陷阱二：混淆最大存款與最大貸款 (Trap 2: Confusing Max Deposits with Max Loans)</strong><br>
+        考試時很多學生算出了 $100 / 0.2 = 500$，看到選項 D 有 500 就立刻圈選。緊記公式：$Maximum\ Loans = Maximum\ Deposits - Actual\ Reserves$。
+        <span class="en-text">In exams, many calculate $100 / 0.2 = 500$, see Option D, and immediately choose it. Remember the formula: Maximum Loans = Maximum Deposits - Actual Reserves.</span></p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 客戶提取了 50，為什麼銀行不需要馬上收回貸款 (Call back loans)？</p>
+        <p>A: 因為提款後，新的法定儲備要求是 $450 \times 20\% = 90$。而銀行剩下的實際儲備是 100 ($150 - 50$)。這意味著銀行仍然有 10 ($100 - 90$) 的超額儲備，不用收回貸款，甚至還可以繼續借出！<br>
+        <span class="en-text">Q: The customer withdrew 50, why didn't the bank need to call back loans immediately? <br>A: Because after withdrawal, the new required reserves is $450 \times 20\% = 90$. The remaining actual reserves is 100 ($150 - 50$). This means the bank still has 10 ($100 - 90$) in excess reserves. It doesn't need to call back loans and can even lend more!</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="concept-box" style="background-color: #fdf2f8; border-left-color: #ec4899;">
+        <p>如果你不想算得那麼複雜，你可以使用「最終狀態」速算法：<br>
+        <span class="en-text">If you want a shortcut, use the "Final State" method:</span></p>
+        <ol>
+            <li>找出最終留在銀行體系內的儲備：$150 - 50 = 100$。 <span class="en-text">(Find final reserves inside the system)</span></li>
+            <li>找出 RRR：$100 / 500 = 20\%$。 <span class="en-text">(Find RRR)</span></li>
+            <li>直接使用最大貸款捷徑公式：$Maximum\ Loans = Actual\ Reserves \times (\frac{1}{RRR} - 1)$<br>
+            計算：$100 \times (\frac{1}{0.2} - 1) = 100 \times (5 - 1) = 100 \times 4 = 400$。</li>
+        </ol>
+        <p>10 秒鐘就能得出答案！<span class="en-text">You get the answer in 10 seconds!</span></p>
+    </div>
+
+</body>
+</html>
