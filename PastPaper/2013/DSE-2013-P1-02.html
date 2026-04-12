@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Opportunity Cost</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --bg-gray: #f9fafb;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --cream: #fffbeb;
+            --cream-border: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* Bilingual Text Styles */
+        .zh {
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        /* Header Section */
+        .header-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .stat-badge {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #e5e7eb;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: var(--bg-gray);
+            border-radius: 6px;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Analysis Box */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .correct-analysis {
+            border-left: 5px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+        .wrong-analysis {
+            border-left: 5px solid var(--wrong-red);
+            background-color: #fef2f2;
+        }
+
+        /* Callout Boxes */
+        .trap-box {
+            background-color: var(--cream);
+            border-left: 5px solid var(--cream-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        .qa-box {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .trick-box {
+            background-color: #eef2ff;
+            border: 2px dashed #6366f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics MCQ Analysis</h1>
+    <div class="header-stats">
+        <span class="stat-badge">📊 Topic: Opportunity Cost (機會成本)</span>
+        <span class="stat-badge">⭐ Difficulty: ★★★☆☆ (3/5)</span>
+        <span class="stat-badge">🔑 Concepts: Cost vs Value, Time Cost</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="zh">書豪將觀看大滿貫得主李娜參與的一場網球比賽。下列哪項會令書豪觀看該場網球比賽的成本上升？</div>
+        <div class="en">Jeremy is going to watch a tennis match in which Li Na, a Grand Slam winner, will play. Which of the following will increase the cost to Jeremy of watching the tennis match?</div>
+        
+        <ul class="options-list">
+            <li>
+                <div class="zh">A. 由於交通擠塞，他遲到了30分鐘。</div>
+                <div class="en">A. He is 30 minutes late for the match due to traffic congestion.</div>
+            </li>
+            <li>
+                <div class="zh">B. 他的視線被前面的觀眾阻擋。</div>
+                <div class="en">B. His view is blocked by the spectators in front of him.</div>
+            </li>
+            <li>
+                <div class="zh">C. 由於暴雨關係，比賽時間延長了一小時。</div>
+                <div class="en">C. Due to a rainstorm, the match is extended by an hour.</div>
+            </li>
+            <li>
+                <div class="zh">D. 李娜受傷，沒有出場比賽。</div>
+                <div class="en">D. Li Na is injured and does not show up for the match.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="zh"><strong>機會成本 (Opportunity Cost)</strong></div>
+        <div class="zh">機會成本是指在作出一項選擇時，所放棄的選項中價值最高的一個。簡單來說，成本就是你為了得到某事物而「付出了甚麼代價」（包括金錢和時間）。</div>
+        <div class="en">Opportunity cost is defined as the highest-valued option forgone. In simple terms, cost is what you have to "give up" (including both money and time) to acquire or do something.</div>
+
+        <div class="math-block">
+            $$\text{Opportunity Cost} = \text{Highest-valued Option Forgone}$$
+            $$\text{Total Cost} = \text{Explicit Cost (Money)} + \text{Implicit Cost (Time)}$$
+        </div>
+
+        <div class="zh"><strong>核心概念：成本 \( C \) 與價值 \( V \) 的區別</strong></div>
+        <div class="zh">經濟學中，觀看比賽的「價值」(Value/Utility) 是指你從中獲得的滿足感或快樂。而「成本」(Cost) 是指你付出的門票錢和時間。<strong>體驗變差（不開心）會降低價值，但絕不會增加成本！</strong></div>
+        <div class="en"><strong>Core Concept: The difference between Cost \( C \) and Value \( V \)</strong><br>
+        In economics, the "value" or "utility" of watching a match refers to the satisfaction or happiness you derive from it. The "cost" refers to the ticket price and time sacrificed. <strong>A worse experience reduces value, but it does NOT increase cost!</strong></div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <h3 style="color: var(--correct-green);">Correct Option: C (正確答案：C)</h3>
+    
+    <div class="analysis-item wrong-analysis">
+        <div class="zh"><strong>選項 A 錯在哪裡？</strong></div>
+        <div class="zh">由於遲到了30分鐘，書豪實際觀看比賽的時間減少了。他犧牲的時間並沒有增加，反而他因為錯過了精彩片段而令觀看比賽的<strong>價值 (Value) 下降</strong>。成本並沒有上升。</div>
+        <div class="en"><strong>Why is Option A wrong?</strong><br>
+        Being 30 minutes late means Jeremy spends less time watching the match. The time he sacrificed did not increase. Instead, missing part of the match decreases the <strong>value/utility</strong> he receives. The cost remains unchanged or even decreases.</div>
+    </div>
+
+    <div class="analysis-item wrong-analysis">
+        <div class="zh"><strong>選項 B 錯在哪裡？</strong></div>
+        <div class="zh">視線被阻擋是一件不愉快的事，這會大大降低他觀看比賽的樂趣（效用/價值下降）。但他為觀看比賽而放棄的金錢或時間沒有任何改變，因此成本不變。</div>
+        <div class="en"><strong>Why is Option B wrong?</strong><br>
+        Having a blocked view is an unpleasant experience that greatly reduces his enjoyment (utility/value drops). However, the amount of money and time he gave up to watch the match remains exactly the same, so the cost does not change.</div>
+    </div>
+
+    <div class="analysis-item correct-analysis">
+        <div class="zh"><strong>選項 C 為何正確？</strong></div>
+        <div class="zh">比賽時間延長了一小時，這意味著書豪需要<strong>額外付出多一個小時</strong>來觀看整場比賽。這個額外的小時本來可以帶給他其他收入或休閒活動（即被放棄的最高價值選項增加），因此他的<strong>時間成本 (Time Cost) 上升</strong>了。</div>
+        <div class="en"><strong>Why is Option C correct?</strong><br>
+        The match is extended by an hour, meaning Jeremy has to <strong>sacrifice an extra hour</strong> to finish watching the match. This extra hour could have been used to earn income or enjoy other leisure activities (the forgone option increases). Thus, his <strong>time cost increases</strong>.</div>
+    </div>
+
+    <div class="analysis-item wrong-analysis">
+        <div class="zh"><strong>選項 D 錯在哪裡？</strong></div>
+        <div class="zh">李娜缺陣會令這場大滿貫級別的比賽失色不少，導致觀看比賽的得益或價值 (Value) 大幅下降。但他付出的門票費用和時間資源並無增加，故成本不變。</div>
+        <div class="en"><strong>Why is Option D wrong?</strong><br>
+        Li Na's absence makes the match much less attractive, leading to a massive drop in the benefit or value of watching. But the ticket fee and time resources he committed have not increased, so the cost is unchanged.</div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: white; border-left-color: #8b5cf6;">
+        <div class="zh"><strong>解題樞紐 (Pivot Point)：</strong></div>
+        <div class="zh">做這類題目時，必須在腦海中區分兩條獨立的算式：<br>
+        1. <strong>成本 (Cost)</strong> = 放棄的錢 + 放棄的時間<br>
+        2. <strong>價值/效用 (Value)</strong> = 獲得的快樂 - 經歷的痛苦</div>
+        <div class="en"><strong>Pivot Point:</strong><br>
+        When tackling this type of question, mentally separate these two formulas:<br>
+        1. <strong>Cost</strong> = Money given up + Time given up<br>
+        2. <strong>Value/Utility</strong> = Happiness gained - Pain experienced</div>
+        <br>
+        <div class="zh"><strong>干擾資訊 (Distractors)：</strong></div>
+        <div class="zh">題目中的「交通擠塞」、「視線被阻」和「球星受傷」全都是干擾項。考評局故意用這些「負面經歷」來誘使同學以為這就是「代價（成本）」。記住，心情變差不是成本上升！</div>
+        <div class="en"><strong>Distractors:</strong><br>
+        "Traffic congestion", "blocked view", and "injured star" are all distractors. The HKEAA purposely uses these "negative experiences" to trick students into thinking they are "costs/prices paid". Remember, feeling unhappy is not an increase in economic cost!</div>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <div class="zh">⚠️ <strong>致命陷阱：將「效用下降」(Decrease in Utility) 當作「成本上升」(Increase in Cost)</strong></div>
+        <div class="zh">很多同學覺得：「我花了幾百塊買門票，結果李娜不來，我這幾百塊『白花了』，所以成本很高！」<br>
+        <strong>糾正：</strong> 門票錢已經付了（沉沒成本 Sunk Cost，或早已固定的顯性成本）。你看得不開心，代表這場比賽帶給你的<strong>價值低於預期</strong>，但你付出的成本由始至終都只是那張門票的價錢和原定的時間。</div>
+        <br>
+        <div class="en">⚠️ <strong>Fatal Trap: Confusing "Decrease in Utility" with "Increase in Cost"</strong><br>
+        Many students think: "I spent hundreds of dollars on the ticket, but Li Na didn't show up. My money is 'wasted', so the cost is high!"<br>
+        <strong>Correction:</strong> The ticket price is already paid (sunk cost, or fixed explicit cost). Being unhappy means the <strong>value is lower than expected</strong>, but the cost you paid is exactly the same ticket price and the scheduled time.</div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="zh"><strong>Q: 在選項 C 中，如果書豪決定不看那延長的一小時，提早離場，他的成本還會上升嗎？</strong></div>
+        <div class="en"><strong>Q: In Option C, if Jeremy decides NOT to watch the extended hour and leaves early, does his cost still increase?</strong></div>
+        
+        <div class="zh"><strong>A:</strong> 不會。如果他提早離場，他實際犧牲的時間就沒有增加，因此觀看的成本不變。然而，DSE 題目的預設語境（觀看該場網球比賽）通常暗示「觀看整場比賽」。若比賽延長而他選擇看完，他必然犧牲了額外一小時的替代用途，故成本上升。</div>
+        <div class="en"><strong>A:</strong> No. If he leaves early, the actual time he sacrifices doesn't increase, so the cost of watching remains unchanged. However, the default context in DSE questions ("watching the match") usually implies "watching the entire match". Since the match is extended and he chooses to finish it, he necessarily sacrifices the alternative use of that extra hour, increasing the cost.</div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="zh">💡 <strong>秒殺技巧：尋找「資源投入」的變化</strong></div>
+        <div class="zh">當被問到「甚麼會令成本上升？」時，立刻掃描四個選項，問自己一個問題：<strong>哪一個選項逼使主角投入更多的「時間」或「金錢」？</strong></div>
+        <div class="en">💡 <strong>Speed-solving Trick: Look for changes in "Resource Input"</strong><br>
+        When asked "What increases the cost?", immediately scan the four options and ask yourself one question: <strong>Which option forces the protagonist to input MORE "time" or "money"?</strong></div>
+        <br>
+        <ul style="margin-top: 10px;">
+            <li>A = 時間減少 (Less time) ❌</li>
+            <li>B = 時間/金錢不變 (No change in time/money) ❌</li>
+            <li><strong>C = 時間增加 (More time spent) ✅</strong></li>
+            <li>D = 時間/金錢不變 (No change in time/money) ❌</li>
+        </ul>
+        <div class="zh">只需 5 秒鐘，就能鎖定答案 C！</div>
+        <div class="en">You can lock in answer C in just 5 seconds!</div>
+    </div>
+
+</div>
+
+</body>
+</html>

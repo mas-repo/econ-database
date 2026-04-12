@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Aggregate Demand</title>
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+            margin-top: 1.5em;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Specific Styles */
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            overflow-x: auto;
+            border: 1px dashed #cbd5e1;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .analysis-card {
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .correct {
+            border-left: 5px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+        .wrong {
+            border-left: 5px solid #ef4444;
+            background-color: #fef2f2;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #f4f4f5;
+            border-left: 5px solid #71717a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        /* Bilingual Text Styles */
+        .en-text {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            font-size: 0.95em;
+        }
+        .zh-text {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor 經濟學導師</h1>
+        <div>
+            <span class="tag">Topic: 總供求模型 (AD-AS Model)</span>
+            <span class="tag">Difficulty: ★★☆☆☆</span>
+            <span class="tag">Key Concept: 總需求 (Aggregate Demand)</span>
+            <span class="tag">Key Concept: 財政政策 (Fiscal Policy)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="zh-text">在下列哪種情況下，總需求曲線會向右移？</p>
+        <p class="en-text">The aggregate demand curve will shift to the right if</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>A.</strong> 物價水平下降<br><span class="en-text">there is a fall in the price level.</span></li>
+            <li><strong>B.</strong> 科技進步<br><span class="en-text">there is an improvement in technology.</span></li>
+            <li><strong>C.</strong> 政府減低進口關稅<br><span class="en-text">the government reduces the import tariff.</span></li>
+            <li><strong>D.</strong> 政府減低薪俸稅率<br><span class="en-text">the government reduces the salaries tax rate.</span></li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>總需求 (Aggregate Demand, AD)</strong> 是指在不同物價水平下，經濟體系內各部門對本地生產物品及服務的需求總值。其核心公式如下：</p>
+        <p class="en-text"><strong>Aggregate Demand (AD)</strong> is the total demand for domestically produced goods and services in an economy at different price levels. The core formula is:</p>
+        
+        <div class="math-block">
+            $$AD = C + I + G + (X - M)$$
+        </div>
+
+        <p class="zh-text">當中 $C$ 為私人消費開支、$I$ 為投資開支、$G$ 為政府消費開支、$X$ 為出口、$M$ 為進口。任何導致這些組成部分（除了因物價改變而引起的變化）上升的因素，都會令 AD 曲線向右移。</p>
+        <p class="en-text">Where $C$ is private consumption expenditure, $I$ is investment expenditure, $G$ is government consumption expenditure, $X$ is exports, and $M$ is imports. Any factor (other than a change in the price level) that causes these components to rise will shift the AD curve to the right.</p>
+        
+        <hr style="margin: 15px 0;">
+
+        <p class="zh-text"><strong>整條移動 (Shift) vs 沿線移動 (Movement along):</strong><br>
+        只有「物價水平」改變會導致「沿曲線移動」。其他所有非物價因素（如稅率、科技、外國收入等）都會導致「整條曲線移動」。</p>
+        <p class="en-text"><strong>Shift vs Movement along:</strong><br>
+        Only a change in the "price level" causes a "movement along the curve." All other non-price factors (e.g., tax rates, technology, foreign income) cause a "shift of the entire curve."</p>
+    </div>
+
+    <h2>3. Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <h3 style="color: #059669;">Correct Answer / 正確答案：Option D</h3>
+    
+    <div class="analysis-card wrong">
+        <p class="zh-text"><strong>選項 A 分析 (錯誤):</strong> 物價水平下降只會導致總需求量 (Quantity of AD) 增加，即在同一條 AD 曲線上向右下方移動 (Movement along the curve)，並不會令整條曲線平移。</p>
+        <p class="en-text"><strong>Option A Analysis (Incorrect):</strong> A fall in the price level only leads to an increase in the quantity of AD, meaning a downward movement along the same AD curve. It does not shift the curve.</p>
+    </div>
+
+    <div class="analysis-card wrong">
+        <p class="zh-text"><strong>選項 B 分析 (錯誤):</strong> 科技進步會提升生產力，降低生產成本，這會導致總供應 (Aggregate Supply, AS) 曲線向右移（包括短期及長期總供應）。它不直接影響總需求。</p>
+        <p class="en-text"><strong>Option B Analysis (Incorrect):</strong> An improvement in technology enhances productivity and lowers production costs. This shifts the Aggregate Supply (AS) curve to the right (both SRAS and LRAS). It does not directly affect AD.</p>
+    </div>
+
+    <div class="analysis-card wrong">
+        <p class="zh-text"><strong>選項 C 分析 (錯誤):</strong> 政府減低進口關稅會令外國貨品在本地市場變得更便宜，市民會購買更多進口貨。因此，進口 ($M$) 增加。在淨出口 ($X - M$) 下降的情況下，總需求會減少，令 AD 曲線<strong>向左移</strong>。</p>
+        <p class="en-text"><strong>Option C Analysis (Incorrect):</strong> Reducing import tariffs makes foreign goods cheaper in the local market, prompting citizens to buy more imports. Therefore, imports ($M$) increase. With a decrease in net exports ($X - M$), total demand falls, shifting the AD curve to the <strong>left</strong>.</p>
+    </div>
+
+    <div class="analysis-card correct">
+        <p class="zh-text"><strong>選項 D 分析 (正確):</strong> 減低薪俸稅率會增加市民的<strong>可支配收入 (Disposable Income)</strong>。市民手頭上的錢多了，私人消費開支 ($C$) 便會上升。根據公式，當 $C$ 上升時，總需求便會增加，AD 曲線向右移。</p>
+        <p class="en-text"><strong>Option D Analysis (Correct):</strong> Reducing the salaries tax rate increases citizens' <strong>disposable income</strong>. With more money on hand, private consumption expenditure ($C$) rises. According to the formula, when $C$ increases, aggregate demand increases, shifting the AD curve to the right.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="container" style="padding: 0; box-shadow: none;">
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point):</strong> 找出影響 $C, I, G, X, M$ 的外在因素。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> Identify the external factors that affect $C, I, G, X, M$.</p>
+        <p class="zh-text">這類題目的核心在於「過濾」。首先過濾掉干擾選項（與 AS 相關的因素），然後過濾掉只改變物價的因素，最後檢視剩下的選項對淨出口 ($X-M$) 或消費 ($C$) 的影響方向。</p>
+        <p class="en-text">The core of this type of question is "filtering". First, filter out distractors (factors related to AS), then filter out factors that only change the price level. Finally, examine the direction of impact the remaining options have on net exports ($X-M$) or consumption ($C$).</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>陷阱 1：混淆「物價改變」與「其他因素改變」</strong><br>
+        很多學生看到「物價下降」就直覺認為需求大增，誤選 A。緊記：價格改變 = 沿線移動 (Movement)；非價格因素改變 = 曲線平移 (Shift)。</p>
+        <p class="en-text"><strong>Trap 1: Confusing "Price Changes" with "Other Factor Changes"</strong><br>
+        Many students intuitively think "price falls" means a huge increase in demand and wrongly choose A. Remember: Price change = Movement; Non-price factor change = Shift.</p>
+        
+        <p class="zh-text" style="margin-top: 15px;"><strong>陷阱 2：關稅的直覺誤區 (選項 C)</strong><br>
+        學生可能會想：「減關稅是好事，經濟會變好，所以 AD 增加。」這是一個嚴重的概念錯誤。總需求 (AD) 衡量的是對<strong>本地生產</strong>的物品的需求。減低關稅會鼓勵市民購買外國貨 (Import Substitution)，反而會削弱對本地貨品的需求！</p>
+        <p class="en-text"><strong>Trap 2: Intuition Error on Tariffs (Option C)</strong><br>
+        Students might think: "Reducing tariffs is a good thing, the economy will improve, so AD increases." This is a severe conceptual error. AD measures the demand for <strong>domestically produced</strong> goods. Lowering tariffs encourages people to buy foreign goods (Import Substitution), which actually weakens the demand for local goods!</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>Q: 如果題目把「減低進口關稅」改成「外國對本國出口貨品減收關稅」，答案會變嗎？</strong></p>
+        <p class="en-text"><strong>Q: If the question changed "reduces import tariff" to "foreign countries reduce tariffs on our exports", would the answer change?</strong></p>
+        <p class="zh-text"><strong>A: 會的！</strong>如果外國減少對我們的關稅，我們的貨品在外國就會變便宜，出口 ($X$) 會增加。這樣就會導致 AD 曲線向右移。要分清楚是本國減關稅（增加 $M$，AD 跌）還是外國減關稅（增加 $X$，AD 升）。</p>
+        <p class="en-text"><strong>A: Yes!</strong> If foreign countries reduce tariffs on us, our goods become cheaper abroad, and exports ($X$) will increase. This would cause the AD curve to shift to the right. Always distinguish between domestic tariff reduction (increases $M$, AD falls) and foreign tariff reduction (increases $X$, AD rises).</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="border-left-color: #f59e0b; background-color: #fffbeb;">
+        <p class="zh-text"><strong>「三步秒殺法」:</strong></p>
+        <ul style="padding-left: 20px;">
+            <li class="zh-text">第一步：看到「曲線移位 (Shift)」，立刻劃走任何包含「物價水平 (Price Level)」的選項。(直接淘汰 A)</li>
+            <li class="zh-text">第二步：認清是問 AD 還是 AS。科技進步/生產成本通常與 AS 有關。(淘汰 B)</li>
+            <li class="zh-text">第三步：剩下 C 和 D，套入 $C+I+G+X-M$。C 增加 $M$ (負面)，D 增加 $C$ (正面)。一秒選出 D！</li>
+        </ul>
+        
+        <p class="en-text"><strong>"Three-Step Quick Solve":</strong></p>
+        <ul class="en-text" style="padding-left: 20px;">
+            <li>Step 1: When you see "Shift", immediately cross out any option mentioning "Price Level". (Eliminate A instantly)</li>
+            <li>Step 2: Check if it asks for AD or AS. Tech improvements/production costs usually relate to AS. (Eliminate B)</li>
+            <li>Step 3: Left with C and D, apply $C+I+G+X-M$. Option C increases $M$ (negative impact), Option D increases $C$ (positive impact). Choose D in a second!</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

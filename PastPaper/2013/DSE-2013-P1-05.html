@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Economies of Scale</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* Deep Blue */
+            --secondary-color: #0ea5e9; /* Light Blue */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-top: 1.5em;
+        }
+
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+
+        .option-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+
+        .option-wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .qa-box {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #c2410c;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor</h1>
+        <div>
+            <span class="badge">Topic: Theory of the Firm (廠商理論)</span>
+            <span class="badge">Difficulty: ★★★☆☆</span>
+            <span class="badge">Key Concept: Economies of Scale (規模經濟)</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>為求增加護士的數目以擴展醫療服務，政府投放了更多資源予大學開辦更多護土課程。在這情況下，私家醫院會：</strong>
+            <ol type="A">
+                <li>享有內部規模經濟。</li>
+                <li>承受內部規模負經濟。</li>
+                <li>享有外部規模經濟。</li>
+                <li>承受外部規模負經濟。</li>
+            </ol>
+        </div>
+        <hr>
+        <div class="bilingual-text en-text">
+            <strong>In order to increase the number of nurses for expanding medical services, the government has allocated more resources to expand the nursing programme in universities. In this case, private hospitals will:</strong>
+            <ol type="A">
+                <li>enjoy internal economies of scale.</li>
+                <li>suffer internal diseconomies of scale.</li>
+                <li>enjoy external economies of scale.</li>
+                <li>suffer external diseconomies of scale.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <h3>規模經濟 (Economies of Scale)</h3>
+        <p>當產量增加時，平均成本（Average Cost, \(AC\)）下降的現象。<br>
+        <span class="en-text">The phenomenon where average cost (\(AC\)) decreases as output increases.</span></p>
+        
+        <div class="math-block">
+            $$ AC = \frac{TC}{Q} $$
+            <p style="font-size: 0.9em; color: #666;">Where \(TC\) is Total Cost (總成本) and \(Q\) is Output (產量).</p>
+        </div>
+
+        <h3>內部規模經濟 (Internal Economies of Scale)</h3>
+        <p>由<strong>個別廠商自身</strong>擴充規模（增加產量）而導致其平均成本 \(AC\) 下降。<br>
+        <span class="en-text">The decrease in average cost \(AC\) resulting from the expansion of the <strong>individual firm itself</strong>.</span></p>
+        
+        <h3>外部規模經濟 (External Economies of Scale)</h3>
+        <p>由<strong>整個行業</strong>或<strong>外在環境</strong>擴充（例如政府政策、基建改善、勞工供應增加）而導致個別廠商的平均成本 \(AC\) 下降，而該廠商自身的規模無需改變。<br>
+        <span class="en-text">The decrease in average cost \(AC\) of an individual firm resulting from the expansion of the <strong>entire industry</strong> or <strong>external environment</strong> (e.g., government policy, better infrastructure, increased labour supply), without the firm itself necessarily changing its scale of production.</span></p>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p><strong>正確答案 Correct Option: <span class="highlight">C</span></strong></p>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>A. 享有內部規模經濟 / enjoy internal economies of scale ❌</strong></p>
+        <p>題目指出是「政府」增加資源，而不是「個別私家醫院」自行擴建或擴大其服務規模。因為這並非個別醫院自身擴張帶來的成本下降，所以不是「內部」。<br>
+        <span class="en-text">The question states that the "government" increases resources, not that an "individual private hospital" is expanding its own facilities or scale of services. Since the cost reduction is not brought about by the individual hospital's own expansion, it is not "internal".</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>B. 承受內部規模負經濟 / suffer internal diseconomies of scale ❌</strong></p>
+        <p>與 A 選項同理，這不是醫院自身規模改變引起的。此外，「負經濟」代表成本上升。護士供應增加理應降低醫院招聘的平均成本，而非增加。<br>
+        <span class="en-text">Similar to Option A, this is not caused by a change in the hospital's own scale. Furthermore, "diseconomies" implies an increase in costs. An increased supply of nurses should lower the average cost of recruitment for hospitals, not increase it.</span></p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <p><strong>C. 享有外部規模經濟 / enjoy external economies of scale ✅</strong></p>
+        <p>政府增加大學護理課程，增加了市場上受訓護士（專門勞工）的整體供應。私家醫院無需自行擴張，就能更容易、以更低成本（例如節省培訓及招聘成本）聘請到護士，從而降低了平均成本（\(AC\) 下降）。這屬於「專門勞工供應集中」的外部規模經濟。<br>
+        <span class="en-text">The government's expansion of university nursing programmes increases the overall supply of trained nurses (specialised labour) in the market. Private hospitals, without expanding themselves, can hire nurses more easily and at a lower cost (e.g., saving on training and recruitment costs), thereby lowering their average cost (\(AC\) decreases). This is a classic example of external economies of scale due to a "concentration of skilled labour".</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><strong>D. 承受外部規模負經濟 / suffer external diseconomies of scale ❌</strong></p>
+        <p>雖然這是「外部」因素，但護士供應增加對醫院來說是「好處」（降低招聘及培訓的平均成本），因此是「經濟」而非「負經濟」。<br>
+        <span class="en-text">Although this is an "external" factor, the increased supply of nurses is a "benefit" to the hospitals (lowering average recruitment and training costs). Therefore, it is "economies" rather than "diseconomies".</span></p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <p>解答這類題目的「黃金兩步」/ The "Golden Two Steps" to solve this type of question:</p>
+    <ol>
+        <li>
+            <strong>尋找「樞紐點」(Pivot Point 1): 誰在改變規模？ (Who is changing the scale?)</strong><br>
+            題目清楚指出是「政府」和「大學」，而受影響的是「私家醫院」。因為發起行動的不是醫院自身，我們立刻可以排除「內部 (Internal)」的選項 A 和 B。<br>
+            <span class="en-text">The question clearly states the "government" and "universities" are acting, while "private hospitals" are affected. Since the hospital itself is not initiating the expansion, we can immediately eliminate the "Internal" Options A and B.</span>
+        </li>
+        <li>
+            <strong>尋找「影響方向」(Pivot Point 2): 成本是升還是降？ (Is the cost rising or falling?)</strong><br>
+            更多護士畢業 = 勞工供應增加 = 醫院更容易請人 = 招聘/培訓成本下降。成本下降就是「經濟 (Economies)」，立刻排除 D。<br>
+            <span class="en-text">More nursing graduates = increased labour supply = easier for hospitals to hire = lower recruitment/training costs. Falling costs mean "Economies", immediately eliminating Option D.</span>
+        </li>
+    </ol>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li><strong>混淆內外因素 (Confusing Internal vs. External):</strong> 學生常以為只要對公司有「好處」，就是內部規模經濟。記住：「內部」必須是公司<strong>自己增加產量</strong>。如果公司產量不變，但因外圍環境改善而成本下降，這是「外部」。<br>
+        <span class="en-text">Students often think any "benefit" to a firm is internal economies. Remember: "Internal" strictly requires the firm to <strong>increase its own output</strong>. If the firm's output is unchanged but its costs fall due to an improved external environment, it is "External".</span></li>
+        <li><strong>看到「擴展」就選內部 (Seeing "expand" and choosing Internal):</strong> 題目有「擴展」二字，但擴展的是「大學課程」，而非「私家醫院」。必須看清楚主語！<br>
+        <span class="en-text">The word "expand" is in the prompt, but it refers to "university programmes", not "private hospitals". Always identify the subject correctly!</span></li>
+    </ul>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼增加護理課程不會導致醫院的總成本 (Total Cost) 增加？<br>
+        <span class="en-text">Why wouldn't expanding nursing programmes increase the hospital's Total Cost?</span></p>
+        <p>A: 規模經濟看的是「平均成本 \(AC\)」而不是總成本。即使醫院最終聘請了更多護士導致總薪金支出（總成本 \(TC\)）上升，但因為護士供應充裕，每單位醫療服務的招聘、培訓和尋找人才的成本下降了，導致整體的平均成本 \(AC\) 下降。<br>
+        <span class="en-text">Economies of scale look at "Average Cost \(AC\)", not total cost. Even if the hospital eventually hires more nurses and its total wage bill (Total Cost \(TC\)) rises, the abundant supply of nurses lowers the cost of recruiting, training, and talent-searching per unit of medical service provided. This causes the overall Average Cost \(AC\) to fall.</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <p><strong>「刪除法秒殺技巧」 (The Elimination Shortcut):</strong></p>
+    <p>在 DSE 選擇題中，只要看到政府建基建、政府提供教育、行業周邊開設輔助性行業等字眼，這<strong>100% 屬於外部因素 (External factor)</strong>。在考場上，你可以不用看 A 和 B，直接在 C 和 D 之間做決定。然後問自己一個常識問題：「這對醫院是好事還是壞事？」好事選經濟，壞事選負經濟。<br>
+        <span class="en-text">In DSE MCQs, whenever you see government building infrastructure, government providing education, or the establishment of ancillary industries around a main industry, this is <strong>100% an External factor</strong>. In the exam, you can ignore A and B and decide between C and D directly. Then ask yourself a common-sense question: "Is this good or bad for the hospital?" Good = economies; Bad = diseconomies.</span></p>
+
+</div>
+
+</body>
+</html>

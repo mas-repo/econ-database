@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Per-unit Tax Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-light: #fef2f2;
+            --trick-color: #8b5cf6;
+            --trick-light: #f5f3ff;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { border-bottom: 2px solid var(--bg-gray); padding-bottom: 5px; }
+
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Standard Section Styling */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        /* Specialized Boxes */
+        .header-box {
+            background-color: var(--bg-gray);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .trap-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .trick-box {
+            background-color: var(--trick-light);
+            border-left: 5px solid var(--trick-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+            overflow-x: auto;
+            display: block;
+        }
+        @media (min-width: 600px) { table { display: table; } }
+        
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-gray);
+            font-weight: bold;
+        }
+
+        /* Options list */
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background-color: var(--bg-gray);
+            border-radius: 5px;
+        }
+        .correct-option {
+            background-color: #d1fae5 !important;
+            border-left: 4px solid var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Q&A Section */
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .qa-a {
+            margin-left: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--bg-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Tutor: Microeconomics</h1>
+
+    <div class="header-box">
+        <p><strong>主題 (Topic):</strong> 政府干預：從量稅 (Government Intervention: Per-unit Tax)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>關鍵概念 (Key Concepts):</strong> 從量稅 (Per-unit Tax), 淨銷售收益 (Net Sales Revenue), 供需均衡 (Market Equilibrium)</p>
+    </div>
+
+    <div class="section">
+        <h2>題目 (The Question)</h2>
+        <p>以下是物品X的供需表。</p>
+        <p class="bilingual-en">The following table shows the demand and supply schedule of good X.</p>
+        
+        <table>
+            <tr>
+                <th>價格 / Price ($)</th>
+                <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+            </tr>
+            <tr>
+                <th>需求量 / Quantity demanded (units)</th>
+                <td>90</td><td>80</td><td>70</td><td>60</td><td>50</td><td>40</td><td>30</td>
+            </tr>
+            <tr>
+                <th>供應量 / Quantity supplied (units)</th>
+                <td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td>
+            </tr>
+        </table>
+
+        <p>假設政府就每售賣一單位物品X收取$2從量銷量稅。除稅後的總銷售收益是_________。</p>
+        <p class="bilingual-en">Suppose the government imposes a $2 per-unit sales tax on each unit of good X sold. The total sales revenue net of tax is ___________.</p>
+
+        <ul class="options-list">
+            <li>A. $180</li>
+            <li class="correct-option">B. $200</li>
+            <li>C. $280</li>
+            <li>D. $300</li>
+        </ul>
+    </div>
+
+    <div class="section concept-box">
+        <h2>概念重溫 (Concept Review)</h2>
+        <p>當政府向生產者徵收<strong>從量稅 (Per-unit Tax)</strong>時，生產成本會上升，導致供應曲線垂直向上移動（移動幅度相等於稅款）。在新的均衡點下，消費者支付的價格與生產者實際收取的價格會出現一個差額，這個差額正是稅款。</p>
+        <p class="bilingual-en">When the government imposes a <strong>per-unit tax</strong> on producers, production costs rise, shifting the supply curve vertically upwards by the amount of the tax. At the new equilibrium, there is a wedge between the price consumers pay and the price producers actually keep. This difference is exactly the tax amount.</p>
+
+        <p><strong>核心公式 (Core Formulas):</strong></p>
+        <div class="math-block">
+            $$ P_c - P_s = t $$
+        </div>
+        <p>這裡 \(P_c\) 是消費者支付的價格 (Price paid by consumers)，\(P_s\) 是賣家除稅後實際收取的價格 (Price received by sellers net of tax)，而 \(t\) 是從量稅金額 (Per-unit tax amount)。</p>
+        <p class="bilingual-en">Here, \(P_c\) is the price paid by consumers, \(P_s\) is the price received by sellers net of tax, and \(t\) is the per-unit tax amount.</p>
+
+        <div class="math-block">
+            $$ \text{除稅後的總銷售收益 (Net Sales Revenue)} = P_s \times Q_1 $$
+        </div>
+        <p>這裡 \(Q_1\) 是徵稅後的新交易量 (New quantity transacted after tax)。</p>
+        <p class="bilingual-en">Here, \(Q_1\) is the new quantity transacted after tax.</p>
+    </div>
+
+    <div class="section">
+        <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <p><strong>正確答案 (Correct Option): B</strong></p>
+        
+        <p><strong>第一步：尋找徵稅後的新均衡 (Step 1: Find the new equilibrium after tax)</strong><br>
+        根據公式 \(P_c - P_s = 2\)，我們需要在表格中尋找一個交易量 \(Q\)，在該交易量下，需求價格（\(P_c\)）減去供應價格（\(P_s\)）剛好等於$2。<br>
+        觀察表格，當 \(Q = 50\) 時：<br>
+        消費者願意支付的價格 (Demand Price) \(P_c = \$6\)<br>
+        生產者願意供應的價格 (Supply Price) \(P_s = \$4\)<br>
+        差額剛好是：\$6 - \$4 = \$2（等於稅款）。因此，新的交易量 \(Q_1 = 50\)。</p>
+        
+        <p class="bilingual-en">Based on the formula \(P_c - P_s = 2\), we need to look at the table to find a specific quantity \(Q\) where the demand price (\(P_c\)) minus the supply price (\(P_s\)) equals exactly $2.<br>
+        Looking at the table, when \(Q = 50\):<br>
+        Price consumers are willing to pay (Demand Price) \(P_c = \$6\)<br>
+        Price producers require to supply (Supply Price) \(P_s = \$4\)<br>
+        The difference is exactly: $6 - $4 = $2 (which equals the tax). Thus, the new transacted quantity \(Q_1 = 50\).</p>
+
+        <p><strong>第二步：計算除稅後的總銷售收益 (Step 2: Calculate net sales revenue)</strong><br>
+        除稅後的總收益 = 生產者實際收取的價格 \(\times\) 新交易量。<br>
+        收益 = \(P_s \times Q_1 = 4 \times 50 = 200\)。</p>
+
+        <p class="bilingual-en">Net sales revenue = Price received by producers \(\times\) New quantity transacted.<br>
+        Revenue = \(P_s \times Q_1 = 4 \times 50 = 200\).</p>
+
+        <h3>選項分析 (Option Breakdown):</h3>
+        <ul>
+            <li><strong>A ($180): 錯誤。</strong> 這是隨機數字的組合，例如可能誤用了 \(Q=30\) 及 \(P_c=\$6\)。<br>
+            <span class="bilingual-en">Incorrect. This is likely a random combination of numbers, such as misusing \(Q=30\) and \(P_c=\$6\).</span></li>
+            
+            <li><strong>B ($200): 正確。</strong> \(P_s \times Q_1 = 4 \times 50 = 200\)。<br>
+            <span class="bilingual-en">Correct. \(P_s \times Q_1 = 4 \times 50 = 200\).</span></li>
+            
+            <li><strong>C ($280): 錯誤。</strong> 可能是錯誤使用了 \(P_s=4\) 但配錯了 \(Q=70\)。<br>
+            <span class="bilingual-en">Incorrect. This might result from using \(P_s=4\) but incorrectly pairing it with \(Q=70\).</span></li>
+            
+            <li><strong>D ($300): 錯誤。</strong> 這是<strong>消費者總開支 (Total Consumer Expenditure)</strong>，即 \(P_c \times Q_1 = 6 \times 50 = 300\)。這是一個非常常見的陷阱！<br>
+            <span class="bilingual-en">Incorrect. This represents the <strong>Total Consumer Expenditure</strong>, calculated as \(P_c \times Q_1 = 6 \times 50 = 300\). This is a very common trap!</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        <p>解答這類表格題的「解題樞紐 (Pivot Point)」是<strong>找出符合稅款的價格差額</strong>。不要急著畫圖，也不要盲目將所有價格加$2。<br>
+        很多同學會先找原來的均衡點（價格=$5，數量=60）。雖然這能讓你了解市場原狀，但對於計算徵稅後的新收益，原來的均衡點其實是<strong>干擾資訊 (Distractor)</strong>。你真正需要的是：哪一個數量下的 \(P_c\) 和 \(P_s\) 相差$2。</p>
+
+        <p class="bilingual-en">The "Pivot Point" for solving table-based questions like this is to <strong>find the price difference that matches the tax amount</strong>. Don't rush to draw a graph, and don't blindly add $2 to all prices.<br>
+        Many students start by finding the initial equilibrium (Price=$5, Quantity=60). While this helps you understand the initial state of the market, for calculating the new post-tax revenue, the original equilibrium is actually a <strong>distractor</strong>. What you strictly need is: at which quantity do \(P_c\) and \(P_s\) differ by exactly $2.</p>
+    </div>
+
+    <div class="section trap-box">
+        <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p><strong>概念混淆：總收益 vs 總開支</strong><br>
+        題目要求計算「除稅後的總銷售收益 (Net sales revenue)」，這屬於<strong>賣家 (Sellers)</strong> 實際落袋的錢，所以必須使用 \(P_s\) ($4)。如果題目問的是「總消費者開支 (Total consumer expenditure)」，或是「包含稅款的總銷售收益 (Gross sales revenue)」，那麼就應該用消費者支付的價格 \(P_c\) ($6) 乘以數量 50，得出 $300（即選項 D）。考試時必須看清楚題目問的是誰的收益！</p>
+
+        <p class="bilingual-en"><strong>Conceptual Confusion: Total Revenue vs. Total Expenditure</strong><br>
+        The question asks for the "Net sales revenue", which is the money that <strong>sellers</strong> actually keep in their pockets, so you must use \(P_s\) ($4). If the question asked for "Total consumer expenditure" or "Gross sales revenue (including tax)", then you would use the price consumers pay \(P_c\) ($6) multiplied by the quantity 50, resulting in $300 (Option D). Always read carefully whose revenue the question is asking for!</p>
+    </div>
+
+    <div class="section">
+        <h2>學生常見疑問 (Student Q&A)</h2>
+        <div class="qa-item">
+            <div class="qa-q">Q: 為什麼我們知道新的交易數量一定是 50，而不是其他數字？</div>
+            <div class="qa-q bilingual-en">Q: How do we know for sure the new quantity is exactly 50 and not another number?</div>
+            <div class="qa-a">
+                <p>A: 因為在自由市場中，買賣雙方必須在同一數量下達成交易。徵收$2稅款後，消費者願意付出的錢，減去賣家實際想收到的錢，必須剛好彌補這$2的稅款。在表格中，只有當 \(Q = 50\) 時，消費者願意出$6，賣方願意收$4（差距剛好$2）。在其他數量（例如 \(Q=40\)）時，差價是 $7 - $3 = $4，不符合$2的稅款條件。</p>
+                <p class="bilingual-en">A: Because in a free market, buyers and sellers must transact at the same quantity. After a $2 tax is imposed, what consumers are willing to pay minus what sellers require to receive must exactly cover this $2 tax wedge. In the table, only when \(Q = 50\) is the consumer willing to pay $6 and the seller willing to receive $4 (a difference of exactly $2). At other quantities (e.g., \(Q=40\)), the price gap is $7 - $3 = $4, which doesn't match the $2 tax condition.</p>
+            </div>
+        </div>
+        <div class="qa-item">
+            <div class="qa-q">Q: 如果題目問政府的總稅收 (Total tax revenue)，我該怎麼算？</div>
+            <div class="qa-q bilingual-en">Q: If the question asked for the government's total tax revenue, how would I calculate it?</div>
+            <div class="qa-a">
+                <p>A: 政府總稅收 = 單位稅款 \(\times\) 交易量 (Tax per unit \(\times\) Transacted quantity)。在這一題中，就是 $2 \times 50 = \$100。</p>
+                <p class="bilingual-en">A: Total tax revenue = Tax per unit \(\times\) Transacted quantity. In this question, it would be $2 \times 50 = $100.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section trick-box">
+        <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p><strong>「手指平移法」尋找稅額缺口：</strong><br>
+        在做這種表格題時，不需要畫圖。你可以將左手食指放在「需求量」那一列，右手食指放在「供應量」那一列。尋找兩邊<strong>數量相同</strong>的格子（例如兩邊都是50）。找到後，往上看它們對應的「價格」。如果這兩個價格相減剛好等於題目的稅額（這題是$2），你就瞬間找到了新的均衡點！</p>
+        
+        <p class="bilingual-en"><strong>"Finger Sliding Method" to find the tax wedge:</strong><br>
+        When dealing with table questions like this, you don't need to draw a graph. Place your left index finger on the "Quantity demanded" row and your right index finger on the "Quantity supplied" row. Look for boxes where the <strong>quantities are identical</strong> (e.g., both are 50). Once found, look up at their corresponding "Prices". If the difference between these two prices exactly equals the tax amount in the question ($2 in this case), you have instantly found the new equilibrium!</p>
+    </div>
+
+</body>
+</html>

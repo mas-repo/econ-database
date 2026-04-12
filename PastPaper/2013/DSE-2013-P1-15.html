@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Rent Control</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1f2937;
+            --light-text: #4b5563;
+            --warning-orange: #f59e0b;
+            --light-yellow: #fffbeb;
+            --success-green: #10b981;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "📘";
+            margin-right: 8px;
+        }
+        .en {
+            color: var(--light-text);
+            font-size: 0.95em;
+            margin-bottom: 1em;
+            font-style: italic;
+        }
+        .tc {
+            font-weight: 500;
+            margin-bottom: 0.2em;
+        }
+        
+        /* Specific Section Styles */
+        .header-section {
+            background: var(--dark-text);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-section span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .option-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .option-item:last-child {
+            border-bottom: none;
+        }
+
+        .trap-box {
+            background-color: var(--light-yellow);
+            border-left: 5px solid var(--warning-orange);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box, .trick-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .correct-answer {
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <span><strong>📚 主題 (Topic):</strong> 微觀經濟學：市場干預 - 有效價格上限 (Microeconomics: Market Intervention - Effective Price Ceiling)</span>
+        <span><strong>⭐ 難度 (Difficulty):</strong> ★★☆☆☆ (2/5)</span>
+        <span><strong>🔑 關鍵概念 (Key Concepts):</strong> 價格上限 (Price Ceiling), 短缺 (Shortage), 非價格競爭 (Non-price Competition), 質素下降 (Quality Deterioration)</span>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <p class="tc">假設政府實施有效租金管制，即為業主可向租客收取的每平方呎租金設定上限。下列哪項陳述是正確的？</p>
+        <p class="en">Suppose the government introduces an effective rent control which sets a maximum rental per square feet the landlords can charge to any tenants. Which of the following statements is correct?</p>
+        
+        <p class="tc">(1) 出租單位會有短缺。<br>
+        (2) 業主出租他們單位的意慾會較低。<br>
+        (3) 業主會花費較少的金錢維修出租單位。</p>
+        <p class="en">(1) There will be a shortage of rental units.<br>
+        (2) The landlords will have less incentive to rent out their flats.<br>
+        (3) The landlords will spend less on maintenance of the rental flats.</p>
+
+        <p class="tc">
+        A. 只有(1)、(2)<br>
+        B. 只有(1)、(3)<br>
+        C. 只有(2)、(3)<br>
+        D. (1)、(2)及(3)
+        </p>
+        <p class="en">
+        A. (1) and (2) only<br>
+        B. (1) and (3) only<br>
+        C. (2) and (3) only<br>
+        D. (1), (2) and (3)
+        </p>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="tc"><strong>有效價格上限 (Effective Price Ceiling)</strong> 是政府為保障消費者（在此題中為租客）而設定的最高法定價格。要使價格上限「有效」，該上限必須設定於市場均衡價格之下。</p>
+        <p class="en"><strong>Effective Price Ceiling</strong> is a legally established maximum price set by the government to protect consumers (tenants, in this case). To be "effective" (binding), this maximum price must be set below the market equilibrium price.</p>
+
+        <div class="math-block">
+            <p class="tc">有效條件：</p>
+            $$P_c < P_e$$
+            <p class="en">Condition for an effective ceiling, where $P_c$ is Price Ceiling and $P_e$ is Equilibrium Price.</p>
+        </div>
+
+        <p class="tc"><strong>主要影響 (Key Effects):</strong></p>
+        <ul>
+            <li>
+                <p class="tc"><strong>短缺 (Shortage):</strong> 當價格被人為壓低，需求量會上升，但供應量會下降，導致需求量大於供應量 ($Q_d > Q_s$)。</p>
+                <p class="en"><strong>Shortage:</strong> When price is kept artificially low, quantity demanded increases while quantity supplied decreases, leading to quantity demanded exceeding quantity supplied ($Q_d > Q_s$).</p>
+            </li>
+            <li>
+                <p class="tc"><strong>非價格競爭 (Non-price Competition):</strong> 由於買家無法以更高價格競爭，他們會訴諸其他方式，例如排隊或依靠人際關係。</p>
+                <p class="en"><strong>Non-price Competition:</strong> Since buyers cannot compete by offering a higher price, they resort to other means, such as queuing or relying on personal connections.</p>
+            </li>
+            <li>
+                <p class="tc"><strong>產品質素下降 (Quality Deterioration):</strong> 賣方（業主）缺乏誘因去維持產品（單位）質素，因為即使質素下降，在短缺情況下依然容易找到買家（租客）。</p>
+                <p class="en"><strong>Quality Deterioration:</strong> Sellers (landlords) have no incentive to maintain product (flat) quality because, given the shortage, they can easily find buyers (tenants) even for lower-quality goods.</p>
+            </li>
+        </ul>
+    </div>
+
+    <h2>答案與詳細分析 Detailed Analysis</h2>
+    <div class="analysis-box">
+        <p class="tc">正確答案是 / The correct option is: <span class="correct-answer">Option D</span></p>
+
+        <div class="option-item">
+            <p class="tc"><strong>分析 (1)：出租單位會有短缺。 (正確)</strong><br>
+            由於租金上限低於市場均衡價格，租客想租的單位數量（需求量）增加了，但業主願意提供的單位數量（供應量）減少了。因此，市場會出現供不應求的情況，即「短缺」。</p>
+            <p class="en"><strong>Analysis (1): There will be a shortage of rental units. (Correct)</strong><br>
+            Since the rent ceiling is below the equilibrium price, the quantity of units tenants want to rent (quantity demanded) increases, while the quantity landlords are willing to provide (quantity supplied) decreases. This results in excess demand, known as a "shortage".</p>
+        </div>
+
+        <div class="option-item">
+            <p class="tc"><strong>分析 (2)：業主出租他們單位的意慾會較低。 (正確)</strong><br>
+            根據供應定律 (Law of Supply)，價格與供應量呈正向關係。當政府限制了最高租金，業主的回報率下降。部分業主可能會選擇將單位空置、收回自用或轉售，導致他們出租的意慾下降（供應量 $Q_s$ 下跌）。</p>
+            <p class="en"><strong>Analysis (2): The landlords will have less incentive to rent out their flats. (Correct)</strong><br>
+            According to the Law of Supply, price and quantity supplied are positively related. When the maximum rent is restricted, landlords' return on investment drops. Some may choose to leave flats vacant, use them personally, or sell them, reducing their incentive to rent (quantity supplied $Q_s$ falls).</p>
+        </div>
+
+        <div class="option-item">
+            <p class="tc"><strong>分析 (3)：業主會花費較少的金錢維修出租單位。 (正確)</strong><br>
+            在短缺的情況下，市場上有大量正在尋找單位的租客（租客處於弱勢）。因為政府限制了租金上限，業主無法透過提供更好的維修保養來收取更高租金。即使單位殘破，業主也極容易以法定最高租金租出。因此，為節省成本，業主會減少花費在維修上，導致質素下降。</p>
+            <p class="en"><strong>Analysis (3): The landlords will spend less on maintenance of the rental flats. (Correct)</strong><br>
+            During a shortage, there are many tenants desperately looking for flats. Because the rent is capped, landlords cannot charge higher rent even if they provide better maintenance. Even with poor conditions, landlords can easily rent out flats at the ceiling price. To cut costs, they will spend less on maintenance, leading to quality deterioration.</p>
+        </div>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <div class="analysis-box">
+        <p class="tc"><strong>破題關鍵 (The Pivot Point)：</strong><br>
+        題目中的關鍵字是 <strong>「有效 (Effective)」</strong>。這兩個字暗示了 $P_c < P_e$。如果題目只寫「實施租金管制」而沒有「有效」二字，我們就無法確定會不會產生上述效果（因為如果上限設在均衡價格之上，則對市場毫無影響）。</p>
+        <p class="en"><strong>The Pivot Point:</strong><br>
+        The key word in the question is <strong>"Effective"</strong>. This implies that $P_c < P_e$. If the question merely stated "introduces a rent control" without the word "effective", we couldn't be certain of the outcomes (because a ceiling set above the equilibrium price has no market effect).</p>
+    </div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p class="tc"><strong>陷阱一：混淆價格上限 (Ceiling) 與價格下限 (Floor) 的有效位置</strong><br>
+        很多同學直覺以為「上限」就應該畫在均衡點「之上」。這是大錯特錯的！上限是指「不能超過這個價格」，所以只有當法定上限設定在均衡點 <strong>之下</strong> 時，它才會「咬住」市場（Binding），產生短缺。</p>
+        <p class="en"><strong>Trap 1: Confusing the effective positions of Price Ceilings and Price Floors</strong><br>
+        Many students intuitively think a "ceiling" should be drawn "above" the equilibrium. This is a crucial mistake! A ceiling means "price cannot go above this level". Therefore, it is only effective (binding) when set <strong>below</strong> the equilibrium price, causing a shortage.</p>
+        
+        <p class="tc"><strong>陷阱二：忽略了質素下降也是一種後果</strong><br>
+        學生很容易理解 (1) 和 (2)，但往往對 (3) 感到猶疑。請記住，價格管制剝奪了「價格」作為分配資源和競爭的工具，因此市場參與者必然會轉向「非價格」的競爭或調整，例如降低質素來彌補無法提升價格的損失。</p>
+        <p class="en"><strong>Trap 2: Ignoring quality deterioration as a consequence</strong><br>
+        Students easily grasp (1) and (2) but often hesitate on (3). Remember, price controls strip away "price" as a tool for resource allocation and competition. Market participants will inevitably pivot to "non-price" adjustments, such as lowering quality to compensate for the inability to raise prices.</p>
+    </div>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="tc"><strong>問：如果題目說租金管制是「無效的 (Ineffective)」，答案會是什麼？</strong></p>
+        <p class="en"><strong>Q: What if the question stated the rent control was "Ineffective"?</strong></p>
+        
+        <p class="tc"><strong>答：</strong> 如果是無效的（即價格上限設定在均衡租金之上），市場會維持在原本的均衡狀態 ($P_e$ 和 $Q_e$)。不會有短缺，業主出租意慾不變，維修保養質素也不會受此政策影響。這時三個陳述都會是錯的。</p>
+        <p class="en"><strong>A:</strong> If it were ineffective (i.e., the price ceiling is set above the equilibrium rent), the market would simply remain at its original equilibrium ($P_e$ and $Q_e$). There would be no shortage, no change in landlords' incentives, and no impact on maintenance. All three statements would be incorrect.</p>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p class="tc"><strong>速解口訣：</strong> 處理「有效價格上限」題目時，腦海馬上浮現 <strong>"SQQ"</strong>：</p>
+        <ul>
+            <li class="tc"><strong>S</strong>hortage (短缺)</li>
+            <li class="tc"><strong>Q</strong>uality Drop (質素下降 / 減少維修)</li>
+            <li class="tc"><strong>Q</strong>ueuing / Quotas (排隊 / 配額等非價格競爭)</li>
+        </ul>
+        <p class="tc">只要看到選項符合這三個方向的描述，通常都是正確的。在此題中，(1) 是 Shortage，(3) 是 Quality Drop，(2) 則是導致 Shortage 的基本成因 (供應量下跌)，所以可以迅速選出 (1), (2) 及 (3) 皆正確。</p>
+        
+        <p class="en"><strong>Shortcut Acronym:</strong> When tackling "Effective Price Ceiling" questions, immediately think of <strong>"SQQ"</strong>:</p>
+        <ul>
+            <li class="en"><strong>S</strong>hortage</li>
+            <li class="en"><strong>Q</strong>uality Drop (Less maintenance)</li>
+            <li class="en"><strong>Q</strong>ueuing / Quotas (Non-price competition)</li>
+        </ul>
+        <p class="en">If the options describe any of these three directions, they are usually correct. In this question, (1) is Shortage, (3) is Quality Drop, and (2) is the fundamental cause of the Shortage (drop in quantity supplied). You can quickly conclude that (1), (2), and (3) are all correct.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
