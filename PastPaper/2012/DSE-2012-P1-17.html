@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head><script src="/econ-database/PastPaper/protect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Tax Burden Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-gray: #333333;
+            --mid-gray: #555555;
+            --light-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; color: var(--primary-blue); }
+        
+        .bilingual-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .zh-text {
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .en-text {
+            color: var(--mid-gray);
+            font-size: 0.95em;
+            margin-top: 0;
+            font-style: italic;
+        }
+
+        /* 1. Header Styling */
+        .header-section {
+            background-color: var(--light-gray);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--dark-gray);
+            margin-bottom: 25px;
+        }
+
+        .header-section p { margin: 5px 0; }
+
+        /* 3. Concept Box Styling */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Blocks */
+        .math-block {
+            background-color: #ffffff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+        }
+
+        th {
+            background-color: var(--light-gray);
+            font-weight: bold;
+        }
+
+        /* Options Analysis */
+        .option-analysis {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .correct-option {
+            border-color: var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .wrong-option {
+            border-color: var(--border-color);
+            background-color: #ffffff;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .badge-correct { background-color: var(--correct-green); }
+        .badge-wrong { background-color: var(--wrong-red); }
+
+        /* Emphasized Text */
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <p><strong>📝 課題 (Topic):</strong> 政府干預與市場均衡 - 從量稅 (Government Intervention & Market Equilibrium - Per-unit Tax)</p>
+        <p><strong>⭐ 難度 (Difficulty):</strong> ★★★☆☆ (3/5)</p>
+        <p><strong>🔑 關鍵概念 (Key Concepts):</strong> 從量稅 (Per-unit tax), 稅收負擔 (Tax burden), 供需表 (Demand-supply schedule)</p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    
+    <div class="bilingual-group">
+        <p class="zh-text">參閱以下物品X的供需表，然後回答第16和17題。</p>
+        <p class="en-text">Refer to the following demand-supply schedule of good X and answer Question 16 and 17.</p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>價格 ($)<br><em>Price ($)</em></th>
+                    <th>需求量（單位）<br><em>Quantity demanded (units)</em></th>
+                    <th>供應量（單位）<br><em>Quantity supplied (units)</em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10</td><td>700</td><td>300</td></tr>
+                <tr><td>11</td><td>600</td><td>400</td></tr>
+                <tr><td>12</td><td>500</td><td>500</td></tr>
+                <tr><td>13</td><td>400</td><td>600</td></tr>
+                <tr><td>14</td><td>300</td><td>700</td></tr>
+                <tr><td>15</td><td>200</td><td>800</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bilingual-group">
+        <p class="zh-text">若政府對物品X徵收$4從量稅，消費者賦稅負擔和生產商賦稅負擔的比率是___________。</p>
+        <p class="en-text">If the government imposes a per unit tax of $4 on good X, the ratio of the consumers’ tax burden to the producers’ tax burden is ___________.</p>
+    </div>
+
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li><strong>A.</strong> 1:1</li>
+        <li><strong>B.</strong> 1:3</li>
+        <li><strong>C.</strong> 3:1</li>
+        <li><strong>D.</strong> 以上各項均不是 / None of the above</li>
+    </ul>
+
+    <div class="concept-box">
+        <h2>2. 概念重溫 (Concept Review)</h2>
+        
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>從量稅 (Per-unit Tax):</strong> 政府對每一單位交易的物品徵收的固定稅款。這會導致供應曲線向上移動，垂直移動的距離等於稅額 \(t\)。</p>
+            <p class="en-text"><strong>Per-unit Tax:</strong> A fixed amount of tax imposed by the government on each unit of a good traded. This shifts the supply curve upwards by a vertical distance equal to the tax amount \(t\).</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh-text">在徵稅後的新均衡點，消費者支付的價格 \(P_d\) 與生產商實際收取的價格 \(P_s\) 之間的差額，將剛好等於從量稅 \(t\)。</p>
+            <p class="en-text">At the new equilibrium after tax, the difference between the price paid by consumers \(P_d\) and the price actually received by producers \(P_s\) is exactly equal to the per-unit tax \(t\).</p>
+        </div>
+
+        <div class="math-block">
+            $$ P_d - P_s = t $$
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>稅收負擔 (Tax Burden):</strong> 稅收如何分配在消費者和生產商之間。計算公式如下：</p>
+            <p class="en-text"><strong>Tax Burden:</strong> How the tax is shared between consumers and producers. The formulas are:</p>
+        </div>
+
+        <div class="math-block">
+            $$ \text{每單位消費者負擔 (Per-unit Consumer Burden)} = P_d - P_0 $$
+            $$ \text{每單位生產商負擔 (Per-unit Producer Burden)} = P_0 - P_s $$
+        </div>
+        <p class="en-text" style="text-align: center;"><em>Where \(P_0\) is the original equilibrium price (原來的均衡價格).</em></p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <h3 style="color: var(--correct-green);">正確答案 (Correct Option): A</h3>
+
+    <div class="option-analysis correct-option">
+        <span class="badge badge-correct">Option A - Correct</span>
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>第一步：尋找原來的均衡點。</strong><br>在徵稅前，當價格為 $12 時，需求量 = 供應量 = 500。所以，原來的價格 \(P_0 = \$12\)。</p>
+            <p class="en-text"><strong>Step 1: Find the original equilibrium.</strong><br>Before tax, when the price is $12, quantity demanded = quantity supplied = 500. So, the original price \(P_0 = \$12\).</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>第二步：尋找徵稅後的新均衡點。</strong><br>徵收 $4 稅款後，我們需要在同一交易量下，找到相差 $4 的需求價格 \(P_d\) 和供應價格 \(P_s\)。<br>觀察圖表，當數量為 300 單位時：需求者願意支付 \(P_d = \$14\)，而生產者願意接受 \(P_s = \$10\)。兩者差額剛好是 \(\$14 - \$10 = \$4\)。<br>因此，新交易量 \(Q_1 = 300\)，新市價 \(P_d = \$14\)。</p>
+            <p class="en-text"><strong>Step 2: Find the new equilibrium after tax.</strong><br>After a $4 tax, we need to find a quantity where the demand price \(P_d\) and supply price \(P_s\) differ by exactly $4.<br>Looking at the table, at a quantity of 300 units: Consumers are willing to pay \(P_d = \$14\), and producers are willing to accept \(P_s = \$10\). The difference is exactly \(\$14 - \$10 = \$4\).<br>Therefore, the new transacted quantity \(Q_1 = 300\), and the new market price \(P_d = \$14\).</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>第三步：計算稅收負擔比例。</strong><br>每單位消費者負擔 = \(P_d - P_0 = \$14 - \$12 = \$2\)<br>每單位生產商負擔 = \(P_0 - P_s = \$12 - \$10 = \$2\)<br>比率 = 2 : 2 = <strong>1 : 1</strong>。</p>
+            <p class="en-text"><strong>Step 3: Calculate the tax burden ratio.</strong><br>Per-unit consumer burden = \(P_d - P_0 = \$14 - \$12 = \$2\)<br>Per-unit producer burden = \(P_0 - P_s = \$12 - \$10 = \$2\)<br>Ratio = 2 : 2 = <strong>1 : 1</strong>.</p>
+        </div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <span class="badge badge-wrong">Options B & C - Wrong</span>
+        <div class="bilingual-group">
+            <p class="zh-text">這兩個選項是干擾項。學生可能會因為錯誤計算新價格（例如直接將均衡價加上稅款的一半），或者沒有對齊需求量和供應量，而得出錯誤的比例。在此題中，供需彈性在該區間內恰好讓雙方平均分擔稅款。</p>
+            <p class="en-text">These are distractors. Students might arrive at these ratios by incorrectly calculating the new price (e.g., arbitrarily adding a fraction of the tax to the original price) or failing to align the quantity demanded and supplied. In this specific case, the elasticities of demand and supply in this range cause the tax to be shared equally.</p>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-group">
+        <p class="zh-text"><strong>解題樞紐 (The Pivot Point):</strong><br>處理這類表格題目的秘訣在於<strong>尋找價格差距</strong>。不要嘗試在腦海中移動整條供應曲線！你只需要在表格中上下尋找一個特定的數量（Quantity），在該數量下，需求價格（左邊的價格）減去供應價格（右邊對應的價格）剛好等於稅額 \(t\)。</p>
+        <p class="en-text"><strong>The Pivot Point:</strong><br>The secret to solving these table questions is <strong>finding the price gap</strong>. Do not try to shift the entire supply curve in your head! You simply need to look up and down the table to find a specific Quantity where the Demand Price minus the Supply Price exactly equals the tax amount \(t\).</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li>
+            <div class="bilingual-group">
+                <p class="zh-text">❌ <strong>錯誤假設：直接將稅款加到原來的均衡價格上。</strong><br>有些學生會錯誤地認為新價格是 \(\$12 + \$4 = \$16\)。這只有在需求完全缺乏彈性 (perfectly inelastic demand) 時才成立。實際上，稅款會導致交易量下跌。</p>
+                <p class="en-text">❌ <strong>Wrong Assumption: Adding the tax directly to the original equilibrium price.</strong><br>Some students mistakenly think the new price will be \(\$12 + \$4 = \$16\). This is only true if demand is perfectly inelastic. In reality, the tax will cause the transacted quantity to fall.</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-group">
+                <p class="zh-text">❌ <strong>錯誤計算總稅收：忘記使用新的交易量。</strong><br>雖然這題只問「比例」（每單位比例等於總額比例），但如果要算總負擔，必須乘以<strong>新</strong>的交易量 (\(Q_1 = 300\))，而不是原來的 500。</p>
+                <p class="en-text">❌ <strong>Miscalculating total tax: Forgetting to use the NEW transacted quantity.</strong><br>Although this question only asks for the "ratio" (where per-unit ratio equals total ratio), if you need to calculate total burden, you must multiply by the <strong>new</strong> quantity (\(Q_1 = 300\)), not the original 500.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="bilingual-group">
+        <p class="zh-text"><strong>🙋 學生問：</strong> 我需要計算「總消費者負擔」才能得出比例嗎？</p>
+        <p class="en-text"><strong>🙋 Student:</strong> Do I need to calculate the "Total Consumer Burden" to find the ratio?</p>
+    </div>
+    <div class="bilingual-group" style="padding-left: 20px; border-left: 3px solid var(--primary-blue);">
+        <p class="zh-text"><strong>👨‍🏫 導師答：</strong> 不需要！因為總負擔 = 每單位負擔 × 新數量 \(Q_1\)。在計算比例時，分子和分母的 \(Q_1\) 會互相抵消。因此，你只需要計算「每單位」的稅負比例（此題為 $2 : $2），就能直接得出正確答案。</p>
+        <p class="en-text"><strong>👨‍🏫 Tutor:</strong> No! Because Total Burden = Per-unit Burden × New Quantity \(Q_1\). When calculating the ratio, the \(Q_1\) in the numerator and denominator cancel each other out. Therefore, you only need to calculate the "per-unit" tax burden ratio (which is $2 : $2 here) to get the correct answer.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="bilingual-group">
+        <p class="zh-text"><strong>👀 垂直掃描法 (Vertical Scanning Method):</strong><br>在 DSE 考試中，時間非常寶貴。遇到這種稅收表格題，直接運用公式 \(P_d - P_s = \text{Tax}\)。<br>把左手放在「需求量」欄，右手放在「供應量」欄。向下掃描，尋找哪一個「數量」同時出現在兩欄中。當你找到相同的數量（例如此題的 300），查看它們對應的價格：需求量 300 對應 $14，供應量 300 對應 $10。差距剛好是 $4，這就是你的新均衡點！秒殺！</p>
+        <p class="en-text"><strong>👀 Vertical Scanning Method:</strong><br>Time is precious in the DSE exam. For these tax schedule questions, apply the formula \(P_d - P_s = \text{Tax}\) directly.<br>Put your left finger on the "Quantity demanded" column and your right finger on the "Quantity supplied" column. Scan downwards and look for a "quantity" that appears in BOTH columns. When you find matching quantities (like 300 here), check their corresponding prices: Qd=300 corresponds to $14; Qs=300 corresponds to $10. The gap is exactly $4. Boom! That's your new equilibrium point. Solved in seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
