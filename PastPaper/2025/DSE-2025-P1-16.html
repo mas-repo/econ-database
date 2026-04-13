@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Concept Guide - Supply and Demand</title>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --correct-bg: #ecfdf5;
+            --correct-border: #10b981;
+            --incorrect-bg: #fef2f2;
+            --incorrect-border: #ef4444;
+            --concept-bg: #f0f9ff;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 { color: var(--primary-color); margin-top: 0; }
+        
+        .section {
+            background-color: var(--box-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .header-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .badge-difficulty { background-color: #8b5cf6; }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .option-box {
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+        }
+
+        .option-box.correct {
+            border-left: 5px solid var(--correct-border);
+            background-color: var(--correct-bg);
+        }
+
+        .option-box.incorrect {
+            border-left: 5px solid var(--incorrect-border);
+        }
+
+        .option-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bilingual-group {
+            margin-bottom: 12px;
+        }
+
+        .zh-text { font-weight: 500; margin-bottom: 4px; }
+        .en-text { 
+            color: var(--text-muted); 
+            font-size: 0.95em; 
+            border-left: 2px solid #cbd5e1; 
+            padding-left: 12px; 
+            margin-top: 4px;
+        }
+
+        .trap-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .question-text { font-weight: bold; color: var(--primary-color); }
+
+        hr { border: 0; height: 1px; background: #e2e8f0; margin: 20px 0; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="section">
+        <div class="header-badges">
+            <span class="badge">Topic: Market Supply & Intervention (市場供應與干預)</span>
+            <span class="badge badge-difficulty">Difficulty: ⭐⭐⭐ (3/5)</span>
+        </div>
+        <div class="header-badges" style="margin-top: 10px;">
+            <span class="badge" style="background-color: #475569;">Key Concepts: Supply Curve Shift (供應曲線移動)</span>
+            <span class="badge" style="background-color: #475569;">Tariffs (關稅)</span>
+            <span class="badge" style="background-color: #475569;">Exchange Rate (匯率)</span>
+        </div>
+    </div>
+
+    <div class="section" style="border-left: 5px solid var(--primary-color); border-radius: 0 12px 12px 0;">
+        <h2>The Question (題目)</h2>
+        <div class="bilingual-group">
+            <div class="zh-text">參考提供的圖表。下列哪項最能解釋為什麼供應曲線從 \(S_1\) 移至 \(S_2\)？</div>
+            <div class="en-text">Refer to the provided diagram. Which of the following best explains why the supply curve shifts from \(S_1\) to \(S_2\)?</div>
+        </div>
+        
+        <ol style="list-style-type: upper-alpha; font-weight: bold; margin-top: 15px;">
+            <li>
+                <div class="bilingual-group">
+                    <div class="zh-text" style="font-weight: normal;">中國生產葡萄酒的成本下降。</div>
+                    <div class="en-text">Cost of production of wine in China decreases.</div>
+                </div>
+            </li>
+            <li>
+                <div class="bilingual-group">
+                    <div class="zh-text" style="font-weight: normal;">澳洲居民的收入上升。</div>
+                    <div class="en-text">The income of Australian residents increases.</div>
+                </div>
+            </li>
+            <li>
+                <div class="bilingual-group">
+                    <div class="zh-text" style="font-weight: normal;">中國政府取消澳洲葡萄酒的進口關稅。</div>
+                    <div class="en-text">The Chinese Government abolishes the import tariffs on Australian wine.</div>
+                </div>
+            </li>
+            <li>
+                <div class="bilingual-group">
+                    <div class="zh-text" style="font-weight: normal;">澳元兌人民幣升值。</div>
+                    <div class="en-text">Australian dollar appreciates against Renminbi.</div>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="concept-box">
+        <h2>💡 Concept Review (概念重溫)</h2>
+        
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>1. 供應曲線的移動 (Shift in Supply Curve)</strong><br>
+            當圖表中的供應曲線向右移動 (如 \(S_1 \rightarrow S_2\))，這代表<strong>供應增加 (Increase in Supply)</strong>。這意味著在任何一個既定價格下，生產者都願意提供更多的產品。這通常是由於生產成本下降、技術進步或政府補貼增加（或稅收/關稅減少）所引起的。</div>
+            <div class="en-text"><strong>1. Shift in Supply Curve</strong><br>
+            When the supply curve shifts to the right (like \(S_1 \rightarrow S_2\)), it represents an <strong>increase in supply</strong>. This means that at any given price, producers are willing to supply more of the good. This is usually caused by a decrease in production costs, technological advancement, or an increase in government subsidies (or a decrease in taxes/tariffs).</div>
+        </div>
+        <hr>
+        <div class="bilingual-group">
+            <div class="zh-text"><strong>2. 關稅 (Tariffs)</strong><br>
+            關稅是對進口貨物徵收的稅項。它會增加進口貨物的銷售成本，導致供應減少（向左移）。相反，<strong>取消關稅</strong>會降低成本，導致供應增加（向右移）。</div>
+            <div class="en-text"><strong>2. Tariffs</strong><br>
+            A tariff is a tax imposed on imported goods. It increases the cost of selling imported goods, leading to a decrease in supply (shift left). Conversely, <strong>abolishing a tariff</strong> lowers costs, leading to an increase in supply (shift right).</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <h3 style="color: var(--correct-border);">Correct Option: C</h3>
+
+        <div class="option-box incorrect">
+            <div class="option-title">❌ Option A</div>
+            <div class="bilingual-group">
+                <div class="zh-text"><strong>中國</strong>生產葡萄酒的成本下降，只會增加<strong>中國葡萄酒</strong>的供應（中國葡萄酒的供應曲線向右移）。本題的圖表是關於「在中國出售的<strong>澳洲</strong>葡萄酒」。這兩個是不同的市場，中國葡萄酒成本下降不會直接導致澳洲葡萄酒的供應增加。</div>
+                <div class="en-text">A decrease in the cost of producing wine in <strong>China</strong> would only increase the supply of <strong>Chinese wine</strong> (shifting its supply curve to the right). The diagram in the question is about "<strong>Australian</strong> wine sold in China". These are different markets. A decrease in Chinese wine production costs does not directly increase the supply of Australian wine.</div>
+            </div>
+        </div>
+
+        <div class="option-box incorrect">
+            <div class="option-title">❌ Option B</div>
+            <div class="bilingual-group">
+                <div class="zh-text">澳洲居民的收入上升會影響澳洲本土對葡萄酒的<strong>需求 (Demand)</strong>。如果澳洲人在本土消費更多葡萄酒，出口到中國的葡萄酒數量反而可能減少，導致中國市場的供應向左移，而不是向右移。</div>
+                <div class="en-text">An increase in the income of Australian residents affects the <strong>demand</strong> for wine within Australia. If Australians consume more wine domestically, the amount exported to China might actually decrease, potentially shifting the supply in the Chinese market to the left, not right.</div>
+            </div>
+        </div>
+
+        <div class="option-box correct">
+            <div class="option-title">✅ Option C</div>
+            <div class="bilingual-group">
+                <div class="zh-text">取消對澳洲葡萄酒的進口關稅，直接降低了澳洲生產商將葡萄酒賣到中國的銷售成本。成本下降導致供應增加，因此供應曲線從 \(S_1\) 向右移至 \(S_2\)。這完美吻合圖表顯示的情況。</div>
+                <div class="en-text">Abolishing import tariffs on Australian wine directly lowers the cost for Australian producers to sell their wine in China. A decrease in cost leads to an increase in supply, therefore the supply curve shifts rightward from \(S_1\) to \(S_2\). This perfectly matches the diagram.</div>
+            </div>
+        </div>
+
+        <div class="option-box incorrect">
+            <div class="option-title">❌ Option D</div>
+            <div class="bilingual-group">
+                <div class="zh-text">澳元兌人民幣升值，意味著每一澳元可以兌換更多人民幣（即人民幣貶值）。對於將貨物賣到中國的澳洲出口商來說，為了賺取相同數量的澳元利潤，他們需要收取<strong>更高的人民幣價格</strong>。這會導致在中國市場的供應減少（供應曲線向左移）。</div>
+                <div class="en-text">If the Australian dollar appreciates against the Renminbi, it means one AUD exchanges for more RMB (RMB depreciates). For Australian exporters selling in China, to earn the same amount of profit in AUD, they must charge a <strong>higher price in RMB</strong>. This leads to a decrease in supply in the Chinese market (shifting the supply curve to the left).</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        <div class="bilingual-group">
+            <div class="zh-text">
+                <p>要解答這類題目，我們需要採取以下三個步驟：</p>
+                <ol>
+                    <li><strong>確認市場 (Identify the Market):</strong> 標題寫著「在中國出售的澳洲葡萄酒」。這非常重要，因為這決定了我們的主體是澳洲出口商。</li>
+                    <li><strong>觀察圖表變化 (Observe the Graph):</strong> 供應曲線由 \(S_1\) 向右移動到 \(S_2\)，代表在同一個人民幣價格下，供應量增加了。這必定是因為成本下降或利潤空間擴大。</li>
+                    <li><strong>篩選選項 (Filter Options):</strong> 尋找哪一個選項會令澳洲出口商的「成本下降」。選項 A 搞錯了主體（中國酒）；選項 B 搞錯了概念（影響需求）；選項 D 會導致成本（以人民幣計價）上升；只有選項 C（取消關稅）確實降低了成本。</li>
+                </ol>
+            </div>
+            <div class="en-text">
+                <p>To solve this type of question, follow these three steps:</p>
+                <ol>
+                    <li><strong>Identify the Market:</strong> The title says "Australian wine sold in China". This is crucial because it establishes our subject as Australian exporters.</li>
+                    <li><strong>Observe the Graph:</strong> The supply curve shifts right from \(S_1\) to \(S_2\), meaning at the same RMB price, the quantity supplied increases. This must be due to a decrease in costs or an increase in profit margins.</li>
+                    <li><strong>Filter Options:</strong> Look for the option that causes a "decrease in cost" for Australian exporters. Option A is the wrong subject (Chinese wine); Option B is the wrong concept (affects demand); Option D causes costs (in RMB) to rise; Only Option C (abolishing tariffs) genuinely reduces costs.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="trap-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="bilingual-group">
+            <div class="zh-text">
+                <strong>陷阱：匯率的影響 (The Exchange Rate Trap)</strong><br>
+                很多學生在選項 D 跌倒。當題目說「澳元升值」，學生直覺認為這對澳洲是「好事」，所以供應會增加。這是大錯特錯的！<br>
+                我們必須看 Y 軸：圖表的 Y 軸是<strong>人民幣 (Renminbi)</strong>。<br>
+                如果澳元升值，澳洲商人賣出一瓶酒後，需要更多的人民幣才能換回原本數量的澳元來支付他們在澳洲的工人工資。因此，以人民幣計算的成本上升了，供應曲線應該<strong>向左移</strong>才對。
+            </div>
+            <div class="en-text">
+                <strong>Trap: The Effect of Exchange Rates</strong><br>
+                Many students fall for Option D. When the question says "AUD appreciates", students intuitively think this is "good" for Australia, so supply must increase. This is completely wrong!<br>
+                We must look at the Y-axis: The Y-axis is in <strong>Renminbi (RMB)</strong>.<br>
+                If the AUD appreciates, an Australian merchant needs more RMB after selling a bottle of wine to exchange back into the same amount of AUD needed to pay their workers in Australia. Therefore, the cost measured in RMB has increased, and the supply curve should shift <strong>to the left</strong> instead.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-box">
+            <div class="bilingual-group">
+                <div class="zh-text">
+                    <span class="question-text">Q: 選項 A 說中國葡萄酒成本下降，難道這不會影響澳洲葡萄酒嗎？</span><br>
+                    A: 會影響，但是影響的是<strong>需求 (Demand)</strong>，而不是供應 (Supply)。中國葡萄酒和澳洲葡萄酒是<strong>替代品 (Substitutes)</strong>。如果中國酒成本下降導致中國酒價格下跌，消費者會轉買中國酒，這會導致澳洲酒的<strong>需求曲線向左移</strong>，但不會令供應曲線移動。
+                </div>
+                <div class="en-text">
+                    <span class="question-text">Q: Option A says the cost of Chinese wine decreases. Doesn't this affect Australian wine?</span><br>
+                    A: It does, but it affects <strong>Demand</strong>, not Supply. Chinese wine and Australian wine are <strong>substitutes</strong>. If cheaper Chinese wine production leads to lower Chinese wine prices, consumers will switch to Chinese wine. This shifts the <strong>demand curve for Australian wine to the left</strong>, but it does not shift its supply curve.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section" style="background-color: #fdf4ff; border-left: 5px solid #d946ef;">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="bilingual-group">
+            <div class="zh-text">
+                做這類 DSE MC 題時，可以使用「主體消除法」。<br>
+                題目是關於「澳洲」酒的「供應」。<br>
+                - 看到「中國」酒的成本 (A) -> 直接刪除 (主體錯誤)。<br>
+                - 看到「收入」 (B) -> 直接刪除 (收入影響的是需求，不是供應)。<br>
+                剩下 C 和 D。再用常理判斷：取消稅收 (C) 一定是降低成本，令供應增加（向右移）。5秒鐘就能鎖定答案。
+            </div>
+            <div class="en-text">
+                When doing this type of DSE MC question, use the "Subject Elimination Method".<br>
+                The question is about the "Supply" of "Australian" wine.<br>
+                - Seeing the cost of "Chinese" wine (A) -> Eliminate immediately (Wrong subject).<br>
+                - Seeing "Income" (B) -> Eliminate immediately (Income affects Demand, not Supply).<br>
+                You are left with C and D. Use common sense: Abolishing a tax (C) definitely lowers costs and increases supply (shifts right). You can lock in the answer in 5 seconds.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

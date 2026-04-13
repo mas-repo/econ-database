@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --math-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+        .en-text {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option {
+            background: #f9fafb;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .option-correct {
+            border-left: 5px solid var(--correct-color);
+            background: #ecfdf5;
+        }
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+            background: #fef2f2;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .tag-correct { background-color: var(--correct-color); color: white; }
+        .tag-wrong { background-color: var(--wrong-color); color: white; }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <p><strong>📝 Topic (課題):</strong> Macroeconomics - Aggregate Demand & Aggregate Supply (宏觀經濟學 - 總需求與總供應)</p>
+        <p><strong>⭐ Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>🔑 Key Concepts (核心概念):</strong> Long Run Aggregate Supply (LRAS), Aggregate Demand (AD), Long-run Equilibrium (長期均衡)</p>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="bilingual-block">
+        <p class="question-text">下圖顯示某國的長期總供應曲線。<br>下列哪項會令在長期的均衡點由E1改變為E2？</p>
+        <p>A. 該國的生產受極端天氣阻礙。<br>
+           B. 該國的基礎建設因一項政府工程項目而改善。<br>
+           C. 物價水平持續上升。<br>
+           D. 住戶的儲蓄意欲下降。</p>
+        
+        <div class="en-text">
+            <p class="question-text">The diagram below shows the long run aggregate supply curve of a country.<br>Which of the following would result in a change in the long run equilibrium point from E1 to E2?</p>
+            <p>A. The production of the country is disrupted by extreme weather.<br>
+               B. The infrastructure of the country is improved by a government construction project.<br>
+               C. There is a persistent increase in the price level.<br>
+               D. Households' desire to save decreases.</p>
+        </div>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>Long Run Aggregate Supply, LRAS (長期總供應)</h3>
+        <p>在長期而言，價格和工資具有完全的彈性。因此，產出水平取決於實質因素（如資源、勞動力、技術），而不受物價水平影響。所以 LRAS 曲線是一條垂直線。</p>
+        <p class="en-text">In the long run, prices and wages are fully flexible. Therefore, the output level depends on real factors (e.g., resources, labor, technology) and is independent of the price level. This makes the LRAS curve vertical.</p>
+
+        <h3>Aggregate Demand, AD (總需求)</h3>
+        <p>總需求是經濟體系中對所有最終物品和服務的需求總和。</p>
+        <p class="en-text">Aggregate Demand is the total demand for all final goods and services in an economy.</p>
+        <div class="math-block">
+            $$AD = C + I + G + (X - M)$$
+        </div>
+        <p>公式中：\(C\) 代表消費 (Consumption)，\(I\) 代表投資 (Investment)，\(G\) 代表政府開支 (Government Expenditure)，\(X\) 代表出口 (Exports)，\(M\) 代表進口 (Imports)。</p>
+        <p class="en-text">In the formula: \(C\) is Consumption, \(I\) is Investment, \(G\) is Government Expenditure, \(X\) is Exports, and \(M\) is Imports.</p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-block">
+        <p><strong>正確答案 (Correct Option): <span style="color: var(--correct-color); font-size: 1.2em;">D</span></strong></p>
+    </div>
+
+    <div class="option option-wrong">
+        <p><span class="tag tag-wrong">Incorrect</span> <strong>A. 該國的生產受極端天氣阻礙。 / The production of the country is disrupted by extreme weather.</strong></p>
+        <p>極端天氣會破壞生產要素（如農作物、廠房）。這會導致長期總供應曲線（LRAS）向左移，令長期總產出下降。但圖中 LRAS 並沒有移動，總產出保持不變，因此A錯誤。</p>
+        <p class="en-text">Extreme weather destroys factors of production (like crops or factories). This causes the LRAS curve to shift to the left, decreasing long-run aggregate output. However, in the diagram, the LRAS curve does not shift and output remains constant, so A is wrong.</p>
+    </div>
+
+    <div class="option option-wrong">
+        <p><span class="tag tag-wrong">Incorrect</span> <strong>B. 該國的基礎建設因一項政府工程項目而改善。 / The infrastructure of the country is improved by a government construction project.</strong></p>
+        <p>基礎設施改善會提高生產力，導致長期總供應曲線（LRAS）向右移，長期總產出增加。由於圖中總產出不變，因此B錯誤。</p>
+        <p class="en-text">An improvement in infrastructure increases productivity, causing the LRAS curve to shift to the right, increasing long-run aggregate output. Since the aggregate output in the diagram remains unchanged, B is wrong.</p>
+    </div>
+
+    <div class="option option-wrong">
+        <p><span class="tag tag-wrong">Incorrect</span> <strong>C. 物價水平持續上升。 / There is a persistent increase in the price level.</strong></p>
+        <p>「物價水平持續上升」是圖中由 E1 移至 E2 的<strong>結果</strong>（現象），而不是導致這個變化的<strong>成因</strong>。題目問的是「下列哪項會令...改變」（成因），所以C是混淆視聽的選項。</p>
+        <p class="en-text">"A persistent increase in the price level" is the <strong>result</strong> (phenomenon) of moving from E1 to E2, not the <strong>cause</strong> of this change. The question asks "Which of the following would result in..." (the cause), making C a distractor.</p>
+    </div>
+
+    <div class="option option-correct">
+        <p><span class="tag tag-correct">Correct</span> <strong>D. 住戶的儲蓄意欲下降。 / Households' desire to save decreases.</strong></p>
+        <p>當儲蓄意欲下降，代表消費意欲（Consumption, \(C\)）上升。由於 \(AD = C + I + G + NX\)，消費增加會令總需求（AD）曲線向右移。在長期而言，AD增加只會拉高物價水平（由 E1 升至 E2），而總產出會維持在自然產出水平（LRAS）不變。這完美符合圖表顯示的情況。</p>
+        <p class="en-text">When the desire to save decreases, it means the desire to consume (Consumption, \(C\)) increases. Since \(AD = C + I + G + NX\), an increase in consumption shifts the Aggregate Demand (AD) curve to the right. In the long run, an increase in AD only pushes up the price level (from E1 to E2) while aggregate output remains at the natural level of output (LRAS). This perfectly matches the diagram.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-block">
+        <p><strong>Pivot Point (破題關鍵):</strong></p>
+        <p>觀察圖表，有兩大特徵：<br>
+        1. <strong>總產出不變 (Aggregate output is constant):</strong> 均衡點在同一條垂直的 LRAS 曲線上下移動。這意味著所有影響生產力或資源數量的選項（A 和 B）都可以立刻剔除。<br>
+        2. <strong>物價水平上升 (Price level increases):</strong> 長期產出不變而物價上升，唯一的原因是<strong>總需求 (AD) 增加</strong>。因此，我們要找一個令 AD 增加的選項（D）。</p>
+        
+        <div class="en-text">
+            <p><strong>Pivot Point:</strong></p>
+            <p>Observe two main features in the diagram:<br>
+            1. <strong>Aggregate output is constant:</strong> The equilibrium moves along the same vertical LRAS curve. This means any option affecting productivity or resource quantity (A and B) can be eliminated immediately.<br>
+            2. <strong>Price level increases:</strong> The only reason for a higher price level with constant long-run output is an <strong>increase in Aggregate Demand (AD)</strong>. Therefore, we must find an option that increases AD (Option D).</p>
+        </div>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <p><strong>陷阱：倒果為因 (Confusing Cause and Effect)</strong></p>
+        <p>很多同學會誤選 C。圖表確實顯示了物價水平上升，但這只是均衡點改變後的「現象」。在經濟學選擇題中，當被問及「什麼會導致均衡改變」時，你必須尋找一個<strong>外生衝擊 (Exogenous shock)</strong>，例如消費習慣改變、政府政策改變等。物價變動通常是內生變數 (Endogenous variable) 的結果。</p>
+        <p class="en-text"><strong>Trap: Confusing Cause and Effect</strong><br>
+        Many students mistakenly choose C. The diagram indeed shows an increase in the price level, but this is merely the "phenomenon" after the equilibrium changes. In Economics MCQs, when asked "what would result in a change in equilibrium", you must look for an <strong>exogenous shock</strong> (e.g., changes in consumption habits, government policies). Price changes are usually the result of endogenous variables.</p>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>🤔 Q: 儲蓄減少不是會影響銀行的可借貸資金，從而影響投資 (Investment) 和長期生產力嗎？</strong></p>
+        <p><strong>💡 A:</strong> 這是非常好的進階問題！在極度長期的經濟增長模型中，儲蓄減少確實可能拉低投資和未來生產力。但在 DSE 的 AD-AS 宏觀基礎模型中，我們首要考慮的是儲蓄減少對「當下消費 (Consumption)」的直接刺激。消費增加會令 AD 右移。在 DSE 程度，除非題目明確提及「資本累積 (Capital accumulation)」減少，否則我們主要將「儲蓄意欲改變」視為影響 AD 內消費 (\(C\)) 的因素。</p>
+        
+        <div class="en-text">
+            <p><strong>🤔 Q: Doesn't a decrease in saving affect the loanable funds in banks, thereby affecting investment and long-run productivity?</strong></p>
+            <p><strong>💡 A:</strong> That is an excellent advanced question! In very long-term economic growth models, lower savings might indeed reduce investment and future productivity. However, in the basic DSE AD-AS model, our primary consideration is the direct stimulus that lower savings has on "current consumption". Increased consumption shifts AD right. At the DSE level, unless the question explicitly mentions a reduction in "capital accumulation", we primarily treat a "change in desire to save" as a factor affecting consumption (\(C\)) within AD.</p>
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual-block">
+        <p><strong>兩秒刪除法 (2-Second Elimination):</strong></p>
+        <p>只要看到 LRAS 是一條直線而且沒有左右移動，立刻刪除所有關於「資源」、「科技」、「天災」、「基建」的選項（秒殺 A 和 B）。剩下 C 和 D，由於 C 只是描述 Y 軸的變化（廢話選項），唯一能解釋成因的只有 D。</p>
+        
+        <div class="en-text">
+            <p><strong>2-Second Elimination:</strong></p>
+            <p>As soon as you see the LRAS is a vertical line and does not shift left or right, immediately eliminate any options related to "resources", "technology", "natural disasters", or "infrastructure" (Instantly kills A and B). You are left with C and D. Since C merely describes the change on the Y-axis (a tautology option), the only one that explains the cause is D.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
