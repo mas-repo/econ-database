@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics MCQ Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #0369a1;
+            --bg-cream: #fdfbf7;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+            --math-bg: #f3f4f6;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; }
+        h2 { font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
+        
+        .en-subtitle {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-weight: normal;
+            display: block;
+            margin-top: -5px;
+            margin-bottom: 15px;
+        }
+
+        /* Bilingual Text Styling */
+        .zh-text { font-weight: 500; margin-bottom: 8px; }
+        .en-text { color: var(--text-muted); margin-top: 0; margin-bottom: 20px; font-size: 0.95em; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th { background-color: var(--light-blue); font-weight: 600; }
+
+        /* Specific Section Boxes */
+        .header-box {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-box span { display: block; margin: 5px 0; }
+        .header-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        .question-box {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        .analysis-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .analysis-item.correct { border-left: 5px solid var(--correct-green); background-color: #f0fdf4; }
+        .analysis-item.wrong { border-left: 5px solid var(--wrong-red); }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .bg-green { background-color: var(--correct-green); }
+        .bg-red { background-color: var(--wrong-red); }
+
+        .trap-box {
+            background-color: #fff1f2;
+            border-left: 5px solid #be123c;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: var(--bg-cream);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .question-tag { font-weight: bold; color: var(--dark-blue); }
+        .answer-tag { font-weight: bold; color: var(--correct-green); }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.9em; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <h1 style="color: white; border-bottom: 1px solid rgba(255,255,255,0.3); margin-top: 0;">HKDSE Economics Tutorial</h1>
+        <span><strong>Topic (課題):</strong> Types of Business Ownership (企業擁有權類型)</span>
+        <span><strong>Difficulty (難度):</strong> ★★★☆☆</span>
+        <div style="margin-top: 15px;">
+            <span class="header-tag">Public Limited Company</span>
+            <span class="header-tag">Private Limited Company</span>
+            <span class="header-tag">Partnership</span>
+            <span class="header-tag">Profits Tax</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh-text">參閱以下有關在香港的甲廠商及乙廠商的資料。</p>
+        <p class="en-text">Refer to the following information about Firm A and Firm B in Hong Kong.</p>
+
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特徵 (Features)</th>
+                        <th>甲廠商 (Firm A)</th>
+                        <th>乙廠商 (Firm B)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>東主數目 (Number of owners)</td>
+                        <td>3</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>向公眾發行股票 (Issuing shares to the public)</td>
+                        <td>不可能 (Impossible)</td>
+                        <td>可能 (Possible)</td>
+                    </tr>
+                    <tr>
+                        <td>向公眾披露財務資料 (Disclosure of financial information to the public)</td>
+                        <td>不需要 (Not necessary)</td>
+                        <td>需要 (Necessary)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="zh-text">根據上述資料，我們可得出結論如下：</p>
+        <p class="en-text">Based on the above information, we can conclude that:</p>
+
+        <ol type="A" style="font-weight: 500; margin-bottom: 20px;">
+            <li>乙廠商籌集到的資金比甲廠商多。<br><span class="en-text">Firm B raises more capital than Firm A.</span></li>
+            <li>兩家廠商的東主在轉讓其擁有權時，均需獲得其他東主同意。<br><span class="en-text">Owners of both firms are required to obtain consent from other owners when transferring their ownership.</span></li>
+            <li>甲廠商可能比乙廠商享有較低的利得稅稅率。<br><span class="en-text">Firm A may enjoy a lower profits tax rate than Firm B.</span></li>
+            <li>乙廠商是獨立法人而甲廠商不是。<br><span class="en-text">Firm B is an independent legal entity while Firm A is not.</span></li>
+        </ol>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <h3 style="margin-top:0;">1. 判斷企業類型 (Identifying Business Types)</h3>
+        <p class="zh-text">根據香港的商業法規，不同類型的企業有不同的特徵：</p>
+        <p class="en-text">According to Hong Kong commercial laws, different business ownership types have distinct features:</p>
+        <ul>
+            <li><strong>公眾有限公司 (Public Limited Company):</strong> 可以向公眾發行股票集資，必須公開財務狀況。股票轉讓自由。<br>
+            <span class="en-text">Can issue shares to the public, must disclose financial status publicly. Shares are freely transferable.</span></li>
+            <li><strong>私人有限公司 (Private Limited Company):</strong> 股東人數為 1-50 人。不能向公眾發行股票，通常無需公開財務報表。轉讓股份需獲董事局/其他股東同意。是獨立法人。<br>
+            <span class="en-text">1-50 shareholders. Cannot issue shares to the public, usually not required to disclose financial statements. Transfer of shares requires consent. It is an independent legal entity.</span></li>
+            <li><strong>合夥 (Partnership):</strong> 東主（合夥人）人數通常為 2-20 人。不能發行股票，無需公開財務資料。轉讓擁有權需所有合夥人同意。不是獨立法人。<br>
+            <span class="en-text">Usually 2-20 partners. Cannot issue shares, no need to disclose financial information. Transfer of ownership requires all partners' consent. It is NOT an independent legal entity.</span></li>
+        </ul>
+
+        <h3>2. 香港利得稅 (Hong Kong Profits Tax)</h3>
+        <p class="zh-text">企業的利潤計算公式如下：</p>
+        <p class="en-text">The formula for a firm's profit is:</p>
+        <div class="math-block">
+            $$ \pi = TR - TC $$
+        </div>
+        <p class="zh-text">（其中 \( \pi \) 代表利潤，\( TR \) 代表總收入，\( TC \) 代表總成本。香港政府會對企業的利潤徵稅。）</p>
+        <p class="en-text">(Where \( \pi \) is profit, \( TR \) is total revenue, and \( TC \) is total cost. The HK government taxes this profit.)</p>
+        
+        <p class="zh-text">香港實行兩級制利得稅，並按「法團」與「非法團」區分：</p>
+        <p class="en-text">Hong Kong implements a two-tiered profits tax regime, differentiated by incorporated and unincorporated businesses:</p>
+        <ul>
+            <li><strong>法團 (Corporations, 即有限公司):</strong> 標準稅率較高（16.5%）。</li>
+            <li><strong>非法團 (Unincorporated, 即獨資/合夥):</strong> 標準稅率較低（15%）。</li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p style="font-size: 1.2em; font-weight: bold;">正確答案 Correct Option: <span style="color: var(--correct-green);">C</span></p>
+
+    <div class="analysis-item wrong">
+        <span class="status-badge bg-red">Distractor A</span>
+        <p class="zh-text"><strong>選項 A 錯誤：</strong> 雖然乙廠商（公眾有限公司）有向公眾集資的「能力」，但這並不代表它「實際上」籌集的資金一定比甲廠商多。甲廠商（例如一家大型私人有限公司或專業合夥）可能擁有多於乙廠商的資本。</p>
+        <p class="en-text"><strong>Option A is incorrect:</strong> Although Firm B (a public limited company) has the "ability" to raise capital from the public, it does not mean it "actually" raises more capital. Firm A (e.g., a massive private limited company or professional partnership) could theoretically have more capital than Firm B.</p>
+    </div>
+
+    <div class="analysis-item wrong">
+        <span class="status-badge bg-red">Distractor B</span>
+        <p class="zh-text"><strong>選項 B 錯誤：</strong> 乙廠商是公眾有限公司，其股票可以在股票市場上自由買賣，股東轉讓擁有權時 <strong>不需要</strong> 獲得其他股東的同意。</p>
+        <p class="en-text"><strong>Option B is incorrect:</strong> Firm B is a public limited company. Its shares can be traded freely on the stock market, so owners do <strong>not</strong> need consent from other owners to transfer their ownership.</p>
+    </div>
+
+    <div class="analysis-item correct">
+        <span class="status-badge bg-green">Correct C</span>
+        <p class="zh-text"><strong>選項 C 正確：</strong> 甲廠商有3名東主，不能公開發行股票且無需披露財務。它 <strong>可能 (may)</strong> 是一間「合夥企業」。如果是合夥企業（非法團業務），它適用的利得稅稅率（15%）就會低於乙廠商（作為法團的公眾有限公司，稅率為16.5%）。題目使用了「可能」一詞，因此這是一個合理的推論。</p>
+        <p class="en-text"><strong>Option C is correct:</strong> Firm A has 3 owners, cannot issue public shares, and has no public financial disclosure. It <strong>may</strong> be a "partnership". If it is a partnership (an unincorporated business), its applicable profits tax rate (15%) would be lower than Firm B's (a public limited company, which is a corporation taxed at 16.5%). Because the option uses the word "may", it is a logically sound conclusion.</p>
+    </div>
+
+    <div class="analysis-item wrong">
+        <span class="status-badge bg-red">Distractor D</span>
+        <p class="zh-text"><strong>選項 D 錯誤：</strong> 雖然甲廠商可能是合夥企業（不是獨立法人），但它也 <strong>可能</strong> 是一間「私人有限公司」（擁有3名股東，符合1-50人的限制，同樣不能公開招股及無需公開財務）。如果甲廠商是私人有限公司，它 <strong>就是</strong> 獨立法人。因此，我們不能絕對地「得出結論」甲廠商不是獨立法人。</p>
+        <p class="en-text"><strong>Option D is incorrect:</strong> While Firm A could be a partnership (not an independent legal entity), it could <strong>also</strong> be a "private limited company" (having 3 shareholders fits the 1-50 limit, cannot issue public shares, and does not need to publish financials). If Firm A is a private limited company, it <strong>IS</strong> an independent legal entity. Therefore, we cannot absolutely "conclude" that Firm A is not a legal entity.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>尋找「解題樞紐」(The Pivot Point)：</strong></p>
+        <p class="en-text">The key to solving this problem is precisely classifying the firms based on the table:</p>
+        <ul>
+            <li><span class="zh-text"><strong>乙廠商的確定性：</strong> 「可能發行股票」+「需要披露財務」 ➜ 100% 肯定是<strong>公眾有限公司</strong>。</span><br>
+            <span class="en-text"><strong>Certainty of Firm B:</strong> "Possible to issue shares" + "Disclosure necessary" ➜ 100% certainty it is a <strong>Public Limited Company</strong>.</span></li>
+            <li><span class="zh-text"><strong>甲廠商的模糊性：</strong> 「3名東主」+「不能發行股票」+「無需披露財務」 ➜ 可能是<strong>私人有限公司</strong> 或 <strong>合夥</strong>。</span><br>
+            <span class="en-text"><strong>Ambiguity of Firm A:</strong> "3 owners" + "Cannot issue shares" + "No disclosure" ➜ Could be a <strong>Private Limited Company</strong> OR a <strong>Partnership</strong>.</span></li>
+        </ul>
+        <p class="zh-text">因為甲廠商的身份不確定，任何帶有絕對語氣的選項（如 D 的「甲廠商不是」）都容易出錯。而帶有「可能」語氣的選項（如 C 的「可能享有」）則是極佳的候選答案。</p>
+        <p class="en-text">Because Firm A's identity is ambiguous, any option with absolute phrasing (like D's "Firm A is not") is likely wrong. Options with probabilistic phrasing (like C's "may enjoy") are excellent candidates.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p class="zh-text"><strong>🚨 陷阱一：忽略了「私人有限公司」的可能性</strong></p>
+        <p class="en-text"><strong>Trap 1: Ignoring the possibility of a Private Limited Company</strong></p>
+        <p class="zh-text">很多同學看到「無需向公眾披露財務資料」，就立刻認定甲廠商是合夥企業，從而誤選 D。記住，私人有限公司同樣符合甲廠商的所有條件！</p>
+        <p class="en-text">Many students see "disclosure not necessary" and immediately assume Firm A is a partnership, leading them to wrongly choose D. Remember, a Private Limited Company perfectly matches all of Firm A's criteria too!</p>
+
+        <hr style="border: 0; border-top: 1px solid #fecdd3; margin: 15px 0;">
+
+        <p class="zh-text"><strong>🚨 陷阱二：混淆「融資能力」與「實際資金」</strong></p>
+        <p class="en-text"><strong>Trap 2: Confusing "Financing Capability" with "Actual Capital"</strong></p>
+        <p class="zh-text">公眾有限公司（乙廠商）有最廣的融資渠道，但不代表它現時戶口裡的錢一定比一間富有的私人企業（甲廠商）多。經濟學考題中，能力 (Capability) 不等於 實際規模 (Actual scale)。</p>
+        <p class="en-text">Public limited companies (Firm B) have the broadest financing channels, but that doesn't mean their current bank balance is definitely larger than a wealthy private firm (Firm A). In Econ MCQs, Capability ≠ Actual Scale.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p><span class="question-tag">Q1: 題目表格裡寫著「東主」(Owners)，這不是代表甲廠商一定是合夥或者獨資嗎？因為有限公司應該叫「股東」(Shareholders) 啊？</span><br>
+        <span class="en-text en-subtitle">Q1: The table uses the word "Owners". Doesn't this imply Firm A must be a partnership/sole proprietorship, since limited companies use the term "Shareholders"?</span></p>
+        
+        <p><span class="answer-tag">A1: </span><span class="zh-text">這是一個很好的觀察，但在考評局 (HKEAA) 的題目設定中，「東主」有時會被當作一個統稱 (umbrella term) 來概括所有企業的擁有者。你可以看到，表格中乙廠商也被稱為有 50 名「東主」，但乙廠商肯定是公眾有限公司（因為它可以發行股票）。既然乙廠商的股東可以被稱為「東主」，甲廠商的「東主」自然也可能是股東。</span><br>
+        <span class="en-text">This is a sharp observation, but in HKEAA exams, "owners" is sometimes used as an umbrella term for all business proprietors. Notice that Firm B is also listed as having 50 "owners", yet Firm B is definitively a public limited company (as it issues shares). Since Firm B's shareholders can be called "owners", Firm A's "owners" could easily be shareholders too.</span></p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>💡 語氣排除法 (Tone Elimination Method)</strong></p>
+        <p class="en-text">When information is incomplete, watch out for absolute words.</p>
+        <p class="zh-text">在處理這類「根據資料，我們可得出結論... (Based on the information, we can conclude...)」的題目時，如果題目給的資料不足以 100% 確定某個企業的具體類型（如甲廠商），那麼包含 <strong>絕對字眼</strong> 的選項通常是錯的。包含 <strong>可能性字眼</strong>（例如「可能」、「未必」）的選項，往往為了包容未知情況，而成為正確答案。</p>
+        <ul style="margin-top: 10px;">
+            <li>選項 B：「...<strong>均需</strong>獲得...」 (<strong>required</strong> to...) ❌ 太絕對</li>
+            <li>選項 D：「...<strong>是</strong>...而...<strong>不是</strong>。」 (<strong>is</strong>... while... <strong>is not</strong>) ❌ 太絕對</li>
+            <li>選項 C：「甲廠商<strong>可能</strong>...」 (Firm A <strong>may</strong>...) ✅ 留有餘地，合乎邏輯</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

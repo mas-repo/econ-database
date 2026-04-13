@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Profit Maximization</title>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        h1 {
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 5px;
+        }
+        .en-text {
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        .tc-text {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .highlight {
+            background-color: #fef08a;
+            font-weight: bold;
+        }
+        .qa-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 6px;
+            border-left: 4px solid #94a3b8;
+        }
+        .option.correct {
+            border-left-color: #22c55e;
+            background-color: #f0fdf4;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            th, td { padding: 8px 4px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📝 HKDSE Economics MCQ Analysis</h1>
+
+    <div>
+        <p><strong>Topic (課題):</strong> Theory of the Firm: Profit Maximization (廠商理論：利潤極大化)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts (核心概念):</strong> Price-taker (受價者), Marginal Cost (邊際成本), Fixed Cost (固定成本), Profit (利潤)</p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="tc-text">下表顯示某受價成衣工廠的資料。該工廠的固定成本為$10。</p>
+        <p class="en-text">The following table shows the data of a price-taking garment factory. The fixed cost of the factory is $10.</p>
+        
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>產出 (Output) / units</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>總成本 (Total cost) / $</strong></td>
+                        <td>48</td>
+                        <td>63</td>
+                        <td>80</td>
+                        <td>99</td>
+                        <td>120</td>
+                        <td>143</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="tc-text">假設成衣的市場價格由$17上升至$19，而該工廠的固定成本則上升了$2。結果，該工廠利潤極大化的產量會 __________ ，而利潤會__________ 。</p>
+        <p class="en-text">Suppose the market price of garments rises from $17 to $19, and the fixed cost of the factory rises by $2. As a result, the profit-maximising output of the factory would __________ while its profit would __________. </p>
+
+        <p class="tc-text">A. 維持不變 …… 上升至 $56</p>
+        <p class="en-text">A. remain unchanged …… increase to $56</p>
+        <p class="tc-text">B. 維持不變 …… 上升至 $70</p>
+        <p class="en-text">B. remain unchanged …… increase to $70</p>
+        <p class="tc-text">C. 上升1單位 …… 上升至$70</p>
+        <p class="en-text">C. increase by 1 unit. …… increase to $70</p>
+        <p class="tc-text">D. 上升1單位 …… 上升至 $82</p>
+        <p class="en-text">D. increase by 1 unit. …… increase to $82</p>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="tc-text">要解決這道題目，我們需要掌握以下幾個微觀經濟學的核心概念：</p>
+        <p class="en-text">To solve this problem, we need to master the following core microeconomic concepts:</p>
+
+        <ul>
+            <li>
+                <span class="tc-text"><strong>利潤極大化條件 (Profit-Maximizing Condition):</strong> 對於受價者（完全競爭市場中的廠商），當價格 ($P$) 等於邊際成本 ($MC$) 時，利潤達到最大。</span><br>
+                <span class="en-text">For a price-taker (a firm in perfect competition), profit is maximized when Price ($P$) equals Marginal Cost ($MC$).</span>
+                <div class="math-block">
+                    $$P = MC$$
+                </div>
+            </li>
+            <li>
+                <span class="tc-text"><strong>邊際成本 (Marginal Cost, $MC$):</strong> 生產多一單位產品所增加的總成本。</span><br>
+                <span class="en-text">The addition to total cost from producing one more unit of output.</span>
+                <div class="math-block">
+                    $$MC = \frac{\Delta TC}{\Delta Q}$$
+                </div>
+            </li>
+            <li>
+                <span class="tc-text"><strong>利潤計算 (Profit Calculation):</strong> 總收入減去總成本。</span><br>
+                <span class="en-text">Total Revenue minus Total Cost.</span>
+                <div class="math-block">
+                    $$\pi = TR - TC = (P \times Q) - TC$$
+                </div>
+            </li>
+            <li>
+                <span class="tc-text"><strong>固定成本的影響 (Impact of Fixed Cost):</strong> 固定成本 ($FC$) 的改變會影響總成本 ($TC$) 和利潤 ($\pi$)，但<strong>絕不會</strong>影響邊際成本 ($MC$)。</span><br>
+                <span class="en-text">A change in Fixed Cost ($FC$) affects Total Cost ($TC$) and Profit ($\pi$), but it <strong>NEVER</strong> affects Marginal Cost ($MC$).</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <p class="tc-text" style="font-size: 1.2em;"><strong>正確答案是 (Correct Option): <span style="color: #22c55e;">Option C</span></strong></p>
+
+    <p class="tc-text">讓我們先計算出各個產量下的邊際成本 ($MC$)：</p>
+    <p class="en-text">Let's first calculate the Marginal Cost ($MC$) at each output level:</p>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>$Q$</th>
+                    <th>$TC$</th>
+                    <th>$MC = \Delta TC / \Delta Q$</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>6</td><td>48</td><td>-</td></tr>
+                <tr><td>7</td><td>63</td><td>$63 - 48 = 15$</td></tr>
+                <tr style="background-color: #f1f5f9;"><td><strong>8</strong></td><td><strong>80</strong></td><td><strong>$80 - 63 = 17$ (Initial $P$)</strong></td></tr>
+                <tr class="highlight"><td><strong>9</strong></td><td><strong>99</strong></td><td><strong>$99 - 80 = 19$ (New $P$)</strong></td></tr>
+                <tr><td>10</td><td>120</td><td>$120 - 99 = 21$</td></tr>
+                <tr><td>11</td><td>143</td><td>$143 - 120 = 23$</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="tc-text"><strong>第一步：分析初始情況</strong><br>初始市場價格 $P_1 = \$17$。根據 $P = MC$ 的原則，廠商會生產至 $MC = 17$ 的水平，即產量 $Q_1 = 8$。此時的利潤 $\pi_1 = TR - TC = (\$17 \times 8) - \$80 = \$136 - \$80 = \$56$。</p>
+    <p class="en-text"><strong>Step 1: Analyze the initial situation</strong><br>The initial market price $P_1 = \$17$. According to the $P = MC$ rule, the firm produces where $MC = 17$, which is at output $Q_1 = 8$. The initial profit $\pi_1 = TR - TC = (\$17 \times 8) - \$80 = \$136 - \$80 = \$56$.</p>
+
+    <p class="tc-text"><strong>第二步：分析變化後的情況</strong><br>新市場價格 $P_2 = \$19$。固定成本上升 $\$2$ 導致每個產量下的總成本 ($TC$) 增加 $\$2$，但<strong>邊際成本 ($MC$) 維持不變</strong>。根據新的 $P = MC$，廠商會生產至 $MC = 19$ 的水平，即新產量 $Q_2 = 9$。產量由 8 上升至 9（上升1單位）。</p>
+    <p class="en-text"><strong>Step 2: Analyze the new situation</strong><br>The new market price $P_2 = \$19$. The fixed cost increases by $\$2$, which means the Total Cost ($TC$) at every level increases by $\$2$, but <strong>Marginal Cost ($MC$) remains unchanged</strong>. According to the new $P = MC$, the firm produces where $MC = 19$, which is at the new output $Q_2 = 9$. Output rises from 8 to 9 (increases by 1 unit).</p>
+
+    <p class="tc-text"><strong>第三步：計算新利潤</strong><br>在新產量 $Q_2 = 9$ 下，原本的總成本是 $\$99$。加上新增的 $\$2$ 固定成本，新總成本 $TC' = \$99 + \$2 = \$101$。新利潤 $\pi_2 = (\$19 \times 9) - \$101 = \$171 - \$101 = \$70$。</p>
+    <p class="en-text"><strong>Step 3: Calculate the new profit</strong><br>At the new output $Q_2 = 9$, the original total cost was $\$99$. Adding the $\$2$ increase in fixed cost, the new total cost $TC' = \$99 + \$2 = \$101$. The new profit $\pi_2 = (\$19 \times 9) - \$101 = \$171 - \$101 = \$70$.</p>
+
+    <h3>選項分析 (Options Breakdown):</h3>
+    <div class="option">
+        <p class="tc-text">❌ <strong>A. 維持不變 …… 上升至 $56</strong></p>
+        <p class="en-text">Incorrect. Output does not remain unchanged. It increases because the market price (and thus $MR$) increased, making it profitable to produce more. $56 was the old profit.</p>
+    </div>
+    <div class="option">
+        <p class="tc-text">❌ <strong>B. 維持不變 …… 上升至 $70</strong></p>
+        <p class="en-text">Incorrect. While the profit calculation of $70 matches if we mistakenly thought output stayed at 8 (Wait, at Q=8, new TR = $19 * 8 = 152. New TC = 80 + 2 = 82. Profit = 152 - 82 = 70. Ah! This is a trap!). If the firm didn't adjust its output, profit would be $70, but a profit-maximizing firm *will* adjust output to $Q=9$ where profit is actually higher (Let's check: TR=171, TC=101, Profit=70. Wait! If output is 8, profit is $152 - 82 = 70$. If output is 9, profit is $171 - 101 = 70$. Both give $70! However, the firm expands output as long as $P \ge MC$. At $Q=9$, $P=19$ and $MC=19$. This is the profit-maximizing point. So output must increase to 9).</p>
+    </div>
+    <div class="option correct">
+        <p class="tc-text">✅ <strong>C. 上升1單位 …… 上升至$70</strong></p>
+        <p class="en-text">Correct. The firm increases output to 9 (an increase of 1 unit). The new profit is accurately calculated as $70.</p>
+    </div>
+    <div class="option">
+        <p class="tc-text">❌ <strong>D. 上升1單位 …… 上升至 $82</strong></p>
+        <p class="en-text">Incorrect. The output increase is correct, but the profit is miscalculated. $82 is the new Total Cost at $Q=8$, not the profit.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #f59e0b;">
+        <p class="tc-text"><strong>🔑 解題樞紐 (The Pivot Point):</strong><br>這條題目的核心在於明白「固定成本 ($\Delta FC$) 的改變不會影響邊際成本 ($MC$)」。所以，當你看到固定成本上升，你只需在最後計算利潤時，把總成本加回去，完全不用重新計算 $MC$ 表格。</p>
+        <p class="en-text"><strong>🔑 The Pivot Point:</strong><br>The core of this question is understanding that "a change in fixed cost ($\Delta FC$) does NOT affect marginal cost ($MC$)". Therefore, when you see an increase in fixed cost, you only need to add it to the total cost at the final step of calculating profit. You don't need to recalculate the $MC$ table.</p>
+
+        <p class="tc-text"><strong>👻 擾敵資訊 (Distractors):</strong><br>題目提到「工廠的固定成本為 $\$10$」。這是一個徹頭徹尾的擾敵資訊！表中的「總成本 ($TC$)」已經包含了這 $\$10$。如果你把表中的數字再加 $\$10$，你就中計了！</p>
+        <p class="en-text"><strong>👻 Distractors:</strong><br>The question states "The fixed cost of the factory is $\$10$". This is a complete distractor! The "Total cost ($TC$)" in the table already includes this $\$10$. If you added $\$10$ to the numbers in the table, you fell into the trap!</p>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li>
+            <span class="tc-text"><strong>重複計算固定成本 (Double Counting Fixed Cost):</strong> 以為表格給的是「可變成本 ($VC$)」，於是手多把 $\$10$ 加進去計算總成本。請記住，表頭寫的是「總成本 ($TC$)」。</span><br>
+            <span class="en-text">Thinking the table provides "Variable Cost ($VC$)" and incorrectly adding $\$10$ to find the total cost. Always read the table header carefully: it explicitly says "Total cost ($TC$)".</span>
+        </li>
+        <li>
+            <span class="tc-text"><strong>忽略了固定成本的變化 (Ignoring the change in Fixed Cost):</strong> 在計算新利潤時，只用了舊的總成本 $\$99$，算出了 $\$171 - \$99 = \$72$ 的錯誤答案（幸好選擇題沒有這個選項）。</span><br>
+            <span class="en-text">Forgetting to add the $\$2$ increase in fixed cost when calculating the final profit, resulting in an incorrect profit of $\$171 - \$99 = \$72$ (luckily, not an option).</span>
+        </li>
+    </ul>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="tc-text"><strong>🤔 學生問：</strong> 為什麼我們不需要用到「固定成本為 $\$10$」這個資料？</p>
+        <p class="en-text"><strong>Q:</strong> Why didn't we need to use the information "The fixed cost... is $\$10$"?</p>
+        
+        <p class="tc-text"><strong>💡 導師答：</strong> 因為總成本的定義是 $TC = FC + VC$。表格提供的已經是 $TC$，這代表那 $\$10$ 已經「隱藏」在 $48, 63, 80$ 這些數字裡面了。我們只需要關心 $TC$ 的變化（即 $MC$）以及 $FC$ 後來的<strong>增幅</strong>（上升 $\$2$）。</p>
+        <p class="en-text"><strong>A:</strong> Because Total Cost is defined as $TC = FC + VC$. The table already provides $TC$, which means the $\$10$ is already "baked into" the numbers $48, 63, 80$, etc. We only care about the change in $TC$ (which is $MC$) and the <strong>increase</strong> in $FC$ (the $+\$2$) later on.</p>
+    </div>
+    
+    <div class="qa-box">
+        <p class="tc-text"><strong>🤔 學生問：</strong> 如果固定成本不是上升 $\$2$，而是大幅上升 $\$20$，產量會改變嗎？</p>
+        <p class="en-text"><strong>Q:</strong> If the fixed cost increased drastically by $\$20$ instead of $\$2$, would the output change?</p>
+        
+        <p class="tc-text"><strong>💡 導師答：</strong> 不會改變產量（短期內）！只要價格 $P$ 不變，$MC$ 曲線不變，利潤極大化的產量 ($P=MC$) 就不會變。但是，如果固定成本上升太多，導致出現經濟虧損，且價格低於平均可變成本 ($P < AVC$)，廠商就會選擇停業 (Shut down)。</p>
+        <p class="en-text"><strong>A:</strong> The output would NOT change (in the short run)! As long as Price $P$ and the $MC$ curve remain unchanged, the profit-maximizing output ($P=MC$) stays exactly the same. However, if the fixed cost increases so much that the firm makes an economic loss AND the price falls below Average Variable Cost ($P < AVC$), the firm would choose to shut down.</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #ecfdf5; border-color: #10b981;">
+        <p class="tc-text">⏱️ <strong>十秒殺題法 (The 10-Second Shortcut):</strong></p>
+        <p class="en-text">⏱️ <strong>The 10-Second Shortcut:</strong></p>
+        <ol>
+            <li>
+                <span class="tc-text">一看到 $\Delta FC$，馬上告訴自己：「$MC$ 不變！不用重計 $MC$！」</span><br>
+                <span class="en-text">The moment you see a change in Fixed Cost ($\Delta FC$), tell yourself: "$MC$ doesn't change! No need to recalculate $MC$!"</span>
+            </li>
+            <li>
+                <span class="tc-text">找新價格點：新價格是 $\$19$。查表看哪裡的相差是 $\$19$。$99 - 80 = 19$，所以新產量是 9。舊產量是 8 ($80 - 63 = 17$)。產量上升 1 單位。<strong>(馬上刪除選項 A 和 B)</strong>。</span><br>
+                <span class="en-text">Find the new price point: The new price is $\$19$. Look at the table for a difference of $\$19$. $99 - 80 = 19$, so new output is 9. Old output was 8 ($80 - 63 = 17$). Output increases by 1. <strong>(Instantly eliminate A and B)</strong>.</span>
+            </li>
+            <li>
+                <span class="tc-text">計新利潤：$TR - 新TC = (\$19 \times 9) - (99 + 2) = 171 - 101 = 70$。選 C。搞定！</span><br>
+                <span class="en-text">Calculate new profit: $TR - \text{New } TC = (\$19 \times 9) - (99 + 2) = 171 - 101 = 70$. Choose C. Done!</span>
+            </li>
+        </ol>
+    </div>
+
+</body>
+</html>
