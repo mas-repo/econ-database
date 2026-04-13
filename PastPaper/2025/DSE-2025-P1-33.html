@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Market</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #f0f9ff;
+            --accent-color: #0ea5e9;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e0e7ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "📘";
+            margin-right: 8px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.5em;
+            font-style: italic;
+        }
+        .header-info {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+        .header-info span {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: var(--bg-light);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: var(--success-color);
+            font-weight: bold;
+            padding: 10px;
+            background: #d1fae5;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .analysis-step {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--border-color);
+        }
+        .qa-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #d97706;
+        }
+        .trick-box {
+            background: #fef2f2;
+            border-left: 5px solid var(--danger-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info span {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Masterclass 經濟學大師班</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <span>📚 Topic (課題): Money Market (貨幣市場)</span>
+        <span>⭐ Difficulty (難度): ★★★☆☆</span><br>
+        <span>🔑 Key Concepts (關鍵概念): Money Demand (貨幣需求), Money Supply (貨幣供應), Open Market Operations (公開市場操作)</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p>下圖顯示某經濟的貨幣需求曲線和貨幣供應曲線。原初的均衡點是E。</p>
+        <p>假設該經濟越來越多人喜歡使用電子錢包支付日常開支。同時，該經濟的中央銀行在公開市場進行一項政府債券購入行動。新的均衡點會在上圖的___________點。</p>
+        
+        <div class="bilingual-en">
+            <p>The diagram below shows the money demand and money supply curves of an economy. The original equilibrium point is at E.</p>
+            <p>Suppose more and more people in the economy like to make payments for daily expenses using e-wallets. At the same time, the central bank of the economy performs an open market purchase of government bonds. The new equilibrium point in the above diagram will be at point ___________.</p>
+        </div>
+
+        <ul class="options">
+            <li>A. A</li>
+            <li>B. B</li>
+            <li>C. C</li>
+            <li>D. D</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>1. Money Demand (貨幣需求 - \(M_d\))</h3>
+        <p>貨幣需求是指人們願意以流動形式（如現金）持有財富的數量。當支付科技進步（例如普及使用信用卡、電子錢包 e-wallets），人們日常交易所需的現金減少，導致<strong>交易性貨幣需求 (Transactions demand for money)</strong> 下降。這會使貨幣需求曲線向左移。</p>
+        <p class="bilingual-en">Money demand refers to the amount of wealth people want to hold in liquid form (like cash). When payment technology advances (e.g., widespread use of credit cards, e-wallets), people need less cash for daily transactions, leading to a decrease in the <strong>transactions demand for money</strong>. This shifts the money demand curve to the left.</p>
+
+        <h3>2. Money Supply (貨幣供應 - \(M_s\))</h3>
+        <p>貨幣供應由中央銀行控制。當中央銀行在公開市場<strong>購入 (Purchase)</strong> 政府債券時，央行會將資金注入銀行體系，增加貨幣基礎 (Monetary base)，透過存款創造過程，最終令貨幣供應增加。這會使貨幣供應曲線向右移。</p>
+        <p class="bilingual-en">Money supply is controlled by the central bank. When the central bank performs an <strong>open market purchase</strong> of government bonds, it injects funds into the banking system, increasing the monetary base. Through the deposit creation process, the money supply ultimately increases. This shifts the money supply curve to the right.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">Correct Option: B</div>
+
+    <div class="analysis-step">
+        <strong>Event 1: E-wallets (電子錢包)</strong>
+        <p>越來越多人使用電子錢包，減少了對實體貨幣的依賴，貨幣需求下降。因此，貨幣需求曲線由 \(M_{d0}\) 向左移至 \(M_{d1}\)。</p>
+        <p class="bilingual-en">More people using e-wallets reduces the reliance on physical money, decreasing the demand for money. Therefore, the money demand curve shifts to the left from \(M_{d0}\) to \(M_{d1}\).</p>
+    </div>
+
+    <div class="analysis-step">
+        <strong>Event 2: Open Market Purchase (公開市場購入債券)</strong>
+        <p>中央銀行購入債券會向市場注入資金，導致貨幣供應增加。因此，貨幣供應曲線由 \(M_{s0}\) 向右移至 \(M_{s2}\)。</p>
+        <p class="bilingual-en">The central bank's purchase of bonds injects money into the market, leading to an increase in the money supply. Therefore, the money supply curve shifts to the right from \(M_{s0}\) to \(M_{s2}\).</p>
+    </div>
+
+    <div class="analysis-step">
+        <strong>Conclusion (結論)</strong>
+        <p>新的均衡點是新的貨幣需求曲線 \(M_{d1}\) 與新的貨幣供應曲線 \(M_{s2}\) 的相交點。在地圖上，這兩條曲線相交於<strong>點 B</strong>。因此，答案是 B。</p>
+        <p class="bilingual-en">The new equilibrium point is the intersection of the new money demand curve \(M_{d1}\) and the new money supply curve \(M_{s2}\). On the graph, these two curves intersect at <strong>Point B</strong>. Therefore, the answer is B.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <p>處理這類「雙重移動」(Double Shift) 的題目，最重要是將題目拆解為兩個獨立事件，並逐一找出它們對曲線的影響：</p>
+    <p class="bilingual-en">When tackling "Double Shift" questions, the most important thing is to break the question down into two independent events and find their individual effects on the curves:</p>
+    <ul>
+        <li><strong>Pivot Point 1:</strong> "e-wallets" \(\rightarrow\) Less cash needed \(\rightarrow\) \(M_d \downarrow\) (Shift Left to \(M_{d1}\)).</li>
+        <li><strong>Pivot Point 2:</strong> "purchase of government bonds" \(\rightarrow\) Inject money \(\rightarrow\) \(M_s \uparrow\) (Shift Right to \(M_{s2}\)).</li>
+        <li><strong>Final Step:</strong> Trace the new curves \(M_{d1}\) and \(M_{s2}\) with your finger or pen to find where they cross.</li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trick-box">
+        <p><strong>Trap 1: Confusing Purchase and Sale (混淆買入與賣出)</strong><br>
+        學生常忘記「購入債券」(Purchase) 是將錢交給公眾（放水），而「出售債券」(Sale) 是將公眾的錢收回央行（收水）。記住：央行買入資產，市場就會多出貨幣！</p>
+        <p class="bilingual-en">Students often forget that "Purchasing bonds" means giving money to the public (injecting liquidity), while "Selling bonds" means taking money back from the public (draining liquidity). Remember: When the central bank buys assets, the market gets more money!</p>
+        
+        <p><strong>Trap 2: Misinterpreting E-wallets (誤解電子錢包的影響)</strong><br>
+        有些學生以為電子錢包代表「錢多了」，從而錯誤判斷貨幣供應增加。在經濟學中，電子錢包只是一種支付媒介的改變，它改變的是我們<strong>持有現金的意欲 (Demand)</strong>，而不是央行發行的貨幣總量。</p>
+        <p class="bilingual-en">Some students think e-wallets mean "more money," mistakenly judging it as an increase in money supply. In economics, e-wallets are just a change in the medium of payment; they change our <strong>desire to hold cash (Demand)</strong>, not the total amount of money issued by the central bank.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: Will the nominal interest rate always decrease in this scenario? (在這種情況下，名義利率一定會下降嗎？)</p>
+        <p><strong>A:</strong> Yes! (是的！) <br>
+        貨幣需求下降（\(M_d\) 左移）會令利率下降；同時，貨幣供應增加（\(M_s\) 右移）也會令利率下降。由於兩種力量都將利率推向同一個方向，所以名義利率 (Nominal interest rate) 必定會下降。你可以從圖中看到，點 B 的利率水平明顯低於原來的點 E。</p>
+        <p class="bilingual-en">A decrease in money demand (leftward shift of \(M_d\)) lowers the interest rate; simultaneously, an increase in money supply (rightward shift of \(M_s\)) also lowers the interest rate. Since both forces push the interest rate in the same direction, the nominal interest rate must definitely decrease. You can see from the graph that the interest rate level at point B is clearly lower than the original point E.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p><strong>The "Directional Arrow" Method (方向箭嘴法):</strong></p>
+    <p>在考試時為了節省時間，可以直接在原均衡點 E 畫箭嘴：</p>
+    <p class="bilingual-en">To save time during the exam, you can draw arrows directly from the original equilibrium point E:</p>
+    <ol>
+        <li>E-wallets \(\rightarrow\) \(M_d\) decreases \(\rightarrow\) Move <strong>DOWN/LEFT</strong> along the \(M_d\) spectrum.</li>
+        <li>Buy bonds \(\rightarrow\) \(M_s\) increases \(\rightarrow\) Move <strong>RIGHT</strong> along the \(M_s\) spectrum.</li>
+        <li>From point E, look for the point that is both "Below/Left of the original \(M_d\)" AND "Right of the original \(M_s\)". Point B is the only logical answer!</li>
+    </ol>
+
+</div>
+
+</body>
+</html>
