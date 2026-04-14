@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Value Added Approach</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Dark blue */
+            --secondary-color: #0ea5e9; /* Light blue */
+            --bg-color: #ffffff;
+            --text-color: #334155;
+            --box-bg-light: #f0f9ff;
+            --box-bg-math: #f8fafc;
+            --alert-color: #dc2626;
+            --success-color: #16a34a;
+        }
+
+        body {
+            font-family: 'Noto Sans HK', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .en-text {
+            color: #475569;
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Specialized Boxes */
+        .header-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .header-box span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-light);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-math);
+            padding: 15px;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .analysis-box {
+            margin-bottom: 20px;
+        }
+
+        .option {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .option.correct {
+            border-left-color: var(--success-color);
+            background-color: #f0fdf4;
+        }
+        
+        .option.incorrect {
+            border-left-color: var(--alert-color);
+            background-color: #fef2f2;
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #fbbf24;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--alert-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-box">
+        <span><strong>📚 Topic (課題):</strong> National Income Accounting - Value Added Approach (國民收入會計 - 增值法)</span>
+        <span><strong>⭐ Difficulty (難度):</strong> 3 / 5 Stars</span>
+        <span><strong>🔑 Key Concepts (核心概念):</strong> <span class="tag">GDP</span> <span class="tag">Value Added 增值</span> <span class="tag">Intermediate Goods 中間物品</span></span>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>[繁體中文]</strong><br>
+        下圖顯示某經濟中手錶的生產鏈。<br>
+        對該經濟以市價計算的本地生產總值而言，本地手錶生產商的貢獻是 __________。</p>
+        <p>A. $220<br>
+        B. $240<br>
+        C. $350<br>
+        D. $400</p>
+        
+        <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
+        
+        <p><strong>[English]</strong><br>
+        The following diagram shows a production chain of watches in an economy.<br>
+        The contribution of the local watch manufacturers to the economy’s GDP at market prices is __________.</p>
+        <p>A. $220<br>
+        B. $240<br>
+        C. $350<br>
+        D. $400</p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>增值法 (Value Added Approach)</strong> 是一種計算本地生產總值 (GDP) 的方法。一個生產單位的「貢獻」相等於其創造的<strong>增值 (Value Added)</strong>。為了避免重複計算 (Double Counting)，我們必須從總產值中減去所有中間耗用的價值。</p>
+        <p class="en-text">The <strong>Value Added Approach</strong> is a method used to calculate GDP. The "contribution" of a production unit equals the <strong>Value Added</strong> it creates. To avoid double counting, we must deduct the value of all intermediate consumption from the gross value of output.</p>
+        
+        <div class="math-block">
+            $$ \text{Value Added} = \text{Value of Output} - \text{Value of Intermediate Consumption} $$
+            $$ \text{增值} = \text{總產值} - \text{中間耗用價值} $$
+        </div>
+
+        <p><strong>定義 (Definitions):</strong></p>
+        <ul>
+            <li><strong>總產值 (Value of Output):</strong> 廠商出售其產品的總收益 (包括本地銷售及出口)。<br>
+            <span class="en-text">The total revenue from selling products (including local sales and exports).</span></li>
+            <li><strong>中間耗用 (Intermediate Consumption):</strong> 廠商在生產過程中消耗掉的物品或服務（如原材料），不論是本地採購還是進口。<br>
+            <span class="en-text">Goods or services consumed during the production process (e.g., raw materials), regardless of whether they are purchased locally or imported.</span></li>
+        </ul>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <p>正確答案是 (Correct Option): <strong><span style="color:var(--success-color); font-size:1.2em;">A. $220</span></strong></p>
+
+        <div class="option correct">
+            <p><strong>✔ Option A ($220): 正確 (Correct)</strong></p>
+            <p>本地手錶生產商的總產值（即向外國和本地零售商銷售的總和）為 \( \$150 + \$120 = \$270 \)。其需要減去的中間耗用（包括本地和進口原料）為 \( \$30 + \$20 = \$50 \)。因此，增值 = \( \$270 - \$50 = \$220 \)。</p>
+            <p class="en-text">The gross output of the local watch manufacturers (total sales to foreign consumers and local retailers) is \( \$150 + \$120 = \$270 \). The intermediate consumption to be deducted (both imported and local materials) is \( \$30 + \$20 = \$50 \). Therefore, Value Added = \( \$270 - \$50 = \$220 \).</p>
+        </div>
+
+        <div class="option incorrect">
+            <p><strong>✘ Option B ($240): 錯誤 (Incorrect)</strong></p>
+            <p>這個錯誤選項是因為考生只扣減了「進口原料」(\$30)，而忘記了「本地原料」(\$20) 同樣是生產商的中間耗用，也必須扣除以避免重複計算（本地原料的價值應計算在本地原料供應商的貢獻中）。</p>
+            <p class="en-text">This incorrect option arises if a student only deducts "imported materials" ($30) and forgets that "local materials" ($20) are also intermediate consumption for the manufacturer and must be deducted to avoid double counting (the value of local materials is credited to the local material suppliers).</p>
+        </div>
+
+        <div class="option incorrect">
+            <p><strong>✘ Option C ($350): 錯誤 (Incorrect)</strong></p>
+            <p>這是一個混淆了加減法的隨機錯誤。考生可能錯誤地把最終消費和出口相加，再減去某些數值，或者把某些中間產值錯誤地加進去，完全偏離了增值法的公式。</p>
+            <p class="en-text">This is a random calculation error involving mixed up addition and subtraction. A student might have wrongly added final consumption and exports, or incorrectly added intermediate values instead of subtracting them, completely deviating from the Value Added formula.</p>
+        </div>
+
+        <div class="option incorrect">
+            <p><strong>✘ Option D ($400): 錯誤 (Incorrect)</strong></p>
+            <p>這是<strong>整個生產鏈</strong>（整個經濟）對本地生產總值的總貢獻，而不是「本地手錶生產商」單一環節的貢獻。若用支出計算法 (Expenditure Approach) 計算整體 GDP：私人消費 (C) + 出口 (X) - 進口 (M) = \( \$280 + \$150 - \$30 = \$400 \)。</p>
+            <p class="en-text">This is the total contribution of the <strong>entire production chain</strong> (the whole economy) to the GDP, NOT the contribution of the "local watch manufacturers" alone. Using the Expenditure Approach for total GDP: Private Consumption (C) + Exports (X) - Imports (M) = \( \$280 + \$150 - \$30 = \$400 \).</p>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div>
+        <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+        題目的關鍵字是<strong>「本地手錶生產商的貢獻」</strong>(contribution of the local watch manufacturers)。這意味著我們不需要理會整個經濟體，只需要將目光鎖定在流程圖中間的那個方塊（本地手錶生產商）。</p>
+        <p class="en-text">The key phrase is <strong>"contribution of the local watch manufacturers"</strong>. This means we should ignore the rest of the economy and strictly focus our attention on the specific box in the middle of the flowchart (Local watch manufacturers).</p>
+
+        <p><strong>有用資訊 vs 干擾資訊 (Relevant vs Irrelevant Info):</strong></p>
+        <ul>
+            <li><strong>有用 (Relevant):</strong> 流入生產商的箭頭（成本：$30, $20）和流出生產商的箭頭（產值：$150, $120）。</li>
+            <li><strong>干擾 (Irrelevant - Distractors):</strong> 本地消費者支付的 $280（包括 $50 稅款）。這是零售商 (Retailer) 階段發生的事，與生產商 (Manufacturer) 的增值無關！</li>
+            <li class="en-text"><strong>Relevant:</strong> Arrows flowing INTO the manufacturer (costs: $30, $20) and arrows flowing OUT (output: $150, $120).</li>
+            <li class="en-text"><strong>Irrelevant:</strong> The $280 paid by local consumers (inclusive of $50 tax). This happens at the Retailer stage and has nothing to do with the Manufacturer's value added!</li>
+        </ul>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱 1：沒有分清「廠商」與「整體經濟」</strong><br>
+        很多同學一看到這種流程圖，就習慣性地計算整個經濟的 GDP (選項 D)。請務必圈出題目問的是「某個廠商」還是「整體」。</p>
+        <p class="en-text"><strong>Trap 1: Confusing "a firm" with "the whole economy".</strong> Many students instinctively calculate the total GDP of the economy (Option D) upon seeing such a flowchart. Always circle whether the question asks for a "specific firm" or "the whole economy".</p>
+
+        <p><strong>陷阱 2：誤以為「本地」原料不用扣除</strong><br>
+        計算單一廠商增值時，<strong>所有</strong>從其他廠商買入的原料（無論本地還是進口）都是中間耗用，都必須扣除！否則就會出現重複計算 (Double Counting)。</p>
+        <p class="en-text"><strong>Trap 2: Assuming "local" materials are not deducted.</strong> When calculating a single firm's value added, <strong>ALL</strong> materials purchased from other firms (whether local or imported) are intermediate consumption and MUST be deducted! Otherwise, double counting occurs.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>🤔 問題 (Q): 題目提到零售價包含了「$50 稅款 (Tax)」，這會影響生產商的增值嗎？</strong></p>
+        <p><strong>💡 解答 (A):</strong> 完全不會！首先，這筆稅款是在「零售商賣給消費者」這個環節才產生的，生產商的交易早就完成了。其次，即使題目問的是零售商的增值，因為題目要求的是「以市價計算 (at market prices)」，市價本身就應該包含間接稅 (Indirect Tax)。</p>
+        <p class="en-text"><strong>🤔 Q: The question mentions the retail price includes "$50 tax". Does this affect the manufacturer's value added?</strong></p>
+        <p class="en-text"><strong>💡 A:</strong> Not at all! First, this tax is levied at the "retailer to consumer" stage; the manufacturer's transactions are already completed. Second, even if we were calculating the retailer's value added, since the question asks for GDP "at market prices", market prices naturally include indirect taxes.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <p><strong>⚡ 「畫箱法」秒殺技巧 (The "Box Method" Shortcut):</strong></p>
+        <p>遇到這類流程圖，立刻拿筆在題目要求的主體（例如：本地手錶生產商）外面<strong>畫一個大大的方框</strong>。然後只看穿過這個方框的箭頭：</p>
+        <ul>
+            <li><strong>向外指的箭頭相加 (Output):</strong> \( 150 + 120 = 270 \)</li>
+            <li><strong>向內指的箭頭相加 (Input):</strong> \( 30 + 20 = 50 \)</li>
+            <li><strong>兩者相減 (Value Added):</strong> \( 270 - 50 = 220 \)</li>
+        </ul>
+        <p>5秒鐘內得出答案，完全不需要理會方框外面的其他數字！</p>
+        
+        <p class="en-text"><strong>⚡ Shortcut:</strong> When you see a flowchart, immediately <strong>draw a box</strong> around the target subject (e.g., Local watch manufacturers). Then, only look at the arrows crossing your box's border:</p>
+        <ul class="en-text">
+            <li><strong>Sum of outward arrows (Output):</strong> \( 150 + 120 = 270 \)</li>
+            <li><strong>Sum of inward arrows (Input):</strong> \( 30 + 20 = 50 \)</li>
+            <li><strong>Subtract the two (Value Added):</strong> \( 270 - 50 = 220 \)</li>
+        </ul>
+        <p class="en-text">You can get the answer in 5 seconds without ever looking at the numbers outside your box!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
