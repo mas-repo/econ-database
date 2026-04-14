@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Classical Quantity Theory of Money</title>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-blue: #0369a1;
+            --primary-orange: #f59e0b;
+            --light-orange: #fffbeb;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-english: #4b5563;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--dark-blue);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 10px;
+        }
+
+        h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .eng-text {
+            color: var(--text-english);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        /* Section Specific Styles */
+        .header-box {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .header-box h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 0.9rem;
+        }
+
+        .question-box {
+            background-color: var(--bg-gray);
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            overflow-x: auto;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+        }
+
+        .correct-ans {
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+        }
+
+        .wrong-ans {
+            border-left: 5px solid #ef4444;
+        }
+
+        .trick-box {
+            background-color: var(--light-orange);
+            border-left: 5px solid var(--primary-orange);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .qa-a {
+            margin-left: 15px;
+            position: relative;
+        }
+        
+        .qa-a::before {
+            content: "↳";
+            position: absolute;
+            left: -15px;
+            color: var(--primary-blue);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .section { padding: 16px; }
+            .header-box h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <h1>古典貨幣量理論<br><span style="font-size: 1.2rem; font-weight: normal;">Classical Quantity Theory of Money</span></h1>
+        <div>
+            <span class="tag">難度 / Difficulty: ★★★☆☆</span>
+            <span class="tag">貨幣流動速度 / Velocity of Money</span>
+            <span class="tag">交易方程式 / Equation of Exchange</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>題目 / The Question</h2>
+        <div class="question-box">
+            <p><strong>古典貨幣量理論</strong></p>
+            <p>(1) 推斷貨幣供應的轉變可能不會影響一般物價水平。<br>
+               (2) 名義國民收入的轉變與貨幣供應的轉變有正向關係。<br>
+               (3) 假設貨幣流動速度不變。</p>
+            <p>A. 只有(1)、(2)<br>
+               B. 只有(1)、(3)<br>
+               C. 只有(2)、(3)<br>
+               D. (1)、(2)、(3)</p>
+            <hr style="border: 0; border-top: 1px solid #d1d5db; margin: 15px 0;">
+            <p class="eng-text"><strong>The classical quantity theory of money</strong></p>
+            <p class="eng-text">
+               (1) predicts that changes in money supply may have no effect on the general price level.<br>
+               (2) predicts that changes in nominal national income are positively related to changes in money supply.<br>
+               (3) assumes that the velocity of circulation of money is constant.
+            </p>
+            <p class="eng-text">
+               A. (1) and (2) only<br>
+               B. (1) and (3) only<br>
+               C. (2) and (3) only<br>
+               D. (1), (2) and (3)
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>概念重溫 / Concept Review</h2>
+        <div class="concept-box">
+            <p>要解答這道題目，我們必須了解<strong>交易方程式 (Equation of Exchange)</strong> 及其在古典學派中的假設。</p>
+            <p class="eng-text">To answer this question, we must understand the <strong>Equation of Exchange</strong> and its assumptions in the classical school of thought.</p>
+            
+            <div class="math-block">
+                $$ M \times V = P \times Y $$
+            </div>
+            
+            <ul>
+                <li>$M$ = 貨幣供應量 (Money Supply)</li>
+                <li>$V$ = 貨幣流動速度 (Velocity of circulation of money) - <em>貨幣轉手的平均次數 / the average number of times a unit of money is used</em></li>
+                <li>$P$ = 一般物價水平 (General Price Level)</li>
+                <li>$Y$ = 實質國民收入 / 實質產出 (Real National Income / Real Output)</li>
+            </ul>
+            
+            <p><strong>名義國民收入 (Nominal National Income)</strong> 的定義就是 $P \times Y$。</p>
+            <p class="eng-text">The definition of <strong>Nominal National Income</strong> is exactly $P \times Y$.</p>
+
+            <h3>古典學派的兩大假設 (Two Key Classical Assumptions):</h3>
+            <ol>
+                <li><strong>$V$ 是常數 (Constant $V$):</strong> 貨幣流動速度在短期內保持不變。<br>
+                    <span class="eng-text">Velocity of money remains constant in the short run.</span></li>
+                <li><strong>$Y$ 處於全民就業水平 (Full-employment $Y$):</strong> 實質產出由生產要素決定，短期內不會因貨幣供應改變。<br>
+                    <span class="eng-text">Real output is determined by real factors of production and is fixed at full employment in the short run.</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>答案與詳細分析 / Answer & Detailed Analysis</h2>
+        <h3 style="color: #16a34a; font-size: 1.5rem; text-align: center; margin-bottom: 20px;">正確答案 Correct Option: C</h3>
+        
+        <div class="analysis-item wrong-ans">
+            <p><strong>分析 (1) / Analysis (1): 錯誤 False</strong></p>
+            <p>根據方程式 $MV = PY$，因為古典學派假設 $V$ 和 $Y$ 都是常數，所以當貨幣供應 $M$ 改變時，必定會導致一般物價水平 $P$ 出現相同比例的改變。貨幣供應<strong>必定會</strong>影響物價水平，而不會「可能不會影響」。</p>
+            <p class="eng-text">According to the equation $MV = PY$, since classical economists assume $V$ and $Y$ are constant, any change in money supply $M$ must lead to a proportionate change in the general price level $P$. Changes in money supply <strong>will definitely</strong> affect the price level, not "may have no effect".</p>
+        </div>
+
+        <div class="analysis-item correct-ans">
+            <p><strong>分析 (2) / Analysis (2): 正確 True</strong></p>
+            <p>名義國民收入等於 $PY$。將方程式重寫為 $M \times V = \text{名義國民收入}$。既然 $V$ 被假設為不變 (常數)，當貨幣供應 $M$ 增加時，$PY$ (名義國民收入) 亦必定會增加。因此兩者呈正向關係。</p>
+            <p class="eng-text">Nominal national income equals $PY$. Rewriting the equation gives $M \times V = \text{Nominal National Income}$. Given that $V$ is assumed to be constant, an increase in $M$ must result in an increase in $PY$. Therefore, they are positively related.</p>
+        </div>
+
+        <div class="analysis-item correct-ans">
+            <p><strong>分析 (3) / Analysis (3): 正確 True</strong></p>
+            <p>這是古典貨幣量理論最核心的基礎假設：人們的交易習慣在短期內不會大幅改變，因此貨幣流動速度 $V$ 是固定不變的。</p>
+            <p class="eng-text">This is the core foundational assumption of the classical quantity theory: people's transaction habits do not change drastically in the short run, so the velocity of money $V$ is assumed to be constant.</p>
+        </div>
+        
+        <p style="text-align: center; font-weight: bold; margin-top: 15px;">綜合以上，(2) 和 (3) 正確，故答案為 C。<br>
+        <span class="eng-text">In conclusion, (2) and (3) are correct, so the answer is C.</span></p>
+    </div>
+
+    <div class="section">
+        <h2>題目拆解 / Problem Decomposition</h2>
+        <p><strong>解題樞紐 (Pivot Point):</strong><br>
+        解開這題的關鍵在於清楚區分「名義變量」(Nominal) 與「實質變量」(Real)。名義國民收入是 $PY$，而實質國民收入是 $Y$。只要你在腦海中寫出 $MV = PY$，並標記 $V$ 為常數，(2) 和 (3) 的答案就會顯而易見。</p>
+        <p class="eng-text">The key to solving this is clearly distinguishing between "Nominal" and "Real" variables. Nominal income is $PY$, while real income is $Y$. If you visualize $MV = PY$ and mark $V$ as a constant, statements (2) and (3) become obvious.</p>
+    </div>
+
+    <div class="section">
+        <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+        <ul>
+            <li><strong>混淆名義與實質收入：</strong> 很多學生看到 (2) 會以為說的是「實質國民收入」(Real Income)。記住，古典理論中貨幣是「中立的」(Money is neutral)，$M$ 的改變不會影響實質 $Y$，但<strong>會</strong>影響名義 $PY$！<br>
+            <span class="eng-text"><strong>Confusing Nominal and Real Income:</strong> Many students misread (2) as "Real national income". Remember, in classical theory, money is neutral. A change in $M$ does not affect real $Y$, but it <strong>DOES</strong> affect nominal $PY$!</span></li>
+            <li><strong>將凱恩斯理論與古典理論混淆：</strong> 凱恩斯學派認為在「流動性陷阱」(Liquidity Trap) 下，增加貨幣供應可能無法刺激經濟或改變物價。但本題問的是<strong>古典理論</strong>，千萬不要套用錯學派的假設。<br>
+            <span class="eng-text"><strong>Mixing Keynesian and Classical theories:</strong> Keynesians argue that in a liquidity trap, increasing money supply might not affect prices. But this question specifically asks about <strong>Classical theory</strong>. Don't mix up the schools of thought.</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>學生常見疑問 / Student Q&A</h2>
+        <div class="qa-item">
+            <p class="qa-q">Q: 為什麼古典學派認為實質國民收入 ($Y$) 是不變的？<br>
+               <span class="eng-text">Why do classical economists assume real national income ($Y$) is constant?</span></p>
+            <p class="qa-a">古典經濟學家相信市場機制是完美的，價格和工資具備完全彈性(perfectly flexible)。因此，經濟體系會自動調節並長期處於「全民就業」(Full employment) 的狀態。既然所有資源都已充分利用，產出 $Y$ 就達到極限，不會因為你印更多銀紙而增加。<br>
+               <span class="eng-text">Classical economists believe markets are perfect and wages/prices are perfectly flexible. Thus, the economy naturally adjusts to full employment. Since all resources are fully utilized, output $Y$ is at its maximum and won't increase just because you print more money.</span></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+        <div class="trick-box">
+            <h3>秒殺法 / The "One-Second" Elimination Method</h3>
+            <p>在應付 DSE MC 題時，我們不一定要逐一分析。看看這題：</p>
+            <p>只要你溫習過古典理論，你一定知道它的招牌口號就是「貨幣流動速度不變」($V$ is constant)。所以 <strong>(3) 肯定是正確的</strong>。這無法幫我們排除任何選項，因為 B, C, D 都有 (3)。</p>
+            <p>接下來看 <strong>(1)</strong>。古典理論的核心結論是「貨幣只會影響物價 (Money neutrality)」，即 $M$ 決定 $P$。所以說「可能不影響」是<strong>百分之百錯誤</strong>的，直接違背了該學派的宗旨。</p>
+            <p>既然 (1) 是錯的，你可以立即劃掉選項 A、B、D（因為它們都包含 1）。<br>
+            <strong>根本不需要看 (2) 就能確定答案是 C！</strong> 這樣可以為你節省寶貴的考試時間。</p>
+            <hr style="border-top: 1px dashed #f59e0b; margin: 15px 0;">
+            <p class="eng-text">In DSE MC, you don't always need to analyze every statement. <br>
+            If you studied Classical theory, you know its hallmark assumption is "$V$ is constant". So <strong>(3) is definitely TRUE</strong>. <br>
+            Next, look at <strong>(1)</strong>. The core conclusion of classical theory is that money dictates prices. Saying it "may have no effect" completely contradicts the theory. So <strong>(1) is absolutely FALSE</strong>.<br>
+            Since (1) is false, cross out options A, B, and D immediately. <strong>You arrive at the correct answer C without even needing to read statement (2)!</strong> This saves crucial exam time.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

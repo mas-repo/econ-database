@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7; /* Ocean Blue */
+            --secondary-color: #0ea5e9; /* Light Blue */
+            --bg-light: #f8fafc;
+            --concept-bg: #e0f2fe;
+            --math-bg: #f1f5f9;
+            --text-dark: #334155;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --success-color: #16a34a;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 5px;
+        }
+
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+
+        .chi-text {
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .eng-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 4px 8px 8px 4px;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .analysis-option {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .correct-option {
+            border-color: var(--success-color);
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--success-color);
+        }
+
+        .incorrect-option {
+            border-left: 5px solid var(--danger-color);
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        .trick-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-section h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> Money Supply 貨幣供應</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span class="tag"><strong>Keywords:</strong> M1, M2, M3, 銀行三級制</span>
+        </div>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <div class="bilingual-pair">
+            <div class="chi-text">陳先生從本港某間有限制牌照銀行的存款中提取 4 000 000 港元。然後將其中 3 500 000 港元存入本港某持牌銀行作定期，並將餘下的 500 000 港元持作現金。</div>
+            <div class="eng-text">Mr Chan withdraws HK$4 000 000 from his deposit account in a restricted licence bank in Hong Kong. He then puts HK$3 500 000 as time deposit in a licensed bank in Hong Kong and holds the remaining HK$500 000 as cash.</div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">上述行動對港元貨幣供應量的即時影響會是：</div>
+            <div class="eng-text">The immediate effect of the above actions on the Hong Kong dollar money supply would be:</div>
+        </div>
+        <ul>
+            <li><strong>A.</strong> 貨幣供應 M2 和貨幣供應 M3 都維持不變。<br><span class="eng-text">Both M2 and M3 remain unchanged.</span></li>
+            <li><strong>B.</strong> 貨幣供應 M1 增加而貨幣供應 M2 維持不變。<br><span class="eng-text">M1 increases while M2 remains unchanged.</span></li>
+            <li><strong>C.</strong> 貨幣供應 M2 增加而貨幣供應 M3 維持不變。<br><span class="eng-text">M2 increases while M3 remains unchanged.</span></li>
+            <li><strong>D.</strong> 貨幣供應 M2 增加而貨幣供應 M3 減少。<br><span class="eng-text">M2 increases while M3 decreases.</span></li>
+        </ul>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <div class="bilingual-pair">
+            <div class="chi-text">在香港，貨幣供應量分為三個級別（M1, M2, M3），這與香港的「銀行三級制」息息相關：持牌銀行 (LB)、有限制牌照銀行 (RLB) 和接受存款公司 (DTC)。</div>
+            <div class="eng-text">In Hong Kong, money supply is classified into three tiers (M1, M2, M3), which are closely tied to the three-tier banking system: Licensed Banks (LB), Restricted Licence Banks (RLB), and Deposit-taking Companies (DTC).</div>
+        </div>
+        
+        <div class="math-block">
+            $$ M1 = C_p + D_d $$
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">\( C_p \) = 公眾持有的法定貨幣 (Cash in public hands) <br> \( D_d \) = 持牌銀行客戶的活期存款 (Demand deposits at LB)</div>
+            <div class="eng-text">\( C_p \) = Cash held by the non-bank public <br> \( D_d \) = Demand deposits held by customers at Licensed Banks</div>
+        </div>
+
+        <div class="math-block">
+            $$ M2 = M1 + D_s + D_t \text{ (at LB)} + \text{NCDs (LB)} $$
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">即 M1 加上持牌銀行的儲蓄 (\( D_s \)) 及定期存款 (\( D_t \))，以及由持牌銀行發行並由非銀行公眾持有的可轉讓存款證 (NCDs)。</div>
+            <div class="eng-text">This is M1 plus savings (\( D_s \)) and time deposits (\( D_t \)) at Licensed Banks, plus Negotiable Certificates of Deposit (NCDs) issued by LBs held by the non-bank public.</div>
+        </div>
+
+        <div class="math-block">
+            $$ M3 = M2 + D_{RLB} + D_{DTC} + \text{NCDs (RLB & DTC)} $$
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">即 M2 加上在有限制牌照銀行 (\( D_{RLB} \)) 和接受存款公司 (\( D_{DTC} \)) 的客戶存款，及它們發行的 NCDs。</div>
+            <div class="eng-text">This is M2 plus customer deposits at Restricted Licence Banks (\( D_{RLB} \)) and Deposit-taking Companies (\( D_{DTC} \)), plus NCDs issued by them.</div>
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 Answer & Detailed Analysis</h2>
+    
+    <h3 style="color: var(--success-color);">正確答案 Correct Option: C</h3>
+
+    <div class="bilingual-pair">
+        <div class="chi-text">我們來逐步計算各項貨幣供應的變化：</div>
+        <div class="eng-text">Let's calculate the changes in each definition of money supply step-by-step:</div>
+    </div>
+
+    <div class="analysis-option correct-option">
+        <strong>1. 現金增加 Cash Increases (+ HK$500,000)</strong>
+        <div class="bilingual-pair">
+            <div class="chi-text">陳先生保留了 500,000 港元現金。這增加了 \( C_p \)（公眾持有現金）。因此，<strong>M1 增加了 500,000 港元</strong>。</div>
+            <div class="eng-text">Mr Chan holds HK$500,000 as cash. This increases \( C_p \) (cash in public hands). Therefore, <strong>M1 increases by HK$500,000</strong>.</div>
+        </div>
+    </div>
+
+    <div class="analysis-option correct-option">
+        <strong>2. 持牌銀行定期存款增加 LB Time Deposit Increases (+ HK$3,500,000)</strong>
+        <div class="bilingual-pair">
+            <div class="chi-text">他將 3,500,000 港元存入持牌銀行 (LB) 作定期存款。這屬於 M2 的一部分（但不屬於 M1）。</div>
+            <div class="eng-text">He deposits HK$3,500,000 as a time deposit in a Licensed Bank (LB). This is part of M2 (but not M1).</div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">綜合第 1 和第 2 點，<strong>M2 的總增加額</strong>為：M1 的增幅 (+500,000) 加上 LB 定期存款的增幅 (+3,500,000) = <strong>增加 4,000,000 港元</strong>。</div>
+            <div class="eng-text">Combining points 1 and 2, the <strong>total change in M2</strong> is: the increase in M1 (+500,000) plus the increase in LB time deposits (+3,500,000) = <strong>an increase of HK$4,000,000</strong>.</div>
+        </div>
+    </div>
+
+    <div class="analysis-option correct-option">
+        <strong>3. 有限制牌照銀行存款減少 RLB Deposit Decreases (- HK$4,000,000)</strong>
+        <div class="bilingual-pair">
+            <div class="chi-text">這筆錢最初從有限制牌照銀行 (RLB) 提取。RLB 存款僅屬於 M3，不屬於 M1 或 M2。</div>
+            <div class="eng-text">The money was originally withdrawn from a Restricted Licence Bank (RLB). RLB deposits belong ONLY to M3, not M1 or M2.</div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">M3 = M2 + RLB存款 + DTC存款。由於 M2 增加了 4,000,000 港元，而 RLB 存款減少了 4,000,000 港元，正負抵銷，<strong>M3 維持不變</strong>。</div>
+            <div class="eng-text">M3 = M2 + RLB deposits + DTC deposits. Since M2 increased by 4,000,000 and RLB deposits decreased by 4,000,000, they cancel out. <strong>M3 remains unchanged</strong>.</div>
+        </div>
+    </div>
+
+    <div class="bilingual-pair">
+        <div class="chi-text">結論：M1 增加，M2 增加，M3 維持不變。因此，選項 C 正確。</div>
+        <div class="eng-text">Conclusion: M1 increases, M2 increases, and M3 remains unchanged. Therefore, Option C is correct.</div>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <div class="bilingual-pair">
+        <div class="chi-text"><strong>解題關鍵 (Pivot Point)：</strong>理解 M1 包含在 M2 中，而 M2 包含在 M3 中（層層遞進的包含關係）。當資金從「外層」（如 RLB，僅屬 M3）轉移到「內層」（如現金和 LB，屬於 M1 和 M2）時，較窄的貨幣定義（M1, M2）會擴張，但最寬泛的貨幣定義（M3）由於總額沒有離開體系而保持不變。</div>
+        <div class="eng-text"><strong>Pivot Point:</strong> Understand the nested structure of money supply (M1 is inside M2, M2 is inside M3). When funds move from an "outer layer" (RLB, which is M3 only) to "inner layers" (cash and LB, which are in M1 and M2), the narrower definitions (M1, M2) expand, but the broadest definition (M3) remains constant because the total funds haven't left the system.</div>
+    </div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li>
+            <div class="bilingual-pair">
+                <div class="chi-text"><strong>陷阱 1：認為「提取現金」會減少貨幣供應。</strong> 學生常以為把錢從銀行拿走，貨幣供應就會減少。事實上，公眾持有的現金 (\( C_p \)) 也是貨幣供應的一部分！</div>
+                <div class="eng-text"><strong>Trap 1: Thinking "withdrawing cash" reduces money supply.</strong> Students often assume taking money out of the bank reduces money supply. In reality, cash held by the public (\( C_p \)) is also a component of the money supply!</div>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-pair">
+                <div class="chi-text"><strong>陷阱 2：忘記累加效應。</strong> 學生計算出 LB 定期存款增加，就知道 M2 增加，但忘記了 M1（現金增加）也是 M2 的一部分，導致計算總額時出錯（儘管在此題的選項中不影響選出答案）。</div>
+                <div class="eng-text"><strong>Trap 2: Forgetting the cumulative effect.</strong> Students figure out LB time deposits increase, so M2 increases. But they forget that M1 (cash increase) is ALSO part of M2, leading to math errors in the total change (though it didn't prevent choosing the right option here).</div>
+            </div>
+        </li>
+    </ul>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 為什麼這題中 M3 沒有減少？陳先生不是把錢從 RLB 拿走了嗎？</div>
+        <div class="eng-text" style="color: #b45309; font-weight: bold; margin-bottom: 8px;">Q: Why didn't M3 decrease in this question? Didn't Mr Chan take the money out of the RLB?</div>
+        
+        <div class="bilingual-pair">
+            <div class="chi-text">A: 沒錯，RLB 的存款的確減少了，這會帶來 M3 的向下壓力。<strong>但是</strong>，他把這些錢轉成了現金和 LB 存款，這兩者都會增加 M2。因為 M3 = M2 + RLB存款，所以 M2 的增加完美抵銷了 RLB 存款的減少。總資金還在香港的金融體系和公眾手中，所以最闊的貨幣供應指標 (M3) 不變。</div>
+            <div class="eng-text">A: True, RLB deposits decreased, which puts downward pressure on M3. <strong>However</strong>, he converted that money into cash and LB deposits, both of which increase M2. Since M3 = M2 + RLB deposits, the increase in M2 perfectly offsets the decrease in RLB deposits. The total funds are still within Hong Kong's financial system and the public's hands, so the broadest measure (M3) doesn't change.</div>
+        </div>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <div class="bilingual-pair">
+            <div class="chi-text"><strong>「大水池理論」秒殺法：</strong><br>
+            不需要精確計算！只要看到資金只是在「香港金融體系內」轉換形式（從一間銀行轉到另一間，或者變成現金），而沒有匯出國外，也沒有還款給銀行消滅貸款，<strong>最寬泛的貨幣指標 M3 就必定不變。</strong></div>
+            <div class="eng-text"><strong>The "Big Pool" Shortcut:</strong><br>
+            No precise calculation needed! As long as you see funds merely changing forms *within* the Hong Kong financial system (moving between banks or turning into cash), without being remitted overseas or used to repay bank loans (which destroys credit), <strong>the broadest monetary indicator, M3, MUST remain unchanged.</strong></div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="chi-text">因此，你可以立刻淘汰選項 D（說 M3 減少）。然後觀察資金流向：資金從僅屬於 M3 的機構 (RLB) 流向了屬於 M2 的機構 (LB) 和現金。既然進入了 M2 的範圍，M2 必定增加。秒選 <strong>C</strong>！</div>
+            <div class="eng-text">Therefore, you can immediately eliminate Option D (which says M3 decreases). Then observe the flow: funds moved from an M3-only institution (RLB) into M2 components (LB and cash). Since money entered the M2 scope, M2 MUST increase. Instantly choose <strong>C</strong>!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
