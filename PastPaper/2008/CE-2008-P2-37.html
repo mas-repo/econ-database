@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --accent-color: #0ea5e9;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --math-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Noto Sans TC';
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .section-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .header-box {
+            background-color: white;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .bilingual-group {
+            margin-bottom: 15px;
+        }
+
+        .zh-text {
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .option-card {
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #ccc;
+            background-color: #f9fafb;
+        }
+
+        .option-correct {
+            border-left-color: var(--correct-border);
+            background-color: var(--correct-bg);
+        }
+
+        .option-wrong {
+            border-left-color: var(--wrong-border);
+            background-color: var(--wrong-bg);
+        }
+
+        .option-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #c026d3;
+            margin-bottom: 5px;
+        }
+
+        .qa-a {
+            margin-left: 15px;
+        }
+
+        .tips-box {
+            background-color: #fef2f2;
+            border: 1px dashed #ef4444;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-container { padding: 15px; }
+            .math-block { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>📈 經濟學 DSE 試題解析 (Economics Tutorial)</h1>
+        <p><strong>Topic (課題):</strong> 貨幣與銀行 - 貨幣供應定義 (Money & Banking - Definitions of Money Supply)</p>
+        <p><strong>Difficulty (難度):</strong> ★★★☆☆</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">M1 & M2</span>
+            <span class="tag">公眾持有的法定貨幣 ($C_p$)</span>
+            <span class="tag">存款 (Deposits)</span>
+        </p>
+    </div>
+
+    <div class="section-container question-box">
+        <h2>📝 The Question (題目)</h2>
+        
+        <div class="bilingual-group">
+            <div class="zh-text">假設在發生一連串利用易辦事為八達通卡增值失敗但卡主的銀行戶口仍被扣數的事件後，有更多卡主使用現金來增值。此舉馬上會增加 __________。</div>
+            <div class="en-text">Suppose, after making a series of unsuccessful add-value transactions through EPS in which their bank accounts were debited, more Octopus cardholders use cash to make their add-value transactions. This would immediately increase __________。</div>
+        </div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="bilingual-group">
+                <div class="zh-text">A. 貨幣供應定義M1</div>
+                <div class="en-text">A. the money supply M1.</div>
+            </li>
+            <li class="bilingual-group">
+                <div class="zh-text">B. 貨幣供應定義M2</div>
+                <div class="en-text">B. the money supply M2.</div>
+            </li>
+            <li class="bilingual-group">
+                <div class="zh-text">C. 銀行儲蓄存款額</div>
+                <div class="en-text">C. the amount of savings deposits of banks.</div>
+            </li>
+            <li class="bilingual-group">
+                <div class="zh-text">D. 銀行定期存款額</div>
+                <div class="en-text">D. the amount of time deposits of banks.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-container concept-box">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        
+        <p class="zh-text">要解答這條問題，我們必須清楚香港貨幣供應的三大定義以及它們的組成部分。在香港，貨幣供應（Money Supply）主要分為 M1, M2, M3。</p>
+        <p class="en-text">To solve this question, we must understand the definitions of money supply in Hong Kong and their components. In HK, money supply is mainly categorized into M1, M2, and M3.</p>
+
+        <div class="math-block">
+            $$M1 = C_p + D_d$$
+            $$M2 = M1 + D_s + D_t + NCD_b$$
+        </div>
+
+        <ul>
+            <li><strong>\(C_p\) (Cash in Public Hands / 公眾持有的法定貨幣):</strong> 不在銀行體系內，由市民及非銀行機構持有的現金。<br><em>Cash held by individuals and non-bank institutions outside the banking system.</em></li>
+            <li><strong>\(D_d\) (Demand Deposits / 活期存款):</strong> 可以隨時開支票提取的存款。<br><em>Deposits that can be withdrawn at any time using checks.</em></li>
+            <li><strong>\(D_s\) (Savings Deposits / 儲蓄存款):</strong> 一般設有利息，不能開支票的存款（易辦事 EPS 通常從此戶口扣錢）。<br><em>Interest-bearing deposits without check-writing privileges (EPS usually deducts from here).</em></li>
+            <li><strong>\(D_t\) (Time Deposits / 定期存款):</strong> 存放在銀行特定時間的存款。<br><em>Deposits kept in banks for a specified period.</em></li>
+        </ul>
+    </div>
+
+    <div class="section-container">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>正確答案 (Correct Option): <span style="color: var(--correct-border); font-size: 1.2em; font-weight: bold;">A</span></strong></p>
+
+        <div class="option-card option-correct">
+            <div class="option-title">Option A: 貨幣供應定義M1 (the money supply M1) - ✔️ CORRECT</div>
+            <p class="zh-text">當市民放棄使用易辦事（EPS）轉而使用「現金」增值，這代表他們需要將資金從銀行（通常是儲蓄戶口 \(D_s\)）提取出來，變成手上的現金（\(C_p\)）。因為 M1 = \(C_p\) + \(D_d\)，當公眾手持的現金 \(C_p\) 上升，而活期存款 \(D_d\) 不變時，M1 就會<strong>馬上增加</strong>。</p>
+            <p class="en-text">When citizens abandon EPS and use "cash" to add value, it means they must withdraw funds from their bank accounts (usually savings accounts \(D_s\)) and hold them as physical cash (\(C_p\)). Since M1 = \(C_p\) + \(D_d\), when cash in public hands \(C_p\) rises and demand deposits \(D_d\) remain unchanged, M1 will <strong>immediately increase</strong>.</p>
+        </div>
+
+        <div class="option-card option-wrong">
+            <div class="option-title">Option B: 貨幣供應定義M2 (the money supply M2) - ❌ WRONG</div>
+            <p class="zh-text">從銀行提款的行為，導致手持現金 \(C_p\) 增加（令 M1 增加），但同時儲蓄存款 \(D_s\) 會減少相同的金額。因為 M2 包含了 M1 和 \(D_s\)，一增一減互相抵消，所以 M2 的總量<strong>維持不變</strong>。</p>
+            <p class="en-text">The act of withdrawing money causes cash \(C_p\) to increase (which increases M1), but at the same time, savings deposits \(D_s\) decrease by the exact same amount. Since M2 includes both M1 and \(D_s\), the increase and decrease offset each other perfectly, leaving the total amount of M2 <strong>unchanged</strong>.</p>
+        </div>
+
+        <div class="option-card option-wrong">
+            <div class="option-title">Option C: 銀行儲蓄存款額 (savings deposits) - ❌ WRONG</div>
+            <p class="zh-text">為了獲取現金去增值，市民會從銀行提取存款。因此，儲蓄存款額理應是<strong>減少</strong>，而非增加。</p>
+            <p class="en-text">To obtain cash for topping up, citizens will withdraw deposits from the bank. Therefore, the amount of savings deposits should <strong>decrease</strong>, not increase.</p>
+        </div>
+
+        <div class="option-card option-wrong">
+            <div class="option-title">Option D: 銀行定期存款額 (time deposits) - ❌ WRONG</div>
+            <p class="zh-text">市民一般不會為日常交通增值而提取定期存款（會損失利息），就算真的提取，定期存款也會減少，而絕不可能增加。</p>
+            <p class="en-text">Citizens generally do not withdraw time deposits for daily transportation top-ups (as they would lose interest). Even if they did, the time deposits would decrease, and definitely not increase.</p>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        
+        <p class="zh-text"><strong>🎯 破題關鍵 (Pivot Point)：</strong><br>
+        留意題目中的字眼：「更多卡主使用現金」。在經濟學中，如果人們本來不用現金（用電子支付），現在轉用現金，代表他們的「現金需求（流動性偏好）」增加了。現金從哪裡來？自然是從銀行提款。因此，這條題目本質上就是在問：<strong>「從銀行提取現金，對貨幣供應有何影響？」</strong></p>
+        <p class="en-text"><strong>🎯 Pivot Point:</strong><br>
+        Pay attention to the phrasing: "more... use cash". In economics, if people shift from electronic payments to cash, their "demand for cash (liquidity preference)" increases. Where does the cash come from? Bank withdrawals. Therefore, this question is essentially asking: <strong>"What is the impact on money supply when cash is withdrawn from a bank?"</strong></p>
+
+        <p class="zh-text"><strong>👻 迷惑資訊 (Distractor)：</strong><br>
+        「發生一連串利用易辦事為八達通卡增值失敗...」這一長串背景故事只是為了合理化市民「轉用現金」的動機。解題時不需要理會八達通系統的運作，只需聚焦在「由銀行存款轉為手持現金」這個動作。</p>
+        <p class="en-text"><strong>👻 Distractor:</strong><br>
+        "after making a series of unsuccessful add-value transactions..." This long background story merely justifies the motive for citizens to "switch to cash". You don't need to analyze the Octopus system's operations; just focus on the action of "converting bank deposits into cash in hand".</p>
+    </div>
+
+    <div class="section-container tips-box">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li><strong>陷阱一 (Trap 1):</strong> 忘記了 \(D_s\) (儲蓄存款) <strong>不屬於</strong> M1。很多學生誤以為提款只是把錢從「左手交右手」，M1 不變。但其實儲蓄存款轉為現金，是資金跨越了 M1 的界線！</li>
+            <li><strong>陷阱二 (Trap 2):</strong> 誤解了「公眾」的定義。學生可能會想：「用現金增值，現金給了便利店/地鐵站，不是已經不在市民手上了嗎？」注意：在經濟學定義上，便利店和地鐵站屬於「非銀行公眾 (non-bank public)」。只要現金一天未存入持牌銀行，它依然屬於 \(C_p\)。</li>
+        </ul>
+    </div>
+
+    <div class="section-container">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-box">
+            <div class="qa-q">Q: 如果市民是從「活期存款 (Demand Deposit, \(D_d\))」提取現金，答案會有不同嗎？</div>
+            <div class="qa-a">
+                <p class="zh-text">A: 非常好的問題！如果市民從活期存款提款，\(C_p\) 增加，同時 \(D_d\) 減少相同金額。因為 M1 = \(C_p + D_d\)，在這種情況下 M1 是不變的。<strong>但是</strong>，在香港，易辦事 (EPS) 絕大多數綁定的是「儲蓄存款」。而且題目問「馬上會增加」哪一項，只有假設從儲蓄存款提款，選項 A 才會成立，這也是最符合現實邏輯的推論。</p>
+                <p class="en-text">A: Excellent question! If citizens withdrew from demand deposits, \(C_p\) would increase while \(D_d\) decreases by the same amount. Since M1 = \(C_p + D_d\), M1 would remain unchanged. <strong>However</strong>, in Hong Kong, EPS is overwhelmingly linked to savings accounts. Since the question asks what "would immediately increase", assuming a withdrawal from savings is the only way to make one of the options (Option A) logically correct and matches real-world practices.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container header-box" style="border-left-color: #8b5cf6;">
+        <h2 style="color: #8b5cf6; border-bottom-color: #8b5cf6; margin-top: 0;">⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p class="zh-text">在 DSE 考試中，遇到這類「提款 / 存錢」的題目，請馬上在腦海中（或草稿紙上）畫出這個「資金流向表」：</p>
+        <p class="en-text">In the DSE exam, when you see "withdrawal / deposit" questions, immediately visualize (or jot down) this "fund flow table":</p>
+        
+        <div style="background: white; padding: 10px; border-radius: 5px; border: 1px solid #e5e7eb;">
+            <strong>從銀行提取現金 (Withdraw Cash from Savings):</strong><br>
+            ➔ 現金 \(C_p\) ↑ ➔ <strong>M1 ↑</strong><br>
+            ➔ 儲蓄存款 \(D_s\) ↓ ➔ (與 \(C_p\) 互相抵消) ➔ <strong>M2 不變 (Unchanged)</strong><br><br>
+            <strong>把現金存入銀行 (Deposit Cash into Savings):</strong><br>
+            ➔ 現金 \(C_p\) ↓ ➔ <strong>M1 ↓</strong><br>
+            ➔ 儲蓄存款 \(D_s\) ↑ ➔ (與 \(C_p\) 互相抵消) ➔ <strong>M2 不變 (Unchanged)</strong>
+        </div>
+        <p class="zh-text" style="margin-top: 10px; font-weight: bold; color: #ef4444;">記住口訣：提款令 M1 升，存款令 M1 跌；只要是存入/提取儲蓄或定期，M2/M3 永遠不變！</p>
+    </div>
+
+</body>
+</html>

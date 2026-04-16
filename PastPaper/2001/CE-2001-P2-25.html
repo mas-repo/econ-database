@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Money Supply</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-bg: #f0f9ff;
+            --correct: #22c55e;
+            --correct-bg: #dcfce7;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Bilingual Display */
+        .zh {
+            margin-bottom: 4px;
+        }
+        
+        .en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        /* Specific Containers */
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--primary-bg);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        .correct-ans {
+            background-color: var(--correct-bg);
+            border-left: 5px solid var(--correct);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1em;
+        }
+
+        .distractor {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-section { padding: 15px; }
+            .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Analysis</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> 貨幣供應 Money Supply</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★★☆ (4/5)</span>
+            <span class="tag"><strong>Key Concepts:</strong> M1, M2, $C_p$, Deposit Withdrawal</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh">在交易時使用「易辦事」付款，某數量的金額便會即時由買家的銀行戶口轉帳至賣家的銀行戶口。由於「易辦事」服務的收費增加，一些商舖已經停止接受客戶使用「易辦事」來付款。<br><br>下列哪一項是以上改變對貨幣供應定義一(M1)及定義二(M2)的即時影響？</p>
+        <p class="en">In using the Easy Pay System (EPS) to settle a payment in exchange, an amount of money is immediately transferred from the buyer’s bank account to the seller’s. In response to an increase in EPS’s service charge, some shops have stopped accepting payment by EPS.<br><br>Which of the following would be the immediate effect of the above change on the money supply M1 and M2?</p>
+        
+        <ul>
+            <li>
+                <div class="zh">A. M1及M2均會增加。</div>
+                <div class="en">A. Both M1 and M2 will increase.</div>
+            </li>
+            <li>
+                <div class="zh">B. M1會增加而M2會維持不變。</div>
+                <div class="en">B. M1 will increase and M2 will remain unchanged.</div>
+            </li>
+            <li>
+                <div class="zh">C. M1會增加而M2會減少。</div>
+                <div class="en">C. M1 will increase and M2 will decrease.</div>
+            </li>
+            <li>
+                <div class="zh">D. M1及M2均會減少。</div>
+                <div class="en">D. Both M1 and M2 will decrease.</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh">要解答這條問題，我們必須清楚香港貨幣供應（M1及M2）的定義。在香港，「易辦事」(EPS) 是一種與銀行戶口（主要是儲蓄或活期戶口）連結的電子支付方式。</p>
+        <p class="en">To answer this question, we must clearly understand the definitions of money supply (M1 and M2) in Hong Kong. In HK, the Easy Pay System (EPS) is an electronic payment method linked to bank accounts (primarily savings or current accounts).</p>
+        
+        <div class="math-block">
+            <p class="zh"><strong>貨幣供應定義一 (M1)</strong></p>
+            $$M1 = C_p + DD$$
+            <p class="en">M1 = Legal tender held by the public ($C_p$) + Demand deposits ($DD$)</p>
+        </div>
+
+        <div class="math-block">
+            <p class="zh"><strong>貨幣供應定義二 (M2)</strong></p>
+            $$M2 = M1 + SD + TD + NCDs$$
+            <p class="en">M2 = M1 + Savings deposits ($SD$) + Time deposits ($TD$) + Negotiable certificates of deposit ($NCDs$) held by non-bank public</p>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div class="correct-ans">
+        <div class="zh">正確答案是：<strong>選項 B</strong></div>
+        <div class="en">The correct option is: <strong>Option B</strong></div>
+    </div>
+
+    <div class="distractor">
+        <h3>Step-by-Step Analysis (逐步分析)</h3>
+        <p class="zh"><strong>1. 行為改變 (Behavioral Change):</strong> 當商舖停止接受「易辦事」，市民不能再直接扣除戶口存款來購物，他們必須提取<strong>實體現金</strong>作交易媒介。因此，公眾持有的法定貨幣 ($C_p$) 會即時增加。</p>
+        <p class="en"><strong>1. Behavioral Change:</strong> When shops stop accepting EPS, citizens can no longer directly deduct funds from their bank accounts for shopping. They must withdraw <strong>physical cash</strong> to use as a medium of exchange. Therefore, legal tender held by the public ($C_p$) will increase immediately.</p>
+        
+        <p class="zh"><strong>2. 資金來源 (Source of Funds):</strong> 在香港，「易辦事」提款卡通常連結<strong>儲蓄存款 ($SD$)</strong>。當市民提款時，儲蓄存款 ($SD$) 會減少，而現金 ($C_p$) 增加。</p>
+        <p class="en"><strong>2. Source of Funds:</strong> In Hong Kong, EPS ATM cards are typically linked to <strong>Savings Deposits ($SD$)</strong>. When citizens withdraw money, Savings Deposits ($SD$) decrease, while Cash ($C_p$) increases.</p>
+
+        <p class="zh"><strong>3. 對 M1 的影響 (Effect on M1):</strong> 因為 $M1 = C_p + DD$。既然 $C_p$ 增加而 $DD$ 假設不變，M1 必然<strong>增加</strong>。</p>
+        <p class="en"><strong>3. Effect on M1:</strong> Since $M1 = C_p + DD$. Given that $C_p$ increases and $DD$ is assumed unchanged, M1 must <strong>increase</strong>.</p>
+
+        <p class="zh"><strong>4. 對 M2 的影響 (Effect on M2):</strong> 因為 $M2 = C_p + DD + SD + ...$。現金 ($C_p$) 增加的金額，正好等於儲蓄存款 ($SD$) 減少的金額。資金只是在 M2 的組成部分之間轉移，總額<strong>維持不變</strong>。</p>
+        <p class="en"><strong>4. Effect on M2:</strong> Since $M2 = C_p + DD + SD + ...$. The amount by which Cash ($C_p$) increases is exactly equal to the amount by which Savings Deposits ($SD$) decrease. Funds are merely transferred between the components of M2, so the total amount <strong>remains unchanged</strong>.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>關鍵轉捩點 (The Pivot Point):</strong> 找出「替代品」。沒有了電子支付，市民會用甚麼？答案是「現金」($C_p$)。這類題目的核心在於追蹤資金流向（Asset Transfer）。</p>
+        <p class="en"><strong>The Pivot Point:</strong> Identify the "substitute". Without electronic payments, what will people use? The answer is "Cash" ($C_p$). The core of such questions lies in tracking the flow of funds (Asset Transfer).</p>
+        
+        <p class="zh"><strong>「即時影響」的含意 (Meaning of "Immediate Effect"):</strong> 題目特別強調「即時影響」，這是一個重要提示！這意味著你<strong>不需要</strong>考慮銀行體系的信貸創造或收縮過程 (Credit Creation/Contraction process)。只需計算資產轉換的那一刻即可。</p>
+        <p class="en"><strong>Meaning of "Immediate Effect":</strong> The question specifically emphasizes the "immediate effect", which is a crucial hint! This means you <strong>do not</strong> need to consider the credit creation or contraction process in the banking system. Just account for the exact moment of asset transfer.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li>
+            <div class="zh"><strong>陷阱一：以為資金消失了。</strong> 學生可能誤以為不用 EPS 付款，市場上的錢就少了。事實上，消費需求還在，只是付款方式由「存款轉帳」變成了「現金交收」。</div>
+            <div class="en"><strong>Trap 1: Thinking the money disappeared.</strong> Students might mistakenly believe that not using EPS means there is less money in the market. In reality, consumer demand remains; only the payment method has changed from "deposit transfer" to "cash settlement".</div>
+        </li>
+        <li>
+            <div class="zh"><strong>陷阱二：忘記 EPS 主要連結儲蓄存款 ($SD$)。</strong> 如果學生假設 EPS 是連結活期存款 ($DD$)，他們會得出 M1 不變的錯誤結論 (因為 $C_p$ 升而 $DD$ 跌，互相抵銷)。在 DSE 經濟科中，一般假設市民為了日常零售購物而提取的現金，主要來自儲蓄戶口。</div>
+            <div class="en"><strong>Trap 2: Forgetting EPS is primarily linked to Savings Deposits ($SD$).</strong> If a student assumes EPS is linked to Demand Deposits ($DD$), they would wrongly conclude that M1 is unchanged (since $C_p$ rises and $DD$ falls, offsetting each other). In DSE Economics, it's generally assumed that cash withdrawn by citizens for daily retail shopping comes from savings accounts.</div>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="zh"><strong>問 (Q):</strong> 萬一市民是從活期存款 ($DD$) 中提取現金呢？答案會有不同嗎？</p>
+        <p class="en"><strong>Question (Q):</strong> What if citizens withdraw cash from Demand Deposits ($DD$) instead? Would the answer be different?</p>
+        <hr style="border-top: 1px dashed #f59e0b; border-bottom: none;">
+        <p class="zh"><strong>答 (A):</strong> 如果是從 $DD$ 提款，$C_p$ 增加而 $DD$ 減少，兩者都是 M1 的組成部分，所以 M1 會維持不變。但留意選項 A、B、C、D 中，<strong>並沒有</strong>「M1及M2均維持不變」這個選項。因此，根據考試邏輯和香港實際情況，我們必須推斷提款是來自儲蓄存款 ($SD$)。</p>
+        <p class="en"><strong>Answer (A):</strong> If the withdrawal was from $DD$, $C_p$ would increase and $DD$ would decrease. Since both are components of M1, M1 would remain unchanged. However, looking at options A, B, C, and D, there is <strong>no</strong> option for "Both M1 and M2 remain unchanged". Therefore, based on exam logic and HK's practical context, we must deduce that the withdrawals are made from Savings Deposits ($SD$).</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p class="zh"><strong>內部轉移法則 (The Internal Transfer Rule):</strong></p>
+        <p class="en"><strong>The Internal Transfer Rule:</strong></p>
+        <p class="zh">如果在同一個貨幣供應定義（例如 M2）內，資金只是由一個項目（例如 $SD$）轉移到另一個項目（例如 $C_p$），該貨幣供應定義的總額<strong>必定維持不變</strong>。一看到「從銀行戶口提款變成現金」，立即可以斷定 M2 (或 M3) 是不變的，瞬間排除 A、C 和 D！</p>
+        <p class="en">If funds are merely transferred from one component (e.g., $SD$) to another (e.g., $C_p$) within the SAME money supply definition (e.g., M2), the total amount for that money supply definition <strong>must remain unchanged</strong>. The moment you see "withdrawing cash from a bank account," you can immediately conclude that M2 (or M3) is unchanged, instantly eliminating options A, C, and D!</p>
+    </div>
+
+</body>
+</html>
