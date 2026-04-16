@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Deposit Creation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --background: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .header-section {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+
+        .en-translation {
+            color: var(--text-light);
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Question Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+
+        /* Specific Sections */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-option {
+            background-color: #ecfdf5;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .wrong-option {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+        }
+
+        .qna-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .trick-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics 經濟學解題指南</h1>
+        <div>
+            <span class="tag">Topic: 貨幣與銀行 (Money and Banking)</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐ (4/5)</span>
+            <span class="tag">Key Concepts: 法定儲備 (Required Reserves)</span>
+            <span class="tag">Key Concepts: 存款創造 (Deposit Creation)</span>
+        </div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="bilingual-text">
+        <p>參閱以下某銀行系統的資產負債表。該系統的超額儲備是125百萬元。</p>
+        <table>
+            <tr>
+                <th colspan="2">資產（百萬元）</th>
+                <th colspan="2">負債（百萬元）</th>
+            </tr>
+            <tr>
+                <td>儲備</td>
+                <td>500</td>
+                <td>存款</td>
+                <td>1 500</td>
+            </tr>
+            <tr>
+                <td>貸款</td>
+                <td>1 000</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p>下列哪項有關上述銀行系統的陳述是正確的？</p>
+        <p>A. 實際銀行乘數是4。<br>
+        B. 若該銀行系統借出所有超額儲備，在存款創造的過程完成後，儲備金額會下降。<br>
+        C. 若該銀行系統借出所有超額儲備，貸款額增加的可能最大值是500百萬元。<br>
+        D. 若公眾從該銀行系統提取125百萬元，並以現金持有該筆款項，超額儲備會即時下降至零。</p>
+    </div>
+    
+    <div class="bilingual-text en-translation">
+        <p>Refer to the following balance sheet of a banking system which has excess reserves of $125 million.</p>
+        <table>
+            <tr>
+                <th colspan="2">Assets ($ million)</th>
+                <th colspan="2">Liabilities ($ million)</th>
+            </tr>
+            <tr>
+                <td>Reserves</td>
+                <td>500</td>
+                <td>Deposits</td>
+                <td>1 500</td>
+            </tr>
+            <tr>
+                <td>Loans</td>
+                <td>1 000</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p>Which of the following statements about the above banking system is correct?</p>
+        <p>A. The actual banking multiplier is 4.<br>
+        B. If the banking system loans out all the excess reserves, the amount of reserves will decrease after the deposit creation process is completed.<br>
+        C. If the banking system loans out all the excess reserves, the maximum possible increase in loans will be $500 million.<br>
+        D. If the public withdraws $125 million from the banking system and holds it as cash, the amount of excess reserves will decrease to zero immediately.</p>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要解答這類題目，我們必須熟記以下幾個核心公式與概念：</p>
+        <p class="en-translation">To answer this type of question, we must master the following core formulas and concepts:</p>
+
+        <ul>
+            <li><strong>儲備 (Reserves, \(R\)):</strong> 包括法定儲備和超額儲備。<br>
+                <div class="math-block">
+                    $$ R = RR + ER $$
+                </div>
+                <span class="en-translation">Includes Required Reserves (\(RR\)) and Excess Reserves (\(ER\)).</span>
+            </li>
+            <li><strong>法定儲備比率 (Required Reserve Ratio, \(rrr\)):</strong> 銀行必須保留作儲備的存款比例。<br>
+                <div class="math-block">
+                    $$ rrr = \frac{RR}{D} $$
+                </div>
+                <span class="en-translation">The fraction of deposits (\(D\)) that banks are required to keep as reserves.</span>
+            </li>
+            <li><strong>最大銀行乘數 (Maximum Banking Multiplier):</strong> 決定存款創造的最大倍數。<br>
+                <div class="math-block">
+                    $$ \text{Max Multiplier} = \frac{1}{rrr} $$
+                </div>
+            </li>
+             <li><strong>實際銀行乘數 (Actual Banking Multiplier):</strong> 現時系統中真實的乘數。<br>
+                <div class="math-block">
+                    $$ \text{Actual Multiplier} = \frac{D}{R} $$
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是 (The correct option is): <strong>Option C</strong></p>
+
+    <div class="math-block" style="text-align: left;">
+        <strong>Step 0: 找出隱藏資訊 (Find the hidden information)</strong><br>
+        已知 \(R = 500\), \(D = 1500\), \(ER = 125\)。<br>
+        法定儲備 \(RR = R - ER = 500 - 125 = 375\)。<br>
+        法定儲備比率 \(rrr = \frac{RR}{D} = \frac{375}{1500} = 0.25\) (25%)。<br>
+        最大銀行乘數 \( = \frac{1}{0.25} = 4\)。
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <h4>❌ Option A Analysis</h4>
+        <p><strong>中文：</strong> 實際銀行乘數公式是 \( \frac{D}{R} \)。代入數字，\( \frac{1500}{500} = 3 \)。因此實際乘數是3，而不是4（4是「最大」銀行乘數）。</p>
+        <p class="en-translation"><strong>English:</strong> The formula for the actual banking multiplier is \( \frac{D}{R} \). Plugging in the numbers, \( \frac{1500}{500} = 3 \). Thus, the actual multiplier is 3, not 4 (4 is the "maximum" banking multiplier).</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <h4>❌ Option B Analysis</h4>
+        <p><strong>中文：</strong> 在整個存款創造過程（Deposit Creation）完成後，雖然超額儲備會轉化為法定儲備，但銀行系統的「總儲備」並不會減少（假設沒有現金流失）。資金借出後會再次存入銀行系統，因此總儲備金額保持不變（維持在500百萬）。</p>
+        <p class="en-translation"><strong>English:</strong> After the deposit creation process is fully completed, although excess reserves are converted into required reserves, the "total reserves" of the banking system do not decrease (assuming no cash leakage). Money loaned out is redeposited into the banking system, so the total reserve amount remains unchanged (stays at 500 million).</p>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <h4>✅ Option C Analysis</h4>
+        <p><strong>中文：</strong> 當所有超額儲備 (\(ER = 125\)) 借出並進行存款創造，存款最大增加額度 \( \Delta D = ER \times \frac{1}{rrr} = 125 \times 4 = 500 \)。因為整個過程中銀行系統的總儲備 \(\Delta R = 0\)，根據資產負債表平衡原則（\(\Delta D = \Delta R + \Delta L\)），貸款的最大增加額 \( \Delta L \) 必定等於存款的最大增加額。因此 \(\Delta L = 500\)。</p>
+        <p class="en-translation"><strong>English:</strong> When all excess reserves (\(ER = 125\)) are loaned out for deposit creation, the maximum increase in deposits is \( \Delta D = ER \times \frac{1}{rrr} = 125 \times 4 = 500 \). Since the total reserves of the banking system do not change during the process (\(\Delta R = 0\)), according to the balance sheet principle (\(\Delta D = \Delta R + \Delta L\)), the maximum increase in loans \( \Delta L \) must equal the maximum increase in deposits. Therefore, \(\Delta L = 500\).</p>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <h4>❌ Option D Analysis</h4>
+        <p><strong>中文：</strong> 若市民提取125百萬元現金，存款 \(D\) 會減少125，即時降至1375；總儲備 \(R\) 也會即時減少125，降至375。這時，新的法定儲備要求 \(RR = 1375 \times 0.25 = 343.75\)。新的超額儲備 \(ER = \text{新} R - \text{新} RR = 375 - 343.75 = 31.25\)。由於存款下降減少了法定儲備的要求，釋放了部分儲備，因此超額儲備不會即時跌至零。</p>
+        <p class="en-translation"><strong>English:</strong> If the public withdraws 125 million in cash, deposits \(D\) decrease by 125, dropping immediately to 1375; total reserves \(R\) also decrease by 125, dropping to 375. At this point, the new required reserves \(RR = 1375 \times 0.25 = 343.75\). The new excess reserves \(ER = \text{New } R - \text{New } RR = 375 - 343.75 = 31.25\). Because the drop in deposits reduces the required reserve requirement, freeing up some reserves, the excess reserves will not drop to zero immediately.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-text">
+        <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+        這題的致勝關鍵在於<strong>必須先計算出法定儲備比率（rrr）</strong>。題目故意隱藏了這個數字，但提供了總儲備 (\(R\))、存款 (\(D\)) 和超額儲備 (\(ER\))。利用 \(RR = R - ER\) 找出 \(RR\)，然後用 \(RR \div D\) 找出 \(rrr\)，是破解所有選項的先決條件。</p>
+        
+        <p class="en-translation"><strong>The Pivot Point:</strong><br>
+        The key to winning this question lies in <strong>calculating the required reserve ratio (rrr) first</strong>. The question deliberately hides this number but provides total reserves (\(R\)), deposits (\(D\)), and excess reserves (\(ER\)). Using \(RR = R - ER\) to find \(RR\), and then \(RR \div D\) to find \(rrr\), is the prerequisite for cracking all the options.</p>
+
+        <p><strong>陷阱資訊 (Distractors):</strong><br>
+        最初的「貸款 1 000」在直接計算中其實不是必要的，因為存款和儲備已經足夠計算出系統的所有比率。它主要用於選項C的另一種解法檢查中。</p>
+        <p class="en-translation"><strong>Distractors:</strong><br>
+        The initial "Loans 1000" is actually not strictly necessary for the direct calculation, as deposits and reserves are enough to calculate all the system's ratios. It is mainly useful as a check for an alternative solving method for Option C.</p>
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li>
+            <strong>混淆「實際乘數」與「最大乘數」：</strong><br>
+            同學經常看到 \(rrr = 0.25\)，就立刻認定乘數是 4（如選項A）。記住，\( \frac{1}{rrr} \) 只是<strong>最大可能</strong>的乘數。<strong>實際</strong>乘數永遠是 \( \frac{\text{實際存款}}{\text{實際總儲備}} \)。
+            <p class="en-translation"><strong>Confusing Actual vs. Maximum Multiplier:</strong> Students often see \(rrr = 0.25\) and immediately assume the multiplier is 4 (like Option A). Remember, \( \frac{1}{rrr} \) is only the <strong>maximum possible</strong> multiplier. The <strong>actual</strong> multiplier is always \( \frac{\text{Actual Deposits}}{\text{Actual Total Reserves}} \).</p>
+        </li>
+        <li>
+            <strong>提款對超額儲備的影響（選項D的陷阱）：</strong><br>
+            很多同學以為「提取125元，超額儲備剛好有125元，所以相減變零」。這是大錯特錯！提取存款會同時令「法定儲備要求」下降，從而釋放出一部分原來的法定儲備去填補空缺，因此超額儲備的跌幅一定會**小於**提款額。
+            <p class="en-translation"><strong>The Impact of Withdrawal on Excess Reserves (Option D Trap):</strong> Many students think "Withdrawing 125, and there's exactly 125 in ER, so subtracting makes it zero." This is dead wrong! Withdrawing deposits simultaneously lowers the "required reserve requirement," thereby releasing some previously required reserves to fill the gap. Therefore, the drop in ER will always be **less than** the withdrawal amount.</p>
+        </li>
+    </ul>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qna-box">
+        <p><strong>Q: 既然把錢借出去，為什麼選項 B 說「總儲備不會下降」？</strong></p>
+        <p><strong>A:</strong> 在宏觀經濟學的「存款創造」模型中，我們假設沒有現金流失 (No cash leakage)。銀行把錢借給客人後，客人會用這筆錢去消費或投資，收到這筆錢的賣家最終又會把錢「存回」銀行體系。因此，對於「整個銀行系統」來說，這筆儲備只是從這家銀行轉到了另一家銀行，總額保持不變！</p>
+        <hr style="border:0; border-top: 1px solid #fcd34d; margin: 15px 0;">
+        <p class="en-translation"><strong>Q: Since money is loaned out, why does Option B say "total reserves will not decrease"?</strong></p>
+        <p class="en-translation"><strong>A:</strong> In the macroeconomic "deposit creation" model, we assume no cash leakage. After a bank loans money to a customer, the customer spends or invests it, and the seller who receives this money eventually "deposits" it back into the banking system. Therefore, for the "entire banking system," this reserve merely moves from one bank to another; the total amount remains unchanged!</p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <h3>⚡ 速解公式 (Shortcut Formulas)</h3>
+        <p><strong>1. 選項C 的另一種秒殺法 (Alternative shortcut for Option C):</strong><br>
+        與其計 \(\Delta D\) 再推論 \(\Delta L\)，你可以直接計「系統極限狀態」：<br>
+        最大總存款 = 總儲備 \( \times \frac{1}{rrr} = 500 \times 4 = 2000 \)。<br>
+        在極限狀態下，總資產 (儲備500 + 貸款L) 必須等於 總負債 (存款2000)。<br>
+        所以極限總貸款 = \( 2000 - 500 = 1500 \)。<br>
+        現有貸款是 1000，所以最大增加額 = \( 1500 - 1000 = 500 \)。秒殺！</p>
+        
+        <p class="en-translation"><strong>Alternative shortcut for Option C:</strong> Instead of calculating \(\Delta D\) and then inferring \(\Delta L\), calculate the "system's ultimate limit":<br>
+        Max Total Deposits = Total Reserves \( \times \frac{1}{rrr} = 500 \times 4 = 2000 \).<br>
+        At the limit, Total Assets (Reserves 500 + Loans L) must equal Total Liabilities (Deposits 2000).<br>
+        So Max Total Loans = \( 2000 - 500 = 1500 \).<br>
+        Current loans are 1000, so Max Increase = \( 1500 - 1000 = 500 \). Instant solve!</p>
+
+        <p><strong>2. 提款對超額儲備的即時影響公式 (Formula for withdrawal impact on ER):</strong><br>
+        當市民提取現金 \(W\) 時，超額儲備的即時下跌額度必定等於：<strong>\( W \times (1 - rrr) \)</strong><br>
+        套用在選項D：\( 125 \times (1 - 0.25) = 125 \times 0.75 = 93.75 \)。<br>
+        原來的超額儲備是125，只跌了93.75，當然不等於零。記住這個公式，考試快人一步！</p>
+        
+        <p class="en-translation"><strong>Formula for withdrawal impact on ER:</strong> When the public withdraws cash \(W\), the immediate drop in excess reserves is always exactly: <strong>\( W \times (1 - rrr) \)</strong><br>
+        Applying to Option D: \( 125 \times (1 - 0.25) = 125 \times 0.75 = 93.75 \).<br>
+        Original ER was 125, it only dropped by 93.75, so obviously it doesn't equal zero. Memorize this formula to stay ahead in the exam!</p>
+    </div>
+</div>
+
+</body>
+</html>

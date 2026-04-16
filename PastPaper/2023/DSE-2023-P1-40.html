@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: AS-AD Model</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .en-translation {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .header-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0284c7;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border-left: 6px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: #f0fdf4;
+            border-left: 6px solid #22c55e;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .correct-option {
+            background-color: #ecfdf5;
+            border: 1px solid #34d399;
+        }
+        .incorrect-option {
+            border: 1px solid #e2e8f0;
+        }
+        .decomposition-box {
+            background-color: #fffbeb;
+            border-left: 6px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 6px solid #ef4444;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 6px solid #a855f7;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .trick-box {
+            background-color: #f0f9ff;
+            border-left: 6px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .question-box, .concept-box, .analysis-box, .decomposition-box, .trap-box, .qa-box, .trick-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>HKDSE 經濟學題解系統 (Economics Solution System)</h2>
+        <p><strong>Topic (課題):</strong> 總需求與總供給模型 / 宏觀經濟學<br>
+        <span class="en-translation">Aggregate Demand and Aggregate Supply Model / Macroeconomics</span></p>
+        
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆</p>
+        
+        <p><strong>Key Concepts (核心概念):</strong></p>
+        <div style="margin-top: 10px;">
+            <span class="tag">短期總供給 (SRAS)</span>
+            <span class="tag">生產成本 (Cost of Production)</span>
+            <span class="tag">滯脹 (Stagflation)</span>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h3>The Question (題目)</h3>
+        <p>下列哪項會令某經濟的物價水平上升，同時令該經濟的就業水平下降？</p>
+        <p class="en-translation">Which of the following would result in a rise in the price level of an economy and a fall in its employment level at the same time?</p>
+        
+        <ul>
+            <li><strong>A.</strong> 政府調低利得稅稅率。<br>
+            <span class="en-translation">The government reduces the profits tax rate.</span></li>
+            <li><strong>B.</strong> 相對於其貿易夥伴的貨幣，該經濟的貨幣升值。<br>
+            <span class="en-translation">The economy’s currency appreciates against the currencies of its trading partners.</span></li>
+            <li><strong>C.</strong> 政府增加研究及發展的開支。<br>
+            <span class="en-translation">The government increases its spending on research and development.</span></li>
+            <li><strong>D.</strong> 進口原料的價格上升。<br>
+            <span class="en-translation">The prices of imported raw materials increase.</span></li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h3>Concept Review (概念重溫)</h3>
+        <p>要解答這道題目，我們需要運用<strong>總需求-總供給模型 (AS-AD Model)</strong>。宏觀經濟的均衡點取決於總需求 ($AD$) 和短期總供給 ($SRAS$) 的相交點。</p>
+        <p class="en-translation">To answer this question, we need to apply the <strong>Aggregate Demand - Aggregate Supply (AS-AD) Model</strong>. The macroeconomic equilibrium is determined by the intersection of Aggregate Demand ($AD$) and Short-Run Aggregate Supply ($SRAS$).</p>
+        
+        <div class="math-block">
+            <strong>均衡條件 (Equilibrium Condition):</strong>
+            $$AD = SRAS$$
+        </div>
+
+        <h4>關鍵定義 (Key Definitions):</h4>
+        <ul>
+            <li><strong>總需求 ($AD$):</strong> 經濟體系中對所有最終物品及服務的總需求。方程式為 $$AD = C + I + G + NX$$</li>
+            <li class="en-translation"><strong>Aggregate Demand ($AD$):</strong> The total demand for all final goods and services in an economy. The formula is $$AD = C + I + G + NX$$</li>
+            
+            <li><strong>短期總供給 ($SRAS$):</strong> 在生產要素價格（如工資、原料）固定的情況下，經濟體系在不同物價水平下願意且能夠生產的總產出。<br><strong>移動因素：</strong> 生產成本 (Cost of production) 的改變。</li>
+            <li class="en-translation"><strong>Short-Run Aggregate Supply ($SRAS$):</strong> The total output an economy is willing and able to produce at different price levels, assuming factor prices (e.g., wages, raw materials) are fixed.<br><strong>Shift factor:</strong> Changes in the cost of production.</li>
+        </ul>
+    </div>
+
+    <div class="analysis-box">
+        <h3>The Answer & Detailed Analysis (答案與詳細分析)</h3>
+        <p><strong>正確答案是 (Correct Option): <span style="color:#10b981; font-size:1.2em;">Option D</span></strong></p>
+
+        <div class="option incorrect-option">
+            <strong>選項 A (Option A): 錯誤 (Incorrect)</strong>
+            <p>政府調低利得稅稅率，會增加企業的預期投資回報，刺激投資 ($I$) 增加。因此，總需求 ($AD$) 會向右移。這會導致物價水平 ($P$) 上升，實質產出 ($Y$) 增加，就業水平隨之<strong>上升</strong>（不符合題目要求的下降）。</p>
+            <p class="en-translation">A reduction in the profits tax rate increases the expected return on investment for firms, stimulating investment ($I$). Therefore, Aggregate Demand ($AD$) shifts to the right. This leads to a rise in the price level ($P$) and an increase in real output ($Y$), which causes the employment level to <strong>rise</strong> (contradicting the question's requirement of a fall).</p>
+        </div>
+
+        <div class="option incorrect-option">
+            <strong>選項 B (Option B): 錯誤 (Incorrect)</strong>
+            <p>貨幣升值會令出口變得相對昂貴，進口變得相對便宜，導致淨出口 ($NX$) 減少。總需求 ($AD$) 會向左移。這會導致物價水平 ($P$) <strong>下降</strong>，就業水平下降（不符合題目要求的物價上升）。</p>
+            <p class="en-translation">Currency appreciation makes exports relatively more expensive and imports relatively cheaper, leading to a decrease in net exports ($NX$). Aggregate Demand ($AD$) shifts to the left. This causes the price level ($P$) to <strong>fall</strong> and the employment level to fall (contradicting the question's requirement of a price rise).</p>
+        </div>
+
+        <div class="option incorrect-option">
+            <strong>選項 C (Option C): 錯誤 (Incorrect)</strong>
+            <p>政府增加研發開支，一方面直接增加政府開支 ($G$)，令總需求 ($AD$) 向右移；長遠亦會提升生產力，令總供給 ($AS$) 向右移。無論如何，實質產出 ($Y$) 和就業水平都會<strong>上升</strong>。</p>
+            <p class="en-translation">An increase in government R&D spending directly increases government expenditure ($G$), shifting Aggregate Demand ($AD$) to the right. In the long run, it also improves productivity, shifting Aggregate Supply ($AS$) to the right. In either case, real output ($Y$) and the employment level will <strong>rise</strong>.</p>
+        </div>
+
+        <div class="option correct-option">
+            <strong>選項 D (Option D): 正確 (Correct)</strong>
+            <p>進口原料的價格上升，會直接增加企業的<strong>生產成本</strong>。在任何物價水平下，企業的利潤減少，導致短期總供給 ($SRAS$) <strong>向左移</strong>。這會造成「滯脹」(Stagflation) 現象：物價水平 ($P$) <strong>上升</strong>，同時實質產出 ($Y$) 下降，需要較少勞工，令就業水平<strong>下降</strong>。完全符合題目描述。</p>
+            <p class="en-translation">An increase in the prices of imported raw materials directly increases the <strong>cost of production</strong> for firms. At any given price level, firms' profit margins decrease, causing the Short-Run Aggregate Supply ($SRAS$) to <strong>shift to the left</strong>. This creates "Stagflation": the price level ($P$) <strong>rises</strong> while real output ($Y$) falls, requiring fewer workers, which causes the employment level to <strong>fall</strong>. This perfectly matches the question's description.</p>
+        </div>
+    </div>
+
+    <div class="decomposition-box">
+        <h3>Problem Decomposition (題目拆解)</h3>
+        <p><strong>解題樞紐 (The Pivot Point):</strong> 留意題目給出的兩個最終結果：「物價上升」($P \uparrow$) 及「就業下降」($Y \downarrow$)。</p>
+        <p class="en-translation"><strong>The Pivot Point:</strong> Pay attention to the two final outcomes given in the question: "price level rises" ($P \uparrow$) and "employment level falls" ($Y \downarrow$).</p>
+        
+        <ul>
+            <li>在 AS-AD 模型中，只有<strong>短期總供給 (SRAS) 向左移</strong>，才會同時導致物價上升和產出（及就業）下降。</li>
+            <li class="en-translation">In the AS-AD model, only a <strong>leftward shift of the Short-Run Aggregate Supply (SRAS)</strong> curve can simultaneously cause a rise in the price level and a fall in output (and employment).</li>
+            <li>因此，我們只需要在選項中找出「哪一個因素會導致 SRAS 向左移（生產成本上升）」。選項 D (原料價格上升) 顯然是正確答案。</li>
+            <li class="en-translation">Therefore, we only need to look through the options to find "which factor causes SRAS to shift to the left (increase in production cost)". Option D (increase in raw material prices) is clearly the correct answer.</li>
+        </ul>
+    </div>
+
+    <div class="trap-box">
+        <h3>Common Mistakes & Traps (常犯錯誤與陷阱)</h3>
+        <p><strong>陷阱：誤解貨幣升值的影響 (Misunderstanding Currency Appreciation)</strong></p>
+        <p>有學生看到選項 B（貨幣升值），會聯想到「進口原料變便宜」，從而推斷生產成本下降，令 SRAS 向右移。然而，即使 SRAS 向右移，結果會是物價<strong>下降</strong>及就業<strong>上升</strong>，仍然與題意相反。在 DSE 考試中，除非題目特別強調「該國高度依賴進口原料」，否則匯率變動首要影響的是淨出口 ($NX$) 及總需求 ($AD$)。</p>
+        <p class="en-translation">Some students seeing Option B (currency appreciation) might think "imported raw materials become cheaper," deducing that production costs fall and SRAS shifts right. However, even if SRAS shifts right, the result would be a <strong>fall</strong> in price level and a <strong>rise</strong> in employment, which still contradicts the question. In DSE exams, unless the question specifically emphasizes that "the country relies heavily on imported raw materials," exchange rate changes primarily affect net exports ($NX$) and Aggregate Demand ($AD$).</p>
+    </div>
+
+    <div class="qa-box">
+        <h3>Student Q&A (學生常見疑問)</h3>
+        <p><strong>Q: 題目只說「就業水平下降」，為甚麼解題時會自動等同於「實質產出 ($Y$) 下降」？</strong><br>
+        <span class="en-translation">Q: The question only says "employment level falls". Why do we automatically equate this to a "fall in real output ($Y$)" when solving the problem?</span></p>
+        <p><strong>A:</strong> 在短期宏觀經濟中，勞工是主要的浮動生產要素 (variable factor of production)。當實質本地生產總值（產出 $Y$）減少時，企業需要生產的數量下降，自然會減少僱用勞工，導致就業水平下降（或失業率上升）。因此，產出與就業在短期內是同向變動的。</p>
+        <p class="en-translation"><strong>A:</strong> In short-run macroeconomics, labour is the primary variable factor of production. When Real GDP (output $Y$) decreases, firms need to produce less, so they naturally hire fewer workers, leading to a fall in the employment level (or a rise in the unemployment rate). Therefore, output and employment move in the same direction in the short run.</p>
+    </div>
+
+    <div class="trick-box">
+        <h3>Exam Tricks & Shortcuts (考試技巧與速解)</h3>
+        <p><strong>AS-AD 的「四象限法則」(The Four-Quadrant Rule of AS-AD)</strong></p>
+        <p>在選擇題中，無需每次都畫圖。你可以直接背誦以下四種移動對 $P$ (物價) 和 $Y$ (產出/就業) 的影響，以達至「秒殺」效果：</p>
+        <p class="en-translation">In MC questions, you don't need to draw a graph every time. You can memorize the effects of the four shifts on $P$ (price) and $Y$ (output/employment) to solve questions instantly:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px; background-color: #ffffff;">
+            <tr style="background-color: #e2e8f0;">
+                <th style="padding: 10px; border: 1px solid #cbd5e1;">Curve Shift (曲線移動)</th>
+                <th style="padding: 10px; border: 1px solid #cbd5e1;">Price Level $P$ (物價)</th>
+                <th style="padding: 10px; border: 1px solid #cbd5e1;">Employment $Y$ (就業)</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #cbd5e1;">$AD$ Right (向右移)</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\uparrow$ 上升</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\uparrow$ 上升</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #cbd5e1;">$AD$ Left (向左移)</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\downarrow$ 下降</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\downarrow$ 下降</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #cbd5e1;">$SRAS$ Right (向右移)</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\downarrow$ 下降</td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">$\uparrow$ 上升</td>
+            </tr>
+            <tr style="background-color: #fef08a;">
+                <td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>$SRAS$ Left (向左移) [Target!]</strong></td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;"><strong>$\uparrow$ 上升</strong></td>
+                <td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;"><strong>$\downarrow$ 下降</strong></td>
+            </tr>
+        </table>
+        <p style="margin-top: 10px;">本題尋找 $P \uparrow$ 和 $Y \downarrow$，對照表格，一眼就能確認答案必須是導致 $SRAS$ 向左移的因素 (Option D)。</p>
+        <p class="en-translation">This question looks for $P \uparrow$ and $Y \downarrow$. Comparing with the table, you can see at a glance that the answer must be the factor causing $SRAS$ to shift left (Option D).</p>
+    </div>
+
+</body>
+</html>

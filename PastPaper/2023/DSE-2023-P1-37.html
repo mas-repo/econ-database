@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Classical Quantity Theory of Money</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+            --bg-color: #ffffff;
+            --text-main: #333333;
+            --text-muted: #555555;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .lang-tc {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        /* Section 1: Header */
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        /* Section 2: The Question */
+        .question-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .options-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #fcd34d;
+        }
+
+        /* Section 3: Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--accent-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        /* Section 4: Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-ans {
+            border-left: 5px solid var(--correct-color);
+            background-color: #f0fdf4;
+        }
+
+        .wrong-ans {
+            border-left: 5px solid var(--wrong-color);
+            background-color: #fef2f2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .badge-correct { background-color: var(--correct-color); }
+        .badge-wrong { background-color: var(--wrong-color); }
+
+        /* General Styles for remaining sections */
+        .highlight-text {
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+
+        .qa-box, .trick-box {
+            background-color: #faf5ff;
+            border: 1px solid #e9d5ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .trick-box {
+            background-color: #fdf2f8;
+            border-color: #fbcfe8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1 style="border-bottom:none; padding-bottom:0;">HKDSE Economics Masterclass</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> 古典貨幣數量論 (Classical Quantity Theory of Money)</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★★☆☆</span>
+            <span class="tag"><strong>Keywords:</strong> Equation of Exchange, Nominal Output, Velocity</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="lang-tc">根據古典貨幣數量論，若某經濟的貨幣供應上升8%，__________。</p>
+        <p class="lang-en">According to the classical quantity theory of money, if the money supply of an economy increases by 8%, __________.</p>
+        
+        <ul class="options-list">
+            <li>
+                <div class="lang-tc">A. 政府的入息稅稅收會上升8%</div>
+                <div class="lang-en">A. the government’s income tax revenue will increase by 8%</div>
+            </li>
+            <li>
+                <div class="lang-tc">B. 名義產出會上升8%</div>
+                <div class="lang-en">B. the nominal output will increase by 8%</div>
+            </li>
+            <li>
+                <div class="lang-tc">C. 實質產出會上升8%</div>
+                <div class="lang-en">C. the real output will increase by 8%</div>
+            </li>
+            <li>
+                <div class="lang-tc">D. 物價水平可能上升少於8%</div>
+                <div class="lang-en">D. the price level may increase by less than 8%</div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="lang-tc">要解答這條問題，我們必須掌握<strong>交易方程式 (Equation of Exchange)</strong> 以及古典學派的兩大核心假設。</p>
+        <p class="lang-en">To solve this question, we must master the <strong>Equation of Exchange</strong> and the two core assumptions of the classical school.</p>
+
+        <div class="math-block">
+            $$ M \times V = P \times Y $$
+        </div>
+
+        <ul>
+            <li><strong>M</strong> = 貨幣供應 (Money Supply)</li>
+            <li><strong>V</strong> = 貨幣流通速度 (Velocity of money)</li>
+            <li><strong>P</strong> = 物價水平 (Price level)</li>
+            <li><strong>Y</strong> = 實質產出 / 實質 GDP (Real output / Real GDP)</li>
+        </ul>
+
+        <div class="math-block">
+            $$ P \times Y = \text{名義產出 (Nominal Output)} $$
+        </div>
+
+        <p class="lang-tc"><strong>古典學派的核心假設 (Classical Assumptions):</strong><br>
+        1. <strong>貨幣流通速度 \(V\) 是常數 (Constant):</strong> 因為社會制度和人們的支付習慣短期內不會改變。<br>
+        2. <strong>實質產出 \(Y\) 處於全民就業水平 (Full-employment level):</strong> 由實質因素決定，不受貨幣供應影響（即貨幣中性 Money Neutrality）。因此 \(Y\) 亦被視為常數。</p>
+        
+        <p class="lang-en"><strong>Classical Assumptions:</strong><br>
+        1. <strong>Velocity of money \(V\) is constant:</strong> Because institutional factors and payment habits do not change in the short run.<br>
+        2. <strong>Real output \(Y\) is at the full-employment level:</strong> Determined by real factors and unaffected by money supply (i.e., Money Neutrality). Thus, \(Y\) is also considered constant.</p>
+        
+        <p class="lang-tc">將方程式轉換為百分比變化的形式：</p>
+        <p class="lang-en">Converting the equation into percentage changes:</p>
+        <div class="math-block">
+            $$ \% \Delta M + \% \Delta V = \% \Delta P + \% \Delta Y $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <p class="lang-tc"><strong>正確答案是 (Correct Option): Option B</strong></p>
+
+    <div class="option-analysis wrong-ans">
+        <span class="badge badge-wrong">Incorrect</span> <strong>Option A</strong>
+        <p class="lang-tc"><strong>分析：</strong> 政府的入息稅稅收取決於稅制（例如是否累進稅）。即使名義收入上升8%，在累進稅制下，人們可能會跌入更高的稅網，導致稅收上升<strong>多於</strong>8%（這稱為財政拖累 Fiscal Drag）。稅收不會必然剛好上升8%。</p>
+        <p class="lang-en"><strong>Analysis:</strong> Government income tax revenue depends on the tax system (e.g., progressive tax). Even if nominal income increases by 8%, under a progressive system, people might fall into higher tax brackets, causing tax revenue to increase by <strong>more than</strong> 8% (known as Fiscal Drag). It does not necessarily increase by exactly 8%.</p>
+    </div>
+
+    <div class="option-analysis correct-ans">
+        <span class="badge badge-correct">Correct</span> <strong>Option B</strong>
+        <p class="lang-tc"><strong>分析：</strong> 根據方程式 \(M \times V = P \times Y\)，名義產出即是 \(P \times Y\)。因為古典理論假設 \(V\) 為常數（\(\% \Delta V = 0\)），所以貨幣供應 (\(M\)) 上升8%，必定會導致名義產出 (\(P \times Y\)) 同步上升8%。數學上：\(8\% + 0\% = \% \Delta (PY)\)。</p>
+        <p class="lang-en"><strong>Analysis:</strong> According to the equation \(M \times V = P \times Y\), nominal output is \(P \times Y\). Since classical theory assumes \(V\) is constant (\(\% \Delta V = 0\)), an 8% increase in money supply (\(M\)) must lead to a proportionate 8% increase in nominal output (\(P \times Y\)). Mathematically: \(8\% + 0\% = \% \Delta (PY)\).</p>
+    </div>
+
+    <div class="option-analysis wrong-ans">
+        <span class="badge badge-wrong">Incorrect</span> <strong>Option C</strong>
+        <p class="lang-tc"><strong>分析：</strong> 古典學派認為貨幣是中性的 (Money is neutral)。實質產出 (\(Y\)) 處於全民就業水平，不受貨幣供應量影響。因此，\(\% \Delta Y = 0\)。</p>
+        <p class="lang-en"><strong>Analysis:</strong> The classical school believes money is neutral. Real output (\(Y\)) is fixed at the full-employment level and is unaffected by the money supply. Therefore, \(\% \Delta Y = 0\).</p>
+    </div>
+
+    <div class="option-analysis wrong-ans">
+        <span class="badge badge-wrong">Incorrect</span> <strong>Option D</strong>
+        <p class="lang-tc"><strong>分析：</strong> 根據古典數量論，由於 \(V\) 和 \(Y\) 皆被假設為常數（\(\% \Delta V = 0\) 及 \(\% \Delta Y = 0\)），方程式變為 \(8\% + 0\% = \% \Delta P + 0\)。物價水平 (\(P\)) 將會<strong>剛好</strong>上升8%，而不是少於8%。</p>
+        <p class="lang-en"><strong>Analysis:</strong> According to the classical quantity theory, since both \(V\) and \(Y\) are assumed constant (\(\% \Delta V = 0\) and \(\% \Delta Y = 0\)), the equation becomes \(8\% + 0\% = \% \Delta P + 0\). The price level (\(P\)) will increase by <strong>exactly</strong> 8%, not less than 8%.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="lang-tc"><strong>解題樞紐 (The Pivot Point):</strong> 看到「古典貨幣數量論」，你的大腦必須立即彈出兩個條件：\(V\) 是常數，以及 \(Y\) 是常數。接着，你必須懂得將「名義產出」翻譯為代數 \(P \times Y\)。只要知道 \(\% \Delta M = \% \Delta (PY)\)，答案就呼之欲出了。</p>
+    <p class="lang-en"><strong>The Pivot Point:</strong> When you see "Classical quantity theory of money", your brain must instantly recall two conditions: \(V\) is constant, and \(Y\) is constant. Next, you must translate "nominal output" into the algebraic expression \(P \times Y\). Once you know \(\% \Delta M = \% \Delta (PY)\), the answer becomes obvious.</p>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="qa-box">
+        <p class="lang-tc"><strong>陷阱一：混淆名義 (Nominal) 與實質 (Real)</strong><br>
+        學生常常不小心選擇了 C。請緊記，增加印鈔票（貨幣供應）並不能變出更多真實的蘋果和橙（實質產出）。它只能令蘋果和橙的標價變貴（名義價值上升）。</p>
+        <p class="lang-en"><strong>Trap 1: Confusing Nominal with Real</strong><br>
+        Students often carelessly choose C. Remember, printing more money (money supply) cannot magically create more real apples and oranges (real output). It only makes the price tags of those apples and oranges more expensive (nominal value increases).</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="lang-tc"><strong>Q: 甚麼情況下 D 選項 (物價上升少於8%) 才會是正確？</strong><br>
+        A: 如果題目沒有強調「古典學派」，而經濟體系內存在失業（例如凱恩斯學派的短暫時期），貨幣供應增加除了推高物價，同時亦能刺激實質產出 (\(Y\)) 上升。在這種情況下，\(\% \Delta P\) 就會小於 \(8\%\)。但本題明確規定了是「古典理論」。</p>
+        
+        <p class="lang-en"><strong>Q: Under what circumstances would Option D (price level increases by less than 8%) be correct?</strong><br>
+        A: If the question did not emphasize the "classical school" and there was unemployment in the economy (e.g., Keynesian short run), an increase in money supply could stimulate real output (\(Y\)) to rise alongside prices. In that case, \(\% \Delta P\) would be less than \(8\%\). However, this question specifically dictates "classical theory".</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p class="lang-tc"><strong>🔥 終極秒殺技巧：</strong><br>
+        在 DSE 選擇題中，關於「交易方程式」的題目，<strong>只要見到 \(V\) 不變（古典學派必然假設），\(\% \Delta M\) 永遠等於名義收入/名義產出的百分比改變。</strong> <br>
+        所以：看到 \(M\) 上升 8% $\rightarrow$ 直接找「名義產出/收入上升 8%」的選項，5秒內得分！</p>
+        
+        <p class="lang-en"><strong>🔥 Ultimate Shortcut:</strong><br>
+        In DSE MC questions regarding the Equation of Exchange, <strong>as long as \(V\) is constant (which is always assumed in the classical school), \(\% \Delta M\) will ALWAYS equal the percentage change in Nominal Income/Output.</strong><br>
+        Therefore: See \(M\) increase by 8% $\rightarrow$ immediately look for the option saying "Nominal Output/Income increases by 8%". Score the mark in 5 seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
