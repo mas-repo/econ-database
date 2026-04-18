@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+        }
+        h2 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: '📚';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .meta-info {
+            margin-bottom: 10px;
+        }
+        .meta-info strong {
+            color: #bfdbfe;
+        }
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+        /* Question Section */
+        .question-box {
+            background-color: #f9fafb;
+            border: 1px solid #d1d5db;
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        .options-list li {
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+        /* Bilingual Typography */
+        .tc-text {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .en-text {
+            color: #6b7280;
+            font-style: italic;
+            font-size: 0.95em;
+            display: block;
+        }
+        .p-tc {
+            margin-bottom: 8px;
+        }
+        .p-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        /* Concept Boxes */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #ffffff;
+            border: 1px dashed #9ca3af;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        /* Analysis Section */
+        .analysis-option {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .analysis-option.correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+        }
+        .analysis-option.incorrect {
+            background-color: #fef2f2;
+            border-color: #fca5a5;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .correct .status-badge {
+            background-color: #10b981;
+            color: white;
+        }
+        .incorrect .status-badge {
+            background-color: #ef4444;
+            color: white;
+        }
+        /* Special Sections */
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .mistake-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics Micro-Lesson</h1>
+        <div class="meta-info">
+            <strong>課題 Topic:</strong> 稀少性、經濟物品與免費物品 (Scarcity, Economic Goods and Free Goods)
+        </div>
+        <div class="meta-info">
+            <strong>難度 Difficulty:</strong> ★☆☆☆☆ (Level 1: Basic Concept)
+        </div>
+        <div class="meta-info">
+            <strong>關鍵字 Key Concepts:</strong> 
+            <span class="tag">稀少性 Scarcity</span>
+            <span class="tag">經濟物品 Economic Goods</span>
+            <span class="tag">免費物品 Free Goods</span>
+            <span class="tag">競爭 Competition</span>
+        </div>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <span class="tc-text">下列哪項有關經濟物品的陳述是正確的？</span>
+        <span class="en-text">Which of the following statements about economic goods is correct?</span>
+        
+        <ul class="options-list">
+            <li>
+                <span class="tc-text">A. 經濟物品可能不是稀少的。</span>
+                <span class="en-text">A. Economic goods may not be scarce.</span>
+            </li>
+            <li>
+                <span class="tc-text">B. 人們會對經濟物品進行競爭。</span>
+                <span class="en-text">B. People compete for economic goods.</span>
+            </li>
+            <li>
+                <span class="tc-text">C. 人們對經濟物品的偏好大於免費物品。</span>
+                <span class="en-text">C. People prefer economic goods to free goods.</span>
+            </li>
+            <li>
+                <span class="tc-text">D. 人們對經濟物品和免費物品均會進行競爭。</span>
+                <span class="en-text">D. People compete for both economic goods and free goods.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="p-tc"><strong>經濟物品 (Economic Good)</strong> 是一種數量不足以滿足人類所有慾望的物品。因此，要獲取經濟物品，必須付出代價（機會成本大於零）。因為資源不足，人們必須透過<strong>競爭 (Competition)</strong> 來決定誰能獲得該物品。</p>
+        <p class="p-en">An <strong>Economic Good</strong> is a good whose quantity is insufficient to satisfy all human wants. Therefore, acquiring it involves an opportunity cost greater than zero. Because the resource is limited, people must engage in <strong>competition</strong> to determine who gets the good.</p>
+        
+        <p class="p-tc"><strong>免費物品 (Free Good)</strong> 則是即使在價格為零的情況下，其數量已足以滿足人類所有慾望的物品（例如：陽光、空氣）。因此，獲取免費物品的機會成本為零，且不需要競爭。</p>
+        <p class="p-en">A <strong>Free Good</strong> is a good whose quantity is sufficient to satisfy all human wants even at a zero price (e.g., sunlight, air). The opportunity cost of obtaining it is zero, and there is no competition involved.</p>
+
+        <p class="p-tc">決定一件物品是否為「經濟物品」的核心條件是<strong>稀少性 (Scarcity)</strong>。我們可以用以下數學條件來表示：</p>
+        <p class="p-en">The core condition that determines whether a good is an "economic good" is <strong>scarcity</strong>. We can represent this with the following condition:</p>
+        
+        <div class="math-block">
+            $$ \text{Quantity Demanded (需求量)} > \text{Quantity Supplied (供應量)} \quad \text{at } P = 0 $$
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    
+    <p class="p-tc"><strong>正確答案是：選項 B</strong></p>
+    <p class="p-en"><strong>The correct answer is: Option B</strong></p>
+
+    <div class="analysis-option incorrect">
+        <span class="tc-text"><strong>A. 經濟物品可能不是稀少的。</strong> <span class="status-badge">錯誤 Incorrect</span></span>
+        <span class="en-text">A. Economic goods may not be scarce.</span>
+        <p class="p-tc">根據定義，所有經濟物品必定是稀少的。如果一件物品不稀少，它就會成為免費物品。因此，「可能不是稀少的」這句話在邏輯上是矛盾的。</p>
+        <p class="p-en">By definition, ALL economic goods are scarce. If a good is not scarce, it becomes a free good. Therefore, the phrase "may not be scarce" is a logical contradiction.</p>
+    </div>
+
+    <div class="analysis-option correct">
+        <span class="tc-text"><strong>B. 人們會對經濟物品進行競爭。</strong> <span class="status-badge">正確 Correct</span></span>
+        <span class="en-text">B. People compete for economic goods.</span>
+        <p class="p-tc">因為經濟物品具有稀少性（即慾望大於現有資源），並不是每個人都能得到他們想要的數量。為了解決這個分配問題，人們必須參與競爭（例如透過出價、排隊或考試），這是經濟學中的基本定理。</p>
+        <p class="p-en">Because economic goods are scarce (wants > available resources), not everyone can have as much as they want. To resolve this allocation problem, people must compete (e.g., by offering higher prices, queuing, or taking exams). This is a fundamental theorem in economics.</p>
+    </div>
+
+    <div class="analysis-option incorrect">
+        <span class="tc-text"><strong>C. 人們對經濟物品的偏好大於免費物品。</strong> <span class="status-badge">錯誤 Incorrect</span></span>
+        <span class="en-text">C. People prefer economic goods to free goods.</span>
+        <p class="p-tc">物品的「偏好 (Preference)」與它是否屬於經濟物品無關。舉例來說，空氣是免費物品，而鑽石是經濟物品。從生存的角度來看，人們對空氣的偏好絕對遠大於鑽石，只是因為空氣供應無限，我們才不需要為它付費。</p>
+        <p class="p-en">"Preference" has nothing to do with whether a good is economic or free. For example, air is a free good and diamonds are economic goods. In terms of survival, humans vastly prefer air over diamonds; we just don't pay for air because its supply is overwhelmingly abundant.</p>
+    </div>
+
+    <div class="analysis-option incorrect">
+        <span class="tc-text"><strong>D. 人們對經濟物品和免費物品均會進行競爭。</strong> <span class="status-badge">錯誤 Incorrect</span></span>
+        <span class="en-text">D. People compete for both economic goods and free goods.</span>
+        <p class="p-tc">人們<strong>絕對不會</strong>對免費物品進行競爭。當價格為 \( P = 0 \) 時，免費物品的數量已經超過了所有人的需求，任何人都可以隨意拿取所需份量，競爭根本沒有必要存在。</p>
+        <p class="p-en">People <strong>never</strong> compete for free goods. Since the quantity supplied exceeds quantity demanded at \( P = 0 \), anyone can take as much as they want. There is absolutely no need for competition.</p>
+    </div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <div class="concept-box" style="background-color: #f5f3ff; border-color: #8b5cf6;">
+        <p class="p-tc">這是一條標準的定義題 (Definitional Question)。解題的「樞紐 (Pivot Point)」在於理解<strong>稀少性 (Scarcity)</strong>、<strong>經濟物品 (Economic Goods)</strong>與<strong>競爭 (Competition)</strong>三者是不可分割的鐵三角關係。</p>
+        <p class="p-en">This is a standard definitional question. The "Pivot Point" for solving it lies in understanding that <strong>Scarcity</strong>, <strong>Economic Goods</strong>, and <strong>Competition</strong> form an inseparable triangle.</p>
+        <ul>
+            <li><span class="tc-text">有稀少性 ➔ 就是經濟物品 ➔ 必定產生競爭</span><span class="en-text">Has Scarcity ➔ Is an Economic Good ➔ Must generate Competition</span></li>
+            <li><span class="tc-text">題目中的「偏好 (Preference)」是常見的干擾項 (Distractor)，用來誤導概念不清的同學。</span><span class="en-text">"Preference" in the options is a classic distractor used to mislead students with shaky concepts.</span></li>
+        </ul>
+    </div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="mistake-box">
+        <p class="p-tc"><strong>⚠️ 概念混淆：以為「付費」才算是競爭</strong></p>
+        <p class="p-en"><strong>⚠️ Misconception: Thinking "paying money" is the only form of competition.</strong></p>
+        <p class="p-tc">很多學生誤以為只有在市場上用金錢購買才算競爭。實際上，排隊花費的時間 (Time)、用武力搶奪 (Violence)、甚至用考試成績爭取大學學位 (Academic merits)，全部都是競爭經濟物品的形式！</p>
+        <p class="p-en">Many students mistakenly believe that competition only happens in the market via monetary prices. In reality, spending time queuing, using physical force, or using exam results to fight for a university spot are all valid forms of competing for economic goods!</p>
+    </div>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="p-tc"><strong>🙋‍♂️ 學生問：</strong>「如果一件物品沒有人想要（例如垃圾），那它是不是免費物品？因為沒人跟別人競爭啊！」</p>
+        <p class="p-en"><strong>🙋‍♂️ Student Q:</strong> "If no one wants a good (like garbage), does that make it a free good? Since no one is competing for it!"</p>
+        <hr style="border:0; border-top: 1px dashed #fcd34d; margin: 15px 0;">
+        <p class="p-tc"><strong>👨‍🏫 導師答：</strong>這是一個很好的問題！如果一件東西完全沒有人想要，它在經濟學上根本不算是「物品 (Good)」，而是「缺憾 (Bad)」。物品的定義是「能滿足人類慾望的東西」。免費物品是指「大家想要，而且大自然給得非常多，多到拿不完」的東西（如呼吸的空氣）。</p>
+        <p class="p-en"><strong>👨‍🏫 Tutor A:</strong> Great question! If something is desired by absolutely no one, in economics, it is not considered a "Good" at all; it's a "Bad". The definition of a good is "something that satisfies human wants". A free good is something people DO want, but nature provides it in such immense abundance that there's more than enough for everyone (like the air we breathe).</p>
+    </div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="tip-box">
+        <p class="p-tc"><strong>⚡ 秒殺技巧 (The Elimination Trick)：</strong></p>
+        <p class="p-en"><strong>⚡ The Elimination Trick:</strong></p>
+        <p class="p-tc">在 DSE 經濟科 MC 卷中，只要你看到選項把 <strong>「免費物品 (Free Goods)」</strong> 與 <strong>「代價 (Cost) / 稀少 (Scarce) / 競爭 (Compete)」</strong> 放在同一句話裡，你可以<strong>立刻刪除</strong>該選項。這幫助你在 3 秒內直接排除了選項 D！</p>
+        <p class="p-en">In HKDSE Economics MC papers, whenever you see an option that places <strong>"Free Goods"</strong> in the same sentence as <strong>"Cost / Scarce / Compete"</strong>, you can <strong>immediately cross it out</strong>. This rule helps you eliminate Option D in less than 3 seconds!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

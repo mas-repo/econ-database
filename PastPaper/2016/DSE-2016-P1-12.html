@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Profit Maximization</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.2em;
+        }
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header-section {
+            margin-bottom: 25px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: bold;
+            background: #e0f2fe;
+            color: #0369a1;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .badge.diff { background: #fef08a; color: #854d0e; }
+        .question-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 6px solid #0ea5e9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-card {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+        .correct-ans {
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+            border-left: 6px solid #22c55e;
+        }
+        .wrong-ans {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+            border-left: 6px solid #ef4444;
+        }
+        .en-translation {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 12px;
+            border-top: 1px dashed #d1d5db;
+            padding-top: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+        .highlight-row {
+            background-color: #dcfce7;
+            font-weight: bold;
+        }
+        .alert-box {
+            background-color: #fffbeb;
+            border-left: 6px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fdf4ff;
+            border-left: 6px solid #d946ef;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics: MCQ Analysis</h1>
+    
+    <div class="header-section">
+        <span class="badge">Topic: Theory of the Firm (廠商理論)</span>
+        <span class="badge diff">Difficulty: ★★★☆☆</span>
+        <span class="badge">Key Concepts: Price-taker, Marginal Cost, Profit Maximization</span>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>[中文版]</strong></p>
+        <p>下表顯示一受價者的成本與產出的關係。</p>
+        <table>
+            <tr><th>產出（單位）</th><th>平均成本 ($)</th></tr>
+            <tr><td>2</td><td>20</td></tr>
+            <tr><td>3</td><td>21</td></tr>
+            <tr><td>4</td><td>22</td></tr>
+            <tr><td>5</td><td>23</td></tr>
+            <tr><td>6</td><td>24</td></tr>
+            <tr><td>7</td><td>25</td></tr>
+        </table>
+        <p>假設市場價格是$25。爭取最高利潤的產出和利潤分別是多少？</p>
+        <p>A. 4單位及$0<br>
+        B. 4單位及$12<br>
+        C. 7單位及$0<br>
+        D. 7單位及$12</p>
+
+        <div class="en-translation">
+            <p><strong>[English Version]</strong></p>
+            <p>The following table shows the cost-output relationship of a price-taker.</p>
+            <table>
+                <tr><th>Output (units)</th><th>Average cost ($)</th></tr>
+                <tr><td>2</td><td>20</td></tr>
+                <tr><td>3</td><td>21</td></tr>
+                <tr><td>4</td><td>22</td></tr>
+                <tr><td>5</td><td>23</td></tr>
+                <tr><td>6</td><td>24</td></tr>
+                <tr><td>7</td><td>25</td></tr>
+            </table>
+            <p>Suppose the market price is $25. What are the profit-maximizing output and profit respectively?</p>
+            <p>A. 4 units and $0<br>
+            B. 4 units and $12<br>
+            C. 7 units and $0<br>
+            D. 7 units and $12</p>
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p>要解決這類題目，我們必須清楚理解「受價者」的特徵以及如何達到「利潤極大化」。</p>
+        <ul>
+            <li><strong>受價者 (Price-taker):</strong> 面對完全競爭市場，廠商不能改變價格，只能接受市場價格。因此，邊際收益 \(MR\) 會等於價格 \(P\)。</li>
+            <li><strong>利潤極大化條件 (Profit-Maximizing Condition):</strong> 當邊際成本 \(MC\) 等於邊際收益 \(MR\) 時，利潤達到最高。對於受價者而言，這表示 \(P = MC\)。</li>
+        </ul>
+        <div class="math-block">
+            $$ \text{Profit Maximization: } MC = MR = P $$
+        </div>
+        <p>然而，題目只提供了平均成本 \(AC\)。我們需要運用以下公式來找出總成本 \(TC\) 和邊際成本 \(MC\)：</p>
+        <div class="math-block">
+            $$ TC = AC \times Q $$
+            $$ MC = \frac{\Delta TC}{\Delta Q} $$
+            $$ \text{Profit } (\pi) = TR - TC = (P \times Q) - (AC \times Q) $$
+        </div>
+
+        <div class="en-translation">
+            <p>To solve this type of question, we must clearly understand the characteristics of a "price-taker" and how to achieve "profit maximization".</p>
+            <ul>
+                <li><strong>Price-taker:</strong> In a perfectly competitive market, a firm cannot change the price and must accept the market price. Therefore, Marginal Revenue \(MR\) equals Price \(P\).</li>
+                <li><strong>Profit-Maximizing Condition:</strong> Profit is maximized when Marginal Cost \(MC\) equals Marginal Revenue \(MR\). For a price-taker, this means \(P = MC\).</li>
+            </ul>
+            <p>However, the question only provides Average Cost \(AC\). We need to use formulas to find Total Cost \(TC\) and Marginal Cost \(MC\).</p>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    
+    <p>正確答案是 / The correct option is: <strong>B</strong></p>
+
+    <p>為了找出答案，我們首先需要擴展原本的表格，計算每個產出水平的總成本 \(TC\) 和邊際成本 \(MC\)。</p>
+    <div class="en-translation" style="border:none; margin-top:0; padding-top:0;">
+        <p>To find the answer, we first need to expand the original table to calculate Total Cost \(TC\) and Marginal Cost \(MC\) for each output level.</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>產出 \(Q\)</th>
+            <th>平均成本 \(AC\)</th>
+            <th>總成本 \(TC = AC \times Q\)</th>
+            <th>邊際成本 \(MC = \Delta TC\)</th>
+        </tr>
+        <tr><td>2</td><td>20</td><td>2 × 20 = 40</td><td>-</td></tr>
+        <tr><td>3</td><td>21</td><td>3 × 21 = 63</td><td>63 - 40 = 23</td></tr>
+        <tr class="highlight-row"><td>4</td><td>22</td><td>4 × 22 = 88</td><td>88 - 63 = 25</td></tr>
+        <tr><td>5</td><td>23</td><td>5 × 23 = 115</td><td>115 - 88 = 27</td></tr>
+        <tr><td>6</td><td>24</td><td>6 × 24 = 144</td><td>144 - 115 = 29</td></tr>
+        <tr><td>7</td><td>25</td><td>7 × 25 = 175</td><td>175 - 144 = 31</td></tr>
+    </table>
+
+    <div class="analysis-card wrong-ans">
+        <strong>選項 A (Option A): 4單位及$0</strong>
+        <p>雖然產出量正確 (\(Q=4\))，但利潤計算錯誤。在 \(Q=4\) 時，總收益 \(TR = 4 \times 25 = 100\)，總成本 \(TC = 88\)。利潤應為 \(100 - 88 = 12\)，而不是 $0。</p>
+        <div class="en-translation">
+            While the output is correct (\(Q=4\)), the profit calculation is wrong. At \(Q=4\), Total Revenue \(TR = 4 \times 25 = 100\), Total Cost \(TC = 88\). Profit should be \(100 - 88 = 12\), not $0.
+        </div>
+    </div>
+
+    <div class="analysis-card correct-ans">
+        <strong>選項 B (Option B): 4單位及$12</strong>
+        <p><strong>正確。</strong> 從我們計算的表格可見，當產出 \(Q=4\) 時，邊際成本 \(MC = 25\)。由於市場價格 \(P = 25\)，符合 \(P = MC\) 的利潤極大化條件。此時，利潤 \(\pi = TR - TC = (25 \times 4) - 88 = 100 - 88 = 12\)。</p>
+        <div class="en-translation">
+            <strong>Correct.</strong> From our calculated table, when output \(Q=4\), Marginal Cost \(MC = 25\). Since the market price \(P = 25\), it fulfills the profit-maximizing condition \(P = MC\). At this point, Profit \(\pi = TR - TC = (25 \times 4) - 88 = 100 - 88 = 12\).
+        </div>
+    </div>
+
+    <div class="analysis-card wrong-ans">
+        <strong>選項 C (Option C): 7單位及$0</strong>
+        <p>這是最常見的陷阱選項！在 \(Q=7\) 時，平均成本 \(AC = 25\)，剛好等於價格 \(P=25\)。此時利潤的確是 $0 (\(TR=175, TC=175\))。但這只是「收支平衡點」(Break-even point)，並不是「利潤極大化」。這裏的 \(MC = 31\)，已經大於 \(P\)，代表生產第7件產品會帶來虧損。</p>
+        <div class="en-translation">
+            This is the most common trap! At \(Q=7\), Average Cost \(AC = 25\), which equals Price \(P=25\). The profit is indeed $0. However, this is only the "Break-even point", not "Profit maximization". Here, \(MC = 31\), which is greater than \(P\), meaning producing the 7th unit brings a loss.
+        </div>
+    </div>
+
+    <div class="analysis-card wrong-ans">
+        <strong>選項 D (Option D): 7單位及$12</strong>
+        <p>產出量錯誤，且在此產出水平下的利潤計算也錯誤。在 \(Q=7\) 時，利潤應為 $0，絕不可能是 $12。</p>
+        <div class="en-translation">
+            The output is wrong, and the profit calculation for this output level is also wrong. At \(Q=7\), the profit should be $0, it is impossible to be $12.
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="background-color: #f5f3ff; border-left-color: #8b5cf6;">
+        <p><strong>解題樞紐 (The Pivot Point):</strong><br>
+        解決這題的關鍵在於識破「平均成本」的偽裝。題目問的是「利潤極大化」，我們腦中必須立刻彈出公式：\(MC = MR\)。因為表格沒給 \(MC\)，我們必須自己動手把 \(TC\) 和 \(MC\) 算出來。</p>
+        
+        <p><strong>干擾資訊 (Distractors):</strong><br>
+        表格中 \(Q=7\) 時 \(AC=25\)，而題目又剛好設定市場價格 \(P=25\)。這是考評局精心設計的陷阱，專門用來欺騙那些把「\(P = MC\)」誤記為「\(P = AC\)」的同學。</p>
+
+        <div class="en-translation">
+            <p><strong>The Pivot Point:</strong><br>
+            The key to solving this question is seeing through the disguise of "Average Cost". The question asks for "profit maximization", so the formula \(MC = MR\) must immediately pop into our heads. Since the table doesn't provide \(MC\), we must manually calculate \(TC\) and \(MC\).</p>
+            
+            <p><strong>Distractors:</strong><br>
+            In the table, when \(Q=7\), \(AC=25\), and the market price is exactly set at \(P=25\). This is a carefully designed trap by the HKEAA to trick students who mistakenly remember "\(P = MC\)" as "\(P = AC\)".</p>
+        </div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="alert-box">
+        <p><strong>⚠️ 概念混淆：誤將 P = AC 當作極大化利潤</strong><br>
+        很多同學看到「市場價格 = $25」，立刻在表格裏找「25」這個數字，結果找到了 \(Q=7\) 時的 \(AC=25\)。請記住：\(P = AC\) 是「收支平衡」(賺取正常利潤) 的條件，而 \(P = MC\) 才是「爭取最高利潤」的條件！</p>
+        <div class="en-translation">
+            <strong>⚠️ Conceptual Confusion: Mistaking P = AC for Profit Maximization</strong><br>
+            Many students see "Market price = $25" and immediately look for "25" in the table, finding \(AC=25\) at \(Q=7\). Remember: \(P = AC\) is the condition for "breaking even" (earning normal profit), while \(P = MC\) is the condition for "maximizing profit"!
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="question-box" style="background: #ffffff;">
+        <p><strong>Q: 在完全競爭市場中，廠商不是只能賺取「零經濟利潤」(正常利潤) 嗎？為什麼這裡的最高利潤是 $12？</strong></p>
+        <p><strong>A:</strong> 很好的問題！「零經濟利潤」是完全競爭市場在<strong>長期 (Long-run)</strong> 的均衡狀態。但題目問的是在<strong>目前的市場價格下</strong>（短期），廠商應該生產多少來獲取最高利潤。目前價格夠高（$25 > 最小平均成本），所以廠商可以賺取短期的「超額利潤」(Supernormal profit) $12。如果賺 $12 總好過賺 $0！</p>
+        
+        <div class="en-translation">
+            <p><strong>Q: In a perfectly competitive market, shouldn't a firm only earn "zero economic profit" (normal profit)? Why is the maximum profit $12 here?</strong></p>
+            <p><strong>A:</strong> Great question! "Zero economic profit" is the <strong>long-run</strong> equilibrium state for a perfectly competitive market. But this question is asking how much the firm should produce to maximize profit given the <strong>current market price</strong> (short-run). Currently, the price is high enough ($25 > Minimum AC), so the firm can earn a short-run "supernormal profit" of $12. Making $12 is definitely better than making $0!</p>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p><strong>💡 邏輯秒殺法 (Logic Check Elimination Method)</strong></p>
+        <p>即使你不填寫完整的 \(MC\) 表格，你也可以用常理推斷來消去選項 C 和 D！<br>
+        看看選項 C：\(Q=7\)，利潤=$0。我們來測試一下：如果廠商少生產一點，例如只生產 \(Q=6\)，當時的 \(AC\) 是 $24。每賣出一件產品，廠商收 $25 但成本平均只是 $24，所以一定有錢賺（利潤為正數）。既然 \(Q=6\) 時有錢賺，那麼最高利潤絕對不會是 $0！這樣你就能瞬間排除了 C 和 D，大大縮小範圍。</p>
+        
+        <div class="en-translation">
+            <p><strong>💡 Logic Check Elimination Method</strong></p>
+            <p>Even without filling out the entire \(MC\) table, you can eliminate options C and D using common sense!<br>
+            Look at Option C: \(Q=7\), Profit=$0. Let's test it: if the firm produces less, say \(Q=6\), the \(AC\) is $24. For every unit sold, the firm receives $25 but the average cost is only $24. The firm must be making money (profit is positive). Since profit is positive at \(Q=6\), the maximum profit can absolutely NEVER be $0! This allows you to instantly eliminate C and D.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
