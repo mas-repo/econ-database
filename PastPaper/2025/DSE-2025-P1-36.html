@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Interactive Guide</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .english-text {
+            color: #475569;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .chinese-text {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .mistakes-box {
+            background-color: #fee2e2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .tricks-box {
+            background-color: #fef9c3;
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .correct-option {
+            font-weight: bold;
+            color: #16a34a;
+            font-size: 1.2em;
+        }
+        .qa-box {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b91c1c;
+        }
+        .qa-a {
+            margin-left: 20px;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE 經濟學題解指南</h1>
+        <p class="english-text">HKDSE Economics Solution Guide</p>
+        <p><strong>主題 (Topic):</strong> 經濟週期與實質本地生產總值 (Business Cycle & Real GDP)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>關鍵概念 (Key Concepts):</strong> 實質本地生產總值增長率 (Real GDP Growth Rate), 經濟衰退 (Recession), 宏觀經濟現象 (Macroeconomic Phenomena)</p>
+    </header>
+
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="chinese-text">細閱下圖。下列哪些是當一個經濟在A點運作時很可能出現的經濟現象？</p>
+        <p class="english-text">Study the following diagram. Which of the following are economic phenomena that likely occur when an economy is operating at point A?</p>
+        
+        <ol>
+            <li>
+                <span class="chinese-text">商鋪鋪位的空置率正在上升。</span><br>
+                <span class="english-text">The percentage of shop premises that are vacant is increasing.</span>
+            </li>
+            <li>
+                <span class="chinese-text">未能償還銀行貸款的頻率正在上升。</span><br>
+                <span class="english-text">The frequency of non-repayment of bank loans is increasing.</span>
+            </li>
+            <li>
+                <span class="chinese-text">對進口物品的開支正在上升。</span><br>
+                <span class="english-text">The expenditure on imported goods is increasing.</span>
+            </li>
+        </ol>
+
+        <p>A. 只有 (1)、(2) / (1) and (2) only</p>
+        <p>B. 只有 (1)、(3) / (1) and (3) only</p>
+        <p>C. 只有 (2)、(3) / (2) and (3) only</p>
+        <p>D. (1)、(2) 及 (3) / (1), (2) and (3)</p>
+    </div>
+
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="chinese-text">要破解這類題目，首先必須清楚區分「實質本地生產總值水平」(Level of Real GDP) 和「實質本地生產總值改變百分率」(Percentage change in Real GDP，即增長率)。</p>
+        <p class="english-text">To solve this type of question, you must clearly distinguish between the "Level of Real GDP" and the "Percentage change in Real GDP" (i.e., the growth rate).</p>
+        
+        <ul>
+            <li>
+                <span class="chinese-text"><strong>當增長率 > 0：</strong> 經濟正在擴張，實質 GDP 的絕對值正在上升。</span><br>
+                <span class="english-text"><strong>When Growth Rate > 0:</strong> The economy is expanding, and the absolute level of Real GDP is increasing.</span>
+            </li>
+            <li>
+                <span class="chinese-text"><strong>當增長率 < 0：</strong> 經濟正在收縮（衰退），實質 GDP 的絕對值正在下降。</span><br>
+                <span class="english-text"><strong>When Growth Rate < 0:</strong> The economy is contracting (recession), and the absolute level of Real GDP is decreasing.</span>
+            </li>
+        </ul>
+
+        <div class="math-block">
+            $$ \text{增長率 (Growth Rate)} = \frac{\text{GDP}_{t} - \text{GDP}_{t-1}}{\text{GDP}_{t-1}} \times 100\% $$
+        </div>
+        
+        <p class="chinese-text">在圖中，A點位於水平軸 ($0\%$) 之下。這意味著該經濟體的增長率為負數，正處於<strong>經濟衰退 (Recession)</strong> 階段。在衰退期間，國民收入下降，失業率上升，消費和投資減少。</p>
+        <p class="english-text">In the diagram, Point A is located below the horizontal axis ($0\%$). This means the economy's growth rate is negative, and it is in a <strong>Recession</strong>. During a recession, national income falls, unemployment rises, and consumption and investment decrease.</p>
+    </div>
+
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案 (Correct Option): <span class="correct-option">A</span></p>
+    
+    <div class="concept-box" style="background-color: #fff; border-left: 5px solid #16a34a;">
+        <p class="chinese-text"><strong>分析 (1)：正確。</strong> 由於經濟處於衰退期（A點增長率為負），市民收入減少，消費意欲下降。由於生意難做，企業利潤下跌甚至倒閉，導致商鋪的空置率上升。</p>
+        <p class="english-text"><strong>Analysis of (1): Correct.</strong> Since the economy is in a recession (negative growth rate at Point A), citizens' incomes decrease and their desire to consume falls. With businesses struggling, corporate profits drop or firms go bankrupt, leading to an increasing vacancy rate for shop premises.</p>
+
+        <p class="chinese-text"><strong>分析 (2)：正確。</strong> 在經濟衰退期間，失業率通常會上升，企業和個人的收入都會減少。這削弱了他們償還債務的能力，因此未能償還銀行貸款的頻率（壞帳率）會上升。</p>
+        <p class="english-text"><strong>Analysis of (2): Correct.</strong> During an economic recession, the unemployment rate typically rises, and both corporate and personal incomes decrease. This weakens their ability to service debts, so the frequency of non-repayment of bank loans (bad debt rate) will increase.</p>
+
+        <p class="chinese-text"><strong>分析 (3)：錯誤。</strong> 對進口物品的開支取決於國民收入的水平。當經濟陷入衰退，國民收入下降，市民會減少購買各種物品（包括本地和進口物品）。因此，對進口物品的開支應該是<strong>下降</strong>而非上升。</p>
+        <p class="english-text"><strong>Analysis of (3): Incorrect.</strong> Expenditure on imported goods depends on the level of national income. When the economy is in recession, national income falls, and citizens will buy fewer goods in general (both local and imported). Therefore, the expenditure on imported goods should be <strong>decreasing</strong>, not increasing.</p>
+    </div>
+
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <p class="chinese-text"><strong>破題關鍵 (Pivot Point)：</strong> 認清 Y 軸的標籤。圖表顯示的是「改變百分率」(Percentage change)，而不是「實質 GDP 水平」。只要看到 A 點在 $0$ 線以下，就可以斷定整體產出正在萎縮 (Output is shrinking)。</p>
+    <p class="english-text"><strong>Pivot Point:</strong> Recognize the Y-axis label. The graph shows "Percentage change", not the "Level of Real GDP". As long as Point A is below the $0$ line, you can conclude that overall output is shrinking.</p>
+
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistakes-box">
+        <p class="chinese-text"><strong>陷阱一：誤認經濟週期階段 (Misidentifying the Business Cycle Phase)</strong><br>
+        很多學生看到 A 點處於曲線的下降段，就直覺認為這是「衰退的開始」。其實，只要曲線跌穿 $0\%$ 的水平線，經濟就已經處於絕對收縮狀態。曲線最低點（谷底）亦<strong>不是</strong>實質 GDP 最低的時刻，實質 GDP 最低的時刻是曲線由負數重新穿過 $0$ 回升的那一點。</p>
+        <p class="english-text"><strong>Trap 1: Misidentifying the Business Cycle Phase</strong><br>
+        Many students see Point A on the downward slope and instinctively think it's the "start of a recession". In reality, once the curve falls below the $0\%$ line, the economy is already in absolute contraction. The lowest point of this curve is <strong>not</strong> the trough of Real GDP; the actual trough of Real GDP occurs when the curve crosses the $0$ line from negative back to positive.</p>
+    </div>
+
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 圖中的「平均增長率 (average growth rate)」虛線有什麼用？</p>
+        <p class="chinese-text">A: 在這條題目中，平均增長率是一項<strong>干擾資訊 (Distractor)</strong>。這條虛線通常用來判斷經濟是否出現「高於長期趨勢」的擴張，但要判斷絕對的經濟好壞（衰退與否），我們只需要看數值是否大於 $0$。A 點不僅低於平均值，更低於 $0$，所以是明確的衰退。</p>
+        <p class="english-text">A: In this question, the average growth rate dashed line is a <strong>distractor</strong>. It is typically used to judge whether the economy is expanding "above the long-term trend". However, to judge absolute economic conditions (whether it's a recession or not), we only need to look at whether the value is above $0$. Point A is not only below the average, but strictly below $0$, marking a clear recession.</p>
+    </div>
+    
+    <div class="qa-box">
+        <p class="qa-q">Q: 進口是 GDP 計算法中的減項 ($C+I+G+X-M$)，那麼衰退時進口減少，對 GDP 會有什麼影響？</p>
+        <p class="chinese-text">A: 雖然進口 $M$ 是減項，但進口的減少是因為本地收入 $Y$ 的下降。整體而言，因為 $C$ 和 $I$ 的跌幅主導了經濟，整體 GDP 依然是下跌的。同學只需記住：進口需求與國民收入成正比 (Positive relationship)。</p>
+        <p class="english-text">A: Although imports $M$ are a deduction in the GDP formula, the decrease in imports is a *result* of the fall in domestic income $Y$. Overall, because the drops in $C$ and $I$ dominate, total GDP still falls. Students just need to remember: import demand has a positive relationship with national income.</p>
+    </div>
+
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tricks-box">
+        <p class="chinese-text"><strong>排除法速解：</strong> 在考場上，如果你確認 A 點代表經濟很差（衰退），你只需尋找描述「經濟變差」的選項。(1) 和 (2) 都是負面現象，符合經濟衰退；而 (3) 購買更多進口貨代表市民購買力強，這與衰退矛盾。排除包含 (3) 的選項，直接得出答案 A。</p>
+        <p class="english-text"><strong>Speed Solving by Elimination:</strong> In the exam, once you confirm Point A represents a poor economy (recession), just look for options describing "economic deterioration". Both (1) and (2) are negative phenomena fitting a recession, while (3) suggests strong purchasing power for foreign goods, which contradicts a recession. Eliminate any option containing (3), and you instantly get Answer A.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

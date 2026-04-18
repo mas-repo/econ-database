@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1e293b;
+            --gray-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --success-green: #10b981;
+            --danger-red: #ef4444;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 30px 24px;
+        }
+
+        .header h1 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .bilingual-block {
+            margin-bottom: 20px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .en {
+            color: #475569;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--border-color);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .option-item {
+            background-color: var(--gray-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .option-item.correct {
+            border-color: var(--success-green);
+            background-color: #ecfdf5;
+            box-shadow: 0 0 0 1px var(--success-green);
+        }
+
+        .option-item.wrong {
+            border-left: 4px solid var(--danger-red);
+        }
+
+        .badge-correct {
+            background-color: var(--success-green);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .badge-wrong {
+            background-color: var(--danger-red);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+            margin-bottom: 8px;
+        }
+
+        .qa-a {
+            color: #78350f;
+        }
+
+        .trick-box {
+            background-color: #f5f3ff;
+            border: 1px dashed #8b5cf6;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 16px; }
+            .header { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>📊 總體經濟學：物價水平與未預期通縮的影響<br>
+            <span style="font-size: 1.2rem; font-weight: normal; opacity: 0.9;">Macroeconomics: Price Level & Effects of Unexpected Deflation</span>
+        </h1>
+        <div class="tag-container">
+            <span class="tag">難度 / Difficulty: ★★★★☆</span>
+            <span class="tag">GDP Deflator (本地生產總值平減物價指數)</span>
+            <span class="tag">Unexpected Deflation (未預期通縮)</span>
+            <span class="tag">Wealth Redistribution (財富重分配)</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📝 題目 / The Question</h2>
+        <div class="bilingual-block">
+            <div class="zh">細閱下圖。假設人們預期2023年至2024年間的一般物價水平沒有任何變化。當上圖意味着的物價水平變動發生時，下列哪位人士會有損失？</div>
+            <div class="en">Study the diagram. Suppose people did not expect any change in the general price level from 2023 to 2024. Which of the following persons would lose when the change in price level implied by the diagram occurred?</div>
+        </div>
+        
+        <ul class="options-list">
+            <li class="option-item">
+                <div class="zh">A. 一位持有固定利率為2%的債券的投資者</div>
+                <div class="en">A. an investor holding a bond the interest rate of which is fixed at 2%</div>
+            </li>
+            <li class="option-item">
+                <div class="zh">B. 一位收取固定月租的業主</div>
+                <div class="en">B. a landlord receiving a fixed monthly rental</div>
+            </li>
+            <li class="option-item">
+                <div class="zh">C. 一位支付固定薪金的僱主</div>
+                <div class="en">C. an employer paying fixed salaries</div>
+            </li>
+            <li class="option-item">
+                <div class="zh">D. 一位以浮動利率償還貸款的欠債人</div>
+                <div class="en">D. a debtor repaying a loan at a floating interest rate</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🧠 概念重溫 / Concept Review</h2>
+        <div class="concept-box">
+            <h3>1. 名義與實質本地生產總值的關係 (Relationship between Nominal & Real GDP)</h3>
+            <div class="zh">一般物價水平（GDP平減物價指數）連繫了名義GDP與實質GDP。其公式為：</div>
+            <div class="en">The general price level (GDP Deflator) connects Nominal GDP and Real GDP. The formula is:</div>
+            
+            <div class="math-block">
+                $$ \text{GDP Deflator} = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100 $$
+            </div>
+
+            <div class="zh">如果在一段時期內，名義GDP保持不變而實質GDP上升，這意味著公式的分子不變，但分母變大，結果必定是物價指數下降，即發生了<strong>通貨緊縮（Deflation）</strong>。</div>
+            <div class="en">If Nominal GDP remains constant while Real GDP increases over a period, the numerator is unchanged but the denominator grows. This mathematical relationship dictates that the price index must decrease, resulting in <strong>deflation</strong>.</div>
+            
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
+
+            <h3>2. 未預期通縮的財富重分配 (Redistribution of Wealth due to Unexpected Deflation)</h3>
+            <div class="zh">當實際物價跌幅大於預期（例如預期無變動，實際卻下跌），貨幣的實質購買力會上升。</div>
+            <div class="en">When actual prices fall more than expected (e.g., expected 0% change, but actual is a drop), the real purchasing power of money increases.</div>
+            <ul>
+                <li><strong>得益者 (Gainers):</strong> 收取固定金額的人（如債權人、收租業主、定薪僱員）。因為他們收到的錢能買到更多東西。<br>
+                    <span style="font-size: 0.9em; color: #475569;">Receivers of fixed nominal payments (e.g., creditors, landlords, employees on fixed salaries). The money they receive can buy more goods.</span>
+                </li>
+                <li><strong>受損者 (Losers):</strong> 支付固定金額的人（如欠債人、交租租客、支付定薪的僱主）。因為他們付出的錢實際上變得更「貴」了。<br>
+                    <span style="font-size: 0.9em; color: #475569;">Payers of fixed nominal payments (e.g., debtors, tenants, employers paying fixed salaries). The money they pay out is actually worth more in real terms.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✅ 答案與詳細分析 / Answer & Detailed Analysis</h2>
+        <div style="font-size: 1.2rem; margin-bottom: 20px;">
+            <strong>正確答案 / Correct Option: <span style="color: var(--primary-blue);">C</span></strong>
+        </div>
+
+        <div class="option-item wrong">
+            <div class="zh"><strong>選項 A 分析 (錯誤):</strong> <span class="badge-wrong">Gain 得益</span></div>
+            <div class="en"><strong>Option A Analysis (Incorrect):</strong></div>
+            <div class="zh">投資者（債權人）收取固定的2%名義利息。在未預期通縮下，物價下跌，這2%利息和本金的實質購買力上升，因此投資者會得益。</div>
+            <div class="en">The investor (creditor) receives a fixed 2% nominal interest. Under unexpected deflation, the price level falls, meaning the real purchasing power of this 2% interest and the principal increases. Therefore, the investor gains.</div>
+        </div>
+
+        <div class="option-item wrong">
+            <div class="zh"><strong>選項 B 分析 (錯誤):</strong> <span class="badge-wrong">Gain 得益</span></div>
+            <div class="en"><strong>Option B Analysis (Incorrect):</strong></div>
+            <div class="zh">業主收取固定的租金收入。由於物價下跌，這筆固定租金可以購買更多的商品和服務，因此業主會得益。</div>
+            <div class="en">The landlord receives a fixed rental income. Because the price level has dropped, this fixed amount of rent can purchase more goods and services. Therefore, the landlord gains.</div>
+        </div>
+
+        <div class="option-item correct">
+            <div class="zh"><strong>選項 C 分析 (正確):</strong> <span class="badge-correct">Lose 損失</span></div>
+            <div class="en"><strong>Option C Analysis (Correct):</strong></div>
+            <div class="zh">僱主需要支付固定的名義薪金給員工。雖然名義上支付的金額不變，但由於產品售價普遍下跌（通縮），企業的營業額下降，但工資成本（實質工資）卻變相上升。因此，支付固定薪金的僱主會有損失。</div>
+            <div class="en">The employer must pay fixed nominal salaries to employees. Although the nominal amount paid is constant, the general prices of goods they sell are falling (deflation), decreasing business revenue. Meanwhile, the real cost of labor (real wage) has effectively increased. Thus, the employer paying fixed salaries loses.</div>
+        </div>
+
+        <div class="option-item wrong">
+            <div class="zh"><strong>選項 D 分析 (錯誤):</strong> <span class="badge-wrong">Neutral / Unclear 不明確或無損失</span></div>
+            <div class="en"><strong>Option D Analysis (Incorrect):</strong></div>
+            <div class="zh">欠債人以「浮動利率」（Floating rate）還款。在通縮環境下，市場名義利率通常會跟隨向下調整。因此，他的還款負擔會減輕，不會像支付固定利率的欠債人那樣承受必然的損失。</div>
+            <div class="en">The debtor repays at a "floating interest rate". In a deflationary environment, market nominal interest rates typically adjust downwards. Therefore, their repayment burden would lessen, meaning they do not suffer the guaranteed loss that a fixed-rate debtor would face.</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🛠 題目拆解 / Problem Decomposition</h2>
+        <p class="zh">要破解這類題目，我們需要經過兩個關鍵的思考「支點」(Pivot Points)：</p>
+        <p class="en">To crack this type of question, we need to go through two crucial thinking "Pivot Points":</p>
+        
+        <ol>
+            <li>
+                <div class="zh"><strong>支點一：解讀圖表 (圖表背後的隱含意義)</strong><br>
+                題目沒有直接告訴你是通脹還是通縮。你需要觀察圖表：名義GDP是平的橫線（代表不變），實質GDP是斜線向上（代表增加）。根據公式 \( P = (\text{Nominal GDP} / \text{Real GDP}) \times 100 \)，分子不變分母變大，得出物價水平 \(P\) 正在下跌 ➔ <strong>發生了通縮 (Deflation)</strong>。</div>
+                <div class="en"><strong>Pivot Point 1: Interpret the Graph (The hidden meaning)</strong><br>
+                The question doesn't directly state if it's inflation or deflation. You must observe the graph: Nominal GDP is a flat line (constant), Real GDP is upward sloping (increasing). Based on the formula \( P = (\text{Nominal GDP} / \text{Real GDP}) \times 100 \), a constant numerator and growing denominator mean the price level \(P\) is falling ➔ <strong>Deflation occurred</strong>.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>支點二：結合預期與財富轉移原則</strong><br>
+                題目指「預期物價沒有變化」(Expected inflation = 0%)，但實際卻發生了通縮 (Actual inflation < 0%)。這屬於未預期通縮。接著套用口訣：「通縮下，收固定錢的人贏，付固定錢的人輸」。尋找選項中誰是「支付固定金額」的人。</div>
+                <div class="en"><strong>Pivot Point 2: Combine Expectations with Wealth Transfer Rules</strong><br>
+                The question states "expected no change" (Expected inflation = 0%), but actual deflation occurred (Actual inflation < 0%). This is unexpected deflation. Apply the rule: "Under deflation, receivers of fixed money win, payers of fixed money lose." Look for the option who is a "payer of a fixed amount".</div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+        <ul>
+            <li>
+                <div class="zh"><strong>陷阱一：誤把「名義高於實質」當作通脹。</strong><br>很多同學一看到圖表上 Nominal GDP 的線高於 Real GDP，就立刻判定為通貨膨脹。注意！物價變動看的是<strong>趨勢（斜率）</strong>，而不是兩條線的絕對高度。你要比較的是同一年內的相對變化率。</div>
+                <div class="en"><strong>Trap 1: Mistaking "Nominal > Real" for Inflation.</strong><br>Many students see the Nominal GDP line above the Real GDP line and instantly assume inflation. Careful! Price level changes are about the <strong>trend (slope)</strong>, not the absolute height of the lines. You must compare the relative rates of change over time.</div>
+            </li>
+            <li>
+                <div class="zh"><strong>陷阱二：死背通脹的贏家輸家。</strong><br>過去的歷屆試題多數考「未預期通脹」，學生習慣了「欠債人贏、債權人輸」。這題反其道而行考「通縮」，如果沒有重新思考就會全部選錯。</div>
+                <div class="en"><strong>Trap 2: Rote memorization of Inflation winners/losers.</strong><br>Most past paper questions test "unexpected inflation," so students are used to "debtors win, creditors lose." This question tests the opposite scenario ("deflation"). If you don't adjust your logic, you will pick the wrong answer.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🙋‍♂️ 學生常見疑問 / Student Q&A</h2>
+        
+        <div class="qa-box">
+            <div class="qa-q">Q: 為什麼選項 D (浮動利率欠債人) 不算有損失？欠債不是在通縮下通常會虧嗎？<br>
+            <span style="font-size: 0.9em; font-weight: normal;">(Why doesn't Option D, the floating rate debtor, lose? Don't debtors usually lose during deflation?)</span></div>
+            <div class="qa-a">A: 關鍵字是<strong>「浮動利率」(Floating interest rate)</strong>。雖然在通縮下，貨幣購買力上升會對一般欠債人不利（因為要用更值錢的貨幣還款），但浮動利率會根據經濟環境向下調整。通縮時利率通常會下跌，這抵銷了部分或全部貨幣升值帶來的負擔。相反，選項 C 的僱主支付的是「固定」(Fixed) 薪金，完全無法調整，因此是毫無懸念的受損者。<br>
+            <span style="font-size: 0.9em;">(The key is <strong>"Floating interest rate"</strong>. While deflation generally hurts debtors, a floating rate adjusts downwards in a deflationary environment. This drop in nominal interest rate offsets the burden of money becoming more valuable. In contrast, Option C's employer pays a "Fixed" salary which cannot be adjusted, making them the undeniable loser.)</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+        <div class="trick-box">
+            <div class="zh"><strong>速解法 (The Elimination Shortcut):</strong></div>
+            <div class="en"><strong>The Elimination Shortcut:</strong></div>
+            <ol>
+                <li><span class="zh">秒讀圖表：名義平、實質升 ➔ 通縮。</span>
+                    <span class="en">(Quick read graph: Nominal flat, Real up ➔ Deflation.)</span></li>
+                <li><span class="zh">寫下法則：通縮 ➔ 收固定贏 (Gain)；付固定輸 (Lose)。</span>
+                    <span class="en">(Write rule: Deflation ➔ Fixed Receiver Gains; Fixed Payer Loses.)</span></li>
+                <li><span class="zh">標記選項：</span>
+                    <span class="en">(Label options:)</span>
+                    <ul>
+                        <li>A. 債權人 = 收固定 = 贏 (Gain)</li>
+                        <li>B. 業主 = 收固定 = 贏 (Gain)</li>
+                        <li>C. 僱主 = 付固定 = 輸 (Lose) ➔ <strong>Bingo! 答案是 C</strong></li>
+                        <li>D. 浮動 = 不受固定條款綁死 (Not fixed)</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="zh">考試時只需用鉛筆在ABCD旁邊寫上 "收/Gain" 或 "付/Lose"，答案10秒內就能浮現！</div>
+            <div class="en">During the exam, just pencil in "Receive/Gain" or "Pay/Lose" next to A, B, C, D. The answer will pop out in 10 seconds!</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

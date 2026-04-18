@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Exchange Rate & Elasticity</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --light-blue: #eff6ff;
+            --border-blue: #bfdbfe;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gray: #f3f4f6;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+            --warning-bg: #fefce8;
+            --warning-border: #fef08a;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .correct-answer {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .trap-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-left: 5px solid #eab308;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .qa-box {
+            background-color: #fafafa;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: #b91c1c; }
+        .qa-a { margin-top: 10px; }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .concept-box { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>經濟學題目詳解 | Economics Question Guide</h1>
+        <p><strong>主題 (Topic):</strong> 匯率與需求價格彈性 / Exchange Rates and Price Elasticity of Demand</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★★☆</p>
+        <p><strong>關鍵概念 (Key Concepts):</strong> 貶值 (Depreciation)、總進口值 (Total Import Value)、需求價格彈性 (Price Elasticity of Demand)</p>
+    </header>
+
+    <section>
+        <h2>題目 | The Question</h2>
+        <div class="zh">
+            <p>下圖顯示2024年9月27日至10月23日期間日圓和港元之間的匯率。</p>
+            <p>在上述期間，假如日本對從香港輸入的進口的需求是 ___________ 的，日本從香港輸入的進口總值（以日圓計算）會 ___________。</p>
+            <ol type="A">
+                <li>高彈性 …… 下降</li>
+                <li>高彈性 …… 上升</li>
+                <li>低彈性 …… 下降</li>
+                <li>完全沒有彈性 …… 維持不變</li>
+            </ol>
+        </div>
+        <div class="en">
+            <p>The diagram below shows the exchange rate between Japanese Yen (JPY) and Hong Kong Dollar (HKD) from 27 September to 23 October 2024.</p>
+            <p>During the above period, if Japan's demand for imports from Hong Kong is ___________, the total value of Japan's imports from Hong Kong (in terms of JPY) would ___________.</p>
+            <ol type="A">
+                <li>elastic …… decrease</li>
+                <li>elastic …… increase</li>
+                <li>inelastic …… decrease</li>
+                <li>perfectly inelastic …… remain unchanged</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>概念重溫 | Concept Review</h2>
+        <div class="concept-box">
+            <h3 style="margin-top:0;">1. 匯率變動 (Changes in Exchange Rate)</h3>
+            <p class="zh">圖表顯示每 100 日圓可兌換的港元由 5.47 跌至 5.09。這代表 100 日圓能換到的港元變少了，即日圓<strong>貶值 (Depreciated)</strong>，而港元相對<strong>升值 (Appreciated)</strong>。</p>
+            <p class="en">The graph shows the exchange rate per 100 JPY dropped from 5.47 HKD to 5.09 HKD. This means 100 JPY buys fewer HKD, meaning the JPY has <strong>depreciated</strong>, while the HKD has <strong>appreciated</strong>.</p>
+            
+            <h3>2. 總值與彈性的關係 (Total Value and Elasticity)</h3>
+            <p class="zh">當日圓貶值時，日本購買香港貨品（以港幣定價）時，需要支付<strong>更多</strong>的日圓。因此，以日圓計算的進口價格 $P$ 會<strong>上升</strong>。</p>
+            <p class="en">When JPY depreciates, Japan needs to pay <strong>more</strong> JPY to buy Hong Kong goods (priced in HKD). Therefore, the import price in terms of JPY $P$ <strong>increases</strong>.</p>
+            
+            <div class="math-block">
+                $$ \text{Total Value} (TV) = \text{Price} (P) \times \text{Quantity} (Q) $$
+            </div>
+            
+            <p class="zh">根據需求定律，價格上升會導致需求量 $Q$ 下降。總值的變動取決於需求價格彈性 $E_d$：</p>
+            <p class="en">According to the law of demand, an increase in price leads to a decrease in quantity demanded $Q$. The change in total value depends on the price elasticity of demand $E_d$:</p>
+            
+            <ul>
+                <li><span class="zh"><strong>高彈性 ($E_d > 1$):</strong> $Q$ 下降的百分比大於 $P$ 上升的百分比 $\rightarrow$ 總值下降。</span>
+                    <br><span class="en"><strong>Elastic ($E_d > 1$):</strong> % drop in $Q$ is greater than % rise in $P$ $\rightarrow$ Total Value decreases.</span></li>
+                <li><span class="zh"><strong>低彈性 ($E_d < 1$):</strong> $Q$ 下降的百分比小於 $P$ 上升的百分比 $\rightarrow$ 總值上升。</span>
+                    <br><span class="en"><strong>Inelastic ($E_d < 1$):</strong> % drop in $Q$ is less than % rise in $P$ $\rightarrow$ Total Value increases.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>答案與詳細分析 | The Answer & Detailed Analysis</h2>
+        <div class="correct-answer">正確答案 / Correct Option: A</div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 A (高彈性 …… 下降): 正確。</strong> 因為日圓貶值，以日圓計算的香港貨品價格上升 ($P\uparrow$)。如果需求是高彈性，需求量的跌幅會大於價格的升幅，導致總值下降。這與總收益測試 (Total Revenue Test) 的結果一致。</p>
+            <p class="en"><strong>Option A (elastic …… decrease): Correct.</strong> Because JPY depreciates, the price of HK goods in JPY increases ($P\uparrow$). If demand is elastic, the percentage decrease in quantity demanded outweighs the percentage increase in price, leading to a decrease in total value.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 B (高彈性 …… 上升): 錯誤。</strong> 如上所述，在高彈性需求下，價格上升會導致總值下降，而非上升。</p>
+            <p class="en"><strong>Option B (elastic …… increase): Incorrect.</strong> As explained above, under elastic demand, an increase in price leads to a decrease in total value, not an increase.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 C (低彈性 …… 下降): 錯誤。</strong> 如果需求是低彈性 ($E_d < 1$)，需求量的跌幅會較小，無法抵銷價格上升的影響，因此總值應該是<strong>上升</strong>的。</p>
+            <p class="en"><strong>Option C (inelastic …… decrease): Incorrect.</strong> If demand is inelastic ($E_d < 1$), the drop in quantity demanded is proportionately smaller, which cannot offset the price increase. Thus, the total value should <strong>increase</strong>.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p class="zh"><strong>選項 D (完全沒有彈性 …… 維持不變): 錯誤。</strong> 如果需求完全沒有彈性 ($E_d = 0$)，需求量 $Q$ 會維持不變。由於價格 $P$ 上升，而 $Q$ 不變，$P \times Q$ 的總值必然會<strong>上升</strong>，而非維持不變。</p>
+            <p class="en"><strong>Option D (perfectly inelastic …… remain unchanged): Incorrect.</strong> If demand is perfectly inelastic ($E_d = 0$), quantity demanded $Q$ remains constant. Since price $P$ increases and $Q$ is unchanged, the total value $P \times Q$ must <strong>increase</strong>, not remain unchanged.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>題目拆解 | Problem Decomposition</h2>
+        <p class="zh">解答這類題目，你需要掌握一個<strong>「核心支點」(Pivot Point)</strong>：釐清計價貨幣是哪一種。</p>
+        <p class="en">To solve this type of question, you need to grasp the <strong>Pivot Point</strong>: Clarify which currency is being used for valuation.</p>
+        
+        <ul>
+            <li><span class="zh"><strong>關鍵第一步：</strong> 閱讀 Y 軸「匯率 (每百日圓)」。數字下跌意味著日圓變弱 (貶值)。</span>
+                <br><span class="en"><strong>Step 1:</strong> Read the Y-axis "Exchange Rate (per 100 JPY)". The falling number means JPY is getting weaker (depreciating).</span></li>
+            <li><span class="zh"><strong>關鍵第二步：</strong> 題目問的是「以日圓計算」(in terms of JPY)。這代表對於日本買家而言，香港貨變貴了 ($P$ 上升)。</span>
+                <br><span class="en"><strong>Step 2:</strong> The question asks for the value "in terms of JPY". This means for Japanese buyers, HK goods have become more expensive ($P$ increases).</span></li>
+            <li><span class="zh"><strong>干擾資訊 (Distractors)：</strong> 圖表上的具體日子 (9月27日、10月23日) 和確切數值 (5.47, 5.09) 其實不需要用來進行複雜計算。你只需要看出「下降趨勢」即可。</span>
+                <br><span class="en"><strong>Distractors:</strong> The specific dates and exact numbers (5.47, 5.09) on the graph are not needed for calculation. You only need to identify the "downward trend".</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="trap-box">
+            <h2 style="margin-top:0; color: #a16207;">常犯錯誤與陷阱 | Common Mistakes & Traps</h2>
+            <p class="zh"><strong>終極陷阱：混淆計價貨幣！(Confusing the valuation currency!)</strong></p>
+            <p class="en"><strong>Ultimate Trap:</strong> Many students fail to notice the brackets <em>(in terms of JPY)</em>.</p>
+            <p class="zh">如果題目改為問：「日本從香港輸入的進口總值<strong>（以港元計算）</strong>會如何改變？」</p>
+            <p class="zh">答案將會完全不同！因為香港貨品的港元價格不變 ($P_{\text{HKD}}$ 恆定)，但由於日圓貶值，日本買少了 ($Q$ 下降)。因此，無論彈性是多少，以港元計算的總值 ($P_{\text{HKD}} \times Q$) 都必定<strong>下降</strong>！</p>
+            
+            <hr style="border: 0; height: 1px; background: #fef08a; margin: 15px 0;">
+            
+            <p class="en">If the question asked instead: "how would the total value of Japan's imports from HK <strong>(in terms of HKD)</strong> change?"</p>
+            <p class="en">The answer would be completely different! The HKD price of HK goods doesn't change ($P_{\text{HKD}}$ is constant), but because JPY depreciated, Japan buys less ($Q$ decreases). Therefore, regardless of elasticity, the total value in HKD ($P_{\text{HKD}} \times Q$) must <strong>decrease</strong>!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>學生常見疑問 | Student Q&A</h2>
+        <div class="qa-box">
+            <div class="qa-q">Q: 老師，我常常搞混誰升值誰貶值，有沒有簡單的記法？<br>(Teacher, I always confuse which currency is appreciating or depreciating. Is there a simple way to remember?)</div>
+            <div class="qa-a">
+                <span class="zh">A: 有的！看 Y 軸的單位。Y 軸是「每百日圓可以換多少港元」。當線條向下跌，代表「100 日圓換到的港元變少了」。既然換到的東西變少，那日圓本身就變弱了（貶值）。反過來，港元就升值了。</span>
+                <br><span class="en">A: Yes! Look at the unit on the Y-axis. It shows "how many HKD you get per 100 JPY". When the line goes down, it means "100 JPY exchanges for fewer HKD". Since it buys less, the JPY itself has become weaker (depreciated). Conversely, the HKD has appreciated.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>考試技巧與速解 | Exam Tricks & Shortcuts</h2>
+        <p class="zh">在 DSE 考試中，遇到這種結合「匯率」與「彈性」的題目，請在試卷旁邊畫出這個簡單的十字矩陣（Total Revenue Test）：</p>
+        <p class="en">In the DSE exam, when encountering questions combining "Exchange Rates" and "Elasticity", quickly sketch this simple matrix (Total Revenue Test) on the side of your paper:</p>
+        
+        <div class="math-block" style="text-align: left; display: inline-block; padding: 20px;">
+            <p style="margin:0;"><strong>If Price ($P$) $\uparrow$ (Import becomes more expensive):</strong></p>
+            <ul style="margin-top: 5px;">
+                <li>Elastic ($E_d > 1$) $\rightarrow$ Value $\downarrow$</li>
+                <li>Inelastic ($E_d < 1$) $\rightarrow$ Value $\uparrow$</li>
+            </ul>
+        </div>
+        
+        <p class="zh">一旦你從圖表中確認了日圓貶值導致進口價格 $P\uparrow$，你只需要直接在選項中尋找上述兩對匹配的組合。只有「高彈性 $\rightarrow$ 下降」或「低彈性 $\rightarrow$ 上升」是合理的。選項 A 直接命中了第一種情況，秒殺！</p>
+        <p class="en">Once you identify from the graph that JPY depreciation causes import price $P\uparrow$, directly look for these two matching pairs in the options. Only "Elastic $\rightarrow$ Decrease" or "Inelastic $\rightarrow$ Increase" are logically sound. Option A perfectly matches the first case. Instant solve!</p>
+    </section>
+
+</body>
+</html>
