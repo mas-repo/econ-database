@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Comparative Advantage & Trade</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --success-green: #4caf50;
+            --light-green: #e8f5e9;
+            --danger-red: #f44336;
+            --light-red: #ffebee;
+            --gray-bg: #f3f4f6;
+            --text-dark: #333;
+            --text-muted: #555;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+        .header-stats {
+            display: flex;
+            justify-content: space-between;
+            background: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        /* Bilingual text styling */
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--gray-bg);
+        }
+        /* Custom Boxes */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+        }
+        /* Options Analysis */
+        .option-box {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .correct-option {
+            background-color: var(--light-green);
+            border-color: var(--success-green);
+        }
+        .wrong-option {
+            background-color: var(--light-red);
+            border-color: var(--danger-red);
+        }
+        .option-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .q-and-a {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .q-and-a strong {
+            color: #d84315;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            .header-stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+    
+    <div class="header-stats">
+        <div><strong>Topic:</strong> 國際貿易 International Trade</div>
+        <div><strong>Difficulty:</strong> ⭐⭐⭐⭐ (4/5)</div>
+        <div><strong>Concepts:</strong> 
+            <span class="tag">投入計算法 Input Approach</span>
+            <span class="tag">機會成本 Opportunity Cost</span>
+            <span class="tag">運輸成本 Transportation Cost</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <p class="zh">甲、乙兩國只生產玩具和電腦。下表顯示甲、乙兩國生產玩具和電腦所需的<strong>投入數量</strong>。</p>
+    <p class="en">Both Country A and Country B produce only toys and computers. The table below shows the <strong>amount of inputs</strong> required by Country A and Country B in the production of toys and computers.</p>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>每單位的玩具<br>(1 unit of toys)</th>
+            <th>每單位的電腦<br>(1 unit of computers)</th>
+        </tr>
+        <tr>
+            <td><strong>甲國 (Country A)</strong></td>
+            <td>2</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td><strong>乙國 (Country B)</strong></td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <p class="zh">根據以上資料，下列哪項陳述是正確的？</p>
+    <p class="en">Based on the above information, which of the following statements is correct?</p>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li><strong>A.</strong> 相對乙國，甲國生產電腦有絕對優勢。<br><span class="en">Country A has an absolute advantage in the production of computers over Country B.</span></li>
+        <li><strong>B.</strong> 乙國生產兩種物品均沒有比較優勢，因為它生產玩具的機會成本與生產電腦的相等。<br><span class="en">Country B has no comparative advantage in producing any goods as its opportunity cost of producing toys equals that of producing computers.</span></li>
+        <li><strong>C.</strong> 若交易1單位玩具需要1單位的電腦作為運輸費用，則互利貿易沒有可能出現。<br><span class="en">If a transportation cost of 1 unit of computers is required to trade 1 unit of toys, it is impossible to have mutually beneficial trade.</span></li>
+        <li><strong>D.</strong> 由於該兩國生產玩具的生產力相等，所以沒有可能出現互利貿易。<br><span class="en">It is impossible to have mutually beneficial trade as the two countries have equal productivity in producing toys.</span></li>
+    </ul>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>1. 投入表 (Input Table) vs 產出表 (Output Table)</strong><br>
+        本題是「投入表」，數字代表生產所需的資源（如工時）。數字<strong>越小</strong>代表生產力越高（絕對成本越低）。</p>
+        <p class="en"><strong>1. Input vs Output Tables</strong><br>
+        This is an "Input Table", meaning the numbers represent resources required (e.g., labor hours). A <strong>smaller</strong> number implies higher productivity (lower absolute cost).</p>
+        
+        <p class="zh"><strong>2. 計算機會成本 (Calculating Opportunity Cost)</strong><br>
+        對於投入表，計算物品 X 的機會成本公式是：</p>
+        <p class="en">For an input table, the formula for the opportunity cost of Good X is:</p>
+        <div class="math-block">
+            $$ \text{Cost of X} = \frac{\text{Inputs for X}}{\text{Inputs for Y}} \text{ units of Y} $$
+        </div>
+
+        <p class="zh"><strong>3. 運輸成本與互利貿易 (Transportation Cost & Mutually Beneficial Trade)</strong><br>
+        要使貿易互利，買賣雙方賺取的總得益必須<strong>大於</strong>運輸成本。如果運輸成本高於潛在的貿易總利潤，貿易就不會發生。</p>
+        <p class="en"><strong>3. Transportation Cost & Mutually Beneficial Trade</strong><br>
+        For trade to be mutually beneficial, the total gain from trade must be <strong>greater than</strong> the transportation cost. If the transport cost wipes out the potential gains, trade is impossible.</p>
+        <div class="math-block">
+            $$ \text{Total Gain} = \text{Max. Price} - \text{Min. Price} $$
+            $$ \text{Transport Cost} < \text{Total Gain (for trade to occur)} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 / Correct Option: <span style="color: var(--success-green); font-size: 1.2em;">C</span></strong></p>
+
+    <h3>成本計算表 / Cost Calculation Table:</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>1單位玩具的機會成本<br>(Opportunity Cost of 1 Toy)</th>
+            <th>1單位電腦的機會成本<br>(Opportunity Cost of 1 Computer)</th>
+        </tr>
+        <tr>
+            <td><strong>甲國 (Country A)</strong></td>
+            <td>\( \frac{2}{5} = 0.4 \text{ 電腦 (Computers)} \)</td>
+            <td>\( \frac{5}{2} = 2.5 \text{ 玩具 (Toys)} \)</td>
+        </tr>
+        <tr>
+            <td><strong>乙國 (Country B)</strong></td>
+            <td>\( \frac{2}{2} = 1 \text{ 電腦 (Computer)} \)</td>
+            <td>\( \frac{2}{2} = 1 \text{ 玩具 (Toy)} \)</td>
+        </tr>
+    </table>
+
+    <div class="option-box wrong-option">
+        <div class="option-title">Option A (❌ 錯誤 / Incorrect)</div>
+        <p class="zh">甲國生產1單位電腦需要 5 個投入，而乙國只需 2 個投入。因為乙國需要的投入較少，所以<strong>乙國</strong>在生產電腦上有絕對優勢，而非甲國。</p>
+        <p class="en">Country A requires 5 inputs to produce 1 computer, while Country B requires only 2 inputs. Since Country B uses fewer inputs, <strong>Country B</strong> has an absolute advantage in computers, not Country A.</p>
+    </div>
+
+    <div class="option-box wrong-option">
+        <div class="option-title">Option B (❌ 錯誤 / Incorrect)</div>
+        <p class="zh">比較優勢是看「兩國之間的機會成本對比」，而非國內兩種物品的成本。乙國生產電腦的機會成本是 1 單位玩具，低於甲國的 2.5 單位玩具。因此，乙國在生產電腦上有比較優勢。</p>
+        <p class="en">Comparative advantage is determined by comparing opportunity costs <strong>between countries</strong>, not within a single country. Country B's opportunity cost for 1 computer is 1 toy, which is lower than Country A's 2.5 toys. Thus, Country B DOES have a comparative advantage in computers.</p>
+    </div>
+
+    <div class="option-box correct-option">
+        <div class="option-title">Option C (✅ 正確 / Correct)</div>
+        <p class="zh">甲國生產玩具的成本較低（\(0.4\) 部電腦），所以甲國會出口玩具。甲國願意接受的最低價格是 \(0.4\) 部電腦；乙國願意支付的最高價格是 \(1\) 部電腦。因此，每交易 1 單位玩具的<strong>最大總潛在得益</strong>是：<br>
+        \(1 - 0.4 = 0.6 \text{ 部電腦}\)。<br>
+        然而，運輸成本高達 \(1\) 部電腦。因為運輸成本（\(1\)）大於潛在得益（\(0.6\)），貿易會導致虧損，所以互利貿易不可能出現。</p>
+        <p class="en">Country A has a lower opportunity cost for toys (\(0.4\) computers), so it exports toys. The minimum price A accepts is \(0.4\) computers; the maximum price B pays is \(1\) computer. The <strong>maximum total gain</strong> per unit of toy traded is:<br>
+        \(1 - 0.4 = 0.6 \text{ computers}\).<br>
+        However, the transportation cost is \(1\) computer. Since the transport cost (\(1\)) is greater than the total gain (\(0.6\)), trade would result in a net loss. Therefore, mutually beneficial trade is impossible.</p>
+    </div>
+
+    <div class="option-box wrong-option">
+        <div class="option-title">Option D (❌ 錯誤 / Incorrect)</div>
+        <p class="zh">即使兩國生產玩具的生產力（絕對優勢）相等，只要他們生產另一種物品的成本不同，機會成本就會出現差異。機會成本不同，就有可能出現互利貿易。</p>
+        <p class="en">Even if two countries have equal productivity (absolute advantage) in producing one good, as long as their costs for the other good differ, their opportunity costs will differ. If opportunity costs differ, mutually beneficial trade is mathematically possible (assuming no exorbitant transport costs).</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="zh"><strong>🔑 解題關鍵 (Pivot Point):</strong> 留意題目寫著「所需的投入數量」。這是<strong>投入題 (Input Problem)</strong>！如果在算機會成本時，不小心用了產出題的公式（將數字倒轉來除），整條題目就會算錯。</p>
+    <p class="en"><strong>🔑 Pivot Point:</strong> Notice the phrase "amount of inputs required". This is an <strong>Input Problem</strong>! If you accidentally use the output formula (putting the numbers upside down in the fraction), you will get the entire question wrong.</p>
+    
+    <p class="zh"><strong>🤡 擾亂資訊 (Distractor):</strong> 表格中甲乙兩國生產玩具的投入都是「2」。這個相同的數字是為了誘騙學生選擇 Option D，誤以為「生產力相同就不能貿易」。</p>
+    <p class="en"><strong>🤡 Distractor:</strong> The input for toys is "2" for both countries. This identical number is a trap designed to trick students into choosing Option D, mistakenly thinking "equal productivity means no trade".</p>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li class="zh"><strong>盲目背誦公式：</strong>很多學生看到表格就直接用 \(\frac{X}{Y}\) 或 \(\frac{Y}{X}\) 而不分投入與產出。記住：投入題（成本）是「自己除別人」；產出題（產量）是「別人除自己」。</li>
+        <li class="en"><strong>Blindly memorizing formulas:</strong> Many students just divide the numbers without checking if it's an input or output table. Remember: For Inputs (Costs), it's "Own / Other"; for Outputs (Production), it's "Other / Own".</li>
+        <li class="zh"><strong>忽略雙方得益：</strong>在計算運輸成本時，忘記了潛在得益是雙方共同分享的。必須先計算「買家最高肯付」減去「賣家最低肯收」，得出總得益（Total Gain）後，再與運輸費比較。</li>
+        <li class="en"><strong>Ignoring Mutual Gains:</strong> When factoring in transport costs, students forget that the potential gain is shared. You must calculate the "Max Price - Min Price" to find the Total Gain, and then compare it to the transport cost.</li>
+    </ul>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="q-and-a">
+        <p><strong>Q: 為什麼 Option C 計算運輸成本時，是用「1單位電腦」而不是玩具？</strong><br>
+        <span class="en">Why do we use computers for the transport cost in Option C instead of toys?</span></p>
+        <p><strong>A:</strong> 因為題目指定「交易1單位玩具需要1單位的<strong>電腦</strong>作為運輸費用」。我們在計算玩具的交易條件（Terms of Trade）時，單位的計價單位（unit of measurement）本來就是「電腦」（即 \(0.4\) 部電腦到 \(1\) 部電腦之間）。所以可以直接將 \(0.6\) 部電腦的利潤與 \(1\) 部電腦的運費作比較。<br>
+        <span class="en">Because the question explicitly states "a transportation cost of 1 unit of <strong>computers</strong>". When we calculate the Terms of Trade for toys, the unit of measurement is already in "computers" (i.e., between \(0.4\) and \(1\) computer). Thus, we can directly compare the profit of \(0.6\) computers with the transport cost of \(1\) computer.</span></p>
+    </div>
+    <div class="q-and-a">
+        <p><strong>Q: 什麼情況下 Option C 的互利貿易才有可能發生？</strong><br>
+        <span class="en">Under what condition would mutually beneficial trade be possible for Option C?</span></p>
+        <p><strong>A:</strong> 運輸成本必須小於貿易的總潛在利潤。在這題中，總利潤是 \(0.6\) 單位電腦。所以如果運輸成本是 \(0.5\) 單位電腦（小於 \(0.6\)），互利貿易就有可能出現！<br>
+        <span class="en">The transportation cost must be strictly less than the total potential gain from trade. In this question, the total gain is \(0.6\) units of computers. So, if the transport cost was \(0.5\) computers (which is less than \(0.6\)), mutually beneficial trade would be possible!</span></p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #fff3e0; border-color: #ff9800;">
+        <p class="zh"><strong>🚀 秒殺技巧 (The Quick Elimination Method):</strong><br>
+        在 DSE 考試中，如果你能快速判斷出這是「投入題」，看一眼數字：<br>
+        甲的比例 (玩具:電腦) = 2:5<br>
+        乙的比例 (玩具:電腦) = 2:2<br>
+        兩組比例明顯不同！只要比例不同，機會成本就一定不同。機會成本不同，就必定有比較優勢，且<strong>在沒有運輸成本下</strong>必定能貿易。因此可以瞬間刪除 Option B 和 Option D！剩下只需詳細計算 Option A 和 C 即可節省一半時間。</p>
+        <p class="en"><strong>🚀 The Quick Elimination Method:</strong><br>
+        In the DSE exam, once you see it's an "Input" table, just glance at the ratios:<br>
+        Country A's ratio (Toys:Computers) = 2:5<br>
+        Country B's ratio (Toys:Computers) = 2:2<br>
+        The ratios are different! As long as the internal cost ratios differ, opportunity costs differ. This means Comparative Advantage MUST exist, and trade is mathematically possible (assuming zero transport cost). You can instantly eliminate Options B and D! You then only need to calculate A and C, saving you a lot of time.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

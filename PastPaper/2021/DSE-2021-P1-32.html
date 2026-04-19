@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Three-Tier Banking System</title>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3, h4 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .box-header {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #1e40af;
+        }
+        .box-question {
+            border: 2px solid #cbd5e1;
+        }
+        .box-concept {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+        }
+        .box-analysis {
+            background-color: #f8fafc;
+            border-left: 5px solid #10b981;
+        }
+        .box-decomp {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+        }
+        .box-qa {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+        }
+        .box-tricks {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid #d1d5db;
+        }
+        .correct-opt {
+            color: #059669;
+            font-weight: bold;
+            background-color: #d1fae5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .wrong-opt {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box box-header">
+        <h2>📚 經濟學題解 | Economics Tutorial</h2>
+        <p><strong>主題 (Topic):</strong> 貨幣與銀行 - 香港的三級銀行體制 (Money & Banking - Three-tier Banking System in Hong Kong)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>核心概念 (Key Concepts):</strong> 
+            <span class="tag">持牌銀行 (Licensed Banks)</span> 
+            <span class="tag">接受存款公司 (DTCs)</span> 
+            <span class="tag">存款條件 (Deposit Requirements)</span>
+        </p>
+    </div>
+
+    <div class="box box-question">
+        <h3>📝 題目 (The Question)</h3>
+        <p>杰克想存款 $400,000，為期 5 個月。下列哪些本港的金融機構可以接受他的存款？</p>
+        <p>
+            (1) 一家有限制牌照銀行<br>
+            (2) 一家被歸類為持牌銀行的虛擬銀行<br>
+            (3) 一家接受存款公司
+        </p>
+        <p>
+            A. 只有 (1)、(2)<br>
+            B. 只有 (1)、(3)<br>
+            C. 只有 (2)、(3)<br>
+            D. (1)、(2) 及 (3)
+        </p>
+        
+        <hr>
+        
+        <div class="bilingual-en">
+            <p>Jack wants to deposit $400,000 for 5 months. Which of the following financial institutions in Hong Kong can accept his deposit?</p>
+            <p>
+                (1) a restricted licence bank<br>
+                (2) a virtual bank which is classified as a licensed bank<br>
+                (3) a deposit-taking company
+            </p>
+            <p>
+                A. (1) and (2) only<br>
+                B. (1) and (3) only<br>
+                C. (2) and (3) only<br>
+                D. (1), (2) and (3)
+            </p>
+        </div>
+    </div>
+
+    <div class="box box-concept">
+        <h3>🧠 概念重溫 (Concept Review)</h3>
+        <p>要解答這道題目，我們必須熟記香港<strong>三級銀行體制（Three-tier Banking System）</strong>對接受存款的法定限制。香港金融管理局（HKMA）對不同級別的認可機構有嚴格的規定。</p>
+        <div class="bilingual-en">To solve this question, we must memorize the statutory restrictions on accepting deposits under Hong Kong's <strong>Three-tier Banking System</strong>. The Hong Kong Monetary Authority (HKMA) has strict regulations for different tiers of authorized institutions.</div>
+
+        <ul>
+            <li><strong>持牌銀行 (Licensed Banks, LBs):</strong> 無存款金額及期限限制。虛擬銀行（Virtual Banks）只要獲發全牌照，亦屬於此類別。
+                <div class="bilingual-en">No restrictions on deposit amount and maturity. Virtual banks granted a full banking license belong to this tier.</div>
+            </li>
+            <li><strong>有限制牌照銀行 (Restricted Licence Banks, RLBs):</strong> 只可接受 $500,000 或以上的存款，無期限限制。
+                <div class="bilingual-en">Can only accept deposits of $500,000 or more, with no maturity restrictions.</div>
+            </li>
+            <li><strong>接受存款公司 (Deposit-taking Companies, DTCs):</strong> 只可接受 $100,000 或以上，且最初存款期最少為 3 個月的存款。
+                <div class="bilingual-en">Can only accept deposits of $100,000 or more, with an original maturity of at least 3 months.</div>
+            </li>
+        </ul>
+
+        <p>我們可以用以下的數學邏輯模型來表示金融機構接受存款的條件 ($A$ 代表存款金額，$T$ 代表存款期)：</p>
+        <div class="bilingual-en">We can express the conditions for financial institutions to accept deposits using the following mathematical logic model ($A$ represents the deposit amount, $T$ represents the term/maturity):</div>
+        
+        <div class="math-block">
+            $$ \text{Accept}(A, T) = \begin{cases} 
+            \text{True}, & \text{for LBs: } \forall A, \forall T \\ 
+            \text{True}, & \text{for RLBs: } A \ge 500,000 \\ 
+            \text{True}, & \text{for DTCs: } A \ge 100,000 \land T \ge 3 \text{ months} 
+            \end{cases} $$
+        </div>
+    </div>
+
+    <div class="box box-analysis">
+        <h3>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+        <p>正確答案 (Correct Option)： <span class="correct-opt">Option C</span></p>
+
+        <h4>分析 (1)：有限制牌照銀行 (Restricted Licence bank) — <span class="wrong-opt">錯誤 (False)</span></h4>
+        <p>有限制牌照銀行最低存款額要求為 $500,000。杰克只有 $400,000，未達到最低門檻，因此不能接受。</p>
+        <div class="bilingual-en">The minimum deposit requirement for a restricted licence bank is $500,000. Jack only has $400,000, which falls short of the minimum threshold, so it cannot accept his deposit.</div>
+
+        <h4>分析 (2)：虛擬銀行 (Virtual bank classified as a licensed bank) — <span class="correct-opt">正確 (True)</span></h4>
+        <p>由於題目列明該虛擬銀行被歸類為「持牌銀行」，它享有與傳統持牌銀行相同的權利，即對存款金額和期限沒有任何限制。杰克的 $400,000 存款可被接受。</p>
+        <div class="bilingual-en">Since the question specifies the virtual bank is classified as a "licensed bank," it enjoys the same rights as traditional licensed banks, meaning there are no restrictions on deposit amount and maturity. Jack's $400,000 deposit can be accepted.</div>
+
+        <h4>分析 (3)：接受存款公司 (Deposit-taking company) — <span class="correct-opt">正確 (True)</span></h4>
+        <p>接受存款公司的要求是：金額 $\ge$ $100,000 且 期限 $\ge$ 3個月。杰克的存款金額為 $400,000（大於 $100,000），且為期 5 個月（大於 3 個月），同時滿足兩個條件。因此可被接受。</p>
+        <div class="bilingual-en">The requirements for a deposit-taking company are: amount $\ge$ $100,000 AND maturity $\ge$ 3 months. Jack's deposit amount is $400,000 (greater than $100,000) and the term is 5 months (greater than 3 months), satisfying both conditions. Therefore, it can be accepted.</div>
+    </div>
+
+    <div class="box box-decomp">
+        <h3>🔍 題目拆解 (Problem Decomposition)</h3>
+        <p><strong>關鍵情報 (Pivot Point):</strong> 本題的解題核心在於同時檢視兩個數據：<strong>「$400,000」</strong> 和 <strong>「5個月」</strong>。缺一不可。</p>
+        <div class="bilingual-en"><strong>Pivot Point:</strong> The core of solving this problem lies in simultaneously examining two pieces of data: <strong>"$400,000"</strong> and <strong>"5 months"</strong>. Both are indispensable.</div>
+
+        <p><strong>解題步驟 (Approach):</strong></p>
+        <ol>
+            <li>先看金額 ($400,000)：這筆錢小於 $500,000，立刻可以淘汰 (1) RLB。</li>
+            <li>再看期限 (5個月)：因為大於 3 個月，所以 (3) DTC的條件被觸發，加上金額大於 $100,000，DTC過關。</li>
+            <li>檢查機構類別：(2) 雖然是虛擬銀行，但重點在後面的「持牌銀行」四字，所以一路綠燈。</li>
+        </ol>
+        <div class="bilingual-en">
+            <strong>Approach:</strong><br>
+            1. Check the amount ($400,000): It is less than $500,000, immediately eliminating (1) RLB.<br>
+            2. Check the term (5 months): Since it is greater than 3 months, condition for (3) DTC is triggered. Combined with the amount being > $100,000, DTC passes.<br>
+            3. Check institution type: Although (2) is a virtual bank, the keyword is "licensed bank", meaning it has a green light for everything.
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <p>1. <strong>混淆 RLB 和 DTC 的金額限制：</strong> 很多同學會把兩者的最低金額記反，誤以為 RLB 才是 10 萬，DTC 是 50 萬。記住，RLB（有限制牌照銀行）多數處理大額企業融資，所以門檻最高 ($500,000)。</p>
+        <div class="bilingual-en">1. <strong>Confusing the amount limits of RLBs and DTCs:</strong> Many students mix up the minimum amounts, mistakenly thinking RLB is $100k and DTC is $500k. Remember, RLBs generally handle large corporate financing, so their threshold is the highest ($500,000).</div>
+
+        <p>2. <strong>忽略 DTC 的「雙重條件」：</strong> 有些同學只看到金額大於 $100,000 就立刻選 DTC，忘記檢查「最少 3 個月」的期限條件。如果題目改成存款「2 個月」，DTC 就不能選了！</p>
+        <div class="bilingual-en">2. <strong>Ignoring the "dual conditions" of DTCs:</strong> Some students only see the amount is > $100,000 and immediately select DTC, forgetting to check the "minimum 3 months" maturity condition. If the question changed the term to "2 months," the DTC option would be incorrect!</div>
+    </div>
+
+    <div class="box box-qa">
+        <h3>🙋‍♂️ 學生常見疑問 (Student Q&A)</h3>
+        <p><strong>問 (Q): 題目特別強調「虛擬銀行」，虛擬銀行的法例規管跟實體銀行不一樣嗎？</strong></p>
+        <p><strong>答 (A):</strong> 在香港，只要是獲金管局發牌的「持牌銀行」（無論是傳統實體銀行還是虛擬銀行），在接受存款的規定上是完全一致的。考評局在這裡加入「虛擬銀行」只是作為干擾項（Distractor），測試同學是否清楚虛擬銀行其實也屬於持牌銀行級別。</p>
+        <div class="bilingual-en">
+            <strong>Q: The question specifically mentions a "virtual bank". Are virtual banks regulated differently from physical banks?</strong><br>
+            <strong>A:</strong> In Hong Kong, as long as it is a "licensed bank" authorized by the HKMA (whether a traditional physical bank or a virtual bank), the deposit-taking regulations are exactly the same. The HKEAA includes "virtual bank" here merely as a distractor to test if students know that virtual banks actually fall under the licensed bank tier.
+        </div>
+    </div>
+
+    <div class="box box-tricks">
+        <h3>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <p><strong>消去法 (Process of Elimination)：</strong> 在多項選擇題中，一旦你確定某個選項是絕對錯誤的，就能快速刪去多個選項。</p>
+        <ul>
+            <li>當你看到金額是 <strong>$400,000</strong>，而你記得 RLB 的門檻是 <strong>$500,000</strong> 時，你立刻知道 <strong>(1) 必定錯誤</strong>。</li>
+            <li>看看選項：A包含(1)、B包含(1)、D包含(1)。</li>
+            <li>只需 5 秒鐘，你連 (2) 和 (3) 都不用看，就能直接選出正確答案 <strong>C</strong>！</li>
+        </ul>
+        <div class="bilingual-en">
+            <strong>Process of Elimination:</strong> In MCQs, once you confirm a statement is absolutely false, you can quickly eliminate multiple options.<br>
+            - When you see the amount is <strong>$400,000</strong>, and you recall the RLB threshold is <strong>$500,000</strong>, you immediately know <strong>(1) is strictly false</strong>.<br>
+            - Look at the options: A includes (1), B includes (1), D includes (1).<br>
+            - In just 5 seconds, without even analyzing (2) and (3), you can directly choose the correct answer <strong>C</strong>!
+        </div>
+    </div>
+
+</body>
+</html>
