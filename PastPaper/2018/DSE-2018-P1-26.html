@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - MC Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-main: #374151;
+            --correct-green: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-red: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+        }
+        h2 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-section h1 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-left: 4px solid #9ca3af;
+            background-color: #f9fafb;
+            border-radius: 0 8px 8px 0;
+        }
+        .option-correct {
+            border-left-color: var(--correct-border);
+            background-color: var(--correct-green);
+        }
+        .option-wrong {
+            border-left-color: var(--wrong-border);
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .bilingual-zh {
+            font-weight: 500;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-q { font-weight: bold; color: #b45309; }
+        .tips-box {
+            background-color: #fdf4ff;
+            border: 2px dashed #d946ef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .header-section h1 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>📊 經濟學試題解析 | Economics Question Analysis</h1>
+        <div>
+            <span class="tag"><strong>課題 Topic:</strong> 總需求與總供應 (AD-AS Model)</span>
+            <span class="tag"><strong>難度 Difficulty:</strong> ⭐⭐ (2/5)</span>
+            <span class="tag"><strong>概念 Key Concepts:</strong> 短期總供應 (SRAS), 生產要素 (Factors of Production)</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="bilingual-zh">在下列哪種情況下，短期總供應曲線會向右移？</p>
+        <p class="bilingual-en">The short run aggregate supply curve will shift to the right if</p>
+        
+        <ol type="A" style="font-weight: 500; margin-top: 15px;">
+            <li>政府放寬輸入外國工人的配額。<br><span class="bilingual-en">the government relaxes the importation quota of foreign workers.</span></li>
+            <li style="margin-top: 10px;">政府提高利得稅率。<br><span class="bilingual-en">the government increases the profits tax rate.</span></li>
+            <li style="margin-top: 10px;">中央銀行向公眾出售政府債券。<br><span class="bilingual-en">the central bank sells government bonds to the public.</span></li>
+            <li style="margin-top: 10px;">物價水平上升。<br><span class="bilingual-en">there is an increase in the price level.</span></li>
+        </ol>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <h3 style="margin-top:0; color: var(--primary-blue);">短期總供應 (Short Run Aggregate Supply, SRAS)</h3>
+        <p class="bilingual-zh">短期總供應曲線顯示在所有生產要素價格（如工資）及技術水平不變的假設下，整體物價水平 \( P \) 與實質產出 \( Y \) 之間的正向關係。當物價以外的因素（Non-price factors）發生變化時，整條 SRAS 曲線就會發生<strong>移動 (Shift)</strong>。</p>
+        <p class="bilingual-en">The SRAS curve shows the positive relationship between the general price level \( P \) and real output \( Y \), assuming factor prices (like wages) and technology are constant. When non-price factors change, the entire SRAS curve will <strong>shift</strong>.</p>
+        
+        <p class="bilingual-zh">導致 SRAS 向右移（供應增加）的主要因素包括：</p>
+        <p class="bilingual-en">Key factors causing SRAS to shift to the right (increase in supply) include:</p>
+        <ul>
+            <li><span class="bilingual-zh">生產要素數量增加（如勞動力、資本增加）</span> <span class="bilingual-en">(Increase in quantity of factors of production, e.g., more labor/capital)</span></li>
+            <li><span class="bilingual-zh">生產成本下降（如工資下跌、原材料價格下降）</span> <span class="bilingual-en">(Decrease in production costs, e.g., lower wages, cheaper raw materials)</span></li>
+            <li><span class="bilingual-zh">技術進步</span> <span class="bilingual-en">(Technological advancement)</span></li>
+        </ul>
+
+        <div class="math-block">
+            <strong>生產函數 (Production Function) 簡化概念：</strong>
+            $$ Y = f(L, K, T) $$
+            <p style="font-size: 0.9em; margin-bottom: 0;">其中 \( Y \) = 產出 (Output), \( L \) = 勞力 (Labor), \( K \) = 資本 (Capital), \( T \) = 技術 (Technology)</p>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 Detailed Analysis</h2>
+    <p><strong>正確答案 Correct Option: <span style="color: var(--correct-border); font-size: 1.2em;">A</span></strong></p>
+
+    <div class="option-analysis option-correct">
+        <strong>選項 Option A (正確 Correct): </strong><br>
+        <p class="bilingual-zh">放寬輸入外國工人的配額會直接增加勞動力供應。勞動力作為重要的生產要素，其數量增加會提升經濟的整體生產能力（或對工資造成下調壓力，降低生產成本）。因此，在任何相同的物價水平下，廠商能提供更多的產出，導致短期總供應曲線 (SRAS) 向右移。</p>
+        <p class="bilingual-en">Relaxing the quota for foreign workers directly increases the labor supply. Labor is a crucial factor of production; an increase in its quantity expands the economy's productive capacity (or puts downward pressure on wages, lowering production costs). Thus, at any given price level, firms can supply more output, shifting the SRAS curve to the right.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <strong>選項 Option B (錯誤 Incorrect): </strong><br>
+        <p class="bilingual-zh">提高利得稅率會減少企業的稅後利潤，降低投資意欲。這會導致總需求 (AD) 向左移，同時長期可能會減少資本累積，導致短期及長期總供應向左移，而非向右移。</p>
+        <p class="bilingual-en">Increasing the profits tax rate reduces firms' after-tax profits, dampening investment incentives. This shifts Aggregate Demand (AD) to the left and, in the long run, may reduce capital accumulation, shifting SRAS and LRAS to the left, not right.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <strong>選項 Option C (錯誤 Incorrect): </strong><br>
+        <p class="bilingual-zh">中央銀行向公眾出售政府債券屬於緊縮性貨幣政策 (Contractionary monetary policy)。這會減少貨幣供應，推高利率，從而減少投資和消費。這會導致總需求曲線 (AD) 向左移，與總供應曲線無關。</p>
+        <p class="bilingual-en">The central bank selling government bonds to the public is a contractionary monetary policy. It reduces the money supply and pushes up interest rates, lowering investment and consumption. This shifts the Aggregate Demand (AD) curve to the left and has no direct effect on the AS curve.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <strong>選項 Option D (錯誤 Incorrect): </strong><br>
+        <p class="bilingual-zh">物價水平 \( P \) 的上升只會導致<strong>「沿著」</strong>短期總供應曲線向上移動 (Movement along the curve)，反映產量增加，但絕對不會導致整條曲線發生「移動」(Shift)。</p>
+        <p class="bilingual-en">An increase in the price level \( P \) only causes a <strong>"movement along"</strong> the SRAS curve upwards, reflecting an increase in quantity supplied. It does NOT cause the entire curve to shift.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <p class="bilingual-zh"><strong>解題關鍵 (Pivot Point)：</strong> 本題的關鍵在於區分「總供應 (AS)」與「總需求 (AD)」的影響因素，以及「曲線移動 (Shift)」與「沿著曲線移動 (Movement along)」的分別。</p>
+    <p class="bilingual-en"><strong>Pivot Point:</strong> The key to solving this is distinguishing between factors that affect AS vs. AD, and differentiating between a "shift" in the curve versus a "movement along" the curve.</p>
+    <ul>
+        <li><span class="bilingual-zh"><strong>干擾項 (Distractor) D：</strong> 這是最常見的陷阱。看到「增加/上升」，學生很容易誤以為是向右移，但只要是 Y 軸上的變數 (Price level) 改變，永遠只是沿著曲線移動。</span> <br> <span class="bilingual-en">Distractor D is the classic trap. Students see "increase" and think of a rightward shift, but any change in the Y-axis variable (Price level) ALWAYS results in a movement along the curve.</span></li>
+        <li><span class="bilingual-zh"><strong>干擾項 (Distractor) C：</strong> 測試學生能否分清貨幣政策是影響 AD 而非 AS。</span> <br> <span class="bilingual-en">Distractor C tests if students can identify that monetary policy affects AD, not AS.</span></li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <p class="bilingual-zh">⚠️ <strong>混淆物價水平與生產成本：</strong> 很多同學以為物價水平 (Price level) 上升代表供應增加所以曲線右移。記住，圖表的 Y 軸就是物價水平。Y軸數值的改變，只能導致點在原有的線上滑動 (Movement along)。只有非物價因素（如成本、勞力數量、技術）改變，整條線才會移動 (Shift)。</p>
+        <p class="bilingual-en">⚠️ <strong>Confusing Price Level with Production Costs:</strong> Many students think a higher price level means more supply, so the curve shifts right. Remember, the Y-axis IS the price level. A change in the Y-axis variable only causes a point to slide along the existing curve. Only non-price factors (costs, labor quantity, technology) cause a shift.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼選項 B (提高利得稅) 不是影響供應？企業不是要交更多稅，成本增加了嗎？<br>
+        <span style="font-weight: normal; color: #78350f;">Why doesn't Option B (higher profits tax) affect supply by increasing production costs?</span></p>
+        <p class="bilingual-zh">A: 這是個極好的問題！在經濟學中，「利得稅 (Profits tax)」是對企業賺取的「利潤」徵稅，它不屬於「生產成本 (Cost of production)」（如租金、工資、電費）。因為只有賺錢才需要交利得稅，它不會影響每生產一件產品的邊際成本。因此，短期內它主要影響企業的投資意欲（即總需求 AD 向左移）。如果是「銷售稅 (Sales tax)」，那就會增加生產成本，令 SRAS 向左移。</p>
+        <p class="bilingual-en">A: Excellent question! In economics, a "profits tax" is a tax on the profit earned, not a direct "cost of production" (like rent, wages, electricity). You only pay it if you make a profit, so it doesn't affect the marginal cost of producing an extra unit. Thus, in the short run, it mainly affects investment incentives (shifting AD to the left). If it were a "sales tax/per-unit tax," it WOULD increase production costs and shift SRAS to the left.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p class="bilingual-zh">💡 <strong>秒殺法 (Elimination Method)：</strong></p>
+        <p class="bilingual-en">💡 <strong>Quick Solving:</strong></p>
+        <ol>
+            <li class="bilingual-zh">看到題目問「曲線移動 (Curve shift)」，立刻掃描選項有沒有「物價水平 (Price level)」。有就馬上刪除！(秒殺選項 D)</li>
+            <li class="bilingual-en">When asked about a "curve shift", immediately scan for "Price level". If you see it, cross it out! (Eliminates Option D).</li>
+            <li class="bilingual-zh">題目問的是「總供應 (AS)」。選項 C 是中央銀行/貨幣政策，這永遠是控制貨幣供應，影響的是「總需求 (AD)」。刪除選項 C！</li>
+            <li class="bilingual-en">The question asks about "Aggregate Supply (AS)". Option C is Central Bank/Monetary policy, which controls money supply and affects "Aggregate Demand (AD)". Eliminate Option C!</li>
+            <li class="bilingual-zh">剩下 A 和 B。題目要求「向右移 (Right shift)」，代表好消息（產能增加/成本降）。B 是加稅（壞消息），A 是增加勞工（好消息）。直接選 A。</li>
+            <li class="bilingual-en">You are left with A and B. The question asks for a "Right shift" (good news: more capacity/lower cost). B is a tax increase (bad news), A is more workers (good news). Pick A directly.</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>
