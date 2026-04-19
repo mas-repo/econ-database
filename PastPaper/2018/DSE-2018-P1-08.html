@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics MCQ Analysis</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary-color: #1e293b;
+            --bg-color: #f8fafc;
+            --box-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --correct-color: #22c55e;
+            --wrong-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; }
+        h2 { border-left: 4px solid var(--primary-color); padding-left: 10px; }
+
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-section h2 { border: none; color: white; margin-top: 0; padding-left: 0; }
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Distinct Concept Box */
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* Math Block */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-ans { border-left: 5px solid var(--correct-color); background-color: #f0fdf4; }
+        .wrong-ans { border-left: 5px solid var(--wrong-color); }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        ul { padding-left: 20px; }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h2>📚 HKDSE Economics Analysis</h2>
+        <div>
+            <span class="badge">📌 Topic: Types of Integration / Motives of Expansion (廠商擴張的動機 / 結合種類)</span>
+            <span class="badge">⭐ Difficulty: 2.5 / 5</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="badge">🔑 Key Concepts: Lateral Integration (側向結合)</span>
+            <span class="badge">🔑 Economies of Scale (規模經濟)</span>
+            <span class="badge">🔑 Factor Inputs (要素投入)</span>
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>日本餐飲龍頭企業「東利多控股」收購了本港麵食連鎖店譚仔雲南米線。下列哪項最不可能是該擴張背後的動機？</strong></p>
+        <p class="lang-en">Toridoll Holdings Corporation, a leading company in the restaurant industry in Japan, acquired a Hong Kong noodle chain Tam Chai Yunnan Noodles (譚仔雲南米線). Which of the following is the LEAST likely motive behind the integration?</p>
+        
+        <ol type="A" style="font-weight: bold; margin-top: 20px;">
+            <li>確保要素投入的供應
+                <div class="lang-en" style="font-weight: normal;">to secure the supply of factor inputs</div>
+            </li>
+            <li>藉產品多元化分散風險
+                <div class="lang-en" style="font-weight: normal;">to spread risk through product diversification</div>
+            </li>
+            <li>享有規模經濟
+                <div class="lang-en" style="font-weight: normal;">to enjoy economies of scale</div>
+            </li>
+            <li>將業務擴展至其他市場
+                <div class="lang-en" style="font-weight: normal;">to expand its business to other markets</div>
+            </li>
+        </ol>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>Types of Expansion (擴張的種類)</h3>
+        <ul>
+            <li><strong>橫向結合 (Horizontal Integration):</strong> 合併生產同類產品的競爭者。目的：增加市場佔有率。<br>
+                <span class="lang-en">Merging with competitors producing the same products. Motive: Increase market share.</span></li>
+            <li><strong>側向結合 (Lateral Integration):</strong> 合併生產相關但非直接競爭產品的企業。目的：產品多元化、分散風險。<br>
+                <span class="lang-en">Merging with firms producing related but non-competing products. Motive: Product diversification, spreading risks.</span></li>
+            <li><strong>垂直結合 (Vertical Integration):</strong> 
+                <ul>
+                    <li>向後 (Backward): 收購供應商以確保原料（要素投入）供應。<br><span class="lang-en">Acquiring suppliers to secure raw materials (factor inputs).</span></li>
+                    <li>向前 (Forward): 收購分銷商以確保銷售渠道。<br><span class="lang-en">Acquiring distributors to secure retail outlets.</span></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Economies of Scale (規模經濟)</h3>
+        <p>當企業的生產規模擴大，導致長期平均成本下降的現象。<br>
+        <span class="lang-en">The phenomenon where a firm's long-run average cost decreases as its scale of production increases.</span></p>
+        
+        <div class="math-block">
+            $$AC = \frac{TC}{Q}$$
+            <p style="font-size: 0.9em; margin-top: 5px; color: var(--text-muted);">
+                Where $AC$ is Average Cost, $TC$ is Total Cost, and $Q$ is Output.<br>
+                在規模經濟下，當 $Q$ 上升，長期 $AC$ 會下降。
+            </p>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--wrong-color); font-size: 1.2em;">Option A</span></strong> (因為題目問「最不可能 LEAST likely」)</p>
+
+    <div class="option-analysis correct-ans">
+        <strong>A. 確保要素投入的供應 (to secure the supply of factor inputs) - <span style="color: var(--wrong-color);">LEAST LIKELY</span></strong>
+        <p>「確保要素投入的供應」是<strong>向後垂直結合 (Backward Vertical Integration)</strong> 的動機。譚仔雲南米線是一間直接向消費者提供餐飲服務的餐廳，它並不是生產食材（如麵粉、蔬菜、肉類等）的供應商。因此，東利多收購譚仔並不能為其原本的日本餐廳業務確保原材料供應。這是不合理的動機。</p>
+        <p class="lang-en">"Securing the supply of factor inputs" is a motive for <strong>backward vertical integration</strong>. Tam Chai is a restaurant chain serving end-consumers; it is NOT a supplier of raw materials (like flour, vegetables, or meat). Therefore, acquiring Tam Chai does not help Toridoll secure raw materials for its existing Japanese restaurants. This is an invalid motive.</p>
+    </div>
+
+    <div class="option-analysis wrong-ans">
+        <strong>B. 藉產品多元化分散風險 (to spread risk through product diversification) - <span style="color: var(--correct-color);">LIKELY</span></strong>
+        <p>日本料理與雲南米線屬於不同類型的餐飲產品。這種擴張（側向結合）讓公司不再單一依賴日本食品市場，能夠達到產品多元化並分散投資風險。</p>
+        <p class="lang-en">Japanese cuisine and Yunnan noodles are different types of F&B products. This expansion (lateral integration) prevents the company from relying solely on the Japanese food market, achieving product diversification and spreading investment risks.</p>
+    </div>
+
+    <div class="option-analysis wrong-ans">
+        <strong>C. 享有規模經濟 (to enjoy economies of scale) - <span style="color: var(--correct-color);">LIKELY</span></strong>
+        <p>合併後，擴大了的企業實體可以享有管理規模經濟（共用後勤或管理團隊）或財務規模經濟（以更低利率借款）。這會降低整體平均成本 $AC$。</p>
+        <p class="lang-en">After the merger, the enlarged corporate entity can enjoy managerial economies of scale (sharing back-office/management teams) or financial economies of scale (borrowing at lower interest rates). This reduces the overall average cost $AC$.</p>
+    </div>
+
+    <div class="option-analysis wrong-ans">
+        <strong>D. 將業務擴展至其他市場 (to expand its business to other markets) - <span style="color: var(--correct-color);">LIKELY</span></strong>
+        <p>東利多原本的基地在日本，而譚仔主要在香港營運。收購譚仔顯然能讓該日本企業迅速打入香港（甚至中國大陸及海外）的餐飲市場。</p>
+        <p class="lang-en">Toridoll was originally based in Japan, while Tam Chai operates mainly in Hong Kong. Acquiring Tam Chai obviously allows the Japanese firm to swiftly penetrate the F&B market in Hong Kong (and potentially mainland China and overseas).</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li><strong>Pivot Point (解題樞紐):</strong> 辦認兩間公司的業務性質及供應鏈位置。你必須意識到「餐廳」與「餐廳」之間的收購，不是為了獲取原材料（它們都不是農場或食材加工廠）。<br>
+        <span class="lang-en">Identify the business nature and supply chain position of both firms. You must realize that an acquisition between two "restaurants" is not for obtaining raw materials (neither is a farm or food processing plant).</span></li>
+        <li><strong>Distractors (干擾資訊):</strong> 題目強調了「日本」與「本港」，這引導你確認選項 D 是正確的動機（地理上的擴張），從而排除 D 成為答案。<br>
+        <span class="lang-en">The question emphasizes "Japan" and "Hong Kong". This guides you to confirm Option D as a valid motive (geographical expansion), thus eliminating D as the answer.</span></li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="border-left-color: #ef4444; background-color: #fef2f2;">
+        <ul>
+            <li><strong>誤解「要素投入」(Misunderstanding "Factor Inputs"):</strong> 很多同學以為收購任何公司都會增加資源。但「要素投入的供應」特指生產過程所需的原材料或半製成品。除非被收購的是農田或製麵廠，否則不能選 A。<br>
+            <span class="lang-en">Many students think acquiring any company adds resources. However, "supply of factor inputs" specifically refers to raw materials or semi-finished goods needed for production. Unless the acquired firm is a farm or a noodle factory, A is not a valid motive.</span></li>
+            <li><strong>忽略「最不可能」(Ignoring the "LEAST likely"):</strong> 考試時太緊張，看到 B、C、D 都是合理的商業好處就亂選，忘記了題目要求找出<strong>不合理</strong>的一項。<br>
+            <span class="lang-en">Being too nervous during the exam, seeing B, C, and D as valid business benefits and picking one randomly, forgetting the question asks for the <strong>invalid</strong> one.</span></li>
+        </ul>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 既然它們賣不同種類的食物，為什麼還會有「規模經濟」(Economies of Scale)？它們又不能共用同一種食材！</strong></p>
+        <p class="lang-en">Q: Since they sell different types of food, why would there be "economies of scale"? They can't share the same food ingredients!</p>
+        <hr style="border: 0; border-top: 1px solid #fcd34d; margin: 10px 0;">
+        <p><strong>A:</strong> 規模經濟不只限於「採購經濟」(Purchasing economies)。雖然食材不同，但母公司在合併後規模變得極大，它可以享有<strong>財務經濟 (Financial economies)</strong>（大公司更容易向銀行借取低息貸款）及<strong>管理經濟 (Managerial economies)</strong>（例如共用同一套人力資源系統或會計軟件）。這些都能有效降低長期平均成本 $AC$。<br>
+        <span class="lang-en">A: Economies of scale are not limited to "purchasing economies". Although ingredients differ, the combined parent company becomes much larger, allowing it to enjoy <strong>financial economies</strong> (large firms borrow at lower interest rates) and <strong>managerial economies</strong> (e.g., sharing the same HR system or accounting software). These effectively reduce the long-run average cost $AC$.</span></p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p>💡 <strong>速解法 (Shortcut):</strong></p>
+        <p>在經濟學多項選擇題中，一看到<strong>「確保要素投入 / secure factor inputs」</strong>，大腦應該立刻條件反射連結到<strong>「向後垂直結合 / Backward Vertical Integration」</strong>。一旦確認題目的兩間公司處於同一生產階段（大家都是直接面對客人的零售餐廳），這句選項必定是錯的（即「最不可能」的答案）。</p>
+        <p class="lang-en">In Economics MCQs, whenever you see <strong>"secure factor inputs"</strong>, your brain should immediately link it to <strong>"Backward Vertical Integration"</strong>. Once you confirm both companies are at the same stage of production (both are retail restaurants facing end-consumers), this option must be factually wrong in the context (hence, the "LEAST likely" answer).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

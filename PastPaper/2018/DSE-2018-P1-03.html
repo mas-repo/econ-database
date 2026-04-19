@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics MC Analysis: Opportunity Cost</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --border-blue: #0ea5e9;
+            --gray-bg: #f3f4f6;
+            --text-dark: #333333;
+            --text-muted: #555555;
+            --correct-green: #16a34a;
+            --wrong-red: #dc2626;
+            --bg-cream: #fffdf0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.8em; border-bottom: none; }
+        h2 { font-size: 1.4em; }
+        h3 { font-size: 1.2em; border-bottom: none; }
+
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-size: 0.95em;
+        }
+
+        .zh-text {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        /* Specific Section Styles */
+        .header-section {
+            background-color: var(--light-blue);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background-color: #ffffff;
+        }
+
+        .concept-box {
+            background-color: var(--bg-cream);
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            font-size: 1.1em;
+            border: 1px solid #e5e7eb;
+        }
+
+        .analysis-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .correct-ans-highlight {
+            color: var(--correct-green);
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: #dcfce7;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+        
+        .trick-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <h1>HKDSE Economics MC Tutorial</h1>
+        <p><strong>主題 Topic:</strong> 機會成本 Opportunity Cost</p>
+        <p><strong>難度 Difficulty:</strong> ⭐⭐⭐ (3/5)</p>
+        <p><strong>關鍵字 Key Concepts:</strong> 
+            <span class="tag">機會成本 Opportunity Cost</span>
+            <span class="tag">顯性成本 Explicit Cost</span>
+            <span class="tag">隱性成本 Implicit Cost</span>
+        </p>
+    </div>
+
+    <h2>1. 題目 The Question</h2>
+    <div class="question-box">
+        <p class="zh-text">約翰是一名中六畢業生，他正考慮留港或到內地修讀一個課程。下列哪些情況會降低他留港修讀該課程的機會成本？</p>
+        <p class="en-text">John, a Secondary 6 graduate, is considering studying a programme either in Hong Kong or the Mainland. Which of the following situations would lower his opportunity cost of studying the programme in Hong Kong?</p>
+        
+        <p class="zh-text">(1) 若他留港修讀該課程，他首年的學費會獲豁免。</p>
+        <p class="en-text">(1) His tuition fee of the first year will be waived if he studies the programme in Hong Kong.</p>
+        
+        <p class="zh-text">(2) 該內地課程的畢業生就業前景較佳。</p>
+        <p class="en-text">(2) The graduates of the Mainland programme have better job prospects.</p>
+        
+        <p class="zh-text">(3) 該內地課程所頒授的學術資格在港可能不獲承認。</p>
+        <p class="en-text">(3) The qualification of the Mainland programme may not be recognised in Hong Kong.</p>
+        
+        <ul style="list-style-type: none; padding-left: 0; font-weight: bold;">
+            <li>A. 只有 (1)、(2) / (1) and (2) only</li>
+            <li>B. 只有 (1)、(3) / (1) and (3) only</li>
+            <li>C. 只有 (2)、(3) / (2) and (3) only</li>
+            <li>D. (1)、(2) 及 (3) / (1), (2) and (3)</li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <h3>機會成本 (Opportunity Cost)</h3>
+        <p class="zh-text">機會成本是指在作出一項選擇時，所放棄的選項中價值最高的那一個。</p>
+        <p class="en-text">Opportunity cost is the value of the highest-valued option forgone when making a choice.</p>
+
+        <p class="zh-text">在計算某個選項的機會成本時，我們需要考慮兩部分：<strong>顯性成本</strong>（實際支付的金錢或資源）以及<strong>隱性成本</strong>（放棄了的最高價值選項的淨回報）。</p>
+        <p class="en-text">When calculating the opportunity cost of an option, we must consider two components: <strong>Explicit Cost</strong> (actual money or resources paid) and <strong>Implicit Cost</strong> (the net return of the highest-valued alternative forgone).</p>
+        
+        <div class="math-block">
+            $$OC_{A} = Explicit\ Cost_{A} + Net\ Benefit_{B}$$
+        </div>
+        <p class="zh-text" style="text-align: center; font-size: 0.9em;">(其中 $A$ 為所選選項，$B$ 為放棄了的最高價值選項)</p>
+        <p class="en-text" style="text-align: center; font-size: 0.9em;">(Where $A$ is the chosen option, and $B$ is the highest-valued forgone option)</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div>
+        <span class="correct-ans-highlight">正確答案 Correct Option: B</span>
+    </div>
+
+    <div class="analysis-card">
+        <h3>分析選項 (1) / Analysis for (1)</h3>
+        <p class="zh-text"><strong>情況：</strong>留港修讀首年學費獲豁免。<br>
+        <strong>分析：</strong>學費屬於留港讀書的「顯性成本」。學費被豁免代表顯性成本下降。根據公式，當顯性成本下降時，整體機會成本也會隨之下降。因此，(1) 正確。</p>
+        <p class="en-text"><strong>Situation:</strong> First-year tuition fee in HK is waived.<br>
+        <strong>Analysis:</strong> Tuition fee is an "explicit cost" of studying in HK. A waived fee means the explicit cost decreases. According to the formula, a lower explicit cost leads to a lower total opportunity cost. Therefore, (1) is correct.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h3>分析選項 (2) / Analysis for (2)</h3>
+        <p class="zh-text"><strong>情況：</strong>內地課程畢業生就業前景較佳。<br>
+        <strong>分析：</strong>內地課程是約翰放棄了的選項（Alternative）。內地課程前景變好，代表他「放棄了的選項價值」上升了（即隱性成本上升）。放棄的東西越好，你選擇留港的代價就越大。因此，留港的機會成本會<strong>上升</strong>，(2) 錯誤。</p>
+        <p class="en-text"><strong>Situation:</strong> Mainland programme graduates have better job prospects.<br>
+        <strong>Analysis:</strong> The Mainland programme is the forgone option (Alternative). Better prospects mean the "value of the forgone option" increases (i.e., implicit cost rises). The better the thing you give up, the higher the cost of your current choice. Thus, the opportunity cost of studying in HK <strong>increases</strong>, making (2) incorrect.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h3>分析選項 (3) / Analysis for (3)</h3>
+        <p class="zh-text"><strong>情況：</strong>內地課程學歷在港可能不獲承認。<br>
+        <strong>分析：</strong>這對內地課程（放棄了的選項）來說是個壞消息，降低了該選項的預期價值。既然放棄的選項變得不那麼吸引，他選擇留港所犧牲的代價就減少了。因此，留港的機會成本會<strong>下降</strong>，(3) 正確。</p>
+        <p class="en-text"><strong>Situation:</strong> Mainland qualification may not be recognised in HK.<br>
+        <strong>Analysis:</strong> This is bad news for the Mainland programme (the forgone option), decreasing its expected value. Since the forgone option becomes less attractive, the sacrifice made by choosing to stay in HK is smaller. Thus, the opportunity cost of studying in HK <strong>decreases</strong>, making (3) correct.</p>
+    </div>
+
+    <h2>4. 題目拆解 Problem Decomposition</h2>
+    <div class="concept-box" style="border-left-color: #8b5cf6;">
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point)：</strong><br>這道題目的核心在於分清「你選擇的項目 (Choice)」與「你放棄的項目 (Alternative)」。題目問的是「留港修讀 (Choice)」的機會成本。任何直接降低留港開支的事情，或者降低內地課程 (Alternative) 價值的事情，都會降低留港的機會成本。</p>
+        <p class="en-text"><strong>Pivot Point:</strong><br>The core of this question lies in distinguishing between the "Choice" (Studying in HK) and the "Alternative" (Studying in Mainland). The question asks about the opportunity cost of the "Choice". Anything that directly reduces the expenses in HK, OR decreases the value of the Mainland programme (Alternative), will lower the opportunity cost of studying in HK.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li>
+            <p class="zh-text"><strong>混淆主體：</strong>學生常誤以為「內地課程變好 = 對學生是好事 = 機會成本下降」。這是錯的！別人的好處就是你的代價。放棄的選項價值越高，你付出的隱性代價就越大。</p>
+            <p class="en-text"><strong>Confusing the Subject:</strong> Students often mistakenly think "Mainland programme getting better = good news for the student = opportunity cost drops". This is wrong! The benefit of the alternative is your cost. The higher the value of the forgone option, the greater your implicit cost.</p>
+        </li>
+    </ul>
+
+    <h2>6. 學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 題目沒有說「到內地修讀」是他唯一的替代方案，如果他選擇直接工作呢？</p>
+        <p class="en-text" style="color:#1e3a8a; font-weight:bold; font-style:italic;">Q: The question didn't state that "studying in the Mainland" is his ONLY alternative. What if he chooses to work instead?</p>
+        
+        <p class="zh-text">A: 在這類 DSE 題目中，當題目明確列出兩個主要的對立選項（留港 vs 內地），我們通常假設兩者互為最高價值選項。即使直接工作才是他的最高價值選項，只要選項 (3) 發生，內地課程的價值下降，並不會增加他留港的機會成本（最壞情況是機會成本不變）。但在 DSE 邏輯中，這被視為直接降低了替代選項的價值，從而降低機會成本。</p>
+        <p class="en-text">A: In this type of DSE question, when two main contrasting options are presented (HK vs. Mainland), we assume they are each other's highest-valued alternatives. Even if working was his actual best alternative, event (3) lowering the Mainland degree's value wouldn't *increase* his cost of staying in HK (at worst, the cost remains unchanged). However, under standard DSE logic, this is treated as directly lowering the value of the alternative, hence lowering the opportunity cost.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p class="zh-text"><strong>「好壞消息判定法」：</strong><br>
+        遇到這類題目，立刻標記你的 <strong>Choice (C)</strong> 和 <strong>Alternative (A)</strong>。<br>
+        - 對 C 是好消息（例如減價、送禮）$\rightarrow$ C 的機會成本 <strong>下降 $\downarrow$</strong><br>
+        - 對 A 是好消息（例如前途變好、獎學金）$\rightarrow$ C 的機會成本 <strong>上升 $\uparrow$</strong><br>
+        - 對 A 是壞消息（例如不獲承認、學費加價）$\rightarrow$ C 的機會成本 <strong>下降 $\downarrow$</strong></p>
+
+        <hr style="border: 0; border-top: 1px solid #bbf7d0; margin: 10px 0;">
+
+        <p class="en-text"><strong>"Good News / Bad News" Shortcut:</strong><br>
+        Immediately label your <strong>Choice (C)</strong> and <strong>Alternative (A)</strong>.<br>
+        - Good news for C (e.g., discounts, gifts) $\rightarrow$ OC of C <strong>Decreases $\downarrow$</strong><br>
+        - Good news for A (e.g., better prospects, scholarships) $\rightarrow$ OC of C <strong>Increases $\uparrow$</strong><br>
+        - Bad news for A (e.g., not recognised, tuition hikes) $\rightarrow$ OC of C <strong>Decreases $\downarrow$</strong></p>
+    </div>
+
+</div>
+
+</body>
+</html>
