@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Comparative Advantage</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary-color: #0ea5e9;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --math-bg: #f1f5f9;
+            --success: #16a34a;
+            --danger: #dc2626;
+        }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+        h1 { font-size: 1.8rem; border-bottom: none; }
+        h2 { font-size: 1.4rem; }
+        p { margin-bottom: 1rem; }
+        
+        /* Header section */
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Bilingual Text Styles */
+        .tc-text { font-weight: 500; color: #1e293b; }
+        .en-text { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+        /* Question Box */
+        .question-box {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background-color: var(--primary-light); color: var(--primary-color); }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Math Blocks */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+
+        /* Option Analysis */
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+        }
+        .option.correct { border-left-color: var(--success); background-color: #f0fdf4; }
+        .option.wrong { border-left-color: var(--danger); background-color: #fef2f2; }
+        
+        /* Tricks & Q&A */
+        .qa-box, .trick-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .trick-box { background: #f4f4f5; border-color: #d4d4d8; }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            .header-meta { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-meta">
+        <div class="badge">📍 Topic: Comparative Advantage & Terms of Trade (比較優勢與貿易比率)</div>
+        <div class="badge">⭐ Difficulty: 4 / 5</div>
+        <div class="badge">🔑 Keywords: Opportunity Cost, Terms of Trade, Transport Cost</div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="tc-text">下表顯示在甲、乙兩國各以1單位資源可生產物品的數量：</p>
+        <p class="en-text">The following table shows the amount of goods that can be produced with 1 unit of resources in Country A and B respectively.</p>
+        
+        <table>
+            <tr>
+                <th></th>
+                <th>物品X / Good X (單位/units)</th>
+                <th>物品Y / Good Y (單位/units)</th>
+            </tr>
+            <tr>
+                <td><strong>甲國 / Country A</strong></td>
+                <td>8</td>
+                <td>或 / or 12</td>
+            </tr>
+            <tr>
+                <td><strong>乙國 / Country B</strong></td>
+                <td>2</td>
+                <td>或 / or 4</td>
+            </tr>
+        </table>
+
+        <p class="tc-text">假設一單位物品X的運輸成本是0.2單位物品Y，並由出口國承擔。下列哪項是甲、乙兩國互惠互利的貿易比率？</p>
+        <p class="en-text">Suppose the transportation cost for 1 unit of Good X is 0.2 units of Good Y and it is borne by the exporting country. Which of the following is a mutually beneficial terms of trade between Country A and Country B?</p>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 1單位物品X = 1.3單位物品Y (1 unit of Good X = 1.3 units of Good Y)</li>
+            <li>B. 1單位物品X = 1.7單位物品Y (1 unit of Good X = 1.7 units of Good Y)</li>
+            <li>C. 1單位物品X = 1.8單位物品Y (1 unit of Good X = 1.8 units of Good Y)</li>
+            <li>D. 1單位物品X = 2.0單位物品Y (1 unit of Good X = 2.0 units of Good Y)</li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="tc-text"><strong>機會成本 (Opportunity Cost):</strong> 放棄了的其他選擇中，價值最高的一項。在生產可能性表（產量表）中，生產1單位某物品的機會成本是放棄另一物品的數量。</p>
+        <p class="en-text"><strong>Opportunity Cost:</strong> The highest-valued option forgone. In a production table (output approach), the opportunity cost of producing 1 unit of a good is the amount of the other good given up.</p>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of X} = \frac{\text{Max. Output of Y}}{\text{Max. Output of X}} $$
+        </div>
+
+        <p class="tc-text"><strong>比較優勢 (Comparative Advantage):</strong> 如果一個國家生產某物品的機會成本低於另一個國家，該國便擁有生產該物品的比較優勢，並會出口該物品。</p>
+        <p class="en-text"><strong>Comparative Advantage:</strong> If a country can produce a good at a lower opportunity cost than another country, it has a comparative advantage in producing that good and will export it.</p>
+
+        <p class="tc-text"><strong>貿易比率與運輸成本 (Terms of Trade & Transport Cost):</strong> 互惠互利的貿易比率必須介乎於兩國的機會成本之間。如果涉及運輸成本，承擔運輸成本的一方，其利潤空間會被壓縮（即出口國要求更高的最低價格，或進口國願意支付的最高價格降低）。</p>
+        <p class="en-text"><strong>Terms of Trade (TOT) & Transport Cost:</strong> A mutually beneficial TOT must fall between the domestic opportunity costs of the two countries. If transport costs are involved, the party bearing the cost will face a squeezed profit margin (the exporter requires a higher minimum price, or the importer's maximum willingness to pay decreases).</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p class="tc-text" style="font-size: 1.2rem;">正確答案：<strong>C</strong></p>
+    <p class="en-text">Correct Option: <strong>C</strong></p>
+
+    <div class="option wrong">
+        <p class="tc-text"><strong>選項 A 錯誤 (Option A is Incorrect):</strong> $1.3Y$ 低於甲國的生產成本。甲國不會願意出口。</p>
+        <p class="en-text">$1.3Y$ is lower than Country A's cost of production. Country A will not be willing to export.</p>
+    </div>
+    
+    <div class="option wrong">
+        <p class="tc-text"><strong>選項 B 錯誤 (Option B is Incorrect):</strong> $1.7Y$ 剛好等於甲國的總成本（生產 $1.5Y$ + 運輸 $0.2Y$）。在此比率下，甲國只能做到「收支平衡」，並沒有在貿易中獲得好處。互惠互利意味著<strong>雙方</strong>都必須獲益。</p>
+        <p class="en-text">$1.7Y$ is exactly equal to Country A's total cost (Production $1.5Y$ + Transport $0.2Y$). At this rate, Country A only breaks even and gains nothing from trade. "Mutually beneficial" means <strong>both</strong> parties must gain strictly.</p>
+    </div>
+
+    <div class="option correct">
+        <p class="tc-text"><strong>選項 C 正確 (Option C is Correct):</strong> $1.8Y$ 介乎於甲國的總成本 ($1.7Y$) 與乙國的最高願付價格 ($2.0Y$) 之間。甲國賺取 $0.1Y$ 的利潤，乙國節省 $0.2Y$ 的成本，雙方互惠互利。</p>
+        <p class="en-text">$1.8Y$ falls between Country A's total cost ($1.7Y$) and Country B's maximum willing-to-pay price ($2.0Y$). Country A earns a profit of $0.1Y$, and Country B saves $0.2Y$. Both parties benefit.</p>
+    </div>
+
+    <div class="option wrong">
+        <p class="tc-text"><strong>選項 D 錯誤 (Option D is Incorrect):</strong> $2.0Y$ 剛好等於乙國自行生產 X 的機會成本。在此比率下，乙國只能「打和」，無法從貿易中獲益。</p>
+        <p class="en-text">$2.0Y$ is exactly equal to Country B's domestic opportunity cost of producing X. At this rate, Country B only breaks even and gains nothing from trade.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p class="tc-text">這類題目的「關鍵點」在於先找出誰出口物品X，然後正確地將運輸成本加到相應的邊界上。步驟如下：</p>
+    <p class="en-text">The "Pivot Point" of this type of question is to first identify who exports Good X, and then correctly add the transportation cost to the appropriate boundary. The steps are:</p>
+
+    <ol>
+        <li>
+            <p class="tc-text"><strong>計算機會成本 (Calculate Opportunity Cost):</strong><br>
+            甲國生產 1X 的成本 = $12 / 8 = 1.5Y$<br>
+            乙國生產 1X 的成本 = $4 / 2 = 2.0Y$</p>
+            <p class="en-text">Cost of 1X in Country A = $12 / 8 = 1.5Y$<br>
+            Cost of 1X in Country B = $4 / 2 = 2.0Y$</p>
+        </li>
+        <li>
+            <p class="tc-text"><strong>決定出口國 (Determine the Exporter):</strong><br>
+            因為甲國生產X的成本較低 ($1.5Y < 2.0Y$)，所以甲國擁有比較優勢，<strong>甲國出口X</strong>。</p>
+            <p class="en-text">Since Country A has a lower cost for X ($1.5Y < 2.0Y$), it has a comparative advantage. <strong>Country A exports X</strong>.</p>
+        </li>
+        <li>
+            <p class="tc-text"><strong>處理運輸成本 (Handle Transportation Cost):</strong><br>
+            題目指明運輸成本由「出口國」(即甲國) 承擔。因此，甲國賣出1X的「底價」必須涵蓋其生產成本與運輸成本。<br>
+            甲國最低要求 = 生產成本 ($1.5Y$) + 運輸成本 ($0.2Y$) = <strong>$1.7Y$</strong></p>
+            <p class="en-text">The question states the "exporting country" (Country A) bears the transport cost. Therefore, Country A's minimum acceptable price must cover both production and transport costs.<br>
+            Country A's min. requirement = Production ($1.5Y$) + Transport ($0.2Y$) = <strong>$1.7Y$</strong></p>
+        </li>
+        <li>
+            <p class="tc-text"><strong>找出互惠互利區間 (Find the Mutually Beneficial Range):</strong><br>
+            乙國作為進口國，其最高願付價格就是自己生產的成本 ($2.0Y$)。<br>
+            因此，貿易比率 (TOT) 必須滿足：</p>
+            <p class="en-text">As the importer, Country B's maximum willing-to-pay price is its domestic cost ($2.0Y$).<br>
+            Thus, the Terms of Trade (TOT) must satisfy:</p>
+            <div class="math-block">
+                $$ 1.7Y < \text{TOT of 1X} < 2.0Y $$
+            </div>
+            <p class="tc-text">在此區間內唯一符合的選項是 1.8Y (選項 C)。</p>
+            <p class="en-text">The only option that strictly falls within this range is 1.8Y (Option C).</p>
+        </li>
+    </ol>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-left-color: var(--danger); background-color: #fef2f2;">
+        <p class="tc-text">🚨 <strong>陷阱一：扣錯運輸成本</strong><br>
+        學生常死記硬背「將運輸成本除二」或「隨便加減」。必須看清楚題目要求！如果運輸成本由<strong>進口國</strong>承擔，進口國願意付給出口國的最高價格就會<strong>下降</strong>（因為進口國要預留資源自己付運費）。</p>
+        <p class="en-text">🚨 <strong>Trap 1: Misallocating Transport Cost</strong><br>
+        Students often blindly memorize "divide transport cost by two" or add/subtract randomly. Read carefully! If the transport cost was borne by the <strong>importer</strong>, the maximum price the importer is willing to pay the exporter would <strong>decrease</strong> (as they must reserve resources to pay for shipping themselves).</p>
+
+        <p class="tc-text">🚨 <strong>陷阱二：忽略「互惠互利」的嚴格定義</strong><br>
+        很多同學會選 B 或 D，以為邊界值也算。在經濟學考試中，「互惠互利」(Mutually beneficial) 通常暗示雙方都有<strong>淨得益</strong> (Strictly positive gain)。邊界值只能算打和 (Break-even)。</p>
+        <p class="en-text">🚨 <strong>Trap 2: Ignoring the Strict Definition of "Mutually Beneficial"</strong><br>
+        Many students might choose B or D, thinking boundary values count. In economics exams, "mutually beneficial" typically implies both parties have a <strong>strictly positive gain</strong>. Boundary values represent a break-even point where there is no incentive to trade.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="tc-text"><strong>Q: 如果題目說運輸成本由「進口國」承擔，答案會變成什麼？</strong></p>
+        <p class="en-text"><strong>Q: What if the question said the transportation cost is borne by the "importing country"?</strong></p>
+        
+        <p class="tc-text"><strong>A:</strong> 這樣的話，甲國（出口國）的最低要求維持在 $1.5Y$。但乙國（進口國）要自己付 $0.2Y$ 的運費，所以乙國最多只願意付 $2.0Y - 0.2Y = 1.8Y$ 給甲國購買物品X。互惠區間會變成 $1.5Y < \text{TOT} < 1.8Y$。這時 1.7Y 就會是正確答案！</p>
+        <p class="en-text"><strong>A:</strong> In that case, Country A's (exporter) minimum requirement remains at $1.5Y$. However, Country B (importer) has to pay the $0.2Y$ transport cost itself, so it is only willing to pay a maximum of $2.0Y - 0.2Y = 1.8Y$ to Country A for Good X. The mutually beneficial range would shift to $1.5Y < \text{TOT} < 1.8Y$. In this scenario, 1.7Y would be the correct answer!</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <p class="tc-text">⚡ <strong>數線畫圖法 (The Number Line Method)</strong></p>
+        <p class="en-text">When you encounter these questions, don't keep the numbers in your head. Draw a simple number line during the exam!</p>
+        <ul>
+            <li class="tc-text">左端點：出口國的機會成本 ($1.5$)</li>
+            <li class="tc-text">右端點：進口國的機會成本 ($2.0$)</li>
+            <li class="tc-text">如果是出口國付運費，把<strong>左端點向右推</strong> (+0.2 $\rightarrow$ 1.7)。區間變窄為 $[1.7, 2.0]$。</li>
+            <li class="tc-text">一眼就能看出，只有 1.8 落在這個被壓縮的區間中間。</li>
+        </ul>
+        <ul class="en-text">
+            <li>Left boundary: Exporter's OC ($1.5$)</li>
+            <li>Right boundary: Importer's OC ($2.0$)</li>
+            <li>If Exporter pays transport: <strong>Push the left boundary to the right</strong> (+0.2 $\rightarrow$ 1.7). The range narrows to $[1.7, 2.0]$.</li>
+            <li>At a glance, only 1.8 falls comfortably within this squeezed range.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
