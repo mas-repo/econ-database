@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>HKDSE Economics Tutor - Comparative Advantage</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --box-border: #e5e7eb;
+            --math-bg: #f3f4f6;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "📌";
+            margin-right: 8px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .en {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        /* Specialized Boxes */
+        .header-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--box-border);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+        .option {
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid var(--box-border);
+        }
+        .correct {
+            border-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .wrong {
+            border-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="bilingual">
+            <div class="zh"><strong>課題 (Topic):</strong> 國際貿易 - 比較優勢與貿易比率 (International Trade - Comparative Advantage & Terms of Trade)</div>
+            <div class="zh"><strong>難度 (Difficulty):</strong> ⭐⭐⭐⭐ (4/5)</div>
+            <div class="zh"><strong>關鍵概念 (Key Concepts):</strong> 投入問題 (Input Problem), 機會成本 (Opportunity Cost), 比較優勢 (Comparative Advantage), 貿易比率 (Terms of Trade)</div>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <div class="zh">假設日本和香港生產電腦和玩具須投入的勞力如下所示：</div>
+            <div class="en">Assume the labour input requirements for the production of computers and toys in Japan and Hong Kong are as follows:</div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>1單位電腦 (1 unit of computers)</th>
+                    <th>1單位玩具 (1 unit of toys)</th>
+                </tr>
+                <tr>
+                    <td><strong>日本 (Japan)</strong></td>
+                    <td>2工時 (2 man-hours)</td>
+                    <td>6工時 (6 man-hours)</td>
+                </tr>
+                <tr>
+                    <td><strong>香港 (Hong Kong)</strong></td>
+                    <td>4工時 (4 man-hours)</td>
+                    <td>8工時 (8 man-hours)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="bilingual">
+            <div class="zh">假設沒有運輸費用。要使日本和香港均可從貿易得益，下列哪項是可能的貿易比率？</div>
+            <div class="en">Suppose there is no transportation cost. Which of the following can be the terms of trade so that trade is mutually beneficial to Japan and Hong Kong?</div>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <div class="option">A. 1單位電腦交換0.4單位玩具 (1 unit of computers exchanges for 0.4 units of toys)</div>
+            <div class="option">B. 1單位電腦交換0.5單位玩具 (1 unit of computers exchanges for 0.5 units of toys)</div>
+            <div class="option">C. 1單位電腦交換1單位玩具 (1 unit of computers exchanges for 1 unit of toys)</div>
+            <div class="option">D. 1單位電腦交換2.5單位玩具 (1 unit of computers exchanges for 2.5 units of toys)</div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <div class="zh">
+                <strong>1. 投入問題 (Input Problem):</strong> 題目給予的數據是「生產一單位物品所需的資源（工時）」。計算機會成本時，公式與「產出問題 (Output Problem)」相反。<br>
+                <strong>2. 互利貿易比率 (Mutually Beneficial Terms of Trade):</strong> 貿易比率必須介乎於兩國的本地機會成本之間，雙方才能同時獲益。
+            </div>
+            <div class="en">
+                <strong>1. Input Problem:</strong> The data provided is the "resources (man-hours) required to produce one unit of a good." The formula for opportunity cost is the inverse of an "Output Problem".<br>
+                <strong>2. Mutually Beneficial Terms of Trade:</strong> The terms of trade (TOT) must lie between the domestic opportunity costs of the two countries for both to gain from trade.
+            </div>
+        </div>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of Good X (Input)} = \frac{\text{Resources for 1 unit of X}}{\text{Resources for 1 unit of Y}} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="bilingual">
+        <div class="zh"><strong>正確答案是：選項 A (Option A)</strong></div>
+        <div class="en"><strong>The correct answer is: Option A</strong></div>
+    </div>
+
+    <div class="bilingual">
+        <div class="zh"><strong>步驟 1：計算機會成本</strong><br>這是一個投入問題。生產1單位電腦的機會成本 = (生產電腦的工時) / (生產玩具的工時)。</div>
+        <div class="en"><strong>Step 1: Calculate Opportunity Costs</strong><br>This is an input problem. OC of 1 Computer = (Man-hours for Computer) / (Man-hours for Toy).</div>
+    </div>
+
+    <div class="math-block">
+        <strong>Japan (日本):</strong><br>
+        \( 1 \text{ Computer (C)} = \frac{2}{6} \text{ Toys (T)} = 0.333 \text{ T} \)<br>
+        <strong>Hong Kong (香港):</strong><br>
+        \( 1 \text{ Computer (C)} = \frac{4}{8} \text{ Toys (T)} = 0.5 \text{ T} \)
+    </div>
+
+    <div class="bilingual">
+        <div class="zh"><strong>步驟 2：找出比較優勢及貿易比率範圍</strong><br>日本生產電腦的機會成本較低 (\( 0.333 \text{ T} < 0.5 \text{ T} \))，因此日本擁有生產電腦的比較優勢，將出口電腦。要雙方互利，1單位電腦的貿易比率必須介乎兩國的機會成本之間：</div>
+        <div class="en"><strong>Step 2: Identify Comparative Advantage and TOT Range</strong><br>Japan has a lower OC in producing computers (\( 0.333 \text{ T} < 0.5 \text{ T} \)), so Japan has the comparative advantage and exports computers. For mutual benefit, the TOT for 1 computer must fall between their domestic OCs:</div>
+    </div>
+
+    <div class="math-block">
+        $$ 0.333 \text{ T} < 1 \text{ C} < 0.5 \text{ T} $$
+    </div>
+
+    <div class="option correct">
+        <div class="bilingual">
+            <div class="zh"><strong>A. 1單位電腦交換0.4單位玩具:</strong> 正確。\(0.4\) 介乎 \(0.333\) 和 \(0.5\) 之間。</div>
+            <div class="en"><strong>A. 1 C exchanges for 0.4 T:</strong> Correct. \(0.4\) lies between \(0.333\) and \(0.5\).</div>
+        </div>
+    </div>
+    <div class="option wrong">
+        <div class="bilingual">
+            <div class="zh"><strong>B. 1單位電腦交換0.5單位玩具:</strong> 錯誤。等於香港的本地機會成本，香港無法從中獲益。</div>
+            <div class="en"><strong>B. 1 C exchanges for 0.5 T:</strong> Incorrect. It equals Hong Kong's domestic OC, meaning HK gains nothing.</div>
+        </div>
+    </div>
+    <div class="option wrong">
+        <div class="bilingual">
+            <div class="zh"><strong>C & D. 交換1單位或2.5單位玩具:</strong> 錯誤。超出互利範圍 (\( > 0.5 \))，香港不會願意進口。</div>
+            <div class="en"><strong>C & D. Exchanges for 1 or 2.5 T:</strong> Incorrect. Outside the mutually beneficial range (\( > 0.5 \)), HK would not import.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual">
+        <div class="zh">
+            <strong>破題關鍵 (Pivot Point):</strong> 辨認出這是「投入 (Input)」數據。表格中的數字是「工時」而非「產量」。<br>
+            <strong>解題邏輯:</strong> 學生只需計算出「1單位電腦」的機會成本，然後在選項中找出一個數值是夾在兩國機會成本之間的。
+        </div>
+        <div class="en">
+            <strong>Pivot Point:</strong> Recognizing this is "Input" data. The numbers in the table represent "man-hours", not "output quantity".<br>
+            <strong>Logic:</strong> Students only need to calculate the OC of "1 unit of computers", then find the option with a value that is strictly between the two countries' OCs.
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <div class="bilingual">
+            <div class="zh">
+                <strong>陷阱：錯用「產出問題」公式</strong><br>
+                很多學生習慣了「放棄 / 獲得」的產出公式，直接用 \( 6/2 = 3 \) 來計算日本生產電腦的機會成本。記住：如果是時間/勞力投入，公式是 <strong>(自身投入 / 對方投入)</strong>。
+            </div>
+            <div class="en">
+                <strong>Trap: Using the "Output Problem" formula incorrectly</strong><br>
+                Many students are used to the "Give up / Gain" output formula and mistakenly calculate Japan's OC for computers as \( 6/2 = 3 \). Remember: for time/labour inputs, the formula is <strong>(Input of Good X / Input of Good Y)</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <div class="zh">
+                <strong>Q: 為什麼選項 B (0.5單位玩具) 不可以？</strong><br>
+                A: 因為香港自己生產1部電腦的成本剛好就是0.5部玩具。如果貿易比率也是0.5，香港自己生產就可以了，完全沒有從貿易中節省到資源（沒有得益）。題目要求「均可從貿易得益 (mutually beneficial)」，所以必須是嚴格的小於 (\(<\))，不能等於 (\(=\))。
+            </div>
+            <div class="en">
+                <strong>Q: Why is Option B (0.5 units of toys) incorrect?</strong><br>
+                A: Because Hong Kong's domestic cost to produce 1 computer is exactly 0.5 toys. If the TOT is 0.5, HK could just produce it domestically and saves no resources (no gain). The question asks for "mutually beneficial" trade, so the TOT must be strictly less than (\(<\)), not equal to (\(=\)).
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="bilingual">
+        <div class="zh">
+            <strong>速解口訣：</strong>「投入問題，要咩放上面！」<br>
+            題目問「1單位電腦交換...」，即是找電腦的機會成本。直接把電腦的工時放在分子：<br>
+            日本：\( 2/6 = 1/3 \)<br>
+            香港：\( 4/8 = 1/2 \)<br>
+            答案必須在 \( 1/3 \) (\(\approx 0.33\)) 和 \( 1/2 \) (\(0.5\)) 之間，秒選 A (\(0.4\))！
+        </div>
+        <div class="en">
+            <strong>Shortcut:</strong> "Input problem: Put what you want on top!"<br>
+            The options ask for "1 unit of computers exchanges for...", meaning we need the OC of computers. Put the computer's hours in the numerator:<br>
+            Japan: \( 2/6 = 1/3 \)<br>
+            HK: \( 4/8 = 1/2 \)<br>
+            The answer must be between \( 1/3 \) (\(\approx 0.33\)) and \( 1/2 \) (\(0.5\)). Instantly choose A (\(0.4\))!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

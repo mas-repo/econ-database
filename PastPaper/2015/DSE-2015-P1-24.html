@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - GDP Calculation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --bg-gray: #f3f4f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+        
+        /* Header Section */
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        /* Question Section */
+        .question-box {
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: var(--bg-gray);
+            border-radius: 6px;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Math Block */
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Analysis Section */
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .correct-ans {
+            border-left: 5px solid var(--success);
+            background-color: #f0fdf4;
+        }
+        .wrong-ans {
+            border-left: 5px solid var(--danger);
+        }
+        
+        /* Q&A and Tricks */
+        .qa-box, .tricks-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div>📍 Topic: 國民所得會計 (National Income Accounting)</div>
+        <div>⭐ Difficulty: ★★☆☆☆</div>
+        <div>🔑 Key Concepts: 
+            <span class="badge">本地生產總值 GDP</span>
+            <span class="badge">轉移支付 Transfer Payment</span>
+            <span class="badge">生產界限 Production Boundary</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <strong>下列哪項會包括在2014年香港本地生產總值的計算之內？</strong>
+            <div class="en-text">Which of the following would be included in the calculation of Hong Kong’s GDP for 2014?</div>
+        </div>
+        <ul class="options-list">
+            <li>
+                A. 2014年政府支付的長者生活津貼<br>
+                <span class="en-text">the old age allowance paid by the government in 2014</span>
+            </li>
+            <li>
+                B. 2013年建成但在2014年出售的樓宇的市場價值<br>
+                <span class="en-text">the market value of a flat built in 2013 but sold in 2014</span>
+            </li>
+            <li>
+                C. 2014年一名在二手手袋店工作的售貨員的薪金<br>
+                <span class="en-text">the salary of a salesperson working in a shop selling second-hand handbags in 2014</span>
+            </li>
+            <li>
+                D. 2014年香港本地常住生產單位所擁有的加拿大物業的租金收入<br>
+                <span class="en-text">the rental income from a property in Canada owned by a Hong Kong resident producing unit in 2014</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>本地生產總值 (Gross Domestic Product, GDP)</h3>
+        <div class="bilingual-text">
+            本地生產總值是指一個國家或地區在<strong>指定期間內</strong>（通常為一年），於<strong>其經濟領土內</strong>所生產的全部<strong>最終物品及服務</strong>的總市價。
+            <div class="en-text">GDP is the total market value of all <strong>final goods and services</strong> <strong>currently produced</strong> within the <strong>territorial boundary</strong> of a country or region in a <strong>specified period</strong> (usually a year).</div>
+        </div>
+        
+        <h4>四大計算原則 (Four Key Principles):</h4>
+        <ol>
+            <li><strong>現期生產 (Current Production):</strong> 必須是當年製造的產品或提供的服務。過去生產的物品（如二手貨）不計入當年的 GDP。
+                <div class="en-text">Must be produced in the current year. Past production (e.g., second-hand goods) is excluded.</div>
+            </li>
+            <li><strong>境內生產 (Territorial Boundary):</strong> 必須在該地區的地理範圍內生產，無論生產者是本地人還是外國人。
+                <div class="en-text">Must be produced within the geographical boundary, regardless of the producer's nationality.</div>
+            </li>
+            <li><strong>涉及生產 (Involves Production):</strong> 必須有實質的物品或服務產出。轉移支付（如政府津貼、利是）沒有生產貢獻，因此不計入。
+                <div class="en-text">Must involve actual production of goods/services. Transfer payments (e.g., allowances) are excluded.</div>
+            </li>
+            <li><strong>最終物品 (Final Goods):</strong> 只計算最終物品的價值，以避免重複計算 (Double Counting)。
+                <div class="en-text">Only the value of final goods is counted to avoid double counting.</div>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="analysis-item wrong-ans">
+        <strong>選項 A (Option A) - 錯誤 (Incorrect)</strong>
+        <div class="bilingual-text">
+            長者生活津貼屬於<strong>單向轉移支付 (Transfer Payment)</strong>。政府派發津貼時，長者並沒有提供任何相應的物品或服務作為回報，即沒有涉及當年的生產活動，因此不計入 GDP。
+            <div class="en-text">The old age allowance is a <strong>transfer payment</strong>. When the government distributes the allowance, the elderly do not provide any goods or services in return. Since no current production is involved, it is excluded from the GDP.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item wrong-ans">
+        <strong>選項 B (Option B) - 錯誤 (Incorrect)</strong>
+        <div class="bilingual-text">
+            該樓宇是在 2013 年建成的，其市場價值已經計入了 <strong>2013 年的 GDP</strong>。如果將其市場價值計入 2014 年的 GDP，就會違反「現期生產」的原則。注意：如果在 2014 年出售時涉及地產經紀佣金，該<strong>佣金</strong>則會計入 2014 年 GDP，但題目問的是整棟樓宇的「市場價值」。
+            <div class="en-text">The flat was built in 2013, so its market value was already included in the <strong>2013 GDP</strong>. Including its market value in 2014 would violate the "current production" principle. Note: If there was a real estate agent commission during the 2014 sale, that <strong>commission</strong> would be included in 2014, but the option specifies the "market value" of the flat.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item correct-ans">
+        <strong>選項 C (Option C) - 正確 (Correct)</strong>
+        <div class="bilingual-text">
+            雖然手袋是「二手」的（手袋本身的價值不計入 2014 年 GDP），但售貨員在 2014 年提供了<strong>現期的銷售服務</strong>。售貨員的薪金反映了他在 2014 年提供服務的生產價值，因此這筆薪金必須計入 2014 年的 GDP。
+            <div class="en-text">Although the handbags are "second-hand" (the value of the bags themselves is excluded from 2014 GDP), the salesperson is providing a <strong>current sales service</strong> in 2014. The salary reflects the value of the productive service provided in 2014, so it must be included in the 2014 GDP.</div>
+        </div>
+    </div>
+
+    <div class="analysis-item wrong-ans">
+        <strong>選項 D (Option D) - 錯誤 (Incorrect)</strong>
+        <div class="bilingual-text">
+            該物業位於<strong>加拿大</strong>，即香港的經濟領土之外。根據 GDP 的「境內生產」原則，這筆租金收入應計入加拿大的 GDP。不過，由於擁有者是香港常住居民，這筆收入會計入香港的<strong>本地居民總收入 (GNI / GNP)</strong>，而非 GDP。
+            <div class="en-text">The property is located in <strong>Canada</strong>, which is outside Hong Kong's economic territory. According to the territorial principle of GDP, this rental income belongs to Canada's GDP. However, since the owner is a HK resident, it would be included in Hong Kong's <strong>Gross National Income (GNI / GNP)</strong>, not GDP.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="container" style="background-color: #f8fafc; border: 1px solid #cbd5e1;">
+        <div class="bilingual-text">
+            <strong>解題樞紐 (The Pivot Point):</strong><br>
+            這類題目的核心在於測試你對 GDP 定義中三個關鍵詞的敏感度：<strong>時間 (2014年)、地點 (香港)、生產 (實質服務/物品)</strong>。<br>
+            <div class="en-text">The core of this question tests your sensitivity to three keywords in the GDP definition: <strong>Time (2014), Location (Hong Kong), and Production (actual goods/services)</strong>.</div>
+        </div>
+        <div class="bilingual-text">
+            <strong>干擾資訊 (Distractors):</strong><br>
+            選項 C 中的「二手 (second-hand)」是一個經典陷阱。考評局故意用這個詞來誤導學生，讓學生以為「二手物品不計入 GDP，所以整個選項都不計」。關鍵是要區分「二手物品的價值」與「買賣二手物品所涉及的現期服務價值」。<br>
+            <div class="en-text">The word "second-hand" in Option C is a classic trap. The HKEAA uses this to mislead students into thinking "second-hand goods are excluded, so the whole option is excluded." The key is to distinguish between the "value of the second-hand good" and the "value of current services involved in trading it."</div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li class="bilingual-text">
+            <strong>混淆 GDP 與 GNI (Confusing GDP and GNI):</strong> 學生常忘記 GDP 只看「地理位置 (Territory)」，而 GNI 才看「居民身份 (Resident Status)」。看到選項 D 的「香港常住生產單位」，就很容易誤選。
+            <div class="en-text">Students often forget that GDP is strictly about "Territory", while GNI is about "Resident Status". Seeing "Hong Kong resident" in Option D easily leads to a wrong choice.</div>
+        </li>
+        <li class="bilingual-text">
+            <strong>忽略服務的生產 (Ignoring the production of services):</strong> 以為只有製造出實體物品才算生產。實際上，零售、經紀、運輸等無形服務 \(S\) 同樣對當年的 GDP 有貢獻。
+            <div class="en-text">Assuming only the creation of physical goods counts as production. In reality, intangible services \(S\) like retail, brokerage, and transport also contribute to the current year's GDP.</div>
+        </li>
+    </ul>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 如果選項 B 改成「2014年出售該2013年建成的樓宇時，地產經紀所收取的佣金」，答案會改變嗎？</div>
+        <div class="en-text" style="color: #b45309; margin-bottom: 10px;">Q: If Option B was changed to "the commission charged by the estate agent when selling the flat built in 2013 during 2014", would the answer change?</div>
+        
+        <div><strong>A:</strong> 會的！如果是「經紀佣金」，就會計入 2014 年的 GDP。因為經紀在 2014 年付出了勞力，提供了配對買賣雙方的「現期服務」。這與選項 C 中售貨員的薪金原理完全相同。</div>
+        <div class="en-text"><strong>A:</strong> Yes! If it were the "agent's commission", it WOULD be included in the 2014 GDP. This is because the agent exerted effort and provided a "current service" of matching the buyer and seller in 2014. The principle is exactly the same as the salesperson's salary in Option C.</div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tricks-box">
+        <div class="bilingual-text">
+            <strong>「關鍵字剔除法」 (Keyword Elimination Method):</strong><br>
+            在做 GDP 計算的 MC 題時，拿著筆圈出致命關鍵字，可以秒殺錯誤選項：
+            <ul>
+                <li>看到<strong>「津貼 (allowance)」、「援助金」、「利是」</strong> ➔ 轉移支付 ➔ ❌ 剔除</li>
+                <li>看到<strong>「[往年] 建成 / 生產」</strong> ➔ 非現期生產 ➔ ❌ 剔除</li>
+                <li>看到<strong>「外國 / 境外 (如加拿大)」</strong> ➔ 非境內生產 ➔ ❌ 剔除</li>
+            </ul>
+            剩下的 C 選項，即使有「二手」這個字，但主體是「薪金 (salary)」，代表勞工服務，自然是正確答案！
+            <div class="en-text">
+                <strong>Keyword Elimination Method:</strong><br>
+                When doing GDP MC questions, circle the fatal keywords to instantly eliminate wrong options:
+                <ul>
+                    <li>See <strong>"allowance", "aid", "red packet"</strong> ➔ Transfer payment ➔ ❌ Eliminate</li>
+                    <li>See <strong>"built/produced in [past year]"</strong> ➔ Not current production ➔ ❌ Eliminate</li>
+                    <li>See <strong>"foreign country (e.g., Canada)"</strong> ➔ Not domestic production ➔ ❌ Eliminate</li>
+                </ul>
+                The remaining Option C, despite having the word "second-hand", focuses on "salary", which represents labor service. Thus, it must be the correct answer!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Question Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary-color: #1e293b;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-gray: #f8fafc;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .bilingual-zh {
+            margin-bottom: 8px;
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            padding-left: 10px;
+            border-left: 2px solid var(--border-color);
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-gray);
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: var(--bg-gray);
+        }
+        .option-correct {
+            border-left: 5px solid var(--success);
+            background: #ecfdf5;
+        }
+        .option-wrong {
+            border-left: 5px solid var(--danger);
+        }
+        .qa-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+        .tips-box {
+            background: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Analysis</h1>
+    <div class="header-info">
+        <div><strong>Topic:</strong> <span class="badge">Economic Structure 經濟結構</span></div>
+        <div><strong>Difficulty:</strong> ⭐⭐ (2/5)</div>
+        <div><strong>Key Concepts:</strong> Employment Distribution, Absolute vs. Relative Values</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-zh">
+            下表顯示某經濟的就業分佈。<br><br>
+            <table>
+                <tr>
+                    <th>產業 / 年份</th>
+                    <th>2010</th>
+                    <th>2014</th>
+                </tr>
+                <tr>
+                    <td>初級</td>
+                    <td>0.4%</td>
+                    <td>0.4%</td>
+                </tr>
+                <tr>
+                    <td>二級</td>
+                    <td>23.6%</td>
+                    <td>18.5%</td>
+                </tr>
+                <tr>
+                    <td>三級</td>
+                    <td>76.0%</td>
+                    <td>81.1%</td>
+                </tr>
+                <tr>
+                    <td>整體</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+            從上表我們可得出以下結論：由2010年至2014年，<br>
+            A. 從事初級產業的工人數量維持不變。<br>
+            B. 整體就業率是相同的。<br>
+            C. 三級產業對本地生產總值的貢獻增加了。<br>
+            D. 以就業而言二級產業的相對重要性減低了。
+        </div>
+        <div class="bilingual-en">
+            The following table shows the employment distribution in an economy.<br><br>
+            <table>
+                <tr>
+                    <th>Sector / Year</th>
+                    <th>2010</th>
+                    <th>2014</th>
+                </tr>
+                <tr>
+                    <td>Primary</td>
+                    <td>0.4%</td>
+                    <td>0.4%</td>
+                </tr>
+                <tr>
+                    <td>Secondary</td>
+                    <td>23.6%</td>
+                    <td>18.5%</td>
+                </tr>
+                <tr>
+                    <td>Tertiary</td>
+                    <td>76.0%</td>
+                    <td>81.1%</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+            From the above table, we can conclude that from 2010 to 2014,<br>
+            A. the number of workers engaged in the primary sector remained constant.<br>
+            B. the overall employment rate was the same.<br>
+            C. the contribution of the tertiary sector to gross domestic product (GDP) increased.<br>
+            D. the relative importance of the secondary sector in terms of employment decreased.
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-zh">
+            <strong>絕對數值 vs 相對數值 (Absolute vs. Relative Values)</strong><br>
+            這條題目的核心在於分辨「百分比」（相對數值）與「實際數量」（絕對數值）。表格提供的數據是就業<strong>分佈百分比</strong>，它只反映了各產業在整體就業中的相對重要性，而不能反映實際的就業人數。
+        </div>
+        <div class="bilingual-en">
+            <strong>Absolute vs. Relative Values</strong><br>
+            The core of this question lies in distinguishing between "percentages" (relative values) and "actual numbers" (absolute values). The table provides the <strong>percentage distribution</strong> of employment, which only reflects the relative importance of each sector, not the actual number of employed persons.
+        </div>
+        
+        <div class="math-block">
+            $$ \text{某產業就業人數} = \text{總就業人數} \times \text{該產業就業百分比} $$
+            $$ \text{Number of workers in a sector} = \text{Total employment} \times \text{Percentage share} $$
+        </div>
+
+        <div class="bilingual-zh">
+            由於我們不知道「總就業人數」是否有改變，我們無法計算出實際的就業人數變化。此外，就業分佈（投入）並不等同於對 GDP 的貢獻（產出）。
+        </div>
+        <div class="bilingual-en">
+            Since we do not know if the "Total employment" has changed, we cannot calculate the change in the actual number of workers. Furthermore, employment distribution (input) is not equivalent to GDP contribution (output).
+        </div>
+    </div>
+
+    <!-- 4. Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option: D</strong></p>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-zh">
+            <strong>選項 A (錯誤):</strong> 表格顯示初級產業的就業百分比維持在 \(0.4\%\)。然而，如果總就業人數改變了，實際的工人數量也會隨之改變。因此，我們不能斷定工人數量維持不變。
+        </div>
+        <div class="bilingual-en">
+            <strong>Option A (Incorrect):</strong> The table shows the percentage share of the primary sector remained at \(0.4\%\). However, if the total employment changed, the actual number of workers would also change. Therefore, we cannot conclude the number of workers remained constant.
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-zh">
+            <strong>選項 B (錯誤):</strong> 就業率公式為 \(\frac{\text{就業人口}}{\text{勞動人口}} \times 100\%\)。表格只顯示了已就業人口內部的分佈，完全沒有提供勞動人口或失業人口的數據，因此無法得知就業率。
+        </div>
+        <div class="bilingual-en">
+            <strong>Option B (Incorrect):</strong> The employment rate formula is \(\frac{\text{Employed Population}}{\text{Labor Force}} \times 100\%\). The table only shows the internal distribution of the employed population and provides no data on the labor force or unemployed population.
+        </div>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <div class="bilingual-zh">
+            <strong>選項 C (錯誤):</strong> 就業人數的比例增加，不代表其產值（GDP貢獻）一定增加。勞動生產力、資本投入等因素都會影響產值。
+        </div>
+        <div class="bilingual-en">
+            <strong>Option C (Incorrect):</strong> An increase in the proportion of employment does not necessarily mean an increase in output value (GDP contribution). Factors like labor productivity and capital input also affect output.
+        </div>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <div class="bilingual-zh">
+            <strong>選項 D (正確):</strong> 二級產業的就業百分比由 \(23.6\%\) 下降至 \(18.5\%\)。「百分比」正正代表了該產業在就業方面的「相對重要性」。百分比下降，即相對重要性減低。
+        </div>
+        <div class="bilingual-en">
+            <strong>Option D (Correct):</strong> The employment percentage of the secondary sector dropped from \(23.6\%\) to \(18.5\%\). A "percentage" exactly represents the "relative importance" of the sector in terms of employment. A drop in percentage means a decrease in relative importance.
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-zh">
+        <strong>解題關鍵 (Pivot Point):</strong> 認清表格的單位是「%」。這意味著所有數據都是相對的。任何涉及「絕對數量」（如工人數目、GDP數值）的選項都可以立即被排除。<br>
+        <strong>干擾資訊 (Distractors):</strong> 選項A利用了初級產業數字不變 (0.4%) 來製造陷阱，誘使學生將「百分比不變」等同於「數量不變」。
+    </div>
+    <div class="bilingual-en">
+        <strong>Pivot Point:</strong> Recognize that the unit in the table is "%". This means all data are relative. Any option involving "absolute quantities" (like number of workers, GDP values) can be immediately eliminated.<br>
+        <strong>Distractors:</strong> Option A uses the unchanged figure for the primary sector (0.4%) as a trap, tempting students to equate "unchanged percentage" with "unchanged quantity".
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li>
+            <div class="bilingual-zh"><strong>混淆相對與絕對數值：</strong> 這是DSE經濟科最常見的陷阱之一。緊記：百分比 \(\neq\) 實際數量。</div>
+            <div class="bilingual-en"><strong>Confusing relative and absolute values:</strong> This is one of the most common traps in DSE Economics. Remember: Percentage \(\neq\) Actual quantity.</div>
+        </li>
+        <li>
+            <div class="bilingual-zh"><strong>將投入等同於產出：</strong> 投入更多勞工（就業分佈增加）不代表產出（GDP）會按比例增加。</div>
+            <div class="bilingual-en"><strong>Equating input with output:</strong> Inputting more labor (increased employment share) does not mean output (GDP) will increase proportionally.</div>
+        </li>
+    </ul>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 如果題目加上「假設總就業人數在2010至2014年間維持不變」，選項A會變成正確嗎？</div>
+        <div class="bilingual-zh">A: 會的！如果總就業人數不變（例如維持在300萬人），那麼初級產業的工人數量就會是 \(3,000,000 \times 0.4\%\)，兩年的實際人數都會完全相同，選項A就會成立。</div>
+        <br>
+        <div class="qa-q">Q: If the question added "Assume total employment remained constant between 2010 and 2014", would Option A be correct?</div>
+        <div class="bilingual-en">A: Yes! If total employment is constant (e.g., at 3 million), the number of workers in the primary sector would be \(3,000,000 \times 0.4\%\). The actual number would be exactly the same for both years, making Option A correct.</div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-zh">
+            <strong>秒殺技巧 (Elimination Method):</strong> <br>
+            當你看到表格只有「百分比(%)」時，立即掃描選項：<br>
+            - 看到「數量」(Number) -> 刪除 (選項A)<br>
+            - 看到「率」(Rate) 但缺乏分母數據 -> 刪除 (選項B)<br>
+            - 看到「GDP」(產值) 但只有就業數據 -> 刪除 (選項C)<br>
+            剩下的 D 就是唯一可能的答案！
+        </div>
+        <div class="bilingual-en">
+            <strong>Shortcut:</strong> <br>
+            When you see a table with only "percentages (%)", immediately scan the options:<br>
+            - See "Number" (absolute quantity) -> Eliminate (Option A)<br>
+            - See "Rate" without denominator data -> Eliminate (Option B)<br>
+            - See "GDP" (output) with only employment data -> Eliminate (Option C)<br>
+            The remaining Option D is the only possible answer!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

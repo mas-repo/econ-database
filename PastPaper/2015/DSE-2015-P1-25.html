@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --en-text-color: #64748b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 15px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .en-translation {
+            color: var(--en-text-color);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .header-info {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header-info span {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .question-table th, .question-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: center;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .correct-ans {
+            background-color: #dcfce7;
+            border: 2px solid #22c55e;
+            padding: 15px;
+            font-weight: bold;
+            color: #166534;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .analysis-item {
+            margin-bottom: 25px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .question-table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-info">
+        <span>Topic: 宏觀經濟學 Macroeconomics</span>
+        <span>Difficulty: ★★★★☆</span>
+        <span>Keywords: Real GDP, Nominal GDP, Per Capita, Growth Rate</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>題目 The Question</h2>
+    <div class="question-box">
+        <p>參閱以下有關某經濟的表。<br>
+        <div class="en-translation">Refer to the following table about an economy.</div></p>
+        
+        <table class="question-table">
+            <tr>
+                <th>增長率(相對於去年) (%)<br><span style="font-size:0.8em; font-weight:normal;">Growth rate (relative to previous year) (%)</span></th>
+                <th>第1年<br><span style="font-size:0.8em; font-weight:normal;">Year 1</span></th>
+                <th>第2年<br><span style="font-size:0.8em; font-weight:normal;">Year 2</span></th>
+            </tr>
+            <tr>
+                <td>名義本地生產總值 Nominal GDP</td>
+                <td>4</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>一般物價水平 General price level</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>人口 Population</td>
+                <td>-1</td>
+                <td>2</td>
+            </tr>
+        </table>
+
+        <p>下列哪項有關該經濟的陳述是正確的？<br>
+        <div class="en-translation">Which of the following statements about the economy is correct?</div></p>
+        
+        <p>A. 第2年的人均名義本地生產總值和第1年的相同。<br>
+        <span class="en-translation">The per capita nominal GDP in year 2 is the same as that in year 1.</span></p>
+        <p>B. 實質產出在第2年上升了。<br>
+        <span class="en-translation">The real output increased in year 2.</span></p>
+        <p>C. 一般物價水平在第2年下降了。<br>
+        <span class="en-translation">The general price level decreased in year 2.</span></p>
+        <p>D. 人均實質本地生產總值在第2年下降了。<br>
+        <span class="en-translation">The per capita real GDP decreased in year 2.</span></p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p>在處理增長率（Growth Rates）的題目時，我們通常可以使用近似公式（Approximation Formula）來快速運算。當變化百分比很小時，變數相乘可轉化為增長率相加，變數相除可轉化為增長率相減。</p>
+        <div class="en-translation">When dealing with growth rate questions, we can often use approximation formulas for quick calculations. When percentage changes are small, multiplication of variables translates to the addition of their growth rates, and division translates to subtraction.</div>
+        
+        <div class="math-block">
+            $$ g_{\text{Nominal}} \approx g_{\text{Real}} + g_{\text{Price}} $$
+            $$ g_{\text{Per Capita}} \approx g_{\text{Total}} - g_{\text{Population}} $$
+        </div>
+        
+        <p>其中 \(g\) 代表增長率（Growth rate）。如果 \(g > 0\)，代表該數值上升；如果 \(g = 0\)，代表該數值不變；如果 \(g < 0\)，代表該數值下降。</p>
+        <div class="en-translation">Where \(g\) represents the growth rate. If \(g > 0\), the value is increasing; if \(g = 0\), the value remains unchanged; if \(g < 0\), the value is decreasing.</div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <div class="correct-ans">
+        正確答案 Correct Option: D
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 A (Option A): 錯誤 Incorrect</strong>
+        <p>人均名義 GDP 增長率 \(\approx\) 名義 GDP 增長率 \(-\) 人口增長率。在第2年，該增長率為 \(0\% - 2\% = -2\%\)。因為增長率是負數，所以第2年的人均名義 GDP 應該是<strong>下降了</strong>，而不是相同。</p>
+        <div class="en-translation">Per capita nominal GDP growth rate \(\approx\) Nominal GDP growth rate \(-\) Population growth rate. In Year 2, this is \(0\% - 2\% = -2\%\). Since the growth rate is negative, the per capita nominal GDP actually <strong>decreased</strong> in Year 2, rather than remaining the same.</div>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 B (Option B): 錯誤 Incorrect</strong>
+        <p>實質產出（實質 GDP）增長率 \(\approx\) 名義 GDP 增長率 \(-\) 物價水平增長率。在第2年，實質 GDP 增長率 \(\approx 0\% - 1\% = -1\%\)。因為是負數，實質產出<strong>下降了</strong>。</p>
+        <div class="en-translation">Real output (Real GDP) growth rate \(\approx\) Nominal GDP growth rate \(-\) Price level growth rate. In Year 2, Real GDP growth rate \(\approx 0\% - 1\% = -1\%\). Since it is negative, real output <strong>decreased</strong>.</div>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 C (Option C): 錯誤 Incorrect</strong>
+        <p>第2年的一般物價水平增長率為 \(1\%\)。雖然增長率比第1年（\(3\%\)）低，但它仍然是一個<strong>正數</strong>（\(>0\)），這意味著物價水平仍然在<strong>上升</strong>（通脹放緩，但並非通縮）。</p>
+        <div class="en-translation">The growth rate of the general price level in Year 2 is \(1\%\). Although the growth rate is lower than in Year 1 (\(3\%\)), it is still a <strong>positive number</strong> (\(>0\)). This means the price level is still <strong>increasing</strong> (disinflation, not deflation).</div>
+    </div>
+
+    <div class="analysis-item">
+        <strong>選項 D (Option D): 正確 Correct</strong>
+        <p>人均實質 GDP 增長率 \(\approx\) 實質 GDP 增長率 \(-\) 人口增長率。從選項B得知，第2年實質 GDP 增長率約為 \(-1\%\)。因此，人均實質 GDP 增長率 \(\approx -1\% - 2\% = -3\%\)。因為結果是負數，人均實質 GDP 確實<strong>下降了</strong>。</p>
+        <div class="en-translation">Per capita real GDP growth rate \(\approx\) Real GDP growth rate \(-\) Population growth rate. From Option B, the Real GDP growth rate in Year 2 is approx \(-1\%\). Therefore, per capita real GDP growth rate \(\approx -1\% - 2\% = -3\%\). Since the result is negative, the per capita real GDP indeed <strong>decreased</strong>.</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>題目拆解 Problem Decomposition</h2>
+    <p>這類題目的核心在於區分「數值本身（Level）」與「增長率（Growth Rate）」。表格提供的是<strong>增長率</strong>。解題的關鍵點（Pivot Point）是利用公式將已知的增長率轉化為我們需要的變數的增長率。第1年的數據完全是干擾資訊（Distractors），我們只需要計算第2年的狀況即可判斷選項的對錯。</p>
+    <div class="en-translation">The core of this type of question lies in distinguishing between the "Level" and the "Growth Rate". The table provides <strong>growth rates</strong>. The pivot point is using formulas to convert known growth rates into the growth rates of the variables we need. The data for Year 1 are purely distractors; we only need to calculate the situation in Year 2 to judge the options.</div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <div class="trap-box">
+        <p><strong>陷阱：混淆「增長率下降」與「數值下降」</strong></p>
+        <p>很多學生會誤選 C。他們看到物價水平增長率由 \(3\%\) 跌至 \(1\%\)，就以為物價水平下降了。記住：只要增長率是正數（例如 \(1\%\)），該數值（物價）就依然在上升！只有當增長率為負數時（例如 \(-1\%\)），數值才會下降。</p>
+        <div class="en-translation"><strong>Trap: Confusing "a decrease in growth rate" with "a decrease in level"</strong><br>
+        Many students mistakenly choose C. They see the price level growth rate drop from \(3\%\) to \(1\%\) and assume the price level decreased. Remember: As long as the growth rate is positive (e.g., \(1\%\)), the level (price) is still rising! The level only decreases when the growth rate is negative (e.g., \(-1\%\)).</div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>學生常見疑問 Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼我們可以直接把百分比相減？這精確嗎？</strong><br>
+        <span class="en-translation">Why can we just subtract the percentages? Is this exact?</span></p>
+        <p><strong>A:</strong> 這是一個近似值（Approximation）。精確的公式是 \((1 + g_{\text{Nominal}}) = (1 + g_{\text{Real}}) \times (1 + g_{\text{Price}})\)。在第2年，\(1.00 = (1 + g_{\text{Real}}) \times 1.01\)，所以 \(1 + g_{\text{Real}} = 1 / 1.01 \approx 0.9901\)，即實質 GDP 增長率為 \(-0.99\%\)。在 DSE 考試中，當百分比很小（通常小於 10%）時，直接相加減的近似法已經足夠用來判斷正負號（上升或下降）。</p>
+        <div class="en-translation">This is an approximation. The exact formula is \((1 + g_{\text{Nominal}}) = (1 + g_{\text{Real}}) \times (1 + g_{\text{Price}})\). In Year 2, \(1.00 = (1 + g_{\text{Real}}) \times 1.01\), so \(1 + g_{\text{Real}} = 1 / 1.01 \approx 0.9901\), meaning the real GDP growth rate is \(-0.99\%\). In the DSE exam, when percentages are small (usually under 10%), the addition/subtraction approximation is sufficient to determine the sign (increase or decrease).</div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="trick-box">
+        <p><strong>速解法 (Shortcut):</strong></p>
+        <p>遇到這類題目，先掃描選項，尋找最容易判斷的「陷阱選項」。選項 C 說物價下降，但表格顯示第2年物價增長率為 \(1\%\)（正數），立刻可以刪除 C。接著看選項 A，名義 GDP 增長 \(0\%\)，但人口增長 \(2\%\)，分母變大，人均值必定下降，所以 A 錯。這樣就能快速縮窄範圍，節省時間。</p>
+        <div class="en-translation">When encountering such questions, scan the options first for easily identifiable "trap options". Option C says the price decreased, but the table shows a \(1\%\) (positive) growth rate in Year 2, so C is instantly eliminated. Next, look at Option A: Nominal GDP growth is \(0\%\), but population growth is \(2\%\). Since the denominator grew, the per capita value must fall, so A is wrong. This quickly narrows down the choices and saves time.</div>
+    </div>
+
+</div>
+
+</body>
+</html>
