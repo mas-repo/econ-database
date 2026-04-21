@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Supply M1 & M2</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --accent-color: #0ea5e9;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --success-color: #16a34a;
+            --success-bg: #dcfce7;
+            --danger-color: #dc2626;
+            --danger-bg: #fee2e2;
+            --warning-color: #d97706;
+            --warning-bg: #fef3c7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            background-color: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .option-correct {
+            background-color: var(--success-bg);
+            border-color: var(--success-color);
+        }
+
+        .option-wrong {
+            background-color: var(--danger-bg);
+            border-color: var(--danger-color);
+        }
+
+        .tips-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bilingual-en {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .bilingual-zh {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutorial <br> 經濟學文憑試導修</h1>
+
+    <div class="header-info">
+        <span class="badge">Topic: Money Supply 貨幣供應</span>
+        <span class="badge">Difficulty: ⭐⭐ (2/5)</span>
+        <span class="badge">Key Concepts: M1, M2, M3, Licensed Banks 持牌銀行</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p class="bilingual-zh"><strong>下圖顯示香港貨幣供應M1與M2之間的關係。上圖中，\(M2 = M1 + K\)。下列哪些是K的組成部分？</strong></p>
+        <p class="bilingual-en">The following diagram shows the relationship between money supply M1 and M2 in Hong Kong. In the above diagram, \(M2 = M1 + K\). Which of the following are components of K?</p>
+        
+        <ol type="A">
+            <li>
+                <p class="bilingual-zh">持牌銀行、有限制牌照銀行，以及接受存款公司的所有種類的存款</p>
+                <p class="bilingual-en">all types of deposits with licensed banks, restricted licence banks and deposit-taking companies</p>
+            </li>
+            <li>
+                <p class="bilingual-zh">有限制牌照銀行的定期存款，以及非銀行公眾持有的由有限制牌照銀行發行的可轉讓存款證</p>
+                <p class="bilingual-en">time deposits with restricted licence banks and negotiable certificates of deposit issued by restricted licence banks held by non-bank public</p>
+            </li>
+            <li>
+                <p class="bilingual-zh">持牌銀行的儲蓄存款和定期存款，以及非銀行公眾持有的由持牌銀行發行的可轉讓存款證</p>
+                <p class="bilingual-en">savings deposits and time deposits with licensed banks and negotiable certificates of deposits issued by licensed banks held by non-bank public</p>
+            </li>
+            <li>
+                <p class="bilingual-zh">持牌銀行、有限制牌照銀行，以及接受存款公司的儲備金</p>
+                <p class="bilingual-en">reserves of licensed banks, restricted licence banks and deposit-taking companies</p>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="bilingual-zh">在香港，貨幣供應（Money Supply）根據流動性（Liquidity）分為三個層次：M1、M2 和 M3。要解答這題，我們必須清楚記住它們的定義，特別是它們與香港三級銀行體系（持牌銀行、有限制牌照銀行、接受存款公司）的對應關係。</p>
+        <p class="bilingual-en">In Hong Kong, the money supply is classified into three tiers based on liquidity: M1, M2, and M3. To answer this question, we must clearly remember their definitions, especially their correspondence with Hong Kong's three-tier banking system (Licensed Banks, Restricted Licence Banks, Deposit-taking Companies).</p>
+
+        <div class="math-block">
+            $$M1 = \text{公眾持有的法定貨幣 (Legal tender in public circulation)} + \text{持牌銀行的活期存款 (Demand deposits with licensed banks)}$$
+        </div>
+        <div class="math-block">
+            $$M2 = M1 + \text{持牌銀行的儲蓄及定期存款 (Savings & time deposits with licensed banks)} + \text{非銀行公眾持有的持牌銀行發行可轉讓存款證 (NCDs issued by licensed banks)}$$
+        </div>
+        <div class="math-block">
+            $$M3 = M2 + \text{有限制牌照銀行及接受存款公司的客戶存款 (Customer deposits with RLBs & DTCs)} + \text{非銀行公眾持有的RLBs及DTCs發行可轉讓存款證 (NCDs issued by RLBs & DTCs)}$$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p class="bilingual-zh"><strong>正確答案是：C</strong></p>
+    <p class="bilingual-en"><strong>Correct Option: C</strong></p>
+
+    <div class="option-analysis option-wrong">
+        <p class="bilingual-zh"><strong>選項 A (錯誤):</strong> 這個選項包含了所有三類接受存款機構的所有存款。這不僅涵蓋了M2的成分，還涵蓋了M1（活期存款）和M3（有限制牌照銀行及接受存款公司的存款）的成分，因此不等於 \(K\)。</p>
+        <p class="bilingual-en"><strong>Option A (Incorrect):</strong> This option includes all types of deposits across all three types of deposit-taking institutions. This covers not just M2 components, but also M1 (demand deposits) and M3 (deposits with RLBs and DTCs) components. Therefore, it does not equal \(K\).</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p class="bilingual-zh"><strong>選項 B (錯誤):</strong> 這些項目是從 M2 計算 M3 時需要加入的成分（即 \(M3 - M2\)），而不是 \(M2 - M1\)。</p>
+        <p class="bilingual-en"><strong>Option B (Incorrect):</strong> These items are the components added to M2 to calculate M3 (i.e., \(M3 - M2\)), not \(M2 - M1\).</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <p class="bilingual-zh"><strong>選項 C (正確):</strong> 根據定義，\(M2 = M1 + K\)，所以 \(K = M2 - M1\)。這正是持牌銀行的儲蓄存款、定期存款，以及由持牌銀行發行並由非銀行公眾持有的可轉讓存款證。這完全符合選項 C 的描述。</p>
+        <p class="bilingual-en"><strong>Option C (Correct):</strong> By definition, \(M2 = M1 + K\), so \(K = M2 - M1\). This is exactly the savings deposits and time deposits with licensed banks, plus negotiable certificates of deposit issued by licensed banks and held by the non-bank public. This perfectly matches the description in Option C.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p class="bilingual-zh"><strong>選項 D (錯誤):</strong> 銀行儲備金（Reserves）絕對不計算在任何貨幣供應（M1/M2/M3）之內。貨幣供應只計算「公眾」持有的貨幣，而儲備金是由銀行持有的。</p>
+        <p class="bilingual-en"><strong>Option D (Incorrect):</strong> Bank reserves are NEVER included in any definition of money supply (M1/M2/M3). Money supply only measures money held by the "public", whereas reserves are held by banks.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #fffbeb; border-color: #f59e0b;">
+        <p class="bilingual-zh"><strong>解題樞紐 (Pivot Point)：</strong> 題目給出 \(M2 = M1 + K\)，這是一個簡單的代數關係，意味著 \(K\) 就是 M1 和 M2 之間的「差額」。你只需要在腦海中提取 M2 的公式，然後減去 M1 的部分。</p>
+        <p class="bilingual-en"><strong>Pivot Point:</strong> The question provides \(M2 = M1 + K\), a simple algebraic relationship meaning \(K\) is the "difference" between M1 and M2. You just need to recall the formula for M2 and subtract the M1 portion.</p>
+        
+        <p class="bilingual-zh"><strong>關鍵詞配對：</strong><br>
+        1. 看到 M1 / M2 \(\rightarrow\) 只能聯想到「持牌銀行 (Licensed Banks)」。<br>
+        2. 看到 M3 \(\rightarrow\) 才會聯想到「有限制牌照銀行 (RLBs)」和「接受存款公司 (DTCs)」。</p>
+        <p class="bilingual-en"><strong>Keyword Matching:</strong><br>
+        1. Seeing M1 / M2 \(\rightarrow\) Only associate with "Licensed Banks".<br>
+        2. Seeing M3 \(\rightarrow\) Then associate with "Restricted Licence Banks (RLBs)" and "Deposit-taking Companies (DTCs)".</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <p class="bilingual-zh"><strong>陷阱一：混淆銀行體系層次</strong><br>很多學生會忘記 M2 只涉及「持牌銀行」。選項 B 故意放入「有限制牌照銀行」來迷惑你，那是屬於 M3 的範疇。</p>
+        <p class="bilingual-en"><strong>Trap 1: Confusing Banking Tiers</strong><br>Many students forget that M2 ONLY involves "Licensed Banks". Option B deliberately includes "Restricted Licence Banks" to confuse you; that belongs to the M3 category.</p>
+
+        <p class="bilingual-zh"><strong>陷阱二：將儲備金計入貨幣供應</strong><br>選項 D 是一個經典陷阱。記住：<strong>貨幣供應 = 公眾持有的購買力</strong>。存在銀行金庫或金管局的儲備金，並不流通於市面，因此絕對不計入貨幣供應中。</p>
+        <p class="bilingual-en"><strong>Trap 2: Including Reserves in Money Supply</strong><br>Option D is a classic trap. Remember: <strong>Money Supply = Purchasing power held by the public</strong>. Reserves kept in bank vaults or at the HKMA are not circulating in the market, so they are strictly excluded from the money supply.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="bilingual-zh"><strong>Q: 為什麼選項 C 要強調「非銀行公眾持有 (held by non-bank public)」？</strong></p>
+        <p class="bilingual-en"><strong>Q: Why does Option C emphasize "held by non-bank public"?</strong></p>
+        <p class="bilingual-zh"><strong>A:</strong> 因為如果可轉讓存款證（NCDs）是由另一家銀行持有，那就屬於銀行同業之間的資產（Inter-bank transactions），並不代表一般市民或企業的購買力。為了避免重複計算（Double counting），我們只計算由「非銀行公眾」持有的部分。</p>
+        <p class="bilingual-en"><strong>A:</strong> Because if Negotiable Certificates of Deposit (NCDs) are held by another bank, they are considered inter-bank assets and do not represent the purchasing power of the general public or firms. To avoid double counting, we only include those held by the "non-bank public".</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="concept-box" style="background-color: #ecfdf5; border-color: #10b981;">
+        <p class="bilingual-zh"><strong>秒殺技巧 (One-Second Kill Trick)：</strong></p>
+        <p class="bilingual-en"><strong>Shortcut:</strong></p>
+        <p class="bilingual-zh">在處理香港貨幣供應的 MC 題時，使用<strong>「機構排除法」</strong>：<br>
+        題目問及 M1 或 M2 的成分（或差額）\(\rightarrow\) 答案<strong>絕對不能</strong>包含「有限制牌照銀行 (RLB)」或「接受存款公司 (DTC)」。<br>
+        看一眼選項：<br>
+        A 有 RLB 和 DTC \(\rightarrow\) 刪除！<br>
+        B 有 RLB \(\rightarrow\) 刪除！<br>
+        D 有 RLB 和 DTC \(\rightarrow\) 刪除！<br>
+        <strong>瞬間只剩下 C 是唯一可能正確的答案！</strong></p>
+        <p class="bilingual-en">When dealing with HK money supply MC questions, use the <strong>"Institution Elimination Method"</strong>:<br>
+        The question asks about M1 or M2 components (or their difference) \(\rightarrow\) The answer <strong>MUST NOT</strong> contain "Restricted Licence Banks (RLB)" or "Deposit-taking Companies (DTC)".<br>
+        Glance at the options:<br>
+        A has RLB and DTC \(\rightarrow\) Eliminate!<br>
+        B has RLB \(\rightarrow\) Eliminate!<br>
+        D has RLB and DTC \(\rightarrow\) Eliminate!<br>
+        <strong>Instantly, C is the only possible correct answer left!</strong></p>
+    </div>
+
+</div>
+
+</body>
+</html>

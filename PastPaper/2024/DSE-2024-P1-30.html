@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Aggregate Supply</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --box-bg: #ffffff;
+            --border-radius: 8px;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .tc {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        /* Specific Box Styles */
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+        }
+        .correct-option {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: white;
+            background-color: var(--primary-color);
+            margin-right: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div><span class="tag">Topic</span> 宏觀經濟學：總供應 (Macroeconomics: Aggregate Supply)</div>
+        <div><span class="tag">Difficulty</span> ★★☆☆☆</div>
+        <div><span class="tag">Key Concepts</span> SRAS, 生產成本 (Cost of Production), 供應衝擊 (Supply Shock)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="section">
+        <h2>1. 題目 (The Question)</h2>
+        <div class="bilingual">
+            <div class="tc">下圖顯示某國的短期總供應（SRAS）曲線。下列哪項是短期總供應曲線由 SRAS₀ 移至 SRAS₁ 的可能原因？</div>
+            <div class="en">The following diagram shows the short run aggregate supply (SRAS) curves of a country. Which of the following is a possible reason for the above shift of the SRAS curve from SRAS₀ to SRAS₁?</div>
+        </div>
+        <ol type="A">
+            <li class="bilingual">
+                <div class="tc">該國政府向核心科技行業提供補貼。</div>
+                <div class="en">The government of the country provides subsidies to the core technology industries.</div>
+            </li>
+            <li class="bilingual">
+                <div class="tc">相對其貿易伙伴的貨幣，該國貨幣升值。</div>
+                <div class="en">The currency of the country appreciates against that of its trading partners.</div>
+            </li>
+            <li class="bilingual">
+                <div class="tc">該國發生了一場大規模的山火，令生產設施受到重大破壞。</div>
+                <div class="en">A large-scale hill fire occurs in the country and leads to massive destruction of production facilities.</div>
+            </li>
+            <li class="bilingual">
+                <div class="tc">該國的中央銀行增加貨幣供應。</div>
+                <div class="en">The central bank of the country raises the money supply.</div>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="section concept-box">
+        <h2>2. 概念重溫 (Concept Review)</h2>
+        <div class="bilingual">
+            <div class="tc">
+                <strong>短期總供應 (Short Run Aggregate Supply, SRAS):</strong> 顯示在短期內，物價水平與總產出之間的關係。SRAS 曲線向右上方傾斜。<br>
+                <strong>曲線移動的因素 (Factors shifting SRAS):</strong> 任何影響<strong>生產成本 (Cost of Production)</strong> 或 <strong>生產能力 (Productive Capacity)</strong> 的因素都會令 SRAS 移動。
+                <ul>
+                    <li><strong>向右移 (增加):</strong> 生產成本下降（如工資下跌、進口原料變平）、政府補貼、技術進步。</li>
+                    <li><strong>向左移 (減少):</strong> 生產成本上升（如工資上升）、天災人禍破壞生產設施（負面供應衝擊）。</li>
+                </ul>
+            </div>
+            <div class="en">
+                <strong>Short Run Aggregate Supply (SRAS):</strong> Shows the relationship between the price level and aggregate output in the short run. The SRAS curve is upward-sloping.<br>
+                <strong>Factors shifting SRAS:</strong> Any factor that affects the <strong>Cost of Production</strong> or <strong>Productive Capacity</strong> will shift the SRAS curve.
+                <ul>
+                    <li><strong>Shift Right (Increase):</strong> Decrease in production costs (e.g., lower wages, cheaper imported raw materials), government subsidies, technological advancement.</li>
+                    <li><strong>Shift Left (Decrease):</strong> Increase in production costs, natural disasters destroying production facilities (negative supply shock).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="section analysis-box">
+        <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <h3 style="color: #059669;">正確答案 (Correct Option): C</h3>
+        
+        <div class="option">
+            <div class="bilingual">
+                <div class="tc"><strong>選項 A 分析 (錯誤):</strong> 政府提供補貼會降低企業的生產成本。這會導致 SRAS 向右移動（增加），而不是向左移動。</div>
+                <div class="en"><strong>Option A Analysis (Incorrect):</strong> Government subsidies lower the cost of production for firms. This would cause the SRAS curve to shift to the right (increase), not left.</div>
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="bilingual">
+                <div class="tc"><strong>選項 B 分析 (錯誤):</strong> 本國貨幣升值意味著進口原材料的價格會變得相對便宜。這會降低整體的生產成本，導致 SRAS 向右移動。</div>
+                <div class="en"><strong>Option B Analysis (Incorrect):</strong> Currency appreciation means imported raw materials become relatively cheaper. This lowers the overall cost of production, causing the SRAS curve to shift to the right.</div>
+            </div>
+        </div>
+
+        <div class="option correct-option">
+            <div class="bilingual">
+                <div class="tc"><strong>選項 C 分析 (正確):</strong> 大規模山火破壞了生產設施，這是一種負面的供應衝擊（Negative Supply Shock）。生產能力下降導致在任何物價水平下的總產出減少，因此 SRAS 向左移動（由 SRAS₀ 移至 SRAS₁）。</div>
+                <div class="en"><strong>Option C Analysis (Correct):</strong> A large-scale hill fire destroying production facilities is a negative supply shock. The reduction in productive capacity means less aggregate output can be produced at any given price level, thus shifting the SRAS curve to the left (from SRAS₀ to SRAS₁).</div>
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="bilingual">
+                <div class="tc"><strong>選項 D 分析 (錯誤):</strong> 中央銀行增加貨幣供應會降低利率，從而刺激投資和消費。這會導致<strong>總需求 (Aggregate Demand, AD)</strong> 向右移動，而不會直接令 SRAS 移動。</div>
+                <div class="en"><strong>Option D Analysis (Incorrect):</strong> An increase in the money supply by the central bank lowers interest rates, stimulating investment and consumption. This shifts the <strong>Aggregate Demand (AD)</strong> curve to the right, and does not directly shift the SRAS curve.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="section">
+        <h2>4. 題目拆解 (Problem Decomposition)</h2>
+        <div class="bilingual">
+            <div class="tc">
+                <strong>解題樞紐 (Pivot Point):</strong> 首先觀察圖表中的箭頭方向。箭頭指向左邊，代表 SRAS <strong>減少 (Decrease)</strong>。因此，我們需要在選項中尋找一個會導致「生產成本上升」或「生產能力受損」的負面因素。<br>
+                選項 A 和 B 都是對生產者有利的因素（成本下降）；選項 D 影響的是需求面 (AD)；只有選項 C 是一個明顯破壞生產能力的負面事件。
+            </div>
+            <div class="en">
+                <strong>Pivot Point:</strong> First, observe the direction of the arrow in the diagram. The arrow points to the left, indicating a <strong>decrease</strong> in SRAS. Therefore, we need to find an option that represents a negative factor causing "higher production costs" or "damaged productive capacity".<br>
+                Options A and B are favorable factors for producers (lower costs); Option D affects the demand side (AD); only Option C is a clearly negative event that destroys productive capacity.
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="section trap-box">
+        <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <div class="bilingual">
+            <div class="tc">
+                <strong>陷阱 1：混淆 AD 和 AS 的因素。</strong> 很多學生看到「貨幣供應增加」(選項 D) 就覺得是宏觀經濟的變動，忘記了貨幣政策主要影響的是總需求 (AD)，而不是短期總供應 (SRAS)。<br>
+                <strong>陷阱 2：誤解匯率的影響。</strong> 學生常常記得「貨幣升值不利出口，令 AD 左移」，但忽略了在供應面，貨幣升值會令進口原料變平，從而令 SRAS <strong>右移</strong>。這題問的是 SRAS 左移，所以 B 不對。
+            </div>
+            <div class="en">
+                <strong>Trap 1: Confusing AD and AS factors.</strong> Many students see "increase in money supply" (Option D) and know it's a macroeconomic change, but forget that monetary policy primarily affects Aggregate Demand (AD), not SRAS.<br>
+                <strong>Trap 2: Misinterpreting exchange rate effects.</strong> Students often memorize "appreciation hurts exports, shifting AD left", but forget that on the supply side, appreciation makes imported inputs cheaper, shifting SRAS <strong>right</strong>. The question asks for a leftward shift in SRAS, so B is incorrect.
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="section qa-box">
+        <h2>6. 學生常見疑問 (Student Q&A)</h2>
+        <div class="bilingual">
+            <div class="tc"><strong>Q: 為什麼選項 B (貨幣升值) 不會令 SRAS 左移？出口減少不是會令產出減少嗎？</strong></div>
+            <div class="en"><strong>Q: Why doesn't Option B (currency appreciation) shift SRAS left? Doesn't a decrease in exports reduce output?</strong></div>
+            
+            <div class="tc"><strong>A:</strong> 出口減少的確會令產出減少，但那是透過<strong>總需求 (AD)</strong> 左移來實現的。SRAS 曲線反映的是生產者的成本和生產能力。貨幣升值令該國能以更便宜的價格買入外國原材料，生產成本下降，所以 SRAS 反而是向右移的！做題時一定要分清該因素是影響 AD 還是 AS。</div>
+            <div class="en"><strong>A:</strong> A decrease in exports does reduce output, but it does so by shifting <strong>Aggregate Demand (AD)</strong> to the left. The SRAS curve reflects producers' costs and productive capacity. Currency appreciation allows the country to buy foreign raw materials more cheaply, lowering production costs, so SRAS actually shifts to the right! Always distinguish whether a factor affects AD or AS.</div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="section">
+        <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <div class="bilingual">
+            <div class="tc">
+                <strong>速解法 (Elimination Method):</strong><br>
+                1. 看到 SRAS 左移 \(\rightarrow\) 尋找「衰嘢」(Bad news / 成本上升)。<br>
+                2. A (補貼) = 好事 \(\rightarrow\) 刪除。<br>
+                3. B (進口變平) = 好事 \(\rightarrow\) 刪除。<br>
+                4. D (印銀紙) = 需求面 (AD) \(\rightarrow\) 刪除。<br>
+                5. 剩下 C (山火破壞) = 衰嘢 \(\rightarrow\) 秒殺！
+            </div>
+            <div class="en">
+                <strong>Shortcut (Elimination Method):</strong><br>
+                1. See SRAS shift left \(\rightarrow\) Look for "Bad news" (cost increase / destruction).<br>
+                2. A (Subsidies) = Good news \(\rightarrow\) Eliminate.<br>
+                3. B (Cheaper imports) = Good news \(\rightarrow\) Eliminate.<br>
+                4. D (Printing money) = Demand side (AD) \(\rightarrow\) Eliminate.<br>
+                5. Only C (Hill fire destruction) remains = Bad news \(\rightarrow\) Instant solve!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

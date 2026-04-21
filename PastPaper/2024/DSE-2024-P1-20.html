@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Subsidy and Deadweight Loss</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #e0f2fe;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --border-color: #cbd5e1;
+            --correct-color: #16a34a;
+            --wrong-color: #dc2626;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .option.correct {
+            border-color: var(--correct-color);
+            background-color: #f0fdf4;
+        }
+        .option.wrong {
+            border-color: #fca5a5;
+            background-color: #fef2f2;
+        }
+        .badge {
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 10px;
+        }
+        .badge.correct { background-color: var(--correct-color); color: white; }
+        .badge.wrong { background-color: var(--wrong-color); color: white; }
+        .bilingual-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: #d97706; }
+        .trick-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #c026d3;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Masterclass</h1>
+        <div>
+            <span class="tag">Topic: Market Intervention (市場干預)</span>
+            <span class="tag">Difficulty: ★★★★☆</span>
+            <span class="tag">Keywords: Subsidy, Deadweight Loss, Social Surplus</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <p>下圖顯示某物品的供應曲線及需求曲線。<br>
+        假設政府將從量補貼由$5增加至$10。下列哪項陳述是正確的？</p>
+        <p class="bilingual-en">The following diagram shows the supply and demand curves of a good.<br>
+        Suppose the government increases the per-unit subsidy from $5 to $10. Which of the following statements is correct?</p>
+        
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>A. 新的總社會盈餘是面積aib。 / The new total social surplus is area aib.</li>
+            <li>B. 新的總社會盈餘是面積acdb。 / The new total social surplus is area acdb.</li>
+            <li>C. 淨損失的增加是面積ehif。 / The increase in deadweight loss is area ehif.</li>
+            <li>D. 淨損失的增加是面積cid。 / The increase in deadweight loss is area cid.</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要解決這類題目，我們必須釐清以下幾個核心概念：</p>
+        <p class="bilingual-en">To solve this type of question, we must clarify the following core concepts:</p>
+        
+        <ul>
+            <li><strong>邊際成本 (Marginal Cost, MC)：</strong> 社會的真正生產成本永遠由<strong>沒有補貼的供應曲線 \(S_0\)</strong> 反映。補貼只會改變生產者的私人成本，不會改變社會的實際資源消耗。<br>
+            <span class="bilingual-en">The true production cost to society is always reflected by the <strong>supply curve without subsidy \(S_0\)</strong>. Subsidies only change the private cost to producers, not the actual resource consumption of society.</span></li>
+            
+            <li><strong>邊際利益 (Marginal Benefit, MB)：</strong> 由需求曲線 \(D\) 反映。<br>
+            <span class="bilingual-en">Reflected by the demand curve \(D\).</span></li>
+            
+            <li><strong>社會最適量 (Socially Optimal Quantity)：</strong> 當 \(MB = MC\) 時的數量，即 \(D\) 與 \(S_0\) 的相交點（點 \(c\)）。<br>
+            <span class="bilingual-en">The quantity where \(MB = MC\), which is the intersection of \(D\) and \(S_0\) (point \(c\)).</span></li>
+            
+            <li><strong>淨損失 (Deadweight Loss, DWL)：</strong> 當生產量超過社會最適量時，額外生產的單位的 \(MC > MB\)，這會導致社會資源浪費。淨損失的面積是從最適量到實際生產量之間，\(MC\) 與 \(MB\) 之間的面積。<br>
+            <span class="bilingual-en">When production exceeds the socially optimal quantity, the \(MC > MB\) for the extra units produced, leading to a waste of societal resources. The area of DWL is the area between \(MC\) and \(MB\) from the optimal quantity to the actual quantity.</span></li>
+        </ul>
+
+        <div class="math-block">
+            $$ \text{Total Social Surplus (TSS)} = \text{Maximum TSS} - \text{Deadweight Loss (DWL)} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是 / The correct option is: <strong>Option C</strong></p>
+
+    <div class="option wrong">
+        <span class="badge wrong">A & B</span> <strong>分析 / Analysis:</strong>
+        <p>最大總社會盈餘（在沒有干預的最適量 \(c\) 時）是面積 \(abc\)。當政府提供補貼導致過度生產時，新的總社會盈餘必定等於「最大總社會盈餘減去淨損失」。因此，新的總社會盈餘不可能是面積 \(aib\) 或 \(acdb\)（這兩個面積在圖形上並不代表正確的剩餘計算）。</p>
+        <p class="bilingual-en">The maximum total social surplus (at the optimal quantity \(c\) without intervention) is area \(abc\). When the government provides a subsidy leading to overproduction, the new total social surplus must equal "Maximum TSS minus Deadweight Loss". Therefore, the new TSS cannot be area \(aib\) or \(acdb\) (these areas do not represent correct surplus calculations graphically).</p>
+    </div>
+
+    <div class="option correct">
+        <span class="badge correct">C</span> <strong>分析 / Analysis:</strong>
+        <p><strong>原本的狀態（$5 補貼）：</strong> 均衡點在 \(D\) 與 \(S_1\) 的相交點 \(f\)。此時的生產量超過了最適量（點 \(c\) 對應的數量）。這段過度生產的數量中，社會成本（看 \(S_0\)）高於社會利益（看 \(D\)）。原本的淨損失 (DWL) 是三角形 <strong>\(cef\)</strong>。</p>
+        <p class="bilingual-en"><strong>Initial state ($5 subsidy):</strong> The equilibrium is at point \(f\), the intersection of \(D\) and \(S_1\). The production quantity exceeds the optimal quantity (corresponding to point \(c\)). For this overproduced quantity, the social cost (look at \(S_0\)) is higher than the social benefit (look at \(D\)). The original DWL is the triangle <strong>\(cef\)</strong>.</p>
+        
+        <p><strong>新的狀態（$10 補貼）：</strong> 均衡點移動到 \(D\) 與 \(S_2\) 的相交點 \(i\)。生產量進一步增加。新的淨損失 (DWL) 是從點 \(c\) 一直延伸到新數量的三角形 <strong>\(chi\)</strong>。</p>
+        <p class="bilingual-en"><strong>New state ($10 subsidy):</strong> The equilibrium moves to point \(i\), the intersection of \(D\) and \(S_2\). Production increases further. The new DWL is the triangle <strong>\(chi\)</strong>, extending from point \(c\) to the new quantity.</p>
+
+        <p><strong>淨損失的增加：</strong> 新的 DWL (面積 \(chi\)) 減去 舊的 DWL (面積 \(cef\)) = 梯形面積 <strong>\(ehif\)</strong>。因此，選項 C 正確。</p>
+        <p class="bilingual-en"><strong>Increase in DWL:</strong> New DWL (Area \(chi\)) minus Old DWL (Area \(cef\)) = Trapezoid area <strong>\(ehif\)</strong>. Therefore, Option C is correct.</p>
+    </div>
+
+    <div class="option wrong">
+        <span class="badge wrong">D</span> <strong>分析 / Analysis:</strong>
+        <p>面積 \(cid\) 並不代表淨損失的增加。淨損失必須由真正的邊際成本曲線 \(S_0\) 和邊際利益曲線 \(D\) 來界定，而點 \(d\) 位於 \(S_2\) 上，與社會真實成本無關。</p>
+        <p class="bilingual-en">Area \(cid\) does not represent the increase in DWL. DWL must be defined by the true marginal cost curve \(S_0\) and marginal benefit curve \(D\). Point \(d\) lies on \(S_2\), which is irrelevant to the true social cost.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <p>做這類圖表題時，請遵循以下「三步曲」：</p>
+    <p class="bilingual-en">When doing this type of diagram question, follow this "3-Step Approach":</p>
+    <ol>
+        <li><strong>找出社會最適點 (Find the Socially Optimal Point):</strong> 永遠是 \(D\) 和 \(S_0\) (沒有干預的供應曲線) 的相交點。在這裡是點 \(c\)。</li>
+        <li><strong>找出實際交易點 (Find the Actual Transaction Points):</strong> $5補貼時是點 \(f\)；$10補貼時是點 \(i\)。</li>
+        <li><strong>畫出淨損失箭頭 (Draw the DWL Arrow):</strong> 淨損失永遠是一個三角形，其頂點指向「社會最適點」(點 \(c\))，底邊則是實際交易數量對應的 \(MC\) 與 \(MB\) 的垂直差距。</li>
+    </ol>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="concept-box" style="background-color: #fee2e2; border-left-color: #ef4444;">
+        <p><strong>陷阱：用錯供應曲線計算成本 (Trap: Using the wrong supply curve for cost)</strong></p>
+        <p>很多學生會錯誤地使用 \(S_1\) 或 \(S_2\) 來計算社會總盈餘或淨損失。記住，補貼後的供應曲線只反映了<strong>私人成本</strong>（因為政府幫忙付了錢），但社會的<strong>整體資源消耗</strong>並沒有減少，所以計算社會盈餘和淨損失時，<strong>永遠只能看 \(S_0\) 和 \(D\)</strong>。</p>
+        <p class="bilingual-en">Many students mistakenly use \(S_1\) or \(S_2\) to calculate total social surplus or DWL. Remember, the subsidized supply curve only reflects <strong>private cost</strong> (because the government paid a portion), but the <strong>overall resource consumption</strong> of society hasn't decreased. Therefore, when calculating social surplus and DWL, <strong>always look ONLY at \(S_0\) and \(D\)</strong>.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼新的總社會盈餘不是面積 aib？ / Why isn't the new total social surplus area aib?</p>
+        <p><strong>A:</strong> 面積 \(aib\) 是由 \(D\) 和 \(S_2\) 圍成的面積。這代表的是「消費者盈餘 + 生產者盈餘」，但它<strong>沒有扣除政府的補貼支出</strong>！總社會盈餘 (TSS) = 消費者盈餘 + 生產者盈餘 - 政府支出。在圖表上，正確的 TSS 面積應該是最大盈餘 (面積 \(abc\)) 減去淨損失 (面積 \(chi\))。<br>
+        <span class="bilingual-en">Area \(aib\) is bounded by \(D\) and \(S_2\). This represents "Consumer Surplus + Producer Surplus", but it <strong>fails to deduct the government's subsidy expenditure</strong>! Total Social Surplus (TSS) = Consumer Surplus + Producer Surplus - Government Expenditure. Graphically, the correct TSS area should be the maximum surplus (Area \(abc\)) minus the DWL (Area \(chi\)).</span></p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p><strong>速解法 (Shortcut): "The Pointing Triangle Rule"</strong></p>
+        <p>在任何市場干預（稅收、補貼、價格管制）中，淨損失 (DWL) 的形狀必定是一個三角形，而且這個三角形的「尖端」<strong>永遠指向社會最適點 (沒有干預時的均衡點)</strong>。</p>
+        <p class="bilingual-en">In any market intervention (taxes, subsidies, price controls), the shape of the Deadweight Loss (DWL) is always a triangle, and the "tip" of this triangle <strong>always points towards the socially optimal point (the equilibrium without intervention)</strong>.</p>
+        <ul>
+            <li>最適點是 \(c\)。</li>
+            <li>$5補貼的數量對應點 \(f\)，往回指到 \(c\)，形成三角形 \(cef\)。</li>
+            <li>$10補貼的數量對應點 \(i\)，往回指到 \(c\)，形成三角形 \(chi\)。</li>
+            <li>兩者相減，立刻看出增加的面積是梯形 \(ehif\)。秒殺！</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

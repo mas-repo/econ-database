@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Tax Systems and Gini Coefficient</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary-color: #10b981;
+            --secondary-light: #ecfdf5;
+            --warning-color: #f59e0b;
+            --warning-light: #fffbeb;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-gray: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .math-block {
+            background-color: var(--bg-gray);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .bilingual-group {
+            margin-bottom: 16px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 0;
+        }
+
+        .option-analysis {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .option-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .correct-answer {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary-color);
+        }
+
+        .correct-answer .option-title {
+            color: var(--secondary-color);
+        }
+
+        .warning-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning-color);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .qa-a {
+            margin-left: 16px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+
+        .graph-desc {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-bottom: 10px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 16px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div class="tags">
+            <span class="tag">Topic: Income Inequality & Taxation (收入不均與稅制)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+            <span class="tag">Key Concepts: Gini Coefficient, Tax Systems</span>
+        </div>
+    </div>
+
+    <!-- The Question -->
+    <div class="section">
+        <h2>📝 The Question (題目)</h2>
+        
+        <div class="bilingual-group">
+            <p class="zh">下列哪些稅制傾向令某經濟的稅後堅尼系數上升？</p>
+            <p class="en">Which of the following tax systems tend to raise the post-tax Gini coefficient of an economy?</p>
+        </div>
+
+        <div class="graph-desc">
+            <p><strong>Graph (1):</strong> y-axis: 平均稅率 (Average tax rate) / x-axis: 應課稅收入 (Taxable income) - 曲線向下傾斜 (Downward sloping curve)</p>
+            <p><strong>Graph (2):</strong> y-axis: 平均稅率 (Average tax rate) / x-axis: 應課稅收入 (Taxable income) - 曲線向上傾斜 (Upward sloping curve)</p>
+            <p><strong>Graph (3):</strong> y-axis: 稅款 (Tax payment) / x-axis: 應課稅收入 (Taxable income) - 水平直線 (Horizontal straight line)</p>
+            <p><strong>Graph (4):</strong> y-axis: 稅款 (Tax payment) / x-axis: 應課稅收入 (Taxable income) - 曲線向上傾斜且斜率增加 (Upward sloping, convex curve)</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh">A. 只有 (1)、(3)<br>B. 只有 (1)、(4)<br>C. 只有 (2)、(3)<br>D. 只有 (2)、(4)</p>
+            <p class="en">A. (1) and (3) only<br>B. (1) and (4) only<br>C. (2) and (3) only<br>D. (2) and (4) only</p>
+        </div>
+    </div>
+
+    <!-- Concept Review -->
+    <div class="section">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        
+        <div class="concept-box">
+            <div class="bilingual-group">
+                <p class="zh"><strong>1. 堅尼系數 (Gini Coefficient):</strong> 量度收入不均的指標，數值介乎 0 至 1。數值越高，代表收入越不平均。因此，「令堅尼系數上升」即代表「令收入不均惡化」。</p>
+                <p class="en"><strong>1. Gini Coefficient:</strong> An indicator measuring income inequality, ranging from 0 to 1. A higher value means greater income inequality. Therefore, "raising the Gini coefficient" means "worsening income inequality".</p>
+            </div>
+
+            <div class="bilingual-group">
+                <p class="zh"><strong>2. 平均稅率 (Average Tax Rate, ATR):</strong> 總稅款佔應課稅收入的百分比。</p>
+                <p class="en"><strong>2. Average Tax Rate (ATR):</strong> The percentage of total tax payment to taxable income.</p>
+            </div>
+            
+            <div class="math-block">
+                $$ \text{ATR} = \frac{\text{Tax Payment (稅款)}}{\text{Taxable Income (應課稅收入)}} \times 100\% $$
+            </div>
+
+            <div class="bilingual-group">
+                <p class="zh"><strong>3. 稅制分類 (Classification of Tax Systems):</strong></p>
+                <ul class="zh">
+                    <li><strong>累進稅 (Progressive Tax):</strong> 收入越高，平均稅率越高。能收窄貧富懸殊，令堅尼系數<strong>下降</strong>。</li>
+                    <li><strong>比例稅 (Proportional Tax):</strong> 平均稅率維持不變。堅尼系數<strong>不變</strong>。</li>
+                    <li><strong>累退稅 (Regressive Tax):</strong> 收入越高，平均稅率越低。會加劇貧富懸殊，令堅尼系數<strong>上升</strong>。</li>
+                </ul>
+                <p class="en"><strong>3. Classification of Tax Systems:</strong></p>
+                <ul class="en">
+                    <li><strong>Progressive Tax:</strong> ATR increases as income increases. Reduces income gap, <strong>lowers</strong> Gini coefficient.</li>
+                    <li><strong>Proportional Tax:</strong> ATR remains constant. Gini coefficient remains <strong>unchanged</strong>.</li>
+                    <li><strong>Regressive Tax:</strong> ATR decreases as income increases. Worsens income gap, <strong>raises</strong> Gini coefficient.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Answer & Detailed Analysis -->
+    <div class="section">
+        <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        
+        <p style="font-size: 1.2rem;"><strong>正確答案 / Correct Option: <span style="color: var(--secondary-color);">A</span></strong></p>
+
+        <div class="option-analysis correct-answer">
+            <div class="option-title">圖 (1) / Graph (1) - 累退稅 (Regressive Tax)</div>
+            <div class="bilingual-group">
+                <p class="zh">圖表顯示當應課稅收入增加時，平均稅率下降。這正是累退稅的定義。低收入人士承擔相對較重的稅務負擔，導致稅後收入差距擴大，堅尼系數上升。<strong>(符合題意)</strong></p>
+                <p class="en">The graph shows that as taxable income increases, the average tax rate decreases. This is the exact definition of a regressive tax. Lower-income individuals bear a relatively heavier tax burden, widening the post-tax income gap and raising the Gini coefficient. <strong>(Fits the requirement)</strong></p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-title">圖 (2) / Graph (2) - 累進稅 (Progressive Tax)</div>
+            <div class="bilingual-group">
+                <p class="zh">圖表顯示當應課稅收入增加時，平均稅率上升。這是累進稅。高收入人士承擔較大比例的稅款，有助財富再分配，令堅尼系數下降。<strong>(不符合題意)</strong></p>
+                <p class="en">The graph shows that as taxable income increases, the average tax rate increases. This is a progressive tax. Higher-income individuals bear a larger proportion of tax, aiding wealth redistribution and lowering the Gini coefficient. <strong>(Does not fit the requirement)</strong></p>
+            </div>
+        </div>
+
+        <div class="option-analysis correct-answer">
+            <div class="option-title">圖 (3) / Graph (3) - 累退稅 (Regressive Tax)</div>
+            <div class="bilingual-group">
+                <p class="zh">圖表顯示「稅款」固定不變（例如定額人頭稅）。根據公式 \( \text{ATR} = \frac{\text{Tax Payment}}{\text{Income}} \)，由於分子（稅款）不變，當分母（收入）增加時，平均稅率（ATR）必然下降。因此這是一種極端的累退稅，會令堅尼系數上升。<strong>(符合題意)</strong></p>
+                <p class="en">The graph shows a constant "Tax payment" (e.g., a lump-sum poll tax). According to the formula \( \text{ATR} = \frac{\text{Tax Payment}}{\text{Income}} \), since the numerator (Tax payment) is constant, as the denominator (Income) increases, the Average Tax Rate (ATR) must decrease. Thus, this is an extreme regressive tax, which raises the Gini coefficient. <strong>(Fits the requirement)</strong></p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <div class="option-title">圖 (4) / Graph (4) - 累進稅 (Progressive Tax)</div>
+            <div class="bilingual-group">
+                <p class="zh">圖表顯示「稅款」隨收入增加而以遞增的速度上升（曲線呈凸形）。這意味著邊際稅率（曲線的斜率）正在增加。當邊際稅率大於平均稅率時，平均稅率會被拉高。因此，這代表平均稅率隨收入上升，屬於累進稅，會令堅尼系數下降。<strong>(不符合題意)</strong></p>
+                <p class="en">The graph shows "Tax payment" increasing at an increasing rate as income rises (convex curve). This means the marginal tax rate (slope of the curve) is increasing. When the marginal tax rate is greater than the average tax rate, it pulls the average tax rate up. Therefore, the ATR increases with income, representing a progressive tax that lowers the Gini coefficient. <strong>(Does not fit the requirement)</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition -->
+    <div class="section">
+        <h2>🛠 Problem Decomposition (題目拆解)</h2>
+        
+        <div class="bilingual-group">
+            <p class="zh"><strong>解題樞紐 (Pivot Point):</strong><br>
+            題目的關鍵字是「堅尼系數上升」。你必須立刻在腦海中將其翻譯為「收入不均惡化」，並進一步連結到「尋找累退稅 (Regressive Tax)」。</p>
+            <p class="en"><strong>Pivot Point:</strong><br>
+            The key phrase is "raise the Gini coefficient". You must immediately translate this in your mind to "worsening income inequality", and further link it to "looking for a Regressive Tax".</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>看清 Y 軸 (Check the Y-axis):</strong><br>
+            考評局最喜歡的陷阱是改變圖表的 Y 軸。圖 (1) 和 (2) 的 Y 軸是「平均稅率」，你可以直接看曲線的升跌來判斷稅制。但圖 (3) 和 (4) 的 Y 軸是「稅款」，你必須在腦海中進行運算：\( \text{平均稅率} = \frac{\text{Y軸的數值}}{\text{X軸的數值}} \)。</p>
+            <p class="en"><strong>Check the Y-axis:</strong><br>
+            The HKEAA's favorite trap is changing the Y-axis of the graphs. Graphs (1) and (2) have "Average tax rate" on the Y-axis, so you can judge the tax system directly by the curve's direction. But Graphs (3) and (4) have "Tax payment" on the Y-axis. You must calculate mentally: \( \text{ATR} = \frac{\text{Y-axis value}}{\text{X-axis value}} \).</p>
+        </div>
+    </div>
+
+    <!-- Common Mistakes & Traps -->
+    <div class="section">
+        <h2>⚠️ Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        
+        <div class="warning-box">
+            <div class="bilingual-group">
+                <p class="zh"><strong>陷阱 1：誤把「定額稅款」當作「公平」或「比例稅」</strong><br>
+                很多學生看到圖 (3) 稅款是一條平線，就覺得「每個人交一樣的錢，很公平呀，應該是比例稅吧？」。這是大錯特錯！如果窮人賺 $10,000 交 $1,000 稅（10%），富人賺 $100,000 也交 $1,000 稅（1%），富人的平均稅率明顯較低。這是極度不公平的累退稅！</p>
+                <p class="en"><strong>Trap 1: Mistaking "Lump-sum tax" for "Fairness" or "Proportional tax"</strong><br>
+                Many students see the flat line in Graph (3) and think, "Everyone pays the same amount, that's fair, it must be a proportional tax." This is completely wrong! If a poor person earns $10,000 and pays $1,000 (10%), while a rich person earns $100,000 and pays $1,000 (1%), the rich person's ATR is much lower. This is a highly unfair regressive tax!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Q&A -->
+    <div class="section">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        
+        <div class="qa-box">
+            <div class="qa-q">Q: 圖 (4) 的稅款不斷上升，為什麼不是累退稅？窮人交的稅不是越來越多嗎？</div>
+            <div class="qa-a">
+                <p class="zh">A: 判斷稅制（累進/累退）的唯一標準是<strong>「平均稅率 (ATR)」</strong>，而不是「總稅款」。在圖 (4) 中，雖然稅款上升，但它上升的速度比收入上升的速度還要快（曲線越來越斜）。這意味著高收入人士不僅交更多稅，他們交稅的<strong>比例</strong>也更高。因此這是累進稅。</p>
+                <p class="en">A: The ONLY standard for judging a tax system (progressive/regressive) is the <strong>"Average Tax Rate (ATR)"</strong>, not the "Total tax payment". In Graph (4), although the tax payment increases, it increases at a faster rate than income (the curve gets steeper). This means high-income earners not only pay more tax in absolute terms, but they also pay a higher <strong>percentage</strong> of their income. Thus, it is a progressive tax.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Tricks & Shortcuts -->
+    <div class="section">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        
+        <div class="bilingual-group">
+            <p class="zh"><strong>秒殺技巧 (Instant Kill Technique):</strong><br>
+            1. 題目問「堅尼系數上升」 ➔ 找「累退稅 (ATR 下降)」。<br>
+            2. 一眼看出圖 (1) 的 ATR 正在下降，絕對是累退稅。所以答案必定包含 (1)。<br>
+            3. 看看選項：只有 A 和 B 包含 (1)。瞬間淘汰 C 和 D！<br>
+            4. 剩下只需比較 (3) 和 (4)。圖 (3) 是定額稅款，必定是累退稅。直接選 A，完卷！</p>
+            
+            <p class="en"><strong>Instant Kill Technique:</strong><br>
+            1. Question asks for "raise Gini coefficient" ➔ Look for "Regressive tax (ATR drops)".<br>
+            2. At a glance, Graph (1)'s ATR is dropping, so it's definitely regressive. The answer MUST contain (1).<br>
+            3. Look at the options: Only A and B contain (1). Instantly eliminate C and D!<br>
+            4. Now just compare (3) and (4). Graph (3) is a lump-sum tax, which is always regressive. Choose A directly, done!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
