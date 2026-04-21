@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Exchange Rate Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-light: #f0f9ff;
+            --text-main: #333;
+            --text-muted: #666;
+            --border-color: #e5e7eb;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .header-section {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .concept-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .option-correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+            border-left: 5px solid #10b981;
+        }
+        .option-wrong {
+            background-color: #fef2f2;
+            border-color: #ef4444;
+            border-left: 5px solid #ef4444;
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #fff1f2;
+            border-left: 5px solid #e11d48;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <div>
+            <span class="badge">Topic: Exchange Rate & Linked Exchange Rate System (匯率與聯繫匯率制度)</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key Concepts: Appreciation, Total Export Value, Price Elasticity</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h2>📝 The Question (題目)</h2>
+        <p><strong>日期 / Date | 匯率 / Exchange Rate</strong><br>
+        2015年2月15日 | 1美元 = 0.8773歐元 (US $1 = €0.8773)<br>
+        2015年8月15日 | 1美元 = 0.8965歐元 (US $1 = €0.8965)</p>
+        
+        <p>在香港聯繫匯率制度下，上述歐元兌美元匯率的改變會引致 ___________。<br>
+        <span class="bilingual-en">Under the linked exchange rate system of Hong Kong, the above change in the exchange rate of Euro (€) to the US dollar would lead to ___________.</span></p>
+        
+        <ol type="A">
+            <li>到訪香港的歐洲遊客人數上升 <br><span class="bilingual-en">an increase in the number of European tourists to Hong Kong</span></li>
+            <li>歐洲出口往香港的物品總值上升（以港元計算） <br><span class="bilingual-en">an increase in the total value (in terms of Hong Kong dollar) of European exports to Hong Kong</span></li>
+            <li>香港出口往美國的物品數量下降 <br><span class="bilingual-en">a decrease in the volume of Hong Kong exports to the U.S.</span></li>
+            <li>香港出口往歐洲的物品總值下降（以港元計算） <br><span class="bilingual-en">a decrease in the total value (in terms of Hong Kong dollar) of Hong Kong exports to Europe</span></li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>🧠 Concept Review (概念重溫)</h2>
+        <p><strong>1. 聯繫匯率制度 (Linked Exchange Rate System):</strong> 香港的貨幣（港元 HKD）與美元（USD）掛鈎。當美元兌其他貨幣升值時，港元亦會跟隨升值。<br>
+        <span class="bilingual-en">Hong Kong's currency (HKD) is pegged to the US Dollar (USD). When the USD appreciates against other currencies, the HKD also appreciates.</span></p>
+        
+        <p><strong>2. 升值的影響 (Effects of Appreciation):</strong> 美元/港元兌歐元升值，代表港元購買力上升。歐洲貨品對香港人變得更便宜，而香港貨品對歐洲人變得更昂貴。<br>
+        <span class="bilingual-en">When USD/HKD appreciates against the Euro, HKD purchasing power rises. European goods become cheaper for HK people, while HK goods become more expensive for Europeans.</span></p>
+
+        <p><strong>3. 總值公式 (Total Value Formula):</strong></p>
+        <div class="math-block">
+            $$ \text{Total Value (TV)} = \text{Price (P)} \times \text{Quantity (Q)} $$
+        </div>
+        <p>要判斷總值的改變，必須同時考慮「價格」與「數量」的變化。如果兩者呈反方向變動，總值的改變將取決於需求價格彈性 (Price Elasticity of Demand)。<br>
+        <span class="bilingual-en">To determine the change in total value, we must consider changes in both Price and Quantity. If they move in opposite directions, the change in total value depends on the price elasticity of demand.</span></p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 / Correct Option: <span style="color: #10b981; font-size: 1.2em;">D</span></strong></p>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option A (錯誤 / Incorrect)</h3>
+        <p>由於港元兌歐元升值，歐洲遊客來港消費的成本增加（以歐元計算變得更貴）。因此，到訪香港的歐洲遊客人數應會<strong>下降</strong>。<br>
+        <span class="bilingual-en">Since the HKD appreciates against the Euro, the cost of traveling to Hong Kong increases for European tourists (it becomes more expensive in terms of Euros). Therefore, the number of European tourists to Hong Kong should <strong>decrease</strong>.</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option B (錯誤 / Incorrect)</h3>
+        <p>港元升值令歐洲貨品在香港的售價 \(P\)（以港元計算）下降，導致進口數量 \(Q\) 上升。由於 \(P\) 下降而 \(Q\) 上升，總值 \(P \times Q\) 的變化取決於香港對歐洲貨品的需求彈性。由於題目沒有提供彈性數據，總值可能上升、下降或不變（不確定）。<br>
+        <span class="bilingual-en">HKD appreciation causes the price \(P\) of European goods in HK (in HKD) to fall, leading to an increase in quantity imported \(Q\). Since \(P\) falls and \(Q\) rises, the change in total value \(P \times Q\) depends on the elasticity of demand. Without elasticity data, the total value is uncertain.</span></p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option C (錯誤 / Incorrect)</h3>
+        <p>在聯繫匯率下，港元與美元的兌換率保持穩定（約 1美元 = 7.8港元）。因此，香港與美國之間的相對價格不受歐元匯率變動的直接影響，出口數量不會因此下降。<br>
+        <span class="bilingual-en">Under the linked exchange rate, the exchange rate between HKD and USD remains stable. Therefore, relative prices between HK and the US are not directly affected by the Euro's exchange rate, so export volume to the US won't decrease due to this.</span></p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <h3>Option D (正確 / Correct)</h3>
+        <p>香港出口往歐洲的物品，其港元標價 \(P\) 保持不變。但由於港元升值，歐洲人需要支付更多的歐元來購買，導致需求量 \(Q\) 下降。以港元計算的總值公式為 \(P \times Q\)。既然 \(P\) 不變，而 \(Q\) 下降，總值必然<strong>下降</strong>。<br>
+        <span class="bilingual-en">For HK exports to Europe, the price tag in HKD \(P\) remains unchanged. However, due to HKD appreciation, Europeans pay more in Euros, causing the quantity demanded \(Q\) to fall. The total value in HKD is \(P \times Q\). Since \(P\) is constant and \(Q\) decreases, the total value must <strong>decrease</strong>.</span></p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="border-color: #3b82f6; background-color: #eff6ff;">
+        <h2>🔍 Problem Decomposition (題目拆解)</h2>
+        <ul>
+            <li><strong>Pivot Point (破題關鍵):</strong> 辨認出 1 USD 可以換到更多 EUR (從 0.8773 升至 0.8965)，即 USD 升值。然後利用「聯繫匯率」將 USD 升值等同於 HKD 升值。<br>
+            <span class="bilingual-en">Recognize that 1 USD can buy more EUR, meaning USD appreciated. Then use the "Linked Exchange Rate" to equate USD appreciation with HKD appreciation.</span></li>
+            <li><strong>Distractors (干擾資訊):</strong> 具體的日期和匯率小數點其實不重要，你只需要知道變動的「方向」（升值還是貶值）。<br>
+            <span class="bilingual-en">The specific dates and exact decimal numbers are irrelevant. You only need to know the "direction" of the change (appreciation vs. depreciation).</span></li>
+        </ul>
+    </div>
+
+    <!-- 6. Student Q&A -->
+    <div class="qa-box">
+        <h2>🙋 Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 為什麼 Option B 是「不確定」，但 Option D 卻是「肯定下降」？</strong><br>
+        <span class="bilingual-en">Why is Option B "uncertain" while Option D is "definitely decreasing"?</span></p>
+        <p><strong>A:</strong> 關鍵在於「以什麼貨幣計算」。<br>
+        在 Option B，計算的是「港元總值」。歐洲貨的港元價格 \(P\) 下降，數量 \(Q\) 上升。一跌一升，必須知道彈性才能決定總值去向。<br>
+        在 Option D，計算的也是「港元總值」。香港貨的港元價格 \(P\) <strong>不變</strong>（因為是本地定價），但出口數量 \(Q\) 下降。不變的 \(P\) 乘以下降的 \(Q\)，結果必然是下降！<br>
+        <span class="bilingual-en">The key is "in which currency is it calculated". In Option B (HKD total value), the HKD price \(P\) falls and \(Q\) rises. One falls, one rises -> elasticity is needed. In Option D (HKD total value), the HKD price \(P\) is <strong>constant</strong> (local pricing), but \(Q\) falls. Constant \(P\) times falling \(Q\) -> definitely decreases!</span></p>
+    </div>
+
+    <!-- 7. Exam Tricks -->
+    <div class="trick-box">
+        <h2>⚡ Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>1. 貨幣同體法 (The "Same Currency" Trick):</strong> 在 DSE 考題中，只要看到「聯繫匯率」，直接在腦海中把「港元」和「美元」當成同一種貨幣。美元升值 = 港元升值。<br>
+        <span class="bilingual-en">Whenever you see "Linked Exchange Rate" in DSE, treat HKD and USD as the exact same currency. USD appreciation = HKD appreciation.</span></p>
+        <p><strong>2. 總值必殺技 (The Total Value Shortcut):</strong> 題目問「總值 (Total Value)」，如果沒有提供彈性 (Elasticity)，只要價格 \(P\) 和數量 \(Q\) 呈反方向變動，該選項通常是錯的（因為不確定）。只有當 \(P\) 不變而 \(Q\) 改變，或者兩者同方向改變時，你才能確定總值的變化。<br>
+        <span class="bilingual-en">If a question asks about "Total Value" without giving elasticity, any scenario where \(P\) and \(Q\) move in opposite directions is usually the wrong option (because it's uncertain). You can only be certain if \(P\) is constant while \(Q\) changes.</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>

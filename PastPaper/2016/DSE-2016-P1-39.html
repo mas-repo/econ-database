@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: AS-AD Model & Fiscal Policy</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-color: #f9fafb;
+            --box-bg: #ffffff;
+            --math-bg: #f3f4f6;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .bilingual-en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .question-box {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option-item {
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+
+        .option-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            font-weight: bold;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2em;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <header>
+        <h1>HKDSE Economics Tutor<br><span style="font-size: 0.6em; color: var(--text-muted);">總供求模型與財政政策 / AS-AD Model & Fiscal Policy</span></h1>
+        <p><strong>難度 (Difficulty):</strong> <span class="stars">★★★☆☆</span> (3/5)</p>
+        <p><strong>關鍵字 (Key Concepts):</strong> 
+            <span class="tag">總需求 (Aggregate Demand)</span>
+            <span class="tag">產出差距 (Output Gap)</span>
+            <span class="tag">財政結餘 (Fiscal Balance)</span>
+        </p>
+    </header>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 / The Question</h2>
+    <div class="question-box">
+        <p>假設甲國原初在全民就業均衡下運作，而政府財政達至收支平衡。就短期而言，甲國的貿易夥伴經濟復甦會令甲國出現 _________ 及 ________。</p>
+        <span class="bilingual-en">Suppose Country A initially operates at the full-employment equilibrium and the fiscal budget of the government is balanced. In the short run, an economic recovery of Country A’s trading partners will result in _________ and ________ of Country A.</span>
+        
+        <ul class="options-list">
+            <li class="option-item">A. 通脹（產出）差距 …… 財政盈餘<br><span class="bilingual-en">an inflationary (output) gap …… a fiscal surplus</span></li>
+            <li class="option-item">B. 通脹（產出）差距 …… 財政赤字<br><span class="bilingual-en">an inflationary (output) gap …… a fiscal deficit</span></li>
+            <li class="option-item">C. 通縮（產出）差距 …… 財政盈餘<br><span class="bilingual-en">a deflationary (output) gap …… a fiscal surplus</span></li>
+            <li class="option-item">D. 通縮（產出）差距 …… 財政赤字<br><span class="bilingual-en">a deflationary (output) gap …… a fiscal deficit</span></li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p>要解答這道題目，我們需要結合<strong>總需求 (Aggregate Demand)</strong>的組成部分以及<strong>財政結餘 (Fiscal Balance)</strong>的定義。</p>
+        <span class="bilingual-en">To solve this question, we need to combine the components of <strong>Aggregate Demand (AD)</strong> and the definition of <strong>Fiscal Balance</strong>.</span>
+
+        <h3>1. 總需求 (Aggregate Demand, AD)</h3>
+        <p>總需求由消費 \(C\)、投資 \(I\)、政府開支 \(G\) 和淨出口 \(NX\)（即出口 \(X\) 減進口 \(M\)）組成。</p>
+        <span class="bilingual-en">Aggregate Demand consists of Consumption \(C\), Investment \(I\), Government Expenditure \(G\), and Net Exports \(NX\) (Exports \(X\) minus Imports \(M\)).</span>
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+
+        <h3>2. 產出差距 (Output Gap)</h3>
+        <p>當短期均衡產出 \(Y\) 大於全民就業產出 \(Y_f\) 時，會出現<strong>通脹（產出）差距</strong>。反之，當 \(Y < Y_f\) 時，則出現<strong>通縮（產出）差距</strong>。</p>
+        <span class="bilingual-en">When short-run equilibrium output \(Y\) is greater than full-employment output \(Y_f\), an <strong>inflationary (output) gap</strong> occurs. Conversely, when \(Y < Y_f\), a <strong>deflationary (output) gap</strong> occurs.</span>
+
+        <h3>3. 財政結餘 (Fiscal Balance)</h3>
+        <p>財政結餘是政府稅收 \(T\) 與政府開支 \(G\) 的差額。在宏觀經濟學中，稅收 \(T\) 通常會隨國民收入 \(Y\) 增加而上升（例如薪俸稅和利得稅）。</p>
+        <span class="bilingual-en">Fiscal balance is the difference between government tax revenue \(T\) and government expenditure \(G\). In macroeconomics, tax revenue \(T\) typically increases with national income \(Y\) (e.g., salaries tax and profits tax).</span>
+        <div class="math-block">
+            $$ \text{Fiscal Balance} = T - G $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 / Answer & Detailed Analysis</h2>
+    <p>正確答案是 / The correct option is: <strong style="color: var(--correct-border); font-size: 1.2em;">Option A</strong></p>
+
+    <div class="analysis-item">
+        <h3>第一步：分析對總需求 (AD) 及產出的影響 / Step 1: Analyze the impact on AD and Output</h3>
+        <p>當甲國的貿易夥伴經濟復甦，他們的國民收入增加，從而增加對甲國貨品的進口。這意味著甲國的出口 \(X\) 會上升。由於出口是總需求的組成部分，甲國的總需求 \(AD\) 會增加（AD曲線向右移）。</p>
+        <span class="bilingual-en">When Country A's trading partners experience an economic recovery, their national income increases, leading to higher imports of goods from Country A. This means Country A's exports \(X\) will rise. Since exports are a component of AD, Country A's Aggregate Demand \(AD\) increases (AD curve shifts to the right).</span>
+        
+        <p>因為甲國原本處於「全民就業均衡」(\(Y = Y_f\))，AD增加會令短期均衡產出 \(Y\) 上升並超越 \(Y_f\)。因此，甲國會出現<strong>通脹（產出）差距</strong> (\(Y > Y_f\))。這排除了選項 C 和 D。</p>
+        <span class="bilingual-en">Because Country A was initially at "full-employment equilibrium" (\(Y = Y_f\)), the increase in AD will cause the short-run equilibrium output \(Y\) to rise above \(Y_f\). Therefore, an <strong>inflationary (output) gap</strong> (\(Y > Y_f\)) emerges in Country A. This eliminates Options C and D.</span>
+    </div>
+
+    <div class="analysis-item">
+        <h3>第二步：分析對財政結餘的影響 / Step 2: Analyze the impact on Fiscal Balance</h3>
+        <p>題目指出政府原初的財政達至「收支平衡」(\(T = G\))。隨著甲國的總產出/國民收入 \(Y\) 上升，政府的稅收 \(T\)（如直接稅和間接稅）會自動增加。假設政府開支 \(G\) 保持不變，現在稅收將大於開支 (\(T > G\))，導致<strong>財政盈餘</strong>。</p>
+        <span class="bilingual-en">The question states that the initial fiscal budget was "balanced" (\(T = G\)). As Country A's total output/national income \(Y\) rises, government tax revenue \(T\) (such as direct and indirect taxes) will automatically increase. Assuming government expenditure \(G\) remains unchanged, tax revenue will now exceed expenditure (\(T > G\)), resulting in a <strong>fiscal surplus</strong>.</span>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 / Problem Decomposition</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #64748b;">
+        <p>這類題目的關鍵在於找出<strong>「觸發點」(Pivot Points)</strong>：</p>
+        <span class="bilingual-en">The key to this type of question is identifying the <strong>Pivot Points</strong>:</span>
+        <ul>
+            <li><strong>觸發點 1：貿易夥伴經濟復甦 (Trading partners' recovery)</strong><br>
+                暗示：外地收入上升 \(\rightarrow\) 本地出口 \(X\) 上升 \(\rightarrow\) \(AD\) 上升。<br>
+                <span class="bilingual-en">Implication: Foreign income rises \(\rightarrow\) Domestic exports \(X\) rise \(\rightarrow\) \(AD\) rises.</span>
+            </li>
+            <li><strong>觸發點 2：原初在全民就業 (Initially at full employment)</strong><br>
+                暗示：起點是 \(Y = Y_f\)。任何 \(AD\) 的增加都會直接導致 \(Y > Y_f\)，即通脹差距。<br>
+                <span class="bilingual-en">Implication: Starting point is \(Y = Y_f\). Any increase in \(AD\) directly leads to \(Y > Y_f\), i.e., an inflationary gap.</span>
+            </li>
+            <li><strong>觸發點 3：原初收支平衡 (Initially balanced budget)</strong><br>
+                暗示：起點是 \(T = G\)。收入 \(Y\) 增加帶動稅收 \(T\) 增加，打破平衡變成 \(T > G\) (盈餘)。<br>
+                <span class="bilingual-en">Implication: Starting point is \(T = G\). Rising income \(Y\) drives up tax revenue \(T\), breaking the balance to \(T > G\) (surplus).</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <p><strong>陷阱：混淆「貿易結餘」與「財政結餘」</strong></p>
+    <span class="bilingual-en">Trap: Confusing "Trade Balance" with "Fiscal Balance"</span>
+    <p>很多同學看到「出口增加」，會直覺聯想到「貿易盈餘」(Trade Surplus)。雖然這沒錯，但題目問的是<strong>財政結餘 (Fiscal budget)</strong>！你必須多走一步，明白出口增加 \(\rightarrow\) 國民收入增加 \(\rightarrow\) 稅收增加 \(\rightarrow\) 財政盈餘。不要因為看到不熟悉的組合就亂猜。</p>
+    <span class="bilingual-en">Many students see "exports increase" and immediately think of a "Trade Surplus". While true, the question asks about the <strong>Fiscal budget</strong>! You must take one more step: Exports increase \(\rightarrow\) National income increases \(\rightarrow\) Tax revenue increases \(\rightarrow\) Fiscal surplus. Don't guess blindly just because the combination seems unfamiliar.</span>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <p><strong>Q: 國民收入增加，市民消費多了，進口 \(M\) 也會增加。這不會抵消出口 \(X\) 的升幅嗎？</strong></p>
+        <span class="bilingual-en">Q: When national income rises, citizens consume more, so imports \(M\) will also increase. Won't this offset the rise in exports \(X\)?</span>
+        <p><strong>A:</strong> 好問題！進口 \(M\) 確實會因為收入上升而增加（誘發性進口）。但在宏觀經濟學的乘數效應中，最初的自發性出口增加（外生衝擊）是主因，隨後的進口增加只是衍生效果（邊際進口傾向小於1）。因此，淨出口 \(NX\) 和總需求 \(AD\) 的<strong>淨效應仍然是正數</strong>的。</p>
+        <span class="bilingual-en">A: Great question! Imports \(M\) do increase due to higher income (induced imports). However, in macroeconomic multiplier effects, the initial autonomous increase in exports (exogenous shock) is the primary driver, and the subsequent rise in imports is secondary (marginal propensity to import is less than 1). Therefore, the <strong>net effect</strong> on Net Exports \(NX\) and Aggregate Demand \(AD\) remains positive.</span>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p><strong>邏輯連線法 (Logic Chaining):</strong></p>
+        <span class="bilingual-en">Logic Chaining:</span>
+        <p>在考場上，你可以用箭頭快速寫下推導過程，不用畫完整的圖：</p>
+        <span class="bilingual-en">In the exam, you can quickly write down the deduction process using arrows without drawing a full diagram:</span>
+        <p style="font-family: monospace; font-size: 1.1em; background: #fff; padding: 10px; border-radius: 4px;">
+            Partner Recovers \(\rightarrow\) \(X \uparrow\) \(\rightarrow\) \(AD \uparrow\) \(\rightarrow\) \(Y \uparrow\)<br>
+            1. \(Y \uparrow\) from full employment \(\rightarrow\) Inflationary Gap (Eliminate C, D)<br>
+            2. \(Y \uparrow\) \(\rightarrow\) Tax Revenue \(T \uparrow\) \(\rightarrow\) \(T > G\) \(\rightarrow\) Surplus (Choose A)
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

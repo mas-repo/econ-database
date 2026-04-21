@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Supply Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-main: #333;
+            --text-muted: #555;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1, h2, h3 {
+            color: #111;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: var(--primary-blue);
+        }
+        .header-info {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-info div {
+            flex: 1;
+            min-width: 200px;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .bilingual-pair {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+        }
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--gray-bg);
+        }
+        .option.correct {
+            background-color: #ecfdf5;
+            border-left: 4px solid var(--correct-green);
+        }
+        .option.wrong {
+            border-left: 4px solid var(--wrong-red);
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--gray-bg);
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .header-info { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics: Question Analysis</h1>
+    <div class="header-info">
+        <div>
+            <strong>📌 Topic (課題):</strong><br>
+            Money Supply in Hong Kong<br>
+            (香港的貨幣供應)
+        </div>
+        <div>
+            <strong>⭐ Difficulty (難度):</strong><br>
+            ★★★☆☆ (3/5)
+        </div>
+        <div>
+            <strong>🔑 Key Concepts (核心概念):</strong><br>
+            M1, M2, M3 Definitions, Licensed Banks (LBs), Deposit-Taking Companies (DTCs)
+        </div>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-pair">
+            <div class="zh">雲妮從她在持牌銀行的儲蓄戶口提取港幣$500 000。她將一半存入她的往來戶口，另一半存入一間接受存款公司。下列哪項顯示她此舉對香港貨幣供應的即時影響？</div>
+            <div class="en">Winnie withdraws HK$500 000 from her savings account with a licensed bank. She puts half of it into her current account and deposits the other half at a deposit-taking company. Which of the following shows the immediate effects on the money supply of Hong Kong?</div>
+        </div>
+        <div class="options">
+            <div class="option">
+                <div class="zh">A. 貨幣供應定義一(M1)上升，而貨幣供應定義二(M2)下降。</div>
+                <div class="en">A. M1 increases and M2 decreases.</div>
+            </div>
+            <div class="option">
+                <div class="zh">B. 貨幣供應定義一(M1)上升，而貨幣供應定義三(M3)下降。</div>
+                <div class="en">B. M1 increases and M3 decreases.</div>
+            </div>
+            <div class="option">
+                <div class="zh">C. 貨幣供應定義一(M1)和貨幣供應定義二(M2)均下降。</div>
+                <div class="en">C. Both M1 and M2 decrease.</div>
+            </div>
+            <div class="option">
+                <div class="zh">D. 貨幣供應定義二(M2)和貨幣供應定義三(M3)均下降。</div>
+                <div class="en">D. Both M2 and M3 decrease.</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-pair">
+            <div class="zh">要拆解這條題目，我們必須清楚記得香港貨幣供應的三個定義及其包含的成分。貨幣供應是層層遞進的。</div>
+            <div class="en">To solve this question, we must clearly remember the three definitions of Hong Kong's money supply and their components. The money supply definitions are hierarchical.</div>
+        </div>
+        
+        <div class="math-block">
+            $$M1 = C_p + D$$
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh"><strong>M1:</strong> 公眾持有的法定貨幣 (\(C_p\)) + 往來/活期存款 (\(D\))</div>
+            <div class="en"><strong>M1:</strong> Legal tender held by the public (\(C_p\)) + Demand/Current deposits (\(D\))</div>
+        </div>
+
+        <div class="math-block">
+            $$M2 = M1 + S_b + T_b + NCD_b$$
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh"><strong>M2:</strong> M1 + 持牌銀行(LBs)的儲蓄及定期存款 + 持牌銀行發行的可轉讓存款證</div>
+            <div class="en"><strong>M2:</strong> M1 + Savings & Time deposits at Licensed Banks (LBs) + NCDs issued by LBs</div>
+        </div>
+
+        <div class="math-block">
+            $$M3 = M2 + D_r + D_t + NCD_{r,t}$$
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh"><strong>M3:</strong> M2 + 限制牌照銀行(RLBs)及接受存款公司(DTCs)的存款 + RLBs及DTCs發行的可轉讓存款證</div>
+            <div class="en"><strong>M3:</strong> M2 + Deposits at Restricted Licence Banks (RLBs) & Deposit-Taking Companies (DTCs) + NCDs issued by RLBs & DTCs</div>
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-pair">
+        <div class="zh">正確答案是：<strong>選項 A</strong></div>
+        <div class="en">The correct option is: <strong>Option A</strong></div>
+    </div>
+
+    <div class="step">
+        <div class="bilingual-pair">
+            <div class="zh">讓我們逐步分析這筆 $500,000 資金流動所帶來的淨影響 (Net Effect)：</div>
+            <div class="en">Let's break down the net effect of this $500,000 fund movement step-by-step:</div>
+        </div>
+
+        <table>
+            <tr>
+                <th>行動 / Action</th>
+                <th>金額 / Amount</th>
+                <th>對 M1 的影響 / Impact on M1</th>
+                <th>對 M2 的影響 / Impact on M2</th>
+                <th>對 M3 的影響 / Impact on M3</th>
+            </tr>
+            <tr>
+                <td>從持牌銀行儲蓄戶口提取<br>Withdraw from LB savings</td>
+                <td>-$500,000</td>
+                <td>無影響 / No change</td>
+                <td>-$500,000</td>
+                <td>-$500,000</td>
+            </tr>
+            <tr>
+                <td>存入往來戶口<br>Deposit into current account</td>
+                <td>+$250,000</td>
+                <td>+$250,000</td>
+                <td>+$250,000</td>
+                <td>+$250,000</td>
+            </tr>
+            <tr>
+                <td>存入接受存款公司<br>Deposit at DTC</td>
+                <td>+$250,000</td>
+                <td>無影響 / No change</td>
+                <td>無影響 / No change</td>
+                <td>+$250,000</td>
+            </tr>
+            <tr style="background-color: #fef08a; font-weight: bold;">
+                <td colspan="2">淨影響 / Net Change (\(\Delta\))</td>
+                <td>+$250,000 (上升/Inc)</td>
+                <td>-$250,000 (下降/Dec)</td>
+                <td>$0 (不變/Unchanged)</td>
+            </tr>
+        </table>
+
+        <div class="option correct">
+            <div class="zh"><strong>為何 A 正確？</strong> 如上表計算，往來戶口增加了 $250,000，因此 \(M1\) 上升。而 \(M2\) 雖然包含了上升的 \(M1\) (+$250k)，但同時損失了儲蓄存款 (-$500k)，淨效應是下降了 $250,000。</div>
+            <div class="en"><strong>Why is A correct?</strong> As calculated above, the current account increased by $250,000, so \(M1\) increases. While \(M2\) includes the increased \(M1\) (+$250k), it simultaneously lost the savings deposit (-$500k), making the net effect a decrease of $250,000.</div>
+        </div>
+        
+        <div class="option wrong">
+            <div class="zh"><strong>為何 B 錯誤？</strong> \(M3\) 的淨變化為零。雖然 \(M2\) 部分減少了 $250,000，但資金流入了接受存款公司 (DTC)，這剛好填補了 \(M3\) 內的流失，使 \(M3\) 保持不變。</div>
+            <div class="en"><strong>Why is B wrong?</strong> The net change in \(M3\) is zero. Although the \(M2\) component decreased by $250,000, the funds flowed into a Deposit-Taking Company (DTC), which perfectly offset the loss within \(M3\), keeping \(M3\) unchanged.</div>
+        </div>
+
+        <div class="option wrong">
+            <div class="zh"><strong>為何 C & D 錯誤？</strong> 這兩個選項錯誤地指出了 \(M1\) 會下降或 \(M3\) 會下降。</div>
+            <div class="en"><strong>Why are C & D wrong?</strong> These options incorrectly state that \(M1\) decreases or \(M3\) decreases.</div>
+        </div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-pair">
+        <div class="zh"><strong>關鍵思維 (Pivot Point)：</strong><br>處理此類題目的核心在於「包容性」(Inclusivity)。\(M3\) 包含 \(M2\)，而 \(M2\) 包含 \(M1\)。任何對 \(M1\) 的改變都會自動反映在 \(M2\) 和 \(M3\) 上，除非有其他資金在不同定義之間流動。</div>
+        <div class="en"><strong>Pivot Point:</strong><br>The core of handling such questions lies in "Inclusivity". \(M3\) includes \(M2\), and \(M2\) includes \(M1\). Any change to \(M1\) automatically reflects in \(M2\) and \(M3\), unless funds are moving between the different definition tiers.</div>
+    </div>
+    <div class="bilingual-pair">
+        <div class="zh"><strong>干擾資訊 (Distractors)：</strong><br>「一半...另一半...」的設定容易令考生混亂。考生需要清晰寫出每一筆資金的去向。</div>
+        <div class="en"><strong>Distractors:</strong><br>The "half... and the other half..." setup easily confuses candidates. You need to clearly write down the destination of every single portion of the funds.</div>
+    </div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trick-box">
+        <div class="bilingual-pair">
+            <div class="zh"><strong>⚠️ 陷阱 1：忘記層級關係</strong><br>很多學生知道儲蓄存款減少會令 \(M2\) 下降，但忘記了存入往來戶口的錢會令 \(M1\) 上升，而 \(M1\) 是 \(M2\) 的一部分。必須計算「淨效應 (Net Effect)」。</div>
+            <div class="en"><strong>⚠️ Trap 1: Forgetting the Hierarchy</strong><br>Many students know that a decrease in savings deposits lowers \(M2\), but they forget that money put into a current account raises \(M1\), and \(M1\) is part of \(M2\). You MUST calculate the Net Effect.</div>
+        </div>
+        <hr>
+        <div class="bilingual-pair">
+            <div class="zh"><strong>⚠️ 陷阱 2：混淆銀行機構類型</strong><br>學生經常忘記「接受存款公司 (DTCs)」的存款只屬於 \(M3\)，並不屬於 \(M2\)。只有「持牌銀行 (LBs)」的存款才計算在 \(M2\) 內。</div>
+            <div class="en"><strong>⚠️ Trap 2: Confusing Banking Institutions</strong><br>Students often forget that deposits at "Deposit-Taking Companies (DTCs)" ONLY belong to \(M3\), not \(M2\). Only deposits at "Licensed Banks (LBs)" are counted in \(M2\).</div>
+        </div>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-pair">
+            <div class="zh"><strong>學生問：</strong> 為什麼提取現金的那一刻，\(M1\) 不會先增加 $500,000？</div>
+            <div class="en"><strong>Student Q:</strong> Why doesn't \(M1\) initially increase by $500,000 the moment the cash is withdrawn?</div>
+        </div>
+        <div class="bilingual-pair">
+            <div class="zh"><strong>老師答：</strong> 經濟學選擇題通常看的是「完成所有動作後的即時最終狀態」。題目說明她提取後「存入」其他戶口，代表她沒有將這筆錢作為現金保留在手中（公眾持有現金 \(C_p\) 沒有淨增加）。我們只看資金最終泊在哪些戶口。</div>
+            <div class="en"><strong>Tutor A:</strong> Economics MCQs typically look at the "immediate final state after all actions are completed." The question states she withdrew and "deposited" it elsewhere, meaning she didn't hold it as cash in hand (no net increase in cash held by public, \(C_p\)). We only look at where the funds ultimately parked.</div>
+        </div>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual-pair">
+        <div class="zh"><strong>「Delta (\(\Delta\)) 拆局法」：</strong><br>在試卷邊緣快速寫下公式：</div>
+        <div class="en"><strong>The Delta (\(\Delta\)) Shortcut:</strong><br>Quickly write down the formula on the edge of your paper:</div>
+    </div>
+    <div class="math-block" style="text-align: left; padding-left: 20px;">
+        \(\Delta M1 = +250k\) (往來 Current)<br>
+        \(\Delta M2 = \Delta M1 - 500k\) (儲蓄 Savings) \(= 250k - 500k = -250k\)<br>
+        \(\Delta M3 = \Delta M2 + 250k\) (DTC) \(= -250k + 250k = 0\)<br>
+    </div>
+    <div class="bilingual-pair">
+        <div class="zh">只需三行算式，清楚顯示 \(\Delta M1 > 0\) (上升)，\(\Delta M2 < 0\) (下降)，\(\Delta M3 = 0\) (不變)，不用15秒就能精準找出答案 A！</div>
+        <div class="en">With just three lines of calculation, it clearly shows \(\Delta M1 > 0\) (increases), \(\Delta M2 < 0\) (decreases), and \(\Delta M3 = 0\) (unchanged). You can pinpoint Answer A accurately in less than 15 seconds!</div>
+    </div>
+
+</body>
+</html>

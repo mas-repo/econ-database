@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Comparative Advantage</title>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary-color: #334155;
+            --bg-color: #f8fafc;
+            --box-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: -0.5em;
+            margin-bottom: 1.5em;
+            font-style: italic;
+        }
+
+        /* Header Section */
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: var(--primary-light);
+            color: #0369a1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #e2e8f0;
+        }
+
+        /* Concept Review */
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Options Analysis */
+        .option {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .option.correct {
+            border-left-color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .option.wrong {
+            border-left-color: var(--danger);
+        }
+
+        .option-header {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .correct-badge {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .wrong-badge {
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        /* Special Sections */
+        .decomposition-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mistakes-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tricks-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--success);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-item {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics: 比較優勢與貿易比率 (Comparative Advantage & Terms of Trade)</h1>
+    <div class="header-tags">
+        <span class="tag">Topic: 國際貿易 (International Trade)</span>
+        <span class="tag">Difficulty: ★★★★☆</span>
+        <span class="tag">Key Concepts: 機會成本, 比較優勢, 貿易比率, 運輸成本</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>下表顯示甲國和乙國以相同數量的資源可生產的玩具或汽車的數量。</p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>玩具 (Toys)</th>
+                    <th>汽車 (Cars)</th>
+                </tr>
+                <tr>
+                    <td>甲國 (Country A)</td>
+                    <td>50</td>
+                    <td>或 (or) 80</td>
+                </tr>
+                <tr>
+                    <td>乙國 (Country B)</td>
+                    <td>20</td>
+                    <td>或 (or) 60</td>
+                </tr>
+            </table>
+        </div>
+        <p>每單位玩具的運輸成本是0.4單位汽車，由進口國家負擔。下列哪項是甲乙兩國之間有互利的貿易比率？</p>
+        <p>A. 1單位玩具 = 1.6單位汽車<br>
+           B. 1單位玩具 = 2單位汽車<br>
+           C. 1單位玩具 = 2.6單位汽車<br>
+           D. 1單位玩具 = 3單位汽車</p>
+        
+        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 15px 0;">
+        
+        <p class="en-text">The following table shows the amount of toys or cars that Country A and Country B can produce with the same amount of resources.</p>
+        <p class="en-text">The transportation cost for 1 unit of toy is 0.4 units of car and it is borne by the importing country. Which of the following is the mutually beneficial terms of trade between Country A and Country B?</p>
+        <p class="en-text">A. 1 unit of toy = 1.6 units of car<br>
+           B. 1 unit of toy = 2 units of car<br>
+           C. 1 unit of toy = 2.6 units of car<br>
+           D. 1 unit of toy = 3 units of car</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>1. 機會成本 (Opportunity Cost):</strong><br>
+        在「產出問題 (Output Problem)」中，生產某物品的機會成本等於放棄生產另一物品的數量除以該物品的數量。</p>
+        <p class="en-text">In an "Output Problem", the opportunity cost of producing a good is the amount of the other good given up divided by the amount of the good produced.</p>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of 1 unit of Good X} = \frac{\text{Max. output of Good Y}}{\text{Max. output of Good X}} $$
+        </div>
+
+        <p><strong>2. 比較優勢 (Comparative Advantage):</strong><br>
+        一個國家若能以較低的機會成本生產某物品，便在該物品上享有比較優勢，並會出口該物品。</p>
+        <p class="en-text">A country has a comparative advantage in producing a good if it can produce it at a lower opportunity cost. It will export this good.</p>
+
+        <p><strong>3. 互利貿易比率 (Mutually Beneficial Terms of Trade):</strong><br>
+        貿易比率必須介乎兩國的國內機會成本之間。若有運輸成本，必須考慮由哪一方支付，從而調整買方願意支付的最高價格或賣方願意接受的最低價格。</p>
+        <p class="en-text">The Terms of Trade (TOT) must lie strictly between the domestic opportunity costs of the two countries. If there are transportation costs, we must adjust the maximum price the buyer is willing to pay or the minimum price the seller is willing to accept, depending on who bears the cost.</p>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (The correct option is): <strong>Option B</strong></p>
+
+    <div class="option wrong">
+        <div class="option-header"><span class="wrong-badge">✗ Option A: 1單位玩具 = 1.6單位汽車 (1 Toy = 1.6 Cars)</span></div>
+        <p>甲國生產1單位玩具的成本正是1.6單位汽車。如果貿易比率是1.6，甲國（出口國）將無法從貿易中獲益（利潤為零）。互利的貿易比率必須<strong>大於</strong>出口國的成本。</p>
+        <p class="en-text">Country A's domestic cost for 1 Toy is exactly 1.6 Cars. If the TOT is 1.6, Country A (the exporter) gains nothing from trade (zero profit). A mutually beneficial TOT must be <strong>strictly greater</strong> than the exporter's cost.</p>
+    </div>
+
+    <div class="option correct">
+        <div class="option-header"><span class="correct-badge">✓ Option B: 1單位玩具 = 2單位汽車 (1 Toy = 2 Cars)</span></div>
+        <p>如果貿易比率為 \(P = 2\)：<br>
+        甲國（出口國）收到2單位汽車，大於其成本（1.6），獲利0.4單位汽車。<br>
+        乙國（進口國）支付2單位汽車給甲國，加上0.4單位汽車的運輸成本，總代價為 \(2 + 0.4 = 2.4\) 單位汽車。這小於其國內自己生產的成本（3單位汽車），因此乙國也能獲益。雙方互利！</p>
+        <p class="en-text">If the TOT is \(P = 2\):<br>
+        Country A (exporter) receives 2 Cars, which is > its cost (1.6), gaining 0.4 Cars.<br>
+        Country B (importer) pays 2 Cars to A, plus 0.4 Cars for transport. Total cost = \(2 + 0.4 = 2.4\) Cars. This is < its domestic cost (3 Cars), so Country B also gains. Mutually beneficial!</p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-header"><span class="wrong-badge">✗ Option C: 1單位玩具 = 2.6單位汽車 (1 Toy = 2.6 Cars)</span></div>
+        <p>如果貿易比率為 \(P = 2.6\)，乙國（進口國）的總代價將是 \(2.6 + 0.4 = 3\) 單位汽車。這剛好等於乙國自己生產的成本。乙國將無法從貿易中獲益，因此這不是「互利」的比率。</p>
+        <p class="en-text">If the TOT is \(P = 2.6\), Country B's (importer) total cost would be \(2.6 + 0.4 = 3\) Cars. This exactly equals Country B's domestic cost. Country B gains nothing, so it is not "mutually" beneficial.</p>
+    </div>
+
+    <div class="option wrong">
+        <div class="option-header"><span class="wrong-badge">✗ Option D: 1單位玩具 = 3單位汽車 (1 Toy = 3 Cars)</span></div>
+        <p>如果貿易比率為 \(P = 3\)，乙國的總代價將是 \(3 + 0.4 = 3.4\) 單位汽車，這高於其國內成本（3）。乙國會選擇自己生產，拒絕貿易。</p>
+        <p class="en-text">If the TOT is \(P = 3\), Country B's total cost would be \(3 + 0.4 = 3.4\) Cars, which is higher than its domestic cost (3). Country B would choose to produce domestically and refuse to trade.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <div class="decomposition-box">
+        <p><strong>第一步：計算機會成本 (Step 1: Calculate Opportunity Costs)</strong><br>
+        題目表示「相同數量的資源」，這是產出問題 (Output problem)。<br>
+        甲國生產1玩具的成本 = \(80 / 50 = 1.6\) 汽車。<br>
+        乙國生產1玩具的成本 = \(60 / 20 = 3\) 汽車。</p>
+        <p class="en-text">The question states "same amount of resources", indicating an output problem.<br>
+        Country A's cost of 1 Toy = \(80 / 50 = 1.6\) Cars.<br>
+        Country B's cost of 1 Toy = \(60 / 20 = 3\) Cars.</p>
+
+        <p><strong>第二步：找出比較優勢與進出口國 (Step 2: Identify Comparative Advantage)</strong><br>
+        甲國生產玩具的成本較低 (\(1.6 < 3\))，所以甲國出口玩具。乙國進口玩具。</p>
+        <p class="en-text">Country A has a lower cost for Toys (\(1.6 < 3\)), so Country A exports Toys. Country B imports Toys.</p>
+
+        <p><strong>第三步：處理運輸成本 (Step 3: Handle Transportation Cost)</strong><br>
+        關鍵字：「由進口國家負擔 (borne by the importing country)」。<br>
+        乙國是進口國，所以乙國要支付 0.4 汽車的運費。<br>
+        設貿易比率為 \(P\) (1玩具換 \(P\) 汽車)。<br>
+        對甲國(賣方)而言：必須 \(P > 1.6\)<br>
+        對乙國(買方)而言：買價 \(P\) + 運費 \(0.4\) 必須小於自己生產的成本 \(3\)。即 \(P + 0.4 < 3 \implies P < 2.6\)。<br>
+        <strong>結論：互利區間為 \(1.6 < P < 2.6\)</strong>。</p>
+        <p class="en-text">Keyword: "borne by the importing country".<br>
+        Country B imports, so B pays 0.4 Cars for transport.<br>
+        Let TOT be \(P\).<br>
+        For A (seller): Needs \(P > 1.6\).<br>
+        For B (buyer): Price \(P\) + Transport \(0.4\) must be < domestic cost \(3\). So, \(P + 0.4 < 3 \implies P < 2.6\).<br>
+        <strong>Conclusion: Mutually beneficial range is \(1.6 < P < 2.6\)</strong>.</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistakes-box">
+        <p><strong>陷阱一：搞錯誰支付運輸成本 (Trap 1: Wrong payer for transport)</strong><br>
+        很多學生會直接把 0.4 加到出口國的成本上（變成 \(1.6 + 0.4 = 2.0\)），這是錯的！題目明確指出「進口國負擔」。</p>
+        <p class="en-text">Many students mistakenly add 0.4 to the exporter's cost. This is wrong! The question explicitly states it is borne by the importing country.</p>
+
+        <p><strong>陷阱二：忽略「互利」必須是嚴格的不等式 (Trap 2: Ignoring strict inequalities)</strong><br>
+        選項 A (1.6) 和 選項 C (2.6) 是邊界值 (boundary values)。在邊界值上，其中一國的利潤為零，這不符合「互利 (mutually beneficial)」的要求。答案必須嚴格大於下限且小於上限。</p>
+        <p class="en-text">Options A and C are boundary values where one country makes zero profit. "Mutually beneficial" requires strict inequalities (\(<\) and \(>\)).</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-item">
+            <p class="qa-q">Q: 如果題目改成「運輸成本由出口國（甲國）負擔」，答案會改變嗎？</p>
+            <p class="en-text">Q: What if the question said "transportation cost is borne by the exporting country (Country A)"?</p>
+            <p>A: 會的！如果甲國負擔，甲國賣出1單位的實際淨收入是 \(P - 0.4\)。為了獲利，\(P - 0.4 > 1.6 \implies P > 2.0\)。而乙國不需要付運費，所以只要 \(P < 3.0\)。新的互利區間會變成 \(2.0 < P < 3.0\)。</p>
+            <p class="en-text">A: Yes! If A pays, A's net revenue is \(P - 0.4\). For A to gain, \(P - 0.4 > 1.6 \implies P > 2.0\). B doesn't pay transport, so B just needs \(P < 3.0\). The new range would be \(2.0 < P < 3.0\).</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tricks-box">
+        <p><strong>速解法 (The Shortcut):</strong><br>
+        遇到這類題目，直接畫一條數線 (Number Line)！<br>
+        1. 標出兩國的國內機會成本：1.6 和 3。<br>
+        2. 找出誰付運費：進口國 (買方)。<br>
+        3. 買方要付額外費用，代表他願意給賣方的最高價格會<strong>降低</strong>。將上限 3 減去 0.4，得到 2.6。<br>
+        4. 新的有效區間是 1.6 到 2.6。直接在選項中找一個介於 1.6 和 2.6 之間的數字，秒殺！</p>
+        <p class="en-text">Draw a number line! Mark domestic costs: 1.6 and 3. The buyer pays transport, meaning their max willingness to pay the seller <strong>drops</strong>. Subtract 0.4 from the upper bound 3 to get 2.6. The valid range is 1.6 to 2.6. Just pick the option strictly between these numbers!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
