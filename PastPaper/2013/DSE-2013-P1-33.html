@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Business Cycle</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0284c7; /* Sky blue */
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --box-bg-concept: #f0f9ff;
+            --box-bg-math: #f3f4f6;
+            --box-bg-warning: #fffbeb;
+            --border-warning: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: 3px solid var(--primary-color); }
+        h2 { font-size: 1.4rem; }
+        h3 { font-size: 1.2rem; border: none; }
+
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .zh-text {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* Distinct Sections */
+        .header-info {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-info li { margin-bottom: 5px; }
+
+        .question-box {
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #ffffff;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg-concept);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--box-bg-math);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .warning-box {
+            background-color: var(--box-bg-warning);
+            border-left: 5px solid var(--border-warning);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-option {
+            border-color: var(--success-color);
+            background-color: #ecfdf5;
+            box-shadow: 0 0 0 1px var(--success-color);
+        }
+
+        .incorrect-option {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .badge-correct { background-color: var(--success-color); }
+        .badge-wrong { background-color: var(--danger-color); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-info">
+        <h1>📊 HKDSE Economics Tutorial</h1>
+        <ul>
+            <li><strong>📝 Topic (課題):</strong> 宏觀經濟學 - 經濟週期 (Macroeconomics - Business Cycle)</li>
+            <li><strong>⭐ Difficulty (難度):</strong> ★★☆☆☆ (2/5)</li>
+            <li><strong>🔑 Key Concepts (關鍵概念):</strong> 經濟週期階段 (Phases of Business Cycle), 失業率 (Unemployment Rate), 通貨膨脹 (Inflation), 存貨投資 (Inventory Investment)</li>
+        </ul>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="zh-text">某經濟出現下列現象：</p>
+        <p class="zh-text">(1) 失業率正在上升。<br>
+        (2) 通脹率不再上升而是下降。<br>
+        (3) 生產商的存貨正增加。<br>
+        (4) 經濟增長的預測被調低了。</p>
+        <p class="zh-text">該經濟正處於經濟週期的_______階段。</p>
+        <p class="zh-text">A. 衰退<br>
+        B. 低谷<br>
+        C. 復甦<br>
+        D. 高峰</p>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <p class="en-text">The following phenomena are observed in an economy:</p>
+        <p class="en-text">(1) The unemployment rate is increasing.<br>
+        (2) The inflation rate is no longer rising but falling instead.<br>
+        (3) The inventories of producers are accumulating.<br>
+        (4) The forecast of economic growth is revised downward.</p>
+        <p class="en-text">The economy is in the _______ phase of a business cycle.</p>
+        <p class="en-text">A. recession<br>
+        B. trough<br>
+        C. recovery<br>
+        D. peak</p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>經濟週期 (Business Cycle)</strong> 是指實質本地生產總值 (Real GDP) 隨時間出現的短期上下波動。一個完整的經濟週期分為四個階段：</p>
+        <p class="en-text"><strong>Business Cycle</strong> refers to the short-term upward and downward fluctuations of Real GDP over time. A complete cycle consists of four phases:</p>
+        
+        <ol>
+            <li><span class="zh-text"><strong>高峰 (Peak):</strong> 經濟活動達到頂點，失業率處於最低水平，通脹壓力通常很高。</span><br>
+                <span class="en-text"><strong>Peak:</strong> Economic activity reaches its maximum. The unemployment rate is at its lowest, and inflationary pressure is usually high.</span></li>
+            <li><span class="zh-text"><strong>衰退 (Recession):</strong> 經濟活動開始收縮，總需求下降，失業率上升，通脹率放緩。</span><br>
+                <span class="en-text"><strong>Recession:</strong> Economic activity begins to contract. Aggregate demand falls, the unemployment rate rises, and the inflation rate slows down.</span></li>
+            <li><span class="zh-text"><strong>低谷 (Trough):</strong> 經濟活動跌至谷底，失業率達到最高點。</span><br>
+                <span class="en-text"><strong>Trough:</strong> Economic activity reaches its lowest point. The unemployment rate is at its peak.</span></li>
+            <li><span class="zh-text"><strong>復甦 (Recovery):</strong> 經濟活動重新擴張，失業率開始下降，生產商消化存貨。</span><br>
+                <span class="en-text"><strong>Recovery:</strong> Economic activity expands again. The unemployment rate starts to fall, and producers clear out their inventories.</span></li>
+        </ol>
+
+        <p class="zh-text"><strong>關鍵宏觀指標定義：</strong></p>
+        <p class="en-text"><strong>Definitions of Key Macro Indicators:</strong></p>
+
+        <div class="math-block">
+            $$ \text{Unemployment Rate} = \frac{\text{Number of Unemployed}}{\text{Labor Force}} \times 100\% $$
+        </div>
+        <div class="math-block">
+            $$ \text{Inflation Rate} = \frac{\text{CPI}_{\text{Current}} - \text{CPI}_{\text{Previous}}}{\text{CPI}_{\text{Previous}}} \times 100\% $$
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <p class="zh-text"><strong>正確答案是：<span style="color:var(--success-color); font-size:1.2em;">A. 衰退 (Recession)</span></strong></p>
+    <p class="en-text"><strong>The correct option is: A. recession</strong></p>
+
+    <div class="option-analysis correct-option">
+        <h3><span class="badge badge-correct">Correct</span> Option A: 衰退 (Recession)</h3>
+        <p class="zh-text"><strong>分析：</strong> 衰退期的特徵是總需求 (Aggregate Demand) 萎縮。當需求下降，廠商會減少生產並解僱工人，導致<strong>失業率上升</strong> (現象1)。由於消費減少，商品滯銷，導致<strong>存貨增加</strong> (現象3，這被稱為非計劃存貨投資)。同時，由於需求疲弱，加價壓力減弱，導致<strong>通脹率下降</strong> (現象2)。市場對前景悲觀，因此<strong>下調增長預測</strong> (現象4)。這四點完美脗合衰退期的特徵。</p>
+        <p class="en-text"><strong>Analysis:</strong> A recession is characterized by a contraction in Aggregate Demand. When demand falls, firms reduce production and lay off workers, leading to an <strong>increasing unemployment rate</strong> (Phenomenon 1). Due to reduced consumption, unsold goods pile up, resulting in <strong>accumulating inventories</strong> (Phenomenon 3, known as unplanned inventory investment). Meanwhile, weak demand reduces upward pressure on prices, causing the <strong>inflation rate to fall</strong> (Phenomenon 2). Pessimism in the market leads to a <strong>downward revision of economic growth forecasts</strong> (Phenomenon 4). All four points perfectly match a recession.</p>
+    </div>
+
+    <div class="option-analysis incorrect-option">
+        <h3><span class="badge badge-wrong">Incorrect</span> Option B: 低谷 (Trough)</h3>
+        <p class="zh-text"><strong>分析：</strong> 如果經濟處於低谷，失業率會處於「最高點」，而不是「正在上升」。同時，存貨水平通常已經跌至極低（或不再增加），因為廠商早已停止過度生產。題目中的動態詞彙（正在上升、正增加）反映經濟仍在下滑，尚未見底。</p>
+        <p class="en-text"><strong>Analysis:</strong> If the economy were in a trough, the unemployment rate would be at its "highest point" rather than "increasing". Also, inventory levels are usually depleted (or no longer accumulating) because firms have long since stopped overproducing. The dynamic verbs in the question (increasing, accumulating) reflect an economy still in decline, not yet at the absolute bottom.</p>
+    </div>
+
+    <div class="option-analysis incorrect-option">
+        <h3><span class="badge badge-wrong">Incorrect</span> Option C: 復甦 (Recovery)</h3>
+        <p class="zh-text"><strong>分析：</strong> 復甦期的特徵與題目完全相反。在復甦期，失業率會「下降」，通脹率可能會開始「上升」，廠商的存貨會因為銷情好轉而「減少」。</p>
+        <p class="en-text"><strong>Analysis:</strong> The characteristics of a recovery are the exact opposite of the question. In a recovery, the unemployment rate would be "falling", the inflation rate might start "rising", and producers' inventories would "decrease" due to improving sales.</p>
+    </div>
+
+    <div class="option-analysis incorrect-option">
+        <h3><span class="badge badge-wrong">Incorrect</span> Option D: 高峰 (Peak)</h3>
+        <p class="zh-text"><strong>分析：</strong> 在高峰期，經濟處於最繁榮的狀態。失業率會處於極低水平，通脹率高企且可能仍在上升，這與題目描述的現象截然不同。</p>
+        <p class="en-text"><strong>Analysis:</strong> At the peak, the economy is booming. The unemployment rate would be at an extremely low level, and the inflation rate would be high and possibly still rising. This is completely different from the described phenomena.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="border-left-color: #8b5cf6;">
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point)：</strong></p>
+        <p class="en-text"><strong>Pivot Point:</strong></p>
+        <p class="zh-text">這道題的關鍵在於留意<strong>「動態詞 (Dynamic Verbs)」</strong>。請注意「正在上升 (increasing)」、「下降 (falling)」和「正增加 (accumulating)」。</p>
+        <p class="en-text">The key to solving this question is paying attention to the <strong>"Dynamic Verbs"</strong>. Notice words like "increasing", "falling", and "accumulating".</p>
+        
+        <p class="zh-text">這些詞彙描述的是一個<strong>「過程」</strong>（即衰退或復甦），而不是一個<strong>「狀態點」</strong>（即高峰或低谷）。既然失業率「正在」上升，代表經濟正在變差，因此只能是「衰退 (Recession)」階段。</p>
+        <p class="en-text">These words describe a <strong>"process"</strong> (i.e., recession or recovery) rather than a <strong>"static point"</strong> (i.e., peak or trough). Since the unemployment rate is "increasing" (getting worse), the economy must be heading downwards, which strictly points to a "Recession".</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="warning-box">
+        <p class="zh-text">⚠️ <strong>陷阱 1：混淆「通脹率下降 (Falling Inflation)」與「通縮 (Deflation)」</strong><br>
+        很多同學看到「下降」就以為是通縮。題目說「通脹率不再上升而是下降」，意思是物價仍然在上升（通脹率為正數），只是上升的速度減慢了（例如從 5% 跌至 2%）。這是典型的衰退初期特徵（Disinflation）。</p>
+        <p class="en-text">⚠️ <strong>Trap 1: Confusing "Falling Inflation" with "Deflation"</strong><br>
+        Many students see "falling" and think it means deflation. The question says the "inflation rate is falling", which means the general price level is still rising (inflation rate is positive), but at a slower pace (e.g., dropping from 5% to 2%). This is a classic early-recession characteristic known as Disinflation.</p>
+
+        <p class="zh-text">⚠️ <strong>陷阱 2：分不清「低谷」和「衰退」</strong><br>
+        同學常以為經濟差就是「低谷」。請記住：<strong>衰退是下山的路，低谷是山腳。</strong>既然失業率還在上升，代表我們還在「下山」途中，未到山腳。</p>
+        <p class="en-text">⚠️ <strong>Trap 2: Confusing "Trough" and "Recession"</strong><br>
+        Students often assume bad economic conditions equate to a "Trough". Remember: <strong>Recession is the path going down the mountain, while Trough is the absolute bottom.</strong> If unemployment is still rising, we are still heading down the mountain and haven't hit the bottom yet.</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="zh-text"><strong>❓ 學生問：</strong>「既然經濟變差，生產商應該會減少生產呀，為什麼存貨反而會『增加』呢？」</p>
+        <p class="en-text"><strong>❓ Student:</strong> "Since the economy is getting worse, shouldn't producers reduce their production? Why are inventories 'accumulating' instead?"</p>
+
+        <p class="zh-text"><strong>💡 導師答：</strong>這是一個很好的問題！在衰退初期，經濟轉差通常發生得很突然。生產商本來按照過去的良好預期生產了大量商品。但由於市民突然減少消費（需求下跌），這些商品賣不出去，積壓在倉庫裡。這在經濟學上稱為<strong>「非計劃存貨投資 (Unplanned inventory investment)」</strong>。當廠商發現存貨過多時，下一步才會開始減產和裁員。</p>
+        <p class="en-text"><strong>💡 Tutor:</strong> That's an excellent question! In the early stages of a recession, the economic downturn often happens suddenly. Producers have already manufactured goods based on previous optimistic forecasts. But because consumers suddenly cut spending (demand falls), these goods remain unsold and pile up in warehouses. This is called <strong>"unplanned inventory investment"</strong> in economics. Only after realizing they have excess inventory will producers take the next step to cut production and lay off workers.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="concept-box" style="border-left-color: #10b981; background-color: #ecfdf5;">
+        <p class="zh-text"><strong>⚡ 箭頭速記法 (Arrow Technique)：</strong><br>
+        在考試時，不需要寫一大堆文字。在題目旁邊直接畫箭頭：</p>
+        <p class="en-text"><strong>⚡ Arrow Technique:</strong><br>
+        During the exam, you don't need to write long sentences. Just draw arrows next to the question:</p>
+        
+        <ul style="list-style-type: none; padding-left: 0; font-weight: bold;">
+            <li>(1) 失業 Unemployment ➔ ↑ (Bad)</li>
+            <li>(2) 通脹 Inflation ➔ ↓ (Cooling down)</li>
+            <li>(3) 存貨 Inventory ➔ ↑ (Unsold goods)</li>
+            <li>(4) 增長 Growth ➔ ↓ (Pessimistic)</li>
+        </ul>
+
+        <p class="zh-text">當你看到大部分指標都指向經濟正在「收縮 (Contracting)」，唯一的收縮階段選項就是 <strong>A. 衰退 (Recession)</strong>。秒殺！</p>
+        <p class="en-text">When you see most indicators pointing towards a "Contracting" economy, the only contraction phase option is <strong>A. recession</strong>. Instant solve!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

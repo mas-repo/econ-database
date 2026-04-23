@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Linked Exchange Rate System</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Deep Blue */
+            --secondary-color: #0ea5e9; /* Light Blue */
+            --bg-color: #f8fafc; /* Slate 50 */
+            --text-main: #1e293b; /* Slate 800 */
+            --text-muted: #475569; /* Slate 600 */
+            --box-bg: #f0f9ff; /* Sky 50 */
+            --success-color: #15803d; /* Green 700 */
+            --danger-color: #b91c1c; /* Red 700 */
+            --warning-bg: #fffbeb; /* Amber 50 */
+            --warning-border: #f59e0b; /* Amber 500 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--box-bg);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .bilingual-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .zh-text {
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .en-text {
+            font-size: 0.95em;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0;
+        }
+
+        /* Section Specific Styles */
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .question-box {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .correct-option {
+            border-left: 5px solid var(--success-color);
+            background-color: #f0fdf4;
+        }
+
+        .wrong-option {
+            border-left: 5px solid var(--danger-color);
+            background-color: #fef2f2;
+        }
+
+        .correct-label { color: var(--success-color); font-weight: bold; }
+        .wrong-label { color: var(--danger-color); font-weight: bold; }
+
+        .trap-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+
+        .tips-box {
+            background-color: #ecfdf5;
+            border: 2px dashed #10b981;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>📊 HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="badge">Topic: 宏觀經濟 - 聯繫匯率制度 (LERS)</span>
+            <span class="badge">Difficulty: ★★★☆☆ (3/5)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> Currency Board (貨幣發行局), Foreign Exchange Reserves (外匯儲備), Convertibility Undertaking (兌換保證)
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-group">
+            <p class="zh-text">下列哪項有關香港聯繫匯率制度的陳述是正確的？</p>
+            <p class="en-text">Which of the following statements about the linked exchange rate system of Hong Kong is correct?</p>
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh-text">(1) 港元鈔票由人民幣和美元十足支持。</p>
+            <p class="en-text">(1) Hong Kong dollar banknotes are fully backed by Renminbi and the US dollar.</p>
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh-text">(2) 香港金融管理局持有相當數量的外匯儲備。</p>
+            <p class="en-text">(2) The Hong Kong Monetary Authority holds a considerable amount of foreign exchange reserves.</p>
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh-text">(3) 所有發鈔銀行可按聯繫匯率與香港金融管理局兌換美元。</p>
+            <p class="en-text">(3) All note-issuing banks can exchange for US dollars at the linked rate with the Hong Kong Monetary Authority.</p>
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh-text">(4) 港元兌美元在外匯市場的兌換率是固定的。</p>
+            <p class="en-text">(4) The exchange rate of the Hong Kong dollar to the US dollar in the foreign exchange market is fixed.</p>
+        </div>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>A.</strong> 只有(1)、(2) / (1) and (2) only</li>
+            <li><strong>B.</strong> 只有(1)、(4) / (1) and (4) only</li>
+            <li><strong>C.</strong> 只有(2)、(3) / (2) and (3) only</li>
+            <li><strong>D.</strong> 只有(3)、(4) / (3) and (4) only</li>
+        </ul>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>貨幣發行局制度 (Currency Board System)：</strong>香港的聯繫匯率制度要求貨幣基礎必須有百分百的外匯儲備支持。發鈔銀行必須按固定匯率向金管局提交等值的<strong>美元 (USD)</strong>，以換取負債證明書，才能發行港元鈔票。</p>
+            <p class="en-text"><strong>Currency Board System:</strong> Hong Kong's Linked Exchange Rate System requires the monetary base to be 100% backed by foreign exchange reserves. Note-issuing banks must submit equivalent <strong>US Dollars (USD)</strong> to the HKMA at a fixed rate to acquire Certificates of Indebtedness before issuing HKD banknotes.</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>官方匯率 vs. 市場匯率 (Official vs. Market Rate)：</strong>官方聯繫匯率固定為 1 美元兌 7.8 港元。但外匯市場上的實際匯率會因供求而波動，金管局透過強方及弱方兌換保證，將市場匯率維持在 7.75 至 7.85 之間。</p>
+            <p class="en-text"><strong>Official vs. Market Rate:</strong> The official linked rate is fixed at 1 USD = 7.8 HKD. However, the actual rate in the foreign exchange market fluctuates due to supply and demand. The HKMA maintains the market rate within a band of 7.75 to 7.85 through Convertibility Undertakings.</p>
+        </div>
+        
+        <div class="math-block">
+            <strong>Convertibility Zone (兌換保證範圍):</strong><br>
+            7.75 HKD (Strong / 強方) &nbsp; \(\le\) &nbsp; Market Rate (市場匯率) &nbsp; \(\le\) &nbsp; 7.85 HKD (Weak / 弱方)
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div style="font-size: 1.2em; margin-bottom: 20px;">
+        正確答案 / Correct Answer: <strong class="correct-label">Option C</strong>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="bilingual-group">
+            <p class="zh-text"><span class="wrong-label">陳述 (1) 錯誤：</span>港元鈔票僅由<strong>美元 (US Dollar)</strong> 十足支持，並不包括人民幣。雖然香港與內地經濟關係密切，但聯繫匯率的錨定貨幣(Anchor currency)只有美元。</p>
+            <p class="en-text"><span class="wrong-label">Statement (1) is Incorrect:</span> HKD banknotes are fully backed by the <strong>US Dollar</strong> only, NOT Renminbi. Although HK has close economic ties with Mainland China, the sole anchor currency of the LERS is the USD.</p>
+        </div>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <div class="bilingual-group">
+            <p class="zh-text"><span class="correct-label">陳述 (2) 正確：</span>為了維持市場對港元的信心，並隨時應付資金流出，香港金融管理局必須持有龐大且相當數量的外匯儲備。</p>
+            <p class="en-text"><span class="correct-label">Statement (2) is Correct:</span> To maintain market confidence in the HKD and to accommodate capital outflows at any time, the HKMA must hold a massive and considerable amount of foreign exchange reserves.</p>
+        </div>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <div class="bilingual-group">
+            <p class="zh-text"><span class="correct-label">陳述 (3) 正確：</span>發鈔銀行（滙豐、渣打、中銀）有權利及義務按 7.8 港元兌 1 美元的固定聯繫匯率，與金管局進行美元與港元的結算和兌換。</p>
+            <p class="en-text"><span class="correct-label">Statement (3) is Correct:</span> Note-issuing banks (HSBC, Standard Chartered, BOC) have the right and obligation to clear and exchange USD and HKD with the HKMA at the fixed linked rate of 7.8 HKD to 1 USD.</p>
+        </div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="bilingual-group">
+            <p class="zh-text"><span class="wrong-label">陳述 (4) 錯誤：</span>注意「外匯市場」這個字眼。在自由的<strong>外匯市場</strong>上，港元兌美元的匯率會浮動，並非絕對固定，而是被限制在 7.75 至 7.85 的區間內。</p>
+            <p class="en-text"><span class="wrong-label">Statement (4) is Incorrect:</span> Pay attention to the phrase "foreign exchange market". In the free <strong>foreign exchange market</strong>, the exchange rate of HKD to USD fluctuates and is not absolutely fixed; rather, it is confined within the Convertibility Zone of 7.75 to 7.85.</p>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-group">
+        <p class="zh-text"><strong>破題關鍵 (Pivot Point)：</strong>這條題目的核心在於區分「制度規定」與「市場實際運作」。學生必須清楚知道支持港元的唯一外幣是甚麼，以及「官方匯率」與「市場匯率」的分別。</p>
+        <p class="en-text"><strong>Pivot Point:</strong> The core of this question lies in distinguishing between "institutional rules" and "actual market operations". Students must know the exact foreign currency backing the HKD, and the difference between the "official rate" and the "market rate".</p>
+    </div>
+    <div class="bilingual-group">
+        <p class="zh-text"><strong>干擾項 (Distractors)：</strong>陳述(1)加入「人民幣」來混淆視聽；陳述(4)利用「聯繫」二字讓學生誤以為市場匯率也是一條直線「固定」不變的。</p>
+        <p class="en-text"><strong>Distractors:</strong> Statement (1) introduces "Renminbi" to confuse students. Statement (4) uses the concept of being "linked" to trick students into thinking the market rate is a "fixed" straight line with no movement.</p>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <div class="bilingual-group">
+            <p class="zh-text">⚠️ <strong>致命陷阱：混淆官方定價與市場價格</strong><br>
+            很多學生以為「聯繫匯率=固定匯率=市場匯率永遠是 7.8」。這是錯誤的！只有發鈔銀行與金管局交收時才必定是 7.8。一般市民或企業在外匯市場買賣美元時，匯率是由供求決定的（但不會跌出 7.75 - 7.85 區間）。</p>
+            <p class="en-text">⚠️ <strong>Fatal Trap: Confusing Official Price with Market Price</strong><br>
+            Many students think "Linked Rate = Fixed Rate = Market Rate is always 7.8". This is wrong! The rate is strictly 7.8 ONLY when note-issuing banks deal with the HKMA. When the general public trades USD in the forex market, the rate is determined by demand and supply (though bounded within 7.75 - 7.85).</p>
+        </div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>🙋‍♂️ 學生問：</strong>為什麼金管局要容許市場匯率在 7.75 至 7.85 之間波動，而不是直接鎖定在 7.8 呢？</p>
+            <p class="en-text"><strong>🙋‍♂️ Student Asks:</strong> Why does the HKMA allow the market rate to fluctuate between 7.75 and 7.85 instead of locking it exactly at 7.8?</p>
+        </div>
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>💡 導師答：</strong>容許輕微的波幅可以為銀行間的資金流動提供緩衝空間（Buffer），減少金管局需要頻繁干預市場的次數，同時亦能讓銀行透過套戥（Arbitrage）活動自然地將匯率推回中心點。</p>
+            <p class="en-text"><strong>💡 Tutor Answers:</strong> Allowing a slight fluctuation provides a buffer for interbank fund flows, reducing the need for the HKMA to frequently intervene in the market. It also allows banks to naturally push the exchange rate back towards the center through arbitrage activities.</p>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <div class="bilingual-group">
+            <p class="zh-text"><strong>🎯 刪去法 (Process of Elimination)：</strong><br>
+            在DSE多項選擇題中，一旦你確定某個陳述是100%錯誤的，立刻劃掉包含該選項的答案。<br>
+            1. 讀到陳述(1)有「人民幣」，立刻判定為錯。<br>
+            2. 刪去選項 A 和 B（因為它們包含(1)）。<br>
+            3. 剩下選項 C (2,3) 和 D (3,4)。兩者都有(3)，所以(3)必定正確，不用再花時間思考。<br>
+            4. 比較(2)和(4)。(4)說市場匯率是「固定」的，明顯錯誤。因此答案必定是 C。</p>
+            <p class="en-text"><strong>🎯 Process of Elimination:</strong><br>
+            In DSE MCQs, once you are certain a statement is 100% wrong, eliminate the options containing it immediately.<br>
+            1. Read Statement (1) and spot "Renminbi". It's instantly wrong.<br>
+            2. Eliminate Options A and B (since they contain 1).<br>
+            3. You are left with C (2,3) and D (3,4). Both have (3), so (3) must be correct. Don't waste time analyzing it.<br>
+            4. Compare (2) and (4). Statement (4) says the market rate is "fixed", which is wrong. Therefore, the answer must be C.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

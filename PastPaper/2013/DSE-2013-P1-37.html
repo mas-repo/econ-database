@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Exchange Rates & Elasticity</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #0ea5e9;
+            --secondary-light: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --success: #16a34a;
+            --success-light: #dcfce7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --warning: #ca8a04;
+            --warning-light: #fef9c3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .english {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 2px solid #cbd5e1;
+        }
+
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-light);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .option-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .option-card.correct {
+            background-color: var(--success-light);
+            border-color: var(--success);
+        }
+
+        .option-card.wrong {
+            background-color: var(--danger-light);
+            border-color: var(--danger);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .status-badge.correct { background-color: var(--success); }
+        .status-badge.wrong { background-color: var(--danger); }
+
+        .tips-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f4f4f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q { font-weight: bold; color: var(--primary); }
+        .qa-a { margin-top: 10px; }
+
+        @media (max-width: 600px) {
+            .content, header { padding: 20px; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HKDSE Economics Tutor</h1>
+        <div class="tags">
+            <span class="tag">Topic: Macroeconomics - Exchange Rates & Trade</span>
+            <span class="tag">Difficulty: ⭐⭐⭐⭐ (4/5)</span>
+            <span class="tag">Key Concepts: Currency Appreciation, Import Value, Elasticity</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>1. The Question (題目)</h2>
+        <div class="question-box">
+            <p><strong>[中文版]</strong> 相對於其貿易伙伴的貨幣，某國的貨幣升值。若該國對進口的需求屬_______，貨幣升值會令進口總值（以本國貨幣計算）___________。</p>
+            <p>
+                A. 單一彈性 … 上升<br>
+                B. 低彈性 … 上升<br>
+                C. 高彈性 … 下跌<br>
+                D. 低彈性 … 下跌
+            </p>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+            <p class="english" style="border: none; padding: 0; margin: 0; color: #4b5563;">
+                <strong>[English]</strong> A country’s currency appreciates against its trading partners' currencies. If the country's demand for imports is _______, the appreciation of its currency will lead to _______ in the total import value (in terms of domestic currency).
+            </p>
+            <p class="english" style="border: none; padding: 0; margin-top: 10px;">
+                A. unitarily elastic … a rise<br>
+                B. inelastic … a rise<br>
+                C. elastic … a fall<br>
+                D. inelastic … a fall
+            </p>
+        </div>
+
+        <h2>2. Concept Review (概念重溫)</h2>
+        <div class="concept-box">
+            <h3>Currency Appreciation (貨幣升值)</h3>
+            <p>當本國貨幣升值，意味著用相同數量的本國貨幣可以兌換更多的外國貨幣。因此，以<strong>本國貨幣計算的進口價格 \(P\) 會下降</strong>。</p>
+            <p class="english">When the domestic currency appreciates, it means the same amount of domestic currency can exchange for more foreign currency. Therefore, <strong>the price of imports in terms of domestic currency \(P\) falls</strong>.</p>
+            
+            <h3>Total Value & Elasticity (總值與彈性)</h3>
+            <p>進口總值 (Total Import Value, \(TV\)) 取決於進口物品的價格 \(P\) 和需求量 \(Q\)。</p>
+            <p class="english">Total Import Value (\(TV\)) depends on the price of imports \(P\) and the quantity demanded \(Q\).</p>
+            
+            <div class="math-block">
+                $$TV = P \times Q$$
+            </div>
+
+            <p>當價格 \(P\) 下降時，根據需求定律，需求量 \(Q\) 會上升。但 \(TV\) 最終上升還是下跌，取決於<strong>需求價格彈性 \(E_d\)</strong>：</p>
+            <p class="english">When price \(P\) falls, according to the law of demand, quantity demanded \(Q\) rises. However, whether \(TV\) ultimately rises or falls depends on the <strong>price elasticity of demand \(E_d\)</strong>:</p>
+
+            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li><strong>高彈性 Elastic (\(E_d > 1\)):</strong> \(%\Delta Q > %\Delta P\)。\(Q\) 增加的百分比大於 \(P\) 下降的百分比，<strong>\(TV\) 上升</strong>。</li>
+                <li><strong>低彈性 Inelastic (\(E_d < 1\)):</strong> \(%\Delta Q < %\Delta P\)。\(Q\) 增加的百分比小於 \(P\) 下降的百分比，<strong>\(TV\) 下跌</strong>。</li>
+                <li><strong>單一彈性 Unitarily Elastic (\(E_d = 1\)):</strong> \(%\Delta Q = %\Delta P\)。<strong>\(TV\) 不變</strong>。</li>
+            </ul>
+        </div>
+
+        <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p><strong>Correct Option / 正確答案: <span style="color: var(--primary); font-size: 1.2rem;">D</span></strong></p>
+
+        <div class="option-card wrong">
+            <span class="status-badge wrong">Option A - 錯誤 (Incorrect)</span>
+            <p>若需求屬<strong>單一彈性</strong>，價格下跌的百分比等於需求量上升的百分比，進口總值應<strong>維持不變</strong>，而非上升。</p>
+            <p class="english">If demand is <strong>unitarily elastic</strong>, the percentage fall in price equals the percentage rise in quantity demanded. The total import value should remain <strong>unchanged</strong>, not rise.</p>
+        </div>
+
+        <div class="option-card wrong">
+            <span class="status-badge wrong">Option B - 錯誤 (Incorrect)</span>
+            <p>若需求屬<strong>低彈性</strong>，價格下跌（主導因素）的百分比大於需求量上升的百分比，進口總值應<strong>下跌</strong>，而非上升。</p>
+            <p class="english">If demand is <strong>inelastic</strong>, the percentage fall in price (the dominant factor) is greater than the percentage rise in quantity demanded. The total import value should <strong>fall</strong>, not rise.</p>
+        </div>
+
+        <div class="option-card wrong">
+            <span class="status-badge wrong">Option C - 錯誤 (Incorrect)</span>
+            <p>若需求屬<strong>高彈性</strong>，需求量上升（主導因素）的百分比大於價格下跌的百分比，進口總值應<strong>上升</strong>，而非下跌。</p>
+            <p class="english">If demand is <strong>elastic</strong>, the percentage rise in quantity demanded (the dominant factor) is greater than the percentage fall in price. The total import value should <strong>rise</strong>, not fall.</p>
+        </div>
+
+        <div class="option-card correct">
+            <span class="status-badge correct">Option D - 正確 (Correct)</span>
+            <p>本國貨幣升值導致以本國貨幣計算的進口價格下跌。若需求屬<strong>低彈性</strong>，由於價格下跌的幅度大於需求量增加的幅度，進口總值必然<strong>下跌</strong>。完全符合題目描述。</p>
+            <p class="english">The appreciation of domestic currency leads to a fall in import prices in terms of domestic currency. If demand is <strong>inelastic</strong>, since the magnitude of the price fall is greater than the magnitude of the quantity increase, total import value must <strong>fall</strong>. This perfectly matches the statement.</p>
+        </div>
+
+        <h2>4. Problem Decomposition (題目拆解)</h2>
+        <p>遇到這類題目，我們需要採取「兩步走」的策略：</p>
+        <p class="english">When encountering this type of question, we need to adopt a "two-step" strategy:</p>
+
+        <ol style="margin-left: 20px; margin-bottom: 15px;">
+            <li><strong>Pivot Point 1 (關鍵點 1):</strong> 找出價格 \(P\) 的變化方向。<br>
+                貨幣升值 \(\rightarrow\) 進口貨品相對變平 \(\rightarrow\) <strong>\(P\) 下跌</strong>。<br>
+                <span class="english" style="display: block; margin-top: 5px; margin-bottom: 10px; border-left: none; padding-left: 0;">Find the direction of change in price \(P\).<br>Currency appreciates \(\rightarrow\) Imports become relatively cheaper \(\rightarrow\) <strong>\(P\) falls</strong>.</span>
+            </li>
+            <li><strong>Pivot Point 2 (關鍵點 2):</strong> 根據總收益/總值與彈性的關係配對。<br>
+                既然已知 \(P \downarrow\)，我們只需將不同彈性代入，檢查 \(TV\) 的變化方向是否與選項吻合。<br>
+                <span class="english" style="display: block; margin-top: 5px; margin-bottom: 10px; border-left: none; padding-left: 0;">Match it with the relationship between Total Value and Elasticity.<br>Since we know \(P \downarrow\), we just plug in different elasticities to check if the change in \(TV\) matches the options.</span>
+            </li>
+        </ol>
+
+        <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="tips-box">
+            <h3>計價貨幣的陷阱 (The Denomination Currency Trap)</h3>
+            <p>很多同學沒有仔細閱讀括號內的<strong>「以本國貨幣計算」</strong>(in terms of domestic currency)。</p>
+            <p class="english">Many students fail to carefully read the bracketed text <strong>"in terms of domestic currency"</strong>.</p>
+            
+            <p>如果題目問的是「以外國貨幣計算」(in terms of foreign currency)：外幣計價的進口價格 \(P_m\) 是<strong>不變的</strong>。因為本幣升值，進口數量 \(Q_m\) 增加。在 \(P_m\) 不變而 \(Q_m\) 上升的情況下，以外幣計算的進口總值<strong>必然上升</strong>，這與需求彈性完全無關！</p>
+            <p class="english">If the question asked "in terms of foreign currency": The import price in foreign currency \(P_m\) remains <strong>constant</strong>. Because the domestic currency appreciates, the quantity of imports \(Q_m\) increases. With \(P_m\) constant and \(Q_m\) rising, the total import value in foreign currency <strong>must rise</strong>, regardless of the elasticity of demand!</p>
+        </div>
+
+        <h2>6. Student Q&A (學生常見疑問)</h2>
+        <div class="qa-box">
+            <p class="qa-q">Q: 為什麼貨幣升值會令進口價格 (以本國貨幣計算) 下跌？</p>
+            <p class="english" style="margin-bottom: 10px;">Q: Why does currency appreciation cause the price of imports (in terms of domestic currency) to fall?</p>
+            
+            <p class="qa-a"><strong>A:</strong> 想像一下，假設原本 8 港元兌換 1 美元。一件 10 美元的美國進口貨，在香港的售價（本幣計算）是 80 港元。如果港元升值到 7 港元兌換 1 美元，同樣一件 10 美元的貨物，現在只需要 70 港元就能買到。所以，價格 \(P\) 下跌了。</p>
+            <p class="english"><strong>A:</strong> Imagine initially 8 HKD exchanges for 1 USD. A $10 USD imported good from the US costs 80 HKD in Hong Kong (domestic currency). If the HKD appreciates to 7 HKD for 1 USD, the exact same $10 USD good now only costs 70 HKD. Therefore, the price \(P\) has fallen.</p>
+        </div>
+
+        <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>口訣記憶法 (Mnemonic Trick):</strong> 處理價格下跌的情況時，記住「同向低彈，反向高彈」。</p>
+        <p class="english"><strong>Mnemonic Trick:</strong> When dealing with a price decrease, remember "Same direction = Inelastic, Opposite direction = Elastic".</p>
+        
+        <ul style="margin-left: 20px;">
+            <li>如果價格下跌 \(P \downarrow\)，總值也下跌 \(TV \downarrow\) (兩者同方向) \(\rightarrow\) 必然是<strong>低彈性 (Inelastic)</strong>。一看選項 D，完美契合！</li>
+            <li class="english">If Price falls \(P \downarrow\), and Total Value also falls \(TV \downarrow\) (both move in the same direction) \(\rightarrow\) It must be <strong>Inelastic</strong>. Looking at Option D, it's a perfect match!</li>
+            
+            <li style="margin-top: 10px;">如果價格下跌 \(P \downarrow\)，總值卻上升 \(TV \uparrow\) (兩者反方向) \(\rightarrow\) 必然是<strong>高彈性 (Elastic)</strong>。選項 C 寫成了下跌，所以錯。</li>
+            <li class="english">If Price falls \(P \downarrow\), but Total Value rises \(TV \uparrow\) (they move in opposite directions) \(\rightarrow\) It must be <strong>Elastic</strong>. Option C says "a fall", so it's wrong.</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

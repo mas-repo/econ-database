@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Quantity Theory of Money</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --warning: #f59e0b;
+            --warning-light: #fdfbf7;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid var(--gray-bg);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            margin: 4px;
+        }
+        .question-box {
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .mistake-box {
+            background-color: var(--danger-light);
+            border-left: 5px solid var(--danger);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .trick-box {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .analysis-step:last-child {
+            border-bottom: none;
+        }
+        .correct-ans {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>📊 經濟學試題解析 | Economics Question Analysis</h1>
+        <div>
+            <span class="badge">Topic: Quantity Theory of Money (貨幣量理論)</span>
+            <span class="badge" style="background-color: #8b5cf6;">Difficulty: ★★★☆☆</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> Quantity Equation of Exchange, Nominal vs. Real Output, Percentage Change Approximation
+        </div>
+    </div>
+
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <p>某經濟的實質產出有所增長，其增長率較貨幣供應的增長率為低。根據貨幣量理論，我們可得出結論如下：</p>
+            <p class="en-text">The real output of an economy grows at a lower rate than the money supply. According to the quantity theory of money, we can conclude that</p>
+        </div>
+        
+        <div class="bilingual">
+            <p>(1) 物價水平正上升。</p>
+            <p class="en-text">(1) the price level is increasing.</p>
+        </div>
+        <div class="bilingual">
+            <p>(2) 失業率正下降。</p>
+            <p class="en-text">(2) the unemployment rate is decreasing.</p>
+        </div>
+        <div class="bilingual">
+            <p>(3) 貨幣流通速率正下降。</p>
+            <p class="en-text">(3) the velocity of circulation of money is decreasing.</p>
+        </div>
+        <div class="bilingual">
+            <p>(4) 名義產出正上升。</p>
+            <p class="en-text">(4) The nominal output is increasing.</p>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <p>A. 只有(1)、(2) &nbsp;&nbsp; <span class="en-text">| (1) and (2) only</span></p>
+            <p>B. 只有(1)、(4) &nbsp;&nbsp; <span class="en-text">| (1) and (4) only</span></p>
+            <p>C. 只有(2)、(3) &nbsp;&nbsp; <span class="en-text">| (2) and (3) only</span></p>
+            <p>D. 只有(3)、(4) &nbsp;&nbsp; <span class="en-text">| (3) and (4) only</span></p>
+        </div>
+    </div>
+
+    <h2>💡 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>貨幣量理論 (Quantity Theory of Money)</h3>
+        <p>這理論的核心是<strong>交易方程式 (Equation of Exchange)</strong>，它展示了貨幣供應與經濟產出之間的關係。</p>
+        <p class="en-text">The core of this theory is the <strong>Equation of Exchange</strong>, which shows the relationship between money supply and economic output.</p>
+        
+        <div class="math-block">
+            $$M \times V = P \times Y$$
+        </div>
+        
+        <ul>
+            <li>\(M\) = 貨幣供應量 (Money Supply)</li>
+            <li>\(V\) = 貨幣流通速率 (Velocity of circulation of money)</li>
+            <li>\(P\) = 物價水平 (Price Level)</li>
+            <li>\(Y\) = 實質產出 / 實質 GDP (Real Output / Real GDP)</li>
+            <li>\(P \times Y\) = 名義產出 / 名義 GDP (Nominal Output)</li>
+        </ul>
+
+        <p>在應付增長率的題目時，我們通常會將方程式轉換為<strong>百分比變動 (Percentage Change)</strong>形式：</p>
+        <p class="en-text">When dealing with growth rate questions, we usually convert the equation into its <strong>Percentage Change</strong> form:</p>
+        
+        <div class="math-block">
+            $$\% \Delta M + \% \Delta V = \% \Delta P + \% \Delta Y$$
+        </div>
+
+        <p><strong>⚠️ 關鍵假設 (Crucial Assumption):</strong> 根據古典貨幣量理論，貨幣流通速率 (\(V\)) 在短期內被假設為<strong>固定不變 (constant)</strong>。因此，\(\% \Delta V = 0\)。</p>
+        <p class="en-text"><strong>⚠️ Crucial Assumption:</strong> According to the classical quantity theory of money, the velocity of circulation (\(V\)) is assumed to be <strong>constant</strong> in the short run. Therefore, \(\% \Delta V = 0\).</p>
+    </div>
+
+    <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-ans">
+        正確答案 / Correct Option: B
+    </div>
+
+    <div class="analysis-step">
+        <h3>分析 (1) 物價水平正上升 / the price level is increasing</h3>
+        <p><strong>正確 (True)。</strong> 根據題目，實質產出有增長 (\(\% \Delta Y > 0\))，且貨幣供應增長率大於實質產出增長率 (\(\% \Delta M > \% \Delta Y\))。代入公式：\(\% \Delta M + 0 = \% \Delta P + \% \Delta Y\)。重組後得出 \(\% \Delta P = \% \Delta M - \% \Delta Y\)。由於 \(\% \Delta M\) 大於 \(\% \Delta Y\)，\(\% \Delta P\) 必定大於零。因此物價水平上升。</p>
+        <p class="en-text"><strong>True.</strong> Given that real output grows (\(\% \Delta Y > 0\)) and money supply grows faster than real output (\(\% \Delta M > \% \Delta Y\)). Using the formula: \(\% \Delta M + 0 = \% \Delta P + \% \Delta Y\). Rearranging gives \(\% \Delta P = \% \Delta M - \% \Delta Y\). Since \(\% \Delta M\) is greater than \(\% \Delta Y\), \(\% \Delta P\) must be greater than zero. Thus, the price level increases.</p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>分析 (2) 失業率正下降 / the unemployment rate is decreasing</h3>
+        <p><strong>無法得出結論 (Cannot conclude)。</strong> 貨幣量理論主要探討貨幣、物價與產出之間的關係，並不直接推導出失業率的變化。雖然產出增加可能代表就業改善，但如果勞動人口增長更快，或科技進步導致生產力上升，失業率仍可能上升。因此這不是理論的必然結論。</p>
+        <p class="en-text"><strong>Cannot conclude.</strong> The QTM focuses on the relationship between money, prices, and output; it does not directly predict changes in the unemployment rate. While output growth might imply improved employment, if the labor force grows faster or if technological advances boost productivity, unemployment could still rise. It is not a definite conclusion of this theory.</p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>分析 (3) 貨幣流通速率正下降 / the velocity of circulation of money is decreasing</h3>
+        <p><strong>錯誤 (False)。</strong> 貨幣量理論的一個基本前提是假設貨幣流通速率 (\(V\)) 保持不變 (\(\% \Delta V = 0\))。我們不能得出它正在下降的結論，否則就違背了運用此理論的前提。</p>
+        <p class="en-text"><strong>False.</strong> A fundamental premise of applying the QTM is assuming that the velocity of money (\(V\)) is constant (\(\% \Delta V = 0\)). We cannot conclude it is decreasing; doing so would contradict the premise used to apply the theory.</p>
+    </div>
+
+    <div class="analysis-step">
+        <h3>分析 (4) 名義產出正上升 / The nominal output is increasing</h3>
+        <p><strong>正確 (True)。</strong> 名義產出等於 \(P \times Y\)。其增長率為 \(\% \Delta (PY) = \% \Delta P + \% \Delta Y\)。因為我們在(1)已知 \(\% \Delta P > 0\)，且題目給定 \(\% \Delta Y > 0\)，兩者皆為正數，相加必然大於零。另一種看法：因為 \(\% \Delta M > 0\) 且 \(V\) 不變，總支出 (\(MV\)) 上升，必然等於名義產出 (\(PY\)) 上升。</p>
+        <p class="en-text"><strong>True.</strong> Nominal output is \(P \times Y\). Its growth rate is \(\% \Delta (PY) = \% \Delta P + \% \Delta Y\). Since we know from (1) that \(\% \Delta P > 0\), and the question states \(\% \Delta Y > 0\), their sum must be positive. Alternatively: since \(\% \Delta M > 0\) and \(V\) is constant, total spending (\(MV\)) increases, which means nominal output (\(PY\)) must identically increase.</p>
+    </div>
+
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <p>這類題目的「破題點 (Pivot Point)」在於將文字轉化為數學不等式：</p>
+    <p class="en-text">The "Pivot Point" of this question lies in translating the text into mathematical inequalities:</p>
+    <ul>
+        <li>"實質產出有所增長" ➔ \(\% \Delta Y > 0\)</li>
+        <li>"較貨幣供應的增長率為低" ➔ \(\% \Delta M > \% \Delta Y\)</li>
+    </ul>
+    <p>將這兩個條件結合，我們立刻知道 \(\% \Delta M > 0\) 且 \(\% \Delta M\) 的力量足以覆蓋 \(\% \Delta Y\)，導致物價必須上升來平衡方程式。</p>
+
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="mistake-box">
+        <h4>陷阱一：混淆「名義產出」與「實質產出」 (Confusing Nominal and Real Output)</h4>
+        <p>同學常忘記 名義產出 (\(Nominal\ Output\)) = \(P \times Y\)。題目只給了實質產出 \(Y\) 的資訊，你必須先推導出 \(P\) 的變化，才能判斷 \(PY\) 的最終走向。</p>
+        
+        <h4>陷阱二：忘記 V 是常數 (Forgetting V is constant)</h4>
+        <p>看到等式兩邊不平衡，有些同學會誤以為是 \(V\) 下降來抵消 \(M\) 的增長。但在 DSE 經濟科中，「根據貨幣量理論」這句話就暗示了你要假設 \(V\) 為常數來進行推論。</p>
+    </div>
+
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 點解失業率 (Unemployment rate) 一定計唔到？經濟好咗唔係應該少啲人失業咩？</p>
+        <p class="qa-q en-text">Q: Why can't we determine the unemployment rate? Doesn't economic growth mean lower unemployment?</p>
+        <p>A: 雖然現實中經濟增長（實質產出上升）通常伴隨失業率下降（這被稱為奧肯法則 Okun's Law），但這<strong>不是</strong>「貨幣量理論」的結論。題目明確問「根據貨幣量理論，我們可得出結論如下...」，該理論沒有包含勞動市場的變數。考試時必須嚴格遵守題目指定的理論框架。</p>
+        <p class="en-text">A: While in reality, economic growth is often accompanied by lower unemployment (known as Okun's Law), this is <strong>not</strong> a conclusion drawn from the Quantity Theory of Money. The question specifically asks what we can conclude "According to the quantity theory of money...", which doesn't include labor market variables. You must strictly adhere to the theoretical framework specified in the exam.</p>
+    </div>
+
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <p><strong>秒殺法 (The Elimination Method):</strong></p>
+        <ol>
+            <li>一看題目問「根據貨幣量理論」，立刻聯想假設：\(V\) 不變。所以 (3) 說 \(V\) 下降一定是錯的。直接劃掉包含 (3) 的選項 C 和 D。</li>
+            <li>現在剩下 A (1,2) 和 B (1,4)。這表示 (1) 必定是對的，不用浪費時間計！</li>
+            <li>我們只需判斷 (2) 還是 (4) 對。(2) 講失業率，超出了貨幣量理論的範圍 (Out of syllabus for this specific equation)。(4) 講名義產出 (\(PY\))，由 \(MV=PY\) 可知，\(M\) 升、\(V\) 不變，\(PY\) 必升。故 (4) 正確。答案是 B！</li>
+        </ol>
+        <p class="en-text">
+            <strong>Shortcut:</strong> <br>
+            1. "According to QTM" implies \(V\) is constant. Statement (3) is instantly FALSE. Eliminate options C and D. <br>
+            2. We are left with A(1,2) and B(1,4). This means statement (1) is automatically TRUE. No need to calculate it! <br>
+            3. Decide between (2) and (4). (2) is about unemployment (irrelevant to the equation). (4) is about nominal output (\(PY\)). Since \(M\) increases and \(V\) is constant, \(PY\) MUST increase. Statement (4) is TRUE. Answer is B!
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
