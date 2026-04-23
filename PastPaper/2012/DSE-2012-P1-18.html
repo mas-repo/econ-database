@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monopoly Analysis</title>
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --accent-blue: #0ea5e9;
+            --gray-bg: #f3f4f6;
+            --correct-green: #10b981;
+            --incorrect-red: #ef4444;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .question-box {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--accent-blue);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .option-correct {
+            border-left: 6px solid var(--correct-green);
+        }
+
+        .option-incorrect {
+            border-left: 6px solid var(--incorrect-red);
+        }
+
+        .zh-text {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid #ddd;
+        }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .qa-box {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-section { padding: 15px; }
+            .concept-box, .option-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📝 HKDSE Economics: Question Analysis</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> 壟斷與市場結構 (Monopoly & Market Structure)</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★☆☆☆ (2/5)</span>
+            <span class="tag"><strong>Key Concepts:</strong> 壟斷來源 (Sources), 利潤 (Profit), 風險 (Risk)</span>
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            <strong>若一廠商是某市場的壟斷者，</strong><br><br>
+            A. 它的壟斷能力可能來自政府。<br>
+            B. 它的回報會是正數。<br>
+            C. 它無需面對競爭。<br>
+            D. 它無需承擔風險。
+        </div>
+        <div class="en-text">
+            <strong>If a firm is a monopolist in a market,</strong><br><br>
+            A. its monopoly power may come from the government.<br>
+            B. its return will be positive.<br>
+            C. it faces no competition.<br>
+            D. it bears no risk.
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="zh-text"><strong>壟斷 (Monopoly) 的定義與特徵：</strong></div>
+        <div class="zh-text">壟斷是指市場上只有一個賣者（單一供應商），且其產品沒有極近的替代品（No close substitutes）。市場存在龐大的進入障礙（High barriers to entry）。</div>
+        <div class="en-text"><strong>Definition and Features of Monopoly:</strong><br>A monopoly exists when there is only one seller (single supplier) in the market, and its product has no close substitutes. There are high barriers to entry into the market.</div>
+        
+        <hr>
+
+        <div class="zh-text"><strong>壟斷的常見來源 (Sources of Monopoly Power)：</strong></div>
+        <ul>
+            <li><span class="zh-text">政府特許經營權或專利 (Government franchise or patents)</span> <br><span class="en-text">e.g., public utilities, patented drugs.</span></li>
+            <li><span class="zh-text">擁有重要資源 (Ownership of key resources)</span></li>
+            <li><span class="zh-text">規模經濟 / 自然壟斷 (Economies of scale / Natural monopoly)</span></li>
+        </ul>
+
+        <hr>
+
+        <div class="zh-text"><strong>利潤與回報 (Profit and Return)：</strong></div>
+        <div class="zh-text">廠商的利潤 $\pi$ 取決於總收入 ($TR$) 與總成本 ($TC$) 的差距。壟斷者雖然有定價能力，但若需求不足或成本過高，依然會面臨虧損。</div>
+        <div class="en-text">A firm's profit $\pi$ depends on the difference between Total Revenue ($TR$) and Total Cost ($TC$). Although a monopolist is a price searcher, it can still suffer losses if demand is insufficient or costs are too high.</div>
+        
+        <div class="math-block">
+            $$ \pi = TR - TC $$
+            <div class="zh-text" style="font-size: 0.85em; margin-top: 10px;">若 $TC > TR$ (或平均總成本 $ATC > P$)，廠商會錄得負回報（虧損）。</div>
+            <div class="en-text" style="font-size: 0.85em; margin-bottom: 0;">If $TC > TR$ (or Average Total Cost $ATC > P$), the firm records a negative return (loss).</div>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <div class="zh-text" style="font-size: 1.2em; margin-bottom: 20px;">正確答案 Correct Option: <strong>A</strong></div>
+
+    <div class="option-card option-correct">
+        <div class="zh-text"><strong>選項 A (正確): 它的壟斷能力可能來自政府。</strong></div>
+        <div class="zh-text"><strong>分析：</strong> 政府經常透過發放專利（Patents）、版權（Copyrights）或特許經營權（Franchises）來賦予廠商壟斷地位。例如香港的專利巴士服務或發明家的新藥專利。題目使用「可能 (may)」字眼，描述完全正確。</div>
+        <div class="en-text"><strong>Option A (Correct): its monopoly power may come from the government.</strong><br><strong>Analysis:</strong> The government often grants monopoly status to firms through patents, copyrights, or franchises. Examples include franchised bus services in Hong Kong or patents for new drugs. The use of the word "may" makes this statement factually accurate.</div>
+    </div>
+
+    <div class="option-card option-incorrect">
+        <div class="zh-text"><strong>選項 B (錯誤): 它的回報會是正數。</strong></div>
+        <div class="zh-text"><strong>分析：</strong> 壟斷者不保證必賺。即使市場只有一個賣者，如果消費者對該產品沒有需求，或者生產成本極高（導致 $ATC > P$），壟斷者依然會遭受虧損（負回報）。</div>
+        <div class="en-text"><strong>Option B (Incorrect): its return will be positive.</strong><br><strong>Analysis:</strong> A monopolist is not guaranteed a profit. Even as the sole seller, if there is no consumer demand for the product, or if production costs are excessively high (resulting in $ATC > P$), the monopolist will still suffer a loss (negative return).</div>
+    </div>
+
+    <div class="option-card option-incorrect">
+        <div class="zh-text"><strong>選項 C (錯誤): 它無需面對競爭。</strong></div>
+        <div class="zh-text"><strong>分析：</strong> 雖然壟斷者沒有「直接」的同業競爭者，但它仍需面對「間接」競爭（跨行業競爭）。因為消費者的收入是有限的，壟斷者必須與其他所有行業爭奪消費者的消費額（Competition for consumer's dollar）。</div>
+        <div class="en-text"><strong>Option C (Incorrect): it faces no competition.</strong><br><strong>Analysis:</strong> Although a monopolist has no "direct" competitors in the same industry, it still faces "indirect" competition (inter-industry competition). Because consumers' incomes are limited, the monopolist must compete with all other industries for the consumer's dollar.</div>
+    </div>
+
+    <div class="option-card option-incorrect">
+        <div class="zh-text"><strong>選項 D (錯誤): 它無需承擔風險。</strong></div>
+        <div class="zh-text"><strong>分析：</strong> 任何企業都需要承擔風險。壟斷者同樣面臨需求改變（如消費者口味轉變）、成本波動（如原材料價格上升）、技術淘汰或政府政策改變的風險。</div>
+        <div class="en-text"><strong>Option D (Incorrect): it bears no risk.</strong><br><strong>Analysis:</strong> Every business bears risk. A monopolist similarly faces risks such as changes in demand (e.g., shifting consumer tastes), cost fluctuations (e.g., rising raw material prices), technological obsolescence, or changes in government policies.</div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-color: #64748b;">
+        <div class="zh-text"><strong>解題樞紐 (The Pivot Point):</strong></div>
+        <div class="zh-text">這題的核心在於釐清「壟斷」的局限性。學生必須明白，市場結構（單一賣者）並不代表企業擁有「無敵」的經濟特權。</div>
+        <div class="en-text"><strong>The Pivot Point:</strong><br>The core of this question is clarifying the limitations of "monopoly." Students must understand that market structure (being a single seller) does not grant a firm "invincible" economic privileges.</div>
+        
+        <br>
+        <div class="zh-text"><strong>干擾項分析 (Distractor Analysis):</strong></div>
+        <div class="zh-text">B、C、D 選項全都是利用大眾對「壟斷」的刻板印象（以為壟斷=穩賺不賠、毫無壓力）來設置的陷阱。</div>
+        <div class="en-text"><strong>Distractor Analysis:</strong><br>Options B, C, and D are all traps set using the general public's stereotypes of "monopolies" (the assumption that monopoly = guaranteed profits and zero stress).</div>
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <div class="zh-text">🚨 <strong>觀念誤區：將「單一賣者」等同於「必定獲利」</strong></div>
+        <div class="zh-text">許多學生以為壟斷者可以隨意把價格定到天際高。事實上，壟斷者受制於<strong>市場需求定律 (Law of Demand)</strong>。價格越高，需求量越低。若產品根本無人問津，單一賣者也會破產。</div>
+        <div class="en-text">🚨 <strong>Misconception: Equating "Single Seller" with "Guaranteed Profit"</strong><br>Many students assume monopolists can set prices infinitely high. In reality, monopolists are constrained by the <strong>Law of Demand</strong>. The higher the price, the lower the quantity demanded. If no one wants the product, even a single seller will go bankrupt.</div>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="zh-text qa-q">Q1: 如果壟斷者虧損，為什麼它不直接加價來彌補虧損？</div>
+        <div class="en-text qa-q" style="margin-bottom: 10px;">Q1: If a monopolist is making a loss, why doesn't it just increase the price to cover the loss?</div>
+        
+        <div class="zh-text"><strong>A1:</strong> 根據需求定律，加價會導致需求量下降。如果該產品的需求屬彈性 (Elastic demand)，加價反而會令總收入 ($TR$) 減少，加劇虧損。壟斷者只能在需求曲線上尋找「利潤最大化」或「虧損最小化」的點，而不能無止境加價。</div>
+        <div class="en-text"><strong>A1:</strong> According to the law of demand, an increase in price leads to a decrease in quantity demanded. If the demand for the product is elastic, raising the price will actually decrease Total Revenue ($TR$), worsening the loss. A monopolist can only find the point of "profit maximization" or "loss minimization" on the demand curve; it cannot raise prices endlessly.</div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="concept-box" style="background-color: #f5f3ff; border-color: #8b5cf6;">
+        <div class="zh-text">💡 <strong>絕對字眼排除法 (Absolute Terms Elimination)</strong></div>
+        <div class="zh-text">在 DSE 經濟科的 MC 題目中，帶有絕對字眼的選項（如：「會是 (will be)」、「無需 (no)」、「必定 (must)」）通常是錯誤的，因為經濟學充滿變數。</div>
+        <div class="en-text"><strong>Absolute Terms Elimination:</strong><br>In DSE Economics MC questions, options containing absolute terms (like "will be," "no," "must") are usually incorrect because economics is full of variables.</div>
+        
+        <ul>
+            <li><span class="zh-text">B: "<strong>會是 (will be)</strong>" -> 忽略了虧損的可能。</span> <span class="en-text">B: "will be" -> ignores the possibility of loss.</span></li>
+            <li><span class="zh-text">C: "<strong>無需 (no)</strong>" -> 忽略了間接競爭。</span> <span class="en-text">C: "no" -> ignores indirect competition.</span></li>
+            <li><span class="zh-text">D: "<strong>無需 (no)</strong>" -> 忽略了市場風險。</span> <span class="en-text">D: "no" -> ignores market risks.</span></li>
+            <li><span class="zh-text">A: "<strong>可能 (may)</strong>" -> 保守且符合事實，通常是正確答案。</span> <span class="en-text">A: "may" -> conservative and factually correct, often the right answer.</span></li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Banking & Credit Creation</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1e293b;
+            --gray-text: #64748b;
+            --bg-gray: #f8fafc;
+            --math-bg: #f3f4f6;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+        .header-section {
+            background-color: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .bilingual-en {
+            color: var(--gray-text);
+            font-size: 0.95em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow-x: auto;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--bg-gray);
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--bg-gray);
+        }
+        .correct-opt {
+            border-left: 5px solid var(--correct-green);
+        }
+        .wrong-opt {
+            border-left: 5px solid var(--wrong-red);
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+        }
+        .badge.correct { background-color: var(--correct-green); }
+        .badge.wrong { background-color: var(--wrong-red); }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .trick-box {
+            background-color: #fce7f3;
+            border-left: 5px solid #ec4899;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            th, td { padding: 8px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HKDSE Economics Analysis 經濟學題目分析</h1>
+    <div class="header-section">
+        <p><strong>Topic (課題):</strong> Money and Banking - Credit Creation (貨幣與銀行 - 存款創造)</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐⭐ (Moderate 中等)</p>
+        <p><strong>Key Concepts (核心概念):</strong> Required Reserve Ratio (法定儲備比率), Excess Reserves (超額儲備), Maximum Deposits (最高存款額)</p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <p>下表顯示某銀行體系的資產負債表。</p>
+    <div class="bilingual-en">The table below shows the balance sheet of a banking system.</div>
+
+    <table>
+        <tr>
+            <th>資產 Assets ($ million)</th>
+            <th>負債 Liabilities ($ million)</th>
+        </tr>
+        <tr>
+            <td>儲備 Reserves: 400<br>貸款 Loans: 600</td>
+            <td>存款 Deposits: 1000</td>
+        </tr>
+    </table>
+
+    <p>假設該銀行體系的法定儲備比率是 25%。下列哪項陳述是正確的？</p>
+    <div class="bilingual-en">Suppose the required reserve ratio for the banking system is 25%. Which of the following statements is correct?</div>
+
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li><strong>A.</strong> 該銀行體系的超額儲備是200百萬元。<br><span class="bilingual-en">The excess reserves of the banking system are $200 million.</span></li>
+        <li><strong>B.</strong> 該銀行體系的實際銀行乘數是4。<br><span class="bilingual-en">The actual banking multiplier of the banking system is 4.</span></li>
+        <li><strong>C.</strong> 該銀行體系可擴大其總存款至1600百萬元。<br><span class="bilingual-en">The banking system can expand its total deposits to $1 600 million.</span></li>
+        <li><strong>D.</strong> 該銀行體系可製造的最大貸款額為1000百萬元。<br><span class="bilingual-en">The maximum amount of loans the banking system can make is $1 000 million.</span></li>
+    </ul>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要拆解這類資產負債表題目，我們必須熟記以下幾個核心公式與定義：</p>
+        <div class="bilingual-en">To tackle balance sheet questions like this, we must memorize the following core formulas and definitions:</div>
+
+        <p><strong>1. 法定儲備 (Required Reserves, \(RR\)):</strong> 銀行為滿足法定要求而必須保留的最低儲備額。</p>
+        <div class="bilingual-en">The minimum amount of reserves a bank must hold to meet the legal requirement.</div>
+        <div class="math-block">
+            $$ RR = \text{Deposits} \times \text{Required Reserve Ratio (rrr)} $$
+        </div>
+
+        <p><strong>2. 超額儲備 (Excess Reserves, \(ER\)):</strong> 實際儲備減去法定儲備的餘額，可用作借出新貸款。</p>
+        <div class="bilingual-en">The remaining reserves after deducting required reserves from actual reserves, which can be lent out.</div>
+        <div class="math-block">
+            $$ ER = \text{Actual Reserves} - RR $$
+        </div>
+
+        <p><strong>3. 最高存款額 (Maximum Deposits, \(D_{max}\)):</strong> 假設沒有現金流失且銀行借出所有超額儲備時，銀行體系能創造的最大存款總額。</p>
+        <div class="bilingual-en">The maximum total amount of deposits the banking system can create, assuming no cash leakage and banks lend out all excess reserves.</div>
+        <div class="math-block">
+            $$ D_{max} = \frac{\text{Actual Reserves}}{rrr} $$
+        </div>
+
+        <p><strong>4. 最高貸款額 (Maximum Loans, \(L_{max}\)):</strong> 系統創造最高存款時對應的貸款總額。</p>
+        <div class="bilingual-en">The total amount of loans corresponding to the maximum deposit creation.</div>
+        <div class="math-block">
+            $$ L_{max} = D_{max} - \text{Actual Reserves} $$
+        </div>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>正確答案是 / The correct option is: <strong>C</strong></p>
+
+    <div class="option wrong-opt">
+        <p><span class="badge wrong">Wrong</span> <strong>Option A</strong></p>
+        <p>目前的存款是 1000，法定儲備比率是 25%。法定儲備為 1000 × 25% = 250。由於實際儲備是 400，超額儲備 = 400 - 250 = 150（百萬元）。選項 A 稱超額儲備為 200，因此錯誤。</p>
+        <div class="bilingual-en">Current deposits are 1000, and the required reserve ratio is 25%. Required reserves = 1000 × 25% = 250. Since actual reserves are 400, excess reserves = 400 - 250 = 150 ($ million). Option A states 200, so it is incorrect.</div>
+    </div>
+
+    <div class="option wrong-opt">
+        <p><span class="badge wrong">Wrong</span> <strong>Option B</strong></p>
+        <p>「實際銀行乘數」取決於「實際儲備比率」，而不是法定儲備比率。實際儲備比率 = 400 / 1000 = 40%。因此，實際銀行乘數 = 1 / 40% = 2.5。若說乘數是 4，那是「最高銀行乘數」（1 / 25%）。選項 B 錯誤。</p>
+        <div class="bilingual-en">The "actual banking multiplier" depends on the "actual reserve ratio", not the required reserve ratio. Actual reserve ratio = 400 / 1000 = 40%. Thus, actual banking multiplier = 1 / 40% = 2.5. Stating the multiplier is 4 refers to the "maximum banking multiplier" (1 / 25%). Option B is incorrect.</div>
+    </div>
+
+    <div class="option correct-opt">
+        <p><span class="badge correct">Correct</span> <strong>Option C</strong></p>
+        <p>要尋找最高總存款額，我們用實際儲備除以法定儲備比率。最高存款 = 400 / 25% = 1600（百萬元）。題目指出銀行體系可將總存款擴大「至」1600，這是完全正確的描述。</p>
+        <div class="bilingual-en">To find the maximum total deposits, we divide actual reserves by the required reserve ratio. Maximum deposits = 400 / 25% = 1600 ($ million). The statement says the banking system can expand its total deposits "to" 1600, which is perfectly accurate.</div>
+    </div>
+
+    <div class="option wrong-opt">
+        <p><span class="badge wrong">Wrong</span> <strong>Option D</strong></p>
+        <p>由於整個銀行體系的實際儲備總額（400）在創造存款的過程中保持不變（假設沒有現金流失），最高貸款額 = 最高存款額 - 實際儲備 = 1600 - 400 = 1200（百萬元）。選項 D 稱最大貸款為 1000，因此錯誤。</p>
+        <div class="bilingual-en">Since the total actual reserves (400) in the banking system remain unchanged during deposit creation (assuming no cash leakage), maximum loans = maximum deposits - actual reserves = 1600 - 400 = 1200 ($ million). Option D states maximum loans are 1000, so it is incorrect.</div>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p>這道題目的<strong>「關鍵樞紐 (Pivot Point)」</strong>是<strong>實際儲備 (Actual Reserves) = 400</strong>。在整個存款創造的過程中，這個數字是「鎖死」的基礎。銀行能創造多少存款，完全取決於這個 400 能夠支撐多大的資產負債表。</p>
+    <div class="bilingual-en">The <strong>"Pivot Point"</strong> of this question is the <strong>Actual Reserves = 400</strong>. This figure is the "locked" foundation throughout the deposit creation process. How much deposit the banks can create depends entirely on how large a balance sheet this 400 can support.</div>
+    <br>
+    <p><strong>干擾資訊 (Distractors)：</strong>表中的「貸款：600」是一個干擾數字。在計算「最高存款」和「最高貸款」時，我們根本不需要使用目前的貸款數字，因為未來的最高貸款是由未來的最高存款減去儲備得出的。</p>
+    <div class="bilingual-en"><strong>Distractors:</strong> The "Loans: 600" in the table is a distracting figure. When calculating "maximum deposits" and "maximum loans", we don't need the current loan figure at all, because the future maximum loan is derived from the future maximum deposits minus reserves.</div>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <ul>
+        <li><strong>混淆「至 (to)」與「增加 (by)」：</strong> 考試常設語言陷阱。此題最高存款為 1600。如果選項寫「存款可擴大<strong>了</strong> 1600 (expand <strong>by</strong> 1600)」，那就是錯的。因為它是由 1000 擴大<strong>至</strong> 1600，即增加了 600。務必看清楚介詞！
+            <div class="bilingual-en"><strong>Confusing "to" and "by":</strong> A common language trap. The max deposit is 1600. If the option said "expand <strong>by</strong> 1600", it would be wrong, because it expands <strong>from</strong> 1000 <strong>to</strong> 1600 (an increase of 600). Always check the prepositions!</div>
+        </li>
+        <li><strong>最高貸款額的誤算：</strong> 很多同學會錯誤地用「最高存款額 × (1 - 法定儲備比率)」來計算個別銀行的最高貸款，但在整個銀行<strong>體系 (Banking System)</strong>中，最快的算法永遠是 `最高存款 - 實際儲備`。
+            <div class="bilingual-en"><strong>Miscalculating Maximum Loans:</strong> Many students mistakenly use "Max Deposits × (1 - rrr)" for the whole system. The fastest way for the entire <strong>Banking System</strong> is always `Max Deposits - Actual Reserves`.</div>
+        </li>
+    </ul>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>問 (Q):</strong> 為什麼在計算最高存款和最高貸款時，我們假設實際儲備維持在 400 百萬元不變？銀行借錢出去時，儲備不會減少嗎？</p>
+        <p class="bilingual-en"><strong>Q:</strong> Why do we assume actual reserves remain at $400 million when calculating maximums? Doesn't the reserve decrease when banks lend out money?</p>
+        
+        <p><strong>答 (A):</strong> 這是這課題最核心的假設：「無現金流失 (No cash leakage)」。當銀行 A 借出現金給顧客，顧客消費後，收到錢的商戶會將現金<strong>全數存回</strong>銀行 B。因此，現金只是在不同銀行之間流轉，整個銀行「體系」的總儲備 400 百萬元一分也沒有少！</p>
+        <p class="bilingual-en"><strong>A:</strong> This is the core assumption of this topic: "No cash leakage". When Bank A lends cash to a customer, and the customer spends it, the merchant who receives the cash will deposit it <strong>entirely back</strong> into Bank B. Therefore, cash just circulates among different banks; the total reserves of the banking "system" remain exactly at 400 million!</p>
+    </div>
+
+    <div class="trick-box">
+        <h2>💡 Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>「天花板速算法」(The Ceiling Method)</strong></p>
+        <p>在 MC 卷中爭分奪秒，一旦看到「法定儲備比率」(rrr = 25%) 和「總儲備」(R = 400)，不要浪費時間逐個計算。第一步直接計算銀行體系的「天花板」（最高存款額）：</p>
+        <p class="bilingual-en">When racing against time in Paper 1, once you spot "Required Reserve Ratio" (rrr = 25%) and "Total Reserves" (R = 400), don't calculate everything option by option. Instantly calculate the "Ceiling" (Maximum Deposits) of the system:</p>
+        
+        <div class="math-block" style="background: none; border: 1px solid #cbd5e1; display: inline-block; padding: 10px; margin-top: 5px;">
+            $$ D_{max} = \frac{400}{0.25} = 1600 $$
+        </div>
+        
+        <p>算完 1600，立刻掃視選項。你會發現選項 C 直接命中了這個數字！驗證一下用詞是「擴大至 (expand to)」，完全吻合，直接選 C，整個過程只需 15 秒！</p>
+        <p class="bilingual-en">After getting 1600, immediately scan the options. You'll see Option C hits this exact number! Verify the wording is "expand to" (which is correct), select C, and move on. Total time: 15 seconds!</p>
+    </div>
+
+</body>
+</html>

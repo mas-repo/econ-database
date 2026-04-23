@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Income Inequality</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #0ea5e9;
+            --bg-concept: #f0f9ff;
+            --bg-math: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 25px;
+        }
+
+        .header-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .stat-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .lang-section {
+            margin-bottom: 15px;
+        }
+
+        .lang-section:last-child {
+            margin-bottom: 0;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+        }
+
+        .concept-box {
+            background-color: var(--bg-concept);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--bg-math);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .correct-answer {
+            font-size: 1.2rem;
+            color: #16a34a;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #dcfce7;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .bilingual-text {
+            margin-bottom: 10px;
+        }
+
+        .eng-text {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trick-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .stat-badge {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-stats">
+        <span class="stat-badge">Topic: Income Inequality (收入不均)</span>
+        <span class="stat-badge">Difficulty: ⭐⭐ (2/5)</span>
+        <span class="stat-badge">Key Concepts: Wage Differentials, Human Capital, Discrimination</span>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="lang-section">
+            <p><strong>下列哪些是導致不同人之間收入不均的可能原因？</strong></p>
+            <p>(1) 種族的差異<br>
+               (2) 資本擁有權的差異<br>
+               (3) 健康的差異</p>
+            <p>A. 只有(1)、(2)<br>
+               B. 只有(1)、(3)<br>
+               C. 只有(2)、(3)<br>
+               D. (1)、(2)及(3)</p>
+        </div>
+        <div class="lang-section eng-text">
+            <p><strong>Which of the following are possible causes of income inequality among individuals?</strong></p>
+            <p>(1) difference in race<br>
+               (2) difference in capital ownership<br>
+               (3) difference in health</p>
+            <p>A. (1) and (2) only<br>
+               B. (1) and (3) only<br>
+               C. (2) and (3) only<br>
+               D. (1), (2) and (3)</p>
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p class="bilingual-text"><strong>收入的組成部分 (Components of Income)</strong><br>
+        在經濟學中，個人的總收入不僅僅來自工作獲得的薪金，還包括從資產中獲得的回報。要分析收入不均，我們必須了解收入的兩大主要來源：</p>
+        <p class="eng-text">In economics, an individual's total income is not solely derived from working wages but also includes returns from assets. To analyze income inequality, we must understand the two main sources of income:</p>
+        
+        <div class="math-block">
+            $$ \text{Total Income} = \text{Wage Income} (工資收入) + \text{Property Income} (財產收入) $$
+        </div>
+
+        <ul>
+            <li class="bilingual-text">
+                <strong>人力資本 (Human Capital):</strong> 包括教育、技術、經驗和<strong>健康</strong>。擁有較高人力資本的人（例如身體更健康、技術更高）通常有較高的生產力 $MPL$ (邊際勞力產品)，因此能賺取較高的工資收入。<br>
+                <span class="eng-text">Includes education, skills, experience, and <strong>health</strong>. Individuals with higher human capital (e.g., better health, higher skills) typically have higher productivity $MPL$ (Marginal Product of Labor), and thus earn higher wage income.</span>
+            </li>
+            <li class="bilingual-text">
+                <strong>資產/資本擁有權 (Asset/Capital Ownership):</strong> 資本（如房地產、股票、廠房）可以產生利息、股息和租金。擁有更多資本的人會獲得更多的財產收入。<br>
+                <span class="eng-text">Capital (e.g., real estate, stocks, factories) generates interest, dividends, and rent. Those who own more capital receive more property income.</span>
+            </li>
+            <li class="bilingual-text">
+                <strong>社會因素與歧視 (Social Factors & Discrimination):</strong> 勞動市場並非完美的。即使生產力相同，<strong>種族</strong>、性別或年齡等非經濟因素也可能導致同工不同酬，或影響獲得高薪職位的機會。<br>
+                <span class="eng-text">Labor markets are not perfect. Even with equal productivity, non-economic factors like <strong>race</strong>, gender, or age can lead to unequal pay for equal work or affect access to high-paying jobs.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-answer">
+        Correct Option: D
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-text"><strong>分析 (1) 種族的差異 (Difference in race) - 正確 / Correct</strong><br>
+        在現實世界的勞動市場中，種族歧視確實存在。某些少數族裔可能因為歧視而較難獲得高薪工作，或者在相同職位下獲得較低的薪酬。這會導致工資收入的差異。<br>
+        <span class="eng-text">In real-world labor markets, racial discrimination exists. Certain minority groups may find it harder to secure high-paying jobs or may receive lower wages for the same position due to discrimination. This leads to differences in wage income.</span></p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-text"><strong>分析 (2) 資本擁有權的差異 (Difference in capital ownership) - 正確 / Correct</strong><br>
+        不同人擁有的財富和資本數量不同。擁有大量資本（如物業收租、持有大量股票收息）的人，即使不工作，也能獲得龐大的財產收入，這是造成貧富懸殊（收入不均）的核心原因之一。<br>
+        <span class="eng-text">Different individuals own different amounts of wealth and capital. Those with massive capital (e.g., collecting rent from properties, earning dividends from stocks) can earn huge property income even without working. This is one of the core reasons for the wealth gap (income inequality).</span></p>
+    </div>
+
+    <div class="analysis-item">
+        <p class="bilingual-text"><strong>分析 (3) 健康的差異 (Difference in health) - 正確 / Correct</strong><br>
+        健康是人力資本的重要組成部分。健康狀況較差的人可能需要經常請病假、無法從事高體力勞動的職業、甚至提早退出勞動市場。這會直接降低他們的生產力和工作時數，從而減少工資收入。<br>
+        <span class="eng-text">Health is a vital component of human capital. People with poorer health may need to take frequent sick leave, be unable to take on physically demanding jobs, or even exit the labor market early. This directly reduces their productivity and working hours, thereby lowering their wage income.</span></p>
+    </div>
+
+    <p class="bilingual-text"><strong>結論 (Conclusion):</strong> 因為 (1)、(2) 和 (3) 皆為導致收入不均的合理原因，因此答案為 <strong>D</strong>。<br>
+    <span class="eng-text">Since (1), (2), and (3) are all logical causes of income inequality, the correct answer is <strong>D</strong>.</span></p>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <p class="bilingual-text"><strong>解題樞紐 (Pivot Point):</strong><br>
+    這道題目的關鍵在於對「收入 (Income)」的廣義理解，以及認識到勞動市場是不完美的。<br>
+    <span class="eng-text">The key to this question lies in a broad understanding of "Income" and the recognition that the labor market is imperfect.</span></p>
+    <ul>
+        <li class="bilingual-text">不要只把收入局限於「打工賺的錢」(工資)。看到選項(2)「資本」時，必須立刻聯想到「財產收入」。<br><span class="eng-text">Do not limit income strictly to "money earned from working" (wages). When you see option (2) "capital", you must immediately think of "property income".</span></li>
+        <li class="bilingual-text">不要假設經濟模型中的「完美市場」永遠成立。選項(1)「種族」提醒我們，市場外在的社會因素（如歧視）會扭曲價格（工資）。<br><span class="eng-text">Do not assume the "perfect market" in economic models always applies. Option (1) "race" reminds us that external social factors (like discrimination) distort prices (wages).</span></li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p class="bilingual-text"><strong>陷阱一：忽略非經濟因素 (Ignoring Non-Economic Factors)</strong><br>
+        許多學生在學習經濟學時，過度沉浸於供求模型，認為只有「勞工生產力」才會影響收入。他們會誤以為「種族」(1) 不屬於經濟學範疇而將其剔除。事實上，制度和社會歧視是勞動經濟學中解釋工資差異的重要課題。<br>
+        <span class="eng-text">Many students get overly immersed in supply and demand models and believe that ONLY "labor productivity" affects income. They mistakenly exclude "race" (1) thinking it's not an economic concept. In reality, institutional and social discrimination are major topics in labor economics explaining wage differentials.</span></p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="bilingual-text"><strong>Q: 健康差異 (3) 真的會導致收入不均嗎？難道公司可以因為員工生病就減薪？</strong><br>
+        <span class="eng-text">Q: Does difference in health (3) really cause income inequality? Can companies just cut pay because an employee is sick?</span></p>
+        <p class="bilingual-text"><strong>A:</strong> 會的。首先，很多工作（如兼職、散工或按件計酬的工作）是「多勞多得」的，健康差導致工時減少，收入自然減少。其次，長期健康不佳會影響一個人的升職機會、獲取新技能的能力，甚至迫使他們只能選擇較輕鬆但薪水較低的工作。<br>
+        <span class="eng-text">A: Yes. Firstly, many jobs (like part-time, casual labor, or piece-rate work) pay based on output or hours. Poor health leads to fewer working hours and thus lower income. Secondly, chronic poor health affects a person's chances for promotion, ability to acquire new skills, and might force them into less demanding but lower-paying jobs.</span></p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <p class="bilingual-text"><strong>速解法 (Common Sense Check):</strong><br>
+        對於這類「下列哪些是可能原因」的題目，只要該選項能在現實中合乎邏輯地找到一個例子，它通常就是正確的。<br>
+        <span class="eng-text">For questions asking "Which of the following are possible causes", as long as you can logically find a real-world example for an option, it is usually correct.</span></p>
+        <ul style="margin-top: 10px;">
+            <li>會因為膚色不同而同工不同酬嗎？會 (1 ✔️)</li>
+            <li>富二代靠收租賺得比普通打工仔多嗎？會 (2 ✔️)</li>
+            <li>經常生病的人會影響找高薪工作嗎？會 (3 ✔️)</li>
+        </ul>
+        <p class="bilingual-text">既然三個選項在常理下都說得通，直接選擇 D (1, 2 及 3) 是最穩妥和快速的策略。<br>
+        <span class="eng-text">Since all three options make sense under common logic, directly choosing D is the safest and fastest strategy.</span></p>
+    </div>
+</div>
+
+</body>
+</html>
