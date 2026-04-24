@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics - Money Supply Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --accent: #0d9488;
+            --warning: #f59e0b;
+            --success: #166534;
+            --bg-light: #f8fafc;
+        }
+        body { 
+            font-family: 'Segoe UI', "Microsoft JhengHei", "PingFang HK", Tahoma, Geneva, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f1f5f9; 
+        }
+        h1, h2, h3 { color: var(--primary); margin-bottom: 0.5em; }
+        p { margin-top: 0; }
+        
+        .header-box { background-color: #e0f2fe; border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 4px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .question-box { background-color: #fff; border: 1px solid #e2e8f0; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .concept-box { background-color: #f0fdfa; border-left: 5px solid var(--accent); padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .analysis-box { background-color: #fff; border: 1px solid #e2e8f0; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .tips-box { background-color: #fffbeb; border-left: 5px solid var(--warning); padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .qa-box { background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 25px; border-radius: 8px; margin-bottom: 25px; }
+        
+        .math-block { background-color: #e5e7eb; padding: 15px; border-radius: 6px; text-align: center; margin: 15px 0; font-size: 1.1em; overflow-x: auto; }
+        
+        .correct-ans { color: var(--success); font-weight: bold; font-size: 1.3em; background-color: #dcfce7; padding: 8px 15px; border-radius: 6px; display: inline-block; margin-bottom: 15px; border: 1px solid #bbf7d0; }
+        
+        .zh { font-weight: 500; margin-bottom: 6px; color: #1f2937; }
+        .en { color: #4b5563; font-size: 0.95em; margin-bottom: 20px; border-left: 3px solid #cbd5e1; padding-left: 12px; }
+        
+        .badge { display: inline-block; padding: 4px 10px; background: var(--primary); color: white; border-radius: 12px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px;}
+        .stars { color: var(--warning); font-weight: bold; letter-spacing: 2px;}
+        
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { border: 1px solid #cbd5e1; padding: 12px; text-align: center; }
+        th { background-color: #f1f5f9; color: var(--primary); }
+        .col-left { text-align: left; }
+        .highlight-row { background-color: #f8fafc; font-weight: bold; }
+        
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .question-box, .concept-box, .analysis-box, .tips-box, .qa-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>📊 HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="badge">Topic: Money Supply (貨幣供應)</span>
+            <span class="badge" style="background:#0284c7;">Macroeconomics (總體經濟學)</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <p class="zh"><strong>難度：</strong> <span class="stars">★★★★☆</span> (4/5)</p>
+            <p class="zh" style="margin-bottom:0;"><strong>關鍵概念：</strong> 貨幣定義 (M1, M2, M3), 接受存款公司 (DTC), 持牌銀行 (Licensed Banks)</p>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <h2>📝 題目 (The Question)</h2>
+        <p class="zh">雲妮在一接受存款公司提取港幣$500 000定期存款。然後她在一持牌銀行存入港幣$200 000作定期存款，及$100 000作活期存款。她將$50 000放在家中的夾萬，並將餘額匯至海外。<br><br>上述的行動會對港元貨幣供應量有什麼即時的影響？</p>
+        <p class="en">Winnie withdraws HK$500 000 from her time deposit with a deposit-taking company. Then she deposits HK$200 000 as a time deposit and HK$100 000 as a demand deposit with a licensed bank. She keeps HK$50 000 in a safe at home and remits the remainder overseas.<br><br>What will be the immediate effect of the above actions on the Hong Kong dollar money supply?</p>
+        
+        <ol style="list-style-type: upper-alpha; padding-left: 20px;">
+            <li>
+                <div class="zh">貨幣供應定義一會上升港幣$50 000而貨幣供應定義二會上升港幣$350 000。</div>
+                <div class="en">M1 will increase by HK$50 000 and M2 will increase by HK$350 000.</div>
+            </li>
+            <li>
+                <div class="zh">貨幣供應定義一會上升港幣$150 000而貨幣供應定義三會下跌港幣$150 000。</div>
+                <div class="en">M1 will increase by HK$150 000 and M3 will decrease by HK$150 000.</div>
+            </li>
+            <li>
+                <div class="zh">貨幣供應定義二會上升港幣$150 000而貨幣供應定義三會下跌港幣$150 000。</div>
+                <div class="en">M2 will increase by HK$150 000 and M3 will decrease by HK$150 000.</div>
+            </li>
+            <li>
+                <div class="zh">貨幣供應定義二會上升港幣$350 000而貨幣供應定義三會下跌港幣$500 000。</div>
+                <div class="en">M2 will increase by HK$350 000 and M3 will decrease by HK$500 000.</div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="concept-box">
+        <h2>💡 概念重溫 (Concept Review)</h2>
+        <p class="zh">要拆解這條題目，我們必須清楚記得香港貨幣供應 \(M1\)、\(M2\) 和 \(M3\) 的定義及它們之間的包含關係。這是一個層層遞進的結構：</p>
+        <p class="en">To solve this question, we must remember the definitions of Hong Kong's money supply \(M1\), \(M2\), and \(M3\), and their inclusive relationship. It is a nested structure:</p>
+        
+        <div class="math-block">
+            $$ M1 = C_p + D $$
+        </div>
+        <p class="zh">\(C_p\) = 公眾持有的法定貨幣 (Cash in public hands)<br>\(D\) = 持牌銀行客戶的活期存款 (Demand deposits in Licensed Banks)</p>
+        <p class="en">\(C_p\) = Legal tender held by the public<br>\(D\) = Customers' demand deposits with Licensed Banks</p>
+
+        <div class="math-block">
+            $$ M2 = M1 + S_L + T_L + NCD_L $$
+        </div>
+        <p class="zh">\(M2\) 包含了整個 \(M1\)，再加上持牌銀行 (Licensed Banks) 的儲蓄存款 (\(S_L\))、定期存款 (\(T_L\)) 及由持牌銀行發行的可轉讓存款證 (\(NCD_L\))。</p>
+        <p class="en">\(M2\) includes all of \(M1\), plus savings deposits (\(S_L\)), time deposits (\(T_L\)), and negotiable certificates of deposit (\(NCD_L\)) issued by Licensed Banks.</p>
+
+        <div class="math-block">
+            $$ M3 = M2 + D_{RLB, DTC} + NCD_{RLB, DTC} $$
+        </div>
+        <p class="zh">\(M3\) 包含了整個 \(M2\)，再加上有限制牌照銀行 (RLB) 及接受存款公司 (DTC) 的所有存款，以及由它們發行的可轉讓存款證。</p>
+        <p class="en">\(M3\) includes all of \(M2\), plus all deposits in Restricted Licence Banks (RLB) and Deposit-Taking Companies (DTC), along with NCDs issued by them.</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <div class="correct-ans">正確答案 (Correct Option): B</div>
+        
+        <p class="zh">我們透過追蹤每一筆款項的去向，來計算對貨幣供應各階層的即時影響。</p>
+        <p class="en">We calculate the immediate effect on each tier of the money supply by tracking the destination of every sum of money.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-left">行動 (Action)</th>
+                        <th>影響 \(\Delta M1\)</th>
+                        <th>影響 \(\Delta M2\)</th>
+                        <th>影響 \(\Delta M3\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-left">1. 從接受存款公司提取 $500,000<br><span style="font-size:0.85em; color:#666;">Withdraw $500k from DTC</span></td>
+                        <td>$0</td>
+                        <td>$0</td>
+                        <td style="color:#dc2626;">-$500,000</td>
+                    </tr>
+                    <tr>
+                        <td class="col-left">2. 存入持牌銀行 $200,000 定期<br><span style="font-size:0.85em; color:#666;">Deposit $200k Time (LB)</span></td>
+                        <td>$0</td>
+                        <td style="color:#166534;">+$200,000</td>
+                        <td style="color:#166534;">+$200,000</td>
+                    </tr>
+                    <tr>
+                        <td class="col-left">3. 存入持牌銀行 $100,000 活期<br><span style="font-size:0.85em; color:#666;">Deposit $100k Demand (LB)</span></td>
+                        <td style="color:#166534;">+$100,000</td>
+                        <td style="color:#166534;">+$100,000</td>
+                        <td style="color:#166534;">+$100,000</td>
+                    </tr>
+                    <tr>
+                        <td class="col-left">4. 放 $50,000 於家中夾萬 (現金)<br><span style="font-size:0.85em; color:#666;">Keep $50k Cash in safe</span></td>
+                        <td style="color:#166534;">+$50,000</td>
+                        <td style="color:#166534;">+$50,000</td>
+                        <td style="color:#166534;">+$50,000</td>
+                    </tr>
+                    <tr>
+                        <td class="col-left">5. 餘額 $150,000 匯至海外<br><span style="font-size:0.85em; color:#666;">Remit $150k remainder overseas</span></td>
+                        <td>$0</td>
+                        <td>$0</td>
+                        <td>$0</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td class="col-left">淨變動 (Net Change)</td>
+                        <td style="color:#166534;">+$150,000</td>
+                        <td style="color:#166534;">+$350,000</td>
+                        <td style="color:#dc2626;">-$150,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>選項逐一拆解 (Step-by-Step Breakdown):</h3>
+        <p class="zh"><strong>選項 A 錯誤：</strong> 雖然 \(M2\) 上升了 $350,000 是正確的，但 \(M1\) 上升了 $150,000（活期 + 現金），而非 $50,000。</p>
+        <p class="en"><strong>Option A is Incorrect:</strong> While it is true that \(M2\) increases by $350,000, \(M1\) increases by $150,000 (demand deposit + cash), not $50,000.</p>
+
+        <p class="zh"><strong>選項 B 正確：</strong> \(M1\) 上升了 $150,000，且 \(M3\) 淨下跌了 $150,000（因為 $500,000 流出，但只有 $350,000 重新進入 \(M3\) 的組成部分）。完全符合計算結果。</p>
+        <p class="en"><strong>Option B is Correct:</strong> \(M1\) increases by $150,000, and \(M3\) has a net decrease of $150,000 (since $500,000 flowed out, but only $350,000 re-entered \(M3\) components). This perfectly matches our calculations.</p>
+
+        <p class="zh"><strong>選項 C 錯誤：</strong> \(M2\) 的升幅是 $350,000（因為 \(M1\) 增加的 $150,000 會自動計入 \(M2\)，加上定期存款的 $200,000），而非 $150,000。</p>
+        <p class="en"><strong>Option C is Incorrect:</strong> The increase in \(M2\) is $350,000 (since the $150,000 increase in \(M1\) is automatically included in \(M2\), plus the $200,000 time deposit), not $150,000.</p>
+
+        <p class="zh"><strong>選項 D 錯誤：</strong> 雖然 \(M2\) 上升了 $350,000，但 \(M3\) 是下跌 $150,000，而非 $500,000。提取 $500,000 後，大部分資金以其他形式留在了本港銀行體系內（屬於 \(M3\) 的一部分）。</p>
+        <p class="en"><strong>Option D is Incorrect:</strong> While \(M2\) does increase by $350,000, \(M3\) decreases by $150,000, not $500,000. After the $500,000 withdrawal, most of the funds remained within the local banking system in other forms (which are still part of \(M3\)).</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>🧩 題目拆解 (Problem Decomposition)</h2>
+        <p class="zh"><strong>切入點 (The Pivot Point): 包含關係 (The Inclusive Relationship)</strong></p>
+        <p class="zh">這類題目的核心在於明白 \(M1 \subset M2 \subset M3\)。當一筆資金被存入活期戶口時，它不僅僅增加了 \(M1\)，它同時也增加了 \(M2\) 和 \(M3\)。學生必須把每一筆錢當作一個「籌碼」，看它最終落在哪個籃子裡。</p>
+        
+        <p class="en"><strong>The Pivot Point: The Inclusive Relationship</strong></p>
+        <p class="en">The core of this type of question lies in understanding that \(M1 \subset M2 \subset M3\). When money is deposited into a demand account, it doesn't just increase \(M1\); it simultaneously increases \(M2\) and \(M3\). Students must treat each sum of money as a "token" and see which basket it ultimately lands in.</p>
+    </div>
+
+    <div class="tips-box">
+        <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p class="zh"><strong>陷阱一：忽略包含關係 (Ignoring inclusivity)</strong><br>很多同學計算 \(M2\) 時，只會計入「持牌銀行定期存款 $200,000」，忘記了 \(M1\) 的變動（+$150,000）也必須加進 \(M2\) 內。這就是為甚麼會有選項 C 這種干擾項。</p>
+        <p class="en"><strong>Trap 1: Ignoring inclusivity</strong><br>When calculating \(M2\), many students only count the "HK$200,000 time deposit in a licensed bank," forgetting that the change in \(M1\) (+$150,000) MUST also be added to \(M2\). This is why Option C exists as a distractor.</p>
+
+        <p class="zh"><strong>陷阱二：誤解提取存款的影響 (Misunderstanding deposit withdrawals)</strong><br>從接受存款公司 (DTC) 提取 $500,000，只會令 \(M3\) 獨有的部分減少，<strong>不會</strong>令 \(M1\) 或 \(M2\) 下跌。只有從持牌銀行提取活期存款，才會直接導致 \(M1\) 下跌。</p>
+        <p class="en"><strong>Trap 2: Misunderstanding deposit withdrawals</strong><br>Withdrawing $500,000 from a Deposit-Taking Company (DTC) only reduces the exclusive component of \(M3\). It does <strong>not</strong> cause \(M1\) or \(M2\) to fall. Only a withdrawal from a demand deposit in a licensed bank would directly reduce \(M1\).</p>
+    </div>
+
+    <div class="qa-box">
+        <h2>🙋 學生常見疑問 (Student Q&A)</h2>
+        <p class="zh"><strong>Q: 為甚麼「匯至海外」的 $150,000 不計算在任何貨幣供應內？</strong></p>
+        <p class="zh" style="margin-bottom: 15px;"><strong>A:</strong> 貨幣供應量是用來量度在<strong>本地經濟體系</strong>內流通的購買力。當資金被匯出海外，這筆錢就離開了香港的銀行體系和公眾手中，因此不再計算在香港的 \(M1\)、\(M2\) 或 \(M3\) 內。</p>
+        
+        <p class="en"><strong>Q: Why is the $150,000 "remitted overseas" not counted in any money supply?</strong></p>
+        <p class="en"><strong>A:</strong> Money supply measures the purchasing power circulating within the <strong>local economy</strong>. When funds are remitted overseas, that money leaves Hong Kong's banking system and the hands of its public. Therefore, it is no longer counted in Hong Kong's \(M1\), \(M2\), or \(M3\).</p>
+    </div>
+
+    <div class="tips-box" style="background-color: #f0fdf4; border-left-color: var(--success);">
+        <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p class="zh"><strong>「整體流失法」 (The Total Outflow Method)：</strong><br>你可以從宏觀角度看 \(M3\)（即整個貨幣體系的總和）。<br>雲妮原本有 $500,000 在系統內。經過一番操作後，唯一離開了香港貨幣體系的錢，就是匯至海外的 $150,000。因此，整個系統（\(M3\)）的淨變動必然是 <strong>下跌 $150,000</strong>！<br>知道這一點，你可以立刻淘汰選項 A（沒有提及 M3）和選項 D（說 M3 跌 500k）。然後在 B 和 C 之間，你只需簡單計算 \(M1\) = $100k + $50k = $150k。答案 B 一秒確認！</p>
+        
+        <p class="en"><strong>The Total Outflow Method:</strong><br>Look at \(M3\) from a macro perspective (as the sum total of the entire money system).<br>Winnie originally had $500,000 in the system. After all her actions, the ONLY money that completely left the Hong Kong monetary system was the $150,000 remitted overseas. Therefore, the net change for the entire system (\(M3\)) MUST be a <strong>decrease of $150,000</strong>!<br>Knowing this, you can immediately eliminate Option A and Option D. Between B and C, just quickly calculate \(M1\) = $100k + $50k = $150k. Option B is confirmed instantly!</p>
+    </div>
+
+</body>
+</html>

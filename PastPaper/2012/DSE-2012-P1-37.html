@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics HKDSE: Comparative Advantage Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --math-gray: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --border-color: #e5e7eb;
+            --success-green: #10b981;
+            --danger-red: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* Question Box */
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .data-table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            margin: 15px auto;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: var(--math-gray);
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Math Blocks */
+        .math-block {
+            background-color: var(--math-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Options Analysis */
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .correct-option {
+            background-color: rgba(16, 185, 129, 0.05);
+            border-color: var(--success-green);
+            border-left: 5px solid var(--success-green);
+        }
+
+        .wrong-option {
+            border-left: 5px solid var(--danger-red);
+        }
+
+        /* Bilingual Text Formatting */
+        .zh-text {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .en-text {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Q&A Section */
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-q { font-weight: bold; color: #b45309; }
+        .qa-a { margin-top: 8px; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>Economics Tutorial: HKDSE MC Analysis</h1>
+        <div class="badges">
+            <span class="badge">Topic: 國際貿易與比較優勢 (Int. Trade & Comparative Advantage)</span>
+            <span class="badge">Difficulty: ★★★★☆</span>
+            <span class="badge">Key Concepts: 機會成本, 貿易比率, 貿易獲利</span>
+        </div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            下表顯示甲、乙兩國一單位的資源可生產玩具或成衣的數量。<br>
+            若貿易比率是 2單位成衣 = 1單位玩具：<br>
+            A. 甲國每一單位進口可獲利 5 單位玩具。<br>
+            B. 甲國每一單位出口可獲利 0.6 單位成衣。<br>
+            C. 乙國每一單位進口可獲利 0.5 單位成衣。<br>
+            D. 乙國會出口玩具，每一單位出口可獲利 0.6 單位成衣。
+        </div>
+        <div class="en-text">
+            The following table shows the number of toys or clothes that Country A and Country B can produce with one unit of resources.<br>
+            If the terms of trade is 2 units of clothes = 1 unit of toys:<br>
+            A. Country A will gain 5 units of toys per unit of imports.<br>
+            B. Country A will gain 0.6 units of clothes per unit of exports.<br>
+            C. Country B will gain 0.5 units of clothes per unit of imports.<br>
+            D. Country B will export toys and gain 0.6 units of clothes per unit of exports.
+        </div>
+
+        <table class="data-table">
+            <tr>
+                <th></th>
+                <th>玩具 Toys (units)</th>
+                <th>成衣 Clothes (units)</th>
+            </tr>
+            <tr>
+                <td>甲國 Country A</td>
+                <td>10</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>乙國 Country B</td>
+                <td>4</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="zh-text">
+            <strong>1. 產量問題的機會成本 (Opportunity Cost for Output Problems)</strong><br>
+            當表格顯示「相同資源下的產出量」時，計算生產物品 X 的機會成本公式是「放棄的 Y / 獲得的 X」。
+        </div>
+        <div class="en-text">
+            When the table shows output quantities for a given amount of resources, the opportunity cost of producing Good X is calculated as "Quantity of Y foregone / Quantity of X gained".
+        </div>
+
+        <div class="math-block">
+            $$ \text{Opportunity Cost of X} = \frac{\text{Max Output of Y}}{\text{Max Output of X}} $$
+        </div>
+
+        <div class="zh-text">
+            <strong>2. 比較優勢 (Comparative Advantage)</strong><br>
+            一個國家在生產某物品上的機會成本較低，該國就擁有比較優勢，並會出口該物品，進口另一物品。
+        </div>
+        <div class="en-text">
+            A country has a comparative advantage if it can produce a good at a lower opportunity cost. It will export this good and import the other.
+        </div>
+
+        <div class="zh-text">
+            <strong>3. 貿易獲利 (Gains from Trade)</strong><br>
+            - <strong>出口獲利 (Gains from Exporting):</strong> 出口價格 (貿易比率) 減去 國內生產成本。<br>
+            - <strong>進口獲利 (Gains from Importing):</strong> 國內生產成本 減去 進口價格 (貿易比率)。
+        </div>
+        <div class="en-text">
+            - <strong>Gains per unit of export:</strong> Terms of Trade (Export Price) - Domestic Opportunity Cost.<br>
+            - <strong>Gains per unit of import:</strong> Domestic Opportunity Cost - Terms of Trade (Import Price).
+        </div>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="zh-text"><strong>正確答案是 (Correct Option): C</strong></div>
+    <div class="en-text">The correct answer is Option C. Let's break it down step-by-step.</div>
+
+    <div class="math-block">
+        <div class="zh-text"><strong>步驟 1：計算兩國的機會成本 (Step 1: Calculate Opportunity Costs)</strong></div>
+        <table class="data-table">
+            <tr>
+                <th>Country</th>
+                <th>Cost of 1 Toy (1T)</th>
+                <th>Cost of 1 Cloth (1C)</th>
+            </tr>
+            <tr>
+                <td>甲國 (A)</td>
+                <td>\( \frac{10}{10} = 1C \)</td>
+                <td>\( \frac{10}{10} = 1T \)</td>
+            </tr>
+            <tr>
+                <td>乙國 (B)</td>
+                <td>\( \frac{10}{4} = 2.5C \)</td>
+                <td>\( \frac{4}{10} = 0.4T \)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="zh-text">
+        <strong>步驟 2：決定進出口方向 (Step 2: Determine Specialization)</strong><br>
+        甲國生產玩具的成本較低 (\( 1C < 2.5C \))，所以甲國<strong>出口玩具，進口成衣</strong>。<br>
+        乙國生產成衣的成本較低 (\( 0.4T < 1T \))，所以乙國<strong>出口成衣，進口玩具</strong>。
+    </div>
+    <div class="en-text">
+        Country A has a lower cost for Toys (\( 1C < 2.5C \)), so A <strong>exports Toys, imports Clothes</strong>.<br>
+        Country B has a lower cost for Clothes (\( 0.4T < 1T \)), so B <strong>exports Clothes, imports Toys</strong>.
+    </div>
+
+    <h3>選項分析 (Option Analysis):</h3>
+    <div class="zh-text">貿易比率 (Terms of Trade, TOT): \( 1T = 2C \) （或 \( 1C = 0.5T \)）</div>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>A. 錯誤 (Incorrect)</strong><br>
+        甲國進口成衣。甲國自己生產1單位成衣的成本是 \( 1T \)。以貿易比率進口1單位成衣的代價是 \( 0.5T \)。<br>
+        每單位進口獲利 = 國內成本 - 進口價格 = \( 1T - 0.5T = 0.5T \)。(非 5T)</div>
+        <div class="en-text">Country A imports clothes. Domestic cost of 1C = \( 1T \). Import price = \( 0.5T \). Gain per import = \( 1T - 0.5T = 0.5T \). (Not 5T).</div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>B. 錯誤 (Incorrect)</strong><br>
+        甲國出口玩具。甲國生產1單位玩具的國內成本是 \( 1C \)。出口1單位玩具可換取 \( 2C \)。<br>
+        每單位出口獲利 = 出口價格 - 國內成本 = \( 2C - 1C = 1C \)。(非 0.6C)</div>
+        <div class="en-text">Country A exports toys. Domestic cost of 1T = \( 1C \). Export price = \( 2C \). Gain per export = \( 2C - 1C = 1C \). (Not 0.6C).</div>
+    </div>
+
+    <div class="option-analysis correct-option">
+        <div class="zh-text"><strong>C. 正確 (Correct)</strong><br>
+        乙國進口玩具。乙國自己生產1單位玩具的成本是 \( 2.5C \)。以貿易比率進口1單位玩具的代價是 \( 2C \)。<br>
+        每單位進口獲利 = 國內成本 - 進口價格 = \( 2.5C - 2C = 0.5C \)。</div>
+        <div class="en-text">Country B imports toys. Domestic cost of 1T = \( 2.5C \). Import price = \( 2C \). Gain per import = \( 2.5C - 2C = 0.5C \). This matches the option.</div>
+    </div>
+
+    <div class="option-analysis wrong-option">
+        <div class="zh-text"><strong>D. 錯誤 (Incorrect)</strong><br>
+        乙國沒有生產玩具的比較優勢，所以乙國會<strong>進口</strong>玩具，而非出口。單憑這點已可剔除此選項。</div>
+        <div class="en-text">Country B does not have a comparative advantage in toys, so B will <strong>import</strong> toys, not export them. This option is fundamentally flawed.</div>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="zh-text">
+        <strong>解題樞紐 (Pivot Point):</strong><br>
+        這類題目的核心在於準確分辨<strong>產量 (Output)</strong> 還是 <strong>投入 (Input)</strong> 數據。表格頂部寫著「一單位的資源可生產...數量」，這明確指出了這是「產量」問題，因此計算機會成本的公式必須是「放棄量 / 獲得量」。
+    </div>
+    <div class="en-text">
+        <strong>The Pivot Point:</strong><br>
+        The core of this question type is accurately distinguishing between <strong>Output</strong> and <strong>Input</strong> data. The table states "number... produced with one unit of resources", clearly indicating an Output problem. Hence, the formula must be "Foregone / Gained".
+    </div>
+    <div class="zh-text">
+        <strong>干擾資訊 (Distractors):</strong><br>
+        選項中特意混合了「進口」與「出口」字眼。同學必須先非常確定兩國的貿易方向，否則會將進口獲利與出口獲利公式調轉。
+    </div>
+    <div class="en-text">
+        <strong>Distractors:</strong><br>
+        The options deliberately mix "imports" and "exports". Students must be 100% certain of the trade direction first, otherwise they will swap the formulas for import gains and export gains.
+    </div>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="zh-text">
+        <ul>
+            <li><strong>陷阱一：誤當「投入」計算 (Confusing Output with Input)</strong><br>
+            若學生誤以為數字是「生產1單位所需的時間」(投入)，計算出來的機會成本會完全顛倒，導致選錯貿易方向。</li>
+            <li><strong>陷阱二：搞錯獲利單位 (Confusing Gain Units)</strong><br>
+            計算進口/出口獲利時，單位必須是<strong>另一種物品</strong>。例如，出口玩具的獲利單位必然是「成衣」。若選項寫「出口玩具獲利X單位玩具」，則必定是錯的。</li>
+        </ul>
+    </div>
+    <div class="en-text">
+        <ul>
+            <li><strong>Trap 1: Treating it as an Input problem.</strong> If students assume the numbers are "hours required to make 1 unit", the opportunity costs will flip, leading to the wrong trade directions.</li>
+            <li><strong>Trap 2: Confusing the units of gain.</strong> Gains from exporting/importing a good are always measured in terms of the <em>other</em> good. E.g., the gain from exporting Toys must be measured in Clothes.</li>
+        </ul>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 為什麼甲國選擇出口玩具而不是成衣？甲國生產兩者的數量都是10，不是一樣嗎？</div>
+        <div class="en-text">Q: Why does Country A choose to export Toys instead of Clothes? Country A can produce 10 of both, aren't they the same?</div>
+        
+        <div class="qa-a">
+            <div class="zh-text"><strong>A:</strong> 雖然甲國生產兩種物品的絕對能力一樣，但在國際貿易中，我們看的是<strong>比較優勢（機會成本）</strong>。甲國生產1玩具的成本是1成衣，而乙國是2.5成衣。因為 \( 1 < 2.5 \)，甲國的成本較低，因此甲國應該專注生產玩具。</div>
+            <div class="en-text"><strong>A:</strong> While Country A has the same absolute capability for both, international trade relies on <strong>Comparative Advantage (Opportunity Cost)</strong>. A's cost for 1 Toy is 1 Cloth, while B's is 2.5 Clothes. Since \( 1 < 2.5 \), A has a lower cost and should specialize in Toys.</div>
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="qa-q">Q: 考試時有什麼方法確保不會把「國內成本」和「貿易比率」減反？</div>
+        <div class="en-text">Q: Is there a trick during exams to ensure I don't subtract "Domestic Cost" and "Terms of Trade" in the wrong order?</div>
+        
+        <div class="qa-a">
+            <div class="zh-text"><strong>A:</strong> 記住一個原則：「貿易必定是有利的（正數）」。<br>
+            你買東西（進口）當然想便宜，所以 <strong>進口獲利 = 本來貴的國內成本 - 便宜的進口價 (TOT)</strong>。<br>
+            你賣東西（出口）當然想高價，所以 <strong>出口獲利 = 賣得高的出口價 (TOT) - 本來便宜的國內成本</strong>。</div>
+            <div class="en-text"><strong>A:</strong> Remember this rule: "Trade must be beneficial (positive number)".<br>
+            When buying (importing), you want it cheaper: <strong>Gain = Expensive Domestic Cost - Cheaper Import Price (TOT)</strong>.<br>
+            When selling (exporting), you want a higher price: <strong>Gain = Higher Export Price (TOT) - Cheaper Domestic Cost</strong>.</div>
+        </div>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="zh-text">
+        <strong>秒殺技巧 (Elimination Method):</strong><br>
+        在計算出雙方的機會成本後，馬上寫下：<strong>「甲出口 T，乙出口 C」</strong>。<br>
+        掃視選項，選項 D 說「乙國會出口玩具 (T)」。這與我們得出的結論直接矛盾。因此，在不進行任何數字運算的情況下，你可以立刻將 <strong>D</strong> 畫交叉淘汰，節省寶貴時間！
+    </div>
+    <div class="en-text">
+        <strong>Shortcut:</strong><br>
+        Once you calculate the opportunity costs, immediately jot down: <strong>"A exports T, B exports C"</strong>.<br>
+        Scan the options. Option D says "Country B will export toys (T)". This directly contradicts our finding. Therefore, without even doing the math for D, you can cross it out immediately, saving valuable time!
+    </div>
+</div>
+
+</body>
+</html>

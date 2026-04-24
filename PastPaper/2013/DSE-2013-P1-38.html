@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Expert Guide</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-blue: #0ea5e9;
+            --bg-blue: #f0f9ff;
+            --correct-green: #10b981;
+            --incorrect-red: #ef4444;
+            --trap-red: #fef2f2;
+            --trick-yellow: #fffbeb;
+            --text-main: #334155;
+            --text-en: #64748b;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 { color: var(--primary-blue); margin-top: 1.5em; }
+        h1 { border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; }
+        
+        /* Language Styling */
+        .tc { display: block; margin-bottom: 8px; font-weight: 500; }
+        .en { display: block; color: var(--text-en); font-style: italic; margin-bottom: 20px; font-size: 0.95em; }
+
+        /* Specific Sections */
+        .header-card { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        
+        .question-box { background-color: #f1f5f9; padding: 20px; border-left: 5px solid #64748b; border-radius: 4px; font-family: monospace; font-size: 1.1em;}
+        
+        .concept-box { background-color: var(--bg-blue); border-left: 5px solid var(--accent-blue); padding: 20px; margin: 20px 0; border-radius: 4px; }
+        
+        .math-block { background-color: #ffffff; padding: 15px; border-radius: 8px; text-align: center; overflow-x: auto; border: 1px solid #e2e8f0; margin: 15px 0; }
+        
+        .analysis-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background-color: #ffffff;}
+        .analysis-card.correct { border-left: 5px solid var(--correct-green); box-shadow: 0 2px 4px rgba(16, 185, 129, 0.1); }
+        .analysis-card.incorrect { border-left: 5px solid var(--incorrect-red); }
+        
+        .trap-box { background-color: var(--trap-red); border: 1px solid #fca5a5; border-radius: 8px; padding: 20px; margin-top: 30px;}
+        .trap-box h3 { color: #b91c1c; margin-top: 0; }
+        
+        .trick-box { background-color: var(--trick-yellow); border: 1px solid #fcd34d; border-radius: 8px; padding: 20px; margin-top: 30px;}
+        .trick-box h3 { color: #b45309; margin-top: 0; }
+
+        .qa-box { background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-top: 30px; }
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+        
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; background-color: #fff; }
+        th, td { border: 1px solid #cbd5e1; padding: 12px; text-align: center; }
+        th { background-color: #f1f5f9; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-card">
+        <h2>經濟學名師解析 / Economics Tutor Guide</h2>
+        <p><strong>Topic / 課題:</strong> 國際貿易：絕對優勢與比較優勢 (International Trade: Absolute & Comparative Advantage)</p>
+        <p><strong>Difficulty / 難度:</strong> ★★★★☆ (4/5)</p>
+        <p><strong>Key Concepts / 核心概念:</strong> 機會成本 (Opportunity Cost), 比較優勢 (Comparative Advantage), 資源數量陷阱 (Resource Quantity Trap)</p>
+    </div>
+
+    <h2>1. 題目 / The Question</h2>
+    <div class="question-box">
+        <span class="tc">參考以下資料。貿易前，泰國和日本將他們所有的資源平均分配在生產白米和電腦上，其產量如下：</span>
+        <span class="en">Refer to the following information. Before trade, the output of Thailand and Japan with all their resources evenly allocated between the production of rice and computers is shown below:</span>
+        
+        <table>
+            <tr>
+                <th></th>
+                <th>白米 (Rice)</th>
+                <th>電腦 (Computers)</th>
+            </tr>
+            <tr>
+                <td>泰國 (Thailand)</td>
+                <td>15</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>日本 (Japan)</td>
+                <td>24</td>
+                <td>12</td>
+            </tr>
+        </table>
+
+        <span class="tc">下列哪項有關以上個案的陳述是正確的？</span>
+        <span class="tc">(1) 日本生產電腦有比較優勢。<br>(2) 日本生產電腦有絕對優勢。<br>(3) 當兩國完全專門化生產，白米和電腦的總產量均會增加。</span>
+        <br>
+        <span class="en">Which of the following statements about the above case is correct?</span>
+        <span class="en">(1) Japan has a comparative advantage in producing computers.<br>(2) Japan has an absolute advantage in producing computers.<br>(3) With complete specialization in the two countries, the total output [of both] increase.</span>
+        
+        <p>A. 只有(1) / (1) only</p>
+        <p>B. 只有(1)、(2) / (1) and (2) only</p>
+        <p>C. 只有(2)、(3) / (2) and (3) only</p>
+        <p>D. (1)、(2)及(3) / (1), (2) and (3)</p>
+    </div>
+
+    <h2>2. 概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <span class="tc"><strong>比較優勢 (Comparative Advantage):</strong> 如果一個國家生產某物品的機會成本低於另一個國家，該國便享有比較優勢。</span>
+        <span class="en"><strong>Comparative Advantage:</strong> A country has a comparative advantage if it can produce a good at a lower opportunity cost than another country.</span>
+
+        <span class="tc"><strong>絕對優勢 (Absolute Advantage):</strong> 如果一個國家使用<strong>相同數量的資源</strong>，能生產出較多數量的物品，該國便享有絕對優勢。</span>
+        <span class="en"><strong>Absolute Advantage:</strong> A country has an absolute advantage if it can produce more of a good using the <strong>same amount of resources</strong>.</span>
+
+        <div class="math-block">
+            <p>【產出計算法 / Output Approach Formula】</p>
+            $$ \text{Opportunity Cost of Good X} = \frac{\text{Maximum Output of Good Y}}{\text{Maximum Output of Good X}} $$
+        </div>
+        
+        <span class="tc"><strong>完全專門化 (Complete Specialization):</strong> 國家將所有資源集中生產其享有比較優勢的物品。</span>
+        <span class="en"><strong>Complete Specialization:</strong> A country allocates all its resources to produce the good in which it has a comparative advantage.</span>
+    </div>
+
+    <h2>3. 答案與詳細分析 / Answer & Detailed Analysis</h2>
+    <h3>正確答案 / Correct Option: <span style="color: var(--correct-green);">A</span></h3>
+    
+    <div class="analysis-card correct">
+        <h4>陳述 (1) 解析 / Statement (1) Analysis</h4>
+        <span class="tc">我們要先計算兩國生產電腦的機會成本。由於表中顯示的是「一半資源」的產量，我們可以直接使用這些數字來計算比例：</span>
+        <span class="en">We first calculate the opportunity cost of producing computers. Since the table shows the output using "half of their resources", we can directly use these figures for the ratio:</span>
+        
+        <ul>
+            <li><span class="tc">泰國生產 1 單位電腦的機會成本 = \( \frac{15}{5} = 3 \) 單位白米。</span>
+                <span class="en">Thailand's OC of 1 Computer = \( \frac{15}{5} = 3 \) units of Rice.</span></li>
+            <li><span class="tc">日本生產 1 單位電腦的機會成本 = \( \frac{24}{12} = 2 \) 單位白米。</span>
+                <span class="en">Japan's OC of 1 Computer = \( \frac{24}{12} = 2 \) units of Rice.</span></li>
+        </ul>
+        
+        <span class="tc">因為 \( 2 < 3 \)，日本生產電腦的機會成本較低，因此日本生產電腦享有比較優勢。<strong>陳述(1)正確。</strong></span>
+        <span class="en">Since \( 2 < 3 \), Japan has a lower opportunity cost in producing computers, hence Japan enjoys a comparative advantage. <strong>Statement (1) is Correct.</strong></span>
+    </div>
+
+    <div class="analysis-card incorrect">
+        <h4>陳述 (2) 解析 / Statement (2) Analysis</h4>
+        <span class="tc">題目的表格只列出了「國家的總產量」，並沒有說明泰國和日本擁有多少資源（例如勞工時數或土地面積）。要判斷絕對優勢，我們必須比較「相同資源下」的產出。由於資源總量為未知數，我們<strong>無法判斷</strong>哪國擁有絕對優勢。<strong>陳述(2)錯誤。</strong></span>
+        <span class="en">The table only shows the "total output of the countries" without specifying how many resources (e.g., labor hours) Thailand and Japan possess. To determine absolute advantage, we must compare output under the "same amount of resources". Since the total resource amount is unknown, we <strong>cannot determine</strong> who has the absolute advantage. <strong>Statement (2) is Incorrect.</strong></span>
+    </div>
+
+    <div class="analysis-card incorrect">
+        <h4>陳述 (3) 解析 / Statement (3) Analysis</h4>
+        <span class="tc">專門化前，總產量為：白米 = \( 15 + 24 = 39 \)，電腦 = \( 5 + 12 = 17 \)。<br>
+        完全專門化後：日本專門生產電腦（將所有資源投入電腦），產量為 \( 12 \times 2 = 24 \) 單位電腦；泰國專門生產白米，產量為 \( 15 \times 2 = 30 \) 單位白米。<br>
+        專門化後總產量：白米 = 30（比原本的39下跌），電腦 = 24（比原本的17上升）。<br>
+        因此，並非兩者的總產量均會增加。<strong>陳述(3)錯誤。</strong></span>
+        
+        <span class="en">Before specialization, total output: Rice = \( 15 + 24 = 39 \), Computers = \( 5 + 12 = 17 \).<br>
+        After complete specialization: Japan specializes in computers (allocating all resources to it), outputting \( 12 \times 2 = 24 \) computers. Thailand specializes in rice, outputting \( 15 \times 2 = 30 \) rice.<br>
+        Post-specialization total: Rice = 30 (decreased from 39), Computers = 24 (increased from 17).<br>
+        Therefore, it is FALSE that the total output of BOTH goods increase. <strong>Statement (3) is Incorrect.</strong></span>
+    </div>
+
+    <h2>4. 題目拆解 / Problem Decomposition</h2>
+    <span class="tc">解答這類題目的「關鍵點 (Pivot Point)」在於認清數據的性質。這是一道<strong>產出題 (Output Problem)</strong>，而且是國家級別的總產出。只要看到國家總產出，卻沒有給予資源數量（如「假設兩國有相同數量的勞工」），你就應該立刻警覺到這是一個關於絕對優勢的經典陷阱。</span>
+    <span class="en">The "Pivot Point" of this question lies in identifying the nature of the data. This is an <strong>Output Problem</strong> based on national totals. Whenever you see total national output but no information on resource quantities (like "assuming both countries have the same amount of labor"), you should immediately be alert to the classic absolute advantage trap.</span>
+
+    <div class="trap-box">
+        <h3>🚨 常犯錯誤與陷阱 / Common Mistakes & Traps</h3>
+        <span class="tc"><strong>資源數量陷阱 (The Resource Quantity Trap)：</strong> 許多學生看到 \( 12 > 5 \)，就直覺認為日本有絕對優勢。這是 DSE 最愛考的陷阱！12部電腦可能是日本用 1,000 萬個工人做出來的，而 5部電腦可能是泰國只用 10 個工人做出來的。在資源數量未知的情況下，<strong>絕對無法</strong>計算絕對優勢。</span>
+        <span class="en"><strong>The Resource Quantity Trap:</strong> Many students see that \( 12 > 5 \) and instinctively assume Japan has an absolute advantage. This is the most popular DSE trap! Japan might have used 10 million workers to produce 12 computers, while Thailand might have used only 10 workers to produce 5. Without knowing the resource base, you <strong>absolutely cannot</strong> determine absolute advantage.</span>
+    </div>
+
+    <div class="qa-box">
+        <h3>💬 學生常見疑問 / Student Q&A</h3>
+        <p class="qa-q">Q: 題目說「將他們所有的資源平均分配」，這不代表兩國的資源一樣多嗎？<br>
+        <span class="en">Q: The question says "with all their resources evenly allocated", doesn't that mean both countries have the same amount of resources?</span></p>
+        
+        <p>A: <span class="tc">不代表！這句話的意思是泰國把自己的資源分一半（50%勞力去種米，50%勞力去造電腦），日本也把自己的資源分一半。這只說明了資源的分配比例，完全沒有說明泰國的 100% 和日本的 100% 是否相等。</span><br>
+        <span class="en">A: No! It merely means Thailand split its own resources in half (50% for rice, 50% for computers), and Japan did the same. It only describes the allocation ratio within each country, not that Thailand's 100% equals Japan's 100%.</span></p>
+    </div>
+
+    <div class="trick-box">
+        <h3>⚡ 考試技巧與速解 / Exam Tricks & Shortcuts</h3>
+        <span class="tc"><strong>5秒秒殺法 (The 5-Second Kill):</strong><br>
+        在選擇題中，一旦你發現表格提供的是「國家產出」且沒有給定「資源數量」，請立刻將所有包含「絕對優勢 (Absolute advantage)」的選項打交叉！<br>
+        在這題中，我們瞬間判定 (2) 是錯的。看看選項：B包含(2)，C包含(2)，D包含(2)。全錯！答案只可能是 A，連計數都不用！</span>
+        
+        <span class="en"><strong>The 5-Second Kill:</strong><br>
+        In MCQs, the moment you realize the table shows "National Output" without defining "Resource Quantity", immediately cross out any statements claiming "Absolute Advantage"!<br>
+        In this question, we instantly know statement (2) is false. Look at the options: B includes (2), C includes (2), D includes (2). All wrong! The answer must be A. You don't even need to calculate anything!</span>
+    </div>
+
+</div>
+
+</body>
+</html>
