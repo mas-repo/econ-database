@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Classical Quantity Theory of Money</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .header-section {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--gray-bg);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .eng-text {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .question-box {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-correct {
+            border-left: 5px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+
+        .option-wrong {
+            border-left: 5px solid var(--wrong-red);
+        }
+
+        .badge {
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+        
+        .badge-correct { background-color: var(--correct-green); color: white; }
+        .badge-wrong { background-color: var(--wrong-red); color: white; }
+
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            margin-bottom: 15px;
+        }
+        
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .concept-box, .tips-box, .question-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="tag">Topic: 貨幣與通脹 (Money and Inflation)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Key Concepts:</strong> 
+            <span class="tag">古典貨幣量理論 (Classical Quantity Theory)</span>
+            <span class="tag">交易方程式 (Equation of Exchange)</span>
+            <span class="tag">因果關係 (Causality)</span>
+        </div>
+    </div>
+
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項有關古典貨幣量理論的陳述是不正確的？</strong></p>
+        <div class="eng-text">Which of the following statements about the classical quantity theory of money is INCORRECT?</div>
+        
+        <ol type="A" style="margin-top:15px;">
+            <li>貨幣流通速度和實質產出均假設為不變。<br>
+                <span class="eng-text">Both the velocity of money and the real output are assumed to be constant.</span>
+            </li>
+            <li style="margin-top:10px;">貨幣供應的任何改變會導致名義產出產生同等比例的改變。<br>
+                <span class="eng-text">Any change in money supply will lead to the same proportional change in nominal output.</span>
+            </li>
+            <li style="margin-top:10px;">當貨幣供應不斷下降時，通縮便會出現。<br>
+                <span class="eng-text">Deflation will occur when there is a continuous fall in money supply.</span>
+            </li>
+            <li style="margin-top:10px;">物價水平的任何改變會導致貨幣供應產生同等比例的改變。<br>
+                <span class="eng-text">Any change in price level will lead to the same proportional change in money supply.</span>
+            </li>
+        </ol>
+    </div>
+
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>交易方程式 (Equation of Exchange)</h3>
+        <p>要解答這條問題，我們必須理解費雪 (Irving Fisher) 提出的交易方程式：</p>
+        <p class="eng-text">To solve this problem, we must understand the Equation of Exchange proposed by Irving Fisher:</p>
+        
+        <div class="math-block">
+            $$M \times V = P \times Y$$
+        </div>
+
+        <p><strong>定義 (Definitions):</strong></p>
+        <ul>
+            <li>$M$ = 貨幣供應量 (Money Supply)</li>
+            <li>$V$ = 貨幣流通速度 (Velocity of Money)</li>
+            <li>$P$ = 物價水平 (Price Level)</li>
+            <li>$Y$ = 實質產出 / 實質 GDP (Real Output / Real GDP)</li>
+            <li>$P \times Y$ = 名義產出 / 名義 GDP (Nominal Output / Nominal GDP)</li>
+        </ul>
+
+        <h3>古典學派的假設 (Classical Assumptions)</h3>
+        <p>古典學派認為：<br>
+        1. 貨幣流通速度 ($V$) 由制度決定，在短期內是<strong>固定不變</strong>的。<br>
+        2. 經濟體系長遠會處於充分就業狀態，因此實質產出 ($Y$) 也是<strong>固定不變</strong>的。</p>
+        <p class="eng-text">The Classical School assumes:<br>
+        1. The velocity of money ($V$) is determined by institutional factors and is <strong>constant</strong> in the short run.<br>
+        2. The economy will operate at full employment in the long run, so real output ($Y$) is also <strong>constant</strong>.</p>
+        
+        <p>基於以上假設，方程式可簡化為：貨幣供應 ($M$) 與物價水平 ($P$) 成<strong>正比例關係</strong>。而且，因果關係是單向的：是由 $M$ 決定 $P$，而非相反。</p>
+        <p class="eng-text">Based on these assumptions, the equation implies that money supply ($M$) is <strong>strictly proportional</strong> to the price level ($P$). Furthermore, the causality is one-way: $M$ determines $P$, not the other way around.</p>
+    </div>
+
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <p>正確選項 (The Correct Option): <strong>Option D</strong></p>
+    <p class="eng-text"><em>*注意：題目要求選出「不正確」的陳述 (Note: The question asks for the INCORRECT statement).</em></p>
+
+    <div class="option-analysis option-wrong">
+        <h4>Option A <span class="badge badge-wrong">True Statement</span></h4>
+        <p><strong>分析：</strong> 這是古典貨幣量理論的核心假設。古典學派認為 $V$ 和 $Y$ 在短期內均為常數。</p>
+        <p class="eng-text"><strong>Analysis:</strong> This is the core assumption of the classical quantity theory. The classical school assumes both $V$ and $Y$ are constant in the short run.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h4>Option B <span class="badge badge-wrong">True Statement</span></h4>
+        <p><strong>分析：</strong> 根據公式 $M \times V = P \times Y$，因為 $V$ 是常數，所以 $M$ 的任何百分比改變，必然等於 $P \times Y$（名義產出）的百分比改變。例如 $M$ 增加 10%，$P \times Y$ 也會增加 10%。</p>
+        <p class="eng-text"><strong>Analysis:</strong> According to the formula $M \times V = P \times Y$, since $V$ is constant, any percentage change in $M$ must equal the percentage change in $P \times Y$ (nominal output). For example, if $M$ increases by 10%, $P \times Y$ will also increase by 10%.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h4>Option C <span class="badge badge-wrong">True Statement</span></h4>
+        <p><strong>分析：</strong> 在 $M \times V = P \times Y$ 中，假設 $V$ 和 $Y$ 不變，當 $M$ 下降，$P$（物價水平）也會隨之下降。物價水平的持續下降即為通縮 (Deflation)。</p>
+        <p class="eng-text"><strong>Analysis:</strong> In $M \times V = P \times Y$, assuming $V$ and $Y$ are constant, a fall in $M$ leads to a fall in $P$ (price level). A continuous fall in the price level is the definition of deflation.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <h4>Option D <span class="badge badge-correct">False Statement -> Correct Answer!</span></h4>
+        <p><strong>分析：</strong> 這句陳述犯了「因果倒置」的錯誤！古典貨幣量理論強調的是<strong>「貨幣中性」(Money Neutrality)</strong>，即是<strong>貨幣供應 ($M$) 的改變導致了物價 ($P$) 的改變</strong>。物價改變本身並不能反過來迫使中央銀行改變貨幣供應。貨幣供應是由中央銀行外生決定的 (Exogenously determined)。因此，這句話的因果方向寫反了。</p>
+        <p class="eng-text"><strong>Analysis:</strong> This statement commits the error of "reversed causality"! The classical quantity theory emphasizes <strong>Money Neutrality</strong>, meaning <strong>changes in money supply ($M$) lead to changes in price level ($P$)</strong>. Changes in prices do not force the central bank to change the money supply. Money supply is exogenously determined by the central bank. Therefore, the direction of causality here is inverted.</p>
+    </div>
+
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li><strong>審題目標 (Goal):</strong> 找出「不正確」的陳述 (Find the false statement).</li>
+        <li><strong>關鍵樞紐 (Pivot Point):</strong> 理論中的<strong>因果關係 (Causality)</strong>。大部分學生都能記住 $MV=PY$ 以及 $V$、$Y$ 不變，所以很容易判斷 A、B、C 是正確的。這題的決勝點在於同學是否明白，方程式不只是一個數學等式，它背後有一個經濟學的因果方向：$M \rightarrow P$。</li>
+        <li><strong>干擾項 (Distractors):</strong> B 選項使用了「名義產出」(Nominal Output)，有些同學會一時忘記名義產出就是 $P \times Y$，從而誤以為 B 是錯的。</li>
+    </ul>
+
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <h4>陷阱一：混淆實質與名義變量 (Confusing Real and Nominal Variables)</h4>
+        <p>考生常忘記 $P \times Y$ 代表「名義產出 / 名義 GDP」。當題目提到「名義產出」時，直接聯想等式的右邊整個部分即可。</p>
+        
+        <h4>陷阱二：忽略因果方向 (Ignoring the Direction of Causality)</h4>
+        <p>在數學上，若 $x=y$，則 $y=x$。但在經濟學理論中，因果關係不能隨意互換。古典學派中，$M$ 是「因」，$P$ 是「果」。</p>
+    </div>
+
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 為什麼古典學派要假設 $Y$ (實質產出) 是不變的？現實中經濟不是會增長嗎？</p>
+        <p><strong>A:</strong> 好問題！古典學派關注的是「長期」的均衡狀態。他們相信自由市場的價格機制非常靈活，最終能自我調節至「充分就業」(Full Employment) 的水平。在該水平下，經濟體已經利用了所有資源，因此 $Y$ 達到了潛在的最大值，在模型分析中便將其視為一個固定的常數。</p>
+        <p class="eng-text"><em>A: Great question! The classical school focuses on long-run equilibrium. They believe that free-market price mechanisms are flexible and will eventually self-adjust to "Full Employment". At this level, the economy is utilizing all resources, so $Y$ has reached its potential maximum and is treated as a constant in the model's analysis.</em></p>
+    </div>
+    
+    <div class="qa-box">
+        <p class="qa-q">Q: 如果題目沒有說「古典」(Classical)，只說「交易方程式」(Equation of Exchange)，D 選項還錯嗎？</p>
+        <p><strong>A:</strong> 交易方程式 $MV=PY$ 本身只是一個恆等式 (Identity)，它沒有解釋因果關係。但當題目提到「貨幣量理論」(Quantity Theory of Money) 時，它就變成了一個具有因果方向的經濟理論。因此，無論如何，說「物價改變導致貨幣供應改變」在該理論框架下都是錯的。</p>
+        <p class="eng-text"><em>A: The Equation of Exchange $MV=PY$ itself is just a mathematical identity and does not imply causality. However, when the "Quantity Theory of Money" is mentioned, it becomes an economic theory with a specific direction of causality. Therefore, stating that "price changes lead to money supply changes" is fundamentally wrong within this theoretical framework.</em></p>
+    </div>
+
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box" style="border-left-color: #8b5cf6; background-color: #f5f3ff;">
+        <p><strong>百分比改變的速算公式 (Percentage Change Shortcut Formula):</strong></p>
+        <p>當處理 $M \times V = P \times Y$ 時，你可以將其轉換為百分比改變的加法公式（近似值）：</p>
+        <div class="math-block">
+            $$\% \Delta M + \% \Delta V \approx \% \Delta P + \% \Delta Y$$
+        </div>
+        <p>根據古典理論，$\% \Delta V = 0$ 且 $\% \Delta Y = 0$，所以公式立刻簡化為：</p>
+        <div class="math-block">
+            $$\% \Delta M \approx \% \Delta P$$
+        </div>
+        <p>在考試中，只要看到「古典」二字，馬上寫下這個簡化公式，你就能瞬間判斷出 $M$ 與 $P$ 是成正比的。接下來只要小心檢查文字描述中的<strong>「誰導致誰 (Who causes whom)」</strong>，就能秒殺這類題目！</p>
+    </div>
+
+</body>
+</html>
