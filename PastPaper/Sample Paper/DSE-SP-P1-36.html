@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Inflationary Gap</title>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #111827;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .header-section {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #ede9fe;
+            color: #6d28d9;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .question-option {
+            margin: 10px 0;
+            padding-left: 15px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .analysis-section {
+            margin-bottom: 25px;
+        }
+        .option-analysis {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .correct-badge {
+            color: #166534;
+            background-color: #dcfce3;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .incorrect-badge {
+            color: #991b1b;
+            background-color: #fee2e2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .eng-text {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>📊 HKDSE Economics Analysis</h1>
+        <p><strong>Topic (課題):</strong> Macroeconomics - Fiscal Policy & Output Gaps (宏觀經濟學：財政政策與產出差距)</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">Aggregate Demand (總需求)</span>
+            <span class="badge">Inflationary Gap (通貨膨脹差距)</span>
+            <span class="badge">Contractionary Fiscal Policy (緊縮性財政政策)</span>
+        </p>
+    </div>
+
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <p><strong>下列哪項有助解決通貨膨脹差距？</strong></p>
+        <div class="question-option">
+            A. 增加稅項<br>
+            B. 增加財政赤字<br>
+            C. 增加轉移支付<br>
+            D. 增加政府支出
+        </div>
+        <hr style="margin: 15px 0;">
+        <p class="eng-text" style="font-style: normal;"><strong>Which of the following can help to solve an inflationary gap?</strong></p>
+        <div class="question-option eng-text" style="font-style: normal;">
+            A. an increase in taxes<br>
+            B. an increase in budget deficit<br>
+            C. an increase in transfer payments<br>
+            D. an increase in government expenditure
+        </div>
+    </div>
+
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <h3>💡 通貨膨脹差距 (Inflationary Gap)</h3>
+        <p>當經濟體的<strong>實際產出 (Actual Output)</strong> 高於<strong>潛在產出 (Potential Output / Full-employment GDP)</strong> 時，就會出現通貨膨脹差距。這代表經濟體系內的總需求 ($AD$) 過高，導致物價持續面臨上升壓力。</p>
+        <p class="eng-text">Occurs when the economy's <strong>Actual Output</strong> exceeds its <strong>Potential Output (Full-employment GDP)</strong>. This indicates that Aggregate Demand ($AD$) in the economy is too high, leading to continuous upward pressure on prices.</p>
+
+        <h3>📉 緊縮性財政政策 (Contractionary Fiscal Policy)</h3>
+        <p>為了解決通脹差距，政府必須「降溫」，採取減少總需求的措施。</p>
+        <p class="eng-text">To close an inflationary gap, the government must "cool down" the economy by taking measures to reduce Aggregate Demand.</p>
+
+        <div class="math-block">
+            <strong>總需求公式 (Aggregate Demand Equation):</strong>
+            $$AD = C + I + G + (X - M)$$
+        </div>
+        <p>政府主要透過改變<strong>稅收 ($T$)</strong>、<strong>政府支出 ($G$)</strong> 或<strong>轉移支付</strong>來影響私人消費 ($C$) 和直接影響 $G$。</p>
+        <p class="eng-text">The government primarily alters <strong>Taxes ($T$)</strong>, <strong>Government Expenditure ($G$)</strong>, or <strong>Transfer Payments</strong> to influence private consumption ($C$) or directly impact $G$.</p>
+    </div>
+
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>Correct Option (正確答案):</strong> <span style="font-size: 1.2em; font-weight: bold; color: #166534;">Option A</span></p>
+
+    <div class="option-analysis">
+        <p><span class="correct-badge">A. 增加稅項 (an increase in taxes) - CORRECT</span></p>
+        <p>增加稅收會減少市民的<strong>可支配收入 (Disposable Income)</strong>，從而減少私人消費開支 ($C$)。根據公式，消費下降會導致總需求 ($AD$) 減少，成功為經濟降溫並消除通貨膨脹差距。</p>
+        <p class="eng-text">Increasing taxes reduces citizens' <strong>disposable income</strong>, which in turn decreases private consumption expenditure ($C$). According to the equation, a fall in consumption reduces Aggregate Demand ($AD$), successfully cooling the economy and closing the inflationary gap.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="incorrect-badge">B. 增加財政赤字 (an increase in budget deficit) - INCORRECT</span></p>
+        <p>財政赤字代表政府支出 ($G$) 大於稅收 ($T$)。增加赤字意味著政府正在實行擴張性政策（例如進一步增加 $G$ 或減少 $T$），這會增加總需求，使通脹問題惡化。</p>
+        <p class="eng-text">A budget deficit means government expenditure ($G$) exceeds tax revenue ($T$). Increasing the deficit implies the government is implementing expansionary policies (like increasing $G$ or cutting $T$), which would increase $AD$ and worsen inflation.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="incorrect-badge">C. 增加轉移支付 (an increase in transfer payments) - INCORRECT</span></p>
+        <p>轉移支付（如失業救濟金、消費券）會增加市民的可支配收入，刺激消費 ($C$)，從而推高總需求 ($AD$)，令通脹更嚴重。</p>
+        <p class="eng-text">Transfer payments (e.g., unemployment benefits, consumption vouchers) raise disposable income, stimulating consumption ($C$). This pushes up Aggregate Demand ($AD$) and exacerbates inflation.</p>
+    </div>
+
+    <div class="option-analysis">
+        <p><span class="incorrect-badge">D. 增加政府支出 (an increase in government expenditure) - INCORRECT</span></p>
+        <p>政府支出 ($G$) 是總需求的直接組成部分。增加 $G$ 會直接增加 $AD$，令通貨膨脹差距進一步擴大。</p>
+        <p class="eng-text">Government expenditure ($G$) is a direct component of Aggregate Demand. Increasing $G$ directly increases $AD$, further widening the inflationary gap.</p>
+    </div>
+
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <ul>
+        <li><strong>Pivot Point (解題關鍵):</strong> 看到「解決通貨膨脹差距」 (solve an inflationary gap)，大腦必須立刻連繫到 <strong>「減少總需求 ($AD \downarrow$)」</strong>。</li>
+        <li><strong>Distractors (干擾項分析):</strong> 題目測試你是否清楚各項財政工具的方向。選項 B、C、D 全部都是<strong>擴張性 (Expansionary)</strong> 政策，只有 A 是<strong>緊縮性 (Contractionary)</strong>。</li>
+    </ul>
+
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <p>⚠️ <strong>混淆差距類型 (Confusing Gap Types)</strong></p>
+        <p>同學常因為粗心，將「通貨膨脹差距」誤看成「通貨緊縮差距 (Deflationary Gap)」。如果在通縮差距下，我們才需要擴張性政策（選項 B、C、D）。考試時請務必圈起 <strong>Inflationary (通脹)</strong> 一詞以提醒自己需要「降溫」。</p>
+        <p class="eng-text">Students often carelessly misread "Inflationary Gap" as "Deflationary Gap". Expansionary policies (Options B, C, D) are only needed during a deflationary gap. Always circle the word <strong>"Inflationary"</strong> during exams to remind yourself the economy needs "cooling down".</p>
+    </div>
+
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>🙋‍♂️ 學生問：</strong> 「增加財政赤字」不是代表政府沒錢嗎？為什麼反而會推高通脹？</p>
+        <p class="eng-text"><strong>Q:</strong> Doesn't "budget deficit" mean the government has no money? Why would it push up inflation?</p>
+        <p><strong>👨‍🏫 導師答：</strong> 在宏觀經濟中，赤字 (Deficit) 是指政府「花出去的錢 ($G$)」大於「收回來的錢 ($T$)」。這代表政府正在向市場<strong>淨注入</strong>資金！市場上的錢變多了，需求自然上升，從而推高物價（通脹）。</p>
+        <p class="eng-text"><strong>A:</strong> In macroeconomics, a deficit means the government is "spending more ($G$)" than it is "taxing ($T$)". This means the government is making a <strong>net injection</strong> of money into the market! More money in the market leads to higher demand, which drives up prices (inflation).</p>
+    </div>
+
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <p>🔥 <strong>The "Odd One Out" Strategy (「排除法」速解):</strong></p>
+    <p>在應付這類政策選擇題時，你可以先判斷每個選項的「政策方向」：</p>
+    <ul>
+        <li>A. 增加稅項 $\rightarrow$ 收縮經濟</li>
+        <li>B. 增加財政赤字 $\rightarrow$ 擴張經濟</li>
+        <li>C. 增加轉移支付 $\rightarrow$ 擴張經濟</li>
+        <li>D. 增加政府支出 $\rightarrow$ 擴張經濟</li>
+    </ul>
+    <p>在單項選擇題中，方向唯一不同的那個選項（Odd One Out），有 99% 的機率就是正確答案！</p>
+    <p class="eng-text">When dealing with policy MCQs, evaluate the "direction" of each option. Options B, C, and D are all expansionary. Option A is the only contractionary one. In a single-choice question, the option with the unique direction (the Odd One Out) is almost always the correct answer!</p>
+
+</div>
+
+</body>
+</html>

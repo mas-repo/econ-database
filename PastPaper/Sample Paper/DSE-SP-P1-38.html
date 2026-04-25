@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Balance of Payments</title>
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #0ea5e9;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-main: #f9fafb;
+            --bg-card: #ffffff;
+            --correct: #15803d;
+            --incorrect: #b91c1c;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+            --math-bg: #f3f4f6;
+            --qna-bg: #fdf2f8;
+            --qna-border: #db2777;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-main);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 5px;
+        }
+
+        h1 { margin-top: 0; border-bottom: none; }
+
+        .header-info {
+            background-color: var(--primary-light);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-info li {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .question-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+
+        .analysis-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-correct { color: var(--correct); font-weight: bold; }
+        .status-incorrect { color: var(--incorrect); font-weight: bold; }
+
+        .qna-box {
+            background-color: var(--qna-bg);
+            border-left: 5px solid var(--qna-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .lang-zh {
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .lang-en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-info">
+        <h1>經濟學題目解析 <br><span style="font-size: 0.7em; color: var(--text-muted);">Economics Problem Analysis</span></h1>
+        <ul>
+            <li><strong>主題 (Topic):</strong> 國際收支平衡 (Balance of Payments)</li>
+            <li><strong>難度 (Difficulty):</strong> ★★★☆☆</li>
+            <li><strong>關鍵概念 (Key Concepts):</strong> 經常帳 (Current Account), 資本及金融帳 (Capital and Financial Account), 會計恆等式 (Accounting Identity)</li>
+        </ul>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="lang-zh">
+            <strong>若一國有經常帳赤字，</strong><br><br>
+            A. 該國必定有貿易赤字。<br>
+            B. 該國的資本及金融帳必定有盈餘。<br>
+            C. 該國外匯儲備必定會減少。<br>
+            D. 以上均正確。
+        </div>
+        <div class="lang-en">
+            <strong>If a country is running a current account deficit,</strong><br><br>
+            A. it must also be running a trade deficit.<br>
+            B. its capital and financial account must be in surplus.<br>
+            C. the foreign exchange reserves of the country must decrease.<br>
+            D. all of the above are correct.
+        </div>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="lang-zh">
+            <strong>國際收支平衡表 (Balance of Payments, BOP)</strong> 記錄了一國在特定期間內與世界各地的所有經濟交易。根據會計原則，國際收支平衡表的總和必須為零。
+        </div>
+        <div class="lang-en">
+            The <strong>Balance of Payments (BOP)</strong> account records all economic transactions between a country and the rest of the world over a specific period. By accounting principles, the sum of the balance of payments must always be zero.
+        </div>
+        
+        <div class="math-block">
+            $$ BOP = CA + CFA \equiv 0 $$
+        </div>
+
+        <div class="lang-zh">
+            <ul>
+                <li><strong>經常帳 (Current Account, \(CA\)):</strong> 包括有形貿易 (貨物)、無形貿易 (服務)、初次收入 (要素收益) 及二次收入 (經常轉移)。</li>
+                <li><strong>資本及金融帳 (Capital and Financial Account, \(CFA\)):</strong> 記錄資本轉移、非儲備金融資產交易 (如直接投資、證券投資) 以及儲備資產 (外匯儲備) 的變動。</li>
+            </ul>
+        </div>
+        <div class="lang-en">
+            <ul>
+                <li><strong>Current Account (\(CA\)):</strong> Includes visible trade (goods), invisible trade (services), primary income (factor income), and secondary income (current transfers).</li>
+                <li><strong>Capital and Financial Account (\(CFA\)):</strong> Records capital transfers, transactions in non-reserve financial assets (like foreign direct investment, portfolio investment), and changes in reserve assets (foreign exchange reserves).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    
+    <p><strong>正確答案 (Correct Option): <span class="status-correct">選項 B (Option B)</span></strong></p>
+
+    <div class="analysis-item">
+        <div class="lang-zh">
+            <span class="status-correct">✔ 為什麼選項 B 是正確的？</span><br>
+            基於會計恆等式 \(BOP = CA + CFA = 0\)。如果經常帳出現赤字，即 \(CA < 0\)，為了使總和等於零，資本及金融帳必須出現盈餘，即 \(CFA > 0\)。這是一個數學上的必然結果。
+        </div>
+        <div class="lang-en">
+            <span class="status-correct">✔ Why is Option B correct?</span><br>
+            Based on the accounting identity \(BOP = CA + CFA = 0\). If the current account is in deficit, meaning \(CA < 0\), then to make the sum equal zero, the capital and financial account must be in surplus, meaning \(CFA > 0\). This is a mathematical certainty.
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <div class="lang-zh">
+            <span class="status-incorrect">✘ 為什麼選項 A 是錯誤的？</span><br>
+            經常帳不只有貿易餘額，還包含收入和經常轉移。一個國家可能在貨物及服務貿易上有盈餘，但因為有龐大的資金流出（例如外資匯走利潤或大量外匯匯款），導致整體經常帳出現赤字。因此，「必定」有貿易赤字是不成立的。
+        </div>
+        <div class="lang-en">
+            <span class="status-incorrect">✘ Why is Option A incorrect?</span><br>
+            The current account consists of more than just the trade balance; it also includes income and current transfers. A country might have a surplus in the trade of goods and services, but still suffer a massive outflow of funds (e.g., foreign investors repatriating profits or large remittance outflows), resulting in an overall current account deficit. Therefore, it does not "must" have a trade deficit.
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <div class="lang-zh">
+            <span class="status-incorrect">✘ 為什麼選項 C 是錯誤的？</span><br>
+            外匯儲備（儲備資產）只是資本及金融帳的其中一部分。即使經常帳有赤字，如果該國吸引了極大量的海外直接投資或證券投資流入（非儲備資產盈餘大於經常帳赤字），該國的外匯儲備實際上是可以增加的，而不一定會減少。
+        </div>
+        <div class="lang-en">
+            <span class="status-incorrect">✘ Why is Option C incorrect?</span><br>
+            Foreign exchange reserves (reserve assets) are only one component of the capital and financial account. Even with a current account deficit, if the country attracts a massive inflow of foreign direct investment or portfolio investment (where the non-reserve asset surplus is larger than the current account deficit), the country's foreign exchange reserves could actually increase, rather than must decrease.
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="lang-zh">
+        這條題目的 <strong>Pivot Point (拆解關鍵)</strong> 在於 <span class="highlight">「必定」(must)</span> 這個字眼。
+        在經濟學中，當題目使用「必定」時，通常暗示著背後有一個堅不可摧的「會計恆等式」或極度嚴格的理論條件。選項 A 和 C 只代表了「可能發生」的經濟現象（例如經常帳赤字通常伴隨貿易赤字），但無法達到「必定」的門檻。只有選項 B 完美契合了會計帳目 \(CA + CFA = 0\) 的絕對定律。
+    </div>
+    <div class="lang-en">
+        The <strong>Pivot Point</strong> of this question is the word <span class="highlight">"must" (必定)</span>. 
+        In economics, when a question uses "must", it usually implies an unbreakable "accounting identity" or extremely strict theoretical conditions. Options A and C represent economic phenomena that "might happen" (e.g., a current account deficit is often accompanied by a trade deficit), but they cannot reach the threshold of "must". Only Option B perfectly fits the absolute law of the accounting framework \(CA + CFA = 0\).
+    </div>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="lang-zh">
+        <ul>
+            <li><strong>概念混淆：</strong> 學生經常將「經常帳 (Current Account)」與「貿易帳 (Trade Account/Balance)」劃上等號。緊記，貿易帳只是經常帳的最大組成部分，但並非全部。</li>
+            <li><strong>忽略恆等式：</strong> 忘記了 BOP 是一個永遠為零的會計帳目，誤以為經常帳赤字代表整體的國際收支也是赤字。</li>
+        </ul>
+    </div>
+    <div class="lang-en">
+        <ul>
+            <li><strong>Concept Confusion:</strong> Students often equate the "Current Account" with the "Trade Account/Balance". Remember, the trade account is the largest component of the current account, but it is not the whole thing.</li>
+            <li><strong>Ignoring the Identity:</strong> Forgetting that the BOP is an accounting account that always equals zero, mistakenly thinking a current account deficit means the overall balance of payments is also in deficit.</li>
+        </ul>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qna-box">
+        <div class="lang-zh">
+            <strong>問：如果真實世界中有統計錯誤，BOP 的總和還是零嗎？</strong><br>
+            答：是的！在編製國際收支平衡表時，如果 \(CA\) 和 \(CFA\) 加起來不等於零，會計師會加入一個名為「誤差及遺漏 (Errors and omissions)」的項目來進行調整，強制讓最後的帳目總和 \(BOP\) 等於零。這是一個會計原則。
+        </div>
+        <div class="lang-en">
+            <strong>Q: If there are statistical errors in the real world, is the sum of BOP still zero?</strong><br>
+            A: Yes! When compiling the balance of payments account, if \(CA\) and \(CFA\) do not sum to zero, accountants will insert an item called "Errors and omissions" to adjust the discrepancy, forcibly making the final sum of the \(BOP\) equal to zero. This is an accounting principle.
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="lang-zh">
+        <strong>「必定法則」秒殺法：</strong> 在做多項選擇題時，圈出所有帶有「必定 (must)」、「總是 (always)」、「唯一 (only)」的字眼。這些極端詞彙通常要求你尋找經濟學上的「恆等式」或「定義」。只要腦海中彈出方程式 \(CA + CFA = 0\)，你就能在 5 秒內鎖定選項 B，無需逐一推敲 A 和 C 的複雜情境。
+    </div>
+    <div class="lang-en">
+        <strong>The "Must Rule" Shortcut:</strong> When doing MCQs, circle all absolute words like "must", "always", or "only". These extreme words usually require you to look for an economic "identity" or "definition". As soon as the equation \(CA + CFA = 0\) pops into your head, you can lock in Option B within 5 seconds without overthinking the complex scenarios in Options A and C.
+    </div>
+
+</div>
+
+</body>
+</html>

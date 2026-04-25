@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --cream: #fffbeb;
+            --cream-border: #f59e0b;
+            --gray-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-en: #4b5563;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .zh-text {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        /* Specific Section Styles */
+        .header-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .header-item {
+            margin-bottom: 10px;
+        }
+        .header-tag {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ccc;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .is-correct {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+        .is-wrong {
+            background-color: var(--wrong-bg);
+            border-left-color: var(--wrong-border);
+        }
+
+        .tips-box {
+            background-color: var(--cream);
+            border-left: 5px solid var(--cream-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: white;
+            border: 1px solid #d1d5db;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q { font-weight: bold; color: var(--primary-blue); }
+        .qa-a { margin-top: 10px; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-section, .question-box, .concept-box, .tips-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="header-item">
+            <span class="header-tag">Topic (課題)</span> 
+            <strong>宏觀經濟學：總需求與總供給、貨幣政策</strong><br>
+            <div class="en-text">Macroeconomics: AD-AS Model, Monetary Policy</div>
+        </div>
+        <div class="header-item">
+            <span class="header-tag">Difficulty (難度)</span> 
+            ⭐⭐⭐ (3/5)
+        </div>
+        <div class="header-item">
+            <span class="header-tag">Key Concepts (核心概念)</span> 
+            總需求 (Aggregate Demand), 潛在收入 (Potential Income), 貨幣供應 (Money Supply), 失業缺口 (Unemployment Gap)
+        </div>
+    </div>
+
+    <h2>題目 / The Question</h2>
+    <div class="question-box">
+        <div class="zh-text">當有失業時，貨幣供應的增加不會使_____________增加/上升。</div>
+        <div class="en-text">During unemployment, an increase in money supply will NOT raise</div>
+        <ul class="options-list">
+            <li>
+                <span class="zh-text">A. 實質國民收入</span><br>
+                <span class="en-text">A. the real national income.</span>
+            </li>
+            <li>
+                <span class="zh-text">B. 名義國民收入</span><br>
+                <span class="en-text">B. the nominal national income.</span>
+            </li>
+            <li>
+                <span class="zh-text">C. 物價水平</span><br>
+                <span class="en-text">C. the price level.</span>
+            </li>
+            <li>
+                <span class="zh-text">D. 潛在收入</span><br>
+                <span class="en-text">D. the potential income.</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2>概念重溫 / Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>1. 擴張性貨幣政策 (Expansionary Monetary Policy):</strong><br>當貨幣供應 \( M_s \) 增加時，利率 \( r \) 會下降。這會刺激投資 \( I \) 和消費 \( C \)，從而導致總需求 \( AD \) 增加（AD曲線向右移）。</p>
+        <p class="en-text">When money supply \( M_s \) increases, the interest rate \( r \) falls. This stimulates investment \( I \) and consumption \( C \), leading to an increase in Aggregate Demand \( AD \) (AD curve shifts to the right).</p>
+
+        <p class="zh-text"><strong>2. 總需求與總供給模型 (AD-AS Model):</strong><br>「當有失業時」意味著經濟正在潛在產出（充分就業水平）之下運行，即 \( Y < Y_f \)。在這種情況下，短期總供給曲線（SRAS）向上傾斜。當 \( AD \) 增加時，物價水平 \( P \) 和實質產出 \( Y \) 都會上升。</p>
+        <p class="en-text">"During unemployment" means the economy is operating below its potential output (full employment level), i.e., \( Y < Y_f \). In this scenario, the short-run aggregate supply (SRAS) curve is upward sloping. When \( AD \) increases, both the price level \( P \) and real output \( Y \) will rise.</p>
+
+        <p class="zh-text"><strong>3. 潛在收入 (Potential Income) / 長期總供給 (LRAS):</strong><br>潛在收入 \( Y_f \) 是指經濟體系充分利用所有資源（勞動力、資本、技術）時所能達到的最高產出水平。它不受物價水平或需求面因素（如貨幣供應）影響。</p>
+        <p class="en-text">Potential income \( Y_f \) is the maximum output an economy can produce when all resources (labor, capital, technology) are fully employed. It is unaffected by the price level or demand-side factors like money supply.</p>
+
+        <div class="math-block">
+            <strong>名義國民收入公式 (Nominal National Income Formula):</strong>
+            $$ \text{Nominal Income} = P \times Y $$
+            <div class="en-text" style="margin-top: 10px;">Where \( P \) = Price Level, \( Y \) = Real National Income</div>
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 / The Answer & Detailed Analysis</h2>
+    <div class="zh-text"><strong>正確答案：Option D</strong></div>
+    <div class="en-text" style="margin-bottom: 20px;"><strong>Correct Option: Option D</strong></div>
+
+    <div class="analysis-item is-wrong">
+        <p class="zh-text"><strong>選項 A 錯誤：實質國民收入 (Real national income) 會增加。</strong><br>由於經濟存在失業，表示有閒置資源。當貨幣供應增加帶動總需求 \( AD \) 上升時，廠商會增聘原本失業的工人來增加生產，因此實質國民收入 \( Y \) 會上升。題目問「不會」，所以A錯誤。</p>
+        <p class="en-text"><strong>Option A is Incorrect: Real national income WILL increase.</strong><br>Since there is unemployment, idle resources exist. When an increase in money supply boosts aggregate demand \( AD \), firms will hire unemployed workers to increase production, causing real national income \( Y \) to rise. The question asks what will NOT raise, so A is wrong.</p>
+    </div>
+
+    <div class="analysis-item is-wrong">
+        <p class="zh-text"><strong>選項 B 錯誤：名義國民收入 (Nominal national income) 會增加。</strong><br>根據公式，名義國民收入 = 物價水平 \( P \) × 實質國民收入 \( Y \)。由於總需求增加導致 \( P \) 和 \( Y \) 雙雙上升，它們的乘積（名義國民收入）必然也會增加。</p>
+        <p class="en-text"><strong>Option B is Incorrect: Nominal national income WILL increase.</strong><br>According to the formula, Nominal Income = Price Level \( P \) × Real Income \( Y \). Since the increase in aggregate demand causes both \( P \) and \( Y \) to rise, their product (nominal national income) must also increase.</p>
+    </div>
+
+    <div class="analysis-item is-wrong">
+        <p class="zh-text"><strong>選項 C 錯誤：物價水平 (Price level) 會增加。</strong><br>總需求 \( AD \) 向右移會沿著向上傾斜的短期總供給曲線 (SRAS) 移動，產生需求拉動型通脹 (demand-pull inflation)，導致物價水平 \( P \) 上升。</p>
+        <p class="en-text"><strong>Option C is Incorrect: The price level WILL increase.</strong><br>The rightward shift in \( AD \) moves along the upward-sloping short-run aggregate supply (SRAS) curve, creating demand-pull inflation, which raises the price level \( P \).</p>
+    </div>
+
+    <div class="analysis-item is-correct">
+        <p class="zh-text"><strong>選項 D 正確：潛在收入 (Potential income) 不會增加。</strong><br>潛在收入由供給面的實質因素決定（如勞動人口規模、資本存量、技術水平）。貨幣供應是需求面的因素，即使印製更多鈔票，也不會改變國家的生產能力極限。因此，潛在收入保持不變。</p>
+        <p class="en-text"><strong>Option D is Correct: The potential income will NOT increase.</strong><br>Potential income is determined by real supply-side factors (e.g., size of labor force, capital stock, technological level). Money supply is a demand-side factor. Printing more money does not alter the physical productive capacity limits of a country. Therefore, potential income remains unchanged.</p>
+    </div>
+
+    <h2>題目拆解 / Problem Decomposition</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>解題樞紐 (Pivot Point)：區分「需求面」與「供給面」</strong><br>這道題的核心在於測試你是否知道「貨幣供應」純粹影響總需求 (AD)，而「潛在收入」(LRAS) 完全取決於長期的生產要素。只要掌握這個原則，就能秒殺題目。</p>
+        <p class="en-text"><strong>Pivot Point: Distinguishing "Demand Side" vs. "Supply Side"</strong><br>The core of this question tests if you know that "money supply" purely affects Aggregate Demand (AD), while "potential income" (LRAS) depends entirely on long-run factors of production. Grasping this principle lets you solve the question instantly.</p>
+
+        <p class="zh-text"><strong>關鍵字眼分析：</strong><br>
+        1. <strong>「當有失業時」</strong>：這是告訴你經濟尚未達到潛在產出 (\( Y < Y_f \))。如果題目說「處於充分就業」，那麼實質國民收入 (A) 就不會增加（因為已經到頂了）。這個前提是用來排除A的。<br>
+        2. <strong>「不會」</strong>：這是一個反向問題，要找出那個保持不變或下降的變數。</p>
+        <p class="en-text"><strong>Keyword Analysis:</strong><br>
+        1. <strong>"During unemployment"</strong>: This tells you the economy has not yet reached potential output (\( Y < Y_f \)). If the question said "at full employment," then real national income (A) would NOT increase (as it's capped). This premise ensures option A is incorrect.<br>
+        2. <strong>"NOT"</strong>: This is a negative question, requiring you to find the variable that remains constant or decreases.</p>
+    </div>
+
+    <h2>常犯錯誤與陷阱 / Common Mistakes & Traps</h2>
+    <ul>
+        <li>
+            <p class="zh-text"><strong>混淆「實質國民收入」與「潛在收入」：</strong><br>很多同學以為兩者是一樣的。實質國民收入是<strong>實際</strong>生產出來的數量（會隨經濟週期波動），而潛在收入是<strong>理想狀態下</strong>的最高生產能力（一條垂直的直線）。</p>
+            <p class="en-text"><strong>Confusing "Real National Income" with "Potential Income":</strong><br>Many students think these are the same. Real national income is the <strong>actual</strong> amount produced (which fluctuates with the business cycle), while potential income is the <strong>ideal</strong> maximum productive capacity (a vertical straight line).</p>
+        </li>
+    </ul>
+
+    <h2>學生常見疑問 / Student Q&A</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 如果題目把「當有失業時」改成「當經濟處於充分就業時 (at full employment)」，答案會改變嗎？</div>
+        <div class="en-text">Q: If the question changed "During unemployment" to "At full employment," would the answer change?</div>
+        
+        <div class="qa-a zh-text">A: 會的！如果在充分就業下，產出已經達到了極限 \( Y = Y_f \)。此時增加貨幣供應（增加 AD）只會導致物價水平 \( P \) 大幅上升，但<strong>實質國民收入</strong>將無法增加。在這種情況下，選項 A 和 D 都不會增加。</div>
+        <div class="en-text">A: Yes! If at full employment, output has reached its limit \( Y = Y_f \). Increasing the money supply (increasing AD) would only cause a sharp rise in the price level \( P \), but the <strong>real national income</strong> could not increase. In that specific case, both Option A and D would not increase.</div>
+    </div>
+
+    <div class="qa-box">
+        <div class="qa-q">Q: 甚麼情況下潛在收入 (Potential Income) 才會增加？</div>
+        <div class="en-text">Q: Under what circumstances would Potential Income actually increase?</div>
+        
+        <div class="qa-a zh-text">A: 潛在收入只會在經濟的生產能力擴大時增加。例如：引進新科技、勞動人口增加、發現新自然資源、或是提升教育水平（人力資本增加）。這些因素會使長期總供給曲線 (LRAS) 向右移。</div>
+        <div class="en-text">A: Potential income only increases when the economy's productive capacity expands. Examples include: introduction of new technology, growth in the labor force, discovery of new natural resources, or improvements in education (increase in human capital). These factors shift the Long-Run Aggregate Supply (LRAS) curve to the right.</div>
+    </div>
+
+    <h2>考試技巧與速解 / Exam Tricks & Shortcuts</h2>
+    <div class="tips-box">
+        <p class="zh-text"><strong>秒殺法 (The Instant Kill Method)：分類法</strong><br>
+        在選擇題中看到「貨幣政策」、「財政政策」、「貨幣供應」、「政府開支」等字眼，立刻在腦海中打上「<strong>需求面 (Demand-side)</strong>」的標籤。當選項中出現「潛在收入 / 長期總供給」，立刻打上「<strong>供給面 (Supply-side)</strong>」的標籤。需求面的變動永遠不會直接改變長期的供給極限。因此，問到「什麼不會改變」，直接選供給面的選項 (D) 即可，連畫圖的時間都省下來！</p>
+        <p class="en-text"><strong>The Categorization Shortcut:</strong><br>
+        When you see terms like "monetary policy," "fiscal policy," "money supply," or "government expenditure" in an MCQ, instantly tag them mentally as "<strong>Demand-side</strong>". When an option mentions "potential income / LRAS", tag it as "<strong>Supply-side</strong>". Changes in the demand side never directly alter the long-run supply limit. Therefore, when asked "what will NOT change," just pick the supply-side option (D) immediately. You don't even need to draw a graph!</p>
+    </div>
+
+</body>
+</html>

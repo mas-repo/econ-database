@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monetary Neutrality</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #f0f9ff;
+            --border-color: #bae6fd;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --bg-color: #f8fafc;
+            --math-bg: #f3f4f6;
+            --trap-bg: #fff1f2;
+            --trap-border: #f43f5e;
+            --qa-bg: #fdf4ff;
+            --qa-border: #d946ef;
+            --trick-bg: #fefce8;
+            --trick-border: #eab308;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-heading);
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .en-translation {
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #cbd5e1;
+            padding-left: 10px;
+        }
+
+        /* Section Styles */
+        .header-section {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background-color: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            margin-bottom: 25px;
+        }
+
+        .option {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .option.correct {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            border-left: 5px solid #22c55e;
+        }
+
+        .trap-box {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .qa-box {
+            background-color: var(--qa-bg);
+            border-left: 5px solid var(--qa-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .trick-box {
+            background-color: var(--trick-bg);
+            border-left: 5px solid var(--trick-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .tag {
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>HKDSE Economics Tutor<br>經濟學導師解析</h1>
+        <div>
+            <span class="tag">Topic: 貨幣中立性 (Monetary Neutrality)</span>
+            <span class="tag">Difficulty: ★★★☆☆</span>
+        </div>
+        <div style="margin-top: 15px;">
+            <strong>Key Concepts:</strong> 貨幣供應 (Money Supply), 古典二分法 (Classical Dichotomy), 實質變量 (Real Variables)
+        </div>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>在長期而言，貨幣供應的轉變不會影響</strong></p>
+        <p>A. 物價水平。<br>
+           B. 實質產出。<br>
+           C. 名義貨幣需求。<br>
+           D. 以上均正確。</p>
+        <hr style="border-top: 1px solid #e2e8f0; margin: 15px 0;">
+        <p class="en-translation" style="border:none; margin:0; padding:0; color:#475569;">
+            <strong>In the long run, a change in money supply will NOT affect</strong><br><br>
+            A. the price level.<br>
+            B. the real output.<br>
+            C. the nominal demand for money.<br>
+            D. all of the above.
+        </p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>貨幣中立性與古典二分法 (Monetary Neutrality & Classical Dichotomy)</h3>
+        <p>這道題目的核心在於<strong>貨幣中立性 (Monetary Neutrality)</strong>。在宏觀經濟學的長期分析中，經濟學家認為名義變量（Nominal variables，如物價水平、名義工資）與實質變量（Real variables，如實質產出、就業人數）是分離的，這稱為<strong>古典二分法 (Classical Dichotomy)</strong>。</p>
+        <p class="en-translation">The core of this question lies in <strong>Monetary Neutrality</strong>. In long-run macroeconomic analysis, economists believe that nominal variables (e.g., price level, nominal wage) and real variables (e.g., real output, employment) are separated. This is known as the <strong>Classical Dichotomy</strong>.</p>
+        
+        <p>根據交易方程式 (Equation of Exchange)：</p>
+        <p class="en-translation">According to the Equation of Exchange:</p>
+        
+        <div class="math-block">
+            $$M \times V = P \times Y$$
+        </div>
+        
+        <p>當中 \(M\) 是貨幣供應，\(V\) 是貨幣流通速度，\(P\) 是物價水平，而 \(Y\) 是實質產出 (Real Output)。在長期而言，\(V\) 趨於穩定，而 \(Y\) 取決於實質因素（如勞動力、資本、技術），不受貨幣供應影響。因此，貨幣供應 \(M\) 的改變只會導致物價水平 \(P\) 作出同比例的改變。</p>
+        <p class="en-translation">Where \(M\) is the money supply, \(V\) is the velocity of money, \(P\) is the price level, and \(Y\) is the real output. In the long run, \(V\) is relatively stable, and \(Y\) is determined by real factors (like labor, capital, technology) and is unaffected by the money supply. Therefore, a change in money supply \(M\) will only lead to a proportional change in the price level \(P\).</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="analysis-box">
+        <p><strong>正確答案 (Correct Option)：<span style="color: #22c55e; font-size: 1.2rem;">Option B</span></strong></p>
+        
+        <div class="option">
+            <p><strong>A. 物價水平 (the price level) - ❌ 錯誤 (Incorrect)</strong></p>
+            <p>正如上面所述，長期貨幣供應的增加會直接導致物價水平上升（引發通脹）。因此，物價水平<strong>會</strong>被影響。</p>
+            <p class="en-translation">As explained above, an increase in the money supply in the long run directly leads to an increase in the price level (causing inflation). Therefore, the price level <strong>WILL</strong> be affected.</p>
+        </div>
+
+        <div class="option correct">
+            <p><strong>B. 實質產出 (the real output) - ✅ 正確 (Correct)</strong></p>
+            <p>基於貨幣中立性，在長期而言，貨幣只是一層「面紗」。實質產出（即實質 GDP）是由技術、資源和生產力決定的，而不是由市場上有多少鈔票決定的。因此，它<strong>不會</strong>被影響。</p>
+            <p class="en-translation">Based on monetary neutrality, in the long run, money is just a "veil." Real output (i.e., real GDP) is determined by technology, resources, and productivity, not by how many banknotes are in the market. Therefore, it <strong>WILL NOT</strong> be affected.</p>
+        </div>
+
+        <div class="option">
+            <p><strong>C. 名義貨幣需求 (the nominal demand for money) - ❌ 錯誤 (Incorrect)</strong></p>
+            <p>雖然實質貨幣需求可能不變，但由於物價水平 \(P\) 上升，人們需要持有更多的名義貨幣（更多面額的鈔票）來購買相同數量的商品。因此，名義貨幣需求<strong>會</strong>隨之改變。</p>
+            <p class="en-translation">Although the real demand for money might remain unchanged, because the price level \(P\) rises, people need to hold more nominal money (a higher face value of cash) to buy the same quantity of goods. Therefore, the nominal demand for money <strong>WILL</strong> change.</p>
+        </div>
+
+        <div class="option">
+            <p><strong>D. 以上均正確 (all of the above) - ❌ 錯誤 (Incorrect)</strong></p>
+            <p>因為選項 A 和 C 皆會受影響，所以此選項不正確。</p>
+            <p class="en-translation">Since options A and C are affected, this option is incorrect.</p>
+        </div>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>解答這類題目的「關鍵字」在於<strong>「長期」(In the long run)</strong>。這是一個明確的信號，提示你必須運用「貨幣中立性」的原則。</p>
+    <p class="en-translation">The "pivot point" for answering this type of question lies in the phrase <strong>"In the long run"</strong>. This is a clear signal prompting you to apply the principle of "Monetary Neutrality".</p>
+    <ul>
+        <li><strong>步驟一：</strong> 尋找時間框架（短期還是長期？）。本題是「長期」。</li>
+        <li><strong>步驟二：</strong> 區分選項中的變數是「名義」(Nominal) 還是「實質」(Real)。</li>
+        <li><strong>步驟三：</strong> 套用定論：長期貨幣政策只影響名義變數，不影響實質變數。</li>
+    </ul>
+    <ul class="en-translation">
+        <li><strong>Step 1:</strong> Identify the time frame (Short run or Long run?). Here, it is "Long run".</li>
+        <li><strong>Step 2:</strong> Categorize the variables in the options as "Nominal" or "Real".</li>
+        <li><strong>Step 3:</strong> Apply the rule: Long-run monetary policy only affects nominal variables, not real variables.</li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱一：混淆名義與實質貨幣需求 (Confusing Nominal and Real Money Demand)</strong></p>
+        <p>很多學生會誤選 C。他們記得「貨幣需求取決於實質利率和實質收入」，這兩者在長期不變，所以誤以為貨幣需求也不變。請注意！題目寫的是<strong>「名義」</strong>貨幣需求 (Nominal demand)。當漢堡包從 $20 漲價到 $40，你銀包裡需要的現金（名義貨幣）就增加了！</p>
+        <p class="en-translation">Many students mistakenly choose C. They remember "money demand depends on real interest rate and real income", and since these don't change in the long run, they assume money demand doesn't either. Watch out! The question specifies <strong>"nominal"</strong> money demand. When a burger's price goes from $20 to $40, the cash you need in your wallet (nominal money) increases!</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 如果題目改成「在短期而言 (In the short run)」，答案會是甚麼？</strong></p>
+        <p>A: 在短期而言，由於價格具有黏性 (Sticky prices) 未必能即時調整，貨幣供應的增加會降低利率，刺激投資和消費，從而導致「實質產出」(Real output) 增加。所以短期內，幾乎所有選項都會受影響。</p>
+        <hr style="border-top: 1px dashed #d946ef; margin: 10px 0;">
+        <p class="en-translation"><strong>Q: What if the question was changed to "In the short run"?</strong><br>
+        A: In the short run, due to sticky prices that cannot adjust instantly, an increase in money supply lowers interest rates, stimulating investment and consumption, which leads to an increase in "real output". So in the short run, almost all the listed options would be affected.</p>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <p><strong>10秒速解法 (The 10-Second Shortcut)</strong></p>
+        <p>在 DSE 經濟科 MC 中，只要看到 <strong>「長期」+「貨幣供應」</strong> 這兩個關鍵詞出現，你的眼睛就應該立刻去掃描帶有<strong>「實質」(Real)</strong> 字眼的選項（如實質產出、實質利率、失業率）。這些必定是「不會被影響」的答案。直接秒殺！</p>
+        <p class="en-translation">In DSE Economics MC questions, whenever you see the combo <strong>"Long run" + "Money supply"</strong>, your eyes should immediately scan the options for words containing <strong>"Real"</strong> (like real output, real interest rate, unemployment rate). These are guaranteed to be the "unaffected" variables. Instant kill!</p>
+    </div>
+
+</div>
+
+</body>
+</html>
