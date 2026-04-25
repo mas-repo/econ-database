@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutorial: Exchange Rates</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #f0f9ff;
+            --secondary: #f59e0b;
+            --bg-gray: #f8fafc;
+            --math-bg: #f3f4f6;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --correct: #22c55e;
+            --wrong: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+        }
+
+        /* Bilingual Text Styling */
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .zh-text {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        /* Section Boxes */
+        .header-box {
+            background-color: var(--bg-gray);
+            border-bottom: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 25px;
+        }
+
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-left: 6px solid var(--secondary);
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 6px solid var(--primary);
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .analysis-box {
+            background-color: #fdfffe;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 6px solid var(--secondary);
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        /* Math Blocks */
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        /* Options Breakdown */
+        .option {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            background-color: var(--bg-gray);
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .option.correct {
+            border-left-color: var(--correct);
+            background-color: #f0fdf4;
+        }
+
+        .option.wrong {
+            border-left-color: var(--wrong);
+            background-color: #fef2f2;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-gray);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+        .badge-correct { background-color: var(--correct); }
+        .badge-wrong { background-color: var(--wrong); }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header-box, .question-box, .concept-box, .analysis-box, .trick-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1 style="margin-top: 0;">HKDSE Economics Tutor</h1>
+        <p class="zh-text"><strong>課題 Topic:</strong> 匯率與聯繫匯率制度 (Exchange Rates & Linked Exchange Rate System)</p>
+        <p class="zh-text"><strong>難度 Difficulty:</strong> ★★★☆☆</p>
+        <p class="zh-text"><strong>核心概念 Key Concepts:</strong> 聯繫匯率 (Linked Exchange Rate), 貨幣升值/貶值 (Appreciation/Depreciation), 出口與進口 (Exports & Imports)</p>
+    </div>
+
+    <div class="question-box">
+        <h2 style="margin-top: 0; color: var(--secondary);">題目 The Question</h2>
+        
+        <table>
+            <tr>
+                <th>某年 Year X</th>
+                <th>匯率 Exchange rate</th>
+            </tr>
+            <tr>
+                <td>四月 April</td>
+                <td>1歐元 (€1) = 1.12 美元 (US$1.12)</td>
+            </tr>
+            <tr>
+                <td>七月 July</td>
+                <td>1歐元 (€1) = 1.35 美元 (US$1.35)</td>
+            </tr>
+        </table>
+
+        <p class="zh-text">在聯繫匯率制度下，上述歐元兌美元的匯率變動會導致：</p>
+        <p class="en-text">Under the linked exchange rate system, the above change in the exchange rate between the Euro and the US dollar will lead to:</p>
+
+        <p class="zh-text">A. 訪港的歐洲旅客人數減少。</p>
+        <p class="en-text">A. a decrease in the number of Europeans visiting Hong Kong.</p>
+
+        <p class="zh-text">B. 訪美的香港旅客人數減少。</p>
+        <p class="en-text">B. a decrease in the number of Hong Kong people visiting the US.</p>
+
+        <p class="zh-text">C. 歐洲出口到香港的汽車數量增加。</p>
+        <p class="en-text">C. an increase in the quantity of European cars exported to Hong Kong.</p>
+
+        <p class="zh-text">D. 香港出口到歐洲的成衣產品數量增加。</p>
+        <p class="en-text">D. an increase in the quantity of Hong Kong garments exported to Europe.</p>
+    </div>
+
+    <div class="concept-box">
+        <h2>概念重溫 Concept Review</h2>
+        
+        <p class="zh-text"><strong>1. 聯繫匯率制度 (Linked Exchange Rate System - LERS)</strong><br>
+        在香港，港元 (HKD) 與美元 (USD) 掛鈎。因此，當美元相對於其他貨幣（如歐元）貶值時，港元也會跟隨美元對該貨幣貶值。兩者是「命運共同體」。</p>
+        <p class="en-text">In Hong Kong, the Hong Kong Dollar (HKD) is pegged to the US Dollar (USD). Therefore, when the USD depreciates against other currencies (like the Euro), the HKD also depreciates against that currency. They move together.</p>
+
+        <p class="zh-text"><strong>2. 升值與貶值 (Appreciation & Depreciation)</strong><br>
+        從題目數據可見，四月份買 1 歐元需要 1.12 美元，到了七月份買 1 歐元需要 1.35 美元。這意味著歐元變得更「昂貴」，即歐元升值 (Euro appreciates)；相對而言，美元貶值 (USD depreciates)。</p>
+        <p class="en-text">From the data, buying 1 Euro cost US$1.12 in April, and US$1.35 in July. This means the Euro became more "expensive", i.e., the Euro appreciated. Conversely, the USD depreciated.</p>
+
+        <p class="zh-text"><strong>3. 匯率變動對貿易的影響 (Impact on Trade)</strong><br>
+        當本國貨幣貶值時，本國商品在外國人眼中變得更便宜，有利出口 (Exports $\uparrow$)；相反，外國商品在本國人眼中變得更昂貴，不利進口 (Imports $\downarrow$)。</p>
+        <p class="en-text">When the domestic currency depreciates, domestic goods become cheaper to foreigners, boosting exports. Conversely, foreign goods become more expensive to locals, reducing imports.</p>
+
+        <div class="math-block">
+            $$\text{Price in Foreign Currency} = \text{Price in Domestic Currency} \times \left( \frac{\text{Foreign Currency}}{\text{Domestic Currency}} \right)$$
+        </div>
+        <p class="zh-text">以香港出口到歐洲的衣服為例：由於港元兌歐元貶值（即每港元能兌換的歐元減少），香港衣服的歐元價格下降。</p>
+        <p class="en-text">Taking HK garments exported to Europe as an example: Since the HKD depreciated against the Euro (fewer Euros per HKD), the price of HK garments in terms of Euros decreases.</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+        
+        <h3 style="color: var(--correct);">正確答案 Correct Option: D</h3>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 Wrong</span><strong>選項 A (Option A)</strong>
+            <p class="zh-text">由於美元貶值，港元亦跟隨對歐元貶值。這意味著歐洲旅客來香港消費變相打了折扣（他們的歐元能換到更多港元）。因此，訪港的歐洲旅客人數應該<strong>增加</strong>，而非減少。</p>
+            <p class="en-text">Since the USD depreciated, the HKD also depreciated against the Euro. This means traveling to HK becomes cheaper for Europeans (their Euros can buy more HKD). Thus, the number of European visitors should <strong>increase</strong>, not decrease.</p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 Wrong</span><strong>選項 B (Option B)</strong>
+            <p class="zh-text">在聯繫匯率制度下，港元與美元的匯率維持固定（約 US$1 = HK$7.8）。歐元兌美元的變動不會影響港元兌美元的匯率。因此，訪美的香港旅客人數在匯率層面上<strong>不受影響</strong>。</p>
+            <p class="en-text">Under the LERS, the exchange rate between HKD and USD is fixed (around US$1 = HK$7.8). Changes in the Euro-USD rate do not affect the HKD-USD rate. Therefore, the number of HK people visiting the US is <strong>unaffected</strong> by this exchange rate change.</p>
+        </div>
+
+        <div class="option wrong">
+            <span class="badge badge-wrong">錯誤 Wrong</span><strong>選項 C (Option C)</strong>
+            <p class="zh-text">歐元升值，意味著以港元結算的歐洲汽車價格上升（變得更貴）。價格上升會導致需求量下降，因此歐洲出口到香港的汽車數量應該<strong>減少</strong>。</p>
+            <p class="en-text">The Euro appreciated, meaning the price of European cars denominated in HKD increases (they become more expensive). A higher price leads to a lower quantity demanded, so the quantity of European cars exported to HK should <strong>decrease</strong>.</p>
+        </div>
+
+        <div class="option correct">
+            <span class="badge badge-correct">正確 Correct</span><strong>選項 D (Option D)</strong>
+            <p class="zh-text">港元跟隨美元對歐元貶值。這使得香港的成衣產品在歐洲市場以歐元標價時變得更便宜。根據需求定律，價格下降導致需求量上升，因此香港出口到歐洲的數量會<strong>增加</strong>。</p>
+            <p class="en-text">The HKD depreciated against the Euro along with the USD. This makes Hong Kong garments cheaper in the European market when priced in Euros. By the law of demand, a lower price increases the quantity demanded, so the quantity exported to Europe will <strong>increase</strong>.</p>
+        </div>
+    </div>
+
+    <div class="analysis-box">
+        <h2>題目拆解 Problem Decomposition</h2>
+        <p class="zh-text">解答這類題目的「關鍵支點」(Pivot Point) 只有兩個：</p>
+        <p class="en-text">There are only two "Pivot Points" to solving this type of question:</p>
+        
+        <ol>
+            <li>
+                <p class="zh-text"><strong>確認方向：</strong> 題目數字從 1.12 升至 1.35。這代表甚麼？這代表你需要付出<em>更多</em>的美元才能買到 1 歐元。結論：<strong>歐元升值，美元貶值</strong>。</p>
+                <p class="en-text"><strong>Identify the direction:</strong> The number goes from 1.12 to 1.35. What does this mean? You need to pay <em>more</em> USD to buy 1 Euro. Conclusion: <strong>Euro appreciated, USD depreciated</strong>.</p>
+            </li>
+            <li>
+                <p class="zh-text"><strong>啟動聯繫匯率：</strong> 題目特別提到「在聯繫匯率制度下」。這句是解題密碼。只要美元貶值，港元就自動對歐元貶值。隨後只需代入「貶值利出口、不利進口」的原則即可。</p>
+                <p class="en-text"><strong>Activate LERS:</strong> The question specifically mentions "Under the linked exchange rate system". This is the code. If USD depreciates, HKD automatically depreciates against the Euro. Then, simply apply the rule: "Depreciation benefits exports, harms imports".</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="trick-box">
+        <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+        <p class="zh-text"><strong>陷阱一：數字變大 = 該貨幣升值？</strong><br>
+        很多同學看到 $1.12 \rightarrow 1.35$，數字變大了，就直覺認為是「美元升值」。這是極常見的致命錯誤！你要看清楚單位是「1歐元 = 多少美元」。美元數字變大，代表美元的購買力下降了，所以是<strong>美元貶值</strong>。</p>
+        <p class="en-text"><strong>Trap 1: Bigger number = Appreciation?</strong><br>
+        Many students see $1.12 \rightarrow 1.35$ and intuitively think "USD appreciated". This is a fatal error! Look at the unit: "1 Euro = X USD". If the USD number increases, it means the purchasing power of USD has fallen. It is a <strong>USD depreciation</strong>.</p>
+    </div>
+
+    <div class="analysis-box">
+        <h2>學生常見疑問 Student Q&A</h2>
+        
+        <p class="zh-text"><strong>Q: 為什麼選項 B 中，香港人去美國不會因為匯率改變而變便宜或變貴？</strong></p>
+        <p class="en-text"><strong>Q: Why doesn't travel for HK people to the US become cheaper or more expensive in Option B?</strong></p>
+        
+        <p class="zh-text"><strong>A:</strong> 因為香港實行聯繫匯率制度（LERS），港元兌美元的匯率被鎖定在約 7.8 的水平。無論美元在國際市場上對歐元、日圓還是英鎊升跌，你在香港找換店換美元的成本永遠都是大約 $HK\$7.8$ 換 $US\$1$。所以，單純看匯率，去美國旅行的成本不會因此改變。</p>
+        <p class="en-text"><strong>A:</strong> Because HK implements the LERS, locking the HKD to USD rate at roughly 7.8. No matter how the USD fluctuates against the Euro, Yen, or Pound globally, your cost to exchange USD at a local shop remains roughly $HK\$7.8$ for $US\$1$. Thus, purely from an exchange rate perspective, the cost of US travel doesn't change.</p>
+    </div>
+
+    <div class="trick-box">
+        <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+        <p class="zh-text"><strong>畫箭咀速解法 (The Arrow Method):</strong></p>
+        <p class="en-text"><strong>The Arrow Method:</strong></p>
+        <ul style="margin-top: 10px;">
+            <li class="zh-text">Step 1: 寫出 $\frac{\text{USD}}{\text{EUR}}$ 數值 $\uparrow$ (由 1.12 去 1.35)</li>
+            <li class="zh-text">Step 2: 這代表 EUR $\uparrow$ (升值), USD $\downarrow$ (貶值)</li>
+            <li class="zh-text">Step 3: 聯繫匯率制度啟動 $\rightarrow$ HKD $\downarrow$ (貶值)</li>
+            <li class="zh-text">Step 4: HKD $\downarrow \implies$ 香港貨平咗 (出口 $\uparrow$), 外國貨貴咗 (進口 $\downarrow$)</li>
+            <li class="zh-text">Step 5: 直接找選項中「香港出口增加」或「外國進口減少」的描述，秒殺答案 D！</li>
+        </ul>
+    </div>
+
+</body>
+</html>
