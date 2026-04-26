@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Gains from Trade</title>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-en: #64748b;
+            --correct: #16a34a;
+            --wrong: #dc2626;
+        }
+        
+        body {
+            font-family: 'PingFang HK', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            padding: 15px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* Bilingual Styling */
+        .zh {
+            margin-bottom: 8px;
+        }
+        .en-translation {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            border-left: 3px solid #cbd5e1;
+            padding-left: 12px;
+            font-style: italic;
+        }
+
+        /* Specific Sections */
+        .header-section {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        /* Table Styling */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            th, td { padding: 8px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <p class="zh"><strong>📖 主題 (Topic):</strong> 國際貿易、比較優勢與貿易得益 (International Trade, Comparative Advantage & Gains from Trade)</p>
+        <p class="zh"><strong>⭐ 難度 (Difficulty):</strong> ★★★☆☆</p>
+        <div class="zh"><strong>🔑 關鍵概念 (Key Concepts):</strong>
+            <span class="tag">機會成本 Opportunity Cost</span>
+            <span class="tag">產出表 Output Table</span>
+            <span class="tag">貿易比率 Terms of Trade</span>
+        </div>
+    </div>
+
+    <h2>題目 The Question</h2>
+    <div class="zh">
+        <p>下表顯示甲、乙兩國每單位資源的產出：</p>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>平板電腦(單位)</th>
+                    <th>手提電話(單位)</th>
+                </tr>
+                <tr>
+                    <td>甲國</td>
+                    <td>8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>乙國</td>
+                    <td>10</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+        <p>若甲國出口10單位的平板電腦至乙國，以換取25單位的手提電話，甲國的貿易總得益是_______單位的手提電話。</p>
+        <p>A. 1<br>B. 5<br>C. 6.667<br>D. 10</p>
+    </div>
+    
+    <div class="en-translation">
+        <p>The following table shows the output per unit of resources in Country A and Country B.</p>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Tablet computers (Units)</th>
+                    <th>Mobile phones (Units)</th>
+                </tr>
+                <tr>
+                    <td>Country A</td>
+                    <td>8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Country B</td>
+                    <td>10</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+        <p>If Country A exports 10 units of tablet computers to Country B in exchange for 25 units of mobile phones, the total gains from trade of Country A will be _______ unit(s) of mobile phones.</p>
+        <p>A. 1<br>B. 5<br>C. 6.667<br>D. 10</p>
+    </div>
+
+    <h2>概念重溫 Concept Review</h2>
+    <div class="concept-box">
+        <p class="zh"><strong>1. 產出表的機會成本 (Opportunity Cost in Output Tables):</strong><br>
+        當題目提供的是「產出表」（相同資源下能生產的數量），計算生產物品 $X$ 的機會成本公式為「放棄的數量除以獲得的數量」。</p>
+        <div class="en-translation">When the question provides an "Output Table" (quantities produced with the same resources), the formula for the opportunity cost of producing Good $X$ is "Quantity given up divided by Quantity gained."</div>
+        
+        <div class="math-block">
+            $$Opportunity\ Cost\ of\ 1X = \frac{\Delta Y}{\Delta X}$$
+        </div>
+
+        <p class="zh"><strong>2. 貿易得益 (Gains from Trade):</strong><br>
+        一個國家參與貿易的得益，等於從貿易中獲得的數量，減去若在國內自行生產該批出口貨物所必須放棄的數量（國內機會成本）。</p>
+        <div class="en-translation">A country's gains from trade equals the quantity received from trade minus the quantity they would have had to sacrifice to produce the exported goods domestically (domestic opportunity cost).</div>
+        
+        <div class="math-block">
+            $$Total\ Gain = Quantity\ Received - Domestic\ Opportunity\ Cost\ of\ Exports$$
+        </div>
+    </div>
+
+    <h2>答案與詳細分析 The Answer & Detailed Analysis</h2>
+    <p class="zh"><strong>正確答案是：<span class="correct">選項 D</span></strong></p>
+    <div class="en-translation"><strong>The correct option is: <span class="correct">Option D</span></strong></div>
+
+    <h3>選項分析 Option Breakdown</h3>
+    
+    <p class="zh"><strong>步驟一：計算甲國生產平板電腦的國內機會成本</strong><br>
+    根據表格，甲國可以用一單位資源生產 8 部平板電腦 (T) 或 12 部手提電話 (M)。<br>
+    甲國生產 1 部平板電腦的機會成本 = $12 \div 8 = 1.5M$。也就是說，甲國每生產 1 部平板電腦，就要放棄 1.5 部手提電話。</p>
+    <div class="en-translation"><strong>Step 1: Calculate Country A's domestic opportunity cost for tablet computers.</strong><br>According to the table, Country A can use one unit of resources to produce 8 tablets (T) or 12 mobile phones (M). <br>Country A's opportunity cost of 1 tablet = $12 \div 8 = 1.5M$. This means for every 1 tablet Country A produces, it gives up 1.5 mobile phones.</div>
+
+    <p class="zh"><strong>步驟二：計算貿易總得益</strong><br>
+    甲國出口了 10 單位的平板電腦。<br>
+    如果甲國不貿易，在國內自行生產這 10 單位平板電腦，需要放棄的手提電話數量為：$10 \times 1.5M = 15M$。<br>
+    現在透過貿易，甲國用這 10 單位平板電腦換取了 25 單位的手提電話。<br>
+    甲國的淨得益 = 從貿易中獲得的手提電話 - 國內自行生產需放棄的手提電話<br>
+    甲國淨得益 = $25M - 15M = 10M$。</p>
+    <div class="en-translation"><strong>Step 2: Calculate the total gains from trade.</strong><br>Country A exported 10 units of tablet computers. <br>If Country A did not trade and produced these 10 tablets domestically, the amount of mobile phones sacrificed would be: $10 \times 1.5M = 15M$. <br>Now, through trade, Country A exchanges these 10 tablets for 25 mobile phones. <br>Country A's net gain = Mobile phones received from trade - Mobile phones sacrificed for domestic production <br>Country A's net gain = $25M - 15M = 10M$.</div>
+
+    <p class="zh"><span class="wrong">❌ 選項 A (1)：</span> 這是甲國「每單位」平板電腦的貿易得益。貿易比率是 $1T = 2.5M$。每出口 1 單位平板電腦，得益是 $2.5M - 1.5M = 1M$。但題目問的是「總得益」，所以是錯誤的。</p>
+    <div class="en-translation"><span class="wrong">❌ Option A (1):</span> This is Country A's "per unit" gain from trade. The terms of trade are $1T = 2.5M$. For each tablet exported, the gain is $2.5M - 1.5M = 1M$. However, the question asks for the "total gains", making this incorrect.</div>
+
+    <p class="zh"><span class="wrong">❌ 選項 B (5)：</span> <span class="highlight">這是一個極佳的陷阱！</span> 這是<strong>乙國</strong>的貿易總得益。乙國生產 1 部平板電腦的機會成本是 $30 \div 10 = 3M$。乙國進口 10 部平板電腦，省下了在國內生產所需的 $30M$，但只付出了 $25M$ 給甲國。乙國的得益 = $30M - 25M = 5M$。</p>
+    <div class="en-translation"><span class="wrong">❌ Option B (5):</span> <span class="highlight">This is an excellent trap!</span> This is the total gain of <strong>Country B</strong>. Country B's opportunity cost for 1 tablet is $30 \div 10 = 3M$. Country B imports 10 tablets, saving the $30M$ it would have cost to produce them domestically, but only pays Country A $25M$. Country B's gain = $30M - 25M = 5M$.</div>
+
+    <p class="zh"><span class="wrong">❌ 選項 C (6.667)：</span> 這是沒有經濟學意義的干擾數字（可能是誤用了錯誤的計算公式，例如 $10 \times 0.667$）。</p>
+    <div class="en-translation"><span class="wrong">❌ Option C (6.667):</span> This is a distractor with no economic meaning (likely resulting from using the wrong formula, such as $10 \times 0.667$).</div>
+
+    <h2>題目拆解 Problem Decomposition</h2>
+    <p class="zh"><strong>1. 找出「樞紐點」(The Pivot Point)：</strong><br>
+    解題的關鍵在於判斷這是「產出表」(Output) 還是「投入表」(Input)。題目寫明「每單位資源的產出」，因此是產出表。這決定了我們計算機會成本時分子分母的位置。</p>
+    <div class="en-translation"><strong>1. Identify the "Pivot Point":</strong><br>The key is determining if this is an "Output" or "Input" table. The question states "output per unit of resources", so it is an Output table. This determines which number is the numerator and which is the denominator when calculating opportunity cost.</div>
+
+    <p class="zh"><strong>2. 辨識「無關資訊」(Irrelevant Info)：</strong><br>
+    既然題目已經給定了「貿易比率」(10 平板 = 25 手機) 並且只問「甲國的得益」，那麼<strong>乙國的生產數據是完全不需要用到的</strong>！很多學生會浪費時間去計算乙國的比較優勢，這在考試中是不必要的。</p>
+    <div class="en-translation"><strong>2. Spot the "Irrelevant Info":</strong><br>Since the question provides the Terms of Trade (10 tablets = 25 phones) and ONLY asks for "Country A's gain", <strong>Country B's production data is completely irrelevant!</strong> Many students waste time calculating Country B's comparative advantage, which is unnecessary for solving this specific question.</div>
+
+    <h2>常犯錯誤與陷阱 Common Mistakes & Traps</h2>
+    <ul>
+        <li class="zh"><strong>混淆「產出」與「投入」公式：</strong> 學生常將產出表當作投入表計算，把機會成本算成 $8 \div 12 = 0.667M$。緊記：產出表 = $\frac{放棄}{獲得}$。
+            <div class="en-translation"><strong>Confusing Output vs. Input formulas:</strong> Students often treat an output table like an input table, wrongly calculating the opportunity cost as $8 \div 12 = 0.667M$. Remember: Output table = $\frac{Give\ up}{Gain}$.</div>
+        </li>
+        <li class="zh"><strong>未看清楚「總得益」與「單位得益」：</strong> 算出每單位賺 $1M$ 後直接選 A，忘記題目有 10 單位。
+            <div class="en-translation"><strong>Misreading "Total" vs. "Per Unit":</strong> Calculating the per unit gain of $1M$ and immediately choosing A, forgetting that 10 units are being traded.</div>
+        </li>
+    </ul>
+
+    <h2>學生常見疑問 Student Q&A</h2>
+    <p class="zh"><strong>學生問：</strong> 為什麼我在計算過程中完全沒有用到乙國的數據？這樣正常嗎？<br>
+    <strong>導師答：</strong> 非常正常！在經濟學中，一個國家的貿易得益只取決於兩個因素：1. 該國自己的國內機會成本；2. 國際的貿易比率 (Terms of Trade)。既然題目已經直接告訴你他們實際交易的數量 (10換25)，貿易比率已經鎖定，乙國的成本只會影響乙國自己的得益，與甲國無關。</p>
+    <div class="en-translation"><strong>Student Q:</strong> Why didn't I use Country B's data at all in my calculation? Is that normal?<br>
+    <strong>Tutor A:</strong> Completely normal! In economics, a country's gains from trade depend on exactly two things: 1. Its own domestic opportunity cost; 2. The international Terms of Trade. Since the question explicitly gave you the actual trade quantities (10 for 25), the Terms of Trade are locked. Country B's costs only affect Country B's gains, not Country A's.</div>
+
+    <h2>考試技巧與速解 Exam Tricks & Shortcuts</h2>
+    <div class="concept-box" style="background-color: #fefce8; border-color: #eab308;">
+        <p class="zh"><strong>⚡ 「總量對比法」 (The Total Comparison Method) - 10秒速解法！</strong></p>
+        <p class="zh">不用去算「每 1 單位」的成本再乘 10！直接看總量：<br>
+        1. 貿易結果：甲國送出 10T，拿到 <strong>25M</strong>。<br>
+        2. 國內自製：看表格，甲國做 8T 需要的資源等於做 12M。那做 10T 需要多少資源？用比例算：$10 \times (\frac{12}{8}) = <strong>15M</strong>$。<br>
+        3. 直接相減：本來自己做要犧牲 15M，現在靠貿易拿到了 25M。白賺了 $25 - 15 = 10M$！答案直接選 D。</p>
+        
+        <div class="en-translation">
+        <strong>⚡ The Total Comparison Method - 10 Second Shortcut!</strong><br>
+        Don't bother calculating the "per unit" cost and multiplying by 10! Look at the totals directly:<br>
+        1. Trade Result: Country A gives 10T, receives <strong>25M</strong>.<br>
+        2. Domestic Production: From the table, making 8T equals the resources for 12M. So, making 10T takes: $10 \times (\frac{12}{8}) = <strong>15M</strong>$.<br>
+        3. Subtract directly: Domestically they would sacrifice 15M, but through trade they received 25M. They gained a net $25 - 15 = 10M$! Choose D immediately.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

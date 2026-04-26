@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Monetary Policy & Aggregate Demand</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']]
+            }
+        };
+    </script>
+
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #f0f9ff;
+            --border-blue: #0ea5e9;
+            --bg-gray: #f9fafb;
+            --math-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-en: #4b5563;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --trick-bg: #fefce8;
+            --trick-border: #eab308;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .en-text {
+            color: var(--text-en);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .header-section {
+            background-color: var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--border-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .correct-answer {
+            background-color: var(--correct-bg);
+            border-left: 5px solid var(--correct-border);
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analysis-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .analysis-card h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+
+        .trap-box {
+            background-color: var(--trap-bg);
+            border-left: 5px solid var(--trap-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: var(--trick-bg);
+            border-left: 5px solid var(--trick-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: #334155;
+        }
+
+        .qa-answer {
+            margin-top: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .concept-box, .trap-box, .trick-box {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h2>📚 經濟學題目解析 Economics Question Analysis</h2>
+        <p><strong>主題 (Topic):</strong> 宏觀經濟學 - 貨幣政策與總需求 (Macroeconomics - Monetary Policy & Aggregate Demand)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★☆☆</p>
+        <p><strong>核心概念 (Key Concepts):</strong> 擴張性貨幣政策 (Expansionary Monetary Policy), 資產性貨幣需求 (Asset Demand for Money), 收入流失 (Leakages), 轉移支付 (Transfer Payments).</p>
+    </div>
+
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>_______ 有所增加可能會抵銷擴張性貨幣政策對國民收入造成的影響。</p>
+        <p>
+            (1) 人們持有貨幣作為資產的意慾<br>
+            (2) 人們的儲蓄意慾<br>
+            (3) 轉移支付
+        </p>
+        <p>
+            A. 只有 (1)、(2)<br>
+            B. 只有 (1)、(3)<br>
+            C. 只有 (2)、(3)<br>
+            D. (1)、(2) 及 (3)
+        </p>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        
+        <p class="en-text">An increase in _______ may offset the effect of an expansionary monetary policy on national income.</p>
+        <p class="en-text">
+            (1) people’s desire to hold money as an asset<br>
+            (2) people’s desire to save<br>
+            (3) transfer payments
+        </p>
+        <p class="en-text">
+            A. (1) and (2) only<br>
+            B. (1) and (3) only<br>
+            C. (2) and (3) only<br>
+            D. (1), (2) and (3)
+        </p>
+    </div>
+
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>擴張性貨幣政策 (Expansionary Monetary Policy)</h3>
+        <p>當中央銀行增加貨幣供應 \(M_s\) 時，利率 \(r\) 會下降。較低的利率會刺激投資 \(I\) 和消費 \(C\)，從而增加總需求 \(AD\) 及國民收入 \(Y\)。</p>
+        <p class="en-text">When the central bank increases money supply \(M_s\), the interest rate \(r\) falls. A lower interest rate stimulates investment \(I\) and consumption \(C\), thereby increasing aggregate demand \(AD\) and national income \(Y\).</p>
+        
+        <div class="math-block">
+            $$ \uparrow M_s \implies \downarrow r \implies \uparrow I, \uparrow C \implies \uparrow AD \implies \uparrow Y $$
+        </div>
+
+        <h3>貨幣需求 (Money Demand)</h3>
+        <p>貨幣總需求由「交易性需求」和「資產性需求」組成。如果人們持有貨幣作為資產的意慾增加，貨幣需求 \(M_d\) 會上升，這會推高利率，削弱貨幣供應增加帶來的降息效果。</p>
+        <p class="en-text">Total money demand consists of transaction demand and asset demand. If the desire to hold money as an asset increases, money demand \(M_d\) rises, which pushes up the interest rate and weakens the interest-rate-lowering effect of an increased money supply.</p>
+
+        <h3>流失與注入 (Leakages and Injections)</h3>
+        <p>在收入循環流轉中，儲蓄 \(S\) 是一種「流失」。儲蓄意慾增加代表邊際消費傾向 (MPC) 減少，導致消費 \(C\) 下降。相反，轉移支付 (如政府津貼) 增加了可支配收入，會刺激消費。</p>
+        <p class="en-text">In the circular flow of income, saving \(S\) is a "leakage". An increase in the desire to save means a lower marginal propensity to consume (MPC), leading to lower consumption \(C\). Conversely, transfer payments (like government subsidies) increase disposable income, which stimulates consumption.</p>
+    </div>
+
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-answer">
+        正確答案 (Correct Option)：A. 只有 (1)、(2) / (1) and (2) only
+    </div>
+
+    <div class="analysis-card">
+        <h4>分析 (1)：人們持有貨幣作為資產的意慾 (People’s desire to hold money as an asset) —— <b>正確 (Correct)</b></h4>
+        <p>擴張性貨幣政策旨在透過增加貨幣供應來壓低利率。然而，如果人們持有貨幣作為資產的意慾增加（即貨幣需求 \(M_d\) 增加），利率就會面臨上升的壓力。這會抵銷貨幣供應增加所帶來的利率下降幅度，導致投資和國民收入的增長不如預期。因此，它會抵銷政策效果。</p>
+        <p class="en-text">Expansionary monetary policy aims to lower interest rates by increasing the money supply. However, if people's desire to hold money as an asset increases (i.e., money demand \(M_d\) increases), it puts upward pressure on interest rates. This offsets the fall in interest rates caused by the increased money supply, leading to a smaller-than-expected increase in investment and national income. Thus, it offsets the policy's effect.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h4>分析 (2)：人們的儲蓄意慾 (People’s desire to save) —— <b>正確 (Correct)</b></h4>
+        <p>儲蓄意慾增加意味著人們將更大比例的收入存起來，而不是用於消費（邊際消費傾向下降）。這導致消費支出 \(C\) 減少，總需求 \(AD\) 向左移。由於擴張性貨幣政策的目的是增加 \(AD\)，儲蓄意慾的增加產生了完全相反的收縮作用，抵銷了政策的效果。</p>
+        <p class="en-text">An increase in the desire to save implies people are saving a larger proportion of their income rather than consuming it (a fall in marginal propensity to consume). This causes a decrease in consumption expenditure \(C\) and a leftward shift in aggregate demand \(AD\). Since expansionary monetary policy aims to increase \(AD\), an increase in savings exerts an opposing contractionary force, offsetting the policy's effect.</p>
+    </div>
+
+    <div class="analysis-card">
+        <h4>分析 (3)：轉移支付 (Transfer payments) —— <b>錯誤 (Incorrect)</b></h4>
+        <p>轉移支付（例如失業救濟金、消費券）會增加家庭的「可支配收入」。可支配收入增加會帶動消費 \(C\) 上升，進一步推高總需求 \(AD\) 和國民收入。因此，轉移支付的增加會<b>加強（reinforce）</b>而非抵銷擴張性貨幣政策的影響。</p>
+        <p class="en-text">Transfer payments (e.g., unemployment benefits, consumption vouchers) increase households' "disposable income". An increase in disposable income drives up consumption \(C\), further pushing up aggregate demand \(AD\) and national income. Therefore, an increase in transfer payments would <b>reinforce</b> rather than offset the effect of an expansionary monetary policy.</p>
+    </div>
+
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>要解決這類題目，我們需要尋找「逆向作用點」(Pivot Point)。</p>
+    <p class="en-text">To solve this type of question, we need to find the "Pivot Point" (the opposing force).</p>
+    
+    <ul>
+        <li><b>政策目標 (Policy Goal):</b> 擴張性政策 \(\implies\) 提升國民收入 \(Y\)。</li>
+        <li><b>題目要求 (Question Requirement):</b> 尋找「抵銷 (Offset)」因素 \(\implies\) 尋找會令國民收入 \(Y\) <b>下降</b> 或 阻礙利率下降的因素。</li>
+        <li><b>逐一檢視 (Check item by item):</b>
+            <ul>
+                <li>(1) 貨幣需求升 \(\implies\) 利率難跌 \(\implies\) 阻礙 \(Y\) 升。（符合抵銷）</li>
+                <li>(2) 儲蓄升 \(\implies\) 消費跌 \(\implies\) 令 \(Y\) 跌。（符合抵銷）</li>
+                <li>(3) 轉移支付升 \(\implies\) 可支配收入升 \(\implies\) 消費升 \(\implies\) 令 \(Y\) 升。（加強作用，不符合）</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="trap-box">
+        <h3>陷阱：誤解轉移支付的性質 (Trap: Misunderstanding Transfer Payments)</h3>
+        <p>很多學生會誤以為轉移支付是政府支出 \(G\) 的一種流失，或者認為政府派錢會減少庫房收入，從而對經濟有負面影響。事實上，在宏觀經濟學中，轉移支付 \(T_r\) 雖然不計入 GDP 的政府購買 \(G\) 中，但它直接增加了市民的可支配收入 \(Y_d = Y - T + T_r\)，從而刺激消費 \(C\)。</p>
+        <p class="en-text">Many students mistakenly believe that transfer payments are a leakage of government expenditure \(G\), or think that government handouts deplete the treasury and negatively impact the economy. In fact, in macroeconomics, while transfer payments \(T_r\) are not counted in GDP under government purchases \(G\), they directly increase citizens' disposable income \(Y_d = Y - T + T_r\), thereby stimulating consumption \(C\).</p>
+    </div>
+
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-question">Q: 為什麼「持有貨幣作為資產的意慾」會影響利率？ <br><span style="font-weight:normal; font-style:italic; color:#4b5563;">Why does the "desire to hold money as an asset" affect the interest rate?</span></div>
+        <div class="qa-answer">
+            <p>A: 想像市場上的貨幣總量是有限的。當央行增加貨幣供應時，原本會令「借錢」變得容易，利率下降。但如果市民突然覺得經濟前景不明朗，想把現金留在身邊作為資產（即資產性貨幣需求大增），這些新增的貨幣就會被市民囤積起來，沒有流向銀行體系借貸出去。因此，市場上的可借貸資金並沒有實際增加，利率就跌不下來，投資也不會增加。</p>
+            <p class="en-text">A: Imagine the total money in the market is limited. When the central bank increases money supply, it normally makes borrowing easier, lowering the interest rate. But if citizens suddenly feel the economic outlook is uncertain and want to hold onto cash as an asset (a huge increase in asset demand for money), this newly injected money gets hoarded. It doesn't flow into the banking system for lending. Therefore, the actual loanable funds in the market don't increase, the interest rate fails to drop, and investment won't rise.</p>
+        </div>
+    </div>
+
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <h3>秒殺技巧：消去法 (Elimination Method)</h3>
+        <p>在考場上，如果你非常肯定某一個選項的對錯，你可以利用消去法極速找到答案。在這題中，選項 (3)「轉移支付」是派錢給市民，常識告訴我們這一定會刺激經濟（與擴張性政策方向一致，而非抵銷）。</p>
+        <p>既然 (3) 一定是<b>錯誤</b>的，我們立刻淘汰所有包含 (3) 的選項：</p>
+        <ul>
+            <li><del>B. 只有 (1)、(3)</del></li>
+            <li><del>C. 只有 (2)、(3)</del></li>
+            <li><del>D. (1)、(2) 及 (3)</del></li>
+        </ul>
+        <p>只剩下 <b>A</b>！你甚至不需要深入分析 (1) 和 (2) 就能得分，這能為你節省大量考試時間。</p>
+        
+        <p class="en-text">In the exam room, if you are absolutely certain about one option, use the elimination method. Here, option (3) "transfer payments" means giving money to citizens. Common sense tells us this stimulates the economy (aligning with expansionary policy, not offsetting it).</p>
+        <p class="en-text">Since (3) must be <b>incorrect</b> as an "offsetting" factor, we can instantly eliminate any choice containing (3):</p>
+        <ul class="en-text">
+            <li><del>B. (1) and (3) only</del></li>
+            <li><del>C. (2) and (3) only</del></li>
+            <li><del>D. (1), (2) and (3)</del></li>
+        </ul>
+        <p class="en-text">Only <b>A</b> remains! You score the mark without even needing to deeply analyze (1) and (2), saving you valuable exam time.</p>
+    </div>
+
+</body>
+</html>
