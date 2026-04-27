@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Deposit Creation</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-dark: #0284c7;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-dark);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.3em;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: none;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .question-box {
+            background-color: #ffffff;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .correct-option {
+            border-color: var(--correct-color);
+            background-color: #ecfdf5;
+        }
+
+        .wrong-option {
+            border-color: var(--wrong-color);
+            background-color: #fef2f2;
+        }
+
+        .tc {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            font-size: 0.95em;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor Guide<br><span style="font-size: 1.2rem; color: var(--text-muted);">經濟學導師解析</span></h1>
+    
+    <div class="header-tags">
+        <span class="tag">Topic: Money & Banking (貨幣與銀行)</span>
+        <span class="tag">Difficulty: ★★☆☆☆</span>
+        <span class="tag">Key Concept: Deposit Creation (存款創造)</span>
+        <span class="tag">Key Concept: Banking Multiplier (銀行乘數)</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>2. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="tc">
+            設法定儲備率為20%。當銀行體系有超額儲備$20 000時，它最多可創造若干存款？<br><br>
+            A. $80 000<br>
+            B. $100 000<br>
+            C. 等同它的總儲備<br>
+            D. 等同它的超額儲備
+        </div>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+        <div class="en" style="font-style: normal; color: var(--text-main);">
+            Assuming that a 20% reserve ratio is required by law, when the banking system has excess reserves of $20 000, it can at most increase its deposits by<br><br>
+            A. $80 000.<br>
+            B. $100 000.<br>
+            C. the amount of its total reserves.<br>
+            D. the amount of its excess reserves.
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>3. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="tc">
+            要解答這條題目，我們需要明白銀行體系如何透過借貸過程創造存款。核心概念是<strong>銀行乘數 (Banking Multiplier)</strong>。
+        </div>
+        <div class="en">
+            To solve this question, we need to understand how the banking system creates deposits through the lending process. The core concept is the <strong>Banking Multiplier</strong>.
+        </div>
+
+        <div class="math-block">
+            $$ \text{Banking Multiplier (銀行乘數)} = \frac{1}{\text{Required Reserve Ratio (法定儲備率)}} $$
+        </div>
+
+        <div class="tc">
+            <strong>最高存款創造 (Maximum Deposit Creation)：</strong> 當銀行將所有超額儲備 (Excess Reserves) 借出，而市民將所有借款重新存入銀行（沒有現金流失），銀行體系能創造的最高額外存款。
+        </div>
+        <div class="en">
+            <strong>Maximum Deposit Creation:</strong> The maximum amount of additional deposits the banking system can create when banks lend out all their Excess Reserves and the public redeposits all loans into the banking system (no cash leakage).
+        </div>
+
+        <div class="math-block">
+            $$ \Delta \text{Deposits (存款變動)} = \text{Excess Reserves (超額儲備)} \times \text{Banking Multiplier (銀行乘數)} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>4. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    
+    <div class="tc" style="font-size: 1.2em; color: var(--correct-color); font-weight: bold;">
+        正確答案 Correct Option: B
+    </div>
+
+    <div class="option wrong-option">
+        <div class="tc"><strong>選項 A (錯誤):</strong> $80 000 是「最高貸款創造 (Maximum Loan Creation)」，而不是存款創造。計算方法是：最高存款創造 \( \$100 000 \) 減去最初的超額儲備 \( \$20 000 \)。</div>
+        <div class="en"><strong>Option A (Incorrect):</strong> $80 000 is the "Maximum Loan Creation", not deposit creation. It is calculated by subtracting the initial excess reserves \( \$20 000 \) from the maximum deposit creation \( \$100 000 \).</div>
+    </div>
+
+    <div class="option correct-option">
+        <div class="tc"><strong>選項 B (正確):</strong> 根據公式，銀行乘數 = \( \frac{1}{0.2} = 5 \)。最高存款創造 = 超額儲備 \(\times\) 銀行乘數 = \( \$20 000 \times 5 = \$100 000 \)。</div>
+        <div class="en"><strong>Option B (Correct):</strong> According to the formula, Banking Multiplier = \( \frac{1}{0.2} = 5 \). Maximum deposit creation = Excess Reserves \(\times\) Banking Multiplier = \( \$20 000 \times 5 = \$100 000 \).</div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="tc"><strong>選項 C (錯誤):</strong> 總儲備 (Total Reserves) 決定的是「最高總存款 (Maximum Total Deposits)」，而不是由超額儲備所「增加/創造」的存款額。</div>
+        <div class="en"><strong>Option C (Incorrect):</strong> Total Reserves determine the "Maximum Total Deposits", not the "increase/creation" of deposits generated from the current excess reserves.</div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="tc"><strong>選項 D (錯誤):</strong> 超額儲備只是創造存款的基礎，透過乘數效應，創造出的存款會大於超額儲備本身（除非法定儲備率為100%）。</div>
+        <div class="en"><strong>Option D (Incorrect):</strong> Excess reserves are merely the base for deposit creation. Through the multiplier effect, the created deposits will be larger than the excess reserves themselves (unless the required reserve ratio is 100%).</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>5. Problem Decomposition (題目拆解)</h2>
+    <div class="tc">
+        <strong>解題關鍵 (Pivot Point)：</strong> 題目問的是「最多可創造若干存款 (at most increase its deposits by)」。這意味著我們只關心<strong>變動量 (\(\Delta\))</strong>，即由現有超額儲備引發的新增存款。
+    </div>
+    <div class="en">
+        <strong>Pivot Point:</strong> The question asks "at most increase its deposits by". This means we only care about the <strong>change (\(\Delta\))</strong>, i.e., the newly created deposits triggered by the existing excess reserves.
+    </div>
+
+    <div class="tc">
+        <strong>為何不需要知道原本的總儲備或法定儲備？</strong><br>
+        因為原本的儲備已經支撐著現有的存款（處於均衡狀態）。任何<strong>新創造</strong>的存款，完全取決於銀行手頭上「多出來」可以借出的錢，也就是<strong>超額儲備 (Excess Reserves)</strong>。因此，只要有超額儲備和法定儲備率，我們就能計算出新增的存款上限，無需理會銀行原本的規模有多大。
+    </div>
+    <div class="en">
+        <strong>Why don't we need to know the original total reserves or required reserves?</strong><br>
+        Because the original reserves are already backing the existing deposits (in equilibrium). Any <strong>newly created</strong> deposits depend entirely on the "extra" money the bank has available to lend out, which is the <strong>Excess Reserves</strong>. Therefore, as long as we have the excess reserves and the required reserve ratio, we can calculate the maximum increase in deposits without needing to know the initial size of the bank's balance sheet.
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>6. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tc">
+        <strong>陷阱一：混淆「總額」與「創造額 (變動量)」</strong><br>
+        學生常把「最高總存款 (Maximum Total Deposits)」與「最高存款創造 (Maximum Deposit Creation)」混淆。總存款是用「實際儲備 (Actual Reserves)」乘以乘數；而存款創造是用「超額儲備 (Excess Reserves)」乘以乘數。
+    </div>
+    <div class="en">
+        <strong>Trap 1: Confusing "Total" with "Creation (Change)"</strong><br>
+        Students often confuse "Maximum Total Deposits" with "Maximum Deposit Creation". Total deposits are calculated using "Actual Reserves" times the multiplier; whereas deposit creation is calculated using "Excess Reserves" times the multiplier.
+    </div>
+    <div class="tc">
+        <strong>陷阱二：混淆「存款創造」與「貸款創造」</strong><br>
+        如果題目問「最多可創造若干貸款 (increase its loans by)」，答案就會是 \( \$100 000 - \$20 000 = \$80 000 \)。考試時必須看清楚是問 Deposits 還是 Loans！
+    </div>
+    <div class="en">
+        <strong>Trap 2: Confusing "Deposit Creation" with "Loan Creation"</strong><br>
+        If the question asked "at most increase its loans by", the answer would be \( \$100 000 - \$20 000 = \$80 000 \). You must read carefully during the exam whether it asks for Deposits or Loans!
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>7. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="tc">
+            <strong>Q: 為什麼選項 A ($80 000) 是貸款創造，而不是存款創造？</strong><br>
+            A: 當銀行有 \( \$20 000 \) 超額儲備時，它第一步是將這 \( \$20 000 \) 借出（這是貸款）。當這筆錢存回銀行體系後，變成了 \( \$20 000 \) 的新存款。然後銀行保留 20% (\( \$4 000 \))，再借出 \( \$16 000 \)... 如此類推。最終，總存款增加了 \( \$100 000 \)。而總貸款增加額 = 總存款增加額 - 最初流出的超額儲備 = \( \$100 000 - \$20 000 = \$80 000 \)。
+        </div>
+        <div class="en">
+            <strong>Q: Why is Option A ($80 000) the loan creation and not deposit creation?</strong><br>
+            A: When the bank has \( \$20 000 \) in excess reserves, its first step is to lend out this \( \$20 000 \) (this is a loan). When this money is redeposited into the banking system, it becomes \( \$20 000 \) in new deposits. The bank then keeps 20% (\( \$4 000 \)) and lends out \( \$16 000 \)... and so on. Ultimately, total deposits increase by \( \$100 000 \). The total increase in loans = Total increase in deposits - Initial excess reserves lent out = \( \$100 000 - \$20 000 = \$80 000 \).
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>8. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <div class="tc">
+            <strong>秒殺技巧 (Shortcut)：</strong><br>
+            在DSE中，遇到「超額儲備 (Excess Reserves)」和「創造存款 (Deposit Creation)」，直接套用公式：<br>
+            1. 看到 20% 法定儲備率 \(\rightarrow\) 乘數是 5。<br>
+            2. 看到超額儲備 \( \$20 000 \) \(\rightarrow\) 直接乘以 5。<br>
+            3. \( \$20 000 \times 5 = \$100 000 \)。選 B！
+        </div>
+        <div class="en">
+            <strong>Shortcut:</strong><br>
+            In the HKDSE, when you see "Excess Reserves" and "Deposit Creation", apply the formula directly:<br>
+            1. See 20% Required Reserve Ratio \(\rightarrow\) Multiplier is 5.<br>
+            2. See Excess Reserves of \( \$20 000 \) \(\rightarrow\) Multiply directly by 5.<br>
+            3. \( \$20 000 \times 5 = \$100 000 \). Choose B!
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
