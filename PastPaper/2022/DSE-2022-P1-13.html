@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Market Equilibrium</title>
+    <!-- MathJax for rendering LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --gray-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .section-container {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* 1. Header Section */
+        .header-section {
+            background-color: #f8fafc;
+            border-left: 5px solid #3b82f6;
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* 2. Question Section */
+        .question-box {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: #f9fafb;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* 3. Concept Review */
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--gray-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        /* Bilingual Text Formatting */
+        .zh-text {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* 4. Analysis Section */
+        .correct-option {
+            background-color: #d1fae5;
+            border-left: 5px solid var(--accent-green);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .analysis-step {
+            margin-bottom: 1.5rem;
+        }
+
+        /* 5. Decomposition & Traps */
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--accent-red);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* 6. Tricks */
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section-container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="section-container header-section">
+        <h1 style="margin-top: 0;">HKDSE Economics Interactive Guide</h1>
+        <div>
+            <strong>Topic (課題):</strong> 市場均衡與價格機制 (Market Equilibrium & Price Mechanism)<br>
+            <strong>Difficulty (難度):</strong> ⭐⭐⭐ (3/5 Stars)<br>
+            <strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">需求轉變 (Shift in Demand)</span>
+            <span class="tag">供應轉變 (Shift in Supply)</span>
+            <span class="tag">生產要素 (Factors of Production)</span>
+            <span class="tag">引申需求 (Derived Demand)</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="zh-text">
+            下圖顯示視像鏡頭的需求和供應曲線。原初的均衡點是 \(E_0\)。<br>
+            假設更多廠商以視像會議軟件Zoom進行網上會議，取代面對面會議。同時，用於生產視像鏡頭的鏡片價格上升。結果，新的均衡點會是 ______。
+        </div>
+        <div class="en-text">
+            The diagram below shows the demand and supply curves of webcams. The initial equilibrium point is \(E_0\).<br>
+            Suppose more firms replace face-to-face meetings with online meetings using video-conferencing software such as Zoom. At the same time, the price of lens used to produce webcams increases. As a result, the new equilibrium point will be ____________.
+        </div>
+        
+        <ul class="options">
+            <li><strong>A.</strong> \(E_1\)</li>
+            <li><strong>B.</strong> \(E_2\)</li>
+            <li><strong>C.</strong> \(E_3\)</li>
+            <li><strong>D.</strong> \(E_4\)</li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="zh-text">
+            要解答這類題目，我們必須分別辨識事件對<strong>需求 (Demand)</strong> 和 <strong>供應 (Supply)</strong> 的影響。
+        </div>
+        <div class="en-text">
+            To solve this type of question, we must separately identify the impact of the events on <strong>Demand</strong> and <strong>Supply</strong>.
+        </div>
+
+        <ul style="padding-left: 20px;">
+            <li>
+                <div class="zh-text"><strong>需求改變 (Changes in Demand):</strong> 消費者偏好改變、替代品或輔助品價格變動等，會令整條需求曲線移動。</div>
+                <div class="en-text"><strong>Changes in Demand:</strong> Changes in consumer preferences, prices of substitutes or complements, etc., will shift the entire demand curve.</div>
+            </li>
+            <li>
+                <div class="zh-text"><strong>供應改變 (Changes in Supply):</strong> 生產成本（如原料價格、工資）改變，會令整條供應曲線移動。</div>
+                <div class="en-text"><strong>Changes in Supply:</strong> Changes in the cost of production (e.g., raw material prices, wages) will shift the entire supply curve.</div>
+            </li>
+        </ul>
+
+        <div class="math-block">
+            <strong>聯立效應 (Combined Effect):</strong><br>
+            $$ \text{If } D \uparrow \implies P \uparrow, Q \uparrow $$
+            $$ \text{If } S \downarrow \implies P \uparrow, Q \downarrow $$
+            $$ \therefore \text{Result: } P \uparrow \uparrow, \text{Q is uncertain (視乎兩者移動幅度)} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    
+    <div class="correct-option">
+        正確答案 / Correct Option: B (\(E_2\))
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh-text"><strong>步驟一：分析第一個事件 (Step 1: Analyze the first event)</strong><br>
+        「更多廠商以視像會議軟件Zoom進行網上會議」—— 這意味著對視像鏡頭（進行網上會議的必備設備）的需求增加。因此，需求曲線向右移動，由 \(D_0\) 移至 \(D_1\)。</div>
+        <div class="en-text">"More firms replace face-to-face meetings with online meetings" — This implies an increase in the demand for webcams (an essential equipment for online meetings). Therefore, the demand curve shifts to the right, from \(D_0\) to \(D_1\).</div>
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh-text"><strong>步驟二：分析第二個事件 (Step 2: Analyze the second event)</strong><br>
+        「用於生產視像鏡頭的鏡片價格上升」—— 鏡片是視像鏡頭的生產要素 (Factor of production)。鏡片價格上升會導致視像鏡頭的生產成本 (Cost of production) 增加。因此，供應減少，供應曲線向左 / 向上移動，由 \(S_0\) 移至 \(S_2\)。</div>
+        <div class="en-text">"The price of lens used to produce webcams increases" — Lenses are a factor of production for webcams. An increase in the price of lenses leads to a higher cost of production. Therefore, supply decreases, and the supply curve shifts to the left / upwards, from \(S_0\) to \(S_2\).</div>
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh-text"><strong>步驟三：找出新均衡點 (Step 3: Find the new equilibrium)</strong><br>
+        新的均衡點是新的需求曲線 (\(D_1\)) 與新的供應曲線 (\(S_2\)) 的相交點。在圖表上，\(D_1\) 與 \(S_2\) 相交於 \(E_2\)。</div>
+        <div class="en-text">The new equilibrium is the intersection of the new demand curve (\(D_1\)) and the new supply curve (\(S_2\)). On the graph, \(D_1\) and \(S_2\) intersect at \(E_2\).</div>
+    </div>
+
+    <div class="math-block" style="text-align: left;">
+        <strong>為何其他選項錯誤 (Why other options are wrong):</strong><br>
+        <ul>
+            <li><strong>A (\(E_1\)):</strong> 這是 \(D_1\) 和 \(S_1\) 的交點。代表需求增加且供應<strong>增加</strong>。與題目「供應減少」不符。 (Intersection of \(D_1\) and \(S_1\). Represents an increase in D and an <strong>increase</strong> in S.)</li>
+            <li><strong>C (\(E_3\)):</strong> 這是 \(D_2\) 和 \(S_2\) 的交點。代表需求<strong>減少</strong>且供應減少。與題目「需求增加」不符。 (Intersection of \(D_2\) and \(S_2\). Represents a <strong>decrease</strong> in D and a decrease in S.)</li>
+            <li><strong>D (\(E_4\)):</strong> 這是 \(D_2\) 和 \(S_1\) 的交點。代表需求<strong>減少</strong>且供應<strong>增加</strong>。方向完全相反。 (Intersection of \(D_2\) and \(S_1\). Represents a <strong>decrease</strong> in D and an <strong>increase</strong> in S.)</li>
+        </ul>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="section-container">
+        <div class="zh-text">這類題目的「關鍵點」(Pivot Point) 在於拆解題目中的兩句獨立陳述，並把它們分別對應到「需求」或「供應」的一方。</div>
+        <div class="en-text">The "Pivot Point" of such questions lies in breaking down the two independent statements in the question and mapping them strictly to either the "Demand" or "Supply" side.</div>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <tr style="background-color: var(--primary-blue); color: white;">
+                <th style="padding: 10px; border: 1px solid var(--border-color);">事件 (Event)</th>
+                <th style="padding: 10px; border: 1px solid var(--border-color);">受影響方 (Affected Side)</th>
+                <th style="padding: 10px; border: 1px solid var(--border-color);">方向 (Direction)</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">更多人用 Zoom (More Zoom usage)</td>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">需求 (Demand) - 消費者層面</td>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">增加 (Increase) \(\rightarrow D_1\)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">鏡片價格上升 (Lens price \(\uparrow\))</td>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">供應 (Supply) - 生產者層面</td>
+                <td style="padding: 10px; border: 1px solid var(--border-color);">減少 (Decrease) \(\rightarrow S_2\)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="highlight-box">
+        <div class="zh-text"><strong>⚠️ 陷阱：混淆「供應減少」的移動方向！</strong><br>
+        很多學生看到「成本上升」，會直覺聯想到「向上」，然後錯誤地選擇了下方的供應曲線 (\(S_1\)) 以為那是「減少」。請謹記：供應減少是向<strong>左</strong>移動（或向<strong>上</strong>平移）。在圖中，\(S_2\) 才是供應減少。</div>
+        <div class="en-text"><strong>⚠️ Trap: Confusing the direction of a "decrease in supply"!</strong><br>
+        Many students see "cost increases" and instinctively look for a curve lower down, mistakenly choosing \(S_1\) thinking it represents a decrease. Remember: A decrease in supply is a shift to the <strong>left</strong> (or a shift <strong>upwards</strong> vertically). In the graph, \(S_2\) represents a decrease in supply.</div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="section-container">
+        <p><strong>Q: 為什麼鏡片價格上升不會令視像鏡頭的需求減少？ (Why doesn't the increase in lens price reduce the demand for webcams?)</strong></p>
+        <div class="zh-text"><strong>A:</strong> 鏡片是生產視像鏡頭的「原材料」(Raw materials)。原材料價格變動只會影響生產者的成本，從而影響<strong>供應</strong>。消費者購買的是最終產品（視像鏡頭），他們並不關心鏡片本身的價格，因此整條需求曲線不會因為成本變動而移動。需求量 (Quantity demanded) 只會因為最終產品價格被推高而沿著曲線減少。</div>
+        <div class="en-text"><strong>A:</strong> Lenses are "raw materials" used to produce webcams. Changes in raw material prices only affect producers' costs, thus shifting <strong>supply</strong>. Consumers buy the final product (webcams) and are not directly concerned with the price of the components. Therefore, the demand curve itself does not shift due to cost changes. Only the quantity demanded will decrease along the curve as the final product price gets pushed up.</div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="trick-box">
+        <div class="zh-text"><strong>🚀 座標象限速解法 (Quadrant Shortcut Method):</strong><br>
+        將原初均衡點 \(E_0\) 視為十字座標的中心。
+        <ul>
+            <li>需求增加 (\(D \uparrow\)) \(\implies\) 答案必定在 \(E_0\) 的<strong>右方</strong> (即 \(E_1\) 或 \(E_2\))。</li>
+            <li>供應減少 (\(S \downarrow\)) \(\implies\) 答案必定在 \(E_0\) 的<strong>上方</strong> (即 \(E_2\) 或 \(E_3\))。</li>
+        </ul>
+        兩者重疊的區域就是右上方的點，即 <strong>\(E_2\)</strong>。這樣連曲線都不用慢慢追蹤！</div>
+        <div class="en-text"><strong>🚀 Quadrant Shortcut Method:</strong><br>
+        Treat the initial equilibrium \(E_0\) as the center of a crosshair.
+        <ul>
+            <li>Demand increases (\(D \uparrow\)) \(\implies\) The answer must be to the <strong>right</strong> of \(E_0\) (\(E_1\) or \(E_2\)).</li>
+            <li>Supply decreases (\(S \downarrow\)) \(\implies\) The answer must be <strong>above</strong> \(E_0\) (\(E_2\) or \(E_3\)).</li>
+        </ul>
+        The overlapping region is the top-right point, which is <strong>\(E_2\)</strong>. You don't even need to trace the curves closely!</div>
+    </div>
+
+</body>
+</html>

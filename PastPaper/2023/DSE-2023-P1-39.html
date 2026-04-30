@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - GDP Deflator Analysis</title>
+    <!-- MathJax for rendering LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        h1 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+        h2 {
+            margin-top: 30px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "📝";
+            margin-right: 10px;
+        }
+        .header-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        .header-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-box li {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .zh {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .en {
+            color: #4b5563;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .concept-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .analysis-step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .correct-option {
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .tag-true {
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .tag-false {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .qa-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #a855f7;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .q-text { font-weight: bold; color: #6b21a8; }
+        .a-text { margin-top: 5px; }
+        
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <div class="header-box">
+        <ul>
+            <li><strong>Topic (課題):</strong> Macroeconomics - Price Level & National Income (宏觀經濟學 - 物價水平與國民收入)</li>
+            <li><strong>Difficulty (難度):</strong> ★★★☆☆ (3.5 / 5)</li>
+            <li><strong>Key Concepts (核心概念):</strong> GDP Deflator (本地生產總值平減物價指數), Deflation (通縮), Purchasing Power (購買力), Real vs. Nominal GDP (實質與名義本地生產總值)</li>
+        </ul>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <div class="zh">下圖顯示某國的本地生產總值平減物價指數的按年增長率。根據上圖，下列哪些有關該國於上述期間的陳述是正確的？</div>
+            <div class="en">The following chart shows the year-on-year growth rate of the GDP deflator of a country. Based on the above chart, which of the following statements about the country during the above period are correct?</div>
+        </div>
+        
+        <div class="bilingual-text" style="margin-left: 20px;">
+            <div class="zh">(1) 貨幣的購買力上升了。</div>
+            <div class="en">(1) The purchasing power of money increased.</div>
+            
+            <div class="zh" style="margin-top: 10px;">(2) 名義本地生產總值增長率低於實質本地生產總值增長率。</div>
+            <div class="en">(2) The nominal GDP growth rate was lower than the real GDP growth rate.</div>
+            
+            <div class="zh" style="margin-top: 10px;">(3) 生活成本上升了。</div>
+            <div class="en">(3) The cost of living increased.</div>
+        </div>
+
+        <div class="bilingual-text" style="margin-top: 20px; font-weight: bold;">
+            A. 只有 (1)、(2) &nbsp;&nbsp; / &nbsp;&nbsp; (1) and (2) only<br>
+            B. 只有 (1)、(3) &nbsp;&nbsp; / &nbsp;&nbsp; (1) and (3) only<br>
+            C. 只有 (2)、(3) &nbsp;&nbsp; / &nbsp;&nbsp; (2) and (3) only<br>
+            D. (1)、(2) 及 (3) &nbsp;&nbsp; / &nbsp;&nbsp; (1), (2) and (3)
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="zh">
+            <strong>本地生產總值平減物價指數 (GDP Deflator)</strong> 是量度經濟體內一般物價水平的指標。它的增長率就等同於<strong>通貨膨脹率 (Inflation Rate)</strong>。<br><br>
+            當平減物價指數的增長率為<strong>負數</strong>時，這代表一般物價水平正在下跌，經濟處於<strong>通貨緊縮 (Deflation)</strong> 狀態。
+        </div>
+        <div class="en">
+            The <strong>GDP Deflator</strong> is an indicator that measures the general price level in an economy. Its growth rate is equivalent to the <strong>Inflation Rate</strong>.<br><br>
+            When the growth rate of the GDP deflator is <strong>negative</strong>, it means the general price level is falling, and the economy is experiencing <strong>Deflation</strong>.
+        </div>
+
+        <div class="math-block">
+            $$ \text{Inflation Rate } (\pi) = \text{Growth Rate of GDP Deflator} $$
+        </div>
+
+        <div class="zh" style="margin-top: 15px;">
+            <strong>名義與實質的關係：</strong> 名義數據 (Nominal) 未扣除物價變動的影響，而實質數據 (Real) 則已扣除。它們增長率的近似關係如下：
+        </div>
+        <div class="en">
+            <strong>Nominal vs. Real Relationship:</strong> Nominal data is not adjusted for price changes, while Real data is. The approximate relationship of their growth rates is:
+        </div>
+
+        <div class="math-block">
+            $$ g_{\text{Nominal GDP}} \approx g_{\text{Real GDP}} + \text{Inflation Rate } (\pi) $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="correct-option">
+        Correct Answer (正確答案): Option A
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh">
+            <strong>圖表分析：</strong> 觀察 Y 軸，這是「增長率」。在 2019 至 2022 年間，這條線全部處於 0% 之下（大約是 -5% 升至 -1.5%）。只要增長率是負數，就代表物價水平在<strong>下跌</strong>。這條線向上傾斜，只是代表「跌幅收窄」（通縮放緩），但整體物價依然在下跌中。
+        </div>
+        <div class="en">
+            <strong>Chart Analysis:</strong> Look at the Y-axis, which is the "Growth rate". Between 2019 and 2022, the entire line is below 0% (moving approximately from -5% up to -1.5%). As long as the growth rate is negative, it means the price level is <strong>falling</strong>. The upward-sloping line simply means the "rate of decrease is shrinking" (deflation is slowing down), but the overall price level is still dropping.
+        </div>
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh">
+            <strong>分析 (1) 貨幣的購買力上升了：<span class="tag-true">[正確]</span></strong><br>
+            由於一般物價水平正在下跌（通縮），相同面額的貨幣現在能買到更多的貨品和服務。因此，貨幣的購買力上升了。
+        </div>
+        <div class="en">
+            <strong>Analysis (1) The purchasing power of money increased: <span class="tag-true">[Correct]</span></strong><br>
+            Since the general price level is falling (deflation), the same nominal amount of money can now buy more goods and services. Therefore, the purchasing power of money has increased.
+        </div>
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh">
+            <strong>分析 (2) 名義本地生產總值增長率低於實質本地生產總值增長率：<span class="tag-true">[正確]</span></strong><br>
+            根據公式 \( g_{\text{Nominal}} \approx g_{\text{Real}} + \pi \)。因為物價水平下跌，通脹率 \( \pi \) 是一個負數。假設實質增長是 2%，通脹率是 -3%，那麼名義增長就是 -1%。因此，名義增長率必然低於實質增長率。
+        </div>
+        <div class="en">
+            <strong>Analysis (2) The nominal GDP growth rate was lower than the real GDP growth rate: <span class="tag-true">[Correct]</span></strong><br>
+            According to the formula \( g_{\text{Nominal}} \approx g_{\text{Real}} + \pi \). Because the price level is falling, the inflation rate \( \pi \) is a negative number. If real growth is 2% and inflation is -3%, nominal growth would be -1%. Thus, the nominal growth rate must be strictly lower than the real growth rate.
+        </div>
+    </div>
+
+    <div class="analysis-step">
+        <div class="zh">
+            <strong>分析 (3) 生活成本上升了：<span class="tag-false">[錯誤]</span></strong><br>
+            本地生產總值平減物價指數反映了一般的物價水平。既然指數的增長率為負數，表示物價變得便宜了，市民的生活成本應該是<strong>下降</strong>而非上升。
+        </div>
+        <div class="en">
+            <strong>Analysis (3) The cost of living increased: <span class="tag-false">[Incorrect]</span></strong><br>
+            The GDP deflator reflects the general price level. Since the growth rate of this index is negative, goods and services are becoming cheaper. The cost of living for citizens should be <strong>decreasing</strong>, not increasing.
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="zh">
+        這類題目的<strong>「破題點」(Pivot Point)</strong> 在於分辨「水平」(Level) 與「增長率」(Growth Rate)。<br>
+        學生在考試時，第一眼看到向上的趨勢線，直覺會以為「有些東西正在增加」。但你必須冷靜看清楚 Y 軸的 0% 界線。整條線都在 0% 之下！這意味著變數（物價）是在持續減少。
+    </div>
+    <div class="en" style="margin-top: 10px;">
+        The <strong>"Pivot Point"</strong> of this type of question lies in distinguishing between "Level" and "Growth Rate".<br>
+        During an exam, when students see an upward-sloping trend line at first glance, their intuition tells them "something is increasing". But you must calmly check the 0% line on the Y-axis. The entire line is below 0%! This means the variable (price level) is continuously decreasing.
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <div class="zh">
+            <strong>陷阱：將「通縮放緩」誤認為「通脹」</strong><br>
+            很多同學看見圖表從 2019 年的 -5% 升到 2022 年的 -1.5%，就以為物價上升了。請記住：-1.5% 依然是通縮！只要數值是負數，代表今年的物價比去年還要低。這只不過是「跌得慢了」，並非「升了」。
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            <strong>Trap: Confusing "Slowing Deflation" with "Inflation"</strong><br>
+            Many students see the chart going from -5% in 2019 to -1.5% in 2022 and assume prices have gone up. Remember: -1.5% is still deflation! As long as the value is negative, it means this year's prices are lower than last year's. Prices are merely "dropping slower", not "rising".
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="q-text">Q: 如果這條線在 2023 年越過了 0% 變成 +1%，那代表什麼？ / What if the line crossed 0% and became +1% in 2023?</div>
+        <div class="a-text zh">
+            A: 如果越過了 0%，那就代表經濟由通縮轉為了<strong>通脹 (Inflation)</strong>。那時候物價水平才真正開始比前一年上升，生活成本也會隨之上升，購買力就會下降。
+        </div>
+        <div class="a-text en">
+            A: If it crossed 0%, it would mean the economy shifted from deflation to <strong>Inflation</strong>. Only then would the price level truly start rising compared to the previous year, causing the cost of living to increase and purchasing power to decrease.
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="zh">
+            <strong>速解法：畫大減號！</strong><br>
+            在考場上，一看到這種有正負值的圖表，立刻在 0% 以下的區域畫一個大大的 <strong>「-」 (減號)</strong>。這能在視覺上不斷提醒自己：「現在是負增長！是通縮！物價在跌！」<br>
+            既然知道物價在跌，選項 (1) 購買力升必然正確，選項 (3) 生活成本升必然錯誤。1 對 3 錯，看選項：只有 A 包含 1 且不包含 3。瞬間選 A！完全不需要浪費時間思考選項 (2)。
+        </div>
+        <div class="en" style="margin-top: 10px;">
+            <strong>Shortcut: Draw a big minus sign!</strong><br>
+            In the exam hall, whenever you see a chart crossing the positive/negative threshold, immediately draw a huge <strong>"-" (minus sign)</strong> in the area below 0%. This visually reminds you continuously: "It's negative growth! It's deflation! Prices are falling!"<br>
+            Since you know prices are falling, Statement (1) [purchasing power increases] MUST be true, and Statement (3) [cost of living increases] MUST be false. 1 is True, 3 is False. Look at the options: Only A contains (1) and excludes (3). Choose A instantly! You don't even need to waste time analyzing Statement (2).
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
