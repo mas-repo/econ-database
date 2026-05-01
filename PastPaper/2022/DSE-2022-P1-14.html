@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Guide: Demand and Supply</title>
+    <!-- MathJax for rendering LaTeX -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #0ea5e9;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f3f4f6;
+            --correct-bg: #ecfdf5;
+            --correct-border: #10b981;
+            --wrong-bg: #fef2f2;
+            --wrong-border: #ef4444;
+            --text-main: #334155;
+            --text-en: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 { border-bottom: 3px solid var(--accent-color); padding-bottom: 10px; font-size: 1.8em; }
+        h2 { font-size: 1.4em; border-left: 4px solid var(--primary-color); padding-left: 10px; }
+
+        .en-text {
+            color: var(--text-en);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 3px solid #cbd5e1;
+            font-style: italic;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .header-info span { background: #e2e8f0; padding: 5px 10px; border-radius: 5px; color: var(--primary-color); }
+
+        .question-box {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .option-analysis.correct {
+            border-color: var(--correct-border);
+            background-color: var(--correct-bg);
+        }
+
+        .option-analysis.incorrect {
+            border-color: var(--wrong-border);
+            background-color: var(--wrong-bg);
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .qa-q { font-weight: bold; color: #b45309; }
+        .qa-a { margin-top: 10px; }
+
+        .tips-box {
+            background-color: #f5f3ff;
+            border: 2px dashed #8b5cf6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 0; border-radius: 0; padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Header -->
+    <h1>HKDSE 經濟學題解分析</h1>
+    <div class="en-text">HKDSE Economics Question Analysis Guide</div>
+    
+    <div class="header-info">
+        <span>📚 主題 Topic: 需求與供應 (Demand and Supply)</span>
+        <span>⭐ 難度 Difficulty: ★★★☆☆</span>
+        <span>🔑 關鍵字 Key Concepts: 需求量改變 (Change in Quantity Demanded), 供應轉變 (Change in Supply), 生產成本 (Cost of Production)</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p><strong>下圖顯示私人房屋的需求曲線。下列哪項最能解釋均衡點由X移至Y？</strong></p>
+        <p>A. 住戶收入下降。<br>
+        B. 人們預期私人房屋價格下降。<br>
+        C. 建築工人的工資率上升。<br>
+        D. 商業樓宇的需求下降。</p>
+        
+        <div class="en-text">
+            <strong>The following diagram shows the demand curve of private housing. Which of the following can best explain the change in equilibrium position from X to Y?</strong><br><br>
+            A. The household income decreases.<br>
+            B. People expect a price drop in private housing.<br>
+            C. The wage rates of construction workers increase.<br>
+            D. The demand for commercial buildings decreases.
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <h3>需求量改變 vs 需求改變</h3>
+        <p>這題考核的核心概念是區分「沿著曲線的移動」與「整條曲線的移動」。</p>
+        <ul>
+            <li><strong>需求量改變 (Change in Quantity Demanded)：</strong> 只有當物品的<strong>自身價格</strong> \( P \) 改變時，才會導致需求量 \( Q_d \) 改變。這在圖表上顯示為沿著同一條需求曲線（Demand Curve）的移動（Movement along the curve）。</li>
+            <li><strong>需求改變 (Change in Demand)：</strong> 當價格以外的因素（如收入、預期、代替品價格等）改變時，整條需求曲線會向左或向右移動（Shift of the curve）。</li>
+        </ul>
+        <div class="math-block">
+            $$ Q_d = f(P) $$
+        </div>
+        <p>根據需求法則（Law of Demand），在其他因素不變的情況下（ceteris paribus），價格與需求量呈反向關係：</p>
+        <div class="math-block">
+            $$ P \uparrow \implies Q_d \downarrow $$
+        </div>
+
+        <div class="en-text">
+            <h3>Change in Quantity Demanded vs. Change in Demand</h3>
+            <p>The core concept tested here is distinguishing between a "movement along the curve" and a "shift of the curve".</p>
+            <ul>
+                <li><strong>Change in Quantity Demanded:</strong> This occurs ONLY when the <strong>own price</strong> \( P \) of the good changes, leading to a change in quantity demanded \( Q_d \). This is shown graphically as a movement along the same demand curve.</li>
+                <li><strong>Change in Demand:</strong> When non-price determinants (e.g., income, expectations, price of substitutes) change, the entire demand curve shifts to the left or right.</li>
+            </ul>
+            <p>According to the Law of Demand, ceteris paribus, there is an inverse relationship between price and quantity demanded.</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <p><strong>正確答案是：選項 C (Option C)</strong></p>
+    
+    <div class="option-analysis incorrect">
+        <strong>A. 住戶收入下降 (The household income decreases) - 錯誤 (Incorrect)</strong>
+        <p>住戶收入下降（假設私人房屋是正常物品 Normal Good），會導致人們對房屋的整體需求減少。這在圖表上會呈現為<strong>整條需求曲線向左移動</strong>（Shift to the left），而不是沿著同一條曲線移動。圖中只有一條固定不變的需求曲線 D。</p>
+        <div class="en-text">A decrease in household income (assuming private housing is a normal good) reduces the overall demand. Graphically, this is represented by a <strong>leftward shift of the entire demand curve</strong>, not a movement along it. The diagram shows a single, unchanged demand curve D.</div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <strong>B. 人們預期私人房屋價格下降 (People expect a price drop...) - 錯誤 (Incorrect)</strong>
+        <p>如果買家預期未來價格會下跌，他們會延遲現在的購買決定。這同樣會導致現時的房屋需求減少，即<strong>整條需求曲線向左移動</strong>。這不符合圖中顯示的狀況。</p>
+        <div class="en-text">If buyers expect prices to fall in the future, they will delay their current purchases. This also leads to a decrease in current demand, meaning a <strong>leftward shift of the demand curve</strong>. This does not match the diagram.</div>
+    </div>
+
+    <div class="option-analysis correct">
+        <strong>C. 建築工人的工資率上升 (Wage rates of construction workers increase) - 正確 (Correct)</strong>
+        <p>建築工人的工資是興建房屋的「生產成本」（Cost of Production）。工資上升會導致生產成本增加，供應因此減少，<strong>供應曲線向左移動</strong>。當供應減少，市場的均衡價格 \( P \) 會上升，而均衡交易量 \( Q \) 會下降。這正正反映了買家面對更高的價格，因而減少購買量，即在需求曲線 D 上由點 X（較低價、較多量）移動至點 Y（較高價、較少量）。</p>
+        <div class="en-text">Construction workers' wages are a "cost of production" for building houses. An increase in wages raises production costs, leading to a decrease in supply. The <strong>supply curve shifts to the left</strong>. When supply decreases, the equilibrium price \( P \) increases and the equilibrium quantity \( Q \) decreases. This exactly reflects buyers facing a higher price and reducing their quantity demanded, moving from point X (lower price, higher quantity) to point Y (higher price, lower quantity) along the demand curve D.</div>
+    </div>
+
+    <div class="option-analysis incorrect">
+        <strong>D. 商業樓宇的需求下降 (Demand for commercial buildings decreases) - 錯誤 (Incorrect)</strong>
+        <p>如果商業樓宇的需求下降，發展商可能會將資源（如土地、工人）轉移去興建私人房屋（這是競爭性供應 Competitive Supply 的概念）。這會導致私人房屋的供應<strong>增加</strong>（供應曲線向右移動）。這會令均衡價格下降、交易量上升，即在圖表上應該是由 Y 點移向 X 點，與題目方向相反。</p>
+        <div class="en-text">If the demand for commercial buildings decreases, developers might reallocate resources (like land and labor) to build private housing (concept of competitive supply). This would cause an <strong>increase</strong> in the supply of private housing (rightward shift of the supply curve). This would lead to a lower equilibrium price and higher quantity, meaning a movement from point Y to point X, which is the opposite of the question.</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <p>做這類圖表題時，我們必須先找出<strong>「支點」(Pivot Point)</strong>：</p>
+    <ol>
+        <li><strong>觀察圖表特徵：</strong> 圖中只有一條需求曲線 D，並沒有 \( D_1 \)、\( D_2 \) 的出現。均衡點的改變（X 到 Y）是<strong>沿著曲線的移動</strong>。</li>
+        <li><strong>解讀移動方向：</strong> 比較 X 和 Y。Y 點的價格比 X 點高，但數量比 X 點少。甚麼會導致價格上升而交易量下跌？唯一答案是：<strong>供應減少 (Decrease in Supply)</strong>。</li>
+        <li><strong>尋找對應選項：</strong> 我們要找的選項，必須是一個能導致「私人房屋供應減少」的因素。選項 C 的生產成本上升完美符合這個條件。</li>
+    </ol>
+    <div class="en-text">
+        <p>When tackling chart-based MCQs, we must first find the <strong>Pivot Point</strong>:</p>
+        <ol>
+            <li><strong>Observe the graph:</strong> There is only one demand curve D, no \( D_1 \) or \( D_2 \). The change in equilibrium (X to Y) is a <strong>movement along the curve</strong>.</li>
+            <li><strong>Decode the movement:</strong> Compare X and Y. Point Y has a higher price but a lower quantity than point X. What causes price to rise and quantity to fall? The only answer is: <strong>Decrease in Supply</strong>.</li>
+            <li><strong>Find the matching option:</strong> We need to look for an option that causes a "decrease in the supply of private housing". Option C's increase in production cost perfectly fits.</li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="concept-box" style="border-color: #ef4444; background-color: #fef2f2;">
+        <p>🚨 <strong>死穴：混淆「需求」與「需求量」</strong></p>
+        <p>很多同學一看到點 X 移向點 Y，發現「數量減少了」，就直覺以為是「需求下降」，於是急急忙忙選了 A 或 B。但請緊記：只有價格改變才會導致點在同一條線上移動！如果真的是 A 或 B 發生，考評局的圖表必須畫出另一條新的需求曲線在原有的左邊。</p>
+        <div class="en-text">
+            <p>🚨 <strong>Fatal Flaw: Confusing "Demand" with "Quantity Demanded"</strong></p>
+            <p>Many students see the movement from X to Y, notice the "quantity decreased," and intuitively think "Demand decreased," hastily choosing A or B. Remember: ONLY a change in price causes a point to move along the SAME line! If A or B actually happened, the HKEAA diagram would have to show a brand new demand curve drawn to the left of the original one.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-q">🙋‍♂️ 學生問：這題完全沒有畫出供應曲線 (Supply Curve)，我怎麼知道跟供應有關？</div>
+        <div class="qa-a">
+            👨‍🏫 <strong>導師答：</strong> 這是考評局常用的「隱藏曲線」技巧！雖然圖中沒有畫出供應曲線 \( S \)，但市場均衡點必定是需求曲線和供應曲線的相交點。既然 X 和 Y 都在同一條需求曲線上，代表需求曲線沒動。要令交叉點由 X 跑到 Y，必定是隱藏的那條供應曲線往左上方移動（減少）了。這就是經濟學上的逆向推理！
+        </div>
+        <div class="en-text" style="margin-top: 15px;">
+            <div class="qa-q">🙋‍♂️ Student: The supply curve isn't even drawn in this diagram! How am I supposed to know it's about supply?</div>
+            <div class="qa-a">
+                👨‍🏫 <strong>Tutor:</strong> This is a classic "hidden curve" trick used by examiners! Although the supply curve \( S \) isn't drawn, a market equilibrium point is ALWAYS the intersection of supply and demand. Since both X and Y are on the same demand curve, the demand curve hasn't moved. For the intersection to travel from X up to Y, the hidden supply curve MUST have shifted to the upper-left (decreased). This is economic reverse-engineering!
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="tips-box">
+        <p>⚡ <strong>三秒必殺技 (The 3-Second Rule)：</strong></p>
+        <p>在考場上看到這種圖，立刻在腦海中進行「兩步篩選法」：</p>
+        <ol>
+            <li>圖中只有一條 D 線 ➡️ 尋找改變供應 (Supply) 的選項，直接劃掉所有改變需求 (Demand) 的選項 (A, B)。</li>
+            <li>價格上升，數量下降 ➡️ 尋找令供應<strong>減少</strong> (Supply ↓) 的因素。選項 C 是成本上升 = 供應減少。秒殺！</li>
+        </ol>
+        <div class="en-text">
+            <p>⚡ <strong>The 3-Second Rule:</strong></p>
+            <p>When you see this diagram in the exam hall, run the "2-Step Filter" in your head immediately:</p>
+            <ol>
+                <li>Only one D-curve shown ➡️ Look for options that change Supply. Cross out all options that change Demand (A, B).</li>
+                <li>Price goes UP, Quantity goes DOWN ➡️ Look for factors that <strong>decrease</strong> Supply (Supply ↓). Option C is an increase in cost = decrease in supply. Solved!</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
