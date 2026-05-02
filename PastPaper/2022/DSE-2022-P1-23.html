@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor: Lorenz Curve Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --light-blue: #f0f9ff;
+            --dark-text: #1e293b;
+            --gray-text: #64748b;
+            --math-bg: #f3f4f6;
+            --border-color: #e2e8f0;
+            --correct-green: #10b981;
+            --wrong-red: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .tc {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .en {
+            color: var(--gray-text);
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .header-card {
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .concept-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        .correct {
+            border-left: 5px solid var(--correct-green);
+            background-color: #ecfdf5;
+        }
+        .wrong {
+            border-left: 5px solid var(--wrong-red);
+            background-color: #fef2f2;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .badge.correct-badge { background-color: var(--correct-green); }
+        .badge.wrong-badge { background-color: var(--wrong-red); }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .qa-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-card">
+        <h2>📊 HKDSE Economics Topic Analysis</h2>
+        <p><strong>Topic (課題):</strong> 收入不均與洛倫茨曲線 / Income Inequality & Lorenz Curve</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐⭐☆☆ (3/5)</p>
+        <p><strong>Key Concepts (關鍵概念):</strong> 洛倫茨曲線 (Lorenz Curve), 收入再分配 (Income Redistribution), 累進稅 (Progressive Tax), 堅尼系數 (Gini Coefficient)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. 題目 (The Question)</h2>
+    <div class="question-box">
+        <p class="tc">參閱以下某國的洛倫茨曲線。<br>根據以上資料，下列哪項／些有關該國的陳述是正確的？</p>
+        <p class="en">Refer to the following Lorenz curves of a country.<br>Based on the above information, which of the following statements about the country is/are correct?</p>
+        
+        <ul>
+            <li>
+                <span class="tc">(1) 稅制是累進的。</span><br>
+                <span class="en">(1) The tax system is progressive.</span>
+            </li>
+            <li>
+                <span class="tc">(2) 福利轉移幫助結果均等化。</span><br>
+                <span class="en">(2) Social transfer helps equalise outcome.</span>
+            </li>
+            <li>
+                <span class="tc">(3) 在政府進行收入再分配後，收入不均的問題變得更嚴重。</span><br>
+                <span class="en">(3) The income inequality problem becomes more serious after the government’s redistribution of income.</span>
+            </li>
+        </ul>
+
+        <p class="tc">A. 只有 (1) &nbsp;&nbsp; B. 只有 (2) &nbsp;&nbsp; C. 只有 (3) &nbsp;&nbsp; D. 只有 (1)、(2)</p>
+        <p class="en">A. (1) only &nbsp;&nbsp; B. (2) only &nbsp;&nbsp; C. (3) only &nbsp;&nbsp; D. (1) and (2) only</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p class="tc"><strong>洛倫茨曲線 (Lorenz Curve)</strong></p>
+        <p class="en"><strong>Lorenz Curve</strong></p>
+        <p class="tc">洛倫茨曲線以圖像方式顯示一個經濟體內的收入分佈。X軸代表住戶的累積百分比，Y軸代表總收入的累積百分比。圖中隱藏了一條45度角斜線，稱為<strong>絕對平均線 (Line of Absolute Equality)</strong>。</p>
+        <p class="en">The Lorenz curve graphically represents income distribution within an economy. The X-axis represents the cumulative percentage of households, and the Y-axis represents the cumulative percentage of total income. There is an implied 45-degree diagonal line known as the <strong>Line of Absolute Equality</strong>.</p>
+        
+        <ul>
+            <li>
+                <span class="tc"><strong>判斷收入不均：</strong> 洛倫茨曲線距離45度絕對平均線<strong>越遠</strong>（即「肚子」越大），代表收入不均的情況<strong>越嚴重</strong>。</span><br>
+                <span class="en"><strong>Determining Inequality:</strong> The <strong>further</strong> the Lorenz curve is from the 45-degree line (i.e., the larger the "belly"), the <strong>more serious</strong> the income inequality.</span>
+            </li>
+            <li>
+                <span class="tc"><strong>政府政策的影響：</strong> 一般而言，累進稅（Progressive Tax）和向低收入人士提供的福利轉移（Social Transfers）會將財富由富人轉移至窮人，使曲線向45度線<strong>推近</strong>，從而減輕收入不均。</span><br>
+                <span class="en"><strong>Impact of Government Policies:</strong> Generally, a progressive tax and social transfers to low-income earners shift wealth from the rich to the poor. This pushes the curve <strong>closer</strong> to the 45-degree line, thereby alleviating income inequality.</span>
+            </li>
+        </ul>
+
+        <div class="math-block">
+            <p class="tc">堅尼系數 (Gini Coefficient) 的概念與洛倫茨曲線息息相關：</p>
+            <p class="en">The concept of the Gini Coefficient is closely related to the Lorenz curve:</p>
+            $$ Gini = \frac{\text{Area between 45}^\circ \text{ line and Lorenz Curve}}{\text{Total Area under 45}^\circ \text{ line}} $$
+            <p class="tc">數值介乎 \(0\) 與 \(1\) 之間。曲線越偏離對角線，堅尼系數越大，不均越嚴重。</p>
+            <p class="en">The value is between \(0\) and \(1\). The further the curve deviates from the diagonal, the larger the Gini coefficient and the more severe the inequality.</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    
+    <div class="option-analysis correct">
+        <span class="badge correct-badge">正確答案 (Correct Answer): C</span>
+        <p class="tc"><strong>整體圖像分析：</strong></p>
+        <p class="en"><strong>Overall Graphical Analysis:</strong></p>
+        <p class="tc">在圖中，虛線 A 代表「稅前及福利轉移前」的狀況，而實線 B 代表「稅後及福利轉移後」的狀況。我們可以清楚看見，<strong>實線 B 比虛線 A 距離45度絕對平均線更遠</strong>。這意味著政府介入後，收入分佈變得更加不平均。</p>
+        <p class="en">In the graph, the dashed line A represents the "pre-tax pre-social transfer" situation, while the solid line B represents the "post-tax post-social transfer" situation. We can clearly see that <strong>solid line B is further away from the 45-degree line of absolute equality than dashed line A</strong>. This implies that income distribution became more unequal after government intervention.</p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge wrong-badge">陳述 (1) - 錯誤 (False)</span>
+        <p class="tc"><strong>稅制是累進的。</strong><br>如果稅制是累進的，高收入人士會被徵收較高比例的稅款，這會縮窄貧富懸殊，令曲線 B 應該比曲線 A <strong>更接近</strong> 45度線。但圖表顯示相反的結果，所以稅制不可能是累進的（它可能是累退的）。</p>
+        <p class="en"><strong>The tax system is progressive.</strong><br>If the tax system were progressive, high-income earners would be taxed at a higher proportion, narrowing the wealth gap. This would make Curve B <strong>closer</strong> to the 45-degree line than Curve A. However, the graph shows the opposite result, so the tax system cannot be progressive (it is likely regressive).</p>
+    </div>
+
+    <div class="option-analysis wrong">
+        <span class="badge wrong-badge">陳述 (2) - 錯誤 (False)</span>
+        <p class="tc"><strong>福利轉移幫助結果均等化。</strong><br>「結果均等化」代表收入差距縮小。如前所述，曲線 B 向外移（遠離平均線），反映貧富差距擴大了。因此，這裡的福利轉移並沒有幫助結果均等化。</p>
+        <p class="en"><strong>Social transfer helps equalise outcome.</strong><br>"Equalising outcome" means narrowing the income gap. As established, Curve B shifted outward (away from the line of equality), reflecting a widening wealth gap. Therefore, the social transfers here did not help equalise the outcome.</p>
+    </div>
+
+    <div class="option-analysis correct" style="border-left: 5px solid var(--primary-blue); background-color: #f8fafc;">
+        <span class="badge" style="background-color: var(--primary-blue);">陳述 (3) - 正確 (True)</span>
+        <p class="tc"><strong>在政府進行收入再分配後，收入不均的問題變得更嚴重。</strong><br>這是對圖表最直接且正確的解讀。稅後及福利轉移後（曲線 B）距離絕對平均線比稅前（曲線 A）更遠，直接證明了收入不均問題惡化。</p>
+        <p class="en"><strong>The income inequality problem becomes more serious after the government’s redistribution of income.</strong><br>This is the most direct and correct interpretation of the graph. The post-tax and post-transfer state (Curve B) is further from the line of absolute equality than the pre-tax state (Curve A), directly proving that the income inequality problem worsened.</p>
+    </div>
+    
+    <p class="tc"><strong>結論：</strong>因為只有 (3) 是正確的，所以答案是 <strong>C</strong>。</p>
+    <p class="en"><strong>Conclusion:</strong> Since only (3) is correct, the answer is <strong>C</strong>.</p>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. 題目拆解 (Problem Decomposition)</h2>
+    <div class="tips-box">
+        <p class="tc"><strong>解題樞紐 (The Pivot Point)：找對照基準</strong></p>
+        <p class="en"><strong>The Pivot Point: Finding the Reference Baseline</strong></p>
+        <p class="tc">這類題目的核心在於比較兩條曲線與「隱形45度線」的相對距離。很多學生在看這類圖表時，會忘記在腦海中畫出一條由原點 \((0,0)\) 到右上角 \((100,100)\) 的對角線。只要你畫出這條線，就能一眼看出 A 和 B 誰的彎曲度更大（誰更遠離平均）。</p>
+        <p class="en">The core of this type of question lies in comparing the relative distances of the two curves from the "invisible 45-degree line". Many students, when looking at such graphs, forget to mentally draw a diagonal line from the origin \((0,0)\) to the top right corner \((100,100)\). Once you draw this line, you can tell at a glance which curve has a greater curvature (which one is further from equality).</p>
+        
+        <p class="tc"><strong>這題的「陷阱」：</strong></p>
+        <p class="en"><strong>The "Trap" of this question:</strong></p>
+        <p class="tc">題目故意利用學生的「常識」來設局。在現實世界中，我們通常假設政府收稅和派福利是為了「扶貧」（即改善收入不均）。如果學生不看圖，只憑常理判斷，很容易會誤選包含 (1) 或 (2) 的選項。**在經濟學考試中，圖表數據永遠凌駕於一般常識。**</p>
+        <p class="en">The question intentionally uses students' "common sense" to set a trap. In the real world, we normally assume that government taxation and welfare provision aim to "alleviate poverty" (i.e., improve income inequality). If students don't look at the graph and judge purely based on common sense, they will easily mistakenly choose options containing (1) or (2). **In economics exams, chart data always overrides general common sense.**</p>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <h2>5. 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <ul>
+        <li>
+            <p class="tc"><strong>混淆曲線移動的方向：</strong> 以為曲線向右下方移動（由 A 到 B）代表情況「改善」。記住，洛倫茨曲線越貼近右下角（即堅尼系數接近 \(1\)），代表極少數人掌握了絕大部分的財富，這是極端的不平均。</p>
+            <p class="en"><strong>Confusing the direction of curve shifts:</strong> Assuming that a shift to the bottom right (from A to B) represents an "improvement". Remember, the closer the Lorenz curve is to the bottom right corner (i.e., Gini coefficient approaching \(1\)), the more it means a tiny minority holds the vast majority of wealth, which is extreme inequality.</p>
+        </li>
+        <li>
+            <p class="tc"><strong>沒有仔細閱讀圖例 (Legend)：</strong> 搞錯了 A 和 B 分別代表什麼。必須確認哪一條是「介入前」，哪一條是「介入後」。</p>
+            <p class="en"><strong>Not reading the legend carefully:</strong> Mixing up what A and B represent. You must confirm which line is "pre-intervention" and which is "post-intervention".</p>
+        </li>
+    </ul>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="tc"><strong>學生問：</strong>「現實中真的有政府的稅制和福利政策會令貧富懸殊更嚴重嗎？這不合理吧？」</p>
+        <p class="en"><strong>Student asks:</strong> "In reality, are there really government tax and welfare policies that make the wealth gap worse? Isn't that unreasonable?"</p>
+        <hr style="border: 0; height: 1px; background: #ddd; margin: 15px 0;">
+        <p class="tc"><strong>導師答：</strong>這是一個很好的問題！雖然多數現代政府的政策目標是拉近貧富差距，但在某些情況下，如果政府嚴重依賴<strong>累退稅 (Regressive Taxes)</strong>（例如極高的銷售稅/消費稅，這對窮人的負擔比例遠大於富人），同時福利政策又錯配（例如巨額補貼落入了大企業或富裕階層手中），整體的再分配結果就可能如圖中所示，令不均惡化。這道題目正是測試你是否能拋開先入為主的觀念，客觀地分析圖表數據。</p>
+        <p class="en"><strong>Tutor answers:</strong> This is a great question! While the policy goal of most modern governments is to narrow the wealth gap, in some cases, if a government relies heavily on <strong>regressive taxes</strong> (like extremely high sales/consumption taxes, which burden the poor proportionally more than the rich), and welfare policies are misallocated (e.g., massive subsidies falling into the hands of large corporations or the wealthy class), the overall redistribution outcome could worsen inequality, exactly as shown in the graph. This question specifically tests whether you can put aside preconceived notions and objectively analyze the chart data.</p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <h2>7. 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <ul>
+        <li>
+            <p class="tc"><strong>鉛筆輔助法：</strong> 考試時，立刻用直尺和鉛筆在圖上把原點與右上角連成一條直線（45度線）。比較哪條曲線離直線較近，離得近的就是「較平均」。</p>
+            <p class="en"><strong>The Pencil Assist Method:</strong> During the exam, immediately use a ruler and pencil to draw a straight line connecting the origin to the top right corner (the 45-degree line). Compare which curve is closer to the straight line; the closer one is "more equal".</p>
+        </li>
+        <li>
+            <p class="tc"><strong>連鎖否決法：</strong> 看到圖表顯示「惡化」，(1) 和 (2) 這種描述「改善」的正面字眼必然同時錯誤。A、B、D 選項瞬間被淘汰，3秒內即可得出答案 C。</p>
+            <p class="en"><strong>Chain Elimination Method:</strong> Seeing that the graph shows "deterioration", positive descriptions like (1) and (2) that imply "improvement" must both be wrong simultaneously. Options A, B, and D are instantly eliminated, leading to the answer C within 3 seconds.</p>
+        </li>
+    </ul>
+
+</body>
+</html>
