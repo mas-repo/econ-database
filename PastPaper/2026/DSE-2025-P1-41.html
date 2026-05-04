@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Comparative Advantage</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #0284c7;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --concept-bg: #f0f9ff;
+            --math-bg: #f1f5f9;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .correct-option {
+            background-color: #dcfce7;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .bilingual-zh {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .bilingual-en {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+        .tips-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutor</h1>
+    <div class="header-info">
+        <div><span class="badge">Topic / 課題</span> 國際貿易：比較優勢 (International Trade: Comparative Advantage)</div>
+        <div><span class="badge">Difficulty / 難度</span> ★★☆☆☆</div>
+        <div><span class="badge">Key Concepts / 關鍵概念</span> 比較優勢 (Comparative Advantage), 絕對優勢 (Absolute Advantage), 機會成本 (Opportunity Cost)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>題目 (The Question)</h2>
+    <div class="question-box">
+        <div class="bilingual-zh">
+            某國擁有生產物品 X 的比較優勢。下列哪項有關該國的陳述是正確的？<br><br>
+            A. 運用相同數量的資源，該國可生產的物品 X 數量較另一種物品多。<br>
+            B. 該國物品 X 的產量較其他國家高。<br>
+            C. 在生產一單位的物品 X 時，該國所需的資源較其他國家少。<br>
+            D. 在生產一單位的物品 X 時，該國放棄另一種物品的數量較其他國家少。
+        </div>
+        <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 15px 0;">
+        <div class="bilingual-en">
+            A country has a comparative advantage in producing good X. Which of the following statements about the country is correct?<br><br>
+            A. With the same amount of resources, it can produce more of good X than another good.<br>
+            B. Its output of good X is higher than other countries.<br>
+            C. It requires a smaller amount of resources to produce one unit of good X than other countries.<br>
+            D. It gives up a smaller amount of another good than other countries in producing one unit of good X.
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <div class="bilingual-zh">
+            <strong>比較優勢 (Comparative Advantage)：</strong> 如果一個國家生產某物品的<strong>機會成本</strong>（即放棄生產其他物品的數量）低於其他國家，該國便擁有生產該物品的比較優勢。<br><br>
+            <strong>絕對優勢 (Absolute Advantage)：</strong> 如果一個國家運用相同數量的資源能生產較多數量的某物品，或者生產相同數量的物品所需<strong>資源</strong>較少，該國便擁有絕對優勢。
+        </div>
+        <div class="bilingual-en">
+            <strong>Comparative Advantage:</strong> A country has a comparative advantage in producing a good if its <strong>opportunity cost</strong> (the amount of other goods given up) of producing that good is lower than that of other countries.<br><br>
+            <strong>Absolute Advantage:</strong> A country has an absolute advantage if it can produce more of a good with the same amount of resources, or if it requires fewer <strong>resources</strong> to produce the same amount of a good compared to other countries.
+        </div>
+        
+        <div class="math-block">
+            <div class="bilingual-zh">生產 1 單位物品 X 的機會成本公式：</div>
+            <div class="bilingual-en">Formula for Opportunity Cost of 1 unit of Good X:</div>
+            $$ \text{Opportunity Cost of 1X} = \frac{\text{Quantity of Good Y given up}}{\text{Quantity of Good X gained}} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+    <div class="correct-option">
+        <strong>正確答案 (Correct Option): D</strong>
+    </div>
+
+    <div class="option-analysis">
+        <div class="bilingual-zh"><strong>選項 A 分析：錯誤。</strong> 這個選項只是比較同一個國家內兩種物品的產量，並沒有與其他國家進行機會成本的比較。比較優勢必須涉及國家之間的機會成本比較。</div>
+        <div class="bilingual-en"><strong>Option A Analysis: Incorrect.</strong> This option merely compares the production volumes of two goods within the same country. It does not compare opportunity costs between countries. Comparative advantage must involve an inter-country comparison of opportunity costs.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="bilingual-zh"><strong>選項 B 分析：錯誤。</strong> 產量較高只反映生產規模或總量，並不代表生產效率高，更不能反映機會成本的高低。</div>
+        <div class="bilingual-en"><strong>Option B Analysis: Incorrect.</strong> A higher output only reflects the scale of production or total volume. It does not indicate higher production efficiency, nor does it reflect the level of opportunity cost.</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="bilingual-zh"><strong>選項 C 分析：錯誤。</strong> 「所需資源較少」是<strong>絕對優勢 (Absolute Advantage)</strong> 的定義。絕對優勢關注的是投入的資源數量，而非放棄的其他物品數量（機會成本）。</div>
+        <div class="bilingual-en"><strong>Option C Analysis: Incorrect.</strong> "Requires a smaller amount of resources" is the definition of <strong>Absolute Advantage</strong>. Absolute advantage focuses on the amount of resources inputted, not the amount of other goods given up (opportunity cost).</div>
+    </div>
+
+    <div class="option-analysis">
+        <div class="bilingual-zh"><strong>選項 D 分析：正確。</strong> 「放棄另一種物品的數量較其他國家少」精確地描述了生產該物品的<strong>機會成本較低</strong>。這正是比較優勢 (Comparative Advantage) 的核心定義。</div>
+        <div class="bilingual-en"><strong>Option D Analysis: Correct.</strong> "Gives up a smaller amount of another good than other countries" accurately describes a <strong>lower opportunity cost</strong> of producing that good. This is the exact core definition of Comparative Advantage.</div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>題目拆解 (Problem Decomposition)</h2>
+    <div class="bilingual-zh">
+        <strong>解題樞紐 (Pivot Point)：</strong> 看到「比較優勢 (Comparative Advantage)」，你的大腦必須立刻聯想到「機會成本 (Opportunity Cost)」或「放棄的數量 (Amount given up)」。<br>
+        <strong>干擾資訊 (Distractors)：</strong> 題目中的選項 C 是一個經典的陷阱，它描述的是「絕對優勢」。考評局經常將這兩個概念放在一起來測試學生是否能清晰分辨「資源投入」與「機會成本」。
+    </div>
+    <div class="bilingual-en">
+        <strong>Pivot Point:</strong> When you see "Comparative Advantage", your brain must immediately link it to "Opportunity Cost" or "Amount given up".<br>
+        <strong>Distractors:</strong> Option C is a classic trap; it describes "Absolute Advantage". The HKEAA frequently puts these two concepts together to test if students can clearly distinguish between "resource input" and "opportunity cost".
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <div class="bilingual-zh">
+            <strong>概念混淆：</strong> 學生最常犯的錯誤是混淆了「絕對優勢」和「比較優勢」。記住：<br>
+            - 講「資源 (Resources)」或「產量 (Output)」 \(\rightarrow\) 絕對優勢<br>
+            - 講「放棄 (Give up)」或「機會成本 (Opportunity Cost)」 \(\rightarrow\) 比較優勢
+        </div>
+        <div class="bilingual-en">
+            <strong>Concept Confusion:</strong> The most common mistake students make is confusing "Absolute Advantage" with "Comparative Advantage". Remember:<br>
+            - Mentions "Resources" or "Output" \(\rightarrow\) Absolute Advantage<br>
+            - Mentions "Give up" or "Opportunity Cost" \(\rightarrow\) Comparative Advantage
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <div class="qa-q">Q: 一個國家可以同時擁有生產兩種物品的比較優勢嗎？ (Can a country have a comparative advantage in both goods?)</div>
+        <div class="bilingual-zh">
+            <strong>A: 不可以。</strong> 因為機會成本是互為倒數的 (reciprocals)。如果甲國生產物品 X 的機會成本低於乙國，那麼甲國生產物品 Y 的機會成本必然<strong>高於</strong>乙國。因此，一個國家最多只能擁有一種物品的比較優勢（除非兩國機會成本完全相同，則沒有比較優勢）。
+        </div>
+        <div class="bilingual-en">
+            <strong>A: No.</strong> Because opportunity costs are reciprocals. If Country A has a lower opportunity cost in producing Good X than Country B, Country A's opportunity cost in producing Good Y must be <strong>higher</strong> than Country B's. Therefore, a country can have a comparative advantage in at most one good (unless both countries have identical opportunity costs, in which case neither has a comparative advantage).
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <div class="bilingual-zh">
+        <strong>關鍵字秒殺法 (Keyword Elimination Method)：</strong><br>
+        在多項選擇題中，當題目問及「比較優勢 (Comparative Advantage)」時，直接掃描選項尋找關鍵字「放棄 (give up)」或「機會成本 (opportunity cost)」。<br>
+        - 看到「資源 (resources)」(選項 A 和 C) \(\rightarrow\) 立即刪除！<br>
+        - 看到「產量 (output)」(選項 B) \(\rightarrow\) 立即刪除！<br>
+        這樣不用 10 秒就能鎖定答案 D。
+    </div>
+    <div class="bilingual-en">
+        <strong>Keyword Elimination Method:</strong><br>
+        In MCQs, when the question asks about "Comparative Advantage", scan the options directly for the keywords "give up" or "opportunity cost".<br>
+        - See "resources" (Options A and C) \(\rightarrow\) Eliminate immediately!<br>
+        - See "output" (Option B) \(\rightarrow\) Eliminate immediately!<br>
+        This way, you can lock in Option D in less than 10 seconds.
+    </div>
+
+</div>
+
+</body>
+</html>

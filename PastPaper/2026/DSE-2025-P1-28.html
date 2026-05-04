@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - AS-AD Model</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e40af;
+        }
+        .question-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .mistake-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fdf4ff;
+            border-left: 5px solid #d946ef;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .trick-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .en-translation {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Masterclass</h1>
+        <p><span class="tag">Topic</span> 總供求模型 (AS-AD Model) / 宏觀經濟衝擊 (Macroeconomic Shocks)</p>
+        <p><span class="tag">Difficulty</span> ★★★☆☆ (3/5 Stars)</p>
+        <p><span class="tag">Key Concepts</span> 短期總供給 (SRAS), 總需求 (AD), 物價水平 (Price Level)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-section">
+        <h2>題目 (The Question)</h2>
+        <p>假設在某經濟中，許多工廠因一次大規模罷工而關閉。下列哪項／些可能抵銷其對該經濟在短期的物價水平的影響？</p>
+        <p>
+            (1) 該經濟的主要貿易夥伴經濟復甦。<br>
+            (2) 人們的儲蓄意欲增加。<br>
+            (3) 油價上升。
+        </p>
+        <p>
+            A. 只有(1)<br>
+            B. 只有(2)<br>
+            C. 只有(1)、(3)<br>
+            D. 只有(2)、(3)
+        </p>
+        <hr>
+        <div class="en-translation">
+            <p>Suppose many factories in an economy are closed due to a massive labour strike. Which of the following may offset its effect on the economy's price level in the short run?</p>
+            <p>
+                (1) There is an economic recovery in the economy's major trading partner.<br>
+                (2) There is an increase in people's desire to save.<br>
+                (3) There is an increase in oil prices.
+            </p>
+            <p>
+                A. (1) only<br>
+                B. (2) only<br>
+                C. (1) and (3) only<br>
+                D. (2) and (3) only
+            </p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>概念重溫 (Concept Review)</h2>
+        <p>要解答這道題目，我們需要運用<strong>總供求模型 (AS-AD Model)</strong>。首先，我們要分析初始事件（罷工）對經濟的影響，然後找出哪個選項能產生相反的物價效果。</p>
+        <div class="en-translation">
+            <p>To solve this question, we need to apply the <strong>Aggregate Supply and Aggregate Demand (AS-AD) Model</strong>. First, we analyze the impact of the initial event (the strike) on the economy, and then identify which option produces the opposite effect on the price level.</p>
+        </div>
+
+        <h3>1. 總需求 (Aggregate Demand, AD)</h3>
+        <p>總需求是指在不同物價水平下，經濟體系內各部門對本地實質產出的需求總和。公式為：</p>
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+        </div>
+        <p>其中 \(C\) 是私人消費開支，\(I\) 是投資開支，\(G\) 是政府消費開支，\(X\) 是出口，\(M\) 是進口。</p>
+        <div class="en-translation">
+            <p>Aggregate Demand is the total demand for domestic real output by all sectors at different price levels. The formula is \( AD = C + I + G + (X - M) \), where \(C\) is private consumption, \(I\) is investment, \(G\) is government spending, \(X\) is exports, and \(M\) is imports.</p>
+        </div>
+
+        <h3>2. 短期總供給 (Short-Run Aggregate Supply, SRAS)</h3>
+        <p>短期總供給反映在生產要素價格（如工資）固定的情況下，物價水平 \(P\) 與實質產出 \(Y\) 之間的正向關係。生產成本上升或生產受阻會導致 SRAS 向左移。</p>
+        <div class="en-translation">
+            <p>Short-Run Aggregate Supply reflects the positive relationship between the price level \(P\) and real output \(Y\) when factor prices (like wages) are sticky. An increase in production costs or production disruptions will shift SRAS to the left.</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="analysis-section">
+        <h2>答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <p>正確答案是：<span class="correct-answer">B. 只有(2) (Option B)</span></p>
+        
+        <h3>初始事件分析 (Analysis of the Initial Event)</h3>
+        <p>「許多工廠因一次大規模罷工而關閉」會導致生產受阻，這是一個不利的供給衝擊 (Adverse supply shock)。因此，短期總供給 (SRAS) 會減少（向左移）。這會導致物價水平 \(P\) <strong>上升</strong>，實質產出 \(Y\) 減少。</p>
+        <div class="en-translation">
+            <p>"Many factories are closed due to a massive labour strike" disrupts production, which is an adverse supply shock. Therefore, Short-Run Aggregate Supply (SRAS) decreases (shifts left). This causes the price level \(P\) to <strong>increase</strong> and real output \(Y\) to decrease.</p>
+        </div>
+        <p><strong>題目要求：</strong>找出能「抵銷」物價水平影響的選項。既然初始影響是物價 \(P\) 上升，我們就要找一個會令物價 \(P\) <strong>下降</strong>的選項。</p>
+        <div class="en-translation">
+            <p><strong>Question Requirement:</strong> Find the option that "offsets" the effect on the price level. Since the initial effect is an increase in price level \(P\), we must find an option that causes the price level \(P\) to <strong>decrease</strong>.</p>
+        </div>
+
+        <div class="option-analysis">
+            <h4>分析 (1)：貿易夥伴經濟復甦</h4>
+            <p>貿易夥伴經濟復甦會增加他們對本國出口商品的需求，導致本國出口 \(X\) 增加。這會令總需求 (AD) 增加（向右移），從而推高物價水平 \(P\)。這會<strong>加劇</strong>（而非抵銷）物價上升的影響。</p>
+            <div class="en-translation">
+                <p>Economic recovery in a trading partner increases their demand for domestic exports, leading to an increase in exports \(X\). This increases Aggregate Demand (AD) (shifts right), pushing up the price level \(P\). This <strong>reinforces</strong> (rather than offsets) the increase in the price level.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <h4>分析 (2)：人們的儲蓄意欲增加</h4>
+            <p>人們儲蓄意欲增加，意味著消費意欲下降，私人消費開支 \(C\) 減少。這會令總需求 (AD) 減少（向左移），從而拉低物價水平 \(P\)。這正好<strong>抵銷</strong>了因罷工引起的物價上升。</p>
+            <div class="en-translation">
+                <p>An increase in people's desire to save means a decrease in the desire to consume, reducing private consumption expenditure \(C\). This decreases Aggregate Demand (AD) (shifts left), pulling down the price level \(P\). This exactly <strong>offsets</strong> the price increase caused by the strike.</p>
+            </div>
+        </div>
+
+        <div class="option-analysis">
+            <h4>分析 (3)：油價上升</h4>
+            <p>油價上升會增加企業的生產成本。這會導致短期總供給 (SRAS) 進一步減少（向左移），從而進一步推高物價水平 \(P\)。這同樣會<strong>加劇</strong>物價上升的影響。</p>
+            <div class="en-translation">
+                <p>An increase in oil prices raises production costs for firms. This causes Short-Run Aggregate Supply (SRAS) to decrease further (shifts left), pushing the price level \(P\) even higher. This also <strong>reinforces</strong> the increase in the price level.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #64748b;">
+        <h2>題目拆解 (Problem Decomposition)</h2>
+        <p><strong>破題關鍵 (The Pivot Point)：</strong>這條題目的核心在於準確理解「抵銷其對...物價水平的影響」(offset its effect on the price level)。</p>
+        <ul>
+            <li>第一步：確立初始方向。罷工 = SRAS 左移 = 物價 \(P\) ↑。</li>
+            <li>第二步：定義「抵銷」。抵銷 \(P\) ↑ = 尋找導致 \(P\) ↓ 的因素。</li>
+            <li>第三步：逐一測試選項。只有 AD 左移或 SRAS 右移才能令 \(P\) ↓。</li>
+        </ul>
+        <div class="en-translation">
+            <p><strong>The Pivot Point:</strong> The core of this question lies in accurately understanding "offset its effect on the price level".</p>
+            <ul>
+                <li>Step 1: Establish initial direction. Strike = SRAS shifts left = Price level \(P\) ↑.</li>
+                <li>Step 2: Define "offset". Offsetting \(P\) ↑ = finding a factor that causes \(P\) ↓.</li>
+                <li>Step 3: Test options one by one. Only a leftward shift in AD or a rightward shift in SRAS can cause \(P\) ↓.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="mistake-box">
+        <h2>常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+        <p><strong>陷阱：混淆「抵銷物價影響」與「抵銷產出影響」</strong></p>
+        <p>很多同學一看到罷工（壞事，導致實質產出 \(Y\) 下降），就直覺認為「抵銷」代表要找一件「好事」（令 \(Y\) 上升）。如果題目問的是「抵銷對<strong>實質產出 (Real Output)</strong>的影響」，那麼選項 (1) 出口增加帶動 AD 右移，令 \(Y\) 上升，就會是正確答案。但本題明確問的是<strong>物價水平 (Price Level)</strong>，所以必須嚴格跟隨物價 \(P\) 的升跌來判斷。</p>
+        <div class="en-translation">
+            <p><strong>Trap: Confusing "offsetting price effect" with "offsetting output effect"</strong></p>
+            <p>Many students see a strike (a bad event causing real output \(Y\) to fall) and intuitively think "offset" means finding a "good event" (causing \(Y\) to rise). If the question asked to "offset the effect on <strong>Real Output</strong>", then Option (1) (exports increase -> AD shifts right -> \(Y\) rises) would be correct. However, this question specifically asks about the <strong>Price Level</strong>, so you must strictly follow the rise and fall of \(P\).</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-box">
+        <h2>學生常見疑問 (Student Q&A)</h2>
+        <p><strong>Q: 為什麼儲蓄意欲增加會影響總需求 (AD)？</strong></p>
+        <p>A: 在宏觀經濟中，市民的收入主要有兩個去向：消費 (\(C\)) 或儲蓄 (\(S\))。當人們的儲蓄意欲增加時，他們會將更大比例的收入存起來，這必然導致當前的私人消費開支 (\(C\)) 減少。因為 \(C\) 是總需求 (\(AD\)) 的最大組成部分，\(C\) 下降會直接導致 \(AD\) 減少（向左移）。</p>
+        <div class="en-translation">
+            <p><strong>Q: Why does an increase in the desire to save affect Aggregate Demand (AD)?</strong></p>
+            <p>A: In macroeconomics, disposable income mainly goes to two places: consumption (\(C\)) or saving (\(S\)). When people's desire to save increases, they save a larger proportion of their income, which inevitably leads to a decrease in current private consumption expenditure (\(C\)). Since \(C\) is the largest component of Aggregate Demand (\(AD\)), a fall in \(C\) directly causes \(AD\) to decrease (shift left).</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="trick-box">
+        <h2>考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p><strong>箭頭速記法 (The Arrow Method)：</strong></p>
+        <p>在選擇題中，不需要畫完整的圖，只需在試卷旁邊寫下變數的上下箭頭：</p>
+        <p>
+            初始：Strike → SRAS↓ → <strong>P↑</strong><br>
+            目標：找 <strong>P↓</strong><br>
+            (1) 復甦 → X↑ → AD↑ → P↑ (錯 ❌)<br>
+            (2) 儲蓄↑ → C↓ → AD↓ → <strong>P↓ (對 ✅)</strong><br>
+            (3) 油價↑ → 成本↑ → SRAS↓ → P↑ (錯 ❌)
+        </p>
+        <div class="en-translation">
+            <p><strong>The Arrow Method:</strong></p>
+            <p>For MCQs, you don't need to draw full graphs. Just jot down the up/down arrows for variables next to the question:</p>
+            <p>
+                Initial: Strike → SRAS↓ → <strong>P↑</strong><br>
+                Goal: Find <strong>P↓</strong><br>
+                (1) Recovery → X↑ → AD↑ → P↑ (Wrong ❌)<br>
+                (2) Save↑ → C↓ → AD↓ → <strong>P↓ (Correct ✅)</strong><br>
+                (3) Oil Price↑ → Cost↑ → SRAS↓ → P↑ (Wrong ❌)
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

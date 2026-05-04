@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Externalities</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --box-bg: #f0f9ff;
+            --math-bg: #f1f5f9;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --incorrect-bg: #fee2e2;
+            --incorrect-border: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .concept-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .bilingual-group {
+            margin-bottom: 15px;
+        }
+
+        .zh {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 0;
+        }
+
+        .question-box {
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option-item {
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        .analysis-option {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .analysis-option.correct {
+            background-color: var(--correct-bg);
+            border-left-color: var(--correct-border);
+        }
+
+        .analysis-option.incorrect {
+            background-color: var(--incorrect-bg);
+            border-left-color: var(--incorrect-border);
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutorial</h1>
+    <div class="header-info">
+        <div>📍 Topic (課題): Market Failure - Externalities (市場失效 - 界外影響)</div>
+        <div>⭐ Difficulty (難度): ★★☆☆☆</div>
+        <div>🔑 Key Concepts (關鍵概念): Negative Externality (負面界外影響), Overproduction (過度生產), Efficiency Loss (效率損失)</div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>1. The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-group">
+            <p class="zh">當有負面界外影響時，市場會出現 ______，而其有效率的產出水平會 ______ 其均衡產出水平。</p>
+            <p class="en">When there is a negative externality, ________ occurs in the market and its efficient output level is ________ its equilibrium output level.</p>
+        </div>
+        
+        <ul class="options-list">
+            <li class="option-item">
+                <div class="zh">A. 過度生產 …… 高於</div>
+                <div class="en">A. overproduction ...... above</div>
+            </li>
+            <li class="option-item" style="background-color: var(--correct-bg); border-color: var(--correct-border); font-weight: bold;">
+                <div class="zh">B. 過度生產 …… 低於</div>
+                <div class="en">B. overproduction ...... below</div>
+            </li>
+            <li class="option-item">
+                <div class="zh">C. 生產不足 …… 高於</div>
+                <div class="en">C. underproduction ...... above</div>
+            </li>
+            <li class="option-item">
+                <div class="zh">D. 生產不足 …… 低於</div>
+                <div class="en">D. underproduction ...... below</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>2. Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual-group">
+            <p class="zh"><strong>負面界外影響 (Negative Externality)：</strong> 指生產或消費活動對沒有參與交易的第三者造成了未被補償的成本。這意味著社會承擔的成本高於私人承擔的成本。</p>
+            <p class="en"><strong>Negative Externality:</strong> Occurs when a production or consumption activity imposes an uncompensated cost on a third party not involved in the transaction. This means the cost borne by society is higher than the private cost.</p>
+        </div>
+        
+        <div class="math-block">
+            $$ MSC = MPC + MEC $$
+        </div>
+        
+        <div class="bilingual-group">
+            <p class="zh">其中 \(MSC\) 是邊際社會成本，\(MPC\) 是邊際私人成本，\(MEC\) 是邊際外部成本（大於零）。因此，\(MSC > MPC\)。</p>
+            <p class="en">Where \(MSC\) is Marginal Social Cost, \(MPC\) is Marginal Private Cost, and \(MEC\) is Marginal External Cost (greater than zero). Therefore, \(MSC > MPC\).</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>均衡產出 (Equilibrium Output, \(Q_m\))：</strong> 由私人市場決定，條件是邊際私人利益等於邊際私人成本 (\(MPB = MPC\))。</p>
+            <p class="en"><strong>Equilibrium Output (\(Q_m\)):</strong> Determined by the private market, where Marginal Private Benefit equals Marginal Private Cost (\(MPB = MPC\)).</p>
+        </div>
+
+        <div class="bilingual-group">
+            <p class="zh"><strong>有效率產出 (Efficient Output, \(Q_e\))：</strong> 社會資源達到最佳分配的水平，條件是邊際社會利益等於邊際社會成本 (\(MSB = MSC\))。</p>
+            <p class="en"><strong>Efficient Output (\(Q_e\)):</strong> The level where social resources are optimally allocated, where Marginal Social Benefit equals Marginal Social Cost (\(MSB = MSC\)).</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>3. The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="bilingual-group">
+        <p class="zh"><strong>正確答案是：B</strong></p>
+        <p class="en"><strong>The correct option is: B</strong></p>
+    </div>
+
+    <div class="analysis-option incorrect">
+        <div class="bilingual-group">
+            <p class="zh"><strong>選項 A (錯誤)：</strong> 雖然負面界外影響確實會導致「過度生產」，但有效率的產出水平是「低於」而非「高於」均衡產出水平。</p>
+            <p class="en"><strong>Option A (Incorrect):</strong> While a negative externality does lead to "overproduction", the efficient output level is "below", not "above", the equilibrium output level.</p>
+        </div>
+    </div>
+
+    <div class="analysis-option correct">
+        <div class="bilingual-group">
+            <p class="zh"><strong>選項 B (正確)：</strong> 因為存在負面界外影響，\(MSC > MPC\)。假設沒有正面界外影響 (\(MSB = MPB\))。由於社會成本較高，社會最適宜的產量 \(Q_e\) 會少於私人市場決定的產量 \(Q_m\)。因此，有效率產出「低於」均衡產出 (\(Q_e < Q_m\))。既然實際生產量 \(Q_m\) 大於理想產量 \(Q_e\)，市場便出現了「過度生產」，並導致效率損失 (Efficiency Loss)。</p>
+            <p class="en"><strong>Option B (Correct):</strong> Due to the negative externality, \(MSC > MPC\). Assuming no positive externality (\(MSB = MPB\)). Because the social cost is higher, the socially optimal output \(Q_e\) will be less than the private market output \(Q_m\). Thus, the efficient output is "below" the equilibrium output (\(Q_e < Q_m\)). Since the actual output \(Q_m\) is greater than the ideal output \(Q_e\), "overproduction" occurs in the market, leading to an efficiency loss.</p>
+        </div>
+    </div>
+
+    <div class="analysis-option incorrect">
+        <div class="bilingual-group">
+            <p class="zh"><strong>選項 C & D (錯誤)：</strong> 「生產不足」(Underproduction) 是正面界外影響 (Positive Externality) 的特徵，而非負面界外影響。當有正面界外影響時，\(MSB > MPB\)，才會導致生產不足。</p>
+            <p class="en"><strong>Options C & D (Incorrect):</strong> "Underproduction" is a characteristic of a positive externality, not a negative one. Underproduction occurs when there is a positive externality and \(MSB > MPB\).</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>4. Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual-group">
+        <p class="zh">解答這類題目的<strong>關鍵樞紐 (Pivot Point)</strong> 在於將文字轉換為數學邏輯：</p>
+        <p class="en">The <strong>Pivot Point</strong> to solving this type of question is translating the text into mathematical logic:</p>
+    </div>
+    <ul>
+        <li>
+            <div class="bilingual-group">
+                <p class="zh">第一步：看到「負面界外影響」，立刻聯想到 \(MSC > MPC\)。</p>
+                <p class="en">Step 1: Seeing "negative externality", immediately recall \(MSC > MPC\).</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-group">
+                <p class="zh">第二步：因為成本被低估了（私人成本低於社會成本），自私的市場參與者會生產得「太多」。這就確定了第一個空格是「過度生產」。</p>
+                <p class="en">Step 2: Because costs are underestimated (private cost is lower than social cost), selfish market participants will produce "too much". This confirms the first blank is "overproduction".</p>
+            </div>
+        </li>
+        <li>
+            <div class="bilingual-group">
+                <p class="zh">第三步：釐清主語和賓語。題目問的是「有效率的產出水平 (\(Q_e\))」相比於「均衡產出水平 (\(Q_m\))」是如何。既然生產過度 (\(Q_m > Q_e\))，反過來說，有效率產出 \(Q_e\) 就是「低於」均衡產出 \(Q_m\)。</p>
+                <p class="en">Step 3: Clarify the subject and object. The question asks how the "efficient output level (\(Q_e\))" compares to the "equilibrium output level (\(Q_m\))". Since there is overproduction (\(Q_m > Q_e\)), conversely, the efficient output \(Q_e\) is "below" the equilibrium output \(Q_m\).</p>
+            </div>
+        </li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>5. Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="bilingual-group">
+        <p class="zh">⚠️ <strong>粗心陷阱：語意反轉</strong><br>很多學生知道負面界外影響會導致過度生產 (\(Q_m > Q_e\))，但在閱讀第二個空格時太快，誤以為題目問「均衡產出」對比「有效率產出」，從而錯誤選擇了「高於」。請務必看清楚題目問的是「有效率產出」對比「均衡產出」，所以答案是「低於」。</p>
+        <p class="en">⚠️ <strong>Careless Trap: Semantic Reversal</strong><br>Many students know negative externalities lead to overproduction (\(Q_m > Q_e\)), but read the second blank too quickly, mistakenly thinking the question asks for "equilibrium output" compared to "efficient output", thus wrongly choosing "above". Always read carefully: the question asks for "efficient output" compared to "equilibrium output", so the answer is "below".</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>6. Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual-group">
+            <p class="zh"><strong>問：題目沒有提到利益 (Benefit)，我們怎麼知道 MSB 和 MPB 的關係？</strong></p>
+            <p class="en"><strong>Q: The question didn't mention benefits. How do we know the relationship between MSB and MPB?</strong></p>
+        </div>
+        <div class="bilingual-group">
+            <p class="zh"><strong>答：</strong> 在經濟學選擇題中，我們通常採用「單一變數原則」。既然題目只指明了「負面界外影響」，我們就假設沒有正面界外影響的存在。因此，我們預設邊際社會利益等於邊際私人利益 (\(MSB = MPB\))，只需專注於成本面的分析即可。</p>
+            <p class="en"><strong>A:</strong> In economics MCQs, we usually apply the ceteris paribus principle. Since the question only specifies a "negative externality", we assume no positive externality exists. Therefore, we presume Marginal Social Benefit equals Marginal Private Benefit (\(MSB = MPB\)) and solely focus on analyzing the cost side.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>7. Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <div class="bilingual-group">
+            <p class="zh"><strong>邏輯連貫法 (Logical Consistency Method)：</strong><br>這題其實可以秒殺！「過度生產」在字面上的意思就是「實際生產量 (均衡) > 理想生產量 (有效率)」。<br>換句話說：理想 (有效率) < 實際 (均衡)。<br>因此，只要第一個空格填了「過度生產」，第二個空格在邏輯上<strong>必須</strong>是「低於」。選項 A (過度生產 + 高於) 在邏輯上是自相矛盾的。利用這個語意邏輯，你可以直接排除 A 和 C。</p>
+            <p class="en"><strong>Logical Consistency Method:</strong><br>You can solve this instantly! "Overproduction" literally means "Actual output (Equilibrium) > Ideal output (Efficient)".<br>In other words: Ideal (Efficient) < Actual (Equilibrium).<br>Therefore, if the first blank is "overproduction", the second blank <strong>must</strong> logically be "below". Option A (overproduction + above) is logically self-contradictory. Using this semantic logic, you can immediately eliminate A and C.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Problem Analysis</title>
+    <!-- MathJax Configuration -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 { color: #1e3a8a; margin-bottom: 10px; }
+        p { margin-bottom: 15px; }
+        .en { color: #4b5563; font-size: 0.95em; margin-bottom: 20px; }
+        
+        /* Specific Section Styles */
+        .header-box {
+            background-color: #e0f2fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 6px solid #0284c7;
+        }
+        .question-box {
+            background-color: #ffffff;
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .option {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9fafb;
+            border-left: 5px solid #d1d5db;
+        }
+        .option.correct {
+            border-left-color: #22c55e;
+            background-color: #f0fdf4;
+        }
+        .option.wrong {
+            border-left-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        .qa-box {
+            background-color: #fdfce8;
+            border-left: 5px solid #fef08a;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        .trick-box {
+            background-color: #fcf5ff;
+            border-left: 5px solid #d946ef;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background-color: #f3f4f6; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .question-box, .concept-box, .header-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-box">
+        <h2>📊 題目分析報告 | Problem Analysis Report</h2>
+        <p><strong>主題 (Topic):</strong> 廠商與生產 - 勞工生產力 (Firms and Production - Labour Productivity)</p>
+        <p><strong>難度 (Difficulty):</strong> ★★★★☆ (常見陷阱題 / Common Trap)</p>
+        <p><strong>核心概念 (Key Concepts):</strong> 平均勞工生產力 (Average Labour Productivity), 總工時 (Total Man-hours), 薪酬支付制度 (Wage Payment Methods)</p>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-box">
+        <h3>📝 題目 (The Question)</h3>
+        <p>參考下列有關工廠甲和工廠乙的資料。</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>工廠甲</th>
+                <th>工廠乙</th>
+            </tr>
+            <tr>
+                <td>每名工人的產出（單位）</td>
+                <td>7 200</td>
+                <td>6 000</td>
+            </tr>
+            <tr>
+                <td>聘用的工人數目</td>
+                <td>10</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>每名工人的平均工作時數</td>
+                <td>120</td>
+                <td>60</td>
+            </tr>
+        </table>
+        <p>下列哪項／些是工廠甲和工廠乙平均勞工生產力的差別的可能原因？</p>
+        <ol>
+            <li>工廠甲的工作環境較工廠乙的好。</li>
+            <li>工廠甲以時薪支付工資，工廠乙則以件工計算。</li>
+            <li>與工廠乙相比，工廠甲進行較高度的分工。</li>
+            <li>工廠乙向工人提供的訓練較工廠甲多。</li>
+        </ol>
+        <p>A. 只有 (4)<br>B. 只有 (1)、(3)<br>C. 只有 (2)、(4)<br>D. 只有 (1)、(2)、(3)</p>
+        <hr>
+        <p class="en">Refer to the following information about Factory A and Factory B.</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>Factory A</th>
+                <th>Factory B</th>
+            </tr>
+            <tr>
+                <td>Output per worker (units)</td>
+                <td>7 200</td>
+                <td>6 000</td>
+            </tr>
+            <tr>
+                <td>Number of workers employed</td>
+                <td>10</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Average number of working hours per worker</td>
+                <td>120</td>
+                <td>60</td>
+            </tr>
+        </table>
+        <p class="en">Which of the following is/are possible reason(s) for the difference between the average labour productivity of Factory A and Factory B?</p>
+        <ol class="en">
+            <li>Factory A provides a better working environment than Factory B.</li>
+            <li>Factory A pays its workers at time rate while Factory B pays at piece rate.</li>
+            <li>Compared to Factory B, Factory A practises a higher degree of division of labour.</li>
+            <li>Factory B provides more training for its workers than Factory A.</li>
+        </ol>
+        <p class="en">A. (4) only<br>B. (1) and (3) only<br>C. (2) and (4) only<br>D. (1), (2) and (3) only</p>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h3>🧠 概念重溫 (Concept Review)</h3>
+        <p>在經濟學中，<strong>平均勞工生產力 (Average Labour Productivity)</strong> 是指平均每單位勞工時間（通常為每工時）所能生產的產出量。它反映了勞工的生產效率，而不是總產量或單純每名工人的產量。</p>
+        <p class="en">In economics, <strong>Average Labour Productivity</strong> refers to the amount of output produced per unit of labour time (usually per man-hour). It reflects the production efficiency of labour, not the total output or simply the output per individual worker.</p>
+        
+        <div class="math-block">
+            $$ \text{Average Labour Productivity} = \frac{\text{Total Output}}{\text{Total Man-hours}} $$
+        </div>
+        
+        <p>由於這條公式可以被展開，當題目提供「每名工人的產出」及「每名工人的平均工作時數」時，我們可以簡化計算：</p>
+        <p class="en">Since this formula can be expanded, when the question provides "Output per worker" and "Average number of working hours per worker", we can simplify the calculation:</p>
+
+        <div class="math-block">
+            $$ \text{Average Labour Productivity} = \frac{\text{Output per Worker}}{\text{Hours per Worker}} $$
+        </div>
+        
+        <p><strong>重要定義：薪酬支付制度</strong><br>
+        <strong>計時工資 (Time Rate):</strong> 按工作時間支付薪金。工人缺乏誘因去提高每小時的生產速度。<br>
+        <strong>計件工資 (Piece Rate):</strong> 按生產件數支付薪金。這會給予工人極大誘因去加快生產速度，從而提高勞工生產力（產量/工時）。</p>
+        
+        <p class="en"><strong>Key Definitions: Wage Payment Methods</strong><br>
+        <strong>Time Rate:</strong> Wages paid based on time worked. Workers have less incentive to speed up production per hour.<br>
+        <strong>Piece Rate:</strong> Wages paid based on the number of units produced. This gives workers a strong incentive to speed up, thereby increasing labour productivity (quantity/man-hour).</p>
+    </div>
+
+    <!-- 4. Answer & Analysis -->
+    <div>
+        <h3>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h3>
+        <p>正確答案是 (Correct Option is): <strong>C. 只有 (2)、(4) / (2) and (4) only</strong></p>
+        
+        <h4>第一步：計算兩間工廠的平均勞工生產力 (Step 1: Calculate the Average Labour Productivity of both factories)</h4>
+        <p>我們必須先利用公式找出真正的生產力數據：</p>
+        <p class="en">We must first use the formula to find the true productivity figures:</p>
+        
+        <div class="math-block">
+            工廠甲 (Factory A) = $ \frac{7200}{120} = 60 \text{ 單位/小時 (units/hour)} $ <br><br>
+            工廠乙 (Factory B) = $ \frac{6000}{60} = 100 \text{ 單位/小時 (units/hour)} $
+        </div>
+        
+        <p><strong>結論：工廠乙的平均勞工生產力高於工廠甲 ($100 > 60$)。</strong><br>接下來，我們要找出哪個選項能夠解釋「為何乙的生產力高於甲」。</p>
+        <p class="en"><strong>Conclusion: Factory B has a higher average labour productivity than Factory A ($100 > 60$).</strong><br>Next, we need to find which options explain "why B's productivity is higher than A's".</p>
+
+        <div class="option wrong">
+            <strong>❌ (1) 工廠甲的工作環境較工廠乙的好。 (Factory A provides a better working environment than Factory B.)</strong><br>
+            如果甲的工作環境較好，工人的士氣和效率應該較高，導致甲的生產力大於乙。但數據顯示乙大於甲，故此選項與數據矛盾。
+            <p class="en">If Factory A had a better environment, worker morale and efficiency should be higher, leading to A > B. However, the data shows B > A. This option contradicts the data.</p>
+        </div>
+
+        <div class="option correct">
+            <strong>✅ (2) 工廠甲以時薪支付工資，工廠乙則以件工計算。 (Factory A pays its workers at time rate while Factory B pays at piece rate.)</strong><br>
+            計件工資（乙）直接將收入與產量掛鉤，工人為了賺取更多薪金，會盡量在每小時內生產更多產品。這完美解釋了為何工廠乙每小時能生產 $100$ 件，高於甲的 $60$ 件。
+            <p class="en">Piece rate (Factory B) directly links income to output. To earn more, workers will try to produce as many units as possible per hour. This perfectly explains why Factory B produces $100$ units/hour, higher than Factory A's $60$.</p>
+        </div>
+
+        <div class="option wrong">
+            <strong>❌ (3) 與工廠乙相比，工廠甲進行較高度的分工。 (Compared to Factory B, Factory A practises a higher degree of division of labour.)</strong><br>
+            較高度的分工通常能提升熟練度並節省轉換工序的時間，理應令甲的生產力較高。但這再次與「乙大於甲」的計算結果矛盾。
+            <p class="en">A higher degree of division of labour usually improves dexterity and saves time shifting between tasks, which should make A's productivity higher. Again, this contradicts our calculation that B > A.</p>
+        </div>
+
+        <div class="option correct">
+            <strong>✅ (4) 工廠乙向工人提供的訓練較工廠甲多。 (Factory B provides more training for its workers than Factory A.)</strong><br>
+            提供更多訓練能提升工人的人力資本（技能與知識），使其工作效率更高。這合理地解釋了為何工廠乙的勞工生產力較高。
+            <p class="en">Providing more training improves workers' human capital (skills and knowledge), making them more efficient. This logically explains why Factory B has higher labour productivity.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="concept-box">
+        <h3>🔍 題目拆解 (Problem Decomposition)</h3>
+        <p>這類題目的<strong>核心破局點 (Pivot Point)</strong> 在於：你是否懂得將視線從「表面數字」轉移到「隱藏的比例」。</p>
+        <ul>
+            <li><strong>極大干擾項 (Distractor 1)：</strong>「每名工人的產出」（甲：7200 vs 乙：6000）。很多同學一看到 7200 > 6000，就直接假設甲的生產力較高，從而錯選 B。</li>
+            <li><strong>極大干擾項 (Distractor 2)：</strong>「聘用的工人數目」（10 與 50）。這個數據在計算平均每工時產出時，是<strong>完全不需要使用</strong>的！這純粹是為了擾亂你的計算過程。</li>
+            <li><strong>破局行動：</strong>永遠將「產出」除以「時間」。只要你算出 甲=60，乙=100，這條題目的難度瞬間歸零。</li>
+        </ul>
+        
+        <p class="en">The <strong>Pivot Point</strong> of such questions is whether you can shift your focus from "surface numbers" to the "hidden ratio".</p>
+        <ul class="en">
+            <li><strong>Distractor 1:</strong> "Output per worker" (A: 7200 vs B: 6000). Many students see 7200 > 6000 and immediately assume Factory A is more productive, wrongly choosing Option B.</li>
+            <li><strong>Distractor 2:</strong> "Number of workers employed" (10 vs 50). This data is <strong>completely unnecessary</strong> when calculating output per man-hour! It is purely there to clutter your calculation process.</li>
+            <li><strong>Action:</strong> Always divide "Output" by "Time". Once you calculate A=60 and B=100, the difficulty of this question drops to zero.</li>
+        </ul>
+    </div>
+
+    <!-- 6. Common Mistakes -->
+    <div class="concept-box">
+        <h3>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h3>
+        <p><strong>概念混淆：將「勞工生產力」等同於「每名工人的產量」</strong><br>
+        同學極常忘記時間成本。如果工人A一天做10個蛋糕，工人B一小時做5個蛋糕，誰的生產力高？當然是工人B！在DSE經濟科中，「勞工生產力」預設是以<strong>「每工時 (per man-hour)」</strong>為計算單位的。</p>
+        
+        <p class="en"><strong>Conceptual Confusion: Equating "Labour Productivity" with "Output per Worker"</strong><br>
+        Students frequently forget the time cost. If Worker A makes 10 cakes in a day, and Worker B makes 5 cakes in an hour, who is more productive? Worker B, of course! In HKDSE Economics, "Labour Productivity" is strictly measured <strong>per man-hour</strong> by default.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-box">
+        <h3>🙋 學生常見疑問 (Student Q&A)</h3>
+        <p><strong>問 (Q)：</strong>點解題目要俾「聘用的工人數目 (10 同 50)」？完全無用喎！<br>
+        <strong>Why did the question provide the "Number of workers (10 and 50)"? It seems completely useless!</strong></p>
+        
+        <p><strong>答 (A)：</strong>這就是考評局常見的陷阱！如果你堅持要用這個數據，你可以用它來計「總產出 (Total Output)」(例如甲: $7200 \times 10 = 72000$) 和「總工時 (Total Man-hours)」(甲: $10 \times 120 = 1200$)。然後你再用 $72000 \div 1200$，最後答案依然是 $60$！數字 $10$ 在分子和分母互相抵消了，所以直接用簡化公式更快。<br>
+        <span class="en">This is a classic trap by the HKEAA! If you insist on using this data, you could calculate "Total Output" (e.g., A: $7200 \times 10 = 72000$) and "Total Man-hours" (A: $10 \times 120 = 1200$). Then you divide $72000 \div 1200$, and the answer is still $60$! The number $10$ cancels out in the numerator and denominator, which is why the simplified formula is much faster.</span></p>
+
+        <p><strong>問 (Q)：</strong>計件工資 (Piece rate) 唔係會令產品質素下降咩？點解仲算係生產力高咗？<br>
+        <strong>Doesn't piece rate lead to a drop in product quality? Why is it still considered an increase in productivity?</strong></p>
+
+        <p><strong>答 (A)：</strong>在現實中確實可能影響質素。但在經濟學定義中，「勞工生產力」單純量度「物理數量的產出速率 (Quantity output rate)」。除非題目明確說明有「次貨 (defective goods)」被扣除，否則我們只看數量。計件工資的確能有效推高每小時的生產數量。<br>
+        <span class="en">In reality, quality might indeed suffer. However, within the economic definition here, "Labour Productivity" strictly measures the "physical quantity output rate". Unless the question explicitly mentions deducting "defective goods", we only look at the sheer quantity. Piece rate undeniably pushes up the number of units produced per hour.</span></p>
+    </div>
+
+    <!-- 8. Exam Tricks -->
+    <div class="trick-box">
+        <h3>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h3>
+        <p><strong>「見表加欄」大法 (The "Add a Column" Technique):</strong><br>
+        在 MC 卷看到包含「產量」、「工人數目」、「工作時數」的圖表時，<strong>不要急著看選項！</strong>第一時間在試卷旁邊畫一個新欄目，寫上「產量 $\div$ 工時」。自己先把 A 和 B 誰大誰小算出來，然後帶著「找尋能解釋 B > A 的原因」這個唯一目標去看選項，就能百發百中，不受字眼干擾。</p>
+        
+        <p class="en"><strong>The "Add a Column" Technique:</strong><br>
+        Whenever you see a table in a multiple-choice paper containing "Output", "Workers", and "Hours", <strong>do not look at the options yet!</strong> Immediately draw a new column on your question paper and label it "Output $\div$ Hours". Calculate who is the winner (A or B) yourself first. Then, read the options with the sole objective of "finding reasons that explain B > A". You will hit the correct answer with 100% accuracy without being confused by distractor wordings.</p>
+    </div>
+
+</body>
+</html>

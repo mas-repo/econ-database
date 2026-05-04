@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Employment Data Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .header-section {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .header-section h1 {
+            color: white;
+            border: none;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .bilingual-text {
+            margin-bottom: 15px;
+        }
+        .eng-text {
+            color: #475569;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+        }
+        .option.correct {
+            background-color: #ecfdf5;
+            border-left: 4px solid #10b981;
+        }
+        .option.wrong {
+            border-left: 4px solid #ef4444;
+        }
+        .trap-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>HKDSE Economics Tutorial</h1>
+        <div>
+            <span class="tag"><strong>Topic:</strong> Macroeconomics - Unemployment (宏觀經濟學 - 失業)</span>
+            <span class="tag"><strong>Difficulty:</strong> ★★☆☆☆ (2/5)</span>
+            <span class="tag"><strong>Key Concepts:</strong> Labour Force, Employed Population, Underemployed</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual-text">
+            <p>下表是某經濟的就業資料。</p>
+            <table>
+                <tr><td>15歲或以上的人口</td><td>10 000 000</td></tr>
+                <tr><td>勞動人口參與率*</td><td>80%</td></tr>
+                <tr><td>失業人口</td><td>500 000</td></tr>
+                <tr><td>就業不足的人口</td><td>1 000 000</td></tr>
+            </table>
+            <p><small>*勞動人口參與率 = 15歲或以上的人口中勞動人口所佔比例</small></p>
+            <p>根據以上資料，該經濟的就業人口是 ______。</p>
+            <p>A. 6 500 000<br>B. 7 000 000<br>C. 7 500 000<br>D. 8 000 000</p>
+        </div>
+        <hr>
+        <div class="eng-text">
+            <p>The following table shows the employment data of an economy.</p>
+            <table>
+                <tr><td>Population aged 15 or above</td><td>10 000 000</td></tr>
+                <tr><td>Labour force participation rate*</td><td>80%</td></tr>
+                <tr><td>Unemployed population</td><td>500 000</td></tr>
+                <tr><td>Underemployed population</td><td>1 000 000</td></tr>
+            </table>
+            <p><small>*Labour force participation rate = proportion of labour force in population aged 15 or above</small></p>
+            <p>Based on the above data, the employed population of the economy is ______.</p>
+            <p>A. 6 500 000<br>B. 7 000 000<br>C. 7 500 000<br>D. 8 000 000</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <p>要解答這條題目，我們必須清楚了解勞動人口（Labour Force）的組成部分以及各項定義。</p>
+        <p class="eng-text">To answer this question, we must clearly understand the components of the Labour Force and their definitions.</p>
+        
+        <ul>
+            <li><strong>勞動人口 (Labour Force):</strong> 包含所有就業人口和失業人口。<br>
+            <span class="eng-text">Includes all employed and unemployed populations.</span></li>
+            <li><strong>就業人口 (Employed Population):</strong> 包含所有全職、兼職以及<strong>就業不足 (Underemployed)</strong> 的人士。只要有工作，就算就業。<br>
+            <span class="eng-text">Includes all full-time, part-time, and <strong>underemployed</strong> persons. As long as they have a job, they are considered employed.</span></li>
+            <li><strong>失業人口 (Unemployed Population):</strong> 沒有工作，但隨時可以工作並正在尋找工作的人。<br>
+            <span class="eng-text">People without a job, but who are available for work and actively seeking employment.</span></li>
+        </ul>
+
+        <div class="math-block">
+            $$ \text{Labour Force} = \text{Employed Population} + \text{Unemployed Population} $$
+            $$ \text{Labour Force} = \text{Population aged } \ge 15 \times \text{Labour Force Participation Rate} $$
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <div class="analysis-box">
+        <p><strong>正確答案 (Correct Option): <span style="color:#10b981; font-size: 1.2em;">C</span></strong></p>
+        
+        <p><strong>計算步驟 (Calculation Steps):</strong></p>
+        <ol>
+            <li>首先，計算總勞動人口： \( 10,000,000 \times 80\% = 8,000,000 \) <br>
+            <span class="eng-text">First, calculate the total labour force: \( 10,000,000 \times 80\% = 8,000,000 \)</span></li>
+            <li>然後，利用公式找出就業人口： \( \text{就業人口} = \text{勞動人口} - \text{失業人口} \) <br>
+            <span class="eng-text">Then, use the formula to find the employed population: \( \text{Employed} = \text{Labour Force} - \text{Unemployed} \)</span></li>
+            <li>\( \text{就業人口} = 8,000,000 - 500,000 = 7,500,000 \) <br>
+            <span class="eng-text">\( \text{Employed Population} = 8,000,000 - 500,000 = 7,500,000 \)</span></li>
+        </ol>
+
+        <h3>選項分析 (Option Breakdown):</h3>
+        
+        <div class="option wrong">
+            <strong>Option A (6 500 000): 錯誤 (Wrong)</strong><br>
+            這是將勞動人口減去失業人口後，再錯誤地減去了就業不足人口 (\( 8M - 0.5M - 1M \))。就業不足人士本身已經是就業人口的一部分，不應被扣減。<br>
+            <span class="eng-text">This incorrectly subtracts the underemployed population after subtracting the unemployed from the labour force (\( 8M - 0.5M - 1M \)). Underemployed persons are already part of the employed population and should not be deducted.</span>
+        </div>
+
+        <div class="option wrong">
+            <strong>Option B (7 000 000): 錯誤 (Wrong)</strong><br>
+            這是錯誤地將勞動人口直接減去就業不足人口 (\( 8M - 1M \))，完全忽略了正確的公式邏輯。<br>
+            <span class="eng-text">This incorrectly subtracts the underemployed population directly from the labour force (\( 8M - 1M \)), completely ignoring the correct formula logic.</span>
+        </div>
+
+        <div class="option correct">
+            <strong>Option C (7 500 000): 正確 (Correct)</strong><br>
+            正確運用公式：就業人口 = 勞動人口 - 失業人口 (\( 8M - 0.5M = 7.5M \))。<br>
+            <span class="eng-text">Correctly applies the formula: Employed Population = Labour Force - Unemployed Population (\( 8M - 0.5M = 7.5M \)).</span>
+        </div>
+
+        <div class="option wrong">
+            <strong>Option D (8 000 000): 錯誤 (Wrong)</strong><br>
+            這是總勞動人口 (Labour Force) 的數字，而不是就業人口。<br>
+            <span class="eng-text">This is the figure for the total Labour Force, not the Employed Population.</span>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-left-color: #64748b;">
+        <p><strong>解題樞紐 (Pivot Point):</strong><br>
+        題目的核心在於先透過「15歲或以上人口」和「參與率」計算出<strong>勞動人口</strong>。這是解開整條問題的鑰匙。</p>
+        <p class="eng-text">The core of the question lies in first calculating the <strong>Labour Force</strong> using the "Population aged 15 or above" and the "Participation rate". This is the key to unlocking the whole problem.</p>
+        
+        <p><strong>干擾資訊 (Distractors):</strong><br>
+        表中的<strong>「就業不足的人口 1 000 000」</strong>是完全不需要使用的干擾數據（煙幕）。因為就業不足人士（例如兼職想轉全職的人）在統計上已經被歸類為「就業人口」。</p>
+        <p class="eng-text">The <strong>"Underemployed population 1 000 000"</strong> in the table is a distractor (smoke screen) that is not needed at all. This is because underemployed individuals (e.g., part-timers wanting full-time work) are statistically already classified under the "Employed population".</p>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="trap-box">
+        <p><strong>陷阱：誤解「就業不足」的分類</strong><br>
+        很多同學看到「就業不足 (Underemployed)」帶有負面字眼，就誤以為他們屬於失業，或者認為需要從就業人口中剔除。記住：<strong>只要有做工（即使工時很少），就是就業人口。</strong></p>
+        <p class="eng-text"><strong>Trap: Misunderstanding the classification of "Underemployed"</strong><br>
+        Many students see the negative connotation of "Underemployed" and mistakenly think they are unemployed, or that they need to be excluded from the employed population. Remember: <strong>As long as they are working (even with very few hours), they are part of the employed population.</strong></p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <p><strong>Q: 為什麼我們計算時完全不理會「就業不足的人口」？</strong><br>
+        <span class="eng-text">Why do we completely ignore the "Underemployed population" in our calculation?</span></p>
+        
+        <p><strong>A:</strong> 因為「就業人口」是一個大集合，裡面包含了「充分就業的人」和「就業不足的人」。當我們用 \( \text{勞動人口} - \text{失業人口} \) 時，得出的 \( 7,500,000 \) 已經包含了那 \( 1,000,000 \) 的就業不足人士。如果再減去他們，就等於把他們當作失業人士了，這是不正確的。<br>
+        <span class="eng-text">Because the "Employed population" is a broad category that includes both "fully employed" and "underemployed" persons. When we use \( \text{Labour Force} - \text{Unemployed} \), the resulting \( 7,500,000 \) already includes those \( 1,000,000 \) underemployed individuals. If we subtract them again, it would be equivalent to treating them as unemployed, which is incorrect.</span></p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="tips-box">
+        <p><strong>速解技巧 (Shortcut): 刪除法 (Elimination Method)</strong><br>
+        在考場上，當你看到「就業不足 (Underemployed)」這個數據時，立刻在試卷上用筆將它<strong>劃掉</strong>。這是一個經典的 DSE 陷阱。一旦排除了這個干擾，題目就變成了極簡單的兩步計算：\( (10M \times 0.8) - 0.5M \)。</p>
+        <p class="eng-text"><strong>Shortcut: Elimination Method</strong><br>
+        In the exam room, when you see the data for "Underemployed", immediately <strong>cross it out</strong> with your pen on the question paper. This is a classic DSE trap. Once you eliminate this distractor, the question becomes an extremely simple two-step calculation: \( (10M \times 0.8) - 0.5M \).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

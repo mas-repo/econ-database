@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Money Supply</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-color: #333;
+            --bg-color: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+        }
+        h1 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "📚";
+            margin-right: 10px;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .question-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .option {
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+        }
+        .correct-option {
+            background-color: #d1fae5;
+            border-color: var(--correct-color);
+        }
+        .wrong-option {
+            background-color: #fee2e2;
+            border-color: var(--wrong-color);
+        }
+        .bilingual {
+            margin-bottom: 15px;
+        }
+        .eng-text {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        .tips-box {
+            background-color: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .qa-box {
+            background-color: #f3e8ff;
+            border-left: 5px solid #a855f7;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor</h1>
+    
+    <!-- 1. Header -->
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> Money Supply 貨幣供應</div>
+        <div><strong>Difficulty (難度):</strong> <span style="color: #f59e0b;">★★★☆☆</span></div>
+        <div><strong>Key Concepts (關鍵概念):</strong> 
+            <span class="badge">M1, M2, M3</span>
+            <span class="badge">Licensed Banks 持牌銀行</span>
+            <span class="badge">Deposit-taking Companies 接受存款公司</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <div class="bilingual">
+            <p>許小姐收取了一筆來自英國的匯款，金額為港幣 $160 000。她把該筆匯款的 50%存入一家接受存款公司的定期存款戶口。其後，許小姐把該筆匯款的 37.5%持作現金，並將餘下金額存入某持牌銀行的儲蓄戶口。</p>
+            <p>上述行動對港元貨幣供應量會有什麼即時的影響？</p>
+            <p>A. 貨幣供應定義一上升港幣 $60 000，而貨幣供應定義二上升港幣 $160 000。<br>
+               B. 貨幣供應定義一上升港幣 $80 000，而貨幣供應定義二上升港幣 $80 000。<br>
+               C. 貨幣供應定義一上升港幣 $60 000，而貨幣供應定義三上升港幣 $160 000。<br>
+               D. 貨幣供應定義二上升港幣 $20 000，而貨幣供應定義三上升港幣 $160 000。</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+        <div class="bilingual eng-text">
+            <p>Miss Hui received a HK$160 000 remittance from the UK. She puts 50% of the remittance in a time deposit account in a deposit-taking company. She then holds 37.5% of the remittance as cash and deposits the rest in a savings account in a licensed bank.</p>
+            <p>What will be the immediate effect of the above actions on the Hong Kong dollar money supply?</p>
+            <p>A. M1 increases by HK$60 000 and M2 increases by HK$160 000.<br>
+               B. M1 increases by HK$80 000 and M2 increases by HK$80 000.<br>
+               C. M1 increases by HK$60 000 and M3 increases by HK$160 000.<br>
+               D. M2 increases by HK$20 000 and M3 increases by HK$160 000.</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="bilingual">
+            <p>在香港，貨幣供應量（Money Supply）分為三個層次：M1、M2 和 M3。它們的包含範圍是層層遞進的，即 M3 包含 M2，而 M2 包含 M1。要準確計算，必須清楚區分**金融機構的類別**（持牌銀行 Licensed Banks vs. 接受存款公司 Deposit-taking Companies / 限制牌照銀行 Restricted Licence Banks）以及**存款的類別**（活期 Demand vs. 儲蓄 Savings vs. 定期 Time）。</p>
+            <p class="eng-text">In Hong Kong, the money supply is classified into three tiers: M1, M2, and M3. They are nested, meaning M3 includes M2, and M2 includes M1. To calculate accurately, you must distinguish between the <strong>types of financial institutions</strong> (Licensed Banks vs. Deposit-taking Companies / Restricted Licence Banks) and the <strong>types of deposits</strong> (Demand vs. Savings vs. Time).</p>
+        </div>
+        
+        <div class="math-block">
+            $$ M1 = C_p + D $$
+            $$ M2 = M1 + S_L + T_L + NCD_L $$
+            $$ M3 = M2 + D_R + D_D + NCD_R + NCD_D $$
+        </div>
+        
+        <div class="bilingual">
+            <ul>
+                <li>\(C_p\) = 公眾持有的法定貨幣 (Legal tender held by the public / Cash)</li>
+                <li>\(D\) = 持牌銀行的活期存款 (Demand deposits with licensed banks)</li>
+                <li>\(S_L, T_L\) = 持牌銀行的儲蓄及定期存款 (Savings and time deposits with licensed banks)</li>
+                <li>\(D_R, D_D\) = 限制牌照銀行及接受存款公司的所有存款 (All deposits with restricted licence banks and deposit-taking companies)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p><strong>正確答案 (Correct Option): <span style="color: var(--correct-color); font-size: 1.2em;">C</span></strong></p>
+    
+    <div class="bilingual">
+        <p>首先，我們計算出各項目的實際金額：</p>
+        <p class="eng-text">First, let's calculate the actual amount for each item:</p>
+        <ul>
+            <li><strong>總金額 (Total Amount):</strong> $160,000</li>
+            <li><strong>接受存款公司定期存款 (Time deposit in DTC):</strong> $160,000 \times 50\% = \$80,000</li>
+            <li><strong>現金 (Cash):</strong> $160,000 \times 37.5\% = \$60,000</li>
+            <li><strong>持牌銀行儲蓄存款 (Savings deposit in LB):</strong> $160,000 \times (100\% - 50\% - 37.5\%) = \$160,000 \times 12.5\% = \$20,000</li>
+        </ul>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="bilingual">
+            <strong>選項 A (Option A) - 錯誤 (Incorrect)</strong>
+            <p>M1 上升了 $60,000（因為現金增加了 $60,000），這部分正確。但 M2 的升幅等於 M1 的升幅加上持牌銀行的儲蓄存款，即 \(\$60,000 + \$20,000 = \$80,000\)。M2 並沒有上升 $160,000。</p>
+            <p class="eng-text">M1 increases by $60,000 (because cash increases by $60,000), which is correct. However, the increase in M2 equals the increase in M1 plus savings deposits in licensed banks, which is \(\$60,000 + \$20,000 = \$80,000\). M2 does not increase by $160,000.</p>
+        </div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="bilingual">
+            <strong>選項 B (Option B) - 錯誤 (Incorrect)</strong>
+            <p>M1 只上升了現金的部分（$60,000），並沒有上升 $80,000。M2 上升 $80,000 是正確的，但因為 M1 的計算錯誤，所以此選項不正確。</p>
+            <p class="eng-text">M1 only increases by the cash portion ($60,000), not $80,000. The increase of $80,000 in M2 is correct, but since the M1 calculation is wrong, this option is incorrect.</p>
+        </div>
+    </div>
+
+    <div class="option correct-option">
+        <div class="bilingual">
+            <strong>選項 C (Option C) - 正確 (Correct)</strong>
+            <p>M1 上升了 $60,000（現金）。M3 的升幅等於 M2 的升幅（$80,000）加上接受存款公司的存款（$80,000），即 \(\$80,000 + \$80,000 = \$160,000\)。兩者皆正確。</p>
+            <p class="eng-text">M1 increases by $60,000 (cash). The increase in M3 equals the increase in M2 ($80,000) plus deposits in deposit-taking companies ($80,000), which is \(\$80,000 + \$80,000 = \$160,000\). Both statements are correct.</p>
+        </div>
+    </div>
+
+    <div class="option wrong-option">
+        <div class="bilingual">
+            <strong>選項 D (Option D) - 錯誤 (Incorrect)</strong>
+            <p>M2 的升幅是 $80,000（包含 M1 的 $60,000 和儲蓄存款的 $20,000），而不是僅僅 $20,000。這選項忘記了 M2 是包含 M1 的。</p>
+            <p class="eng-text">The increase in M2 is $80,000 (including $60,000 from M1 and $20,000 from savings deposits), not just $20,000. This option forgets that M2 includes M1.</p>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="bilingual">
+        <p>這類題目的<strong>關鍵樞紐 (Pivot Point)</strong> 在於對資金去向的分類。你需要將每一筆錢精準地放入 M1、M2 或 M3 的「抽屜」裡。</p>
+        <p class="eng-text">The <strong>Pivot Point</strong> of this type of question is categorizing where the funds go. You need to accurately place each sum of money into the "drawers" of M1, M2, or M3.</p>
+        <ol>
+            <li><strong>辨識資金來源：</strong> 匯款來自英國（海外）。這意味著這是一筆全新注入香港經濟的資金，因此總貨幣供應量（M3）必定會增加全數金額（$160,000）。</li>
+            <li class="eng-text"><strong>Identify the source of funds:</strong> The remittance is from the UK (overseas). This means it is entirely new money injected into the HK economy, so the total money supply (M3) must increase by the full amount ($160,000).</li>
+            <li><strong>拆解資金分佈：</strong>
+                <ul>
+                    <li>現金 $60,000 \(\rightarrow\) 直接進入 M1。</li>
+                    <li>持牌銀行儲蓄 $20,000 \(\rightarrow\) 進入 M2（但不入 M1）。</li>
+                    <li>接受存款公司定期 $80,000 \(\rightarrow\) 進入 M3（但不入 M1 或 M2）。</li>
+                </ul>
+            </li>
+            <li class="eng-text"><strong>Break down the fund distribution:</strong>
+                <ul>
+                    <li>Cash $60,000 \(\rightarrow\) Goes directly into M1.</li>
+                    <li>Licensed Bank Savings $20,000 \(\rightarrow\) Goes into M2 (but not M1).</li>
+                    <li>Deposit-taking Company Time Deposit $80,000 \(\rightarrow\) Goes into M3 (but not M1 or M2).</li>
+                </ul>
+            </li>
+            <li><strong>累加計算 (Cumulative Calculation)：</strong>
+                <ul>
+                    <li>\(\Delta M1 = \$60,000\)</li>
+                    <li>\(\Delta M2 = \Delta M1 + \$20,000 = \$80,000\)</li>
+                    <li>\(\Delta M3 = \Delta M2 + \$80,000 = \$160,000\)</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="tips-box">
+        <div class="bilingual">
+            <p><strong>陷阱一：忘記貨幣供應定義的「包含性」 (Nested Definitions)</strong><br>
+            很多同學以為 M2 的改變只等於儲蓄存款的改變（選項 D 的錯誤）。記住公式：\(M2 = M1 + ...\)。當 M1 增加時，M2 也會同步增加！</p>
+            <p class="eng-text"><strong>Trap 1: Forgetting the nested nature of money supply definitions</strong><br>
+            Many students think the change in M2 only equals the change in savings deposits (the error in Option D). Remember the formula: \(M2 = M1 + ...\). When M1 increases, M2 increases simultaneously!</p>
+            
+            <p><strong>陷阱二：混淆金融機構類別 (Confusing Financial Institutions)</strong><br>
+            題目特意將「接受存款公司 (Deposit-taking company)」和「持牌銀行 (Licensed bank)」混在一起。如果同學不小心把接受存款公司的存款當成了持牌銀行的存款，就會錯誤地將那 $80,000 算入 M2 中。</p>
+            <p class="eng-text"><strong>Trap 2: Confusing Financial Institutions</strong><br>
+            The question deliberately mixes "Deposit-taking company" with "Licensed bank". If a student carelessly treats a DTC deposit as a licensed bank deposit, they would wrongly include that $80,000 in M2.</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="bilingual">
+            <p><strong>Q: 為什麼這筆匯款會令總貨幣供應量增加？如果許小姐是從自己的另一個香港戶口轉帳過來呢？</strong></p>
+            <p class="eng-text"><strong>Q: Why does this remittance increase the total money supply? What if Miss Hui transferred the money from another of her Hong Kong accounts?</strong></p>
+            
+            <p><strong>A:</strong> 因為這筆錢來自「英國的匯款」，代表有新的外匯流入香港並兌換成港元，這是香港銀行體系外的新資金，所以會令香港整體的貨幣供應量（M3）增加。如果她只是從香港的 A 銀行轉帳到 B 銀行，這只是貨幣在體系內的轉移（Transfer），總貨幣供應量（M3）將保持不變。</p>
+            <p class="eng-text"><strong>A:</strong> Because the money is a "remittance from the UK", meaning new foreign exchange flowed into Hong Kong and was converted to HKD. This is new money from outside the HK banking system, so it increases the overall money supply (M3). If she merely transferred money from Bank A to Bank B within Hong Kong, it would just be an internal transfer, and the total money supply (M3) would remain unchanged.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="bilingual">
+        <p><strong>秒殺法 (The One-Second Kill Method)：</strong><br>
+        一看到「來自英國的匯款 $160,000」，你應該立刻反應：這是海外新資金，所以 <strong>M3 必定增加全數 $160,000</strong>！<br>
+        看看選項，只有 C 和 D 的 M3 是增加 $160,000，立刻淘汰 A 和 B。<br>
+        接著，看現金部分是 $160,000 \times 37.5\% = \$60,000，這代表 M1 必定增加 $60,000。對比 C 和 D，只有選項 C 符合。答案瞬間選出，甚至不需要計算 M2！</p>
+        
+        <p class="eng-text"><strong>Shortcut:</strong><br>
+        As soon as you see "remittance from the UK of $160,000", you should immediately realize: this is new overseas money, so <strong>M3 MUST increase by the full $160,000</strong>!<br>
+        Looking at the options, only C and D show M3 increasing by $160,000. Eliminate A and B instantly.<br>
+        Next, look at the cash portion: $160,000 \times 37.5\% = \$60,000. This means M1 MUST increase by $60,000. Comparing C and D, only Option C matches. You find the answer instantly without even calculating M2!</p>
+    </div>
+
+</div>
+
+</body>
+</html>

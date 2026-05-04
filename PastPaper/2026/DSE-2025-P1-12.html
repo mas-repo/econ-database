@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Economics - Question Analysis</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+            margin-top: 1.5em;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header-section h1 {
+            color: white;
+            margin-top: 0;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #fbbf24;
+            color: #78350f;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .analysis-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .correct-ans {
+            color: #15803d;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .wrong-ans {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+        .tips-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .qa-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #ec4899;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            font-size: 0.95em;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>DSE Economics Tutor Analysis</h1>
+        <div>
+            <span class="badge">Topic: Law of Demand & Relative Price (需求定律與相對價格)</span>
+            <span class="badge">Difficulty: ★★★★☆ (4/5 Stars)</span>
+            <span class="badge">Key Concepts: Law of Demand, Relative Price, Substitution Effect</span>
+        </div>
+    </div>
+
+    <!-- The Question Section -->
+    <div class="question-box">
+        <h2>The Question (題目)</h2>
+        <p>假設香港政府調整「長者及合資格殘疾人士公共交通票價優惠計劃」的安排如下：</p>
+        <p class="bilingual-en">Suppose the Hong Kong Government adjusts the arrangement of ‘Public Transport Fare Concession Scheme for the Elderly and Eligible Persons with Disabilities’ as below:</p>
+        
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>原計劃的車資<br><span class="bilingual-en">Fare under the original scheme</span></th>
+                    <th>計劃調整後的車資<br><span class="bilingual-en">Fare under the adjusted scheme</span></th>
+                </tr>
+                <tr>
+                    <td>短途車程（車資等於或低於$10）<br><span class="bilingual-en">Short-distance trip (Fare equal to or below $10)</span></td>
+                    <td>$2</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>長途車程（車資高於$10）<br><span class="bilingual-en">Long-distance trip (Fare above $10)</span></td>
+                    <td>$2</td>
+                    <td>原車資的兩折<br><span class="bilingual-en">80% discount of the original fare</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <p>由於上述政策調整，長者及合資格殘疾人士的 ______ 會下降。</p>
+        <p class="bilingual-en">As a result of the above policy adjustment, the __________ for the elderly and eligible persons with disabilities will decrease.</p>
+        
+        <p>
+            (1) 長途車程的需求量<br>
+            <span class="bilingual-en">(1) quantity demanded for long-distance trips</span><br>
+            (2) 短途車程乘搭次數相對長途車程乘搭次數的比例<br>
+            <span class="bilingual-en">(2) ratio of short-distance trips taken to long-distance trips taken</span><br>
+            (3) 平均乘車距離<br>
+            <span class="bilingual-en">(3) average travel distance</span>
+        </p>
+
+        <p>
+            A. 只有 (1)、(2) / (1) and (2) only<br>
+            B. 只有 (1)、(3) / (1) and (3) only<br>
+            C. 只有 (2)、(3) / (2) and (3) only<br>
+            D. (1)、(2) 及 (3) / (1), (2) and (3)
+        </p>
+    </div>
+
+    <!-- Concept Review Section -->
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <h3>1. 需求定律 (Law of Demand)</h3>
+        <p>在其他因素不變的情況下，當物品的價格上升，其需求量便會下降。</p>
+        <p class="bilingual-en">Ceteris paribus, when the price of a good increases, its quantity demanded decreases.</p>
+
+        <h3>2. 相對價格 (Relative Price)</h3>
+        <p>相對價格是指以一種物品來表示另一種物品的價格。當兩種物品的價格比例改變時，消費者會傾向多購買相對較便宜的物品（替代效應）。</p>
+        <p class="bilingual-en">Relative price is the price of one good expressed in terms of another. When the price ratio between two goods changes, consumers tend to buy more of the relatively cheaper good (substitution effect).</p>
+        
+        <div class="math-block">
+            $$ \text{Relative Price of Short Trips} = \frac{\text{Price of Short Trips}}{\text{Price of Long Trips}} $$
+        </div>
+    </div>
+
+    <!-- The Answer & Detailed Analysis Section -->
+    <div class="analysis-box">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p>正確答案是 / The correct option is: <span class="correct-ans">Option B</span></p>
+
+        <div class="option-analysis">
+            <p><strong>分析 (1) / Analysis (1): <span class="correct-ans">正確 (True)</span></strong></p>
+            <p>長途車程的定義是原車資高於 \( \$10 \)。在調整後，長途車程的收費是「原車資的兩折」（即 \( 20\% \)）。因為原車資大於 \( \$10 \)，所以新車資必然大於 \( \$2 \)（例如原車資為 \( \$15 \)，新車資便是 \( \$3 \)）。由於長途車程的實際支付價格由 \( \$2 \) 上升至大於 \( \$2 \)，根據需求定律，長途車程的需求量會下降。</p>
+            <p class="bilingual-en">Long-distance trips are defined as having an original fare above \( \$10 \). After the adjustment, the fare is "80% discount" (which means paying \( 20\% \) of the original fare). Since the original fare is greater than \( \$10 \), the new fare must be greater than \( \$2 \) (e.g., if the original fare is \( \$15 \), the new fare is \( \$3 \)). Because the actual out-of-pocket price for long-distance trips increases from \( \$2 \) to more than \( \$2 \), by the law of demand, the quantity demanded for long-distance trips will decrease.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>分析 (2) / Analysis (2): <span class="wrong-ans">錯誤 (False)</span></strong></p>
+            <p>短途車程的價格維持在 \( \$2 \)，而長途車程的價格上升（大於 \( \$2 \)）。因此，短途車程的相對價格下降了。消費者會以短途車程替代長途車程，導致短途車程的乘搭次數相對增加，而長途車程相對減少。因此，「短途相對長途的比例」（即 短途次數 / 長途次數）將會<strong>上升</strong>，而不是下降。</p>
+            <p class="bilingual-en">The price of short-distance trips remains at \( \$2 \), while the price of long-distance trips increases (to > \( \$2 \)). Therefore, the relative price of short-distance trips decreases. Consumers will substitute short-distance trips for long-distance trips, leading to a relative increase in short trips and a relative decrease in long trips. Thus, the "ratio of short-distance trips to long-distance trips" (i.e., Short trips / Long trips) will <strong>increase</strong>, not decrease.</p>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>分析 (3) / Analysis (3): <span class="correct-ans">正確 (True)</span></strong></p>
+            <p>由於長途車程的需求量減少，而短途車程的比例相對增加，整體而言，長者乘搭短途車程的佔比變大，這自然會拉低整體的平均乘車距離。因此，平均乘車距離會下降。</p>
+            <p class="bilingual-en">Because the quantity demanded for long-distance trips decreases and the proportion of short-distance trips relatively increases, the overall share of short trips taken by the elderly becomes larger. This naturally pulls down the overall average travel distance. Therefore, the average travel distance will decrease.</p>
+        </div>
+    </div>
+
+    <!-- Problem Decomposition Section -->
+    <div class="tips-box">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p><strong>解題關鍵 (The Pivot Point):</strong></p>
+        <p>這條題目的核心在於理解「原車資的兩折」在數學上代表甚麼。很多同學會被文字混淆。題目已經界定長途車程是「車資高於 \( \$10 \)」。</p>
+        <p class="bilingual-en">The core of this question lies in understanding what "80% discount of the original fare" means mathematically. Many students get confused by the wording. The question already defines a long-distance trip as "Fare above \( \$10 \)".</p>
+        
+        <div class="math-block">
+            $$ \text{New Fare} = \text{Original Fare} \times 20\% $$
+            $$ \text{Since Original Fare} > \$10, \text{New Fare} > \$10 \times 0.2 = \$2 $$
+        </div>
+        
+        <p>一旦你發現長途車的價格由 \( \$2 \) 變成了「大於 \( \$2 \)」，整條題目就變成了簡單的「價格上升」分析。</p>
+        <p class="bilingual-en">Once you realize the price of long trips has changed from \( \$2 \) to "greater than \( \$2 \)", the whole question simply becomes an analysis of a "price increase".</p>
+    </div>
+
+    <!-- Common Mistakes & Traps Section -->
+    <div class="tips-box">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li>
+                <strong>誤解「兩折」的意思 (Misinterpreting "80% discount"):</strong><br>
+                在中文裡，「兩折」代表只需支付原價的 \( 20\% \)；而在英文中是 "80% discount"（扣減 \( 80\% \)）。如果同學以為新收費是 \( \$2 \) 的兩折（即 \( \$0.4 \)），就會得出完全相反的結論！記住，是「原車資」的兩折。
+                <p class="bilingual-en">In Chinese, "兩折" means paying \( 20\% \) of the original price; in English, it is phrased as an "80% discount". If students mistakenly think the new fare is \( 20\% \) of \( \$2 \) (which is \( \$0.4 \)), they will reach the exact opposite conclusion! Remember, it's \( 20\% \) of the "original fare".</p>
+            </li>
+            <li>
+                <strong>搞錯比例的分子與分母 (Confusing the numerator and denominator of the ratio):</strong><br>
+                選項 (2) 說的是「短途 相對 長途 的比例」，即 \( \frac{\text{短途}}{\text{長途}} \)。因為短途變多（或跌幅較小），長途變少，這個分數的值會變大。同學常因為粗心大意而選錯。
+                <p class="bilingual-en">Statement (2) asks for the "ratio of short-distance to long-distance", which is \( \frac{\text{Short}}{\text{Long}} \). Since short trips increase (or fall less) and long trips decrease, the value of this fraction increases. Students often choose the wrong answer here due to carelessness.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Student Q&A Section -->
+    <div class="qa-box">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 為什麼短途車程的乘搭次數一定會相對增加？</strong></p>
+        <p class="bilingual-en">Q: Why will the number of short-distance trips definitely increase relatively?</p>
+        
+        <p><strong>A:</strong> 這是因為「替代效應」(Substitution Effect)。當長途車程加價，而短途車程價格不變時，短途車程變得「相對便宜」。理性的消費者會傾向減少消費變貴的物品（長途車），並以相對便宜的物品（短途車）來替代（例如原本搭一程長途車去遠處買餸，現在改為搭短途車去附近的街市）。</p>
+        <p class="bilingual-en">A: This is due to the "Substitution Effect". When long-distance trips become more expensive and short-distance trips maintain the same price, short trips become "relatively cheaper". Rational consumers will tend to reduce consumption of the more expensive good (long trips) and substitute it with the relatively cheaper good (short trips) (e.g., instead of taking a long trip to a faraway market, they take a short trip to a nearby market).</p>
+    </div>
+
+    <!-- Exam Tricks & Shortcuts Section -->
+    <div class="tips-box">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>消去法 (Elimination Method):</strong></p>
+        <p>在多項選擇題中，善用消去法可以節省大量時間。當你確定 (1) 是正確的，而 (2) 是錯誤的（比例應該上升而非下降），你可以立即看選項：</p>
+        <p class="bilingual-en">In multiple-choice questions, using the elimination method can save a lot of time. Once you are certain that (1) is true and (2) is false (the ratio should increase, not decrease), you can immediately look at the options:</p>
+        <ul>
+            <li>A. 包含 (2) ❌</li>
+            <li>C. 包含 (2) ❌</li>
+            <li>D. 包含 (2) ❌</li>
+        </ul>
+        <p>因此，即使你沒有時間詳細思考 (3)，你也可以100%肯定答案是 <strong>B</strong>！</p>
+        <p class="bilingual-en">Therefore, even if you don't have time to analyze (3) in detail, you can be 100% sure the answer is <strong>B</strong>!</p>
+    </div>
+
+</body>
+</html>

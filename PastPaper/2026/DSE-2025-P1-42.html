@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - International Trade</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #f0f9ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --correct-color: #10b981;
+            --wrong-color: #ef4444;
+            --math-bg: #f3f4f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bilingual-en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 1.1rem;
+        }
+        .question-box {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .option-analysis {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .option-correct {
+            border-left: 5px solid var(--correct-color);
+            background-color: #ecfdf5;
+        }
+        .option-wrong {
+            border-left: 5px solid var(--wrong-color);
+            background-color: #fef2f2;
+        }
+        .tag-correct {
+            color: var(--correct-color);
+            font-weight: bold;
+        }
+        .tag-wrong {
+            color: var(--wrong-color);
+            font-weight: bold;
+        }
+        .tips-box, .qa-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .qa-q {
+            font-weight: bold;
+            color: #b45309;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--bg-light);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. Header -->
+    <h1>HKDSE Economics Tutorial</h1>
+    <div class="header-info">
+        <div><strong>Topic (課題):</strong> 國際貿易與比較優勢 <br><span class="bilingual-en">International Trade and Comparative Advantage</span></div>
+        <div><strong>Difficulty (難度):</strong> <span class="stars">★★★★☆</span></div>
+        <div><strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">Opportunity Cost</span>
+            <span class="badge">Terms of Trade</span>
+            <span class="badge">Gains from Trade</span>
+        </div>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>📝 題目 (The Question)</h2>
+    <div class="question-box">
+        <p>甲國使用勞力生產物品 X 和物品 Y。該國生產一單位的物品 X 和一單位的物品 Y 須分別投入 1 工時的勞力和 2 工時的勞力。<br>根據以上資料，下列哪項陳述是正確的？</p>
+        <ol type="A">
+            <li>甲國會專門化生產物品 X，因為該國每單位的勞力可生產更多物品 X。</li>
+            <li>甲國會出口物品 X，因為該國生產物品 X 的機會成本比物品 Y 低。</li>
+            <li>若貿易比率是 1 單位物品 X 等於 1 單位物品 Y，甲國每一單位進口可獲利 1 單位物品 X。</li>
+            <li>若貿易比率是 1 單位物品 X 等於 1 單位物品 Y，甲國每一單位出口可獲利 1 單位物品 Y。</li>
+        </ol>
+        <hr style="border:0; border-top:1px solid #e5e7eb; margin:15px 0;">
+        <p class="bilingual-en">Country A employs labour to produce good X and good Y. Its labour input requirements for the production of one unit of good X and good Y are 1 man-hour and 2 man-hours respectively.<br>Based on the above information, which of the following statements is correct?</p>
+        <ol type="A" class="bilingual-en">
+            <li>Country A will specialise in producing good X because it can produce more units of good X per unit of labour.</li>
+            <li>Country A will export good X because it has a lower opportunity cost in producing good X than good Y.</li>
+            <li>If the terms of trade is 1 unit of good X equals 1 unit of good Y, Country A will gain 1 unit of good X per unit of its imports.</li>
+            <li>If the terms of trade is 1 unit of good X equals 1 unit of good Y, Country A will gain 1 unit of good Y per unit of its exports.</li>
+        </ol>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>🧠 概念重溫 (Concept Review)</h2>
+    <div class="concept-box">
+        <p><strong>1. 投入型數據的機會成本 (Opportunity Cost from Input Data)</strong><br>
+        當題目提供的是「生產一單位物品所需的資源（如工時）」時，這屬於<strong>投入型 (Input type)</strong> 數據。計算機會成本的公式為：</p>
+        <p class="bilingual-en">When the question provides the "resources required to produce one unit of a good (e.g., man-hours)", this is <strong>Input type</strong> data. The formula for opportunity cost is:</p>
+        
+        <div class="math-block">
+            $$ \text{Opportunity Cost of 1X} = \frac{\text{Input required for 1X}}{\text{Input required for 1Y}} \text{ units of Y} $$
+        </div>
+
+        <p><strong>2. 貿易獲利 (Gains from Trade)</strong><br>
+        貿易獲利是指國家透過參與國際貿易，以優於國內生產成本的價格進行交換所獲得的好處。<br>
+        - <strong>出口獲利 (Gain per unit of export):</strong> 貿易比率 (TOT) 減去 國內機會成本。<br>
+        - <strong>進口獲利 (Gain per unit of import):</strong> 國內機會成本 減去 貿易比率 (TOT)。</p>
+        
+        <p class="bilingual-en">Gains from trade refer to the benefits a country obtains by exchanging goods at a price better than its domestic production cost.<br>
+        - <strong>Gain per unit of export:</strong> Terms of Trade (TOT) minus Domestic Opportunity Cost.<br>
+        - <strong>Gain per unit of import:</strong> Domestic Opportunity Cost minus Terms of Trade (TOT).</p>
+    </div>
+
+    <!-- 4. Answer & Detailed Analysis -->
+    <h2>✅ 答案與詳細分析 (Answer & Detailed Analysis)</h2>
+    <p>正確答案是 (The correct option is): <strong>Option C</strong></p>
+
+    <p>首先，我們需要計算甲國生產 X 和 Y 的國內機會成本：<br>
+    <span class="bilingual-en">First, we need to calculate the domestic opportunity costs of producing X and Y in Country A:</span></p>
+    <ul>
+        <li>生產 1 單位 X 需要 1 工時。在這 1 工時內，本來可以生產 \( 1/2 = 0.5 \) 單位的 Y。因此，<strong>1X 的機會成本 = 0.5Y</strong>。</li>
+        <li class="bilingual-en">Producing 1 unit of X requires 1 man-hour. In this 1 man-hour, \( 1/2 = 0.5 \) units of Y could have been produced. Therefore, <strong>Opportunity Cost of 1X = 0.5Y</strong>.</li>
+        <li>生產 1 單位 Y 需要 2 工時。在這 2 工時內，本來可以生產 \( 2/1 = 2 \) 單位的 X。因此，<strong>1Y 的機會成本 = 2X</strong>。</li>
+        <li class="bilingual-en">Producing 1 unit of Y requires 2 man-hours. In these 2 man-hours, \( 2/1 = 2 \) units of X could have been produced. Therefore, <strong>Opportunity Cost of 1Y = 2X</strong>.</li>
+    </ul>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="tag-wrong">✗ 選項 A (Option A)</span></p>
+        <p><strong>分析：</strong> 專門化生產取決於「比較優勢」（機會成本較低），而不是「絕對優勢」（每單位勞力生產較多）。而且，只有一個國家的數據，我們無法與其他國家比較機會成本，因此無法確定它是否會專門化生產 X。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> Specialisation depends on "comparative advantage" (lower opportunity cost), not "absolute advantage" (producing more per unit of labour). Furthermore, with data from only one country, we cannot compare opportunity costs with another country, so we cannot determine if it will specialise in producing X.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="tag-wrong">✗ 選項 B (Option B)</span></p>
+        <p><strong>分析：</strong> 我們不能將「生產 X 的機會成本（以 Y 為單位）」與「生產 Y 的機會成本（以 X 為單位）」直接比較。0.5Y 和 2X 是不同單位的量度，比較它們是沒有意義的。出口與否同樣需要與另一國家的機會成本作比較。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> We cannot directly compare the "opportunity cost of X (in terms of Y)" with the "opportunity cost of Y (in terms of X)". 0.5Y and 2X are measured in different units, making the comparison meaningless. Whether to export also requires comparison with another country's opportunity cost.</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <p><span class="tag-correct">✓ 選項 C (Option C)</span></p>
+        <p><strong>分析：</strong> 假設貿易比率 (TOT) 是 1X = 1Y。因為甲國生產 1X 只需放棄 0.5Y，但在國際市場上 1X 可以換取 1Y，所以甲國會選擇<strong>出口 X，進口 Y</strong>。<br>
+        題目問「每一單位進口」的獲利。甲國進口的物品是 Y。<br>
+        - 國內自己生產 1Y 的成本 = 2X。<br>
+        - 在國際市場進口 1Y 的代價 = 1X (因為 TOT 是 1X=1Y)。<br>
+        - <strong>進口獲利</strong> = 國內成本 - 進口代價 = \( 2X - 1X = 1X \)。選項 C 正確。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> Assume the terms of trade (TOT) is 1X = 1Y. Since Country A only gives up 0.5Y to produce 1X, but can exchange 1X for 1Y in the international market, Country A will choose to <strong>export X and import Y</strong>.<br>
+        The option asks for the gain "per unit of its imports". The imported good is Y.<br>
+        - Domestic cost to produce 1Y = 2X.<br>
+        - Cost to import 1Y in the international market = 1X (since TOT is 1X=1Y).<br>
+        - <strong>Gain from import</strong> = Domestic cost - Import cost = \( 2X - 1X = 1X \). Option C is correct.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <p><span class="tag-wrong">✗ 選項 D (Option D)</span></p>
+        <p><strong>分析：</strong> 題目問「每一單位出口」的獲利。甲國出口的物品是 X。<br>
+        - 出口 1X 在國際市場可獲得 = 1Y。<br>
+        - 國內生產 1X 的成本 = 0.5Y。<br>
+        - <strong>出口獲利</strong> = 出口獲得 - 國內成本 = \( 1Y - 0.5Y = 0.5Y \)。而不是 1Y，因此選項 D 錯誤。</p>
+        <p class="bilingual-en"><strong>Analysis:</strong> The option asks for the gain "per unit of its exports". The exported good is X.<br>
+        - Exporting 1X yields in the international market = 1Y.<br>
+        - Domestic cost to produce 1X = 0.5Y.<br>
+        - <strong>Gain from export</strong> = Export yield - Domestic cost = \( 1Y - 0.5Y = 0.5Y \). It is not 1Y, so Option D is incorrect.</p>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>🔍 題目拆解 (Problem Decomposition)</h2>
+    <p>這類題目的<strong>關鍵轉折點 (Pivot Point)</strong> 在於辨識數據類型並正確計算機會成本。學生必須清楚分辨題目給予的是「投入 (Input)」還是「產出 (Output)」。</p>
+    <p class="bilingual-en">The <strong>Pivot Point</strong> of this type of question is identifying the data type and calculating the opportunity cost correctly. Students must clearly distinguish whether the given data is "Input" or "Output".</p>
+    <ul>
+        <li><strong>干擾資訊 (Distractors):</strong> 選項 A 和 B 利用了學生對「絕對優勢」和「比較優勢」概念模糊的弱點。沒有兩國數據是無法直接推斷專門化生產的。</li>
+        <li class="bilingual-en">Options A and B exploit students' vague understanding of "absolute advantage" vs "comparative advantage". Without data from two countries, one cannot directly deduce specialisation.</li>
+        <li><strong>解題核心 (Core Solution):</strong> 當給定貿易比率 (TOT) 時，將其與國內機會成本進行比較，找出出口和進口的物品，然後分別計算出口獲利和進口獲利。</li>
+        <li class="bilingual-en">When given the Terms of Trade (TOT), compare it with the domestic opportunity cost to identify the export and import goods, then calculate the export gain and import gain respectively.</li>
+    </ul>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>⚠️ 常犯錯誤與陷阱 (Common Mistakes & Traps)</h2>
+    <div class="tips-box">
+        <p><strong>1. 搞錯投入與產出 (Confusing Input and Output)</strong><br>
+        如果誤將「1工時和2工時」當作產出量，會得出 1X 的成本是 2Y，這會導致完全相反的結論！緊記：投入型數據的公式是「自己除以別人」。</p>
+        <p class="bilingual-en">If you mistakenly treat "1 man-hour and 2 man-hours" as output quantities, you would calculate the cost of 1X as 2Y, leading to the exact opposite conclusion! Remember: For input data, the formula is "Own input divided by the other's input".</p>
+        
+        <p><strong>2. 比較錯誤的單位 (Comparing Wrong Units)</strong><br>
+        如選項 B，很多學生會看到 \( 0.5 < 2 \)，就認為 X 的機會成本較低。但 \( 0.5Y \) 和 \( 2X \) 是蘋果與橙的比較，在經濟學上毫無意義。</p>
+        <p class="bilingual-en">Like in Option B, many students see \( 0.5 < 2 \) and think the opportunity cost of X is lower. But \( 0.5Y \) and \( 2X \) is comparing apples to oranges, which is meaningless in economics.</p>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+    <div class="qa-box">
+        <p class="qa-q">Q: 題目只有甲國的資料，沒有乙國，我們怎麼知道甲國一定會出口 X？</p>
+        <p class="bilingual-en" style="color: #b45309; font-weight: bold;">Q: The question only has data for Country A, not Country B. How do we know Country A will definitely export X?</p>
+        <p>A: 好問題！在選項 C 和 D 中，題目<strong>假設</strong>了一個國際貿易比率 (TOT: 1X = 1Y)。只要這個國際價格對甲國有利（即國際上賣出 1X 能換到 1Y，比國內自己生產 1X 只能換 0.5Y 好），甲國就會作為一個理性的經濟體選擇出口 X。我們不需要知道另一國的具體數據，只要 TOT 落在互利區間內，貿易就會發生。</p>
+        <p class="bilingual-en">A: Great question! In options C and D, the question <strong>assumes</strong> an international terms of trade (TOT: 1X = 1Y). As long as this international price is favorable to Country A (i.e., selling 1X internationally gets 1Y, which is better than the domestic trade-off of 0.5Y), Country A, as a rational economy, will choose to export X. We don't need the specific data of the other country; as long as the TOT allows for gains, trade will occur.</p>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+    <p><strong>秒殺選項 A 和 B (Eliminate A and B instantly):</strong><br>
+    在 DSE 考試中，如果你看到題目只提供了一個國家的數據，任何聲稱「因為機會成本較低而出口/專門化」的選項（如 A 和 B）通常都是錯的，因為「比較」優勢必須要有兩個國家才能「比較」。你可以立即將注意力集中在計算 C 和 D 的獲利上。</p>
+    <p class="bilingual-en"><strong>Eliminate A and B instantly:</strong><br>
+    In the DSE exam, if you see a question providing data for only ONE country, any option claiming "export/specialise because of lower opportunity cost" (like A and B) is usually wrong, because "comparative" advantage requires two countries to "compare". You can immediately focus your attention on calculating the gains for C and D.</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Economics Tutor: Law of Diminishing Marginal Returns</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #0f172a;
+            --bg-main: #ffffff;
+            --bg-alt: #f8fafc;
+            --math-bg: #f1f5f9;
+            --border-color: #cbd5e1;
+            --text-main: #334155;
+            --correct: #16a34a;
+            --wrong: #dc2626;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-main);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        h1 { font-size: 1.8rem; border-bottom: 3px solid var(--primary); }
+        h2 { font-size: 1.4rem; }
+        h3 { font-size: 1.2rem; border-bottom: none; }
+
+        .header-box {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header-box p { margin: 5px 0; font-size: 1.1rem; }
+        .tag { font-weight: bold; color: #bae6fd; }
+
+        .question-box {
+            background-color: var(--bg-alt);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th { background-color: var(--primary-light); color: var(--secondary); }
+
+        .concept-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .option-analysis {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .option-correct { border-left: 5px solid var(--correct); }
+        .option-wrong { border-left: 5px solid var(--wrong); }
+
+        .correct-badge { color: var(--correct); font-weight: bold; }
+        .wrong-badge { color: var(--wrong); font-weight: bold; }
+
+        .zh-text { margin-bottom: 8px; font-weight: 500; }
+        .en-text { color: #475569; font-style: italic; margin-top: 0; margin-bottom: 16px; }
+
+        .trick-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1px solid #fde68a;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .qa-item { margin-bottom: 20px; }
+        .qa-q { font-weight: bold; color: var(--primary); margin-bottom: 5px; }
+        .qa-a { margin-left: 15px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 8px 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <p><span class="tag">Topic (課題):</span> Short-Run Production & Law of Diminishing Marginal Returns (短期生產與邊際回報遞減定律)</p>
+        <p><span class="tag">Difficulty (難度):</span> ★★★★☆</p>
+        <p><span class="tag">Key Concepts (關鍵概念):</span> Total Product (總產出), Marginal Product (邊際產出), Turning Point of MP (邊際產出轉向點)</p>
+    </div>
+
+    <h2>The Question 題目</h2>
+    <div class="question-box">
+        <p class="zh-text">下表顯示某廠商的生產計劃，它只使用勞力及機器這兩種要素。</p>
+        <p class="en-text">The following table shows the production plan of a firm which employs two factors only, namely labour and machinery.</p>
+        
+        <table>
+            <tr>
+                <th>Labour (units)<br>勞力 (單位)</th>
+                <th>Machinery (units)<br>機器 (單位)</th>
+                <th>Total product (units)<br>總產出 (單位)</th>
+            </tr>
+            <tr><td>10</td><td>2</td><td>90</td></tr>
+            <tr><td>10</td><td>3</td><td>Q₁</td></tr>
+            <tr><td>10</td><td>4</td><td>120</td></tr>
+            <tr><td>10</td><td>5</td><td>Q₂</td></tr>
+            <tr><td>10</td><td>6</td><td>130</td></tr>
+        </table>
+
+        <p class="zh-text">上述資料說明了邊際回報遞減定律，而當機器的數量由 4 單位增加至 5 單位時，邊際產出開始遞減。Q₁ 和 Q₂ 的可能數值分別是 ______ 和 ______ 。</p>
+        <p class="en-text">The law of diminishing marginal returns is illustrated by the above data and the marginal product starts to diminish when the quantity of machinery increases from 4 units to 5 units. The possible values of Q₁ and Q₂ are __________ and __________ respectively.</p>
+
+        <p>
+            A. 95 …… 120<br>
+            B. 100 …… 127<br>
+            C. 107 …… 126<br>
+            D. 115 …… 126
+        </p>
+    </div>
+
+    <h2>Concept Review 概念重溫</h2>
+    <div class="concept-box">
+        <p class="zh-text"><strong>1. 邊際回報遞減定律 (Law of Diminishing Marginal Returns, LDMR)</strong><br>
+        在短期內，當最少一種生產要素的數量是固定時（本題為勞力），若不斷增加可變生產要素（本題為機器），其邊際產出（MP）最終必然會下降。</p>
+        <p class="en-text">In the short run, when at least one factor of production is fixed (Labour in this case), adding more units of a variable factor (Machinery) will eventually lead to a decrease in its marginal product (MP).</p>
+
+        <p class="zh-text"><strong>2. 邊際產出 (Marginal Product, MP)</strong><br>
+        每增加一單位可變生產要素所帶來的額外總產出。</p>
+        <p class="en-text">The extra total product generated by adding one more unit of a variable factor.</p>
+
+        <div class="math-block">
+            $$ MP = \frac{\Delta TP}{\Delta V} $$
+        </div>
+        <p class="zh-text" style="text-align: center;">（\( \Delta TP \) = 總產出轉變；\( \Delta V \) = 可變要素轉變量）</p>
+    </div>
+
+    <h2>The Answer & Detailed Analysis 答案與詳細分析</h2>
+    
+    <p class="zh-text"><strong>正確答案是：<span class="correct-badge">Option B</span></strong></p>
+    <p class="en-text"><strong>The correct answer is: <span class="correct-badge">Option B</span></strong></p>
+
+    <p class="zh-text">題目指出邊際產出在機器數量「由 4 單位增加至 5 單位時」<strong>開始</strong>遞減。這代表兩個關鍵條件：<br>
+    1. 在第 4 單位之前，邊際產出（MP）正在上升或保持不變：\( MP_4 \ge MP_3 \) <br>
+    2. 從第 5 單位開始，邊際產出下跌，並且持續下跌：\( MP_4 > MP_5 > MP_6 \)</p>
+    
+    <p class="en-text">The question states that the marginal product <strong>starts</strong> to diminish when machinery increases "from 4 units to 5 units". This implies two key conditions:<br>
+    1. Before the 4th unit, MP is increasing or constant: \( MP_4 \ge MP_3 \) <br>
+    2. From the 5th unit onwards, MP decreases and continues to fall: \( MP_4 > MP_5 > MP_6 \)</p>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option A: 95 ...... 120 <span class="wrong-badge">✗</span></h3>
+        <p class="zh-text">如果 \( Q_1 = 95, Q_2 = 120 \) :<br>
+        \( MP_3 = 95 - 90 = 5 \)<br>
+        \( MP_4 = 120 - 95 = 25 \)<br>
+        \( MP_5 = 120 - 120 = 0 \)<br>
+        \( MP_6 = 130 - 120 = 10 \)
+        <br><br>
+        <strong>錯誤原因：</strong> 雖然 \( MP_5 \) 確實比 \( MP_4 \) 跌了（25 跌至 0），但到了第 6 單位時，\( MP \) 又回升至 10。這違反了邊際回報遞減定律（下跌後應持續下跌或保持極低水平，不應無故大幅回升）。</p>
+        
+        <p class="en-text"><strong>Reason for incorrectness:</strong> Although \( MP_5 \) drops from \( MP_4 \) (25 down to 0), at the 6th unit, \( MP \) jumps back up to 10. This violates the Law of Diminishing Marginal Returns (once it falls, it should continue to fall, not suddenly bounce back up).</p>
+    </div>
+
+    <div class="option-analysis option-correct">
+        <h3>Option B: 100 ...... 127 <span class="correct-badge">✓</span></h3>
+        <p class="zh-text">如果 \( Q_1 = 100, Q_2 = 127 \) :<br>
+        \( MP_3 = 100 - 90 = 10 \)<br>
+        \( MP_4 = 120 - 100 = 20 \)<br>
+        \( MP_5 = 127 - 120 = 7 \)<br>
+        \( MP_6 = 130 - 127 = 3 \)
+        <br><br>
+        <strong>正確原因：</strong> 邊際產出在第 3 至 4 單位時上升（10 上升至 20），並精準地在第 4 至 5 單位時<strong>開始</strong>下跌（20 跌至 7），隨後繼續下跌（7 跌至 3）。完全符合題目要求。</p>
+        
+        <p class="en-text"><strong>Reason for correctness:</strong> The MP increases from the 3rd to 4th unit (10 to 20), and strictly <strong>starts</strong> to diminish from the 4th to 5th unit (20 to 7), continuing to fall afterwards (7 to 3). This perfectly matches the question's conditions.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option C: 107 ...... 126 <span class="wrong-badge">✗</span></h3>
+        <p class="zh-text">如果 \( Q_1 = 107, Q_2 = 126 \) :<br>
+        \( MP_3 = 107 - 90 = 17 \)<br>
+        \( MP_4 = 120 - 107 = 13 \)<br>
+        \( MP_5 = 126 - 120 = 6 \)<br>
+        \( MP_6 = 130 - 126 = 4 \)
+        <br><br>
+        <strong>錯誤原因：</strong> 邊際產出在第 3 至 4 單位時（17 跌至 13）已經提早開始遞減了，不符合題目所說的在第 5 單位才「開始」遞減。</p>
+        
+        <p class="en-text"><strong>Reason for incorrectness:</strong> The marginal product already started diminishing from the 3rd to 4th unit (17 down to 13). This contradicts the statement that it "starts to diminish" from 4 to 5 units.</p>
+    </div>
+
+    <div class="option-analysis option-wrong">
+        <h3>Option D: 115 ...... 126 <span class="wrong-badge">✗</span></h3>
+        <p class="zh-text">如果 \( Q_1 = 115, Q_2 = 126 \) :<br>
+        \( MP_3 = 115 - 90 = 25 \)<br>
+        \( MP_4 = 120 - 115 = 5 \)<br>
+        \( MP_5 = 126 - 120 = 6 \)<br>
+        \( MP_6 = 130 - 126 = 4 \)
+        <br><br>
+        <strong>錯誤原因：</strong> 與 Option C 相同，邊際產出在第 4 單位已經暴跌（25 跌至 5），並且在第 5 單位反而微升（5 升至 6），走勢完全錯亂。</p>
+        
+        <p class="en-text"><strong>Reason for incorrectness:</strong> Similar to Option C, the MP crashes early at the 4th unit (25 to 5), and bizarrely increases at the 5th unit (5 to 6). The trend is completely incorrect.</p>
+    </div>
+
+    <h2>Problem Decomposition 題目拆解</h2>
+    <p class="zh-text"><strong>解題樞紐 (Pivot Point)：</strong><br>
+    題目的靈魂在於「<strong>開始</strong>遞減」(starts to diminish) 這幾個字。這意味著在該點<strong>之前</strong>的 MP 必定是上升（或最少打平）的。我們因此可以確立 \( MP_4 \) 是一個最高點 (Maximum Point)。</p>
+    <p class="en-text"><strong>Pivot Point:</strong><br>
+    The core of this question lies in the phrase "<strong>starts</strong> to diminish". This implies that the MP <strong>before</strong> this point must be increasing (or at least constant). Therefore, we can establish that \( MP_4 \) is the Maximum Point.</p>
+
+    <p class="zh-text"><strong>干擾資訊 (Distractors)：</strong><br>
+    表中第一欄的「勞力 (10單位)」。很多同學習慣機器是固定要素、勞力是可變要素。本題刻意反轉，將勞力變成固定數值。但只要你明白計算 MP 只需要看會變動的那一欄（即機器），這個 10 是完全不用理會的。</p>
+    <p class="en-text"><strong>Distractors:</strong><br>
+    The first column "Labour (10 units)". Students are used to Machinery being fixed and Labour being variable. This question intentionally flipped them. However, as long as you understand that calculating MP only requires the variable factor column (Machinery), the number '10' is completely irrelevant.</p>
+
+    <h2>Common Mistakes & Traps 常犯錯誤與陷阱</h2>
+    <ul>
+        <li class="zh-text"><strong>誤解「遞減」與「負數」的分別：</strong> 邊際回報遞減是指 MP 的<strong>數值變小</strong>（例如由 20 跌至 7），而不是指 MP 變成負數。總產出 (TP) 此刻仍在上升中。
+        <div class="en-text"><strong>Confusing "Diminishing" with "Negative":</strong> Diminishing returns means the value of MP is decreasing (e.g., from 20 to 7), not that MP becomes negative. Total Product (TP) is still increasing.</div></li>
+        
+        <li class="zh-text"><strong>忽略了「連續性」：</strong> 有些同學選了 A，因為看到第 5 單位的 MP 跌至 0。但定律的核心精神是要素生產力逐漸下降，如果 MP 突然變 0 之後又升回 10，就不是典型的「遞減定律」現象了。
+        <div class="en-text"><strong>Ignoring "Continuity":</strong> Some students pick A because they see MP drop to 0 at the 5th unit. But the core spirit of the law is a gradual decline in productivity. If MP drops to 0 and suddenly bounces to 10, it violates the typical phenomenon of the law.</div></li>
+    </ul>
+
+    <h2>Student Q&A 學生常見疑問</h2>
+    <div class="qa-item">
+        <div class="qa-q">Q: 為什麼必須是 \( MP_4 \ge MP_3 \)？不能一開始就一直跌嗎？</div>
+        <div class="qa-q" style="font-style: italic; font-weight: normal;">Q: Why must it be \( MP_4 \ge MP_3 \)? Couldn't it be falling from the very beginning?</div>
+        <div class="qa-a zh-text">A: 如果從一開始就一直跌（例如 \( MP_3 > MP_4 > MP_5 \)），那麼題目就應該寫「邊際產出在第 4 單位時開始遞減」甚至更早。既然題目明確指出在增加至「第 5 單位」時才<strong>開始</strong>遞減，代表第 5 單位是第一個下跌的點，之前的點必須是在上升軌道中。</div>
+        <div class="qa-a en-text">A: If it was falling from the beginning (e.g., \( MP_3 > MP_4 > MP_5 \)), the question would have said "marginal product starts to diminish at the 4th unit" or earlier. Since it explicitly states it <strong>starts</strong> diminishing at the "5th unit", the 5th unit must be the first drop, meaning previous points were on an upward trajectory.</div>
+    </div>
+
+    <div class="trick-box">
+        <h2>Exam Tricks & Shortcuts 考試技巧與速解 (The Boundary Method)</h2>
+        <p class="zh-text">在選擇題中，其實你可以利用不等式 (Inequalities) 秒殺這題，連遂個選項計算都不需要！</p>
+        <p class="en-text">In MCQs, you can actually use inequalities to instant-kill this question without calculating every single option!</p>
+        
+        <p class="zh-text"><strong>步驟一：尋找 \( Q_1 \) 的上限</strong><br>
+        既然 MP 在第 5 單位才跌，代表第 4 單位是上升的：\( MP_4 \ge MP_3 \)<br>
+        在草稿紙寫下： \( (120 - Q_1) \ge (Q_1 - 90) \)<br>
+        解方程： \( 210 \ge 2Q_1 \implies Q_1 \le 105 \)<br>
+        看選項的 \( Q_1 \)：A(95), B(100), C(107), D(115)。<br>
+        <strong>瞬間淘汰 C 和 D！</strong></p>
+        <p class="en-text"><strong>Step 1: Find the upper limit of \( Q_1 \)</strong><br>
+        Since MP falls at the 5th unit, it must be rising before: \( MP_4 \ge MP_3 \)<br>
+        Write: \( (120 - Q_1) \ge (Q_1 - 90) \)<br>
+        Solve: \( 210 \ge 2Q_1 \implies Q_1 \le 105 \)<br>
+        Check \( Q_1 \) in options: A(95), B(100), C(107), D(115).<br>
+        <strong>Instantly eliminate C and D!</strong></p>
+
+        <p class="zh-text"><strong>步驟二：尋找 \( Q_2 \) 的下限</strong><br>
+        遞減定律發生後，MP 應該持續下跌：\( MP_5 > MP_6 \)<br>
+        在草稿紙寫下： \( (Q_2 - 120) > (130 - Q_2) \)<br>
+        解方程： \( 2Q_2 > 250 \implies Q_2 > 125 \)<br>
+        看剩下的選項 A 和 B 裡的 \( Q_2 \)：A(120), B(127)。<br>
+        <strong>淘汰 A！答案必定是 B！全過程只需 20 秒。</strong></p>
+        <p class="en-text"><strong>Step 2: Find the lower limit of \( Q_2 \)</strong><br>
+        After diminishing returns set in, MP continues to fall: \( MP_5 > MP_6 \)<br>
+        Write: \( (Q_2 - 120) > (130 - Q_2) \)<br>
+        Solve: \( 2Q_2 > 250 \implies Q_2 > 125 \)<br>
+        Check \( Q_2 \) in remaining options A and B: A(120), B(127).<br>
+        <strong>Eliminate A! The answer must be B! The whole process takes just 20 seconds.</strong></p>
+    </div>
+
+</div>
+
+</body>
+</html>

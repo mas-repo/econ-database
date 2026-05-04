@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor Analysis</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-light: #f8fafc;
+            --concept-bg: #f0f9ff;
+            --concept-border: #0ea5e9;
+            --mistake-bg: #fef2f2;
+            --mistake-border: #ef4444;
+            --correct-bg: #ecfdf5;
+            --correct-border: #10b981;
+            --math-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft JhengHei';
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .question-box {
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+
+        .lang-block {
+            margin-bottom: 15px;
+        }
+
+        .lang-block.en {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            border-left: 3px solid #cbd5e1;
+            padding-left: 10px;
+        }
+
+        .concept-box {
+            background-color: var(--concept-bg);
+            border-left: 5px solid var(--concept-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .math-block {
+            background-color: var(--math-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+
+        .analysis-box {
+            margin: 20px 0;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .option.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            border-left: 5px solid var(--correct-border);
+        }
+
+        .mistake-box {
+            background-color: var(--mistake-bg);
+            border-left: 5px solid var(--mistake-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .trick-box {
+            background-color: #f5f3ff;
+            border-left: 5px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bold-highlight {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HKDSE Economics Tutor Guide</h1>
+    
+    <!-- 1. Header -->
+    <div class="header-info">
+        <span class="badge">Topic: Fiscal Policy & Aggregate Demand (財政政策與總需求)</span>
+        <span class="badge">Difficulty: ★★★★☆</span>
+        <span class="badge">Key Concepts: Aggregate Demand, Government Expenditure, Taxes</span>
+    </div>
+
+    <!-- 2. The Question -->
+    <h2>The Question (題目)</h2>
+    <div class="question-box">
+        <div class="lang-block zh">
+            <p>假設政府透過削減醫療服務支出以支付薪俸稅的退稅，而退稅的金額和削減支出的金額相同。<br>這對總需求的影響屬 ______。</p>
+            <p>A. 擴張性<br>
+               B. 收縮性<br>
+               C. 中性<br>
+               D. 未能決定</p>
+        </div>
+        <div class="lang-block en">
+            <p>Suppose a government reduces its expenditure on medical services to provide a tax rebate on salaries tax, and the amount of the tax rebate equals the amount of reduction in the expenditure.<br>The effect on the aggregate demand will be ______.</p>
+            <p>A. expansionary<br>
+               B. contractionary<br>
+               C. neutral<br>
+               D. indeterminate</p>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <h2>Concept Review (概念重溫)</h2>
+    <div class="concept-box">
+        <div class="lang-block zh">
+            <p><span class="bold-highlight">總需求 (Aggregate Demand, AD)</span> 是指在特定物價水平下，經濟體系內對本地生產物品和服務的總需求量。它的組成部分包括：</p>
+            <div class="math-block">
+                $$ AD = C + I + G + (X - M) $$
+            </div>
+            <p>其中 \( C \) 是私人消費開支，\( I \) 是投資開支，\( G \) 是政府開支，\( X-M \) 是淨出口。</p>
+            <ul>
+                <li><strong>政府開支 (\( G \)) 的直接影響：</strong> 政府開支是總需求的直接組成部分。政府開支減少 \( \$X \)，總需求會直接減少 \( \$X \)。</li>
+                <li><strong>稅收 (\( T \)) 的間接影響：</strong> 稅收並不直接出現在總需求的公式中。退稅（即稅收減少）會增加市民的<strong>可支配收入 (Disposable Income)</strong>。然而，市民<strong>不會</strong>把所有額外收入都花掉，他們會將部分額外收入儲蓄起來。因此，消費 \( C \) 的增加量會<strong>小於</strong>退稅的金額。</li>
+            </ul>
+        </div>
+        <div class="lang-block en">
+            <p><span class="bold-highlight">Aggregate Demand (AD)</span> is the total demand for domestically produced goods and services in an economy at a given price level. Its components are:</p>
+            <div class="math-block">
+                $$ AD = C + I + G + (X - M) $$
+            </div>
+            <p>Where \( C \) is private consumption expenditure, \( I \) is investment expenditure, \( G \) is government expenditure, and \( X-M \) is net exports.</p>
+            <ul>
+                <li><strong>Direct effect of Government Expenditure (\( G \)):</strong> \( G \) is a direct component of AD. A decrease in government expenditure by \( \$X \) directly reduces AD by \( \$X \).</li>
+                <li><strong>Indirect effect of Taxes (\( T \)):</strong> Taxes do not appear directly in the AD formula. A tax rebate (decrease in taxes) increases citizens' <strong>Disposable Income</strong>. However, citizens will <strong>not</strong> spend all of this extra income; they will save a portion of it. Therefore, the increase in consumption \( C \) will be <strong>smaller than</strong> the tax rebate amount.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+    <p>Correct Option: <span class="badge" style="background-color: var(--correct-border);">Option B (收縮性 / contractionary)</span></p>
+
+    <div class="analysis-box">
+        <div class="option">
+            <div class="lang-block zh">
+                <strong>選項 A (擴張性): 錯誤。</strong><br>
+                擴張性政策會導致總需求增加。但在這個情況下，政府開支的減幅大於私人消費的增幅，因此總需求實際上是減少的。
+            </div>
+            <div class="lang-block en">
+                <strong>Option A (expansionary): Incorrect.</strong><br>
+                An expansionary policy leads to an increase in AD. In this case, the decrease in government expenditure is larger than the increase in private consumption, so AD actually decreases.
+            </div>
+        </div>
+
+        <div class="option correct">
+            <div class="lang-block zh">
+                <strong>選項 B (收縮性): 正確。</strong><br>
+                假設政府削減開支 \( \$100 \)，同時退稅 \( \$100 \)。<br>
+                1. 削減醫療支出會令政府開支 \( G \) 減少 \( \$100 \)。這會令總需求直接減少 \( \$100 \)。<br>
+                2. 退稅 \( \$100 \) 會令市民的可支配收入增加 \( \$100 \)。由於市民會將部分退稅儲蓄起來，消費 \( C \) 的增加額必定小於 \( \$100 \)（例如只增加 \( \$80 \)）。<br>
+                3. 淨影響：總需求減少 \( \$100 \) 但只增加 \( \$80 \)，淨效應是總需求下降（收縮性）。
+            </div>
+            <div class="lang-block en">
+                <strong>Option B (contractionary): Correct.</strong><br>
+                Suppose the government cuts expenditure by \( \$100 \) and gives a tax rebate of \( \$100 \).<br>
+                1. The cut in medical expenditure reduces government expenditure \( G \) by \( \$100 \). This directly reduces AD by \( \$100 \).<br>
+                2. The \( \$100 \) tax rebate increases citizens' disposable income by \( \$100 \). Because citizens will save a portion of the tax rebate, the increase in consumption \( C \) must be less than \( \$100 \) (e.g., increases by only \( \$80 \)).<br>
+                3. Net effect: AD drops by \( \$100 \) but only rises by \( \$80 \). The net effect is a decrease in AD (contractionary).
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="lang-block zh">
+                <strong>選項 C (中性): 錯誤。</strong><br>
+                中性意味著總需求沒有淨改變。只有當市民把退稅的<strong>全數</strong>金額都用於消費時，總需求才會維持不變。但在現實和經濟學假設中，市民總會儲蓄一部分收入。
+            </div>
+            <div class="lang-block en">
+                <strong>Option C (neutral): Incorrect.</strong><br>
+                Neutral implies no net change in AD. This would only happen if citizens spent the <strong>entire</strong> amount of the tax rebate on consumption. However, in reality and economic assumptions, citizens always save a portion of their income.
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="lang-block zh">
+                <strong>選項 D (未能決定): 錯誤。</strong><br>
+                基於「市民會儲蓄部分收入」這個基本的宏觀經濟學假設，我們可以明確判斷出總需求必定會下降，因此並非未能決定。
+            </div>
+            <div class="lang-block en">
+                <strong>Option D (indeterminate): Incorrect.</strong><br>
+                Based on the fundamental macroeconomic assumption that "citizens save a portion of their income", we can definitively conclude that AD will decrease. Therefore, it is not indeterminate.
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <h2>Problem Decomposition (題目拆解)</h2>
+    <div class="concept-box" style="background-color: #f8fafc; border-color: #64748b;">
+        <div class="lang-block zh">
+            <p><strong>解題關鍵 (Pivot Point)：</strong></p>
+            <p>這條題目的核心在於比較「政府開支」與「稅收」對總需求影響的<strong>不對稱性 (Asymmetry)</strong>。</p>
+            <ul>
+                <li>政府開支是 \( 1:1 \) 直接影響總需求。</li>
+                <li>稅收是透過消費間接影響總需求，因為存在<strong>儲蓄 (Saving)</strong>，所以影響比例是 \( < 1:1 \)。</li>
+            </ul>
+            <p>只要明白「減少 \( G \) 的殺傷力」大於「減少 \( T \) 的刺激力」，就能秒殺此題。</p>
+        </div>
+        <div class="lang-block en">
+            <p><strong>Pivot Point:</strong></p>
+            <p>The core of this question lies in comparing the <strong>asymmetry</strong> of how "Government Expenditure" and "Taxes" affect Aggregate Demand.</p>
+            <ul>
+                <li>Government expenditure affects AD directly at a \( 1:1 \) ratio.</li>
+                <li>Taxes affect AD indirectly through consumption. Because of <strong>saving</strong>, the impact ratio is \( < 1:1 \).</li>
+            </ul>
+            <p>As long as you understand that the "destructive power of reducing \( G \)" is greater than the "stimulating power of reducing \( T \)", you can solve this question instantly.</p>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+    <div class="mistake-box">
+        <div class="lang-block zh">
+            <p><strong>陷阱：誤選 C (中性)</strong></p>
+            <p>很多同學看到「退稅金額 = 削減支出金額」，大腦就會直覺認為一加一減，互相抵消（\( +100 - 100 = 0 \)）。這是因為他們忘記了稅收不會完全轉化為消費。記住：市民收到退稅後，一定會把一部分錢存入銀行！</p>
+        </div>
+        <div class="lang-block en">
+            <p><strong>Trap: Mistakenly choosing C (neutral)</strong></p>
+            <p>Many students see "tax rebate amount = expenditure reduction amount" and intuitively think the plus and minus cancel each other out (\( +100 - 100 = 0 \)). This is because they forget that taxes do not fully translate into consumption. Remember: when citizens receive a tax rebate, they will definitely deposit a portion of it into the bank as savings!</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <h2>Student Q&A (學生常見疑問)</h2>
+    <div class="qa-box">
+        <div class="lang-block zh">
+            <p><strong>Q: 題目提到「醫療服務支出」，這有特別含義嗎？</strong></p>
+            <p>A: 沒有特別含義，這只是一個干擾資訊 (Distractor)。無論政府是削減醫療支出、教育支出還是基建支出，只要它屬於政府開支 \( G \)，對總需求的直接影響機制都是一樣的。</p>
+        </div>
+        <div class="lang-block en">
+            <p><strong>Q: The question mentions "expenditure on medical services". Does this have a special meaning?</strong></p>
+            <p>A: No special meaning, it is just a distractor. Whether the government cuts medical, educational, or infrastructure expenditure, as long as it falls under government expenditure \( G \), the mechanism of its direct impact on AD is exactly the same.</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+    <div class="trick-box">
+        <div class="lang-block zh">
+            <p><strong>速解口訣：平衡預算乘數效應 (Balanced Budget Effect)</strong></p>
+            <p>在 DSE 經濟科，當政府開支 \( G \) 和稅收 \( T \) 以<strong>相同金額、相同方向</strong>變動時，總需求 \( AD \) 的最終變動方向，<strong>永遠跟隨政府開支 \( G \) 的變動方向</strong>。</p>
+            <ul>
+                <li>\( G \uparrow \) 和 \( T \uparrow \) (等額) \(\rightarrow\) AD 最終上升 (擴張性)</li>
+                <li>\( G \downarrow \) 和 \( T \downarrow \) (等額) \(\rightarrow\) AD 最終下降 (收縮性)</li>
+            </ul>
+            <p>本題中，政府削減支出 (\( G \downarrow \))，所以閉著眼睛也能選出總需求下降 (收縮性)！</p>
+        </div>
+        <div class="lang-block en">
+            <p><strong>Shortcut Rule: Balanced Budget Effect</strong></p>
+            <p>In HKDSE Economics, when government expenditure \( G \) and taxes \( T \) change by the <strong>same amount and in the same direction</strong>, the final direction of change in Aggregate Demand \( AD \) <strong>always follows the direction of government expenditure \( G \)</strong>.</p>
+            <ul>
+                <li>\( G \uparrow \) and \( T \uparrow \) (equal amount) \(\rightarrow\) AD ultimately increases (expansionary)</li>
+                <li>\( G \downarrow \) and \( T \downarrow \) (equal amount) \(\rightarrow\) AD ultimately decreases (contractionary)</li>
+            </ul>
+            <p>In this question, the government cuts expenditure (\( G \downarrow \)), so you can confidently choose that AD decreases (contractionary) without a second thought!</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
