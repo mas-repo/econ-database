@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Economics Tutor - Short Run Aggregate Supply</title>
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e3a8a;
+        }
+        .question-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .analysis-section, .decomposition-section, .mistakes-section, .qa-section, .tricks-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .correct-answer {
+            font-size: 1.2em;
+            color: #166534;
+            font-weight: bold;
+            background-color: #dcfce7;
+            padding: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .option {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .option:last-child {
+            border-bottom: none;
+        }
+        .lang-zh {
+            margin-bottom: 8px;
+        }
+        .lang-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .question-text {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        @media (min-width: 768px) {
+            .question-text {
+                flex-direction: row;
+            }
+            .question-text > div {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <div class="header-section">
+        <h1>DSE Economics 經濟學名師解析</h1>
+        <p><strong>Topic (課題):</strong> 總體經濟學：短期總供應 (Macroeconomics: Short Run Aggregate Supply)</p>
+        <p><strong>Difficulty (難度):</strong> ★★☆☆☆ (2/5)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="badge">SRAS</span> 
+            <span class="badge">Supply Shock (供應衝擊)</span> 
+            <span class="badge">Cost of Production (生產成本)</span>
+        </p>
+    </div>
+
+    <!-- 2. The Question -->
+    <div class="question-section">
+        <h2>The Question (題目)</h2>
+        <p><em>(Please refer to the provided image for the graph showing a rightward shift of the SRAS curve from \( \text{SRAS}_0 \) to \( \text{SRAS}_1 \).)</em></p>
+        
+        <div class="question-text">
+            <div>
+                <div class="lang-zh">
+                    <strong>下列哪項是導致短期總供應曲線作以上移動的一個可能原因？</strong>
+                    <ol type="A">
+                        <li>全球對石油的需求上升，導致生產成本上升。</li>
+                        <li>公司的利潤隨着物價水平上升而增加，因為產出價格和投入價格之間的差距擴大。</li>
+                        <li>利率上升，令投資的成本上升。</li>
+                        <li>在一次大規模罷工後，勞工市場回復正常運作。</li>
+                    </ol>
+                </div>
+            </div>
+            <div>
+                <div class="lang-en">
+                    <strong>Which of the following is a possible reason of the above shift of the short run aggregate supply curve?</strong>
+                    <ol type="A">
+                        <li>The cost of production increases due to an increase in global demand for oil.</li>
+                        <li>The profitability of firms increases with the rise in price level, since the difference between output prices and input prices increases.</li>
+                        <li>An increase in interest rate leads to an increase in cost of investment.</li>
+                        <li>The operation of labour market resumes to normal after a massive labour strike.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Concept Review -->
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        
+        <div class="lang-zh">
+            <p><strong>短期總供應 (Short Run Aggregate Supply, SRAS)：</strong> 是指在短期內，經濟體系中所有廠商願意且能夠提供的總產出水平與一般物價水平之間的關係。短期內，部分投入價格（如名義工資）是僵固的（Sticky）。</p>
+            <p><strong>曲線移動 (Shift of the Curve) vs. 沿著曲線移動 (Movement along the Curve)：</strong></p>
+            <ul>
+                <li><strong>沿著曲線移動：</strong> 只有當<strong>一般物價水平 (Price Level)</strong> 改變時才會發生。</li>
+                <li><strong>曲線移動：</strong> 當物價水平以外的因素改變時發生，例如：生產成本（工資、原材料價格）、生產力、勞動人口或突發的供應衝擊。</li>
+            </ul>
+        </div>
+        <div class="lang-en">
+            <p><strong>Short Run Aggregate Supply (SRAS):</strong> The relationship between the total quantity of output firms are willing and able to produce and the general price level in the short run. In the short run, some input prices (like nominal wages) are sticky.</p>
+            <p><strong>Shift of the Curve vs. Movement along the Curve:</strong></p>
+            <ul>
+                <li><strong>Movement along the curve:</strong> Occurs ONLY when the <strong>general price level</strong> changes.</li>
+                <li><strong>Shift of the curve:</strong> Occurs when non-price factors change, such as: cost of production (wages, raw material prices), productivity, size of the labour force, or sudden supply shocks.</li>
+            </ul>
+        </div>
+
+        <div class="math-block">
+            $$ \text{Profit per unit} = \text{Output Price} - \text{Unit Cost of Production} $$
+        </div>
+        
+        <div class="lang-zh">
+            <p>當生產成本下降或生產力上升時，廠商在同一物價水平下能獲取更高利潤，因此願意提供更多產出，導致 SRAS 曲線<strong>向右移動 (Shift Right)</strong>。</p>
+        </div>
+        <div class="lang-en">
+            <p>When production costs decrease or productivity increases, firms can earn a higher profit at the same price level. Thus, they are willing to supply more output, causing the SRAS curve to <strong>shift to the right</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 4. The Answer & Detailed Analysis -->
+    <div class="analysis-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <div class="correct-answer">Correct Option: D</div>
+
+        <div class="option">
+            <h3>Option A</h3>
+            <div class="lang-zh"><strong>分析：</strong> 錯誤。全球石油需求上升導致生產成本上升。生產成本上升會減少廠商的利潤空間，導致短期總供應減少，SRAS 曲線應<strong>向左移動</strong>，而非向右。</div>
+            <div class="lang-en"><strong>Analysis:</strong> Incorrect. An increase in global oil demand leads to higher production costs. Higher production costs squeeze firms' profit margins, reducing short-run aggregate supply. The SRAS curve would <strong>shift to the left</strong>, not right.</div>
+        </div>
+
+        <div class="option">
+            <h3>Option B</h3>
+            <div class="lang-zh"><strong>分析：</strong> 錯誤。這個選項解釋了為什麼 SRAS 曲線是<strong>向上傾斜 (Upward sloping)</strong> 的。物價水平上升導致的產量增加，只會反映為<strong>沿著同一條 SRAS 曲線向上移動 (Movement along the curve)</strong>，而不會導致整條曲線平移。</div>
+            <div class="lang-en"><strong>Analysis:</strong> Incorrect. This option explains why the SRAS curve is <strong>upward sloping</strong>. An increase in output due to a rise in the price level is represented by a <strong>movement along the same SRAS curve</strong>, not a shift of the entire curve.</div>
+        </div>
+
+        <div class="option">
+            <h3>Option C</h3>
+            <div class="lang-zh"><strong>分析：</strong> 錯誤。利率上升會增加借貸成本，從而減少廠商的投資意欲。投資 (Investment, \(I\)) 是總需求 (Aggregate Demand, AD) 的一部分。因此，這會導致 <strong>AD 曲線向左移動</strong>，而不是直接影響 SRAS 曲線。</div>
+            <div class="lang-en"><strong>Analysis:</strong> Incorrect. An increase in the interest rate raises the cost of borrowing, which reduces firms' incentive to invest. Investment (\(I\)) is a component of Aggregate Demand (AD). Therefore, this would cause the <strong>AD curve to shift to the left</strong>, rather than directly affecting the SRAS curve.</div>
+        </div>
+
+        <div class="option">
+            <h3>Option D</h3>
+            <div class="lang-zh"><strong>分析：</strong> 正確。大規模罷工結束，勞工市場回復正常運作，意味著勞動力供應恢復，生產瓶頸被消除，這相當於一種正面的供應衝擊 (Positive supply shock)。在任何給定的物價水平下，經濟體系能夠生產更多的產出，因此 SRAS 曲線<strong>向右移動</strong>。</div>
+            <div class="lang-en"><strong>Analysis:</strong> Correct. The resumption of normal labour market operations after a massive strike means labour supply is restored and production bottlenecks are eliminated. This acts as a positive supply shock. At any given price level, the economy can produce more output, causing the SRAS curve to <strong>shift to the right</strong>.</div>
+        </div>
+    </div>
+
+    <!-- 5. Problem Decomposition -->
+    <div class="decomposition-section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <div class="lang-zh">
+            <p><strong>解題切入點 (Pivot Point)：</strong></p>
+            <ol>
+                <li>觀察圖表：箭頭顯示 SRAS 曲線<strong>向右移動</strong>，代表短期總供應<strong>增加</strong>。</li>
+                <li>確立目標：我們需要尋找一個能<strong>降低生產成本</strong>或<strong>增加生產能力</strong>的「非物價因素」(Non-price factor)。</li>
+                <li>篩選資訊：任何導致成本上升的（如選項 A）都會令曲線左移；任何提及「物價水平上升」的（如選項 B）都是干擾項，因為那是沿著曲線移動；任何影響總需求 (AD) 的（如選項 C）都不相關。</li>
+            </ol>
+        </div>
+        <div class="lang-en">
+            <p><strong>How to approach (Pivot Point):</strong></p>
+            <ol>
+                <li>Observe the graph: The arrow shows the SRAS curve <strong>shifting to the right</strong>, indicating an <strong>increase</strong> in short-run aggregate supply.</li>
+                <li>Set the goal: We need to find a "non-price factor" that either <strong>lowers production costs</strong> or <strong>increases productive capacity</strong>.</li>
+                <li>Filter information: Anything causing costs to rise (like Option A) shifts the curve left; anything mentioning a "rise in price level" (like Option B) is a distractor because it causes a movement along the curve; anything affecting Aggregate Demand (like Option C) is irrelevant.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 6. Common Mistakes & Traps -->
+    <div class="mistakes-section">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <div class="lang-zh">
+            <p><strong>陷阱一：混淆「曲線移動」與「沿著曲線移動」</strong><br>
+            考評局非常喜歡用選項 B 這種描述來測試學生。記住：如果題目中的原因是「物價水平 (Price Level) 改變」，答案永遠是沿著曲線移動。只有當外在因素（如成本、科技）改變時，整條曲線才會平移。</p>
+            <p><strong>陷阱二：混淆 AD 與 AS 的影響因素</strong><br>
+            學生常誤以為「利率上升 = 成本上升 = AS 減少」。在 DSE 經濟學中，利率 (Interest rate) 主要影響借貸成本，從而影響消費 (C) 和投資 (I)，因此它是 <strong>總需求 (AD)</strong> 的因素，而非短期總供應 (SRAS) 的直接因素。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Trap 1: Confusing "Shift" with "Movement along the curve"</strong><br>
+            The HKEAA loves using descriptions like Option B to test students. Remember: If the cause is a change in the "Price Level", it's always a movement along the curve. The entire curve only shifts when external factors (like costs, technology) change.</p>
+            <p><strong>Trap 2: Confusing AD and AS factors</strong><br>
+            Students often mistakenly think "higher interest rate = higher cost = decrease in AS". In DSE Economics, the interest rate primarily affects borrowing costs, which in turn affects Consumption (C) and Investment (I). Therefore, it is a factor of <strong>Aggregate Demand (AD)</strong>, not a direct factor of Short Run Aggregate Supply (SRAS).</p>
+        </div>
+    </div>
+
+    <!-- 7. Student Q&A -->
+    <div class="qa-section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <div class="lang-zh">
+            <p><strong>Q: 為什麼罷工結束會令 SRAS 增加？這不是只回復到原來的水平嗎？</strong></p>
+            <p>A: 很好的問題！在經濟學圖表中，我們比較的是「罷工期間」與「罷工結束後」的狀態。罷工期間，勞動力短缺，生產力下降（SRAS 處於較左的位置，即 \( \text{SRAS}_0 \)）。當罷工結束，勞動力重新投入生產，相對於罷工期間，整體的生產能力增加了，因此 SRAS 向右移動至 \( \text{SRAS}_1 \)。</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>Q: Why does the end of a strike increase SRAS? Isn't it just returning to the original level?</strong></p>
+            <p>A: Great question! In economic models, we are comparing the state "during the strike" with the state "after the strike". During the strike, there is a labour shortage and productivity drops (SRAS is at a position further left, i.e., \( \text{SRAS}_0 \)). When the strike ends, workers return to production. Relative to the strike period, the overall productive capacity has increased, so SRAS shifts to the right to \( \text{SRAS}_1 \).</p>
+        </div>
+    </div>
+
+    <!-- 8. Exam Tricks & Shortcuts -->
+    <div class="tricks-section">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <div class="lang-zh">
+            <p><strong>「好消息 / 壞消息」速算法：</strong></p>
+            <p>對於 SRAS 曲線：<br>
+            向右移動 = 供應增加 = 對生產者是<strong>「好消息」</strong>（成本跌、資源多）。<br>
+            向左移動 = 供應減少 = 對生產者是<strong>「壞消息」</strong>（成本升、天災）。</p>
+            <p>看題目圖表，曲線向右移（好消息）。<br>
+            選項 A：成本上升（壞消息） ❌<br>
+            選項 B：講物價（不移動） ❌<br>
+            選項 C：投資成本升（壞消息/AD因素） ❌<br>
+            選項 D：罷工結束，回復正常（好消息） ✅</p>
+        </div>
+        <div class="lang-en">
+            <p><strong>The "Good News / Bad News" Shortcut:</strong></p>
+            <p>For the SRAS curve:<br>
+            Shift Right = Supply Increases = <strong>"Good News"</strong> for producers (lower costs, more resources).<br>
+            Shift Left = Supply Decreases = <strong>"Bad News"</strong> for producers (higher costs, disasters).</p>
+            <p>Look at the graph: The curve shifts right (Good News).<br>
+            Option A: Cost increases (Bad News) ❌<br>
+            Option B: Talks about price level (No shift) ❌<br>
+            Option C: Investment cost increases (Bad News / AD factor) ❌<br>
+            Option D: Strike ends, back to normal (Good News) ✅</p>
+        </div>
+    </div>
+
+</body>
+</html>

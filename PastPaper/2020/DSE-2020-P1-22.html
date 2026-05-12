@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE Economics Tutor - Lorenz Curve</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e40af;
+        }
+        .question-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .analysis-section, .decomposition-section, .mistakes-section, .qa-section, .tricks-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .correct-option {
+            color: #166534;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>HKDSE Economics: Question Analysis</h1>
+        <p><strong>Topic (課題):</strong> Income Distribution (收入分佈)</p>
+        <p><strong>Difficulty (難度):</strong> ⭐⭐ (2/5 Stars)</p>
+        <p><strong>Key Concepts (核心概念):</strong> 
+            <span class="tag">Lorenz Curve (洛倫茨曲線)</span>
+            <span class="tag">Gini Coefficient (堅尼系數)</span>
+            <span class="tag">Income Inequality (收入不均)</span>
+        </p>
+    </div>
+
+    <div class="question-section">
+        <h2>The Question (題目)</h2>
+        <p>細閱以下兩條洛倫茨曲線。<br>
+        與乙國相比，</p>
+        <ol type="A">
+            <li>甲國的堅尼系數較高。</li>
+            <li>甲國的生活水準較高。</li>
+            <li>甲國最高端 20% 的住戶的總收入較低。</li>
+            <li>甲國的收入分佈較均等。</li>
+        </ol>
+        
+        <div class="bilingual-en">
+            <p>Study the following two Lorenz curves.<br>
+            Compared with Country B,</p>
+            <ol type="A">
+                <li>the Gini coefficient of Country A is larger.</li>
+                <li>Country A has a higher standard of living.</li>
+                <li>the top 20% of households in Country A have less total income.</li>
+                <li>Country A has a more even income distribution.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h2>Concept Review (概念重溫)</h2>
+        <p><strong>洛倫茨曲線 (Lorenz Curve):</strong> 這是一條用來顯示一個國家或地區收入分佈狀況的曲線。圖表的橫軸代表住戶數目累積百分比，縱軸代表收入累積百分比。曲線越接近 45 度對角線（絕對均等線 Line of Absolute Equality），代表收入分佈越平均；曲線越向外彎曲，代表收入分佈越不平均。</p>
+        <div class="bilingual-en">
+            <strong>Lorenz Curve:</strong> This is a graphical representation of income distribution within a country or region. The horizontal axis shows the cumulative percentage of households, and the vertical axis shows the cumulative percentage of income. The closer the curve is to the 45-degree diagonal (Line of Absolute Equality), the more even the income distribution. The more bowed out the curve is, the more uneven the distribution.
+        </div>
+
+        <p><strong>堅尼系數 (Gini Coefficient):</strong> 這是一個量度收入不均的指標。數值介乎 0 至 1 之間。數值越大，代表收入越不平均；數值越小，代表收入越平均。如果將絕對均等線與洛倫茨曲線之間的面積設為 \(A\)，絕對均等線以下的總面積設為 \(A+B\)，公式如下：</p>
+        <div class="bilingual-en">
+            <strong>Gini Coefficient:</strong> This is an index measuring income inequality, ranging from 0 to 1. A larger value indicates greater inequality, while a smaller value indicates greater equality. If the area between the line of absolute equality and the Lorenz curve is \(A\), and the total area under the line of absolute equality is \(A+B\), the formula is:
+        </div>
+        
+        <div class="math-block">
+            $$ Gini\ Coefficient = \frac{A}{A + B} $$
+        </div>
+    </div>
+
+    <div class="analysis-section">
+        <h2>The Answer & Detailed Analysis (答案與詳細分析)</h2>
+        <p>正確答案是 (Correct Option): <span class="correct-option">Option D</span></p>
+
+        <div class="option-analysis">
+            <p><strong>選項 A (Option A):</strong> 錯誤。從圖中可見，甲國的洛倫茨曲線比乙國更接近 45 度對角線。這意味著甲國的收入分佈較平均，因此其堅尼系數應該<strong>較低</strong>（較小），而不是較高。</p>
+            <div class="bilingual-en">Incorrect. As seen from the graphs, Country A's Lorenz curve is closer to the 45-degree diagonal than Country B's. This means Country A has a more even income distribution, so its Gini coefficient should be <strong>smaller</strong> (lower), not larger.</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>選項 B (Option B):</strong> 錯誤。洛倫茨曲線只能反映收入的<strong>相對分佈比例</strong>，並不能提供任何關於絕對收入金額或國內生產總值 (GDP) 的資訊。因此，我們無法從圖中得知哪一國的生活水準較高。</p>
+            <div class="bilingual-en">Incorrect. The Lorenz curve only reflects the <strong>relative distribution</strong> of income. It provides no information about absolute income amounts or Gross Domestic Product (GDP). Therefore, we cannot determine which country has a higher standard of living from these graphs.</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>選項 C (Option C):</strong> 錯誤。雖然我們可以從圖中計算出甲國最高端 20% 住戶佔總收入的百分比（100% - 40% = 60%），而乙國最高端 20% 住戶佔總收入的百分比（100% - 20% = 80%），但這只是「百分比」。由於我們不知道兩國的總收入（絕對數值）是多少，因此無法比較他們最高端 20% 住戶的「總收入」絕對值。</p>
+            <div class="bilingual-en">Incorrect. Although we can calculate the income percentage share of the top 20% households in Country A (100% - 40% = 60%) and Country B (100% - 20% = 80%), these are only "percentages". Since we do not know the total national income (absolute value) of either country, we cannot compare the absolute "total income" of their top 20% households.</div>
+        </div>
+
+        <div class="option-analysis">
+            <p><strong>選項 D (Option D):</strong> 正確。甲國的洛倫茨曲線較接近絕對均等線（45度線），這直接代表該國的收入分佈比乙國更為均等。</p>
+            <div class="bilingual-en">Correct. Country A's Lorenz curve is closer to the line of absolute equality (the 45-degree line), which directly indicates that its income distribution is more even than that of Country B.</div>
+        </div>
+    </div>
+
+    <div class="decomposition-section">
+        <h2>Problem Decomposition (題目拆解)</h2>
+        <p>解答這類題目的關鍵在於理解<strong>「相對」與「絕對」數據的分別</strong>（Pivot Point）。</p>
+        <p>洛倫茨曲線和堅尼系數都只是量度「相對分配」的工具。圖表中的橫軸和縱軸都是「百分比 (Percentage)」，而不是實質的金額。因此，任何涉及「絕對數值」的選項（例如：生活水準、總收入金額、GDP大小）都必定是干擾項 (Distractors)，可以直接排除。</p>
+        <div class="bilingual-en">
+            The key to solving this type of question is understanding the difference between <strong>"relative" and "absolute" data</strong> (the Pivot Point). 
+            Both the Lorenz curve and the Gini coefficient are tools for measuring "relative distribution". The axes on the graphs are "percentages", not actual monetary values. Therefore, any option involving "absolute values" (e.g., standard of living, total income amount, size of GDP) is definitely a distractor and can be eliminated immediately.
+        </div>
+    </div>
+
+    <div class="mistakes-section">
+        <h2>Common Mistakes & Traps (常犯錯誤與陷阱)</h2>
+        <ul>
+            <li><strong>誤解堅尼系數的數值意義：</strong> 學生常以為「堅尼系數較高 = 較好/較平均」。記住，堅尼系數是量度「不均等」的指標，數值越大代表越<strong>不平均</strong>。</li>
+            <li><strong>混淆百分比與絕對值：</strong> 這是最常見的陷阱（如選項 C）。即使某個群體佔整體收入的百分比很高，如果該國非常貧窮（總收入極低），他們的實際收入絕對值也可能很低。</li>
+        </ul>
+        <div class="bilingual-en">
+            <ul>
+                <li><strong>Misinterpreting the Gini coefficient value:</strong> Students often think "higher Gini coefficient = better/more even". Remember, the Gini coefficient measures "inequality"; a larger value means <strong>more uneven</strong>.</li>
+                <li><strong>Confusing percentages with absolute values:</strong> This is the most common trap (like Option C). Even if a group has a high percentage share of total income, if the country is very poor (extremely low total income), their actual absolute income might still be very low.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="qa-section">
+        <h2>Student Q&A (學生常見疑問)</h2>
+        <p><strong>Q: 我該如何從圖表中準確讀取「最高端 20% 住戶」的收入份額？</strong></p>
+        <p>A: 你需要看橫軸「住戶數目累積百分比」的 80% 位置。這代表了社會上最底層的 80% 人口。對應縱軸，甲國最底層 80% 人口佔了 40% 的收入。因此，剩下的最高端 20% 人口（即 100% - 80%）就佔了剩餘的收入，即 \( 100\% - 40\% = 60\% \)。</p>
+        <div class="bilingual-en">
+            <strong>Q: How do I accurately read the income share of the "top 20% households" from the graph?</strong><br>
+            A: You need to look at the 80% mark on the horizontal axis ("Cumulative percentage of households"). This represents the bottom 80% of the population. Corresponding to the vertical axis, the bottom 80% in Country A earns 40% of the income. Therefore, the remaining top 20% of the population (i.e., 100% - 80%) earns the remaining income, which is \( 100\% - 40\% = 60\% \).
+        </div>
+    </div>
+
+    <div class="tricks-section">
+        <h2>Exam Tricks & Shortcuts (考試技巧與速解)</h2>
+        <p><strong>秒殺技巧 (One-second kill trick):</strong> 看到洛倫茨曲線的比較題，立刻使用視覺判斷法：<br>
+        1. 曲線越「直」（貼近對角線） ➡️ 越平均 ➡️ 堅尼系數越小。<br>
+        2. 曲線越「彎」（遠離對角線） ➡️ 越不平均 ➡️ 堅尼系數越大。<br>
+        3. 看到選項有「生活水準」、「總收入金額」等字眼，在沒有提供絕對數據的情況下，直接打交叉 (X) 淘汰。</p>
+        <div class="bilingual-en">
+            <strong>Shortcut:</strong> When you see a Lorenz curve comparison question, use visual judgment immediately:<br>
+            1. Straighter curve (closer to diagonal) ➡️ More even ➡️ Smaller Gini coefficient.<br>
+            2. More bowed curve (further from diagonal) ➡️ More uneven ➡️ Larger Gini coefficient.<br>
+            3. If you see options with words like "standard of living" or "total income amount" without any absolute data provided, cross them out (X) immediately.
+        </div>
+    </div>
+
+</body>
+</html>
