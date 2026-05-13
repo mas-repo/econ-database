@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Economics Tutor - AD-AS Model</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3 {
+            color: #1e3a8a;
+        }
+        .header-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-top: 5px solid #1e3a8a;
+        }
+        .question-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid #0ea5e9;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .math-block {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .analysis-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .option-analysis {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .option-analysis:last-child {
+            border-bottom: none;
+        }
+        .correct-option {
+            color: #166534;
+            font-weight: bold;
+            background-color: #dcfce7;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .bilingual-en {
+            color: #4b5563;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+        .qa-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tips-box {
+            background-color: #fdf2f8;
+            border-left: 5px solid #db2777;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .bold-zh { font-weight: bold; color: #111827; }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>📝 DSE Economics 經濟學名師解析</h1>
+        <p><span class="bold-zh">課題 (Topic):</span> 宏觀經濟學：總需求與總供應模型、產出差距與貿易餘額 (Macroeconomics: AD-AS Model, Output Gap & Trade Balance)</p>
+        <p><span class="bold-zh">難度 (Difficulty):</span> ★★★☆☆</p>
+        <p><span class="bold-zh">核心概念 (Key Concepts):</span> 總需求 (Aggregate Demand), 通縮差距 (Deflationary Gap), 轉移支付 (Transfer Payments), 貿易餘額 (Trade Balance)</p>
+    </div>
+
+    <div class="question-section">
+        <h2>題目 (The Question)</h2>
+        <p>下圖顯示某經濟的總需求曲線、短期總供應曲線和長期總供應曲線。</p>
+        <p>假設該經濟原初於 \(E_0\) 運作，而總進口值與總出口值相等。若政府減少長者社會保障援助金額，在短期內，通縮（產出）差距會 ________，並會出現 ________。</p>
+        <ul>
+            <li>A. 收窄 …… 貿易盈餘</li>
+            <li>B. 收窄 …… 貿易赤字</li>
+            <li>C. 擴闊 …… 貿易盈餘</li>
+            <li>D. 擴闊 …… 貿易赤字</li>
+        </ul>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        
+        <p class="bilingual-en">The diagram below shows the aggregate demand curve, the short run aggregate supply curve and the long run aggregate supply curve of an economy.</p>
+        <p class="bilingual-en">Suppose the economy initially operates at \(E_0\) and the total import value equals to the total export value. If the government decreases the amount of social security assistance for the elderly, in the short run, the deflationary (output) gap will become ________ and there will be a ________.</p>
+        <ul class="bilingual-en">
+            <li>A. narrower …… trade surplus</li>
+            <li>B. narrower …… trade deficit</li>
+            <li>C. wider …… trade surplus</li>
+            <li>D. wider …… trade deficit</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h2>📚 概念重溫 (Concept Review)</h2>
+        
+        <p><span class="bold-zh">1. 轉移支付與總需求 (Transfer Payments and Aggregate Demand):</span><br>
+        長者社會保障援助屬於政府的轉移支付 (Transfer Payments)。減少援助會導致市民的可支配收入 (Disposable Income, \(Y_d\)) 下降，從而減少私人消費開支 (Consumption, \(C\))。由於 \(C\) 是總需求的一部分，總需求 (AD) 會下降，AD 曲線向左移。</p>
+        <p class="bilingual-en">Social security assistance for the elderly is a form of government transfer payments. A decrease in this assistance reduces citizens' disposable income (\(Y_d\)), which in turn reduces private consumption expenditure (\(C\)). Since \(C\) is a component of Aggregate Demand, AD will decrease, shifting the AD curve to the left.</p>
+        
+        <div class="math-block">
+            $$ AD = C + I + G + (X - M) $$
+            $$ Y_d \downarrow \implies C \downarrow \implies AD \downarrow $$
+        </div>
+
+        <p><span class="bold-zh">2. 通縮差距 (Deflationary Gap):</span><br>
+        當短期的均衡產出 (\(Y\)) 低於充分就業產出 / 長期總供應 (\(Y_f\)) 時，便會出現通縮差距。差距的大小是 \(Y_f - Y\)。</p>
+        <p class="bilingual-en">A deflationary gap occurs when the short-run equilibrium output (\(Y\)) is less than the full-employment output / Long-Run Aggregate Supply (\(Y_f\)). The size of the gap is \(Y_f - Y\).</p>
+
+        <p><span class="bold-zh">3. 貿易餘額 (Trade Balance):</span><br>
+        貿易餘額 = 總出口值 (\(X\)) - 總進口值 (\(M\))。當本地收入 (\(Y\)) 下降時，對進口物品的需求會減少 (\(M \downarrow\))。同時，物價水平 (\(P\)) 下降會令本地出口更具競爭力 (\(X \uparrow\))，進一步減少進口。兩者皆會導致淨出口增加。</p>
+        <p class="bilingual-en">Trade Balance = Total Exports (\(X\)) - Total Imports (\(M\)). When domestic income (\(Y\)) falls, the demand for imported goods decreases (\(M \downarrow\)). Simultaneously, a lower price level (\(P\)) makes domestic exports more competitive (\(X \uparrow\)) and further reduces imports. Both effects lead to an increase in net exports.</p>
+    </div>
+
+    <div class="analysis-section">
+        <h2>✅ 答案與詳細分析 (The Answer & Detailed Analysis)</h2>
+        <div class="correct-option">正確答案 (Correct Option): C</div>
+
+        <div class="option-analysis">
+            <p><span class="bold-zh">步驟一：分析 AD 曲線的移動</span><br>
+            政府減少長者社會保障援助金額，長者的可支配收入減少，導致消費開支 (\(C\)) 下降。因此，總需求 (AD) 曲線向左移動。</p>
+            <p class="bilingual-en">Step 1: Analyze the shift in the AD curve. The government decreases social security assistance, reducing the disposable income of the elderly, which leads to a fall in consumption expenditure (\(C\)). Therefore, the Aggregate Demand (AD) curve shifts to the left.</p>
+            
+            <p><span class="bold-zh">步驟二：分析通縮差距的變化</span><br>
+            在原初均衡點 \(E_0\)，產出水平位於 LRAS 的左方，本身已存在通縮差距。當 AD 向左移，新的短期均衡點會進一步向左移動，導致新的產出水平 (\(Y_1\)) 更遠離充分就業產出 (\(Y_f\))。因此，通縮差距會<span class="bold-zh">擴闊 (wider)</span>。</p>
+            <p class="bilingual-en">Step 2: Analyze the change in the deflationary gap. At the initial equilibrium \(E_0\), the output level is to the left of LRAS, meaning a deflationary gap already exists. When AD shifts left, the new short-run equilibrium moves further to the left, causing the new output level (\(Y_1\)) to be even further away from the full-employment output (\(Y_f\)). Thus, the deflationary gap becomes <b>wider</b>.</p>
+
+            <p><span class="bold-zh">步驟三：分析貿易餘額的變化</span><br>
+            AD 向左移會導致本地產出/收入 (\(Y\)) 下降及物價水平 (\(P\)) 下降。<br>
+            1. 收入效應：本地收入下降，市民會減少購買進口貨品，進口值 (\(M\)) 下降。<br>
+            2. 價格效應：本地物價下降，出口貨品相對外國貨品變得更便宜，出口值 (\(X\)) 增加；同時進口貨品相對變貴，進口值 (\(M\)) 進一步下降。<br>
+            由於原初 \(X = M\)，現在 \(M\) 下降而 \(X\) 增加（或不變），必然會出現 \(X > M\)，即<span class="bold-zh">貿易盈餘 (trade surplus)</span>。</p>
+            <p class="bilingual-en">Step 3: Analyze the change in the trade balance. The leftward shift of AD leads to a decrease in domestic output/income (\(Y\)) and a decrease in the price level (\(P\)).<br>
+            1. Income effect: Lower domestic income means citizens buy fewer imported goods, so import value (\(M\)) falls.<br>
+            2. Price effect: A lower domestic price level makes exports relatively cheaper than foreign goods, increasing export value (\(X\)); meanwhile, imports become relatively more expensive, further reducing import value (\(M\)).<br>
+            Since initially \(X = M\), and now \(M\) decreases while \(X\) increases (or remains steady), it must be that \(X > M\), resulting in a <b>trade surplus</b>.</p>
+        </div>
+        
+        <p><span class="bold-zh">綜合以上分析：</span>通縮差距擴闊，並出現貿易盈餘，故選 C。</p>
+        <p class="bilingual-en">Conclusion: The deflationary gap widens and a trade surplus occurs, so Option C is correct.</p>
+    </div>
+
+    <div class="question-section">
+        <h2>🛠 題目拆解 (Problem Decomposition)</h2>
+        <p><span class="bold-zh">破題關鍵 (Pivot Point):</span><br>
+        本題的關鍵在於將「減少長者社會保障援助」準確翻譯為宏觀經濟變量：「轉移支付減少 \(\rightarrow\) 消費減少 \(\rightarrow\) AD 左移」。只要畫出 AD 左移的圖，就能立刻看出產出 (\(Y\)) 和物價 (\(P\)) 雙雙下跌。</p>
+        <p class="bilingual-en">The key to solving this problem is accurately translating "decreases social security assistance" into a macroeconomic variable: "Decrease in transfer payments \(\rightarrow\) Decrease in consumption \(\rightarrow\) AD shifts left". By sketching the leftward shift of AD, you can immediately see that both output (\(Y\)) and price level (\(P\)) fall.</p>
+    </div>
+
+    <div class="qa-box">
+        <h2>🙋‍♂️ 學生常見疑問 (Student Q&A)</h2>
+        <p><span class="bold-zh">Q: 政府減少援助，這不是屬於政府開支 (G) 減少嗎？</span><br>
+        <span class="bold-zh">A:</span> 不是。政府開支 (\(G\)) 是指政府購買物品和服務（例如建橋築路、支付公務員薪酬）。社會保障援助屬於「轉移支付」(Transfer Payments)，政府並沒有換取任何物品或服務。它只會影響市民的可支配收入，從而間接影響消費 (\(C\))。</p>
+        <p class="bilingual-en"><b>Q: Isn't a decrease in government assistance considered a decrease in Government Expenditure (\(G\))?</b><br>
+        <b>A:</b> No. Government expenditure (\(G\)) refers to government purchases of goods and services (e.g., building roads, paying civil servants). Social security assistance is a "Transfer Payment", where the government receives no goods or services in return. It only affects citizens' disposable income, thereby indirectly affecting consumption (\(C\)).</p>
+    </div>
+
+    <div class="tips-box">
+        <h2>⚡ 考試技巧與速解 (Exam Tricks & Shortcuts)</h2>
+        <p><span class="bold-zh">圖像秒殺法：</span><br>
+        在試卷上直接畫圖！<br>
+        1. 看到「減少援助」 \(\rightarrow\) 沒錢了 \(\rightarrow\) 買少點東西 \(\rightarrow\) AD 左移。<br>
+        2. 原本 \(E_0\) 已經在 LRAS 左邊（通縮差距）。AD 再向左移，距離 LRAS 更遠了 \(\rightarrow\) 差距必定「擴闊」。立刻刪去 A 和 B。<br>
+        3. 剩下 C 和 D。AD 左移代表經濟變差、收入減少。香港人收入少了，自然會減少去旅行和買外國貨（進口 \(M\) 下降）。原本 \(X=M\)，現在 \(M\) 變小了，自然變成盈餘 (Surplus)。秒選 C！</p>
+        <p class="bilingual-en"><b>Graphical Shortcut:</b><br>
+        Draw directly on the exam paper!<br>
+        1. "Decrease assistance" \(\rightarrow\) Less money \(\rightarrow\) Buy less \(\rightarrow\) AD shifts left.<br>
+        2. \(E_0\) is already to the left of LRAS (deflationary gap). AD shifts further left, moving further away from LRAS \(\rightarrow\) Gap MUST be "wider". Eliminate A and B immediately.<br>
+        3. Between C and D: AD shifting left means the economy worsens and incomes fall. With less income, people buy fewer foreign goods (Imports \(M\) drop). Initially \(X=M\), now \(M\) is smaller, which naturally leads to a Surplus. Choose C instantly!</p>
+    </div>
+
+</body>
+</html>
