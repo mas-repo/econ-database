@@ -374,6 +374,9 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                                 q.AristochapterClassification.length > 1;
                         } else if (value === '已刪除') {
                             return q.answerMC && q.answerMC.trim() === '*';
+                        } else if (value === 'Out syl') {
+                            // Show ONLY if it has 'Y'
+                            return q.outSyl && q.outSyl.trim().toUpperCase() === 'Y';
                         }
                         return true;
                     });
@@ -410,7 +413,10 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
                                 q.AristochapterClassification.length <= 1;
                         } else if (value === '已刪除') {
                             return !q.answerMC || q.answerMC.trim() !== '*';
-                        }                     
+                        } else if (value === 'Out syl') {
+                            // Hide if it has 'Y'
+                            return !q.outSyl || q.outSyl.trim().toUpperCase() !== 'Y';
+                        }                          
                         return true;
                     });
                 }

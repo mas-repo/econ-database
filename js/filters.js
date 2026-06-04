@@ -15,7 +15,7 @@ if (!window.triStateFilters) {
     window.triStateFilters = { 
         curriculum: {}, 
         chapter: {}, 
-        feature: {}, 
+        feature: { 'Out syl': 'excluded' }, 
         exam: {}, 
         qtype: {},
         year: {},
@@ -291,23 +291,32 @@ function updateFilterIndicators() {
     ];
     
     triStateTypes.forEach(type => {
-        // Handle the Dot Indicator (if it exists in HTML)
-        const indicator = document.getElementById(`indicator-${type}`);
-        if (!indicator) return;
+            // Handle the Dot Indicator (if it exists in HTML)
+            const indicator = document.getElementById(`indicator-${type}`);
+            if (!indicator) return;
 
-        const hasActiveFilters = window.triStateFilters[type] && 
-                                 Object.keys(window.triStateFilters[type]).length > 0;
-        
-        if (hasActiveFilters) {
-            indicator.classList.add('visible');
-        } else {
-            indicator.classList.remove('visible');
-        }
-        
-        const input = document.querySelector(`input[data-filter-type="${type}"]`);
-        if (input) {
-            input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
-        }
+            // NEW LOGIC: Check for active filters, but ignore 'Out syl' if it's in the default 'excluded' state
+            let hasActiveFilters = false;
+            if (window.triStateFilters[type]) {
+                const activeKeys = Object.keys(window.triStateFilters[type]).filter(key => {
+                    if (type === 'feature' && key === 'Out syl' && window.triStateFilters[type][key] === 'excluded') {
+                        return false; // Don't count this as an active filter
+                    }
+                    return true;
+                });
+                hasActiveFilters = activeKeys.length > 0;
+            }
+            
+            if (hasActiveFilters) {
+                indicator.classList.add('visible');
+            } else {
+                indicator.classList.remove('visible');
+            }
+            
+            const input = document.querySelector(`input[data-filter-type="${type}"]`);
+            if (input) {
+                input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
+            }
     });
 
     // Explicitly Handle AI Button Styling
@@ -860,10 +869,21 @@ function clearFilters() {
     if (scopeSelect) scopeSelect.value = 'all';
     window.searchScope = 'all';
 
+    // === Reset tri-state visual classes with Out syl exception ===
     document.querySelectorAll('.tri-state-checkbox').forEach(el => {
-        el.classList.remove('checked', 'excluded');
-        const label = el.closest('.tri-state-label');
-        if(label) label.classList.remove('checked', 'excluded');
+        if (el.dataset.value === 'Out syl') {
+            el.classList.remove('checked');
+            el.classList.add('excluded');
+            const label = el.closest('.tri-state-label');
+            if(label) {
+                label.classList.remove('checked');
+                label.classList.add('excluded');
+            }
+        } else {
+            el.classList.remove('checked', 'excluded');
+            const label = el.closest('.tri-state-label');
+            if(label) label.classList.remove('checked', 'excluded');
+        }
     });
 
     document.querySelectorAll('.filter-input').forEach(input => {
@@ -892,7 +912,7 @@ function clearFilters() {
     window.triStateFilters = { 
         curriculum: {}, 
         chapter: {}, 
-        feature: {}, 
+        feature: { 'Out syl': 'excluded' },  
         exam: {}, 
         qtype: {},
         year: {},
@@ -1020,16 +1040,22 @@ function updateSearchInfo() {
     };
 
     Object.entries(window.triStateFilters).forEach(([catKey, items]) => {
-        Object.entries(items).forEach(([itemVal, state]) => {
-            const label = categories[catKey] || catKey;
-            if (state === 'checked') {
-                html += createBadge(label, itemVal, 'blue', 'tag', catKey, itemVal);
-                hasFilters = true;
-            } else if (state === 'excluded') {
-                html += createBadge(`排除 ${label}`, itemVal, 'red', 'tag', catKey, itemVal);
-                hasFilters = true;
-            }
-        });
+            Object.entries(items).forEach(([itemVal, state]) => {
+                
+                // NEW LOGIC: Skip creating a badge if it's the default 'Out syl' excluded state
+                if (catKey === 'feature' && itemVal === 'Out syl' && state === 'excluded') {
+                    return; // Skip to the next item
+                }
+
+                const label = categories[catKey] || catKey;
+                if (state === 'checked') {
+                    html += createBadge(label, itemVal, 'blue', 'tag', catKey, itemVal);
+                    hasFilters = true;
+                } else if (state === 'excluded') {
+                    html += createBadge(`排除 ${label}`, itemVal, 'red', 'tag', catKey, itemVal);
+                    hasFilters = true;
+                }
+            });
     });
 
     if (hasFilters) {
