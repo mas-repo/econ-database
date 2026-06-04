@@ -84,6 +84,7 @@ function updateStorageStatus(status, message) {
     if (statusElement) {
         statusElement.textContent = message;
         statusElement.className = ''; // Clear all classes
+        statusElement.className = ''; 
         statusElement.classList.add(status);
         statusElement.style.color = status === 'connected' ? '#27ae60' : '#e74c3c';
     }
@@ -125,11 +126,9 @@ async function initializeApp() {
 
 // Also add to refreshViews() so they update if data changes (e.g. after sync)
 async function refreshViews() {
-    
     if (typeof populateDynamicFilters === 'function') {
         await populateDynamicFilters();
     }
-
     await renderQuestions();
     await refreshStatistics();
 }
@@ -163,9 +162,7 @@ async function manualSync() {
     
     try {
         showLoading('正在從 Google Sheets 載入資料...');
-        
         const result = await window.googleSheetsSync.syncOnLoad();
-        
         hideLoading();
         
         if (result.success) {
@@ -273,6 +270,63 @@ function setupEventListeners() {
             scrollBtn.style.display = 'none';
         }
     });
+
+    // === EVENT DELEGATION LISTENER ===
+    const grid = document.getElementById('question-grid');
+    if (grid) {
+        grid.addEventListener('click', function(event) {
+            const target = event.target;
+
+            const filterTag = target.closest('[data-action="filter"]');
+            if (filterTag) {
+                const type = filterTag.getAttribute('data-type');
+                const value = filterTag.getAttribute('data-value');
+                filterByTag(type, value);
+                return;
+            }
+
+            const marksTag = target.closest('[data-action="filter-marks"]');
+            if (marksTag) {
+                const marks = parseInt(marksTag.getAttribute('data-value'), 10);
+                filterByExactMarks(marks);
+                return;
+            }
+
+            const expandBtn = target.closest('.expand-btn');
+            if (expandBtn) {
+                toggleQuestionText(expandBtn);
+                return;
+            }
+
+            const copyBtn = target.closest('[data-action="copy"]');
+            if (copyBtn) {
+                const content = copyBtn.getAttribute('data-content');
+                copyToClipboard(content, copyBtn); 
+                return;
+            }
+
+            const editBtn = target.closest('[data-action="edit"]');
+            if (editBtn) {
+                const id = editBtn.getAttribute('data-id');
+                editQuestion(id);
+                return;
+            }
+
+            const deleteBtn = target.closest('[data-action="delete"]');
+            if (deleteBtn) {
+                const id = deleteBtn.getAttribute('data-id');
+                deleteQuestion(id);
+                return;
+            }
+            
+            const feedbackBtn = target.closest('[data-action="feedback"]');
+            if (feedbackBtn) {
+                const id = feedbackBtn.getAttribute('data-id');
+                openFeedbackModal(id);
+                return;
+            }
+        });
+    }
 }
 
 // Debounce utility
@@ -287,8 +341,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// REMOVED: populateYearFilter function
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {

@@ -86,17 +86,13 @@ async function renderQuestions() {
         
         // Escape content for HTML display
         const escapedContent = escapeHTML(content.trim());
-        // Escape content for the copy button function call
-        const jsonContent = JSON.stringify(content).replace(/"/g, '&quot;');
 
         return `
             <div class="question-text">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                    <button class="expand-btn" onclick="toggleQuestionText(this)" title="展開/收起">▶</button>
+                    <button class="expand-btn" title="展開/收起">▶</button>
                     <strong style="flex: 1;">${label}</strong>
-                    <button class="copy-btn" onclick="copyToClipboard(${jsonContent}, this)" title="複製" style="flex-shrink: 0;">
-                        📋
-                    </button>
+                    <button class="copy-btn" data-action="copy" title="複製" data-content="${escapeHTML(content.trim())}">📋</button>
                 </div>
                 <div class="question-text-content collapsed">${escapedContent}</div>
             </div>
@@ -108,14 +104,10 @@ async function renderQuestions() {
         // Sort curriculum classifications by CURRICULUM_ORDER
         const sortedCurriculum = q.curriculumClassification ? 
             [...q.curriculumClassification].sort((a, b) => {
-                // Find the index of 'a' based on matching it against the full display names derived from CURRICULUM_ORDER
                 const indexA = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === a);
                 const indexB = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === b);
-                
-                // If found, use that index. If not found (e.g. -1), push to the end (999).
                 const valA = indexA === -1 ? 999 : indexA;
                 const valB = indexB === -1 ? 999 : indexB;
-                
                 return valA - valB;
             }) : [];
         
@@ -124,7 +116,7 @@ async function renderQuestions() {
             [...q.AristochapterClassification].sort((a, b) => {
                 const getNum = (str) => {
                     const match = str.match(/(\d+)/);
-                    return match ? parseInt(match[0], 10) : 9999; // No number = put at end
+                    return match ? parseInt(match[0], 10) : 9999;
                 };
                 return getNum(a) - getNum(b);
             }) : [];
@@ -148,7 +140,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">課程:</strong>
                         ${sortedCurriculum.map(c => `
-                            <span class="tag clickable-tag" onclick="filterByTag('curriculum', '${escapeAttr(c)}')" style="${getTagStyle('curriculum', c)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="curriculum" data-value="${escapeHTML(c)}" style="${getTagStyle('curriculum', c)}">
                                 ${c}
                             </span>
                         `).join('')}
@@ -166,7 +158,7 @@ async function renderQuestions() {
                             const val = match ? match[0] : c; 
                             const displayLabel = c.replace(/^(Ch|Chapter)\s*/i, '');
                             return `
-                            <span class="tag clickable-tag" onclick="filterByTag('chapter', '${escapeAttr(val)}')" style="${getTagStyle('chapter', val)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="chapter" data-value="${escapeHTML(val)}" style="${getTagStyle('chapter', val)}">
                                 ${displayLabel}
                             </span>
                             `;
@@ -181,7 +173,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">概念:</strong>
                         ${q.concepts.map(c => `
-                            <span class="tag clickable-tag" onclick="filterByTag('concepts', '${escapeAttr(c)}')" style="${getTagStyle('concepts', c)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="concepts" data-value="${escapeHTML(c)}" style="${getTagStyle('concepts', c)}">
                                 ${c}
                             </span>
                         `).join('')}
@@ -195,7 +187,7 @@ async function renderQuestions() {
                     <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">題型:</strong>
                         ${q.patterns.map(p => `
-                            <span class="tag clickable-tag" onclick="filterByTag('patterns', '${escapeAttr(p)}')" style="${getTagStyle('patterns', p)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="patterns" data-value="${escapeHTML(p)}" style="${getTagStyle('patterns', p)}">
                                 ${p}
                             </span>
                         `).join('')}
@@ -206,7 +198,6 @@ async function renderQuestions() {
             classificationHtml += `</div>`;
         }
 
-        // Get the display name (e.g., "Section A" instead of "A")
         const sectionDisplay = typeof SECTION_DISPLAY_NAMES !== 'undefined' && SECTION_DISPLAY_NAMES[q.section] 
             ? SECTION_DISPLAY_NAMES[q.section] 
             : q.section;
@@ -223,15 +214,15 @@ async function renderQuestions() {
                             🤖
                         </a>
                     ` : ''}                    
-                    <button class="feedback-btn" onclick="openFeedbackModal('${q.id.replace(/'/g, "\\'")}')" title="回報問題" style="background: none; border: none; cursor: pointer; font-size: 1.2em; opacity: 0.6; transition: opacity 0.2s; padding: 0; margin-left: 8px;">
+                    <button class="feedback-btn" data-action="feedback" data-id="${escapeHTML(q.id)}" title="回報問題" style="background: none; border: none; cursor: pointer; font-size: 1.2em; opacity: 0.6; transition: opacity 0.2s; padding: 0; margin-left: 8px;">
                         📢
                     </button>                   
                 </div>
                 <div class="question-badges">
-                    ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" onclick="filterByTag('year', '${escapeHTML(q.year)}')" title="點擊以篩選此年份">${escapeHTML(q.year)}</span>` : ''}
-                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" onclick="filterByTag('qtype', '${escapeHTML(q.questionType)}')" title="點擊以篩選此題型">${escapeHTML(q.questionType)}</span>` : ''}
-                    ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" onclick="filterByExactMarks(${q.marks})" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
-                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" onclick="filterByTag('section', '${escapeHTML(q.section)}')" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
+                    ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" data-action="filter" data-type="year" data-value="${escapeHTML(q.year)}" title="點擊以篩選此年份">${escapeHTML(q.year)}</span>` : ''}
+                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" data-action="filter" data-type="qtype" data-value="${escapeHTML(q.questionType)}" title="點擊以篩選此題型">${escapeHTML(q.questionType)}</span>` : ''}
+                    ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" data-action="filter-marks" data-value="${q.marks}" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
+                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" data-action="filter" data-type="section" data-value="${escapeHTML(q.section)}" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
                 </div>
             </div>
             
@@ -239,7 +230,6 @@ async function renderQuestions() {
                 ${renderCollapsibleSection('題目：', q.questionTextChi)}
                 ${renderCollapsibleSection('Question:', q.questionTextEng)}
 
-                <!-- Answer Display Logic -->
                 ${(q.answerMC && q.answerMC !== '-') ? `
                     <div class="info-item" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
                         <strong>答案：</strong> 
@@ -250,7 +240,6 @@ async function renderQuestions() {
                 ${renderCollapsibleSection('答案：', q.answerChi)}
                 ${renderCollapsibleSection('Answer:', q.answerEng)}
 
-                <!-- Markers Report Display Logic -->
                 ${renderCollapsibleSection('評卷報告：', q.markersReportChi)}
                 ${renderCollapsibleSection('Markers Report:', q.markersReportEng)}
 
@@ -260,7 +249,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('graph', '${escapeHTML(q.graphType)}')" style="${getTagStyle('graph', q.graphType)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="graph" data-value="${escapeHTML(q.graphType)}" style="${getTagStyle('graph', q.graphType)}">
                                 ${q.graphType}
                             </span>
                         </div>
@@ -269,7 +258,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.tableType && q.tableType !== '-') ? `
                         <div class="info-item">
                             <strong>表格：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('table', '${escapeHTML(q.tableType)}')" style="${getTagStyle('table', q.tableType)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="table" data-value="${escapeHTML(q.tableType)}" style="${getTagStyle('table', q.tableType)}">
                                 ${q.tableType}
                             </span>
                         </div>
@@ -278,7 +267,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.calculationType && q.calculationType !== '-') ? `
                         <div class="info-item">
                             <strong>計算：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('calculation', '${escapeHTML(q.calculationType)}')" style="${getTagStyle('calculation', q.calculationType)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="calculation" data-value="${escapeHTML(q.calculationType)}" style="${getTagStyle('calculation', q.calculationType)}">
                                 ${q.calculationType}
                             </span>
                         </div>
@@ -287,22 +276,21 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.multipleSelectionType && q.multipleSelectionType !== '-') ? `
                         <div class="info-item">
                             <strong>複選：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${escapeHTML(q.multipleSelectionType)}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
+                            <span class="tag clickable-tag" data-action="filter" data-type="multipleSelection" data-value="${escapeHTML(q.multipleSelectionType)}" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
                                 ${q.multipleSelectionType}
                             </span>
                         </div>
                     ` : ''}                    
                 </div>
                 
-                <!-- Combined Classifications Section -->
                 ${classificationHtml}
                 
             </div>
             
             ${isAdminMode ? `
                 <div style="margin-top: 15px; display: flex; gap: 10px;">
-                    <button class="btn btn-warning" onclick="editQuestion('${q.id}')">編輯</button>
-                    <button class="btn btn-danger" onclick="deleteQuestion('${q.id}')">刪除</button>
+                    <button class="btn btn-warning" data-action="edit" data-id="${escapeHTML(q.id)}">編輯</button>
+                    <button class="btn btn-danger" data-action="delete" data-id="${escapeHTML(q.id)}">刪除</button>
                 </div>
             ` : ''}
         </div>
