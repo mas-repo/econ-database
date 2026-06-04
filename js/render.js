@@ -41,7 +41,7 @@ async function renderQuestions() {
     generatePagination(currentPage, totalPages);
 
     const renderImageButtons = (urls, lang) => {
-        if (!urls || urls === '-') return '';
+        if (!urls || urls === '-' || typeof urls !== 'string') return '';
         
         // Split by comma, trim whitespace, and remove empty strings
         const urlArray = urls.split(',').map(u => u.trim()).filter(u => u);
@@ -215,7 +215,7 @@ async function renderQuestions() {
         <div class="question-card">
             <div class="question-header">
                 <div class="question-title">
-                    ${q.id}
+                    ${escapeHTML(q.id)}
                     ${renderImageButtons(q.imageChi, 'chi')}
                     ${renderImageButtons(q.imageEng, 'eng')}              
                     ${q.AIExplanation ? `
@@ -228,10 +228,10 @@ async function renderQuestions() {
                     </button>                   
                 </div>
                 <div class="question-badges">
-                    ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" onclick="filterByTag('year', '${q.year}')" title="點擊以篩選此年份">${q.year}</span>` : ''}
-                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" onclick="filterByTag('qtype', '${q.questionType}')" title="點擊以篩選此題型">${q.questionType}</span>` : ''}
+                    ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" onclick="filterByTag('year', '${escapeHTML(q.year)}')" title="點擊以篩選此年份">${escapeHTML(q.year)}</span>` : ''}
+                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" onclick="filterByTag('qtype', '${escapeHTML(q.questionType)}')" title="點擊以篩選此題型">${escapeHTML(q.questionType)}</span>` : ''}
                     ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" onclick="filterByExactMarks(${q.marks})" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
-                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" onclick="filterByTag('section', '${q.section}')" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
+                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" onclick="filterByTag('section', '${escapeHTML(q.section)}')" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
                 </div>
             </div>
             
@@ -260,7 +260,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('graph', '${q.graphType}')" style="${getTagStyle('graph', q.graphType)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('graph', '${escapeHTML(q.graphType)}')" style="${getTagStyle('graph', q.graphType)}">
                                 ${q.graphType}
                             </span>
                         </div>
@@ -269,7 +269,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.tableType && q.tableType !== '-') ? `
                         <div class="info-item">
                             <strong>表格：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('table', '${q.tableType}')" style="${getTagStyle('table', q.tableType)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('table', '${escapeHTML(q.tableType)}')" style="${getTagStyle('table', q.tableType)}">
                                 ${q.tableType}
                             </span>
                         </div>
@@ -278,7 +278,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.calculationType && q.calculationType !== '-') ? `
                         <div class="info-item">
                             <strong>計算：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('calculation', '${q.calculationType}')" style="${getTagStyle('calculation', q.calculationType)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('calculation', '${escapeHTML(q.calculationType)}')" style="${getTagStyle('calculation', q.calculationType)}">
                                 ${q.calculationType}
                             </span>
                         </div>
@@ -287,7 +287,7 @@ async function renderQuestions() {
                     ${(window.showQuestionTags && q.multipleSelectionType && q.multipleSelectionType !== '-') ? `
                         <div class="info-item">
                             <strong>複選：</strong> 
-                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${q.multipleSelectionType}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
+                            <span class="tag clickable-tag" onclick="filterByTag('multipleSelection', '${escapeHTML(q.multipleSelectionType)}')" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
                                 ${q.multipleSelectionType}
                             </span>
                         </div>
