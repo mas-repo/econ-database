@@ -1,3 +1,5 @@
+
+```markdown
 # HKDSE Economics Questions Database - System Documentation
 
 ## 1. Project Overview
@@ -41,9 +43,17 @@ There are two distinct layers of security:
 ### 2.3. Filtering Logic (`storage-filters.js` & `filters.js`)
 The application supports complex filtering:
 *   **Tri-State Filters:** Items (Chapters, Curriculum) can be in three states: *Neutral* (Ignored), *Included* (Green check), or *Excluded* (Red cross).
-*   **Input-First Dropdowns:** Specialized filters (Graph, Table, Calculation, Multiple Selection) that function as both text inputs and dropdowns. Users can type to filter the option list, and visual indicators (blue dots/borders) show active states.
+*   **Static vs. Dynamic Dropdowns:** Core attributes with fixed options (e.g., Question Type, Section) are hardcoded in the HTML for performance and precise visual control. Other specialized filters (Graph, Table, Calculation) are dynamically generated.
+*   **Input-First Dropdowns:** Specialized filters that function as both text inputs and dropdowns. Users can type to filter the option list, and visual indicators (blue dots/borders) show active states.
 *   **Search Scope:** Users can limit text search to specific fields (ID, Content, Answer), dynamically populated based on user permissions.
 *   **Range Filters:** Sliders for Marks and Percentage.
+
+### 2.4. "Out syl" (Out of Syllabus) & "NA" Logic
+To maintain historical completeness while keeping the UI clean, the database handles obsolete or non-applicable data using specific conventions:
+*   **"Out syl" Tagging:** Questions that are no longer part of the current HKDSE syllabus are retained in the database but are explicitly tagged with `"Out syl"` (usually within the `curriculumClassification` or `concepts` arrays). 
+*   **Filtering "Out syl":** Users can easily hide these questions by setting the "Out syl" tag to the *Excluded* (Red cross) state in the Tri-State filters.
+*   **"NA" or `"-"` Values:** For fields that do not apply to a specific question (e.g., a Section for an older HKCEE paper, or an empty graph type), the database uses the hyphen character `"-"`. 
+*   **UI Rendering for `"-"`:** The frontend rendering logic (`render.js`) explicitly checks for `"-"`. If a value is `"-"`, the corresponding UI elements (like the Section badge or specific tags) are hidden to prevent cluttering the interface with "NA" labels.
 
 ---
 
@@ -68,7 +78,7 @@ These files run on the Google Cloud / Apps Script environment.
 *   **`main.js`**: The bootstrapper. Handles initialization (`init()`), loading states, and orchestrates the startup sequence.
 *   **`globals.js`**: Holds global state variables (`storage`, `currentTab`, `paginationState`, `triStateFilters`). **Crucial:** Must be loaded before other logic files.
 *   **`config.js`**: Frontend configuration, specifically the `GOOGLE_APPS_SCRIPT_URL`.
-*   **`constants.js`**: Static definitions (Curriculum lists, Chapter ranges, Question Types). Used to populate dropdowns and sort orders.
+*   **`constants.js`**: Static definitions (Curriculum lists, Chapter ranges, Question Types, Display Names). Used to populate dropdowns, format UI text, and sort orders.
 
 ### 4.2. Data Layer
 *   **`auth.js`**: Manages user sessions. Handles Login Modal, Cookie setting/getting, and LocalStorage fallbacks.
@@ -78,8 +88,8 @@ These files run on the Google Cloud / Apps Script environment.
 *   **`import-export.js`**: Functions to export the local IndexedDB data to JSON and import it back (Backup/Restore).
 
 ### 4.3. UI & Interaction
-*   **`render.js`**: The main view generator. Reads from storage, applies pagination, and generates the HTML for the Question Cards grid.
-*   **`filters.js`**: UI Event handlers for the filter sidebar. Manages standard dropdowns, the new "Input-First" dropdowns with type-ahead filtering, visual active-state indicators, and range slider logic.
+*   **`render.js`**: The main view generator. Reads from storage, applies pagination, and generates the HTML for the Question Cards grid. Handles conditional rendering (e.g., hiding badges if the value is `"-"`).
+*   **`filters.js`**: UI Event handlers for the filter sidebar. Manages standard dropdowns, visual active-state indicators, and range slider logic.
 *   **`forms.js`**: Logic for the "Add/Edit Question" form and the "Feedback" modal. Handles form validation and submission to IndexedDB.
 *   **`pagination.js`**: Calculates total pages and renders the pagination controls.
 *   **`sort.js`**: Helper function to sort question arrays by Year, ID, or Marks. Handles complex alphanumeric sorting (e.g., Q1, Q1a, Q1b).
@@ -96,7 +106,7 @@ These files run on the Google Cloud / Apps Script environment.
 *   **`components.css`**: Tabs, Badges, Pagination.
 *   **`cards.css`**: Styling for Question Cards and Statistic Cards.
 *   **`filters.css`**: Specific styling for the complex filter sidebar. Includes styles for the search bar, tri-state checkboxes, range sliders, and the new input-based dropdowns with floating active indicators.
-*   **`forms.js`**: Styling for input fields and modals.
+*   **`forms.css`**: Styling for input fields and modals.
 *   **`buttons.css`**: Button variants (Primary, Danger, Success).
 *   **`responsive.css`**: Media queries for Mobile and Tablet adaptation.
 
@@ -112,25 +122,19 @@ The IndexedDB stores objects with normalized keys (mapped from `config.gs`):
   "year": 2012,
   "examination": "HKDSE",
   "questionType": "MC",
+  "section": "A",
   "questionTextChi": "...",
   "questionTextEng": "...",
   "answer": "A",
-  "curriculumClassification": ["A", "B"], // Array
-  "concepts": ["Scarcity", "Opportunity Cost"], // Array
+  "curriculumClassification": ["A", "B", "Out syl"], 
+  "concepts": ["Scarcity", "Opportunity Cost"], 
   "marks": 2
-  // ... other fields
 }
+```
 
-
-\### 5.2. Custom Data Transmission Format
-
+### 5.2. Custom Data Transmission Format
 To avoid JSON parsing issues with quotes and newlines in question text, the backend sends data as a custom delimited string:
 
-\*   \*\*Column Separator:\*\* `String.fromCharCode(30)` (Record Separator)
-
-\*   \*\*Row Separator:\*\* `String.fromCharCode(31)` (Unit Separator)
-
-
-
-
-
+*   **Column Separator:** `String.fromCharCode(30)` (Record Separator)
+*   **Row Separator:** `String.fromCharCode(31)` (Unit Separator)
+```
