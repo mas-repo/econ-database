@@ -132,3 +132,10 @@ if (typeof module !== 'undefined' && module.exports) {
         DEFAULT_PUBLISHER
     };
 }
+
+const SECTION_DISPLAY_NAMES = {
+    'A': 'Section A',
+    'B': 'Section B',
+    'C': 'Section C',
+    '-': 'NA'
+};

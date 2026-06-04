@@ -18,6 +18,7 @@ if (!window.triStateFilters) {
         feature: { 'Out syl': 'excluded' }, 
         exam: {}, 
         qtype: {},
+        section: {},
         year: {},
         concepts: {},
         patterns: {},
@@ -46,7 +47,8 @@ const ARROW_MAP = {
     // Standard Filters
     'exam-options': 'exam-arrow',
     'qtype-options': 'qtype-arrow',
-    
+    'section-options': 'section-arrow',
+
     // Range Filters
     'percentage-options': 'percentage-arrow',
     'marks-options': 'marks-arrow',
@@ -285,7 +287,7 @@ function filterDropdownList(input, listId) {
 
 function updateFilterIndicators() {
     const triStateTypes = [
-        'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year',
+        'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year', 'section',
         'multipleSelection', 'graph', 'table', 'calculation',
         'concepts', 'patterns', 'ai'
     ];
@@ -661,7 +663,7 @@ async function updateDynamicDropdowns() {
     populateList('graph-options', 'graphType', 'graph');
     populateList('table-options', 'tableType', 'table');
     populateList('calculation-options', 'calculationType', 'calculation');
-    
+
     populateList('concepts-options', 'concepts', 'concepts', true);
     populateList('patterns-options', 'patterns', 'patterns', true);
 
@@ -915,6 +917,7 @@ function clearFilters() {
         feature: { 'Out syl': 'excluded' },  
         exam: {}, 
         qtype: {},
+        section: {},
         year: {},
         concepts: {},
         patterns: {},
@@ -1029,6 +1032,7 @@ function updateSearchInfo() {
         'feature': '特徵',
         'exam': '考試',
         'qtype': '題型',
+        'section': 'Section',
         'year': '年份',
         'concepts': '概念',
         'patterns': '題型標籤',

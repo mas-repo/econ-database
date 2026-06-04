@@ -10,6 +10,7 @@ var triStateFilters = {
     chapter: {},
     exam: {},
     qtype: {},
+    section: {},
     concepts: {},
     patterns: {},
     ai: {},

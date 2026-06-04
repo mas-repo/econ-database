@@ -271,6 +271,20 @@ IndexedDBStorage.prototype.applyFilters = function(questions, filters) {
             }
         }
 
+        // Section filters
+        if (filters.triState.section) {
+            const checkedSections = Object.keys(filters.triState.section).filter(k => filters.triState.section[k] === 'checked');
+            const excludedSections = Object.keys(filters.triState.section).filter(k => filters.triState.section[k] === 'excluded');
+            
+            if (checkedSections.length > 0) {
+                questions = questions.filter(q => checkedSections.includes(q.section));
+            }
+            
+            if (excludedSections.length > 0) {
+                questions = questions.filter(q => !excludedSections.includes(q.section));
+            }
+        }
+
         // AI Explanation Filter
         if (filters.triState.ai) {
             const checked = Object.keys(filters.triState.ai).filter(k => filters.triState.ai[k] === 'checked');

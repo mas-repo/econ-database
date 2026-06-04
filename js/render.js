@@ -205,6 +205,11 @@ async function renderQuestions() {
 
             classificationHtml += `</div>`;
         }
+
+        // Get the display name (e.g., "Section A" instead of "A")
+        const sectionDisplay = typeof SECTION_DISPLAY_NAMES !== 'undefined' && SECTION_DISPLAY_NAMES[q.section] 
+            ? SECTION_DISPLAY_NAMES[q.section] 
+            : q.section;
         
         return `
         <div class="question-card">
@@ -226,7 +231,7 @@ async function renderQuestions() {
                     ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" onclick="filterByTag('year', '${q.year}')" title="點擊以篩選此年份">${q.year}</span>` : ''}
                     ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" onclick="filterByTag('qtype', '${q.questionType}')" title="點擊以篩選此題型">${q.questionType}</span>` : ''}
                     ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" onclick="filterByExactMarks(${q.marks})" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
-                    ${q.section && q.section !== '-' ? `<span class="badge badge-section">Section ${q.section}</span>` : ''}
+                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" onclick="filterByTag('section', '${q.section}')" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
                 </div>
             </div>
             
