@@ -1046,56 +1046,40 @@ function updateSearchInfo() {
  * that are NOT handled by updateDynamicDropdowns (e.g., Chapter, Curriculum).
  * This ensures that when a filter is removed via the badge, the dropdown UI updates.
  */
+/**
+ * Helper: Updates the visual state (checked/excluded) of static filters.
+ * This ensures that when a filter is removed via the badge, the dropdown UI updates.
+ */
 function updateStaticFilterVisuals() {
-    const staticContainers = [
-        'curriculum-options', 
-        'chapter-options', 
-        'feature-options', 
-        'exam-options', 
-        'qtype-options',
-        'year-options'
-    ];
-
-    staticContainers.forEach(containerId => {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        // Strategy: Find ALL elements that define a filter value.
-        // This covers both cases: 
-        // 1. <div class="tri-state-label" data-filter="..." ...>
-        // 2. <div class="tri-state-checkbox" data-filter="..." ...>
-        const filterElements = container.querySelectorAll('[data-filter][data-value]');
+    // Query ALL filter elements globally instead of relying on specific container IDs.
+    const filterElements = document.querySelectorAll('[data-filter][data-value]');
+    
+    filterElements.forEach(el => {
+        const filterType = el.dataset.filter;
+        const itemValue = el.dataset.value; 
         
-        filterElements.forEach(el => {
-            const filterType = el.dataset.filter;
-            const itemValue = el.dataset.value; 
-            
-            if (!filterType || !itemValue) return;
+        if (!filterType || !itemValue) return;
 
-            // Determine the visual components to update
-            // Case A: 'el' is the wrapper (.tri-state-label)
-            // Case B: 'el' is the inner (.tri-state-checkbox)
-            
-            const label = el.closest('.tri-state-label');
-            const checkbox = el.classList.contains('tri-state-checkbox') ? el : el.querySelector('.tri-state-checkbox');
-            
-            // Check state
-            const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
-            
-            // Update Label
-            if (label) {
-                label.classList.remove('checked', 'excluded');
-                if (currentState === 'checked') label.classList.add('checked');
-                if (currentState === 'excluded') label.classList.add('excluded');
-            }
+        // Determine the visual components to update
+        const label = el.closest('.tri-state-label');
+        const checkbox = el.classList.contains('tri-state-checkbox') ? el : el.querySelector('.tri-state-checkbox');
+        
+        // Check state
+        const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
+        
+        // Update Label
+        if (label) {
+            label.classList.remove('checked', 'excluded');
+            if (currentState === 'checked') label.classList.add('checked');
+            if (currentState === 'excluded') label.classList.add('excluded');
+        }
 
-            // Update Checkbox
-            if (checkbox) {
-                checkbox.classList.remove('checked', 'excluded');
-                if (currentState === 'checked') checkbox.classList.add('checked');
-                if (currentState === 'excluded') checkbox.classList.add('excluded');
-            }
-        });
+        // Update Checkbox
+        if (checkbox) {
+            checkbox.classList.remove('checked', 'excluded');
+            if (currentState === 'checked') checkbox.classList.add('checked');
+            if (currentState === 'excluded') checkbox.classList.add('excluded');
+        }
     });
 }
 

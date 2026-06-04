@@ -15,7 +15,12 @@ function updatePaginationInfo(currentPage, totalItems, itemsPerPage) {
 
 // Dependencies: None
 function generatePagination(currentPage, totalPages) {
-    const container = document.getElementById('pagination-buttons');
+    // Target both the original bottom container and a new top container
+    const containers = [
+        document.getElementById('pagination-buttons'),
+        document.getElementById('pagination-buttons-top') // New top container
+    ].filter(Boolean); // Ignore if the element doesn't exist in HTML
+    
     let html = '';
     
     if (totalPages <= 1) {
@@ -48,13 +53,23 @@ function generatePagination(currentPage, totalPages) {
         }
     }
     
-    container.innerHTML = html;
+    // Apply the generated HTML to all valid containers
+    containers.forEach(container => {
+        container.innerHTML = html;
+    });
 }
 
 // Dependencies: globals.js (paginationState), render.js (renderQuestions)
 function goToPage(page) {
     paginationState.questions.page = page;
     renderQuestions();
+    
+    // Modification: Scroll to top smoothly after changing page
+    if (typeof scrollToTop === 'function') {
+        scrollToTop();
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 // Dependencies: globals.js (paginationState), render.js (renderQuestions)

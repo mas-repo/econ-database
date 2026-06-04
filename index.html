@@ -368,12 +368,22 @@
 
                 <!-- Question Count and Actions -->
                 <div class="action-bar">
-                    <h2 id="question-count">總題目數: 0</h2>
-                    <div>
-                        <button class="btn btn-admin-only btn-outline-primary" onclick="exportJSON()">📥 匯出 JSON</button>
-                        <button class="btn btn-admin-only btn-outline-primary" onclick="importJSON()">📤 匯入 JSON</button>
-                        <button class="btn btn-admin-only btn-outline-danger" onclick="clearDatabase()">🗑️ 清除資料庫</button>
-                        <button class="btn btn-admin-only btn-primary" onclick="toggleForm()">➕ 新增題目</button>
+                    <h2 id="question-count" style="margin: 0;">總題目數: 0</h2>
+                    
+                    <!-- Group pagination and admin buttons on the right side -->
+                    <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                        
+                        <!-- Top Pagination Container -->
+                        <div id="pagination-buttons-top" style="display: flex; gap: 5px; flex-wrap: wrap;"></div>
+                        
+                        <!-- Admin Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn btn-admin-only btn-outline-primary" onclick="exportJSON()">📥 匯出 JSON</button>
+                            <button class="btn btn-admin-only btn-outline-primary" onclick="importJSON()">📤 匯入 JSON</button>
+                            <button class="btn btn-admin-only btn-outline-danger" onclick="clearDatabase()">🗑️ 清除資料庫</button>
+                            <button class="btn btn-admin-only btn-primary" onclick="toggleForm()">➕ 新增題目</button>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -548,7 +558,7 @@
                         </div>
                     </form>
                 </div>
-
+                
                 <!-- Questions Grid -->
                 <div id="question-grid" class="question-grid"></div>
 
