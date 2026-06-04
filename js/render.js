@@ -223,9 +223,9 @@ async function renderQuestions() {
                     </button>                   
                 </div>
                 <div class="question-badges">
-                    ${q.year && q.year !== '-' ? `<span class="badge badge-year">${q.year}</span>` : ''}
-                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type">${q.questionType}</span>` : ''}
-                    ${q.marks > 0 ? `<span class="badge badge-marks">${q.marks}分</span>` : ''}
+                    ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" onclick="filterByTag('year', '${q.year}')" title="點擊以篩選此年份">${q.year}</span>` : ''}
+                    ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" onclick="filterByTag('qtype', '${q.questionType}')" title="點擊以篩選此題型">${q.questionType}</span>` : ''}
+                    ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" onclick="filterByExactMarks(${q.marks})" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
                     ${q.section && q.section !== '-' ? `<span class="badge badge-section">Section ${q.section}</span>` : ''}
                 </div>
             </div>

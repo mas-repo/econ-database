@@ -1272,3 +1272,47 @@ window.clearCurriculumFilter = function() {
     }
     filterQuestions();
 };
+
+window.filterByExactMarks = function(marks) {
+    const minSlider = document.getElementById('min-marks');
+    const maxSlider = document.getElementById('max-marks');
+    
+    // Check if this exact mark is already the currently active filter
+    const isAlreadyFiltered = window.marksFilter && 
+                              window.marksFilter.active && 
+                              window.marksFilter.min == marks && 
+                              window.marksFilter.max == marks;
+
+    if (isAlreadyFiltered) {
+        // --- TOGGLE OFF ---
+        // If it's already filtered by this exact mark, clear the filter
+        if (typeof clearMarksFilter === 'function') {
+            clearMarksFilter(); // Use your existing clear function
+        } else {
+            // Fallback just in case: reset sliders to their default min/max
+            if (minSlider) minSlider.value = minSlider.min;
+            if (maxSlider) maxSlider.value = maxSlider.max;
+            updateMarksRange();
+        }
+    } else {
+        // --- TOGGLE ON ---
+        // Apply the exact mark filter
+        if (minSlider && maxSlider) {
+            minSlider.value = marks;
+            maxSlider.value = marks;
+            
+            // updateMarksRange() updates the UI, sets the state, and calls filterQuestions()
+            updateMarksRange();
+            
+            // Optional: Open the marks dropdown so the user sees the filter was applied
+            const marksDropdown = document.getElementById('marks-options');
+            if (marksDropdown && !marksDropdown.classList.contains('active')) {
+                toggleDropdown('marks-options');
+            }
+        } else {
+            // Fallback in case the UI elements aren't found
+            window.marksFilter = { min: marks, max: marks, active: true };
+            filterQuestions();
+        }
+    }
+};
