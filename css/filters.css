@@ -401,29 +401,45 @@
     transition: all 0.2s;
 }
 
-/* Checkbox States */
+/* ============================================
+   Tri-State Checkbox Styles
+   ============================================ */
+
+/* Box Border (預設：灰色背景 + 白色剔號) */
+.tri-state-checkbox::before {
+    content: '✓'; /* 預設顯示剔號 */
+    position: absolute;
+    left: 0; 
+    top: 1px;
+    width: 16px; 
+    height: 16px;
+    border: 2px solid #bdc3c7; /* 灰色邊框 */
+    border-radius: 3px;
+    background: #bdc3c7; /* 灰色背景 */
+    color: white; /* 白色剔號 */
+    font-size: 12px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Checkbox States - Checked (藍色) */
 .tri-state-label.checked .tri-state-checkbox::before,
 .tri-state-checkbox.checked::before {
     content: '✓';
     background: var(--secondary-color);
     border-color: var(--secondary-color);
     color: white;
-    font-size: 12px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
 }
 
+/* Checkbox States - Excluded (紅色交叉) */
 .tri-state-label.excluded .tri-state-checkbox::before,
 .tri-state-checkbox.excluded::before {
     content: '✕';
     background: var(--danger-color);
     border-color: var(--danger-color);
     color: white;
-    font-size: 12px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
 }
 
 /* ============================================
