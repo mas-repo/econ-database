@@ -144,3 +144,23 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
+// 切換篩選條件顯示/隱藏
+function toggleFiltersPanel() {
+    const wrapper = document.getElementById('collapsible-filters-wrapper');
+    const btn = document.getElementById('toggle-filters-btn');
+    
+    if (wrapper.style.maxHeight === '0px' || wrapper.style.maxHeight === '0') {
+        // 展開
+        wrapper.style.maxHeight = '2000px'; // 確保大於內容高度
+        wrapper.style.opacity = '1';
+        wrapper.style.marginTop = '15px';
+        btn.innerHTML = '🔽 隱藏篩選條件';
+    } else {
+        // 收合
+        wrapper.style.maxHeight = '0px';
+        wrapper.style.opacity = '0';
+        wrapper.style.marginTop = '0';
+        btn.innerHTML = '▶️ 顯示篩選條件';
+    }
+}
