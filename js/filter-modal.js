@@ -107,3 +107,12 @@ function closeFilterModal() {
     document.getElementById('filter-modal').style.display = 'none';
     currentModalFilterType = null;
 }
+
+// 點擊 Modal 外部（背景）時自動關閉 Modal
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('filter-modal');
+    // 如果點擊的目標剛好是 modal 容器本身（而非內部的 modal-content），則關閉
+    if (event.target === modal) {
+        closeFilterModal();
+    }
+});
