@@ -75,13 +75,12 @@
                         </div>   
 
                     <!-- 將所有篩選條件包裝在此容器內以便收合 -->
-                        <!-- 預設設為 max-height: 0px, opacity: 0, overflow: hidden -->
-                        <div id="collapsible-filters-wrapper" style="transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease; overflow: hidden; max-height: 0px; opacity: 0; margin-top: 0px;">
+                    <div id="collapsible-filters-wrapper" style="transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease; overflow: hidden; max-height: 0px; opacity: 0; margin-top: 0px;">
                         
                         <!-- Row 2: Primary Filters Grid -->
                         <div class="filter-primary-grid">
                             
-                            <!-- Exam Type Filter -->
+                            <!-- Exam Type Filter (維持下拉) -->
                             <div class="filter-item dropdown-filter">
                                 <button class="dropdown-btn" onclick="toggleDropdown('exam-list')">
                                 📝 考試 <span class="arrow">▶</span>
@@ -100,21 +99,18 @@
                                 </div>
                             </div>
 
-                            <!-- YEAR FILTER SECTION -->
-                            <div class="filter-item dropdown-filter">
-                                <button id="year-filter-btn" class="dropdown-btn" onclick="toggleDropdown('year-options')">
-                                    📅 年份 <span id="year-arrow" class="arrow">▶</span>
+                            <!-- YEAR FILTER SECTION (改為 Modal) -->
+                            <div class="filter-item">
+                                <button id="year-filter-btn" class="dropdown-btn" onclick="openFilterModal('year', '📅 選擇年份')">
+                                    📅 年份 <span class="arrow">🔍</span>
                                     <div id="indicator-year" class="active-indicator"></div>
                                 </button>
-                                <!-- Grid Layout similar to Chapters -->
-                                <div id="year-options" class="dropdown-content" style="display: none;">
+                                <div id="year-options" style="display: none;">
                                     <div class="filter-actions" style="padding: 8px; border-bottom: 1px solid var(--border-color); margin-bottom: 8px; display: flex; gap: 10px;">
                                         <button class="text-btn" onclick="selectAllYears()" style="font-size: 0.9em; cursor: pointer; color: var(--primary-color); background: none; border: none;">全選</button>
                                         <button class="text-btn" onclick="clearYearFilter()" style="font-size: 0.9em; cursor: pointer; color: var(--danger-color); background: none; border: none;">🗑️ 清除</button>
                                     </div>
-                                    <!-- The years will be injected here by JavaScript -->
-                                    <div id="year-list" class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 8px; padding: 0 8px 8px 8px;">
-                                    </div>
+                                    <div id="year-list" class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 8px; padding: 0 8px 8px 8px;"></div>
                                 </div>
                             </div>
 
@@ -134,7 +130,7 @@
                                 </div>
                             </div>
 
-                            <!-- Sections -->
+                            <!-- Sections (維持下拉) -->
                             <div class="filter-item dropdown-filter">
                                 <button class="dropdown-btn" onclick="toggleDropdown('section-options')">
                                     Section <span class="arrow" id="section-arrow">▶</span>
@@ -156,19 +152,15 @@
                                 </div>                            
                             </div>
 
-                            <!-- Curriculum Filter Section -->
-                            <div class="filter-item dropdown-filter">
-                                <button class="dropdown-btn" onclick="toggleDropdown('curriculum-options')">
+                            <!-- Curriculum Filter Section (改為 Modal) -->
+                            <div class="filter-item">
+                                <button class="dropdown-btn" onclick="openFilterModal('curriculum', '📚 課程分類')">
                                     <span>📚 課程分類</span>
-                                    <span id="curriculum-arrow" class="arrow">▶</span>
+                                    <span class="arrow">🔍</span>
                                 </button>
                                 <div id="indicator-curriculum" class="active-indicator"></div>
-                                
-                                <!-- Dropdown Content -->
-                                <div id="curriculum-options" class="custom-grid-dropdown">
-                                    <!-- Header Area: Logic Toggle and Clear Button -->
-                                    <div class="filter-header" style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
-                                        <!-- Logic Toggle Switch -->
+                                <div id="curriculum-options" style="display: none;">
+                                    <div class="filter-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
                                         <div class="logic-toggle" title="Toggle Logic: Any (OR) / All (AND)">
                                             <input type="checkbox" id="curriculum-logic-toggle" onchange="toggleCurriculumLogic(this)">
                                             <label for="curriculum-logic-toggle">
@@ -176,29 +168,20 @@
                                                 <span class="logic-text and">AND</span>
                                             </label>
                                         </div>
-                                        
-                                        <!-- Clear Button -->
-                                        <button class="clear-btn" onclick="clearCurriculumFilter()">
-                                            🗑️ 清除
-                                        </button>
+                                        <button class="clear-btn" onclick="clearCurriculumFilter()">🗑️ 清除</button>
                                     </div>
-
-                                    <div id="curriculum-list" style="display: grid; grid-template-columns: 1fr; gap: 5px;">
-                                        <!-- JS will populate this -->
-                                    </div>
+                                    <div id="curriculum-list" style="display: grid; grid-template-columns: 1fr; gap: 5px;"></div>
                                 </div>
                             </div>
 
-                            <!-- Chapters -->
-                            <div class="filter-item dropdown-filter">
-                                <button class="dropdown-btn" onclick="toggleDropdown('chapter-options')">
-                                📖 Chapters <span id="chapter-arrow" class="arrow">▶</span>
+                            <!-- Chapters (改為 Modal) -->
+                            <div class="filter-item">
+                                <button class="dropdown-btn" onclick="openFilterModal('chapter', '📖 Chapters')">
+                                📖 Chapters <span class="arrow">🔍</span>
                                 </button>
                                 <div id="indicator-chapter" class="active-indicator"></div>
-                                
-                                <div id="chapter-options" class="dropdown-content custom-grid-dropdown chapter-grid-width">
-                                    <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
-                                        <!-- Logic Toggle Switch -->
+                                <div id="chapter-options" style="display: none;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #eee;">
                                         <div class="logic-toggle" title="切換篩選邏輯: 包含任一 (OR) / 同時包含 (AND)">
                                             <input type="checkbox" id="chapter-logic-toggle" onchange="toggleChapterLogic(this)">
                                             <label for="chapter-logic-toggle">
@@ -206,29 +189,22 @@
                                                 <span class="logic-text and">AND</span>
                                             </label>
                                         </div>                                    
-                                        <button onclick="clearChapterFilter()" style="background:none; border:none; cursor:pointer; color:#666; font-size:0.9rem; display: flex; align-items: center; gap: 4px;">
-                                            🗑️ 清除
-                                        </button>
+                                        <button onclick="clearChapterFilter()" style="background:none; border:none; cursor:pointer; color:#666; font-size:0.9rem; display: flex; align-items: center; gap: 4px;">🗑️ 清除</button>
                                     </div>
-
-                                    <div id="chapter-list" style="display: contents;">
-                                        <!-- Your utils.js should populate options HERE -->
-                                    </div>
+                                    <div id="chapter-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 8px;"></div>
                                 </div>
                             </div>
 
-                            <!-- Features -->
+                            <!-- Features (維持下拉) -->
                             <div class="filter-item dropdown-filter">
                                 <button class="dropdown-btn" onclick="toggleDropdown('feature-options')">
                                 🎯 特徵 <span id="feature-arrow" class="arrow">▶</span>
                                 </button>
                                 <div id="indicator-feature" class="active-indicator"></div>
-                                <div id="feature-options" class="dropdown-content custom-grid-dropdown">
-                                    <!-- Populated by JS -->
-                                </div>
+                                <div id="feature-options" class="dropdown-content custom-grid-dropdown"></div>
                             </div>
 
-                            <!-- Percentage Range -->
+                            <!-- Percentage Range (維持下拉) -->
                             <div class="filter-item dropdown-filter">
                                 <button class="dropdown-btn" onclick="toggleDropdown('percentage-options')">
                                 📊 答對率 <span id="percentage-arrow" class="arrow">▶</span>
@@ -252,7 +228,7 @@
                                 </div>
                             </div>
 
-                            <!-- Marks Range -->
+                            <!-- Marks Range (維持下拉) -->
                             <div class="filter-item dropdown-filter">
                                 <button class="dropdown-btn" onclick="toggleDropdown('marks-options')">
                                     💯 分數 <span id="marks-arrow" class="arrow">▶</span>
@@ -275,63 +251,110 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
-                
-                        <!-- Dynamic Filters Grid -->
+
+                        <!-- Dynamic Filters Grid (改為 Modal) -->
                         <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
                             
                             <!-- Graph Filter -->
                             <div class="filter-item input-dropdown-container">
-                                <div class="filter-input-wrapper">
-                                    <input type="text" class="filter-input" placeholder="📊 搜尋圖表類型..." data-filter-type="graph" onkeyup="filterDropdownList(this, 'graph-options')">
+                                <button class="dropdown-btn" onclick="openFilterModal('graph', '📊 圖表類型')">
+                                    📊 圖表類型 <span class="arrow">🔍</span>
                                     <span class="active-indicator" id="indicator-graph"></span>
-                                    <span class="input-arrow">▶</span>
-                                </div>
-                                <div id="graph-options" class="dropdown-content scrollable-options input-dropdown-list">
-                                    <!-- Populated by JS -->
-                                </div>
+                                </button>
+                                <div id="graph-options" style="display: none;"></div>
                             </div>
 
                             <!-- Table Filter -->
                             <div class="filter-item input-dropdown-container">
-                                <div class="filter-input-wrapper">
-                                    <input type="text" class="filter-input" placeholder="📅 搜尋表格類型..." data-filter-type="table" onkeyup="filterDropdownList(this, 'table-options')">
+                                <button class="dropdown-btn" onclick="openFilterModal('table', '📅 表格類型')">
+                                    📅 表格類型 <span class="arrow">🔍</span>
                                     <span class="active-indicator" id="indicator-table"></span>
-                                    <span class="input-arrow">▶</span>
-                                </div>
-                                <div id="table-options" class="dropdown-content scrollable-options input-dropdown-list">
-                                    <!-- Populated by JS -->
-                                </div>
+                                </button>
+                                <div id="table-options" style="display: none;"></div>
                             </div>
 
                             <!-- Calculation Filter -->
                             <div class="filter-item input-dropdown-container">
-                                <div class="filter-input-wrapper">
-                                    <input type="text" class="filter-input" placeholder="🧮 搜尋計算類型..." data-filter-type="calculation" onkeyup="filterDropdownList(this, 'calculation-options')">
+                                <button class="dropdown-btn" onclick="openFilterModal('calculation', '🧮 計算類型')">
+                                    🧮 計算類型 <span class="arrow">🔍</span>
                                     <span class="active-indicator" id="indicator-calculation"></span>
-                                    <span class="input-arrow">▶</span>
-                                </div>
-                                <div id="calculation-options" class="dropdown-content scrollable-options input-dropdown-list">
-                                    <!-- Populated by JS -->
-                                </div>
+                                </button>
+                                <div id="calculation-options" style="display: none;"></div>
                             </div>
 
                             <!-- Multiple Selection Filter -->
                             <div class="filter-item input-dropdown-container">
-                                <div class="filter-input-wrapper">
-                                    <input type="text" class="filter-input" placeholder="🔍 搜尋複選類型..." data-filter-type="multipleSelection" onkeyup="filterDropdownList(this, 'multiple-selection-options')">
+                                <button class="dropdown-btn" onclick="openFilterModal('multiple-selection', '🔍 複選類型')">
+                                    🔍 複選類型 <span class="arrow">🔍</span>
                                     <span class="active-indicator" id="indicator-multipleSelection"></span>
-                                    <span class="input-arrow">▶</span>
-                                </div>
-                                <div id="multiple-selection-options" class="dropdown-content scrollable-options input-dropdown-list">
-                                    <!-- Populated by JS -->
-                                </div>
+                                </button>
+                                <div id="multiple-selection-options" style="display: none;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Filters Grid for Concepts, Pattern and AIExplanation -->
+                        <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+                            
+                            <!-- Concepts Selection Filter -->
+                            <div class="filter-item input-dropdown-container">
+                                <button class="dropdown-btn" onclick="openFilterModal('concepts', '💡 概念類型')">
+                                    💡 概念類型 <span class="arrow">🔍</span>
+                                    <span class="active-indicator" id="indicator-concepts"></span>
+                                </button>
+                                <div id="concepts-options" style="display: none;"></div>
+                            </div> 
+
+                            <!-- Patterns Selection Filter -->
+                            <div class="filter-item input-dropdown-container">
+                                <button class="dropdown-btn" onclick="openFilterModal('patterns', '🎯 題型')">
+                                    🎯 題型 <span class="arrow">🔍</span>
+                                    <span class="active-indicator" id="indicator-patterns"></span>
+                                </button>
+                                <div id="patterns-options" style="display: none;"></div>
                             </div>
 
+                            <!-- AIExplanation Selection Filter (維持下拉) -->
+                            <div class="dropdown-filter">
+                                <button class="dropdown-btn" onclick="toggleDropdown('ai-options')" id="ai-filter-btn">
+                                    <span>🤖 AI 詳解</span>
+                                    <div id="indicator-ai" class="filter-indicator"></div>
+                                    <span class="arrow">▶</span>
+                                </button>
+                                <div id="ai-options" class="dropdown-content"></div>
+                            </div>
                         </div>
+                        
+                        <div style="margin-bottom: 10px; margin-top: 15px; display: flex; align-items: center; gap: 5px;">
+                            <input type="checkbox" id="toggle-tags-checkbox" checked onchange="toggleTags(this)">
+                            <label for="toggle-tags-checkbox" style="cursor: pointer; user-select: none;">顯示詳細標籤</label>
+                        </div> 
+                    </div> <!-- 結束 collapsible-filters-wrapper -->
+
+                    <!-- ========================================== -->
+                    <!-- 請將以下 Modal 結構放在 </body> 標籤前 -->
+                    <!-- ========================================== -->
+                    <div id="filter-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 3000; align-items: center; justify-content: center;">
+                        <div class="modal-content" style="background: white; width: 90%; max-width: 500px; max-height: 80vh; border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                            
+                            <div style="padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa;">
+                                <h3 id="filter-modal-title" style="margin: 0; font-size: 18px; color: #2c3e50;">篩選條件</h3>
+                                <button onclick="closeFilterModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #7f8c8d; line-height: 1;">&times;</button>
+                            </div>
+
+                            <div id="filter-modal-search-container" style="padding: 10px 20px; border-bottom: 1px solid #eee; display: none;">
+                                <input type="text" id="filter-modal-search" placeholder="搜尋選項..." style="width: 100%; padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 14px;">
+                            </div>
+
+                            <div id="filter-modal-body" style="padding: 20px; overflow-y: auto; flex: 1;">
+                                <!-- 選項內容會動態注入到這裡 -->
+                            </div>
+
+                            <div style="padding: 15px 20px; border-top: 1px solid #eee; display: flex; justify-content: flex-end; background: #f8f9fa;">
+                                <button onclick="closeFilterModal()" class="btn btn-primary" style="width: 100%; justify-content: center;">完成</button>
+                            </div>
+                        </div>
+                    </div>
 
                         <!-- Dynamic Filters Grid for "Concepts, Pattern and AIExplanation" -->
                         <div class="filter-primary-grid" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
@@ -682,6 +705,7 @@
 <script src="js/utils.js"></script>
 <script src="js/pagination.js"></script>
 <script src="js/filters.js"></script>
+<script src="js/filter-modal.js"></script>
 <script src="js/forms.js"></script>
 <script src="js/sort.js"></script>
 <script src="js/render.js"></script>
