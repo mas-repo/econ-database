@@ -35,8 +35,6 @@ if (!window.triStateFilters) {
 // ============================================
 
 // Configuration map for all filters that have arrow icons
-// Maps the Dropdown ID -> The Arrow Span ID
-// NOTE: Ensure these IDs match your HTML exactly.
 const ARROW_MAP = {
     // Custom Grid Filters
     'curriculum-options': 'curriculum-arrow',
@@ -64,63 +62,59 @@ const ARROW_MAP = {
 };
 
 /**
- * Helper: Closes ALL dropdowns (both standard and custom grids)
- * and resets all arrow icons.
+ * Helper: Closes ALL dropdowns and resets all arrow icons.
  */
 function closeAllDropdowns() {
-    // 1. Close standard CSS-based dropdowns (remove .active)
     document.querySelectorAll('.dropdown-content').forEach(d => {
         d.classList.remove('active');
     });
     
-    // Close input-dropdown lists specifically
     document.querySelectorAll('.input-dropdown-list').forEach(d => {
         d.classList.remove('active');
     });
 
-    // 2. Close custom inline-style grids
     ['curriculum', 'chapter', 'feature', 'year'].forEach(type => {
         const section = document.getElementById(`${type}-options`);
         if (section) section.style.display = 'none';
     });
 
-    // 3. Reset ALL arrows
-    // Method A: Use the map
     Object.values(ARROW_MAP).forEach(arrowId => {
         const arrow = document.getElementById(arrowId);
         if (arrow) arrow.textContent = '▶';
     });
 
-    // Method B: Fallback - Find all elements with class 'arrow' inside buttons and reset them
     document.querySelectorAll('.dropdown-btn .arrow, .filter-input-wrapper .input-arrow').forEach(arrow => {
-        // Only reset if it looks like an arrow (avoid resetting other icons if any)
         if (arrow.textContent === '▼') arrow.textContent = '▶';
     });
 }
 
 /**
- * Helper: Applies tooltips to Chapter options based on constants.js
- * This allows users to see the Chapter Name on hover.
+ * Helper: Applies tooltips to Chapter options based on constants.js.
+ * Also enforces the "Colleagues" rule: that group must not see chapter names,
+ * so the full-name spans are hidden via the 'hide-chapter-names' class.
  */
 function applyChapterTooltips() {
-    if (window.authManager && window.authManager.userGroup === 'Colleagues') return;
-    if (typeof CHAPTER_DESCRIPTIONS === 'undefined') return;
-
     const container = document.getElementById('chapter-options');
     if (!container) return;
 
-    // Find all elements that represent a chapter value
-    const items = container.querySelectorAll('[data-value]');
+    // Colleagues: hide names and tooltips entirely
+    if (window.authManager && window.authManager.userGroup === 'Colleagues') {
+        container.classList.add('hide-chapter-names');
+        container.querySelectorAll('[data-value]').forEach(item => item.removeAttribute('title'));
+        return;
+    }
+    container.classList.remove('hide-chapter-names');
 
+    if (typeof CHAPTER_DESCRIPTIONS === 'undefined') return;
+
+    const items = container.querySelectorAll('[data-value]');
     items.forEach(item => {
         const rawVal = item.getAttribute('data-value');
         if (!rawVal) return;
 
-        // Pad value to match keys in constants.js (e.g. "1" -> "01")
         const paddedVal = rawVal.toString().padStart(2, '0');
         const description = CHAPTER_DESCRIPTIONS[paddedVal];
         if (description) {
-            // Set the native browser tooltip
             item.setAttribute('title', `${paddedVal}: ${description}`);
         }
     });
@@ -128,44 +122,34 @@ function applyChapterTooltips() {
 
 /**
  * Master Toggle Function
- * Handles opening/closing for ALL filter types
  */
 function toggleDropdown(dropdownId) {
     const target = document.getElementById(dropdownId);
     if (!target) return;
 
-    // 1. Determine if the target is CURRENTLY open
     const isStandardActive = target.classList.contains('active');
     const isGridActive = target.style.display === 'grid' || target.style.display === 'block';
     
-    // Note: We must check if it's actually visible.
     const isActuallyVisible = isGridActive || (isStandardActive && target.style.display !== 'none');
     const wasOpen = isActuallyVisible;
 
-    // 2. Close EVERYTHING first (Exclusive Mode)
     closeAllDropdowns();
 
-    // 3. If it was NOT open before, open it now
     if (!wasOpen) {
         const gridFilters = ['curriculum-options', 'feature-options', 'chapter-options', 'year-options'];
 
         if (gridFilters.includes(dropdownId)) {
-            // Treat year-options exactly like chapter-options (display: grid)
-            // This ensures it uses the .custom-grid-dropdown styles correctly.
             target.style.display = 'grid';
             
-            // Special handling for Chapter: Apply tooltips when opening
             if (dropdownId === 'chapter-options') {
                 applyChapterTooltips();
             }
         } else {
-            // === Case B: Standard, Range, & Input Filters ===
             target.style.display = ''; 
             target.classList.add('active');
         }
 
         // === ARROW LOGIC ===
-        // Attempt 1: Use the map
         let arrowUpdated = false;
         const arrowId = ARROW_MAP[dropdownId];
         if (arrowId) {
@@ -176,7 +160,6 @@ function toggleDropdown(dropdownId) {
             }
         }
 
-        // Attempt 2: Dynamic Lookup (Fallback)
         if (!arrowUpdated) {
             const container = target.closest('.dropdown-filter') || target.closest('.input-dropdown-container');
             if (container) {
@@ -195,7 +178,6 @@ function toggleDropdown(dropdownId) {
 }
 
 document.addEventListener('click', function(event) {
-    // Check if click is inside any filter container
     const isFilterClick = event.target.closest('.dropdown-filter') || 
                           event.target.closest('.dropdown-section') || 
                           event.target.closest('.advanced-header') ||
@@ -203,7 +185,6 @@ document.addEventListener('click', function(event) {
 
     if (!isFilterClick) {
         closeAllDropdowns();
-        // When clicking outside to close, trigger the sort on the now-hidden elements.
         updateDynamicDropdowns();
     }
 });
@@ -248,19 +229,15 @@ function toggleTriState(element) {
 }
 
 window.filterByTag = async function(category, value) {
-    // Ensure the category object exists in the global filter state
     if (!window.triStateFilters[category]) {
         window.triStateFilters[category] = {};
     }
 
-    // Check the current state of this specific tag
     const currentState = window.triStateFilters[category][value];
 
     if (currentState === 'checked') {
-        // TOGGLE OFF: If currently active, remove it
         delete window.triStateFilters[category][value];
     } else {
-        // TOGGLE ON: If inactive (or excluded), set to checked
         window.triStateFilters[category][value] = 'checked';
     }
 
@@ -276,7 +253,6 @@ function filterDropdownList(input, listId) {
     const items = list.getElementsByClassName('tri-state-label');
     for (let i = 0; i < items.length; i++) {
         const txtValue = items[i].textContent || items[i].innerText;
-        // Remove the count number for search matching (e.g. "Algebra (5)" -> match "Algebra")
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             items[i].style.display = "";
         } else {
@@ -293,16 +269,14 @@ function updateFilterIndicators() {
     ];
     
     triStateTypes.forEach(type => {
-            // Handle the Dot Indicator (if it exists in HTML)
             const indicator = document.getElementById(`indicator-${type}`);
             if (!indicator) return;
 
-            // NEW LOGIC: Check for active filters, but ignore 'Out syl' if it's in the default 'excluded' state
             let hasActiveFilters = false;
             if (window.triStateFilters[type]) {
                 const activeKeys = Object.keys(window.triStateFilters[type]).filter(key => {
                     if (type === 'feature' && key === 'Out syl' && window.triStateFilters[type][key] === 'excluded') {
-                        return false; // Don't count this as an active filter
+                        return false;
                     }
                     return true;
                 });
@@ -321,14 +295,12 @@ function updateFilterIndicators() {
             }
     });
 
-    // Explicitly Handle AI Button Styling
     const aiBtn = document.getElementById('ai-filter-btn');
     if (aiBtn) {
         const hasAiFilter = window.triStateFilters.ai && Object.keys(window.triStateFilters.ai).length > 0;
         if (hasAiFilter) {
             aiBtn.style.borderColor = 'var(--secondary-color)';
             aiBtn.style.color = 'var(--secondary-color)';
-            // Also try to toggle a child indicator class if the ID method above failed
             const childIndicator = aiBtn.querySelector('.filter-indicator');
             if (childIndicator) childIndicator.classList.add('visible');
         } else {
@@ -348,7 +320,6 @@ function updateFilterIndicators() {
         }
     }
 
-    // Handle Marks Indicator
     const marksIndicator = document.getElementById('indicator-marks');
     if (marksIndicator) {
         if (window.marksFilter && window.marksFilter.active) {
@@ -411,13 +382,12 @@ async function updateDynamicDropdowns() {
 
     const contextQuestions = window.storage.applyFilters(allQuestions, contextFilters);
 
-    // --- Populate Year Filter Dynamically ---
+    // --- Populate Year Filter Dynamically (Grouped by Decade) ---
     const populateYearGrid = () => {
-        // UPDATED: Target the main options container directly, not a list inside it
         const container = document.getElementById('year-options');
         if (!container) return;
 
-        // 1. Calculate Counts (Optional, but good for data-driven logic)
+        // 1. Calculate Counts
         const counts = {};
         contextQuestions.forEach(q => {
             if (q.year) {
@@ -426,12 +396,10 @@ async function updateDynamicDropdowns() {
             }
         });
 
-        // 2. Check Visibility (Soft Update vs Full Rebuild)
-        // If visible, we just update classes.
-        const isVisible = container.style.display === 'grid'; // Changed to check for grid
+        // 2. Soft Update if the dropdown is currently open
+        const isVisible = container.style.display === 'grid' || container.style.display === 'block';
 
         if (isVisible) {
-            // Soft Update
             const existingItems = container.querySelectorAll('.tri-state-checkbox');
             existingItems.forEach(el => {
                 const itemValue = el.dataset.value;
@@ -448,59 +416,85 @@ async function updateDynamicDropdowns() {
             return;
         }
 
-        // Full Rebuild
-        const validYears = window.storage.getUniqueValues(contextQuestions, 'year');
-        
-        // Sort Descending (Newest first), with PP/SP at the end
-        validYears.sort((a, b) => {
-            const strA = String(a).toUpperCase();
-            const strB = String(b).toUpperCase();
-            
-            const isSpecialA = strA === 'PP' || strA === 'SP';
-            const isSpecialB = strB === 'PP' || strB === 'SP';
+        // 3. Full Rebuild
+        let validYears = window.storage.getUniqueValues(contextQuestions, 'year').map(String);
 
-            if (isSpecialA && isSpecialB) {
-                 return strB.localeCompare(strA); 
-            }
-            
-            if (isSpecialA) return 1;
-            if (isSpecialB) return -1;
-            
-            return strB.localeCompare(strA, undefined, { numeric: true });
+        // BUGFIX-CONSISTENCY: always keep currently-selected years visible,
+        // even if the current context contains no matching questions.
+        Object.keys(window.triStateFilters.year || {}).forEach(y => {
+            if (!validYears.includes(y)) validYears.push(y);
         });
 
-        // UPDATED: Include the Header (Select All / Clear) inside the grid container
-        // Use grid-column: 1 / -1 to make it span the full width of the grid
+        // 4. Group years by decade; "PP", "SP" and other non-numeric values go to a special group
+        const decadeGroups = {};   // e.g. { 2020: ['2026','2025',...], 1990: [...] }
+        const specialYears = [];
+
+        validYears.forEach(y => {
+            const num = parseInt(y, 10);
+            if (!isNaN(num) && /^\d{4}$/.test(String(y).trim())) {
+                const decade = Math.floor(num / 10) * 10;
+                if (!decadeGroups[decade]) decadeGroups[decade] = [];
+                decadeGroups[decade].push(y);
+            } else {
+                specialYears.push(y);
+            }
+        });
+
+        const decadeKeys = Object.keys(decadeGroups).map(Number).sort((a, b) => b - a); // newest decade first
+        specialYears.sort((a, b) => String(b).localeCompare(String(a)));
+
+        // Helper to render a single year button
+        const yearButton = (year) => {
+            const currentState = window.triStateFilters.year && window.triStateFilters.year[year];
+            let itemClass = 'tri-state-checkbox';
+            if (currentState === 'checked') itemClass += ' checked';
+            else if (currentState === 'excluded') itemClass += ' excluded';
+
+            const count = counts[year] || 0;
+            return `
+                <div class="${itemClass}" 
+                     data-filter="year" 
+                     data-value="${year}" 
+                     onclick="toggleTriState(this)"
+                     title="${year}（${count} 題）">
+                    ${year}
+                </div>`;
+        };
+
+        // 5. Build HTML: global header + decade groups + special group
         let html = `
-            <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+            <div class="year-global-header">
                 <button onclick="selectAllYears()" class="clear-btn" style="color: var(--secondary-color); font-weight: bold;">全選</button>
                 <button onclick="clearYearFilter()" class="clear-btn">🗑️ 清除</button>
             </div>
         `;
 
-        validYears.forEach(year => {
-            const currentState = window.triStateFilters.year && window.triStateFilters.year[year];
-            const displayYear = year.toString(); // add .slice(-2) to get last 2 digits if necessary
-
-            let itemClass = 'tri-state-checkbox';
-            
-            if (currentState === 'checked') {
-                itemClass += ' checked';
-            } else if (currentState === 'excluded') {
-                itemClass += ' excluded';
-            }
-
-            // Generate "Button-like" HTML structure similar to Chapters
+        decadeKeys.forEach(decade => {
+            const years = decadeGroups[decade].sort((a, b) => parseInt(b, 10) - parseInt(a, 10));
             html += `
-                <div class="${itemClass}" 
-                     data-filter="year" 
-                     data-value="${year}" 
-                     onclick="toggleTriState(this)"
-                     title="${year}">
-                    ${displayYear}
-                </div>
-            `;
+                <div class="year-group">
+                    <div class="year-group-header">
+                        <span class="year-group-title">${decade}s</span>
+                        <button class="clear-btn year-decade-btn" onclick="toggleYearDecade('${decade}')">全選 / 取消</button>
+                    </div>
+                    <div class="year-group-grid">
+                        ${years.map(yearButton).join('')}
+                    </div>
+                </div>`;
         });
+
+        if (specialYears.length > 0) {
+            html += `
+                <div class="year-group">
+                    <div class="year-group-header">
+                        <span class="year-group-title">其他 (PP / SP)</span>
+                    </div>
+                    <div class="year-group-grid">
+                        ${specialYears.map(yearButton).join('')}
+                    </div>
+                </div>`;
+        }
+
         container.innerHTML = html;
     };
     populateYearGrid();
@@ -541,7 +535,6 @@ async function updateDynamicDropdowns() {
                 const count = counts[itemValue] || 0;
                 const checkbox = el.querySelector('.tri-state-checkbox');
                 
-                // Update State Classes
                 const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
                 
                 el.classList.remove('checked', 'excluded');
@@ -555,7 +548,6 @@ async function updateDynamicDropdowns() {
                     if (checkbox) checkbox.classList.add('excluded');
                 }
 
-                // Update Count Text
                 const countSpan = el.querySelector('small');
                 if (countSpan) {
                     countSpan.textContent = `(${count})`;
@@ -584,43 +576,74 @@ async function updateDynamicDropdowns() {
             validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
         }
         
-        // 4. Apply Custom Sorting (Active items first)
+        // ============================================================
+        // 4. BUGFIX: Clean up filters ONLY against the FULL dataset.
+        //
+        // Previously this cleanup used `validValues` (derived from
+        // contextQuestions, which still includes the exam / qtype /
+        // section filters). Selecting one of those filters could
+        // therefore silently DELETE the user's active concepts /
+        // graph / table / etc. selections whenever the selected value
+        // didn't appear in the narrowed context. Patterns appeared
+        // immune only because `patterns` is removed from the context.
+        //
+        // Now we only delete a selection if the value genuinely no
+        // longer exists anywhere in the database (e.g. after a re-sync).
+        // ============================================================
+        const allValuesSet = new Set();
+        if (isArrayField) {
+            allQuestions.forEach(q => {
+                if (Array.isArray(q[fieldName])) {
+                    q[fieldName].forEach(v => {
+                        if (v && typeof v === 'string' && v.trim() !== '') allValuesSet.add(v.trim());
+                    });
+                }
+            });
+        } else {
+            window.storage.getUniqueValues(allQuestions, fieldName).forEach(v => allValuesSet.add(v));
+        }
+
+        if (window.triStateFilters[filterType]) {
+            Object.keys(window.triStateFilters[filterType]).forEach(val => {
+                if (!allValuesSet.has(val)) {
+                    delete window.triStateFilters[filterType][val];
+                }
+            });
+        }
+
+        // BUGFIX (part 2): Always render active selections, even when the
+        // current context has 0 matches — they appear with a "(0)" count
+        // instead of vanishing (and taking the filter state with them).
+        Object.keys(window.triStateFilters[filterType] || {}).forEach(val => {
+            if (!validValues.includes(val)) {
+                validValues.push(val);
+            }
+        });
+
+        // 5. Apply Custom Sorting (Active items first)
         const priorities = PRIORITY_CONFIG[filterType] || [];
         
         validValues.sort((a, b) => {
-            // Priority 1: Checked Items
             const isAChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'checked';
             const isBChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'checked';
             
             if (isAChecked && !isBChecked) return -1;
             if (!isAChecked && isBChecked) return 1;
 
-            // Priority 2: Excluded Items
             const isAExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'excluded';
             const isBExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'excluded';
             
             if (isAExcluded && !isBExcluded) return -1;
             if (!isAExcluded && isBExcluded) return 1;
 
-            // Priority 3: Config Priority (e.g. "No Graph")
             const indexA = priorities.indexOf(a);
             const indexB = priorities.indexOf(b);
             if (indexA !== -1 && indexB !== -1) return indexA - indexB;
             if (indexA !== -1) return -1;
             if (indexB !== -1) return 1;
 
-            // Priority 4: Alphabetical
             return a.localeCompare(b, 'zh-HK');
         });
-
-        // 5. Clean up filters for non-existent values
-        if (window.triStateFilters[filterType]) {
-            Object.keys(window.triStateFilters[filterType]).forEach(val => {
-                if (!validValues.includes(val)) {
-                    delete window.triStateFilters[filterType][val];
-                }
-            });
-        }
 
         const wrapper = container.closest('.input-dropdown-container') || container.closest('.dropdown-filter');
 
@@ -647,7 +670,6 @@ async function updateDynamicDropdowns() {
                 checkboxClass += ' excluded';
             }
 
-            // Added Count Badge Logic
             html += `
                 <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="${filterType}" data-value="${item}">
                     <div class="${checkboxClass}" data-filter="${filterType}" data-value="${item}">
@@ -677,7 +699,6 @@ async function updateDynamicDropdowns() {
         } else {
             if (wrapper) wrapper.style.display = 'block'; 
             
-            // Calculate AI Count
             const aiCount = contextQuestions.filter(q => q.AIExplanation && q.AIExplanation.trim() !== '').length;
 
             const item = 'AI 詳解';
@@ -710,7 +731,6 @@ async function updateDynamicDropdowns() {
 async function populateDynamicFilters() {
     await updateDynamicDropdowns();
     setupInputDropdownListeners();
-    // Also try to apply tooltips initially in case elements are already there
     applyChapterTooltips();
 }
 
@@ -804,9 +824,8 @@ function populateSearchScope() {
 
 window.clearYearFilter = function() {
     window.triStateFilters.year = {};
-    const container = document.getElementById('year-options'); // UPDATED
+    const container = document.getElementById('year-options');
     if (container) {
-        // Updated selector to match new HTML structure (just .tri-state-checkbox)
         container.querySelectorAll('.tri-state-checkbox').forEach(el => {
             el.classList.remove('checked', 'excluded');
         });
@@ -816,7 +835,7 @@ window.clearYearFilter = function() {
 
 // Select All Years
 window.selectAllYears = function() {
-    const container = document.getElementById('year-options'); // UPDATED
+    const container = document.getElementById('year-options');
     if (!container) return;
     
     const items = container.querySelectorAll('[data-value]');
@@ -832,6 +851,41 @@ window.selectAllYears = function() {
     filterQuestions();
 };
 
+// NEW: Toggle all years within a decade (e.g. toggleYearDecade('1990'))
+// If every year in that decade is already checked → unselect them all.
+// Otherwise → check them all.
+window.toggleYearDecade = function(decade) {
+    const container = document.getElementById('year-options');
+    if (!container) return;
+
+    const decadeNum = parseInt(decade, 10);
+    if (isNaN(decadeNum)) return;
+
+    const items = Array.from(container.querySelectorAll('.tri-state-checkbox[data-value]')).filter(el => {
+        const num = parseInt(el.dataset.value, 10);
+        return !isNaN(num) && Math.floor(num / 10) * 10 === decadeNum;
+    });
+
+    if (items.length === 0) return;
+
+    if (!window.triStateFilters.year) window.triStateFilters.year = {};
+
+    const allChecked = items.every(el => window.triStateFilters.year[el.dataset.value] === 'checked');
+
+    items.forEach(el => {
+        const val = el.dataset.value;
+        el.classList.remove('checked', 'excluded');
+        if (allChecked) {
+            delete window.triStateFilters.year[val];
+        } else {
+            window.triStateFilters.year[val] = 'checked';
+            el.classList.add('checked');
+        }
+    });
+
+    filterQuestions();
+};
+
 window.clearChapterFilter = function() {
     window.triStateFilters.chapter = {};
     const container = document.getElementById('chapter-options');
@@ -841,7 +895,6 @@ window.clearChapterFilter = function() {
         });
     }
     
-    // Reset logic switch back to OR
     const toggle = document.getElementById('chapter-logic-toggle');
     if (toggle) {
         toggle.checked = false;
@@ -935,7 +988,6 @@ function clearFilters() {
         if (window.filterLogic) window.filterLogic.curriculum = 'OR';
     }
 
-    // Reset Chapter Logic Toggle
     const chapToggle = document.getElementById('chapter-logic-toggle');
     if (chapToggle) {
         chapToggle.checked = false; 
@@ -959,14 +1011,11 @@ window.removeFilter = function(type, param1, param2) {
     if (type === 'search') {
         document.getElementById('search').value = '';
     } else if (type === 'year') {
-        // Handle removing year filter (tri-state)
-        // If param1 is provided, it's a specific year tag removal
         if (param1) {
             if (window.triStateFilters.year) {
                 delete window.triStateFilters.year[param1];
             }
         } else {
-            // Fallback for full clear
             window.triStateFilters.year = {};
         }
     } else if (type === 'percentage') {
@@ -1046,9 +1095,8 @@ function updateSearchInfo() {
     Object.entries(window.triStateFilters).forEach(([catKey, items]) => {
             Object.entries(items).forEach(([itemVal, state]) => {
                 
-                // NEW LOGIC: Skip creating a badge if it's the default 'Out syl' excluded state
                 if (catKey === 'feature' && itemVal === 'Out syl' && state === 'excluded') {
-                    return; // Skip to the next item
+                    return;
                 }
 
                 const label = categories[catKey] || catKey;
@@ -1072,16 +1120,9 @@ function updateSearchInfo() {
 }
 
 /**
- * Helper: Updates the visual state (checked/excluded) of static filters
- * that are NOT handled by updateDynamicDropdowns (e.g., Chapter, Curriculum).
- * This ensures that when a filter is removed via the badge, the dropdown UI updates.
- */
-/**
  * Helper: Updates the visual state (checked/excluded) of static filters.
- * This ensures that when a filter is removed via the badge, the dropdown UI updates.
  */
 function updateStaticFilterVisuals() {
-    // Query ALL filter elements globally instead of relying on specific container IDs.
     const filterElements = document.querySelectorAll('[data-filter][data-value]');
     
     filterElements.forEach(el => {
@@ -1090,21 +1131,17 @@ function updateStaticFilterVisuals() {
         
         if (!filterType || !itemValue) return;
 
-        // Determine the visual components to update
         const label = el.closest('.tri-state-label');
         const checkbox = el.classList.contains('tri-state-checkbox') ? el : el.querySelector('.tri-state-checkbox');
         
-        // Check state
         const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
         
-        // Update Label
         if (label) {
             label.classList.remove('checked', 'excluded');
             if (currentState === 'checked') label.classList.add('checked');
             if (currentState === 'excluded') label.classList.add('excluded');
         }
 
-        // Update Checkbox
         if (checkbox) {
             checkbox.classList.remove('checked', 'excluded');
             if (currentState === 'checked') checkbox.classList.add('checked');
@@ -1125,19 +1162,17 @@ async function filterQuestions() {
 
     updateFilterIndicators();
     
-    // Update dynamic lists (concepts, etc.)
     await updateDynamicDropdowns();
     
-    // Update static lists (chapters, etc.)
     updateStaticFilterVisuals();
     
     updateSearchInfo();
     if (typeof renderQuestions === 'function') await renderQuestions();
 }
 
-// ... (Rest of range functions remain the same) ...
-// Range Filter Functions (updatePercentageRange, applyPercentageFilter, etc.)
-// Toggle Logic Functions (toggleChapterLogic, etc.)
+// ============================================
+// RANGE FILTER FUNCTIONS
+// ============================================
 
 function updatePercentageRange() {
     const minSlider = document.getElementById('min-percentage');
@@ -1281,40 +1316,31 @@ window.filterByExactMarks = function(marks) {
     const minSlider = document.getElementById('min-marks');
     const maxSlider = document.getElementById('max-marks');
     
-    // Check if this exact mark is already the currently active filter
     const isAlreadyFiltered = window.marksFilter && 
                               window.marksFilter.active && 
                               window.marksFilter.min == marks && 
                               window.marksFilter.max == marks;
 
     if (isAlreadyFiltered) {
-        // --- TOGGLE OFF ---
-        // If it's already filtered by this exact mark, clear the filter
         if (typeof clearMarksFilter === 'function') {
-            clearMarksFilter(); // Use your existing clear function
+            clearMarksFilter();
         } else {
-            // Fallback just in case: reset sliders to their default min/max
             if (minSlider) minSlider.value = minSlider.min;
             if (maxSlider) maxSlider.value = maxSlider.max;
             updateMarksRange();
         }
     } else {
-        // --- TOGGLE ON ---
-        // Apply the exact mark filter
         if (minSlider && maxSlider) {
             minSlider.value = marks;
             maxSlider.value = marks;
             
-            // updateMarksRange() updates the UI, sets the state, and calls filterQuestions()
             updateMarksRange();
             
-            // Optional: Open the marks dropdown so the user sees the filter was applied
             const marksDropdown = document.getElementById('marks-options');
             if (marksDropdown && !marksDropdown.classList.contains('active')) {
                 toggleDropdown('marks-options');
             }
         } else {
-            // Fallback in case the UI elements aren't found
             window.marksFilter = { min: marks, max: marks, active: true };
             filterQuestions();
         }

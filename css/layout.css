@@ -30,15 +30,30 @@ header p {
     font-size: 1.1em;
 }
 
-/* Storage Status Indicator */
+/* Storage Status Indicator
+   FIXED: pinned to the top-left corner of the header with fit-content
+   width, instead of rendering as a full-width block. Hidden entirely
+   when it has no text. */
 #storage-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: fit-content;
+    max-width: 50%;
     background: rgba(255, 255, 255, 0.95);
-    padding: 10px 20px;
+    padding: 6px 14px;
     border-radius: var(--radius-pill);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-color);
     font-weight: 600;
     box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#storage-status:empty {
+    display: none;
 }
 
 #storage-status.connected {

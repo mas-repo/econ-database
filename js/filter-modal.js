@@ -12,7 +12,6 @@ function openFilterModal(filterType, title) {
     document.getElementById('filter-modal-title').textContent = title;
     
     const modalBody = document.getElementById('filter-modal-body');
-    // 支援 -options 或 -list 結尾的容器
     const originalContainer = document.getElementById(`${filterType}-options`) || document.getElementById(`${filterType}-list`);
     
     if (originalContainer) {
@@ -22,13 +21,12 @@ function openFilterModal(filterType, title) {
         // 2. 重新綁定 Tri-state 選項點擊事件
         const items = modalBody.querySelectorAll('.tri-state-label, .tri-state-checkbox');
         items.forEach(item => {
-            item.removeAttribute('onclick'); // 移除行內事件避免重複觸發
+            item.removeAttribute('onclick');
             item.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (typeof toggleTriState === 'function') {
-                    toggleTriState(this); // 呼叫原有邏輯
+                    toggleTriState(this);
                 }
-                // 延遲刷新 Modal，讓畫面同步最新狀態
                 setTimeout(() => {
                     if (currentModalFilterType === filterType) {
                         openFilterModal(filterType, title);
@@ -54,7 +52,7 @@ function openFilterModal(filterType, title) {
             }
         });
 
-        // 4. 重新綁定特殊操作按鈕 (全選、清除)
+        // 4. 重新綁定特殊操作按鈕 (全選、清除、年代全選)
         const actionBtns = modalBody.querySelectorAll('button');
         actionBtns.forEach(btn => {
             const onclickStr = btn.getAttribute('onclick');
@@ -63,9 +61,14 @@ function openFilterModal(filterType, title) {
                 btn.addEventListener('click', function(e) {
                     e.stopPropagation();
                     if (onclickStr.includes('clearYearFilter')) clearYearFilter();
-                    if (onclickStr.includes('selectAllYears')) selectAllYears();
-                    if (onclickStr.includes('clearChapterFilter')) clearChapterFilter();
-                    if (onclickStr.includes('clearCurriculumFilter')) clearCurriculumFilter();
+                    else if (onclickStr.includes('selectAllYears')) selectAllYears();
+                    else if (onclickStr.includes('toggleYearDecade')) {
+                        // NEW: support the per-decade "全選 / 取消" buttons
+                        const m = onclickStr.match(/toggleYearDecade\('([^']+)'\)/);
+                        if (m && typeof toggleYearDecade === 'function') toggleYearDecade(m[1]);
+                    }
+                    else if (onclickStr.includes('clearChapterFilter')) clearChapterFilter();
+                    else if (onclickStr.includes('clearCurriculumFilter')) clearCurriculumFilter();
                     
                     setTimeout(() => {
                         if (currentModalFilterType === filterType) openFilterModal(filterType, title);
@@ -111,7 +114,6 @@ function closeFilterModal() {
 // 點擊 Modal 外部（背景）時自動關閉 Modal
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('filter-modal');
-    // 如果點擊的目標剛好是 modal 容器本身（而非內部的 modal-content），則關閉
     if (event.target === modal) {
         closeFilterModal();
     }
