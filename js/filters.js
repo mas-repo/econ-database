@@ -1,6 +1,11 @@
 // Dependencies: globals.js, render.js, storage-core.js, storage-filters.js,
 // constants.js, utils.js (escapeHTML, debounce), filter-modal.js
-// (populateModalFilter, updateModalFilterBadges)
+// (populateModalFilter, updateModalFilterBadges, closeFilterModal)
+//
+// NOTE: the input-first dropdown machinery (filterDropdownList,
+// setupInputDropdownListeners, populateList) has been removed — all six
+// dynamic filters now use the modal pickers in filter-modal.js. Restore
+// from git history if an input-first filter is ever needed again.
 
 // ============================================
 // GLOBAL FILTER STATE INITIALIZATION
@@ -37,7 +42,7 @@ if (!window.triStateFilters) {
 // ============================================
 
 // Configuration map for all filters that have arrow icons.
-// (graph/table/calculation/concepts/patterns moved to modals — no arrows.)
+// (All six dynamic filters moved to modals — no arrows.)
 const ARROW_MAP = {
     // Custom Grid Filters
     'curriculum-options': 'curriculum-arrow',
@@ -54,13 +59,11 @@ const ARROW_MAP = {
     'percentage-options': 'percentage-arrow',
     'marks-options': 'marks-arrow',
     
-    // Input-First / Dynamic Filters
-    'multiple-selection-options': 'multiple-selection-arrow',
+    // AI
     'ai-options': 'ai-arrow'
 };
 
-// Priority sort options for dynamic filters (shared by the remaining
-// input-first dropdown and the modal pickers).
+// Priority sort options for the modal pickers.
 const PRIORITY_CONFIG = { 
     multipleSelection: ['並非複選型', '不適用'], 
     graph: ['沒有圖', '未命名圖表'],
@@ -77,10 +80,6 @@ function closeAllDropdowns() {
     document.querySelectorAll('.dropdown-content').forEach(d => {
         d.classList.remove('active');
     });
-    
-    document.querySelectorAll('.input-dropdown-list').forEach(d => {
-        d.classList.remove('active');
-    });
 
     ['curriculum', 'chapter', 'feature', 'year'].forEach(type => {
         const section = document.getElementById(`${type}-options`);
@@ -92,7 +91,7 @@ function closeAllDropdowns() {
         if (arrow) arrow.textContent = '▶';
     });
 
-    document.querySelectorAll('.dropdown-btn .arrow, .filter-input-wrapper .input-arrow').forEach(arrow => {
+    document.querySelectorAll('.dropdown-btn .arrow').forEach(arrow => {
         if (arrow.textContent === '▼') arrow.textContent = '▶';
     });
 }
@@ -170,11 +169,11 @@ function toggleDropdown(dropdownId) {
         }
 
         if (!arrowUpdated) {
-            const container = target.closest('.dropdown-filter') || target.closest('.input-dropdown-container');
+            const container = target.closest('.dropdown-filter');
             if (container) {
-                const btn = container.querySelector('.dropdown-btn') || container.querySelector('.filter-input-wrapper');
+                const btn = container.querySelector('.dropdown-btn');
                 if (btn) {
-                    const arrow = btn.querySelector('.arrow') || btn.querySelector('.input-arrow');
+                    const arrow = btn.querySelector('.arrow');
                     if (arrow) {
                         arrow.textContent = '▼';
                     }
@@ -189,8 +188,7 @@ function toggleDropdown(dropdownId) {
 document.addEventListener('click', function(event) {
     const isFilterClick = event.target.closest('.dropdown-filter') || 
                           event.target.closest('.dropdown-section') || 
-                          event.target.closest('.advanced-header') ||
-                          event.target.closest('.input-dropdown-container');
+                          event.target.closest('.advanced-header');
 
     if (!isFilterClick) {
         closeAllDropdowns();
@@ -253,29 +251,12 @@ window.filterByTag = async function(category, value) {
     await filterQuestions();
 };
 
-function filterDropdownList(input, listId) {
-    const filter = input.value.toUpperCase();
-    const list = document.getElementById(listId);
-    
-    list.classList.add('active');
-    
-    const items = list.getElementsByClassName('tri-state-label');
-    for (let i = 0; i < items.length; i++) {
-        const txtValue = items[i].textContent || items[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            items[i].style.display = "";
-        } else {
-            items[i].style.display = "none";
-        }
-    }
-}
-
 function updateFilterIndicators() {
-    // graph/table/calculation/concepts/patterns now use modal trigger
-    // badges (filter-modal.js) instead of dot indicators.
+    // graph/table/calculation/multipleSelection/concepts/patterns use
+    // modal trigger badges (filter-modal.js) instead of dot indicators.
     const triStateTypes = [
-        'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year', 'section',
-        'multipleSelection', 'ai'
+        'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year',
+        'section', 'ai'
     ];
     
     triStateTypes.forEach(type => {
@@ -297,11 +278,6 @@ function updateFilterIndicators() {
                 indicator.classList.add('visible');
             } else {
                 indicator.classList.remove('visible');
-            }
-            
-            const input = document.querySelector(`input[data-filter-type="${type}"]`);
-            if (input) {
-                input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
             }
     });
 
@@ -346,7 +322,7 @@ function updateFilterIndicators() {
 }
 
 // ============================================
-// DYNAMIC DROPDOWN LOGIC (Context-Aware)
+// DYNAMIC OPTION LOGIC (Context-Aware)
 // ============================================
 
 function gatherFilterState() {
@@ -360,7 +336,7 @@ function gatherFilterState() {
 }
 
 /**
- * Shared option-data builder for dynamic filters (dropdowns + modals).
+ * Shared option-data builder for the dynamic modal filters.
  * Returns { values: sorted array, counts: { value: n } }.
  *
  * Includes the consistency bugfixes:
@@ -602,97 +578,14 @@ async function updateDynamicDropdowns() {
     populateYearGrid();
     // ---------------------------------------------
 
-    // Input-first dropdown populator (now only used for 複選類型).
-    const populateList = (containerId, fieldName, filterType, isArrayField = false) => {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        const { values: validValues, counts } =
-            buildOptionData(fieldName, filterType, isArrayField, contextQuestions, allQuestions);
-
-        // Check if Dropdown is Open (Visible)
-        const isVisible = container.classList.contains('active') || 
-                          container.style.display === 'block' || 
-                          container.style.display === 'grid' ||
-                          (container.offsetParent !== null && container.closest('.active'));
-
-        if (isVisible) {
-            // SOFT UPDATE: Update existing DOM elements without reordering
-            const existingItems = container.querySelectorAll('.tri-state-label');
-            existingItems.forEach(el => {
-                const itemValue = el.dataset.value;
-                const count = counts[itemValue] || 0;
-                const checkbox = el.querySelector('.tri-state-checkbox');
-                
-                const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][itemValue];
-                
-                el.classList.remove('checked', 'excluded');
-                if (checkbox) checkbox.classList.remove('checked', 'excluded');
-
-                if (currentState === 'checked') {
-                    el.classList.add('checked');
-                    if (checkbox) checkbox.classList.add('checked');
-                } else if (currentState === 'excluded') {
-                    el.classList.add('excluded');
-                    if (checkbox) checkbox.classList.add('excluded');
-                }
-
-                const countSpan = el.querySelector('small');
-                if (countSpan) {
-                    countSpan.textContent = `(${count})`;
-                }
-            });
-            return; 
-        }
-
-        // FULL REBUILD (Only happens when dropdown is closed)
-        const wrapper = container.closest('.input-dropdown-container') || container.closest('.dropdown-filter');
-
-        if (validValues.length === 0) {
-            if (wrapper) wrapper.style.display = 'none';
-            return;
-        } else {
-            if (wrapper) wrapper.style.display = 'block'; 
-        }
-
-        let html = '';
-        validValues.forEach(item => {
-            const count = counts[item] || 0;
-            const currentState = window.triStateFilters[filterType] && window.triStateFilters[filterType][item];
-            
-            let wrapperClass = 'tri-state-label';
-            let checkboxClass = 'tri-state-checkbox';
-            
-            if (currentState === 'checked') {
-                wrapperClass += ' checked';
-                checkboxClass += ' checked';
-            } else if (currentState === 'excluded') {
-                wrapperClass += ' excluded';
-                checkboxClass += ' excluded';
-            }
-
-            // SECURITY: item comes from the Sheet — escape both the
-            // data-value attribute and the visible label.
-            html += `
-                <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="${filterType}" data-value="${escapeHTML(item)}">
-                    <div class="${checkboxClass}" data-filter="${filterType}" data-value="${escapeHTML(item)}">
-                        <span>${escapeHTML(item)} <small style="opacity: 0.6; font-size: 0.85em; margin-left: 4px;">(${count})</small></span>
-                    </div>
-                </div>
-            `;
-        });
-        container.innerHTML = html;
-    };
-
-    populateList('multiple-selection-options', 'multipleSelectionType', 'multipleSelection');
-
-    // Modal-based filters (圖表 / 表格 / 計算 / 概念 / 題型)
+    // Modal-based filters (圖表 / 表格 / 計算 / 複選 / 概念 / 題型)
     if (typeof populateModalFilter === 'function') {
-        populateModalFilter('graph',       buildOptionData('graphType',       'graph',       false, contextQuestions, allQuestions));
-        populateModalFilter('table',       buildOptionData('tableType',       'table',       false, contextQuestions, allQuestions));
-        populateModalFilter('calculation', buildOptionData('calculationType', 'calculation', false, contextQuestions, allQuestions));
-        populateModalFilter('concepts',    buildOptionData('concepts',        'concepts',    true,  contextQuestions, allQuestions));
-        populateModalFilter('patterns',    buildOptionData('patterns',        'patterns',    true,  contextQuestions, allQuestions));
+        populateModalFilter('graph',             buildOptionData('graphType',             'graph',             false, contextQuestions, allQuestions));
+        populateModalFilter('table',             buildOptionData('tableType',             'table',             false, contextQuestions, allQuestions));
+        populateModalFilter('calculation',       buildOptionData('calculationType',       'calculation',       false, contextQuestions, allQuestions));
+        populateModalFilter('multipleSelection', buildOptionData('multipleSelectionType', 'multipleSelection', false, contextQuestions, allQuestions));
+        populateModalFilter('concepts',          buildOptionData('concepts',              'concepts',          true,  contextQuestions, allQuestions));
+        populateModalFilter('patterns',          buildOptionData('patterns',              'patterns',          true,  contextQuestions, allQuestions));
     }
 
     const aiContainer = document.getElementById('ai-options');
@@ -736,36 +629,7 @@ async function updateDynamicDropdowns() {
 
 async function populateDynamicFilters() {
     await updateDynamicDropdowns();
-    setupInputDropdownListeners();
     applyChapterTooltips();
-}
-
-function setupInputDropdownListeners() {
-    const inputs = document.querySelectorAll('.filter-input');
-    
-    inputs.forEach(input => {
-        const onkeyupAttr = input.getAttribute('onkeyup');
-        if (!onkeyupAttr) return;
-
-        const match = onkeyupAttr.match(/'([^']+)'/);
-        if (!match) return;
-
-        const listId = match[1];
-        const list = document.getElementById(listId);
-        
-        input.addEventListener('focus', () => {
-            closeAllDropdowns();
-            if(list) {
-                list.classList.add('active');
-                list.style.display = ''; 
-            }
-            const container = input.closest('.filter-input-wrapper');
-            if (container) {
-                const arrow = container.querySelector('.input-arrow');
-                if (arrow) arrow.textContent = '▼';
-            }
-        });
-    });
 }
 
 function populateSearchScope() {
@@ -947,23 +811,6 @@ function clearFilters() {
             el.classList.remove('checked', 'excluded');
             const label = el.closest('.tri-state-label');
             if(label) label.classList.remove('checked', 'excluded');
-        }
-    });
-
-    document.querySelectorAll('.filter-input').forEach(input => {
-        input.value = '';
-        input.style.borderColor = ''; 
-        
-        const onkeyupAttr = input.getAttribute('onkeyup');
-        if (onkeyupAttr) {
-            const listId = onkeyupAttr.match(/'([^']+)'/)[1];
-            const list = document.getElementById(listId);
-            if (list) {
-                const items = list.getElementsByClassName('tri-state-label');
-                for (let i = 0; i < items.length; i++) {
-                    items[i].style.display = "";
-                }
-            }
         }
     });
 

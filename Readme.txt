@@ -53,9 +53,9 @@ JavaScript (js/):
 - filters.js — Filter state machine, context-aware dynamic option
   building (buildOptionData), applyFilters orchestration, active-filter
   badges. All Sheet-sourced values are HTML-escaped before injection.
-- filter-modal.js — Modal pickers for the five long-option filters
-  (圖表類型 / 表格類型 / 計算類型 / 概念類型 / 題型). State lives
-  directly in window.triStateFilters, so tri-state include/exclude,
+- filter-modal.js — Modal pickers for the six long-option filters
+  (圖表類型 / 表格類型 / 計算類型 / 複選類型 / 概念類型 / 題型). State
+  lives directly in window.triStateFilters, so tri-state include/exclude,
   badges, tag-clicks and clearFilters all work unchanged.
 - render.js — Question card rendering + pagination. Fully XSS-hardened:
   every Sheet field is escaped; image/AI links restricted to http(s).
@@ -68,7 +68,7 @@ JavaScript (js/):
 
 Templates (js/templates/):
 - template-filters.js — renderFiltersTemplate() — full filter panel,
-  including the five modal trigger buttons (ids mf-item-*, mf-trigger-*,
+  including the six modal trigger buttons (ids mf-item-*, mf-trigger-*,
   mf-badge-* must match filter-modal.js).
 - template-tabs.js — TAB_DEFINITIONS + renderTabsNavTemplate() +
   renderTabContentsTemplate().
@@ -91,13 +91,17 @@ Templates (js/templates/):
 - Most filters are tri-state: unselected → ✔ included → ✕ excluded.
 - Curriculum and Chapter filters support OR/AND logic via a toggle.
 - 答對率 and 分數 use dual-thumb range sliders.
-- The five long-option filters — 圖表類型, 表格類型, 計算類型, 概念類型,
-  題型 — open as a modal dialog (bottom sheet on narrow screens) with an
-  in-modal search box, per-option counts, and a selected-count badge on
-  the trigger button. Clicking an option cycles 未選 → ✔ 包含 → ✕ 排除.
-  Option ordering is frozen while the modal is open so rows don't jump.
+- All six dynamic long-option filters — 圖表類型, 表格類型, 計算類型,
+  複選類型, 概念類型, 題型 — open as a modal dialog (bottom sheet on
+  narrow screens) with an in-modal search box, per-option counts, and a
+  selected-count badge on the trigger button (hidden when the count is
+  zero). Clicking an option cycles 未選 → ✔ 包含 → ✕ 排除. Option
+  ordering is frozen while the modal is open so rows don't jump.
   Triggers are hidden when the dataset has no values for that field.
-- 複選類型 keeps the input-first dropdown (short option list).
+- The input-first dropdown pattern is fully retired; its helpers
+  (inputFilter, filterDropdownList, setupInputDropdownListeners,
+  populateList) and CSS were removed. Restore from git history if
+  needed.
 - Search input is debounced (~250ms) and routed through
   filterQuestions(), which resets pagination to page 1.
 - Esc key: closes an open filter modal first; only a bare Esc (no modal
@@ -124,6 +128,10 @@ Templates (js/templates/):
   Sheet values inside inline onclick strings; use data-* attributes with
   delegated listeners, or JS-escape then HTML-escape (see
   updateSearchInfo in filters.js).
+- CSS gotcha worth remembering: an explicit display value on a class
+  (e.g. .mf-badge with display inline-block) overrides the browser's
+  default hidden-attribute rule. Pair any hidden-attribute usage with an
+  explicit selector like .mf-badge[hidden] { display: none !important }.
 
 ---
 
@@ -139,6 +147,8 @@ Templates (js/templates/):
   metadata stores (publishers / topics / concepts / patterns) or the
   removed getAllMetadata() / updateMetadata() methods — verify before
   re-enabling the statistics tabs.
+- Confirm template-form.js / admin code does not rely on the removed
+  .filter-input / .input-dropdown-list CSS classes.
 
 ---
 
@@ -155,11 +165,19 @@ Templates (js/templates/):
 ## 6. Changelog
 
 ### 2026-06 (current)
-- Long-option filters (圖表類型 / 表格類型 / 計算類型 / 概念類型 / 題型)
-  converted from input-first dropdowns to modal pickers (filter-modal.js)
-  with in-modal search, counts, frozen ordering, count badges, and
-  bottom-sheet layout on mobile. State remains in triStateFilters so all
-  existing filter logic, badges and tag-clicks are unchanged.
+- 複選類型 upgraded to a modal long-option filter; all six dynamic
+  filters now share the modal picker. Input-first dropdown machinery
+  removed (template helper, filterDropdownList,
+  setupInputDropdownListeners, populateList, related CSS).
+- Modal trigger count badges are now fully hidden at zero selections
+  (fixed display:inline-block overriding the hidden attribute).
+
+### 2026-06 (earlier)
+- Long-option filters converted from input-first dropdowns to modal
+  pickers (filter-modal.js) with in-modal search, counts, frozen
+  ordering, count badges, and bottom-sheet layout on mobile. State
+  remains in triStateFilters so all existing filter logic, badges and
+  tag-clicks are unchanged.
 - Search input debounced at 250ms via filterQuestions() (resets to page
   1; refreshes counts and badges). Duplicate debounce util removed from
   main.js — utils.js is the single source.
@@ -168,14 +186,11 @@ Templates (js/templates/):
   filters.js escapes dynamic option lists, year grid, and active-filter
   badges (including inline onclick argument escaping); escapeHTML now
   coerces non-string input (numeric IDs no longer throw).
-- storage-core.js cleaned: DB bumped to v4; legacy metadata stores
-  (publishers / topics / concepts / patterns) and updateMetadata /
-  getMetadata / getAllMetadata removed; clear() now clears questions
-  only; legacy stores deleted on upgrade.
+- storage-core.js cleaned: DB bumped to v4; legacy metadata stores and
+  updateMetadata / getMetadata / getAllMetadata removed; clear() now
+  clears questions only; legacy stores deleted on upgrade.
 - Esc hotkey now closes an open filter modal instead of clearing all
   filters.
-
-### 2026-06 (earlier)
 - Tabs refactored into a TAB_DEFINITIONS config; statistics tabs
   unpublished; tab bar auto-hides when only one tab is visible.
 - Sort dropdown now resets pagination to page 1 via onSortOrderChange().

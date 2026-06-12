@@ -195,50 +195,6 @@
     overflow: visible; /* sliders don't need scrolling; avoid thumb clipping */
 }
 
-/* ============================================
-   Input-First Dropdown Styles
-   ============================================ */
-
-.input-dropdown-container {
-    position: relative;
-    width: 100%;
-}
-
-.filter-input-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.filter-input {
-    width: 100%;
-    height: 42px;
-    padding: 0 30px 0 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-color);
-    transition: all 0.2s;
-    background: var(--white-bg);
-    box-sizing: border-box;
-}
-
-.filter-input:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-}
-
-.input-arrow {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
-    color: #999;
-    pointer-events: none;
-}
-
 /* The Blue Dot Indicator */
 .active-indicator {
     position: absolute;
@@ -255,33 +211,6 @@
 
 .active-indicator.visible {
     display: block;
-}
-
-.input-dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    z-index: 100;
-    display: none;
-    padding: 5px;
-    margin-top: 4px;
-    box-sizing: border-box;
-}
-
-.input-dropdown-list.active {
-    display: block;
-    animation: slideDown 0.2s ease-out;
-}
-
-.scrollable-options {
-    max-height: 250px;
-    overflow-y: auto;
-    scrollbar-width: thin;
 }
 
 /* --- Active Filters Badges --- */
@@ -790,7 +719,7 @@
 }
 
 /* ============================================
-   Modal Filter Triggers (圖表/表格/計算/概念/題型)
+   Modal Filter Triggers (圖表/表格/計算/複選/概念/題型)
    ============================================ */
 
 .modal-filter-trigger .mf-trigger-right {
@@ -816,6 +745,13 @@
     font-weight: 700;
     text-align: center;
     line-height: 1.4;
+}
+
+/* BUGFIX: display:inline-block above beats the browser's default
+   [hidden]{display:none} rule, so zero-count badges rendered as empty
+   pills. This rule restores the hidden behavior. */
+.mf-badge[hidden] {
+    display: none !important;
 }
 
 /* ============================================

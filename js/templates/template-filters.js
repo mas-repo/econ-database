@@ -4,6 +4,12 @@
 // Dynamic option lists are populated later by utils.js / filters.js;
 // modal filter triggers are managed by filter-modal.js (badge ids must
 // match: mf-item-*, mf-trigger-*, mf-badge-*).
+//
+// NOTE: the input-first dropdown pattern has been fully retired — all
+// six dynamic filters (圖表 / 表格 / 計算 / 複選 / 概念 / 題型) now use
+// modal pickers. If you ever need an input-first filter again, restore
+// the inputFilter helper from git history along with filterDropdownList
+// and setupInputDropdownListeners in filters.js.
 
 function renderFiltersTemplate() {
 
@@ -15,25 +21,9 @@ function renderFiltersTemplate() {
             </div>
         </div>`;
 
-    // Helper: input-first dropdown filter (still used for 複選類型)
-    const inputFilter = (idPrefix, filterType, placeholder) => `
-        <div class="filter-item">
-            <div class="input-dropdown-container">
-                <div class="filter-input-wrapper">
-                    <input type="text" class="filter-input"
-                           placeholder="${placeholder}"
-                           data-filter-type="${filterType}"
-                           onkeyup="filterDropdownList(this, '${idPrefix}-options')">
-                    <span class="input-arrow" id="${idPrefix}-arrow">▶</span>
-                    <span class="active-indicator" id="indicator-${filterType}"></span>
-                </div>
-                <div class="input-dropdown-list scrollable-options" id="${idPrefix}-options"></div>
-            </div>
-        </div>`;
-
-    // Helper: modal trigger button for long-option filters
-    // (圖表 / 表格 / 計算 / 概念 / 題型). Hidden until filter-modal.js
-    // confirms the dataset actually contains values for the field.
+    // Helper: modal trigger button for long-option filters. Hidden until
+    // filter-modal.js confirms the dataset actually contains values for
+    // the field.
     const modalTrigger = (key, label) => `
         <div class="filter-item" id="mf-item-${key}" style="display: none;">
             <button type="button" class="dropdown-btn modal-filter-trigger" id="mf-trigger-${key}"
@@ -233,13 +223,11 @@ function renderFiltersTemplate() {
                     </div>
                 </div>
 
-                <!-- Input-first dynamic filter (short option list — stays as dropdown) -->
-                ${inputFilter('multiple-selection', 'multipleSelection', '🔍 複選類型')}
-
                 <!-- Modal-based filters (long option lists) -->
                 ${modalTrigger('graph', '📊 圖表類型')}
                 ${modalTrigger('table', '📅 表格類型')}
                 ${modalTrigger('calculation', '🧮 計算類型')}
+                ${modalTrigger('multipleSelection', '🔍 複選類型')}
                 ${modalTrigger('concepts', '💡 概念類型')}
                 ${modalTrigger('patterns', '🎯 題型')}
 

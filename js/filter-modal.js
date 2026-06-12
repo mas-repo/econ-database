@@ -1,13 +1,13 @@
 // filter-modal.js
-// Modal-based pickers for the five long-option filters:
-// 圖表類型 / 表格類型 / 計算類型 / 概念類型 / 題型
+// Modal-based pickers for the six long-option filters:
+// 圖表類型 / 表格類型 / 計算類型 / 複選類型 / 概念類型 / 題型
 //
 // DESIGN: state lives directly in window.triStateFilters (keys: graph,
-// table, calculation, concepts, patterns) with the existing
-// 'checked' / 'excluded' tri-state semantics. This means applyFilters
-// (storage-filters.js), the active-filter badges (updateSearchInfo),
-// clickable question-card tags (filterByTag) and clearFilters() all
-// work unchanged.
+// table, calculation, multipleSelection, concepts, patterns) with the
+// existing 'checked' / 'excluded' tri-state semantics. This means
+// applyFilters (storage-filters.js), the active-filter badges
+// (updateSearchInfo), clickable question-card tags (filterByTag) and
+// clearFilters() all work unchanged.
 //
 // Option lists + counts are pushed in by updateDynamicDropdowns()
 // (filters.js) via populateModalFilter(), so counts are context-aware
@@ -21,11 +21,12 @@
 // buttons with ids mf-item-*, mf-trigger-*, mf-badge-*).
 
 const MODAL_FILTER_DEFS = [
-    { key: 'graph',       label: '📊 圖表類型' },
-    { key: 'table',       label: '📅 表格類型' },
-    { key: 'calculation', label: '🧮 計算類型' },
-    { key: 'concepts',    label: '💡 概念類型' },
-    { key: 'patterns',    label: '🎯 題型' },
+    { key: 'graph',             label: '📊 圖表類型' },
+    { key: 'table',             label: '📅 表格類型' },
+    { key: 'calculation',       label: '🧮 計算類型' },
+    { key: 'multipleSelection', label: '🔍 複選類型' },
+    { key: 'concepts',          label: '💡 概念類型' },
+    { key: 'patterns',          label: '🎯 題型' },
 ];
 
 // key -> { values: [sorted option strings], counts: { value: n } }
@@ -63,8 +64,14 @@ function updateModalFilterBadge(key) {
     if (!badge || !trigger) return;
     const state = (window.triStateFilters && window.triStateFilters[key]) || {};
     const n = Object.keys(state).length;
+
+    // Zero selections → badge fully hidden. The hidden attribute alone is
+    // not enough because .mf-badge sets display:inline-block, which beats
+    // the UA's [hidden]{display:none} rule — filters.css therefore also
+    // declares .mf-badge[hidden]{display:none !important}. We blank the
+    // text too as belt-and-braces.
     badge.hidden = n === 0;
-    badge.textContent = n;
+    badge.textContent = n === 0 ? '' : n;
     trigger.classList.toggle('mf-trigger-active', n > 0);
 }
 
@@ -98,7 +105,7 @@ function openFilterModal(key) {
             <input type="text" class="mf-search" id="mf-search" placeholder="搜尋選項...">
             <div class="mf-list" id="mf-list"></div>
             <div class="mf-footer">
-                <button type="button" class="btn mf-clear-btn" onclick="clearFilterModal()">🗑️ 清除本項</button>
+                <button type="button" class="btn mf-clear-btn" onclick="clearFilterModal()">🗑️ 清除</button>
                 <button type="button" class="btn mf-done-btn" onclick="closeFilterModal()">完成</button>
             </div>
         </div>`;
