@@ -2,7 +2,8 @@
    Main Application Initialization
    ============================================ */
 
-// Dependencies: auth.js, storage.js, render.js, filters.js, statistics.js
+// Dependencies: auth.js, storage-core.js, render.js, filters.js,
+// statistics.js, utils.js (debounce), filter-modal.js (closeFilterModal)
 
 // Logout function
 function logout() {
@@ -83,8 +84,7 @@ function updateStorageStatus(status, message) {
     const statusElement = document.getElementById('storage-status');
     if (statusElement) {
         statusElement.textContent = message;
-        statusElement.className = ''; // Clear all classes
-        statusElement.className = ''; 
+        statusElement.className = '';
         statusElement.classList.add(status);
         statusElement.style.color = status === 'connected' ? '#27ae60' : '#e74c3c';
     }
@@ -206,7 +206,8 @@ function hideLoading() {
     if (loader) loader.remove();
 }
 
-// Tab switching
+// Tab switching — delegates to tabs.js renderers (thin wrappers around
+// the read-only renderers in statistics.js).
 function switchTab(tabName, event) {
     window.currentTab = tabName;
     
@@ -232,9 +233,6 @@ function switchTab(tabName, event) {
     
     // Render content based on tab
     if (tabName === 'publishers') {
-        // Note: calling renderPublishers here triggers the one in tabs.js (metadata)
-        // or statistics.js (stats) depending on load order.
-        // We will rename statistics.js functions to avoid conflict.
         if (typeof renderPublishers === 'function') renderPublishers();
     } else if (tabName === 'topics') {
         if (typeof renderTopics === 'function') renderTopics();
@@ -249,10 +247,14 @@ function switchTab(tabName, event) {
 
 // Event listeners
 function setupEventListeners() {
-    // Search input
+    // Search input — debounced (~250ms) so typing against a 1000+
+    // question IndexedDB doesn't re-render on every keystroke.
+    // filterQuestions() resets pagination to page 1 and refreshes
+    // dropdown counts + active-filter badges, so it is the correct
+    // debounced target (NOT bare renderQuestions()).
     const searchInput = document.getElementById('search');
     if (searchInput) {
-        searchInput.addEventListener('input', debounce(filterQuestions, 300));
+        searchInput.addEventListener('input', debounce(filterQuestions, 250));
     }
 
     // Search Scope Listener
@@ -329,19 +331,6 @@ function setupEventListeners() {
     }
 }
 
-// Debounce utility
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -359,10 +348,15 @@ if (document.readyState === 'loading') {
     init();
 }
 
-// === Hotkey Listener (Suggestion 3) ===
+// === Hotkey Listener ===
 document.addEventListener('keydown', function(e) {
-    // Press Escape to clear filters
     if (e.key === 'Escape') {
+        // If a filter modal is open, Esc closes it — and does NOT clear
+        // the user's filters. Only a "bare" Esc clears filters.
+        if (document.getElementById('mf-overlay')) {
+            if (typeof closeFilterModal === 'function') closeFilterModal();
+            return;
+        }
         clearFilters();
     }
 });

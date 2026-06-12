@@ -2,19 +2,31 @@
 // Generates the tab navigation and all tab content containers.
 // Dependencies: renderFiltersTemplate (template-filters.js), renderFormTemplate (template-form.js)
 
+// Tab registry. To publish a hidden tab, just flip `visible` to true.
+// (Replaces the old commented-out <button> block — do not delete.)
+const TAB_DEFINITIONS = [
+    { id: 'questions',  label: '題目',        visible: true  },
+    { id: 'publishers', label: '出版商統計',   visible: false },
+    { id: 'concepts',   label: '涉及概念統計', visible: false },
+    { id: 'topics',     label: '課程分類統計', visible: false },
+    { id: 'chapters',   label: 'Chapters統計', visible: false },
+    { id: 'patterns',   label: '題型統計',     visible: false },
+];
+
 function renderTabsNavTemplate() {
+    const visibleTabs = TAB_DEFINITIONS.filter(t => t.visible);
+
+    // A tab bar with one (or zero) tabs is pointless UI — render nothing.
+    // The questions tab content is already marked .active in
+    // renderTabContentsTemplate(), so no tab button is required.
+    if (visibleTabs.length <= 1) return '';
+
     return `
     <div class="tabs">
-        <button class="tab active" onclick="switchTab('questions', event)">題目</button>
+        ${visibleTabs.map((t, i) => `
+        <button class="tab${i === 0 ? ' active' : ''}" onclick="switchTab('${t.id}', event)">${t.label}</button>`).join('')}
     </div>`;
 }
-
-// The following comment is for hidden tab. Do not delete this comment.
-    // <button class="tab" onclick="switchTab('publishers', event)">出版商統計</button>
-    // <button class="tab" onclick="switchTab('concepts', event)">涉及概念統計</button>
-    // <button class="tab" onclick="switchTab('topics', event)">課程分類統計</button>
-    // <button class="tab" onclick="switchTab('chapters', event)">Chapters統計</button>
-    // <button class="tab" onclick="switchTab('patterns', event)">題型統計</button>
 
 function renderTabContentsTemplate() {
     return `
@@ -29,7 +41,7 @@ function renderTabContentsTemplate() {
         <!-- Sort controls -->
         <div class="sort-controls-wrapper">
             <span class="sort-label">排序方式：</span>
-            <select id="sort-order" onchange="renderQuestions()">
+            <select id="sort-order" onchange="onSortOrderChange()">
                 <option value="default">預設 (年份新→舊，題號小→大)</option>
                 <option value="year-desc">年份 (新→舊)</option>
                 <option value="year-asc">年份 (舊→新)</option>
@@ -41,7 +53,7 @@ function renderTabContentsTemplate() {
                 <option value="percentage-desc">答對率 (高→低)</option>
             </select>
             <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
-                <input type="checkbox" checked onchange="toggleTags(this)"> 顯示詳細標籤
+                <input type="checkbox" id="show-tags-toggle" checked onchange="toggleTags(this)"> 顯示詳細標籤
             </label>
             <span class="total-count" id="question-count">總題目數: 0</span>
         </div>
@@ -81,7 +93,7 @@ function renderTabContentsTemplate() {
         </div>
     </div>
 
-    <!-- ===== Statistics Tabs ===== -->
+    <!-- ===== Statistics Tabs (hidden until published via TAB_DEFINITIONS) ===== -->
     <div id="publishers-tab" class="tab-content">
         <h2>出版商統計</h2>
         <div class="stats-grid" id="publishers-grid"></div>
@@ -106,4 +118,12 @@ function renderTabContentsTemplate() {
         <h2>題型統計</h2>
         <div class="stats-grid" id="patterns-grid"></div>
     </div>`;
+}
+
+// Sort change handler — resets to page 1 so the user never lands on a
+// stale/empty page after re-sorting. Falls back gracefully if the
+// pagination global has a different name in your render.js.
+function onSortOrderChange() {
+    if (typeof window.currentPage !== 'undefined') window.currentPage = 1;
+    renderQuestions();
 }

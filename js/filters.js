@@ -1,4 +1,6 @@
-// Dependencies: globals.js, render.js, storage-core.js, storage-filters.js, constants.js
+// Dependencies: globals.js, render.js, storage-core.js, storage-filters.js,
+// constants.js, utils.js (escapeHTML, debounce), filter-modal.js
+// (populateModalFilter, updateModalFilterBadges)
 
 // ============================================
 // GLOBAL FILTER STATE INITIALIZATION
@@ -34,7 +36,8 @@ if (!window.triStateFilters) {
 // DROPDOWN & UI FUNCTIONS
 // ============================================
 
-// Configuration map for all filters that have arrow icons
+// Configuration map for all filters that have arrow icons.
+// (graph/table/calculation/concepts/patterns moved to modals — no arrows.)
 const ARROW_MAP = {
     // Custom Grid Filters
     'curriculum-options': 'curriculum-arrow',
@@ -53,12 +56,18 @@ const ARROW_MAP = {
     
     // Input-First / Dynamic Filters
     'multiple-selection-options': 'multiple-selection-arrow',
-    'graph-options': 'graph-arrow',
-    'table-options': 'table-arrow',
-    'calculation-options': 'calculation-arrow',
-    'concepts-options': 'concepts-arrow',
-    'patterns-options': 'patterns-arrow',
     'ai-options': 'ai-arrow'
+};
+
+// Priority sort options for dynamic filters (shared by the remaining
+// input-first dropdown and the modal pickers).
+const PRIORITY_CONFIG = { 
+    multipleSelection: ['並非複選型', '不適用'], 
+    graph: ['沒有圖', '未命名圖表'],
+    table: ['沒有表格', '未命名表格'],
+    calculation: ['沒有計算', '未命名計算題'],
+    concepts: [],
+    patterns: ['未分類']
 };
 
 /**
@@ -262,10 +271,11 @@ function filterDropdownList(input, listId) {
 }
 
 function updateFilterIndicators() {
+    // graph/table/calculation/concepts/patterns now use modal trigger
+    // badges (filter-modal.js) instead of dot indicators.
     const triStateTypes = [
         'exam', 'qtype', 'curriculum', 'chapter', 'feature', 'year', 'section',
-        'multipleSelection', 'graph', 'table', 'calculation',
-        'concepts', 'patterns', 'ai'
+        'multipleSelection', 'ai'
     ];
     
     triStateTypes.forEach(type => {
@@ -294,6 +304,11 @@ function updateFilterIndicators() {
                 input.style.borderColor = hasActiveFilters ? 'var(--secondary-color)' : '';
             }
     });
+
+    // Modal trigger badges
+    if (typeof updateModalFilterBadges === 'function') {
+        updateModalFilterBadges();
+    }
 
     const aiBtn = document.getElementById('ai-filter-btn');
     if (aiBtn) {
@@ -344,21 +359,108 @@ function gatherFilterState() {
     };
 }
 
+/**
+ * Shared option-data builder for dynamic filters (dropdowns + modals).
+ * Returns { values: sorted array, counts: { value: n } }.
+ *
+ * Includes the consistency bugfixes:
+ * - Stale selections are cleaned ONLY against the FULL dataset (so other
+ *   filters narrowing the context never silently delete user selections).
+ * - Active selections always render, even with a (0) count in context.
+ */
+function buildOptionData(fieldName, filterType, isArrayField, contextQuestions, allQuestions) {
+    // 1. Counts from the current context
+    const counts = {};
+    contextQuestions.forEach(q => {
+        const val = q[fieldName];
+        if (isArrayField && Array.isArray(val)) {
+            val.forEach(v => {
+                if (v && v.trim() !== '') {
+                    const key = v.trim();
+                    counts[key] = (counts[key] || 0) + 1;
+                }
+            });
+        } else if (val) {
+            const key = typeof val === 'string' ? val.trim() : val;
+            if (key !== '') counts[key] = (counts[key] || 0) + 1;
+        }
+    });
+
+    // 2. Values present in the context
+    let validValues;
+    if (isArrayField) {
+        const set = new Set();
+        contextQuestions.forEach(q => {
+            if (Array.isArray(q[fieldName])) {
+                q[fieldName].forEach(val => {
+                    if (val && val.trim() !== '') set.add(val.trim());
+                });
+            }
+        });
+        validValues = Array.from(set);
+    } else {
+        validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
+    }
+
+    // 3. Stale-selection cleanup against the FULL dataset only
+    const allValuesSet = new Set();
+    if (isArrayField) {
+        allQuestions.forEach(q => {
+            if (Array.isArray(q[fieldName])) {
+                q[fieldName].forEach(v => {
+                    if (v && typeof v === 'string' && v.trim() !== '') allValuesSet.add(v.trim());
+                });
+            }
+        });
+    } else {
+        window.storage.getUniqueValues(allQuestions, fieldName).forEach(v => allValuesSet.add(v));
+    }
+
+    if (window.triStateFilters[filterType]) {
+        Object.keys(window.triStateFilters[filterType]).forEach(val => {
+            if (!allValuesSet.has(val)) {
+                delete window.triStateFilters[filterType][val];
+            }
+        });
+    }
+
+    // 4. Always render active selections, even with 0 context matches
+    Object.keys(window.triStateFilters[filterType] || {}).forEach(val => {
+        if (!validValues.includes(val)) {
+            validValues.push(val);
+        }
+    });
+
+    // 5. Sort: checked first, excluded next, then priority list, then locale
+    const priorities = PRIORITY_CONFIG[filterType] || [];
+
+    validValues.sort((a, b) => {
+        const isAChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'checked';
+        const isBChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'checked';
+
+        if (isAChecked && !isBChecked) return -1;
+        if (!isAChecked && isBChecked) return 1;
+
+        const isAExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'excluded';
+        const isBExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'excluded';
+
+        if (isAExcluded && !isBExcluded) return -1;
+        if (!isAExcluded && isBExcluded) return 1;
+
+        const indexA = priorities.indexOf(a);
+        const indexB = priorities.indexOf(b);
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+
+        return a.localeCompare(b, 'zh-HK');
+    });
+
+    return { values: validValues, counts };
+}
+
 async function updateDynamicDropdowns() {
     if (!window.storage) return;
-
-    // ==========================================================
-    // CONFIG: DEFINE YOUR PRIORITY SORT OPTIONS HERE
-    // ==========================================================
-    const PRIORITY_CONFIG = { 
-        multipleSelection: ['並非複選型', '不適用'], 
-        graph: ['沒有圖', '未命名圖表'],
-        table: ['沒有表格', '未命名表格'],
-        calculation: ['沒有計算', '未命名計算題'],
-        concepts: [],
-        patterns: ['未分類']
-    };
-    // ==========================================================
 
     const allQuestions = await window.storage.getQuestions();
     const currentFilters = gatherFilterState();
@@ -426,7 +528,7 @@ async function updateDynamicDropdowns() {
         });
 
         // 4. Group years by decade; "PP", "SP" and other non-numeric values go to a special group
-        const decadeGroups = {};   // e.g. { 2020: ['2026','2025',...], 1990: [...] }
+        const decadeGroups = {};
         const specialYears = [];
 
         validYears.forEach(y => {
@@ -443,7 +545,7 @@ async function updateDynamicDropdowns() {
         const decadeKeys = Object.keys(decadeGroups).map(Number).sort((a, b) => b - a); // newest decade first
         specialYears.sort((a, b) => String(b).localeCompare(String(a)));
 
-        // Helper to render a single year button
+        // Helper to render a single year button (Sheet-sourced → escaped)
         const yearButton = (year) => {
             const currentState = window.triStateFilters.year && window.triStateFilters.year[year];
             let itemClass = 'tri-state-checkbox';
@@ -454,10 +556,10 @@ async function updateDynamicDropdowns() {
             return `
                 <div class="${itemClass}" 
                      data-filter="year" 
-                     data-value="${year}" 
+                     data-value="${escapeHTML(year)}" 
                      onclick="toggleTriState(this)"
-                     title="${year}（${count} 題）">
-                    ${year}
+                     title="${escapeHTML(year)}（${count} 題）">
+                    ${escapeHTML(year)}
                 </div>`;
         };
 
@@ -500,28 +602,15 @@ async function updateDynamicDropdowns() {
     populateYearGrid();
     // ---------------------------------------------
 
+    // Input-first dropdown populator (now only used for 複選類型).
     const populateList = (containerId, fieldName, filterType, isArrayField = false) => {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        // 1. Calculate Counts First
-        const counts = {};
-        contextQuestions.forEach(q => {
-            const val = q[fieldName];
-            if (isArrayField && Array.isArray(val)) {
-                val.forEach(v => {
-                    if (v && v.trim() !== '') {
-                        const key = v.trim();
-                        counts[key] = (counts[key] || 0) + 1;
-                    }
-                });
-            } else if (val) {
-                const key = typeof val === 'string' ? val.trim() : val;
-                if(key !== '') counts[key] = (counts[key] || 0) + 1;
-            }
-        });
+        const { values: validValues, counts } =
+            buildOptionData(fieldName, filterType, isArrayField, contextQuestions, allQuestions);
 
-        // 2. Check if Dropdown is Open (Visible)
+        // Check if Dropdown is Open (Visible)
         const isVisible = container.classList.contains('active') || 
                           container.style.display === 'block' || 
                           container.style.display === 'grid' ||
@@ -556,95 +645,7 @@ async function updateDynamicDropdowns() {
             return; 
         }
 
-        // ============================================================
         // FULL REBUILD (Only happens when dropdown is closed)
-        // ============================================================
-
-        // 3. Get Values (Only those that exist in context)
-        let validValues;
-        if (isArrayField) {
-            const set = new Set();
-            contextQuestions.forEach(q => {
-                if (Array.isArray(q[fieldName])) {
-                    q[fieldName].forEach(val => {
-                        if (val && val.trim() !== '') set.add(val.trim());
-                    });
-                }
-            });
-            validValues = Array.from(set);
-        } else {
-            validValues = window.storage.getUniqueValues(contextQuestions, fieldName);
-        }
-        
-        // ============================================================
-        // 4. BUGFIX: Clean up filters ONLY against the FULL dataset.
-        //
-        // Previously this cleanup used `validValues` (derived from
-        // contextQuestions, which still includes the exam / qtype /
-        // section filters). Selecting one of those filters could
-        // therefore silently DELETE the user's active concepts /
-        // graph / table / etc. selections whenever the selected value
-        // didn't appear in the narrowed context. Patterns appeared
-        // immune only because `patterns` is removed from the context.
-        //
-        // Now we only delete a selection if the value genuinely no
-        // longer exists anywhere in the database (e.g. after a re-sync).
-        // ============================================================
-        const allValuesSet = new Set();
-        if (isArrayField) {
-            allQuestions.forEach(q => {
-                if (Array.isArray(q[fieldName])) {
-                    q[fieldName].forEach(v => {
-                        if (v && typeof v === 'string' && v.trim() !== '') allValuesSet.add(v.trim());
-                    });
-                }
-            });
-        } else {
-            window.storage.getUniqueValues(allQuestions, fieldName).forEach(v => allValuesSet.add(v));
-        }
-
-        if (window.triStateFilters[filterType]) {
-            Object.keys(window.triStateFilters[filterType]).forEach(val => {
-                if (!allValuesSet.has(val)) {
-                    delete window.triStateFilters[filterType][val];
-                }
-            });
-        }
-
-        // BUGFIX (part 2): Always render active selections, even when the
-        // current context has 0 matches — they appear with a "(0)" count
-        // instead of vanishing (and taking the filter state with them).
-        Object.keys(window.triStateFilters[filterType] || {}).forEach(val => {
-            if (!validValues.includes(val)) {
-                validValues.push(val);
-            }
-        });
-
-        // 5. Apply Custom Sorting (Active items first)
-        const priorities = PRIORITY_CONFIG[filterType] || [];
-        
-        validValues.sort((a, b) => {
-            const isAChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'checked';
-            const isBChecked = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'checked';
-            
-            if (isAChecked && !isBChecked) return -1;
-            if (!isAChecked && isBChecked) return 1;
-
-            const isAExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][a] === 'excluded';
-            const isBExcluded = window.triStateFilters[filterType] && window.triStateFilters[filterType][b] === 'excluded';
-            
-            if (isAExcluded && !isBExcluded) return -1;
-            if (!isAExcluded && isBExcluded) return 1;
-
-            const indexA = priorities.indexOf(a);
-            const indexB = priorities.indexOf(b);
-            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            if (indexA !== -1) return -1;
-            if (indexB !== -1) return 1;
-
-            return a.localeCompare(b, 'zh-HK');
-        });
-
         const wrapper = container.closest('.input-dropdown-container') || container.closest('.dropdown-filter');
 
         if (validValues.length === 0) {
@@ -670,10 +671,12 @@ async function updateDynamicDropdowns() {
                 checkboxClass += ' excluded';
             }
 
+            // SECURITY: item comes from the Sheet — escape both the
+            // data-value attribute and the visible label.
             html += `
-                <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="${filterType}" data-value="${item}">
-                    <div class="${checkboxClass}" data-filter="${filterType}" data-value="${item}">
-                        <span>${item} <small style="opacity: 0.6; font-size: 0.85em; margin-left: 4px;">(${count})</small></span>
+                <div class="${wrapperClass}" onclick="toggleTriState(this)" data-filter="${filterType}" data-value="${escapeHTML(item)}">
+                    <div class="${checkboxClass}" data-filter="${filterType}" data-value="${escapeHTML(item)}">
+                        <span>${escapeHTML(item)} <small style="opacity: 0.6; font-size: 0.85em; margin-left: 4px;">(${count})</small></span>
                     </div>
                 </div>
             `;
@@ -682,12 +685,15 @@ async function updateDynamicDropdowns() {
     };
 
     populateList('multiple-selection-options', 'multipleSelectionType', 'multipleSelection');
-    populateList('graph-options', 'graphType', 'graph');
-    populateList('table-options', 'tableType', 'table');
-    populateList('calculation-options', 'calculationType', 'calculation');
 
-    populateList('concepts-options', 'concepts', 'concepts', true);
-    populateList('patterns-options', 'patterns', 'patterns', true);
+    // Modal-based filters (圖表 / 表格 / 計算 / 概念 / 題型)
+    if (typeof populateModalFilter === 'function') {
+        populateModalFilter('graph',       buildOptionData('graphType',       'graph',       false, contextQuestions, allQuestions));
+        populateModalFilter('table',       buildOptionData('tableType',       'table',       false, contextQuestions, allQuestions));
+        populateModalFilter('calculation', buildOptionData('calculationType', 'calculation', false, contextQuestions, allQuestions));
+        populateModalFilter('concepts',    buildOptionData('concepts',        'concepts',    true,  contextQuestions, allQuestions));
+        populateModalFilter('patterns',    buildOptionData('patterns',        'patterns',    true,  contextQuestions, allQuestions));
+    }
 
     const aiContainer = document.getElementById('ai-options');
     if (aiContainer) {
@@ -851,7 +857,7 @@ window.selectAllYears = function() {
     filterQuestions();
 };
 
-// NEW: Toggle all years within a decade (e.g. toggleYearDecade('1990'))
+// Toggle all years within a decade (e.g. toggleYearDecade('1990'))
 // If every year in that decade is already checked → unselect them all.
 // Otherwise → check them all.
 window.toggleYearDecade = function(decade) {
@@ -919,6 +925,9 @@ function clearFilters() {
     });
 
     closeAllDropdowns();
+
+    // Close any open filter modal
+    if (typeof closeFilterModal === 'function') closeFilterModal();
 
     const scopeSelect = document.getElementById('search-scope');
     if (scopeSelect) scopeSelect.value = 'all';
@@ -1042,15 +1051,21 @@ function updateSearchInfo() {
     let html = '';
     let hasFilters = false;
 
+    // SECURITY: values are Sheet-sourced. For inline onclick args we
+    // JS-escape backslashes/quotes first, then HTML-escape the result
+    // (the browser decodes entities before parsing the handler, so the
+    // JS escaping survives intact). Display text is HTML-escaped.
+    const jsArg = (s) => String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+
     const createBadge = (label, value, colorClass = 'blue', removeType, p1, p2) => {
         let removeArgs = `'${removeType}'`;
-        if (p1) removeArgs += `, '${p1.replace(/'/g, "\\'")}'`; 
-        if (p2) removeArgs += `, '${p2.replace(/'/g, "\\'")}'`;
+        if (p1 !== undefined && p1 !== null) removeArgs += `, '${escapeHTML(jsArg(p1))}'`;
+        if (p2 !== undefined && p2 !== null) removeArgs += `, '${escapeHTML(jsArg(p2))}'`;
 
         return `
         <span class="filter-badge ${colorClass}">
             <span class="remove-filter-btn" onclick="removeFilter(${removeArgs})" style="cursor: pointer; margin-right: 6px; font-weight: bold; opacity: 0.7; display: inline-block;">✕</span>
-            ${label}: ${value}
+            ${escapeHTML(label)}: ${escapeHTML(value)}
         </span>`;
     };
 

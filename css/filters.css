@@ -92,7 +92,7 @@
 }
 
 /* Standardizing Buttons and Selects
-   FIXED: .btn-clear-filter removed from this group — it was forcing the
+   .btn-clear-filter removed from this group — it was forcing the
    "重置篩選條件" button to width:100% / height:42px. Only the explicit
    .full-width variant gets the standardized sizing now. */
 .dropdown-btn, 
@@ -159,9 +159,7 @@
     border: none;
 }
 
-/* Dropdown Content Styling (Standard)
-   FIXED: was overflow:hidden with no height cap, so long lists were
-   clipped at the wrapper boundary. Now the dropdown itself scrolls. */
+/* Dropdown Content Styling (Standard) — the dropdown itself scrolls */
 .dropdown-content {
     position: absolute;
     top: calc(100% + 5px);
@@ -667,16 +665,11 @@
 }
 
 /* ============================================
-   Hide Dynamic Filters by Default
+   Hide AI Filter by Default (shown when data exists)
    ============================================ */
 
 .dropdown-filter:has(#ai-options),
 .dropdown-filter:has(#ai-filter-btn) {
-    display: none;
-}
-
-.input-dropdown-container:has(#concepts-options),
-.input-dropdown-container:has(#patterns-options) {
     display: none;
 }
 
@@ -797,6 +790,182 @@
 }
 
 /* ============================================
+   Modal Filter Triggers (圖表/表格/計算/概念/題型)
+   ============================================ */
+
+.modal-filter-trigger .mf-trigger-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.modal-filter-trigger.mf-trigger-active {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.mf-badge {
+    display: inline-block;
+    min-width: 18px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ============================================
+   Filter Modal
+   ============================================ */
+
+.mf-modal-open { overflow: hidden; }
+
+.mf-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.mf-dialog {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 520px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.mf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 8px;
+}
+
+.mf-header h3 { margin: 0; font-size: 17px; }
+
+.mf-close {
+    border: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    color: #666;
+}
+
+.mf-hint {
+    padding: 0 16px 8px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.mf-search {
+    margin: 0 16px 10px;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.mf-search:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.mf-list {
+    overflow-y: auto;
+    padding: 0 12px 8px;
+    flex: 1;
+}
+
+.mf-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 4px;
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.mf-option:hover { background: #f3f4f6; }
+
+.mf-mark {
+    width: 18px;
+    flex-shrink: 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.mf-include { border-color: var(--secondary-color); background: #e3f2fd; }
+.mf-include .mf-mark { color: var(--secondary-color); }
+
+.mf-exclude { border-color: var(--danger-color); background: #ffebee; }
+.mf-exclude .mf-mark { color: var(--danger-color); }
+
+.mf-option-label {
+    flex: 1;
+    min-width: 0;
+    word-break: break-word; /* long Chinese option text wraps */
+}
+
+.mf-count {
+    flex-shrink: 0;
+    font-size: 12px;
+    opacity: 0.55;
+}
+
+.mf-empty {
+    padding: 24px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+.mf-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.mf-clear-btn {
+    background: none;
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.mf-done-btn {
+    background: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ============================================
    Responsive Adjustments
    ============================================ */
 @media (max-width: 768px) {
@@ -847,6 +1016,19 @@
     /* Years: slightly tighter grid */
     .year-group-grid {
         grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    /* Modal becomes a bottom sheet on phones */
+    .mf-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+    .mf-dialog {
+        max-width: none;
+        max-height: 92vh;
+        border-radius: 12px 12px 0 0;
     }
 }
 

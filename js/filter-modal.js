@@ -1,120 +1,202 @@
 // filter-modal.js
+// Modal-based pickers for the five long-option filters:
+// 圖表類型 / 表格類型 / 計算類型 / 概念類型 / 題型
+//
+// DESIGN: state lives directly in window.triStateFilters (keys: graph,
+// table, calculation, concepts, patterns) with the existing
+// 'checked' / 'excluded' tri-state semantics. This means applyFilters
+// (storage-filters.js), the active-filter badges (updateSearchInfo),
+// clickable question-card tags (filterByTag) and clearFilters() all
+// work unchanged.
+//
+// Option lists + counts are pushed in by updateDynamicDropdowns()
+// (filters.js) via populateModalFilter(), so counts are context-aware
+// exactly like the old input-first dropdowns were.
+//
+// Esc handling lives in main.js's global hotkey (closes modal first,
+// clears filters only when no modal is open).
+//
+// Dependencies: utils.js (escapeHTML, debounce), filters.js
+// (filterQuestions, triStateFilters), template-filters.js (trigger
+// buttons with ids mf-item-*, mf-trigger-*, mf-badge-*).
 
-let currentModalFilterType = null;
+const MODAL_FILTER_DEFS = [
+    { key: 'graph',       label: '📊 圖表類型' },
+    { key: 'table',       label: '📅 表格類型' },
+    { key: 'calculation', label: '🧮 計算類型' },
+    { key: 'concepts',    label: '💡 概念類型' },
+    { key: 'patterns',    label: '🎯 題型' },
+];
 
-/**
- * 打開共用篩選器 Modal
- * @param {string} filterType - 篩選器類型 (對應原本的 ID 前綴)
- * @param {string} title - Modal 標題
- */
-function openFilterModal(filterType, title) {
-    currentModalFilterType = filterType;
-    document.getElementById('filter-modal-title').textContent = title;
-    
-    const modalBody = document.getElementById('filter-modal-body');
-    const originalContainer = document.getElementById(`${filterType}-options`) || document.getElementById(`${filterType}-list`);
-    
-    if (originalContainer) {
-        // 1. 複製原本的 HTML 結構到 Modal 中
-        modalBody.innerHTML = originalContainer.innerHTML;
-        
-        // 2. 重新綁定 Tri-state 選項點擊事件
-        const items = modalBody.querySelectorAll('.tri-state-label, .tri-state-checkbox');
-        items.forEach(item => {
-            item.removeAttribute('onclick');
-            item.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (typeof toggleTriState === 'function') {
-                    toggleTriState(this);
-                }
-                setTimeout(() => {
-                    if (currentModalFilterType === filterType) {
-                        openFilterModal(filterType, title);
-                    }
-                }, 100);
-            });
-        });
+// key -> { values: [sorted option strings], counts: { value: n } }
+const modalFilterData = {};
+MODAL_FILTER_DEFS.forEach(d => {
+    modalFilterData[d.key] = { values: [], counts: {} };
+});
 
-        // 3. 重新綁定邏輯切換按鈕 (OR/AND)
-        const toggles = modalBody.querySelectorAll('input[type="checkbox"]');
-        toggles.forEach(toggle => {
-            const onchangeStr = toggle.getAttribute('onchange');
-            if (onchangeStr) {
-                toggle.removeAttribute('onchange');
-                toggle.addEventListener('change', function(e) {
-                    if (onchangeStr.includes('toggleChapterLogic')) toggleChapterLogic(this);
-                    if (onchangeStr.includes('toggleCurriculumLogic')) toggleCurriculumLogic(this);
-                    
-                    setTimeout(() => {
-                        if (currentModalFilterType === filterType) openFilterModal(filterType, title);
-                    }, 100);
-                });
-            }
-        });
+let _mfActiveKey = null;
+let _mfFrozenOrder = null;   // option order snapshot while modal is open
+let _mfRenderedOpts = [];    // currently rendered (search-filtered) options
 
-        // 4. 重新綁定特殊操作按鈕 (全選、清除、年代全選)
-        const actionBtns = modalBody.querySelectorAll('button');
-        actionBtns.forEach(btn => {
-            const onclickStr = btn.getAttribute('onclick');
-            if (onclickStr) {
-                btn.removeAttribute('onclick');
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (onclickStr.includes('clearYearFilter')) clearYearFilter();
-                    else if (onclickStr.includes('selectAllYears')) selectAllYears();
-                    else if (onclickStr.includes('toggleYearDecade')) {
-                        // NEW: support the per-decade "全選 / 取消" buttons
-                        const m = onclickStr.match(/toggleYearDecade\('([^']+)'\)/);
-                        if (m && typeof toggleYearDecade === 'function') toggleYearDecade(m[1]);
-                    }
-                    else if (onclickStr.includes('clearChapterFilter')) clearChapterFilter();
-                    else if (onclickStr.includes('clearCurriculumFilter')) clearCurriculumFilter();
-                    
-                    setTimeout(() => {
-                        if (currentModalFilterType === filterType) openFilterModal(filterType, title);
-                    }, 100);
-                });
-            }
-        });
-    }
+// ---------- Data intake (called from filters.js) ----------
 
-    // 5. 判斷是否需要顯示搜尋列 (動態標籤類才需要)
-    const searchContainer = document.getElementById('filter-modal-search-container');
-    const searchInput = document.getElementById('filter-modal-search');
-    const dynamicTypes = ['graph', 'table', 'calculation', 'multiple-selection', 'concepts', 'patterns'];
-    
-    if (dynamicTypes.includes(filterType)) {
-        searchContainer.style.display = 'block';
-        searchInput.value = '';
-        searchInput.onkeyup = function() {
-            const filter = this.value.toUpperCase();
-            const labels = modalBody.getElementsByClassName('tri-state-label');
-            for (let i = 0; i < labels.length; i++) {
-                const txtValue = labels[i].textContent || labels[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    labels[i].style.display = "";
-                } else {
-                    labels[i].style.display = "none";
-                }
-            }
-        };
-    } else {
-        searchContainer.style.display = 'none';
-    }
+function populateModalFilter(key, data) {
+    if (!modalFilterData[key]) return;
+    modalFilterData[key] = data;
 
-    // 顯示 Modal
-    document.getElementById('filter-modal').style.display = 'flex';
+    // Hide the trigger entirely when the dataset has no values for it
+    // (same behavior as the old input-first dropdowns).
+    const item = document.getElementById(`mf-item-${key}`);
+    if (item) item.style.display = data.values.length ? '' : 'none';
+
+    updateModalFilterBadge(key);
+
+    // Live-refresh counts/marks if this modal is currently open.
+    if (_mfActiveKey === key) renderModalOptionList();
+}
+
+// ---------- Trigger badges ----------
+
+function updateModalFilterBadge(key) {
+    const badge = document.getElementById(`mf-badge-${key}`);
+    const trigger = document.getElementById(`mf-trigger-${key}`);
+    if (!badge || !trigger) return;
+    const state = (window.triStateFilters && window.triStateFilters[key]) || {};
+    const n = Object.keys(state).length;
+    badge.hidden = n === 0;
+    badge.textContent = n;
+    trigger.classList.toggle('mf-trigger-active', n > 0);
+}
+
+function updateModalFilterBadges() {
+    MODAL_FILTER_DEFS.forEach(d => updateModalFilterBadge(d.key));
+}
+
+// ---------- Modal lifecycle ----------
+
+function openFilterModal(key) {
+    const def = MODAL_FILTER_DEFS.find(d => d.key === key);
+    if (!def) return;
+
+    closeFilterModal(); // ensure no duplicate
+
+    _mfActiveKey = key;
+    // Freeze ordering so rows don't jump around while the user clicks
+    // (filters.js re-sorts active-first on every change).
+    _mfFrozenOrder = [...modalFilterData[key].values];
+
+    const overlay = document.createElement('div');
+    overlay.className = 'mf-overlay';
+    overlay.id = 'mf-overlay';
+    overlay.innerHTML = `
+        <div class="mf-dialog" role="dialog" aria-modal="true" aria-label="${def.label}">
+            <div class="mf-header">
+                <h3>${def.label}</h3>
+                <button type="button" class="mf-close" onclick="closeFilterModal()" aria-label="關閉">✕</button>
+            </div>
+            <div class="mf-hint">點擊選項切換：未選 → ✔ 包含 → ✕ 排除</div>
+            <input type="text" class="mf-search" id="mf-search" placeholder="搜尋選項...">
+            <div class="mf-list" id="mf-list"></div>
+            <div class="mf-footer">
+                <button type="button" class="btn mf-clear-btn" onclick="clearFilterModal()">🗑️ 清除本項</button>
+                <button type="button" class="btn mf-done-btn" onclick="closeFilterModal()">完成</button>
+            </div>
+        </div>`;
+
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeFilterModal();
+    });
+    document.body.appendChild(overlay);
+    document.body.classList.add('mf-modal-open');
+
+    const searchEl = document.getElementById('mf-search');
+    searchEl.addEventListener('input',
+        typeof debounce === 'function'
+            ? debounce(() => renderModalOptionList(), 150)
+            : () => renderModalOptionList());
+
+    renderModalOptionList();
+    searchEl.focus();
 }
 
 function closeFilterModal() {
-    document.getElementById('filter-modal').style.display = 'none';
-    currentModalFilterType = null;
+    const overlay = document.getElementById('mf-overlay');
+    if (overlay) overlay.remove();
+    document.body.classList.remove('mf-modal-open');
+    _mfActiveKey = null;
+    _mfFrozenOrder = null;
+    _mfRenderedOpts = [];
 }
 
-// 點擊 Modal 外部（背景）時自動關閉 Modal
-window.addEventListener('click', function(event) {
-    const modal = document.getElementById('filter-modal');
-    if (event.target === modal) {
-        closeFilterModal();
+// ---------- Option list ----------
+
+function renderModalOptionList() {
+    const list = document.getElementById('mf-list');
+    if (!list || !_mfActiveKey) return;
+    const key = _mfActiveKey;
+    const data = modalFilterData[key];
+    const state = (window.triStateFilters && window.triStateFilters[key]) || {};
+
+    // Frozen base order + any values that appeared after opening.
+    const base = _mfFrozenOrder ? [..._mfFrozenOrder] : [...data.values];
+    data.values.forEach(v => {
+        if (!base.includes(v)) base.push(v);
+    });
+
+    const term = (document.getElementById('mf-search')?.value || '').trim().toUpperCase();
+    const opts = base.filter(o => !term || String(o).toUpperCase().includes(term));
+    _mfRenderedOpts = opts;
+
+    if (opts.length === 0) {
+        list.innerHTML = `<div class="mf-empty">沒有符合的選項</div>`;
+        return;
     }
-});
+
+    list.innerHTML = opts.map((opt, i) => {
+        const s = state[opt];
+        const mode = s === 'checked' ? 'include' : s === 'excluded' ? 'exclude' : 'none';
+        const mark = mode === 'include' ? '✔' : mode === 'exclude' ? '✕' : '';
+        const count = data.counts[opt] || 0;
+        return `
+        <button type="button" class="mf-option mf-${mode}" data-idx="${i}">
+            <span class="mf-mark">${mark}</span>
+            <span class="mf-option-label">${escapeHTML(opt)}</span>
+            <span class="mf-count">(${count})</span>
+        </button>`;
+    }).join('');
+
+    // Delegated handler; map index back to the rendered array so raw
+    // option text never lands inside an onclick attribute (XSS-safe,
+    // and quote-safe for option names containing ' or ").
+    list.onclick = e => {
+        const btn = e.target.closest('.mf-option');
+        if (!btn) return;
+        const opt = _mfRenderedOpts[Number(btn.dataset.idx)];
+        if (opt !== undefined) cycleModalOption(key, opt);
+    };
+}
+
+function cycleModalOption(key, opt) {
+    if (!window.triStateFilters[key]) window.triStateFilters[key] = {};
+    const cur = window.triStateFilters[key][opt];
+
+    if (!cur) {
+        window.triStateFilters[key][opt] = 'checked';
+    } else if (cur === 'checked') {
+        window.triStateFilters[key][opt] = 'excluded';
+    } else {
+        delete window.triStateFilters[key][opt];
+    }
+
+    renderModalOptionList();        // instant visual feedback
+    updateModalFilterBadge(key);
+    if (typeof filterQuestions === 'function') filterQuestions();
+}
+
+function clearFilterModal() {
+    if (!_mfActiveKey) return;
+    window.triStateFilters[_mfActiveKey] = {};
+    renderModalOptionList();
+    updateModalFilterBadge(_mfActiveKey);
+    if (typeof filterQuestions === 'function') filterQuestions();
+}

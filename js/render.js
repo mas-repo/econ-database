@@ -1,5 +1,15 @@
 // Render questions
-// Dependencies: storage-core.js (storage), storage-filters.js (applyFilters), globals.js (paginationState, triStateFilters, window.percentageFilter, window.marksFilter), pagination.js (updatePaginationInfo, generatePagination), admin.js (isAdminMode), utils.js (copyToClipboard, toggleQuestionText), sort.js, constants.js (CURRICULUM_ORDER)
+// Dependencies: storage-core.js (storage), storage-filters.js (applyFilters),
+// globals.js (paginationState, triStateFilters, window.percentageFilter,
+// window.marksFilter), pagination.js (updatePaginationInfo,
+// generatePagination), admin.js (isAdminMode), utils.js (escapeHTML,
+// copyToClipboard, toggleQuestionText), sort.js, constants.js
+// (CURRICULUM_ORDER, CURRICULUM_DISPLAY, SECTION_DISPLAY_NAMES)
+//
+// SECURITY: every Sheet-sourced field interpolated into HTML goes through
+// escapeHTML() — body text, attribute values, and tag labels alike.
+// URL fields (imageChi / imageEng / AIExplanation) are additionally
+// restricted to http(s) schemes to block javascript: URL injection.
 
 // ==========================================
 // Tag Visibility
@@ -14,59 +24,64 @@ window.toggleTags = function(checkbox) {
 };
 // ==========================================
 
+// Only allow http/https URLs from the Sheet (blocks javascript: etc.)
+function safeHttpUrl(url) {
+    if (typeof url !== 'string') return '';
+    const trimmed = url.trim();
+    return /^https?:\/\//i.test(trimmed) ? trimmed : '';
+}
+
 async function renderQuestions() {
-    // Added searchScope to the filters object
     const filters = {
         search: document.getElementById('search').value,
-        searchScope: window.searchScope || 'all',        
+        searchScope: window.searchScope || 'all',
         triState: triStateFilters,
         percentageFilter: window.percentageFilter,
         marksFilter: window.marksFilter
     };
-    
+
     let questions = await storage.getQuestions(filters);
 
     // Get sort order and apply sorting
     const sortSelect = document.getElementById('sort-order');
     const sortBy = sortSelect ? sortSelect.value : 'default';
-    questions = sortQuestions(questions, sortBy);    
+    questions = sortQuestions(questions, sortBy);
 
     const currentPage = paginationState.questions.page;
     const itemsPerPage = paginationState.questions.itemsPerPage;
-    
+
     const totalPages = itemsPerPage === -1 ? 1 : Math.max(1, Math.ceil(questions.length / itemsPerPage));
     const paginatedQuestions = itemsPerPage === -1 ? questions : questions.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    
+
     updatePaginationInfo(currentPage, questions.length, itemsPerPage);
     generatePagination(currentPage, totalPages);
 
     const renderImageButtons = (urls, lang) => {
         if (!urls || urls === '-' || typeof urls !== 'string') return '';
-        
-        // Split by comma, trim whitespace, and remove empty strings
-        const urlArray = urls.split(',').map(u => u.trim()).filter(u => u);
+
+        // Split by comma, trim, drop empties AND drop non-http(s) URLs
+        const urlArray = urls.split(',').map(u => u.trim()).map(safeHttpUrl).filter(u => u);
         if (urlArray.length === 0) return '';
-        
+
         const label = lang === 'chi' ? 'ZH' : 'EN';
         const titlePrefix = lang === 'chi' ? '原題圖片 (中文)' : '原題圖片 (英文)';
-        
+
         return urlArray.map((url, index) => {
-            // If there's more than 1 image, append the number (e.g., ZH1, ZH2)
             const displayLabel = urlArray.length > 1 ? `${label}${index + 1}` : label;
             const displayTitle = urlArray.length > 1 ? `${titlePrefix} - P.${index + 1}` : titlePrefix;
-            
+
             return `
-                <a href="${url}" target="_blank" class="ai-btn" title="${displayTitle}" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 6px; border-radius: 15px; background-color: #eff6ff; border: 1px solid #93c5fd; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); margin-left: 8px; font-size: 0.85em; transition: all 0.2s; cursor: pointer; color: #2563eb; font-weight: bold;">
+                <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" class="ai-btn" title="${escapeHTML(displayTitle)}" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 6px; border-radius: 15px; background-color: #eff6ff; border: 1px solid #93c5fd; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); margin-left: 8px; font-size: 0.85em; transition: all 0.2s; cursor: pointer; color: #2563eb; font-weight: bold;">
                     ${displayLabel}
                 </a>
             `;
         }).join('');
-    };    
+    };
 
     document.getElementById('question-count').textContent = `總題目數: ${questions.length}`;
-    
+
     const grid = document.getElementById('question-grid');
-    
+
     if (questions.length === 0) {
         grid.innerHTML = '<p style="text-align: center; padding: 40px; color: #7f8c8d;">未找到題目</p>';
         return;
@@ -75,16 +90,15 @@ async function renderQuestions() {
     // Helper function to determine tag style based on filter state
     const getTagStyle = (category, value) => {
         const isChecked = triStateFilters[category] && triStateFilters[category][value] === 'checked';
-        return isChecked 
-            ? 'cursor:pointer; background-color: #e3f2fd; border: 1px solid #2196f3; color: #1565c0; font-weight: 600;' 
+        return isChecked
+            ? 'cursor:pointer; background-color: #e3f2fd; border: 1px solid #2196f3; color: #1565c0; font-weight: 600;'
             : 'cursor:pointer; color:var(--secondary-color);';
     };
 
     // Helper function to render collapsible text sections (Answers/Reports)
     const renderCollapsibleSection = (label, content) => {
         if (!content || content.trim() === '' || content === '-') return '';
-        
-        // Escape content for HTML display
+
         const escapedContent = escapeHTML(content.trim());
 
         return `
@@ -92,17 +106,17 @@ async function renderQuestions() {
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
                     <button class="expand-btn" title="展開/收起">▶</button>
                     <strong style="flex: 1;">${label}</strong>
-                    <button class="copy-btn" data-action="copy" title="複製" data-content="${escapeHTML(content.trim())}">📋</button>
+                    <button class="copy-btn" data-action="copy" title="複製" data-content="${escapedContent}">📋</button>
                 </div>
                 <div class="question-text-content collapsed">${escapedContent}</div>
             </div>
         `;
     };
-    
+
     grid.innerHTML = paginatedQuestions.map(q => {
-        
+
         // Sort curriculum classifications by CURRICULUM_ORDER
-        const sortedCurriculum = q.curriculumClassification ? 
+        const sortedCurriculum = q.curriculumClassification ?
             [...q.curriculumClassification].sort((a, b) => {
                 const indexA = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === a);
                 const indexB = CURRICULUM_ORDER.findIndex(code => CURRICULUM_DISPLAY[code] === b);
@@ -110,9 +124,9 @@ async function renderQuestions() {
                 const valB = indexB === -1 ? 999 : indexB;
                 return valA - valB;
             }) : [];
-        
+
         // Sort chapter classifications numerically
-        const sortedChapters = q.AristochapterClassification ? 
+        const sortedChapters = q.AristochapterClassification ?
             [...q.AristochapterClassification].sort((a, b) => {
                 const getNum = (str) => {
                     const match = str.match(/(\d+)/);
@@ -122,12 +136,12 @@ async function renderQuestions() {
             }) : [];
 
         // --- PRE-GENERATE HTML FOR CLASSIFICATIONS TO GROUP THEM ---
-        
+
         let classificationHtml = '';
         const hasClassifications = window.showQuestionTags && (
-            sortedCurriculum.length > 0 || 
-            sortedChapters.length > 0 || 
-            (q.concepts && q.concepts.length > 0) || 
+            sortedCurriculum.length > 0 ||
+            sortedChapters.length > 0 ||
+            (q.concepts && q.concepts.length > 0) ||
             (q.patterns && q.patterns.length > 0)
         );
 
@@ -141,7 +155,7 @@ async function renderQuestions() {
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">課程:</strong>
                         ${sortedCurriculum.map(c => `
                             <span class="tag clickable-tag" data-action="filter" data-type="curriculum" data-value="${escapeHTML(c)}" style="${getTagStyle('curriculum', c)}">
-                                ${c}
+                                ${escapeHTML(c)}
                             </span>
                         `).join('')}
                     </div>
@@ -155,11 +169,11 @@ async function renderQuestions() {
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">Chapter:</strong>
                         ${sortedChapters.map(c => {
                             const match = c.match(/(\d+)/);
-                            const val = match ? match[0] : c; 
+                            const val = match ? match[0] : c;
                             const displayLabel = c.replace(/^(Ch|Chapter)\s*/i, '');
                             return `
                             <span class="tag clickable-tag" data-action="filter" data-type="chapter" data-value="${escapeHTML(val)}" style="${getTagStyle('chapter', val)}">
-                                ${displayLabel}
+                                ${escapeHTML(displayLabel)}
                             </span>
                             `;
                         }).join('')}
@@ -174,7 +188,7 @@ async function renderQuestions() {
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">概念:</strong>
                         ${q.concepts.map(c => `
                             <span class="tag clickable-tag" data-action="filter" data-type="concepts" data-value="${escapeHTML(c)}" style="${getTagStyle('concepts', c)}">
-                                ${c}
+                                ${escapeHTML(c)}
                             </span>
                         `).join('')}
                     </div>
@@ -188,7 +202,7 @@ async function renderQuestions() {
                         <strong style="white-space: nowrap; font-size: 0.9em; color: #555;">題型:</strong>
                         ${q.patterns.map(p => `
                             <span class="tag clickable-tag" data-action="filter" data-type="patterns" data-value="${escapeHTML(p)}" style="${getTagStyle('patterns', p)}">
-                                ${p}
+                                ${escapeHTML(p)}
                             </span>
                         `).join('')}
                     </div>
@@ -198,10 +212,12 @@ async function renderQuestions() {
             classificationHtml += `</div>`;
         }
 
-        const sectionDisplay = typeof SECTION_DISPLAY_NAMES !== 'undefined' && SECTION_DISPLAY_NAMES[q.section] 
-            ? SECTION_DISPLAY_NAMES[q.section] 
+        const sectionDisplay = typeof SECTION_DISPLAY_NAMES !== 'undefined' && SECTION_DISPLAY_NAMES[q.section]
+            ? SECTION_DISPLAY_NAMES[q.section]
             : q.section;
-        
+
+        const aiUrl = safeHttpUrl(q.AIExplanation);
+
         return `
         <div class="question-card">
             <div class="question-header">
@@ -209,8 +225,8 @@ async function renderQuestions() {
                     ${escapeHTML(q.id)}
                     ${renderImageButtons(q.imageChi, 'chi')}
                     ${renderImageButtons(q.imageEng, 'eng')}              
-                    ${q.AIExplanation ? `
-                        <a href="${q.AIExplanation}" target="_blank" class="ai-btn" title="AI 詳解" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #e3f2fd; border: 1px solid #90caf9; margin-left: 8px; font-size: 1.2em; transition: all 0.2s; cursor: pointer;">
+                    ${aiUrl ? `
+                        <a href="${escapeHTML(aiUrl)}" target="_blank" rel="noopener noreferrer" class="ai-btn" title="AI 詳解" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background-color: #e3f2fd; border: 1px solid #90caf9; margin-left: 8px; font-size: 1.2em; transition: all 0.2s; cursor: pointer;">
                             🤖
                         </a>
                     ` : ''}                    
@@ -222,7 +238,7 @@ async function renderQuestions() {
                     ${q.year && q.year !== '-' ? `<span class="badge badge-year" style="cursor: pointer;" data-action="filter" data-type="year" data-value="${escapeHTML(q.year)}" title="點擊以篩選此年份">${escapeHTML(q.year)}</span>` : ''}
                     ${q.questionType && q.questionType !== '-' ? `<span class="badge badge-type" style="cursor: pointer;" data-action="filter" data-type="qtype" data-value="${escapeHTML(q.questionType)}" title="點擊以篩選此題型">${escapeHTML(q.questionType)}</span>` : ''}
                     ${q.marks > 0 ? `<span class="badge badge-marks" style="cursor: pointer;" data-action="filter-marks" data-value="${q.marks}" title="點擊以篩選此分數">${q.marks}分</span>` : ''}
-                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" data-action="filter" data-type="section" data-value="${escapeHTML(q.section)}" title="點擊以篩選此部分">${sectionDisplay}</span>` : ''}
+                    ${q.section && q.section !== '-' ? `<span class="badge badge-section" style="cursor: pointer;" data-action="filter" data-type="section" data-value="${escapeHTML(q.section)}" title="點擊以篩選此部分">${escapeHTML(sectionDisplay)}</span>` : ''}
                 </div>
             </div>
             
@@ -244,13 +260,13 @@ async function renderQuestions() {
                 ${renderCollapsibleSection('Markers Report:', q.markersReportEng)}
 
                 <div class="question-info">             
-                    ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${q.correctPercentage}%</div>` : ''}
+                    ${q.correctPercentage !== null && q.correctPercentage !== undefined ? `<div class="info-item"><strong>答對率：</strong> ${escapeHTML(q.correctPercentage)}%</div>` : ''}
 
                     ${(window.showQuestionTags && q.graphType && q.graphType !== '-') ? `
                         <div class="info-item">
                             <strong>圖表：</strong> 
                             <span class="tag clickable-tag" data-action="filter" data-type="graph" data-value="${escapeHTML(q.graphType)}" style="${getTagStyle('graph', q.graphType)}">
-                                ${q.graphType}
+                                ${escapeHTML(q.graphType)}
                             </span>
                         </div>
                     ` : ''}
@@ -259,7 +275,7 @@ async function renderQuestions() {
                         <div class="info-item">
                             <strong>表格：</strong> 
                             <span class="tag clickable-tag" data-action="filter" data-type="table" data-value="${escapeHTML(q.tableType)}" style="${getTagStyle('table', q.tableType)}">
-                                ${q.tableType}
+                                ${escapeHTML(q.tableType)}
                             </span>
                         </div>
                     ` : ''}
@@ -268,7 +284,7 @@ async function renderQuestions() {
                         <div class="info-item">
                             <strong>計算：</strong> 
                             <span class="tag clickable-tag" data-action="filter" data-type="calculation" data-value="${escapeHTML(q.calculationType)}" style="${getTagStyle('calculation', q.calculationType)}">
-                                ${q.calculationType}
+                                ${escapeHTML(q.calculationType)}
                             </span>
                         </div>
                     ` : ''}
@@ -277,7 +293,7 @@ async function renderQuestions() {
                         <div class="info-item">
                             <strong>複選：</strong> 
                             <span class="tag clickable-tag" data-action="filter" data-type="multipleSelection" data-value="${escapeHTML(q.multipleSelectionType)}" style="${getTagStyle('multipleSelection', q.multipleSelectionType)}">
-                                ${q.multipleSelectionType}
+                                ${escapeHTML(q.multipleSelectionType)}
                             </span>
                         </div>
                     ` : ''}                    

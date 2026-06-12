@@ -1,7 +1,9 @@
 // template-filters.js
 // Generates the complete filter panel markup.
 // Dependencies: None (pure HTML string generator).
-// All dynamic option lists are populated later by utils.js / filters.js.
+// Dynamic option lists are populated later by utils.js / filters.js;
+// modal filter triggers are managed by filter-modal.js (badge ids must
+// match: mf-item-*, mf-trigger-*, mf-badge-*).
 
 function renderFiltersTemplate() {
 
@@ -13,7 +15,7 @@ function renderFiltersTemplate() {
             </div>
         </div>`;
 
-    // Helper: input-first dropdown filter (Graph, Table, Calculation, etc.)
+    // Helper: input-first dropdown filter (still used for 複選類型)
     const inputFilter = (idPrefix, filterType, placeholder) => `
         <div class="filter-item">
             <div class="input-dropdown-container">
@@ -27,6 +29,21 @@ function renderFiltersTemplate() {
                 </div>
                 <div class="input-dropdown-list scrollable-options" id="${idPrefix}-options"></div>
             </div>
+        </div>`;
+
+    // Helper: modal trigger button for long-option filters
+    // (圖表 / 表格 / 計算 / 概念 / 題型). Hidden until filter-modal.js
+    // confirms the dataset actually contains values for the field.
+    const modalTrigger = (key, label) => `
+        <div class="filter-item" id="mf-item-${key}" style="display: none;">
+            <button type="button" class="dropdown-btn modal-filter-trigger" id="mf-trigger-${key}"
+                    onclick="openFilterModal('${key}')">
+                <span>${label}</span>
+                <span class="mf-trigger-right">
+                    <span class="mf-badge" id="mf-badge-${key}" hidden></span>
+                    <span class="arrow">▶</span>
+                </span>
+            </button>
         </div>`;
 
     return `
@@ -216,13 +233,15 @@ function renderFiltersTemplate() {
                     </div>
                 </div>
 
-                <!-- Input-first dynamic filters -->
-                ${inputFilter('graph', 'graph', '📊 圖表類型')}
-                ${inputFilter('table', 'table', '📅 表格類型')}
-                ${inputFilter('calculation', 'calculation', '🧮 計算類型')}
+                <!-- Input-first dynamic filter (short option list — stays as dropdown) -->
                 ${inputFilter('multiple-selection', 'multipleSelection', '🔍 複選類型')}
-                ${inputFilter('concepts', 'concepts', '💡 概念類型')}
-                ${inputFilter('patterns', 'patterns', '🎯 題型')}
+
+                <!-- Modal-based filters (long option lists) -->
+                ${modalTrigger('graph', '📊 圖表類型')}
+                ${modalTrigger('table', '📅 表格類型')}
+                ${modalTrigger('calculation', '🧮 計算類型')}
+                ${modalTrigger('concepts', '💡 概念類型')}
+                ${modalTrigger('patterns', '🎯 題型')}
 
                 <!-- 🤖 AI 詳解 (shown only when data exists) -->
                 <div class="filter-item">
